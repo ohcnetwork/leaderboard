@@ -1,16 +1,63 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .masonry {
+      column-gap: 1.5em;
+      column-count: 2;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
+}
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @apply font-spacemono;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.ContentSection {
+  @apply max-w-screen-sm mx-auto;
+  @apply py-8;
+  @apply px-6;
 }
 
-* {
-  box-sizing: border-box;
+@screen sm {
+  .ContentSection {
+    @apply max-w-screen-md;
+    @apply py-16;
+    @apply px-0;
+  }
+}
+
+@screen md {
+  .ContentSection {
+    @apply max-w-screen-lg mx-auto;
+    @apply py-32;
+    @apply w-2/3;
+  }
+}
+
+h1, h2, h3, h4 {
+  @apply font-bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
 }

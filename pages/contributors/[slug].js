@@ -6,6 +6,7 @@ import InfoCard from "../../components/contributors/InfoCard";
 import GithubActivity from "../../components/contributors/GithubActivity";
 
 import { getContributorBySlug, getContributors } from "../../lib/api";
+import Link from "next/link";
 
 export default function Contributor({ contributor, slug }) {
   console.log(contributor);
@@ -18,11 +19,13 @@ export default function Contributor({ contributor, slug }) {
       </Head>
       <header className="max-w-6xl mx-auto py-4 lg:py-8 px-4 xl:px-0 ">
         <div className="flex justify-between items-center">
-          <a className="inline-block" href="/">
-            <code className="text-primary-900 text-3xl">
-              coronasafe.network
-            </code>
-          </a>
+          <Link href="/">
+            <div className="inline-block">
+              <code className="text-primary-900 text-3xl">
+                coronasafe.network
+              </code>
+            </div>
+          </Link>
         </div>
       </header>
       <section className="max-w-6xl mx-auto bg-gray-900 border-t border-gray-600 ">

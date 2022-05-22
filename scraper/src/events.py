@@ -44,7 +44,9 @@ def fetch_repo_events(repo, date, data=None, page=1):
             event["created_at"], "%Y-%m-%dT%H:%M:%SZ"
         ).replace(tzinfo=ZoneInfo("UTC"))
 
-        if event_time.date() <= prev_day:
+        if event_time.date() > date.date():
+            continue
+        elif event_time.date() <= prev_day:
             return data
 
         if event["type"] == "IssueCommentEvent":

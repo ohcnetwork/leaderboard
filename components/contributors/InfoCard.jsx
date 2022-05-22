@@ -11,7 +11,7 @@ export default function InfoCard({ contributor, minimal = false }) {
         />
         <div className={minimal ? "text-center" : "space-y-2"}>
           <div className="font-medium text-lg leading-6 space-y-1">
-            <Link href="/contributors/bodhish" className="">
+            <Link href={`/contributors/${contributor.github}`} className="">
               <h3 className="text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">
                 {contributor.name}
               </h3>

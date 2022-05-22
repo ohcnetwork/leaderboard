@@ -17,13 +17,12 @@ allowed_events = (
 
 
 def add_event(data, user, event):
-    time = event.get("time")
     try:
         data[user]["activity"].append(event)
-        if time > data[user]["last_updated"]:
-            data[user]["last_active"] = time
+        if event["time"] > data[user]["last_updated"]:
+            data[user]["last_updated"] = event["time"]
     except KeyError:
-        data[user] = {"last_updated": time, "activity": [event]}
+        data[user] = {"last_updated": event["time"], "activity": [event]}
 
 
 def fetch_repo_events(repo, date, data=None, page=1):
@@ -109,7 +108,7 @@ def fetch_repo_events(repo, date, data=None, page=1):
                     "type": "pr_reviewed",
                     "time": event_time,
                     "link": event["payload"]["review"]["html_url"],
-                    "text": event["payload"]["review"]["body"],
+                    "text": event["payload"]["pull_request"]["title"],
                 },
             )
 

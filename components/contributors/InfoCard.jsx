@@ -5,8 +5,8 @@ export default function InfoCard({ contributor }) {
       <div className="space-y-6 xl:space-y-10">
         <img
           className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-          src="https://github.com/bodhish.png"
-          alt=""
+          src={`https://github.com/${contributor.github}.png`}
+          alt={contributor.github}
         />
         <div className="space-y-2">
           <div className="font-medium text-lg leading-6 space-y-1">

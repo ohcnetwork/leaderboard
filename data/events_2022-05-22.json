@@ -1,0 +1,562 @@
+{
+  "sainAk": {
+    "last_updated": "2022-05-22T16:50:17+00:00",
+    "activity": [
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T16:50:17+00:00",
+        "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980995925",
+        "text": "This is a test review"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T16:47:09+00:00",
+        "link": "https://github.com/coronasafe/care/pull/740#issuecomment-1133933110",
+        "text": "Ignore the review it was for a test"
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T16:46:16+00:00",
+        "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980995572",
+        "text": ""
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:36:29+00:00",
+        "link": "https://github.com/coronasafe/care/pull/772#issuecomment-1133856645",
+        "text": "what we can do is rename the min_quantity field to default_min_quantity in the response and decide the is_low based on the `FacilityInventoryMinQuantity`"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:34:12+00:00",
+        "link": "https://github.com/coronasafe/care/pull/772#issuecomment-1133856253",
+        "text": "Its possible to do it on the BE but the min_quantity will still be redundant atlest in `FacilityInventoryLogSerializer`"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:31:10+00:00",
+        "link": "https://github.com/coronasafe/care/pull/772#issuecomment-1133855741",
+        "text": "> @sainAk the min_quantity can stay and maybe FE can ignore the flag if the min_quantity value is not present, or we can add that logic into our flagging system.\r\n\r\nSure I'll apply the changes"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:28:28+00:00",
+        "link": "https://github.com/coronasafe/care/pull/768#issuecomment-1133855283",
+        "text": "For now I'm only building the docker image, after we add localstack we can switch over to compose for testing."
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:12:42+00:00",
+        "link": "https://github.com/coronasafe/care/pull/775#pullrequestreview-980930255",
+        "text": "LGTM"
+      }
+    ]
+  },
+  "mathew-alex": {
+    "last_updated": "2022-05-22T13:18:32+00:00",
+    "activity": [
+      {
+        "type": "pr_closed",
+        "time": "2022-05-22T13:18:32+00:00",
+        "link": "https://github.com/coronasafe/care/pull/778",
+        "text": "Update deployment.yaml"
+      }
+    ]
+  },
+  "tomahawk-pilot": {
+    "last_updated": "2022-05-22T13:14:22+00:00",
+    "activity": [
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T13:14:22+00:00",
+        "link": "https://github.com/coronasafe/care/pull/778#issuecomment-1133894137",
+        "text": "@mathew-alex "
+      },
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T13:14:14+00:00",
+        "link": "https://github.com/coronasafe/care/pull/778",
+        "text": "Update deployment.yaml"
+      },
+      {
+        "type": "pr_closed",
+        "time": "2022-05-22T13:13:12+00:00",
+        "link": "https://github.com/coronasafe/care/pull/733",
+        "text": "Update deployment.yaml"
+      },
+      {
+        "type": "pr_closed",
+        "time": "2022-05-22T13:11:27+00:00",
+        "link": "https://github.com/coronasafe/care/pull/733",
+        "text": "Update deployment.yaml"
+      },
+      {
+        "type": "pr_closed",
+        "time": "2022-05-22T10:17:49+00:00",
+        "link": "https://github.com/coronasafe/care/pull/768",
+        "text": "update main CI"
+      },
+      {
+        "type": "issue_closed",
+        "time": "2022-05-22T10:17:49+00:00",
+        "link": "https://github.com/coronasafe/care/issues/754",
+        "text": "Update Dockerfile"
+      }
+    ]
+  },
+  "iamsdas": {
+    "last_updated": "2022-05-22T10:52:03+00:00",
+    "activity": [
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T10:52:03+00:00",
+        "link": "https://github.com/coronasafe/care/pull/776#pullrequestreview-980940332",
+        "text": null
+      },
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T10:52:03+00:00",
+        "link": "https://github.com/coronasafe/care/pull/776#discussion_r878839924",
+        "text": "yup, `camera_address` was not an accurate name and has been replaced in [#771](https://github.com/coronasafe/care/pull/771)."
+      }
+    ]
+  },
+  "vigneshhari": {
+    "last_updated": "2022-05-22T10:04:02+00:00",
+    "activity": [
+      {
+        "type": "issue_closed",
+        "time": "2022-05-22T10:04:02+00:00",
+        "link": "https://github.com/coronasafe/care/issues/747",
+        "text": "IP Number : Mandatory field"
+      },
+      {
+        "type": "pr_closed",
+        "time": "2022-05-22T10:03:57+00:00",
+        "link": "https://github.com/coronasafe/care/pull/748",
+        "text": "made Ip number mandatory"
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:54:45+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980934564",
+        "text": ""
+      },
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T09:54:42+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878832763",
+        "text": "This does not contain a beat instance, create another container for beat or add the beat functionality to this container."
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:54:45+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980934564",
+        "text": ""
+      },
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T09:47:19+00:00",
+        "link": "https://github.com/coronasafe/care/pull/740#discussion_r878831888",
+        "text": "Why create a separate serializer? "
+      },
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T09:48:35+00:00",
+        "link": "https://github.com/coronasafe/care/pull/740#discussion_r878832057",
+        "text": "How exactly is this serializer supporting soft deletions? "
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:48:45+00:00",
+        "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980933848",
+        "text": ""
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:48:45+00:00",
+        "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980933848",
+        "text": ""
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:46:40+00:00",
+        "link": "https://github.com/coronasafe/care/pull/740#issuecomment-1133858350",
+        "text": "Only keep changes relevant to the PR, either remove the other changes or rebase with master if the changes are merged in"
+      },
+      {
+        "type": "issue_closed",
+        "time": "2022-05-22T09:41:40+00:00",
+        "link": "https://github.com/coronasafe/care/issues/759",
+        "text": "Backend: Migration to change meta.camera_address to meta.local_ip_address"
+      },
+      {
+        "type": "pr_closed",
+        "time": "2022-05-22T09:41:41+00:00",
+        "link": "https://github.com/coronasafe/care/pull/771",
+        "text": "add migration to change meta.camera_address to meta.local_ip_address"
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:41:19+00:00",
+        "link": "https://github.com/coronasafe/care/pull/771#pullrequestreview-980933307",
+        "text": "Looks good to me."
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:38:11+00:00",
+        "link": "https://github.com/coronasafe/care/pull/773#issuecomment-1133856953",
+        "text": "@tomahawk-pilot if you are okay then merge this."
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:31:29+00:00",
+        "link": "https://github.com/coronasafe/care/pull/772#issuecomment-1133855793",
+        "text": "@sainAk in FE or BE ?"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:29:48+00:00",
+        "link": "https://github.com/coronasafe/care/pull/772#issuecomment-1133855548",
+        "text": "@sainAk the min_quantity can stay and maybe FE can ignore the flag if the min_quantity value is not present, or we can add that logic into our flagging system."
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:25:58+00:00",
+        "link": "https://github.com/coronasafe/care/pull/768#issuecomment-1133854752",
+        "text": "@tomahawk-pilot is this good to go ?"
+      },
+      {
+        "type": "pr_closed",
+        "time": "2022-05-22T09:24:11+00:00",
+        "link": "https://github.com/coronasafe/care/pull/775",
+        "text": "Modified maximum number of doses for a patient"
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:24:03+00:00",
+        "link": "https://github.com/coronasafe/care/pull/775#pullrequestreview-980931627",
+        "text": ""
+      },
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T09:21:42+00:00",
+        "link": "https://github.com/coronasafe/care/pull/776#discussion_r878828951",
+        "text": "Is this change in onvif intended?"
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:21:51+00:00",
+        "link": "https://github.com/coronasafe/care/pull/776#pullrequestreview-980931399",
+        "text": ""
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:21:51+00:00",
+        "link": "https://github.com/coronasafe/care/pull/776#pullrequestreview-980931399",
+        "text": ""
+      },
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T09:08:39+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878827136",
+        "text": "Since this is the local version, we should mount local volumes as well."
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:08:44+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980929837",
+        "text": ""
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:08:44+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980929837",
+        "text": ""
+      },
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T09:03:53+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878826597",
+        "text": "We don't need to mount docker."
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:04:20+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980929389",
+        "text": ""
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:04:20+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980929389",
+        "text": ""
+      }
+    ]
+  },
+  "Marmik2003": {
+    "last_updated": "2022-05-22T09:49:42+00:00",
+    "activity": [
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T09:49:42+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878832218",
+        "text": "done"
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:49:42+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980934103",
+        "text": null
+      },
+      {
+        "type": "pr_review",
+        "time": "2022-05-22T09:49:25+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980934082",
+        "text": null
+      },
+      {
+        "type": "pr_review_comment",
+        "time": "2022-05-22T09:49:25+00:00",
+        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878832186",
+        "text": "done"
+      }
+    ]
+  },
+  "patelaryan7751": {
+    "last_updated": "2022-05-22T13:44:17+00:00",
+    "activity": [
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T13:44:17+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2490",
+        "text": "Fixed the unresponsive behaviour of UI in sample test page"
+      },
+      {
+        "type": "issue_opened",
+        "time": "2022-05-22T08:00:56+00:00",
+        "link": "https://github.com/coronasafe/care_fe/issues/2482",
+        "text": "Update sample test status modal unresponsive in mobile"
+      },
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T07:57:44+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2481",
+        "text": "Fixed unresponsive behaviour of details of patient card in sample details page"
+      },
+      {
+        "type": "issue_opened",
+        "time": "2022-05-22T04:32:14+00:00",
+        "link": "https://github.com/coronasafe/care_fe/issues/2478",
+        "text": "Details of Patient card unresponsive in sample details page !"
+      }
+    ]
+  },
+  "rabilrbl": {
+    "last_updated": "2022-05-22T12:13:40+00:00",
+    "activity": [
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T12:13:40+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2489",
+        "text": "Fix asset qr code id empty string"
+      },
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T11:50:20+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2487",
+        "text": "Add Camera Feed to Tabs in Patient Consultation Page"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T10:32:40+00:00",
+        "link": "https://github.com/coronasafe/care_fe/issues/2422#issuecomment-1133865907",
+        "text": "> This issue is caused because `Asset QR Code ID` is sending blank string which causes integrity error\n> @rabilrbl do you want to take up this issue to handle it on the FE?\n\nSure \ud83d\udc4d"
+      }
+    ]
+  },
+  "GokulramGHV": {
+    "last_updated": "2022-05-22T12:02:35+00:00",
+    "activity": [
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T12:02:35+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2488",
+        "text": "Fixed improper pagination padding in external results page"
+      },
+      {
+        "type": "issue_opened",
+        "time": "2022-05-22T11:40:37+00:00",
+        "link": "https://github.com/coronasafe/care_fe/issues/2486",
+        "text": "Pagination padding is improper in external results page"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T10:35:31+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2474#issuecomment-1133866292",
+        "text": "@nihal467 It is working for me...\r\nCan you please share the link of the patricular page in which it is not working?\r\n\r\n![image](https://user-images.githubusercontent.com/40627011/169691092-137d657b-951a-4028-99cf-7b4290e6a674.png)\r\n"
+      }
+    ]
+  },
+  "rithviknishad": {
+    "last_updated": "2022-05-22T09:56:24+00:00",
+    "activity": [
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T09:56:24+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2485",
+        "text": "Adds hints for delete last entry, mark as accident and unmark actions in inventory management"
+      },
+      {
+        "type": "issue_opened",
+        "time": "2022-05-22T09:53:22+00:00",
+        "link": "https://github.com/coronasafe/care_fe/issues/2483",
+        "text": "Inventory Delete Last Entry and Mark as Accident's intended use case can be confusing"
+      }
+    ]
+  },
+  "siddnikh": {
+    "last_updated": "2022-05-22T09:53:48+00:00",
+    "activity": [
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T09:53:48+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2484",
+        "text": "Added password change option in user profile."
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:32:04+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2468#issuecomment-1133844478",
+        "text": "@gigincg yeah. You can check it out here: https://github.com/coronasafe/care/pull/775"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:31:30+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2468#issuecomment-1133844379",
+        "text": "@nihal467 I had to update the backend too. Here's the PR for that: https://github.com/coronasafe/care/pull/775\r\nPlease try using that."
+      }
+    ]
+  },
+  "nihal467": {
+    "last_updated": "2022-05-22T09:01:06+00:00",
+    "activity": [
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T09:01:06+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2473#issuecomment-1133850827",
+        "text": "@ishanExtreme @gigincg when we click the switch bed, button, the date of shifting column should be auto-filled with the current time and date "
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:41:49+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2476#issuecomment-1133845973",
+        "text": "test approved"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:38:17+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2474#issuecomment-1133845445",
+        "text": "@GokulramGHV @gigincg \r\n![poewkf](https://user-images.githubusercontent.com/57055998/169686151-0dab6af2-51bf-4d77-9c16-4ad499faefed.jpg)\r\n\r\ntest failed, as there is no message showing in the medicine"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:35:27+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2473#issuecomment-1133845007",
+        "text": "![eoifjw](https://user-images.githubusercontent.com/57055998/169685991-23be60b4-73e6-4ea2-8750-f9757e653762.jpg)\r\n\r\n@ishanExtreme @gigincg test failed, \r\n- the UI is very small\r\n- the date is not auto fetching\r\n- the date is not fully visible"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:29:19+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2472#issuecomment-1133844122",
+        "text": "@Pranshu1902 @gigincg there is merge conflicts, check it"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:27:26+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2468#issuecomment-1133843861",
+        "text": "![wpokdqowd](https://user-images.githubusercontent.com/57055998/169685769-1575d18c-ef9c-408b-b47a-d9c542813068.jpg)\r\n\r\n@gigincg @siddnikh it is not accepting 3rd dose"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:19:28+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2466#issuecomment-1133842851",
+        "text": "test approved"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:16:21+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2465#issuecomment-1133842431",
+        "text": "test approved"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:12:51+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2464#issuecomment-1133841934",
+        "text": "test approved"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:09:13+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2461#issuecomment-1133841364",
+        "text": "test approved"
+      }
+    ]
+  },
+  "ishanExtreme": {
+    "last_updated": "2022-05-22T08:47:26+00:00",
+    "activity": [
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:47:26+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2473#issuecomment-1133846854",
+        "text": "@nihal467 \r\nCan you give more details about date auto fetching issue."
+      }
+    ]
+  },
+  "gigincg": {
+    "last_updated": "2022-05-22T08:30:54+00:00",
+    "activity": [
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T08:30:54+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2468#issuecomment-1133844287",
+        "text": "@siddnikh Have you created a backend issue for this?"
+      }
+    ]
+  },
+  "Ritesh-Aggarwal": {
+    "last_updated": "2022-05-22T06:53:20+00:00",
+    "activity": [
+      {
+        "type": "pr_opened",
+        "time": "2022-05-22T06:53:20+00:00",
+        "link": "https://github.com/coronasafe/care_fe/pull/2480",
+        "text": "fix : Issue 2450 & 2479 - Revamp teleICU patient info card"
+      },
+      {
+        "type": "comment_created",
+        "time": "2022-05-22T06:50:32+00:00",
+        "link": "https://github.com/coronasafe/care_fe/issues/2479#issuecomment-1133831244",
+        "text": "issue can be merged with #2450 "
+      },
+      {
+        "type": "issue_opened",
+        "time": "2022-05-22T06:18:17+00:00",
+        "link": "https://github.com/coronasafe/care_fe/issues/2479",
+        "text": "Patient gender not visible in infoCard"
+      }
+    ]
+  },
+  "naman114": {
+    "last_updated": "2022-05-22T00:49:29+00:00",
+    "activity": [
+      {
+        "type": "issue_opened",
+        "time": "2022-05-22T00:49:29+00:00",
+        "link": "https://github.com/coronasafe/care_fe/issues/2477",
+        "text": "Location management page is not mobile responsive"
+      }
+    ]
+  }
+}

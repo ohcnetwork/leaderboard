@@ -138,7 +138,7 @@ if __name__ == "__main__":
     for repo in repos:
         data = fetch_repo_events(repo, _date, data)
 
-    with open(f"events_{argv[1]}.json", "w") as f:
+    with open(f"data/events_{argv[1]}.json", "w") as f:
         json.dump(data, f, indent=2, default=serializer)
 
     print(len(data))

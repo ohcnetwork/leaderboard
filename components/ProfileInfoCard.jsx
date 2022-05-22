@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-export default function ProfileInfoCard({ userId }) {
+export default function ProfileInfoCard({ contributor }) {
   return (
     <li className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
       <div className="space-y-6 xl:space-y-10">
@@ -11,8 +11,8 @@ export default function ProfileInfoCard({ userId }) {
         />
         <div className="space-y-2 xl:flex xl:items-center xl:justify-between">
           <div className="font-medium text-lg leading-6 space-y-1">
-            <h3 className="text-white">Leonard Krasner</h3>
-            <p className="text-primary-400">Senior Designer</p>
+            <h3 className="text-white">{contributor.name}</h3>
+            <p className="text-primary-400">{contributor.title}</p>
           </div>
 
           <ul role="list" className="flex justify-center space-x-5">

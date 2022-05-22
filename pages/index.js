@@ -1,8 +1,9 @@
 import Head from "next/head";
+import { useEffect } from "react";
 import ProfileInfoCard from "../components/ProfileInfoCard";
-// import { getContributors } from "/lib/api";
+import { getContributors } from "../lib/api";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
       <Head>
@@ -171,4 +172,13 @@ export default function Home() {
       </footer>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const contributors = getContributors();
+  return {
+    props: {
+      categories: contributors,
+    },
+  };
 }

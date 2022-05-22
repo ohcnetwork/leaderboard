@@ -1,0 +1,315 @@
+{
+    "2022-05-21 00:00:00": [
+        {
+            "client_msg_id": "088c2fc9-4f70-46f0-936a-139d35a5cff5",
+            "type": "message",
+            "text": "No progress today.",
+            "user": "U02T4HFA07Q",
+            "ts": "1653076490.686769",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "QQhIZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "No progress today."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-05-19 00:00:00": [
+        {
+            "client_msg_id": "c2f953fc-69e5-475e-9103-a6f1d843d4f6",
+            "type": "message",
+            "text": "\u2022 PRs: <https://github.com/coronasafe/care_fe/pull/2442|#2442> <https://github.com/coronasafe/care_fe/pull/2433|#2433>\n\u2022 Created Issues: <https://github.com/coronasafe/care_fe/issues/2440|2440> <https://github.com/coronasafe/care_fe/issues/2418|#2418>  ",
+            "user": "U02T4HFA07Q",
+            "ts": "1652977550.119039",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "b/Rn",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "PRs: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2442",
+                                            "text": "#2442",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2433",
+                                            "text": "#2433",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Created Issues: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2440",
+                                            "text": "2440"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2418",
+                                            "text": "#2418",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "  "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-05-18 00:00:00": [
+        {
+            "client_msg_id": "d7843cd9-8fe4-4c2a-a502-d089271d3853",
+            "type": "message",
+            "text": "Submitted a PR, <https://github.com/coronasafe/care_fe/pull/2406>\nTook up an issue to work on",
+            "user": "U02T4HFA07Q",
+            "ts": "1652896770.318449",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/168914088-7f585a51-961c-4b67-ac45-15e796143126.png",
+                    "image_width": 789,
+                    "image_height": 312,
+                    "image_bytes": 27148,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1652823410,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2406",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "789x312px image",
+                    "text": "Closes <https://github.com/coronasafe/care_fe/issues/2141|#2141>\n\n`pulse` and `ventilator_spo2` are casted to `Number`. This means that in cases where they are left blank, they are actually forced to be stored as 0, rather than null. ( `Number(null) -&gt; 0` ) Which causes the above issue. Removing this cast resolves it. `null` values displayed properly as `-` in the charts and not as 0s.\n\n<https://user-images.githubusercontent.com/3626859/168914088-7f585a51-961c-4b67-ac45-15e796143126.png|image>\n\n<https://user-images.githubusercontent.com/3626859/168914095-8ea3b546-12ae-4c7b-9077-856973a81b4f.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2406|#2406 Send raw pulse and spo2 data>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "tested",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "oBg",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted a PR, "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2406"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nTook up an issue to work on"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TPSZMJRF",
+                        "U02TDGQ0TFE",
+                        "UV5PPBE2D",
+                        "U02TDGQQPMJ",
+                        "U02TPSYRUPK"
+                    ],
+                    "count": 5
+                }
+            ]
+        }
+    ],
+    "2022-05-17 00:00:00": [
+        {
+            "client_msg_id": "11161f22-4fb0-462a-ae40-f0dbb6722e47",
+            "type": "message",
+            "text": "Made a PR: <https://github.com/coronasafe/care_fe/issues/1060>",
+            "user": "U02T4HFA07Q",
+            "ts": "1652802114.285019",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1620974124,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/1060",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/1060|#1060 Authentication Failure in Safari>",
+                    "text": "Inventory Management does not fetch data in Safari\n\nTo Reproduce, open Inventory Screen in Safari",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/1060|#1060 Authentication Failure in Safari>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ashesh3|@Ashesh3>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "good first issue, cef",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "a3q",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/1060"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-05-14 00:00:00": [
+        {
+            "client_msg_id": "bbed6f41-58c0-48a5-974c-7d9e6bcedb06",
+            "type": "message",
+            "text": "No update, just picked up an issue to consider working on.",
+            "user": "U02T4HFA07Q",
+            "ts": "1652472029.967029",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "PD5y",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "No update, just picked up an issue to consider working on."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "U02U1035G0G"
+                    ],
+                    "count": 2
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ]
+}

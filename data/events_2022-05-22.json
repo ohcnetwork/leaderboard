@@ -3,7 +3,7 @@
     "last_updated": "2022-05-22T16:50:17+00:00",
     "activity": [
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T16:50:17+00:00",
         "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980995925",
         "text": "This is a test review"
@@ -15,7 +15,7 @@
         "text": "Ignore the review it was for a test"
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T16:46:16+00:00",
         "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980995572",
         "text": ""
@@ -45,7 +45,7 @@
         "text": "For now I'm only building the docker image, after we add localstack we can switch over to compose for testing."
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:12:42+00:00",
         "link": "https://github.com/coronasafe/care/pull/775#pullrequestreview-980930255",
         "text": "LGTM"
@@ -56,7 +56,7 @@
     "last_updated": "2022-05-22T13:18:32+00:00",
     "activity": [
       {
-        "type": "pr_closed",
+        "type": "pr_merged",
         "time": "2022-05-22T13:18:32+00:00",
         "link": "https://github.com/coronasafe/care/pull/778",
         "text": "Update deployment.yaml"
@@ -79,19 +79,7 @@
         "text": "Update deployment.yaml"
       },
       {
-        "type": "pr_closed",
-        "time": "2022-05-22T13:13:12+00:00",
-        "link": "https://github.com/coronasafe/care/pull/733",
-        "text": "Update deployment.yaml"
-      },
-      {
-        "type": "pr_closed",
-        "time": "2022-05-22T13:11:27+00:00",
-        "link": "https://github.com/coronasafe/care/pull/733",
-        "text": "Update deployment.yaml"
-      },
-      {
-        "type": "pr_closed",
+        "type": "pr_merged",
         "time": "2022-05-22T10:17:49+00:00",
         "link": "https://github.com/coronasafe/care/pull/768",
         "text": "update main CI"
@@ -108,16 +96,10 @@
     "last_updated": "2022-05-22T10:52:03+00:00",
     "activity": [
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T10:52:03+00:00",
         "link": "https://github.com/coronasafe/care/pull/776#pullrequestreview-980940332",
         "text": null
-      },
-      {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T10:52:03+00:00",
-        "link": "https://github.com/coronasafe/care/pull/776#discussion_r878839924",
-        "text": "yup, `camera_address` was not an accurate name and has been replaced in [#771](https://github.com/coronasafe/care/pull/771)."
       }
     ]
   },
@@ -131,49 +113,25 @@
         "text": "IP Number : Mandatory field"
       },
       {
-        "type": "pr_closed",
-        "time": "2022-05-22T10:03:57+00:00",
-        "link": "https://github.com/coronasafe/care/pull/748",
-        "text": "made Ip number mandatory"
-      },
-      {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:54:45+00:00",
         "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980934564",
         "text": ""
       },
       {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T09:54:42+00:00",
-        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878832763",
-        "text": "This does not contain a beat instance, create another container for beat or add the beat functionality to this container."
-      },
-      {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:54:45+00:00",
         "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980934564",
         "text": ""
       },
       {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T09:47:19+00:00",
-        "link": "https://github.com/coronasafe/care/pull/740#discussion_r878831888",
-        "text": "Why create a separate serializer? "
-      },
-      {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T09:48:35+00:00",
-        "link": "https://github.com/coronasafe/care/pull/740#discussion_r878832057",
-        "text": "How exactly is this serializer supporting soft deletions? "
-      },
-      {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:48:45+00:00",
         "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980933848",
         "text": ""
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:48:45+00:00",
         "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980933848",
         "text": ""
@@ -191,13 +149,13 @@
         "text": "Backend: Migration to change meta.camera_address to meta.local_ip_address"
       },
       {
-        "type": "pr_closed",
+        "type": "pr_merged",
         "time": "2022-05-22T09:41:41+00:00",
         "link": "https://github.com/coronasafe/care/pull/771",
         "text": "add migration to change meta.camera_address to meta.local_ip_address"
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:41:19+00:00",
         "link": "https://github.com/coronasafe/care/pull/771#pullrequestreview-980933307",
         "text": "Looks good to me."
@@ -227,67 +185,49 @@
         "text": "@tomahawk-pilot is this good to go ?"
       },
       {
-        "type": "pr_closed",
+        "type": "pr_merged",
         "time": "2022-05-22T09:24:11+00:00",
         "link": "https://github.com/coronasafe/care/pull/775",
         "text": "Modified maximum number of doses for a patient"
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:24:03+00:00",
         "link": "https://github.com/coronasafe/care/pull/775#pullrequestreview-980931627",
         "text": ""
       },
       {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T09:21:42+00:00",
-        "link": "https://github.com/coronasafe/care/pull/776#discussion_r878828951",
-        "text": "Is this change in onvif intended?"
-      },
-      {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:21:51+00:00",
         "link": "https://github.com/coronasafe/care/pull/776#pullrequestreview-980931399",
         "text": ""
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:21:51+00:00",
         "link": "https://github.com/coronasafe/care/pull/776#pullrequestreview-980931399",
         "text": ""
       },
       {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T09:08:39+00:00",
-        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878827136",
-        "text": "Since this is the local version, we should mount local volumes as well."
-      },
-      {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:08:44+00:00",
         "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980929837",
         "text": ""
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:08:44+00:00",
         "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980929837",
         "text": ""
       },
       {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T09:03:53+00:00",
-        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878826597",
-        "text": "We don't need to mount docker."
-      },
-      {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:04:20+00:00",
         "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980929389",
         "text": ""
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:04:20+00:00",
         "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980929389",
         "text": ""
@@ -298,28 +238,16 @@
     "last_updated": "2022-05-22T09:49:42+00:00",
     "activity": [
       {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T09:49:42+00:00",
-        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878832218",
-        "text": "done"
-      },
-      {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:49:42+00:00",
         "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980934103",
         "text": null
       },
       {
-        "type": "pr_review",
+        "type": "pr_reviewed",
         "time": "2022-05-22T09:49:25+00:00",
         "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-980934082",
         "text": null
-      },
-      {
-        "type": "pr_review_comment",
-        "time": "2022-05-22T09:49:25+00:00",
-        "link": "https://github.com/coronasafe/care/pull/752#discussion_r878832186",
-        "text": "done"
       }
     ]
   },

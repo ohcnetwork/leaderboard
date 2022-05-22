@@ -4,7 +4,7 @@ title: FullStack Developer
 github: vigneshhari
 twitter: vigneshhari
 linkedin: vigneshhari
-slack: "slack_user_id"
+slack: "UC8TSEGCQ"
 joining_date: "11/03/2020"
 core: true
 intern: false

@@ -21,7 +21,7 @@ MESSAGE_DUMP_FILE_NAME = "message_dump"
 
 
 def generate_timestamp(date):
-    return datetime.timestamp(date) * 1
+    return datetime.timestamp(date)
 
 
 def parse_save_user_data(data: dict, date):

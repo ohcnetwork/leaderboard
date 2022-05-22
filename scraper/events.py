@@ -75,15 +75,26 @@ def fetch_repo_events(repo, date, data=None, page=1):
                 )
 
         elif event["type"] == "PullRequestEvent":
-            if event["payload"]["action"] in (
-                "opened",
-                "closed",
-            ):
+            if event["payload"]["action"] == "opened":
                 add_event(
                     data,
                     event["actor"]["display_login"],
                     {
                         "type": f'pr_{event["payload"]["action"]}',
+                        "time": event_time,
+                        "link": event["payload"]["pull_request"]["html_url"],
+                        "text": event["payload"]["pull_request"]["title"],
+                    },
+                )
+            elif (
+                event["payload"]["action"] == "closed"
+                and event["payload"]["pull_request"]["merged"]
+            ):
+                add_event(
+                    data,
+                    event["actor"]["display_login"],
+                    {
+                        "type": "pr_merged",
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
@@ -95,22 +106,10 @@ def fetch_repo_events(repo, date, data=None, page=1):
                 data,
                 event["actor"]["display_login"],
                 {
-                    "type": "pr_review",
+                    "type": "pr_reviewed",
                     "time": event_time,
                     "link": event["payload"]["review"]["html_url"],
                     "text": event["payload"]["review"]["body"],
-                },
-            )
-
-        elif event["type"] == "PullRequestReviewCommentEvent":
-            add_event(
-                data,
-                event["actor"]["display_login"],
-                {
-                    "type": "pr_review_comment",
-                    "time": event_time,
-                    "link": event["payload"]["comment"]["html_url"],
-                    "text": event["payload"]["comment"]["body"],
                 },
             )
 

@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
+import Link from "next/link";
+
 let renderText = (activity) => {
   switch (activity["type"]) {
     case "comment_created":
@@ -30,15 +32,15 @@ let renderText = (activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-gray-100">
-            <a href="#" className="font-medium text-primary-500 ">
+            <span className="font-medium text-primary-500 ">
               Pull Request {activity["type"].split("_")[1]}
-            </a>
-            <a
-              href={activity["link"]}
-              className="font-medium text-gray-200 ml-2"
-            >
-              {activity["text"]}
-            </a>
+            </span>
+
+            <Link href={activity["link"]}>
+              <span className="font-medium text-gray-200 ml-2">
+                {activity["text"]}
+              </span>
+            </Link>
             <span className="whitespace-nowrap ml-2">{activity["time"]}</span>
           </div>
         </div>
@@ -48,15 +50,14 @@ let renderText = (activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-gray-100">
-            <a href="#" className="font-medium text-primary-500  ">
+            <div className="font-medium text-primary-500  ">
               Issue {activity["type"].split("_")[1]}
-            </a>
-            <a
-              href={activity["link"]}
-              className="font-medium text-white ml-2 hover:text-primary-500"
-            >
-              {activity["text"]}
-            </a>
+            </div>
+            <Link href={activity["link"]}>
+              <span className="font-medium text-white ml-2 hover:text-primary-500">
+                {activity["text"]}
+              </span>
+            </Link>
             <span className="whitespace-nowrap ml-2">{activity["time"]}</span>
           </div>
         </div>
@@ -65,9 +66,10 @@ let renderText = (activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-gray-100">
-            <a href="#" className="font-medium text-primary-500 ">
+            <span className="font-medium text-primary-500 ">
               {activity["type"]}
-            </a>
+            </span>
+
             <div className="font-medium text-gray-200 ml-2">
               {activity["text"]}
             </div>

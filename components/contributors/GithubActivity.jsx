@@ -174,11 +174,11 @@ let showContribution = (activity) => {
   );
 };
 
-export default function GithubActivity({ githubData }) {
+export default function GithubActivity({ activityData }) {
   return (
     <div className="flow-root text-gray-100 mt-4">
       <ul role="list" className="-mb-8">
-        {githubData["activity"].map((activity, i) => {
+        {activityData["activity"].map((activity, i) => {
           return <li key={i}>{showContribution(activity)}</li>;
         })}
       </ul>

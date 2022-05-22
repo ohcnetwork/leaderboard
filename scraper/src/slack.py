@@ -87,7 +87,7 @@ def get_file(
     filename: str,
 ):
     try:
-        with open(f"data/{filename}.json", "r") as fp:
+        with open(f"data/slack/{filename}.json", "r") as fp:
             data = fp.read()
             if data:
                 return json.loads(data)
@@ -97,7 +97,7 @@ def get_file(
 
 
 def dump_file(filename: str, data: dict):
-    with open(f"data/{filename}.json", "w") as fp:
+    with open(f"data/slack/{filename}.json", "w") as fp:
         fp.write(json.dumps(data, indent=4))
 
 

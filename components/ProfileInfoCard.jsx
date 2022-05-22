@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+
 export default function ProfileInfoCard({ userId }) {
   return (
     <li className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">

@@ -47,10 +47,13 @@ export default function Contributor({ contributor, slug }) {
                 ...to add activity visualization...
               </p>
             </div>
-            <div className="mt-6">
-              <h3 className="font-bold text-gray-100">Contributions</h3>
-              <GithubActivity githubData={contributor["githubData"]} />
-            </div>
+            {contributor["githubData"] &&
+              contributor["githubData"]["activity"] && (
+                <div className="mt-6">
+                  <h3 className="font-bold text-gray-100">Contributions</h3>
+                  <GithubActivity githubData={contributor["githubData"]} />
+                </div>
+              )}
           </div>
         </div>
       </section>

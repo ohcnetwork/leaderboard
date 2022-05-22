@@ -13,27 +13,44 @@ args = parser.parse_args()
 
 lookback_days = args.lookback_days
 
-slack_api_token = os.environ.get("SLACK_API_TOKEN", "xoxb-417332993380-3557088320245-YMXTOFTkCzl6QPMkXLUG2SfX")
+SLACK_API_TOKEN = os.environ.get("SLACK_API_TOKEN", "")
 
-slack_channel = os.environ.get("SLACK_CHANNEL", "C02U0A47JUQ")
+SLACK_CHANNEL = os.environ.get("SLACK_CHANNEL", "C02U0A47JUQ")
+
+MESSAGE_DUMP_FILE_NAME = "message_dump"
 
 
 def generate_timestamp(date):
     return datetime.timestamp(date) * 1
 
 
-def parse_save_user_data(data: dict):
-    pass
+def parse_save_user_data(data: dict, date):
+    user_dict = {}
+    for message in data:
+        if "user" not in message:
+            continue
+        user = message["user"]
+        user_dict[user] = user_dict.get(user, []) + [message]
+    for user in user_dict.keys():
+        save_user_data(user, user_dict[user], date)
 
 
-def save_data(data: dict):
-    pass
+def save_user_data(user, user_data, date):
+    existing_user_data = get_file(user)
+    existing_user_data[str(date)] = user_data
+    dump_file(user, existing_user_data)
+
+
+def save_data(data: dict, date):
+    existing_user_data = get_file(MESSAGE_DUMP_FILE_NAME)
+    existing_user_data[str(date)] = data
+    dump_file(MESSAGE_DUMP_FILE_NAME, existing_user_data)
 
 
 def get_slack_data(date):
     cursor = True
     request_body = {
-        "channel": slack_channel,
+        "channel": SLACK_CHANNEL,
         "latest": generate_timestamp(date + timedelta(days=1)),
         "oldest": generate_timestamp((date)),
         "limit": 200,
@@ -43,7 +60,7 @@ def get_slack_data(date):
         response = requests.get(
             "https://slack.com/api/conversations.history",
             request_body,
-            headers={"Authorization": f"Bearer {slack_api_token}"},
+            headers={"Authorization": f"Bearer {SLACK_API_TOKEN}"},
         )
         if response.status_code != 200:
             raise Exception("Slack Connection Failed")
@@ -60,23 +77,27 @@ def get_slack_data(date):
 def generate_cache(lookback):
     current_date = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     for counter in range(lookback + 1):
-        print(current_date - timedelta(days=counter))
-        data = get_slack_data((current_date - timedelta(days=counter)))
-        parse_save_user_data(data)
-        save_data(data)
-    return
+        date = current_date - timedelta(days=counter)
+        data = get_slack_data(date)
+        parse_save_user_data(data, date)
+        save_data(data, date)
 
 
-def get_file(filename: str, data: dict):
-    with open(f"data/{filename}", "r") as fp:
-        data = fp.read()
-        if data:
-            return json.loads(data)
+def get_file(
+    filename: str,
+):
+    try:
+        with open(f"data/{filename}.json", "r") as fp:
+            data = fp.read()
+            if data:
+                return json.loads(data)
+            return {}
+    except FileNotFoundError:
         return {}
 
 
 def dump_file(filename: str, data: dict):
-    with open(f"data/{filename}", "w") as fp:
+    with open(f"data/{filename}.json", "w") as fp:
         fp.write(json.dumps(data, indent=4))
 
 

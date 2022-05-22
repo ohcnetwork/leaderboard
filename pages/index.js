@@ -86,26 +86,28 @@ export default function Home(props) {
                       <span>Leaderboard | 18-24 May 2022 </span>
                     </div>
                     <div className="space-y-6 lg:space-y-8 p-4 lg:p-6 ">
-                      {props.contributors.map((contributor, index) => {
-                        return (
-                          <Link
-                            key={index}
-                            href={`/contributors/${contributor.github}`}
-                          >
-                            <div className="flex " key={index}>
-                              <span className="text-primary-500 text-xl">
-                                &#10142;
-                              </span>
-                              <p className="pl-3">
-                                <span className="cursor-pointer text-primary-500 hover:bg-primary-500 hover:text-gray-900 mr-1">
-                                  {contributor.name}
+                      {props.contributors
+                        .slice(0, 5)
+                        .map((contributor, index) => {
+                          return (
+                            <Link
+                              key={index}
+                              href={`/contributors/${contributor.github}`}
+                            >
+                              <div className="flex " key={index}>
+                                <span className="text-primary-500 text-xl">
+                                  &#10142;
                                 </span>
-                                | {index + 1}
-                              </p>
-                            </div>
-                          </Link>
-                        );
-                      })}
+                                <p className="pl-3">
+                                  <span className="cursor-pointer text-primary-500 hover:bg-primary-500 hover:text-gray-900 mr-1">
+                                    {contributor.name}
+                                  </span>
+                                  | {index + 1}
+                                </p>
+                              </div>
+                            </Link>
+                          );
+                        })}
 
                       <div className="pt-2">
                         <a

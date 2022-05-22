@@ -9,7 +9,6 @@ import { getContributorBySlug, getContributors } from "../../lib/api";
 import Link from "next/link";
 
 export default function Contributor({ contributor, slug }) {
-  console.log(contributor);
   return (
     <div className="bg-gray-900 min-h-screen ">
       <Head>

@@ -110,11 +110,8 @@ export default function Home(props) {
                         })}
 
                       <div className="pt-2">
-                        <Link>
-                          <div
-                            className="block px-10 p-3 text-center bg-gradient-to-b from-primary-500 to-primary-700 text-gray-900 border border-primary-500 font-bold font-montserrat rounded shadow-lg hover:shadow-xl hover:from-gray-800 hover:to-gray-900 hover:text-primary-500 transition"
-                            href="#"
-                          >
+                        <Link href="/">
+                          <div className="block px-10 p-3 text-center bg-gradient-to-b from-primary-500 to-primary-700 text-gray-900 border border-primary-500 font-bold font-montserrat rounded shadow-lg hover:shadow-xl hover:from-gray-800 hover:to-gray-900 hover:text-primary-500 transition">
                             View Leaderboard
                           </div>
                         </Link>

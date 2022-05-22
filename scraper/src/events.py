@@ -27,7 +27,7 @@ def add_event(data, user, event):
 
 def fetch_repo_events(repo, date, data=None, page=1):
     print(f"Fetching events for {repo} {page}")
-    prev_day = (date - timedelta(days=1)).date()
+    prev_day = (date - timedelta(days=15)).date()
     data = data or {}
 
     resp = requests.get(
@@ -137,6 +137,7 @@ if __name__ == "__main__":
     data = {}
     for repo in repos:
         data = fetch_repo_events(repo, _date, data)
+
 
     with open(f"data/events_{argv[1]}.json", "w") as f:
         json.dump(data, f, indent=2, default=serializer)

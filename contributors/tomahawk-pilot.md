@@ -1,6 +1,6 @@
 ---
 name: Syamkumar
-title: Site Reliability Engineer
+title: DevOps Engineer
 github: tomahawk-pilot
 twitter: tomahawk-pilot
 linkedin: tomahawk-pilot

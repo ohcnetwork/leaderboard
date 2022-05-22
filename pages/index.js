@@ -1,6 +1,7 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useEffect } from "react";
-import ProfileInfoCard from "../components/ProfileInfoCard";
+import InfoCard from "../components/contributors/InfoCard";
 import { getContributors } from "../lib/api";
 
 export default function Home(props) {
@@ -51,7 +52,7 @@ export default function Home(props) {
                     <div className="space-y-12">
                       <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                         <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                          Meet our team
+                          Our Contributors
                         </h2>
                         <p className="text-xl text-gray-300">
                           Ornare sagittis, suspendisse in hendrerit quis. Sed
@@ -63,12 +64,15 @@ export default function Home(props) {
                         role="list"
                         className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
                       >
-                        <ProfileInfoCard userId={"bodhish"} />
-                        <ProfileInfoCard userId={"bodhish"} />
-                        <ProfileInfoCard userId={"bodhish"} />
-                        <ProfileInfoCard userId={"bodhish"} />
-                        <ProfileInfoCard userId={"bodhish"} />
-                        <ProfileInfoCard userId={"bodhish"} />
+                        {props.contributors.map((contributor, index) => {
+                          return (
+                            <InfoCard
+                              key={index}
+                              contributor={contributor}
+                              minimal={true}
+                            />
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>
@@ -81,62 +85,27 @@ export default function Home(props) {
                     <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                       <span>Leaderboard | 18-24 May 2022 </span>
                     </div>
-                    <div className="space-y-6 lg:space-y-8 p-4 lg:p-6">
-                      <div className="flex">
-                        <span className="text-primary-500 text-xl">
-                          &#10142;
-                        </span>
-                        <p className="pl-3">
-                          <span className="text-primary-500 mr-1">
-                            Bodhish Thomas
-                          </span>
-                          | 20 Points
-                        </p>
-                      </div>
-                      <div className="flex">
-                        <span className="text-primary-500 text-xl">
-                          &#10142;
-                        </span>
-                        <p className="pl-3">
-                          <span className="text-primary-500 mr-1">
-                            Syam Mozilla
-                          </span>
-                          | 17 Points
-                        </p>
-                      </div>
-                      <div className="flex">
-                        <span className="text-primary-500 text-xl">
-                          &#10142;
-                        </span>
-                        <p className="pl-3">
-                          <span className="text-primary-500 mr-1">
-                            Vignesh Hari
-                          </span>
-                          | 16 Points
-                        </p>
-                      </div>
-                      <div className="flex">
-                        <span className="text-primary-500 text-xl">
-                          &#10142;
-                        </span>
-                        <p className="pl-3">
-                          <span className="text-primary-500 mr-1">
-                            Gigin C George
-                          </span>
-                          | 15 Points
-                        </p>
-                      </div>
-                      <div className="flex">
-                        <span className="text-primary-500 text-xl">
-                          &#10142;
-                        </span>
-                        <p className="pl-3">
-                          <span className="text-primary-500 mr-1">
-                            Nihal the tester
-                          </span>
-                          | 8 Points
-                        </p>
-                      </div>
+                    <div className="space-y-6 lg:space-y-8 p-4 lg:p-6 ">
+                      {props.contributors.map((contributor, index) => {
+                        return (
+                          <Link
+                            key={index}
+                            href={`/contributors/${contributor.github}`}
+                          >
+                            <div className="flex " key={index}>
+                              <span className="text-primary-500 text-xl">
+                                &#10142;
+                              </span>
+                              <p className="pl-3">
+                                <span className="cursor-pointer text-primary-500 hover:bg-primary-500 hover:text-gray-900 mr-1">
+                                  {contributor.name}
+                                </span>
+                                | {index + 1}
+                              </p>
+                            </div>
+                          </Link>
+                        );
+                      })}
 
                       <div className="pt-2">
                         <a
@@ -178,7 +147,7 @@ export async function getStaticProps() {
   const contributors = getContributors();
   return {
     props: {
-      categories: contributors,
+      contributors: contributors,
     },
   };
 }

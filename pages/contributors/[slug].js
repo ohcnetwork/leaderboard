@@ -104,7 +104,7 @@ export default function Contributor({ contributor, slug }) {
             </div>
 
             {contributor["activityData"] &&
-              contributor["activityData"]["open_prs "] && (
+              contributor["activityData"]["open_prs"] && (
                 <div>
                   <h3 className="font-bold text-gray-100 mt-6">
                     Currently Working on

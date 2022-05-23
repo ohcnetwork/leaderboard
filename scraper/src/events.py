@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timedelta
 from sys import argv
 from zoneinfo import ZoneInfo
+from urllib.parse import urlparse, parse_qsl
 
 import requests
 
@@ -17,14 +18,22 @@ def add_event(data, user, event):
         data[user] = {"last_updated": event["time"], "activity": [event]}
 
 
-def fetch_repo_events(repo, date, data=None, page=1):
-    print(f"Fetching events for {repo} {page}")
-    prev_day = (date - timedelta(days=15)).date()
+def fetch_repo_events(repo, end_date, data=None, page=1):
+    print(f"Fetching events for {repo} page:{page}")
+    start_date = (end_date - timedelta(days=15)).date()
     data = data or {}
 
     resp = requests.get(
-        f"https://api.github.com/repos/{repo}/events?per_page=100&page={page}"
+        f"https://api.github.com/repos/{repo}/events?per_page=100&page={page}",
+        headers={
+            "Accept": "application/vnd.github.v3.raw+json"  # https://docs.github.com/en/rest/overview/media-types
+        },
     )
+
+    if resp.status_code == 422:
+        # stop pagination
+        return data
+
     resp.raise_for_status()
     events = resp.json()
 
@@ -36,9 +45,9 @@ def fetch_repo_events(repo, date, data=None, page=1):
             event["created_at"], "%Y-%m-%dT%H:%M:%SZ"
         ).replace(tzinfo=ZoneInfo("UTC"))
 
-        if event_time.date() > date.date():
+        if event_time.date() > end_date.date():
             continue
-        elif event_time.date() <= prev_day:
+        elif event_time.date() <= start_date:
             return data
 
         if event["type"] == "IssueCommentEvent":
@@ -106,10 +115,10 @@ def fetch_repo_events(repo, date, data=None, page=1):
                 },
             )
 
-    if page > 30:
-        # don't go too far
-        return data
-    return fetch_repo_events(repo, date, data, page + 1)
+    if has_next := resp.links.get("next", {}).get("url"):
+        next_page = dict(parse_qsl(urlparse(has_next).query)).get("page", 99)
+        return fetch_repo_events(repo, end_date, data, int(next_page))
+    return data
 
 
 def serializer(obj):
@@ -129,7 +138,6 @@ if __name__ == "__main__":
     data = {}
     for repo in repos:
         data = fetch_repo_events(repo, _date, data)
-
 
     with open(f"data/events_{argv[1]}.json", "w") as f:
         json.dump(data, f, indent=2, default=serializer)

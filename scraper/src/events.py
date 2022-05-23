@@ -1,19 +1,11 @@
 #!/usr/bin/env python3
 
 import json
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 from sys import argv
 from zoneinfo import ZoneInfo
 
 import requests
-
-allowed_events = (
-    "IssueCommentEvent",  # counts PR comments as well
-    "IssuesEvent",
-    "PullRequestEvent",
-    "PullRequestReviewEvent",
-    "PullRequestReviewCommentEvent",
-)
 
 
 def add_event(data, user, event):
@@ -121,7 +113,7 @@ def fetch_repo_events(repo, date, data=None, page=1):
 
 
 def serializer(obj):
-    return obj.isoformat() if isinstance(obj, (datetime, date)) else repr(obj)
+    return obj.timestamp() if isinstance(obj, datetime) else repr(obj)
 
 
 if __name__ == "__main__":

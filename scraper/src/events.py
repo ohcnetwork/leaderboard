@@ -15,7 +15,14 @@ def add_event(data, user, event):
         if event["time"] > data[user]["last_updated"]:
             data[user]["last_updated"] = event["time"]
     except KeyError:
-        data[user] = {"last_updated": event["time"], "activity": [event]}
+        data[user] = {"last_updated": event["time"], "activity": [event], "open_prs": []}
+
+
+def add_open_pr(data, user, pr):
+    try:
+        data[user]["open_prs"].append(pr)
+    except KeyError:
+        data[user] = {"last_updated": 0, "activity":[], "open_prs": [pr] }
 
 
 def fetch_repo_events(repo, end_date, data=None, page=1):
@@ -57,6 +64,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                     event["actor"]["display_login"],
                     {
                         "type": f'comment_{event["payload"]["action"]}',
+                        "obj": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
                         "time": event_time,
                         "link": event["payload"]["comment"]["html_url"],
                         "text": event["payload"]["comment"]["body"],
@@ -70,6 +78,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                     event["actor"]["display_login"],
                     {
                         "type": f'issue_{event["payload"]["action"]}',
+                        "obj": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
                         "time": event_time,
                         "link": event["payload"]["issue"]["html_url"],
                         "text": event["payload"]["issue"]["title"],
@@ -83,11 +92,18 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                     event["actor"]["display_login"],
                     {
                         "type": f'pr_{event["payload"]["action"]}',
+                        "obj": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
                     },
                 )
+                if event["payload"]["pull_request"]["state"] == "open":
+                    add_open_pr(data, event["actor"]["display_login"], {
+                        "link": event["payload"]["pull_request"]["html_url"],
+                        "title": event["payload"]["pull_request"]["title"],
+                    })
+
             elif (
                 event["payload"]["action"] == "closed"
                 and event["payload"]["pull_request"]["merged"]
@@ -97,6 +113,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                     event["actor"]["display_login"],
                     {
                         "type": "pr_merged",
+                        "obj": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
@@ -110,6 +127,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                 {
                     "type": "pr_reviewed",
                     "time": event_time,
+                    "obj": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
                     "link": event["payload"]["review"]["html_url"],
                     "text": event["payload"]["pull_request"]["title"],
                 },

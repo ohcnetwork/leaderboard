@@ -107,11 +107,15 @@ export default function Contributor({ contributor, slug }) {
               Currently Working on
             </h3>
             <div className="mt-4">
-              <p className="text-sm text-gray-300">
-                <span className="text-primary-500 text-sm pr-2">➞</span>
-                Care_fe: Fixed the unresponsive behaviour of UI in sample test
-                page
-              </p>
+              {contributor["activityData"]["open_prs"].map((pr, index) => (
+                <Link href={pr.link} key={index}>
+                  <p className="text-sm text-gray-300" key={index}>
+                    <span className="text-primary-500 text-sm pr-2">➞</span>
+                    {pr.title}
+                  </p>
+                </Link>
+              ))}
+
               <p className="text-sm text-gray-300">
                 <span className="text-primary-500 text-sm pr-2">➞</span>
                 Care: Fixed the unresponsive the other backend function page

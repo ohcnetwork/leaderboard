@@ -64,7 +64,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                     event["actor"]["display_login"],
                     {
                         "type": f'comment_{event["payload"]["action"]}',
-                        "obj": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
+                        "title": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
                         "time": event_time,
                         "link": event["payload"]["comment"]["html_url"],
                         "text": event["payload"]["comment"]["body"],
@@ -78,7 +78,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                     event["actor"]["display_login"],
                     {
                         "type": f'issue_{event["payload"]["action"]}',
-                        "obj": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
+                        "title": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
                         "time": event_time,
                         "link": event["payload"]["issue"]["html_url"],
                         "text": event["payload"]["issue"]["title"],
@@ -92,7 +92,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                     event["actor"]["display_login"],
                     {
                         "type": f'pr_{event["payload"]["action"]}',
-                        "obj": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
+                        "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
@@ -113,7 +113,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                     event["actor"]["display_login"],
                     {
                         "type": "pr_merged",
-                        "obj": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
+                        "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
@@ -127,7 +127,7 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
                 {
                     "type": "pr_reviewed",
                     "time": event_time,
-                    "obj": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
+                    "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
                     "link": event["payload"]["review"]["html_url"],
                     "text": event["payload"]["pull_request"]["title"],
                 },
@@ -139,8 +139,8 @@ def fetch_repo_events(repo, end_date, data=None, page=1):
     return data
 
 
-def serializer(obj):
-    return obj.timestamp() if isinstance(obj, datetime) else repr(obj)
+def serializer(title):
+    return title.timestamp() if isinstance(title, datetime) else repr(title)
 
 
 if __name__ == "__main__":

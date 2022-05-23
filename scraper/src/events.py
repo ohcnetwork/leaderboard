@@ -31,7 +31,7 @@ def fetch_repo_events(repo, date, data=None, page=1):
     data = data or {}
 
     resp = requests.get(
-        f"https://api.github.com/repos/{repo}/events?per_page=50&page={page}"
+        f"https://api.github.com/repos/{repo}/events?per_page=100&page={page}"
     )
     resp.raise_for_status()
     events = resp.json()
@@ -114,7 +114,7 @@ def fetch_repo_events(repo, date, data=None, page=1):
                 },
             )
 
-    if page > 10:
+    if page > 30:
         # don't go too far
         return data
     return fetch_repo_events(repo, date, data, page + 1)

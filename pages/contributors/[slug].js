@@ -8,6 +8,23 @@ import GithubActivity from "../../components/contributors/GithubActivity";
 import { getContributorBySlug, getContributors } from "../../lib/api";
 import Link from "next/link";
 
+import ActivityCalendar from "react-activity-calendar";
+
+// export function defaultCalendarData() {
+//   return [...Array(365)].map((_, i) => {
+//     // Current Date - i
+//     const iReverse = 365 - i;
+//     const date = new Date(
+//       new Date().getTime() - iReverse * 24 * 60 * 60 * 1000
+//     );
+//     return {
+//       date: date.toISOString(),
+//       count: 0,
+//       level: 0,
+//     };
+//   });
+// }
+
 export default function Contributor({ contributor, slug }) {
   return (
     <div className="bg-gray-900 min-h-screen">
@@ -36,10 +53,16 @@ export default function Contributor({ contributor, slug }) {
           <div className="col-span-2">
             <div>
               <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
-              <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left mt-4">
-                <p className="text-xl text-gray-300">
+              <div className="p-2 py-8 bg-white text-center rounded-lg xl:px-10 xl:text-left mt-4">
+                {/* <p className="text-xl text-gray-300">
                   ...to add activity visualization...
-                </p>
+                </p> */}
+
+                <ActivityCalendar
+                  className=""
+                  showWeekdayLabels
+                  data={contributor.calendarData}
+                />
               </div>
             </div>
             <div>
@@ -50,7 +73,7 @@ export default function Contributor({ contributor, slug }) {
                     Pull Request
                   </dt>
                   <dd className="order-1 text-5xl font-extrabold text-white">
-                    6
+                    {contributor.highlights.pr_opened}
                   </dd>
                 </div>
                 <div className="flex flex-col mt-4 sm:mt-0">
@@ -58,7 +81,7 @@ export default function Contributor({ contributor, slug }) {
                     Reviews
                   </dt>
                   <dd className="order-1 text-5xl font-extrabold text-white">
-                    4
+                    {contributor.highlights.pr_reviews}
                   </dd>
                 </div>
                 <div className="flex flex-col mt-4 sm:mt-0">
@@ -66,7 +89,7 @@ export default function Contributor({ contributor, slug }) {
                     Feed
                   </dt>
                   <dd className="order-1 text-5xl font-extrabold text-white">
-                    20
+                    {contributor.highlights.eod_updates}
                   </dd>
                 </div>
                 <div className="flex flex-col mt-4 sm:mt-0">
@@ -74,7 +97,7 @@ export default function Contributor({ contributor, slug }) {
                     Points
                   </dt>
                   <dd className="order-1 text-5xl font-extrabold text-white">
-                    100
+                    {contributor.highlights.points}
                   </dd>
                 </div>
               </dl>

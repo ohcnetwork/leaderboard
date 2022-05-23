@@ -34,16 +34,72 @@ export default function Contributor({ contributor, slug }) {
           </div>
 
           <div className="col-span-2">
-            <h3 className="font-bold text-gray-100 mt-4">Bio</h3>
-            <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left mt-4">
-              <p className="text-xl text-gray-300">{contributor.content}</p>
+            <div>
+              <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
+              <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left mt-4">
+                <p className="text-xl text-gray-300">
+                  ...to add activity visualization...
+                </p>
+              </div>
             </div>
-            <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
-            <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left mt-4">
-              <p className="text-xl text-gray-300">
-                ...to add activity visualization...
+            <div>
+              <h3 className="font-bold text-gray-100 mt-6">Highlights</h3>
+              <dl className="mt-4 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-4 sm:gap-8">
+                <div className="flex flex-col">
+                  <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-200">
+                    Pull Request
+                  </dt>
+                  <dd className="order-1 text-5xl font-extrabold text-white">
+                    6
+                  </dd>
+                </div>
+                <div className="flex flex-col mt-4 sm:mt-0">
+                  <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-200">
+                    Reviews
+                  </dt>
+                  <dd className="order-1 text-5xl font-extrabold text-white">
+                    4
+                  </dd>
+                </div>
+                <div className="flex flex-col mt-4 sm:mt-0">
+                  <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-200">
+                    Feed
+                  </dt>
+                  <dd className="order-1 text-5xl font-extrabold text-white">
+                    20
+                  </dd>
+                </div>
+                <div className="flex flex-col mt-4 sm:mt-0">
+                  <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-200">
+                    Points
+                  </dt>
+                  <dd className="order-1 text-5xl font-extrabold text-white">
+                    100
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <h3 className="font-bold text-gray-100 mt-6">
+              Currently Working on
+            </h3>
+            <div className="mt-4">
+              <p className="text-sm text-gray-300">
+                <span className="text-primary-500 text-sm pr-2">➞</span>
+                Care_fe: Fixed the unresponsive behaviour of UI in sample test
+                page
+              </p>
+              <p className="text-sm text-gray-300">
+                <span className="text-primary-500 text-sm pr-2">➞</span>
+                Care: Fixed the unresponsive the other backend function page
+              </p>
+              <p className="text-sm text-gray-300">
+                <span className="text-primary-500 text-sm pr-2">➞</span>
+                Care_fe: Fixed the unresponsive behaviour of UI in sample test
+                page
               </p>
             </div>
+
             {contributor["activityData"] &&
               contributor["activityData"]["activity"] && (
                 <div className="mt-6">

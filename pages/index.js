@@ -14,11 +14,11 @@ export default function Home(props) {
       </Head>
       <header className="max-w-6xl mx-auto py-4 lg:py-8 px-4 xl:px-0">
         <div className="flex justify-between items-center">
-          <a className="inline-block" href="/">
+          <Link className="inline-block" href="/">
             <code className="text-primary-900 text-3xl">
               coronasafe.network
             </code>
-          </a>
+          </Link>
         </div>
       </header>
       <section className="bg-gray-900 border-t border-gray-600 relative">
@@ -110,12 +110,12 @@ export default function Home(props) {
                         })}
 
                       <div className="pt-2">
-                        <a
+                        <Link
                           className="block px-10 p-3 text-center bg-gradient-to-b from-primary-500 to-primary-700 text-gray-900 border border-primary-500 font-bold font-montserrat rounded shadow-lg hover:shadow-xl hover:from-gray-800 hover:to-gray-900 hover:text-primary-500 transition"
                           href="/leaderboard"
                         >
                           View Leaderboard
-                        </a>
+                        </Link>
                         <p className="text-yellow-400 font-semibold p-4 rounded bg-gray-800 bg-opacity-50 text-center md:text-lg hidden">
                           {"{"} Application Closed! {"}"}
                         </p>

@@ -91,14 +91,14 @@ export default function Contributor({ contributor, slug }) {
                     {contributor.highlights.eod_update}
                   </dd>
                 </div>
-                <div className="flex flex-col mt-4 sm:mt-0">
+                {/* <div className="flex flex-col mt-4 sm:mt-0">
                   <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-200">
                     Points
                   </dt>
                   <dd className="order-1 text-5xl font-extrabold text-white">
                     {contributor.highlights.points}
                   </dd>
-                </div>
+                </div> */}
               </dl>
             </div>
 

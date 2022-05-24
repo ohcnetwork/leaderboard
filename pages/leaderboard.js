@@ -85,11 +85,11 @@ export default function Home(props) {
                         role="list"
                         className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
                       >
-                        {categories.map((category, index) => {
+                        {props.categoryLeaderboard.map((category, index) => {
                           return (
                             <TopContributor
                               key={index}
-                              contributors={props.contributors}
+                              contributor={category.contributor}
                               category={category}
                               minimal={true}
                             />
@@ -123,9 +123,16 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   const contributors = getContributors();
+  const categoryLeaderboard = categories.map((category) => ({
+    ...category,
+    contributor: contributors.sort((a, b) => {
+      return b.weekSummary[category.slug] - a.weekSummary[category.slug];
+    })[0],
+  }));
   return {
     props: {
       contributors: contributors,
+      categoryLeaderboard: categoryLeaderboard,
     },
   };
 }

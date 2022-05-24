@@ -1,9 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-export default function InfoCard({ contributors, minimal = false, category }) {
-  const contributor = contributors.sort((a, b) => {
-    return b.weekSummary[category.slug] - a.weekSummary[category.slug];
-  })[0];
+export default function InfoCard({ contributor, minimal = false, category }) {
   return (
     <div className="py-6 px-2 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
       <span className="text-white text-sm font-sans">

@@ -59,7 +59,6 @@ export default function Contributor({ contributor, slug }) {
                 </p> */}
 
                 <ActivityCalendar
-                  className=""
                   showWeekdayLabels
                   data={contributor.calendarData}
                 />
@@ -67,7 +66,7 @@ export default function Contributor({ contributor, slug }) {
             </div>
             <div>
               <h3 className="font-bold text-gray-100 mt-6">Highlights</h3>
-              <dl className="mt-4 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-4 sm:gap-8">
+              <dl className="mt-4 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
                 <div className="flex flex-col">
                   <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-200">
                     Pull Request
@@ -81,7 +80,7 @@ export default function Contributor({ contributor, slug }) {
                     Reviews
                   </dt>
                   <dd className="order-1 text-5xl font-extrabold text-white">
-                    {contributor.highlights.pr_reviews}
+                    {contributor.highlights.pr_reviewed}
                   </dd>
                 </div>
                 <div className="flex flex-col mt-4 sm:mt-0">
@@ -89,7 +88,7 @@ export default function Contributor({ contributor, slug }) {
                     Feed
                   </dt>
                   <dd className="order-1 text-5xl font-extrabold text-white">
-                    {contributor.highlights.eod_updates}
+                    {contributor.highlights.eod_update}
                   </dd>
                 </div>
                 <div className="flex flex-col mt-4 sm:mt-0">
@@ -141,7 +140,7 @@ export default function Contributor({ contributor, slug }) {
 }
 
 export async function getStaticProps({ params }) {
-  const contributor = getContributorBySlug(params.slug);
+  const contributor = getContributorBySlug(params.slug, true);
   const content = await markdownToHtml(contributor.content || "");
 
   return {
@@ -156,7 +155,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const paths = [];
 
-  getContributors().map((contributor) => {
+  getContributors(true).map((contributor) => {
     paths.push({
       params: {
         slug: contributor.slug,

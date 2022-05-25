@@ -1,0 +1,35 @@
+name: Main
+
+on:
+  schedule:
+    - cron: "0 1 * * *" # 6:30am IST
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: install requirements
+        run: pip install -r scraper/requirements.txt
+
+      - name: run github scraper
+        run: python scraper/src/github.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: run slack scraper
+        run: |
+          echo slack
+          #python scraper/src/slack.py
+
+      - name: commit and push data
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: "chore: update data"

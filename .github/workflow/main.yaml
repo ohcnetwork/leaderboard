@@ -19,14 +19,14 @@ jobs:
         run: pip install -r scraper/requirements.txt
 
       - name: run github scraper
-        run: python scraper/src/github.py
+        run: python scraper/src/github.py coronasafe data/github -l DEBUG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: run slack scraper
-        run: |
-          echo slack
-          #python scraper/src/slack.py
+        run: python scraper/src/slack.py --lookback_days=2
+        env:
+          SLACK_API_TOKEN: ${{ secrets.SLACK_TOKEN }}
 
       - name: commit and push data
         uses: EndBug/add-and-commit@v9

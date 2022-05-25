@@ -25,13 +25,13 @@ user_blacklist = {
 }
 
 
-def serializer(title):
-    return title.timestamp() if isinstance(title, datetime) else repr(title)
+def serializer(obj):
+    return obj.timestamp() if isinstance(obj, datetime) else repr(obj)
 
 
 class GitHubScraper:
     def __init__(
-        self, org, token, date=None, data_dir=None, days_back=1, log_level=logging.INFO
+        self, org, token, data_dir, date, days_back=1, log_level=logging.INFO
     ):
         self.log = logging.getLogger("GitHubScraper")
         self.log.setLevel(log_level)
@@ -284,8 +284,8 @@ def main():
     scraper = GitHubScraper(
         args.org_name,
         token,
-        date,
         Path(args.data_dir),
+        date,
         days_back=args.num_days,
         log_level=getattr(logging, args.loglevel),
     )

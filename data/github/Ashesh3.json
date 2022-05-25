@@ -1,0 +1,211 @@
+{
+  "last_updated": 1653425059.0,
+  "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2507",
+      "time": 1653425059.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2507",
+      "text": "Empty notes and comments should not be allowed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2505",
+      "time": 1653420982.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2505",
+      "text": "UI issues on Upload External Results page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2442",
+      "time": 1652962298.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2442",
+      "text": "Improve Sample Test page and Voice Recorder"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2418",
+      "time": 1652961944.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2418#issuecomment-1131603863",
+      "text": "When the user denies the browser's microphone permission, The UI has no way of informing the user, instead it just continues recording. This needs to be fixed to inform the user about the same and not show \"Recording\" when there is no permission.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/169289293-80a92721-cfeb-45f1-b65a-b782aa9f2ea8.png)\r\n\r\nShows Recording even though I have denied it microphone permission."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2440",
+      "time": 1652959136.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2440",
+      "text": "ICMR Sample export fails for new patients"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2433",
+      "time": 1652942372.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2433",
+      "text": "Fix notification padding when no results are found"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2304",
+      "time": 1652906919.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2304#issuecomment-1130530033",
+      "text": "Reduced the spacing\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/169153051-57a28d0a-aca9-4511-b726-c4a6ee6c17c4.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2418",
+      "time": 1652870921.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2418#issuecomment-1129858207",
+      "text": "The above also applies to other parts of the same page:\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/169021973-68157161-a5db-40f5-b271-5c5f1f8e617c.png)\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2418",
+      "time": 1652870764.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2418",
+      "text": "Improve status in Sample Test History"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2304",
+      "time": 1652824361.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2304#issuecomment-1129351524",
+      "text": "All the elements are now aligned to the line below the blood group.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/168916108-5bb11745-920d-445b-b032-4ffe1d530738.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2406",
+      "time": 1652823411.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2406",
+      "text": "Send raw pulse and spo2 data"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1060",
+      "time": 1652821401.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1060#issuecomment-1129315159",
+      "text": "> @Ashesh3 tested on 15.4 works fine ![image](https://user-images.githubusercontent.com/42417893/168906614-ae6d7dde-7e58-47d9-ac39-29189eb4b4a9.png)\r\n\r\nThat's helpful! I only have versions <15.3 to test on, Guess it works with 15.4+ . I guess in either case the attached PR would be helpful not only to prevent the unnecessary redirects, but also to add support for <15.3 Safari versions. Thanks for the additional info!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2309",
+      "time": 1652813285.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2309#issuecomment-1129204050",
+      "text": "@gigincg Error keys are now title cased. Since we already use `lodash` , I just used the built-in functions for this change.\r\nWe no longer need regex to replace the \"_\" with \" \".\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/168886930-2575fa74-a956-46ec-bef0-d0882c38568f.png)\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/168886490-cddda095-ccbb-4480-a383-d3b1594f8e2a.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1060",
+      "time": 1652811521.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1060#issuecomment-1129178187",
+      "text": "@arpancodes Hey, I tested it on Safari 15.3 and it was not working, on redirects, the Auth header is omitted which leads to some API calls failing.\r\n\r\nWhere did you test it? Are you sure you used a Safari browser? If so, which version?\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/168882769-6f1dd621-0944-4168-8340-b0daa005cc18.png)\r\n![image](https://user-images.githubusercontent.com/3626859/168883039-307acfae-55bd-4846-96ee-17eac5ad14df.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2304",
+      "time": 1652801669.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2304#issuecomment-1129019472",
+      "text": "> ![psajfojasf](https://user-images.githubusercontent.com/57055998/168846833-114760c8-196e-4a57-9a5d-f6584e94e526.jpg)\r\n> \r\n> @Ashesh3 the alignment of created, diagnosis, and verified by is off, when we compared to the top\r\n\r\nFixed the alignment of the said elements.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/168849734-e6e1fd04-93d0-42d3-8d82-06fb52802c87.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2304",
+      "time": 1652797739.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2304#issuecomment-1128943422",
+      "text": "@nihal467 Fixed the left alignment, reduced the facility name font size, made it semi bold to match it more with the surrounding elements.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/168834981-13034df9-ca39-49e0-878a-72318d84b0cb.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2395",
+      "time": 1652794976.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2395",
+      "text": "Fix API calls on Safari"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2304",
+      "time": 1652680010.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2304#issuecomment-1127244810",
+      "text": "@nihal467 Fixed the alignment to match the padding of the patient name on the left side.\r\n\r\n- With inner padding on div `md:pl-2` (Updated in this PR)\r\n![image](https://user-images.githubusercontent.com/3626859/168526664-cfe8044f-de58-4f7b-a519-e74a9eb8bf95.png)\r\n\r\n- Without inner padding (Not in this PR)\r\n![image](https://user-images.githubusercontent.com/3626859/168526988-14165535-04bc-467b-96bd-4cf6426fa77c.png)\r\n\r\nLet me know which one works the best."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2304",
+      "time": 1652678459.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2304#issuecomment-1127233036",
+      "text": "> ![wpojefeopf](https://user-images.githubusercontent.com/57055998/168523635-7be54252-a901-40f1-89fb-a50e9d6a56c3.jpg)\r\n> \r\n> @Ashesh3 @gigincg i can't see any update in the PR,\r\n\r\nThat's correct, Just wanted to get a visual feedback first if that looks good or not. if yes, I'd add the updated commit to this PR! Did that just now!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2304",
+      "time": 1652630858.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2304#issuecomment-1126970983",
+      "text": "@nihal467 Is this better?\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/168482478-268b881d-e7f1-44a4-b9a1-0f0757bae21a.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#734",
+      "time": 1652258134.0,
+      "link": "https://github.com/coronasafe/care/pull/734",
+      "text": "Make Daily Round clone error more user friendly"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2309",
+      "time": 1652258096.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2309",
+      "text": "Make error messages more user friendly"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2307",
+      "time": 1652209993.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2307",
+      "text": "Fix Profile Tab not showing active in sidebar"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2305",
+      "time": 1652200217.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2305",
+      "text": "Remove obsolete admission radio"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2304",
+      "time": 1652193263.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2304",
+      "text": "Fix representation of facility name"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2307",
+      "time": 1652810376.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2307",
+      "text": "Fix Profile Tab not showing active in sidebar"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2305",
+      "time": 1652810295.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2305",
+      "text": "Remove obsolete admission radio"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#734",
+      "time": 1652540038.0,
+      "link": "https://github.com/coronasafe/care/pull/734",
+      "text": "Make Daily Round clone error more user friendly"
+    }
+  ],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2442",
+      "title": "Improve Sample Test page and Voice Recorder"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2395",
+      "title": "Fix API calls on Safari"
+    }
+  ]
+}

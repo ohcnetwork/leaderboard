@@ -1,0 +1,148 @@
+{
+  "last_updated": 1653392314.0,
+  "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2160",
+      "time": 1653392314.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2160#issuecomment-1135802926",
+      "text": "@gigincg I'm thinking of taking this up.\r\n\r\nTwo approaches can be there.\r\n\r\n### 1. Client Side\r\nWhere each preset is traversed and selected at an interval controlled by the client side.\r\nHowever in this method the middleware will not be aware whether a client is using patrol mode or not, and hence other clients who might access the same camera will also not be aware of this. Set preset requests may conflict the order if more than one client accesses it.\r\n\r\n### 2. Server side\r\nAn endpoint for the camera can be exposed to enable patrol mode, and also status response can include whether the resource is in patrol mode or not. Hence every client will be aware whether it's in patrol mode or not. Presets are traversed and selected by the middleware/backend, hence order is maintained regardless of multiple clients accessing the resource. Preset traverse interval can be optionally adjusted by client."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2485",
+      "time": 1653213384.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2485",
+      "text": "Adds hints for delete last entry, mark as accident and unmark actions in inventory management"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2483",
+      "time": 1653213202.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2483",
+      "text": "Inventory Delete Last Entry and Mark as Accident's intended use case can be confusing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2466",
+      "time": 1653147810.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2466#issuecomment-1133656792",
+      "text": "@rabilrbl got it, my bad, didn't see that.\r\n@gigincg this PR is also resolving closing the drawer also when notification's visit is clicked. I have merged rabil's #2423 into this."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2470",
+      "time": 1653120520.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2470",
+      "text": "Fixes missing quotes in .env"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2469",
+      "time": 1653120111.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2469",
+      "text": "Sourcing .env causes command not found errors"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2466",
+      "time": 1653118342.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2466",
+      "text": "Collapse drawer onclick"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2465",
+      "time": 1653115154.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2465",
+      "text": "Collapse notification side bar when visit link is clicked on any notification"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2464",
+      "time": 1653113478.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2464",
+      "text": " Revamp Facility Creation Page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2438",
+      "time": 1652956675.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2438",
+      "text": "Incosistent results in sidebar for languages other than english"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2381",
+      "time": 1652877683.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2381#issuecomment-1129957278",
+      "text": "- Added shortcut keys for patient feed.\r\n- Added help menu that lists all shortcut keys (in both asset cam feed and patient feed)\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/169040603-acae41b9-3f3d-45ba-8c7b-2f4e3ae93104.png)\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/169040697-0e763ba1-59ca-4b71-a76e-e00325138141.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2381",
+      "time": 1652753892.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2381",
+      "text": "Feature: Keyboard Shortcuts for Camera Live Feed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2374",
+      "time": 1652712387.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2374#issuecomment-1127768998",
+      "text": "- [ ] `Ctrl` + `Up`: Move Camera Up\r\n- [ ] `Ctrl` + `Left`: Move Camera Left\r\n- [ ] `Ctrl` + `Down`: Move Camera Down\r\n- [ ] `Ctrl` + `Right`: Move Camera Right\r\n- [ ] `Alt` + `S`: Save / Update Preset\r\n- [ ] `Alt` + `X`: Stop feed\r\n- [ ] `Alt` + `R`: Reset Feed\r\n- [ ] `Alt` + `+`: Zoom In\r\n- [ ] `Alt` + `-`: Zoom Out\r\n- [ ] `F`: Enter full-screen (Exit full-screen shortcut is handled by browser itself)\r\n\r\nAny suggestions? @gigincg "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2374",
+      "time": 1652710821.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2374",
+      "text": "Feature: Keyboard Shortcuts for Camera Live Feed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2257",
+      "time": 1652533906.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2257#issuecomment-1126713875",
+      "text": "@cp-Coder [here](http://localhost:4000/facility/05980e8f-8860-4460-b863-fefdff1d187b/patient/e45b93eb-4b1a-4f91-9b6f-3533b719e9a6/consultation/008e06f1-20fa-44a1-b665-bb1d9b21d04e/daily_rounds/72e37048-f117-4c23-aed2-6c77558b09f1/update) inside ABG Analaysis."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2336",
+      "time": 1652436484.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2336",
+      "text": "Reload Patient Presets in PatientFeed View When updating preset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2327",
+      "time": 1652371571.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2327",
+      "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2336",
+      "time": 1652811578.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2336",
+      "text": "Reload Patient Presets in PatientFeed View When updating preset"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2327",
+      "time": 1652810702.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2327",
+      "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
+    }
+  ],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2485",
+      "title": "Adds hints for delete last entry, mark as accident and unmark actions in inventory management"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2470",
+      "title": "Fixes missing quotes in .env and update REACT_APP_TITLE"
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "last_updated": 1653238217.0,
+  "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1653238217.0,
+      "title": "coronasafe/care#740",
+      "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980995925",
+      "text": "Added soft delete API endpoint for file uploads"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#740",
+      "time": 1653238029.0,
+      "link": "https://github.com/coronasafe/care/pull/740#issuecomment-1133933110",
+      "text": "Ignore the review it was for a test"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653237976.0,
+      "title": "coronasafe/care#740",
+      "link": "https://github.com/coronasafe/care/pull/740#pullrequestreview-980995572",
+      "text": "Added soft delete API endpoint for file uploads"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#772",
+      "time": 1653212189.0,
+      "link": "https://github.com/coronasafe/care/pull/772#issuecomment-1133856645",
+      "text": "what we can do is rename the min_quantity field to default_min_quantity in the response and decide the is_low based on the `FacilityInventoryMinQuantity`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#772",
+      "time": 1653212052.0,
+      "link": "https://github.com/coronasafe/care/pull/772#issuecomment-1133856253",
+      "text": "Its possible to do it on the BE but the min_quantity will still be redundant atlest in `FacilityInventoryLogSerializer`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#772",
+      "time": 1653211870.0,
+      "link": "https://github.com/coronasafe/care/pull/772#issuecomment-1133855741",
+      "text": "> @sainAk the min_quantity can stay and maybe FE can ignore the flag if the min_quantity value is not present, or we can add that logic into our flagging system.\r\n\r\nSure I'll apply the changes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#768",
+      "time": 1653211708.0,
+      "link": "https://github.com/coronasafe/care/pull/768#issuecomment-1133855283",
+      "text": "For now I'm only building the docker image, after we add localstack we can switch over to compose for testing."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653210762.0,
+      "title": "coronasafe/care#775",
+      "link": "https://github.com/coronasafe/care/pull/775#pullrequestreview-980930255",
+      "text": "Modified maximum number of doses for a patient"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2422",
+      "time": 1653165312.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2422#issuecomment-1133764807",
+      "text": "This issue is caused because `Asset QR Code ID` is sending blank string which causes integrity error\r\n@rabilrbl do you want to take up this issue to handle it on the FE?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#777",
+      "time": 1653165119.0,
+      "link": "https://github.com/coronasafe/care/pull/777",
+      "text": "fix issues when qr_code_id is blank string and message for unique integrity error"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#773",
+      "time": 1653116452.0,
+      "link": "https://github.com/coronasafe/care/pull/773",
+      "text": "Update codeql actions to fix warnings"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2422",
+      "time": 1653074988.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2422#issuecomment-1133250416",
+      "text": "@gigincg this is not reproduceable locally"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2452",
+      "time": 1653074906.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2452#issuecomment-1133248795",
+      "text": "Regression from coronasafe/care#715"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#772",
+      "time": 1653072805.0,
+      "link": "https://github.com/coronasafe/care/pull/772",
+      "text": "fix: Inventory unexpectedly marked as Low Stock"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653058034.0,
+      "title": "coronasafe/care#771",
+      "link": "https://github.com/coronasafe/care/pull/771#pullrequestreview-980240212",
+      "text": "add migration to change meta.camera_address to meta.local_ip_address"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#768",
+      "time": 1653035632.0,
+      "link": "https://github.com/coronasafe/care/pull/768#issuecomment-1132633036",
+      "text": "Requires #724 for static files"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#768",
+      "time": 1652976589.0,
+      "link": "https://github.com/coronasafe/care/pull/768",
+      "text": "update main CI"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2437",
+      "time": 1652958467.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2437#issuecomment-1131552907",
+      "text": "related to coronasafe/care#725"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2435",
+      "time": 1652958338.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2435#issuecomment-1131551086",
+      "text": "This issue can be combined with coronasafe/care_fe#2285"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#754",
+      "time": 1652885137.0,
+      "link": "https://github.com/coronasafe/care/issues/754",
+      "text": "Merge base dockerfile into main dockerfile and add layer caching in github actions"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#753",
+      "time": 1652884219.0,
+      "link": "https://github.com/coronasafe/care/issues/753",
+      "text": "Remove postgis"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1652880158.0,
+      "title": "coronasafe/care#752",
+      "link": "https://github.com/coronasafe/care/pull/752#pullrequestreview-976955212",
+      "text": "added localstack s3 buckets for local environment"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#735",
+      "time": 1652871544.0,
+      "link": "https://github.com/coronasafe/care/pull/735#issuecomment-1129866720",
+      "text": "@Marmik2003 you changes from other PR are being mixed up in ths one\r\nTo fix the problem:\r\nClose this PR \r\ncreate a new branch from fd027983dcdf6ce436b5499183a57ac24dbedd98 and cherry-pick the changes on that branch."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2402",
+      "time": 1652852470.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2402#issuecomment-1129589643",
+      "text": "@cp-Coder tailwind SS/custom-forms needs to be migrated to tailwindcss/forms https://tailwindcss.com/blog/tailwindcss-v2#utility-friendly-form-styles"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#751",
+      "time": 1652810039.0,
+      "link": "https://github.com/coronasafe/care/issues/751",
+      "text": "Setup localstack for development"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#750",
+      "time": 1652790352.0,
+      "link": "https://github.com/coronasafe/care/issues/750#issuecomment-1128805150",
+      "text": "alteady pointed out coronasafe/care_fe#2298"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2391",
+      "time": 1652789690.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2391",
+      "text": "fix: sidebar on small height devices"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2380",
+      "time": 1652721989.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2380",
+      "text": "Replace react-dates with material ui date picker"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2379",
+      "time": 1652721915.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2379",
+      "text": "Update raviger; breaking changes"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2378",
+      "time": 1652721830.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2378",
+      "text": "Update react-qr-reader; breaking changes"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2158",
+      "time": 1652679290.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2158",
+      "text": "QR External ID for Asset"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2278",
+      "time": 1652621775.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2278",
+      "text": "Bed registration form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#746",
+      "time": 1652620102.0,
+      "link": "https://github.com/coronasafe/care/pull/746",
+      "text": "added a new created_by field in user model"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#745",
+      "time": 1652615259.0,
+      "link": "https://github.com/coronasafe/care/issues/745#issuecomment-1126919975",
+      "text": "@siddnikh we are still on django django 2.2"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2358",
+      "time": 1652607838.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2358",
+      "text": "fix: Use latest node LTS everywhere"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#744",
+      "time": 1652538180.0,
+      "link": "https://github.com/coronasafe/care/issues/744",
+      "text": "Show the names of the creator in user api"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1652352874.0,
+      "title": "coronasafe/care_fe#2311",
+      "link": "https://github.com/coronasafe/care_fe/pull/2311#pullrequestreview-970650691",
+      "text": "feat: added devcontainer config for vscode"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2313",
+      "time": 1652351751.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2313#issuecomment-1124832537",
+      "text": "@skks1212 can you try making the time and rhythm column a bit narrower because they don't need that much space."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2311",
+      "time": 1652267123.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2311",
+      "text": "feat: added devcontainer config for vscode"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2306",
+      "time": 1652205052.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2306",
+      "text": "feat: use rescript compiler instead of bsb"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2358",
+      "time": 1652615736.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2358",
+      "text": "fix: Use latest node LTS everywhere"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2306",
+      "time": 1652606182.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2306",
+      "text": "feat: use rescript compiler instead of bsb"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2300",
+      "time": 1652337203.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2300",
+      "text": "fix: UserAdd component responsive layout"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#768",
+      "time": 1653214669.0,
+      "link": "https://github.com/coronasafe/care/pull/768",
+      "text": "update main CI"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2391",
+      "time": 1652800281.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2391",
+      "text": "fix: sidebar on devices with small height"
+    }
+  ],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/777",
+      "title": "fix issues when qr_code_id is a blank string and show message for unique integrity error"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/772",
+      "title": "fix: Inventory unexpectedly marked as Low Stock"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/746",
+      "title": "added a new created_by field in user model"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2311",
+      "title": "feat: added devcontainer config for vscode"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/724",
+      "title": "Switched Static Files in Care to WhiteNoise"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/718",
+      "title": "updated `/add_user` endpoint to return status code instead of user object"
+    }
+  ]
+}

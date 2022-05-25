@@ -1,0 +1,111 @@
+{
+  "last_updated": 1653398141.0,
+  "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#784",
+      "time": 1653398141.0,
+      "link": "https://github.com/coronasafe/care/pull/784",
+      "text": "add middleware_address field to facility table"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653216723.0,
+      "title": "coronasafe/care#776",
+      "link": "https://github.com/coronasafe/care/pull/776#pullrequestreview-980940332",
+      "text": "Add new class for HL7MonitorAsset"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#776",
+      "time": 1653144608.0,
+      "link": "https://github.com/coronasafe/care/pull/776#issuecomment-1133646711",
+      "text": "@gigincg could you confirm if everything required for the class is present?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#776",
+      "time": 1653143132.0,
+      "link": "https://github.com/coronasafe/care/pull/776",
+      "text": "Add new class for HL7MonitorAsset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#771",
+      "time": 1653057412.0,
+      "link": "https://github.com/coronasafe/care/pull/771",
+      "text": "add migration to change meta.camera_address to meta.local_ip_address"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#762",
+      "time": 1652945457.0,
+      "link": "https://github.com/coronasafe/care/pull/762",
+      "text": "Refactor get_users API to show proper swagger documentation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#739",
+      "time": 1652797844.0,
+      "link": "https://github.com/coronasafe/care/issues/739#issuecomment-1128945543",
+      "text": "@gigincg could you check if this issue is a duplicate of [this](https://github.com/coronasafe/care/issues/709) issue?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#736",
+      "time": 1652713636.0,
+      "link": "https://github.com/coronasafe/care/pull/736#issuecomment-1127792853",
+      "text": "@vigneshhari\r\nI updated the PR to add the validations in the model level (using the `clean` method) and made some minor changes so that DRF can handle these Django validation errors.\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#742",
+      "time": 1652526314.0,
+      "link": "https://github.com/coronasafe/care/pull/742",
+      "text": "Summarize beds under facility"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#736",
+      "time": 1652280223.0,
+      "link": "https://github.com/coronasafe/care/pull/736",
+      "text": "Prevent creation of bed with the same name"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#725",
+      "time": 1652194430.0,
+      "link": "https://github.com/coronasafe/care/issues/725#issuecomment-1122504205",
+      "text": "@gigincg is this issue still valid? I am unable to reproduce this issue locally.\r\n(I tried creating a new inventory without specifying the `min_quantity` using the swagger UI. The resulting inventory summary does not have low stock)\r\n![Screenshot_20220510_202231](https://user-images.githubusercontent.com/26461855/167658004-fbd02fe9-b367-43f2-a624-b80db8aca4e7.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#771",
+      "time": 1653212501.0,
+      "link": "https://github.com/coronasafe/care/pull/771",
+      "text": "add migration to change meta.camera_address to meta.local_ip_address"
+    }
+  ],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/784",
+      "title": "add middleware_address field to facility table"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/776",
+      "title": "Add new class for HL7MonitorAsset"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/762",
+      "title": "Refactor get_users API to show proper swagger documentation"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/742",
+      "title": "Summarize beds under facility"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/736",
+      "title": "Prevent creation of bed with the same name"
+    }
+  ]
+}

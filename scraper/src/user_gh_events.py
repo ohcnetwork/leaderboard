@@ -96,7 +96,7 @@ def fetch_repo_events(user, end_date, data=None, page=1):
             if event["payload"]["action"] in ("created",):
                 add_event(
                     data,
-                    event["actor"]["display_login"],
+                    event["actor"]["login"],
                     {
                         "type": f'comment_{event["payload"]["action"]}',
                         "title": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
@@ -110,7 +110,7 @@ def fetch_repo_events(user, end_date, data=None, page=1):
             if event["payload"]["action"] in ("opened", "closed", "assigned"):
                 add_event(
                     data,
-                    event["actor"]["display_login"],
+                    event["actor"]["login"],
                     {
                         "type": f'issue_{event["payload"]["action"]}',
                         "title": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
@@ -124,7 +124,7 @@ def fetch_repo_events(user, end_date, data=None, page=1):
             if event["payload"]["action"] == "opened":
                 add_event(
                     data,
-                    event["actor"]["display_login"],
+                    event["actor"]["login"],
                     {
                         "type": f'pr_{event["payload"]["action"]}',
                         "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
@@ -133,15 +133,6 @@ def fetch_repo_events(user, end_date, data=None, page=1):
                         "text": event["payload"]["pull_request"]["title"],
                     },
                 )
-                if event["payload"]["pull_request"]["state"] == "open":
-                    add_open_pr(
-                        data,
-                        event["actor"]["display_login"],
-                        {
-                            "link": event["payload"]["pull_request"]["html_url"],
-                            "title": event["payload"]["pull_request"]["title"],
-                        },
-                    )
 
             elif (
                 event["payload"]["action"] == "closed"
@@ -149,7 +140,7 @@ def fetch_repo_events(user, end_date, data=None, page=1):
             ):
                 add_event(
                     data,
-                    event["actor"]["display_login"],
+                    event["payload"]["pull_request"]["user"]["login"],
                     {
                         "type": "pr_merged",
                         "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
@@ -162,7 +153,7 @@ def fetch_repo_events(user, end_date, data=None, page=1):
         elif event["type"] == "PullRequestReviewEvent":
             add_event(
                 data,
-                event["actor"]["display_login"],
+                event["actor"]["login"],
                 {
                     "type": "pr_reviewed",
                     "time": event_time,
@@ -175,6 +166,44 @@ def fetch_repo_events(user, end_date, data=None, page=1):
     if has_next := resp.links.get("next", {}).get("url"):
         next_page = dict(parse_qsl(urlparse(has_next).query)).get("page", 99)
         return fetch_repo_events(user, end_date, data, int(next_page))
+    return data
+
+
+def fetch_open_prs(user, data=None, page=1):
+    print(f"Fetching open PRs for {user} page:{page}")
+    data = data or {}
+
+    resp = requests.get(
+        f"https://api.github.com/search/issues?q=is:pr+is:open+org%3Acoronasafe+author%3A{user}&per_page=100&page={page}",
+        headers={
+            "Accept": "application/vnd.github.v3.raw+json",  # https://docs.github.com/en/rest/overview/media-types
+            "Authorization": f"token {token}"
+        },
+    )
+
+    if resp.status_code == 422:
+        # stop pagination
+        return data
+
+    resp.raise_for_status()
+    issues = resp.json()
+
+    if not issues:
+        return data
+    
+    for issue in issues["items"]:
+        add_open_pr(
+            data,
+            issue["user"]["login"],
+            {
+                "link": issue["html_url"],
+                "title": issue["title"],
+            },
+        )
+
+    if has_next := resp.links.get("next", {}).get("url"):
+        next_page = dict(parse_qsl(urlparse(has_next).query)).get("page", 99)
+        return fetch_open_prs(user, data, int(next_page))
     return data
 
 
@@ -198,6 +227,7 @@ if __name__ == "__main__":
 
     for user in users:
         data = fetch_repo_events(user, datetime.now(), data)
+        data = fetch_open_prs(user, data)
 
     with open("data/events_seed_data.json", "w") as f:
         json.dump(data, f, indent=2, default=serializer)

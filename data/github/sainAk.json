@@ -1,6 +1,34 @@
 {
-  "last_updated": 1653238217.0,
+  "last_updated": 1653510097.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#779",
+      "time": 1653510097.0,
+      "link": "https://github.com/coronasafe/care/issues/779#issuecomment-1137811990",
+      "text": "@siddnikh we can just fix the `UserSerializer` update method to handle password field changes, also make the password a writeonly field, by doing this we can just PATCH the password, I don't think there is a requirement for a separate endpoint."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#724",
+      "time": 1653508510.0,
+      "link": "https://github.com/coronasafe/care/pull/724#issuecomment-1137789177",
+      "text": "This should be good to merge as now we are using a single docker image."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653480097.0,
+      "title": "coronasafe/care#770",
+      "link": "https://github.com/coronasafe/care/pull/770#pullrequestreview-984690750",
+      "text": "added string support for admin interface"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2427",
+      "time": 1653467277.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2427#issuecomment-1136948602",
+      "text": "@cp-Coder update https://www.npmjs.com/package/rescript-material-ui as well"
+    },
     {
       "type": "pr_reviewed",
       "time": 1653238217.0,

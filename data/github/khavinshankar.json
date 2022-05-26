@@ -1,6 +1,27 @@
 {
-  "last_updated": 1652812647.0,
+  "last_updated": 1653466170.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2412",
+      "time": 1653466170.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2412#issuecomment-1136927596",
+      "text": "As of now, we have 2 ways to access the notifications list, one is to use notification in the side menu bar and other is to use the floating icon, this is leading to an unexpected behavior of opening more than 1 notification list slideover at the same time i.e., when we click on floating icon, it opens 1 instance of the notifications list and we also can click on side menu bar to open another instance at the same time\r\n\r\nso,\r\n- [ ] create a global state for isNotificationsListOpen in AppRouter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653461077.0,
+      "title": "coronasafe/care_fe#2476",
+      "link": "https://github.com/coronasafe/care_fe/pull/2476#pullrequestreview-984288930",
+      "text": "Improve toast notifications in mobile view"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2276",
+      "time": 1653457931.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2276",
+      "text": "Set temperature floating point precision to 1 in HemodynamicParametersEditor"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2387",
@@ -51,5 +72,50 @@
       "text": "Shows a 'data not available' message when null in NeurologicalTables"
     }
   ],
-  "open_prs": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2491",
+      "title": "Added mark as read feature for NotificationsList"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2447",
+      "title": "Made first_name and last_name mandatory in UserAdd"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2428",
+      "title": "Added drag and drop feature in Shifting BoardView"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2412",
+      "title": "Added floating notification icon in AppRouter "
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2095",
+      "title": "Fix Warnings"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2045",
+      "title": "fixed spacing issues in Consultation Details"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2022",
+      "title": "Added PatientHomeNonCovid"
+    },
+    {
+      "link": "https://github.com/coronasafe/arike/pull/143",
+      "title": "added browser confirmation for uncheduling in Agenda"
+    },
+    {
+      "link": "https://github.com/coronasafe/arike/pull/141",
+      "title": "Added search bar in Patients"
+    },
+    {
+      "link": "https://github.com/coronasafe/arike/pull/140",
+      "title": "Refactored Patients from ruby-html to rescript-react"
+    },
+    {
+      "link": "https://github.com/coronasafe/life/pull/306",
+      "title": "filtered duplicate tweets"
+    }
+  ]
 }

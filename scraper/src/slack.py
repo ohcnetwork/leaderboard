@@ -6,18 +6,18 @@ import os
 from datetime import datetime, timedelta
 
 import requests
+from requests.exceptions import RequestException
 
 parser = argparse.ArgumentParser()
-
 parser.add_argument("--lookback_days", type=int, help="Fetch the Last X days Data", default=0)
-
 args = parser.parse_args()
 
-lookback_days = args.lookback_days
-
-SLACK_API_TOKEN = os.environ.get("SLACK_API_TOKEN", "")
 
 SLACK_CHANNEL = os.environ.get("SLACK_CHANNEL", "C02U0A47JUQ")
+SLACK_API_TOKEN = os.environ.get("SLACK_API_TOKEN", "")
+if not SLACK_API_TOKEN:
+    raise Exception("SLACK_API_TOKEN is not set")
+
 
 MESSAGE_DUMP_FILE_NAME = "message_dump"
 
@@ -33,7 +33,7 @@ def parse_save_user_data(data: dict, date):
             continue
         user = message["user"]
         user_dict[user] = user_dict.get(user, []) + [message]
-    for user in user_dict.keys():
+    for user in user_dict:
         save_user_data(user, user_dict[user], date)
 
 
@@ -64,9 +64,10 @@ def get_slack_data(date):
             request_body,
             headers={"Authorization": f"Bearer {SLACK_API_TOKEN}"},
         )
-        if response.status_code != 200:
-            raise Exception("Slack Connection Failed")
+        response.raise_for_status()
         response_body = response.json()
+        if not response_body.get("ok", True):
+            raise RequestException(f"Slack API Error:{response_body.get('error')}")
         if "next_cursor" in response_body.get("response_metadata", {}):
             cursor = response_body["response_metadata"]["next_cursor"]
         else:
@@ -90,17 +91,14 @@ def get_file(
 ):
     try:
         with open(f"data/slack/{filename}.json", "r") as fp:
-            data = fp.read()
-            if data:
-                return json.loads(data)
-            return {}
-    except FileNotFoundError:
+            return json.load(fp)
+    except (FileNotFoundError, json.JSONDecodeError):
         return {}
 
 
 def dump_file(filename: str, data: dict):
     with open(f"data/slack/{filename}.json", "w") as fp:
-        fp.write(json.dumps(data, indent=4))
+        json.dump(data, fp, indent=4)
 
 
-generate_cache(lookback_days)
+generate_cache(args.lookback_days)

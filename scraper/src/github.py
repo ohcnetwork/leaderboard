@@ -75,7 +75,7 @@ class GitHubScraper:
             return
 
         self.log.debug(f"Parsing event for {user}")
-        self.log.debug(f"Event: {event}")
+        self.log.debug(f"event_id: {event['id']}")
 
         if event["type"] == "IssueCommentEvent":
             if event["payload"]["action"] in ("created",):

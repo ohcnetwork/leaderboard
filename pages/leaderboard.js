@@ -55,16 +55,18 @@ export default function Home(props) {
                       </span>
                     </div>
                     <ul className="space-y-6 lg:space-y-8 p-4 lg:p-6 ">
-                      {props.contributors.map((contributor, index) => {
-                        return (
-                          <li key={contributor.github}>
-                            <LeaderboardCard
-                              key={contributor.github}
-                              contributor={contributor}
-                            />
-                          </li>
-                        );
-                      })}
+                      {props.contributors
+                        .filter((contributor) => contributor.intern)
+                        .map((contributor, index) => {
+                          return (
+                            <li key={contributor.github}>
+                              <LeaderboardCard
+                                key={contributor.github}
+                                contributor={contributor}
+                              />
+                            </li>
+                          );
+                        })}
                     </ul>
                   </div>
                 </div>
@@ -125,9 +127,11 @@ export async function getStaticProps() {
   const contributors = getContributors();
   const categoryLeaderboard = categories.map((category) => ({
     ...category,
-    contributor: contributors.sort((a, b) => {
-      return b.weekSummary[category.slug] - a.weekSummary[category.slug];
-    })[0],
+    contributor: contributors
+      .filter((contributor) => contributor.intern)
+      .sort((a, b) => {
+        return b.weekSummary[category.slug] - a.weekSummary[category.slug];
+      })[0],
   }));
   return {
     props: {

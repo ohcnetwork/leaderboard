@@ -400,5 +400,68 @@
                 }
             ]
         }
+    ],
+    "2022-05-25 00:00:00": [
+        {
+            "client_msg_id": "bc8ab1b9-078e-4819-a26d-6c957d251217",
+            "type": "message",
+            "text": "worked on: <https://github.com/coronasafe/care/pull/784|#784>",
+            "user": "U02U102TL0G",
+            "ts": "1653422217.415829",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653398140,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/784",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/784|#784 add middleware_address field to facility table>",
+                    "text": "Add `middleware_address` field to the facility table with a default NULL value and then populate its value from `Asset.meta`.\n\nFixes: <https://github.com/coronasafe/care/issues/685|#685>",
+                    "title": "<https://github.com/coronasafe/care/pull/784|#784 add middleware_address field to facility table>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "JqVu",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/784",
+                                    "text": "#784",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "U02TB8XCDU3",
+                        "U02TB8X9WRZ"
+                    ],
+                    "count": 3
+                }
+            ]
+        }
     ]
 }

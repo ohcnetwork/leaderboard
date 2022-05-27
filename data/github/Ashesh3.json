@@ -1,6 +1,55 @@
 {
-  "last_updated": 1653515818.0,
+  "last_updated": 1653579335.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2525",
+      "time": 1653579335.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2525#issuecomment-1138709480",
+      "text": "Using `/\\S+/` to check if the string is empty or not. \r\n\r\n![image](https://user-images.githubusercontent.com/3626859/170520528-94489786-c65c-40cc-857e-a2fe9ee0a507.png)\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2535",
+      "time": 1653567049.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2535#issuecomment-1138497558",
+      "text": "Now that's one smart way to hide your last seen! \ud83d\udc40 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2536",
+      "time": 1653566882.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2536",
+      "text": "Fix inconsistent type of visited countries attribute"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#789",
+      "time": 1653566865.0,
+      "link": "https://github.com/coronasafe/care/pull/789",
+      "text": "Fix inconsistent type of visited countries attribute"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2532",
+      "time": 1653565968.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2532#issuecomment-1138457947",
+      "text": "> > I believe that the intention of displaying the message \"Comment should contain at least 1 character\" to the user is to prevent mishaps where they user might accidently try to hit the \"Post comment\"/\"Add note\" button without actually filling the box.\r\n> > Sure, they can still bypass it by adding a space. But if we then add a check for the space, we would need to address dozens other ways where the user might try to post an empty comment. For example, using empty Unicode characters or even unintentional characters like a single dot or multiple spaces, tabs etc.\r\n> > Although adding this is a neat little change, I think it might be out of scope of the behavior we are expecting from the check there currently is (Which is only checking length of the TextField's value).\r\n> > TLDR; There would be many ways to bypass this check and it's main purpose should be limited to just nudging the user in case they hit submit without any text, accidently.\r\n> > Just my thoughts, would love to hear other opinions on this! smile\r\n> \r\n> Yeah @Ashesh3 I completely agree on this but comment without anything looks a little unprofessional it can contain anything a dot or any single character but containing space can make it look empty :) Even in whatsapp try to send a message containing only spaces no character it would not allow you to send it. Having this check maybe a bit enhancement \ud83d\ude04\r\n\r\nYep, agree with you there, could be a neat enhancement! \r\nWe would also need to add a check for invisible Unicode characters too, since that would let users post a blank (but non empty) comment. \r\n\r\nBonus: Try copy pasting this character `\u200f\u200f\u200e \u200e` (select the code block and copy), into Whatsapp and see what happens \ud83d\ude09 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#788",
+      "time": 1653565168.0,
+      "link": "https://github.com/coronasafe/care/pull/788",
+      "text": "Update pre-commit requirement and fix it's branch name"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2532",
+      "time": 1653564720.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2532#issuecomment-1138435255",
+      "text": "I believe that the intention of displaying the message \"Comment should contain at least 1 character\" to the user is to prevent mishaps where they user might accidently try to hit the \"Post comment\"/\"Add note\" button without actually filling the box.\r\n\r\nSure, they can still bypass it by adding a space. But if we then add a check for the space, we would need to address dozens other ways where the user might try to post an empty comment. For example, using empty Unicode characters or even unintentional characters like a single dot or multiple spaces, tabs etc. \r\n\r\nAlthough adding this is a neat little change, I think it might be out of scope of the behavior we are expecting from the check there currently is (Which is only checking length of the TextField's value).\r\n\r\nTLDR; There would be many ways to bypass this check and it's main purpose should be limited to just nudging the user in case they hit submit without any text, accidently.\r\n\r\nJust my thoughts, would love to hear other opinions on this! \ud83d\ude04 "
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#2525",
@@ -234,6 +283,18 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2536",
+      "title": "Fix inconsistent type of visited countries attribute"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/789",
+      "title": "Fix inconsistent type of visited countries attribute"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/788",
+      "title": "Update pre-commit requirement and fix it's branch name"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2525",
       "title": "Disallow empty notes and comments"

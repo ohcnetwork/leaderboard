@@ -1,6 +1,90 @@
 {
-  "last_updated": 1653461436.0,
+  "last_updated": 1653585050.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2542",
+      "time": 1653585050.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2542",
+      "text": "Prevented sending empty notification to facilities"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2541",
+      "time": 1653583242.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2541",
+      "text": "Prevent empty notifications while notifying a facility."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2525",
+      "time": 1653582794.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2525#issuecomment-1138761829",
+      "text": "Fixes #2532 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2532",
+      "time": 1653581417.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2532",
+      "text": "Overiding the rule \"Comment should contain atleast 1 character\" and having empty comments in Shifting Deatils page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2532",
+      "time": 1653565295.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2532#issuecomment-1138442345",
+      "text": "> I believe that the intention of displaying the message \"Comment should contain at least 1 character\" to the user is to prevent mishaps where they user might accidently try to hit the \"Post comment\"/\"Add note\" button without actually filling the box.\r\n> \r\n> Sure, they can still bypass it by adding a space. But if we then add a check for the space, we would need to address dozens other ways where the user might try to post an empty comment. For example, using empty Unicode characters or even unintentional characters like a single dot or multiple spaces, tabs etc.\r\n> \r\n> Although adding this is a neat little change, I think it might be out of scope of the behavior we are expecting from the check there currently is (Which is only checking length of the TextField's value).\r\n> \r\n> TLDR; There would be many ways to bypass this check and it's main purpose should be limited to just nudging the user in case they hit submit without any text, accidently.\r\n> \r\n> Just my thoughts, would love to hear other opinions on this! smile\r\n\r\nYeah @Ashesh3 I completely agree on this but comment without anything looks a little unprofessional it can contain anything a dot or any single character but containing space can make it look empty :) Even in whatsapp try to send a message containing  \r\nonly spaces no character it would not allow you to send it. Having this check maybe a bit enhancement :smile: "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2525",
+      "time": 1653563586.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2525#issuecomment-1138420847",
+      "text": "Hey @Ashesh3  i found a bug in the shifting page comment posting algorithm we can easily overide the check **\"Comment should contain 1 character\"** by giving **space** . You can view it here #2532 for more detail demonstration. \r\n\r\nI think we need to also have a check for spaces it might go like this:\r\n\r\n```\r\nif (noteField.trim().length < 1) {\r\n      Notification.Error({\r\n        msg: \"Note Should Contain At Least 1 Character\",\r\n      });\r\n      return;\r\n    }\r\n```"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2532",
+      "time": 1653563042.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2532",
+      "text": "Overiding the rule \"Comment should contain atleast 1 character\" and having empty comments in Shifting Deatils page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2531",
+      "time": 1653562306.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2531",
+      "text": "Fixed the unresponsive behaviour of Resource(List View) page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2530",
+      "time": 1653543762.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2530",
+      "text": "Some of the buttons get hidden in Live feed page in some mobile devices."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2513",
+      "time": 1653543158.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2513#issuecomment-1138170395",
+      "text": "@kunatastic hey are you working on this issue #2529  regarding the resource page  ? Can i work on that part ?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2529",
+      "time": 1653543009.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2529",
+      "text": "UI of resource(List view page) unresponsive in mobile devices"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2528",
+      "time": 1653539935.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2528",
+      "text": "Fixed the Ui unresposive behaviour of Shifting page in mobile devices"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2481",
@@ -206,6 +290,14 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2542",
+      "title": "Prevented sending empty notification to facilities"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2531",
+      "title": "Fixed the unresponsive behaviour of Resource(List View) page"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2528",
       "title": "Fixed the Ui unresposive behaviour of Shifting page in mobile devices"

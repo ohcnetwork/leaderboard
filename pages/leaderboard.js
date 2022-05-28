@@ -29,7 +29,7 @@ const categories = [
 export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead/>
+      <PageHead title="Leaderboard"/>
       <Header/>
       <section className="bg-gray-900 border-t border-gray-600 relative">
         <div className="max-w-6xl mx-auto">

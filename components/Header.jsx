@@ -6,7 +6,7 @@ export default function Header(){
             <div className="flex justify-between items-center">
                 <Link className="inline-block cursor-pointer" href="/">
                     <code className="text-primary-900 cursor-pointer text-3xl">
-                        coronasafe.network leaderboard
+                        coronasafe.network contributors
                     </code>
                 </Link>
             </div>

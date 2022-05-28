@@ -6,30 +6,32 @@ export default function InfoCard({ contributor, minimal = false, category }) {
       <span className="text-white text-sm font-sans">
         Most number of {category.title}
       </span>
-      <div className="mt-2 flex items-center gap-2">
-        <img
-          className="mx-auto h-12 w-12 rounded-full"
-          src={`https://github.com/${contributor.github}.png`}
-          alt={contributor.github}
-        />
-        <div className={minimal ? "text-center" : "space-y-2"}>
-          <div className="font-medium text-lg leading-6 space-y-1">
-            <Link href={`/contributors/${contributor.github}`} className="">
-              <h3 className="text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">
-                {/* {category.title} */}
-              </h3>
-            </Link>
-            <p className="text-primary-400">{contributor.name}</p>
-          </div>
+      <div className="flex">
+        <div className="mx-auto mt-2 flex items-center gap-2">
+          <img
+            className="h-12 w-12 rounded-full"
+            src={`https://github.com/${contributor.github}.png`}
+            alt={contributor.github}
+          />
+          <div className={minimal ? "text-center" : "space-y-2"}>
+            <div className="font-medium text-lg leading-6 space-y-1">
+              <Link href={`/contributors/${contributor.github}`} className="">
+                <h3 className="text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">
+                  {/* {category.title} */}
+                </h3>
+              </Link>
+              <p className="text-primary-400">{contributor.name}</p>
+            </div>
 
-          <ul
-            role="list"
-            className={
-              minimal
-                ? "flex items-center space-x-2 justify-center mt-2"
-                : "space-y-2"
-            }
-          ></ul>
+            <ul
+              role="list"
+              className={
+                minimal
+                  ? "flex items-center space-x-2 justify-center mt-2"
+                  : "space-y-2"
+              }
+            ></ul>
+          </div>
         </div>
       </div>
     </div>

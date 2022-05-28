@@ -111,14 +111,14 @@ export default function Contributor({ contributor, slug }) {
                   <div className="mt-4">
                     {contributor["activityData"]["open_prs"].map(
                       (pr, index) => (
-                        <Link href={pr.link} key={index}>
-                          <p className="text-sm text-gray-300" key={index}>
+                        <a href={pr.link} key={index}>
+                          <p className="text-sm text-gray-300 hover:text-primary-300" key={index}>
                             <span className="text-primary-500 text-sm pr-2">
                               ➞
                             </span>
                             {pr.title}
                           </p>
-                        </Link>
+                        </a>
                       )
                     )}
                   </div>

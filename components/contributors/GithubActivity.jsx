@@ -36,11 +36,11 @@ let renderText = (activity) => {
               Pull Request {activity["type"].split("_")[1]}
             </span>
 
-            <Link href={activity["link"]}>
+            <a href={activity["link"]}>
               <span className="font-medium text-gray-200 ml-2">
                 {activity["text"]}
               </span>
-            </Link>
+            </a>
             <span className="whitespace-nowrap ml-2">{activity["time"]}</span>
           </div>
         </div>
@@ -53,11 +53,11 @@ let renderText = (activity) => {
             <div className="font-medium text-primary-500  ">
               Issue {activity["type"].split("_")[1]}
             </div>
-            <Link href={activity["link"]}>
+            <a href={activity["link"]}>
               <span className="font-medium text-white ml-2 hover:text-primary-500">
                 {activity["text"]}
               </span>
-            </Link>
+            </a>
             <span className="whitespace-nowrap ml-2">{activity["time"]}</span>
           </div>
         </div>

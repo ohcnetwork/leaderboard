@@ -29,7 +29,7 @@ export default function InfoCard({ contributor, minimal = false }) {
           >
             {contributor.github && (
               <li>
-                <Link
+                <a
                   href={`https://github.com/${contributor.github}`}
                   target="_blank"
                   rel="noreferrer"
@@ -49,12 +49,12 @@ export default function InfoCard({ contributor, minimal = false }) {
                     </svg>
                     {!minimal && `@${contributor.github}`}
                   </div>
-                </Link>
+                </a>
               </li>
             )}
             {contributor.twitter && (
               <li>
-                <Link
+                <a
                   href={`https://twitter.com/${contributor.twitter}`}
                   target="_blank"
                   rel="noreferrer"
@@ -71,12 +71,12 @@ export default function InfoCard({ contributor, minimal = false }) {
                     </svg>
                     {!minimal && `@${contributor.twitter}`}
                   </div>
-                </Link>
+                </a>
               </li>
             )}
             {contributor.linkedin && (
               <li>
-                <Link
+                <a
                   href={`https://linkedin.com/in/${contributor.linkedin}`}
                   target="_blank"
                   rel="noreferrer"
@@ -97,7 +97,7 @@ export default function InfoCard({ contributor, minimal = false }) {
                     </svg>
                     {!minimal && `@${contributor.linkedin}`}
                   </div>
-                </Link>
+                </a>
               </li>
             )}
           </ul>

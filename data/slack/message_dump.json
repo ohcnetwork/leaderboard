@@ -7637,6 +7637,585 @@
     "2022-05-09 00:00:00": [],
     "2022-05-27 00:00:00": [
         {
+            "client_msg_id": "7cdf97b7-62e2-4b94-b716-a0a999ada915",
+            "type": "message",
+            "text": "Worked on existing issues, now looking for new issues.",
+            "user": "U02T4HFA07Q",
+            "ts": "1653686893.641169",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "c+XZ4",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on existing issues, now looking for new issues."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "a6c4c575-ba5c-4179-9a29-e08f34341c0b",
+            "type": "message",
+            "text": "EOD update:\n\nWorked on issue #2544. Will make a PR soon.",
+            "user": "U02TB83MU9G",
+            "ts": "1653678320.405709",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TB83MU9G",
+                "ts": "1653678331.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "lLLfg",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD update:\n\nWorked on issue #2544. Will make a PR soon."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "4504993f-ccef-44d7-b3aa-7a3d395d8899",
+            "type": "message",
+            "text": "\u2022 worked on fixing existing pr <https://github.com/coronasafe/care/pull/769|#769> with <@U02TB8XHZD1> \n\u2022 working on <https://github.com/coronasafe/care_fe/issues/2497|#2497>",
+            "user": "U02TPSYRUPK",
+            "ts": "1653677555.558889",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653018855,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/769",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/769|#769 Make the meta field optional in Asset &amp; Bed Tables>",
+                    "title": "<https://github.com/coronasafe/care/pull/769|#769 Make the meta field optional in Asset &amp; Bed Tables>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653309457,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2497",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2497|#2497 Error Messages for Camera Feed>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2497|#2497 Error Messages for Camera Feed>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "R6n",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "worked on fixing existing pr "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/769",
+                                            "text": "#769",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TB8XHZD1"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "working on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2497",
+                                            "text": "#2497",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "7d6e4a2f-437b-44eb-ae3b-8d0f143181e3",
+            "type": "message",
+            "text": "Submitted a PR <https://github.com/coronasafe/care_fe/pull/2555|#2555>",
+            "user": "U02U1035G0G",
+            "ts": "1653666269.459759",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "mBdpQ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2555",
+                                    "text": "#2555",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "260e8bdb-b6ce-404f-b894-4c9ba2840348",
+            "type": "message",
+            "text": "Working on <https://github.com/coronasafe/care_fe/pull/2552|care_fe/#2552>\nRaised an issue <https://github.com/coronasafe/care/issues/792|care/#792>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1653662157.258329",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653655795,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2552",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2552|#2552 Creates a new Field in CreateAsset Form to update the asset_class for the asset>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2552|#2552 Creates a new Field in CreateAsset Form to update the asset_class for the asset>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653655298,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/issues/792",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/issues/792|#792 Getting a response of 500 when attempting to create asset with asset_class specified.>",
+                    "title": "<https://github.com/coronasafe/care/issues/792|#792 Getting a response of 500 when attempting to create asset with asset_class specified.>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ELoPb",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2552",
+                                    "text": "care_fe/#2552"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nRaised an issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/issues/792",
+                                    "text": "care/#792"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02U1035G0G"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "59afff9b-b9d6-4e3d-a2fb-763bd2a4ec39",
+            "type": "message",
+            "text": "\u2022 Submitted PR: <https://github.com/coronasafe/care/pull/793|#793> \n\u2022 Also worked on suggested changes on previous PR",
+            "user": "U02U102TL0G",
+            "ts": "1653660634.687409",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653660029,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/793",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/793|#793 change model field type of asset_class>",
+                    "text": "Update field type of `asset_class` from integer field to char field.  \nfixes: <https://github.com/coronasafe/care/issues/792|#792>",
+                    "title": "<https://github.com/coronasafe/care/pull/793|#793 change model field type of asset_class>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ciz",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Submitted PR: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/793",
+                                            "text": "#793",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Also worked on suggested changes on previous PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02SWK752TZ",
+                        "U02T4HD63P0",
+                        "U02U1035G0G"
+                    ],
+                    "count": 3
+                }
+            ]
+        },
+        {
+            "client_msg_id": "a3d78905-a57f-45dd-863b-2caf0ba112ba",
+            "type": "message",
+            "text": "Worked on an issue. Will create a PR in sometime.",
+            "user": "U02TB823H8A",
+            "ts": "1653660481.480329",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "aXF4e",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on an issue. Will create a PR in sometime."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02SWK752TZ",
+                        "U02T4HD63P0",
+                        "U02U1035G0G"
+                    ],
+                    "count": 3
+                }
+            ]
+        },
+        {
+            "client_msg_id": "0019e63a-c9bb-4334-9c7b-005e606815d6",
+            "type": "message",
+            "text": "Took up issue #<https://github.com/coronasafe/care_fe/issues/2553|2553>",
+            "user": "U02TPSYB1MF",
+            "ts": "1653660445.330319",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653655905,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2553",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2553|#2553 Bug in Consultation Form Page required fields can be updated being empty.>",
+                    "text": "*Bugs*\n*Bug in Consultation Form Page required fields can be updated being empty.*\nvideo10.mp4",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2553|#2553 Bug in Consultation Form Page required fields can be updated being empty.>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Pranshu1902|@Pranshu1902>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "mQ/",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Took up issue #"
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2553",
+                                    "text": "2553"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02T4HD63P0",
+                        "U02U1035G0G"
+                    ],
+                    "count": 2
+                }
+            ]
+        },
+        {
+            "client_msg_id": "afde7246-889b-4e82-a95a-1b9dc089c8d2",
+            "type": "message",
+            "text": "Update:\nCreated PR: <https://github.com/coronasafe/care/pull/791>",
+            "user": "U02TDGQ0TFE",
+            "ts": "1653654783.651069",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653631906,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/791",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/791|#791 Added Facility Cover image API endpoints>",
+                    "text": "fixes <https://github.com/coronasafe/care/issues/737|#737>",
+                    "title": "<https://github.com/coronasafe/care/pull/791|#791 Added Facility Cover image API endpoints>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Z0dG",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Update:\nCreated PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/791"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "U02SWK752TZ",
+                        "U02T4HD63P0"
+                    ],
+                    "count": 3
+                }
+            ]
+        },
+        {
+            "client_msg_id": "ba3528c7-5019-44ad-a0fa-6b05806f2572",
+            "type": "message",
+            "text": "Update: Worked on improvement of the inventory summary page <https://github.com/coronasafe/care_fe/issues/2549>",
+            "user": "U02SWK752TZ",
+            "ts": "1653654634.200449",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/61267953/170647822-62ad4251-9f7b-4379-9ebc-abc6d73f99d4.png",
+                    "image_width": 1112,
+                    "image_height": 642,
+                    "image_bytes": 28603,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653634862,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2549",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1112x642px image",
+                    "text": "A physical number of the minimum items would be great for UX\n\n*Current*\n\n<https://user-images.githubusercontent.com/61267953/170647822-62ad4251-9f7b-4379-9ebc-abc6d73f99d4.png|image>\n\n<https://user-images.githubusercontent.com/61267953/170648019-9ca0cbe8-0daf-4342-b01f-963e358bfa3f.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2549|#2549 add: show minimum item in inventory>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/kunatastic|@kunatastic>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "yEAUm",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Update: Worked on improvement of the inventory summary page "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2549"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "U02T4HD63P0"
+                    ],
+                    "count": 2
+                }
+            ]
+        },
+        {
             "type": "message",
             "subtype": "channel_join",
             "ts": "1653647704.656729",
@@ -7674,9 +8253,10 @@
                     "name": "eyes",
                     "users": [
                         "U02TDGQQPMJ",
-                        "UV5PPBE2D"
+                        "UV5PPBE2D",
+                        "U02SWK752TZ"
                     ],
-                    "count": 2
+                    "count": 3
                 }
             ]
         }
@@ -7711,9 +8291,10 @@
                     "name": "eyes",
                     "users": [
                         "U02TDGQQPMJ",
-                        "UV5PPBE2D"
+                        "UV5PPBE2D",
+                        "U02SWK752TZ"
                     ],
-                    "count": 2
+                    "count": 3
                 }
             ]
         },
@@ -8199,71 +8780,6 @@
                         "UV5PPBE2D"
                     ],
                     "count": 4
-                }
-            ]
-        },
-        {
-            "client_msg_id": "5a506473-ccd7-40ce-aaf9-807d4fba06ae",
-            "type": "message",
-            "text": "Made a PR today, <https://github.com/coronasafe/care_fe/pull/2525|#2525>",
-            "user": "U02T4HFA07Q",
-            "ts": "1653515948.942639",
-            "team": "TC99SV7B6",
-            "attachments": [
-                {
-                    "image_url": "https://user-images.githubusercontent.com/3626859/170373498-6fdb06f3-27a3-4919-ba31-691d732e88d0.png",
-                    "image_width": 1643,
-                    "image_height": 398,
-                    "image_bytes": 23306,
-                    "id": 1,
-                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
-                    "ts": 1653515818,
-                    "color": "36a64f",
-                    "bot_id": "B01V56NBBNC",
-                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2525",
-                    "is_app_unfurl": true,
-                    "app_id": "A01BP7R4KNY",
-                    "fallback": "1643x398px image",
-                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/2507|#2507>\n\nPatient Notes:  \n<https://user-images.githubusercontent.com/3626859/170373498-6fdb06f3-27a3-4919-ba31-691d732e88d0.png|image>\n\nResource details page:  \n<https://user-images.githubusercontent.com/3626859/170373567-b8fc3697-5996-478e-947b-911f501e38d3.png|image>",
-                    "title": "<https://github.com/coronasafe/care_fe/pull/2525|#2525 Disallow empty notes and comments>",
-                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
-                    "mrkdwn_in": [
-                        "text"
-                    ]
-                }
-            ],
-            "blocks": [
-                {
-                    "type": "rich_text",
-                    "block_id": "R2lx",
-                    "elements": [
-                        {
-                            "type": "rich_text_section",
-                            "elements": [
-                                {
-                                    "type": "text",
-                                    "text": "Made a PR today, "
-                                },
-                                {
-                                    "type": "link",
-                                    "url": "https://github.com/coronasafe/care_fe/pull/2525",
-                                    "text": "#2525",
-                                    "unsafe": true
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "reactions": [
-                {
-                    "name": "white_check_mark",
-                    "users": [
-                        "U02TDGQQPMJ",
-                        "U02TPSYRUPK",
-                        "UV5PPBE2D"
-                    ],
-                    "count": 3
                 }
             ]
         }
@@ -8782,5 +9298,6 @@
                 }
             ]
         }
-    ]
+    ],
+    "2022-05-28 00:00:00": []
 }

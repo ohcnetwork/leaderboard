@@ -463,5 +463,89 @@
                 }
             ]
         }
+    ],
+    "2022-05-27 00:00:00": [
+        {
+            "client_msg_id": "59afff9b-b9d6-4e3d-a2fb-763bd2a4ec39",
+            "type": "message",
+            "text": "\u2022 Submitted PR: <https://github.com/coronasafe/care/pull/793|#793> \n\u2022 Also worked on suggested changes on previous PR",
+            "user": "U02U102TL0G",
+            "ts": "1653660634.687409",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653660029,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/793",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/793|#793 change model field type of asset_class>",
+                    "text": "Update field type of `asset_class` from integer field to char field.  \nfixes: <https://github.com/coronasafe/care/issues/792|#792>",
+                    "title": "<https://github.com/coronasafe/care/pull/793|#793 change model field type of asset_class>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ciz",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Submitted PR: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/793",
+                                            "text": "#793",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Also worked on suggested changes on previous PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02SWK752TZ",
+                        "U02T4HD63P0",
+                        "U02U1035G0G"
+                    ],
+                    "count": 3
+                }
+            ]
+        }
     ]
 }

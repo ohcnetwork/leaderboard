@@ -22,7 +22,7 @@ let renderText = (activity) => {
             </p>
           </div>
           <div className="mt-2 text-sm text-gray-100">
-            <p>{activity["text"]}</p>
+            <p className="break-words">{activity["text"]}</p>
           </div>
         </div>
       );

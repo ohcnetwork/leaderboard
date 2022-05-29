@@ -53,7 +53,7 @@ export default function Contributor({ contributor, slug }) {
           <div className="col-span-2">
             <div>
               <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
-              <div className="p-2 py-8 bg-white text-center rounded-lg px-5 sm:px-10 xl:text-left mt-4">
+              <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
                 {/* <p className="text-xl text-gray-300">
                   ...to add activity visualization...
                 </p> */}

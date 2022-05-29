@@ -1291,5 +1291,170 @@
                 }
             ]
         }
+    ],
+    "2022-05-28 00:00:00": [
+        {
+            "client_msg_id": "bf011abf-2490-413e-9ef0-3368b9a1d72b",
+            "type": "message",
+            "text": "*Issues raised:*\n\u2022 <https://github.com/coronasafe/care_fe/issues/2564|#2564> (`createMui` deprecated, but had to close it, since it was already resolved as part of another PR)\n\u2022 <https://github.com/coronasafe/care_fe/issues/2560|#2560> Text field style issue where double border is present.\n*PRs worked on:*\n\u2022 <http://Resolves%20deprecated%20`createMuiTheme`%20https://github.com/coronasafe/care_fe/pull/2565|#2565> (closed before merge for the same reason of 2564).\n*Issues worked on:*\n\u2022 <https://github.com/coronasafe/care_fe/issues/2432|#2432> (hints for external and internal asset.. yet to make a PR)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1653760110.098569",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1653760185.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Wmgs+",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues raised:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2564",
+                                            "text": "#2564",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " ("
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "createMui",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " deprecated, but had to close it, since it was already resolved as part of another PR)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2560",
+                                            "text": "#2560",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Text field style issue where double border is present."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs worked on:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "http://Resolves%20deprecated%20`createMuiTheme`%20https://github.com/coronasafe/care_fe/pull/2565",
+                                            "text": "#2565",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (closed before merge for the same reason of 2564)."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues worked on:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2432",
+                                            "text": "#2432",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (hints for external and internal asset.. yet to make a PR)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

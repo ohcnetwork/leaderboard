@@ -265,5 +265,105 @@
                 }
             ]
         }
+    ],
+    "2022-05-28 00:00:00": [
+        {
+            "client_msg_id": "0d9fde18-a507-46b6-b993-b2a4bc64cb93",
+            "type": "message",
+            "text": "*Updates*\n\u2022 Fixed <https://github.com/coronasafe/care_fe/pull/2506|PR#2506> (bed management breadcrumb link fixed)\n\u2022 Tried Yarn",
+            "user": "U02U103J5LG",
+            "ts": "1653747462.031229",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653424542,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2506",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2506|#2506 bed management breadcrumb link fixed>",
+                    "text": "*Issue Fixed*\n\nfixes <https://github.com/coronasafe/care_fe/issues/2504|#2504>\n\n*Updates*\n\n\u2022 Made the location id link unclickable\n\u2022 fixed apply styling to breadcrumbs\n\n*Demo*\nBed.Management._.Corona.Care.-.25.May.2022.mp4",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2506|#2506 bed management breadcrumb link fixed>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "work-in-progress",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Jm/P",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Updates",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2506",
+                                            "text": "PR#2506"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (bed management breadcrumb link fixed)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tried Yarn"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

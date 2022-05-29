@@ -452,5 +452,81 @@
                 }
             ]
         }
+    ],
+    "2022-05-28 00:00:00": [
+        {
+            "client_msg_id": "4176d615-d308-4e45-9ddc-67c3a156ad03",
+            "type": "message",
+            "text": "EoD Update:\n\u2022 Worked on existing PR: <https://github.com/coronasafe/care/pull/791>\n\u2022 revised django testing and read about pytest",
+            "user": "U02TDGQ0TFE",
+            "ts": "1653746782.302619",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653631906,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/791",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/791|#791 Added Facility Cover image API endpoints>",
+                    "text": "fixes <https://github.com/coronasafe/care/issues/737|#737>",
+                    "title": "<https://github.com/coronasafe/care/pull/791|#791 Added Facility Cover image API endpoints>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "omN",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EoD Update:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on existing PR: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/791"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "revised django testing and read about pytest"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

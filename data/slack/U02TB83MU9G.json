@@ -257,6 +257,15 @@
                         }
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
             ]
         },
         {
@@ -292,6 +301,109 @@
                         "U02SWK752TZ"
                     ],
                     "count": 3
+                }
+            ]
+        }
+    ],
+    "2022-05-28 00:00:00": [
+        {
+            "client_msg_id": "6893ef84-7b2c-4e20-be2c-ebd6ba904044",
+            "type": "message",
+            "text": "*EOD Update:*\n\u2022 Resolved PR conflict in <https://github.com/coronasafe/care_fe/pull/2543|PR #2543>, waiting for it to merge.\n\u2022 Working on another issue",
+            "user": "U02TB83MU9G",
+            "ts": "1653760341.556709",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TB83MU9G",
+                "ts": "1653760426.000000"
+            },
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/76481787/170588335-04d5840d-6536-49ae-afca-6b419bb796dd.png",
+                    "image_width": 1420,
+                    "image_height": 809,
+                    "image_bytes": 105156,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653603313,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2543",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1420x809px image",
+                    "text": "This PR addresses Issues <https://github.com/coronasafe/care_fe/issues/2131|#2131> and <https://github.com/coronasafe/care_fe/issues/2171|#2171>.\n\nExcept the Backend API, other frontend components are ready to be used.\n\n*Screenshots:*\n\n<https://user-images.githubusercontent.com/76481787/170588335-04d5840d-6536-49ae-afca-6b419bb796dd.png|Before image selection>\n\n<https://user-images.githubusercontent.com/76481787/170588530-d17467d6-8744-4ee6-999f-881bcdc18c57.png|After image selection>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2543|#2543 Added Facility Image Form (API URL needed)>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing, need Review, waiting for back end",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "jV2",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Update:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved PR conflict in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2543",
+                                            "text": "PR #2543"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", waiting for it to merge."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on another issue"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
                 }
             ]
         }

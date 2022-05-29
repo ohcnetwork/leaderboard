@@ -11,4 +11,5 @@ intern: true
 operations: false
 ---
 
-Still waiting for this
+“ I have no special talent.I am only passionately curious." -Albert Einstein
+Engineering student knowledgeable in inspecting plans, composing reports, exploring arrangements and carrying out organization systems. Ability to learn, adhere to guidelines and work helpfully inside group conditions.

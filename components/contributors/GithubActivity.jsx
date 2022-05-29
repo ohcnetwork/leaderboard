@@ -47,6 +47,7 @@ let renderText = (activity) => {
       );
     case "issue_opened":
     case "issue_assigned":
+    case "issue_closed":
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-gray-100">

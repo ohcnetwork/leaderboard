@@ -34,14 +34,14 @@ export default function Contributor({ contributor, slug }) {
       <Header/>
       <section className="max-w-6xl mx-auto bg-gray-900 border-t border-gray-600 p-4">
         <div className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
-          <div className=" md:sticky md:top-0 md:h-16 shadow">
+          <div className="md:sticky md:top-0 shadow">
             <InfoCard contributor={contributor} />
           </div>
 
           <div className="col-span-2">
             <div>
               <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
-              <div className="p-2 py-8 bg-white text-center rounded-lg xl:px-10 xl:text-left mt-4">
+              <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
                 {/* <p className="text-xl text-gray-300">
                   ...to add activity visualization...
                 </p> */}
@@ -101,7 +101,10 @@ export default function Contributor({ contributor, slug }) {
                     {contributor["activityData"]["open_prs"].map(
                       (pr, index) => (
                         <a href={pr.link} key={index}>
-                          <p className="text-sm text-gray-300 hover:text-primary-300" key={index}>
+                          <p
+                            className="text-sm text-gray-300 hover:text-primary-300"
+                            key={index}
+                          >
                             <span className="text-primary-500 text-sm pr-2">
                               ➞
                             </span>

@@ -3,6 +3,14 @@
 import Link from "next/link";
 
 let renderText = (activity) => {
+  const activity_time = (
+    new String(activity.time).length === 10
+      ? new Date(activity.time * 1000)
+      : new Date(activity.time)
+  ).toLocaleString(undefined, {
+    dateStyle: "long",
+    timeStyle: "medium",
+  });
   switch (activity["type"]) {
     case "comment_created":
     case "eod_update":
@@ -16,10 +24,7 @@ let renderText = (activity) => {
                   : "Commented"}
               </div>
             </div>
-            <p className="mt-0.5 text-sm text-gray-200">
-              {" "}
-              on {activity["time"]}
-            </p>
+            <p className="mt-0.5 text-sm text-gray-200"> on {activity_time}</p>
           </div>
           <div className="mt-2 text-sm text-gray-100">
             <p className="break-words">{activity["text"]}</p>
@@ -41,7 +46,7 @@ let renderText = (activity) => {
                 {activity["text"]}
               </span>
             </a>
-            <span className="whitespace-nowrap ml-2">{activity["time"]}</span>
+            <span className="whitespace-nowrap ml-2">{activity_time}</span>
           </div>
         </div>
       );
@@ -59,7 +64,7 @@ let renderText = (activity) => {
                 {activity["text"]}
               </span>
             </a>
-            <span className="whitespace-nowrap ml-2">{activity["time"]}</span>
+            <span className="whitespace-nowrap ml-2">{activity_time}</span>
           </div>
         </div>
       );
@@ -74,7 +79,7 @@ let renderText = (activity) => {
             <div className="font-medium text-gray-200 ml-2">
               {activity["text"]}
             </div>
-            <span className="whitespace-nowrap ml-2">{activity["time"]}</span>
+            <span className="whitespace-nowrap ml-2">{activity_time}</span>
           </div>
         </div>
       );

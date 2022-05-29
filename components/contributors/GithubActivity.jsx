@@ -3,9 +3,13 @@
 import Link from "next/link";
 
 let renderText = (activity) => {
-  const activity_time = (new Date(activity["time"] * 1000)).toLocaleString(undefined, {
+  const activity_time = (
+    new String(activity.time).length === 10
+      ? new Date(activity.time * 1000)
+      : new Date(activity.time)
+  ).toLocaleString(undefined, {
     dateStyle: "long",
-    timeStyle: "medium"
+    timeStyle: "medium",
   });
   switch (activity["type"]) {
     case "comment_created":
@@ -20,10 +24,7 @@ let renderText = (activity) => {
                   : "Commented"}
               </div>
             </div>
-            <p className="mt-0.5 text-sm text-gray-200">
-              {" "}
-              on {activity_time}
-            </p>
+            <p className="mt-0.5 text-sm text-gray-200"> on {activity_time}</p>
           </div>
           <div className="mt-2 text-sm text-gray-100">
             <p>{activity["text"]}</p>

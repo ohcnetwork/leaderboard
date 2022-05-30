@@ -1,9 +1,9 @@
 name: Main
 
 on:
-  schedule:
-    - cron: "0 1 * * *" # 6:30am IST
-
+  push:
+    branches:
+      - main
 jobs:
   fetch:
     runs-on: ubuntu-latest

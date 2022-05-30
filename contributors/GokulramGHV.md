@@ -13,7 +13,8 @@ operations: false
 
 ### Hi there 👋
 
-Hi, I'm a 19 year old engineering undergrad pursuing B.Tech Information Technology at SSNCE. I'm a tech enthusiast 💻 and I'm also an aspiring web developer and software engineer 👨‍💻.
+Hi, I'm a 19 year old engineering undergrad pursuing B.Tech Information Technology at SSNCE.
+I'm an aspiring web developer and software engineer 👨‍💻.
 
 <br/>
 

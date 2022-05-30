@@ -124,6 +124,13 @@ export default function LeaderBoardCard({ contributor, position }) {
                     <span className="ml-2 text-sm leading-5 text-gray-500">
                       Comments
                     </span>
+                    <span className="ml-2 text-sm leading-5 text-gray-100">
+                      {contributor.weekSummary.points}
+                    </span>
+
+                    <span className="ml-2 text-sm leading-5 text-gray-500">
+                      Points
+                    </span>
                   </div>
                 </dd>
               </dl>

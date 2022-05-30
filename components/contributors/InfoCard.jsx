@@ -2,7 +2,7 @@
 import Link from "next/link";
 export default function InfoCard({ contributor, minimal = false }) {
   return (
-    <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+    <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left" role="listitem">
       <div className="space-y-6 xl:space-y-10">
         <img
           className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"

@@ -510,5 +510,132 @@
                 }
             ]
         }
+    ],
+    "2022-05-29 00:00:00": [
+        {
+            "client_msg_id": "41edcd55-119a-493b-b774-5531388c8cd3",
+            "type": "message",
+            "text": "Dual booted manjaro this weekend, after successfully messing my drive partition twice.\n\n*Issues:*\n1. Inventory management doesn't update minimum count value <https://github.com/coronasafe/care/issues/802>\n2. Additional white space on smaller devices on asset page <https://github.com/coronasafe/care_fe/issues/2577>\n*PRs:*\n1. fix: white space on smaller device <https://github.com/coronasafe/care_fe/pull/2579>",
+            "user": "U02SWK752TZ",
+            "ts": "1653846649.377379",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RFT",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Dual booted manjaro this weekend, after successfully messing my drive partition twice.\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "Issues:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Inventory management doesn't update minimum count value "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/issues/802"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Additional white space on smaller devices on asset page "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2577"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "ordered",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fix: white space on smaller device "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2579"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "ordered",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "U02T4HD63P0",
+                        "U02TB8XHZD1"
+                    ],
+                    "count": 3
+                },
+                {
+                    "name": "sweat_smile",
+                    "users": [
+                        "UC99MFPU1"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

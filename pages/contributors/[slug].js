@@ -57,7 +57,7 @@ export default function Contributor({ contributor, slug }) {
             <div>
               <h3 className="font-bold text-gray-100 my-4">Bio</h3>
               <div
-                className="py-10 px-6 bg-gray-800 rounded-lg xl:px-10 xl:text-left text-white leading-relaxed"
+                className="prose prose-invert py-10 px-6 bg-gray-800 rounded-lg xl:px-10 xl:text-left leading-relaxed"
                 dangerouslySetInnerHTML={{
                   __html: contributor.content,
                 }}

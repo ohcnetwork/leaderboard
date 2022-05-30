@@ -28,13 +28,13 @@ export default function InfoCard({ contributor, minimal = false }) {
             }
           >
             {contributor.github && (
-              <li>
+              <li role="listitem">
                 <a
                   href={`https://github.com/${contributor.github}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-400 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Github</span>
                     <svg
                       viewBox="0 0 24 24"
@@ -53,13 +53,13 @@ export default function InfoCard({ contributor, minimal = false }) {
               </li>
             )}
             {contributor.twitter && (
-              <li>
+              <li role="listitem">
                 <a
                   href={`https://twitter.com/${contributor.twitter}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-400 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Twitter</span>
                     <svg
                       className="w-5 h-5 mr-2"
@@ -75,13 +75,13 @@ export default function InfoCard({ contributor, minimal = false }) {
               </li>
             )}
             {contributor.linkedin && (
-              <li>
+              <li role="listitem">
                 <a
                   href={`https://linkedin.com/in/${contributor.linkedin}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-400 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">LinkedIn</span>
                     <svg
                       className="w-5 h-5 mr-2"

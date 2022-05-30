@@ -2,7 +2,7 @@
 import Link from "next/link";
 export default function InfoCard({ contributor, minimal = false, category }) {
   return (
-    <div className="py-6 px-2 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+    <div className="py-6 px-2 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left" role="listitem">
       <span className="text-white text-sm font-sans">
         Most number of {category.title}
       </span>

@@ -113,7 +113,9 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const contributors = getContributors();
+  const contributors = getContributors().sort(
+    (a, b) => b.monthSummary.points - a.monthSummary.points
+  );
   const categoryLeaderboard = categories.map((category) => ({
     ...category,
     contributor: contributors

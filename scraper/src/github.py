@@ -23,7 +23,8 @@ user_blacklist = {
     "dependabot",
     "dependabot[bot]",
     "snyk-bot",
-    "vercel[bot]"
+    "vercel[bot]",
+    "github-actions[bot]",
 }
 
 

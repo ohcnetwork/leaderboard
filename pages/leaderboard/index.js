@@ -3,6 +3,7 @@ import TopContributor from "../../components/contributors/TopContributor";
 import Header from "../../components/Header";
 import PageHead from "../../components/PageHead";
 import { getContributors } from "../../lib/api";
+import categories from "../../lib/leaderboardCategories"
 import Image from "next/image";
 
 // Calculate week number
@@ -13,16 +14,6 @@ const getWeekNumber = (date) => {
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
   return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
 };
-
-const categories = [
-  { slug: "eod_update", title: "EOD Updates" },
-  { slug: "pr_opened", title: "Pull Requests Opened" },
-  { slug: "pr_merged", title: "Pull Requests Merged" },
-  { slug: "pr_reviewed", title: "Pull Requests Reviewed" },
-  { slug: "issue_assigned", title: "Issues Assigned" },
-  { slug: "issue_opened", title: "Issues Opened" },
-  { slug: "comment_created", title: "Comments Created" },
-];
 
 export default function Home(props) {
   return (

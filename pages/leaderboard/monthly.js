@@ -8,18 +8,13 @@ import Image from "next/image";
 
 // Calculate month number
 const getMonthRepresentation = (date) => {
-  const d = new Date(date);
-  const firstDayPrevMonth = new Date(
-    date.getFullYear(),
-    date.getMonth() - 1,
-    1
-  );
-  const lastDayPrevMonth = new Date(date.getFullYear(), date.getMonth(), 0);
-  return firstDayPrevMonth
-    .toLocaleDateString(undefined, {
-      month: "long",
-      year: "2-digit",
-    })
+  let d = new Date(date);
+  // Use previous month if before 14th of current month.
+  if (d.getDate() < 14) {
+    d = new Date(date.getFullYear(), date.getMonth() - 1, 1);
+  }
+  return d
+    .toLocaleDateString(undefined, { month: "long", year: "2-digit" })
     .replace(" ", " ’");
 };
 

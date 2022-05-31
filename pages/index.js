@@ -136,7 +136,9 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const contributors = getContributors();
+  const contributors = getContributors().sort((a, b) => {
+    return b.weekSummary[category.slug] - a.weekSummary[category.slug];
+  });
   return {
     props: {
       contributors: contributors,

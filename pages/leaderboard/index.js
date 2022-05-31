@@ -43,6 +43,7 @@ export default function Home(props) {
                                 position={index}
                                 key={contributor.github}
                                 contributor={contributor}
+                                summary={contributor.weekSummary}
                               />
                             </li>
                           );

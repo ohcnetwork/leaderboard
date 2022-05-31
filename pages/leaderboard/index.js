@@ -3,7 +3,7 @@ import TopContributor from "../../components/contributors/TopContributor";
 import Header from "../../components/Header";
 import PageHead from "../../components/PageHead";
 import { getContributors } from "../../lib/api";
-import categories from "../../lib/leaderboardCategories"
+import categories from "../../lib/leaderboardCategories";
 import Image from "next/image";
 
 // Calculate week number

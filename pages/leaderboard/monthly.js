@@ -6,7 +6,6 @@ import { getContributors } from "../../lib/api";
 import categories from "../../lib/leaderboardCategories";
 import Image from "next/image";
 
-// Calculate month number
 const getMonthRepresentation = (date) => {
   let d = new Date(date);
   // Use previous month if before 14th of current month.

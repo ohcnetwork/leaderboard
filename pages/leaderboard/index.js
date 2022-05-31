@@ -2,7 +2,7 @@ import LeaderboardCard from "../../components/contributors/LeaderboardCard";
 import TopContributor from "../../components/contributors/TopContributor";
 import Header from "../../components/Header";
 import PageHead from "../../components/PageHead";
-import { getContributors } from "../../lib/api";
+import { getContributorsSortedByWeekSummary } from "../../lib/api";
 import { categories, getMonthRepresentation } from "../../lib/leaderboardUtils";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,8 +19,8 @@ const getWeekNumber = (date) => {
 export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead title="Leaderboard"/>
-      <Header/>
+      <PageHead title="Leaderboard" />
+      <Header />
       <section className="bg-gray-900 border-t border-gray-600 relative">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
@@ -101,7 +101,13 @@ export default function Home(props) {
             <div className="flex items-center justify-center w-full">
               Powered by{" "}
               <span className={"w-20 ml-4"}>
-                <Image src="/logo.webp" alt="Coronasafe" width="80" height="21.88" layout="responsive" />
+                <Image
+                  src="/logo.webp"
+                  alt="Coronasafe"
+                  width="80"
+                  height="21.88"
+                  layout="responsive"
+                />
               </span>
             </div>
           </div>
@@ -112,9 +118,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const contributors = getContributors().sort(
-    (a, b) => b.weekSummary.points - a.highlights.points
-  );
+  const contributors = getContributorsSortedByWeekSummary();
   const categoryLeaderboard = categories.map((category) => ({
     ...category,
     contributor: contributors

@@ -2,7 +2,7 @@ import LeaderboardCard from "../../components/contributors/LeaderboardCard";
 import TopContributor from "../../components/contributors/TopContributor";
 import Header from "../../components/Header";
 import PageHead from "../../components/PageHead";
-import { getContributors } from "../../lib/api";
+import { getContributorsSortedByMonthSummary } from "../../lib/api";
 import { categories, getMonthRepresentation } from "../../lib/leaderboardUtils";
 import Image from "next/image";
 
@@ -102,9 +102,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const contributors = getContributors().sort(
-    (a, b) => b.monthSummary.points - a.monthSummary.points
-  );
+  const contributors = getContributorsSortedByMonthSummary();
   const categoryLeaderboard = categories.map((category) => ({
     ...category,
     contributor: contributors

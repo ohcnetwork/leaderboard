@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import InfoCard from "../components/contributors/InfoCard";
 import Header from "../components/Header";
 import PageHead from "../components/PageHead";
-import { getContributors } from "../lib/api";
+import { getContributorsSortedByWeekSummary } from "../lib/api";
 
 export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead/>
-      <Header/>
+      <PageHead />
+      <Header />
       <section className="bg-gray-900 border-t border-gray-600 relative">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
@@ -136,9 +136,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const contributors = getContributors().sort((a, b) => {
-    return b.weekSummary[category.slug] - a.weekSummary[category.slug];
-  });
+  const contributors = getContributorsSortedByWeekSummary();
   return {
     props: {
       contributors: contributors,

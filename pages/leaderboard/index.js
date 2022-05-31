@@ -33,6 +33,12 @@ export default function Home(props) {
                         Leaderboard of the week | Week{" "}
                         {getWeekNumber(new Date())}
                       </span>
+                      <div className="flex-1"></div>
+                      <Link href={`/leaderboard/monthly`}>
+                        <span className="cursor-pointer text-primary-500 hover:bg-primary-500 hover:text-gray-900 mr-1">
+                          See for {getMonthRepresentation(new Date())}
+                        </span>
+                      </Link>
                     </div>
                     <ul className="space-y-6 lg:space-y-8 p-4 lg:p-2 ">
                       {props.contributors

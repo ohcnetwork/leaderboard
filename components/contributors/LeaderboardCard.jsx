@@ -45,14 +45,14 @@ export default function LeaderBoardCard({ contributor, position }) {
               <p className="text-sm font-medium text-green-500 truncate">
                 {contributor.name}
               </p>
-              <p className="mt-2 flex items-center text-sm text-gray-500">
+              <p className="mt-2 flex items-center text-sm text-gray-300">
                 <span className="truncate">{contributor.title}</span>
               </p>
             </div>
             {/* Show the following: contributor.hightlights.pr_opened, eod_update, pr_reviewed */}
             <div className="hidden md:block">
               <dl>
-                <dt className="text-sm leading-5 font-medium text-gray-500 truncate">
+                <dt className="text-sm leading-5 font-medium text-gray-300 truncate">
                   PRs
                 </dt>
                 <dd className="flex">
@@ -72,7 +72,7 @@ export default function LeaderBoardCard({ contributor, position }) {
                       {contributor.weekSummary.pr_reviewed}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-500">
+                    <span className="ml-2 text-sm leading-5 text-gray-300">
                       reviewed
                     </span>
 
@@ -80,21 +80,21 @@ export default function LeaderBoardCard({ contributor, position }) {
                       {contributor.weekSummary.pr_opened}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-500">
+                    <span className="ml-2 text-sm leading-5 text-gray-300">
                       opened
                     </span>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
                       {contributor.weekSummary.pr_merged}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-500">
+                    <span className="ml-2 text-sm leading-5 text-gray-300">
                       merged
                     </span>
                   </div>
                 </dd>
               </dl>
               <dl>
-                <dt className="text-sm leading-5 font-medium text-gray-500 truncate">
+                <dt className="text-sm leading-5 font-medium text-gray-300 truncate">
                   Activity
                 </dt>
                 <dd className="flex">
@@ -114,14 +114,14 @@ export default function LeaderBoardCard({ contributor, position }) {
                       {contributor.weekSummary.eod_update}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-500">
+                    <span className="ml-2 text-sm leading-5 text-gray-300">
                       EOD updates
                     </span>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
                       {contributor.weekSummary.comment_created}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-500">
+                    <span className="ml-2 text-sm leading-5 text-gray-300">
                       Comments
                     </span>
                   </div>

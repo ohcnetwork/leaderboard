@@ -4,15 +4,9 @@ import Header from "../components/Header";
 import PageHead from "../components/PageHead";
 import { getContributors } from "../lib/api";
 import Image from "next/image";
+import { getWeekNumber } from "../lib/utils";
 
-// Calculate week number
-const getWeekNumber = (date) => {
-  const d = new Date(date);
-  const dayNum = d.getUTCDay() || 7;
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
-};
+
 
 const categories = [
   { slug: "eod_update", title: "EOD Updates" },
@@ -27,8 +21,8 @@ const categories = [
 export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead title="Leaderboard"/>
-      <Header/>
+      <PageHead title="Leaderboard" />
+      <Header />
       <section className="bg-gray-900 border-t border-gray-600 relative">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">

@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Link from "next/link";
-import { useEffect } from "react";
 import LeaderboardCard from "../../components/contributors/LeaderboardCard";
 import TopContributor from "../../components/contributors/TopContributor";
 import Header from "../../components/Header";
@@ -8,6 +5,7 @@ import PageHead from "../../components/PageHead";
 import { getContributors } from "../../lib/api";
 import { getWeekNumber } from "../../lib/utils"
 import { categories } from "./index";
+import Image from "next/image";
 
 export default function Home(props) {
     return (
@@ -87,7 +85,7 @@ export default function Home(props) {
                         <div className="flex items-center justify-center w-full">
                             Powered by{" "}
                             <span className={"w-20 ml-4"}>
-                                <img src="../logo.webp" alt="Coronasafe" />
+                                <Image src="/logo.webp" alt="Coronasafe" width="80" height="21.88" layout="responsive" />
                             </span>
                         </div>
                     </div>

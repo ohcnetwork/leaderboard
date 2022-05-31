@@ -1,8 +1,8 @@
-import LeaderboardCard from "../components/contributors/LeaderboardCard";
-import TopContributor from "../components/contributors/TopContributor";
-import Header from "../components/Header";
-import PageHead from "../components/PageHead";
-import { getContributors } from "../lib/api";
+import LeaderboardCard from "../../components/contributors/LeaderboardCard";
+import TopContributor from "../../components/contributors/TopContributor";
+import Header from "../../components/Header";
+import PageHead from "../../components/PageHead";
+import { getContributors } from "../../lib/api";
 import Image from "next/image";
 import { getWeekNumber } from "../../lib/utils"
 

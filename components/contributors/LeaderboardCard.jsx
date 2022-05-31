@@ -28,7 +28,7 @@ export default function LeaderBoardCard({ contributor, position }) {
       href={"/contributors/" + contributor.github}
       className="block hover:bg-gray-50"
     >
-      <div className="flex items-center px-4 py-4 sm:px-6 cursor-pointer">
+      <div className="flex items-center px-4 py-4 sm:px-6 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:-translate-x-1 hover:scale-105 duration-200">
         <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr ${badgeColors} border-4 mr-4`}>
           {position+1}
         </div>

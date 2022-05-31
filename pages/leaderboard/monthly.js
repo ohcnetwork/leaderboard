@@ -3,19 +3,8 @@ import TopContributor from "../../components/contributors/TopContributor";
 import Header from "../../components/Header";
 import PageHead from "../../components/PageHead";
 import { getContributors } from "../../lib/api";
-import categories from "../../lib/leaderboardCategories";
+import { categories, getMonthRepresentation } from "../../lib/leaderboardUtils";
 import Image from "next/image";
-
-const getMonthRepresentation = (date) => {
-  let d = new Date(date);
-  // Use previous month if before 14th of current month.
-  if (d.getDate() < 14) {
-    d = new Date(date.getFullYear(), date.getMonth() - 1, 1);
-  }
-  return d
-    .toLocaleDateString(undefined, { month: "long", year: "2-digit" })
-    .replace(" ", " ’");
-};
 
 export default function Home(props) {
   return (

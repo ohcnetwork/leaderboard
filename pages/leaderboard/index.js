@@ -3,8 +3,9 @@ import TopContributor from "../../components/contributors/TopContributor";
 import Header from "../../components/Header";
 import PageHead from "../../components/PageHead";
 import { getContributors } from "../../lib/api";
-import categories from "../../lib/leaderboardCategories";
+import { categories, getMonthRepresentation } from "../../lib/leaderboardUtils";
 import Image from "next/image";
+import Link from "next/link";
 
 // Calculate week number
 const getWeekNumber = (date) => {
@@ -27,7 +28,7 @@ export default function Home(props) {
               <div className="lg:col-span-7 2xl:col-span-8">
                 <div className="sticky top-0 pt-24">
                   <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
-                    <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
+                    <div className="flex space-x-2 px-6 py-3 border-b border-primary-500">
                       <span>
                         Leaderboard of the week | Week{" "}
                         {getWeekNumber(new Date())}

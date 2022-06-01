@@ -2,21 +2,20 @@ import Link from "next/link";
 
 /* eslint-disable @next/next/no-img-element */
 export default function LeaderBoardCard({ contributor, position }) {
-
-  const userPosition = position+1;
+  const userPosition = position + 1;
   let badgeColors = "bg-gray-800 border-black/20";
 
   switch (userPosition) {
     case 1:
-      badgeColors = "from-yellow-600 to-yellow-200 border-yellow-700"
-      break;
-    
-    case 2:
-      badgeColors = "from-stone-600 to-stone-300 border-stone-700"
+      badgeColors = "from-yellow-600 to-yellow-200 border-yellow-700";
       break;
 
-    case 3: 
-      badgeColors = "from-[#804A00] to-[#A97142] border-amber-900"
+    case 2:
+      badgeColors = "from-stone-600 to-stone-300 border-stone-700";
+      break;
+
+    case 3:
+      badgeColors = "from-[#804A00] to-[#A97142] border-amber-900";
       break;
 
     default:
@@ -28,29 +27,35 @@ export default function LeaderBoardCard({ contributor, position }) {
       href={"/contributors/" + contributor.github}
       className="block hover:bg-gray-50"
     >
-      <div className="flex items-center px-4 py-4 sm:px-6 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:-translate-x-1 hover:scale-105 duration-200">
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr ${badgeColors} border-4 mr-4`}>
-          {position+1}
+      <div className="flex md:items-center px-4 py-4 sm:px-6 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:-translate-x-1 hover:scale-105 duration-200">
+        <div
+          className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr ${badgeColors} border-4 mr-4 shrink-0`}
+        >
+          {position + 1}
         </div>
-        <div className="min-w-0 flex-1 flex items-center">
-          <div className="flex-shrink-0">
-            <img
-              className="h-12 w-12 rounded-full"
-              src={`https://github.com/${contributor.github}.png`}
-              alt={contributor.github}
-            />
-          </div>
-          <div className="min-w-0 flex-1 px-4 flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-green-500 truncate">
-                {contributor.name}
-              </p>
-              <p className="mt-2 flex items-center text-sm text-gray-300">
-                <span className="truncate">{contributor.title}</span>
-              </p>
+        <div className="flex md:flex-row flex-col md:items-center justify-between w-full space-y-4">
+          <div className="flex w-full">
+            <div className="min-w-0 flex-1 flex items-center">
+              <div className="flex-shrink-0">
+                <img
+                  className="h-12 w-12 rounded-full"
+                  src={`https://github.com/${contributor.github}.png`}
+                  alt={contributor.github}
+                />
+              </div>
+              <div className="ml-4">
+                <div className="text-sm font-medium text-green-500 truncate">
+                  {contributor.name}
+                </div>
+                <p className="mt-2 flex items-center text-sm text-gray-300">
+                  <span className="truncate">{contributor.title}</span>
+                </p>
+              </div>
             </div>
-            {/* Show the following: contributor.hightlights.pr_opened, eod_update, pr_reviewed */}
-            <div className="hidden md:block">
+          </div>
+
+          <div className="px-4 flex items-center justify-between">
+            <div className="md:block">
               <dl>
                 <dt className="text-sm leading-5 font-medium text-gray-300 truncate">
                   PRs

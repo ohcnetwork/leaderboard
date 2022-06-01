@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import PageHead from "../components/PageHead";
 import { getContributors } from "../lib/api";
 import Image from "next/image";
-import { getWeekNumber } from "../lib/utils";
+import { getWeek, getWeekNumber } from "../lib/utils";
 
 
 
@@ -32,8 +32,7 @@ export default function Home(props) {
                   <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                     <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                       <span>
-                        Leaderboard of the week | Week{" "}
-                        {getWeekNumber(new Date())}
+                        Leaderboard of the week | {getWeek(new Date)}
                       </span>
                     </div>
                     <ul className="space-y-6 lg:space-y-8 p-4 lg:p-2 ">

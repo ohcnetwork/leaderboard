@@ -542,6 +542,74 @@
                         }
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-05-31 00:00:00": [
+        {
+            "client_msg_id": "f350941b-bb00-4362-b096-e87f1f3dc9cb",
+            "type": "message",
+            "text": "Working on <https://github.com/coronasafe/care_fe/issues/2557|#2557>",
+            "user": "U02T4HD63P0",
+            "ts": "1654020175.158969",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653699996,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2557",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2557|#2557 Required Fields can be submitted empty in some forms>",
+                    "text": "*Bugs*\n*When updating the shift request form we can submit the form being the \"reason for shift\" field empty which is a required field.*\nvideo1.mp4\n*When updating the facility details form we can submit the form being the \"address\" field empty. The form does not post the details but it should prevent from submitting the form by displaying an error msg that the field is empty.*\nvideo2.mp4\n*When updating the resource request form we can submit the form being the \"Description for Request\" field empty.*\nvideo3.mp4",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2557|#2557 Required Fields can be submitted empty in some forms>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/patelaryan7751|@patelaryan7751>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "iwl",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2557",
+                                    "text": "#2557",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
             ]
         }
     ]

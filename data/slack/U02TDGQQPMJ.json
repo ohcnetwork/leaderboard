@@ -1454,6 +1454,509 @@
                         }
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02U1035G0G"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-05-30 00:00:00": [
+        {
+            "client_msg_id": "f9487ec6-d0b6-4bf8-be1d-512dbefb235b",
+            "type": "message",
+            "text": "Was not productive in care today...\nSpent time learning nextjs by using it for my side project.\nUpdated PR: <https://github.com/coronasafe/care_fe/pull/2552|#2552> and marked as waiting for backend.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1653915221.137619",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653655795,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2552",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2552|#2552 Adds Asset Class field and hints for Asset Type in AssetCreate>",
+                    "text": "Asset Class field added to Create Asset page.  \nWaiting for <https://github.com/coronasafe/care/issues/792|coronasafe/care#792> to be solved.",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2552|#2552 Adds Asset Class field and hints for Asset Type in AssetCreate>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "waiting for back end",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "G8GC",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Was not productive in care today...\nSpent time learning nextjs by using it for my side project.\nUpdated PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2552",
+                                    "text": "#2552",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " and marked as waiting for backend."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQ0TFE",
+                        "U02U1035G0G",
+                        "UV5PPBE2D"
+                    ],
+                    "count": 3
+                }
+            ]
+        }
+    ],
+    "2022-05-29 00:00:00": [
+        {
+            "client_msg_id": "2aa59104-7bab-4c5f-894f-201d1820834a",
+            "type": "message",
+            "text": "*Issues Raised:*\n\u2022 Activity card goes behind Contributor Info Card in some sizes <https://github.com/coronasafe/leaderboard/issues/18|leaderboard/18>\n\u2022 Activity time not formatted <https://github.com/coronasafe/leaderboard/issues/16|leaderboard/16>\n\u2022 Activity type \"issue_closed\" is not handled in renderText <https://github.com/coronasafe/leaderboard/issues/14|leaderboard/14>\n\u2022 Contributor profile page width not correct in mobile. <https://github.com/coronasafe/leaderboard/issues/10|leaderboard/10>\n\u2022 InfoCard content incorrectly aligned in different window size <https://github.com/coronasafe/leaderboard/issues/8|leaderboard/8>\n*Pull Requests:*\n\u2022 Fix activity card being hidden in `md` sizes <https://github.com/coronasafe/leaderboard/pull/19|leaderboard/19>\n\u2022 Format activity time <https://github.com/coronasafe/leaderboard/pull/17|leaderboard/17>\n\u2022 Handle `issue_closed` GitHub activity in renderText <https://github.com/coronasafe/leaderboard/pull/15|leaderboard/15>\n\u2022 Hides \"currently working on\" if data is empty <https://github.com/coronasafe/leaderboard/pull/11|leaderboard/11>\n\u2022 Responsive alignment for InfoCard Content <https://github.com/coronasafe/leaderboard/pull/9|leaderboard/9>\n*Blockers:*\n\u2022 Unable to debug the issue <https://github.com/coronasafe/care_fe/issues/2560|care_fe/2560>. ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1653825598.696189",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "3bj",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues Raised:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Activity card goes behind Contributor Info Card in some sizes "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/issues/18",
+                                            "text": "leaderboard/18"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Activity time not formatted "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/issues/16",
+                                            "text": "leaderboard/16"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Activity type \"issue_closed\" is not handled in renderText "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/issues/14",
+                                            "text": "leaderboard/14"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Contributor profile page width not correct in mobile. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/issues/10",
+                                            "text": "leaderboard/10"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "InfoCard content incorrectly aligned in different window size "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/issues/8",
+                                            "text": "leaderboard/8"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Pull Requests:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fix activity card being hidden in "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "md",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " sizes "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/pull/19",
+                                            "text": "leaderboard/19"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Format activity time "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/pull/17",
+                                            "text": "leaderboard/17"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Handle "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "issue_closed",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " GitHub activity in renderText "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/pull/15",
+                                            "text": "leaderboard/15"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Hides \"currently working on\" if data is empty "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/pull/11",
+                                            "text": "leaderboard/11"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Responsive alignment for InfoCard Content "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/pull/9",
+                                            "text": "leaderboard/9"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Blockers:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Unable to debug the issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2560",
+                                            "text": "care_fe/2560"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ". "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "fire",
+                    "users": [
+                        "U02TPSYRUPK",
+                        "UC8TSEGCQ",
+                        "U8RA799S9",
+                        "U02T4HD63P0",
+                        "U02TB83Q5V0",
+                        "U02U1035G0G",
+                        "U02T4HE96KY",
+                        "U02TB8XHZD1",
+                        "U02SWK752TZ",
+                        "U02TB823H8A"
+                    ],
+                    "count": 10
+                }
+            ]
+        }
+    ],
+    "2022-05-31 00:00:00": [
+        {
+            "client_msg_id": "7e2dd00e-ed5a-42fc-9a7e-fee8b607b9f6",
+            "type": "message",
+            "text": "*Issues Raised:* \n\u2022 <https://github.com/coronasafe/leaderboard/issues/36>\n*PRs:*\n\u2022 <https://github.com/coronasafe/leaderboard/pull/35>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1654000945.543869",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653966110,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/issues/36",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/issues/36|#36 Home page's leaderboard title is statically typed>",
+                    "title": "<https://github.com/coronasafe/leaderboard/issues/36|#36 Home page's leaderboard title is statically typed>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653964783,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/pull/35",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/pull/35|#35 Monthly Leaderboard>",
+                    "title": "<https://github.com/coronasafe/leaderboard/pull/35|#35 Monthly Leaderboard>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "mfZpT",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues Raised: ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/issues/36"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/pull/35"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "fire",
+                    "users": [
+                        "U02TPSYRUPK"
+                    ],
+                    "count": 1
+                }
             ]
         }
     ]

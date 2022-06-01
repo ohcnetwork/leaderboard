@@ -3,7 +3,6 @@ name: Main
 on:
   schedule:
     - cron: "0 1 * * *" # 6:30am IST
-
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -27,9 +26,15 @@ jobs:
         run: python scraper/src/slack.py --lookback_days=2
         env:
           SLACK_API_TOKEN: ${{ secrets.SLACK_TOKEN }}
-
-      - name: commit and push data
-        uses: EndBug/add-and-commit@v9
+          
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git diff --staged --quiet || git commit -am "🌍 Update JSON - $(date -d '+5 hours +30 minutes' +'%d %b %Y | %I:%M %p')"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          default_author: github_actions
-          message: "chore: update data"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main

@@ -2,7 +2,7 @@
 import Link from "next/link";
 export default function InfoCard({ contributor, minimal = false }) {
   return (
-    <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left">
+    <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left" role="listitem">
       <div className="space-y-6 xl:space-y-10">
         <img
           className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
@@ -28,13 +28,13 @@ export default function InfoCard({ contributor, minimal = false }) {
             }
           >
             {contributor.github && (
-              <li>
+              <li role="listitem">
                 <a
                   href={`https://github.com/${contributor.github}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-400 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Github</span>
                     <svg
                       viewBox="0 0 24 24"
@@ -53,13 +53,13 @@ export default function InfoCard({ contributor, minimal = false }) {
               </li>
             )}
             {contributor.twitter && (
-              <li>
+              <li role="listitem">
                 <a
                   href={`https://twitter.com/${contributor.twitter}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-400 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Twitter</span>
                     <svg
                       className="w-5 h-5 mr-2"
@@ -75,13 +75,13 @@ export default function InfoCard({ contributor, minimal = false }) {
               </li>
             )}
             {contributor.linkedin && (
-              <li>
+              <li role="listitem">
                 <a
                   href={`https://linkedin.com/in/${contributor.linkedin}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-400 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">LinkedIn</span>
                     <svg
                       className="w-5 h-5 mr-2"

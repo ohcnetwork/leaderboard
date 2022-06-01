@@ -11,4 +11,4 @@ intern: true
 operations: false
 ---
 
-Still waiting for this    
+Passionate about building things that make people's lives better and making the world a better place.

@@ -1,6 +1,188 @@
 {
-  "last_updated": 1653676683.0,
+  "last_updated": 1654001901.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2594",
+      "time": 1654001901.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2594#issuecomment-1142103268",
+      "text": "@rabilrbl also the effect need not be triggered when alt phone changes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2594",
+      "time": 1654001773.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2594#issuecomment-1142100906",
+      "text": "@rabilrbl I think the onChange should clear the field only when going from true-false\n\nOtherwise there is a chance that the effect gets triggered before this and thereby clearing the field when marking it true "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654001011.0,
+      "title": "coronasafe/care_fe#2594",
+      "link": "https://github.com/coronasafe/care_fe/pull/2594#pullrequestreview-990379726",
+      "text": "Fix empty whatsapp no. field"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2308",
+      "time": 1653998268.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2308#issuecomment-1142038848",
+      "text": "@Pranshu1902 Update the labels when you've made changes, otherwise it won't get tested for QA"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653998195.0,
+      "title": "coronasafe/care_fe#2308",
+      "link": "https://github.com/coronasafe/care_fe/pull/2308#pullrequestreview-990312062",
+      "text": "Reduced white spaces and added 2 column view Issue#2046"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653998195.0,
+      "title": "coronasafe/care_fe#2308",
+      "link": "https://github.com/coronasafe/care_fe/pull/2308#pullrequestreview-990312062",
+      "text": "Reduced white spaces and added 2 column view Issue#2046"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2593",
+      "time": 1653997059.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2593#issuecomment-1142018961",
+      "text": "@rabilrbl @nihal467 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2571",
+      "time": 1653983177.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2571#issuecomment-1141782137",
+      "text": "> @nihal467 I have modified only *Facility* tab, since there are many pages connected in each tab I will modify other tabs in other PRs\n\nThat sounds good but, please make an issue listing out all the pages you need to complete (as checklist items), so that we don't accidentally skip out on some pages\n\nOr if the existing issue serves this purpose you can let it be. Also please make the backend issue for the location issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#782",
+      "time": 1653811996.0,
+      "link": "https://github.com/coronasafe/care/issues/782#issuecomment-1140400480",
+      "text": "@rabilrbl Were you able to verify if the backend was returning the Default VAPID or a different one?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#793",
+      "time": 1653811930.0,
+      "link": "https://github.com/coronasafe/care/pull/793#issuecomment-1140400286",
+      "text": "@vigneshhari Should we create an Integer Mapping for the Asset Classes and keep it as an Integer Field\r\n\r\ncc: @iamsdas \r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#800",
+      "time": 1653811827.0,
+      "link": "https://github.com/coronasafe/care/issues/800#issuecomment-1140400027",
+      "text": "Refer swagger documentation for coronasafe/teleicu_middleware for details on APIs"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#801",
+      "time": 1653807396.0,
+      "link": "https://github.com/coronasafe/care/issues/801",
+      "text": "Backend: Update asset/action API for proxying HL7 Monitor Requests through care_be (Details to be Added)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#800",
+      "time": 1653807390.0,
+      "link": "https://github.com/coronasafe/care/issues/800",
+      "text": "Backend: Update asset/action API for proxying Camera Requests through care_be (Details to be Added)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#799",
+      "time": 1653807386.0,
+      "link": "https://github.com/coronasafe/care/issues/799",
+      "text": "Backend: Create Schema for the meta field of an asset to be the details required for a camera or the details for the HL7 Adapter"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#3",
+      "time": 1653807214.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/3",
+      "text": "Build Activities graph"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#3",
+      "time": 1653807214.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/3#issuecomment-1140389580",
+      "text": "Added on https://github.com/coronasafe/leaderboard/commit/1707f7fd97c8d7da3ac4f9de1a85e95fdd6c5722"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653806989.0,
+      "title": "coronasafe/leaderboard#20",
+      "link": "https://github.com/coronasafe/leaderboard/pull/20#pullrequestreview-988581067",
+      "text": "Update Marmik2003.md"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#18",
+      "time": 1653806821.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/18",
+      "text": "Activity card goes behind Contributor Info Card in some sizes"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#16",
+      "time": 1653804824.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/16",
+      "text": "Activity time not formatted"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2545",
+      "time": 1653803124.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2545",
+      "text": "Devops: Switch GDC deployment to production branch "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#14",
+      "time": 1653802798.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/14",
+      "text": "Activity type \"issue_closed\" is not handled in renderText"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653802793.0,
+      "title": "coronasafe/leaderboard#15",
+      "link": "https://github.com/coronasafe/leaderboard/pull/15#pullrequestreview-988576548",
+      "text": "Handle `issue_closed` GitHub activity in renderText"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#10",
+      "time": 1653802766.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/10",
+      "text": "Contributor profile page width not correct in mobile."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653802755.0,
+      "title": "coronasafe/leaderboard#13",
+      "link": "https://github.com/coronasafe/leaderboard/pull/13#pullrequestreview-988576515",
+      "text": "fixed word wrap"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#19",
+      "time": 1653802646.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/19#issuecomment-1140381468",
+      "text": "@rithviknishad Can you add a bit more padding for the Activity graph in mobile view? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#17",
+      "time": 1653802591.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/17#issuecomment-1140381405",
+      "text": "@rithviknishad That broke the timestamp for the EOD Messages (Slack Data)\r\n\r\n<img width=\"885\" alt=\"image\" src=\"https://user-images.githubusercontent.com/13028584/170853906-38708108-8fcd-4bc7-81c1-384f1914fba3.png\">\r\n"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2527",

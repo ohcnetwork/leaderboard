@@ -1,6 +1,62 @@
 {
-  "last_updated": 1653811996.0,
+  "last_updated": 1654001901.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2594",
+      "time": 1654001901.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2594#issuecomment-1142103268",
+      "text": "@rabilrbl also the effect need not be triggered when alt phone changes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2594",
+      "time": 1654001773.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2594#issuecomment-1142100906",
+      "text": "@rabilrbl I think the onChange should clear the field only when going from true-false\n\nOtherwise there is a chance that the effect gets triggered before this and thereby clearing the field when marking it true "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654001011.0,
+      "title": "coronasafe/care_fe#2594",
+      "link": "https://github.com/coronasafe/care_fe/pull/2594#pullrequestreview-990379726",
+      "text": "Fix empty whatsapp no. field"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2308",
+      "time": 1653998268.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2308#issuecomment-1142038848",
+      "text": "@Pranshu1902 Update the labels when you've made changes, otherwise it won't get tested for QA"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653998195.0,
+      "title": "coronasafe/care_fe#2308",
+      "link": "https://github.com/coronasafe/care_fe/pull/2308#pullrequestreview-990312062",
+      "text": "Reduced white spaces and added 2 column view Issue#2046"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1653998195.0,
+      "title": "coronasafe/care_fe#2308",
+      "link": "https://github.com/coronasafe/care_fe/pull/2308#pullrequestreview-990312062",
+      "text": "Reduced white spaces and added 2 column view Issue#2046"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2593",
+      "time": 1653997059.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2593#issuecomment-1142018961",
+      "text": "@rabilrbl @nihal467 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2571",
+      "time": 1653983177.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2571#issuecomment-1141782137",
+      "text": "> @nihal467 I have modified only *Facility* tab, since there are many pages connected in each tab I will modify other tabs in other PRs\n\nThat sounds good but, please make an issue listing out all the pages you need to complete (as checklist items), so that we don't accidentally skip out on some pages\n\nOr if the existing issue serves this purpose you can let it be. Also please make the backend issue for the location issue"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#782",

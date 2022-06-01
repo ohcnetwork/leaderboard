@@ -27,9 +27,9 @@ const categories = [
 export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead title="Leaderboard"/>
-      <Header/>
-      <section className="bg-gray-900 border-t border-gray-600 relative">
+      <PageHead title="Leaderboard" />
+      <Header />
+      <section className="bg-gray-900 border-t border-gray-600 ">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
@@ -102,7 +102,13 @@ export default function Home(props) {
             <div className="flex items-center justify-center w-full">
               Powered by{" "}
               <span className={"w-20 ml-4"}>
-                <Image src="/logo.webp" alt="Coronasafe" width="80" height="21.88" layout="responsive" />
+                <Image
+                  src="/logo.webp"
+                  alt="Coronasafe"
+                  width="80"
+                  height="21.88"
+                  layout="responsive"
+                />
               </span>
             </div>
           </div>

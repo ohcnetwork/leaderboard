@@ -21,10 +21,7 @@ logger = logging.getLogger(__name__)
 
 user_blacklist = {
     "dependabot",
-    "dependabot[bot]",
     "snyk-bot",
-    "vercel[bot]",
-    "github-actions[bot]",
 }
 
 
@@ -73,8 +70,8 @@ class GitHubScraper:
             _user = event["payload"]["pull_request"]["user"]["login"]
         except KeyError:
             _user = user
-        if blacklisted_user := {user, _user} & user_blacklist:
-            self.log.debug(f"Skipping blacklisted user {blacklisted_user}")
+        if _user.endswith("[bot]") or _user in user_blacklist:
+            self.log.debug(f"Skipping blacklisted user {_user}")
             return
 
         self.log.debug(f"Parsing event for {user}")
@@ -100,7 +97,7 @@ class GitHubScraper:
                 "closed",
             ):
                 self.append(
-                    event["actor"]["login"],
+                    user,
                     {
                         "type": f'issue_{event["payload"]["action"]}',
                         "title": f'{event["repo"]["name"]}#{event["payload"]["issue"]["number"]}',
@@ -113,7 +110,7 @@ class GitHubScraper:
         elif event["type"] == "PullRequestEvent":
             if event["payload"]["action"] == "opened":
                 self.append(
-                    event["actor"]["login"],
+                    user,
                     {
                         "type": f'pr_{event["payload"]["action"]}',
                         "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
@@ -140,7 +137,7 @@ class GitHubScraper:
 
         elif event["type"] == "PullRequestReviewEvent":
             self.append(
-                event["actor"]["login"],
+                user,
                 {
                     "type": "pr_reviewed",
                     "time": event_time,

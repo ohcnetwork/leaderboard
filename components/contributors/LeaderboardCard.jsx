@@ -27,7 +27,7 @@ export default function LeaderBoardCard({ contributor, position }) {
       href={"/contributors/" + contributor.github}
       className="block hover:bg-gray-50"
     >
-      <div className="flex md:items-center px-4 py-4 sm:px-6 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:-translate-x-1 hover:scale-105 duration-200">
+      <div className="flex md:items-center px-4 sm:px-6 md:py-0 py-2 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:-translate-x-1 hover:scale-105 duration-200">
         <div
           className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr ${badgeColors} border-4 mr-4 shrink-0`}
         >
@@ -74,19 +74,18 @@ export default function LeaderBoardCard({ contributor, position }) {
                       />
                     </svg>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
-                      {contributor.weekSummary.pr_reviewed}
-                    </span>
-
-                    <span className="ml-2 text-sm leading-5 text-gray-300">
-                      reviewed
-                    </span>
-
-                    <span className="ml-2 text-sm leading-5 text-gray-100">
                       {contributor.weekSummary.pr_opened}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-gray-300">
                       opened
+                    </span>
+                    <span className="ml-2 text-sm leading-5 text-gray-100">
+                      {contributor.weekSummary.pr_reviewed}
+                    </span>
+
+                    <span className="ml-2 text-sm leading-5 text-gray-300">
+                      reviewed
                     </span>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
                       {contributor.weekSummary.pr_merged}
@@ -98,8 +97,8 @@ export default function LeaderBoardCard({ contributor, position }) {
                   </div>
                 </dd>
               </dl>
-              <dl>
-                <dt className="text-sm leading-5 font-medium text-gray-300 truncate">
+              <dl className="">
+                <dt className="text-sm leading-5 font-medium text-gray-300 truncate mt-4">
                   Activity
                 </dt>
                 <dd className="flex">

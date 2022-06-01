@@ -38,8 +38,9 @@ export default function Home(props) {
                   <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                     <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                       <span>
-                        Leaderboard of the week | Week{" "}
-                        {getWeekNumber(new Date())}
+                        Live Leaderboard of last 7 days | Week{" "}
+                        {getWeekNumber(new Date())} of{" "}
+                        {new Date().getFullYear()}
                       </span>
                     </div>
                     <ul className="space-y-6 lg:space-y-8 p-4 lg:p-2 ">

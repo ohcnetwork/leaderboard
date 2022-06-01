@@ -22,6 +22,9 @@ logger = logging.getLogger(__name__)
 user_blacklist = {
     "dependabot",
     "dependabot[bot]",
+    "snyk-bot",
+    "vercel[bot]",
+    "github-actions[bot]",
 }
 
 

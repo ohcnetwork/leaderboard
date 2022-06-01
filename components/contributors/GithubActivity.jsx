@@ -15,6 +15,10 @@ let commentTypes = (activityEvent) => {
   }
 };
 
+function generateId() {
+  return Math.random().toString(36).slice(2, 7);
+}
+
 let renderText = (activity) => {
   const activity_time = (
     new String(activity.time).length === 10
@@ -85,13 +89,32 @@ let renderText = (activity) => {
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
-
-            <a href={activity["link"]}>
-              <span className="font-medium text-gray-200">
-                {activity["text"]}
-              </span>
-            </a>
-            <span className="whitespace-nowrap ml-2">{activity_time}</span>
+            {activity["type"] == "pr_merged" && (
+              <div className="pt-4">
+                <a href={activity["link"]}>
+                  <img
+                    alt={activity["link"]}
+                    className="rounded-xl"
+                    src={`https://opengraph.githubassets.com/${generateId()}/${activity[
+                      "link"
+                    ]
+                      .split("/")
+                      .slice(3, 7)
+                      .join("/")}/`}
+                  />
+                </a>
+              </div>
+            )}
+            {activity["type"] != "pr_merged" && (
+              <div>
+                <a href={activity["link"]}>
+                  <span className="font-medium text-gray-200">
+                    {activity["text"]}
+                  </span>
+                </a>
+                <span className="whitespace-nowrap ml-2">{activity_time}</span>
+              </div>
+            )}
           </div>
         </div>
       );

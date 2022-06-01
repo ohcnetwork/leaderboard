@@ -77,7 +77,7 @@ export default function Home(props) {
                     </div>
                     <div className="space-y-6 lg:space-y-8 p-4 lg:p-6 ">
                       {props.contributors
-                        .filter((contributor) => (contributor.intern))
+                        .filter((contributor) => (!contributor.core))
                         .slice(0, 5)
                         .map((contributor, index) => {
                           return (

@@ -2,6 +2,23 @@
 
 import Link from "next/link";
 
+let commentTypes = (activityEvent) => {
+  switch (activityEvent[0]) {
+    case "pull":
+      return "a pull request";
+    case "issues":
+      return "an issue";
+    case "discussions":
+      return "a discussion";
+    default:
+      return "the community";
+  }
+};
+
+function generateId() {
+  return Math.random().toString(36).slice(2, 7);
+}
+
 let renderText = (activity) => {
   const activity_time = (
     new String(activity.time).length === 10
@@ -12,22 +29,48 @@ let renderText = (activity) => {
     timeStyle: "medium",
   });
   switch (activity["type"]) {
-    case "comment_created":
     case "eod_update":
       return (
         <div className="min-w-0 flex-1">
           <div>
             <div className="text-sm">
               <div className="font-medium text-primary-500 ">
-                {activity["type"] == "eod_update"
-                  ? "End of the day"
-                  : "Commented"}
+                {activity_time.split("at")[0]}
+                <span className=" text-sm font-medium text-gray-200">
+                  {" "}
+                  - End of the day update from slack
+                </span>
               </div>
             </div>
-            <p className="mt-0.5 text-sm text-gray-200"> on {activity_time}</p>
           </div>
           <div className="mt-2 text-sm text-gray-100">
             <p className="break-words">{activity["text"]}</p>
+          </div>
+        </div>
+      );
+    case "comment_created":
+      return (
+        <div className="min-w-0 flex-1">
+          <div>
+            <div className="text-sm">
+              <p className="font-medium  ">
+                {"Shared a comment on "}
+                {commentTypes(activity["link"].split("/").slice(5, 6))}
+                {" in  "}
+                <span className="text-primary-500 font-medium">
+                  {activity["link"].split("/").slice(3, 5).join("/")}
+                </span>
+
+                <span className="font-normal text-gray-100">
+                  {" "}
+                  on {activity_time}
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="mt-2 text-sm text-gray-100">
+            <p className="break-words">{activity["text"]}</p>
+            <p className="break-words">{activity["link"]}</p>
           </div>
         </div>
       );
@@ -37,16 +80,41 @@ let renderText = (activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-gray-100">
-            <span className="font-medium text-primary-500 ">
-              Pull Request {activity["type"].split("_")[1]}
-            </span>
-
-            <a href={activity["link"]}>
-              <span className="font-medium text-gray-200 ml-2">
-                {activity["text"]}
+            <div className="font-medium">
+              <span className="capitalize">
+                {activity["type"].split("_")[1]}
               </span>
-            </a>
-            <span className="whitespace-nowrap ml-2">{activity_time}</span>
+              <span>{" a pull request on "}</span>
+              <span className="text-primary-500 font-medium">
+                {activity["link"].split("/").slice(3, 5).join("/")}
+              </span>
+            </div>
+            {activity["type"] == "pr_merged" && (
+              <div className="pt-4">
+                <a href={activity["link"]}>
+                  <img
+                    alt={activity["link"]}
+                    className="rounded-xl"
+                    src={`https://opengraph.githubassets.com/${generateId()}/${activity[
+                      "link"
+                    ]
+                      .split("/")
+                      .slice(3, 7)
+                      .join("/")}/`}
+                  />
+                </a>
+              </div>
+            )}
+            {activity["type"] != "pr_merged" && (
+              <div>
+                <a href={activity["link"]}>
+                  <span className="font-medium text-gray-200">
+                    {activity["text"]}
+                  </span>
+                </a>
+                <span className="whitespace-nowrap ml-2">{activity_time}</span>
+              </div>
+            )}
           </div>
         </div>
       );
@@ -56,11 +124,18 @@ let renderText = (activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-gray-100">
-            <div className="font-medium text-primary-500  ">
-              Issue {activity["type"].split("_")[1]}
+            <div className="font-medium">
+              <span className="capitalize">
+                {activity["type"].split("_")[1]}
+              </span>
+              <span>{" an issue on "}</span>
+              <span className="text-primary-500 font-medium">
+                {activity["link"].split("/").slice(3, 5).join("/")}
+              </span>
             </div>
-            <a href={activity["link"]}>
-              <span className="font-medium text-white ml-2 hover:text-primary-500">
+
+            <a href={activity["link"]} className="pt-1">
+              <span className="font-medium text-white hover:text-primary-500">
                 {activity["text"]}
               </span>
             </a>
@@ -109,19 +184,16 @@ let icon = (type) => {
     case "pr_merged":
       return (
         <svg
-          className="h-5 w-5 text-gray-700"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
+          viewBox="0 0 448 512"
+          className="h-5 w-5 text-gray-700"
           fill="currentColor"
           aria-hidden="true"
         >
-          <path
-            fillRule="evenodd"
-            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
-            clipRule="evenodd"
-          />
+          <path d="M208 239.1H294.7C307 211.7 335.2 191.1 368 191.1C412.2 191.1 448 227.8 448 271.1C448 316.2 412.2 352 368 352C335.2 352 307 332.3 294.7 303.1H208C171.1 303.1 138.7 292.1 112 272V358.7C140.3 371 160 399.2 160 432C160 476.2 124.2 512 80 512C35.82 512 0 476.2 0 432C0 399.2 19.75 371 48 358.7V153.3C19.75 140.1 0 112.8 0 80C0 35.82 35.82 0 80 0C124.2 0 160 35.82 160 80C160 112.6 140.5 140.7 112.4 153.2C117 201.9 158.1 240 208 240V239.1zM80 103.1C93.25 103.1 104 93.25 104 79.1C104 66.74 93.25 55.1 80 55.1C66.75 55.1 56 66.74 56 79.1C56 93.25 66.75 103.1 80 103.1zM80 456C93.25 456 104 445.3 104 432C104 418.7 93.25 408 80 408C66.75 408 56 418.7 56 432C56 445.3 66.75 456 80 456zM368 247.1C354.7 247.1 344 258.7 344 271.1C344 285.3 354.7 295.1 368 295.1C381.3 295.1 392 285.3 392 271.1C392 258.7 381.3 247.1 368 247.1z" />
         </svg>
       );
+
     case "issue_opened":
     case "issue_assigned":
       return (
@@ -182,7 +254,7 @@ let showContribution = (activity) => {
 
 export default function GithubActivity({ activityData }) {
   return (
-    <div className="flow-root text-gray-100 mt-4">
+    <div className="mx-2 flow-root text-gray-100 mt-4">
       <ul role="list" className="-mb-8">
         {activityData["activity"].map((activity, i) => {
           return <li key={i}>{showContribution(activity)}</li>;

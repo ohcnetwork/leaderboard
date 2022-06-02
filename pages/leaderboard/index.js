@@ -12,7 +12,6 @@ export const categories = [
   { slug: "pr_opened", title: "Pull Requests Opened" },
   { slug: "pr_merged", title: "Pull Requests Merged" },
   { slug: "pr_reviewed", title: "Pull Requests Reviewed" },
-  { slug: "issue_assigned", title: "Issues Assigned" },
   { slug: "issue_opened", title: "Issues Opened" },
   { slug: "comment_created", title: "Comments Created" },
 ];
@@ -22,7 +21,7 @@ export default function Home(props) {
     <div className="bg-gray-900 min-h-screen">
       <PageHead title="Leaderboard" />
       <Header />
-      <section className="bg-gray-900 border-t border-gray-600 relative">
+      <section className="bg-gray-900 border-t border-gray-600 ">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
@@ -31,11 +30,12 @@ export default function Home(props) {
                   <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                     <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                       <span>
-                        Leaderboard of the week | Week{" "}
-                        {getWeekNumber(new Date())}
+                        Live Leaderboard of last 7 days | Week{" "}
+                        {getWeekNumber(new Date())} of{" "}
+                        {new Date().getFullYear()}
                       </span>
                     </div>
-                    <ul className="space-y-6 lg:space-y-8 p-4 lg:p-2 ">
+                    <ul className="space-y-6 lg:space-y-8 p-2 lg:p-2 overflow-x-auto">
                       {props.contributors
                         .filter((contributor) => contributor.intern)
                         .map((contributor, index) => {
@@ -95,7 +95,13 @@ export default function Home(props) {
             <div className="flex items-center justify-center w-full">
               Powered by{" "}
               <span className={"w-20 ml-4"}>
-                <Image src="/logo.webp" alt="Coronasafe" width="80" height="21.88" layout="responsive" />
+                <Image
+                  src="/logo.webp"
+                  alt="Coronasafe"
+                  width="80"
+                  height="21.88"
+                  layout="responsive"
+                />
               </span>
             </div>
           </div>

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1654013537.0,
+  "last_updated": 1654088014.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2600",
+      "time": 1654088014.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2600#issuecomment-1143572941",
+      "text": "- [x] Hid review alert when the patient is discharged  \r\n- [x] Hid review alert when a daily round is created or when update is made after review time\r\n- [x] In daily rounds form, added a hint to show the next expected review time\r\n![image](https://user-images.githubusercontent.com/29787772/171404644-52b17c31-8f78-4971-9003-0d95d70508a6.png)\r\n![image](https://user-images.githubusercontent.com/29787772/171404899-bbcc2aee-d4e6-45fe-a2e6-1551b06ad3a7.png)\r\n![image](https://user-images.githubusercontent.com/29787772/171404557-dc864a5c-7fcb-4c58-b4a1-04349bdfccec.png)\r\n\r\n\r\n\r\n_**Considerations:**_\r\n\r\n- _Because we are storing absolute time in the backend and here in the frontend we are using relative time for `review_time` without any reference, it is not possible to set previous review time value in the form, so I went with the hint that notifies the user about the previous review time_ \r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2608",
+      "time": 1654064912.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2608",
+      "text": "Reload required to view uploaded files in Sample Report"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2608",
+      "time": 1654064888.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2608#issuecomment-1143169206",
+      "text": "duplicate issue \n\nfollow issue #2609 for further information "
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#2600",
@@ -115,6 +136,10 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2628",
+      "title": "fix web push notifications"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2600",
       "title": "Fixed the review alert"

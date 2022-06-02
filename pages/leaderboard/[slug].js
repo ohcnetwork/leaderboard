@@ -60,16 +60,17 @@ export default function Home(props) {
                                                 className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
                                             >
                                                 {props.categoryLeaderboard.map((category, index) => {
-                                                    return (
-                                                        <TopContributor
+                                                    return <>
+                                                        {category && <TopContributor
                                                             key={index}
                                                             contributor={category.contributor}
                                                             category={category}
                                                             minimal={true}
-                                                        />
-                                                    );
+                                                        />}
+                                                    </>
                                                 })}
                                             </ul>
+                                            {props.categoryLeaderboard.every(value => value === null) && <div className="text-white">Nothing to show here yet :-)</div>}
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +98,7 @@ export default function Home(props) {
 
 export async function getStaticProps({ params }) {
     const contributors = getContributors(Number(params.slug));
-    const categoryLeaderboard = categories.map((category) => ({
+    let categoryLeaderboard = categories.map((category) => ({
         ...category,
         contributor: contributors
             .filter((contributor) => contributor.intern)
@@ -105,6 +106,17 @@ export async function getStaticProps({ params }) {
                 return b.weekSummary[category.slug] - a.weekSummary[category.slug];
             })[0],
     }));
+
+    categoryLeaderboard = categoryLeaderboard.map((category, index) => {
+        let acc = 0
+        Object.entries(category.contributor.weekSummary).map(item => {
+            acc += item[1]
+        })
+        if (acc > 0) {
+            return category
+        } else return null
+    })
+
     return {
         props: {
             week: params.slug,

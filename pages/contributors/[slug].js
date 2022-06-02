@@ -1,16 +1,16 @@
-import React from 'react';
-import markdownToHtml from '../../lib/markdownToHtml';
-import Head from 'next/head';
+import React from "react";
+import markdownToHtml from "../../lib/markdownToHtml";
+import Head from "next/head";
 
-import InfoCard from '../../components/contributors/InfoCard';
-import GithubActivity from '../../components/contributors/GithubActivity';
+import InfoCard from "../../components/contributors/InfoCard";
+import GithubActivity from "../../components/contributors/GithubActivity";
 
-import { getContributorBySlug, getContributors } from '../../lib/api';
-import Link from 'next/link';
+import { getContributorBySlug, getContributors } from "../../lib/api";
+import Link from "next/link";
 
-import ActivityCalendar from 'react-activity-calendar';
-import PageHead from '../../components/PageHead';
-import Header from '../../components/Header';
+import ActivityCalendar from "react-activity-calendar";
+import PageHead from "../../components/PageHead";
+import Header from "../../components/Header";
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
 //     // Current Date - i
@@ -56,12 +56,14 @@ export default function Contributor({ contributor, slug }) {
 
             <div>
               <h3 className="font-bold text-gray-100 my-4">Bio</h3>
-              <div
-                className="prose prose-invert py-10 px-6 bg-gray-800 rounded-lg xl:px-10 xl:text-left leading-relaxed"
-                dangerouslySetInnerHTML={{
-                  __html: contributor.content,
-                }}
-              ></div>
+              <div className="bg-gray-800 w-full rounded-lg ">
+                <div
+                  className="prose prose-invert py-10 px-6 rounded-lg xl:px-10 xl:text-left leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: contributor.content,
+                  }}
+                ></div>
+              </div>
             </div>
 
             <div>
@@ -102,15 +104,15 @@ export default function Contributor({ contributor, slug }) {
               </dl>
             </div>
 
-            {contributor['activityData'] &&
-              contributor['activityData']['open_prs'] &&
-              contributor['activityData']['open_prs'].length > 0 && (
+            {contributor["activityData"] &&
+              contributor["activityData"]["open_prs"] &&
+              contributor["activityData"]["open_prs"].length > 0 && (
                 <div>
                   <h3 className="font-bold text-gray-100 mt-6">
                     Currently Working on
                   </h3>
                   <div className="mt-4">
-                    {contributor['activityData']['open_prs'].map(
+                    {contributor["activityData"]["open_prs"].map(
                       (pr, index) => (
                         <a href={pr.link} key={index}>
                           <p
@@ -129,11 +131,11 @@ export default function Contributor({ contributor, slug }) {
                 </div>
               )}
 
-            {contributor['activityData'] &&
-              contributor['activityData']['activity'] && (
-                <div className="mt-6">
+            {contributor["activityData"] &&
+              contributor["activityData"]["activity"] && (
+                <div className="mt-6 overflow-x-hidden">
                   <h3 className="font-bold text-gray-100">Contributions</h3>
-                  <GithubActivity activityData={contributor['activityData']} />
+                  <GithubActivity activityData={contributor["activityData"]} />
                 </div>
               )}
           </div>
@@ -145,7 +147,7 @@ export default function Contributor({ contributor, slug }) {
 
 export async function getStaticProps({ params }) {
   const contributor = getContributorBySlug(params.slug, true);
-  const content = await markdownToHtml(contributor.content || '');
+  const content = await markdownToHtml(contributor.content || "");
 
   return {
     props: {

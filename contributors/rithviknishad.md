@@ -11,4 +11,7 @@ intern: true
 operations: false
 ---
 
-Still waiting for this    
+
+**⚡ An Electrical Engineer by degree and a Software Developer by passion.**
+
+*Passionate about creating scalable and distributed systems for the power grid and interested in contributing to open source digital public goods.*

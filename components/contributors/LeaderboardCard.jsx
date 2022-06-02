@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /* eslint-disable @next/next/no-img-element */
-export default function LeaderBoardCard({ contributor, position }) {
+export default function LeaderboardCard({ contributor, position }) {
   const userPosition = position + 1;
   let badgeColors = "bg-gray-800 border-black/20";
 
@@ -74,21 +74,21 @@ export default function LeaderBoardCard({ contributor, position }) {
                       />
                     </svg>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
-                      {contributor.weekSummary.pr_opened}
+                      {contributor.summary.pr_opened}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-gray-300">
                       opened
                     </span>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
-                      {contributor.weekSummary.pr_reviewed}
+                      {contributor.summary.pr_reviewed}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-gray-300">
                       reviewed
                     </span>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
-                      {contributor.weekSummary.pr_merged}
+                      {contributor.summary.pr_merged}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-gray-300">
@@ -115,14 +115,14 @@ export default function LeaderBoardCard({ contributor, position }) {
                       />
                     </svg>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
-                      {contributor.weekSummary.eod_update}
+                      {contributor.summary.eod_update}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-gray-300">
                       EOD updates
                     </span>
                     <span className="ml-2 text-sm leading-5 text-gray-100">
-                      {contributor.weekSummary.comment_created}
+                      {contributor.summary.comment_created}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-gray-300">

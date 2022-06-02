@@ -1,9 +1,8 @@
-import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
 import InfoCard from "../components/contributors/InfoCard";
 import Header from "../components/Header";
 import PageHead from "../components/PageHead";
+import Footer from "../components/Footer";
 import { getContributors } from "../lib/api";
 
 export default function Home(props) {
@@ -119,19 +118,7 @@ export default function Home(props) {
           </div>
         </div>
       </section>
-
-      <footer className="">
-        <div className="bg-gray-800 p-4 lg:p-10 border-t border-gray-700 h-full">
-          <div className="max-w-5xl font-bold text-primary-500 text-center text-sm lg:leading-tight lg:mx-auto">
-            <div className="flex items-center justify-center w-full">
-              Powered by{" "}
-              <span className={"w-20 ml-4"}>
-                <img src="/logo.webp" alt="Coronasafe" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

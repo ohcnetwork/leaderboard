@@ -42,7 +42,7 @@ export default function Home(props) {
                         {new Date().getFullYear()}
                       </span>
                     </div>
-                    <ul className="space-y-6 lg:space-y-8 p-4 lg:p-2 ">
+                    <ul className="space-y-6 lg:space-y-8 p-2 lg:p-2 overflow-x-auto">
                       {props.contributors
                         .filter((contributor) => contributor.intern)
                         .map((contributor, index) => {

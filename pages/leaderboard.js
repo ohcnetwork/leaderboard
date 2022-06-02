@@ -13,7 +13,6 @@ const categories = [
   { slug: "pr_opened", title: "Pull Requests Opened" },
   { slug: "pr_merged", title: "Pull Requests Merged" },
   { slug: "pr_reviewed", title: "Pull Requests Reviewed" },
-  { slug: "issue_assigned", title: "Issues Assigned" },
   { slug: "issue_opened", title: "Issues Opened" },
   { slug: "comment_created", title: "Comments Created" },
 ];
@@ -23,7 +22,7 @@ export default function Home(props) {
     <div className="bg-gray-900 min-h-screen">
       <PageHead title="Leaderboard" />
       <Header />
-      <section className="bg-gray-900 border-t border-gray-600 relative">
+      <section className="bg-gray-900 border-t border-gray-600 ">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
@@ -32,10 +31,12 @@ export default function Home(props) {
                   <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                     <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                       <span>
-                        Leaderboard of the week | {getWeek(new Date)}
-                      </span>
-                    </div>
-                    <ul className="space-y-6 lg:space-y-8 p-4 lg:p-2 ">
+                        Live Leaderboard of last 7 days | {getWeek(new Date)} |  Week{" "}
+                        {getWeekNumber(new Date())} of{" "}
+                        {new Date().getFullYear()}
+                      </span >
+                    </div >
+                    <ul className="space-y-6 lg:space-y-8 p-2 lg:p-2 overflow-x-auto">
                       {props.contributors
                         .filter((contributor) => contributor.intern)
                         .map((contributor, index) => {
@@ -50,9 +51,9 @@ export default function Home(props) {
                           );
                         })}
                     </ul>
-                  </div>
-                </div>
-              </div>
+                  </div >
+                </div >
+              </div >
               <div className="lg:col-span-5 2xl:col-span-4">
                 <div>
                   <div className="mx-auto py-12 px-4 max-w-6xl sm:px-6 lg:px-8 lg:py-24">
@@ -84,10 +85,10 @@ export default function Home(props) {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </div >
+          </div >
+        </div >
+      </section >
 
       <footer className="">
         <div className="bg-gray-800 p-4 lg:p-10 border-t border-gray-700 h-full">
@@ -95,13 +96,19 @@ export default function Home(props) {
             <div className="flex items-center justify-center w-full">
               Powered by{" "}
               <span className={"w-20 ml-4"}>
-                <Image src="/logo.webp" alt="Coronasafe" width="80" height="21.88" layout="responsive" />
+                <Image
+                  src="/logo.webp"
+                  alt="Coronasafe"
+                  width="80"
+                  height="21.88"
+                  layout="responsive"
+                />
               </span>
             </div>
           </div>
         </div>
       </footer>
-    </div>
+    </div >
   );
 }
 

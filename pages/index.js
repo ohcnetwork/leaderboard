@@ -10,7 +10,7 @@ export default function Home(props) {
     <div className="bg-gray-900 min-h-screen">
       <PageHead />
       <Header />
-      <section className="bg-gray-900 border-t border-gray-600 relative">
+      <section className="bg-gray-900 border-t border-gray-600 ">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
@@ -76,6 +76,7 @@ export default function Home(props) {
                     </div>
                     <div className="space-y-6 lg:space-y-8 p-4 lg:p-6 ">
                       {props.contributors
+                        .filter((contributor) => !contributor.core)
                         .slice(0, 5)
                         .map((contributor, index) => {
                           return (

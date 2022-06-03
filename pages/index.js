@@ -1,10 +1,9 @@
-import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
 import InfoCard from "../components/contributors/InfoCard";
 import Header from "../components/Header";
 import PageHead from "../components/PageHead";
 import { getContributors } from "../lib/api";
+import { getWeek } from '../lib/utils';
 
 export default function Home(props) {
   return (
@@ -73,7 +72,7 @@ export default function Home(props) {
                 <div className="sticky top-0 pt-24">
                   <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                     <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
-                      <span>Leaderboard | 18-24 May 2022 </span>
+                      <span>Leaderboard | {getWeek(new Date())} </span>
                     </div>
                     <div className="space-y-6 lg:space-y-8 p-4 lg:p-6 ">
                       {props.contributors

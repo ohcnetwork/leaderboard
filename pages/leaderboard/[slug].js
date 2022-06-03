@@ -97,7 +97,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps({ params }) {
-    const contributors = getContributors(Number(params.slug));
+    const contributors = getContributors(false, Number(params.slug));
     let categoryLeaderboard = categories.map((category) => ({
         ...category,
         contributor: contributors

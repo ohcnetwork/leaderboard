@@ -183,5 +183,81 @@
                 }
             ]
         }
+    ],
+    "2022-06-02 00:00:00": [
+        {
+            "client_msg_id": "c7ccb089-71d5-4a72-aa82-50bad95d9f97",
+            "type": "message",
+            "text": "EOD Update:\nOpened issue <https://github.com/coronasafe/care_fe/issues/2626|#2626> and working on it",
+            "user": "U02TPSZMJRF",
+            "ts": "1654184550.015169",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/57593654/171525955-19bcce3e-ace3-46ab-b13f-9b8bc635bb00.png",
+                    "image_width": 512,
+                    "image_height": 841,
+                    "image_bytes": 74928,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654131958,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2626",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "512x841px image",
+                    "text": "*Describe the bug*  \nThe `Resource Approving Facility` and `Resource Requesting Facility` Card Headings are overlapping in mobile view\n\n*To Reproduce*  \nSteps to reproduce the behavior:\n\n1. Go to <https://care.coronasafe.in/resource/ce53ee56-52b1-4211-b037-bceb3138c633|https://care.coronasafe.in/resource/ce53ee56-52b1-4211-b037-bceb3138c633>\n2. Open in mobile view\n\n*Screenshots*\n\n<https://user-images.githubusercontent.com/57593654/171525955-19bcce3e-ace3-46ab-b13f-9b8bc635bb00.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2626|#2626 Overlapping card headings in Resource Details page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/naman114|@naman114>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "d0e",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Update:\nOpened issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2626",
+                                    "text": "#2626",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " and working on it"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

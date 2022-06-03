@@ -836,9 +836,147 @@
                         "U02T4HD63P0",
                         "U02TDGQ0TFE",
                         "U02TPSYRUPK",
-                        "U02U1035G0G"
+                        "U02U1035G0G",
+                        "UV5PPBE2D"
                     ],
-                    "count": 5
+                    "count": 6
+                }
+            ]
+        }
+    ],
+    "2022-06-02 00:00:00": [
+        {
+            "client_msg_id": "eab34dfd-08ac-4495-9314-28bbf4d5d93d",
+            "type": "message",
+            "text": "*EOD Updates*\nIssues raised:\n\u2022 <https://github.com/coronasafe/care_fe/issues/2633|#2633> (Improve patients page for read-only users)\n\u2022 <https://github.com/coronasafe/care_fe/issues/2636|#2636> (improve patient details section for read-only users)\nPR:\n\u2022 <https://github.com/coronasafe/care_fe/pull/2635|#2635> (Partially improved patients page for read-only users)\n\u2022 <https://github.com/coronasafe/care_fe/pull/2637|#2637> (Partially improved patients details section for read-only users)",
+            "user": "U02U103J5LG",
+            "ts": "1654179141.514489",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "P8L9j",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Updates",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nIssues raised:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2633",
+                                            "text": "#2633",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (Improve patients page for read-only users)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2636",
+                                            "text": "#2636",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (improve patient details section for read-only users)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PR:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2635",
+                                            "text": "#2635",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (Partially improved patients page for read-only users)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2637",
+                                            "text": "#2637",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (Partially improved patients details section for read-only users)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "UV5PPBE2D",
+                        "U02T4HD63P0",
+                        "U02TPSZMJRF"
+                    ],
+                    "count": 3
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
                 }
             ]
         }

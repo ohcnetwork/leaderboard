@@ -980,5 +980,102 @@
                 }
             ]
         }
+    ],
+    "2022-06-03 00:00:00": [
+        {
+            "client_msg_id": "496d7394-411c-4f49-8e66-6ca15ddd322e",
+            "type": "message",
+            "text": "*EOD Updates*\nIssue Raised:\n\u2022 <https://github.com/coronasafe/care/issues/813|#813 backend>\nWorking on solving issue #813 found the buggy code snippet working on its fix.",
+            "user": "U02U103J5LG",
+            "ts": "1654263809.080659",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654241769,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/issues/813",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/issues/813|#813 Endpoint  /consultation/consultationId/daily_rounds/analyse/ giving error for read-only users>",
+                    "text": "*Overview*\n\nPOST request to endpoint /consultation/consultationId/daily_rounds/analyse/ gives _Permission Denied_ error for read-only users. This endpoint is used for *ABG Analysis Plot* at frontend.\n\n*Steps to reproduce*\n\n1. Login as read-only user (Cred=&gt; username:readonly, password:Welcome@123)\n2. Go to patient tab and choose any patient\n3. Opening consultation page will give \"You Dont have permission...\" notfification when logged in as read-only\n4. Observe network section in developer option of browser\n\n*Demo*\nFacilities._.Corona.Care.-.2.June.2022.mp4",
+                    "title": "<https://github.com/coronasafe/care/issues/813|#813 Endpoint  /consultation/consultationId/daily_rounds/analyse/ giving error for read-only users>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/ishanExtreme|@ishanExtreme>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "BJR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Updates",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nIssue Raised:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/issues/813",
+                                            "text": "#813 backend",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on solving issue #813 found the buggy code snippet working on its fix."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

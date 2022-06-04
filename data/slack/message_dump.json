@@ -12806,6 +12806,15 @@
                         }
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
             ]
         },
         {
@@ -12834,6 +12843,15 @@
                             ]
                         }
                     ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
                 }
             ]
         },
@@ -13505,5 +13523,655 @@
             ]
         }
     ],
-    "2022-06-03 00:00:00": []
+    "2022-06-03 00:00:00": [
+        {
+            "client_msg_id": "fe2735cc-8cca-4e39-9e8d-fbb81c9a2e7a",
+            "type": "message",
+            "text": "Worked on resolving conflict on <https://github.com/coronasafe/care_fe/pull/2579>",
+            "user": "U02SWK752TZ",
+            "ts": "1654276030.402829",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/61267953/170884216-13e519dc-4328-4b78-a424-3466344595d9.png",
+                    "image_width": 464,
+                    "image_height": 627,
+                    "image_bytes": 45870,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653846350,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2579",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "464x627px image",
+                    "text": "fixes <https://github.com/coronasafe/care_fe/issues/2577|#2577>\n\nConsistent white space even on smaller devices\n\n<https://user-images.githubusercontent.com/61267953/170884216-13e519dc-4328-4b78-a424-3466344595d9.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2579|#2579 fix: white space on smaller device>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "test failed",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "yuq",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on resolving conflict on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2579"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "7d72c01f-fe4c-4093-b8ab-810d747d8ea7",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care_fe/issues/2451|#2451>",
+            "user": "U02T4HD63P0",
+            "ts": "1654269913.359739",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653033175,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2451",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2451|#2451 Validation: New Bed Assignment should be newer than oldest start time>",
+                    "text": "In the UI to Switch Beds, only dates that are newer than the start_time of the current bed should be allowed. Other dates should be disabled",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2451|#2451 Validation: New Bed Assignment should be newer than oldest start time>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/patelaryan7751|@patelaryan7751>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "good first issue",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Fx+M",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2451",
+                                    "text": "#2451",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "ebb441d0-f227-451a-9793-48bba3c1e918",
+            "type": "message",
+            "text": "Working on the changes for previously made PRs",
+            "user": "U02U1035G0G",
+            "ts": "1654269729.434449",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "V9o/G",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on the changes for previously made PRs"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "c65fb7f3-2468-48ee-8c0f-8a61b8fc25ea",
+            "type": "message",
+            "text": "Working on Old Prs , solved merge conflicts",
+            "user": "U02T4HE96KY",
+            "ts": "1654268043.308059",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "idY",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on Old Prs , solved merge conflicts"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "578e112b-bd19-4af1-9fd5-b215ddc0978e",
+            "type": "message",
+            "text": "Today, I worked for scraping global contributions in coronasafe",
+            "user": "U02TDGQ0TFE",
+            "ts": "1654267256.781849",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQ0TFE",
+                "ts": "1654267319.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "aOckb",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Today, I worked for scraping global contributions in coronasafe"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "7c811752-7a35-4ac4-b1cb-578f2e15a655",
+            "type": "message",
+            "text": "Worked on issue <https://github.com/coronasafe/care_fe/issues/2643|#2643>\nPRs resolving the issue: <https://github.com/coronasafe/care_fe/pull/2645|#2645> <https://github.com/coronasafe/care/pull/815|#care/815>",
+            "user": "U02T4HFA07Q",
+            "ts": "1654266384.180769",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "A=e",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2643",
+                                    "text": "#2643",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nPRs resolving the issue: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2645",
+                                    "text": "#2645",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/815",
+                                    "text": "#care/815",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "ca41f6c8-eeee-4ab9-a45c-d1cc14ba5477",
+            "type": "message",
+            "text": "EOD UPDATE -\n\nMade PRs - <https://github.com/coronasafe/care_fe/pull/2639|2639> and <https://github.com/coronasafe/care_fe/pull/2638|2638>\nMostly explored Care Backend and working out how we can divide testing (edited)",
+            "user": "U02TB83Q5V0",
+            "ts": "1654265833.406609",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "MN8L",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD UPDATE -\n\nMade PRs - "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2639",
+                                    "text": "2639"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " and "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2638",
+                                    "text": "2638"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nMostly explored Care Backend and working out how we can divide testing (edited)"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "fa237597-25e4-4077-97c0-1262cd85cf12",
+            "type": "message",
+            "text": "no progress, will assign a new issue",
+            "user": "U02TB90FU2X",
+            "ts": "1654265799.350419",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "5Eh4w",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "no progress, will assign a new issue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "45a0e130-8af9-4a3c-8f61-d15053a19923",
+            "type": "message",
+            "text": "no progress, did some college work",
+            "user": "U02TPSYB1MF",
+            "ts": "1654264970.978199",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "rKL",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "no progress, did some college work"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "496d7394-411c-4f49-8e66-6ca15ddd322e",
+            "type": "message",
+            "text": "*EOD Updates*\nIssue Raised:\n\u2022 <https://github.com/coronasafe/care/issues/813|#813 backend>\nWorking on solving issue #813 found the buggy code snippet working on its fix.",
+            "user": "U02U103J5LG",
+            "ts": "1654263809.080659",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654241769,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/issues/813",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/issues/813|#813 Endpoint  /consultation/consultationId/daily_rounds/analyse/ giving error for read-only users>",
+                    "text": "*Overview*\n\nPOST request to endpoint /consultation/consultationId/daily_rounds/analyse/ gives _Permission Denied_ error for read-only users. This endpoint is used for *ABG Analysis Plot* at frontend.\n\n*Steps to reproduce*\n\n1. Login as read-only user (Cred=&gt; username:readonly, password:Welcome@123)\n2. Go to patient tab and choose any patient\n3. Opening consultation page will give \"You Dont have permission...\" notfification when logged in as read-only\n4. Observe network section in developer option of browser\n\n*Demo*\nFacilities._.Corona.Care.-.2.June.2022.mp4",
+                    "title": "<https://github.com/coronasafe/care/issues/813|#813 Endpoint  /consultation/consultationId/daily_rounds/analyse/ giving error for read-only users>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/ishanExtreme|@ishanExtreme>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "BJR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Updates",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nIssue Raised:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/issues/813",
+                                            "text": "#813 backend",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on solving issue #813 found the buggy code snippet working on its fix."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "02c63211-1336-448d-8414-33a6f3fba6ed",
+            "type": "message",
+            "text": "Reopened an issue <https://github.com/coronasafe/care/issues/792|care/792> while testing <https://github.com/coronasafe/care_fe/pull/2552|care_fe/2552> (Related to adding Asset Class field)\n*PRs Raised:*\n\u2022 Hide \"copy logs from previous logs\" if first consultation update <https://github.com/coronasafe/care_fe/pull/2644|care_fe/2644>\n\u2022 Closed leaderboard/35 (Monthly leaderboard) and recreated it again (<https://github.com/coronasafe/leaderboard/pull/52|leaderboard/52>) as resolving conflicts gone out of my hands :sweat_smile:",
+            "user": "U02TDGQQPMJ",
+            "ts": "1654261678.040359",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RaF",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Reopened an issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/issues/792",
+                                    "text": "care/792"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " while testing "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2552",
+                                    "text": "care_fe/2552"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " (Related to adding Asset Class field)\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "PRs Raised:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Hide \"copy logs from previous logs\" if first consultation update "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2644",
+                                            "text": "care_fe/2644"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Closed leaderboard/35 (Monthly leaderboard) and recreated it again ("
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/leaderboard/pull/52",
+                                            "text": "leaderboard/52"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ") as resolving conflicts gone out of my hands "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "sweat_smile"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "e4e0f51d-25d3-4ad6-a56a-dcf423af8dc1",
+            "type": "message",
+            "text": "Down with cold today, couldn't get anything done. Sorry :(",
+            "user": "U02TB8XCDU3",
+            "ts": "1654260987.202119",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "3xST",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Down with cold today, couldn't get anything done. Sorry :("
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-04 00:00:00": []
 }

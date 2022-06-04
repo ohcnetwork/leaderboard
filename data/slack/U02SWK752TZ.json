@@ -637,5 +637,71 @@
                 }
             ]
         }
+    ],
+    "2022-06-03 00:00:00": [
+        {
+            "client_msg_id": "fe2735cc-8cca-4e39-9e8d-fbb81c9a2e7a",
+            "type": "message",
+            "text": "Worked on resolving conflict on <https://github.com/coronasafe/care_fe/pull/2579>",
+            "user": "U02SWK752TZ",
+            "ts": "1654276030.402829",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/61267953/170884216-13e519dc-4328-4b78-a424-3466344595d9.png",
+                    "image_width": 464,
+                    "image_height": 627,
+                    "image_bytes": 45870,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653846350,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2579",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "464x627px image",
+                    "text": "fixes <https://github.com/coronasafe/care_fe/issues/2577|#2577>\n\nConsistent white space even on smaller devices\n\n<https://user-images.githubusercontent.com/61267953/170884216-13e519dc-4328-4b78-a424-3466344595d9.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2579|#2579 fix: white space on smaller device>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "test failed",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "yuq",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on resolving conflict on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2579"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -767,5 +767,78 @@
                 }
             ]
         }
+    ],
+    "2022-06-03 00:00:00": [
+        {
+            "client_msg_id": "7d72c01f-fe4c-4093-b8ab-810d747d8ea7",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care_fe/issues/2451|#2451>",
+            "user": "U02T4HD63P0",
+            "ts": "1654269913.359739",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653033175,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2451",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2451|#2451 Validation: New Bed Assignment should be newer than oldest start time>",
+                    "text": "In the UI to Switch Beds, only dates that are newer than the start_time of the current bed should be allowed. Other dates should be disabled",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2451|#2451 Validation: New Bed Assignment should be newer than oldest start time>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/patelaryan7751|@patelaryan7751>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "good first issue",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Fx+M",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2451",
+                                    "text": "#2451",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

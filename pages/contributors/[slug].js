@@ -27,7 +27,25 @@ import Header from "../../components/Header";
 // }
 
 export default function Contributor({ contributor, slug }) {
-  // const md_content = xss(marked.parse(contributor.content));
+  const calenderData = () => {
+    const currentYear = new Date().getFullYear();
+    let dates = contributor.calendarData.filter(
+      (d) => d.date.slice(0, 4) === String(currentYear)
+    );
+    let date;
+    if (dates.length != 0) date = new Date(dates.slice(-1)[0].date);
+    else date = new Date();
+    date.setDate(date.getDate() + 1);
+    while (date.getFullYear() === currentYear) {
+      dates.push({
+        date: new Date(date).toISOString().split('T')[0],
+        count: 0,
+        level: 0,
+      });
+      date.setDate(date.getDate() + 1);
+    }
+    return dates;
+  };
 
   return (
     <div className="bg-gray-900 min-h-screen">
@@ -46,11 +64,7 @@ export default function Contributor({ contributor, slug }) {
                 {/* <p className="text-xl text-gray-300">
                   ...to add activity visualization...
                 </p> */}
-
-                <ActivityCalendar
-                  showWeekdayLabels
-                  data={contributor.calendarData}
-                />
+                <ActivityCalendar showWeekdayLabels data={calenderData()} />
               </div>
             </div>
 

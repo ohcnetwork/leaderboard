@@ -1,6 +1,111 @@
 {
-  "last_updated": 1654116348.0,
+  "last_updated": 1654351385.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2649",
+      "time": 1654351385.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2649",
+      "text": "Hide the Configure button if asset_class = null"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654349476.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1146612293",
+      "text": "@iamsdas working now! Great :)\r\n@sainAk will you be moving this to a new issue as the original issue is now solved."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#792",
+      "time": 1654349477.0,
+      "link": "https://github.com/coronasafe/care/issues/792",
+      "text": "Getting a response of 500 when attempting to create asset with asset_class specified."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654289939.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1146357301",
+      "text": "Weren't the migrations run automatically? It's a char field in the last change. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654258574.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1145903172",
+      "text": "@iamsdas I'm using the staging API via proxy mentioned in `care_fe/package.json`\r\n\r\nI'm yet to setup a local care BE on my machine.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/171849660-749941b9-314e-494f-b7df-696037c63ac8.png)\r\n\r\n- What I'm performing is:\r\n```sh\r\ncurl 'https://careapi.coronasafe.in/api/v1/asset/' \\\r\n        -X POST \\\r\n        -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0' \\\r\n        -H 'Accept: application/json, text/plain, */*' \\\r\n        -H 'Accept-Language: en-US,en;q=0.5' \\\r\n        -H 'Accept-Encoding: gzip, deflate, br' \\\r\n        -H 'Content-Type: application/json' \\\r\n        -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU0MjU4MjY5LCJqdGkiOiIwZjgyMTQ5Mzc4MjY0ZWUyYTJmNzVlNDFmYzllMmRjMSIsInVzZXJfaWQiOjIwMn0.gp1grpzzKDH3ZCPoRSI_XTLX-IoZnWDATUcZQpolwuU' \\\r\n        -H 'Origin: http://localhost:4000' \\\r\n        -H 'Connection: keep-alive' \\\r\n        -H 'Referer: http://localhost:4000/facility/4fa7d5bf-1862-4ebb-b2d1-8284d12185ac/assets/new' \\\r\n        -H 'Sec-Fetch-Dest: empty' \\\r\n        -H 'Sec-Fetch-Mode: cors' \\\r\n        -H 'Sec-Fetch-Site: same-origin' \\\r\n        --data-raw ' \r\n{                              \r\n  \"name\": \"Hello Asset :wave:\",\r\n  \"asset_type\": \"INTERNAL\",\r\n  \"asset_class\": \"ONVIF\",\r\n  \"description\": \"\",   \r\n  \"is_working\": \"true\",    \r\n  \"not_working_reason\": \"\",\r\n  \"serial_number\": \"\",   \r\n  \"warranty_details\": \"\",                            \r\n  \"location\": \"afa28ab1-53f5-4554-8cb0-77c1e5d58c37\",\r\n  \"vendor_name\": \"\", \r\n  \"support_name\": \"\", \r\n  \"support_email\": \"\",             \r\n  \"support_phone\": \"+917777777777\",\r\n  \"qr_code_id\": \"\",\r\n  \"cancelToken\": {\r\n    \"promise\": {}\r\n  }\r\n}'\r\n\r\n```\r\n\r\n- And I'm getting the following for the above.\r\n![image](https://user-images.githubusercontent.com/25143503/171851175-e385b0d2-8d30-419c-889e-e7e3b61b5e1f.png)\r\n\r\n- However, if I just remove `asset_class` attribute in the same above cURL command:\r\n```sh\r\ncurl 'https://careapi.coronasafe.in/api/v1/asset/' \\\r\n        -X POST \\\r\n        -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0' \\\r\n        -H 'Accept: application/json, text/plain, */*' \\\r\n        -H 'Accept-Language: en-US,en;q=0.5' \\\r\n        -H 'Accept-Encoding: gzip, deflate, br' \\\r\n        -H 'Content-Type: application/json' \\\r\n        -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU0MjU4MjY5LCJqdGkiOiIwZjgyMTQ5Mzc4MjY0ZWUyYTJmNzVlNDFmYzllMmRjMSIsInVzZXJfaWQiOjIwMn0.gp1grpzzKDH3ZCPoRSI_XTLX-IoZnWDATUcZQpolwuU' \\\r\n        -H 'Origin: http://localhost:4000' \\\r\n        -H 'Connection: keep-alive' \\\r\n        -H 'Referer: http://localhost:4000/facility/4fa7d5bf-1862-4ebb-b2d1-8284d12185ac/assets/new' \\\r\n        -H 'Sec-Fetch-Dest: empty' \\\r\n        -H 'Sec-Fetch-Mode: cors' \\\r\n        -H 'Sec-Fetch-Site: same-origin' \\\r\n        --data-raw '\r\n{\r\n  \"name\": \"Hello Asset :wave:\",\r\n  \"asset_type\": \"INTERNAL\",\r\n  \"description\": \"\",\r\n  \"is_working\": \"true\",\r\n  \"not_working_reason\": \"\",\r\n  \"serial_number\": \"\",\r\n  \"warranty_details\": \"\",\r\n  \"location\": \"afa28ab1-53f5-4554-8cb0-77c1e5d58c37\",\r\n  \"vendor_name\": \"\",\r\n  \"support_name\": \"\",\r\n  \"support_email\": \"\",\r\n  \"support_phone\": \"+917777777777\",\r\n  \"qr_code_id\": \"\",\r\n  \"cancelToken\": {\r\n    \"promise\": {}\r\n  }\r\n}'\r\n```\r\n\r\n- I'm getting a good response for that:\r\n![image](https://user-images.githubusercontent.com/25143503/171851568-8201dd1e-38a0-4a1e-bd3a-367eb724f981.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2644",
+      "time": 1654257511.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2644",
+      "text": "Hide \"copy logs from previous logs\" if first consultation update"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654250879.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1145809297",
+      "text": "@vigneshhari @iamsdas still getting 500 as response :/\r\nAm I doing something wrong or...?\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/171834317-b5c65b96-dec5-469f-997f-4c221bb5f892.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2485",
+      "time": 1654229697.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2485",
+      "text": "Adds hints for delete last entry, mark as accident and unmark actions in inventory management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654229381.0,
+      "title": "coronasafe/care_fe#2581",
+      "link": "https://github.com/coronasafe/care_fe/pull/2581#pullrequestreview-994418540",
+      "text": "added backslashes at the end of each route in api.ts"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654229317.0,
+      "title": "coronasafe/care_fe#2581",
+      "link": "https://github.com/coronasafe/care_fe/pull/2581#pullrequestreview-994418140",
+      "text": "added backslashes at the end of each route in api.ts"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#35",
+      "time": 1654184978.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/35#issuecomment-1145019246",
+      "text": "Closing as re-worked with new changes on #52. Ocean of merge conflicts in this."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#52",
+      "time": 1654184855.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/52",
+      "text": "Monthly leaderboard"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2518",
+      "time": 1654168432.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2518",
+      "text": "replace \"Doctor Video\" to \"Doctor Connect\""
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard#48",
+      "time": 1654163238.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/48",
+      "text": "Updates `rithviknishad`'s bio"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#48",
+      "time": 1654132572.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/48",
+      "text": "Updates `rithviknishad`'s bio"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2622",
@@ -557,24 +662,16 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/leaderboard/pull/48",
-      "title": "Updates `rithviknishad`'s bio"
+      "link": "https://github.com/coronasafe/care_fe/pull/2644",
+      "title": "Hide \"copy logs from previous logs\" if first consultation update"
     },
     {
-      "link": "https://github.com/coronasafe/leaderboard/pull/35",
-      "title": "Monthly Leaderboard"
+      "link": "https://github.com/coronasafe/leaderboard/pull/52",
+      "title": "Monthly leaderboard"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2552",
       "title": "Adds Asset Class field and hints for Asset Type in AssetCreate"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2518",
-      "title": "replace \"Doctor Video\" to \"Doctor Connect\""
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2485",
-      "title": "Adds hints for delete last entry, mark as accident and unmark actions in inventory management"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2470",

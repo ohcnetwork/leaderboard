@@ -2323,5 +2323,117 @@
                 }
             ]
         }
+    ],
+    "2022-06-04 00:00:00": [
+        {
+            "client_msg_id": "171ee12a-b400-4f4d-86e4-b97390af4964",
+            "type": "message",
+            "text": "Nothing much for today.\n\u2022 Just tested a long waiting PR after the backend issue was solved - <https://github.com/coronasafe/care_fe/pull/2552|#2552> \n\u2022 Attended a pre-placement talk by silicon labs.\n\u2022 Worked on side project rest of the time.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1654350966.027499",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653655795,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2552",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2552|#2552 Adds Asset Class field and hints for Asset Type in AssetCreate>",
+                    "text": "Asset Class field added to Create Asset page.  \nWaiting for <https://github.com/coronasafe/care/issues/792|coronasafe/care#792> to be solved.\n\nCloses <https://github.com/coronasafe/care_fe/issues/2431|#2431>  \nCloses <https://github.com/coronasafe/care_fe/issues/2432|#2432>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2552|#2552 Adds Asset Class field and hints for Asset Type in AssetCreate>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "i1+rU",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Nothing much for today.\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Just tested a long waiting PR after the backend issue was solved - "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2552",
+                                            "text": "#2552",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Attended a pre-placement talk by silicon labs."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on side project rest of the time."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQ0TFE"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

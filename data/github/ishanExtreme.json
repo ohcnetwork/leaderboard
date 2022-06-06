@@ -1,6 +1,13 @@
 {
-  "last_updated": 1654344536.0,
+  "last_updated": 1654437594.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2635",
+      "time": 1654437594.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2635#issuecomment-1146810103",
+      "text": "@nihal467 @gigincg  it was because of /analyze endpoint not having permission for readOnly user for access.\r\nHere is the issue at backend: [#813](https://github.com/coronasafe/care/issues/813)\r\nand here is the PR fixing the issue: [#817](https://github.com/coronasafe/care/pull/817)\r\n\r\nThis PR converted /analuze endpoint from POST to GET so merging this PR at backend needs parallel changes at frontend. Once backend PR is approved I will make PR at frontend to make it compatible."
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#2572",

@@ -1,6 +1,139 @@
 {
-  "last_updated": 1654110854.0,
+  "last_updated": 1654551742.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#824",
+      "time": 1654551742.0,
+      "link": "https://github.com/coronasafe/care/pull/824#issuecomment-1147961631",
+      "text": "@Marmik2003 there are a lot of changes that I want to make, I would suggest pushing the changes to a new branch in care itself `marmik2003/feat/uset-tests` and create a draft PR from that branch"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#828",
+      "time": 1654551300.0,
+      "link": "https://github.com/coronasafe/care/pull/828",
+      "text": "update coverage-package and config"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#826",
+      "time": 1654537430.0,
+      "link": "https://github.com/coronasafe/care/pull/826",
+      "text": "add workflow to build and deploy docs"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#825",
+      "time": 1654531523.0,
+      "link": "https://github.com/coronasafe/care/issues/825",
+      "text": "Create pipelines to automatically build documentation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#822",
+      "time": 1654531381.0,
+      "link": "https://github.com/coronasafe/care/pull/822#issuecomment-1147615420",
+      "text": "This change would be a 2 step process\r\n1. Migrating the location field to normal fields \r\n2. removing references of the location filed from older migrations (0015, 0017)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#718",
+      "time": 1654525003.0,
+      "link": "https://github.com/coronasafe/care/pull/718",
+      "text": "updated `/add_user` endpoint to return status code instead of user object"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654350897.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1146617067",
+      "text": "> > > We can but let it be there. Since we have multiple instances being deployed to\r\n> > \r\n> > \r\n> > @tomahawk-pilot I'm asking auto deployments only for Staging-egov, If the review requirement could be removed for `Staging-egov` environment the FE development and testing won't be blocked by pending deployments.\r\n> \r\n> Feel free to remove the review requirements for staging egov environment\r\n\r\nI don't have the privileges for it."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#819",
+      "time": 1654350266.0,
+      "link": "https://github.com/coronasafe/care/issues/819",
+      "text": "ValidationError raised by django give 500 response"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654342033.0,
+      "title": "coronasafe/care#817",
+      "link": "https://github.com/coronasafe/care/pull/817#pullrequestreview-995796838",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654341977.0,
+      "title": "coronasafe/care#817",
+      "link": "https://github.com/coronasafe/care/pull/817#pullrequestreview-995796762",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654341977.0,
+      "title": "coronasafe/care#817",
+      "link": "https://github.com/coronasafe/care/pull/817#pullrequestreview-995796762",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654337380.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1146582385",
+      "text": "> We can but let it be there. Since we have multiple instances being deployed to\r\n\r\n@tomahawk-pilot I'm asking auto deployments only for Staging-egov, If the review requirement could be removed for `Staging-egov` environment the FE development and testing won't be blocked by pending deployments."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654333941.0,
+      "title": "coronasafe/care#817",
+      "link": "https://github.com/coronasafe/care/pull/817#pullrequestreview-995787289",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654333941.0,
+      "title": "coronasafe/care#817",
+      "link": "https://github.com/coronasafe/care/pull/817#pullrequestreview-995787289",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654290242.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1146360771",
+      "text": "It's waiting for deployment https://github.com/coronasafe/care/deployments/activity_log?environment=Staging-egov\r\n\r\n@mathew-alex @tomahawk-pilot can you update the staging to deploy automatically?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654289204.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1146349157",
+      "text": "The asset_class expects an integer\r\nException: https://sentry.io/organizations/coronasafe-network/issues/3306110898/"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#816",
+      "time": 1654288793.0,
+      "link": "https://github.com/coronasafe/care/issues/816#issuecomment-1146344671",
+      "text": "> Which site\r\n\r\nNot sure but it was cause by this worker `care-staging-celery-worker-7dfcc76ffd-gc8f8`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2298",
+      "time": 1654288539.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2298#issuecomment-1146341427",
+      "text": "tracked in https://github.com/coronasafe/care/issues/816"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#816",
+      "time": 1654288441.0,
+      "link": "https://github.com/coronasafe/care/issues/816#issuecomment-1146340300",
+      "text": "Cc @tomahawk-pilot @mathew-alex "
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/leaderboard#47",
@@ -501,6 +634,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/828",
+      "title": "update coverage-package and config"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/826",
+      "title": "add workflow to build and deploy docs"
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/811",
       "title": "Finalize MiddlewareAuthentication for required endpoints"
     },
@@ -515,10 +656,6 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2311",
       "title": "feat: added devcontainer config for vscode"
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/718",
-      "title": "updated `/add_user` endpoint to return status code instead of user object"
     }
   ]
 }

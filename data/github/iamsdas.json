@@ -1,6 +1,34 @@
 {
-  "last_updated": 1653933207.0,
+  "last_updated": 1654522499.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#805",
+      "time": 1654522499.0,
+      "link": "https://github.com/coronasafe/care/pull/805",
+      "text": "Add more filters for patient list API"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#759",
+      "time": 1654428545.0,
+      "link": "https://github.com/coronasafe/care/issues/759#issuecomment-1146787453",
+      "text": "@rithviknishad Deployment waiting for review I guess.\r\nhttps://github.com/coronasafe/care/runs/6553313671?check_suite_focus=true\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654251764.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1145820482",
+      "text": "@rithviknishad have you pulled the latest changes from the master branch? It seems to be working fine for me locally (using the Swagger UI). Also, check if you are providing the necessary input fields.\r\n\r\nHere's the request body I used for testing:\r\n```\r\n{\r\n  \"asset_type\": \"INTERNAL\",\r\n  \"location_object\": {\r\n    \"facility\": {\r\n      \"name\": \"facility #1\"\r\n    },\r\n    \"name\": \"al 1\",\r\n    \"description\": \"string\",\r\n    \"location_type\": 10\r\n  },\r\n  \"location\": \"18b21291-1c87-4bfc-8c02-f60c5ccc285f\",\r\n  \"name\": \"asset name\",\r\n  \"description\": \"string\",\r\n  \"asset_class\": \"ONVIF\",\r\n  \"is_working\": true,\r\n  \"not_working_reason\": \"string\",\r\n  \"serial_number\": \"string\",\r\n  \"warranty_details\": \"string\",\r\n  \"meta\": {},\r\n  \"vendor_name\": \"string\",\r\n  \"support_name\": \"string\",\r\n  \"support_phone\": \"+919999999999\",\r\n  \"support_email\": \"user@example.com\",\r\n  \"qr_code_id\": null\r\n}\r\n```\r\n![Screenshot_20220603_155057](https://user-images.githubusercontent.com/26461855/171836380-7d3229b9-5fd5-46c4-8e83-6546336933e5.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#793",
+      "time": 1654179518.0,
+      "link": "https://github.com/coronasafe/care/pull/793",
+      "text": "change model field type of asset_class"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#805",
@@ -129,14 +157,6 @@
     }
   ],
   "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care/pull/805",
-      "title": "Add more filters for patient list API"
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/793",
-      "title": "change model field type of asset_class"
-    },
     {
       "link": "https://github.com/coronasafe/care/pull/762",
       "title": "Refactor get_users API to show proper swagger documentation"

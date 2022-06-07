@@ -1,6 +1,118 @@
 {
-  "last_updated": 1654093114.0,
+  "last_updated": 1654524699.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1654524699.0,
+      "title": "coronasafe/care#810",
+      "link": "https://github.com/coronasafe/care/pull/810#pullrequestreview-996676004",
+      "text": "Fix error format for external test"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#788",
+      "time": 1654524425.0,
+      "link": "https://github.com/coronasafe/care/pull/788",
+      "text": "Update pre-commit requirement and fix it's branch name"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#815",
+      "time": 1654522295.0,
+      "link": "https://github.com/coronasafe/care/pull/815",
+      "text": "Allow DELETE method for bed endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654432530.0,
+      "title": "coronasafe/care_fe#2645",
+      "link": "https://github.com/coronasafe/care_fe/pull/2645#pullrequestreview-996002682",
+      "text": "Delete endpoint for beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654432459.0,
+      "title": "coronasafe/care_fe#2645",
+      "link": "https://github.com/coronasafe/care_fe/pull/2645#pullrequestreview-996002586",
+      "text": "Delete endpoint for beds"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2525",
+      "time": 1654314838.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2525#issuecomment-1146520998",
+      "text": "> @Ashesh3 Can you make the Backend issues as well for this?\r\n\r\nSure, On it!"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2525",
+      "time": 1654314066.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2525",
+      "text": "Disallow empty notes and comments"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2395",
+      "time": 1654312685.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2395",
+      "text": "Fix API calls on Safari"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654267473.0,
+      "title": "coronasafe/care_fe#2554",
+      "link": "https://github.com/coronasafe/care_fe/pull/2554#pullrequestreview-995014549",
+      "text": "Moved covid vaccination related fields to medical history section in PatientRegister"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2581",
+      "time": 1654267209.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2581#issuecomment-1146032939",
+      "text": "I feel not all endpoints in `api.ts` need a trailing slash, and adding it in some cases will cause malfunction.\r\n\r\nFor instance, Updating a Facility fails with this change. This is because of the way `fireRequest` works.\r\n\r\n```\r\nexport const fireRequest = (\r\n...\r\n    if (path.length > 0) {\r\n      request.path += \"/\" + path.join(\"/\");\r\n    }\r\n...\r\n```\r\n\r\nAdding a trailing slash to `updateFacility` key in the `api.ts` would lead to the final URL being: \r\n`http://localhost:4000/api/v1/facility//4a3dbe9c-8d1b-4dc1-b939-237d79d96233`\r\n(Notice the double slash there).\r\n\r\nWhich obviously errors out:\r\n![image](https://user-images.githubusercontent.com/3626859/171876150-88ec6227-f2a8-4fcf-9d10-454821a13fdc.png)\r\n\r\nSome endpoints in `api.ts` are to be without end slashes for the above reason.\r\n\r\nI believe this issue would be resolved better with this PR: https://github.com/coronasafe/care_fe/pull/2395\r\nThis is because the mentioned PR modifies how `fireRequest` works and just adds a trailing slash on the fly whenever and only when its necessary.\r\n\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2442",
+      "time": 1654266667.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2442",
+      "text": "Improve Sample Test page and Voice Recorder"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#815",
+      "time": 1654266205.0,
+      "link": "https://github.com/coronasafe/care/pull/815",
+      "text": "Delete bed endpoint"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2645",
+      "time": 1654266133.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2645",
+      "text": "Delete endpoint for beds"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2442",
+      "time": 1654232880.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2442#issuecomment-1145588854",
+      "text": "@khavinshankar Done! thanks for the ping."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2642",
+      "time": 1654198555.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2642",
+      "text": "Patient list filter \"Last Admitted\" fails"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2615",
+      "time": 1654167980.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2615",
+      "text": "Fix Bed actions button style"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#2615",
@@ -312,8 +424,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2615",
-      "title": "Fix Bed actions button style"
+      "link": "https://github.com/coronasafe/care_fe/pull/2645",
+      "title": "Delete endpoint for beds"
     },
     {
       "link": "https://github.com/coronasafe/care/pull/810",
@@ -330,22 +442,6 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute"
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/788",
-      "title": "Update pre-commit requirement and fix it's branch name"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2525",
-      "title": "Disallow empty notes and comments"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2442",
-      "title": "Improve Sample Test page and Voice Recorder"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2395",
-      "title": "Fix API calls on Safari"
     }
   ]
 }

@@ -2512,6 +2512,153 @@
                         }
                     ]
                 }
+            ],
+            "thread_ts": "1654449106.751469",
+            "reply_count": 2,
+            "reply_users_count": 2,
+            "latest_reply": "1654491529.820769",
+            "reply_users": [
+                "U02T4HD63P0",
+                "U02TDGQQPMJ"
+            ],
+            "is_locked": false,
+            "subscribed": false,
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02T4HD63P0"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-06 00:00:00": [
+        {
+            "client_msg_id": "4b4f62b7-da18-49ae-95ec-45ae19341352",
+            "type": "message",
+            "text": "*PRs*\n\u2022 <https://github.com/coronasafe/care_fe/pull/2654|care_fe/2654> Hides the configure asset button if `asset_class` is undefined / null\n\u2022 <https://github.com/coronasafe/care_fe/pull/2653|care_fe/2653> Re-work of 2552 as my system didn't like me working on that branch for some reason :confused:",
+            "user": "U02TDGQQPMJ",
+            "ts": "1654522907.455899",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654513561,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2654",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2654|#2654 Hide Configure Asset button if `!asset_class`>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2654|#2654 Hide Configure Asset button if `!asset_class`>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654512746,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2653",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2653|#2653 Adds Asset Class field and Improve Asset Type option's descriptions>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2653|#2653 Adds Asset Class field and Improve Asset Type option's descriptions>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "BROBl",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2654",
+                                            "text": "care_fe/2654"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Hides the configure asset button if "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "asset_class",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " is undefined / null"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2653",
+                                            "text": "care_fe/2653"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Re-work of 2552 as my system didn't like me working on that branch for some reason "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "confused"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQ0TFE"
+                    ],
+                    "count": 1
+                }
             ]
         }
     ]

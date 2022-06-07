@@ -1,6 +1,48 @@
 {
-  "last_updated": 1654350897.0,
+  "last_updated": 1654551742.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#824",
+      "time": 1654551742.0,
+      "link": "https://github.com/coronasafe/care/pull/824#issuecomment-1147961631",
+      "text": "@Marmik2003 there are a lot of changes that I want to make, I would suggest pushing the changes to a new branch in care itself `marmik2003/feat/uset-tests` and create a draft PR from that branch"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#828",
+      "time": 1654551300.0,
+      "link": "https://github.com/coronasafe/care/pull/828",
+      "text": "update coverage-package and config"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#826",
+      "time": 1654537430.0,
+      "link": "https://github.com/coronasafe/care/pull/826",
+      "text": "add workflow to build and deploy docs"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#825",
+      "time": 1654531523.0,
+      "link": "https://github.com/coronasafe/care/issues/825",
+      "text": "Create pipelines to automatically build documentation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#822",
+      "time": 1654531381.0,
+      "link": "https://github.com/coronasafe/care/pull/822#issuecomment-1147615420",
+      "text": "This change would be a 2 step process\r\n1. Migrating the location field to normal fields \r\n2. removing references of the location filed from older migrations (0015, 0017)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#718",
+      "time": 1654525003.0,
+      "link": "https://github.com/coronasafe/care/pull/718",
+      "text": "updated `/add_user` endpoint to return status code instead of user object"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#792",
@@ -592,6 +634,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/828",
+      "title": "update coverage-package and config"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/826",
+      "title": "add workflow to build and deploy docs"
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/811",
       "title": "Finalize MiddlewareAuthentication for required endpoints"
     },
@@ -606,10 +656,6 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2311",
       "title": "feat: added devcontainer config for vscode"
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/718",
-      "title": "updated `/add_user` endpoint to return status code instead of user object"
     }
   ]
 }

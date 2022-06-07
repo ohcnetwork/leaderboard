@@ -60,14 +60,14 @@ export default function Home(props) {
                                                 className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
                                             >
                                                 {props.categoryLeaderboard.map((category, index) => {
-                                                    return <>
+                                                    return <div key={index}>
                                                         {category && <TopContributor
                                                             key={index}
                                                             contributor={category.contributor}
                                                             category={category}
                                                             minimal={true}
                                                         />}
-                                                    </>
+                                                    </div>
                                                 })}
                                             </ul>
                                             {props.categoryLeaderboard.every(value => value === null) && <div className="text-white">Nothing to show here yet :-)</div>}

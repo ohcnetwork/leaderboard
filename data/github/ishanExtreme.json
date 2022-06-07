@@ -1,6 +1,118 @@
 {
-  "last_updated": 1654086794.0,
+  "last_updated": 1654437594.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2635",
+      "time": 1654437594.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2635#issuecomment-1146810103",
+      "text": "@nihal467 @gigincg  it was because of /analyze endpoint not having permission for readOnly user for access.\r\nHere is the issue at backend: [#813](https://github.com/coronasafe/care/issues/813)\r\nand here is the PR fixing the issue: [#817](https://github.com/coronasafe/care/pull/817)\r\n\r\nThis PR converted /analuze endpoint from POST to GET so merging this PR at backend needs parallel changes at frontend. Once backend PR is approved I will make PR at frontend to make it compatible."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2572",
+      "time": 1654344536.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2572",
+      "text": "Bug: read-only user can edit/update in location management of a facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2572",
+      "time": 1654344528.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2572#issuecomment-1146597135",
+      "text": "Shifted to backend repo https://github.com/coronasafe/care/issues/818"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#818",
+      "time": 1654344509.0,
+      "link": "https://github.com/coronasafe/care/issues/818",
+      "text": "Bug: read-only user can edit/update location management of a facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#817",
+      "time": 1654343920.0,
+      "link": "https://github.com/coronasafe/care/pull/817#issuecomment-1146595443",
+      "text": "Once approved I will make a PR at frontend to change endpoint to GET. So these PR at frontend and backend can be merged at same time @vigneshhari "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#817",
+      "time": 1654331482.0,
+      "link": "https://github.com/coronasafe/care/pull/817",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2506",
+      "time": 1654312620.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2506",
+      "text": "bed management breadcrumb link fixed"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#814",
+      "time": 1654257217.0,
+      "link": "https://github.com/coronasafe/care/pull/814",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#813",
+      "time": 1654241769.0,
+      "link": "https://github.com/coronasafe/care/issues/813",
+      "text": "Endpoint  /consultation/consultationId/daily_rounds/analyse/ giving error for read-only users"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2637",
+      "time": 1654177051.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2637",
+      "text": "Partially improved patients details section for read-only users"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2636",
+      "time": 1654174726.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2636",
+      "text": "improve patient details section for read-only users"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2635",
+      "time": 1654170318.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2635",
+      "text": "Partially improved patients page for read-only users"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2571",
+      "time": 1654168961.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2571",
+      "text": "Facility page for read-only users improved"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2607",
+      "time": 1654168292.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2607",
+      "text": "Patient notes broken link fixed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2633",
+      "time": 1654164538.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2633",
+      "text": "Improve patients page for read-only users"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2571",
+      "time": 1654158890.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2571#issuecomment-1144599366",
+      "text": "@khavinshankar Yes this PR is good to merge but  dont close the issue, I will edit the issue and make another PR once backend is fixed "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#2611",
@@ -263,16 +375,16 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2607",
-      "title": "Patient notes broken link fixed"
+      "link": "https://github.com/coronasafe/care/pull/817",
+      "title": "Endpoint analyse/ fixed for read-only users"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2571",
-      "title": "Facility page for read-only users improved"
+      "link": "https://github.com/coronasafe/care_fe/pull/2637",
+      "title": "Partially improved patients details section for read-only users"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2506",
-      "title": "bed management breadcrumb link fixed"
+      "link": "https://github.com/coronasafe/care_fe/pull/2635",
+      "title": "Partially improved patients page for read-only users"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2473",

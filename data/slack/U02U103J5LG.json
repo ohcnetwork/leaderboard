@@ -1077,5 +1077,138 @@
                 }
             ]
         }
+    ],
+    "2022-06-07 00:00:00": [
+        {
+            "client_msg_id": "5b77ebbf-033c-45de-a414-b9837efcf821",
+            "type": "message",
+            "text": "*EOD Updates*\n\nIssue Raised:\n\u2022 <https://github.com/coronasafe/care_fe/issues/2656|#2656>(Longitude value doesnot accepts more than 90 and less than -90)\nPR:\n\u2022 <https://github.com/coronasafe/care/pull/830|#830(backend)>(DRY Permissions added for assetLocation viewset)",
+            "user": "U02U103J5LG",
+            "ts": "1654610942.621689",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654610016,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2656",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2656|#2656 Longitude value doesnot accepts more than 90 and less than -90>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2656|#2656 Longitude value doesnot accepts more than 90 and less than -90>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654598076,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/830",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/830|#830 DRY Permissions added for assetLocation viewset>",
+                    "title": "<https://github.com/coronasafe/care/pull/830|#830 DRY Permissions added for assetLocation viewset>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "=sTu",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Updates",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nIssue Raised:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2656",
+                                            "text": "#2656",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(Longitude value doesnot accepts more than 90 and less than -90)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nPR:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/830",
+                                            "text": "#830(backend)",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(DRY Permissions added for assetLocation viewset)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TB823H8A",
+                        "U02U1035G0G"
+                    ],
+                    "count": 2
+                }
+            ]
+        }
     ]
 }

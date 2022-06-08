@@ -754,9 +754,70 @@
                     "name": "squirrel",
                     "users": [
                         "UC8TSEGCQ",
-                        "U02TDGQ0TFE"
+                        "U02TDGQ0TFE",
+                        "U02U102TL0G",
+                        "U02TPSYRUPK",
+                        "U02TDGQQPMJ"
                     ],
-                    "count": 2
+                    "count": 5
+                }
+            ]
+        }
+    ],
+    "2022-06-07 00:00:00": [
+        {
+            "client_msg_id": "49da8873-06d0-4185-93c9-ccfc09a2e5a6",
+            "type": "message",
+            "text": "Created an epic to track dependency updates in care\nAnd made a pr <https://github.com/coronasafe/care/pull/836|https://github.com/coronasafe/care/pull/836>",
+            "user": "U02TB8XHZD1",
+            "ts": "1654625088.783859",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654609395,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/836",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/836|#836 update pre-commit hooks and dependencies>",
+                    "text": "use common code style everywhere\n\nremoved\n\n\u2022 pycodestyle\n\u2022 pylint\n\ncloses <https://github.com/coronasafe/care/issues/417|#417>",
+                    "title": "<https://github.com/coronasafe/care/pull/836|#836 update pre-commit hooks and dependencies>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Two",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Created an epic to track dependency updates in care\nAnd made a pr "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/836",
+                                    "text": "https://github.com/coronasafe/care/pull/836"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

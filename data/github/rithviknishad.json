@@ -1,6 +1,41 @@
 {
-  "last_updated": 1654513563.0,
+  "last_updated": 1654687552.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654687552.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149793039",
+      "text": "@nihal467 @gigincg  how about this one?\r\nIf mobile, shows the asset type's hint below the selected option.\r\nIf not mobile, shows a tooltip on hover.\r\n\r\nCouldn't get the above design to work on chrome.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172604729-dfd5d67c-8db7-4dab-91a6-6fb145ba5557.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2470",
+      "time": 1654684991.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2470",
+      "text": "Fixes missing quotes in .env and update REACT_APP_TITLE"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654668932.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149505938",
+      "text": "@nihal467 will try working on it. \r\nthat one was using non-native rendering and had issues with different browsers when you tested in #2552 so decided to use the original style itself.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654666229.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149480791",
+      "text": "@nihal467 I'm using the native rendering which was used originally \ud83e\udd72 Just used a better description instead of External and Internal.\r\n\r\nCould you give me some suggestions to improve?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2654",
+      "time": 1654666141.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2654#issuecomment-1149479979",
+      "text": "@nihal467 #2653 has Asset Class field implemented. This PR does not include that PR branch as base. \r\n\r\nAn asset with asset class defined: https://deploy-preview-2654--care-net.netlify.app/assets/15e5b3e0-c991-418d-b21d-b51c5369e213\r\n\r\nAn asset without asset class defined: https://deploy-preview-2654--care-net.netlify.app/assets/86c5fc30-98c7-45ad-855f-2c59cc7d2fd2"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#2654",
@@ -711,6 +746,10 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/2660",
+      "title": "Test Preview Deploy"
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/2654",
       "title": "Hide Configure Asset button if `!asset_class`"
     },
@@ -725,10 +764,6 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2470",
-      "title": "Fixes missing quotes in .env and update REACT_APP_TITLE"
     }
   ]
 }

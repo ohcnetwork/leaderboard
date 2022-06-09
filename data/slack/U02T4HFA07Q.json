@@ -873,5 +873,66 @@
                 }
             ]
         }
+    ],
+    "2022-06-08 00:00:00": [
+        {
+            "client_msg_id": "d83d497c-951a-4ed5-98c7-f5026481ec5b",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care/pull/838|#838>",
+            "user": "U02T4HFA07Q",
+            "ts": "1654706917.350979",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654691606,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/838",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/838|#838 Add check for empty comments and notes>",
+                    "text": "Builds on <https://github.com/coronasafe/care_fe/pull/2525|coronasafe/care_fe#2525>\n\nAdds a check for empty comments and notes from the backend and rejects with proper validation message when needed.\n\nAlso some minor formatting change performed automatically by `pre-commit-hooks`",
+                    "title": "<https://github.com/coronasafe/care/pull/838|#838 Add check for empty comments and notes>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "XN3R5",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/838",
+                                    "text": "#838",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

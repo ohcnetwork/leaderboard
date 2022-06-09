@@ -2704,5 +2704,121 @@
                 }
             ]
         }
+    ],
+    "2022-06-08 00:00:00": [
+        {
+            "client_msg_id": "346b39ed-b919-4a1b-8072-6b3f79028ac2",
+            "type": "message",
+            "text": "\u2022 Worked on <https://github.com/coronasafe/care_fe/pull/2653> (3rd time test failed :sweat_smile:)\n\u2022 Purchased a domain... ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1654704023.540689",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1654704083.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654512746,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2653",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2653|#2653 Adds Asset Class field and Improve Asset Type option's descriptions>",
+                    "text": "Closes <https://github.com/coronasafe/care_fe/issues/2431|#2431>  \nCloses <https://github.com/coronasafe/care_fe/issues/2432|#2432>\n\nRe-work of <https://github.com/coronasafe/care_fe/pull/2552|#2552> as I'm unable to develop on that branch as system freezes every time I do `yarn start` on that.\n\n2022-06-06.16-13-57.mp4",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2653|#2653 Adds Asset Class field and Improve Asset Type option's descriptions>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "6",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Ond",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2653"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (3rd time test failed "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "sweat_smile"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Purchased a domain... "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "thread_ts": "1654704023.540689",
+            "reply_count": 4,
+            "reply_users_count": 3,
+            "latest_reply": "1654740259.409279",
+            "reply_users": [
+                "U02TB8XHZD1",
+                "U02TDGQQPMJ",
+                "U02TDGQ0TFE"
+            ],
+            "is_locked": false,
+            "subscribed": false,
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02T4HD63P0",
+                        "U02TB8XHZD1"
+                    ],
+                    "count": 2
+                }
+            ]
+        }
     ]
 }

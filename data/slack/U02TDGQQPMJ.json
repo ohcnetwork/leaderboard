@@ -2799,13 +2799,14 @@
                 }
             ],
             "thread_ts": "1654704023.540689",
-            "reply_count": 4,
-            "reply_users_count": 3,
-            "latest_reply": "1654740259.409279",
+            "reply_count": 10,
+            "reply_users_count": 4,
+            "latest_reply": "1654760583.870519",
             "reply_users": [
                 "U02TB8XHZD1",
                 "U02TDGQQPMJ",
-                "U02TDGQ0TFE"
+                "U02TDGQ0TFE",
+                "UV5PPBE2D"
             ],
             "is_locked": false,
             "subscribed": false,
@@ -2814,9 +2815,86 @@
                     "name": "eyes",
                     "users": [
                         "U02T4HD63P0",
-                        "U02TB8XHZD1"
+                        "U02TB8XHZD1",
+                        "UV5PPBE2D"
                     ],
-                    "count": 2
+                    "count": 3
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-09 00:00:00": [
+        {
+            "client_msg_id": "75dd8294-5f2a-4bd7-b060-c5f76ea55fac",
+            "type": "message",
+            "text": "\u2022 Raised three PR's and closed all three of them, to debug the netlify cache issue. (2660, 2662, 2663)\n\u2022 Configured personal email with custom domain.\n\u2022 Worked on side project, mostly ideating things...",
+            "user": "U02TDGQQPMJ",
+            "ts": "1654781774.339859",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Tqry",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Raised three PR's and closed all three of them, to debug the netlify cache issue. (2660, 2662, 2663)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Configured personal email with custom domain."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on side project, mostly ideating things..."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02SWK752TZ"
+                    ],
+                    "count": 1
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
                 }
             ]
         }

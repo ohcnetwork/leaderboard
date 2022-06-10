@@ -1,6 +1,48 @@
 {
-  "last_updated": 1654699828.0,
+  "last_updated": 1654802561.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#844",
+      "time": 1654802561.0,
+      "link": "https://github.com/coronasafe/care/issues/844#issuecomment-1151527610",
+      "text": "> Another thing worth mentioning is that we are being spammed by requests with unknown hosts which triggers `django.security.DisallowedHost` events on sentry these events are not worth tracking and they only consume events bandwidth Its possible to ignore these events from the deployment itself.\r\n\r\n@vigneshhari whats your take on this?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#844",
+      "time": 1654802522.0,
+      "link": "https://github.com/coronasafe/care/issues/844",
+      "text": "Update sentry sdk and specify deployment environment for each deployment"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#842",
+      "time": 1654801668.0,
+      "link": "https://github.com/coronasafe/care/issues/842#issuecomment-1151501089",
+      "text": "@JAIMIN-CHOKHAWALA https://github.com/coronasafe/care_fe/pull/2665 will update the status message"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#842",
+      "time": 1654799612.0,
+      "link": "https://github.com/coronasafe/care/issues/842",
+      "text": "showing password-reset email status success even when I don't have CARE user account. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#842",
+      "time": 1654799611.0,
+      "link": "https://github.com/coronasafe/care/issues/842#issuecomment-1151468957",
+      "text": "closing this issue as it's being tracked in https://github.com/coronasafe/care_fe/issues/2664 "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#836",
+      "time": 1654778642.0,
+      "link": "https://github.com/coronasafe/care/pull/836",
+      "text": "update pre-commit hooks and dependencies"
+    },
     {
       "type": "pr_reviewed",
       "time": 1654699828.0,
@@ -808,10 +850,6 @@
     }
   ],
   "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care/pull/836",
-      "title": "update pre-commit hooks and dependencies"
-    },
     {
       "link": "https://github.com/coronasafe/care/pull/811",
       "title": "Finalize MiddlewareAuthentication for required endpoints"

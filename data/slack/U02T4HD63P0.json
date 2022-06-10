@@ -991,6 +991,80 @@
                 {
                     "name": "white_check_mark",
                     "users": [
+                        "U02TDGQQPMJ",
+                        "UV5PPBE2D"
+                    ],
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "2022-06-10 00:00:00": [
+        {
+            "client_msg_id": "87ed3d12-7dc9-464d-bb1c-a57546f516f3",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care_fe/pull/2647|#2647>",
+            "user": "U02T4HD63P0",
+            "ts": "1654825711.944919",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654346306,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2647",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2647|#2647 Disabled dates before previous bed's start date while switching patients bed>",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/2451|#2451>\n\n*Bugs Fixed*\n*Disabled dates before the previous bed's start date while switching the patient's bed. Furthermore, if the selected date is the same as the previous start date it would check for the time if the time selected is after the previous start date's time or not.*\nvideo.mp4",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2647|#2647 Disabled dates before previous bed's start date while switching patients bed>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "WP9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2647",
+                                    "text": "#2647",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
                         "U02TDGQQPMJ"
                     ],
                     "count": 1

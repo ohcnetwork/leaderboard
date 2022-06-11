@@ -1001,6 +1001,81 @@
     ],
     "2022-06-10 00:00:00": [
         {
+            "client_msg_id": "6841960c-a42f-4015-a99c-5b4c20455905",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care_fe/issues/2668|#2668> <https://github.com/coronasafe/care_fe/issues/2673|#2673>",
+            "user": "U02T4HD63P0",
+            "ts": "1654881012.665809",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654777547,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2668",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2668|#2668 When an incorrect URL is typed it should be redirected to Error Page>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2668|#2668 When an incorrect URL is typed it should be redirected to Error Page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654872806,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2673",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2673|#2673 After a patient is discharged from CARE the switch bed option should be hidden>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2673|#2673 After a patient is discharged from CARE the switch bed option should be hidden>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "JDj",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2668",
+                                    "text": "#2668",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2673",
+                                    "text": "#2673",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "client_msg_id": "87ed3d12-7dc9-464d-bb1c-a57546f516f3",
             "type": "message",
             "text": "Worked on <https://github.com/coronasafe/care_fe/pull/2647|#2647>",
@@ -1065,9 +1140,10 @@
                 {
                     "name": "white_check_mark",
                     "users": [
-                        "U02TDGQQPMJ"
+                        "U02TDGQQPMJ",
+                        "U02TB83Q5V0"
                     ],
-                    "count": 1
+                    "count": 2
                 }
             ]
         }

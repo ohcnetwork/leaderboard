@@ -934,5 +934,66 @@
                 }
             ]
         }
+    ],
+    "2022-06-10 00:00:00": [
+        {
+            "client_msg_id": "02a28a7a-ea04-40f7-8723-6be836373906",
+            "type": "message",
+            "text": "made PR <https://github.com/coronasafe/care_fe/pull/2672>",
+            "user": "U02TB83Q5V0",
+            "ts": "1654872354.772579",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/23238460/173084720-dce93f44-5876-40c5-b5ee-3f4d4dc489b0.png",
+                    "image_width": 822,
+                    "image_height": 745,
+                    "image_bytes": 91836,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654870389,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2672",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "822x745px image",
+                    "text": "closes <https://github.com/coronasafe/care_fe/issues/2671|#2671>\n\n<https://user-images.githubusercontent.com/23238460/173084720-dce93f44-5876-40c5-b5ee-3f4d4dc489b0.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2672|#2672 Solve hidden overflow in duplicate patient record modal>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "AIg",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "made PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2672"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

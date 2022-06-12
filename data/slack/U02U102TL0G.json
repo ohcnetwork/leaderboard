@@ -721,6 +721,76 @@
                         }
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "tada",
+                    "users": [
+                        "U02U103J5LG",
+                        "U02TDGQQPMJ",
+                        "U02U1035G0G"
+                    ],
+                    "count": 3
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TB83Q5V0"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-11 00:00:00": [
+        {
+            "client_msg_id": "37e28d2a-b7fe-4762-ac72-031759117039",
+            "type": "message",
+            "text": "Submitted PR <https://github.com/coronasafe/care/pull/854|#854>",
+            "user": "U02U102TL0G",
+            "ts": "1654974901.973919",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654974842,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/854",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/854|#854 prevent switching patient to the same bed>",
+                    "text": "Prevent patients from switching to the same bed during consultation while the previous one hasn't ended.  \nfixes: <https://github.com/coronasafe/care/issues/850|#850>",
+                    "title": "<https://github.com/coronasafe/care/pull/854|#854 prevent switching patient to the same bed>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "WFz1",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/854",
+                                    "text": "#854",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
             ]
         }
     ]

@@ -993,6 +993,98 @@
                         }
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-11 00:00:00": [
+        {
+            "client_msg_id": "6b25598f-9776-4c03-8748-e7b98dc42d8c",
+            "type": "message",
+            "text": "Made PRs : <https://github.com/coronasafe/care_fe/pull/2687> and <https://github.com/coronasafe/care/pull/852>",
+            "user": "U02TB83Q5V0",
+            "ts": "1654961763.821669",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654959749,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2687",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2687|#2687 Fix camera buttons>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2687|#2687 Fix camera buttons>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654956552,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/852",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/852|#852 Changed allowed hosts to wildcard in staging>",
+                    "title": "<https://github.com/coronasafe/care/pull/852|#852 Changed allowed hosts to wildcard in staging>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "guHzK",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PRs : "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2687"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " and "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/852"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02U1035G0G",
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 2
+                }
             ]
         }
     ]

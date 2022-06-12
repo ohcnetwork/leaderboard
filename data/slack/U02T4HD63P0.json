@@ -1073,6 +1073,15 @@
                         }
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
             ]
         },
         {
@@ -1144,6 +1153,94 @@
                         "U02TB83Q5V0"
                     ],
                     "count": 2
+                }
+            ]
+        }
+    ],
+    "2022-06-11 00:00:00": [
+        {
+            "client_msg_id": "10dcef58-259c-4fef-90b4-e242bb91b34a",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care_fe/issues/2668|#2668> <https://github.com/coronasafe/care_fe/issues/2673|#2673>",
+            "user": "U02T4HD63P0",
+            "ts": "1654958715.080159",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654777547,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2668",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2668|#2668 When an incorrect URL is typed it should be redirected to Error Page>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2668|#2668 When an incorrect URL is typed it should be redirected to Error Page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654872806,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2673",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2673|#2673 After a patient is discharged from CARE the switch bed option should be hidden>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2673|#2673 After a patient is discharged from CARE the switch bed option should be hidden>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/eG",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2668",
+                                    "text": "#2668",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2673",
+                                    "text": "#2673",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TB83Q5V0",
+                        "U02U1035G0G",
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 3
                 }
             ]
         }

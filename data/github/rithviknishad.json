@@ -1,6 +1,20 @@
 {
-  "last_updated": 1654827599.0,
+  "last_updated": 1654958510.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2543",
+      "time": 1654958510.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2543#issuecomment-1152940699",
+      "text": "@gigincg @anuran-roy Vercel preview deploy works without clearing cache out of the box for this PR. \r\nHowever netlify preview build failed 3 times even after clearing cache.\r\n\r\n[Build logs](https://app.netlify.com/sites/care-net/deploys/62a4a77f19201b00093b79a1#L13) says: \r\n\r\n```\r\n8:03:16 PM: Different build command detected, going to use the one specified in the Netlify\r\nconfiguration file: 'CI='' yarn run build' versus 'CI=\"\" yarn run prebuild && CI=\"\" yarn run\r\nbuild || { cat /tmp/* ; sleep 30 ; false; }' in the Netlify UI\r\n```"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2543",
+      "time": 1654957925.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2543#issuecomment-1152938569",
+      "text": "@anuran-roy @nihal467 deploy fails even after clear cache and deploy."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2644",

@@ -3008,5 +3008,113 @@
                 }
             ]
         }
+    ],
+    "2022-06-12 00:00:00": [
+        {
+            "client_msg_id": "0bef4180-ad80-452f-a46d-354e0690655a",
+            "type": "message",
+            "text": "Sadly not much updates for today...\n\u2022 A lead engineer from General Electric pinged me about one of my old project and wanted help in setting up MQTT with Azure Digital Twin. Almost half of the day went there...\n\u2022 Spent time in creating custom components in tailwind for my portfolio.\n\u2022 Will finish this issue by tonight: <https://github.com/coronasafe/care_fe/issues/2656>\n",
+            "user": "U02TDGQQPMJ",
+            "ts": "1655032433.305469",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654610016,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2656",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2656|#2656 Longitude value doesnot accepts more than 90 and less than -90>",
+                    "text": "*Overview*\n\nFacility page has input option for latitude and longitude but longitude is wrongly set to take value between [-90, 90]. *Longitude range is between [-180, 180]\n\n*Steps to reproduce*\n\n1. Select a facility\n2. Go to update facilitty\n3. Longitude doesnot accept value beyond 90 or less than -90\n\n*Expected Behaviour*\n\nLongitude should accept value in range [-180, 180] (including)",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2656|#2656 Longitude value doesnot accepts more than 90 and less than -90>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/rithviknishad|@rithviknishad>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Nip",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Sadly not much updates for today...\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "A lead engineer from General Electric pinged me about one of my old project and wanted help in setting up MQTT with Azure Digital Twin. Almost half of the day went there..."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Spent time in creating custom components in tailwind for my portfolio."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Will finish this issue by tonight: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2656"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "fire",
+                    "users": [
+                        "U02TB83Q5V0",
+                        "U02U102TL0G",
+                        "U02TPSYRUPK",
+                        "U02TPSYB1MF"
+                    ],
+                    "count": 4
+                }
+            ]
+        }
     ]
 }

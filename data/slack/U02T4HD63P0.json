@@ -1238,9 +1238,83 @@
                     "users": [
                         "U02TB83Q5V0",
                         "U02U1035G0G",
+                        "U02TDGQQPMJ",
+                        "U02U102TL0G"
+                    ],
+                    "count": 4
+                }
+            ]
+        }
+    ],
+    "2022-06-13 00:00:00": [
+        {
+            "client_msg_id": "335cc4c5-bccc-414d-9147-8d85f3988f49",
+            "type": "message",
+            "text": "worked on <https://github.com/coronasafe/care_fe/issues/2689|#2689>",
+            "user": "U02T4HD63P0",
+            "ts": "1655082104.880519",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655015208,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2689",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2689|#2689 Added an alert when no CSV file is uploaded in Upload External Results Page.>",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/2678|#2678>\n\n*Bugs*\n*Added an alert when no CSV file is uploaded to Upload External Results Page.*\nexternalupload.mp4",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2689|#2689 Added an alert when no CSV file is uploaded in Upload External Results Page.>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "bp7",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2689",
+                                    "text": "#2689",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
                         "U02TDGQQPMJ"
                     ],
-                    "count": 3
+                    "count": 1
                 }
             ]
         }

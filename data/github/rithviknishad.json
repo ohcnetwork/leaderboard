@@ -1,6 +1,321 @@
 {
-  "last_updated": 1654116348.0,
+  "last_updated": 1655090654.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2691",
+      "time": 1655090654.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2691",
+      "text": "adds rewrites for vercel"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2691",
+      "time": 1655056099.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2691",
+      "text": "adds rewrites for vercel"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2690",
+      "time": 1655054912.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2690",
+      "text": "fix incorrect coorindates validation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2543",
+      "time": 1654958510.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2543#issuecomment-1152940699",
+      "text": "@gigincg @anuran-roy Vercel preview deploy works without clearing cache out of the box for this PR. \r\nHowever netlify preview build failed 3 times even after clearing cache.\r\n\r\n[Build logs](https://app.netlify.com/sites/care-net/deploys/62a4a77f19201b00093b79a1#L13) says: \r\n\r\n```\r\n8:03:16 PM: Different build command detected, going to use the one specified in the Netlify\r\nconfiguration file: 'CI='' yarn run build' versus 'CI=\"\" yarn run prebuild && CI=\"\" yarn run\r\nbuild || { cat /tmp/* ; sleep 30 ; false; }' in the Netlify UI\r\n```"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2543",
+      "time": 1654957925.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2543#issuecomment-1152938569",
+      "text": "@anuran-roy @nihal467 deploy fails even after clear cache and deploy."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2644",
+      "time": 1654827599.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2644",
+      "text": "Hide \"copy logs from previous logs\" if first consultation update"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2663",
+      "time": 1654780330.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2663#issuecomment-1151102225",
+      "text": "Closing as fixed in [c060b4b](https://github.com/coronasafe/care_fe/commit/c060b4b70a19b51838c826fc7dc62f622f5aa6ed)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2667",
+      "time": 1654775349.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2667#issuecomment-1151023046",
+      "text": "@Pranshu1902 deploy failing even after clear cache!\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172839447-28a78814-61e6-458b-954c-36140a398552.png)\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172839694-e17b0586-fb29-444b-985c-c88937455c7c.png)\r\n\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654775122.0,
+      "title": "coronasafe/care_fe#2667",
+      "link": "https://github.com/coronasafe/care_fe/pull/2667#pullrequestreview-1001185605",
+      "text": "Added spacing Issue#2666"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654775110.0,
+      "title": "coronasafe/care_fe#2667",
+      "link": "https://github.com/coronasafe/care_fe/pull/2667#pullrequestreview-1001185605",
+      "text": "Added spacing Issue#2666"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2663",
+      "time": 1654770847.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2663",
+      "text": "Clean rebuild of `yarn.lock` to fix netlify cache issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2660",
+      "time": 1654759461.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2660#issuecomment-1150766839",
+      "text": "Closing as solved in #2662 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2662",
+      "time": 1654759394.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2662#issuecomment-1150765869",
+      "text": "@gigincg worked without needing to clear cache and deploy, rebuilt yarn.lock.\r\n\r\n![Uploading image.png\u2026]()\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2662",
+      "time": 1654758604.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2662",
+      "text": "Test Preview Deploy without plugin"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2660",
+      "time": 1654758094.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2660#issuecomment-1150747243",
+      "text": "will try testing without the plugin in another draft PR to confirm that it's not a coincidence."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2660",
+      "time": 1654757412.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2660#issuecomment-1150738642",
+      "text": "Tried rebuilding the yarn.lock from scratch and now it seems to deploy without needing to clear cache.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172782885-b4ce235c-1bd5-446d-baef-b4e41f2d658c.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#56",
+      "time": 1654740843.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/56#issuecomment-1150595330",
+      "text": "@khavinshankar footer component has been refactored in https://github.com/coronasafe/leaderboard/pull/52/files#diff-3ebccc91178536d06703a58be49b5077d0535c8ff3ab2512af21ca060c5b4e77"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2660",
+      "time": 1654738703.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2660",
+      "text": "Test Preview Deploy"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654687552.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149793039",
+      "text": "@nihal467 @gigincg  how about this one?\r\nIf mobile, shows the asset type's hint below the selected option.\r\nIf not mobile, shows a tooltip on hover.\r\n\r\nCouldn't get the above design to work on chrome.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172604729-dfd5d67c-8db7-4dab-91a6-6fb145ba5557.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2470",
+      "time": 1654684991.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2470",
+      "text": "Fixes missing quotes in .env and update REACT_APP_TITLE"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654668932.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149505938",
+      "text": "@nihal467 will try working on it. \r\nthat one was using non-native rendering and had issues with different browsers when you tested in #2552 so decided to use the original style itself.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654666229.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149480791",
+      "text": "@nihal467 I'm using the native rendering which was used originally \ud83e\udd72 Just used a better description instead of External and Internal.\r\n\r\nCould you give me some suggestions to improve?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2654",
+      "time": 1654666141.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2654#issuecomment-1149479979",
+      "text": "@nihal467 #2653 has Asset Class field implemented. This PR does not include that PR branch as base. \r\n\r\nAn asset with asset class defined: https://deploy-preview-2654--care-net.netlify.app/assets/15e5b3e0-c991-418d-b21d-b51c5369e213\r\n\r\nAn asset without asset class defined: https://deploy-preview-2654--care-net.netlify.app/assets/86c5fc30-98c7-45ad-855f-2c59cc7d2fd2"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2654",
+      "time": 1654513563.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2654",
+      "text": "Hide Configure Asset button if `!asset_class`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654512747.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653",
+      "text": "Adds Asset Class field and Improve Asset Type option's descriptions"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2427",
+      "time": 1654449702.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2427#issuecomment-1146852022",
+      "text": "@cp-Coder cleared cache and deployed!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#759",
+      "time": 1654427810.0,
+      "link": "https://github.com/coronasafe/care/issues/759#issuecomment-1146785985",
+      "text": "@sainAk @iamsdas @vigneshhari Still receiving it as `meta.camera_address` :(\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172047923-15a86fa7-e5d0-4f02-8f2a-5b7688dac1ef.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2552",
+      "time": 1654425960.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2552#issuecomment-1146782156",
+      "text": "@nihal467 fixed it...\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2552",
+      "time": 1654425912.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2552#issuecomment-1146782072",
+      "text": "\r\nhttps://user-images.githubusercontent.com/25143503/172046804-90c6228a-8f37-4f16-b859-972c61e68407.mp4\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2552",
+      "time": 1654424140.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2552#issuecomment-1146778449",
+      "text": "@nihal467 unable to reproduce. this is what i see, even from preview deploy. will look into it.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172045750-1654c71d-96fe-4be1-93cc-2826956df84b.png)\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2649",
+      "time": 1654351385.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2649",
+      "text": "Hide the Configure button if asset_class = null"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654349476.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1146612293",
+      "text": "@iamsdas working now! Great :)\r\n@sainAk will you be moving this to a new issue as the original issue is now solved."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#792",
+      "time": 1654349477.0,
+      "link": "https://github.com/coronasafe/care/issues/792",
+      "text": "Getting a response of 500 when attempting to create asset with asset_class specified."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654289939.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1146357301",
+      "text": "Weren't the migrations run automatically? It's a char field in the last change. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654258574.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1145903172",
+      "text": "@iamsdas I'm using the staging API via proxy mentioned in `care_fe/package.json`\r\n\r\nI'm yet to setup a local care BE on my machine.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/171849660-749941b9-314e-494f-b7df-696037c63ac8.png)\r\n\r\n- What I'm performing is:\r\n```sh\r\ncurl 'https://careapi.coronasafe.in/api/v1/asset/' \\\r\n        -X POST \\\r\n        -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0' \\\r\n        -H 'Accept: application/json, text/plain, */*' \\\r\n        -H 'Accept-Language: en-US,en;q=0.5' \\\r\n        -H 'Accept-Encoding: gzip, deflate, br' \\\r\n        -H 'Content-Type: application/json' \\\r\n        -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU0MjU4MjY5LCJqdGkiOiIwZjgyMTQ5Mzc4MjY0ZWUyYTJmNzVlNDFmYzllMmRjMSIsInVzZXJfaWQiOjIwMn0.gp1grpzzKDH3ZCPoRSI_XTLX-IoZnWDATUcZQpolwuU' \\\r\n        -H 'Origin: http://localhost:4000' \\\r\n        -H 'Connection: keep-alive' \\\r\n        -H 'Referer: http://localhost:4000/facility/4fa7d5bf-1862-4ebb-b2d1-8284d12185ac/assets/new' \\\r\n        -H 'Sec-Fetch-Dest: empty' \\\r\n        -H 'Sec-Fetch-Mode: cors' \\\r\n        -H 'Sec-Fetch-Site: same-origin' \\\r\n        --data-raw ' \r\n{                              \r\n  \"name\": \"Hello Asset :wave:\",\r\n  \"asset_type\": \"INTERNAL\",\r\n  \"asset_class\": \"ONVIF\",\r\n  \"description\": \"\",   \r\n  \"is_working\": \"true\",    \r\n  \"not_working_reason\": \"\",\r\n  \"serial_number\": \"\",   \r\n  \"warranty_details\": \"\",                            \r\n  \"location\": \"afa28ab1-53f5-4554-8cb0-77c1e5d58c37\",\r\n  \"vendor_name\": \"\", \r\n  \"support_name\": \"\", \r\n  \"support_email\": \"\",             \r\n  \"support_phone\": \"+917777777777\",\r\n  \"qr_code_id\": \"\",\r\n  \"cancelToken\": {\r\n    \"promise\": {}\r\n  }\r\n}'\r\n\r\n```\r\n\r\n- And I'm getting the following for the above.\r\n![image](https://user-images.githubusercontent.com/25143503/171851175-e385b0d2-8d30-419c-889e-e7e3b61b5e1f.png)\r\n\r\n- However, if I just remove `asset_class` attribute in the same above cURL command:\r\n```sh\r\ncurl 'https://careapi.coronasafe.in/api/v1/asset/' \\\r\n        -X POST \\\r\n        -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0' \\\r\n        -H 'Accept: application/json, text/plain, */*' \\\r\n        -H 'Accept-Language: en-US,en;q=0.5' \\\r\n        -H 'Accept-Encoding: gzip, deflate, br' \\\r\n        -H 'Content-Type: application/json' \\\r\n        -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU0MjU4MjY5LCJqdGkiOiIwZjgyMTQ5Mzc4MjY0ZWUyYTJmNzVlNDFmYzllMmRjMSIsInVzZXJfaWQiOjIwMn0.gp1grpzzKDH3ZCPoRSI_XTLX-IoZnWDATUcZQpolwuU' \\\r\n        -H 'Origin: http://localhost:4000' \\\r\n        -H 'Connection: keep-alive' \\\r\n        -H 'Referer: http://localhost:4000/facility/4fa7d5bf-1862-4ebb-b2d1-8284d12185ac/assets/new' \\\r\n        -H 'Sec-Fetch-Dest: empty' \\\r\n        -H 'Sec-Fetch-Mode: cors' \\\r\n        -H 'Sec-Fetch-Site: same-origin' \\\r\n        --data-raw '\r\n{\r\n  \"name\": \"Hello Asset :wave:\",\r\n  \"asset_type\": \"INTERNAL\",\r\n  \"description\": \"\",\r\n  \"is_working\": \"true\",\r\n  \"not_working_reason\": \"\",\r\n  \"serial_number\": \"\",\r\n  \"warranty_details\": \"\",\r\n  \"location\": \"afa28ab1-53f5-4554-8cb0-77c1e5d58c37\",\r\n  \"vendor_name\": \"\",\r\n  \"support_name\": \"\",\r\n  \"support_email\": \"\",\r\n  \"support_phone\": \"+917777777777\",\r\n  \"qr_code_id\": \"\",\r\n  \"cancelToken\": {\r\n    \"promise\": {}\r\n  }\r\n}'\r\n```\r\n\r\n- I'm getting a good response for that:\r\n![image](https://user-images.githubusercontent.com/25143503/171851568-8201dd1e-38a0-4a1e-bd3a-367eb724f981.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2644",
+      "time": 1654257511.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2644",
+      "text": "Hide \"copy logs from previous logs\" if first consultation update"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#792",
+      "time": 1654250879.0,
+      "link": "https://github.com/coronasafe/care/issues/792#issuecomment-1145809297",
+      "text": "@vigneshhari @iamsdas still getting 500 as response :/\r\nAm I doing something wrong or...?\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/171834317-b5c65b96-dec5-469f-997f-4c221bb5f892.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2485",
+      "time": 1654229697.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2485",
+      "text": "Adds hints for delete last entry, mark as accident and unmark actions in inventory management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654229381.0,
+      "title": "coronasafe/care_fe#2581",
+      "link": "https://github.com/coronasafe/care_fe/pull/2581#pullrequestreview-994418540",
+      "text": "added backslashes at the end of each route in api.ts"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654229317.0,
+      "title": "coronasafe/care_fe#2581",
+      "link": "https://github.com/coronasafe/care_fe/pull/2581#pullrequestreview-994418140",
+      "text": "added backslashes at the end of each route in api.ts"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#35",
+      "time": 1654184978.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/35#issuecomment-1145019246",
+      "text": "Closing as re-worked with new changes on #52. Ocean of merge conflicts in this."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#52",
+      "time": 1654184855.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/52",
+      "text": "Monthly leaderboard"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2518",
+      "time": 1654168432.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2518",
+      "text": "replace \"Doctor Video\" to \"Doctor Connect\""
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard#48",
+      "time": 1654163238.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/48",
+      "text": "Updates `rithviknishad`'s bio"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#48",
+      "time": 1654132572.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/48",
+      "text": "Updates `rithviknishad`'s bio"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2622",
@@ -557,28 +872,20 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/leaderboard/pull/48",
-      "title": "Updates `rithviknishad`'s bio"
+      "link": "https://github.com/coronasafe/care_fe/pull/2690",
+      "title": "fix incorrect coorindates validation"
     },
     {
-      "link": "https://github.com/coronasafe/leaderboard/pull/35",
-      "title": "Monthly Leaderboard"
+      "link": "https://github.com/coronasafe/care_fe/pull/2654",
+      "title": "Hide Configure Asset button if `!asset_class`"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2552",
-      "title": "Adds Asset Class field and hints for Asset Type in AssetCreate"
+      "link": "https://github.com/coronasafe/care_fe/pull/2653",
+      "title": "Adds Asset Class field and Improve Asset Type option's descriptions"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2518",
-      "title": "replace \"Doctor Video\" to \"Doctor Connect\""
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2485",
-      "title": "Adds hints for delete last entry, mark as accident and unmark actions in inventory management"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2470",
-      "title": "Fixes missing quotes in .env and update REACT_APP_TITLE"
+      "link": "https://github.com/coronasafe/leaderboard/pull/52",
+      "title": "Monthly leaderboard"
     }
   ]
 }

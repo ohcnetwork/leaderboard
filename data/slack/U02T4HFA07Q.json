@@ -741,9 +741,233 @@
                         "U02T4HD63P0",
                         "U02TDGQ0TFE",
                         "U02TPSYRUPK",
-                        "U02U1035G0G"
+                        "U02U1035G0G",
+                        "UV5PPBE2D"
                     ],
-                    "count": 5
+                    "count": 6
+                }
+            ]
+        }
+    ],
+    "2022-06-02 00:00:00": [
+        {
+            "client_msg_id": "d9aa2b1a-358e-49bd-acd3-739e60f52275",
+            "type": "message",
+            "text": "Nothing for today, just college work.",
+            "user": "U02T4HFA07Q",
+            "ts": "1654197758.253079",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "anb",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Nothing for today, just college work."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-03 00:00:00": [
+        {
+            "client_msg_id": "7c811752-7a35-4ac4-b1cb-578f2e15a655",
+            "type": "message",
+            "text": "Worked on issue <https://github.com/coronasafe/care_fe/issues/2643|#2643>\nPRs resolving the issue: <https://github.com/coronasafe/care_fe/pull/2645|#2645> <https://github.com/coronasafe/care/pull/815|#care/815>",
+            "user": "U02T4HFA07Q",
+            "ts": "1654266384.180769",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "A=e",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2643",
+                                    "text": "#2643",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nPRs resolving the issue: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2645",
+                                    "text": "#2645",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/815",
+                                    "text": "#care/815",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-06 00:00:00": [
+        {
+            "client_msg_id": "e350325b-f1b0-4a07-aff0-8f4d96de15d2",
+            "type": "message",
+            "text": "Nothing for today, busy with college project.",
+            "user": "U02T4HFA07Q",
+            "ts": "1654525774.146929",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "mxeD",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Nothing for today, busy with college project."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-08 00:00:00": [
+        {
+            "client_msg_id": "d83d497c-951a-4ed5-98c7-f5026481ec5b",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care/pull/838|#838>",
+            "user": "U02T4HFA07Q",
+            "ts": "1654706917.350979",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654691606,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/838",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/838|#838 Add check for empty comments and notes>",
+                    "text": "Builds on <https://github.com/coronasafe/care_fe/pull/2525|coronasafe/care_fe#2525>\n\nAdds a check for empty comments and notes from the backend and rejects with proper validation message when needed.\n\nAlso some minor formatting change performed automatically by `pre-commit-hooks`",
+                    "title": "<https://github.com/coronasafe/care/pull/838|#838 Add check for empty comments and notes>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "XN3R5",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/838",
+                                    "text": "#838",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "UV5PPBE2D"
+                    ],
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "2022-06-10 00:00:00": [
+        {
+            "client_msg_id": "5d83346f-7519-4d5e-98eb-15bc870d9aa3",
+            "type": "message",
+            "text": "Worked on an existing PR and took up a new issue.",
+            "user": "U02T4HFA07Q",
+            "ts": "1654880746.207689",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "2Ao",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on an existing PR and took up a new issue."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
                 }
             ]
         }

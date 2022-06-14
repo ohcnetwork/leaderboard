@@ -1,6 +1,335 @@
 {
-  "last_updated": 1653844467.0,
+  "last_updated": 1655151978.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2701",
+      "time": 1655151978.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2701",
+      "text": "Deleted doctors appear in Doctor Connect "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655151967.0,
+      "title": "coronasafe/care#855",
+      "link": "https://github.com/coronasafe/care/pull/855#pullrequestreview-1004890272",
+      "text": "fixed listing of deleted users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#818",
+      "time": 1655151756.0,
+      "link": "https://github.com/coronasafe/care/issues/818",
+      "text": "Bug: read-only user can edit/update location management of a facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655151739.0,
+      "title": "coronasafe/care#830",
+      "link": "https://github.com/coronasafe/care/pull/830#pullrequestreview-1004886289",
+      "text": "DRY Permissions added for assetLocation viewset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654956611.0,
+      "title": "coronasafe/care#852",
+      "link": "https://github.com/coronasafe/care/pull/852#pullrequestreview-1003467622",
+      "text": "Changed allowed hosts to wildcard in staging"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654885817.0,
+      "title": "coronasafe/care#797",
+      "link": "https://github.com/coronasafe/care/pull/797#pullrequestreview-1003169207",
+      "text": "Added API Route for User Password Change"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654885817.0,
+      "title": "coronasafe/care#797",
+      "link": "https://github.com/coronasafe/care/pull/797#pullrequestreview-1003169207",
+      "text": "Added API Route for User Password Change"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654885088.0,
+      "title": "coronasafe/care#838",
+      "link": "https://github.com/coronasafe/care/pull/838#pullrequestreview-1003166868",
+      "text": "Add check for empty comments and notes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#838",
+      "time": 1654885052.0,
+      "link": "https://github.com/coronasafe/care/pull/838#issuecomment-1152619471",
+      "text": "I would create a new serializer field that has the empty check validator built-in and use that everywhere instead of re-writing the logic multiple times. Create a PR with this or create an issue to create such a field. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#813",
+      "time": 1654884734.0,
+      "link": "https://github.com/coronasafe/care/issues/813",
+      "text": "Endpoint  /consultation/consultationId/daily_rounds/analyse/ giving error for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654884728.0,
+      "title": "coronasafe/care#814",
+      "link": "https://github.com/coronasafe/care/pull/814#pullrequestreview-1003161481",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#417",
+      "time": 1654778641.0,
+      "link": "https://github.com/coronasafe/care/issues/417",
+      "text": "pre-commit fails while trying to commit the changes that we made, [un-used imports on various files]"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#836",
+      "time": 1654778633.0,
+      "link": "https://github.com/coronasafe/care/pull/836#issuecomment-1151073254",
+      "text": "@sainAk the app requires write access to the code, so the app won't be installed. we can keep tabs on it."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654778500.0,
+      "title": "coronasafe/care#836",
+      "link": "https://github.com/coronasafe/care/pull/836#pullrequestreview-1001257246",
+      "text": "update pre-commit hooks and dependencies"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654698218.0,
+      "title": "coronasafe/care#814",
+      "link": "https://github.com/coronasafe/care/pull/814#pullrequestreview-999862728",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654698218.0,
+      "title": "coronasafe/care#814",
+      "link": "https://github.com/coronasafe/care/pull/814#pullrequestreview-999862728",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654694289.0,
+      "title": "coronasafe/care#837",
+      "link": "https://github.com/coronasafe/care/pull/837#pullrequestreview-999731296",
+      "text": "fix docs pipeline and remove new pipeline"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#825",
+      "time": 1654683701.0,
+      "link": "https://github.com/coronasafe/care/issues/825",
+      "text": "Create pipelines to automatically build documentation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654683662.0,
+      "title": "coronasafe/care#826",
+      "link": "https://github.com/coronasafe/care/pull/826#pullrequestreview-999484193",
+      "text": "add workflow to build and deploy docs"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654683662.0,
+      "title": "coronasafe/care#826",
+      "link": "https://github.com/coronasafe/care/pull/826#pullrequestreview-999484193",
+      "text": "add workflow to build and deploy docs"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654538962.0,
+      "title": "coronasafe/care#826",
+      "link": "https://github.com/coronasafe/care/pull/826#pullrequestreview-996987339",
+      "text": "add workflow to build and deploy docs"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654538962.0,
+      "title": "coronasafe/care#826",
+      "link": "https://github.com/coronasafe/care/pull/826#pullrequestreview-996987339",
+      "text": "add workflow to build and deploy docs"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#707",
+      "time": 1654525003.0,
+      "link": "https://github.com/coronasafe/care/issues/707",
+      "text": "Update `/add_user` endpoint to return status code instead of user object"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654524990.0,
+      "title": "coronasafe/care#718",
+      "link": "https://github.com/coronasafe/care/pull/718#pullrequestreview-996683186",
+      "text": "updated `/add_user` endpoint to return status code instead of user object"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#666",
+      "time": 1654524834.0,
+      "link": "https://github.com/coronasafe/care/pull/666#issuecomment-1147494681",
+      "text": "Looks like there are no breaking changes, merging without testing."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654524596.0,
+      "title": "coronasafe/care#810",
+      "link": "https://github.com/coronasafe/care/pull/810#pullrequestreview-996673364",
+      "text": "Fix error format for external test"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654524595.0,
+      "title": "coronasafe/care#810",
+      "link": "https://github.com/coronasafe/care/pull/810#pullrequestreview-996673364",
+      "text": "Fix error format for external test"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654524419.0,
+      "title": "coronasafe/care#788",
+      "link": "https://github.com/coronasafe/care/pull/788#pullrequestreview-996669275",
+      "text": "Update pre-commit requirement and fix it's branch name"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#619",
+      "time": 1654523587.0,
+      "link": "https://github.com/coronasafe/care/pull/619#issuecomment-1147472667",
+      "text": "Closing PR since features are not likely to be merged in ( too many conflicts )"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#578",
+      "time": 1654523497.0,
+      "link": "https://github.com/coronasafe/care/pull/578#issuecomment-1147471325",
+      "text": "Closing until requirement is open again."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#756",
+      "time": 1654522659.0,
+      "link": "https://github.com/coronasafe/care/issues/756",
+      "text": "Documentation on local deployment"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#763",
+      "time": 1654522654.0,
+      "link": "https://github.com/coronasafe/care/pull/763#issuecomment-1147457139",
+      "text": "We need pipelines to build HTML.\r\ncc @sainAk "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654522615.0,
+      "title": "coronasafe/care#763",
+      "link": "https://github.com/coronasafe/care/pull/763#pullrequestreview-996624236",
+      "text": "Updated Documentation"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#682",
+      "time": 1654522499.0,
+      "link": "https://github.com/coronasafe/care/issues/682",
+      "text": "TeleICU Filter for Live Patients"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654522468.0,
+      "title": "coronasafe/care#805",
+      "link": "https://github.com/coronasafe/care/pull/805#pullrequestreview-996620880",
+      "text": "Add more filters for patient list API"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654522291.0,
+      "title": "coronasafe/care#815",
+      "link": "https://github.com/coronasafe/care/pull/815#pullrequestreview-996616670",
+      "text": "Allow DELETE method for bed endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654522276.0,
+      "title": "coronasafe/care#815",
+      "link": "https://github.com/coronasafe/care/pull/815#pullrequestreview-996616670",
+      "text": "Allow DELETE method for bed endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654522213.0,
+      "title": "coronasafe/care#817",
+      "link": "https://github.com/coronasafe/care/pull/817#pullrequestreview-996614809",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654522213.0,
+      "title": "coronasafe/care#817",
+      "link": "https://github.com/coronasafe/care/pull/817#pullrequestreview-996614809",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654522059.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-996611625",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654522059.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-996611625",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654521976.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-996609986",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654521873.0,
+      "title": "coronasafe/care#797",
+      "link": "https://github.com/coronasafe/care/pull/797#pullrequestreview-996606838",
+      "text": "Added API Route for User Password Change"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654521873.0,
+      "title": "coronasafe/care#797",
+      "link": "https://github.com/coronasafe/care/pull/797#pullrequestreview-996606838",
+      "text": "Added API Route for User Password Change"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#792",
+      "time": 1654179517.0,
+      "link": "https://github.com/coronasafe/care/issues/792",
+      "text": "Getting a response of 500 when attempting to create asset with asset_class specified."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654179498.0,
+      "title": "coronasafe/care#793",
+      "link": "https://github.com/coronasafe/care/pull/793#pullrequestreview-993619128",
+      "text": "change model field type of asset_class"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#793",
+      "time": 1654179480.0,
+      "link": "https://github.com/coronasafe/care/pull/793#issuecomment-1144920927",
+      "text": "@gigincg we can use String choices."
+    },
     {
       "type": "pr_reviewed",
       "time": 1653844467.0,

@@ -647,5 +647,151 @@
                 }
             ]
         }
+    ],
+    "2022-06-06 00:00:00": [
+        {
+            "client_msg_id": "3d45632d-e02c-4726-b014-7dad069a90a7",
+            "type": "message",
+            "text": "no progress, studying for exams",
+            "user": "U02U102TL0G",
+            "ts": "1654535036.700749",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ybDf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "no progress, studying for exams"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-10 00:00:00": [
+        {
+            "client_msg_id": "ab66e44b-e6ab-4eab-bcbb-684b8846dbe8",
+            "type": "message",
+            "text": "Exams\n\u2022 finally over, travelling back to home",
+            "user": "U02U102TL0G",
+            "ts": "1654887598.627349",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02U102TL0G",
+                "ts": "1654887690.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "TTG",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Exams"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "finally over, travelling back to home"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "tada",
+                    "users": [
+                        "U02U103J5LG",
+                        "U02TDGQQPMJ",
+                        "U02U1035G0G"
+                    ],
+                    "count": 3
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TB83Q5V0"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-11 00:00:00": [
+        {
+            "client_msg_id": "37e28d2a-b7fe-4762-ac72-031759117039",
+            "type": "message",
+            "text": "Submitted PR <https://github.com/coronasafe/care/pull/854|#854>",
+            "user": "U02U102TL0G",
+            "ts": "1654974901.973919",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654974842,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/854",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/854|#854 prevent switching patient to the same bed>",
+                    "text": "Prevent patients from switching to the same bed during consultation while the previous one hasn't ended.  \nfixes: <https://github.com/coronasafe/care/issues/850|#850>",
+                    "title": "<https://github.com/coronasafe/care/pull/854|#854 prevent switching patient to the same bed>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "WFz1",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/854",
+                                    "text": "#854",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

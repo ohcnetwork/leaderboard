@@ -3110,9 +3110,116 @@
                         "U02TB83Q5V0",
                         "U02U102TL0G",
                         "U02TPSYRUPK",
-                        "U02TPSYB1MF"
+                        "U02TPSYB1MF",
+                        "UV5PPBE2D"
                     ],
-                    "count": 4
+                    "count": 5
+                },
+                {
+                    "name": "rocket",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-13 00:00:00": [
+        {
+            "client_msg_id": "dda6b065-f089-4fd5-b33a-a4f981671b3c",
+            "type": "message",
+            "text": "PRs\n\u2022 adds rewrites for vercel <https://github.com/coronasafe/care_fe/pull/2691>\n\u2022 fix incorrect coorindates validation <https://github.com/coronasafe/care_fe/pull/2690> ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1655124781.499529",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655056098,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2691",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2691|#2691 adds rewrites for vercel>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2691|#2691 adds rewrites for vercel>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655054911,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2690",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/2690|#2690 fix incorrect coorindates validation>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2690|#2690 fix incorrect coorindates validation>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "iwc+",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "adds rewrites for vercel "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2691"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fix incorrect coorindates validation "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2690"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
                 }
             ]
         }

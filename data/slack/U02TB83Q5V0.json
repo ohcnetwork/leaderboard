@@ -1153,9 +1153,105 @@
                 {
                     "name": "white_check_mark",
                     "users": [
-                        "U02TDGQQPMJ"
+                        "U02TDGQQPMJ",
+                        "UV5PPBE2D"
                     ],
-                    "count": 1
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "2022-06-13 00:00:00": [
+        {
+            "client_msg_id": "cc89a872-e460-48f4-95f0-7c7120d2d0c1",
+            "type": "message",
+            "text": "PRs\n\u2022 <https://github.com/coronasafe/care/pull/855>\n\u2022 <https://github.com/coronasafe/care_fe/pull/2702>\n\u2022 <https://github.com/coronasafe/care_fe/pull/2699>",
+            "user": "U02TB83Q5V0",
+            "ts": "1655139746.146539",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TB83Q5V0",
+                "ts": "1655139769.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655125598,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/855",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/855|#855 fixed listing of deleted users>",
+                    "text": "Users fetched with the get_users API returned users which had been set to not active.\n\ncloses <https://github.com/coronasafe/care_fe/issues/2701|coronasafe/care_fe#2701>",
+                    "title": "<https://github.com/coronasafe/care/pull/855|#855 fixed listing of deleted users>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Wt7",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/855"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2702"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2699"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "U02SWK752TZ"
+                    ],
+                    "count": 2
                 }
             ]
         }

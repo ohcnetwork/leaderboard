@@ -3223,5 +3223,81 @@
                 }
             ]
         }
+    ],
+    "2022-06-14 00:00:00": [
+        {
+            "client_msg_id": "2434724f-0c8e-418a-bb9b-f57011be0f74",
+            "type": "message",
+            "text": "Working on <https://github.com/coronasafe/leaderboard/pull/52> to make `getHighlights` more generic.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1655215131.225439",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/25143503/171669032-4d696c5b-1427-45b9-88d6-5b37557bcbba.png",
+                    "image_width": 1920,
+                    "image_height": 1080,
+                    "image_bytes": 219720,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654184854,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/pull/52",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1920x1080px image",
+                    "text": "Closes <https://github.com/coronasafe/leaderboard/issues/31|#31>\n\n<https://user-images.githubusercontent.com/25143503/171669032-4d696c5b-1427-45b9-88d6-5b37557bcbba.png|image>",
+                    "title": "<https://github.com/coronasafe/leaderboard/pull/52|#52 Monthly leaderboard>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "bvOdn",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/pull/52"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to make "
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "getHighlights",
+                                    "style": {
+                                        "code": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " more generic."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

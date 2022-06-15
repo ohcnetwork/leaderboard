@@ -793,5 +793,68 @@
                 }
             ]
         }
+    ],
+    "2022-06-14 00:00:00": [
+        {
+            "client_msg_id": "535784b7-31b5-461e-9d6f-5a19fc7d4951",
+            "type": "message",
+            "text": "updated PR <https://github.com/coronasafe/care/pull/854|#854> to solve a similar issue",
+            "user": "U02U102TL0G",
+            "ts": "1655215768.543709",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654974842,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/854",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/854|#854 update patient bed switching logic>",
+                    "text": "Prevent patients from switching to the same bed during consultation while the previous one hasn't ended.  \nfixes: <https://github.com/coronasafe/care/issues/850|#850>  \nfixes: <https://github.com/coronasafe/care/issues/847|#847> (both are similar/related issues)",
+                    "title": "<https://github.com/coronasafe/care/pull/854|#854 update patient bed switching logic>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "jT+",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "updated PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/854",
+                                    "text": "#854",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to solve a similar issue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

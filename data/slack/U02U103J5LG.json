@@ -1355,5 +1355,108 @@
                 }
             ]
         }
+    ],
+    "2022-06-15 00:00:00": [
+        {
+            "client_msg_id": "bd5ffa29-9721-4f28-9635-6c7924c94f9d",
+            "type": "message",
+            "text": "*EOD Updates*\n\nPR:\n\u2022 <https://github.com/coronasafe/care_fe/pull/2718|#2718>(Facility Page made full role responsive for read-only users)\nIssue Raised:\n\u2022 <https://github.com/coronasafe/care_fe/issues/2719|#2719>(When pressing logout 404 is displayed for a small time frame)\nICU monitor data extraction repo is live <https://github.com/coronasafe/care_ocr|here>",
+            "user": "U02U103J5LG",
+            "ts": "1655304971.711729",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "T+bhr",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Updates",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nPR:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2718",
+                                            "text": "#2718",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(Facility Page made full role responsive for read-only users)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issue Raised:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2719",
+                                            "text": "#2719",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(When pressing logout 404 is displayed for a small time frame)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nICU monitor data extraction repo is live "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_ocr",
+                                    "text": "here"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

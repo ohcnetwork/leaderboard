@@ -856,5 +856,64 @@
                 }
             ]
         }
+    ],
+    "2022-06-16 00:00:00": [
+        {
+            "client_msg_id": "4cb651be-0a9c-4b06-a9fb-3dac4a6bca64",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/858|#858>",
+            "user": "U02U102TL0G",
+            "ts": "1655405624.720499",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655405474,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/858",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/858|#858 add asset integration class for multipara monitors>",
+                    "text": "fixes: <https://github.com/coronasafe/care/issues/657|#657>",
+                    "title": "<https://github.com/coronasafe/care/pull/858|#858 add asset integration class for multipara monitors>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "l+O",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/858",
+                                    "text": "#858",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

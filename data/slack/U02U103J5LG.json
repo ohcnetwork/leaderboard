@@ -1458,5 +1458,97 @@
                 }
             ]
         }
+    ],
+    "2022-06-16 00:00:00": [
+        {
+            "client_msg_id": "421c27ef-de15-4d2c-a0f2-3117889e7500",
+            "type": "message",
+            "text": "*EOD UPDATES*\n\nPR:\n\u2022 <https://github.com/coronasafe/care_fe/pull/2722|#2722>(404 page displayed on logout fixed)\nOther:\n\u2022 Created several issues in <https://github.com/coronasafe/care_ocr/|care_ocr> repo",
+            "user": "U02U103J5LG",
+            "ts": "1655389546.949999",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "aCV",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD UPDATES",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nPR:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/2722",
+                                            "text": "#2722",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(404 page displayed on logout fixed)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nOther:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Created several issues in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_ocr/",
+                                            "text": "care_ocr"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " repo"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -1,16 +1,14 @@
-import React from "react";
-import markdownToHtml from "../../lib/markdownToHtml";
-import Head from "next/head";
+import React from 'react';
+import markdownToHtml from '../../lib/markdownToHtml';
 
-import InfoCard from "../../components/contributors/InfoCard";
-import GithubActivity from "../../components/contributors/GithubActivity";
+import InfoCard from '../../components/contributors/InfoCard';
+import GithubActivity from '../../components/contributors/GithubActivity';
 
-import { getContributorBySlug, getContributors } from "../../lib/api";
-import Link from "next/link";
+import { getContributorBySlug, getContributors } from '../../lib/api';
 
-import ActivityCalendar from "react-activity-calendar";
-import PageHead from "../../components/PageHead";
-import Header from "../../components/Header";
+import PageHead from '../../components/PageHead';
+import Header from '../../components/Header';
+import ActivityCalenderGit from '../../components/contributors/ActivityCalenderGit';
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
 //     // Current Date - i
@@ -27,26 +25,6 @@ import Header from "../../components/Header";
 // }
 
 export default function Contributor({ contributor, slug }) {
-  const calenderData = () => {
-    const currentYear = new Date().getFullYear();
-    let dates = contributor.calendarData.filter(
-      (d) => d.date.slice(0, 4) === String(currentYear)
-    );
-    let date;
-    if (dates.length != 0) date = new Date(dates.slice(-1)[0].date);
-    else date = new Date();
-    date.setDate(date.getDate() + 1);
-    while (date.getFullYear() === currentYear) {
-      dates.push({
-        date: new Date(date).toISOString().split('T')[0],
-        count: 0,
-        level: 0,
-      });
-      date.setDate(date.getDate() + 1);
-    }
-    return dates;
-  };
-
   return (
     <div className="bg-gray-900 min-h-screen">
       <PageHead title={contributor.name} />
@@ -60,12 +38,7 @@ export default function Contributor({ contributor, slug }) {
           <div className="col-span-2">
             <div>
               <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
-              <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
-                {/* <p className="text-xl text-gray-300">
-                  ...to add activity visualization...
-                </p> */}
-                <ActivityCalendar showWeekdayLabels data={calenderData()} />
-              </div>
+              <ActivityCalenderGit calendarData={contributor.calendarData} />
             </div>
 
             <div>
@@ -118,15 +91,15 @@ export default function Contributor({ contributor, slug }) {
               </dl>
             </div>
 
-            {contributor["activityData"] &&
-              contributor["activityData"]["open_prs"] &&
-              contributor["activityData"]["open_prs"].length > 0 && (
+            {contributor['activityData'] &&
+              contributor['activityData']['open_prs'] &&
+              contributor['activityData']['open_prs'].length > 0 && (
                 <div>
                   <h3 className="font-bold text-gray-100 mt-6">
                     Currently Working on
                   </h3>
                   <div className="mt-4">
-                    {contributor["activityData"]["open_prs"].map(
+                    {contributor['activityData']['open_prs'].map(
                       (pr, index) => (
                         <a href={pr.link} key={index}>
                           <p
@@ -145,11 +118,11 @@ export default function Contributor({ contributor, slug }) {
                 </div>
               )}
 
-            {contributor["activityData"] &&
-              contributor["activityData"]["activity"] && (
+            {contributor['activityData'] &&
+              contributor['activityData']['activity'] && (
                 <div className="mt-6 overflow-x-hidden">
                   <h3 className="font-bold text-gray-100">Contributions</h3>
-                  <GithubActivity activityData={contributor["activityData"]} />
+                  <GithubActivity activityData={contributor['activityData']} />
                 </div>
               )}
           </div>
@@ -161,7 +134,7 @@ export default function Contributor({ contributor, slug }) {
 
 export async function getStaticProps({ params }) {
   const contributor = getContributorBySlug(params.slug, true);
-  const content = await markdownToHtml(contributor.content || "");
+  const content = await markdownToHtml(contributor.content || '');
 
   return {
     props: {

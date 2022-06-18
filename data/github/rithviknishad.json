@@ -1,6 +1,272 @@
 {
-  "last_updated": 1654351385.0,
+  "last_updated": 1655467559.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2159",
+      "time": 1655467559.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2159#issuecomment-1158805325",
+      "text": "*correction: coronasafe/care#657"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2741",
+      "time": 1655466816.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2741#issuecomment-1158796555",
+      "text": "Waiting to merge. Done in #2690 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2736",
+      "time": 1655464724.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2736#issuecomment-1158772095",
+      "text": "netlify build failing even after clear cache."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2737",
+      "time": 1655462004.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2737",
+      "text": "Pressing back takes you back, but not where you expect..."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1655458682.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1158695440",
+      "text": "![image](https://user-images.githubusercontent.com/25143503/174271402-f129d52a-a8fa-4a04-b786-9c0081fc205e.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#59",
+      "time": 1655389523.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/59#issuecomment-1157722789",
+      "text": "Being worked on #52 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2702",
+      "time": 1655297119.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2702#issuecomment-1156426522",
+      "text": "@skks1212 can u merge the latest develop again? the one you've is one commit behind the required one and that has a typo in the build command.\r\n![image](https://user-images.githubusercontent.com/25143503/173829995-d1a9fe8c-0db6-4bd8-85c5-250e4d40e46e.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2427",
+      "time": 1655185932.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2427#issuecomment-1154745784",
+      "text": "@cp-Coder the issue has been fixed in latest develop 7c4c16a\r\nCould you merge that?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2691",
+      "time": 1655090654.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2691",
+      "text": "adds rewrites for vercel"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2691",
+      "time": 1655056099.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2691",
+      "text": "adds rewrites for vercel"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2690",
+      "time": 1655054912.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2690",
+      "text": "fix incorrect coorindates validation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2543",
+      "time": 1654958510.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2543#issuecomment-1152940699",
+      "text": "@gigincg @anuran-roy Vercel preview deploy works without clearing cache out of the box for this PR. \r\nHowever netlify preview build failed 3 times even after clearing cache.\r\n\r\n[Build logs](https://app.netlify.com/sites/care-net/deploys/62a4a77f19201b00093b79a1#L13) says: \r\n\r\n```\r\n8:03:16 PM: Different build command detected, going to use the one specified in the Netlify\r\nconfiguration file: 'CI='' yarn run build' versus 'CI=\"\" yarn run prebuild && CI=\"\" yarn run\r\nbuild || { cat /tmp/* ; sleep 30 ; false; }' in the Netlify UI\r\n```"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2543",
+      "time": 1654957925.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2543#issuecomment-1152938569",
+      "text": "@anuran-roy @nihal467 deploy fails even after clear cache and deploy."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2644",
+      "time": 1654827599.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2644",
+      "text": "Hide \"copy logs from previous logs\" if first consultation update"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2663",
+      "time": 1654780330.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2663#issuecomment-1151102225",
+      "text": "Closing as fixed in [c060b4b](https://github.com/coronasafe/care_fe/commit/c060b4b70a19b51838c826fc7dc62f622f5aa6ed)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2667",
+      "time": 1654775349.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2667#issuecomment-1151023046",
+      "text": "@Pranshu1902 deploy failing even after clear cache!\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172839447-28a78814-61e6-458b-954c-36140a398552.png)\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172839694-e17b0586-fb29-444b-985c-c88937455c7c.png)\r\n\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654775122.0,
+      "title": "coronasafe/care_fe#2667",
+      "link": "https://github.com/coronasafe/care_fe/pull/2667#pullrequestreview-1001185605",
+      "text": "Added spacing Issue#2666"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654775110.0,
+      "title": "coronasafe/care_fe#2667",
+      "link": "https://github.com/coronasafe/care_fe/pull/2667#pullrequestreview-1001185605",
+      "text": "Added spacing Issue#2666"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2663",
+      "time": 1654770847.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2663",
+      "text": "Clean rebuild of `yarn.lock` to fix netlify cache issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2660",
+      "time": 1654759461.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2660#issuecomment-1150766839",
+      "text": "Closing as solved in #2662 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2662",
+      "time": 1654759394.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2662#issuecomment-1150765869",
+      "text": "@gigincg worked without needing to clear cache and deploy, rebuilt yarn.lock.\r\n\r\n![Uploading image.png\u2026]()\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2662",
+      "time": 1654758604.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2662",
+      "text": "Test Preview Deploy without plugin"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2660",
+      "time": 1654758094.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2660#issuecomment-1150747243",
+      "text": "will try testing without the plugin in another draft PR to confirm that it's not a coincidence."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2660",
+      "time": 1654757412.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2660#issuecomment-1150738642",
+      "text": "Tried rebuilding the yarn.lock from scratch and now it seems to deploy without needing to clear cache.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172782885-b4ce235c-1bd5-446d-baef-b4e41f2d658c.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#56",
+      "time": 1654740843.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/56#issuecomment-1150595330",
+      "text": "@khavinshankar footer component has been refactored in https://github.com/coronasafe/leaderboard/pull/52/files#diff-3ebccc91178536d06703a58be49b5077d0535c8ff3ab2512af21ca060c5b4e77"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2660",
+      "time": 1654738703.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2660",
+      "text": "Test Preview Deploy"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654687552.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149793039",
+      "text": "@nihal467 @gigincg  how about this one?\r\nIf mobile, shows the asset type's hint below the selected option.\r\nIf not mobile, shows a tooltip on hover.\r\n\r\nCouldn't get the above design to work on chrome.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172604729-dfd5d67c-8db7-4dab-91a6-6fb145ba5557.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2470",
+      "time": 1654684991.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2470",
+      "text": "Fixes missing quotes in .env and update REACT_APP_TITLE"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654668932.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149505938",
+      "text": "@nihal467 will try working on it. \r\nthat one was using non-native rendering and had issues with different browsers when you tested in #2552 so decided to use the original style itself.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654666229.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653#issuecomment-1149480791",
+      "text": "@nihal467 I'm using the native rendering which was used originally \ud83e\udd72 Just used a better description instead of External and Internal.\r\n\r\nCould you give me some suggestions to improve?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2654",
+      "time": 1654666141.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2654#issuecomment-1149479979",
+      "text": "@nihal467 #2653 has Asset Class field implemented. This PR does not include that PR branch as base. \r\n\r\nAn asset with asset class defined: https://deploy-preview-2654--care-net.netlify.app/assets/15e5b3e0-c991-418d-b21d-b51c5369e213\r\n\r\nAn asset without asset class defined: https://deploy-preview-2654--care-net.netlify.app/assets/86c5fc30-98c7-45ad-855f-2c59cc7d2fd2"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2654",
+      "time": 1654513563.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2654",
+      "text": "Hide Configure Asset button if `!asset_class`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1654512747.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653",
+      "text": "Adds Asset Class field and Improve Asset Type option's descriptions"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2427",
+      "time": 1654449702.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2427#issuecomment-1146852022",
+      "text": "@cp-Coder cleared cache and deployed!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#759",
+      "time": 1654427810.0,
+      "link": "https://github.com/coronasafe/care/issues/759#issuecomment-1146785985",
+      "text": "@sainAk @iamsdas @vigneshhari Still receiving it as `meta.camera_address` :(\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172047923-15a86fa7-e5d0-4f02-8f2a-5b7688dac1ef.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2552",
+      "time": 1654425960.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2552#issuecomment-1146782156",
+      "text": "@nihal467 fixed it...\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2552",
+      "time": 1654425912.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2552#issuecomment-1146782072",
+      "text": "\r\nhttps://user-images.githubusercontent.com/25143503/172046804-90c6228a-8f37-4f16-b859-972c61e68407.mp4\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2552",
+      "time": 1654424140.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2552#issuecomment-1146778449",
+      "text": "@nihal467 unable to reproduce. this is what i see, even from preview deploy. will look into it.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/172045750-1654c71d-96fe-4be1-93cc-2826956df84b.png)\r\n"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#2649",
@@ -662,20 +928,20 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2644",
-      "title": "Hide \"copy logs from previous logs\" if first consultation update"
+      "link": "https://github.com/coronasafe/care_fe/pull/2690",
+      "title": "fix incorrect coorindates validation"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2654",
+      "title": "Hide Configure Asset button if `!asset_class`"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2653",
+      "title": "Adds Asset Class field and Improve Asset Type option's descriptions"
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2552",
-      "title": "Adds Asset Class field and hints for Asset Type in AssetCreate"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2470",
-      "title": "Fixes missing quotes in .env and update REACT_APP_TITLE"
     }
   ]
 }

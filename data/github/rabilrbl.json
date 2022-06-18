@@ -1,6 +1,41 @@
 {
-  "last_updated": 1654229554.0,
+  "last_updated": 1654841013.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2576",
+      "time": 1654841013.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2576",
+      "text": "Fix labels under user management not having sufficient contrast with background"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2567",
+      "time": 1654840960.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2567",
+      "text": "Darken labels and fix col gap under profile"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2661",
+      "time": 1654757994.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2661",
+      "text": "Assets: pagination next button is disfunctional on intital page load"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#32",
+      "time": 1654452212.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/32#issuecomment-1146857800",
+      "text": "> Can't nextjs itself handle it? How about this? We'll make an API endpoint in nextjs that'll dispatch an email with sendgrid or anything. And invoke that endpoint every week by a github workflow? \ud83d\ude0e\r\n\r\n@rithviknishad As this NextJS project only uses SSG. The choice is only to go for GH workflow\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654450626.0,
+      "title": "coronasafe/care_fe#2650",
+      "link": "https://github.com/coronasafe/care_fe/pull/2650#pullrequestreview-996025746",
+      "text": "Fix: Overlapping card headings in Resource Details page"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2489",
@@ -493,14 +528,6 @@
     }
   ],
   "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2576",
-      "title": "Fix labels under user management not having sufficient contrast with background"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2567",
-      "title": "Darken labels and fix col gap under profile"
-    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2498",
       "title": "Fix notification subscription"

@@ -474,5 +474,189 @@
                 }
             ]
         }
+    ],
+    "2022-06-07 00:00:00": [
+        {
+            "client_msg_id": "92fb99f5-2412-47a2-974d-4d39c85c7fd4",
+            "type": "message",
+            "text": "Writing EOD after like, forever...\n\nWas unwell because of the extreme summer heat. Missed the EODs and the Weekly review. Looking for new issues to work on.",
+            "user": "U02TB83MU9G",
+            "ts": "1654614345.975049",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "psX",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Writing EOD after like, forever...\n\nWas unwell because of the extreme summer heat. Missed the EODs and the Weekly review. Looking for new issues to work on."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02U1035G0G"
+                    ],
+                    "count": 1
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UC99MFPU1"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-16 00:00:00": [
+        {
+            "client_msg_id": "e417c8b3-fb9a-4eb9-925d-4d54649e1ca8",
+            "type": "message",
+            "text": "*EOD Update:*\n\u2022 Worked with the easy_ocr library for <https://github.com/coronasafe/care_ocr/|care_ocr>, made a <https://github.com/coronasafe/care_ocr/pull/5|PR>\n\u2022 Working on <https://github.com/coronasafe/care_fe/issues/2646|#2646> of care_fe",
+            "user": "U02TB83MU9G",
+            "ts": "1655398404.863239",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TB83MU9G",
+                "ts": "1655398576.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "j7c",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Update:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked with the easy_ocr library for "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_ocr/",
+                                            "text": "care_ocr"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", made a "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_ocr/pull/5",
+                                            "text": "PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/2646",
+                                            "text": "#2646",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " of care_fe"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-17 00:00:00": [
+        {
+            "client_msg_id": "25e2a223-3ea9-4c9a-a1fb-000dc53b24c5",
+            "type": "message",
+            "text": "EOD:\n\n1. Worked on a few personal projects\n2. Worked on care_ocr, trying to work out text detection in different lighting settings",
+            "user": "U02TB83MU9G",
+            "ts": "1655476144.713609",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "D6+E",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD:\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on a few personal projects"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on care_ocr, trying to work out text detection in different lighting settings"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "ordered",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

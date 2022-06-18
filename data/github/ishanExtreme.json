@@ -1,6 +1,132 @@
 {
-  "last_updated": 1654344536.0,
+  "last_updated": 1655377905.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_ocr#4",
+      "time": 1655377905.0,
+      "link": "https://github.com/coronasafe/care_ocr/issues/4",
+      "text": "Test different OCR libraries"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_ocr#3",
+      "time": 1655377699.0,
+      "link": "https://github.com/coronasafe/care_ocr/issues/3",
+      "text": "Clean and Verify extracted data"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_ocr#2",
+      "time": 1655377152.0,
+      "link": "https://github.com/coronasafe/care_ocr/issues/2",
+      "text": "Crop the image to reduce noise during OCR."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_ocr#1",
+      "time": 1655376607.0,
+      "link": "https://github.com/coronasafe/care_ocr/issues/1",
+      "text": "Reduce image size for a faster data extraction"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2722",
+      "time": 1655372885.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2722",
+      "text": "404 page displayed on logout fixed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2718",
+      "time": 1655372012.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2718#issuecomment-1157443827",
+      "text": "read-only user Credentials:readonly, Welcome@123"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2719",
+      "time": 1655297145.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2719",
+      "text": "When pressing logout 404 is displayed for a small time frame"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2718",
+      "time": 1655296599.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2718",
+      "text": "Facility Page made full role responsive for read-only users"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#830",
+      "time": 1655151757.0,
+      "link": "https://github.com/coronasafe/care/pull/830",
+      "text": "DRY Permissions added for assetLocation viewset"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#814",
+      "time": 1654884734.0,
+      "link": "https://github.com/coronasafe/care/pull/814",
+      "text": "Endpoint analyse/ fixed for read-only users"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#814",
+      "time": 1654854328.0,
+      "link": "https://github.com/coronasafe/care/pull/814#issuecomment-1152179165",
+      "text": "![Screenshot from 2022-06-10 15-12-45](https://user-images.githubusercontent.com/39593226/173038923-e6012bb8-701a-44b7-a1a5-220d75cd1b77.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2473",
+      "time": 1654849278.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2473",
+      "text": "Modal for switching bed fixed"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2637",
+      "time": 1654827672.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2637",
+      "text": "Partially improved patients details section for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654681244.0,
+      "title": "coronasafe/care_fe#2638",
+      "link": "https://github.com/coronasafe/care_fe/pull/2638#pullrequestreview-999431304",
+      "text": "Removed App.css and index.scss, moved css imports to index.css"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1654622962.0,
+      "title": "coronasafe/care_fe#2654",
+      "link": "https://github.com/coronasafe/care_fe/pull/2654#pullrequestreview-998582027",
+      "text": "Hide Configure Asset button if `!asset_class`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2656",
+      "time": 1654610017.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2656",
+      "text": "Longitude value doesnot accepts more than 90 and less than -90"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#830",
+      "time": 1654598077.0,
+      "link": "https://github.com/coronasafe/care/pull/830",
+      "text": "DRY Permissions added for assetLocation viewset"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2635",
+      "time": 1654437594.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2635#issuecomment-1146810103",
+      "text": "@nihal467 @gigincg  it was because of /analyze endpoint not having permission for readOnly user for access.\r\nHere is the issue at backend: [#813](https://github.com/coronasafe/care/issues/813)\r\nand here is the PR fixing the issue: [#817](https://github.com/coronasafe/care/pull/817)\r\n\r\nThis PR converted /analuze endpoint from POST to GET so merging this PR at backend needs parallel changes at frontend. Once backend PR is approved I will make PR at frontend to make it compatible."
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#2572",
@@ -368,20 +494,16 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/817",
-      "title": "Endpoint analyse/ fixed for read-only users"
+      "link": "https://github.com/coronasafe/care_fe/pull/2722",
+      "title": "404 page displayed on logout fixed"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2637",
-      "title": "Partially improved patients details section for read-only users"
+      "link": "https://github.com/coronasafe/care_fe/pull/2718",
+      "title": "Facility Page made full role responsive for read-only users"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2635",
       "title": "Partially improved patients page for read-only users"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2473",
-      "title": "Modal for switching bed fixed"
     }
   ]
 }

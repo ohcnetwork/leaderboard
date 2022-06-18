@@ -1,6 +1,167 @@
 {
-  "last_updated": 1654356436.0,
+  "last_updated": 1655319653.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2343",
+      "time": 1655319653.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2343#issuecomment-1156821406",
+      "text": "Will open a new PR with existing as well as new changes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2427",
+      "time": 1655189307.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2427#issuecomment-1154783959",
+      "text": "@nihal This is my login screen(local)\r\n![image](https://user-images.githubusercontent.com/77210185/173511344-a8cb886a-d445-4145-a138-60811e5369b4.png)\r\nI will ask @gigincg today in the EOD call.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2427",
+      "time": 1655185826.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2427#issuecomment-1154744892",
+      "text": "@nihal467 The netlify build is failing because the cache is not cleared.\r\n@rithviknishad Can you clear the netlify cache and deploy this pr???"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2685",
+      "time": 1655185362.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2685",
+      "text": "Auto reload failed : Consultation File"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2685",
+      "time": 1655185362.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2685#issuecomment-1154740467",
+      "text": "@skks1212 I think I didn't convey my thoughts correctly. I was saying that now with every upload, it is successfully reloading the page. So this issue has been fixed."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2685",
+      "time": 1655143637.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2685#issuecomment-1154223948",
+      "text": "@skks1212 since issue #2297 has been fixed, now the page is auto-reloading with every upload."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2196",
+      "time": 1655143431.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2196",
+      "text": "File Upload Error : Consultation Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2196",
+      "time": 1655143007.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2196#issuecomment-1154214916",
+      "text": "Fixed with issue#2297"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#1897",
+      "time": 1655142223.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1897",
+      "text": "File Preview not Working"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1897",
+      "time": 1655142163.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1897#issuecomment-1154202920",
+      "text": "Fixed with issue#2297"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2343",
+      "time": 1655136914.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2343#issuecomment-1154117432",
+      "text": "@gigincg I have made the necessary changes"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#853",
+      "time": 1654956651.0,
+      "link": "https://github.com/coronasafe/care/pull/853",
+      "text": "Adding field validator for non-empty field"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2297",
+      "time": 1654893786.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2297#issuecomment-1152724814",
+      "text": "@tomahawk-pilot It's still not working.The request is showing __403 Forbidden error__ \\\r\n\r\n```\r\nRequest URL: https://egov-s3-patient-data-10bedicu.s3.amazonaws.com/CONSULTATION/52854bee-5282-42d2-bb81-f5f97a1e337c1654892265.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAULRENCOF6S7P2YT3%2F20220610%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220610T201745Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3e344408e7419b5e606784b3499f65dfa5d5276dca957a99ca4e91be6e73e472\r\nRequest Method: OPTIONS\r\nStatus Code: 403 Forbidden\r\nRemote Address: xx.xxx.xxx.xxx:xxx\r\nReferrer Policy: strict-origin-when-cross-origin\r\n```\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2427",
+      "time": 1654891045.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2427#issuecomment-1152686987",
+      "text": "# Updates\r\n\r\n- [x] Fixed patient tab goes white screen\r\n- [ ] Text Box is big now and the password icon is off aligned\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2297",
+      "time": 1654551312.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2297#issuecomment-1147955950",
+      "text": "I think the problem is when I am uploading any file through __POST /api/v1/files__, it is giving a response but the __signed_url__ in the response may be wrong because on running __GET__ on that signed_url it is showing XML error.\n```xml\n<Error>\n<Code>SignatureDoesNotMatch</Code>\n<Message>The request signature we calculated does not match the signature you provided. Check your key and signing method.</Message>\n<AWSAccessKeyId>AKIAULRENCOF6S7P2YT3</AWSAccessKeyId>\n<StringToSign>AWS4-HMAC-SHA256 20220606T212439Z 20220606/ap-south-1/s3/aws4_request ee9b2b7f5aca1d251f9989308415e908c3cc0c6c9d5b4de7a985e3f85f484670</StringToSign>\n<SignatureProvided>56c417d0044e52a25ab55ee27aa690037a2ede6ec5f30f1711652cebb7aa1f5a</SignatureProvided>\n<StringToSignBytes>41 57 53 34 2d 48 4d 41 43 2d 53 48 41 32 35 36 0a 32 30 32 32 30 36 30 36 54 32 31 32 34 33 39 5a 0a 32 30 32 32 30 36 30 36 2f 61 70 2d 73 6f 75 74 68 2d 31 2f 73 33 2f 61 77 73 34 5f 72 65 71 75 65 73 74 0a 65 65 39 62 32 62 37 66 35 61 63 61 31 64 32 35 31 66 39 39 38 39 33 30 38 34 31 35 65 39 30 38 63 33 63 63 30 63 36 63 39 64 35 62 34 64 65 37 61 39 38 35 65 33 66 38 35 66 34 38 34 36 37 30</StringToSignBytes>\n<CanonicalRequest>GET /CONSULTATION/00cedb88-4451-4973-81da-b185a81516d91654550679.png X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAULRENCOF6S7P2YT3%2F20220606%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220606T212439Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host host:egov-s3-patient-data-10bedicu.s3.amazonaws.com host UNSIGNED-PAYLOAD</CanonicalRequest>\n<CanonicalRequestBytes>47 45 54 0a 2f 43 4f 4e 53 55 4c 54 41 54 49 4f 4e 2f 30 30 63 65 64 62 38 38 2d 34 34 35 31 2d 34 39 37 33 2d 38 31 64 61 2d 62 31 38 35 61 38 31 35 31 36 64 39 31 36 35 34 35 35 30 36 37 39 2e 70 6e 67 0a 58 2d 41 6d 7a 2d 41 6c 67 6f 72 69 74 68 6d 3d 41 57 53 34 2d 48 4d 41 43 2d 53 48 41 32 35 36 26 58 2d 41 6d 7a 2d 43 72 65 64 65 6e 74 69 61 6c 3d 41 4b 49 41 55 4c 52 45 4e 43 4f 46 36 53 37 50 32 59 54 33 25 32 46 32 30 32 32 30 36 30 36 25 32 46 61 70 2d 73 6f 75 74 68 2d 31 25 32 46 73 33 25 32 46 61 77 73 34 5f 72 65 71 75 65 73 74 26 58 2d 41 6d 7a 2d 44 61 74 65 3d 32 30 32 32 30 36 30 36 54 32 31 32 34 33 39 5a 26 58 2d 41 6d 7a 2d 45 78 70 69 72 65 73 3d 33 36 30 30 26 58 2d 41 6d 7a 2d 53 69 67 6e 65 64 48 65 61 64 65 72 73 3d 68 6f 73 74 0a 68 6f 73 74 3a 65 67 6f 76 2d 73 33 2d 70 61 74 69 65 6e 74 2d 64 61 74 61 2d 31 30 62 65 64 69 63 75 2e 73 33 2e 61 6d 61 7a 6f 6e 61 77 73 2e 63 6f 6d 0a 0a 68 6f 73 74 0a 55 4e 53 49 47 4e 45 44 2d 50 41 59 4c 4f 41 44</CanonicalRequestBytes>\n<RequestId>K1TEV07EE60M7ZXV</RequestId>\n<HostId>YE4zGQQcce44Z/26NgjWgZ1V2lXJMPBrnsQr8uxP8KMGlLNEsG8cuDpNTWFtQuAMchAgLc1eelE=</HostId>\n</Error>\n```\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2297",
+      "time": 1654548694.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2297#issuecomment-1147913771",
+      "text": "![](https://user-images.githubusercontent.com/39593226/171405171-35d748bf-6a1f-4524-85ba-e84cff9ef4ac.png)\r\n@tomahawk-pilot "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2611",
+      "time": 1654545474.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2611",
+      "text": "File Upload: Audio not working"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2611",
+      "time": 1654545455.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2611#issuecomment-1147855366",
+      "text": "Tracked in #2296"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#827",
+      "time": 1654542268.0,
+      "link": "https://github.com/coronasafe/care/issues/827",
+      "text": "Update to Postgres"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#28",
+      "time": 1654514031.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/28",
+      "text": "code repository has both package-lock and yarn.lock"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#822",
+      "time": 1654501301.0,
+      "link": "https://github.com/coronasafe/care/pull/822",
+      "text": "Remove Postgis"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2407",
+      "time": 1654447893.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2407#issuecomment-1146847143",
+      "text": "@nihal467 This PR is good for testing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2427",
+      "time": 1654447852.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2427#issuecomment-1146847029",
+      "text": "@nihal467 \r\n\r\n> @cp-Coder @gigincg is it good for testing?\r\n\r\nYes"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#2427",
@@ -305,16 +466,20 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/853",
+      "title": "Adding field validator for non-empty field"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/822",
+      "title": "Remove Postgis"
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/2427",
       "title": "Upgraded to mui v5"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2407",
       "title": "upgraded raviger to v4"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2343",
-      "title": "fixed QR code"
     }
   ]
 }

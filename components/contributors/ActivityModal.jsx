@@ -49,6 +49,24 @@ export default function ActivityModal({ isopen, closeFunc, activityData }) {
                   </div>
 
                   <div className="mt-2">
+                    {activityData?.pr_opened && (
+                      <p className="text-base text-gray-100">
+                        <span className="font-semibold">PRs Opened:</span>{' '}
+                        {activityData.pr_opened}
+                      </p>
+                    )}
+                    {activityData?.pr_merged && (
+                      <p className="text-base text-gray-100">
+                        <span className="font-semibold">PRs Merged:</span>{' '}
+                        {activityData.pr_merged}
+                      </p>
+                    )}
+                    {activityData?.pr_reviewed && (
+                      <p className="text-base text-gray-100">
+                        <span className="font-semibold">PRs Reviewed:</span>{' '}
+                        {activityData.pr_reviewed}
+                      </p>
+                    )}
                     {activityData?.eod_update && (
                       <p className="text-base text-gray-100">
                         <span className="font-semibold">EOD Updates:</span>{' '}
@@ -73,24 +91,7 @@ export default function ActivityModal({ isopen, closeFunc, activityData }) {
                         {activityData.comment_created}
                       </p>
                     )}
-                    {activityData?.pr_opened && (
-                      <p className="text-base text-gray-100">
-                        <span className="font-semibold">PRs Opened:</span>{' '}
-                        {activityData.pr_opened}
-                      </p>
-                    )}
-                    {activityData?.pr_merged && (
-                      <p className="text-base text-gray-100">
-                        <span className="font-semibold">PRs Merged:</span>{' '}
-                        {activityData.pr_merged}
-                      </p>
-                    )}
-                    {activityData?.pr_reviewed && (
-                      <p className="text-base text-gray-100">
-                        <span className="font-semibold">PRs Reviewed:</span>{' '}
-                        {activityData.pr_reviewed}
-                      </p>
-                    )}
+
                     <div className=" text-gray-100">
                       {!activityData?.pr_reviewed &&
                       !activityData?.pr_opened &&

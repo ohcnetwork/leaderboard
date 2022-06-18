@@ -63,14 +63,13 @@ export default function ActivityCalenderGit({ calendarData }) {
             level3: '#28AF44',
             level4: '#39d353',
             level5: '#50f26b',
+            level6: '#82F595',
           }}
           eventHandlers={{
             onClick: (event) => (data) => {
-              console.log({ event, data });
               setIsOpen(true);
               setActivityData(data);
             },
-            onMouseEnter: (event) => (data) => console.log('mouseEnter'),
           }}
         ></ActivityCalendar>
         <ActivityModal
@@ -80,9 +79,10 @@ export default function ActivityCalenderGit({ calendarData }) {
         />
       </div>
       <div className="grid grid-cols-5 gap-2 mt-2">
-        {lastFiveYears.map((y) => {
+        {lastFiveYears.map((y, i) => {
           return (
             <button
+              key={i}
               className={
                 y !== year
                   ? 'h-12 rounded-lg bg-gray-800 text-gray-100 flex justify-center items-center hover:bg-gray-700'

@@ -605,5 +605,58 @@
                 }
             ]
         }
+    ],
+    "2022-06-17 00:00:00": [
+        {
+            "client_msg_id": "25e2a223-3ea9-4c9a-a1fb-000dc53b24c5",
+            "type": "message",
+            "text": "EOD:\n\n1. Worked on a few personal projects\n2. Worked on care_ocr, trying to work out text detection in different lighting settings",
+            "user": "U02TB83MU9G",
+            "ts": "1655476144.713609",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "D6+E",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD:\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on a few personal projects"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on care_ocr, trying to work out text detection in different lighting settings"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "ordered",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

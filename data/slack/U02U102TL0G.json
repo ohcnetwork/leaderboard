@@ -915,5 +915,64 @@
                 }
             ]
         }
+    ],
+    "2022-06-17 00:00:00": [
+        {
+            "client_msg_id": "222ac178-ee75-400e-90ea-adb9f2da7fe7",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/860|#860>",
+            "user": "U02U102TL0G",
+            "ts": "1655491571.744479",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655491310,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/860",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/860|#860 HBA1C parameter>",
+                    "text": "\u2022 removes HBA1C field from consultation model\n\u2022 updates `populate_investigations` management command to have <https://docs.google.com/spreadsheets/d/1hN13p-BDbb1Pkl3a8tcVdWFsFxncju2QPfeOEkKh51E/edit?usp=sharing|updated> seed data for HBA1C\n\u2022 updates `populate_investigations` command to handle updating of pre-existing data.  \n    fixes: <https://github.com/coronasafe/care_fe/issues/2020|coronasafe/care_fe#2020>",
+                    "title": "<https://github.com/coronasafe/care/pull/860|#860 HBA1C parameter>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "x5E",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/860",
+                                    "text": "#860",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

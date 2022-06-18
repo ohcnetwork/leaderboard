@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ActivityCalendar from 'react-activity-calendar';
-import ActivityModal from './ActivityModel';
+import ActivityModal from './ActivityModal';
 
 export default function ActivityCalenderGit({ calendarData }) {
   const getCalendarData = (year) => {

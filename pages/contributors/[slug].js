@@ -8,7 +8,7 @@ import { getContributorBySlug, getContributors } from '../../lib/api';
 
 import PageHead from '../../components/PageHead';
 import Header from '../../components/Header';
-import ActivityCalenderGit from '../../components/contributors/ActivityCalenderGit';
+import ActivityCalenderGit from '../../components/contributors/ActivityCalendarGitHub';
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
 //     // Current Date - i

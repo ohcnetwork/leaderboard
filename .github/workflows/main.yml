@@ -2,7 +2,7 @@ name: Main
 
 on:
   schedule:
-    - cron: "0 1 * * *" # 6:30am IST
+    - cron: "0 */12 * * *" # every 12 hours
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -26,7 +26,7 @@ jobs:
         run: python scraper/src/slack.py --lookback_days=2
         env:
           SLACK_API_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          
+
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

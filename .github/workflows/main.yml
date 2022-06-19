@@ -2,7 +2,7 @@ name: Main
 
 on:
   schedule:
-    - cron: "30 13 * * *" # 7:00PM IST
+    - cron: "0 */12 * * *" # every 12 hours
 jobs:
   fetch:
     runs-on: ubuntu-latest

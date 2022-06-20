@@ -1014,5 +1014,68 @@
                 }
             ]
         }
+    ],
+    "2022-06-19 00:00:00": [
+        {
+            "client_msg_id": "ee84ddeb-2898-4ae0-a0ca-6685d370d4d5",
+            "type": "message",
+            "text": "worked on <https://github.com/coronasafe/care_fe/issues/2210|#2210>.",
+            "user": "U02T4HE96KY",
+            "ts": "1655644955.193819",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1649083790,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2210",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2210|#2210 Modify COVID Category>",
+                    "text": "Modify COVID Category to Patient Category\n\n\u2022 Comfort Care (White color)\n\u2022 Stable (Blue color)\n\u2022 Slightly Abnormal (yellow color)\n\u2022 Critical Case (Red color)\n\nThe category is to be a mandatory field.\n\nOnce categorized the patient card must have the respective color. Including when viewing as list.",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2210|#2210 Modify COVID Category>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ritesh-Aggarwal|@Ritesh-Aggarwal>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "aeF",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2210",
+                                    "text": "#2210",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

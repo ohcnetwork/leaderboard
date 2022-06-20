@@ -793,5 +793,186 @@
                 }
             ]
         }
+    ],
+    "2022-06-14 00:00:00": [
+        {
+            "client_msg_id": "535784b7-31b5-461e-9d6f-5a19fc7d4951",
+            "type": "message",
+            "text": "updated PR <https://github.com/coronasafe/care/pull/854|#854> to solve a similar issue",
+            "user": "U02U102TL0G",
+            "ts": "1655215768.543709",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654974842,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/854",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/854|#854 update patient bed switching logic>",
+                    "text": "Prevent patients from switching to the same bed during consultation while the previous one hasn't ended.  \nfixes: <https://github.com/coronasafe/care/issues/850|#850>  \nfixes: <https://github.com/coronasafe/care/issues/847|#847> (both are similar/related issues)",
+                    "title": "<https://github.com/coronasafe/care/pull/854|#854 update patient bed switching logic>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "jT+",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "updated PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/854",
+                                    "text": "#854",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to solve a similar issue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-16 00:00:00": [
+        {
+            "client_msg_id": "4cb651be-0a9c-4b06-a9fb-3dac4a6bca64",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/858|#858>",
+            "user": "U02U102TL0G",
+            "ts": "1655405624.720499",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655405474,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/858",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/858|#858 add asset integration class for multipara monitors>",
+                    "text": "fixes: <https://github.com/coronasafe/care/issues/657|#657>",
+                    "title": "<https://github.com/coronasafe/care/pull/858|#858 add asset integration class for multipara monitors>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "l+O",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/858",
+                                    "text": "#858",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-17 00:00:00": [
+        {
+            "client_msg_id": "222ac178-ee75-400e-90ea-adb9f2da7fe7",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/860|#860>",
+            "user": "U02U102TL0G",
+            "ts": "1655491571.744479",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655491310,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/860",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/860|#860 HBA1C parameter>",
+                    "text": "\u2022 removes HBA1C field from consultation model\n\u2022 updates `populate_investigations` management command to have <https://docs.google.com/spreadsheets/d/1hN13p-BDbb1Pkl3a8tcVdWFsFxncju2QPfeOEkKh51E/edit?usp=sharing|updated> seed data for HBA1C\n\u2022 updates `populate_investigations` command to handle updating of pre-existing data.  \n    fixes: <https://github.com/coronasafe/care_fe/issues/2020|coronasafe/care_fe#2020>",
+                    "title": "<https://github.com/coronasafe/care/pull/860|#860 HBA1C parameter>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "x5E",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/860",
+                                    "text": "#860",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

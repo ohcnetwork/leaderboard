@@ -1604,5 +1604,124 @@
                 }
             ]
         }
+    ],
+    "2022-06-22 00:00:00": [
+        {
+            "client_msg_id": "71962b1a-b257-4a79-b4b0-fcce8a042028",
+            "type": "message",
+            "text": "*EOD Updates*\n\nPR:\n\u2022 <https://github.com/coronasafe/care/pull/873|#873(backend)>: Notes endpoint fixed for read-only users\n\u2022 <https://github.com/coronasafe/care/pull/871|#871(backend)>: /test_sample route fixed for staff readonly\nIssues raised:\n\u2022 <https://github.com/coronasafe/care/issues/872|#872(backend)>: Read-Only type can post patient's notes\n\u2022 <https://github.com/coronasafe/care/issues/869|#869(backend)>: read-only staff user can not GET \"patient/patientID/test_sample/\" route",
+            "user": "U02U103J5LG",
+            "ts": "1655914307.563259",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "hDM",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD Updates",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nPR:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/873",
+                                            "text": "#873(backend)",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Notes endpoint fixed for read-only users"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/871",
+                                            "text": "#871(backend)",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": /test_sample route fixed for staff readonly"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues raised:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/issues/872",
+                                            "text": "#872(backend)",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Read-Only type can post patient's notes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/issues/869",
+                                            "text": "#869(backend)",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": read-only staff user can not GET \"patient/patientID/test_sample/\" route"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

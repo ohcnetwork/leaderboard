@@ -1,6 +1,13 @@
 {
-  "last_updated": 1655731621.0,
+  "last_updated": 1655908772.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#854",
+      "time": 1655908772.0,
+      "link": "https://github.com/coronasafe/care/pull/854#issuecomment-1163191242",
+      "text": "Added a commit to prevent switching to occupied beds (regardless of consultation).\r\nAdded it to address this [issue/comment](https://github.com/coronasafe/care/issues/850#issuecomment-1159448522).\r\nThis does not affect already existing multi-occupancies of beds. Should I add some kind of migration to handle them? (not sure how that would work though)"
+    },
     {
       "type": "pr_reviewed",
       "time": 1655731621.0,

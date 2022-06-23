@@ -1,6 +1,34 @@
 {
-  "last_updated": 1655377905.0,
+  "last_updated": 1655901038.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#873",
+      "time": 1655901038.0,
+      "link": "https://github.com/coronasafe/care/pull/873",
+      "text": "Notes endpoint fixed for rad-only users"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#872",
+      "time": 1655898564.0,
+      "link": "https://github.com/coronasafe/care/issues/872",
+      "text": "Read-Only type can post patient's notes"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#871",
+      "time": 1655897195.0,
+      "link": "https://github.com/coronasafe/care/pull/871",
+      "text": "/test_sample route fixed for staff readonly"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#869",
+      "time": 1655893353.0,
+      "link": "https://github.com/coronasafe/care/issues/869",
+      "text": "read-only staff user can not GET \"patient/patientID/test_sample/\" route"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_ocr#4",
@@ -493,6 +521,14 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/873",
+      "title": "Notes endpoint fixed for read-only users"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/871",
+      "title": "/test_sample route fixed for staff readonly"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2722",
       "title": "404 page displayed on logout fixed"

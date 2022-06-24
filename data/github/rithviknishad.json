@@ -58,6 +58,62 @@
       "text": "Backend: Migration to change meta.camera_address to meta.local_ip_address"
     },
     {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2809",
+      "time": 1656002907.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2809#issuecomment-1164644173",
+      "text": "Duplicate of https://github.com/coronasafe/care_fe/issues/2649"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2813",
+      "time": 1656002681.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2813#issuecomment-1164640686",
+      "text": "@cp-Coder already done in https://github.com/coronasafe/care_fe/pull/2654"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2653",
+      "time": 1655995047.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2653",
+      "text": "Adds Asset Class field and Improve Asset Type option's descriptions"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#875",
+      "time": 1655994019.0,
+      "link": "https://github.com/coronasafe/care/issues/875#issuecomment-1164470720",
+      "text": "- [ ] Replace existing `patient_category` to `deprecated covid category` in both consultation and daily rounds\r\n- [ ] Run migrations for above\r\n- [ ] Create new field `patient category` with new choices\r\n- [ ] Run migrations"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2781",
+      "time": 1655983530.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2781",
+      "text": "IO Balance: Allow only positive quantities to be mentioned"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2780",
+      "time": 1655983461.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2780",
+      "text": "Fix incorrect icon for preview file and improve alignment"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#759",
+      "time": 1655979187.0,
+      "link": "https://github.com/coronasafe/care/issues/759#issuecomment-1164227991",
+      "text": "Closing as it's fixed.\r\n![image](https://user-images.githubusercontent.com/25143503/175275818-f2c010b1-a6dc-47f8-a351-afe55d427a55.png)\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#759",
+      "time": 1655979187.0,
+      "link": "https://github.com/coronasafe/care/issues/759",
+      "text": "Backend: Migration to change meta.camera_address to meta.local_ip_address"
+    },
+    {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2690",
       "time": 1655973355.0,
@@ -1361,6 +1417,14 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/887",
+      "title": "Fix unused network in docker-compose and removes unnecessary port bindings"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/885",
+      "title": "Deprecate Covid Category and adds Patient Category in Daily Rounds and Consultation"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2654",
       "title": "Hide Configure Asset button if `!asset_class`"

@@ -26,21 +26,22 @@ export default function ActivityCalenderGit({ calendarData }) {
       (d) => d.date.slice(0, 4) === String(currentYear)
     );
 
-    let datesCopy = dates.slice();
-
-    for (let i = 0; i < datesCopy.length; i++) {
-      for (let j = 0; j < calDates.length; j++) {
-        if (datesCopy[i].date === calDates[j].date) {
-          dates[i] = calDates[j];
-        }
-      }
-    }
+    for (let i = 0; i < dates.length; i++)
+      for (let j = 0; j < calDates.length; j++)
+        if (dates[i].date === calDates[j].date) dates[i] = calDates[j];
 
     return dates;
   };
 
+  const getFirstContribYear = () => {
+    let i;
+    for (i = 0; i < calendarData.length; i++)
+      if (calendarData[i].count > 0) break;
+    return Number(calendarData[i].date.slice(0, 4));
+  };
+
   const lastNYears = (n) => {
-    const currentYear = new Date().getFullYear();
+    const currentYear = getFirstContribYear();
     let years = [];
     for (let i = 0; i < n; i++) years.push(currentYear - i);
     return years;
@@ -75,7 +76,7 @@ export default function ActivityCalenderGit({ calendarData }) {
               },
             }}
             labels={{ totalCount: '{{count}} contributions in the last year' }}
-          ></ActivityCalendar>
+          />
         ) : (
           <ActivityCalendar
             showWeekdayLabels
@@ -95,7 +96,7 @@ export default function ActivityCalenderGit({ calendarData }) {
                 setActivityData(data);
               },
             }}
-          ></ActivityCalendar>
+          />
         )}
 
         <ActivityModal

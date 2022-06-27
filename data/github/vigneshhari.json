@@ -1,6 +1,608 @@
 {
-  "last_updated": 1655387545.0,
+  "last_updated": 1656259893.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#869",
+      "time": 1656259893.0,
+      "link": "https://github.com/coronasafe/care/issues/869",
+      "text": "read-only staff user can not GET \"patient/patientID/test_sample/\" route"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656259880.0,
+      "title": "coronasafe/care#871",
+      "link": "https://github.com/coronasafe/care/pull/871#pullrequestreview-1019452856",
+      "text": "/test_sample route fixed for staff readonly"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#879",
+      "time": 1656259851.0,
+      "link": "https://github.com/coronasafe/care/issues/879",
+      "text": "While Creating Daily Rounds the created_by field is null and doesnot display on Update Log"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656259845.0,
+      "title": "coronasafe/care#888",
+      "link": "https://github.com/coronasafe/care/pull/888#pullrequestreview-1019452792",
+      "text": "Fixed created_by field in patient log"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#869",
+      "time": 1656259893.0,
+      "link": "https://github.com/coronasafe/care/issues/869",
+      "text": "read-only staff user can not GET \"patient/patientID/test_sample/\" route"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656259880.0,
+      "title": "coronasafe/care#871",
+      "link": "https://github.com/coronasafe/care/pull/871#pullrequestreview-1019452856",
+      "text": "/test_sample route fixed for staff readonly"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#879",
+      "time": 1656259851.0,
+      "link": "https://github.com/coronasafe/care/issues/879",
+      "text": "While Creating Daily Rounds the created_by field is null and doesnot display on Update Log"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656259845.0,
+      "title": "coronasafe/care#888",
+      "link": "https://github.com/coronasafe/care/pull/888#pullrequestreview-1019452792",
+      "text": "Fixed created_by field in patient log"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#877",
+      "time": 1656075495.0,
+      "link": "https://github.com/coronasafe/care/pull/877#issuecomment-1165549885",
+      "text": "@gigincg please review."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656075484.0,
+      "title": "coronasafe/care#877",
+      "link": "https://github.com/coronasafe/care/pull/877#pullrequestreview-1018440301",
+      "text": "Update HL7Monitor asset integration"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656075484.0,
+      "title": "coronasafe/care#877",
+      "link": "https://github.com/coronasafe/care/pull/877#pullrequestreview-1018440301",
+      "text": "Update HL7Monitor asset integration"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#886",
+      "time": 1656075177.0,
+      "link": "https://github.com/coronasafe/care/issues/886",
+      "text": "Running `make up` creates unused network `care` and `care_default`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656075101.0,
+      "title": "coronasafe/care#887",
+      "link": "https://github.com/coronasafe/care/pull/887#pullrequestreview-1018434893",
+      "text": "Fix unused network in docker-compose and removes unnecessary port bindings"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#877",
+      "time": 1656075495.0,
+      "link": "https://github.com/coronasafe/care/pull/877#issuecomment-1165549885",
+      "text": "@gigincg please review."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656075484.0,
+      "title": "coronasafe/care#877",
+      "link": "https://github.com/coronasafe/care/pull/877#pullrequestreview-1018440301",
+      "text": "Update HL7Monitor asset integration"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656075484.0,
+      "title": "coronasafe/care#877",
+      "link": "https://github.com/coronasafe/care/pull/877#pullrequestreview-1018440301",
+      "text": "Update HL7Monitor asset integration"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#886",
+      "time": 1656075177.0,
+      "link": "https://github.com/coronasafe/care/issues/886",
+      "text": "Running `make up` creates unused network `care` and `care_default`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656075101.0,
+      "title": "coronasafe/care#887",
+      "link": "https://github.com/coronasafe/care/pull/887#pullrequestreview-1018434893",
+      "text": "Fix unused network in docker-compose and removes unnecessary port bindings"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656007527.0,
+      "title": "coronasafe/care#811",
+      "link": "https://github.com/coronasafe/care/pull/811#pullrequestreview-1017442201",
+      "text": "Finalize MiddlewareAuthentication for required endpoints"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#872",
+      "time": 1655996217.0,
+      "link": "https://github.com/coronasafe/care/issues/872",
+      "text": "Read-Only type can post patient's notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655996184.0,
+      "title": "coronasafe/care#873",
+      "link": "https://github.com/coronasafe/care/pull/873#pullrequestreview-1017172664",
+      "text": "Notes endpoint fixed for read-only users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#866",
+      "time": 1655996132.0,
+      "link": "https://github.com/coronasafe/care/issues/866",
+      "text": "fix plural of localbody in admin"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655996120.0,
+      "title": "coronasafe/care#867",
+      "link": "https://github.com/coronasafe/care/pull/867#pullrequestreview-1017170882",
+      "text": "fixed plural for local body in admin"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655996081.0,
+      "title": "coronasafe/care#870",
+      "link": "https://github.com/coronasafe/care/pull/870#pullrequestreview-1017169846",
+      "text": "Fixed push notifications issue"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656007527.0,
+      "title": "coronasafe/care#811",
+      "link": "https://github.com/coronasafe/care/pull/811#pullrequestreview-1017442201",
+      "text": "Finalize MiddlewareAuthentication for required endpoints"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#872",
+      "time": 1655996217.0,
+      "link": "https://github.com/coronasafe/care/issues/872",
+      "text": "Read-Only type can post patient's notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655996184.0,
+      "title": "coronasafe/care#873",
+      "link": "https://github.com/coronasafe/care/pull/873#pullrequestreview-1017172664",
+      "text": "Notes endpoint fixed for read-only users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#866",
+      "time": 1655996132.0,
+      "link": "https://github.com/coronasafe/care/issues/866",
+      "text": "fix plural of localbody in admin"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655996120.0,
+      "title": "coronasafe/care#867",
+      "link": "https://github.com/coronasafe/care/pull/867#pullrequestreview-1017170882",
+      "text": "fixed plural for local body in admin"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655996081.0,
+      "title": "coronasafe/care#870",
+      "link": "https://github.com/coronasafe/care/pull/870#pullrequestreview-1017169846",
+      "text": "Fixed push notifications issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#736",
+      "time": 1655644030.0,
+      "link": "https://github.com/coronasafe/care/pull/736#issuecomment-1159721881",
+      "text": "resolve the conflicts and we are good to merge."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655644014.0,
+      "title": "coronasafe/care#736",
+      "link": "https://github.com/coronasafe/care/pull/736#pullrequestreview-1011523186",
+      "text": "Prevent creation of bed with the same name"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655644014.0,
+      "title": "coronasafe/care#736",
+      "link": "https://github.com/coronasafe/care/pull/736#pullrequestreview-1011523186",
+      "text": "Prevent creation of bed with the same name"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#822",
+      "time": 1655643600.0,
+      "link": "https://github.com/coronasafe/care/pull/822#issuecomment-1159720226",
+      "text": "we need to remove references from old migrations as well. "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#862",
+      "time": 1655643211.0,
+      "link": "https://github.com/coronasafe/care/pull/862",
+      "text": "Add temporary changes."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#862",
+      "time": 1655643187.0,
+      "link": "https://github.com/coronasafe/care/pull/862",
+      "text": "Add temporary changes."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#769",
+      "time": 1655643169.0,
+      "link": "https://github.com/coronasafe/care/pull/769#issuecomment-1159718454",
+      "text": "There is something wrong with the migrations, moving to temporary branch to test and push to master."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642813.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-1011520509",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642813.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-1011520509",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#829",
+      "time": 1655642520.0,
+      "link": "https://github.com/coronasafe/care/pull/829#issuecomment-1159715799",
+      "text": "Can we close this PR is the requirement is already met? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#841",
+      "time": 1655642361.0,
+      "link": "https://github.com/coronasafe/care/pull/841#issuecomment-1159715146",
+      "text": "These changes needs to be vetted in detail since there might be a lot of broken references, This PR's review will be delayed."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#844",
+      "time": 1655642261.0,
+      "link": "https://github.com/coronasafe/care/issues/844",
+      "text": "Update sentry sdk and specify deployment environment for each deployment"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642245.0,
+      "title": "coronasafe/care#848",
+      "link": "https://github.com/coronasafe/care/pull/848#pullrequestreview-1011519411",
+      "text": "update sentry sdk"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642245.0,
+      "title": "coronasafe/care#848",
+      "link": "https://github.com/coronasafe/care/pull/848#pullrequestreview-1011519411",
+      "text": "update sentry sdk"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#848",
+      "time": 1655642154.0,
+      "link": "https://github.com/coronasafe/care/pull/848#issuecomment-1159714201",
+      "text": "Try to exclude unrelated changes in the PR, there are settings reconfigurations and some precommit changes in a PR about sentry!."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642083.0,
+      "title": "coronasafe/care#848",
+      "link": "https://github.com/coronasafe/care/pull/848#pullrequestreview-1011519203",
+      "text": "update sentry sdk"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#791",
+      "time": 1655641892.0,
+      "link": "https://github.com/coronasafe/care/pull/791#issuecomment-1159712933",
+      "text": "Changes look good to me otherwise, @mathew-alex add env vars for the extra setting confs required in this PR."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641854.0,
+      "title": "coronasafe/care#791",
+      "link": "https://github.com/coronasafe/care/pull/791#pullrequestreview-1011517787",
+      "text": "Added Facility Cover image API endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641853.0,
+      "title": "coronasafe/care#791",
+      "link": "https://github.com/coronasafe/care/pull/791#pullrequestreview-1011517787",
+      "text": "Added Facility Cover image API endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641448.0,
+      "title": "coronasafe/care#853",
+      "link": "https://github.com/coronasafe/care/pull/853#pullrequestreview-1011516222",
+      "text": "Adding field validator for non-empty field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641448.0,
+      "title": "coronasafe/care#853",
+      "link": "https://github.com/coronasafe/care/pull/853#pullrequestreview-1011516222",
+      "text": "Adding field validator for non-empty field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641089.0,
+      "title": "coronasafe/care#854",
+      "link": "https://github.com/coronasafe/care/pull/854#pullrequestreview-1011515666",
+      "text": "update patient bed switching logic"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641089.0,
+      "title": "coronasafe/care#854",
+      "link": "https://github.com/coronasafe/care/pull/854#pullrequestreview-1011515666",
+      "text": "update patient bed switching logic"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655640801.0,
+      "title": "coronasafe/care#857",
+      "link": "https://github.com/coronasafe/care/pull/857#pullrequestreview-1011515321",
+      "text": "updated deployment workflow"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#857",
+      "time": 1655640771.0,
+      "link": "https://github.com/coronasafe/care/pull/857#issuecomment-1159708147",
+      "text": "I highly encourage you folks to test with docker-compose, since the docker image is what runs in production, the tests should replicate that environment as much as possible."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#860",
+      "time": 1655640536.0,
+      "link": "https://github.com/coronasafe/care/pull/860#issuecomment-1159707099",
+      "text": "@gigincg @aparnacoronasafe Merging this PR will delete all values of HBA1C entered uptill now. Confirm if this is intended."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655640453.0,
+      "title": "coronasafe/care#860",
+      "link": "https://github.com/coronasafe/care/pull/860#pullrequestreview-1011514560",
+      "text": "HBA1C parameter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655639368.0,
+      "title": "coronasafe/care#861",
+      "link": "https://github.com/coronasafe/care/pull/861#pullrequestreview-1011512349",
+      "text": "Fixed docker compose command in CONTRIBUTING"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#736",
+      "time": 1655644030.0,
+      "link": "https://github.com/coronasafe/care/pull/736#issuecomment-1159721881",
+      "text": "resolve the conflicts and we are good to merge."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655644014.0,
+      "title": "coronasafe/care#736",
+      "link": "https://github.com/coronasafe/care/pull/736#pullrequestreview-1011523186",
+      "text": "Prevent creation of bed with the same name"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655644014.0,
+      "title": "coronasafe/care#736",
+      "link": "https://github.com/coronasafe/care/pull/736#pullrequestreview-1011523186",
+      "text": "Prevent creation of bed with the same name"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#822",
+      "time": 1655643600.0,
+      "link": "https://github.com/coronasafe/care/pull/822#issuecomment-1159720226",
+      "text": "we need to remove references from old migrations as well. "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#862",
+      "time": 1655643211.0,
+      "link": "https://github.com/coronasafe/care/pull/862",
+      "text": "Add temporary changes."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#862",
+      "time": 1655643187.0,
+      "link": "https://github.com/coronasafe/care/pull/862",
+      "text": "Add temporary changes."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#769",
+      "time": 1655643169.0,
+      "link": "https://github.com/coronasafe/care/pull/769#issuecomment-1159718454",
+      "text": "There is something wrong with the migrations, moving to temporary branch to test and push to master."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642813.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-1011520509",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642813.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-1011520509",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#829",
+      "time": 1655642520.0,
+      "link": "https://github.com/coronasafe/care/pull/829#issuecomment-1159715799",
+      "text": "Can we close this PR is the requirement is already met? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#841",
+      "time": 1655642361.0,
+      "link": "https://github.com/coronasafe/care/pull/841#issuecomment-1159715146",
+      "text": "These changes needs to be vetted in detail since there might be a lot of broken references, This PR's review will be delayed."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#844",
+      "time": 1655642261.0,
+      "link": "https://github.com/coronasafe/care/issues/844",
+      "text": "Update sentry sdk and specify deployment environment for each deployment"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642245.0,
+      "title": "coronasafe/care#848",
+      "link": "https://github.com/coronasafe/care/pull/848#pullrequestreview-1011519411",
+      "text": "update sentry sdk"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642245.0,
+      "title": "coronasafe/care#848",
+      "link": "https://github.com/coronasafe/care/pull/848#pullrequestreview-1011519411",
+      "text": "update sentry sdk"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#848",
+      "time": 1655642154.0,
+      "link": "https://github.com/coronasafe/care/pull/848#issuecomment-1159714201",
+      "text": "Try to exclude unrelated changes in the PR, there are settings reconfigurations and some precommit changes in a PR about sentry!."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655642083.0,
+      "title": "coronasafe/care#848",
+      "link": "https://github.com/coronasafe/care/pull/848#pullrequestreview-1011519203",
+      "text": "update sentry sdk"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#791",
+      "time": 1655641892.0,
+      "link": "https://github.com/coronasafe/care/pull/791#issuecomment-1159712933",
+      "text": "Changes look good to me otherwise, @mathew-alex add env vars for the extra setting confs required in this PR."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641854.0,
+      "title": "coronasafe/care#791",
+      "link": "https://github.com/coronasafe/care/pull/791#pullrequestreview-1011517787",
+      "text": "Added Facility Cover image API endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641853.0,
+      "title": "coronasafe/care#791",
+      "link": "https://github.com/coronasafe/care/pull/791#pullrequestreview-1011517787",
+      "text": "Added Facility Cover image API endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641448.0,
+      "title": "coronasafe/care#853",
+      "link": "https://github.com/coronasafe/care/pull/853#pullrequestreview-1011516222",
+      "text": "Adding field validator for non-empty field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641448.0,
+      "title": "coronasafe/care#853",
+      "link": "https://github.com/coronasafe/care/pull/853#pullrequestreview-1011516222",
+      "text": "Adding field validator for non-empty field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641089.0,
+      "title": "coronasafe/care#854",
+      "link": "https://github.com/coronasafe/care/pull/854#pullrequestreview-1011515666",
+      "text": "update patient bed switching logic"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655641089.0,
+      "title": "coronasafe/care#854",
+      "link": "https://github.com/coronasafe/care/pull/854#pullrequestreview-1011515666",
+      "text": "update patient bed switching logic"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655640801.0,
+      "title": "coronasafe/care#857",
+      "link": "https://github.com/coronasafe/care/pull/857#pullrequestreview-1011515321",
+      "text": "updated deployment workflow"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#857",
+      "time": 1655640771.0,
+      "link": "https://github.com/coronasafe/care/pull/857#issuecomment-1159708147",
+      "text": "I highly encourage you folks to test with docker-compose, since the docker image is what runs in production, the tests should replicate that environment as much as possible."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#860",
+      "time": 1655640536.0,
+      "link": "https://github.com/coronasafe/care/pull/860#issuecomment-1159707099",
+      "text": "@gigincg @aparnacoronasafe Merging this PR will delete all values of HBA1C entered uptill now. Confirm if this is intended."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655640453.0,
+      "title": "coronasafe/care#860",
+      "link": "https://github.com/coronasafe/care/pull/860#pullrequestreview-1011514560",
+      "text": "HBA1C parameter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655639368.0,
+      "title": "coronasafe/care#861",
+      "link": "https://github.com/coronasafe/care/pull/861#pullrequestreview-1011512349",
+      "text": "Fixed docker compose command in CONTRIBUTING"
+    },
     {
       "type": "pr_reviewed",
       "time": 1655387545.0,

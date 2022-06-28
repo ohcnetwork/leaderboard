@@ -41,13 +41,14 @@ export default function ActivityCalenderGit({ calendarData }) {
   };
 
   const lastNYears = (n) => {
-    const currentYear = getFirstContribYear();
+    const currentYear = Number(new Date().getFullYear());
     let years = [];
-    for (let i = 0; i < n; i++) years.push(currentYear - i);
+    for (let i = 0; i <= n; i++) years.push(currentYear - i);
     return years;
   };
 
-  const yearsList = lastNYears(4);
+  const yearDiff = Number(new Date().getFullYear()) - getFirstContribYear();
+  const yearsList = lastNYears(yearDiff);
 
   const [year, setYear] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -105,15 +106,15 @@ export default function ActivityCalenderGit({ calendarData }) {
           closeFunc={() => setIsOpen(false)}
         />
       </div>
-      <div className="grid grid-cols-1 gap-2 mt-2">
+      <div className="flex flex-col gap-2 mt-2">
         {yearsList.map((y, i) => {
           return (
             <button
               key={i}
               className={
                 y !== year
-                  ? 'h-10 w-24 rounded-lg bg-gray-800 text-gray-100 flex text-sm justify-center items-center hover:bg-gray-700'
-                  : 'h-10 w-24 rounded-lg bg-green-600 text-white flex text-sm justify-center items-center'
+                  ? 'h-10 w-24 rounded-lg bg-gray-800 text-gray-100 text-sm flex justify-center items-center hover:bg-gray-700'
+                  : 'h-10 w-24 rounded-lg bg-green-600 text-white text-sm flex justify-center items-center'
               }
               onClick={(_) => setYear(y)}
             >

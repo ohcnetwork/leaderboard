@@ -34,12 +34,129 @@ export default function Contributor({ contributor, slug }) {
       <PageHead title={contributor.name} />
       <Header />
       <section className="max-w-6xl mx-auto bg-gray-900 border-t border-gray-600 p-4">
-        <div className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
-          <div className="md:sticky md:top-0 shadow">
+        <div className="bg-gray-900 p-4">
+          <div className="grid grid-cols-2">
+            <div className="pr-2 pb-2">
+              <div>
+                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                  <p className="text-white">Professional Skills - Self</p>
+                </div>
+                <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="pl-2 pb-2 border-l-4 border-indigo-700">
+              <div>
+                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                  <p className="text-white">Professional Skills - Team</p>
+                </div>
+                <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-2">
+            <div className="pr-2 pt-2 border-t-4 border-indigo-700">
+              <div>
+                <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                </div>
+                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
+                  <p className="text-white">Advanced Skills</p>
+                </div>
+              </div>
+            </div>
+            <div className="pt-2 pl-2 border-t-4 border-l-4 border-indigo-700">
+              <div>
+                <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
+                  <div className="p-2">
+                    <img
+                      src="/images/sample-badge.svg"
+                      alt="Graduate attribute"
+                    />
+                  </div>
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                  <div className="p-2"></div>
+                </div>
+                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
+                  <p className="text-white">Human Values</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
             <InfoCard contributor={contributor} />
           </div>
 
-          <div className="col-span-2">
+          <div className="max-w-4xl mx-auto">
             <div>
               <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
               <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">

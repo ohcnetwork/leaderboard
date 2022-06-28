@@ -1,7 +1,8 @@
+import { useState, useEffect } from "react";
 import LeaderboardCard from "../components/contributors/LeaderboardCard";
 import TopContributor from "../components/contributors/TopContributor";
+import Filters from "../components/filters/Filters";
 import { getContributors } from "../lib/api";
-
 
 // Calculate week number
 const getWeekNumber = (date) => {
@@ -22,9 +23,66 @@ const categories = [
 ];
 
 export default function Home(props) {
+  const [contributors, setContributors] = useState(props.contributors);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState("points");
+  const [sortDescending, setSortDescending] = useState(true);
+  const [showCoreMembers, setShowCoreMembers] = useState(false);
+  const [categoryLeaderboard, setCategoryLeaderboard] = useState([]);
+
+  useEffect(() => {
+    let filteredContributors = props.contributors;
+
+    if (!showCoreMembers) {
+      filteredContributors = filteredContributors.filter(
+        (contributor) => !contributor.core
+      );
+    }
+
+    if (searchTerm) {
+      const searchTermLC = searchTerm.toLowerCase();
+      filteredContributors = filteredContributors.filter(
+        (contributor) =>
+          contributor.name.toLowerCase().includes(searchTermLC) ||
+          contributor.github.toLowerCase().includes(searchTermLC) ||
+          contributor.linkedin.toLowerCase().includes(searchTermLC) ||
+          contributor.twitter.toLowerCase().includes(searchTermLC)
+      );
+    }
+
+    filteredContributors = filteredContributors.sort(
+      (a, b) => a.weekSummary[sortBy] - b.weekSummary[sortBy]
+    );
+
+    if (sortDescending) {
+      filteredContributors = filteredContributors.reverse();
+    }
+
+    setCategoryLeaderboard(() =>
+      categories.map((category) => ({
+        ...category,
+        contributor: filteredContributors.sort(
+          (a, b) => b.weekSummary[category.slug] - a.weekSummary[category.slug]
+        )[0],
+      }))
+    );
+
+    setContributors([...filteredContributors]);
+  }, [props.contributors, searchTerm, sortBy, sortDescending, showCoreMembers]);
+
   return (
     <section className="bg-gray-900 border-t border-gray-600">
       <div className="max-w-6xl mx-auto">
+        <Filters
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          sortDescending={sortDescending}
+          setSortDescending={setSortDescending}
+          showCoreMembers={showCoreMembers}
+          setShowCoreMembers={setShowCoreMembers}
+        />
         <div className="border-gray-600 mx-4 xl:mx-0">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
             <div className="lg:col-span-7 2xl:col-span-8">
@@ -33,32 +91,29 @@ export default function Home(props) {
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                     <span>
                       Live Leaderboard of last 7 days | Week{" "}
-                      {getWeekNumber(new Date())} of{" "}
-                      {new Date().getFullYear()}
+                      {getWeekNumber(new Date())} of {new Date().getFullYear()}
                     </span>
                   </div>
                   <ul className="space-y-6 lg:space-y-8 p-2 lg:p-2 overflow-x-auto">
-                    {props.contributors
-                      .filter((contributor) => contributor.intern)
-                      .map((contributor, index) => {
-                        return (
-                          <li key={contributor.github}>
-                            <LeaderboardCard
-                              position={index}
-                              key={contributor.github}
-                              contributor={contributor}
-                            />
-                          </li>
-                        );
-                      })}
+                    {contributors.map((contributor, index) => {
+                      return (
+                        <li key={contributor.github}>
+                          <LeaderboardCard
+                            position={index}
+                            key={contributor.github}
+                            contributor={contributor}
+                          />
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
             </div>
             <div className="lg:col-span-5 2xl:col-span-4">
               <div>
-                <div className="mx-auto py-12 px-4 max-w-6xl sm:px-6 lg:px-8 lg:py-24">
-                  <div className="space-y-12">
+                <div className="mx-auto py-12 px-4 max-w-6xl sm:px-6 lg:px-8 lg:py-24 ">
+                  <div className="space-y-12 p-4 border border-primary-500 rounded-lg">
                     <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                       <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
                         Top Contributors of the week
@@ -71,7 +126,7 @@ export default function Home(props) {
                       role="list"
                       className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
                     >
-                      {props.categoryLeaderboard.map((category, index) => {
+                      {categoryLeaderboard.map((category, index) => {
                         return (
                           <TopContributor
                             key={index}
@@ -95,19 +150,11 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   const contributors = getContributors();
-  const categoryLeaderboard = categories.map((category) => ({
-    ...category,
-    contributor: contributors
-      .filter((contributor) => contributor.intern)
-      .sort((a, b) => {
-        return b.weekSummary[category.slug] - a.weekSummary[category.slug];
-      })[0],
-  }));
+
   return {
     props: {
       title: "Leaderboard",
       contributors: contributors,
-      categoryLeaderboard: categoryLeaderboard,
     },
   };
 }

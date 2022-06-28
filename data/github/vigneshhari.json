@@ -1,6 +1,111 @@
 {
-  "last_updated": 1656259893.0,
+  "last_updated": 1656361268.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#785",
+      "time": 1656361268.0,
+      "link": "https://github.com/coronasafe/care/issues/785#issuecomment-1167843788",
+      "text": "@gigincg we had a separate API for this because of the way we store this data internally. The facility user relation is a many-to-many type relation, we can bring in facility filters here but it would not be computationally inefficient. if there is a strong use case for this API, we can start thinking about implementation."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#801",
+      "time": 1656361134.0,
+      "link": "https://github.com/coronasafe/care/issues/801",
+      "text": "Backend: Update asset/action API for proxying HL7 Monitor Requests through care_be (Details to be Added)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656361130.0,
+      "title": "coronasafe/care#877",
+      "link": "https://github.com/coronasafe/care/pull/877#pullrequestreview-1020733386",
+      "text": "Update HL7Monitor asset integration"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656361101.0,
+      "title": "coronasafe/care#877",
+      "link": "https://github.com/coronasafe/care/pull/877#pullrequestreview-1020732891",
+      "text": "Update HL7Monitor asset integration"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656361081.0,
+      "title": "coronasafe/care#877",
+      "link": "https://github.com/coronasafe/care/pull/877#pullrequestreview-1020732513",
+      "text": "Update HL7Monitor asset integration"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#671",
+      "time": 1656361002.0,
+      "link": "https://github.com/coronasafe/care/issues/671",
+      "text": "Daily Rounds API for Middleware"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656360993.0,
+      "title": "coronasafe/care#811",
+      "link": "https://github.com/coronasafe/care/pull/811#pullrequestreview-1020731035",
+      "text": "Finalize MiddlewareAuthentication for required endpoints"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#811",
+      "time": 1656360536.0,
+      "link": "https://github.com/coronasafe/care/pull/811#issuecomment-1167831571",
+      "text": "Move tests to a different PR. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#892",
+      "time": 1656360437.0,
+      "link": "https://github.com/coronasafe/care/pull/892#issuecomment-1167830051",
+      "text": "wrap around transactions."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#831",
+      "time": 1656360115.0,
+      "link": "https://github.com/coronasafe/care/pull/831#issuecomment-1167823393",
+      "text": "Approving without testing."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656360102.0,
+      "title": "coronasafe/care#831",
+      "link": "https://github.com/coronasafe/care/pull/831#pullrequestreview-1020714630",
+      "text": "Core testing fixes"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#891",
+      "time": 1656359699.0,
+      "link": "https://github.com/coronasafe/care/issues/891",
+      "text": "AttributeError: 'AnonymousUser' object has no attribute 'user_type' on `/api/v1/asset/`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656359318.0,
+      "title": "coronasafe/care#894",
+      "link": "https://github.com/coronasafe/care/pull/894#pullrequestreview-1020701063",
+      "text": "add IsAuthenticated permission class to asset view set"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#896",
+      "time": 1656322212.0,
+      "link": "https://github.com/coronasafe/care/pull/896",
+      "text": "Revert \"Fixed created_by field in patient log\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#896",
+      "time": 1656322183.0,
+      "link": "https://github.com/coronasafe/care/pull/896",
+      "text": "Revert \"Fixed created_by field in patient log\""
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care#869",

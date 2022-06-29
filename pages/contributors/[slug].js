@@ -32,7 +32,7 @@ export default function Contributor({ contributor, slug }) {
   return (
     <div className="bg-gray-900 min-h-screen">
       <PageHead title={contributor.name} />
-      <Header />
+      {/* <Header /> */}
       <section className="max-w-6xl mx-auto bg-gray-900 border-t border-gray-600 p-4">
         <div className="bg-gray-900 p-4">
           <div className="grid grid-cols-2">
@@ -157,6 +157,93 @@ export default function Contributor({ contributor, slug }) {
           </div>
 
           <div className="max-w-4xl mx-auto">
+            <h3 className="font-bold text-gray-100 mt-6">
+              Graduate Attributes
+            </h3>
+            <div className="bg-gray-900 mt-3">
+              <div className="grid grid-cols-2">
+                <div className="pr-2 pb-2">
+                  <div>
+                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                      <p className="text-white">Professional Skills - Self</p>
+                    </div>
+                    <div className="bg-gray-800 flex flex-wrap flex-row-reverse py-2 gap-2">
+                      <div className="bg-green-600 text-white px-4 p-2 rounded-md">
+                        Creative thinking
+                      </div>
+                      <div className="bg-green-600 text-white px-4 p-2 rounded-md">
+                        Problem Solving
+                      </div>
+                      <div className="bg-green-600 text-white px-4 p-2 rounded-md">
+                        Practical/professional skills
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="pl-2 pb-2 border-l-4 border-indigo-700">
+                  <div>
+                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                      <p className="text-white">Professional Skills - Team</p>
+                    </div>
+                    <div className="bg-gray-800 flex flex-wrap py-2 gap-2">
+                      <div className="bg-indigo-500 text-white px-4 p-2 rounded-md">
+                        Communication Skill
+                      </div>
+                      <div className="bg-indigo-500 text-white px-4 p-2 rounded-md">
+                        Collaboration
+                      </div>
+                      <div className="bg-indigo-500 text-white px-4 p-2 rounded-md">
+                        Practical/professional skills
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2">
+                <div className="pr-2 pt-2 border-t-4 border-indigo-700">
+                  <div>
+                    <div className="bg-gray-800 flex flex-wrap flex-row-reverse py-2 gap-2">
+                      <div className="bg-orange-500 text-white px-4 p-2 rounded-md">
+                        Learning how to learn
+                      </div>
+                      <div className="bg-orange-500 text-white px-4 p-2 rounded-md">
+                        Leadership
+                      </div>
+                      <div className="bg-orange-500 text-white px-4 p-2 rounded-md">
+                        Apply digital &amp; technology solutions
+                      </div>
+                      <div className="bg-orange-500 text-white px-4 p-2 rounded-md">
+                        Critical Thinking
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
+                      <p className="text-white">Advanced Skills</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-2 pl-2 border-t-4 border-l-4 border-indigo-700">
+                  <div>
+                    <div className="bg-gray-800 flex flex-wrap py-2 gap-2">
+                      <div className="bg-rose-500 text-white px-4 p-2 rounded-md">
+                        Autonomy &amp; Responsibility
+                      </div>
+                      <div className="bg-rose-500 text-white px-4 p-2 rounded-md">
+                        Empathy
+                      </div>
+                      <div className="bg-rose-500 text-white px-4 p-2 rounded-md">
+                        Multicultural competence
+                      </div>
+                      <div className="bg-rose-500 text-white px-4 p-2 rounded-md">
+                        Value inculcation
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
+                      <p className="text-white">Human Values</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div>
               <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
               <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">

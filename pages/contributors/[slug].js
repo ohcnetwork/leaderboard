@@ -75,6 +75,7 @@ export default function Contributor({ contributor, slug }) {
                 <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
                   <div className="p-2">
                     <img
+                      className="grayscale opacity-30"
                       src="/images/sample-badge.svg"
                       alt="Graduate attribute"
                     />

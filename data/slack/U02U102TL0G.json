@@ -1089,5 +1089,73 @@
                 }
             ]
         }
+    ],
+    "2022-06-28 00:00:00": [
+        {
+            "client_msg_id": "837e4097-6e48-4c71-b7f3-57676cf0f3d5",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/899|#899>",
+            "user": "U02U102TL0G",
+            "ts": "1656424983.628959",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656403370,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/899",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/899|#899 update actions for hl7monitor asset integration>",
+                    "text": "fixes: <https://github.com/coronasafe/care/issues/800|#800>",
+                    "title": "<https://github.com/coronasafe/care/pull/899|#899 update actions for hl7monitor asset integration>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "axfb",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/899",
+                                    "text": "#899",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "thread_ts": "1656424983.628959",
+            "reply_count": 1,
+            "reply_users_count": 1,
+            "latest_reply": "1656425007.317809",
+            "reply_users": [
+                "UV5PPBE2D"
+            ],
+            "is_locked": false,
+            "subscribed": false
+        }
     ]
 }

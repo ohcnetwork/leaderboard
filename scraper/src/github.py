@@ -30,12 +30,12 @@ def serializer(obj):
 
 
 class GitHubScraper:
-    def __init__(self, org, token, data_dir, date, days_back=1, log_level=logging.INFO):
+    def __init__(self, org, token, data_dir, date, hours_back=24, log_level=logging.INFO):
         self.log = logging.getLogger("GitHubScraper")
         self.log.setLevel(log_level)
         self.org = org
         self.token = token
-        self.start_datetime = date - timedelta(days=days_back)
+        self.start_datetime = date - timedelta(hours=hours_back)
         self.end_datetime = date
         self.data = {}
         self.data_dir = data_dir
@@ -246,10 +246,10 @@ def main():
     )
     parser.add_argument(
         "-n",
-        "--num-days",
+        "--num-hours",
         required=False,
-        help="Number of days to scrape",
-        default=1,
+        help="Number of hours to scrape",
+        default=24,
     )
     parser.add_argument(
         "-l",
@@ -279,7 +279,7 @@ def main():
         token,
         Path(args.data_dir),
         date,
-        days_back=args.num_days,
+        hours_back=args.num_hours,
         log_level=getattr(logging, args.loglevel),
     )
     scraper.run()

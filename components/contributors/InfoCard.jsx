@@ -1,8 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-export default function InfoCard({ contributor, minimal = false }) {
+export default function InfoCard({ contributor, minimal = true }) {
   return (
-    <div className="-mt-24 py-10 px-6 text-center rounded-lg xl:px-10 xl:text-left" role="listitem">
+    <div
+      className="-mt-24 py-10 px-6 text-center rounded-lg xl:px-10 xl:text-left"
+      role="listitem"
+    >
       <div className="flex flex-col items-center space-y-6 xl:space-y-1 ">
         <div className="flex items-center bg-gray-900 rounded-full p-4 w-64 h-64 relative z-10">
           <img
@@ -11,7 +14,13 @@ export default function InfoCard({ contributor, minimal = false }) {
             alt={contributor.github}
           />
         </div>
-        <div className={minimal ? "text-center" : "flex flex-col items-center justify-center text-center space-y-2"}>
+        <div
+          className={
+            minimal
+              ? "text-center"
+              : "flex flex-col items-center justify-center text-center space-y-2"
+          }
+        >
           <div className="font-medium text-lg leading-6 space-y-1">
             <Link href={`/contributors/${contributor.github}`} className="">
               <h3 className="text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">

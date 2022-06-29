@@ -4,6 +4,15 @@ import Head from "next/head";
 
 import InfoCard from "../../components/contributors/InfoCard";
 import GithubActivity from "../../components/contributors/GithubActivity";
+import BadgeIcons from "../../components/contributors/BadgeIcons";
+import GraduateAttributeBadge from "../../components/contributors/GraduateAttributeBadge";
+import {
+  professionalSelfSkills,
+  professionalTeamSkills,
+  advancedSkills,
+  humanValues,
+  resolveGraduateAttributes,
+} from "../../config/GraduateAttributes";
 
 import { getContributorBySlug, getContributors } from "../../lib/api";
 import Link from "next/link";
@@ -46,24 +55,13 @@ export default function Contributor({ contributor, slug }) {
                   <div className="p-2"></div>
                   <div className="p-2"></div>
 
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
+                  {professionalSelfSkills.map((skill) => (
+                    <div className="p-2" key={skill.key}>
+                      <BadgeIcons
+                        skill={resolveGraduateAttributes(skill, contributor)}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -73,31 +71,14 @@ export default function Contributor({ contributor, slug }) {
                   <p className="text-white">Professional Skills - Team</p>
                 </div>
                 <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
-                  <div className="p-2">
-                    <img
-                      className="grayscale opacity-30"
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
+                  {professionalTeamSkills.map((skill) => (
+                    <div className="p-2" key={skill.key}>
+                      <BadgeIcons
+                        skill={resolveGraduateAttributes(skill, contributor)}
+                      />
+                    </div>
+                  ))}
+                  <div className="p-2"></div>
                   <div className="p-2"></div>
                   <div className="p-2"></div>
                 </div>
@@ -111,19 +92,13 @@ export default function Contributor({ contributor, slug }) {
                   <div className="p-2"></div>
                   <div className="p-2"></div>
                   <div className="p-2"></div>
-                  <div className="p-2"></div>
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
+                  {advancedSkills.map((skill) => (
+                    <div className="p-2" key={skill.key}>
+                      <BadgeIcons
+                        skill={resolveGraduateAttributes(skill, contributor)}
+                      />
+                    </div>
+                  ))}
                 </div>
                 <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
                   <p className="text-white">Advanced Skills</p>
@@ -133,15 +108,13 @@ export default function Contributor({ contributor, slug }) {
             <div className="pt-2 pl-2 border-t-4 border-l-4 border-indigo-700">
               <div>
                 <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
-                  <div className="p-2">
-                    <img
-                      src="/images/sample-badge.svg"
-                      alt="Graduate attribute"
-                    />
-                  </div>
-                  <div className="p-2"></div>
-                  <div className="p-2"></div>
-                  <div className="p-2"></div>
+                  {humanValues.map((skill) => (
+                    <div className="p-2" key={skill.key}>
+                      <BadgeIcons
+                        skill={resolveGraduateAttributes(skill, contributor)}
+                      />
+                    </div>
+                  ))}
                   <div className="p-2"></div>
                   <div className="p-2"></div>
                 </div>
@@ -168,16 +141,15 @@ export default function Contributor({ contributor, slug }) {
                     <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
                       <p className="text-white">Professional Skills - Self</p>
                     </div>
+
                     <div className="bg-gray-800 flex flex-wrap flex-row-reverse py-2 gap-2">
-                      <div className="bg-green-600 text-white px-4 p-2 rounded-md">
-                        Creative thinking
-                      </div>
-                      <div className="bg-green-600 text-white px-4 p-2 rounded-md">
-                        Problem Solving
-                      </div>
-                      <div className="bg-green-600 text-white px-4 p-2 rounded-md">
-                        Practical/professional skills
-                      </div>
+                      {professionalSelfSkills.map((skill) => (
+                        <GraduateAttributeBadge
+                          skill={resolveGraduateAttributes(skill, contributor)}
+                          key={skill.key}
+                          color={"bg-green-600"}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -187,15 +159,13 @@ export default function Contributor({ contributor, slug }) {
                       <p className="text-white">Professional Skills - Team</p>
                     </div>
                     <div className="bg-gray-800 flex flex-wrap py-2 gap-2">
-                      <div className="bg-indigo-500 text-white px-4 p-2 rounded-md">
-                        Communication Skill
-                      </div>
-                      <div className="bg-indigo-500 text-white px-4 p-2 rounded-md">
-                        Collaboration
-                      </div>
-                      <div className="bg-indigo-500 text-white px-4 p-2 rounded-md">
-                        Practical/professional skills
-                      </div>
+                      {professionalTeamSkills.map((skill) => (
+                        <GraduateAttributeBadge
+                          skill={resolveGraduateAttributes(skill, contributor)}
+                          key={skill.key}
+                          color={"bg-indigo-500"}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -204,18 +174,13 @@ export default function Contributor({ contributor, slug }) {
                 <div className="pr-2 pt-2 border-t-4 border-indigo-700">
                   <div>
                     <div className="bg-gray-800 flex flex-wrap flex-row-reverse py-2 gap-2">
-                      <div className="bg-orange-500 text-white px-4 p-2 rounded-md">
-                        Learning how to learn
-                      </div>
-                      <div className="bg-orange-500 text-white px-4 p-2 rounded-md">
-                        Leadership
-                      </div>
-                      <div className="bg-orange-500 text-white px-4 p-2 rounded-md">
-                        Apply digital &amp; technology solutions
-                      </div>
-                      <div className="bg-orange-500 text-white px-4 p-2 rounded-md">
-                        Critical Thinking
-                      </div>
+                      {advancedSkills.map((skill) => (
+                        <GraduateAttributeBadge
+                          skill={resolveGraduateAttributes(skill, contributor)}
+                          key={skill.key}
+                          color={"bg-orange-500"}
+                        />
+                      ))}
                     </div>
                     <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
                       <p className="text-white">Advanced Skills</p>
@@ -225,18 +190,13 @@ export default function Contributor({ contributor, slug }) {
                 <div className="pt-2 pl-2 border-t-4 border-l-4 border-indigo-700">
                   <div>
                     <div className="bg-gray-800 flex flex-wrap py-2 gap-2">
-                      <div className="bg-rose-500 text-white px-4 p-2 rounded-md">
-                        Autonomy &amp; Responsibility
-                      </div>
-                      <div className="bg-rose-500 text-white px-4 p-2 rounded-md">
-                        Empathy
-                      </div>
-                      <div className="bg-rose-500 text-white px-4 p-2 rounded-md">
-                        Multicultural competence
-                      </div>
-                      <div className="bg-rose-500 text-white px-4 p-2 rounded-md">
-                        Value inculcation
-                      </div>
+                      {humanValues.map((skill) => (
+                        <GraduateAttributeBadge
+                          skill={resolveGraduateAttributes(skill, contributor)}
+                          key={skill.key}
+                          color={"bg-rose-500"}
+                        />
+                      ))}
                     </div>
                     <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
                       <p className="text-white">Human Values</p>
@@ -246,7 +206,9 @@ export default function Contributor({ contributor, slug }) {
               </div>
             </div>
             <div>
-              <h3 className="font-bold text-gray-100 mt-4">Activity</h3>
+              <h3 className="font-bold text-gray-100 mt-4">
+                Learning Activity
+              </h3>
               <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
                 {/* <p className="text-xl text-gray-300">
                   ...to add activity visualization...

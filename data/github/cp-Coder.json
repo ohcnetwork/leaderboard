@@ -45,6 +45,48 @@
     },
     {
       "type": "pr_reviewed",
+      "time": 1656436976.0,
+      "title": "coronasafe/care_fe#2928",
+      "link": "https://github.com/coronasafe/care_fe/pull/2928#pullrequestreview-1022138591",
+      "text": "Revamped Facility Page Card"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423198.0,
+      "title": "coronasafe/care_fe#2940",
+      "link": "https://github.com/coronasafe/care_fe/pull/2940#pullrequestreview-1021747885",
+      "text": "Fix success text when sending a sample"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2933",
+      "time": 1656400738.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2933#issuecomment-1168330820",
+      "text": "@nihal467 In the video, the zoom in was working fine but since the width of the image was full, it was just shifting the image down when `zoom in` was clicked.\nThis time I also added width attribute so that as we zoom in, both width as well height will change.\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2933",
+      "time": 1656400473.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2933",
+      "text": "Updated zoom_values"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2932",
+      "time": 1656399600.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2932#issuecomment-1168312275",
+      "text": "In the swagger documentation, it is clearly mentioned that `is_active=False` if the patient is discharged or removed from the watchlist. So we can only add the consultation as long as `is_active=True`\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2932",
+      "time": 1656399431.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2932",
+      "text": "Fixed re-admission of the patient"
+    },
+    {
+      "type": "pr_reviewed",
       "time": 1656356922.0,
       "title": "coronasafe/care_fe#2930",
       "link": "https://github.com/coronasafe/care_fe/pull/2930#pullrequestreview-1020659107",

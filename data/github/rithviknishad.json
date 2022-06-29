@@ -58,6 +58,62 @@
       "text": "Made Resource page responsive in Ipad"
     },
     {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#58",
+      "time": 1656423930.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/58#issuecomment-1168747191",
+      "text": "@bodhi nope, the scrapper seems to simply be using start and end date with no time specified. I'll try to fix it ASAP, but need to discuss abt how to remove duplicates in already generated data in today's EOD."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#58",
+      "time": 1656423285.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/58#issuecomment-1168733668",
+      "text": "@bodhish @kunatastic since its running every 12 hours, the workflow is appending data of past 24 hours every 12 hours, which causes the duplicates issue #63 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656422203.0,
+      "title": "coronasafe/care_fe#2940",
+      "link": "https://github.com/coronasafe/care_fe/pull/2940#pullrequestreview-1021718626",
+      "text": "Fix success text when sending a sample"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656421849.0,
+      "title": "coronasafe/care_fe#2928",
+      "link": "https://github.com/coronasafe/care_fe/pull/2928#pullrequestreview-1021709035",
+      "text": "Revamped Facility Page Card"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656403390.0,
+      "title": "coronasafe/care_fe#2930",
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#pullrequestreview-1021290710",
+      "text": "Made Resource page responsive in Ipad"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2930",
+      "time": 1656395225.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#issuecomment-1168253413",
+      "text": "@patelaryan7751 \r\n\r\nIssue is noticeable in window sizes between the following:\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/176102612-2e1f20d1-4256-42b5-a83d-bf0ebd93c2e8.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656389222.0,
+      "title": "coronasafe/care_fe#2928",
+      "link": "https://github.com/coronasafe/care_fe/pull/2928#pullrequestreview-1021068853",
+      "text": "Revamped Facility Page Card"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656388914.0,
+      "title": "coronasafe/care_fe#2930",
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#pullrequestreview-1021066271",
+      "text": "Made Resource page responsive in Ipad"
+    },
+    {
       "type": "pr_reviewed",
       "time": 1656338406.0,
       "title": "coronasafe/care_fe#2896",
@@ -1753,6 +1809,10 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/leaderboard/pull/66",
+      "title": "Scrapper support for datetime based scrapping instead of date"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2919",
       "title": "Fix incorrect behaviour of back button in Add patient by external results page"

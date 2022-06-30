@@ -232,7 +232,7 @@ export default function Contributor({ contributor, slug }) {
                       Industry Internship
                     </div>
                     <div className="p-2 rounded-lg w-32 h-32 bg-gray-200 flex items-center text-center shadow">
-                      Hiring Network
+                      Industry Placement
                     </div>
                   </div>
                 </div>

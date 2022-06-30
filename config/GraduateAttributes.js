@@ -2,7 +2,7 @@ export let professionalSelfSkills = [
   {
     key: "creative_thinking",
     label: "Creative thinking",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Professional-Skills-Self/Creative-Thinking.svg",
     levels: [
       {
         label: "1x",
@@ -29,7 +29,7 @@ export let professionalSelfSkills = [
   {
     key: "problem_solving",
     label: "Problem Solving",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Professional-Skills-Self/Problem-Solving.svg",
     levels: [
       {
         label: "1x",
@@ -56,7 +56,7 @@ export let professionalSelfSkills = [
   {
     key: "practical_professional_skills",
     label: "Practical/Professional Skills",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Professional-Skills-Self/Practical-Professional-Skills.svg",
     levels: [],
   },
 ];
@@ -65,7 +65,7 @@ export let professionalTeamSkills = [
   {
     key: "communication_skills",
     label: "Communication Skills",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Professional-Skills-Team/Communication-Skill.svg",
     levels: [
       {
         label: "1x",
@@ -87,7 +87,7 @@ export let professionalTeamSkills = [
   {
     key: "collaboration",
     label: "Collaboration",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Professional-Skills-Team/Collaboration.svg",
     levels: [
       {
         label: "1x",
@@ -114,7 +114,7 @@ export let professionalTeamSkills = [
   {
     key: "community_engagement",
     label: "Community Engagement",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Professional-Skills-Team/Community-Engagement.svg",
     levels: [
       {
         label: "1x",
@@ -139,7 +139,7 @@ export let advancedSkills = [
   {
     key: "leadership",
     label: "Leadership",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Advanced-Skills/Leadership.svg",
     levels: [
       {
         label: "1x",
@@ -151,7 +151,7 @@ export let advancedSkills = [
   {
     key: "learn_how_to_learn",
     label: "Learn How to Learn",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Advanced-Skills/Learn-how-to-learn.svg",
     levels: [
       {
         label: "1x",
@@ -163,7 +163,7 @@ export let advancedSkills = [
   {
     key: "skills_to_apply_dt_solutions",
     label: "Skills to apply digital & technology solutions",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Advanced-Skills/Skills-to-apply-digital-and-technology-solutions.svg",
     levels: [
       {
         label: "1x",
@@ -188,25 +188,25 @@ export let humanValues = [
   {
     key: "autonomy_and_responsibility",
     label: "Autonomy And Responsibility",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Human-Values/Autonomy-and-Responsibility.svg",
     levels: [],
   },
   {
     key: "empathy",
     label: "Empathy",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Human-Values/Empathy.svg",
     levels: [],
   },
   {
     key: "value_inculcation",
     label: "Value inculcation",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Human-Values/Value-Inculcation.svg",
     levels: [],
   },
   {
     key: "multicultural_competence",
     label: "Multicultural Competence",
-    icon: "/images/sample-badge.svg",
+    icon: "/images/Human-Values/Multicultural-Competence.svg",
     levels: [],
   },
 ];

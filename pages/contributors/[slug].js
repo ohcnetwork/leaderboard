@@ -213,7 +213,7 @@ export default function Contributor({ contributor, slug }) {
             </div>
             {contributor.courses_completed && (
               <div>
-                <h3 className="font-bold text-gray-100 mt-4">Learning Graph</h3>
+                <h3 className="font-bold text-gray-100 mt-4">Journey Map</h3>
                 <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
                   {/* <ActivityCalendar
                   showWeekdayLabels

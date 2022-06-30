@@ -24,20 +24,22 @@ export default function BadgeIcons({ skill }) {
   useOnClickOutside(ref, () => setShowModel(false));
   return (
     <div ref={ref} className="" role="listitem">
-      <img
-        onClick={() => setShowModel(!showModel)}
-        className={skill.currentLevel ? "" : "grayscale opacity-30"}
-        src={skill.icon}
-        alt="Graduate attribute"
-      />
-      {skill.currentLevel && (
-        <div className="z-40 absolute -mt-3 ml-2">
-          <span className="text-white">{skill.currentLevel.label}</span>
-        </div>
-      )}
+      <div className="relative">
+        <img
+          onClick={() => setShowModel(!showModel)}
+          className={skill.currentLevel ? "" : "grayscale opacity-30"}
+          src={skill.icon}
+          alt="Graduate attribute"
+        />
+        {skill.currentLevel && (
+          <div className="z-10 bg-white absolute rounded bottom-0 px-1">
+            <span className="text-xs font-medium">{skill.currentLevel.label}</span>
+          </div>
+        )}
+      </div>
       {/* model */}
       {showModel && (
-        <div className="absolute bg-white rounded-lg shadow-lg p-4 w-60">
+        <div className="absolute z-20 bg-white rounded-lg shadow-lg p-4 max-w-xs">
           <div className="font-bold">{skill.label}</div>
           {skill.levels.map((level) => (
             <div key={level.value} className="flex items-center">

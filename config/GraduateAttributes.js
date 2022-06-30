@@ -198,14 +198,14 @@ export let humanValues = [
     levels: [],
   },
   {
-    key: "multicultural_competence",
-    label: "Multicultural Competence",
+    key: "value_inculcation",
+    label: "Value inculcation",
     icon: "/images/sample-badge.svg",
     levels: [],
   },
   {
-    key: "value_inculcation",
-    label: "Value inculcation",
+    key: "multicultural_competence",
+    label: "Multicultural Competence",
     icon: "/images/sample-badge.svg",
     levels: [],
   },

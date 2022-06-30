@@ -50,7 +50,7 @@ export default function Contributor({ contributor, slug }) {
                 <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
                   <p className="text-white">Professional Skills - Self</p>
                 </div>
-                <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
+                <div className="grid grid-cols-6 divide-x divide-gray-600 border border-gray-600 bg-gray-800">
                   <div className="p-2"></div>
                   <div className="p-2"></div>
                   <div className="p-2"></div>
@@ -70,7 +70,7 @@ export default function Contributor({ contributor, slug }) {
                 <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
                   <p className="text-white">Professional Skills - Team</p>
                 </div>
-                <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
+                <div className="grid grid-cols-6 divide-x divide-gray-600 border border-gray-600 bg-gray-800">
                   {professionalTeamSkills.map((skill) => (
                     <div className="p-2" key={skill.key}>
                       <BadgeIcons
@@ -88,7 +88,7 @@ export default function Contributor({ contributor, slug }) {
           <div className="grid grid-cols-2">
             <div className="pr-2 pt-2 border-t-4 border-indigo-700">
               <div>
-                <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
+                <div className="grid grid-cols-6 divide-x divide-gray-600 border border-gray-600 bg-gray-800">
                   <div className="p-2"></div>
                   <div className="p-2"></div>
                   <div className="p-2"></div>
@@ -107,7 +107,7 @@ export default function Contributor({ contributor, slug }) {
             </div>
             <div className="pt-2 pl-2 border-t-4 border-l-4 border-indigo-700">
               <div>
-                <div className="grid grid-cols-6 divide-x-2 divide-gray-600 border border-gray-600 bg-gray-800">
+                <div className="grid grid-cols-6 divide-x divide-gray-600 border border-gray-600 bg-gray-800">
                   {humanValues.map((skill) => (
                     <div className="p-2" key={skill.key}>
                       <BadgeIcons
@@ -136,71 +136,62 @@ export default function Contributor({ contributor, slug }) {
             </h3>
             <div className="bg-gray-900 mt-3">
               <div className="grid grid-cols-2">
-                <div className="pr-2 pb-2">
-                  <div>
-                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                      <p className="text-white">Professional Skills - Self</p>
-                    </div>
-
-                    <div className="bg-gray-800 flex flex-wrap flex-row-reverse py-2 gap-2">
-                      {professionalSelfSkills.map((skill) => (
-                        <GraduateAttributeBadge
-                          skill={resolveGraduateAttributes(skill, contributor)}
-                          key={skill.key}
-                          color={"bg-green-600"}
-                        />
-                      ))}
-                    </div>
+                <div className="pr-2 pb-2 bg-gray-800 flex flex-col justify-between">
+                  <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                    <p className="text-white">Professional Skills - Self</p>
+                  </div>
+                  <div className="flex flex-wrap flex-row-reverse py-2 pl-2 gap-2">
+                    {professionalSelfSkills.map((skill) => (
+                      <GraduateAttributeBadge
+                        skill={resolveGraduateAttributes(skill, contributor)}
+                        key={skill.key}
+                        color={"bg-green-600"}
+                      />
+                    ))}
                   </div>
                 </div>
-                <div className="pl-2 pb-2 border-l-4 border-indigo-700">
-                  <div>
-                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                      <p className="text-white">Professional Skills - Team</p>
-                    </div>
-                    <div className="bg-gray-800 flex flex-wrap py-2 gap-2">
-                      {professionalTeamSkills.map((skill) => (
-                        <GraduateAttributeBadge
-                          skill={resolveGraduateAttributes(skill, contributor)}
-                          key={skill.key}
-                          color={"bg-indigo-500"}
-                        />
-                      ))}
-                    </div>
+                <div className="pl-2 pb-2 border-l-4 border-indigo-700 bg-gray-800 flex flex-col justify-between">
+                  <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                    <p className="text-white">Professional Skills - Team</p>
+                  </div>
+                  <div className="flex flex-wrap py-2 pr-2 gap-2">
+                    {professionalTeamSkills.map((skill) => (
+                      <GraduateAttributeBadge
+                        skill={resolveGraduateAttributes(skill, contributor)}
+                        key={skill.key}
+                        color={"bg-indigo-500"}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
               <div className="grid grid-cols-2">
-                <div className="pr-2 pt-2 border-t-4 border-indigo-700">
-                  <div>
-                    <div className="bg-gray-800 flex flex-wrap flex-row-reverse py-2 gap-2">
-                      {advancedSkills.map((skill) => (
-                        <GraduateAttributeBadge
-                          skill={resolveGraduateAttributes(skill, contributor)}
-                          key={skill.key}
-                          color={"bg-orange-500"}
-                        />
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
-                      <p className="text-white">Advanced Skills</p>
-                    </div>
+                <div className="pr-2 pt-2 border-t-4 border-indigo-700 bg-gray-800 flex flex-col justify-between">
+                  <div className=" flex flex-wrap flex-row-reverse py-2 pl-2 gap-2">
+                    {advancedSkills.map((skill) => (
+                      <GraduateAttributeBadge
+                        skill={resolveGraduateAttributes(skill, contributor)}
+                        key={skill.key}
+                        color={"bg-orange-500"}
+                      />
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg ">
+                    <p className="text-white">Advanced Skills</p>
                   </div>
                 </div>
-                <div className="pt-2 pl-2 border-t-4 border-l-4 border-indigo-700">
-                  <div>
-                    <div className="bg-gray-800 flex flex-wrap py-2 gap-2">
-                      {humanValues.map((skill) => (
-                        <GraduateAttributeBadge
-                          skill={resolveGraduateAttributes(skill, contributor)}
-                          key={skill.key}
-                          color={"bg-rose-500"}
-                        />
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
-                      <p className="text-white">Human Values</p>
-                    </div>
+                <div className="pt-2 pl-2 border-t-4 border-l-4 border-indigo-700 bg-gray-800 flex flex-col justify-between">
+                  <div className="flex flex-wrap py-2 pr-2 gap-2">
+                    {humanValues.map((skill) => (
+                      <GraduateAttributeBadge
+                        skill={resolveGraduateAttributes(skill, contributor)}
+                        key={skill.key}
+                        color={"bg-rose-500"}
+                      />
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
+                    <p className="text-white">Human Values</p>
                   </div>
                 </div>
               </div>

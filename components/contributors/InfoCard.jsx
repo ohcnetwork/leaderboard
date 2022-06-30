@@ -34,7 +34,7 @@ export default function InfoCard({ contributor, minimal = true }) {
             role="list"
             className={
               minimal
-                ? "flex items-center space-x-2 justify-center mt-2"
+                ? "flex items-center space-x-6 justify-center mt-4"
                 : "space-y-2"
             }
           >
@@ -45,12 +45,12 @@ export default function InfoCard({ contributor, minimal = true }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
+                  <span className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Github</span>
                     <svg
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className="mr-2 w-5 h-5"
+                      className="w-8 h-8"
                     >
                       <path
                         fillRule="evenodd"
@@ -59,7 +59,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                       ></path>
                     </svg>
                     {!minimal && `@${contributor.github}`}
-                  </div>
+                  </span>
                 </a>
               </li>
             )}
@@ -73,7 +73,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                   <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Twitter</span>
                     <svg
-                      className="w-5 h-5 mr-2"
+                      className="w-7 h-7"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       aria-hidden="true"
@@ -95,7 +95,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                   <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">LinkedIn</span>
                     <svg
-                      className="w-5 h-5 mr-2"
+                      className="w-7 h-7"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       aria-hidden="true"

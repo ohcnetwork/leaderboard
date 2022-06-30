@@ -211,7 +211,33 @@ export default function Contributor({ contributor, slug }) {
                 />
               </div>
             </div>
-
+            {contributor.courses_completed && (
+              <div>
+                <h3 className="font-bold text-gray-100 mt-4">Learning Graph</h3>
+                <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
+                  {/* <ActivityCalendar
+                  showWeekdayLabels
+                  data={contributor.calendarData}
+                /> */}
+                  <div className="flex space-x-8 font-semibold">
+                    {contributor.courses_completed.map((course) => (
+                      <div
+                        key={course}
+                        className="p-2 rounded-lg w-32 h-32 bg-green-200 flex items-center text-center shadow"
+                      >
+                        {course}
+                      </div>
+                    ))}
+                    <div className="p-2 rounded-lg w-32 h-32 bg-blue-200 flex items-center text-center shadow animate-pulse animate-bounce">
+                      Industry Internship
+                    </div>
+                    <div className="p-2 rounded-lg w-32 h-32 bg-gray-200 flex items-center text-center shadow">
+                      Hiring Network
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             <div>
               <h3 className="font-bold text-gray-100 my-4">Bio</h3>
               <div className="bg-gray-800 w-full rounded-lg ">

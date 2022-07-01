@@ -48,7 +48,9 @@ export default function Contributor({ contributor, slug }) {
             <div className="pr-2 pb-2">
               <div>
                 <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                  <p className="text-white">Professional Skills - Self</p>
+                  <p className="text-white font-medium">
+                    Professional Skills - Self
+                  </p>
                 </div>
                 <div className="grid grid-cols-6 divide-x divide-gray-600 border border-gray-600 bg-gray-800">
                   <div className="p-2"></div>
@@ -68,7 +70,9 @@ export default function Contributor({ contributor, slug }) {
             <div className="pl-2 pb-2 border-l-4 border-indigo-700">
               <div>
                 <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                  <p className="text-white">Professional Skills - Team</p>
+                  <p className="text-white font-medium">
+                    Professional Skills - Team
+                  </p>
                 </div>
                 <div className="grid grid-cols-6 divide-x divide-gray-600 border border-gray-600 bg-gray-800">
                   {professionalTeamSkills.map((skill) => (
@@ -100,7 +104,7 @@ export default function Contributor({ contributor, slug }) {
                   ))}
                 </div>
                 <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
-                  <p className="text-white">Advanced Skills</p>
+                  <p className="text-white font-medium">Advanced Skills</p>
                 </div>
               </div>
             </div>
@@ -118,7 +122,7 @@ export default function Contributor({ contributor, slug }) {
                   <div className="p-2"></div>
                 </div>
                 <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
-                  <p className="text-white">Human Values</p>
+                  <p className="text-white font-medium">Human Values</p>
                 </div>
               </div>
             </div>
@@ -178,6 +182,7 @@ export default function Contributor({ contributor, slug }) {
                           skill={resolveGraduateAttributes(skill, contributor)}
                           key={skill.key}
                           color={"bg-green-600"}
+                          colorDark={"bg-green-700"}
                         />
                       ))}
                     </div>
@@ -194,6 +199,7 @@ export default function Contributor({ contributor, slug }) {
                           skill={resolveGraduateAttributes(skill, contributor)}
                           key={skill.key}
                           color={"bg-indigo-500"}
+                          colorDark={"bg-indigo-700"}
                         />
                       ))}
                     </div>
@@ -205,6 +211,7 @@ export default function Contributor({ contributor, slug }) {
                           skill={resolveGraduateAttributes(skill, contributor)}
                           key={skill.key}
                           color={"bg-orange-500"}
+                          colorDark={"bg-orange-700"}
                         />
                       ))}
                     </div>
@@ -221,6 +228,7 @@ export default function Contributor({ contributor, slug }) {
                           skill={resolveGraduateAttributes(skill, contributor)}
                           key={skill.key}
                           color={"bg-rose-500"}
+                          colorDark={"bg-rose-700"}
                         />
                       ))}
                     </div>
@@ -233,66 +241,6 @@ export default function Contributor({ contributor, slug }) {
                 </div>
               </div>
             </div>
-
-            {/* Mobile */}
-            {/* <div className="flex space-x-6 overflow-x-auto w-full">
-              <div className="relative overflow-hidden w-3/4 flex-shrink-0 bg-gray-800 ">
-                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                  <p className="text-white">Professional Skills - Self</p>
-                </div>
-                <div className="flex flex-wrap flex-row-reverse py-2 pl-2 gap-2">
-                  {professionalSelfSkills.map((skill) => (
-                    <GraduateAttributeBadge
-                      skill={resolveGraduateAttributes(skill, contributor)}
-                      key={skill.key}
-                      color={"bg-green-600"}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className="relative overflow-hidden w-3/4 flex-shrink-0 bg-gray-800 ">
-                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                  <p className="text-white">Professional Skills - Team</p>
-                </div>
-                <div className="flex flex-wrap py-2 pr-2 gap-2">
-                  {professionalTeamSkills.map((skill) => (
-                    <GraduateAttributeBadge
-                      skill={resolveGraduateAttributes(skill, contributor)}
-                      key={skill.key}
-                      color={"bg-indigo-500"}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className="relative overflow-hidden w-3/4 flex-shrink-0 bg-gray-800 ">
-                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg ">
-                  <p className="text-white">Advanced Skills</p>
-                </div>
-                <div className=" flex flex-wrap flex-row-reverse py-2 pl-2 gap-2">
-                  {advancedSkills.map((skill) => (
-                    <GraduateAttributeBadge
-                      skill={resolveGraduateAttributes(skill, contributor)}
-                      key={skill.key}
-                      color={"bg-orange-500"}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className="relative overflow-hidden w-3/4 flex-shrink-0 bg-gray-800 ">
-                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
-                  <p className="text-white">Human Values</p>
-                </div>
-                <div className="flex flex-wrap py-2 pr-2 gap-2">
-                  {humanValues.map((skill) => (
-                    <GraduateAttributeBadge
-                      skill={resolveGraduateAttributes(skill, contributor)}
-                      key={skill.key}
-                      color={"bg-rose-500"}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div> */}
 
             <div>
               <h3 className="font-bold text-gray-100 my-4">Bio</h3>
@@ -321,33 +269,35 @@ export default function Contributor({ contributor, slug }) {
                 />
               </div>
             </div>
-            {contributor.courses_completed && (
-              <div>
-                <h3 className="font-bold text-gray-100 mt-4">Journey Map</h3>
-                <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
-                  {/* <ActivityCalendar
+            <div className="hidden">
+              {contributor.courses_completed && (
+                <div>
+                  <h3 className="font-bold text-gray-100 mt-4">Journey Map</h3>
+                  <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
+                    {/* <ActivityCalendar
                   showWeekdayLabels
                   data={contributor.calendarData}
                 /> */}
-                  <div className="flex overflow-x-auto space-x-8 font-semibold">
-                    {contributor.courses_completed.map((course) => (
-                      <div
-                        key={course}
-                        className="p-2 rounded-lg w-32 h-32 bg-green-200 flex items-center text-center shadow"
-                      >
-                        {course}
+                    <div className="flex overflow-x-auto space-x-8 font-semibold">
+                      {contributor.courses_completed.map((course) => (
+                        <div
+                          key={course}
+                          className="p-2 rounded-lg w-32 h-32 bg-green-200 flex items-center text-center shadow"
+                        >
+                          {course}
+                        </div>
+                      ))}
+                      <div className="p-2 rounded-lg w-32 h-32 bg-blue-200 flex items-center text-center shadow animate-pulse animate-bounce">
+                        Industry Internship
                       </div>
-                    ))}
-                    <div className="p-2 rounded-lg w-32 h-32 bg-blue-200 flex items-center text-center shadow animate-pulse animate-bounce">
-                      Industry Internship
-                    </div>
-                    <div className="p-2 rounded-lg w-32 h-32 bg-gray-200 flex items-center text-center shadow">
-                      Industry Placement
+                      <div className="p-2 rounded-lg w-32 h-32 bg-gray-200 flex items-center text-center shadow">
+                        Industry Placement
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
             <div>
               <h3 className="font-bold text-gray-100 mt-6">Highlights</h3>
               <dl className="mt-4 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">

@@ -18,9 +18,9 @@ export default function GraduateAttributeBadge({ skill, color }) {
       /></div>
       <div className="py-1 pr-3">
       {skill.currentLevel && (
-        <span className="text-white mr-2">{skill.currentLevel.label}</span>
+        <span className="text-white mr-2 font-medium">{skill.currentLevel.label}</span>
       )}
-      {skill.label}
+      <p>{skill.label}</p>
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ export default function BadgeIcons({ skill }) {
       </div>
       {/* model */}
       {showModel && (
-        <div className="absolute z-20 bg-white rounded-lg shadow-2xl max-w-xs">
+        <div className="inset-x-0 md:inset-auto absolute z-20 bg-white rounded-lg shadow-2xl md:max-w-xs mt-1 mx-4 md:mx-0">
           <div className="bg-gray-50 rounded-t-lg px-4 py-2 border-b">
             <img
               onClick={() => setShowModel(!showModel)}

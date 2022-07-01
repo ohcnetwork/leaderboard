@@ -130,72 +130,153 @@ export default function Contributor({ contributor, slug }) {
             <InfoCard contributor={contributor} />
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <h3 className="font-bold text-gray-100 mt-6">
-              Graduate Attributes
-            </h3>
-            <div className="bg-gray-900 mt-3">
-              <div className="grid grid-cols-2">
-                <div className="pr-2 pb-2 bg-gray-800 flex flex-col justify-between">
-                  <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                    <p className="text-white">Professional Skills - Self</p>
+          <div className="max-w-4xl mx-auto space-y-16">
+            <div>
+              <h3 className="font-bold text-gray-100 mt-6">
+                Graduate Attributes
+              </h3>
+              <div className="bg-gray-900 mt-3">
+                <div className="flex space-x-6 md:space-x-0 overflow-x-auto w-full md:grid md:grid-cols-2">
+                  <div className="md:pr-2 pb-2 bg-gray-800 flex flex-col md:justify-between flex-shrink-0 w-3/4 md:w-auto">
+                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                      <p className="text-white text-lg font-semibold">
+                        Professional Skills - Self
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap md:flex-row-reverse py-2 pl-2 gap-2">
+                      {professionalSelfSkills.map((skill) => (
+                        <GraduateAttributeBadge
+                          skill={resolveGraduateAttributes(skill, contributor)}
+                          key={skill.key}
+                          color={"bg-green-600"}
+                        />
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex flex-wrap flex-row-reverse py-2 pl-2 gap-2">
-                    {professionalSelfSkills.map((skill) => (
-                      <GraduateAttributeBadge
-                        skill={resolveGraduateAttributes(skill, contributor)}
-                        key={skill.key}
-                        color={"bg-green-600"}
-                      />
-                    ))}
+                  <div className="md:pl-2 pb-2 md:border-l-4 md:border-indigo-700 bg-gray-800 flex flex-col md:justify-between flex-shrink-0 w-3/4 md:w-auto">
+                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                      <p className="text-white text-lg font-semibold">
+                        Professional Skills - Team
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap py-2 pl-2 md:pl-0 md:pr-2 gap-2">
+                      {professionalTeamSkills.map((skill) => (
+                        <GraduateAttributeBadge
+                          skill={resolveGraduateAttributes(skill, contributor)}
+                          key={skill.key}
+                          color={"bg-indigo-500"}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="pl-2 pb-2 border-l-4 border-indigo-700 bg-gray-800 flex flex-col justify-between">
-                  <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                    <p className="text-white">Professional Skills - Team</p>
+                  <div className="md:pr-2 md:pt-2 md:border-t-4 md:border-indigo-700 bg-gray-800 flex flex-col-reverse md:flex-col justify-end md:justify-between flex-shrink-0 w-3/4 md:w-auto">
+                    <div className="flex flex-wrap md:flex-row-reverse py-2 pl-2 pr-2 md:pr-0 gap-2 leading-tight">
+                      {advancedSkills.map((skill) => (
+                        <GraduateAttributeBadge
+                          skill={resolveGraduateAttributes(skill, contributor)}
+                          key={skill.key}
+                          color={"bg-orange-500"}
+                        />
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg ">
+                      <p className="text-white text-lg font-semibold">
+                        Advanced Skills
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap py-2 pr-2 gap-2">
-                    {professionalTeamSkills.map((skill) => (
-                      <GraduateAttributeBadge
-                        skill={resolveGraduateAttributes(skill, contributor)}
-                        key={skill.key}
-                        color={"bg-indigo-500"}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="grid grid-cols-2">
-                <div className="pr-2 pt-2 border-t-4 border-indigo-700 bg-gray-800 flex flex-col justify-between">
-                  <div className=" flex flex-wrap flex-row-reverse py-2 pl-2 gap-2">
-                    {advancedSkills.map((skill) => (
-                      <GraduateAttributeBadge
-                        skill={resolveGraduateAttributes(skill, contributor)}
-                        key={skill.key}
-                        color={"bg-orange-500"}
-                      />
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg ">
-                    <p className="text-white">Advanced Skills</p>
-                  </div>
-                </div>
-                <div className="pt-2 pl-2 border-t-4 border-l-4 border-indigo-700 bg-gray-800 flex flex-col justify-between">
-                  <div className="flex flex-wrap py-2 pr-2 gap-2">
-                    {humanValues.map((skill) => (
-                      <GraduateAttributeBadge
-                        skill={resolveGraduateAttributes(skill, contributor)}
-                        key={skill.key}
-                        color={"bg-rose-500"}
-                      />
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
-                    <p className="text-white">Human Values</p>
+                  <div className="md:pt-2 md:pl-2 md:border-t-4 md:border-l-4 md:border-indigo-700 bg-gray-800 flex flex-col-reverse md:flex-col justify-end md:justify-between flex-shrink-0 w-3/4 md:w-auto">
+                    <div className="flex flex-wrap py-2 pl-2 md:pl-0 pr-2 gap-2">
+                      {humanValues.map((skill) => (
+                        <GraduateAttributeBadge
+                          skill={resolveGraduateAttributes(skill, contributor)}
+                          key={skill.key}
+                          color={"bg-rose-500"}
+                        />
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg md:rounded-b-lg">
+                      <p className="text-white text-lg font-semibold">
+                        Human Values
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Mobile */}
+            {/* <div className="flex space-x-6 overflow-x-auto w-full">
+              <div className="relative overflow-hidden w-3/4 flex-shrink-0 bg-gray-800 ">
+                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                  <p className="text-white">Professional Skills - Self</p>
+                </div>
+                <div className="flex flex-wrap flex-row-reverse py-2 pl-2 gap-2">
+                  {professionalSelfSkills.map((skill) => (
+                    <GraduateAttributeBadge
+                      skill={resolveGraduateAttributes(skill, contributor)}
+                      key={skill.key}
+                      color={"bg-green-600"}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="relative overflow-hidden w-3/4 flex-shrink-0 bg-gray-800 ">
+                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
+                  <p className="text-white">Professional Skills - Team</p>
+                </div>
+                <div className="flex flex-wrap py-2 pr-2 gap-2">
+                  {professionalTeamSkills.map((skill) => (
+                    <GraduateAttributeBadge
+                      skill={resolveGraduateAttributes(skill, contributor)}
+                      key={skill.key}
+                      color={"bg-indigo-500"}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="relative overflow-hidden w-3/4 flex-shrink-0 bg-gray-800 ">
+                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg ">
+                  <p className="text-white">Advanced Skills</p>
+                </div>
+                <div className=" flex flex-wrap flex-row-reverse py-2 pl-2 gap-2">
+                  {advancedSkills.map((skill) => (
+                    <GraduateAttributeBadge
+                      skill={resolveGraduateAttributes(skill, contributor)}
+                      key={skill.key}
+                      color={"bg-orange-500"}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="relative overflow-hidden w-3/4 flex-shrink-0 bg-gray-800 ">
+                <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg">
+                  <p className="text-white">Human Values</p>
+                </div>
+                <div className="flex flex-wrap py-2 pr-2 gap-2">
+                  {humanValues.map((skill) => (
+                    <GraduateAttributeBadge
+                      skill={resolveGraduateAttributes(skill, contributor)}
+                      key={skill.key}
+                      color={"bg-rose-500"}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div> */}
+
+            <div>
+              <h3 className="font-bold text-gray-100 my-4">Bio</h3>
+              <div className="bg-gray-800 w-full rounded-lg ">
+                <div
+                  className="prose prose-invert py-10 px-6 rounded-lg xl:px-10 xl:text-left leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: contributor.content,
+                  }}
+                ></div>
+              </div>
+            </div>
+
             <div>
               <h3 className="font-bold text-gray-100 mt-4">
                 Learning Activity
@@ -209,18 +290,6 @@ export default function Contributor({ contributor, slug }) {
                   showWeekdayLabels
                   data={contributor.calendarData}
                 />
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-gray-100 my-4">Bio</h3>
-              <div className="bg-gray-800 w-full rounded-lg ">
-                <div
-                  className="prose prose-invert py-10 px-6 rounded-lg xl:px-10 xl:text-left leading-relaxed"
-                  dangerouslySetInnerHTML={{
-                    __html: contributor.content,
-                  }}
-                ></div>
               </div>
             </div>
 

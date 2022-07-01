@@ -10,7 +10,7 @@ export default function GraduateAttributeBadge({ skill, color }) {
         skill.currentLevel ? color : "bg-gray-600"
       }`}>
       <img
-        className={`w-11 h-11 ${
+        className={`w-8 md:w-11 h-8 md:h-11 ${
           skill.currentLevel ? "" : "grayscale opacity-30"
         }`}
         src={skill.icon}

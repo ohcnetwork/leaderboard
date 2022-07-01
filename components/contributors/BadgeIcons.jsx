@@ -39,32 +39,44 @@ export default function BadgeIcons({ skill }) {
       </div>
       {/* model */}
       {showModel && (
-        <div className="absolute z-20 bg-white rounded-lg shadow-lg p-4 max-w-xs">
-          <div className="font-bold">{skill.label}</div>
-          {skill.levels.map((level) => (
-            <div key={level.value} className="flex items-center">
-              <div
-                className={`flex-shrink-0 ${
-                  skill.currentLevel?.value >= level.value
-                    ? "text-green-600"
-                    : ""
-                }`}
-              >
-                {level.label}
-              </div>
-              <div className="flex-grow pl-4">
-                <div
-                  className={`flex items-center ${
+        <div className="absolute z-20 bg-white rounded-lg shadow-2xl max-w-xs">
+          <div className="bg-gray-50 rounded-t-lg px-4 py-2 border-b">
+            <img
+              onClick={() => setShowModel(!showModel)}
+              className={`w-24 h-24 mx-auto ${skill.currentLevel ? "" : "grayscale opacity-30"}`}
+              src={skill.icon}
+              alt="Graduate attribute"
+            />
+          </div>
+          <div className="px-4 pt-2 pb-4">
+            <p className="font-bold pb-2">{skill.label}</p>
+            <div className="space-y-1 text-sm">
+            {skill.levels.map((level) => (
+              <div key={level.value} className="flex items-center font-medium">
+                <p
+                  className={`flex-shrink-0 bg-gray-100 px-1 py-0.5 rounded ${
                     skill.currentLevel?.value >= level.value
-                      ? "text-green-600"
+                      ? "bg-green-500 text-white"
                       : ""
                   }`}
                 >
-                  {level.description}
+                  {level.label}
+                </p>
+                <div className="flex-grow pl-4">
+                  <p
+                    className={`flex items-center ${
+                      skill.currentLevel?.value >= level.value
+                        ? "text-green-700"
+                        : ""
+                    }`}
+                  >
+                    {level.description}
+                  </p>
                 </div>
               </div>
+            ))}
             </div>
-          ))}
+          </div>
         </div>
       )}
     </div>

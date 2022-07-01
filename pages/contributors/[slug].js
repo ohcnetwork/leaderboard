@@ -91,7 +91,6 @@ export default function Contributor({ contributor, slug }) {
                 <div className="grid grid-cols-6 divide-x divide-gray-600 border border-gray-600 bg-gray-800">
                   <div className="p-2"></div>
                   <div className="p-2"></div>
-                  <div className="p-2"></div>
                   {advancedSkills.map((skill) => (
                     <div className="p-2" key={skill.key}>
                       <BadgeIcons

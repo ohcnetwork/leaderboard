@@ -24183,5 +24183,303 @@
             ]
         }
     ],
-    "2022-06-30 00:00:00": []
+    "2022-06-30 00:00:00": [
+        {
+            "client_msg_id": "1c65a05e-69e0-4bd3-8b15-34927fe3e06f",
+            "type": "message",
+            "text": "Worked on previous care_fe issues",
+            "user": "U02TB90FU2X",
+            "ts": "1656614374.600089",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "VQU1",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous care_fe issues"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "daba3675-b70d-416f-b52c-9e82933c4069",
+            "type": "message",
+            "text": "No updates :upside_down_face: day was packed",
+            "user": "U02TDGQQPMJ",
+            "ts": "1656609430.215929",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "CQc",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "No updates "
+                                },
+                                {
+                                    "type": "emoji",
+                                    "name": "upside_down_face",
+                                    "unicode": "1f643"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " day was packed"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "5809045c-a26e-4338-ab7d-a39ff803e394",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care_fe/issues/2855|#2855>",
+            "user": "U02T4HD63P0",
+            "ts": "1656608825.206279",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/57055998/175662439-3a165293-d1fa-47a7-9be4-d28a60203869.jpg",
+                    "image_width": 1565,
+                    "image_height": 747,
+                    "image_bytes": 91965,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656102462,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2855",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1565x747px image",
+                    "text": "<https://user-images.githubusercontent.com/57055998/175662439-3a165293-d1fa-47a7-9be4-d28a60203869.jpg|23>\n\nwhen we are uploading a audio file, we can't custom name the file",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2855|#2855 Unable to custom name audio file>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/patelaryan7751|@patelaryan7751>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "6qm",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2855",
+                                    "text": "#2855",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "f9c358b0-d811-42b6-a265-daf1acb87fb5",
+            "type": "message",
+            "text": "Working on <https://github.com/coronasafe/care_fe/issues/1789|#1789> backend is complete and working, needs some improvement at frontend",
+            "user": "U02U103J5LG",
+            "ts": "1656598359.857829",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1630739952,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/1789",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/1789|#1789 Facility: Admission data>",
+                    "text": "Any facility today cannot fetch data on how many admissions they have had on any day.\n\nThe problem is even if they apply the admissions date filters, they can browse through the live list/dischasrged list of patients, but they will not have details or number of patients who were admitted to their facility on such date and they discharged and admitted to / shifted to another facility.\n\nEvery facility must have its own registry of a number of admissions across various bed types.\n\n<https://github.com/gigincg|@gigincg>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/1789|#1789 Facility: Admission data>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/ishanExtreme|@ishanExtreme>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "urgent",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tdoZf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/1789",
+                                    "text": "#1789",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " backend is complete and working, needs some improvement at frontend"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "1d3a67bf-28cb-4e8b-9e90-53927310bb2c",
+            "type": "message",
+            "text": "solved 4/5 failing pr today",
+            "user": "U02SWK752TZ",
+            "ts": "1656598320.212609",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "n9DuE",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "solved 4/5 failing pr today"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "02cd6df7-c86b-4165-a729-7bf60fe7c189",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care_fe/pull/2945|#2945>",
+            "user": "U02U1035G0G",
+            "ts": "1656598113.974689",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "d=WyA",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2945",
+                                    "text": "#2945",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "c72b9264-4f25-489e-b5c2-356f30e18a1b",
+            "type": "message",
+            "text": "entire day passed in reading ABDM Docs...",
+            "user": "U02TDGQ0TFE",
+            "ts": "1656597900.826429",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQ0TFE",
+                "ts": "1656597924.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "PROOy",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "entire day passed in reading ABDM Docs..."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "7d079198-a77f-44bf-bfc8-4c1267cb3a5d",
+            "type": "message",
+            "text": "Worked on previous PR",
+            "user": "U02TPSYB1MF",
+            "ts": "1656597252.006489",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "XCXI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-01 00:00:00": []
 }

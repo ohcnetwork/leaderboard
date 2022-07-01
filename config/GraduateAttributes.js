@@ -182,6 +182,12 @@ export let advancedSkills = [
       },
     ],
   },
+  {
+    key: "critical_thinking",
+    label: "Critical Thinking",
+    icon: "/images/Advanced-Skills/Critical-Thinking.svg",
+    levels: [],
+  },
 ];
 
 export let humanValues = [

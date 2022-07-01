@@ -43,7 +43,7 @@ export default function Contributor({ contributor, slug }) {
       <PageHead title={contributor.name} />
       {/* <Header /> */}
       <section className="max-w-6xl mx-auto bg-gray-900 border-t border-gray-600 p-4">
-        <div className="bg-gray-900 p-4">
+        <div className="hidden md:block bg-gray-900 p-4">
           <div className="grid grid-cols-2">
             <div className="pr-2 pb-2">
               <div>
@@ -129,6 +129,36 @@ export default function Contributor({ contributor, slug }) {
           <div>
             <InfoCard contributor={contributor} />
           </div>
+          <div className="flex md:hidden w-full overflow-x-auto">
+            {professionalSelfSkills.map((skill) => (
+              <div className="p-1 flex-shrink-0 w-14 h-14" key={skill.key}>
+                <BadgeIcons
+                  skill={resolveGraduateAttributes(skill, contributor)}
+                />
+              </div>
+            ))}
+            {professionalTeamSkills.map((skill) => (
+              <div className="p-1 flex-shrink-0 w-14 h-14" key={skill.key}>
+                <BadgeIcons
+                  skill={resolveGraduateAttributes(skill, contributor)}
+                />
+              </div>
+            ))}
+            {advancedSkills.map((skill) => (
+              <div className="p-1 flex-shrink-0 w-14 h-14" key={skill.key}>
+                <BadgeIcons
+                  skill={resolveGraduateAttributes(skill, contributor)}
+                />
+              </div>
+            ))}
+            {humanValues.map((skill) => (
+              <div className="p-1 flex-shrink-0 w-14 h-14" key={skill.key}>
+                <BadgeIcons
+                  skill={resolveGraduateAttributes(skill, contributor)}
+                />
+              </div>
+            ))}
+          </div>
 
           <div className="max-w-4xl mx-auto space-y-16">
             <div>
@@ -138,8 +168,8 @@ export default function Contributor({ contributor, slug }) {
               <div className="bg-gray-900 mt-3">
                 <div className="flex space-x-6 md:space-x-0 overflow-x-auto w-full md:grid md:grid-cols-2">
                   <div className="md:pr-2 pb-2 bg-gray-800 flex flex-col md:justify-between flex-shrink-0 w-3/4 md:w-auto">
-                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                      <p className="text-white text-lg font-semibold">
+                    <div className="flex items-center md:justify-center p-3 bg-gray-700 rounded-t-lg">
+                      <p className="text-white md:text-lg font-semibold">
                         Professional Skills - Self
                       </p>
                     </div>
@@ -154,8 +184,8 @@ export default function Contributor({ contributor, slug }) {
                     </div>
                   </div>
                   <div className="md:pl-2 pb-2 md:border-l-4 md:border-indigo-700 bg-gray-800 flex flex-col md:justify-between flex-shrink-0 w-3/4 md:w-auto">
-                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg">
-                      <p className="text-white text-lg font-semibold">
+                    <div className="flex items-center md:justify-center p-3 bg-gray-700 rounded-t-lg">
+                      <p className="text-white md:text-lg font-semibold">
                         Professional Skills - Team
                       </p>
                     </div>
@@ -179,8 +209,8 @@ export default function Contributor({ contributor, slug }) {
                         />
                       ))}
                     </div>
-                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-b-lg ">
-                      <p className="text-white text-lg font-semibold">
+                    <div className="flex items-center md:justify-center p-3 bg-gray-700 rounded-b-lg ">
+                      <p className="text-white md:text-lg font-semibold">
                         Advanced Skills
                       </p>
                     </div>
@@ -195,8 +225,8 @@ export default function Contributor({ contributor, slug }) {
                         />
                       ))}
                     </div>
-                    <div className="flex items-center justify-center p-3 bg-gray-700 rounded-t-lg md:rounded-b-lg">
-                      <p className="text-white text-lg font-semibold">
+                    <div className="flex items-center md:justify-center p-3 bg-gray-700 rounded-t-lg md:rounded-b-lg">
+                      <p className="text-white md:text-lg font-semibold">
                         Human Values
                       </p>
                     </div>
@@ -300,7 +330,7 @@ export default function Contributor({ contributor, slug }) {
                   showWeekdayLabels
                   data={contributor.calendarData}
                 /> */}
-                  <div className="flex space-x-8 font-semibold">
+                  <div className="flex overflow-x-auto space-x-8 font-semibold">
                     {contributor.courses_completed.map((course) => (
                       <div
                         key={course}

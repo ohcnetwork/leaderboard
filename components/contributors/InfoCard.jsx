@@ -3,13 +3,13 @@ import Link from "next/link";
 export default function InfoCard({ contributor, minimal = true }) {
   return (
     <div
-      className="-mt-24 py-10 px-6 text-center rounded-lg xl:px-10 xl:text-left"
+      className="md:-mt-24 pb-8 md:py-10 md:px-6 md:text-center rounded-lg xl:px-10 xl:text-left"
       role="listitem"
     >
-      <div className="flex flex-col items-center space-y-6 xl:space-y-1 ">
-        <div className="flex items-center bg-gray-900 rounded-full p-4 w-64 h-64 relative z-10">
+      <div className="flex md:flex-col items-center space-x-4 md:space-y-6 xl:space-y-1 ">
+        <div className="flex flex-shrink-0 items-center bg-gray-900 rounded-full md:p-4 md:w-64 md:h-64 relative z-10">
           <img
-            className="mx-auto h-48 w-48 rounded-full border-2 border-indigo-500"
+            className="mx-auto h-28 w-28 md:h-48 md:w-48 rounded-full border-2 border-indigo-500"
             src={`https://github.com/${contributor.github}.png`}
             alt={contributor.github}
           />
@@ -17,24 +17,24 @@ export default function InfoCard({ contributor, minimal = true }) {
         <div
           className={
             minimal
-              ? "text-center"
+              ? "md:text-center"
               : "flex flex-col items-center justify-center text-center space-y-2"
           }
         >
-          <div className="font-medium text-lg leading-6 space-y-1">
+          <div className="font-medium text-lg space-y-1">
             <Link href={`/contributors/${contributor.github}`} className="">
-              <h3 className="text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">
+              <h3 className="text-lg md:text-2xl leading-tight text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">
                 {contributor.name}
               </h3>
             </Link>
-            <p className="text-primary-400">{contributor.title}</p>
+            <p className="text-sm md:text-base text-gray-400">{contributor.title}</p>
           </div>
 
           <ul
             role="list"
             className={
               minimal
-                ? "flex items-center space-x-6 justify-center mt-4"
+                ? "flex items-center space-x-4 md:space-x-6 md:justify-center mt-4"
                 : "space-y-2"
             }
           >
@@ -50,7 +50,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                     <svg
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className="w-8 h-8"
+                      className="w-6 md:w-8 h-6 md:h-8"
                     >
                       <path
                         fillRule="evenodd"
@@ -73,7 +73,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                   <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Twitter</span>
                     <svg
-                      className="w-7 h-7"
+                      className="w-6 md:w-7 h-6 md:h-7"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       aria-hidden="true"
@@ -95,7 +95,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                   <div className="text-gray-300 hover:text-primary-300 flex items-center">
                     <span className="sr-only">LinkedIn</span>
                     <svg
-                      className="w-7 h-7"
+                      className="w-6 md:w-7 h-6 md:h-7"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       aria-hidden="true"

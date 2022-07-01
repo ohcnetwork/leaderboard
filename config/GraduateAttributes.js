@@ -234,7 +234,6 @@ let resolveLevel = (attribute, value) => {
 };
 
 export let resolveGraduateAttributes = (attribute, contributor) => {
-  console.log(contributor);
   switch (attribute.key) {
     case "creative_thinking":
       return resolveLevel(attribute, contributor.highlights.issue_opened);

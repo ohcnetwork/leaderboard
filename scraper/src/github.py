@@ -270,7 +270,7 @@ def main():
         exit(1)
 
     if args.date is None:
-        date = datetime.now(tz=ZoneInfo("UTC")) - timedelta(days=1)
+        date = datetime.now(tz=ZoneInfo("UTC"))
     else:
         date = datetime.strptime(date, "%Y-%m-%d").replace(tzinfo=ZoneInfo("UTC"))
 

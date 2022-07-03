@@ -279,7 +279,7 @@ def main():
         token,
         Path(args.data_dir),
         date,
-        hours_back=args.num_hours,
+        hours_back=int(args.num_hours),
         log_level=getattr(logging, args.loglevel),
     )
     scraper.run()

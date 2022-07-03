@@ -1,6 +1,13 @@
 {
-  "last_updated": 1656595469.0,
+  "last_updated": 1656751753.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2946",
+      "time": 1656751753.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2946#issuecomment-1172863289",
+      "text": "> ![10](https://user-images.githubusercontent.com/57055998/176993284-e57054c3-5a99-4094-b894-bd6939f1e3fc.jpg)\r\n> \r\n> @Ashesh3 captcha is not working\r\n\r\nThe Recaptcha keys are for a specific domains only, The error stated in the screenshot explains itself.  If they site-key permits itself to be used on the domain you are testing the site on, it would work, otherwise Recaptcha will fail to render. I tested it on localhost and it seems `localhost` is in allowed domains. \r\n\r\nThis PR has nothing to do with the way Recaptcha renders, all it changes is just `src/Redux/fireRequest.tsx` to display the error before returning the response. \r\n\r\nThe domain you are running this test on, needs to be added in the domains section of the google Recaptcha page where you generated the API key.\r\n"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2940",

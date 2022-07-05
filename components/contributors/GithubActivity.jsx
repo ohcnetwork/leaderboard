@@ -34,7 +34,7 @@ let renderText = (activity) => {
         <div className="min-w-0 flex-1">
           <div>
             <div className="">
-              <div className="font-medium text-primary-500 ">
+              <div className="font-medium text-primary-300 ">
                 {activity_time.split("at")[0]}
                 <span className=" text-sm font-medium text-gray-200">
                   {" "}
@@ -147,7 +147,7 @@ let renderText = (activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-gray-100">
-            <span className="font-medium text-primary-500 ">
+            <span className="font-medium text-primary-300 ">
               {activity["type"]}
             </span>
 

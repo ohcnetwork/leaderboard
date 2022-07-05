@@ -65,8 +65,10 @@ h4 {
 .journey-map__milestone {
   transform: perspective(200px) rotateX(75deg);
   transform-style: preserve-3d;
+  @apply top-8;
 }
 
 .journey-map__container {
   background-image: url("/images/map-bg.svg");
+  @apply bg-no-repeat bg-cover;
 }

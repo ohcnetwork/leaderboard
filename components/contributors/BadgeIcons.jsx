@@ -24,7 +24,7 @@ export default function BadgeIcons({ skill }) {
   useOnClickOutside(ref, () => setShowModel(false));
   return (
     <div ref={ref} className="" role="listitem">
-      <div className="relative">
+      <div className="relative w-14 h-14">
         <img
           onClick={() => setShowModel(!showModel)}
           className={skill.currentLevel ? "" : "grayscale opacity-30"}

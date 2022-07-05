@@ -1909,5 +1909,60 @@
                 }
             ]
         }
+    ],
+    "2022-07-04 00:00:00": [
+        {
+            "client_msg_id": "c11e9af1-c64d-4370-8ef0-ff399fc2dbac",
+            "type": "message",
+            "text": "Added yolo detection method for monitor detection, <https://github.com/coronasafe/care_ocr>",
+            "user": "U02U103J5LG",
+            "ts": "1656945239.351709",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "color": "24292f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_ocr",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "coronasafe/care_ocr",
+                    "title": "coronasafe/care_ocr",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Stars",
+                            "short": true
+                        },
+                        {
+                            "value": "Jupyter Notebook",
+                            "title": "Language",
+                            "short": true
+                        }
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "=1VDL",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Added yolo detection method for monitor detection, "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_ocr"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

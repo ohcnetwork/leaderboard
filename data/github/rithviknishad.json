@@ -1,6 +1,20 @@
 {
-  "last_updated": 1656778863.0,
+  "last_updated": 1656925868.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2286",
+      "time": 1656925868.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2286#issuecomment-1173561791",
+      "text": "@gigincg \r\n\r\nNone of the breaking changes seems to effect our usage. Tested deploy too and everything seems to work, no issues due to axios bump found yet.\r\n\r\n\r\n\r\nList of breaking changes from axios releases between the above versions\r\n\r\n> - Distinguish request and response data types (https://github.com/axios/axios/pull/4116)\r\n> - Change never type to unknown (https://github.com/axios/axios/pull/4142)\r\n> - Fixed TransitionalOptions typings (https://github.com/axios/axios/pull/4147)\r\n> - Revert: change type of AxiosResponse to any, please read lengthy discussion here: (https://github.com/axios/axios/issues/4141) pull request: (https://github.com/axios/axios/pull/4186)\r\n> - Fixing maxBodyLength enforcement (https://github.com/axios/axios/pull/3786)\r\n> - Don't rely on strict mode behaviour for arguments (https://github.com/axios/axios/pull/3470)\r\n> - Adding error handling when missing url (https://github.com/axios/axios/pull/3791)\r\n> - Update isAbsoluteURL.js removing escaping of non-special characters (https://github.com/axios/axios/pull/3809)\r\n> - Use native Array.isArray() in utils.js (https://github.com/axios/axios/pull/3836)\r\n> - Adding error handling inside stream end callback (https://github.com/axios/axios/pull/3967)\r\n> - New toFormData helper function that allows the implementor to pass an object and allow axios to convert it to FormData (https://github.com/axios/axios/pull/3757)\r\n> - Removed functionality that removed the the Content-Type request header when passing FormData (https://github.com/axios/axios/pull/3785)\r\n> - (*) Refactored error handling implementing AxiosError as a constructor, this is a large change to error handling on the whole (https://github.com/axios/axios/pull/3645)\r\n> - Separated responsibility for FormData instantiation between transformRequest and toFormData (https://github.com/axios/axios/pull/4470)\r\n> - (*) Improved and fixed multiple issues with FormData support (https://github.com/axios/axios/pull/4448)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656904239.0,
+      "title": "coronasafe/care_fe#2870",
+      "link": "https://github.com/coronasafe/care_fe/pull/2870#pullrequestreview-1026969144",
+      "text": "Fixed Styling Issue : Patient Notes"
+    },
     {
       "type": "pr_reviewed",
       "time": 1656778863.0,

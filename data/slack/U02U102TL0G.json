@@ -1157,5 +1157,57 @@
             "is_locked": false,
             "subscribed": false
         }
+    ],
+    "2022-07-04 00:00:00": [
+        {
+            "client_msg_id": "659d9bab-2be6-4615-b044-aa37905fdf47",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/909|#909>",
+            "user": "U02U102TL0G",
+            "ts": "1656957662.154179",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656929097,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/909",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/909|#909 update asset integration actions>",
+                    "text": "\u2022 minor bug fixes\n\u2022 sort out misplaced actions between hl7 and onvif.",
+                    "title": "<https://github.com/coronasafe/care/pull/909|#909 update asset integration actions>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "dufF",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/909",
+                                    "text": "#909",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

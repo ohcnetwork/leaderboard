@@ -243,7 +243,7 @@ export default function Contributor({ contributor, slug }) {
             </div>
 
             <div>
-              <h3 className="font-bold text-gray-100 my-4">Bio</h3>
+              <h3 className="font-bold text-gray-100 my-4">Short Bio</h3>
               <div className="bg-gray-800 w-full rounded-lg ">
                 <div
                   className="prose prose-invert py-10 px-6 rounded-lg xl:px-10 xl:text-left leading-relaxed"
@@ -269,31 +269,51 @@ export default function Contributor({ contributor, slug }) {
                 />
               </div>
             </div>
-            <div className="hidden">
+            <div className="">
               {contributor.courses_completed && (
                 <div>
                   <h3 className="font-bold text-gray-100 mt-4">Journey Map</h3>
-                  <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
-                    {/* <ActivityCalendar
-                  showWeekdayLabels
-                  data={contributor.calendarData}
-                /> */}
+                  <div className="journey-map__container relative p-2 py-8 bg-gray-800 text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
                     <div className="flex overflow-x-auto space-x-8 font-semibold">
                       {contributor.courses_completed.map((course) => (
                         <div
                           key={course}
-                          className="p-2 rounded-lg w-32 h-32 bg-green-200 flex items-center text-center shadow"
+                          className="flex flex-col items-center juustify-center"
                         >
-                          {course}
+                          <div className="journey-map__milestone relative z-10 p-2 w-24 h-24 bg-gray-600 rounded-full flex items-center text-center shadow-xl"></div>
+                          <p className="text-center text-gray-300 -mt-4">
+                            {course}
+                          </p>
+                          <div className="absolute top-12 z-20">
+                            <img
+                              className="mx-auto h-9 w-9"
+                              src="/images/map-check.png"
+                            ></img>
+                          </div>
                         </div>
                       ))}
-                      <div className="p-2 rounded-lg w-32 h-32 bg-blue-200 flex items-center text-center shadow animate-pulse animate-bounce">
-                        Industry Internship
+
+                      <div className="flex flex-col items-center juustify-center">
+                        <div className="relative journey-map__milestone z-10 p-2 w-24 h-24 bg-gray-600 rounded-full flex items-center text-center shadow-xl"></div>
+                        <p className="text-center text-gray-300 -mt-4">
+                          Industry Internship
+                        </p>
+                        <div className="absolute top-8 animate-bounce ">
+                          <img
+                            className="mx-auto h-8 w-8 rounded-full border border-indigo-500"
+                            src={`https://github.com/${contributor.github}.png`}
+                            alt={contributor.github}
+                          />
+                        </div>
                       </div>
-                      <div className="p-2 rounded-lg w-32 h-32 bg-gray-200 flex items-center text-center shadow">
-                        Industry Placement
+                      <div className="flex flex-col items-center juustify-center">
+                        <div className="journey-map__milestone z-10 p-2 w-24 h-24 bg-gray-600 rounded-full flex items-center text-center shadow-xl"></div>
+                        <p className="text-center text-gray-300 -mt-4">
+                          Industry Placement
+                        </p>
                       </div>
                     </div>
+                    <div className="h-1.5 absolute bg-primary-400 left-20 right-20 z-1 bottom-24 mb-2"></div>
                   </div>
                 </div>
               )}

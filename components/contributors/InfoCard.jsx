@@ -34,7 +34,7 @@ export default function InfoCard({ contributor, minimal = true }) {
             role="list"
             className={
               minimal
-                ? "flex items-center space-x-4 md:space-x-6 mt-4"
+                ? "flex items-center space-x-4 mt-4"
                 : "space-y-2"
             }
           >
@@ -45,7 +45,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="text-gray-300 hover:text-primary-300 flex items-center">
+                  <span className="text-gray-500 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Github</span>
                     <svg
                       viewBox="0 0 24 24"
@@ -70,7 +70,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-500 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Twitter</span>
                     <svg
                       className="w-6 md:w-7 h-6 md:h-7"
@@ -92,7 +92,7 @@ export default function InfoCard({ contributor, minimal = true }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-500 hover:text-primary-300 flex items-center">
                     <span className="sr-only">LinkedIn</span>
                     <svg
                       className="w-6 md:w-7 h-6 md:h-7"

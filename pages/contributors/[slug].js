@@ -42,6 +42,11 @@ export default function Contributor({ contributor, slug }) {
     <div className="bg-gray-900 min-h-screen">
       <PageHead title={contributor.name} />
       {/* <Header /> */}
+      <div className="pt-2 pb-3 border-b border-gray-700 shadow-md bg-gray-700 bg-opacity-50">
+        <h1 className="max-w-6xl mx-auto text-sm md:text-xl text-gray-400 text-center">
+          Personal Learning Dashboard
+        </h1>
+      </div>
       <section className="px-4 py-8 bg-gray-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row ">
           <div className="md:w-2/3">
@@ -94,7 +99,29 @@ export default function Contributor({ contributor, slug }) {
 
       <div className="max-w-4xl mx-auto space-y-16">
         <div className="pl-4 md:p-0">
-          <h3 className="font-bold text-gray-100 mt-14">Graduate Attributes</h3>
+          <div className="flex items-end justify-between">
+            <h3 className="font-bold text-gray-100 mt-14">
+              Graduate Attributes
+            </h3>
+            <a
+              href="#"
+              className="inline-flex items-center underline text-gray-400 space-x-2 hover:text-primary-400 transition mt-1 pl-1 pt-2"
+            >
+              <span>Learn More About Graduate Attributes</span>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="w-5 h-5"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
+                </svg>
+              </span>
+            </a>
+          </div>
           <div className="bg-gray-900 mt-3">
             <div className="flex space-x-6 md:space-x-0 overflow-x-auto w-full md:grid md:grid-cols-2">
               <div className="md:pr-2 pb-2 bg-gray-800 flex flex-col md:justify-between flex-shrink-0 w-3/4 md:w-auto">
@@ -174,7 +201,7 @@ export default function Contributor({ contributor, slug }) {
             <div>
               <h3 className="font-bold text-gray-100 mt-4">Journey Map</h3>
               <div className="journey-map__container relative bg-gray-800 text-center rounded-lg px-4 py-8 sm:px-8 xl:text-left mt-4">
-                <div className="flex flex-col md:flex-row overflow-x-auto md:space-y-0 md:space-x-4 font-semibold">
+                <div className="flex flex-col md:flex-row overflow-x-auto md:space-y-0 md:space-x-3 font-semibold">
                   {contributor.courses_completed.map((course) => (
                     <div
                       key={course}
@@ -214,6 +241,12 @@ export default function Contributor({ contributor, slug }) {
                     <div className="relative journey-map__milestone z-10 p-2 w-24 h-24 bg-gray-600 rounded-full flex items-center text-center shadow-xl"></div>
                     <p className="text-sm text-center text-gray-300 mt-2 z-10 bg-gray-800 py-0.5">
                       Industry Placement
+                    </p>
+                  </div>
+                  <div className="relative flex flex-col items-center juustify-center">
+                    <div className="relative journey-map__milestone z-10 p-2 w-24 h-24 bg-gray-600 rounded-full flex items-center text-center shadow-xl"></div>
+                    <p className="text-sm text-center text-gray-300 mt-2 z-10 bg-gray-800 py-0.5">
+                      Alumni &amp; Teaching Fellow
                     </p>
                   </div>
                 </div>

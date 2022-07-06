@@ -1760,5 +1760,209 @@
                 }
             ]
         }
+    ],
+    "2022-06-29 00:00:00": [
+        {
+            "client_msg_id": "083fc4a5-f526-4c0f-adb3-324731ad142d",
+            "type": "message",
+            "text": "Explored issues and reviewed nodejs",
+            "user": "U02U103J5LG",
+            "ts": "1656516020.265579",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "PTH9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Explored issues and reviewed nodejs"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-30 00:00:00": [
+        {
+            "client_msg_id": "f9c358b0-d811-42b6-a265-daf1acb87fb5",
+            "type": "message",
+            "text": "Working on <https://github.com/coronasafe/care_fe/issues/1789|#1789> backend is complete and working, needs some improvement at frontend",
+            "user": "U02U103J5LG",
+            "ts": "1656598359.857829",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1630739952,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/1789",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/1789|#1789 Facility: Admission data>",
+                    "text": "Any facility today cannot fetch data on how many admissions they have had on any day.\n\nThe problem is even if they apply the admissions date filters, they can browse through the live list/dischasrged list of patients, but they will not have details or number of patients who were admitted to their facility on such date and they discharged and admitted to / shifted to another facility.\n\nEvery facility must have its own registry of a number of admissions across various bed types.\n\n<https://github.com/gigincg|@gigincg>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/1789|#1789 Facility: Admission data>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/ishanExtreme|@ishanExtreme>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "urgent",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tdoZf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/1789",
+                                    "text": "#1789",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " backend is complete and working, needs some improvement at frontend"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-02 00:00:00": [
+        {
+            "client_msg_id": "36a0257f-9618-48ce-bdb6-01efa2a43115",
+            "type": "message",
+            "text": "Trained an initial model for detecting monitors",
+            "user": "U02U103J5LG",
+            "ts": "1656772159.574999",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "C07gC",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Trained an initial model for detecting monitors"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-03 00:00:00": [
+        {
+            "client_msg_id": "4a459c17-a3ff-4f7c-83a3-30e29de752b2",
+            "type": "message",
+            "text": "Working on image_ocr",
+            "user": "U02U103J5LG",
+            "ts": "1656875768.514919",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "gcHqw",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on image_ocr"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-04 00:00:00": [
+        {
+            "client_msg_id": "c11e9af1-c64d-4370-8ef0-ff399fc2dbac",
+            "type": "message",
+            "text": "Added yolo detection method for monitor detection, <https://github.com/coronasafe/care_ocr>",
+            "user": "U02U103J5LG",
+            "ts": "1656945239.351709",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "color": "24292f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_ocr",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "coronasafe/care_ocr",
+                    "title": "coronasafe/care_ocr",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Stars",
+                            "short": true
+                        },
+                        {
+                            "value": "Jupyter Notebook",
+                            "title": "Language",
+                            "short": true
+                        }
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "=1VDL",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Added yolo detection method for monitor detection, "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_ocr"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

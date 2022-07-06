@@ -1,6 +1,118 @@
 {
-  "last_updated": 1655976388.0,
+  "last_updated": 1657058487.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3015",
+      "time": 1657058487.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3015",
+      "text": "Fix validation when updating facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#907",
+      "time": 1657032000.0,
+      "link": "https://github.com/coronasafe/care/issues/907#issuecomment-1175141137",
+      "text": "Related: https://github.com/coronasafe/care_fe/issues/2642 https://github.com/coronasafe/care_fe/pull/2659"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2981",
+      "time": 1657031966.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2981#issuecomment-1175140470",
+      "text": "This is happening due to the \"Last admitted to\" filter.\r\n\r\nRelated: https://github.com/coronasafe/care_fe/issues/2642"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#911",
+      "time": 1657031738.0,
+      "link": "https://github.com/coronasafe/care/issues/911#issuecomment-1175136208",
+      "text": "Seems related to https://github.com/coronasafe/care/pull/841/\r\n\r\nThe line causing the error is to be removed since `admitted_to` is no longer needed.\r\n\r\nhttps://github.com/coronasafe/care/pull/841/files#diff-1cfa8525a1bda136e828a93f18708d7aca15e41111ac3e0fbc9fc848a9a7a116L98"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3014",
+      "time": 1657029773.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3014",
+      "text": "Facility update page validation issue"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#868",
+      "time": 1656877732.0,
+      "link": "https://github.com/coronasafe/care/pull/868",
+      "text": "Fix http status code when deleting facility with active patients"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2946",
+      "time": 1656751753.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2946#issuecomment-1172863289",
+      "text": "> ![10](https://user-images.githubusercontent.com/57055998/176993284-e57054c3-5a99-4094-b894-bd6939f1e3fc.jpg)\r\n> \r\n> @Ashesh3 captcha is not working\r\n\r\nThe Recaptcha keys are for a specific domains only, The error stated in the screenshot explains itself.  If they site-key permits itself to be used on the domain you are testing the site on, it would work, otherwise Recaptcha will fail to render. I tested it on localhost and it seems `localhost` is in allowed domains. \r\n\r\nThis PR has nothing to do with the way Recaptcha renders, all it changes is just `src/Redux/fireRequest.tsx` to display the error before returning the response. \r\n\r\nThe domain you are running this test on, needs to be added in the domains section of the google Recaptcha page where you generated the API key.\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2940",
+      "time": 1656595469.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2940",
+      "text": "Fix success text when sending a sample"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2796",
+      "time": 1656594668.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2796",
+      "text": "Fix form validation on shift details update page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2946",
+      "time": 1656578497.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2946",
+      "text": "Display error message on 429 status code"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2940",
+      "time": 1656419930.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2940",
+      "text": "Fix success text when sending a sample"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2939",
+      "time": 1656417229.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2939",
+      "text": "Sample sent success text not user friendly"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2938",
+      "time": 1656415993.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2938",
+      "text": "Rate limit message not shown on login page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2940",
+      "time": 1656419930.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2940",
+      "text": "Fix success text when sending a sample"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2939",
+      "time": 1656417229.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2939",
+      "text": "Sample sent success text not user friendly"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2938",
+      "time": 1656415993.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2938",
+      "text": "Rate limit message not shown on login page"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#2713",
@@ -634,12 +746,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/868",
-      "title": "Fix http status code when deleting facility with active patients"
+      "link": "https://github.com/coronasafe/care_fe/pull/3015",
+      "title": "Fix validation when updating facility"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2796",
-      "title": "Fix form validation on shift details update page"
+      "link": "https://github.com/coronasafe/care_fe/pull/2946",
+      "title": "Display error message on 429 status code"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2659",
@@ -648,10 +760,6 @@
     {
       "link": "https://github.com/coronasafe/care/pull/841",
       "title": "Cleanup leftover admitted_to references"
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/810",
-      "title": "Fix error format for external test"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2614",

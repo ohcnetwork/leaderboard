@@ -1,6 +1,335 @@
 {
-  "last_updated": 1656338406.0,
+  "last_updated": 1657009266.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3010",
+      "time": 1657009266.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3010",
+      "text": "Revamp Patients tab's Advanced Filters"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657008657.0,
+      "title": "coronasafe/care_fe#3009",
+      "link": "https://github.com/coronasafe/care_fe/pull/3009#pullrequestreview-1028224954",
+      "text": "Made the Ui of investigation tab responsive in mobile devices"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656994177.0,
+      "title": "coronasafe/care_fe#2974",
+      "link": "https://github.com/coronasafe/care_fe/pull/2974#pullrequestreview-1028027845",
+      "text": "Fixed Styling issues on Login Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2286",
+      "time": 1656925868.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2286#issuecomment-1173561791",
+      "text": "@gigincg \r\n\r\nNone of the breaking changes seems to effect our usage. Tested deploy too and everything seems to work, no issues due to axios bump found yet.\r\n\r\n\r\n\r\nList of breaking changes from axios releases between the above versions\r\n\r\n> - Distinguish request and response data types (https://github.com/axios/axios/pull/4116)\r\n> - Change never type to unknown (https://github.com/axios/axios/pull/4142)\r\n> - Fixed TransitionalOptions typings (https://github.com/axios/axios/pull/4147)\r\n> - Revert: change type of AxiosResponse to any, please read lengthy discussion here: (https://github.com/axios/axios/issues/4141) pull request: (https://github.com/axios/axios/pull/4186)\r\n> - Fixing maxBodyLength enforcement (https://github.com/axios/axios/pull/3786)\r\n> - Don't rely on strict mode behaviour for arguments (https://github.com/axios/axios/pull/3470)\r\n> - Adding error handling when missing url (https://github.com/axios/axios/pull/3791)\r\n> - Update isAbsoluteURL.js removing escaping of non-special characters (https://github.com/axios/axios/pull/3809)\r\n> - Use native Array.isArray() in utils.js (https://github.com/axios/axios/pull/3836)\r\n> - Adding error handling inside stream end callback (https://github.com/axios/axios/pull/3967)\r\n> - New toFormData helper function that allows the implementor to pass an object and allow axios to convert it to FormData (https://github.com/axios/axios/pull/3757)\r\n> - Removed functionality that removed the the Content-Type request header when passing FormData (https://github.com/axios/axios/pull/3785)\r\n> - (*) Refactored error handling implementing AxiosError as a constructor, this is a large change to error handling on the whole (https://github.com/axios/axios/pull/3645)\r\n> - Separated responsibility for FormData instantiation between transformRequest and toFormData (https://github.com/axios/axios/pull/4470)\r\n> - (*) Improved and fixed multiple issues with FormData support (https://github.com/axios/axios/pull/4448)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656904239.0,
+      "title": "coronasafe/care_fe#2870",
+      "link": "https://github.com/coronasafe/care_fe/pull/2870#pullrequestreview-1026969144",
+      "text": "Fixed Styling Issue : Patient Notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656778863.0,
+      "title": "coronasafe/care_fe#2969",
+      "link": "https://github.com/coronasafe/care_fe/pull/2969#pullrequestreview-1026770808",
+      "text": "Fixed alignment issue in Asset List"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656778668.0,
+      "title": "coronasafe/care_fe#2953",
+      "link": "https://github.com/coronasafe/care_fe/pull/2953#pullrequestreview-1026770589",
+      "text": "add: delete specialization doctor type"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2654",
+      "time": 1656751108.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2654#issuecomment-1172861922",
+      "text": "@nihal467\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/176993283-44a10ae0-2681-4b6d-9fcd-41d83a64dbd8.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656731781.0,
+      "title": "coronasafe/care_fe#2916",
+      "link": "https://github.com/coronasafe/care_fe/pull/2916#pullrequestreview-1026718979",
+      "text": "Improved Shifting letter Ui"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656731586.0,
+      "title": "coronasafe/care_fe#2947",
+      "link": "https://github.com/coronasafe/care_fe/pull/2947#pullrequestreview-1026718725",
+      "text": "Added discharge_reason and discharge_notes in discharge modal"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656731531.0,
+      "title": "coronasafe/care_fe#2947",
+      "link": "https://github.com/coronasafe/care_fe/pull/2947#pullrequestreview-1026718725",
+      "text": "Added discharge_reason and discharge_notes in discharge modal"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656731286.0,
+      "title": "coronasafe/care_fe#2951",
+      "link": "https://github.com/coronasafe/care_fe/pull/2951#pullrequestreview-1026718498",
+      "text": "improve profile page responsiveness"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656731132.0,
+      "title": "coronasafe/care_fe#2953",
+      "link": "https://github.com/coronasafe/care_fe/pull/2953#pullrequestreview-1026718337",
+      "text": "add: delete specialization doctor type"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656730419.0,
+      "title": "coronasafe/care_fe#2959",
+      "link": "https://github.com/coronasafe/care_fe/pull/2959#pullrequestreview-1026717617",
+      "text": "Added styling on Facility Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656730281.0,
+      "title": "coronasafe/care_fe#2961",
+      "link": "https://github.com/coronasafe/care_fe/pull/2961#pullrequestreview-1026717494",
+      "text": "Added spacing on Sample page and Esc key closes delete result popup"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2950",
+      "time": 1656636664.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2950",
+      "text": "Deprecate COVID Category and adds new Patient Category"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2654",
+      "time": 1656636183.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2654#issuecomment-1171805142",
+      "text": "@nihal467 "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2919",
+      "time": 1656595364.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2919",
+      "text": "Fix incorrect behaviour of back button in Add patient by external results page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2905",
+      "time": 1656595245.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2905",
+      "text": "Fix alignment issue in Consulation Details page."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#66",
+      "time": 1656465890.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/66",
+      "text": "Scrapper support for datetime based scrapping instead of date"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#58",
+      "time": 1656423930.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/58#issuecomment-1168747191",
+      "text": "@bodhi nope, the scrapper seems to simply be using start and end date with no time specified. I'll try to fix it ASAP, but need to discuss abt how to remove duplicates in already generated data in today's EOD."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#58",
+      "time": 1656423285.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/58#issuecomment-1168733668",
+      "text": "@bodhish @kunatastic since its running every 12 hours, the workflow is appending data of past 24 hours every 12 hours, which causes the duplicates issue #63 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656422203.0,
+      "title": "coronasafe/care_fe#2940",
+      "link": "https://github.com/coronasafe/care_fe/pull/2940#pullrequestreview-1021718626",
+      "text": "Fix success text when sending a sample"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656421849.0,
+      "title": "coronasafe/care_fe#2928",
+      "link": "https://github.com/coronasafe/care_fe/pull/2928#pullrequestreview-1021709035",
+      "text": "Revamped Facility Page Card"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656403390.0,
+      "title": "coronasafe/care_fe#2930",
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#pullrequestreview-1021290710",
+      "text": "Made Resource page responsive in Ipad"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2930",
+      "time": 1656395225.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#issuecomment-1168253413",
+      "text": "@patelaryan7751 \r\n\r\nIssue is noticeable in window sizes between the following:\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/176102612-2e1f20d1-4256-42b5-a83d-bf0ebd93c2e8.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656389222.0,
+      "title": "coronasafe/care_fe#2928",
+      "link": "https://github.com/coronasafe/care_fe/pull/2928#pullrequestreview-1021068853",
+      "text": "Revamped Facility Page Card"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656388914.0,
+      "title": "coronasafe/care_fe#2930",
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#pullrequestreview-1021066271",
+      "text": "Made Resource page responsive in Ipad"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#58",
+      "time": 1656423930.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/58#issuecomment-1168747191",
+      "text": "@bodhi nope, the scrapper seems to simply be using start and end date with no time specified. I'll try to fix it ASAP, but need to discuss abt how to remove duplicates in already generated data in today's EOD."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#58",
+      "time": 1656423285.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/58#issuecomment-1168733668",
+      "text": "@bodhish @kunatastic since its running every 12 hours, the workflow is appending data of past 24 hours every 12 hours, which causes the duplicates issue #63 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656422203.0,
+      "title": "coronasafe/care_fe#2940",
+      "link": "https://github.com/coronasafe/care_fe/pull/2940#pullrequestreview-1021718626",
+      "text": "Fix success text when sending a sample"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656421849.0,
+      "title": "coronasafe/care_fe#2928",
+      "link": "https://github.com/coronasafe/care_fe/pull/2928#pullrequestreview-1021709035",
+      "text": "Revamped Facility Page Card"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656403390.0,
+      "title": "coronasafe/care_fe#2930",
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#pullrequestreview-1021290710",
+      "text": "Made Resource page responsive in Ipad"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2930",
+      "time": 1656395225.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#issuecomment-1168253413",
+      "text": "@patelaryan7751 \r\n\r\nIssue is noticeable in window sizes between the following:\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/176102612-2e1f20d1-4256-42b5-a83d-bf0ebd93c2e8.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656389222.0,
+      "title": "coronasafe/care_fe#2928",
+      "link": "https://github.com/coronasafe/care_fe/pull/2928#pullrequestreview-1021068853",
+      "text": "Revamped Facility Page Card"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656388914.0,
+      "title": "coronasafe/care_fe#2930",
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#pullrequestreview-1021066271",
+      "text": "Made Resource page responsive in Ipad"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656338406.0,
+      "title": "coronasafe/care_fe#2896",
+      "link": "https://github.com/coronasafe/care_fe/pull/2896#pullrequestreview-1020249098",
+      "text": "fixed external results filter badges"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656338349.0,
+      "title": "coronasafe/care_fe#2877",
+      "link": "https://github.com/coronasafe/care_fe/pull/2877#pullrequestreview-1020247633",
+      "text": "Fixed investigation report styling issue"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656321201.0,
+      "title": "coronasafe/care_fe#2870",
+      "link": "https://github.com/coronasafe/care_fe/pull/2870#pullrequestreview-1019868088",
+      "text": "Fixed Styling Issue : Patient Notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656320971.0,
+      "title": "coronasafe/care_fe#2868",
+      "link": "https://github.com/coronasafe/care_fe/pull/2868#pullrequestreview-1019862836",
+      "text": "Made the External Results Page Responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656320906.0,
+      "title": "coronasafe/care_fe#2867",
+      "link": "https://github.com/coronasafe/care_fe/pull/2867#pullrequestreview-1019860437",
+      "text": "Made the Sample management page responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656320576.0,
+      "title": "coronasafe/care_fe#2908",
+      "link": "https://github.com/coronasafe/care_fe/pull/2908#pullrequestreview-1019852952",
+      "text": "Updated CodeQL workflow"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656320468.0,
+      "title": "coronasafe/care_fe#2912",
+      "link": "https://github.com/coronasafe/care_fe/pull/2912#pullrequestreview-1019850398",
+      "text": "Added styling and removed extra spaces"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656320312.0,
+      "title": "coronasafe/care_fe#2913",
+      "link": "https://github.com/coronasafe/care_fe/pull/2913#pullrequestreview-1019846711",
+      "text": "Fixed: Consultation page Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656320235.0,
+      "title": "coronasafe/care_fe#2914",
+      "link": "https://github.com/coronasafe/care_fe/pull/2914#pullrequestreview-1019844770",
+      "text": "Revamped the scroll bar UI"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2919",
+      "time": 1656320147.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2919",
+      "text": "Fix incorrect behaviour of back button in Add patient by external results page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2918",
+      "time": 1656318974.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2918",
+      "text": "Cancel Import and Back Button's behaviour is not same"
+    },
     {
       "type": "pr_reviewed",
       "time": 1656338406.0,
@@ -1621,12 +1950,16 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2919",
-      "title": "Fix incorrect behaviour of back button in Add patient by external results page"
+      "link": "https://github.com/coronasafe/care_fe/pull/3010",
+      "title": "Revamp Patients tab's Advanced Filters"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2905",
-      "title": "Fix alignment issue in Consulation Details page."
+      "link": "https://github.com/coronasafe/care_fe/pull/2950",
+      "title": "Deprecate COVID Category and adds new Patient Category"
+    },
+    {
+      "link": "https://github.com/coronasafe/leaderboard/pull/66",
+      "title": "Scrapper support for datetime based scrapping instead of date"
     },
     {
       "link": "https://github.com/coronasafe/care/pull/885",

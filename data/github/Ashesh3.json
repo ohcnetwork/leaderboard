@@ -1,6 +1,41 @@
 {
-  "last_updated": 1656877732.0,
+  "last_updated": 1657058487.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3015",
+      "time": 1657058487.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3015",
+      "text": "Fix validation when updating facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#907",
+      "time": 1657032000.0,
+      "link": "https://github.com/coronasafe/care/issues/907#issuecomment-1175141137",
+      "text": "Related: https://github.com/coronasafe/care_fe/issues/2642 https://github.com/coronasafe/care_fe/pull/2659"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2981",
+      "time": 1657031966.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2981#issuecomment-1175140470",
+      "text": "This is happening due to the \"Last admitted to\" filter.\r\n\r\nRelated: https://github.com/coronasafe/care_fe/issues/2642"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#911",
+      "time": 1657031738.0,
+      "link": "https://github.com/coronasafe/care/issues/911#issuecomment-1175136208",
+      "text": "Seems related to https://github.com/coronasafe/care/pull/841/\r\n\r\nThe line causing the error is to be removed since `admitted_to` is no longer needed.\r\n\r\nhttps://github.com/coronasafe/care/pull/841/files#diff-1cfa8525a1bda136e828a93f18708d7aca15e41111ac3e0fbc9fc848a9a7a116L98"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3014",
+      "time": 1657029773.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3014",
+      "text": "Facility update page validation issue"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#868",
@@ -710,6 +745,10 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3015",
+      "title": "Fix validation when updating facility"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2946",
       "title": "Display error message on 429 status code"

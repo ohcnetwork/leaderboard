@@ -10,17 +10,19 @@ export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
       <PageHead />
-      <Header />
-      <section className="bg-gray-900 border-t border-gray-600 ">
+      <div className="bg-gray-800 bg-opacity-50">
+        <Header />
+      </div>
+      <section className="bg-gray-900 border-t border-gray-700 ">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
-              <div className="lg:col-span-7 2xl:col-span-8">
-                <div className="pt-10 lg:pt-20">
-                  <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+              <div className="lg:col-span-8 space-y-20">
+                <div className="pt-20">
+                  <div className="mx-auto max-w-7xl">
                     <div className="space-y-12">
                       <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                        <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+                        <h2 className="text-3xl font-bold text-white tracking-tight sm:text-5xl">
                           What do we do?
                         </h2>
                         <p className="text-xl text-gray-300">
@@ -38,10 +40,10 @@ export default function Home(props) {
                   </div>
                 </div>
                 <div>
-                  <div className="mx-auto py-12 px-4 max-w-6xl sm:px-6 lg:px-8 lg:py-24">
+                  <div className="mx-auto">
                     <div className="space-y-12">
                       <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                        <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+                        <h2 className="text-3xl font-bold text-white tracking-tight sm:text-5xl">
                           Our Contributors
                         </h2>
                         <p className="text-xl text-gray-300">
@@ -69,13 +71,16 @@ export default function Home(props) {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 2xl:col-span-4">
-                <div className="sticky top-0 pt-24">
-                  <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
-                    <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
-                      <span>Leaderboard | 18-24 May 2022 </span>
+              <div className="lg:col-span-4">
+                <div className="sticky top-0 pt-20">
+                  <div className=" text-white rounded-lg bg-gray-800 bg-opacity-50 shadow-lg border border-gray-800">
+                    <div className="flex justify-between items-end bg-gray-800 rounded-t-lg px-6 py-4 border-b border-gray-700 ">
+                      <p className="text-xl font-medium">Leaderboard</p>
+                      <span className="block text-gray-400">
+                        18 - 24 May 2022
+                      </span>
                     </div>
-                    <div className="space-y-6 lg:space-y-8 p-4 lg:p-6 ">
+                    <div className="space-y-2 p-4 ">
                       {props.contributors
                         .filter((contributor) => !contributor.core)
                         .slice(0, 5)
@@ -85,17 +90,14 @@ export default function Home(props) {
                               key={index}
                               href={`/contributors/${contributor.github}`}
                             >
-                              <div className="flex " key={index}>
-                                <span className="text-primary-500 text-xl">
-                                  &#10142;
+                              <span className="flex space-x-3 items-center cursor-pointer bg-gray-900 bg-opacity-75 px-2 py-3 rounded-lg hover:bg-opacity-30 transition">
+                                <span className="flex items-center justify-center text-lg h-10 w-10 bg-gray-800 rounded-full">
+                                  {index + 1}
                                 </span>
-                                <p className="pl-3">
-                                  <span className="cursor-pointer text-primary-500 hover:bg-primary-500 hover:text-gray-900 mr-1">
-                                    {contributor.name}
-                                  </span>
-                                  | {index + 1}
-                                </p>
-                              </div>
+                                <span className="text-lg font-medium text-gray-300">
+                                  {contributor.name}
+                                </span>
+                              </span>
                             </Link>
                           );
                         })}
@@ -107,9 +109,6 @@ export default function Home(props) {
                         >
                           View Leaderboard
                         </Link>
-                        <p className="text-yellow-400 font-semibold p-4 rounded bg-gray-800 bg-opacity-50 text-center md:text-lg hidden">
-                          {"{"} Application Closed! {"}"}
-                        </p>
                       </div>
                     </div>
                   </div>

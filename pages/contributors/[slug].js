@@ -107,7 +107,7 @@ export default function Contributor({ contributor, slug }) {
               href="#"
               className="inline-flex items-center underline text-gray-400 space-x-2 hover:text-primary-400 transition mt-1 pl-1 pt-2"
             >
-              <span>Learn More About Graduate Attributes</span>
+              <span>Learn More</span>
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

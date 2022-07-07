@@ -1411,5 +1411,62 @@
                 }
             ]
         }
+    ],
+    "2022-07-06 00:00:00": [
+        {
+            "client_msg_id": "49de6c76-2ec3-43e4-ba38-a04fa6551550",
+            "type": "message",
+            "text": "Made PR <https://github.com/coronasafe/care_fe/pull/3023>",
+            "user": "U02TB83Q5V0",
+            "ts": "1657118794.948749",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1657114686,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3023",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3023|#3023 Added username validator>",
+                    "text": "closes <https://github.com/coronasafe/care_fe/issues/2891|#2891>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3023|#3023 Added username validator>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "9ySf+",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3023"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

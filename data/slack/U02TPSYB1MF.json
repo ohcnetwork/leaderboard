@@ -2011,5 +2011,68 @@
                 }
             ]
         }
+    ],
+    "2022-07-06 00:00:00": [
+        {
+            "client_msg_id": "d82b983c-b23e-4207-a2e7-46589eac3deb",
+            "type": "message",
+            "text": "worked on previous PRs and made a new PR: <https://github.com/coronasafe/care_fe/pull/3022|#3022>",
+            "user": "U02TPSYB1MF",
+            "ts": "1657115529.649899",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/70687348/177542959-9051f8c6-79d4-404a-bf91-15c111a90c7c.png",
+                    "image_width": 1920,
+                    "image_height": 1075,
+                    "image_bytes": 132708,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1657107976,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3022",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1920x1075px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3021|#3021>  \n<http://localhost:4000/patient/36357bfe-c143-4944-bab3-7e4be0a73e89/investigation_reports|http://localhost:4000/patient/36357bfe-c143-4944-bab3-7e4be0a73e89/investigation_reports>\n\n<https://user-images.githubusercontent.com/70687348/177542959-9051f8c6-79d4-404a-bf91-15c111a90c7c.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3022|#3022 Remove placeholder when value is selected on Investigation Report page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "zah",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on previous PRs and made a new PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3022",
+                                    "text": "#3022",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

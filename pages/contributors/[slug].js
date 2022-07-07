@@ -44,7 +44,7 @@ export default function Contributor({ contributor, slug }) {
       {/* <Header /> */}
       <div className="pt-2 pb-3 border-b border-gray-700 shadow-md bg-gray-700 bg-opacity-50">
         <h1 className="max-w-6xl mx-auto text-sm md:text-xl text-gray-400 text-center">
-          Personal Learning Dashboard
+          Personal Learning Dashboard (Beta)
         </h1>
       </div>
       <section className="px-4 py-8 bg-gray-800">

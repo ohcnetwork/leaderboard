@@ -674,5 +674,540 @@
                 }
             ]
         }
+    ],
+    "2022-06-10 00:00:00": [
+        {
+            "client_msg_id": "ab66e44b-e6ab-4eab-bcbb-684b8846dbe8",
+            "type": "message",
+            "text": "Exams\n\u2022 finally over, travelling back to home",
+            "user": "U02U102TL0G",
+            "ts": "1654887598.627349",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02U102TL0G",
+                "ts": "1654887690.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "TTG",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Exams"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "finally over, travelling back to home"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "tada",
+                    "users": [
+                        "U02U103J5LG",
+                        "U02TDGQQPMJ",
+                        "U02U1035G0G"
+                    ],
+                    "count": 3
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "U02TB83Q5V0"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-11 00:00:00": [
+        {
+            "client_msg_id": "37e28d2a-b7fe-4762-ac72-031759117039",
+            "type": "message",
+            "text": "Submitted PR <https://github.com/coronasafe/care/pull/854|#854>",
+            "user": "U02U102TL0G",
+            "ts": "1654974901.973919",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654974842,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/854",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/854|#854 prevent switching patient to the same bed>",
+                    "text": "Prevent patients from switching to the same bed during consultation while the previous one hasn't ended.  \nfixes: <https://github.com/coronasafe/care/issues/850|#850>",
+                    "title": "<https://github.com/coronasafe/care/pull/854|#854 prevent switching patient to the same bed>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "WFz1",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/854",
+                                    "text": "#854",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-14 00:00:00": [
+        {
+            "client_msg_id": "535784b7-31b5-461e-9d6f-5a19fc7d4951",
+            "type": "message",
+            "text": "updated PR <https://github.com/coronasafe/care/pull/854|#854> to solve a similar issue",
+            "user": "U02U102TL0G",
+            "ts": "1655215768.543709",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1654974842,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/854",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/854|#854 update patient bed switching logic>",
+                    "text": "Prevent patients from switching to the same bed during consultation while the previous one hasn't ended.  \nfixes: <https://github.com/coronasafe/care/issues/850|#850>  \nfixes: <https://github.com/coronasafe/care/issues/847|#847> (both are similar/related issues)",
+                    "title": "<https://github.com/coronasafe/care/pull/854|#854 update patient bed switching logic>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "jT+",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "updated PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/854",
+                                    "text": "#854",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to solve a similar issue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-16 00:00:00": [
+        {
+            "client_msg_id": "4cb651be-0a9c-4b06-a9fb-3dac4a6bca64",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/858|#858>",
+            "user": "U02U102TL0G",
+            "ts": "1655405624.720499",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655405474,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/858",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/858|#858 add asset integration class for multipara monitors>",
+                    "text": "fixes: <https://github.com/coronasafe/care/issues/657|#657>",
+                    "title": "<https://github.com/coronasafe/care/pull/858|#858 add asset integration class for multipara monitors>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "l+O",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/858",
+                                    "text": "#858",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-17 00:00:00": [
+        {
+            "client_msg_id": "222ac178-ee75-400e-90ea-adb9f2da7fe7",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/860|#860>",
+            "user": "U02U102TL0G",
+            "ts": "1655491571.744479",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655491310,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/860",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/860|#860 HBA1C parameter>",
+                    "text": "\u2022 removes HBA1C field from consultation model\n\u2022 updates `populate_investigations` management command to have <https://docs.google.com/spreadsheets/d/1hN13p-BDbb1Pkl3a8tcVdWFsFxncju2QPfeOEkKh51E/edit?usp=sharing|updated> seed data for HBA1C\n\u2022 updates `populate_investigations` command to handle updating of pre-existing data.  \n    fixes: <https://github.com/coronasafe/care_fe/issues/2020|coronasafe/care_fe#2020>",
+                    "title": "<https://github.com/coronasafe/care/pull/860|#860 HBA1C parameter>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "x5E",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/860",
+                                    "text": "#860",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-20 00:00:00": [
+        {
+            "client_msg_id": "58e2cac2-e1b8-4305-89a7-bbbf2bf7477a",
+            "type": "message",
+            "text": "worked on suggested changes on existing PR",
+            "user": "U02U102TL0G",
+            "ts": "1655750558.076929",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "DgAir",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on suggested changes on existing PR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02SWK752TZ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-06-23 00:00:00": [
+        {
+            "client_msg_id": "cd18104f-02eb-47bc-b52d-c1dae616d0d0",
+            "type": "message",
+            "text": "Submitted PR: <https://github.com/coronasafe/care/pull/877|#877>",
+            "user": "U02U102TL0G",
+            "ts": "1656007159.597099",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655992742,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/877",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/877|#877 Update HL7Monitor asset integration>",
+                    "text": "fixes: <https://github.com/coronasafe/care/issues/801|#801>  \nrelated to: <https://github.com/coronasafe/care_fe/issues/2159|coronasafe/care_fe#2159>",
+                    "title": "<https://github.com/coronasafe/care/pull/877|#877 Update HL7Monitor asset integration>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "B+PE",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/877",
+                                    "text": "#877",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-24 00:00:00": [
+        {
+            "client_msg_id": "b656dbe8-9bae-4c34-a39c-599d5c83337d",
+            "type": "message",
+            "text": "worked on previous PRs",
+            "user": "U02U102TL0G",
+            "ts": "1656098586.177699",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xktlN",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on previous PRs"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-28 00:00:00": [
+        {
+            "client_msg_id": "837e4097-6e48-4c71-b7f3-57676cf0f3d5",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/899|#899>",
+            "user": "U02U102TL0G",
+            "ts": "1656424983.628959",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656403370,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/899",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/899|#899 update actions for hl7monitor asset integration>",
+                    "text": "fixes: <https://github.com/coronasafe/care/issues/800|#800>",
+                    "title": "<https://github.com/coronasafe/care/pull/899|#899 update actions for hl7monitor asset integration>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "axfb",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/899",
+                                    "text": "#899",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "thread_ts": "1656424983.628959",
+            "reply_count": 1,
+            "reply_users_count": 1,
+            "latest_reply": "1656425007.317809",
+            "reply_users": [
+                "UV5PPBE2D"
+            ],
+            "is_locked": false,
+            "subscribed": false
+        }
+    ],
+    "2022-07-04 00:00:00": [
+        {
+            "client_msg_id": "659d9bab-2be6-4615-b044-aa37905fdf47",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/909|#909>",
+            "user": "U02U102TL0G",
+            "ts": "1656957662.154179",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656929097,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/909",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/909|#909 update asset integration actions>",
+                    "text": "\u2022 minor bug fixes\n\u2022 sort out misplaced actions between hl7 and onvif.",
+                    "title": "<https://github.com/coronasafe/care/pull/909|#909 update asset integration actions>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "dufF",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/909",
+                                    "text": "#909",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

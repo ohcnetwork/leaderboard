@@ -1,6 +1,34 @@
 {
-  "last_updated": 1657143083.0,
+  "last_updated": 1657380554.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#921",
+      "time": 1657380554.0,
+      "link": "https://github.com/coronasafe/care/pull/921",
+      "text": "Fix validation while Shifting Bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3092",
+      "time": 1657368035.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3092#issuecomment-1179531451",
+      "text": "@nihal467 It seems related to https://github.com/coronasafe/care_fe/pull/2946#issuecomment-1172863289\r\n\r\n@gigincg Could you or anyone else having the Recaptcha admin account take a look into the Recaptcha Admin panel and check if `care.coronasafe.in` is added as an allowed domain and also make sure that the below sitekey is valid?\r\n\r\nThe sitekey used is here: https://github.com/coronasafe/care_fe/blob/develop/src/Common/env.tsx#L1"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3075",
+      "time": 1657355247.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3075",
+      "text": "Hide extra error message when shifting bed fails"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#921",
+      "time": 1657354595.0,
+      "link": "https://github.com/coronasafe/care/pull/921",
+      "text": "Fix validation while Shifting Bed"
+    },
     {
       "type": "pr_reviewed",
       "time": 1657143083.0,
@@ -787,6 +815,10 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3075",
+      "title": "Hide extra error message when shifting bed fails"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3015",
       "title": "Fix validation when updating facility"

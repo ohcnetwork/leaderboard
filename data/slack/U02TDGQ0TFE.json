@@ -1696,5 +1696,62 @@
                 }
             ]
         }
+    ],
+    "2022-07-10 00:00:00": [
+        {
+            "client_msg_id": "c05489e7-c522-40cf-8153-a2751e4df44c",
+            "type": "message",
+            "text": "made a PR: <https://github.com/coronasafe/care/pull/922>",
+            "user": "U02TDGQ0TFE",
+            "ts": "1657451086.582449",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1657441305,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/922",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/922|#922 added home_facility field for user>",
+                    "text": "partially fixes <https://github.com/coronasafe/care/issues/910|#910>",
+                    "title": "<https://github.com/coronasafe/care/pull/922|#922 added home_facility field for user>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "43M6y",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "made a PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/922"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -1499,5 +1499,119 @@
                 }
             ]
         }
+    ],
+    "2022-07-13 00:00:00": [
+        {
+            "client_msg_id": "235fdfbe-ef8f-4402-9390-f31f4c124ed9",
+            "type": "message",
+            "text": "Completed PR <https://github.com/coronasafe/care_fe/pull/2487|#2487>\n*Cypress:*\n\u2022 Fixed login captcha issues after struggling for weeks :smiling_face_with_tear:",
+            "user": "U02TPSYRUPK",
+            "ts": "1657726224.611889",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/63334479/169694855-7147ad65-df2c-45c6-8c53-8b3555d4ac6f.png",
+                    "image_width": 1908,
+                    "image_height": 828,
+                    "image_bytes": 604117,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653220219,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2487",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1908x828px image",
+                    "text": "Closes <https://github.com/coronasafe/care_fe/issues/2449|#2449>\n\n*Changes*\n\n\u2022 Replace the Old implementation of Feed (`LiveFeed.tsx`) with the new Feed (`Feed.tsx`) on the consultation details page.\n\u2022 Remove CameraFeed from AppRouter\n\u2022 Remove unused variables as shown in ESLint errors in the pre-commit hook\n\u2022 Removed unnecessary styling found in `Feed.tsx`\n\n<https://user-images.githubusercontent.com/63334479/169694855-7147ad65-df2c-45c6-8c53-8b3555d4ac6f.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2487|#2487 Add Camera Feed to Tabs in Patient Consultation Page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing, good to merge",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "7",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "sphT",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Completed PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2487",
+                                    "text": "#2487",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "Cypress:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed login captcha issues after struggling for weeks "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "smiling_face_with_tear",
+                                            "unicode": "1f972"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "tada",
+                    "users": [
+                        "U02SWK752TZ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

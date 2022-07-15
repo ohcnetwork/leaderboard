@@ -1603,13 +1603,112 @@
                     ]
                 }
             ],
+            "thread_ts": "1657726224.611889",
+            "reply_count": 2,
+            "reply_users_count": 2,
+            "latest_reply": "1657816745.957389",
+            "reply_users": [
+                "UV5PPBE2D",
+                "U02TPSYRUPK"
+            ],
+            "is_locked": false,
+            "subscribed": false,
             "reactions": [
                 {
                     "name": "tada",
                     "users": [
-                        "U02SWK752TZ"
+                        "U02SWK752TZ",
+                        "UV5PPBE2D"
                     ],
-                    "count": 1
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "2022-07-14 00:00:00": [
+        {
+            "client_msg_id": "e06b8f29-946e-4408-bce0-07db57dcdede",
+            "type": "message",
+            "text": "\u2022 Fixed some merge conflicts \n*Cypress:*\n\u2022 Figuring out why only some `&lt;a&gt;` tag buttons not getting clicked.\n\u2022 Trying to know how to redirect to newly created facility after form submission.",
+            "user": "U02TPSYRUPK",
+            "ts": "1657816952.579959",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "FEJl0",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed some merge conflicts "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Cypress:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Figuring out why only some "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "<a>",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " tag buttons not getting clicked."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Trying to know how to redirect to newly created facility after form submission."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
                 }
             ]
         }

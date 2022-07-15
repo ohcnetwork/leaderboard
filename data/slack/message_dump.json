@@ -27123,6 +27123,15 @@
                         }
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
             ]
         },
         {
@@ -27147,6 +27156,15 @@
                             ]
                         }
                     ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
                 }
             ]
         },
@@ -27252,13 +27270,24 @@
                     ]
                 }
             ],
+            "thread_ts": "1657726224.611889",
+            "reply_count": 2,
+            "reply_users_count": 2,
+            "latest_reply": "1657816745.957389",
+            "reply_users": [
+                "UV5PPBE2D",
+                "U02TPSYRUPK"
+            ],
+            "is_locked": false,
+            "subscribed": false,
             "reactions": [
                 {
                     "name": "tada",
                     "users": [
-                        "U02SWK752TZ"
+                        "U02SWK752TZ",
+                        "UV5PPBE2D"
                     ],
-                    "count": 1
+                    "count": 2
                 }
             ]
         },
@@ -27316,6 +27345,15 @@
                             ]
                         }
                     ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
                 }
             ]
         },
@@ -27410,5 +27448,281 @@
             ]
         }
     ],
-    "2022-07-14 00:00:00": []
+    "2022-07-14 00:00:00": [
+        {
+            "client_msg_id": "0d9c19ea-60c2-4a74-a5e2-837d714ae5e5",
+            "type": "message",
+            "text": "Worked on care_fe issues and submitted new PRs",
+            "user": "U02TB90FU2X",
+            "ts": "1657830843.682689",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "9UJ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on care_fe issues and submitted new PRs"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "84598979-1d7d-445b-aff4-41797d42647f",
+            "type": "message",
+            "text": "Made a PR to improve the UI for forget password page",
+            "user": "U02SWK752TZ",
+            "ts": "1657824537.250499",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "d3wDZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a PR to improve the UI for forget password page"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "e06b8f29-946e-4408-bce0-07db57dcdede",
+            "type": "message",
+            "text": "\u2022 Fixed some merge conflicts \n*Cypress:*\n\u2022 Figuring out why only some `&lt;a&gt;` tag buttons not getting clicked.\n\u2022 Trying to know how to redirect to newly created facility after form submission.",
+            "user": "U02TPSYRUPK",
+            "ts": "1657816952.579959",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "FEJl0",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed some merge conflicts "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Cypress:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Figuring out why only some "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "<a>",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " tag buttons not getting clicked."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Trying to know how to redirect to newly created facility after form submission."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "a1fb975a-b5f8-4912-bd6a-31ab2c8187be",
+            "type": "message",
+            "text": "worked on previous PRs and made a new PR",
+            "user": "U02TPSYB1MF",
+            "ts": "1657811065.214979",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "jl+b",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on previous PRs and made a new PR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "94100fcf-dbd6-41fd-a3c3-14d886769ae1",
+            "type": "message",
+            "text": "Made a PR <https://github.com/coronasafe/care_fe/pull/3117|#3117>",
+            "user": "U02T4HD63P0",
+            "ts": "1657807380.967329",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/59426397/178896064-6564e8df-2a5b-4b66-9081-12289c231e5e.png",
+                    "image_width": 1596,
+                    "image_height": 975,
+                    "image_bytes": 129877,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1657771550,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3117",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1596x975px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3116|#3116>\n\n*Enhancement*\n*Added icons to Asset page and enhanced the UI*\n\n<https://user-images.githubusercontent.com/59426397/178896064-6564e8df-2a5b-4b66-9081-12289c231e5e.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3117|#3117 Added icons to Asset page and enhanced the UI>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing, peer-reviewed",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "DlN",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3117",
+                                    "text": "#3117",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "f94f81af-2a71-4a67-bbf3-44df423739bc",
+            "type": "message",
+            "text": "Created PR: <https://github.com/coronasafe/care_fe/pull/3128>",
+            "user": "U02TDGQ0TFE",
+            "ts": "1657797272.641929",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1657797166,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3128",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3128|#3128 New prescription>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3128|#3128 New prescription>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ysp",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Created PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3128"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-15 00:00:00": []
 }

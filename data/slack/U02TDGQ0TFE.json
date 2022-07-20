@@ -1995,5 +1995,61 @@
                 }
             ]
         }
+    ],
+    "2022-07-19 00:00:00": [
+        {
+            "client_msg_id": "9a9bde94-2856-4f7a-a27c-b9b5ffa493a7",
+            "type": "message",
+            "text": "Fixtures were finally added: <https://github.com/coronasafe/care/pull/929>",
+            "user": "U02TDGQ0TFE",
+            "ts": "1658242620.829419",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1657951012,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/929",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/929|#929 Dummy data seeding>",
+                    "title": "<https://github.com/coronasafe/care/pull/929|#929 Dummy data seeding>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "nopL",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Fixtures were finally added: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/929"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

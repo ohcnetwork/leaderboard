@@ -1712,5 +1712,69 @@
                 }
             ]
         }
+    ],
+    "2022-07-19 00:00:00": [
+        {
+            "client_msg_id": "7bb845ef-6057-4eee-9467-843e1b50349e",
+            "type": "message",
+            "text": "Completed Cypress tests, PR <https://github.com/coronasafe/care_fe/pull/3167|#3167>",
+            "user": "U02TPSYRUPK",
+            "ts": "1658256297.247639",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1658239068,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3167",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3167|#3167 Introduce updated cypress test>",
+                    "text": "Base <https://github.com/coronasafe/care_fe/pull/1804|#1804>  \nResolves <https://github.com/coronasafe/care_fe/issues/2601|#2601>\n\n*Changes*\n\n\u2022 Update to cypress 10\n\u2022 Introduce proper TS types in tests\n\u2022 Fix captcha issue on multiple login requests\n\u2022 Added API based login, improves testing speed",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3167|#3167 Introduce updated cypress test>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing, need Review",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "MQVk",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Completed Cypress tests, PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3167",
+                                    "text": "#3167",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

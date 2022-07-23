@@ -1,6 +1,55 @@
 {
-  "last_updated": 1658439504.0,
+  "last_updated": 1658471959.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3184",
+      "time": 1658471959.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3184#issuecomment-1192237461",
+      "text": "> @Ashesh3 can you mention the issue? Alternative numbers and WhatsApp numbers are two different things.\r\n\r\nThey appear to be the same thing. \r\n\r\nWe can set WhatsApp number on the profile page, but in the users page, the filter lists it as \"Alternative number\" and filtering works displaying it as alt number\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/180377350-7da2e812-704d-4f5b-9bd6-b4fda957b51b.png)\r\n![image](https://user-images.githubusercontent.com/3626859/180377361-c6a47e10-0400-44cd-9377-7992b6bb2bfc.png)\r\n\r\nBut the profile page shows it as \"WhatsApp\" number.\r\n![image](https://user-images.githubusercontent.com/3626859/180377424-8b9e6aaa-3808-443a-bc8f-87553587b56c.png)\r\n\r\n\r\nThe frontend is inconsistent with how the data is stored and represented in the backend. Everywhere, the \"second number\" is referenced by \"Alternative number\" and not \"WhatsApp number\".\r\n\r\nhttps://github.com/coronasafe/care/blob/master/care/users/models.py#L216\r\n\r\n```\r\nclass User(AbstractUser):\r\n    ...\r\n    alt_phone_number = models.CharField\r\n```\r\n\r\nThe filter displays it as \"Alternative number\" too\r\n![image](https://user-images.githubusercontent.com/3626859/180378230-0734a749-598c-44a0-ab5c-18060cfd5800.png)\r\n\r\nUpdating the said \"WhatsApp number\" actually sends it as the alternative number:\r\n![image](https://user-images.githubusercontent.com/3626859/180378368-e336a954-47e0-4c9f-ad08-23699b52490c.png)\r\n\r\nhttps://github.com/coronasafe/care_fe/blob/develop/src/Components/Users/UserProfile.tsx#L491\r\n\r\n```\r\n<PhoneNumberField\r\n    --> name=\"altPhoneNumber\"\r\n        label=\"Whatsapp Number\"\r\n    --> value={states.form.altPhoneNumber}\r\n        onChange={ (value: string) =>\r\n    -->     handleWhatsappNumChange(value, \"altPhoneNumber\")\r\n        }\r\n    errors={states.errors.altPhoneNumber}\r\n/>\r\n```\r\n\r\nSo, it appears that \"WhatsApp number\" is actually just the \"Alternative number\" but mislabeled."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658467986.0,
+      "title": "coronasafe/care_fe#3152",
+      "link": "https://github.com/coronasafe/care_fe/pull/3152#pullrequestreview-1047403613",
+      "text": "Fixed malfunction in user management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658467986.0,
+      "title": "coronasafe/care_fe#3152",
+      "link": "https://github.com/coronasafe/care_fe/pull/3152#pullrequestreview-1047403613",
+      "text": "Fixed malfunction in user management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658467583.0,
+      "title": "coronasafe/care_fe#3178",
+      "link": "https://github.com/coronasafe/care_fe/pull/3178#pullrequestreview-1047400586",
+      "text": "Revamped assets page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658467300.0,
+      "title": "coronasafe/care_fe#3185",
+      "link": "https://github.com/coronasafe/care_fe/pull/3185#pullrequestreview-1047397937",
+      "text": "Added facility tooltip"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3187",
+      "time": 1658466873.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3187",
+      "text": "Fix check on Update Sample Test Status"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3186",
+      "time": 1658466130.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3186",
+      "text": "Display the errors when presets fetch fails"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3184",
@@ -983,6 +1032,14 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3187",
+      "title": "Fix check on Update Sample Test Status"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3186",
+      "title": "Display the errors when presets fetch fails"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3184",
       "title": "Suggestion: Rename WhatsApp number to Alternative number"

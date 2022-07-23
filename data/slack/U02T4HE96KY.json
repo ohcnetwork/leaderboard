@@ -1336,5 +1336,68 @@
                 }
             ]
         }
+    ],
+    "2022-07-22 00:00:00": [
+        {
+            "client_msg_id": "5464a5c6-4c72-448d-be8c-f665b6079be7",
+            "type": "message",
+            "text": "working on <https://github.com/coronasafe/care_fe/issues/3195|#3195>",
+            "user": "U02T4HE96KY",
+            "ts": "1658498018.602599",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/67050716/180432850-8f783f01-23be-4cff-99ee-96b28d276007.png",
+                    "image_width": 1330,
+                    "image_height": 304,
+                    "image_bytes": 26727,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1658490619,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/3195",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1330x304px image",
+                    "text": "In the consultation form (<https://care.coronasafe.in/facility/015ad911-39b7-4104-b304-bf8178c33830/patient/aefb147a-eb09-4dd0-8390-e2cd5a05f326/consultation/c5e82e5f-2bab-4cab-9239-307770792bce/update|https://care.coronasafe.in/facility/015ad911-39b7-4104-b304-bf8178c33830/patient/aefb147a-eb09-4dd0-8390-e2cd5a05f326/consultation/c5e82e5f-2bab-4cab-9239-307770792bce/update>), there needs to be a section for Procedures.\n\nSuggestive design:  \n<https://user-images.githubusercontent.com/67050716/180432850-8f783f01-23be-4cff-99ee-96b28d276007.png|Screenshot 2022-07-22 at 5 15 49 PM>\n\nContent:\n\n1. Repetitive: Toggle button for Yes/No\n2. If repetitive, field for \"Frequency\" with dropdown [ 15 min, 30 min, 1 hr, 6 hrs, 12 hrs, 24 hrs ]  \n    If not repetitive \"Time and Date\" to capture the time and date of the procedure\n3. Procedure: Text field to accommodate 100 characters to describe the procedure\n4. Note: Text field to accommodate 100 characters to add a note\n\n*NOTE:* Earlier we had a simple text field in the consultation form for \"Operations\". It was later on taken off by <https://github.com/coronasafe/care_fe/pull/2900|#2900>. The same operation field may be used here for the Procedure\n\nThis section is to come after the Prescription/PRN Prescription Section",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/3195|#3195 Adding Procedure to Consultation>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ritesh-Aggarwal|@Ritesh-Aggarwal>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "nB0y",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/3195",
+                                    "text": "#3195",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

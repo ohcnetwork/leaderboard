@@ -1,6 +1,48 @@
 {
-  "last_updated": 1658513707.0,
+  "last_updated": 1658600301.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1658600301.0,
+      "title": "coronasafe/care_fe#3213",
+      "link": "https://github.com/coronasafe/care_fe/pull/3213#pullrequestreview-1048559050",
+      "text": "Add error messages when deletion fails"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3151",
+      "time": 1658579639.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3151#issuecomment-1193118288",
+      "text": "Added a backend PR coronasafe/care#939 that will add in_use field in bed model which will be helpful in keeping track of used bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2844",
+      "time": 1658559315.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2844#issuecomment-1193074121",
+      "text": "@nihal467 I have submitted the PR. The problem was if any value has \",\" (comma) in their value, then the value got split."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#941",
+      "time": 1658558849.0,
+      "link": "https://github.com/coronasafe/care/pull/941",
+      "text": "Fixed issue in facility download option"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#940",
+      "time": 1658558348.0,
+      "link": "https://github.com/coronasafe/care/issues/940",
+      "text": "Issue: Facility Download CSV file"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#939",
+      "time": 1658548076.0,
+      "link": "https://github.com/coronasafe/care/pull/939",
+      "text": "Fixed: Added in_use field to track used bed"
+    },
     {
       "type": "pr_reviewed",
       "time": 1658513707.0,
@@ -4007,6 +4049,14 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/941",
+      "title": "Fixed issue in facility download option"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/939",
+      "title": "Fixed: Added in_use field to track used bed"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3173",
       "title": "Fixed malfunction in user management regarding add user form"

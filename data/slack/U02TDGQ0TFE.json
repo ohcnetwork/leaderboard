@@ -2132,5 +2132,63 @@
                 }
             ]
         }
+    ],
+    "2022-07-24 00:00:00": [
+        {
+            "client_msg_id": "484d09a4-8af7-4020-bbc2-572e66a044fd",
+            "type": "message",
+            "text": "Created a PR: <https://github.com/coronasafe/care/pull/944|https://github.com/coronasafe/care/pull/944>",
+            "user": "U02TDGQ0TFE",
+            "ts": "1658660885.993219",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1658643543,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/944",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/944|#944 Added procedure field to consultation model>",
+                    "text": "fixes <https://github.com/coronasafe/care/issues/943|#943>",
+                    "title": "<https://github.com/coronasafe/care/pull/944|#944 Added procedure field to consultation model>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "XEeRx",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Created a PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/944",
+                                    "text": "https://github.com/coronasafe/care/pull/944"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

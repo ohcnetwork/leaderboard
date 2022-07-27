@@ -1,6 +1,69 @@
 {
-  "last_updated": 1658481063.0,
+  "last_updated": 1658840069.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#864",
+      "time": 1658840069.0,
+      "link": "https://github.com/coronasafe/care/pull/864#issuecomment-1195444656",
+      "text": "continued in #947 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2824",
+      "time": 1658826458.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2824",
+      "text": "Patient page is unresponsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2805",
+      "time": 1658826456.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2805",
+      "text": "Ui enhancement of Patients Page "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658826276.0,
+      "title": "coronasafe/care_fe#2812",
+      "link": "https://github.com/coronasafe/care_fe/pull/2812#pullrequestreview-1050625915",
+      "text": "Enhanced UI of patients page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#947",
+      "time": 1658826104.0,
+      "link": "https://github.com/coronasafe/care/pull/947#issuecomment-1195207226",
+      "text": "This pr adds features to use the classification of diseases from ICD11 (https://icd.who.int/) **_Refer: https://github.com/coronasafe/care_fe/issues/2016_**\r\n\r\n_context: Initially, for the same thing proxying was suggested _(care fe -> be -> icd.who.int)_ [#864] but Bodhi suggested to store the diseases directly in care db because of the reliability issues_\r\n\r\n4 endpoints are added:\r\n![image](https://user-images.githubusercontent.com/29787772/180965655-750bb5c1-c654-4ad8-8185-e336483b9fd7.png)\r\n\r\n**GET /icd**: for searching the diseases using label\r\n**GET /icd/{id}**: for get a specific disease by id\r\n**POST /icd**: for adding new disease or diseases (if needed)\r\n**GET /icd/scrape** _(only can be accessed by admin user)_: for triggering celery task for scraping icd website and adding those diseases to db"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2842",
+      "time": 1658825312.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2842",
+      "text": "Revamp Asset Creation Form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2841",
+      "time": 1658825312.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2841",
+      "text": "Asset Creation Form Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658824641.0,
+      "title": "coronasafe/care_fe#2848",
+      "link": "https://github.com/coronasafe/care_fe/pull/2848#pullrequestreview-1050583291",
+      "text": "Fixed Malfunctioning of Asset Creation Page and revamped it's UI"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658824641.0,
+      "title": "coronasafe/care_fe#2848",
+      "link": "https://github.com/coronasafe/care_fe/pull/2848#pullrequestreview-1050583291",
+      "text": "Fixed Malfunctioning of Asset Creation Page and revamped it's UI"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#3193",
@@ -4092,6 +4155,10 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/947",
+      "title": "feat (icd): added scraper for icd"
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3134",
       "title": "fix (PatientHome): changed no medical data condition"
     },
@@ -4102,10 +4169,6 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2921",
       "title": "Changed leaflet location picker to gmap"
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/864",
-      "title": "Added an endpoint to search diseases from ICD11"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2727",

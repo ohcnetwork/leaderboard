@@ -1268,5 +1268,64 @@
                 }
             ]
         }
+    ],
+    "2022-07-25 00:00:00": [
+        {
+            "client_msg_id": "60986072-467a-4fb9-88c5-031c49acab1d",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/946|#946>",
+            "user": "U02U102TL0G",
+            "ts": "1658769077.808259",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1658733451,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/946",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/946|#946 update permissions for write access>",
+                    "text": "fixes: <https://github.com/coronasafe/care/issues/938|#938>",
+                    "title": "<https://github.com/coronasafe/care/pull/946|#946 update permissions for write access>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/Lm",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/946",
+                                    "text": "#946",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

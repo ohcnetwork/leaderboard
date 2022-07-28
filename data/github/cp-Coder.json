@@ -1,6 +1,34 @@
 {
-  "last_updated": 1658854221.0,
+  "last_updated": 1658940584.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1658940584.0,
+      "title": "coronasafe/care_fe#3152",
+      "link": "https://github.com/coronasafe/care_fe/pull/3152#pullrequestreview-1052830172",
+      "text": "Fixed malfunction in user management"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3163",
+      "time": 1658934592.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3163",
+      "text": "Fixed: Issue in facility select during add user"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3173",
+      "time": 1658934489.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3173",
+      "text": "Fixed malfunction in user management regarding add user form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#939",
+      "time": 1658932226.0,
+      "link": "https://github.com/coronasafe/care/pull/939#issuecomment-1196837559",
+      "text": "@vigneshhari end_date is present in ConsultationBed. In the issue, user should be able to see only those beds (in the list present in the switch bed form) which are not in use. If in_use field is not present, then I have to query every bed of that facility in ConsultationBed model too and check whether it is still in use or not. This will increase the no of query to the database."
+    },
     {
       "type": "pr_reviewed",
       "time": 1658854221.0,
@@ -4125,20 +4153,12 @@
       "title": "Fixed: Added in_use field to track used bed"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3173",
-      "title": "Fixed malfunction in user management regarding add user form"
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3172",
       "title": "Revamped: Resource Request Page"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3171",
       "title": "Fixed styling issue in Resource Management"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3163",
-      "title": "Fixed: Issue in facility select during add user"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3152",

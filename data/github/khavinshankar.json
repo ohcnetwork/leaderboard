@@ -1,6 +1,41 @@
 {
-  "last_updated": 1659189226.0,
+  "last_updated": 1659276994.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2008",
+      "time": 1659276994.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2008",
+      "text": "Improve Patient Dashboard for Critical Care"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2538",
+      "time": 1659276799.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2538#issuecomment-1200433527",
+      "text": "@nihal467 there is not much to test in this pr, it is more of refactoring going on, it is ready to be merged"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2921",
+      "time": 1659276649.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2921#issuecomment-1200433078",
+      "text": "@nihal467 this won't work in the netlify deploy because the gmap api key permissions are not given for netlify sites, either we can merge this into staging (it should work in staging) and test it or we can ask mathew to add permissions to the api key to allow netlify\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2075",
+      "time": 1659275466.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2075",
+      "text": "Clear Warnings in care_fe"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2095",
+      "time": 1659275435.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2095#issuecomment-1200429407",
+      "text": "@nihal467 This pr was aimed at fixing eslint errors and warnings but now lot has changed and most of the eslint errors are fixed, so I think this pr is not relevant anymore\r\n\r\nThere are few errors here and there, those can be fixed as we make changes, same can be done for the warnings, so I'll close this pr, feel free to open this if necessary."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#3269",
@@ -4619,10 +4654,6 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2538",
       "title": "swapped classnames with clsx"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2095",
-      "title": "Fix Warnings"
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",

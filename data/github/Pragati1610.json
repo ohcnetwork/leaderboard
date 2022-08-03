@@ -1,6 +1,48 @@
 {
-  "last_updated": 1654279540.0,
+  "last_updated": 1659449206.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3300",
+      "time": 1659449206.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3300#issuecomment-1202649267",
+      "text": "This PR removes the need for https://github.com/coronasafe/care_fe/pull/2457\r\n\r\nClosing that and associating this PR with https://github.com/coronasafe/care_fe/issues/2454"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3300",
+      "time": 1659448452.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3300",
+      "text": "fix: add loader in external results page when data is an empty array"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2285",
+      "time": 1659447795.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2285",
+      "text": "User management"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2285",
+      "time": 1659447675.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2285#issuecomment-1202591280",
+      "text": "#2435 has been closed and the PR for it has the piece of code that is required for this issue."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2455",
+      "time": 1659447439.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2455#issuecomment-1202582626",
+      "text": "This PR can be removed. #2435 has already been merged, the same code is found there as well"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2455",
+      "time": 1659445491.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2455#issuecomment-1202505709",
+      "text": "> @Pragati1610 @khavinshankar what is the status of the PR\r\n\r\nCould you take a look at that GitGuardian comment for me once?\r\nIt shows a secret, RECAPTCHA_SITE_KEY has been disclosed, but afaik, it was there from before\r\nSo should it be removed? and if yes, then how should we access the env var?"
+    },
     {
       "type": "pr_reviewed",
       "time": 1654279540.0,
@@ -95,12 +137,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2457",
-      "title": "fix: add loader to external results section"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2455",
-      "title": "fix: show the user that has created that particular user"
+      "link": "https://github.com/coronasafe/care_fe/pull/3300",
+      "title": "fix: add loader in external results page when data is an empty array"
     }
   ]
 }

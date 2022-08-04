@@ -1,6 +1,13 @@
 {
-  "last_updated": 1659452322.0,
+  "last_updated": 1659530348.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3261",
+      "time": 1659530348.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3261#issuecomment-1203896071",
+      "text": "Let's revert the design to the old one. \r\n\r\nLet there be evenly sized rectangles on the left side of the name of patients for all .\r\n- Where bed is allocated, we show location and bed no. in the box\r\n- For patients that have consultation filed and no bed assigned, show their \"decision after consultation input\"\r\n<img width=\"757\" alt=\"Screenshot 2022-08-03 at 6 00 34 PM\" src=\"https://user-images.githubusercontent.com/67050716/182608770-d260eb12-d86f-4688-99b0-bb6262ffcc2c.png\">\r\n- For patients that are only registered and no consultation is filed, lets have No Consultation filed and lets also make the box in red. With this we can get rid of the lable that we have otherwise on the right side for no consultation filed. \r\n\r\nThis is my suggestion.\r\n\r\n@gigincg @bodhish @nihal467 What do you guys think?\r\n\r\n\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#2487",

@@ -1612,5 +1612,69 @@
                 }
             ]
         }
+    ],
+    "2022-08-03 00:00:00": [
+        {
+            "client_msg_id": "b48fe868-afbc-431c-a35a-1043974e77a7",
+            "type": "message",
+            "text": "Submitted PR <https://github.com/coronasafe/care_fe/pull/3310|#3310>",
+            "user": "U02TB90FU2X",
+            "ts": "1659549644.367719",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1659541210,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3310",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3310|#3310 Fixed: Limit DistrictAdmin to link facilities for new users>",
+                    "text": "*Updates*\n\n\u2611\ufe0e Fixes <https://github.com/coronasafe/care_fe/issues/3308|#3308>\n\u2611\ufe0e Added district as prop to `FacilitySelect` component\n\u2611\ufe0e Passed district as query param for searching facilities\n\u2611\ufe0e Removed unused import",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3310|#3310 Fixed: Limit DistrictAdmin to link facilities for new users>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "urgent, tested",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "vObqE",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3310",
+                                    "text": "#3310",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

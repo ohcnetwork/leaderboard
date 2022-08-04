@@ -1,6 +1,27 @@
 {
-  "last_updated": 1659195711.0,
+  "last_updated": 1659539772.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3309",
+      "time": 1659539772.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3309#issuecomment-1204087789",
+      "text": "> Why is port required @iamsdas \n\nCamera port is a required parameter in the backend for onvif asset type. And is currently required by the schema. Not having this field in the frontend is currently causing validation errors."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3309",
+      "time": 1659539482.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3309",
+      "text": "update fields in configure asset page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#963",
+      "time": 1659537970.0,
+      "link": "https://github.com/coronasafe/care/pull/963",
+      "text": "add camera_type to onvif asset schema"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#955",
@@ -486,6 +507,14 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3309",
+      "title": "update fields in configure asset page"
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/963",
+      "title": "add camera_type to onvif asset schema"
+    },
     {
       "link": "https://github.com/coronasafe/care/pull/953",
       "title": "add ONVIF action to get streaming token"

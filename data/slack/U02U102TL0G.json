@@ -1354,5 +1354,86 @@
                 }
             ]
         }
+    ],
+    "2022-08-03 00:00:00": [
+        {
+            "client_msg_id": "756f3c9c-f795-4f65-81e1-9cb43005bf75",
+            "type": "message",
+            "text": "submitted PRs: <https://github.com/coronasafe/care_fe/pull/3309|#3309>, <https://github.com/coronasafe/care/pull/963|#963>",
+            "user": "U02U102TL0G",
+            "ts": "1659544933.440549",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02U102TL0G",
+                "ts": "1659544992.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1659539482,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3309",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3309|#3309 update fields in configure asset page>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3309|#3309 update fields in configure asset page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1659537970,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/963",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/963|#963 add camera_type to onvif asset schema>",
+                    "title": "<https://github.com/coronasafe/care/pull/963|#963 add camera_type to onvif asset schema>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "CQd8J",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PRs: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3309",
+                                    "text": "#3309",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": ", "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/963",
+                                    "text": "#963",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ActivityCalendar from 'react-activity-calendar';
 import ActivityModal from './ActivityModal';
 
-export default function ActivityCalenderGit({ calendarData }) {
+export default function ActivityCalendarGit({ calendarData }) {
   const getCalendarData = (year) => {
     const currentYear = year;
     let dates = [];
@@ -55,20 +55,25 @@ export default function ActivityCalenderGit({ calendarData }) {
   const [activityData, setActivityData] = useState({});
 
   return (
-    <div className="flex gap-3">
-      <div className=" p-2 py-8 bg-gray-800 text-gray-100 text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
+    <div className="sm:flex gap-3">
+      <div
+        className="py-8 bg-gray-800 text-gray-100 text-center rounded-lg px-6 sm:px-10 xl:text-left hover:cursor-pointer"
+        suppressHydrationWarning
+      >
         {year === 0 ? (
           <ActivityCalendar
             showWeekdayLabels
             data={calendarData}
             theme={{
-              level0: '#3A3B41',
-              level1: '#104D2F',
-              level2: '#027E3B',
-              level3: '#28AF44',
-              level4: '#39d353',
-              level5: '#50f26b',
-              level6: '#82F595',
+              level0: '#374151',
+              level1: '#d3bff3',
+              level2: '#b08ee6',
+              level3: '#976ae2',
+              level4: '#6025c0',
+              level5: '#4d1e9a',
+              level6: '#380d80',
+              level7: '#35156b',
+              level8: '#1f0d40',
             }}
             eventHandlers={{
               onClick: (event) => (data) => {
@@ -83,13 +88,15 @@ export default function ActivityCalenderGit({ calendarData }) {
             showWeekdayLabels
             data={getCalendarData(year)}
             theme={{
-              level0: '#3A3B41',
-              level1: '#104D2F',
-              level2: '#027E3B',
-              level3: '#28AF44',
-              level4: '#39d353',
-              level5: '#50f26b',
-              level6: '#82F595',
+              level0: '#374151',
+              level1: '#d3bff3',
+              level2: '#b08ee6',
+              level3: '#976ae2',
+              level4: '#6025c0',
+              level5: '#4d1e9a',
+              level6: '#380d80',
+              level7: '#35156b',
+              level8: '#1f0d40',
             }}
             eventHandlers={{
               onClick: (event) => (data) => {
@@ -106,7 +113,7 @@ export default function ActivityCalenderGit({ calendarData }) {
           closeFunc={() => setIsOpen(false)}
         />
       </div>
-      <div className="flex flex-col gap-2 mt-2">
+      <div className="flex sm:flex-col gap-2 mt-2 sm:mt-0">
         {yearsList.map((y, i) => {
           return (
             <button
@@ -114,7 +121,7 @@ export default function ActivityCalenderGit({ calendarData }) {
               className={
                 y !== year
                   ? 'h-10 w-24 rounded-lg bg-gray-800 text-gray-100 text-sm flex justify-center items-center hover:bg-gray-700'
-                  : 'h-10 w-24 rounded-lg bg-green-600 text-white text-sm flex justify-center items-center'
+                  : 'h-10 w-24 rounded-lg bg-primary-500 text-white text-sm flex justify-center items-center'
               }
               onClick={(_) => setYear(y)}
             >

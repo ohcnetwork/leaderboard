@@ -17,7 +17,7 @@ import { getContributorBySlug, getContributors } from '../../lib/api';
 
 import PageHead from '../../components/PageHead';
 import Header from '../../components/Header';
-import ActivityCalenderGit from '../../components/contributors/ActivityCalendarGitHub';
+import ActivityCalendarGit from '../../components/contributors/ActivityCalendarGitHub';
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
 //     // Current Date - i
@@ -265,17 +265,8 @@ export default function Contributor({ contributor, slug }) {
         </div>
 
         <div className="px-4 md:p-0">
-          <h3 className="font-bold text-gray-100 mt-4">Learning Activity</h3>
-          <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
-            {/* <p className="text-xl text-gray-300">
-                  ...to add activity visualization...
-                </p> */}
-
-            <ActivityCalendar
-              showWeekdayLabels
-              data={contributor.calendarData}
-            />
-          </div>
+          <h3 className="font-bold text-gray-100 my-4">Learning Activity</h3>
+          <ActivityCalendarGit calendarData={contributor.calendarData} />
         </div>
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-gray-100 mt-6">Highlights</h3>

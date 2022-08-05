@@ -29,7 +29,7 @@ export default function ActivityModal({ isopen, closeFunc, activityData }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-96 transform overflow-hidden rounded-xl bg-gray-700 p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-96 transform overflow-hidden rounded-xl bg-gray-800 p-6 text-left align-middle shadow-xl transition-all">
                   <div className="flow-root mb-3">
                     <Dialog.Title
                       as="h3"
@@ -40,7 +40,7 @@ export default function ActivityModal({ isopen, closeFunc, activityData }) {
                     <div className="float-right">
                       <button
                         type="button"
-                        className="text-gray-100 focus:outline-none active:outline-none hover:text-gray-300"
+                        className="text-gray-200 focus:outline-none active:outline-none hover:text-gray-300"
                         onClick={closeFunc}
                       >
                         ✖
@@ -50,49 +50,49 @@ export default function ActivityModal({ isopen, closeFunc, activityData }) {
 
                   <div className="mt-2">
                     {activityData?.pr_opened && (
-                      <p className="text-base text-gray-100">
+                      <p className="text-base text-gray-200">
                         <span className="font-semibold">PRs Opened:</span>{' '}
                         {activityData.pr_opened}
                       </p>
                     )}
                     {activityData?.pr_merged && (
-                      <p className="text-base text-gray-100">
+                      <p className="text-base text-gray-200">
                         <span className="font-semibold">PRs Merged:</span>{' '}
                         {activityData.pr_merged}
                       </p>
                     )}
                     {activityData?.pr_reviewed && (
-                      <p className="text-base text-gray-100">
+                      <p className="text-base text-gray-200">
                         <span className="font-semibold">PRs Reviewed:</span>{' '}
                         {activityData.pr_reviewed}
                       </p>
                     )}
                     {activityData?.eod_update && (
-                      <p className="text-base text-gray-100">
+                      <p className="text-base text-gray-200">
                         <span className="font-semibold">EOD Updates:</span>{' '}
                         {activityData.eod_update}
                       </p>
                     )}
                     {activityData?.issue_opened && (
-                      <p className="text-base text-gray-100">
+                      <p className="text-base text-gray-200">
                         <span className="font-semibold">Issues Opened:</span>{' '}
                         {activityData.issue_opened}
                       </p>
                     )}
                     {activityData?.issue_closed && (
-                      <p className="text-base text-gray-100">
+                      <p className="text-base text-gray-200">
                         <span className="font-semibold">Issues Closed:</span>{' '}
                         {activityData.issue_closed}
                       </p>
                     )}
                     {activityData?.comment_created && (
-                      <p className="text-base text-gray-100">
+                      <p className="text-base text-gray-200">
                         <span className="font-semibold">Comments Created:</span>{' '}
                         {activityData.comment_created}
                       </p>
                     )}
 
-                    <div className=" text-gray-100">
+                    <div className=" text-gray-200">
                       {!activityData?.pr_reviewed &&
                       !activityData?.pr_opened &&
                       !activityData?.pr_merged &&

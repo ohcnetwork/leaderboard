@@ -33,8 +33,8 @@ let renderText = (activity) => {
       return (
         <div className="min-w-0 flex-1">
           <div>
-            <div className="text-sm">
-              <div className="font-medium text-primary-500 ">
+            <div className="">
+              <div className="font-medium text-primary-300 ">
                 {activity_time.split("at")[0]}
                 <span className=" text-sm font-medium text-gray-200">
                   {" "}
@@ -43,7 +43,7 @@ let renderText = (activity) => {
               </div>
             </div>
           </div>
-          <div className="mt-2 text-sm text-gray-100">
+          <div className="mt-2 text-gray-100">
             <p className="break-words">{activity["text"]}</p>
           </div>
         </div>
@@ -57,7 +57,7 @@ let renderText = (activity) => {
                 {"Shared a comment on "}
                 {commentTypes(activity["link"].split("/").slice(5, 6))}
                 {" in  "}
-                <span className="text-primary-500 font-medium">
+                <span className="text-primary-300 font-medium">
                   {activity["link"].split("/").slice(3, 5).join("/")}
                 </span>
 
@@ -68,7 +68,7 @@ let renderText = (activity) => {
               </p>
             </div>
           </div>
-          <div className="mt-2 text-sm text-gray-100">
+          <div className="mt-2 text-gray-100">
             <p className="break-words">{activity["text"]}</p>
             <p className="break-words">{activity["link"]}</p>
           </div>
@@ -79,13 +79,13 @@ let renderText = (activity) => {
     case "pr_reviewed":
       return (
         <div className="min-w-0 flex-1 py-1.5">
-          <div className="text-sm text-gray-100">
+          <div className="text-gray-100">
             <div className="font-medium">
               <span className="capitalize">
                 {activity["type"].split("_")[1]}
               </span>
               <span>{" a pull request on "}</span>
-              <span className="text-primary-500 font-medium">
+              <span className="text-primary-300 font-medium">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
@@ -129,7 +129,7 @@ let renderText = (activity) => {
                 {activity["type"].split("_")[1]}
               </span>
               <span>{" an issue on "}</span>
-              <span className="text-primary-500 font-medium">
+              <span className="text-primary-300 font-medium">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
@@ -147,7 +147,7 @@ let renderText = (activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-gray-100">
-            <span className="font-medium text-primary-500 ">
+            <span className="font-medium text-primary-300 ">
               {activity["type"]}
             </span>
 

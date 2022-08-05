@@ -1418,5 +1418,363 @@
                 }
             ]
         }
+    ],
+    "2022-06-22 00:00:00": [
+        {
+            "client_msg_id": "ee2b7f36-e638-464d-a713-8e4aa5ef5b8e",
+            "type": "message",
+            "text": "Update: Busy with exams until Saturday",
+            "user": "U02TPSYRUPK",
+            "ts": "1655908179.762289",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Zik2P",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Update: Busy with exams until Saturday"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-06-29 00:00:00": [
+        {
+            "client_msg_id": "ddfd014f-559c-42e3-add8-bc48ddf5d649",
+            "type": "message",
+            "text": "Nothing for the day \ud83e\udee5",
+            "user": "U02TPSYRUPK",
+            "ts": "1656518603.089449",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "v4v",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Nothing for the day \ud83e\udee5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-08 00:00:00": [
+        {
+            "client_msg_id": "9149124f-ae8d-4311-9a98-22e6a6d420df",
+            "type": "message",
+            "text": "Made some progress in fixing cypress test",
+            "user": "U02TPSYRUPK",
+            "ts": "1657307281.443739",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "d4Uh",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made some progress in fixing cypress test"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-13 00:00:00": [
+        {
+            "client_msg_id": "235fdfbe-ef8f-4402-9390-f31f4c124ed9",
+            "type": "message",
+            "text": "Completed PR <https://github.com/coronasafe/care_fe/pull/2487|#2487>\n*Cypress:*\n\u2022 Fixed login captcha issues after struggling for weeks :smiling_face_with_tear:",
+            "user": "U02TPSYRUPK",
+            "ts": "1657726224.611889",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/63334479/169694855-7147ad65-df2c-45c6-8c53-8b3555d4ac6f.png",
+                    "image_width": 1908,
+                    "image_height": 828,
+                    "image_bytes": 604117,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653220219,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/2487",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1908x828px image",
+                    "text": "Closes <https://github.com/coronasafe/care_fe/issues/2449|#2449>\n\n*Changes*\n\n\u2022 Replace the Old implementation of Feed (`LiveFeed.tsx`) with the new Feed (`Feed.tsx`) on the consultation details page.\n\u2022 Remove CameraFeed from AppRouter\n\u2022 Remove unused variables as shown in ESLint errors in the pre-commit hook\n\u2022 Removed unnecessary styling found in `Feed.tsx`\n\n<https://user-images.githubusercontent.com/63334479/169694855-7147ad65-df2c-45c6-8c53-8b3555d4ac6f.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/2487|#2487 Add Camera Feed to Tabs in Patient Consultation Page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing, good to merge",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "7",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "sphT",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Completed PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/2487",
+                                    "text": "#2487",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "Cypress:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed login captcha issues after struggling for weeks "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "smiling_face_with_tear",
+                                            "unicode": "1f972"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "thread_ts": "1657726224.611889",
+            "reply_count": 2,
+            "reply_users_count": 2,
+            "latest_reply": "1657816745.957389",
+            "reply_users": [
+                "UV5PPBE2D",
+                "U02TPSYRUPK"
+            ],
+            "is_locked": false,
+            "subscribed": false,
+            "reactions": [
+                {
+                    "name": "tada",
+                    "users": [
+                        "U02SWK752TZ",
+                        "UV5PPBE2D"
+                    ],
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "2022-07-14 00:00:00": [
+        {
+            "client_msg_id": "e06b8f29-946e-4408-bce0-07db57dcdede",
+            "type": "message",
+            "text": "\u2022 Fixed some merge conflicts \n*Cypress:*\n\u2022 Figuring out why only some `&lt;a&gt;` tag buttons not getting clicked.\n\u2022 Trying to know how to redirect to newly created facility after form submission.",
+            "user": "U02TPSYRUPK",
+            "ts": "1657816952.579959",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "FEJl0",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed some merge conflicts "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Cypress:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Figuring out why only some "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "<a>",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " tag buttons not getting clicked."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Trying to know how to redirect to newly created facility after form submission."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-19 00:00:00": [
+        {
+            "client_msg_id": "7bb845ef-6057-4eee-9467-843e1b50349e",
+            "type": "message",
+            "text": "Completed Cypress tests, PR <https://github.com/coronasafe/care_fe/pull/3167|#3167>",
+            "user": "U02TPSYRUPK",
+            "ts": "1658256297.247639",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1658239068,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3167",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3167|#3167 Introduce updated cypress test>",
+                    "text": "Base <https://github.com/coronasafe/care_fe/pull/1804|#1804>  \nResolves <https://github.com/coronasafe/care_fe/issues/2601|#2601>\n\n*Changes*\n\n\u2022 Update to cypress 10\n\u2022 Introduce proper TS types in tests\n\u2022 Fix captcha issue on multiple login requests\n\u2022 Added API based login, improves testing speed",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3167|#3167 Introduce updated cypress test>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need testing, need Review",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "MQVk",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Completed Cypress tests, PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3167",
+                                    "text": "#3167",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

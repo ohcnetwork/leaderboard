@@ -1,6 +1,3590 @@
 {
-  "last_updated": 1655467783.0,
+  "last_updated": 1659619243.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2727",
+      "time": 1659619243.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2727",
+      "text": "Added 'x' icon to close the modal in TeliCUI Switch Bed"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3013",
+      "time": 1659619120.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3013",
+      "text": "Added report table to show summary in ViewInvestigations"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3308",
+      "time": 1659615032.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3308",
+      "text": "Limit District Admin Access in new user page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659615023.0,
+      "title": "coronasafe/care_fe#3310",
+      "link": "https://github.com/coronasafe/care_fe/pull/3310#pullrequestreview-1061784393",
+      "text": "Fixed: Limit DistrictAdmin to link facilities for new users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3264",
+      "time": 1659533323.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3264",
+      "text": "Asset Page : Unresponsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659533316.0,
+      "title": "coronasafe/care_fe#3279",
+      "link": "https://github.com/coronasafe/care_fe/pull/3279#pullrequestreview-1060302968",
+      "text": "Make asset name responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659533254.0,
+      "title": "coronasafe/care_fe#3281",
+      "link": "https://github.com/coronasafe/care_fe/pull/3281#pullrequestreview-1060301252",
+      "text": "Added a clock icon to user card"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3248",
+      "time": 1659533158.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3248",
+      "text": "Facility Creation Page is unresponsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659533148.0,
+      "title": "coronasafe/care_fe#3255",
+      "link": "https://github.com/coronasafe/care_fe/pull/3255#pullrequestreview-1060298335",
+      "text": "Make location input responsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3095",
+      "time": 1659533075.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3095",
+      "text": "Ui enhancement of \"Choose file\" button in Upload External Results Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659533064.0,
+      "title": "coronasafe/care_fe#3099",
+      "link": "https://github.com/coronasafe/care_fe/pull/3099#pullrequestreview-1060296105",
+      "text": "Enhanced Ui of Choose File in Upload External Results Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3136",
+      "time": 1659533008.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3136",
+      "text": "Breadcrumbs extend beyond screen in mobile view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659532997.0,
+      "title": "coronasafe/care_fe#3137",
+      "link": "https://github.com/coronasafe/care_fe/pull/3137#pullrequestreview-1060294348",
+      "text": "Added truncate in breadcrumbs on mobile view"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3253",
+      "time": 1659499346.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3253",
+      "text": "Inventory management unresponsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659499334.0,
+      "title": "coronasafe/care_fe#3254",
+      "link": "https://github.com/coronasafe/care_fe/pull/3254#pullrequestreview-1059669028",
+      "text": "Made buttons in inventory management responsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3262",
+      "time": 1659496741.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3262",
+      "text": "Doctor Capacity : Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659496732.0,
+      "title": "coronasafe/care_fe#3271",
+      "link": "https://github.com/coronasafe/care_fe/pull/3271#pullrequestreview-1059649149",
+      "text": "Remove extra Doctor Capacity update button"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3245",
+      "time": 1659496541.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3245",
+      "text": "Revamp Users page in mobile view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659496509.0,
+      "title": "coronasafe/care_fe#3246",
+      "link": "https://github.com/coronasafe/care_fe/pull/3246#pullrequestreview-1059647440",
+      "text": "Revamped Users page on mobile view"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3210",
+      "time": 1659496443.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3210",
+      "text": "Inventory Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659496429.0,
+      "title": "coronasafe/care_fe#3226",
+      "link": "https://github.com/coronasafe/care_fe/pull/3226#pullrequestreview-1059646781",
+      "text": "Cannot use stock now before having sufficient stock in inventory management page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659448153.0,
+      "title": "coronasafe/care_fe#3185",
+      "link": "https://github.com/coronasafe/care_fe/pull/3185#pullrequestreview-1058809384",
+      "text": "Changed facility feature placement and added a generic tooltip component"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659445200.0,
+      "title": "coronasafe/care_fe#3185",
+      "link": "https://github.com/coronasafe/care_fe/pull/3185#pullrequestreview-1058727162",
+      "text": "Changed facility feature placement and added a generic tooltip component"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659445170.0,
+      "title": "coronasafe/care_fe#3185",
+      "link": "https://github.com/coronasafe/care_fe/pull/3185#pullrequestreview-1058726303",
+      "text": "Changed facility feature placement and added a generic tooltip component"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3182",
+      "time": 1659441893.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3182",
+      "text": "Improve phone number search on External Results page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659441706.0,
+      "title": "coronasafe/care_fe#3183",
+      "link": "https://github.com/coronasafe/care_fe/pull/3183#pullrequestreview-1058641247",
+      "text": "Improve filter inputs"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2818",
+      "time": 1659441580.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2818",
+      "text": "Login Page : Alignment and Border Issues"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659441565.0,
+      "title": "coronasafe/care_fe#2974",
+      "link": "https://github.com/coronasafe/care_fe/pull/2974#pullrequestreview-1058638198",
+      "text": "Fixed Styling issues on Login Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2008",
+      "time": 1659276994.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2008",
+      "text": "Improve Patient Dashboard for Critical Care"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2538",
+      "time": 1659276799.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2538#issuecomment-1200433527",
+      "text": "@nihal467 there is not much to test in this pr, it is more of refactoring going on, it is ready to be merged"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2921",
+      "time": 1659276649.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2921#issuecomment-1200433078",
+      "text": "@nihal467 this won't work in the netlify deploy because the gmap api key permissions are not given for netlify sites, either we can merge this into staging (it should work in staging) and test it or we can ask mathew to add permissions to the api key to allow netlify\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2075",
+      "time": 1659275466.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2075",
+      "text": "Clear Warnings in care_fe"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2095",
+      "time": 1659275435.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2095#issuecomment-1200429407",
+      "text": "@nihal467 This pr was aimed at fixing eslint errors and warnings but now lot has changed and most of the eslint errors are fixed, so I think this pr is not relevant anymore\r\n\r\nThere are few errors here and there, those can be fixed as we make changes, same can be done for the warnings, so I'll close this pr, feel free to open this if necessary."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3269",
+      "time": 1659189226.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3269",
+      "text": "fixed add consultation disable logic and changed redirection route after successful transfer"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3269",
+      "time": 1659186263.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3269",
+      "text": "fixed add consultation disable logic and changed redirection route after successful transfer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658981415.0,
+      "title": "coronasafe/care_fe#3226",
+      "link": "https://github.com/coronasafe/care_fe/pull/3226#pullrequestreview-1053460821",
+      "text": "Cannot use stock now before having sufficient stock in inventory management page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658981415.0,
+      "title": "coronasafe/care_fe#3226",
+      "link": "https://github.com/coronasafe/care_fe/pull/3226#pullrequestreview-1053460821",
+      "text": "Cannot use stock now before having sufficient stock in inventory management page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3202",
+      "time": 1658979521.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3202",
+      "text": "Improve UI on Samples Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2505",
+      "time": 1658979484.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2505",
+      "text": "UI issues on Upload External Results page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2845",
+      "time": 1658979443.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2845",
+      "text": "Filter are malfunctioning : Facility Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658979401.0,
+      "title": "coronasafe/care_fe#2614",
+      "link": "https://github.com/coronasafe/care_fe/pull/2614#pullrequestreview-1053445077",
+      "text": "Improve UI on External Test page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658979009.0,
+      "title": "coronasafe/care_fe#2846",
+      "link": "https://github.com/coronasafe/care_fe/pull/2846#pullrequestreview-1053442098",
+      "text": "Fixed Filters in Facilities Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2862",
+      "time": 1658978558.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2862",
+      "text": "Styling Issue : Assign to a volunteer in patient detail"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2850",
+      "time": 1658978556.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2850",
+      "text": "Consultation Form Styling Issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3150",
+      "time": 1658978473.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3150",
+      "text": "User Management Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658978432.0,
+      "title": "coronasafe/care_fe#3152",
+      "link": "https://github.com/coronasafe/care_fe/pull/3152#pullrequestreview-1053437704",
+      "text": "Fixed malfunction in user management"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2978",
+      "time": 1658978291.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2978",
+      "text": "Styling Issue : Resource Management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658978278.0,
+      "title": "coronasafe/care_fe#3171",
+      "link": "https://github.com/coronasafe/care_fe/pull/3171#pullrequestreview-1053436586",
+      "text": "Fixed styling issue in Resource Management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658977949.0,
+      "title": "coronasafe/care_fe#2869",
+      "link": "https://github.com/coronasafe/care_fe/pull/2869#pullrequestreview-1053434103",
+      "text": "Fix: Consultation Form Styling Issue and assign a volunteer field in Patient details"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658977949.0,
+      "title": "coronasafe/care_fe#2869",
+      "link": "https://github.com/coronasafe/care_fe/pull/2869#pullrequestreview-1053434103",
+      "text": "Fix: Consultation Form Styling Issue and assign a volunteer field in Patient details"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658977077.0,
+      "title": "coronasafe/care_fe#3203",
+      "link": "https://github.com/coronasafe/care_fe/pull/3203#pullrequestreview-1053427385",
+      "text": "Resolved breaking \"Type\" on Samples page in mobile view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658976881.0,
+      "title": "coronasafe/care_fe#3205",
+      "link": "https://github.com/coronasafe/care_fe/pull/3205#pullrequestreview-1053425875",
+      "text": "fix: last-seen overflow"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658976587.0,
+      "title": "coronasafe/care_fe#3236",
+      "link": "https://github.com/coronasafe/care_fe/pull/3236#pullrequestreview-1053423482",
+      "text": "Add LAMA option to discharge reasons"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3243",
+      "time": 1658940692.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3243",
+      "text": "fix (ManageUsers): removed duplicate district_id"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3243",
+      "time": 1658936571.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3243",
+      "text": "fix (ManageUsers): removed duplicate district_id"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658935228.0,
+      "title": "coronasafe/care_fe#3080",
+      "link": "https://github.com/coronasafe/care_fe/pull/3080#pullrequestreview-1052700870",
+      "text": "Added feature for user to change password"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658935034.0,
+      "title": "coronasafe/care_fe#2808",
+      "link": "https://github.com/coronasafe/care_fe/pull/2808#pullrequestreview-1052695735",
+      "text": "Issue#2807 - District filter for Users."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2857",
+      "time": 1658934839.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2857",
+      "text": "Revamp Referral Letter : Shifting"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658934831.0,
+      "title": "coronasafe/care_fe#2916",
+      "link": "https://github.com/coronasafe/care_fe/pull/2916#pullrequestreview-1052690275",
+      "text": "Improved Shifting letter Ui"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3053",
+      "time": 1658934795.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3053",
+      "text": "Add a save and exit button on Add Bed Capacity page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658934787.0,
+      "title": "coronasafe/care_fe#3054",
+      "link": "https://github.com/coronasafe/care_fe/pull/3054#pullrequestreview-1052689000",
+      "text": "Added Add Bed Capacity and Exit button"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3142",
+      "time": 1658934716.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3142",
+      "text": "consultation page is unresponsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658934708.0,
+      "title": "coronasafe/care_fe#3154",
+      "link": "https://github.com/coronasafe/care_fe/pull/3154#pullrequestreview-1052686878",
+      "text": "Fix unresponsiveness of consultation page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3159",
+      "time": 1658934592.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3159",
+      "text": "Issue in facility select in add user"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658934584.0,
+      "title": "coronasafe/care_fe#3163",
+      "link": "https://github.com/coronasafe/care_fe/pull/3163#pullrequestreview-1052683412",
+      "text": "Fixed: Issue in facility select during add user"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3170",
+      "time": 1658934489.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3170",
+      "text": "user management malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658934403.0,
+      "title": "coronasafe/care_fe#3173",
+      "link": "https://github.com/coronasafe/care_fe/pull/3173#pullrequestreview-1052678389",
+      "text": "Fixed malfunction in user management regarding add user form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3169",
+      "time": 1658934313.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3169",
+      "text": "User Mangement Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658934305.0,
+      "title": "coronasafe/care_fe#3174",
+      "link": "https://github.com/coronasafe/care_fe/pull/3174#pullrequestreview-1052675629",
+      "text": "Added validation so that users can see users of the same district only on the Users Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3124",
+      "time": 1658934275.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3124",
+      "text": "Text is going outside on Facility page in mobile view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658934268.0,
+      "title": "coronasafe/care_fe#3126",
+      "link": "https://github.com/coronasafe/care_fe/pull/3126#pullrequestreview-1052674532",
+      "text": "Removed overlap on Facility Page in mobile view"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3177",
+      "time": 1658934058.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3177",
+      "text": "Revamp Assets Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658934049.0,
+      "title": "coronasafe/care_fe#3178",
+      "link": "https://github.com/coronasafe/care_fe/pull/3178#pullrequestreview-1052668464",
+      "text": "Revamped assets page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3189",
+      "time": 1658934004.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3189",
+      "text": "Correct ordering of search filters on Patients page mobile view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658933996.0,
+      "title": "coronasafe/care_fe#3190",
+      "link": "https://github.com/coronasafe/care_fe/pull/3190#pullrequestreview-1052666931",
+      "text": "Corrected ordering of search filters on Patients page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3191",
+      "time": 1658933961.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3191",
+      "text": "404 page disfigured"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658933953.0,
+      "title": "coronasafe/care_fe#3192",
+      "link": "https://github.com/coronasafe/care_fe/pull/3192#pullrequestreview-1052665691",
+      "text": "Fixed error 404 page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3196",
+      "time": 1658933923.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3196",
+      "text": "Styling Issue : Forget Password Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658933914.0,
+      "title": "coronasafe/care_fe#3199",
+      "link": "https://github.com/coronasafe/care_fe/pull/3199#pullrequestreview-1052664596",
+      "text": "Enhanced UI of Password Reset Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3193",
+      "time": 1658933876.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3193",
+      "text": "UI issue in pagination (navigation buttons) of asset configure page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658933869.0,
+      "title": "coronasafe/care_fe#3201",
+      "link": "https://github.com/coronasafe/care_fe/pull/3201#pullrequestreview-1052663275",
+      "text": "Fix pagination buttons on Asset configure page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3197",
+      "time": 1658933836.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3197",
+      "text": "Facility Page : Pagination Malfunction "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658933828.0,
+      "title": "coronasafe/care_fe#3204",
+      "link": "https://github.com/coronasafe/care_fe/pull/3204#pullrequestreview-1052662185",
+      "text": "fix: mobile pagination"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3212",
+      "time": 1658933770.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3212",
+      "text": "Unable to delete a facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658933761.0,
+      "title": "coronasafe/care_fe#3213",
+      "link": "https://github.com/coronasafe/care_fe/pull/3213#pullrequestreview-1052660261",
+      "text": "Add error messages when deletion fails"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3214",
+      "time": 1658928922.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3214",
+      "text": "antenatal malfunction : Patient Form "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658928902.0,
+      "title": "coronasafe/care_fe#3215",
+      "link": "https://github.com/coronasafe/care_fe/pull/3215#pullrequestreview-1052518794",
+      "text": "Fix is_antenatal checkbox display"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3219",
+      "time": 1658927669.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3219",
+      "text": "Consultation update fails as admission_date can not be set"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658927652.0,
+      "title": "coronasafe/care_fe#3220",
+      "link": "https://github.com/coronasafe/care_fe/pull/3220#pullrequestreview-1052484309",
+      "text": "Show admission date picker on Edit Consultation page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3224",
+      "time": 1658927580.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3224",
+      "text": "File Upload UX"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658927568.0,
+      "title": "coronasafe/care_fe#3225",
+      "link": "https://github.com/coronasafe/care_fe/pull/3225#pullrequestreview-1052482173",
+      "text": "Improved UX in file upload"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3188",
+      "time": 1658927501.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3188",
+      "text": "Notification for Notice Board"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658927493.0,
+      "title": "coronasafe/care_fe#3198",
+      "link": "https://github.com/coronasafe/care_fe/pull/3198#pullrequestreview-1052480270",
+      "text": "Renamed 'Message' to 'Notice' in notifications"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3211",
+      "time": 1658927143.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3211",
+      "text": "Update Minimum Quantity : Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658927131.0,
+      "title": "coronasafe/care_fe#3234",
+      "link": "https://github.com/coronasafe/care_fe/pull/3234#pullrequestreview-1052470791",
+      "text": "Fixed update min quantity malfunction"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#864",
+      "time": 1658840069.0,
+      "link": "https://github.com/coronasafe/care/pull/864#issuecomment-1195444656",
+      "text": "continued in #947 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2824",
+      "time": 1658826458.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2824",
+      "text": "Patient page is unresponsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2805",
+      "time": 1658826456.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2805",
+      "text": "Ui enhancement of Patients Page "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658826276.0,
+      "title": "coronasafe/care_fe#2812",
+      "link": "https://github.com/coronasafe/care_fe/pull/2812#pullrequestreview-1050625915",
+      "text": "Enhanced UI of patients page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#947",
+      "time": 1658826104.0,
+      "link": "https://github.com/coronasafe/care/pull/947#issuecomment-1195207226",
+      "text": "This pr adds features to use the classification of diseases from ICD11 (https://icd.who.int/) **_Refer: https://github.com/coronasafe/care_fe/issues/2016_**\r\n\r\n_context: Initially, for the same thing proxying was suggested _(care fe -> be -> icd.who.int)_ [#864] but Bodhi suggested to store the diseases directly in care db because of the reliability issues_\r\n\r\n4 endpoints are added:\r\n![image](https://user-images.githubusercontent.com/29787772/180965655-750bb5c1-c654-4ad8-8185-e336483b9fd7.png)\r\n\r\n**GET /icd**: for searching the diseases using label\r\n**GET /icd/{id}**: for get a specific disease by id\r\n**POST /icd**: for adding new disease or diseases (if needed)\r\n**GET /icd/scrape** _(only can be accessed by admin user)_: for triggering celery task for scraping icd website and adding those diseases to db"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2842",
+      "time": 1658825312.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2842",
+      "text": "Revamp Asset Creation Form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2841",
+      "time": 1658825312.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2841",
+      "text": "Asset Creation Form Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658824641.0,
+      "title": "coronasafe/care_fe#2848",
+      "link": "https://github.com/coronasafe/care_fe/pull/2848#pullrequestreview-1050583291",
+      "text": "Fixed Malfunctioning of Asset Creation Page and revamped it's UI"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658824641.0,
+      "title": "coronasafe/care_fe#2848",
+      "link": "https://github.com/coronasafe/care_fe/pull/2848#pullrequestreview-1050583291",
+      "text": "Fixed Malfunctioning of Asset Creation Page and revamped it's UI"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3193",
+      "time": 1658481063.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3193",
+      "text": "UI issue in pagination (navigation buttons) of asset configure page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2062",
+      "time": 1658480897.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2062",
+      "text": "delete option for asset bed/preset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658480778.0,
+      "title": "coronasafe/care_fe#2705",
+      "link": "https://github.com/coronasafe/care_fe/pull/2705#pullrequestreview-1047619772",
+      "text": "Delete asset bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658383076.0,
+      "title": "coronasafe/care_fe#2812",
+      "link": "https://github.com/coronasafe/care_fe/pull/2812#pullrequestreview-1045971875",
+      "text": "Enhanced UI of patients page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658382338.0,
+      "title": "coronasafe/care_fe#3080",
+      "link": "https://github.com/coronasafe/care_fe/pull/3080#pullrequestreview-1045961279",
+      "text": "Added feature for user to change password"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658382338.0,
+      "title": "coronasafe/care_fe#3080",
+      "link": "https://github.com/coronasafe/care_fe/pull/3080#pullrequestreview-1045961279",
+      "text": "Added feature for user to change password"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3164",
+      "time": 1658381724.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3164",
+      "text": "Clear phone number does not work on profile page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658381717.0,
+      "title": "coronasafe/care_fe#3165",
+      "link": "https://github.com/coronasafe/care_fe/pull/3165#pullrequestreview-1045956017",
+      "text": "Fix phone number clear button on Profile page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3155",
+      "time": 1658381472.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3155",
+      "text": "Scan Asset Button unresponsive on Assets page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658381464.0,
+      "title": "coronasafe/care_fe#3156",
+      "link": "https://github.com/coronasafe/care_fe/pull/3156#pullrequestreview-1045953388",
+      "text": "Added responsiveness on Assets page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3140",
+      "time": 1658381162.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3140",
+      "text": "Remove user id from droplist : Patient Creation Form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658381152.0,
+      "title": "coronasafe/care_fe#3153",
+      "link": "https://github.com/coronasafe/care_fe/pull/3153#pullrequestreview-1045950196",
+      "text": "Fixed(Patient Creation form): Removed user id from droplist"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3129",
+      "time": 1658381131.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3129",
+      "text": "Styling : Inventory Management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658381123.0,
+      "title": "coronasafe/care_fe#3130",
+      "link": "https://github.com/coronasafe/care_fe/pull/3130#pullrequestreview-1045949925",
+      "text": "Fixed styling issue in Inventory Management"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3117",
+      "time": 1658380806.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3117#issuecomment-1191050657",
+      "text": "@nihal467  @patelaryan7751 is this pr complete? Aren't you making this icons as pictures, right?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3044",
+      "time": 1658380712.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3044",
+      "text": "Facility Form : Malfunction"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3025",
+      "time": 1658380627.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3025",
+      "text": "Inventory Management item cursor is not a pointer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658380563.0,
+      "title": "coronasafe/care_fe#3098",
+      "link": "https://github.com/coronasafe/care_fe/pull/3098#pullrequestreview-1045944191",
+      "text": "Fixed notification issue in Facility Form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3030",
+      "time": 1658380430.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3030",
+      "text": "Remove Profile button from sidebar and add link to user at bottom"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658380421.0,
+      "title": "coronasafe/care_fe#3031",
+      "link": "https://github.com/coronasafe/care_fe/pull/3031#pullrequestreview-1045942737",
+      "text": "remove profile button, shifted link to user at bottom"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3027",
+      "time": 1658380303.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3027",
+      "text": "Add icons to facility features"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658380291.0,
+      "title": "coronasafe/care_fe#3028",
+      "link": "https://github.com/coronasafe/care_fe/pull/3028#pullrequestreview-1045941477",
+      "text": "Added icons for facility features"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658380134.0,
+      "title": "coronasafe/care_fe#3026",
+      "link": "https://github.com/coronasafe/care_fe/pull/3026#pullrequestreview-1045939918",
+      "text": "Added pointer cursor to inventory list item and changed name to inventory manager"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658380134.0,
+      "title": "coronasafe/care_fe#3026",
+      "link": "https://github.com/coronasafe/care_fe/pull/3026#pullrequestreview-1045939918",
+      "text": "Added pointer cursor to inventory list item and changed name to inventory manager"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2891",
+      "time": 1658379956.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2891",
+      "text": "Add user name validator : User Creation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658379944.0,
+      "title": "coronasafe/care_fe#3023",
+      "link": "https://github.com/coronasafe/care_fe/pull/3023#pullrequestreview-1045938205",
+      "text": "Added username validator"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3017",
+      "time": 1658379783.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3017",
+      "text": "Remove Bed No- Discharged Patient list"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658379772.0,
+      "title": "coronasafe/care_fe#3019",
+      "link": "https://github.com/coronasafe/care_fe/pull/3019#pullrequestreview-1045936615",
+      "text": "Removed bed number for discharged patient"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3007",
+      "time": 1658379710.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3007#issuecomment-1191041026",
+      "text": "@patelaryan7751 making the filename mandatory can reduce the user experience, so can you make it similar to audio file, giving some template name? \r\n\r\n@nihal467 what do you think?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2985",
+      "time": 1658379477.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2985",
+      "text": "Upload Patient File: Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658379395.0,
+      "title": "coronasafe/care_fe#3003",
+      "link": "https://github.com/coronasafe/care_fe/pull/3003#pullrequestreview-1045933046",
+      "text": "Added downloadable icon to audio and timer to recording audio"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2992",
+      "time": 1658379326.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2992",
+      "text": "Revamp : Discharge Pop-up"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658379299.0,
+      "title": "coronasafe/care_fe#2996",
+      "link": "https://github.com/coronasafe/care_fe/pull/2996#pullrequestreview-1045932215",
+      "text": "Restyled discharge patient popup"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2855",
+      "time": 1658379262.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2855",
+      "text": "Unable to custom name audio file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658379246.0,
+      "title": "coronasafe/care_fe#2957",
+      "link": "https://github.com/coronasafe/care_fe/pull/2957#pullrequestreview-1045931724",
+      "text": "Added functionality to add name to audio files in Consultaion Files Tab"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2878",
+      "time": 1658379158.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2878",
+      "text": "Revamp Info Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658379140.0,
+      "title": "coronasafe/care_fe#2945",
+      "link": "https://github.com/coronasafe/care_fe/pull/2945#pullrequestreview-1045930765",
+      "text": "Removed unwanted blank space in info page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2904",
+      "time": 1658379105.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2904",
+      "text": "Remove spacing in UI on Sample Test page for count of Samples"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658379092.0,
+      "title": "coronasafe/care_fe#2906",
+      "link": "https://github.com/coronasafe/care_fe/pull/2906#pullrequestreview-1045930288",
+      "text": "removed extra space"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2851",
+      "time": 1658379050.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2851",
+      "text": "Revamp Patient Detail Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658379008.0,
+      "title": "coronasafe/care_fe#2897",
+      "link": "https://github.com/coronasafe/care_fe/pull/2897#pullrequestreview-1045929531",
+      "text": "Revamped patient details page UI"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3145",
+      "time": 1657885186.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3145",
+      "text": "Issue in Resource Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657885177.0,
+      "title": "coronasafe/care_fe#3146",
+      "link": "https://github.com/coronasafe/care_fe/pull/3146#pullrequestreview-1040179427",
+      "text": "Fixed board view in resource page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3139",
+      "time": 1657874413.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3139",
+      "text": "UI Issue: Download buttons overlapping in smaller screens"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2808",
+      "time": 1657873597.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2808#issuecomment-1185305997",
+      "text": "![image](https://user-images.githubusercontent.com/29787772/179184247-87438b5f-e295-4dc6-8b21-f3ce9a8967ba.png)\r\n\r\n@siddnikh  the selected value is not showing"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3135",
+      "time": 1657873324.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3135",
+      "text": "Resource & Shifting Page : Revamp List View"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2819",
+      "time": 1657873324.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2819",
+      "text": "Fix Position & Font for Heading"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657873309.0,
+      "title": "coronasafe/care_fe#2836",
+      "link": "https://github.com/coronasafe/care_fe/pull/2836#pullrequestreview-1039964205",
+      "text": "Alignment issue of Patient Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657864545.0,
+      "title": "coronasafe/care_fe#3134",
+      "link": "https://github.com/coronasafe/care_fe/pull/3134#pullrequestreview-1039827098",
+      "text": "fix (PatientHome): changed no medical data condition"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657864545.0,
+      "title": "coronasafe/care_fe#3134",
+      "link": "https://github.com/coronasafe/care_fe/pull/3134#pullrequestreview-1039827098",
+      "text": "fix (PatientHome): changed no medical data condition"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3134",
+      "time": 1657863248.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3134",
+      "text": "fix (PatientHome): changed no medical data condition"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657860704.0,
+      "title": "coronasafe/care_fe#2836",
+      "link": "https://github.com/coronasafe/care_fe/pull/2836#pullrequestreview-1039789814",
+      "text": "Alignment issue of Patient Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2745",
+      "time": 1657800925.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2745",
+      "text": "Bed management page is not mobile responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657800908.0,
+      "title": "coronasafe/care_fe#2903",
+      "link": "https://github.com/coronasafe/care_fe/pull/2903#pullrequestreview-1038768073",
+      "text": "Revamp bed management page, improve responsiveness"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3114",
+      "time": 1657781953.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3114",
+      "text": "Netlify deploy failing"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657781945.0,
+      "title": "coronasafe/care_fe#3115",
+      "link": "https://github.com/coronasafe/care_fe/pull/3115#pullrequestreview-1038384586",
+      "text": "Fixes Netlify deploy issue"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2947",
+      "time": 1657780079.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2947",
+      "text": "Added discharge_reason and discharge_notes in discharge modal"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3090",
+      "time": 1657706981.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3090",
+      "text": "Treatment Summary Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706903.0,
+      "title": "coronasafe/care_fe#3093",
+      "link": "https://github.com/coronasafe/care_fe/pull/3093#pullrequestreview-1037106112",
+      "text": "Made the Physical Examination info field fetched in Treatment Summary"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3078",
+      "time": 1657706806.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3078",
+      "text": "Revamp : Log Update"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706759.0,
+      "title": "coronasafe/care_fe#3089",
+      "link": "https://github.com/coronasafe/care_fe/pull/3089#pullrequestreview-1037102872",
+      "text": "Utilised white space in Daily rounds form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3036",
+      "time": 1657706668.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3036",
+      "text": "Add a save and exit button on Add doctors capacity page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706668.0,
+      "title": "coronasafe/care_fe#3037",
+      "link": "https://github.com/coronasafe/care_fe/pull/3037#pullrequestreview-1037100755",
+      "text": "Added Add Doctor and Exit button"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2325",
+      "time": 1657706604.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2325",
+      "text": "Renaming page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706591.0,
+      "title": "coronasafe/care_fe#3020",
+      "link": "https://github.com/coronasafe/care_fe/pull/3020#pullrequestreview-1037099261",
+      "text": "Renamed the page title from 'Covid Suspect Details' to 'Patient Details'."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706491.0,
+      "title": "coronasafe/care_fe#3015",
+      "link": "https://github.com/coronasafe/care_fe/pull/3015#pullrequestreview-1037096843",
+      "text": "Fix validation when updating facility"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3014",
+      "time": 1657706490.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3014",
+      "text": "Facility update page validation issue"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706388.0,
+      "title": "coronasafe/care_fe#3075",
+      "link": "https://github.com/coronasafe/care_fe/pull/3075#pullrequestreview-1037094882",
+      "text": "Hide extra error message when shifting bed fails"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2970",
+      "time": 1657706339.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2970",
+      "text": "Revamp Invalid Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706329.0,
+      "title": "coronasafe/care_fe#3002",
+      "link": "https://github.com/coronasafe/care_fe/pull/3002#pullrequestreview-1037093583",
+      "text": "Display appropriate message when Facility ID is incorrect"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2977",
+      "time": 1657706258.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2977",
+      "text": "Revamp : Resource Approval Letter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706181.0,
+      "title": "coronasafe/care_fe#3001",
+      "link": "https://github.com/coronasafe/care_fe/pull/3001#pullrequestreview-1037090267",
+      "text": "Fixed misalignment in resource approval letter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657706005.0,
+      "title": "coronasafe/care_fe#2812",
+      "link": "https://github.com/coronasafe/care_fe/pull/2812#pullrequestreview-1037086295",
+      "text": "Enhanced UI of patients page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2369",
+      "time": 1657705796.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2369",
+      "text": "Padding issue in external_results page mobile view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657705769.0,
+      "title": "coronasafe/care_fe#2409",
+      "link": "https://github.com/coronasafe/care_fe/pull/2409#pullrequestreview-1037081012",
+      "text": "fix: extra padding on external results page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2832",
+      "time": 1657705653.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2832",
+      "text": "Doctor List in Facility page : Unable to delete"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657705580.0,
+      "title": "coronasafe/care_fe#2953",
+      "link": "https://github.com/coronasafe/care_fe/pull/2953#pullrequestreview-1037076851",
+      "text": "add: delete specialization doctor type"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657705500.0,
+      "title": "coronasafe/care_fe#2953",
+      "link": "https://github.com/coronasafe/care_fe/pull/2953#pullrequestreview-1037069479",
+      "text": "add: delete specialization doctor type"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657705500.0,
+      "title": "coronasafe/care_fe#2953",
+      "link": "https://github.com/coronasafe/care_fe/pull/2953#pullrequestreview-1037069479",
+      "text": "add: delete specialization doctor type"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657705003.0,
+      "title": "coronasafe/care_fe#2956",
+      "link": "https://github.com/coronasafe/care_fe/pull/2956#pullrequestreview-1037063885",
+      "text": "Added link from facility page to /facility/<external_id>/users/"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2982",
+      "time": 1657629033.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2982",
+      "text": "Syling Issue : Consultation Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/10bedicu#50",
+      "time": 1657629005.0,
+      "link": "https://github.com/coronasafe/10bedicu/pull/50#issuecomment-1181701413",
+      "text": "@kunatastic its seems we have few responsiveness issues when we resize the screen,\r\n![image](https://user-images.githubusercontent.com/29787772/178488094-ccb6aa0a-60ac-42f2-a68a-396cac2a7e57.png)\r\n\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657627718.0,
+      "title": "coronasafe/care_fe#2989",
+      "link": "https://github.com/coronasafe/care_fe/pull/2989#pullrequestreview-1035693995",
+      "text": "Fixed styling issue in consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657627217.0,
+      "title": "coronasafe/10bedicu#50",
+      "link": "https://github.com/coronasafe/10bedicu/pull/50#pullrequestreview-1035684064",
+      "text": "improved UI for image gallery"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3079",
+      "time": 1657625157.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3079",
+      "text": "Log Update Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657625146.0,
+      "title": "coronasafe/care_fe#3081",
+      "link": "https://github.com/coronasafe/care_fe/pull/3081#pullrequestreview-1035644342",
+      "text": "Fixed review time in log update"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3083",
+      "time": 1657625070.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3083",
+      "text": "Styling Issue : Hemodynamic Parameters"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657625060.0,
+      "title": "coronasafe/care_fe#3088",
+      "link": "https://github.com/coronasafe/care_fe/pull/3088#pullrequestreview-1035642666",
+      "text": "Resolved styling issue: Hemodynamic Parameters"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3059",
+      "time": 1657624994.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3059",
+      "text": "Investigation Report : Print Preview "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657624984.0,
+      "title": "coronasafe/care_fe#3068",
+      "link": "https://github.com/coronasafe/care_fe/pull/3068#pullrequestreview-1035641211",
+      "text": "Fixed Ui bug in investigation report"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3061",
+      "time": 1657624763.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3061",
+      "text": "Shifting UI : Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657624756.0,
+      "title": "coronasafe/care_fe#3065",
+      "link": "https://github.com/coronasafe/care_fe/pull/3065#pullrequestreview-1035636383",
+      "text": "Fixed Shifting UI Malfunction"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3062",
+      "time": 1657624714.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3062",
+      "text": "Shifting Detail : Revamp"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657624688.0,
+      "title": "coronasafe/care_fe#3063",
+      "link": "https://github.com/coronasafe/care_fe/pull/3063#pullrequestreview-1035633628",
+      "text": "Improved shifting detail comment section"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3056",
+      "time": 1657609170.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3056",
+      "text": "Styling Issue : Consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657609162.0,
+      "title": "coronasafe/care_fe#3069",
+      "link": "https://github.com/coronasafe/care_fe/pull/3069#pullrequestreview-1035302367",
+      "text": "fixed sliders"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3054",
+      "time": 1657608302.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3054#issuecomment-1181379640",
+      "text": "@Pranshu1902 please do remove the button in the update form\r\n![image](https://user-images.githubusercontent.com/29787772/178425653-45747e2d-3aed-4789-88c3-ac578ef08e70.png)\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3043",
+      "time": 1657607785.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3043",
+      "text": "facility page is not responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657607774.0,
+      "title": "coronasafe/care_fe#3051",
+      "link": "https://github.com/coronasafe/care_fe/pull/3051#pullrequestreview-1035280101",
+      "text": "Made the 'Download Type' accordion in facility page responsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2879",
+      "time": 1657607548.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2879",
+      "text": "Revamp Sample History Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657607539.0,
+      "title": "coronasafe/care_fe#3040",
+      "link": "https://github.com/coronasafe/care_fe/pull/3040#pullrequestreview-1035276628",
+      "text": "Grid layout on lg screen devices for sample test cards"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657607289.0,
+      "title": "coronasafe/care_fe#3037",
+      "link": "https://github.com/coronasafe/care_fe/pull/3037#pullrequestreview-1035272584",
+      "text": "Added Add Doctor and Exit button"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657607289.0,
+      "title": "coronasafe/care_fe#3037",
+      "link": "https://github.com/coronasafe/care_fe/pull/3037#pullrequestreview-1035272584",
+      "text": "Added Add Doctor and Exit button"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3034",
+      "time": 1657607022.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3034",
+      "text": "File name not autofilling when uploaded on Patients page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657607005.0,
+      "title": "coronasafe/care_fe#3035",
+      "link": "https://github.com/coronasafe/care_fe/pull/3035#pullrequestreview-1035268919",
+      "text": "Autofill input field of file upload name on Patients page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657606685.0,
+      "title": "coronasafe/care_fe#3031",
+      "link": "https://github.com/coronasafe/care_fe/pull/3031#pullrequestreview-1035263749",
+      "text": "remove profile button, shifted link to user at bottom"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657606685.0,
+      "title": "coronasafe/care_fe#3031",
+      "link": "https://github.com/coronasafe/care_fe/pull/3031#pullrequestreview-1035263749",
+      "text": "remove profile button, shifted link to user at bottom"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3021",
+      "time": 1657606197.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3021",
+      "text": "Placeholder still visible in Investigation report input field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657606188.0,
+      "title": "coronasafe/care_fe#3022",
+      "link": "https://github.com/coronasafe/care_fe/pull/3022#pullrequestreview-1035257724",
+      "text": "Remove placeholder when value is selected on Investigation Report page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657606065.0,
+      "title": "coronasafe/care_fe#3023",
+      "link": "https://github.com/coronasafe/care_fe/pull/3023#pullrequestreview-1035252609",
+      "text": "Added username validator"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657606065.0,
+      "title": "coronasafe/care_fe#3023",
+      "link": "https://github.com/coronasafe/care_fe/pull/3023#pullrequestreview-1035252609",
+      "text": "Added username validator"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2837",
+      "time": 1657604895.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2837",
+      "text": "Convert Input fields to text box : Inventory Management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657604874.0,
+      "title": "coronasafe/care_fe#3024",
+      "link": "https://github.com/coronasafe/care_fe/pull/3024#pullrequestreview-1035242241",
+      "text": "Fixed styling issue in inventory page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657604795.0,
+      "title": "coronasafe/care_fe#3026",
+      "link": "https://github.com/coronasafe/care_fe/pull/3026#pullrequestreview-1035241023",
+      "text": "Added pointer cursor to inventory list item and changed name to inventory manager"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657604794.0,
+      "title": "coronasafe/care_fe#3026",
+      "link": "https://github.com/coronasafe/care_fe/pull/3026#pullrequestreview-1035241023",
+      "text": "Added pointer cursor to inventory list item and changed name to inventory manager"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3087",
+      "time": 1657604655.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3087",
+      "text": "Styling Issue: Investigation Report"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657604647.0,
+      "title": "coronasafe/care_fe#3094",
+      "link": "https://github.com/coronasafe/care_fe/pull/3094#pullrequestreview-1035239732",
+      "text": "Fixed styling issues in Investigation table"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3096",
+      "time": 1657604553.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3096",
+      "text": "Revamp notification Ui"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657604514.0,
+      "title": "coronasafe/care_fe#3097",
+      "link": "https://github.com/coronasafe/care_fe/pull/3097#pullrequestreview-1035238216",
+      "text": "Revamped notification Ui"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3047",
+      "time": 1657604163.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3047",
+      "text": "Revamp : Facility Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657604150.0,
+      "title": "coronasafe/care_fe#3100",
+      "link": "https://github.com/coronasafe/care_fe/pull/3100#pullrequestreview-1035234394",
+      "text": "Fixed facility page ui"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3103",
+      "time": 1657604079.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3103",
+      "text": "Prescription- Dosage/frequency option"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657603416.0,
+      "title": "coronasafe/care_fe#3106",
+      "link": "https://github.com/coronasafe/care_fe/pull/3106#pullrequestreview-1035226719",
+      "text": "Removed \"sos\" from dosage"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3064",
+      "time": 1657527915.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3064",
+      "text": "Changed add consultation button disable logic in PatientHome"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3085",
+      "time": 1657421983.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3085",
+      "text": "AbsoluteMove call is made only when preset is available in Feed"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3049",
+      "time": 1657421965.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3049",
+      "text": "Fixed Resource Update page going blank on clicking UserSelect"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#902",
+      "time": 1657380292.0,
+      "link": "https://github.com/coronasafe/care/pull/902",
+      "text": "Added discharge_reason and discharge_notes in Patient Consultation"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3077",
+      "time": 1657379097.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3077",
+      "text": "Asset Auto Refresh : Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657379065.0,
+      "title": "coronasafe/care_fe#3082",
+      "link": "https://github.com/coronasafe/care_fe/pull/3082#pullrequestreview-1033544403",
+      "text": "Refresh Asset Configuration page on submit"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3086",
+      "time": 1657376666.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3086",
+      "text": "File Upload : Malfunction"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3070",
+      "time": 1657376651.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3070",
+      "text": "Doctor Connect not working"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3057",
+      "time": 1657376640.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3057",
+      "text": "Malfunction : Patient Creation Form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657376222.0,
+      "title": "coronasafe/care_fe#3066",
+      "link": "https://github.com/coronasafe/care_fe/pull/3066#pullrequestreview-1033540406",
+      "text": "Fixed Patient Creation Form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657375997.0,
+      "title": "coronasafe/care_fe#3091",
+      "link": "https://github.com/coronasafe/care_fe/pull/3091#pullrequestreview-1033540140",
+      "text": "Added * To enter file name field in Files tab"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2947",
+      "time": 1657361951.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2947#issuecomment-1179518739",
+      "text": "@rithviknishad  the new component looks awesome, I'll refactor it, thanks"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657359833.0,
+      "title": "coronasafe/care_fe#3074",
+      "link": "https://github.com/coronasafe/care_fe/pull/3074#pullrequestreview-1033508886",
+      "text": "Fixed doctor connect data fetching error"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3085",
+      "time": 1657359692.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3085",
+      "text": "AbsoluteMove call is made only when preset is available in Feed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3064",
+      "time": 1657349849.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3064#issuecomment-1179492300",
+      "text": "@nihal467 can you please give a patient's link where it is still going wrong "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3064",
+      "time": 1657297069.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3064",
+      "text": "Changed add consultation button disable logic in PatientHome"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2379",
+      "time": 1657118289.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2379",
+      "text": "Update raviger; breaking changes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657118074.0,
+      "title": "coronasafe/care_fe#2407",
+      "link": "https://github.com/coronasafe/care_fe/pull/2407#pullrequestreview-1030209306",
+      "text": "upgraded raviger to v4"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2409",
+      "time": 1657110558.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2409#issuecomment-1176162722",
+      "text": "@kunatastic please do work on the merge conflict"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2577",
+      "time": 1657110441.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2577",
+      "text": "Additional white space on smaller devices on asset page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2626",
+      "time": 1657110412.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2626",
+      "text": "Overlapping card headings in Resource Details page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2477",
+      "time": 1657110264.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2477",
+      "text": "Location management page is not mobile responsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2782",
+      "time": 1657110240.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2782",
+      "text": "oxygen information text overflowing on the facility page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2826",
+      "time": 1657110138.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2826",
+      "text": "shifting page is unresponsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2760",
+      "time": 1657110122.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2760",
+      "text": "Consultation form- remove redundant fields "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2822",
+      "time": 1657110064.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2822",
+      "text": "Facility badges are misaligned"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2863",
+      "time": 1657110038.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2863",
+      "text": "Revamp the scroller"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2497",
+      "time": 1657109954.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2497",
+      "text": "Error Messages for Camera Feed"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2938",
+      "time": 1657109936.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2938",
+      "text": "Rate limit message not shown on login page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2801",
+      "time": 1657109843.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2801",
+      "text": "Fix inconsistent color palette in Sample Test Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2823",
+      "time": 1657109822.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2823",
+      "text": "Facility Page is unresponsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2673",
+      "time": 1657109773.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2673",
+      "text": "After a patient is discharged from CARE the switch bed option should be hidden"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2983",
+      "time": 1657109745.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2983",
+      "text": "Malfunction : Patient File"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657108864.0,
+      "title": "coronasafe/care_fe#2407",
+      "link": "https://github.com/coronasafe/care_fe/pull/2407#pullrequestreview-1029971820",
+      "text": "upgraded raviger to v4"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2286",
+      "time": 1657108326.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2286#issuecomment-1176127542",
+      "text": "@rithviknishad @gigincg is it good to be merged?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657108086.0,
+      "title": "coronasafe/care_fe#2744",
+      "link": "https://github.com/coronasafe/care_fe/pull/2744#pullrequestreview-1029956755",
+      "text": "feat: revamp location management page, improve responsiveness"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657107457.0,
+      "title": "coronasafe/care_fe#2409",
+      "link": "https://github.com/coronasafe/care_fe/pull/2409#pullrequestreview-1029944876",
+      "text": "fix: extra padding on external results page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657102845.0,
+      "title": "coronasafe/care_fe#2987",
+      "link": "https://github.com/coronasafe/care_fe/pull/2987#pullrequestreview-1029855894",
+      "text": "Fixed malfunction in patient file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657102796.0,
+      "title": "coronasafe/care_fe#2986",
+      "link": "https://github.com/coronasafe/care_fe/pull/2986#pullrequestreview-1029854983",
+      "text": "Now discharged patients can not be assigned bed enabled bed history for preview "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657102270.0,
+      "title": "coronasafe/care_fe#2980",
+      "link": "https://github.com/coronasafe/care_fe/pull/2980#pullrequestreview-1029844491",
+      "text": "Made the Facility Page Responsive for Ipad Screen Size"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657102181.0,
+      "title": "coronasafe/care_fe#2971",
+      "link": "https://github.com/coronasafe/care_fe/pull/2971#pullrequestreview-1029842735",
+      "text": "fix: inconsistent button colors"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2957",
+      "time": 1657102133.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2957#issuecomment-1176038044",
+      "text": "@patelaryan7751 make the name field optional or have a default value for the name field like suggested by Bodhi in weekly meet"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657101835.0,
+      "title": "coronasafe/care_fe#2949",
+      "link": "https://github.com/coronasafe/care_fe/pull/2949#pullrequestreview-1029835544",
+      "text": "Removed service worker logs and replaced them with console errors"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657101688.0,
+      "title": "coronasafe/care_fe#2946",
+      "link": "https://github.com/coronasafe/care_fe/pull/2946#pullrequestreview-1029832477",
+      "text": "Display error message on 429 status code"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657101538.0,
+      "title": "coronasafe/care_fe#2926",
+      "link": "https://github.com/coronasafe/care_fe/pull/2926#pullrequestreview-1029829233",
+      "text": "Error Handling for Camera Feed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657101369.0,
+      "title": "coronasafe/care_fe#2924",
+      "link": "https://github.com/coronasafe/care_fe/pull/2924#pullrequestreview-1029825512",
+      "text": "Added ImageCompression for FileUpload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657101155.0,
+      "title": "coronasafe/care_fe#2914",
+      "link": "https://github.com/coronasafe/care_fe/pull/2914#pullrequestreview-1029820814",
+      "text": "Revamped the scroll bar UI"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2906",
+      "time": 1657100969.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2906#issuecomment-1176019433",
+      "text": "![image](https://user-images.githubusercontent.com/29787772/177522613-a29a861f-adeb-4ada-8143-340ef7ed4577.png)\r\n![image](https://user-images.githubusercontent.com/29787772/177522933-0589289f-55b2-4e39-99f0-79e93d3fd26e.png)\r\n\r\n@Pranshu1902 the UI seems to be off"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657100607.0,
+      "title": "coronasafe/care_fe#2906",
+      "link": "https://github.com/coronasafe/care_fe/pull/2906#pullrequestreview-1029808468",
+      "text": "removed extra space"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657100426.0,
+      "title": "coronasafe/care_fe#2901",
+      "link": "https://github.com/coronasafe/care_fe/pull/2901#pullrequestreview-1029804374",
+      "text": "Fixed misalignment of badges in facilities page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657100375.0,
+      "title": "coronasafe/care_fe#2900",
+      "link": "https://github.com/coronasafe/care_fe/pull/2900#pullrequestreview-1029803068",
+      "text": "Removed 'State Test ID' and 'Operation' fields from consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657100228.0,
+      "title": "coronasafe/care_fe#2866",
+      "link": "https://github.com/coronasafe/care_fe/pull/2866#pullrequestreview-1029799820",
+      "text": "Made The shifting page board responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657099890.0,
+      "title": "coronasafe/care_fe#2789",
+      "link": "https://github.com/coronasafe/care_fe/pull/2789#pullrequestreview-1029791860",
+      "text": "fix: oxygen description table on facility page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2739",
+      "time": 1657099706.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2739",
+      "text": "Buttons are fixed & Mobile view has styling issues on Consultation Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657099487.0,
+      "title": "coronasafe/care_fe#2740",
+      "link": "https://github.com/coronasafe/care_fe/pull/2740#pullrequestreview-1029782470",
+      "text": "Resolved buttons placing in desktop and mobile view Issue#2739"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657099257.0,
+      "title": "coronasafe/care_fe#2650",
+      "link": "https://github.com/coronasafe/care_fe/pull/2650#pullrequestreview-1029777168",
+      "text": "Fix: Overlapping card headings in Resource Details page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657099128.0,
+      "title": "coronasafe/care_fe#2650",
+      "link": "https://github.com/coronasafe/care_fe/pull/2650#pullrequestreview-1029773720",
+      "text": "Fix: Overlapping card headings in Resource Details page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657099128.0,
+      "title": "coronasafe/care_fe#2650",
+      "link": "https://github.com/coronasafe/care_fe/pull/2650#pullrequestreview-1029773720",
+      "text": "Fix: Overlapping card headings in Resource Details page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657098882.0,
+      "title": "coronasafe/care_fe#2579",
+      "link": "https://github.com/coronasafe/care_fe/pull/2579#pullrequestreview-1029768398",
+      "text": "fix: white space on smaller device"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2409",
+      "time": 1657098820.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2409#issuecomment-1175982310",
+      "text": "@kunatastic there are some minor changes, can you please address them"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657098781.0,
+      "title": "coronasafe/care_fe#2409",
+      "link": "https://github.com/coronasafe/care_fe/pull/2409#pullrequestreview-1029763333",
+      "text": "fix: extra padding on external results page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657098781.0,
+      "title": "coronasafe/care_fe#2409",
+      "link": "https://github.com/coronasafe/care_fe/pull/2409#pullrequestreview-1029763333",
+      "text": "fix: extra padding on external results page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2407",
+      "time": 1657098401.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2407#issuecomment-1175975119",
+      "text": "@cp-Coder can you check it once please"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657098372.0,
+      "title": "coronasafe/care_fe#2407",
+      "link": "https://github.com/coronasafe/care_fe/pull/2407#pullrequestreview-1029756145",
+      "text": "upgraded raviger to v4"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657098372.0,
+      "title": "coronasafe/care_fe#2407",
+      "link": "https://github.com/coronasafe/care_fe/pull/2407#pullrequestreview-1029756145",
+      "text": "upgraded raviger to v4"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657097659.0,
+      "title": "coronasafe/care_fe#2654",
+      "link": "https://github.com/coronasafe/care_fe/pull/2654#pullrequestreview-1029739860",
+      "text": "Hide Configure Asset button if `!asset_class`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2860",
+      "time": 1657097553.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2860",
+      "text": "Styling Issue : Patient Notes"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2911",
+      "time": 1657097512.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2911",
+      "text": "Improve styling on Patients page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2831",
+      "time": 1657097489.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2831",
+      "text": "Profile page is unresponsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2958",
+      "time": 1657097476.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2958",
+      "text": "Add styling on Facility Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2960",
+      "time": 1657097457.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2960",
+      "text": "Improve spacing on Sample page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2966",
+      "time": 1657097440.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2966",
+      "text": "Notice Board : Alignment Issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2965",
+      "time": 1657097429.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2965",
+      "text": "Asset page: Alignment Issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2990",
+      "time": 1657097414.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2990",
+      "text": "Styling Issue : Consultation Page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3013",
+      "time": 1657019589.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3013",
+      "text": "Added report table to show summary in ViewInvestigations"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3012",
+      "time": 1657013177.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3012",
+      "text": "Added attribute validation for res.data in NotificationsList"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656929002.0,
+      "title": "coronasafe/care_fe#2439",
+      "link": "https://github.com/coronasafe/care_fe/pull/2439#pullrequestreview-1027321471",
+      "text": "add: cancel button on update/create of assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656928902.0,
+      "title": "coronasafe/care_fe#2758",
+      "link": "https://github.com/coronasafe/care_fe/pull/2758#pullrequestreview-1027308961",
+      "text": "Change in camera UI, is now inside the player"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656928902.0,
+      "title": "coronasafe/care_fe#2758",
+      "link": "https://github.com/coronasafe/care_fe/pull/2758#pullrequestreview-1027308961",
+      "text": "Change in camera UI, is now inside the player"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2768",
+      "time": 1656928246.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2768#issuecomment-1173605227",
+      "text": "@patelaryan7751 can you please work on the requested changes and resolve the merge conflict"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656928125.0,
+      "title": "coronasafe/care_fe#2870",
+      "link": "https://github.com/coronasafe/care_fe/pull/2870#pullrequestreview-1027302155",
+      "text": "Fixed Styling Issue : Patient Notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656928094.0,
+      "title": "coronasafe/care_fe#2912",
+      "link": "https://github.com/coronasafe/care_fe/pull/2912#pullrequestreview-1027301494",
+      "text": "Added styling and removed extra spaces"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656928018.0,
+      "title": "coronasafe/care_fe#2951",
+      "link": "https://github.com/coronasafe/care_fe/pull/2951#pullrequestreview-1027299891",
+      "text": "improve profile page responsiveness"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656927955.0,
+      "title": "coronasafe/care_fe#2959",
+      "link": "https://github.com/coronasafe/care_fe/pull/2959#pullrequestreview-1027298578",
+      "text": "Added styling on Facility Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656927865.0,
+      "title": "coronasafe/care_fe#2961",
+      "link": "https://github.com/coronasafe/care_fe/pull/2961#pullrequestreview-1027296660",
+      "text": "Added spacing on Sample page and Esc key closes delete result popup"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656927787.0,
+      "title": "coronasafe/care_fe#2968",
+      "link": "https://github.com/coronasafe/care_fe/pull/2968#pullrequestreview-1027294986",
+      "text": "Fixed alignment issue of Notice Board"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656927710.0,
+      "title": "coronasafe/care_fe#2969",
+      "link": "https://github.com/coronasafe/care_fe/pull/2969#pullrequestreview-1027293319",
+      "text": "Fixed alignment issue in Asset List"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656927657.0,
+      "title": "coronasafe/care_fe#2995",
+      "link": "https://github.com/coronasafe/care_fe/pull/2995#pullrequestreview-1027292211",
+      "text": "Improved styling on Consultation Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#864",
+      "time": 1656906395.0,
+      "link": "https://github.com/coronasafe/care/pull/864#issuecomment-1173306826",
+      "text": "Yes, we can access this API from front-end but every time we want to access any endpoint, we have to get the bearer token first (authentication is needed). If it is done in the front-end, we have to do the authentication for every client, so thought of going with backend.\r\n\r\n@vigneshhari So what are your thoughts Vignesh, should I move this to frontend?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656677757.0,
+      "title": "coronasafe/care_fe#2654",
+      "link": "https://github.com/coronasafe/care_fe/pull/2654#pullrequestreview-1026140243",
+      "text": "Hide Configure Asset button if `!asset_class`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2948",
+      "time": 1656603064.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2948",
+      "text": "Fixed clone_last update issue in DailyRounds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2948",
+      "time": 1656601651.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2948",
+      "text": "Fixed clone_last update issue in DailyRounds"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2906",
+      "time": 1656595812.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2906#issuecomment-1171222959",
+      "text": "@Pranshu1902 please do work on the merge conflict"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2752",
+      "time": 1656595758.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2752",
+      "text": "Sync Bed Types in Advanced filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656595744.0,
+      "title": "coronasafe/care_fe#2792",
+      "link": "https://github.com/coronasafe/care_fe/pull/2792#pullrequestreview-1024876942",
+      "text": "Updated Bed Types in Patient Filter"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2939",
+      "time": 1656595468.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2939",
+      "text": "Sample sent success text not user friendly"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2936",
+      "time": 1656595455.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2936",
+      "text": "Esc key to close Create Patient popup"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2925",
+      "time": 1656595443.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2925",
+      "text": "Zoom button Malfunction : View/Upload Patient File"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2931",
+      "time": 1656595430.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2931",
+      "text": "Re-admission of patient"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2829",
+      "time": 1656595416.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2829",
+      "text": "resource page is not responsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2821",
+      "time": 1656595402.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2821",
+      "text": "Revamp : Facility Page Card"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2922",
+      "time": 1656595387.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2922",
+      "text": "Improve UI on Results page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2918",
+      "time": 1656595364.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2918",
+      "text": "Cancel Import and Back Button's behaviour is not same"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2872",
+      "time": 1656595351.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2872",
+      "text": "Consultation page Malfunction"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2912",
+      "time": 1656595314.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2912#issuecomment-1171213745",
+      "text": "@Pranshu1902 please do work on the merge confict"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2873",
+      "time": 1656595245.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2873",
+      "text": "Alignment Issue : Patient Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2876",
+      "time": 1656595230.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2876",
+      "text": "Revamp Nurse Section : Consultation Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2901",
+      "time": 1656595201.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2901#issuecomment-1171211655",
+      "text": "@GokulramGHV please do work on the merge conflict\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2887",
+      "time": 1656595124.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2887",
+      "text": "Badges Alignment Issue : External Result"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2889",
+      "time": 1656595111.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2889",
+      "text": "Multiple Badge Size : User Management"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2861",
+      "time": 1656595098.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2861",
+      "text": "Malfunction : Patient Notes"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2882",
+      "time": 1656595065.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2882",
+      "text": "Change Error Message : Sample Management System"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2854",
+      "time": 1656595051.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2854",
+      "text": "Investigation report styling Issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2894",
+      "time": 1656595051.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2894",
+      "text": "Styling Issue ; Log Update"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2828",
+      "time": 1656595040.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2828",
+      "text": "External Results is unresponsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2827",
+      "time": 1656595024.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2827",
+      "text": "Sample test page is unresponsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2859",
+      "time": 1656594972.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2859",
+      "text": "Mandatory \"*\" is missing : Request Sample Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2825",
+      "time": 1656594843.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2825",
+      "text": "asset page is unresponsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2830",
+      "time": 1656594798.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2830",
+      "text": "User management is not responsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2849",
+      "time": 1656594781.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2849",
+      "text": "Patient Creation Form Malfunction"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2840",
+      "time": 1656594759.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2840",
+      "text": "Category and Sub Category Malfuntion : Resource Request Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2835",
+      "time": 1656594727.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2835",
+      "text": "Alignment Issue : Inventory Management"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2802",
+      "time": 1656594703.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2802",
+      "text": "Remove back button from Notice Board Page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2259",
+      "time": 1656594685.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2259",
+      "text": "Validator Issue : Medicine : Log Update"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2795",
+      "time": 1656594668.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2795",
+      "text": "Validation bug on Update Shift Request"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656594267.0,
+      "title": "coronasafe/care_fe#2796",
+      "link": "https://github.com/coronasafe/care_fe/pull/2796#pullrequestreview-1024837263",
+      "text": "Fix form validation on shift details update page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656594106.0,
+      "title": "coronasafe/care_fe#2799",
+      "link": "https://github.com/coronasafe/care_fe/pull/2799#pullrequestreview-1024832810",
+      "text": "Added Validator for Medicine field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593965.0,
+      "title": "coronasafe/care_fe#2804",
+      "link": "https://github.com/coronasafe/care_fe/pull/2804#pullrequestreview-1024828762",
+      "text": "Removed Back button from Notice Board"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593903.0,
+      "title": "coronasafe/care_fe#2839",
+      "link": "https://github.com/coronasafe/care_fe/pull/2839#pullrequestreview-1024826708",
+      "text": "Alignment issue of Inventory Management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593789.0,
+      "title": "coronasafe/care_fe#2847",
+      "link": "https://github.com/coronasafe/care_fe/pull/2847#pullrequestreview-1024823472",
+      "text": "Now field of Category and Subcategory are visible in mobile devices in Resource Request Form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593733.0,
+      "title": "coronasafe/care_fe#2852",
+      "link": "https://github.com/coronasafe/care_fe/pull/2852#pullrequestreview-1024821862",
+      "text": "Fixed required field error for srf_id"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593695.0,
+      "title": "coronasafe/care_fe#2853",
+      "link": "https://github.com/coronasafe/care_fe/pull/2853#pullrequestreview-1024820805",
+      "text": "Made the User management responsive for  IPad"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593660.0,
+      "title": "coronasafe/care_fe#2858",
+      "link": "https://github.com/coronasafe/care_fe/pull/2858#pullrequestreview-1024819762",
+      "text": "Made the Asset Page Responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593636.0,
+      "title": "coronasafe/care_fe#2864",
+      "link": "https://github.com/coronasafe/care_fe/pull/2864#pullrequestreview-1024819155",
+      "text": "Added Mandatory Label"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593502.0,
+      "title": "coronasafe/care_fe#2912",
+      "link": "https://github.com/coronasafe/care_fe/pull/2912#pullrequestreview-1024815308",
+      "text": "Added styling and removed extra spaces"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593404.0,
+      "title": "coronasafe/care_fe#2768",
+      "link": "https://github.com/coronasafe/care_fe/pull/2768#pullrequestreview-1024811072",
+      "text": "Made the required fields mandatory in respective forms"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656593404.0,
+      "title": "coronasafe/care_fe#2768",
+      "link": "https://github.com/coronasafe/care_fe/pull/2768#pullrequestreview-1024811072",
+      "text": "Made the required fields mandatory in respective forms"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656592916.0,
+      "title": "coronasafe/care_fe#2724",
+      "link": "https://github.com/coronasafe/care_fe/pull/2724#pullrequestreview-1024801081",
+      "text": "add non-binary gender type to constants"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656592754.0,
+      "title": "coronasafe/care_fe#2650",
+      "link": "https://github.com/coronasafe/care_fe/pull/2650#pullrequestreview-1024797406",
+      "text": "Fix: Overlapping card headings in Resource Details page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656592754.0,
+      "title": "coronasafe/care_fe#2650",
+      "link": "https://github.com/coronasafe/care_fe/pull/2650#pullrequestreview-1024797406",
+      "text": "Fix: Overlapping card headings in Resource Details page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656592572.0,
+      "title": "coronasafe/care_fe#2439",
+      "link": "https://github.com/coronasafe/care_fe/pull/2439#pullrequestreview-1024792406",
+      "text": "add: cancel button on update/create of assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656592572.0,
+      "title": "coronasafe/care_fe#2439",
+      "link": "https://github.com/coronasafe/care_fe/pull/2439#pullrequestreview-1024792406",
+      "text": "add: cancel button on update/create of assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656591991.0,
+      "title": "coronasafe/care_fe#2919",
+      "link": "https://github.com/coronasafe/care_fe/pull/2919#pullrequestreview-1024780648",
+      "text": "Fix incorrect behaviour of back button in Add patient by external results page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656591510.0,
+      "title": "coronasafe/care_fe#2923",
+      "link": "https://github.com/coronasafe/care_fe/pull/2923#pullrequestreview-1024770329",
+      "text": "Improved UI on Results page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656591416.0,
+      "title": "coronasafe/care_fe#2928",
+      "link": "https://github.com/coronasafe/care_fe/pull/2928#pullrequestreview-1024768111",
+      "text": "Revamped Facility Page Card"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656591240.0,
+      "title": "coronasafe/care_fe#2930",
+      "link": "https://github.com/coronasafe/care_fe/pull/2930#pullrequestreview-1024764136",
+      "text": "Made Resource page responsive in Ipad"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656591188.0,
+      "title": "coronasafe/care_fe#2932",
+      "link": "https://github.com/coronasafe/care_fe/pull/2932#pullrequestreview-1024762970",
+      "text": "Fixed re-admission of the patient"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656590914.0,
+      "title": "coronasafe/care_fe#2933",
+      "link": "https://github.com/coronasafe/care_fe/pull/2933#pullrequestreview-1024756507",
+      "text": "Updated zoom_values"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656590804.0,
+      "title": "coronasafe/care_fe#2937",
+      "link": "https://github.com/coronasafe/care_fe/pull/2937#pullrequestreview-1024754323",
+      "text": "Esc key closes the create patient popup"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656590547.0,
+      "title": "coronasafe/care_fe#2940",
+      "link": "https://github.com/coronasafe/care_fe/pull/2940#pullrequestreview-1024749067",
+      "text": "Fix success text when sending a sample"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2947",
+      "time": 1656584314.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2947",
+      "text": "Added discharge_reason and discharge_notes in discharge modal"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#902",
+      "time": 1656583057.0,
+      "link": "https://github.com/coronasafe/care/pull/902",
+      "text": "Added discharge_reason and discharge_notes in Patient Consultation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656425075.0,
+      "title": "coronasafe/care_fe#2867",
+      "link": "https://github.com/coronasafe/care_fe/pull/2867#pullrequestreview-1021804820",
+      "text": "Made the Sample management page responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656425018.0,
+      "title": "coronasafe/care_fe#2868",
+      "link": "https://github.com/coronasafe/care_fe/pull/2868#pullrequestreview-1021803206",
+      "text": "Made the External Results Page Responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424810.0,
+      "title": "coronasafe/care_fe#2877",
+      "link": "https://github.com/coronasafe/care_fe/pull/2877#pullrequestreview-1021796916",
+      "text": "Fixed investigation report styling issue"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424732.0,
+      "title": "coronasafe/care_fe#2884",
+      "link": "https://github.com/coronasafe/care_fe/pull/2884#pullrequestreview-1021794581",
+      "text": "Changed error message in sample management system"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424523.0,
+      "title": "coronasafe/care_fe#2885",
+      "link": "https://github.com/coronasafe/care_fe/pull/2885#pullrequestreview-1021788385",
+      "text": "Fixed malfunction of patient notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424403.0,
+      "title": "coronasafe/care_fe#2895",
+      "link": "https://github.com/coronasafe/care_fe/pull/2895#pullrequestreview-1021784757",
+      "text": "Fixed uneven badge sizes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424214.0,
+      "title": "coronasafe/care_fe#2896",
+      "link": "https://github.com/coronasafe/care_fe/pull/2896#pullrequestreview-1021778570",
+      "text": "fixed external results filter badges"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424118.0,
+      "title": "coronasafe/care_fe#2900",
+      "link": "https://github.com/coronasafe/care_fe/pull/2900#pullrequestreview-1021775262",
+      "text": "Removed 'State Test ID' and 'Operation' fields from consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423694.0,
+      "title": "coronasafe/care_fe#2901",
+      "link": "https://github.com/coronasafe/care_fe/pull/2901#pullrequestreview-1021761838",
+      "text": "Fixed misalignment of badges in facilities page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423628.0,
+      "title": "coronasafe/care_fe#2902",
+      "link": "https://github.com/coronasafe/care_fe/pull/2902#pullrequestreview-1021759921",
+      "text": "UI update : no data available in nursing section"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423336.0,
+      "title": "coronasafe/care_fe#2913",
+      "link": "https://github.com/coronasafe/care_fe/pull/2913#pullrequestreview-1021751694",
+      "text": "Fixed: Consultation page Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423277.0,
+      "title": "coronasafe/care_fe#2905",
+      "link": "https://github.com/coronasafe/care_fe/pull/2905#pullrequestreview-1021750004",
+      "text": "Fix alignment issue in Consulation Details page."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#60",
+      "time": 1656415382.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/60#issuecomment-1168593983",
+      "text": "The UI:\r\n![image](https://user-images.githubusercontent.com/29787772/176166661-1105d514-e0d1-4fa3-998d-969e18fea76b.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656425075.0,
+      "title": "coronasafe/care_fe#2867",
+      "link": "https://github.com/coronasafe/care_fe/pull/2867#pullrequestreview-1021804820",
+      "text": "Made the Sample management page responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656425018.0,
+      "title": "coronasafe/care_fe#2868",
+      "link": "https://github.com/coronasafe/care_fe/pull/2868#pullrequestreview-1021803206",
+      "text": "Made the External Results Page Responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424810.0,
+      "title": "coronasafe/care_fe#2877",
+      "link": "https://github.com/coronasafe/care_fe/pull/2877#pullrequestreview-1021796916",
+      "text": "Fixed investigation report styling issue"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424732.0,
+      "title": "coronasafe/care_fe#2884",
+      "link": "https://github.com/coronasafe/care_fe/pull/2884#pullrequestreview-1021794581",
+      "text": "Changed error message in sample management system"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424523.0,
+      "title": "coronasafe/care_fe#2885",
+      "link": "https://github.com/coronasafe/care_fe/pull/2885#pullrequestreview-1021788385",
+      "text": "Fixed malfunction of patient notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424403.0,
+      "title": "coronasafe/care_fe#2895",
+      "link": "https://github.com/coronasafe/care_fe/pull/2895#pullrequestreview-1021784757",
+      "text": "Fixed uneven badge sizes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424214.0,
+      "title": "coronasafe/care_fe#2896",
+      "link": "https://github.com/coronasafe/care_fe/pull/2896#pullrequestreview-1021778570",
+      "text": "fixed external results filter badges"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656424118.0,
+      "title": "coronasafe/care_fe#2900",
+      "link": "https://github.com/coronasafe/care_fe/pull/2900#pullrequestreview-1021775262",
+      "text": "Removed 'State Test ID' and 'Operation' fields from consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423694.0,
+      "title": "coronasafe/care_fe#2901",
+      "link": "https://github.com/coronasafe/care_fe/pull/2901#pullrequestreview-1021761838",
+      "text": "Fixed misalignment of badges in facilities page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423628.0,
+      "title": "coronasafe/care_fe#2902",
+      "link": "https://github.com/coronasafe/care_fe/pull/2902#pullrequestreview-1021759921",
+      "text": "UI update : no data available in nursing section"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423336.0,
+      "title": "coronasafe/care_fe#2913",
+      "link": "https://github.com/coronasafe/care_fe/pull/2913#pullrequestreview-1021751694",
+      "text": "Fixed: Consultation page Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656423277.0,
+      "title": "coronasafe/care_fe#2905",
+      "link": "https://github.com/coronasafe/care_fe/pull/2905#pullrequestreview-1021750004",
+      "text": "Fix alignment issue in Consulation Details page."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#60",
+      "time": 1656415382.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/60#issuecomment-1168593983",
+      "text": "The UI:\r\n![image](https://user-images.githubusercontent.com/29787772/176166661-1105d514-e0d1-4fa3-998d-969e18fea76b.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2921",
+      "time": 1656322411.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2921",
+      "text": "Changed leaflet location picker to gmap"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2921",
+      "time": 1656322411.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2921",
+      "text": "Changed leaflet location picker to gmap"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2815",
+      "time": 1656141627.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2815",
+      "text": "Medical Detail Malfunction : Patient Detail Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656141559.0,
+      "title": "coronasafe/care_fe#2816",
+      "link": "https://github.com/coronasafe/care_fe/pull/2816#pullrequestreview-1019276769",
+      "text": "Fixed patient health card"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2875",
+      "time": 1656141543.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2875",
+      "text": "Fixed useEffect conflict and logical error in form validation in DailyRounds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2875",
+      "time": 1656139668.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2875",
+      "text": "Fixed useEffect conflict and logical error in form validation in DailyRounds"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2815",
+      "time": 1656141627.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2815",
+      "text": "Medical Detail Malfunction : Patient Detail Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1656141559.0,
+      "title": "coronasafe/care_fe#2816",
+      "link": "https://github.com/coronasafe/care_fe/pull/2816#pullrequestreview-1019276769",
+      "text": "Fixed patient health card"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2875",
+      "time": 1656141543.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2875",
+      "text": "Fixed useEffect conflict and logical error in form validation in DailyRounds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2875",
+      "time": 1656139668.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2875",
+      "text": "Fixed useEffect conflict and logical error in form validation in DailyRounds"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#870",
+      "time": 1655996093.0,
+      "link": "https://github.com/coronasafe/care/pull/870",
+      "text": "Fixed push notifications issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2773",
+      "time": 1655984989.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2773",
+      "text": "Prevent Daily Round Form from being submitted by giving validation of Respiratory Rate"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655984978.0,
+      "title": "coronasafe/care_fe#2786",
+      "link": "https://github.com/coronasafe/care_fe/pull/2786#pullrequestreview-1016863610",
+      "text": "added respiratory validation in the Daily Rounds form and prevented it from submitting"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2707",
+      "time": 1655984944.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2707",
+      "text": "Update Doctor connect UI to show staff and doctors separately"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655984924.0,
+      "title": "coronasafe/care_fe#2709",
+      "link": "https://github.com/coronasafe/care_fe/pull/2709#pullrequestreview-1016862549",
+      "text": "Added distinction between doctor and staff list and changed UI"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2682",
+      "time": 1655984732.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2682",
+      "text": "Align bed assignment modal and improve general UI"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655984712.0,
+      "title": "coronasafe/care_fe#2699",
+      "link": "https://github.com/coronasafe/care_fe/pull/2699#pullrequestreview-1016858407",
+      "text": "Improve bed UI"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2099",
+      "time": 1655984092.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2099",
+      "text": "Validation for weight and height"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655984080.0,
+      "title": "coronasafe/care_fe#2778",
+      "link": "https://github.com/coronasafe/care_fe/pull/2778#pullrequestreview-1016846672",
+      "text": "validated weight and height to only numbers in consultation Form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983976.0,
+      "title": "coronasafe/care_fe#2768",
+      "link": "https://github.com/coronasafe/care_fe/pull/2768#pullrequestreview-1016843153",
+      "text": "Made the required fields mandatory in respective forms"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983976.0,
+      "title": "coronasafe/care_fe#2768",
+      "link": "https://github.com/coronasafe/care_fe/pull/2768#pullrequestreview-1016843153",
+      "text": "Made the required fields mandatory in respective forms"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2764",
+      "time": 1655983530.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2764",
+      "text": "IO- only positive quantities to be mentioned"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983516.0,
+      "title": "coronasafe/care_fe#2781",
+      "link": "https://github.com/coronasafe/care_fe/pull/2781#pullrequestreview-1016836170",
+      "text": "IO Balance: Allow only positive quantities to be mentioned"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2763",
+      "time": 1655983461.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2763",
+      "text": "Preview Icon"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983444.0,
+      "title": "coronasafe/care_fe#2780",
+      "link": "https://github.com/coronasafe/care_fe/pull/2780#pullrequestreview-1016834796",
+      "text": "Fix incorrect icon for preview file and improve alignment"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2761",
+      "time": 1655983374.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2761",
+      "text": "Remove redundant fields from Log update"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983366.0,
+      "title": "coronasafe/care_fe#2772",
+      "link": "https://github.com/coronasafe/care_fe/pull/2772#pullrequestreview-1016833277",
+      "text": "Removed current health as a field from Daily Rounds Form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2679",
+      "time": 1655983285.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2679",
+      "text": "Esc button to close the update sample test status popup"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983275.0,
+      "title": "coronasafe/care_fe#2774",
+      "link": "https://github.com/coronasafe/care_fe/pull/2774#pullrequestreview-1016831585",
+      "text": "Esc key closes the popup of update sample test status Issue#2679"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2756",
+      "time": 1655983232.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2756",
+      "text": "Navbar in consultation details page is transparent"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983204.0,
+      "title": "coronasafe/care_fe#2775",
+      "link": "https://github.com/coronasafe/care_fe/pull/2775#pullrequestreview-1016830295",
+      "text": "Fixed buttons on top of patient card"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2711",
+      "time": 1655983139.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2711",
+      "text": "Revamping notice board page UI"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655982224.0,
+      "title": "coronasafe/care_fe#2777",
+      "link": "https://github.com/coronasafe/care_fe/pull/2777#pullrequestreview-1016811756",
+      "text": "Improving the UI for notice board"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2699",
+      "time": 1655976829.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2699#issuecomment-1164178367",
+      "text": "@skks1212 please do work on the merge conflicts"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2750",
+      "time": 1655976736.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2750",
+      "text": "Patients with no consultation filed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655976720.0,
+      "title": "coronasafe/care_fe#2757",
+      "link": "https://github.com/coronasafe/care_fe/pull/2757#pullrequestreview-1016690438",
+      "text": "Fixed PatientURL"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2751",
+      "time": 1655976610.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2751",
+      "text": "Add Location to list of beds in Update bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655976590.0,
+      "title": "coronasafe/care_fe#2766",
+      "link": "https://github.com/coronasafe/care_fe/pull/2766#pullrequestreview-1016687504",
+      "text": "Added Location name"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#870",
+      "time": 1655996093.0,
+      "link": "https://github.com/coronasafe/care/pull/870",
+      "text": "Fixed push notifications issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2773",
+      "time": 1655984989.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2773",
+      "text": "Prevent Daily Round Form from being submitted by giving validation of Respiratory Rate"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655984978.0,
+      "title": "coronasafe/care_fe#2786",
+      "link": "https://github.com/coronasafe/care_fe/pull/2786#pullrequestreview-1016863610",
+      "text": "added respiratory validation in the Daily Rounds form and prevented it from submitting"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2707",
+      "time": 1655984944.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2707",
+      "text": "Update Doctor connect UI to show staff and doctors separately"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655984924.0,
+      "title": "coronasafe/care_fe#2709",
+      "link": "https://github.com/coronasafe/care_fe/pull/2709#pullrequestreview-1016862549",
+      "text": "Added distinction between doctor and staff list and changed UI"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2682",
+      "time": 1655984732.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2682",
+      "text": "Align bed assignment modal and improve general UI"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655984712.0,
+      "title": "coronasafe/care_fe#2699",
+      "link": "https://github.com/coronasafe/care_fe/pull/2699#pullrequestreview-1016858407",
+      "text": "Improve bed UI"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2099",
+      "time": 1655984092.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2099",
+      "text": "Validation for weight and height"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655984080.0,
+      "title": "coronasafe/care_fe#2778",
+      "link": "https://github.com/coronasafe/care_fe/pull/2778#pullrequestreview-1016846672",
+      "text": "validated weight and height to only numbers in consultation Form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983976.0,
+      "title": "coronasafe/care_fe#2768",
+      "link": "https://github.com/coronasafe/care_fe/pull/2768#pullrequestreview-1016843153",
+      "text": "Made the required fields mandatory in respective forms"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983976.0,
+      "title": "coronasafe/care_fe#2768",
+      "link": "https://github.com/coronasafe/care_fe/pull/2768#pullrequestreview-1016843153",
+      "text": "Made the required fields mandatory in respective forms"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2764",
+      "time": 1655983530.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2764",
+      "text": "IO- only positive quantities to be mentioned"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983516.0,
+      "title": "coronasafe/care_fe#2781",
+      "link": "https://github.com/coronasafe/care_fe/pull/2781#pullrequestreview-1016836170",
+      "text": "IO Balance: Allow only positive quantities to be mentioned"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2763",
+      "time": 1655983461.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2763",
+      "text": "Preview Icon"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983444.0,
+      "title": "coronasafe/care_fe#2780",
+      "link": "https://github.com/coronasafe/care_fe/pull/2780#pullrequestreview-1016834796",
+      "text": "Fix incorrect icon for preview file and improve alignment"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2761",
+      "time": 1655983374.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2761",
+      "text": "Remove redundant fields from Log update"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983366.0,
+      "title": "coronasafe/care_fe#2772",
+      "link": "https://github.com/coronasafe/care_fe/pull/2772#pullrequestreview-1016833277",
+      "text": "Removed current health as a field from Daily Rounds Form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2679",
+      "time": 1655983285.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2679",
+      "text": "Esc button to close the update sample test status popup"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983275.0,
+      "title": "coronasafe/care_fe#2774",
+      "link": "https://github.com/coronasafe/care_fe/pull/2774#pullrequestreview-1016831585",
+      "text": "Esc key closes the popup of update sample test status Issue#2679"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2756",
+      "time": 1655983232.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2756",
+      "text": "Navbar in consultation details page is transparent"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655983204.0,
+      "title": "coronasafe/care_fe#2775",
+      "link": "https://github.com/coronasafe/care_fe/pull/2775#pullrequestreview-1016830295",
+      "text": "Fixed buttons on top of patient card"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2711",
+      "time": 1655983139.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2711",
+      "text": "Revamping notice board page UI"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655982224.0,
+      "title": "coronasafe/care_fe#2777",
+      "link": "https://github.com/coronasafe/care_fe/pull/2777#pullrequestreview-1016811756",
+      "text": "Improving the UI for notice board"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2699",
+      "time": 1655976829.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2699#issuecomment-1164178367",
+      "text": "@skks1212 please do work on the merge conflicts"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2750",
+      "time": 1655976736.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2750",
+      "text": "Patients with no consultation filed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655976720.0,
+      "title": "coronasafe/care_fe#2757",
+      "link": "https://github.com/coronasafe/care_fe/pull/2757#pullrequestreview-1016690438",
+      "text": "Fixed PatientURL"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2751",
+      "time": 1655976610.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2751",
+      "text": "Add Location to list of beds in Update bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655976590.0,
+      "title": "coronasafe/care_fe#2766",
+      "link": "https://github.com/coronasafe/care_fe/pull/2766#pullrequestreview-1016687504",
+      "text": "Added Location name"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2742",
+      "time": 1655976523.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2742",
+      "text": "History of present illness"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655976488.0,
+      "title": "coronasafe/care_fe#2743",
+      "link": "https://github.com/coronasafe/care_fe/pull/2743#pullrequestreview-1016685123",
+      "text": "Added 'History of present illness' card in consultation details"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655976366.0,
+      "title": "coronasafe/care_fe#2713",
+      "link": "https://github.com/coronasafe/care_fe/pull/2713#pullrequestreview-1016682374",
+      "text": "Minor UI fix on Patient Details page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2700",
+      "time": 1655976324.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2700",
+      "text": "Asset View: Next page arrow"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655976301.0,
+      "title": "coronasafe/care_fe#2702",
+      "link": "https://github.com/coronasafe/care_fe/pull/2702#pullrequestreview-1016680815",
+      "text": "Fix pagination"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2692",
+      "time": 1655976089.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2692",
+      "text": "The Date of Result for COVID Test should be after Date of Sample given for COVID Test while adding a Patient"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655976076.0,
+      "title": "coronasafe/care_fe#2693",
+      "link": "https://github.com/coronasafe/care_fe/pull/2693#pullrequestreview-1016675509",
+      "text": "Fixed Now Date of Result cannot be selected before Date of Sample in patient registration Form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2689",
+      "time": 1655975336.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2689#issuecomment-1164153665",
+      "text": "@patelaryan7751 just a suggestion, usually in care we have all of the action buttons to the right especially in forms, so I think it would be better if the button is right aligned instead of the center, \ud83e\udd14  what do you think? "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655975060.0,
+      "title": "coronasafe/care_fe#2689",
+      "link": "https://github.com/coronasafe/care_fe/pull/2689#pullrequestreview-1016651543",
+      "text": "Added an alert when no CSV file is uploaded in Upload External Results Page."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2715",
+      "time": 1655974650.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2715#issuecomment-1164141743",
+      "text": "@Ashesh3 sorry about that, this issue was reported and wanted to be fixed urgent, so when I searched the issues, there was no issue regarding this error, so I kinda went a head and made a pr without searching if there was any pr related to this. \ud83d\ude05\r\n\r\nIt's my bad, just to be more careful for here on, I suggest creating an issue and assign it to yourself and move a head with pr.\r\n\r\nsorry again Ashesh. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2741",
+      "time": 1655973355.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2741",
+      "text": "Unable to enter longitude above 91"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655973337.0,
+      "title": "coronasafe/care_fe#2690",
+      "link": "https://github.com/coronasafe/care_fe/pull/2690#pullrequestreview-1016605378",
+      "text": "fix incorrect coorindates validation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655972850.0,
+      "title": "coronasafe/care_fe#2690",
+      "link": "https://github.com/coronasafe/care_fe/pull/2690#pullrequestreview-1016594032",
+      "text": "fix incorrect coorindates validation"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2686",
+      "time": 1655972738.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2686",
+      "text": "Malfunction : Pressure Sore history"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655972728.0,
+      "title": "coronasafe/care_fe#2688",
+      "link": "https://github.com/coronasafe/care_fe/pull/2688#pullrequestreview-1016591121",
+      "text": "Fixed Malfunction : Pressure Sore history"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2403",
+      "time": 1655972136.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2403",
+      "text": "Display appropriate message when no data is found"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2712",
+      "time": 1655972009.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2712",
+      "text": "Failed patient transfer shows an additional success message"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655971995.0,
+      "title": "coronasafe/care_fe#2714",
+      "link": "https://github.com/coronasafe/care_fe/pull/2714#pullrequestreview-1016573934",
+      "text": "Fix transfer error message display"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2715",
+      "time": 1655971900.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2715#issuecomment-1164095076",
+      "text": "@Ashesh3 This issue has already been fixed in https://github.com/coronasafe/care_fe/pull/2729."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2703",
+      "time": 1655971571.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2703",
+      "text": "No indication of user created"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655971526.0,
+      "title": "coronasafe/care_fe#2717",
+      "link": "https://github.com/coronasafe/care_fe/pull/2717#pullrequestreview-1016563452",
+      "text": "Fixed notification on user create"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2509",
+      "time": 1655971354.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2509",
+      "text": "Improve facility page for read-only users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655971340.0,
+      "title": "coronasafe/care_fe#2718",
+      "link": "https://github.com/coronasafe/care_fe/pull/2718#pullrequestreview-1016559391",
+      "text": "Facility Page made full role responsive for read-only users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2719",
+      "time": 1655971208.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2719",
+      "text": "When pressing logout 404 is displayed for a small time frame"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#870",
+      "time": 1655896412.0,
+      "link": "https://github.com/coronasafe/care/pull/870",
+      "text": "Fixed push notifications issue"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2794",
+      "time": 1655817043.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2794",
+      "text": "Added notification count indicator in NotificationsList"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#865",
+      "time": 1655798407.0,
+      "link": "https://github.com/coronasafe/care/pull/865",
+      "text": "Changed default VAPID keypair"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#865",
+      "time": 1655797181.0,
+      "link": "https://github.com/coronasafe/care/pull/865",
+      "text": "Changed default VAPID keypair"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655795823.0,
+      "title": "coronasafe/care_fe#2754",
+      "link": "https://github.com/coronasafe/care_fe/pull/2754#pullrequestreview-1013074279",
+      "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2794",
+      "time": 1655817043.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2794",
+      "text": "Added notification count indicator in NotificationsList"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#865",
+      "time": 1655798407.0,
+      "link": "https://github.com/coronasafe/care/pull/865",
+      "text": "Changed default VAPID keypair"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#865",
+      "time": 1655797181.0,
+      "link": "https://github.com/coronasafe/care/pull/865",
+      "text": "Changed default VAPID keypair"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655795823.0,
+      "title": "coronasafe/care_fe#2754",
+      "link": "https://github.com/coronasafe/care_fe/pull/2754#pullrequestreview-1013074279",
+      "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2788",
+      "time": 1655738176.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2788",
+      "text": "Push notifications"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#864",
+      "time": 1655727716.0,
+      "link": "https://github.com/coronasafe/care/pull/864",
+      "text": "Added an endpoint to search diseases from ICD11"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2788",
+      "time": 1655738176.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2788",
+      "text": "Push notifications"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#864",
+      "time": 1655727716.0,
+      "link": "https://github.com/coronasafe/care/pull/864",
+      "text": "Added an endpoint to search diseases from ICD11"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#861",
+      "time": 1655639951.0,
+      "link": "https://github.com/coronasafe/care/pull/861",
+      "text": "Fixed docker compose command in CONTRIBUTING"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#861",
+      "time": 1655611571.0,
+      "link": "https://github.com/coronasafe/care/pull/861",
+      "text": "Fixed docker compose command in CONTRIBUTING"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#861",
+      "time": 1655639951.0,
+      "link": "https://github.com/coronasafe/care/pull/861",
+      "text": "Fixed docker compose command in CONTRIBUTING"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#861",
+      "time": 1655611571.0,
+      "link": "https://github.com/coronasafe/care/pull/861",
+      "text": "Fixed docker compose command in CONTRIBUTING"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#2690",
@@ -1236,48 +4820,28 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2730",
-      "title": "feat (NotificationsList): added 'mark as read' functionality"
+      "link": "https://github.com/coronasafe/care/pull/947",
+      "title": "feat (icd): added scraper for icd"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2727",
-      "title": "Added 'x' icon to close the modal in TeliCUI Switch Bed"
+      "link": "https://github.com/coronasafe/care_fe/pull/3134",
+      "title": "fix (PatientHome): changed no medical data condition"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/2921",
+      "title": "Changed leaflet location picker to gmap"
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/60",
-      "title": "Adding a toggle button to show core members"
+      "title": "Added Search, Sort and Toggle Core Members Functionality"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2681",
       "title": "Added drag and drop in BoradView for Shifting and Resources"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2628",
-      "title": "fix web push notifications"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2554",
-      "title": "Moved covid vaccination related fields to medical history section in PatientRegister"
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/2538",
       "title": "swapped classnames with clsx"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2412",
-      "title": "Added floating notification icon in AppRouter "
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2095",
-      "title": "Fix Warnings"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2045",
-      "title": "fixed spacing issues in Consultation Details"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2022",
-      "title": "Added PatientHomeNonCovid"
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",

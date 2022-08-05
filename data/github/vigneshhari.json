@@ -1,6 +1,496 @@
 {
-  "last_updated": 1657219808.0,
+  "last_updated": 1659554242.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1659554242.0,
+      "title": "coronasafe/care#964",
+      "link": "https://github.com/coronasafe/care/pull/964#pullrequestreview-1060876131",
+      "text": "skip facility authorization check for asset user in daily round serializers"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659536137.0,
+      "title": "coronasafe/care#962",
+      "link": "https://github.com/coronasafe/care/pull/962#pullrequestreview-1060388738",
+      "text": "add automated round type for DailyRound"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659417987.0,
+      "title": "coronasafe/care#960",
+      "link": "https://github.com/coronasafe/care/pull/960#pullrequestreview-1058136581",
+      "text": "Modify Patient Access Control"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#907",
+      "time": 1659195903.0,
+      "link": "https://github.com/coronasafe/care/issues/907#issuecomment-1200234291",
+      "text": "@kunatastic Close this issue if its resolved. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#827",
+      "time": 1659195880.0,
+      "link": "https://github.com/coronasafe/care/issues/827",
+      "text": "Update to Postgres"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#827",
+      "time": 1659195879.0,
+      "link": "https://github.com/coronasafe/care/issues/827#issuecomment-1200233792",
+      "text": "Care no longer has PostGIS references. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#911",
+      "time": 1659195832.0,
+      "link": "https://github.com/coronasafe/care/issues/911#issuecomment-1200232864",
+      "text": "@mathew-alex close if the issue has been resolved. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#937",
+      "time": 1659195782.0,
+      "link": "https://github.com/coronasafe/care/issues/937#issuecomment-1200231802",
+      "text": "@gigincg can we close this ? "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#951",
+      "time": 1659195740.0,
+      "link": "https://github.com/coronasafe/care/issues/951",
+      "text": "ModuleNotFoundError: No module named 'utils'"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659195685.0,
+      "title": "coronasafe/care#955",
+      "link": "https://github.com/coronasafe/care/pull/955#pullrequestreview-1056412861",
+      "text": "update facility write access for users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#799",
+      "time": 1659190662.0,
+      "link": "https://github.com/coronasafe/care/issues/799",
+      "text": "Backend: Create Schema for the meta field of an asset to be the details required for a camera or the details for the HL7 Adapter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659190632.0,
+      "title": "coronasafe/care#935",
+      "link": "https://github.com/coronasafe/care/pull/935#pullrequestreview-1056322979",
+      "text": "add schema for validating meta field of assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659186562.0,
+      "title": "coronasafe/care#954",
+      "link": "https://github.com/coronasafe/care/pull/954#pullrequestreview-1056301311",
+      "text": "add home_facility field to user serializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#953",
+      "time": 1659110520.0,
+      "link": "https://github.com/coronasafe/care/pull/953#issuecomment-1199618527",
+      "text": "Merge when needed."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659110480.0,
+      "title": "coronasafe/care#953",
+      "link": "https://github.com/coronasafe/care/pull/953#pullrequestreview-1055777158",
+      "text": "add ONVIF action to get streaming token"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#938",
+      "time": 1659110026.0,
+      "link": "https://github.com/coronasafe/care/issues/938",
+      "text": "Permission Revamp: Write Access only for home_facility for users below DistrictAdmin. Read Access for all linked facilities. Exception for Doctors Notes, Users of type Doctor can make Doctor Notes on Patients in Linked Facilities"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1659110015.0,
+      "title": "coronasafe/care#946",
+      "link": "https://github.com/coronasafe/care/pull/946#pullrequestreview-1055768462",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#946",
+      "time": 1659031891.0,
+      "link": "https://github.com/coronasafe/care/pull/946#issuecomment-1198477023",
+      "text": "All commits will end up being squashed to one, so no worries! \r\nDon't let the dark side tempt you! Use the force wisely!!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#950",
+      "time": 1659031483.0,
+      "link": "https://github.com/coronasafe/care/pull/950#issuecomment-1198467073",
+      "text": "Why are there no migrations? "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658920133.0,
+      "title": "coronasafe/care#952",
+      "link": "https://github.com/coronasafe/care/pull/952#pullrequestreview-1052318623",
+      "text": "Bugfix for Facility Cover Image API"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#939",
+      "time": 1658891432.0,
+      "link": "https://github.com/coronasafe/care/pull/939#issuecomment-1196215727",
+      "text": "@cp-Coder you can use the end_date is null to check if a bed is in use."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658846377.0,
+      "title": "coronasafe/care#935",
+      "link": "https://github.com/coronasafe/care/pull/935#pullrequestreview-1051108462",
+      "text": "add schema for validating meta field of assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658845217.0,
+      "title": "coronasafe/care#935",
+      "link": "https://github.com/coronasafe/care/pull/935#pullrequestreview-1051072562",
+      "text": "add schema for validating meta field of assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658845217.0,
+      "title": "coronasafe/care#935",
+      "link": "https://github.com/coronasafe/care/pull/935#pullrequestreview-1051072562",
+      "text": "add schema for validating meta field of assets"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#935",
+      "time": 1658844961.0,
+      "link": "https://github.com/coronasafe/care/pull/935#issuecomment-1195543064",
+      "text": "ignore the existing values since we cant really do anything in those cases."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#939",
+      "time": 1658844818.0,
+      "link": "https://github.com/coronasafe/care/pull/939#issuecomment-1195540197",
+      "text": "do we need an `in_use` attribute ? `end_date == None` serves the same purpose right? "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2975",
+      "time": 1658844643.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2975",
+      "text": "Inventory Function : Malfunction"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#925",
+      "time": 1658844642.0,
+      "link": "https://github.com/coronasafe/care/issues/925",
+      "text": "Inventory Function : Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658844635.0,
+      "title": "coronasafe/care#932",
+      "link": "https://github.com/coronasafe/care/pull/932#pullrequestreview-1051056426",
+      "text": "Updated script to add units for inventory"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#946",
+      "time": 1658844507.0,
+      "link": "https://github.com/coronasafe/care/pull/946#issuecomment-1195534034",
+      "text": "Why the force pushes ? "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658844364.0,
+      "title": "coronasafe/care#946",
+      "link": "https://github.com/coronasafe/care/pull/946#pullrequestreview-1051048705",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#948",
+      "time": 1658844294.0,
+      "link": "https://github.com/coronasafe/care/issues/948",
+      "text": "Add LAMA discharge reasons"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658844286.0,
+      "title": "coronasafe/care#949",
+      "link": "https://github.com/coronasafe/care/pull/949#pullrequestreview-1051046459",
+      "text": "Add LAMA option to discharge reasons"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658844238.0,
+      "title": "coronasafe/care#949",
+      "link": "https://github.com/coronasafe/care/pull/949#pullrequestreview-1051045093",
+      "text": "Add LAMA option to discharge reasons"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658835924.0,
+      "title": "coronasafe/care#946",
+      "link": "https://github.com/coronasafe/care/pull/946#pullrequestreview-1050835259",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658835925.0,
+      "title": "coronasafe/care#946",
+      "link": "https://github.com/coronasafe/care/pull/946#pullrequestreview-1050835259",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658203043.0,
+      "title": "coronasafe/care#932",
+      "link": "https://github.com/coronasafe/care/pull/932#pullrequestreview-1042787611",
+      "text": "Updated script to add units for inventory"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658203007.0,
+      "title": "coronasafe/care#932",
+      "link": "https://github.com/coronasafe/care/pull/932#pullrequestreview-1042787314",
+      "text": "Updated script to add units for inventory"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#930",
+      "time": 1658158174.0,
+      "link": "https://github.com/coronasafe/care/issues/930",
+      "text": "Facility Creation: Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658158168.0,
+      "title": "coronasafe/care#931",
+      "link": "https://github.com/coronasafe/care/pull/931#pullrequestreview-1042051532",
+      "text": "Fixed malfunction in facility creation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658157550.0,
+      "title": "coronasafe/care#932",
+      "link": "https://github.com/coronasafe/care/pull/932#pullrequestreview-1042031238",
+      "text": "Updated script to add units for inventory"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658157550.0,
+      "title": "coronasafe/care#932",
+      "link": "https://github.com/coronasafe/care/pull/932#pullrequestreview-1042031238",
+      "text": "Updated script to add units for inventory"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658157197.0,
+      "title": "coronasafe/care#923",
+      "link": "https://github.com/coronasafe/care/pull/923#pullrequestreview-1042026809",
+      "text": "Improvements for middleware authentication"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658042707.0,
+      "title": "coronasafe/care#923",
+      "link": "https://github.com/coronasafe/care/pull/923#pullrequestreview-1041080757",
+      "text": "Improvements for middleware authentication"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658042621.0,
+      "title": "coronasafe/care#931",
+      "link": "https://github.com/coronasafe/care/pull/931#pullrequestreview-1041080571",
+      "text": "Fixed malfunction in facility creation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658042621.0,
+      "title": "coronasafe/care#931",
+      "link": "https://github.com/coronasafe/care/pull/931#pullrequestreview-1041080571",
+      "text": "Fixed malfunction in facility creation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658041567.0,
+      "title": "coronasafe/care#915",
+      "link": "https://github.com/coronasafe/care/pull/915#pullrequestreview-1041063103",
+      "text": "Added custom filter to filter out patient based on single date"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658041567.0,
+      "title": "coronasafe/care#915",
+      "link": "https://github.com/coronasafe/care/pull/915#pullrequestreview-1041063103",
+      "text": "Added custom filter to filter out patient based on single date"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658025063.0,
+      "title": "coronasafe/care#931",
+      "link": "https://github.com/coronasafe/care/pull/931#pullrequestreview-1041062859",
+      "text": "Fixed malfunction in facility creation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658025063.0,
+      "title": "coronasafe/care#931",
+      "link": "https://github.com/coronasafe/care/pull/931#pullrequestreview-1041062859",
+      "text": "Fixed malfunction in facility creation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657995929.0,
+      "title": "coronasafe/care#923",
+      "link": "https://github.com/coronasafe/care/pull/923#pullrequestreview-1041017141",
+      "text": "fix middleware authentication"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#923",
+      "time": 1657995630.0,
+      "link": "https://github.com/coronasafe/care/pull/923#issuecomment-1186258293",
+      "text": "Do you think that the commits are somehow messed up? i can see changes that were already made in the previous PR"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#910",
+      "time": 1657909069.0,
+      "link": "https://github.com/coronasafe/care/issues/910",
+      "text": "Add home_facility for a User"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657909057.0,
+      "title": "coronasafe/care#922",
+      "link": "https://github.com/coronasafe/care/pull/922#pullrequestreview-1040662528",
+      "text": "added home_facility field for user"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657381296.0,
+      "title": "coronasafe/care#882",
+      "link": "https://github.com/coronasafe/care/pull/882#pullrequestreview-1033547390",
+      "text": "Removed current health field"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#876",
+      "time": 1657380656.0,
+      "link": "https://github.com/coronasafe/care/pull/876#issuecomment-1179562393",
+      "text": "Resolve all conflicts ASAP @cp-Coder "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3072",
+      "time": 1657380554.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3072",
+      "text": "Shifting Bed : Not working"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657380545.0,
+      "title": "coronasafe/care#921",
+      "link": "https://github.com/coronasafe/care/pull/921#pullrequestreview-1033546202",
+      "text": "Fix validation while Shifting Bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657380287.0,
+      "title": "coronasafe/care#902",
+      "link": "https://github.com/coronasafe/care/pull/902#pullrequestreview-1033545842",
+      "text": "Added discharge_reason and discharge_notes in Patient Consultation"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#914",
+      "time": 1657290059.0,
+      "link": "https://github.com/coronasafe/care/issues/914",
+      "text": "Update documentation instead of readme"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657290050.0,
+      "title": "coronasafe/care#917",
+      "link": "https://github.com/coronasafe/care/pull/917#pullrequestreview-1032985168",
+      "text": "Add Glossary to Docs"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2738",
+      "time": 1657282030.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2738#issuecomment-1178913472",
+      "text": "@Marmik2003 @skks1212 @Krishna-Sivakumar @sainAk Someone take care of this. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3048",
+      "time": 1657280135.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3048",
+      "text": "Bed Management Malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657280092.0,
+      "title": "coronasafe/care#916",
+      "link": "https://github.com/coronasafe/care/pull/916#pullrequestreview-1032789792",
+      "text": "Fixed bed update error"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657280082.0,
+      "title": "coronasafe/care#916",
+      "link": "https://github.com/coronasafe/care/pull/916#pullrequestreview-1032789654",
+      "text": "Fixed bed update error"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#917",
+      "time": 1657280013.0,
+      "link": "https://github.com/coronasafe/care/pull/917#issuecomment-1178882526",
+      "text": "We can move the excel draw to resources somewhere and make it available as a downloadable"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#918",
+      "time": 1657279858.0,
+      "link": "https://github.com/coronasafe/care/issues/918",
+      "text": "Change postgis container to postgres in docker-compose.local.yml"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1657279851.0,
+      "title": "coronasafe/care#919",
+      "link": "https://github.com/coronasafe/care/pull/919#pullrequestreview-1032786191",
+      "text": "fixed local run"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#914",
+      "time": 1657265806.0,
+      "link": "https://github.com/coronasafe/care/issues/914",
+      "text": "Add these to docs"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#912",
+      "time": 1657265672.0,
+      "link": "https://github.com/coronasafe/care/issues/912",
+      "text": "Staging Down."
+    },
     {
       "type": "pr_reviewed",
       "time": 1657219808.0,

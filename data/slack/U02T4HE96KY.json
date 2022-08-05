@@ -1309,5 +1309,203 @@
                 }
             ]
         }
+    ],
+    "2022-07-15 00:00:00": [
+        {
+            "client_msg_id": "a006d99d-dc42-4c3f-95ac-c5fe4b2b0cbf",
+            "type": "message",
+            "text": "laptop is broken, won't be able to do anything for some time",
+            "user": "U02T4HE96KY",
+            "ts": "1657869706.167899",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "iOEw",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "laptop is broken, won't be able to do anything for some time"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-22 00:00:00": [
+        {
+            "client_msg_id": "5464a5c6-4c72-448d-be8c-f665b6079be7",
+            "type": "message",
+            "text": "working on <https://github.com/coronasafe/care_fe/issues/3195|#3195>",
+            "user": "U02T4HE96KY",
+            "ts": "1658498018.602599",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/67050716/180432850-8f783f01-23be-4cff-99ee-96b28d276007.png",
+                    "image_width": 1330,
+                    "image_height": 304,
+                    "image_bytes": 26727,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1658490619,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/3195",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1330x304px image",
+                    "text": "In the consultation form (<https://care.coronasafe.in/facility/015ad911-39b7-4104-b304-bf8178c33830/patient/aefb147a-eb09-4dd0-8390-e2cd5a05f326/consultation/c5e82e5f-2bab-4cab-9239-307770792bce/update|https://care.coronasafe.in/facility/015ad911-39b7-4104-b304-bf8178c33830/patient/aefb147a-eb09-4dd0-8390-e2cd5a05f326/consultation/c5e82e5f-2bab-4cab-9239-307770792bce/update>), there needs to be a section for Procedures.\n\nSuggestive design:  \n<https://user-images.githubusercontent.com/67050716/180432850-8f783f01-23be-4cff-99ee-96b28d276007.png|Screenshot 2022-07-22 at 5 15 49 PM>\n\nContent:\n\n1. Repetitive: Toggle button for Yes/No\n2. If repetitive, field for \"Frequency\" with dropdown [ 15 min, 30 min, 1 hr, 6 hrs, 12 hrs, 24 hrs ]  \n    If not repetitive \"Time and Date\" to capture the time and date of the procedure\n3. Procedure: Text field to accommodate 100 characters to describe the procedure\n4. Note: Text field to accommodate 100 characters to add a note\n\n*NOTE:* Earlier we had a simple text field in the consultation form for \"Operations\". It was later on taken off by <https://github.com/coronasafe/care_fe/pull/2900|#2900>. The same operation field may be used here for the Procedure\n\nThis section is to come after the Prescription/PRN Prescription Section",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/3195|#3195 Adding Procedure to Consultation>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ritesh-Aggarwal|@Ritesh-Aggarwal>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "nB0y",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/3195",
+                                    "text": "#3195",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-26 00:00:00": [
+        {
+            "client_msg_id": "36147d1d-1611-4647-9a44-8e20c7b0683d",
+            "type": "message",
+            "text": "made 2 prs (<https://github.com/coronasafe/care/pull/949|#949> , <https://github.com/coronasafe/care_fe/pull/3236|#3236>)",
+            "user": "U02T4HE96KY",
+            "ts": "1658857059.292149",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1658843488,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/949",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/949|#949 Add LAMA option to discharge reasons>",
+                    "title": "<https://github.com/coronasafe/care/pull/949|#949 Add LAMA option to discharge reasons>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1658839107,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3236",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3236|#3236 Add LAMA option to discharge reasons>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3236|#3236 Add LAMA option to discharge reasons>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "6irf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "made 2 prs ("
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/949",
+                                    "text": "#949",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " , "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3236",
+                                    "text": "#3236",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": ")"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-07-25 00:00:00": [
+        {
+            "client_msg_id": "cc9df59f-6dd7-46da-b854-67a6d3d04872",
+            "type": "message",
+            "text": "busy with an exam, will start work now",
+            "user": "U02T4HE96KY",
+            "ts": "1658760590.845289",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "0yZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "busy with an exam, will start work now"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

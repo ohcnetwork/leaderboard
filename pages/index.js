@@ -46,7 +46,7 @@ export default function Home(props) {
                         <h2 className="text-3xl font-bold text-white tracking-tight sm:text-5xl">
                           Our Contributors
                         </h2>
-                        <p className="text-xl text-gray-300">
+                        <p className="text-xl text-gray-300 hidden">
                           Ornare sagittis, suspendisse in hendrerit quis. Sed
                           dui aliquet lectus sit pretium egestas vel mattis
                           neque.
@@ -54,7 +54,7 @@ export default function Home(props) {
                       </div>
                       <ul
                         role="list"
-                        className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
+                        className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8 mt-4"
                       >
                         {props.contributors.map((contributor, index) => {
                           return (

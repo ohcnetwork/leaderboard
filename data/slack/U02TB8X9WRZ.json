@@ -312,5 +312,82 @@
                 }
             ]
         }
+    ],
+    "2022-08-05 00:00:00": [
+        {
+            "client_msg_id": "2df09486-27c9-42e2-b5a7-9d54ed04236d",
+            "type": "message",
+            "text": "Yesterday, worked on <https://github.com/coronasafe/care_fe/issues/2454|#2454>, made a PR <https://github.com/coronasafe/care_fe/pull/3323|#3323>",
+            "user": "U02TB8X9WRZ",
+            "ts": "1659669890.003259",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1653043842,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2454",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/2454|#2454 Add loader to external results section>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2454|#2454 Add loader to external results section>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1659669382,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3323",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3323|#3323 Add loader to external results section>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3323|#3323 Add loader to external results section>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "O4YC",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Yesterday, worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2454",
+                                    "text": "#2454",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": ", made a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3323",
+                                    "text": "#3323",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

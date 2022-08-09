@@ -1,6 +1,41 @@
 {
-  "last_updated": 1659804049.0,
+  "last_updated": 1659985780.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3318",
+      "time": 1659985780.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3318#issuecomment-1208503322",
+      "text": "Changes were requested during EOD Review. Positive Patients should have the Badge\r\n\r\ncc: @Ashesh3 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3325",
+      "time": 1659985725.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3325#issuecomment-1208502491",
+      "text": "Update based on review.\r\n\r\nInstead of removing the badge/label altogether, hide the Negative Badge, Maintain the Badge when the Patient is Positive"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3333",
+      "time": 1659985640.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3333#issuecomment-1208501108",
+      "text": "@aparnacoronasafe What about the COWIN ID? We should have that as well.\r\n\r\n@vigneshhari Opinion on Making Vaccinations a Separate Entity? Or any other suggestions"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3331",
+      "time": 1659985468.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3331#issuecomment-1208497984",
+      "text": "@aparnacoronasafe Since we'll be keeping Public Health Details (Or COVID Details) In Patient Registration. Can we summarise the changes needed to the following\r\n\r\nIn Consultation:\r\n - Create \"Health Details\" Collapsible Section\r\n - Add Allergies to Health Details\r\n - Add Blood Group to Health Details\r\n - Move Height & Weight to Health Details\r\n - Add Family History to Health Details\r\n - Add Complete Medical History Section from Patient Registration, except for \"Blood Group\"\r\n\r\nMeanwhile in the Patient Registration Form:\r\n - Remove Blood Group\r\n - Remove Medical History Section.\r\n - Rename Health Details Section to Public Health Details\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3341",
+      "time": 1659963893.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3341#issuecomment-1208102347",
+      "text": "@gigincg They are already hidden in a collapsible right, shall we switch the name to Public Health Details for now. We can hide them based on a select option when we can come up with that"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3341",

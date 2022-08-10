@@ -1,6 +1,69 @@
 {
-  "last_updated": 1659990290.0,
+  "last_updated": 1660085064.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3303",
+      "time": 1660085064.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3303#issuecomment-1209965425",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/183769124-e9723eee-355c-48d4-abfe-acbf6306de58.png)\r\n> \r\n> the file name of a PDF is different in care and download\r\n\r\nHey, I am unable to replicate this issue. The file downloads correctly for me, with the correct file name.\r\n\r\nhttps://deploy-preview-3303--care-egov-staging.netlify.app/facility/bd466cf6-0fde-46b1-9591-0acf9d955dd1/patient/163c6459-d121-4814-9ef4-4ef35937711f/files/\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/183774158-66004fee-b44c-45a5-b5a5-3f0416d59b2d.png)\r\n\r\nCould you take a look at this again? If the issue persist, please let me know the steps which lead to the issue."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3303",
+      "time": 1660083005.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3303#issuecomment-1209942343",
+      "text": "> 3286\r\n\r\nHey, I am unable to replicate the issue on my end, pdf files are correctly downloaded with the name of the file. Could you tell me the patient url for the screenshot you provided?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3186",
+      "time": 1660082105.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3186#issuecomment-1209931965",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/183768355-bcbf1319-88c4-46de-9602-326487ff3c62.png)\r\n> \r\n> i can only find this error, @khavinshankar can you check this !\r\n\r\nI think this error is related to saving the configuration, and not while fetching presets. To trigger the preset error, save the asset with blank hostname, address and key."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3247",
+      "time": 1660055922.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3247#issuecomment-1209468655",
+      "text": "This seems to be fixed from the backend, can test again now."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#972",
+      "time": 1660054845.0,
+      "link": "https://github.com/coronasafe/care/pull/972",
+      "text": "Fix CSV export for patients"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#972",
+      "time": 1660054730.0,
+      "link": "https://github.com/coronasafe/care/pull/972",
+      "text": "Fix CSV export for patients"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#969",
+      "time": 1660054720.0,
+      "link": "https://github.com/coronasafe/care/pull/969",
+      "text": "Fix permission issue when deleting users"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3247",
+      "time": 1660053545.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3247#issuecomment-1209420386",
+      "text": "@nihal467 It seems there is a backend issue currently causing the download to fail. The downloads are failing on the staging too, even without this PR. Waiting for the backend issue to be fixed."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3357",
+      "time": 1660052517.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3357#issuecomment-1209399025",
+      "text": "> @Ashesh3\r\n> \r\n> ![image](https://user-images.githubusercontent.com/57055998/183655212-1083a4c9-4c3d-4a63-949f-20a64b5e608a.png)\r\n> \r\n> this stressed three button is three-row doesn't look good, feel the old view is better, take a opinion from @gigincg\r\n\r\nThat seems to be a bug! Didn't intend for it to look like that on large screens. Fixed it now."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3318",
@@ -1595,10 +1658,6 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3357",
       "title": "Make consultation and sample card responsive"
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/969",
-      "title": "Fix permission issue when deleting users"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3346",

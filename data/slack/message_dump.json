@@ -31238,6 +31238,112 @@
     ],
     "2022-08-10 00:00:00": [
         {
+            "client_msg_id": "26ea762e-3c76-4004-9697-e6a8378a3cee",
+            "type": "message",
+            "text": "Partially completed a <https://github.com/coronasafe/care_fe/pull/3372|PR>",
+            "user": "U02TPSYRUPK",
+            "ts": "1660159109.460139",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1660153452,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3372",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3372|#3372 Camera feed fallback protocol on IOS devices>",
+                    "text": "Resolve <https://github.com/coronasafe/care_fe/issues/2917|#2917>\n\n*Changes*\n\n\u2022 Extra HLS player for IOS devices as MSE is not supported",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3372|#3372 Camera feed fallback protocol on IOS devices>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "oIq",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Partially completed a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3372",
+                                    "text": "PR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "9166f257-f39e-4229-983e-2a4b30e1fc26",
+            "type": "message",
+            "text": "Worked on previous PRs",
+            "user": "U02TPSYB1MF",
+            "ts": "1660153262.636669",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "z3C",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PRs"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "5e7ed009-5f96-4b9b-833b-5d4db932d658",
+            "type": "message",
+            "text": "Picked up a new issue",
+            "user": "U02SWK752TZ",
+            "ts": "1660151212.666199",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "CcaQE",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Picked up a new issue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "client_msg_id": "9ae53ffa-0982-47a0-bc8b-525581f0d562",
             "type": "message",
             "text": "No updates, busy with college activities",
@@ -31255,6 +31361,64 @@
                                 {
                                     "type": "text",
                                     "text": "No updates, busy with college activities"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-08-11 00:00:00": [
+        {
+            "client_msg_id": "c57680e9-cd54-40c9-b950-adabcb51a1e8",
+            "type": "message",
+            "text": "Opened a backend PR <https://github.com/coronasafe/care/pull/976|https://github.com/coronasafe/care/pull/976>",
+            "user": "U02TB90FU2X",
+            "ts": "1660181186.302649",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1660145022,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/976",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/976|#976 Fixes: Permission Error during Facility Delete>",
+                    "text": "*Updates*\n\n\u2611\ufe0e Closes <https://github.com/coronasafe/care/issues/975|#975>\n\u2611\ufe0e Added `has_destroy_permission` method for permission checking\n\u2611\ufe0e Updated the logic of `has_write_permission` method\n\u2611\ufe0e Formatted the code",
+                    "title": "<https://github.com/coronasafe/care/pull/976|#976 Fixes: Permission Error during Facility Delete>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "7hu",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Opened a backend PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/976",
+                                    "text": "https://github.com/coronasafe/care/pull/976"
                                 }
                             ]
                         }

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1660085064.0,
+  "last_updated": 1660161590.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2984",
+      "time": 1660161590.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2984#issuecomment-1211204692",
+      "text": "@nihal467 I am unable to replicate this issue.\r\n\r\n1. Discharged patient from facility A,\r\n![image](https://user-images.githubusercontent.com/3626859/184008617-6edf8a0f-297b-48ba-8376-20bda2d4628d.png)\r\n\r\n2. Readmitted the patient to facility A,\r\n![image](https://user-images.githubusercontent.com/3626859/184008676-d1fbd1b9-9a0e-44f7-9f2e-8a07ad35f277.png)\r\n\r\nThe medical history is preserved for me here.\r\n\r\nEdit Patient details (after readmitting):\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/184008785-405198fd-fa5d-4833-a2fe-53898f9a6200.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#974",
+      "time": 1660137223.0,
+      "link": "https://github.com/coronasafe/care/pull/974",
+      "text": "Prevent removal of user's home facility"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3303",
@@ -1655,6 +1669,10 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/974",
+      "title": "Prevent removal of user's home facility"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3357",
       "title": "Make consultation and sample card responsive"

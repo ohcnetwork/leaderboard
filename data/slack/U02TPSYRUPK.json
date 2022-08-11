@@ -1803,5 +1803,63 @@
                 }
             ]
         }
+    ],
+    "2022-08-10 00:00:00": [
+        {
+            "client_msg_id": "26ea762e-3c76-4004-9697-e6a8378a3cee",
+            "type": "message",
+            "text": "Partially completed a <https://github.com/coronasafe/care_fe/pull/3372|PR>",
+            "user": "U02TPSYRUPK",
+            "ts": "1660159109.460139",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1660153452,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3372",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3372|#3372 Camera feed fallback protocol on IOS devices>",
+                    "text": "Resolve <https://github.com/coronasafe/care_fe/issues/2917|#2917>\n\n*Changes*\n\n\u2022 Extra HLS player for IOS devices as MSE is not supported",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3372|#3372 Camera feed fallback protocol on IOS devices>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "oIq",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Partially completed a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3372",
+                                    "text": "PR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

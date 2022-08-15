@@ -31507,6 +31507,91 @@
     ],
     "2022-08-14 00:00:00": [
         {
+            "client_msg_id": "b0c2b304-58d5-4ed8-8e94-e8a37f17a279",
+            "type": "message",
+            "text": "Made a PR",
+            "user": "U02TPSYB1MF",
+            "ts": "1660509256.150219",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "eqZi",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a PR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "8f5d780c-d6de-4df8-8a33-0c10951f7da8",
+            "type": "message",
+            "text": "made a <https://github.com/coronasafe/care_fe/pull/3404|pr>",
+            "user": "U02T4HE96KY",
+            "ts": "1660478655.263479",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/57039447/184535613-8c1e458d-3f5a-49ba-987a-d733e486c0e4.png",
+                    "image_width": 1790,
+                    "image_height": 1068,
+                    "image_bytes": 103516,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1660478259,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3404",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1790x1068px image",
+                    "text": "*Proposed Changes*\n\n\u2022 The blood group field with dropdown is moved from \"Medical History\" section to the \"health details\" section\n\n<https://user-images.githubusercontent.com/57039447/184535613-8c1e458d-3f5a-49ba-987a-d733e486c0e4.png|image>\n\nrelated : <https://github.com/coronasafe/care_fe/issues/3335|#3335>\n\n@coronasafe/reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3404|#3404 reposition blood group dropdown>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "OAb",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "made a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3404",
+                                    "text": "pr"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "client_msg_id": "54870cf5-e093-4d3b-bee4-99fe94a391f4",
             "type": "message",
             "text": "Worked on consultation form api issue",
@@ -31524,6 +31609,33 @@
                                 {
                                     "type": "text",
                                     "text": "Worked on consultation form api issue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-08-15 00:00:00": [
+        {
+            "client_msg_id": "3b7a3c6a-cdf3-4c01-a4dc-68f44829687d",
+            "type": "message",
+            "text": "Worked on previous PRs",
+            "user": "U02TB90FU2X",
+            "ts": "1660529116.228149",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RZRI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PRs"
                                 }
                             ]
                         }

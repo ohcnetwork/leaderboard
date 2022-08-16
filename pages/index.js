@@ -5,6 +5,7 @@ import InfoCard from "../components/contributors/InfoCard";
 import Header from "../components/Header";
 import PageHead from "../components/PageHead";
 import { getContributors } from "../lib/api";
+import { getLastWeekDateRangeString } from "../lib/utils";
 
 export default function Home(props) {
   return (
@@ -77,7 +78,7 @@ export default function Home(props) {
                     <div className="flex justify-between items-end bg-gray-800 rounded-t-lg px-6 py-4 border-b border-gray-700 ">
                       <p className="text-xl font-medium">Leaderboard</p>
                       <span className="block text-gray-400">
-                        18 - 24 May 2022
+                        {props.dateRange}
                       </span>
                     </div>
                     <div className="space-y-2 p-4 ">
@@ -137,9 +138,12 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   const contributors = getContributors();
+  const dateRange = getLastWeekDateRangeString();
+
   return {
     props: {
-      contributors: contributors,
+      contributors,
+      dateRange,
     },
   };
 }

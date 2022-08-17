@@ -443,5 +443,59 @@
                 }
             ]
         }
+    ],
+    "2022-08-16 00:00:00": [
+        {
+            "client_msg_id": "9da9c89a-1245-48a5-a2c8-44cd72bf3459",
+            "type": "message",
+            "text": "Worked on previous PRs. Working on <https://github.com/coronasafe/care/issues/713|this> issue",
+            "user": "U02TB8X9WRZ",
+            "ts": "1660671451.773539",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1647958275,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/issues/713",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/issues/713|#713 Authentication for MSE Server, handled by the Middleware Server>",
+                    "title": "<https://github.com/coronasafe/care/issues/713|#713 Authentication for MSE Server, handled by the Middleware Server>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "qoI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PRs. Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/issues/713",
+                                    "text": "this"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " issue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

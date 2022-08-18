@@ -1521,5 +1521,57 @@
                 }
             ]
         }
+    ],
+    "2022-08-17 00:00:00": [
+        {
+            "client_msg_id": "66fc2262-1631-489d-8c9d-db5d1910c9d7",
+            "type": "message",
+            "text": "submitted PR: <https://github.com/coronasafe/care/pull/981|#981>",
+            "user": "U02U102TL0G",
+            "ts": "1660763449.472019",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1660763419,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/981",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/981|#981 add update and delete apis for consultation files>",
+                    "text": "*Proposed Changes*\n\n\u2022 Create APIs for updating and deleting the consultation files.\n\u2022 Improve error handling for invalid requests (initially giving internal server errors).\n\n@coronasafe/code-reviewers  \nfixes: <https://github.com/coronasafe/care/issues/973|#973>",
+                    "title": "<https://github.com/coronasafe/care/pull/981|#981 add update and delete apis for consultation files>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "J2qen",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/981",
+                                    "text": "#981",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

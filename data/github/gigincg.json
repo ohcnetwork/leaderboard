@@ -1,6 +1,13 @@
 {
-  "last_updated": 1660635141.0,
+  "last_updated": 1660836878.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3331",
+      "time": 1660836878.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3331#issuecomment-1219640476",
+      "text": "Additional Context for Medical History & Health Details.\r\n\r\nDuring the first consultation (When `patient.last_consultation` is null) The accordions should be expanded by default. Otherwise, they would be collapsed by default.\r\n\r\nThere should be 2 new fields to patient_consultation\r\n - health_details_updated_on\r\n - medical_history_updated_on\r\n\r\nMedical History & Health Details would be non-editable by default.\r\n\r\nThere would be an edit button for each. onClick of the Edit Button, the updated_on for the respective field would be set to the current date.\r\n\r\nThe backend should validate if the updated_on is valid\r\n\r\ncc: @vigneshhari "
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#3132",

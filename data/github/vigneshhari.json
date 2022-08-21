@@ -1,6 +1,20 @@
 {
-  "last_updated": 1660918291.0,
+  "last_updated": 1661008846.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#980",
+      "time": 1661008846.0,
+      "link": "https://github.com/coronasafe/care/issues/980#issuecomment-1221333969",
+      "text": "@aparnacoronasafe, a user with the same username exists, this is why the backend threw an error, let's modify this issue to add a cleaner error when this happens.\r\nActual error : `duplicate key value violates unique constraint \"users_user_username_key\" DETAIL: Key (username)=(james) already exists`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1661008595.0,
+      "title": "coronasafe/care#984",
+      "link": "https://github.com/coronasafe/care/pull/984#pullrequestreview-1079533144",
+      "text": "Adds fields to Asset model as per asset registration v2"
+    },
     {
       "type": "pr_reviewed",
       "time": 1660918291.0,

@@ -4753,5 +4753,62 @@
                 }
             ]
         }
+    ],
+    "2022-08-20 00:00:00": [
+        {
+            "client_msg_id": "b653f915-062b-4d4d-a03e-7f7d773e64d8",
+            "type": "message",
+            "text": "Worked on Asset Reg v2 backend  <https://github.com/coronasafe/care/pull/984>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1661018079.902099",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1660991073,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/984",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/984|#984 Adds fields to Asset model as per asset registration v2>",
+                    "text": "Issue tracked at <https://github.com/coronasafe/care_fe/issues/3426|coronasafe/care_fe#3426>\n\nAdds the following fields:\n\n&gt; 1: Manufacturer: Short text field, optional  \n&gt; 2: Warranty/AMC applicable till: Date, Optional  \n&gt; 3: Last serviced on: Date- Optional  \n&gt; 4: Notes: Long text field- optional",
+                    "title": "<https://github.com/coronasafe/care/pull/984|#984 Adds fields to Asset model as per asset registration v2>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "4e/85",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on Asset Reg v2 backend  "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/984"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

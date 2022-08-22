@@ -1573,5 +1573,64 @@
                 }
             ]
         }
+    ],
+    "2022-08-21 00:00:00": [
+        {
+            "client_msg_id": "17e43ea6-4479-4f66-be4f-6074cac254d0",
+            "type": "message",
+            "text": "submitted pr: <https://github.com/coronasafe/care/pull/987|#987>",
+            "user": "U02U102TL0G",
+            "ts": "1661105494.398529",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1661080976,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/987",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/987|#987 add fields for push score>",
+                    "text": "*Proposed Changes*\n\nAdd fields required for push score calculation in daily rounds:\n\n\u2022 Length - number\n\u2022 Width - number\n\u2022 Exudate Amount - ENUM\n\u2022 Tissue Type - ENUM\n\u2022 Description - String\n\u2022 Push score - number, calculated on the backend\n\nfixes: <https://github.com/coronasafe/care/issues/986|#986>\n\n@coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care/pull/987|#987 add fields for push score>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "KUyD",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "submitted pr: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/987",
+                                    "text": "#987",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

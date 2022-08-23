@@ -4810,5 +4810,100 @@
                 }
             ]
         }
+    ],
+    "2022-08-22 00:00:00": [
+        {
+            "client_msg_id": "84b7a84c-4c35-4b6e-91f8-391f6fc33760",
+            "type": "message",
+            "text": "Worked on two PRs\n\u2022 Updated with new goal for EN locale. <https://github.com/coronasafe/care_fe/pull/3456>\n\u2022 Updated Create/Update Asset Form with new fields in frontend. Yet to add those fields in the asset detail page. <https://github.com/coronasafe/care_fe/pull/3458>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1661192603.372359",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1661153822,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3456",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3456|#3456 Updates the Goal for the project in landing page>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3456|#3456 Updates the Goal for the project in landing page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1661192511,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3458",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3458|#3458 Adds fields to Asset model as per asset registration v2>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3458|#3458 Adds fields to Asset model as per asset registration v2>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "X09",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on two PRs\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Updated with new goal for EN locale. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3456"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Updated Create/Update Asset Form with new fields in frontend. Yet to add those fields in the asset detail page. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3458"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

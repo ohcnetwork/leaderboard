@@ -1,23 +1,20 @@
+import {
+  advancedSkills,
+  humanValues,
+  professionalSelfSkills,
+  professionalTeamSkills,
+  resolveGraduateAttributes,
+} from '../../config/GraduateAttributes';
+import { getContributorBySlug, getContributors } from '../../lib/api';
+
+import ActivityCalendarGit from '../../components/contributors/ActivityCalendarGitHub';
+import BadgeIcons from '../../components/contributors/BadgeIcons';
+import GithubActivity from '../../components/contributors/GithubActivity';
+import GraduateAttributeBadge from '../../components/contributors/GraduateAttributeBadge';
+import InfoCard from '../../components/contributors/InfoCard';
 import React from 'react';
 import markdownToHtml from '../../lib/markdownToHtml';
 
-import InfoCard from '../../components/contributors/InfoCard';
-import GithubActivity from '../../components/contributors/GithubActivity';
-import BadgeIcons from '../../components/contributors/BadgeIcons';
-import GraduateAttributeBadge from '../../components/contributors/GraduateAttributeBadge';
-import {
-  professionalSelfSkills,
-  professionalTeamSkills,
-  advancedSkills,
-  humanValues,
-  resolveGraduateAttributes,
-} from '../../config/GraduateAttributes';
-
-import { getContributorBySlug, getContributors } from '../../lib/api';
-
-import PageHead from '../../components/PageHead';
-import Header from '../../components/Header';
-import ActivityCalendarGit from '../../components/contributors/ActivityCalendarGitHub';
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
 //     // Current Date - i
@@ -36,7 +33,6 @@ import ActivityCalendarGit from '../../components/contributors/ActivityCalendarG
 export default function Contributor({ contributor, slug }) {
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead title={contributor.name} />
       {/* <Header /> */}
       <div className="pt-2 pb-3 border-b border-gray-700 shadow-md bg-gray-700 bg-opacity-50">
         <h1 className="max-w-6xl mx-auto text-sm md:text-xl text-gray-400 text-center">
@@ -347,6 +343,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      title: contributor.name,
       contributor: {
         ...contributor,
         content,

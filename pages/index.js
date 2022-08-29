@@ -1,19 +1,11 @@
-import Head from "next/head";
-import Link from "next/link";
-import { useEffect } from "react";
 import InfoCard from "../components/contributors/InfoCard";
-import Header from "../components/Header";
-import PageHead from "../components/PageHead";
+import Link from "next/link";
 import { getContributors } from "../lib/api";
 import { getLastWeekDateRangeString } from "../lib/utils";
 
 export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead />
-      <div className="bg-gray-800 bg-opacity-50">
-        <Header />
-      </div>
       <section className="bg-gray-900 border-t border-gray-700 ">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
@@ -119,19 +111,6 @@ export default function Home(props) {
           </div>
         </div>
       </section>
-
-      <footer className="">
-        <div className="bg-gray-800 p-4 lg:p-10 border-t border-gray-700 h-full">
-          <div className="max-w-5xl font-bold text-primary-500 text-center text-sm lg:leading-tight lg:mx-auto">
-            <div className="flex items-center justify-center w-full">
-              Powered by{" "}
-              <span className={"w-20 ml-4"}>
-                <img src="/logo.webp" alt="Coronasafe" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

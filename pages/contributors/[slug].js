@@ -12,7 +12,6 @@ import BadgeIcons from '../../components/contributors/BadgeIcons';
 import GithubActivity from '../../components/contributors/GithubActivity';
 import GraduateAttributeBadge from '../../components/contributors/GraduateAttributeBadge';
 import InfoCard from '../../components/contributors/InfoCard';
-import PageHead from '../../components/PageHead';
 import React from 'react';
 import markdownToHtml from '../../lib/markdownToHtml';
 

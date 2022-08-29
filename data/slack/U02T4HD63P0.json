@@ -3235,5 +3235,67 @@
                 }
             ]
         }
+    ],
+    "2022-08-28 00:00:00": [
+        {
+            "client_msg_id": "b313f443-6bd0-4ed2-ae5c-23202d3f72fe",
+            "type": "message",
+            "text": "Made a PR <https://github.com/coronasafe/care_fe/pull/3495>",
+            "user": "U02T4HD63P0",
+            "ts": "1661702719.578809",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1661702604,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3495",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3495|#3495 Added functionality to delete and change consultation file name in files tab>",
+                    "text": "*Proposed Changes*\n\nFixes <https://github.com/coronasafe/care_fe/issues/2288|#2288>  \nFixes <https://github.com/coronasafe/care_fe/issues/3367|#3367>\n\n\u2022 Added functionality to delete consultaion file this operation is available to user who created the file.\n\u2022 Added functionality to change file name this operation is available to user who created the file.\n\nVideo  \n<https://www.loom.com/share/239b82a74c9b47ebb2d07e4ced007a23|https://www.loom.com/share/239b82a74c9b47ebb2d07e4ced007a23>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2611\ufe0e Add specs that demonstrate bug / test a new feature.\n\u2611\ufe0e Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2611\ufe0e Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3495|#3495 Added functionality to delete and change consultation file name in files tab>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing, need Review",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "fnR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3495"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

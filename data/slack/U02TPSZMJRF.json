@@ -804,5 +804,77 @@
                 }
             ]
         }
+    ],
+    "2022-08-29 00:00:00": [
+        {
+            "client_msg_id": "d9afd5ff-221a-4492-9368-fd10229bbd2b",
+            "type": "message",
+            "text": "Submitted a PR: <https://github.com/coronasafe/leaderboard/pull/74|#74>",
+            "user": "U02TPSZMJRF",
+            "ts": "1661792210.324079",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/57593654/187252909-b41fd951-2b24-4e11-b592-ce383424a22c.png",
+                    "image_width": 1920,
+                    "image_height": 912,
+                    "image_bytes": 144297,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1661791967,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/pull/74",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1920x912px image",
+                    "text": "Closes <https://github.com/coronasafe/leaderboard/issues/73|#73>\n\nThe following changes were made:\n\n\u2022 Excess spacing between the search bar and live leaderboard is reduced\n\n<https://user-images.githubusercontent.com/57593654/187252909-b41fd951-2b24-4e11-b592-ce383424a22c.png|image>\n\n\u2022 Search sort and toggle are placed in a single row in desktop and left justified in mobile view\n\n<https://user-images.githubusercontent.com/57593654/187253080-3db4be0f-bcae-4350-a0fe-21bc05e71738.png|image>",
+                    "title": "<https://github.com/coronasafe/leaderboard/pull/74|#74 UI enhancements for search, sort and toggle>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "FAZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted a PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/pull/74",
+                                    "text": "#74",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

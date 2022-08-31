@@ -58,14 +58,20 @@ export default function Home(props) {
       filteredContributors = filteredContributors.reverse();
     }
 
-    setCategoryLeaderboard(() =>
-      categories.map((category) => ({
+    setCategoryLeaderboard(() => {
+      let temp =  props.contributors;
+      if (!showCoreMembers) {
+        temp = temp.filter(
+          (contributor) => !contributor.core
+        );
+      }
+      return categories.map((category) => ({
         ...category,
-        contributor: filteredContributors.sort(
+        contributor: temp.sort(
           (a, b) => b.weekSummary[category.slug] - a.weekSummary[category.slug]
         )[0],
-      }))
-    );
+      }));
+    });
 
     setContributors([...filteredContributors]);
   }, [props.contributors, searchTerm, sortBy, sortDescending, showCoreMembers]);

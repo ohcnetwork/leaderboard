@@ -3,6 +3,7 @@ import LeaderboardCard from "../components/contributors/LeaderboardCard";
 import TopContributor from "../components/contributors/TopContributor";
 import Filters from "../components/filters/Filters";
 import { getContributors } from "../lib/api";
+import { TbZoomQuestion } from "react-icons/tb";
 
 // Calculate week number
 const getWeekNumber = (date) => {
@@ -59,11 +60,9 @@ export default function Home(props) {
     }
 
     setCategoryLeaderboard(() => {
-      let temp =  props.contributors;
+      let temp = props.contributors;
       if (!showCoreMembers) {
-        temp = temp.filter(
-          (contributor) => !contributor.core
-        );
+        temp = temp.filter((contributor) => !contributor.core);
       }
       return categories.map((category) => ({
         ...category,
@@ -100,19 +99,28 @@ export default function Home(props) {
                       {getWeekNumber(new Date())} of {new Date().getFullYear()}
                     </span>
                   </div>
-                  <ul className="space-y-6 lg:space-y-8 p-2 lg:p-2 overflow-x-auto">
-                    {contributors.map((contributor, index) => {
-                      return (
-                        <li key={contributor.github}>
-                          <LeaderboardCard
-                            position={index}
-                            key={contributor.github}
-                            contributor={contributor}
-                          />
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  {contributors.length ? (
+                    <ul className="space-y-6 lg:space-y-8 p-2 lg:p-2 overflow-x-auto">
+                      {contributors.map((contributor, index) => {
+                        return (
+                          <li key={contributor.github}>
+                            <LeaderboardCard
+                              position={index}
+                              key={contributor.github}
+                              contributor={contributor}
+                            />
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : (
+                    <div className="my-4 overflow-x-auto">
+                      <div className="flex flex-row justify-center">
+                        <TbZoomQuestion size={25} />{" "}
+                        <span className="ml-4">No results found</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

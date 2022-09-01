@@ -105,7 +105,7 @@ export default function Home(props) {
                         return (
                           <li key={contributor.github}>
                             <LeaderboardCard
-                              position={index}
+                              position={searchTerm ? -1 : index}
                               key={contributor.github}
                               contributor={contributor}
                             />

@@ -33252,9 +33252,11 @@
                 {
                     "name": "fire",
                     "users": [
-                        "U02TPSYRUPK"
+                        "U02TPSYRUPK",
+                        "U02TB8XCDU3",
+                        "U02U1035G0G"
                     ],
-                    "count": 1
+                    "count": 3
                 }
             ]
         },
@@ -33396,6 +33398,159 @@
     ],
     "2022-09-01 00:00:00": [
         {
+            "client_msg_id": "08bc9f85-ddda-4f70-9a96-69b4a4b7a933",
+            "type": "message",
+            "text": "No big updates, took up a PR.",
+            "user": "U02T4HFA07Q",
+            "ts": "1662048168.169599",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "pSF",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "No big updates, took up a PR."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "6254e451-9191-4e6b-af61-ccc746e7dfe9",
+            "type": "message",
+            "text": "Working on implementing searchable select menu",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662043601.501529",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Ki+hk",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on implementing searchable select menu"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "ba6dc479-0df5-4857-9471-36a7f34fd680",
+            "type": "message",
+            "text": "worked on <https://github.com/coronasafe/leaderboard/pull/77|pr77> , searching about GitHub api for <https://github.com/coronasafe/leaderboard/issues/69|#issue69> in leaderboard",
+            "user": "U02T4HE96KY",
+            "ts": "1662043282.879629",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1661945197,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/pull/77",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/pull/77|#77 Fix side effects caused by searchTerm>",
+                    "title": "<https://github.com/coronasafe/leaderboard/pull/77|#77 Fix side effects caused by searchTerm>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656540186,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/issues/69",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/issues/69|#69 Capture Autonomy And Responsibility>",
+                    "title": "<https://github.com/coronasafe/leaderboard/issues/69|#69 Capture Autonomy And Responsibility>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "LnDcn",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/pull/77",
+                                    "text": "pr77"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " , searching about GitHub api for "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/issues/69",
+                                    "text": "#issue69",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " in leaderboard"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "d66011a3-bf4d-4573-98ed-3d2a26969386",
+            "type": "message",
+            "text": "working on the authentication",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662025235.742039",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "j+GwH",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "working on the authentication"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "client_msg_id": "e67e30f6-ab3c-4ad4-955e-f09f464a8586",
             "type": "message",
             "text": "worked on consultation form API",
@@ -33413,6 +33568,33 @@
                                 {
                                     "type": "text",
                                     "text": "worked on consultation form API"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-02 00:00:00": [
+        {
+            "client_msg_id": "ce6ee5d9-ed21-405d-be26-9e4b9b38ae2c",
+            "type": "message",
+            "text": "Worked on health details API",
+            "user": "U02TB90FU2X",
+            "ts": "1662086278.045199",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "mWDAu",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on health details API"
                                 }
                             ]
                         }

@@ -3,17 +3,19 @@ import Link from "next/link";
 export default function InfoCard({ contributor, minimal = true }) {
   return (
     <div
-      className="xl:text-left"
+      className="xl:text-left border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform border-2 border-gray-200 rounded-lg p-4"
       role="listitem"
     >
       <div className="flex flex-shrink-0 items-center space-x-4 md:space-y-6 xl:space-y-1 ">
-        <div className="flex flex-shrink-0 items-center bg-gray-900 bg-opacity-50 rounded-full md:p-1 relative z-10">
+      <Link href={`/contributors/${contributor.github}`} className="">
+        <div className="flex flex-shrink-0 items-center bg-gray-900 bg-opacity-50 rounded-full md:p-1 relative z-10 cursor-pointer">
           <img
             className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-2 border-indigo-500"
             src={`https://github.com/${contributor.github}.png`}
             alt={contributor.github}
           />
         </div>
+        </Link>
         <div
           className={
             minimal
@@ -23,7 +25,7 @@ export default function InfoCard({ contributor, minimal = true }) {
         >
           <div className="font-medium text-lg space-y-1">
             <Link href={`/contributors/${contributor.github}`} className="">
-              <h3 className="text-lg md:text-2xl leading-tight text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">
+              <h3 className="text-lg md:text-2xl leading-tight text-white cursor-pointer hover:text-primary-200">
                 {contributor.name}
               </h3>
             </Link>

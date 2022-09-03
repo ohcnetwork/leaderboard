@@ -1888,5 +1888,67 @@
                 }
             ]
         }
+    ],
+    "2022-09-02 00:00:00": [
+        {
+            "client_msg_id": "77f26624-2226-4489-9728-674748c4884d",
+            "type": "message",
+            "text": "still working on <https://github.com/coronasafe/leaderboard/issues/69|issue69>\nDidn't find any direct API to find linked issues to a PR , thus explored capturing \"cross-referenced\" event to fetch linked issues.",
+            "user": "U02T4HE96KY",
+            "ts": "1662138168.561149",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656540186,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/issues/69",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/issues/69|#69 Capture Autonomy And Responsibility>",
+                    "text": "We should encourage collaborators to find a problem and push fixes to it.\n\nWhen a PR merge event is encountered, we should identify the issue linked with it.  \nIf the author of the PR and Issue are the same, Create a new event for the author.\n\n&gt; Getting this feature live will enable a new badge `Autonomy And Responsibility`",
+                    "title": "<https://github.com/coronasafe/leaderboard/issues/69|#69 Capture Autonomy And Responsibility>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ritesh-Aggarwal|@Ritesh-Aggarwal>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RGdxC",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "still working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/issues/69",
+                                    "text": "issue69"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nDidn't find any direct API to find linked issues to a PR , thus explored capturing \"cross-referenced\" event to fetch linked issues."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

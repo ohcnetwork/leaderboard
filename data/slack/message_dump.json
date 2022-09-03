@@ -33578,6 +33578,208 @@
     ],
     "2022-09-02 00:00:00": [
         {
+            "client_msg_id": "77f26624-2226-4489-9728-674748c4884d",
+            "type": "message",
+            "text": "still working on <https://github.com/coronasafe/leaderboard/issues/69|issue69>\nDidn't find any direct API to find linked issues to a PR , thus explored capturing \"cross-referenced\" event to fetch linked issues.",
+            "user": "U02T4HE96KY",
+            "ts": "1662138168.561149",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656540186,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/issues/69",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/issues/69|#69 Capture Autonomy And Responsibility>",
+                    "text": "We should encourage collaborators to find a problem and push fixes to it.\n\nWhen a PR merge event is encountered, we should identify the issue linked with it.  \nIf the author of the PR and Issue are the same, Create a new event for the author.\n\n&gt; Getting this feature live will enable a new badge `Autonomy And Responsibility`",
+                    "title": "<https://github.com/coronasafe/leaderboard/issues/69|#69 Capture Autonomy And Responsibility>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ritesh-Aggarwal|@Ritesh-Aggarwal>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RGdxC",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "still working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/issues/69",
+                                    "text": "issue69"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nDidn't find any direct API to find linked issues to a PR , thus explored capturing \"cross-referenced\" event to fetch linked issues."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "8b463015-0d5f-41c2-99e5-176c4b82f277",
+            "type": "message",
+            "text": "Raised two issues and made two PRs:\n\u2022 `goBack` was defined 17+ times (issue <https://github.com/coronasafe/care_fe/issues/3518|#3518> fixed in <https://github.com/coronasafe/care_fe/pull/3520|#3520>)\n\u2022 Local body field in User Add page was not handling change (issue <https://github.com/coronasafe/care_fe/issues/3519|#3519> fixed in <https://github.com/coronasafe/care_fe/pull/3521|#3521>)\nWorking on facility cover image feat. (issue <https://github.com/coronasafe/care_fe/issues/2171|#2171>)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662130512.107969",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "SlI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Raised two issues and made two PRs:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "goBack",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " was defined 17+ times (issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3518",
+                                            "text": "#3518",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " fixed in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3520",
+                                            "text": "#3520",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Local body field in User Add page was not handling change (issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3519",
+                                            "text": "#3519",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " fixed in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3521",
+                                            "text": "#3521",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWorking on facility cover image feat. (issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2171",
+                                    "text": "#2171",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": ")"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "5811d2e4-eb0e-4a3f-b776-de30f975431f",
+            "type": "message",
+            "text": "EOD: working on call metrics api",
+            "user": "U02TB8XCDU3",
+            "ts": "1662126801.020409",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "OMC",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD: working on call metrics api"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "client_msg_id": "ce6ee5d9-ed21-405d-be26-9e4b9b38ae2c",
             "type": "message",
             "text": "Worked on health details API",
@@ -33602,5 +33804,6 @@
                 }
             ]
         }
-    ]
+    ],
+    "2022-09-03 00:00:00": []
 }

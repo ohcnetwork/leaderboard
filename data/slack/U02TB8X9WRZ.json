@@ -632,5 +632,61 @@
                 }
             ]
         }
+    ],
+    "2022-09-03 00:00:00": [
+        {
+            "client_msg_id": "77e18f05-3557-431d-bd4e-06469f59c955",
+            "type": "message",
+            "text": "Completed middleware side of authentication. Left with testing along with care. Working on it",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662210101.986529",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TB8X9WRZ",
+                "ts": "1662210138.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tExOf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Completed middleware side of authentication. Left with testing along with care. Working on it"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "a434acca-b1a6-40ff-8aeb-9d8aac4a0983",
+            "type": "message",
+            "text": "yesterday worked on creating a script to generate keypair in docker-entrypoint, created a separate volume for storing certs, worked on generating jwt token in care-be",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662184043.407159",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "czn",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "yesterday worked on creating a script to generate keypair in docker-entrypoint, created a separate volume for storing certs, worked on generating jwt token in care-be"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

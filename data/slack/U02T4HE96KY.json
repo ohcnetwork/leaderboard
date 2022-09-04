@@ -1950,5 +1950,54 @@
                 }
             ]
         }
+    ],
+    "2022-09-03 00:00:00": [
+        {
+            "client_msg_id": "1a6c8486-9890-4da1-9144-729a5dd37fb9",
+            "type": "message",
+            "text": "still working on <https://github.com/coronasafe/leaderboard/issues/69|issue69> ,\nfigured out a possible implementation to find linked pr's to an issue\nwhen an issue is closed , find the source pr where it was cross-referenced\nif both authors are same , create a badge event",
+            "user": "U02T4HE96KY",
+            "ts": "1662224477.296519",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02T4HE96KY",
+                "ts": "1662224488.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "2Bxkw",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "still working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/issues/69",
+                                    "text": "issue69"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ,\nfigured out a possible implementation to find linked pr's to an issue\nwhen an issue is closed , find the source pr where it was cross-referenced\nif both authors are same , create a badge event"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

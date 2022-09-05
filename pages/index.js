@@ -54,7 +54,8 @@ export default function Home(props) {
                             <InfoCard
                               key={index}
                               contributor={contributor}
-                              minimal={true}
+                              minimal
+                              isClickable
                             />
                           );
                         })}

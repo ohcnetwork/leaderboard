@@ -1,6 +1,27 @@
 {
-  "last_updated": 1662234526.0,
+  "last_updated": 1662265167.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1662265167.0,
+      "title": "coronasafe/care#998",
+      "link": "https://github.com/coronasafe/care/pull/998#pullrequestreview-1095610589",
+      "text": "Add public asset fetch endpoint"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#998",
+      "time": 1662265160.0,
+      "link": "https://github.com/coronasafe/care/pull/998#issuecomment-1236256551",
+      "text": "Added caching the asset for 24 hours by it's `external_id` and invalidating it on the `save` method.\r\n\r\n```\r\nCACHE MISS\r\n[04/Sep/2022 09:41:20] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 838\r\n\r\nCACHE HIT\r\n[04/Sep/2022 09:41:24] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 838\r\n\r\nCACHE HIT\r\n[04/Sep/2022 09:41:25] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 838\r\n\r\nCACHE HIT\r\n[04/Sep/2022 09:41:28] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 838\r\n\r\nCACHE INVALIDATED\r\nINFO 2022-09-04 09:41:37,580 receivers 1378112 281472209514784 AUDIT_LOG::put::7ab4a38924973defbfad1b5d484bcc29::20e5b23c0e0a46e1b8f00674ee50619b|devdistrictadmin|update|facility.Asset|ID:1|{\"name\": \"Testttttt122dddddd12\"}\r\nINFO 2022-09-04 09:41:37,618 middleware 1378112 281472209514784 PUT /api/v1/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ 200 User:[4|devdistrictadmin]\r\n[04/Sep/2022 09:41:37] \"PUT /api/v1/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 840\r\n\r\nCACHE MISS\r\n[04/Sep/2022 09:43:52] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 840\r\n\r\nCACHE HIT\r\n[04/Sep/2022 09:43:58] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 840\r\n```\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1662265021.0,
+      "title": "coronasafe/care#998",
+      "link": "https://github.com/coronasafe/care/pull/998#pullrequestreview-1095610424",
+      "text": "Add public asset fetch endpoint"
+    },
     {
       "type": "pr_reviewed",
       "time": 1662234526.0,

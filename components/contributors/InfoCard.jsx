@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function InfoCard({ contributor, minimal = true }) {
   return (
     <div
-      className="xl:text-left border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform border-2 border-gray-200 rounded-lg p-4"
+      className="xl:text-left border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4"
       role="listitem"
     >
       <div className="flex flex-shrink-0 items-center space-x-4 md:space-y-6 xl:space-y-1 ">

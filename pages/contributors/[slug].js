@@ -42,7 +42,7 @@ export default function Contributor({ contributor, slug }) {
       <section className="px-4 py-8 bg-gray-800">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row ">
           <div className="md:w-2/3">
-            <InfoCard contributor={contributor} isClickable={false} />
+            <InfoCard contributor={contributor} />
           </div>
           <div className="flex md:grid md:grid-cols-7 mt-6 md:mt-0 w-full overflow-x-auto gap-2">
             {professionalSelfSkills.map((skill) => (

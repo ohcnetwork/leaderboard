@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function InfoCard({
   contributor,
   minimal = true,
-  isClickable = true,
+  isClickable = false,
 }) {
   return (
     <div

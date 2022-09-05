@@ -55,6 +55,7 @@ export default function Home(props) {
                               key={index}
                               contributor={contributor}
                               minimal={true}
+                              isClickable={true}
                             />
                           );
                         })}

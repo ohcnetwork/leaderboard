@@ -477,5 +477,69 @@
                 }
             ]
         }
+    ],
+    "2022-09-05 00:00:00": [
+        {
+            "client_msg_id": "9bca7f67-c895-4022-a4df-c87f6680b544",
+            "type": "message",
+            "text": "Working on <https://github.com/coronasafe/care/issues/738|#738>",
+            "user": "U02TB8XCDU3",
+            "ts": "1662384191.785539",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1652333053,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/issues/738",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/issues/738|#738 Create Metrics for Whatsapp Video Utilization>",
+                    "text": "Create an API that would be hit when a Whatsapp Video Call is initialized from the UI. This should be asynchronously stored to the Database.\n\n<https://github.com/vigneshhari|@vigneshhari> to comment on implementation details",
+                    "title": "<https://github.com/coronasafe/care/issues/738|#738 Create Metrics for Whatsapp Video Utilization>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Krishna-Sivakumar|@Krishna-Sivakumar>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "i9PI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/issues/738",
+                                    "text": "#738",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

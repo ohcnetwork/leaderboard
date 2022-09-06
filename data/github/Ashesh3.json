@@ -1,6 +1,48 @@
 {
-  "last_updated": 1662265167.0,
+  "last_updated": 1662413453.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3544",
+      "time": 1662413453.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3544",
+      "text": "Migrate bs-webapi to rescript-webapi"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1662411943.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539#issuecomment-1237456166",
+      "text": "> @Ashesh3 The UI is a bit confusing in small screens Can we have flex-col so that fields stack in mobile devices?\r\n\r\nI agree that the table is a bit hard to navigate on smaller screens but I am afraid I am aware of no better solution. MaterialUI Table does not allow us to display the cells stacked according to the screen size. \r\n\r\nhttps://mui.com/material-ui/api/table/\r\n\r\nAlthough we can indeed force the cells to stack, this might not achieve the best results:\r\n![image](https://user-images.githubusercontent.com/3626859/188512255-dff811d3-69dd-4d3c-ba16-316ea0ccdaf2.png)\r\n\r\nI believe that at it's current state (with this PR), it makes the table at least fully usable and represents it in an elegant manner.\r\nIf you know of any better way, feel free to suggest a change! "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3543",
+      "time": 1662411156.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3543",
+      "text": "Migrate bs-webapi (Deprecated) to rescript-webapi"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#998",
+      "time": 1662386438.0,
+      "link": "https://github.com/coronasafe/care/pull/998",
+      "text": "Add public asset fetch endpoint"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1662358688.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539",
+      "text": "Increase input width for Patient Investigation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2984",
+      "time": 1662356774.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2984#issuecomment-1236562085",
+      "text": "@nihal467 Any info on this?"
+    },
     {
       "type": "pr_reviewed",
       "time": 1662265167.0,
@@ -2279,8 +2321,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/998",
-      "title": "Add public asset fetch endpoint"
+      "link": "https://github.com/coronasafe/care_fe/pull/3544",
+      "title": "Migrate bs-webapi to rescript-webapi"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3539",
+      "title": "Increase input width for Patient Investigation"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3503",

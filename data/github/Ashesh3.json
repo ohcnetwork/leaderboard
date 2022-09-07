@@ -1,6 +1,41 @@
 {
-  "last_updated": 1662413453.0,
+  "last_updated": 1662503345.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/dashboard#205",
+      "time": 1662503345.0,
+      "link": "https://github.com/coronasafe/dashboard/pull/205",
+      "text": "Add Asset details page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3550",
+      "time": 1662469086.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3550",
+      "text": "Fix slider fill width on ABGA page."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3544",
+      "time": 1662466590.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3544#issuecomment-1238068608",
+      "text": "> Why isn't the package-lock changed?\r\n\r\nApologies for the confusion, Added now!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3544",
+      "time": 1662440323.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3544#issuecomment-1237659849",
+      "text": "> Why isn't the package-lock changed?\r\n\r\nThat's a good question! Since we're using Yarn as our primary package manager, I've removed and added packages solely using `yarn` commands. It does not touch package-lock, instead it has it's own lock file `yarn.lock` which was indeed modified during this migration. So why isn't it there in this PR? \ud83e\udd14 It's apparently ignored in the `.gitignore` file [here](https://github.com/coronasafe/care_fe/blob/develop/.gitignore#L52).\r\nIt was recently added in [this commit](https://github.com/coronasafe/care_fe/commit/6e53406f168d005caa5ba4a9747dd4bf25e2b320#diff-bc37d034bad564583790a46f19d807abfe519c5671395fd494d8cce506c42947R50-R52) (probably unintentionally)\r\n\r\nIdeally, it should be checked out to source control. \r\n\r\nhttps://classic.yarnpkg.com/en/docs/migrating-from-npm\r\n\r\n> When you run either yarn or yarn add <package>, Yarn will generate a yarn.lock file within the root directory of your package. You don\u2019t need to read or understand this file - just check it into source control. When other people start using Yarn instead of npm, the yarn.lock file will ensure that they get precisely the same dependencies as you have.\r\n\r\nI made a PR resolving the above issue here: #3545"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3545",
+      "time": 1662440292.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3545",
+      "text": "Switch lockfile to Yarn and include in git"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3544",
@@ -2320,6 +2355,18 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/dashboard/pull/205",
+      "title": "Add Asset details page"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3550",
+      "title": "Fix slider fill width on ABGA page."
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3545",
+      "title": "Suggest npm in README"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3544",
       "title": "Migrate bs-webapi to rescript-webapi"

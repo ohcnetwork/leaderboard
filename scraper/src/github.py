@@ -62,6 +62,7 @@ class GitHubScraper:
                 "last_updated": event["time"],
                 "activity": [event],
                 "open_prs": [],
+                "authored_issue_and_pr":[],
             }
 
     def parse_event(self, event, event_time):
@@ -162,7 +163,8 @@ class GitHubScraper:
 
         events_count = 0
         for event in events:
-            event_time = datetime.strptime(event["created_at"], "%Y-%m-%dT%H:%M:%S%z")
+            event_time = datetime.strptime(
+                event["created_at"], "%Y-%m-%dT%H:%M:%S%z")
 
             if event_time.date() > self.end_date:
                 continue
@@ -200,12 +202,12 @@ class GitHubScraper:
 
         return self.data
 
-    def resolve_autonomy_responsibility(self,event,user):
+    def resolve_autonomy_responsibility(self, event, user):
         if event["event"] == "cross-referenced" and event["source"]["type"] == "issue":
             return event["source"]["issue"]["user"]["login"] == user
         return False
 
-    def fetch_merge_events(self,user):
+    def fetch_merge_events(self, user):
         self.log.debug(f"Merge events for {user}")
         # check for those issues which are closed today (reduce number of issues to be calculated)
         resp = requests.get(
@@ -217,7 +219,7 @@ class GitHubScraper:
             return self.data
         resp.raise_for_status()
         issues = resp.json()["items"]
-
+        merged_prs = []
         for issue in issues:
             timeline_events = requests.get(
                 issue["timeline_url"],
@@ -228,17 +230,20 @@ class GitHubScraper:
             timeline_events.raise_for_status()
             events = timeline_events.json()
             for event in events:
-                if self.resolve_autonomy_responsibility(event,user):
+                if self.resolve_autonomy_responsibility(event, user):
                     if 'pull_request' in event["source"]["issue"]:
                         pr = event["source"]["issue"]["pull_request"]
                         if pr["merged_at"]:
-                            print("issue-->",issue["html_url"])
-                            print("PR--->",pr["html_url"])
-
-        self.log.debug(f"Fetched {len(issues)} merged pull requests and issues for {user}")
+                            merged_prs.append(
+                                {
+                                    "issue_link": issue["html_url"],
+                                    "pr_link": pr["html_url"]
+                                }
+                            )
+        for pr in merged_prs:
+            self.data[user]["authored_issue_and_pr"].append(pr)
+        self.log.debug(f"Fetched {len(merged_prs)} merged pull requests and issues for {user}")
         return self.data
-    
-    
 
     def scrape(self):
         self.log.info(f"Scraping {self.org}")

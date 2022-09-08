@@ -219,7 +219,6 @@ class GitHubScraper:
         issues = resp.json()["items"]
 
         for issue in issues:
-            # print(issue["timeline_url"])
             timeline_events = requests.get(
                 issue["timeline_url"],
                 headers=self.headers,
@@ -231,11 +230,10 @@ class GitHubScraper:
             for event in events:
                 if self.resolve_autonomy_responsibility(event,user):
                     if 'pull_request' in event["source"]["issue"]:
-                        # 1. check if PR is closed or merged , proceed only if merged
-                        # 2. check author of pr by api call
-                        # print()
-                        print("issue-->",issue["html_url"])
-                        print("PR--->",event["source"]["issue"]["pull_request"]["html_url"])
+                        pr = event["source"]["issue"]["pull_request"]
+                        if pr["merged_at"]:
+                            print("issue-->",issue["html_url"])
+                            print("PR--->",pr["html_url"])
 
         self.log.debug(f"Fetched {len(issues)} merged pull requests and issues for {user}")
         return self.data

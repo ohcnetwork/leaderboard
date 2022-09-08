@@ -1,6 +1,83 @@
 {
-  "last_updated": 1662503345.0,
+  "last_updated": 1662561733.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662561733.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239484963",
+      "text": "> @Ashesh3 @khavinshankar it is working now, do we need this PR or close it?\r\n\r\nWe still need this PR to fix it, This adds a conditional check to not print attributes which do not exist. This should make the care platform more robust and crash proof. This will ensure that crashes do not happen in future even if backend and frontend are not in sync."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1662557753.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539#issuecomment-1239400387",
+      "text": "> @Ashesh3 Reached out to @gigincg told me @aparnacoronasafe Will confirm whether this UI is confusing or not.\r\n\r\nSure! Please do let me know here once you have an update on that."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662538724.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239064727",
+      "text": "@khavinshankar The backend does have proper validation for feature ids.\r\n\r\nThis issue seemed to be due to an inconsistency between the features mapping on the backend and frontend.\r\n\r\nBackend:\r\n```\r\n FEATURE_CHOICES = [\r\n    (1, \"CT Scan Facility\"),\r\n    (2, \"Maternity Care\"),\r\n    (3, \"X-Ray facility\"),\r\n    (4, \"Neonatal care\"),\r\n    (5, \"Operation theater\"),\r\n    (6, \"Blood Bank\"),\r\n]\r\n```\r\n\r\nFrontend:\r\n```\r\nexport const FACILITY_FEATURE_TYPES = [\r\n  {\r\n    id: 1,\r\n    name: \"CT Scan\",\r\n    icon: \"circle-dot\",\r\n  },\r\n  {\r\n    id: 2,\r\n    name: \"Maternity Care\",\r\n    icon: \"person-breastfeeding\",\r\n  },\r\n  {\r\n    id: 3,\r\n    name: \"X-Ray\",\r\n    icon: \"x-ray\",\r\n  },\r\n  {\r\n    id: 4,\r\n    name: \"Neonatal Care\",\r\n    icon: \"baby\",\r\n  },\r\n  {\r\n    id: 5,\r\n    name: \"Operation Theater\",\r\n    icon: \"syringe\",\r\n  },\r\n];\r\n```\r\n\r\nFeature \"Blood Bank\" with id `6` has not been added to the frontend yet.\r\n\r\nIssue (Addition of Blood Bank): https://github.com/coronasafe/care_fe/issues/3469\r\n\r\nThe below two PRs ideally should have been merged together:\r\nBackend change: https://github.com/coronasafe/care/pull/993\r\nFrontend change: https://github.com/coronasafe/care_fe/pull/3474\r\n\r\nBut it seems that the backend change was merged but the frontend lagged behind, which caused this issue. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662537967.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239051392",
+      "text": "> @Ashesh3 can you please raise an issue about this in the backend?\r\n\r\nSure!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3552",
+      "time": 1662537129.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3552#issuecomment-1239037330",
+      "text": "> @nihal467 the issue was due to that, there was a facility that had a feature that was not there in our pre-defined list of features ![image](https://user-images.githubusercontent.com/29787772/188820763-26f017ee-04d4-49ee-92fc-09ad57fcc9ed.png)\r\n\r\nExactly! Any idea how could an invalid feature was set for this facility?\r\nhttps://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239032458"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662536841.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239032458",
+      "text": "@nihal467 Should be fixed now. Somehow the facility \"test-nihal-001\" has a feature which doesn't exist (ID 6). This shouldn't be possible as the frontend has no option to set a feature with ID 6 during asset creation. Maybe there needs to be checks on the backend to disallow such invalid values."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1662535236.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539#issuecomment-1239005880",
+      "text": "@rabilrbl Which design looks better for you?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3552",
+      "time": 1662534405.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3552#issuecomment-1238993408",
+      "text": "@nihal467 resolved, please test."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662534369.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553",
+      "text": "Fix crash when feature's id is missing from feature_types"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3551",
+      "time": 1662532861.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3551",
+      "text": "Store Asset details URL in QR code"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/dashboard#144",
+      "time": 1662526416.0,
+      "link": "https://github.com/coronasafe/dashboard/issues/144#issuecomment-1238906568",
+      "text": "> Patient numbers appearing for MAJ Hospital is all off on patient export.\r\n> \r\n> CARE shows 24 live patients in the hospital. But the CSV export only shows 4 patients in the isolation rooms and 0 is all other bed types. In CARE there are 7 patients in the isolation room and a total of 24 live patients.\r\n> \r\n> The same thing may be happening for other facilities as well.\r\n> \r\n> [patient_export.csv](https://github.com/coronasafe/dashboard/files/6569282/patient_export.csv)\r\n\r\nI am unable to reproduce this issue, can you check if this still exists?"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/dashboard#205",
@@ -2355,6 +2432,10 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3551",
+      "title": "Store Asset details URL in QR code"
+    },
     {
       "link": "https://github.com/coronasafe/dashboard/pull/205",
       "title": "Add Asset details page"

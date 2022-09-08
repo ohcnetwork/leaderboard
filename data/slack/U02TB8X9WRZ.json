@@ -688,5 +688,61 @@
                 }
             ]
         }
+    ],
+    "2022-09-07 00:00:00": [
+        {
+            "client_msg_id": "fb4775de-a90e-4718-b4d7-589b5ee528b3",
+            "type": "message",
+            "text": "Created a PR <https://github.com/coronasafe/teleicu_middleware/pull/59|#59> to setup auth middleware in MSE server. Looked for new issues in care_fe",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662562510.221419",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662467362,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/teleicu_middleware/pull/59",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/teleicu_middleware/pull/59|#59 feat: authorization middleware for MSE server>",
+                    "text": "Fixes <https://github.com/coronasafe/care/issues/713|coronasafe/care#713>",
+                    "title": "<https://github.com/coronasafe/teleicu_middleware/pull/59|#59 feat: authorization middleware for MSE server>",
+                    "footer": "<https://github.com/coronasafe/teleicu_middleware|coronasafe/teleicu_middleware>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Oqh0",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Created a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/teleicu_middleware/pull/59",
+                                    "text": "#59",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to setup auth middleware in MSE server. Looked for new issues in care_fe"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

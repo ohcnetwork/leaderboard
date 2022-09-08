@@ -34421,7 +34421,17 @@
                     ]
                 }
             ],
-            "client_msg_id": "922eeee0-d020-4cf7-afb0-e999bf548e44"
+            "client_msg_id": "922eeee0-d020-4cf7-afb0-e999bf548e44",
+            "thread_ts": "1662502336.084389",
+            "reply_count": 2,
+            "reply_users_count": 2,
+            "latest_reply": "1662524618.343719",
+            "reply_users": [
+                "U02TDGQQPMJ",
+                "U02T4HFA07Q"
+            ],
+            "is_locked": false,
+            "subscribed": false
         },
         {
             "client_msg_id": "38f79f9e-bd5a-4bb0-925b-97a65255a34e",
@@ -34588,5 +34598,331 @@
             ]
         }
     ],
-    "2022-09-07 00:00:00": []
+    "2022-09-07 00:00:00": [
+        {
+            "client_msg_id": "36304989-ddfe-43bc-8bd9-3855cbcd41b8",
+            "type": "message",
+            "text": "\u2022 Had final practical exam on Micro-controllers and Embedded Systems\n*Cypress*\n\u2022 Made Test <https://github.com/coronasafe/care_fe/pull/3555|PR>\n*Ongoing*\n\u2022 Improvements with cypress actions on deployments\n\u2022 Debugging back-end limitations with rate limit and others.",
+            "user": "U02TPSYRUPK",
+            "ts": "1662569792.591199",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TPSYRUPK",
+                "ts": "1662569833.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662545959,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3555",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3555|#3555 Cypress Fix>",
+                    "text": "*Changes*\n\n\u2022 Tests are now faster and reliable\n\u2022 Remove all explicit mentions and standardize host url accross all tests\n\u2022 Refactored code for less repetitions\n\u2022 Enable 2 retry attempts on fail\n\u2022 Add script to run all tests in visual mode\n\n*Not working*\n\n\u2022 Roles and Profile Edits, Both related to backend errors.",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3555|#3555 Cypress Fix>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "work-in-progress",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "swrXN",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had final practical exam on Micro-controllers and Embedded Systems"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Cypress",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made Test "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3555",
+                                            "text": "PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Ongoing",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Improvements with cypress actions on deployments"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Debugging back-end limitations with rate limit and others."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "426e03b3-4922-4da3-826a-3b3cc9555df3",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care/pull/1006|care/#1006> Marked `warranty_details` as deprecated in BE.\n\u2022 <https://github.com/coronasafe/care/pull/885|care/#885> Resolved conflicts for modify covid category to patient category BE PR.\n\u2022 <https://github.com/coronasafe/care_fe/pull/3458|care_fe/#3458> Cleaned asset reg v2 PR and made ready for testing.\n\u2022 Working on `SearchSelectV2` tailwind component.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662564258.594409",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "T95G",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1006",
+                                            "text": "care/#1006"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Marked "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "warranty_details",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " as deprecated in BE."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/885",
+                                            "text": "care/#885"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Resolved conflicts for modify covid category to patient category BE PR."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3458",
+                                            "text": "care_fe/#3458"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Cleaned asset reg v2 PR and made ready for testing."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "SearchSelectV2",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " tailwind component."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "322376f4-df49-4713-9cc6-020e732ee131",
+            "type": "message",
+            "text": "Worked on previous PRs and studied for upcoming exams",
+            "user": "U02TPSYB1MF",
+            "ts": "1662562576.172499",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xn=tc",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PRs and studied for upcoming exams"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "fb4775de-a90e-4718-b4d7-589b5ee528b3",
+            "type": "message",
+            "text": "Created a PR <https://github.com/coronasafe/teleicu_middleware/pull/59|#59> to setup auth middleware in MSE server. Looked for new issues in care_fe",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662562510.221419",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662467362,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/teleicu_middleware/pull/59",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/teleicu_middleware/pull/59|#59 feat: authorization middleware for MSE server>",
+                    "text": "Fixes <https://github.com/coronasafe/care/issues/713|coronasafe/care#713>",
+                    "title": "<https://github.com/coronasafe/teleicu_middleware/pull/59|#59 feat: authorization middleware for MSE server>",
+                    "footer": "<https://github.com/coronasafe/teleicu_middleware|coronasafe/teleicu_middleware>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Oqh0",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Created a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/teleicu_middleware/pull/59",
+                                    "text": "#59",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to setup auth middleware in MSE server. Looked for new issues in care_fe"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-08 00:00:00": []
 }

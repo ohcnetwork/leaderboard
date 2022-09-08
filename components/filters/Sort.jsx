@@ -26,6 +26,7 @@ const Sort = ({
           name="message-type"
           className="-ml-px block max-w-fit pl-2 rounded-l-none rounded-r-md border border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-white"
           onChange={handleSortByChange}
+          defaultValue={sortBy}
         >
           {sortByOptions.map((option) => (
             <option

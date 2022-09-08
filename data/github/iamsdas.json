@@ -1,6 +1,20 @@
 {
-  "last_updated": 1662028650.0,
+  "last_updated": 1662478737.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3432",
+      "time": 1662478737.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3432#issuecomment-1238322409",
+      "text": "> @aparnacoronasafe Can we have a default value for each of these for migrating the existing data?\r\n> \r\n> cc: @iamsdas\r\n\r\nRight now we have a default value of an empty list. The main question is if there would be any problem deleting the existing data for the `pressure_sore` column (it currently contains a list of entries having `region` and `scale`)."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#999",
+      "time": 1662365250.0,
+      "link": "https://github.com/coronasafe/care/pull/999",
+      "text": "add enhancements for pressure sore (push score)"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3110",
@@ -612,6 +626,10 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/999",
+      "title": "add enhancements for pressure sore (push score)"
+    },
     {
       "link": "https://github.com/coronasafe/care/pull/953",
       "title": "add ONVIF action to get streaming token"

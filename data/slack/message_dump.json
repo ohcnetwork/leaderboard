@@ -33578,6 +33578,208 @@
     ],
     "2022-09-02 00:00:00": [
         {
+            "client_msg_id": "77f26624-2226-4489-9728-674748c4884d",
+            "type": "message",
+            "text": "still working on <https://github.com/coronasafe/leaderboard/issues/69|issue69>\nDidn't find any direct API to find linked issues to a PR , thus explored capturing \"cross-referenced\" event to fetch linked issues.",
+            "user": "U02T4HE96KY",
+            "ts": "1662138168.561149",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1656540186,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/issues/69",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/issues/69|#69 Capture Autonomy And Responsibility>",
+                    "text": "We should encourage collaborators to find a problem and push fixes to it.\n\nWhen a PR merge event is encountered, we should identify the issue linked with it.  \nIf the author of the PR and Issue are the same, Create a new event for the author.\n\n&gt; Getting this feature live will enable a new badge `Autonomy And Responsibility`",
+                    "title": "<https://github.com/coronasafe/leaderboard/issues/69|#69 Capture Autonomy And Responsibility>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ritesh-Aggarwal|@Ritesh-Aggarwal>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RGdxC",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "still working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/issues/69",
+                                    "text": "issue69"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nDidn't find any direct API to find linked issues to a PR , thus explored capturing \"cross-referenced\" event to fetch linked issues."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "8b463015-0d5f-41c2-99e5-176c4b82f277",
+            "type": "message",
+            "text": "Raised two issues and made two PRs:\n\u2022 `goBack` was defined 17+ times (issue <https://github.com/coronasafe/care_fe/issues/3518|#3518> fixed in <https://github.com/coronasafe/care_fe/pull/3520|#3520>)\n\u2022 Local body field in User Add page was not handling change (issue <https://github.com/coronasafe/care_fe/issues/3519|#3519> fixed in <https://github.com/coronasafe/care_fe/pull/3521|#3521>)\nWorking on facility cover image feat. (issue <https://github.com/coronasafe/care_fe/issues/2171|#2171>)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662130512.107969",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "SlI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Raised two issues and made two PRs:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "goBack",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " was defined 17+ times (issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3518",
+                                            "text": "#3518",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " fixed in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3520",
+                                            "text": "#3520",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Local body field in User Add page was not handling change (issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3519",
+                                            "text": "#3519",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " fixed in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3521",
+                                            "text": "#3521",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWorking on facility cover image feat. (issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2171",
+                                    "text": "#2171",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": ")"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "5811d2e4-eb0e-4a3f-b776-de30f975431f",
+            "type": "message",
+            "text": "EOD: working on call metrics api",
+            "user": "U02TB8XCDU3",
+            "ts": "1662126801.020409",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "OMC",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD: working on call metrics api"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "client_msg_id": "ce6ee5d9-ed21-405d-be26-9e4b9b38ae2c",
             "type": "message",
             "text": "Worked on health details API",
@@ -33602,5 +33804,1125 @@
                 }
             ]
         }
-    ]
+    ],
+    "2022-09-03 00:00:00": [
+        {
+            "client_msg_id": "1a6c8486-9890-4da1-9144-729a5dd37fb9",
+            "type": "message",
+            "text": "still working on <https://github.com/coronasafe/leaderboard/issues/69|issue69> ,\nfigured out a possible implementation to find linked pr's to an issue\nwhen an issue is closed , find the source pr where it was cross-referenced\nif both authors are same , create a badge event",
+            "user": "U02T4HE96KY",
+            "ts": "1662224477.296519",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02T4HE96KY",
+                "ts": "1662224488.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "2Bxkw",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "still working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/issues/69",
+                                    "text": "issue69"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ,\nfigured out a possible implementation to find linked pr's to an issue\nwhen an issue is closed , find the source pr where it was cross-referenced\nif both authors are same , create a badge event"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "272b49b0-61e3-407e-90cc-671242d94c2b",
+            "type": "message",
+            "text": "Working on facility cover image feat. (issue <https://github.com/coronasafe/care_fe/issues/2171|#2171>)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662215489.782639",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Zr/",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on facility cover image feat. (issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2171",
+                                    "text": "#2171",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": ")"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "77e18f05-3557-431d-bd4e-06469f59c955",
+            "type": "message",
+            "text": "Completed middleware side of authentication. Left with testing along with care. Working on it",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662210101.986529",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TB8X9WRZ",
+                "ts": "1662210138.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tExOf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Completed middleware side of authentication. Left with testing along with care. Working on it"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "88d6590d-6d79-40d9-bb56-fae8ddc98763",
+            "type": "message",
+            "text": "had some college work today, didn\u2019t do much.",
+            "user": "U02TB8XCDU3",
+            "ts": "1662208893.489149",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "shk",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "had some college work today, didn\u2019t do much."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "4f9ccc70-e296-478c-abef-4eb555df95f0",
+            "type": "message",
+            "text": "Worked on previous PR <https://github.com/coronasafe/care_fe/pull/3503|#3503>",
+            "user": "U02T4HFA07Q",
+            "ts": "1662186337.649519",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "mHQL",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3503",
+                                    "text": "#3503",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "a434acca-b1a6-40ff-8aeb-9d8aac4a0983",
+            "type": "message",
+            "text": "yesterday worked on creating a script to generate keypair in docker-entrypoint, created a separate volume for storing certs, worked on generating jwt token in care-be",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662184043.407159",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "czn",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "yesterday worked on creating a script to generate keypair in docker-entrypoint, created a separate volume for storing certs, worked on generating jwt token in care-be"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-04 00:00:00": [
+        {
+            "client_msg_id": "3e7a3227-2c15-45d3-9af7-9196db19603e",
+            "type": "message",
+            "text": "Worked on <https://github.com/coronasafe/care/pull/998|#998>",
+            "user": "U02T4HFA07Q",
+            "ts": "1662274230.325949",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Q4FiS",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/998",
+                                    "text": "#998",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-05 00:00:00": [
+        {
+            "client_msg_id": "9bfae0a1-a9b3-4335-873d-68aa6ba1de4d",
+            "type": "message",
+            "text": "Entire day passed by working with Cypress Workflow\nPR <https://github.com/coronasafe/care_fe/pull/3541|#1> <https://github.com/coronasafe/care_fe/pull/3541|#2>\n<https://github.com/coronasafe/leaderboard/pull/80|Minor UI feature in leaderboard>",
+            "user": "U02TPSYRUPK",
+            "ts": "1662399342.098889",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662373371,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3541",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3541|#3541 Fix cypress workflow errors>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3541|#3541 Fix cypress workflow errors>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662213934,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/pull/80",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/pull/80|#80 Improve info card hover effect>",
+                    "title": "<https://github.com/coronasafe/leaderboard/pull/80|#80 Improve info card hover effect>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "TcheZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Entire day passed by working with Cypress Workflow\nPR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3541",
+                                    "text": "#1",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3541",
+                                    "text": "#2",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/pull/80",
+                                    "text": "Minor UI feature in leaderboard"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "23d5b9c2-ee1c-42d1-adaa-0132e810dd4a",
+            "type": "message",
+            "text": "worked on <https://github.com/coronasafe/care/pull/999|#999>",
+            "user": "U02U102TL0G",
+            "ts": "1662399107.934809",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662365249,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/999",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/999|#999 add enhancements for pressure sore (push score)>",
+                    "text": "*Proposed Changes*\n\n\u2022 add `pressure_sore_enhanced` field\n\u2022 create schema to validate the field\n\u2022 add save/update logic for push score calculation  \n    @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care/pull/999|#999 add enhancements for pressure sore (push score)>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "gsWG",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/999",
+                                    "text": "#999",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "8a85a42b-c4c8-4563-a370-f327bfb35831",
+            "type": "message",
+            "text": "\u2022 Working on making making care landing page responsive (<https://github.com/coronasafe/care_fe/pull/3456|3456>)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662388868.947829",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "yQO",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on making making care landing page responsive ("
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3456",
+                                            "text": "3456"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "9bca7f67-c895-4022-a4df-c87f6680b544",
+            "type": "message",
+            "text": "Working on <https://github.com/coronasafe/care/issues/738|#738>",
+            "user": "U02TB8XCDU3",
+            "ts": "1662384191.785539",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1652333053,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/issues/738",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/issues/738|#738 Create Metrics for Whatsapp Video Utilization>",
+                    "text": "Create an API that would be hit when a Whatsapp Video Call is initialized from the UI. This should be asynchronously stored to the Database.\n\n<https://github.com/vigneshhari|@vigneshhari> to comment on implementation details",
+                    "title": "<https://github.com/coronasafe/care/issues/738|#738 Create Metrics for Whatsapp Video Utilization>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Krishna-Sivakumar|@Krishna-Sivakumar>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "i9PI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/issues/738",
+                                    "text": "#738",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-06 00:00:00": [
+        {
+            "type": "message",
+            "text": "Finished working on public asset page for care dashboard. Currently, the UI is consistent with `care_fe` .",
+            "files": [
+                {
+                    "id": "F041CR7U5S8",
+                    "created": 1662502299,
+                    "timestamp": 1662502299,
+                    "name": "image.png",
+                    "title": "image.png",
+                    "mimetype": "image/png",
+                    "filetype": "png",
+                    "pretty_type": "PNG",
+                    "user": "U02T4HFA07Q",
+                    "editable": false,
+                    "size": 64532,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https://files.slack.com/files-pri/TC99SV7B6-F041CR7U5S8/image.png",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F041CR7U5S8/download/image.png",
+                    "media_display_type": "unknown",
+                    "thumb_64": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_64.png",
+                    "thumb_80": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_80.png",
+                    "thumb_360": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_360.png",
+                    "thumb_360_w": 360,
+                    "thumb_360_h": 125,
+                    "thumb_480": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_480.png",
+                    "thumb_480_w": 480,
+                    "thumb_480_h": 166,
+                    "thumb_160": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_160.png",
+                    "thumb_720": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_720.png",
+                    "thumb_720_w": 720,
+                    "thumb_720_h": 249,
+                    "thumb_800": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_800.png",
+                    "thumb_800_w": 800,
+                    "thumb_800_h": 277,
+                    "thumb_960": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_960.png",
+                    "thumb_960_w": 960,
+                    "thumb_960_h": 333,
+                    "thumb_1024": "https://files.slack.com/files-tmb/TC99SV7B6-F041CR7U5S8-05c8e5a65e/image_1024.png",
+                    "thumb_1024_w": 1024,
+                    "thumb_1024_h": 355,
+                    "original_w": 1914,
+                    "original_h": 663,
+                    "thumb_tiny": "AwAQADChk+tOPbjrTKdu6UAGOvNJmgsc5pKAJBGxjL5GBTMn1NGSBjJx6UlAH//Z",
+                    "permalink": "https://rebuildearth.slack.com/files/U02T4HFA07Q/F041CR7U5S8/image.png",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F041CR7U5S8-4cbac6ad4b",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                },
+                {
+                    "id": "F041P0XST0R",
+                    "created": 1662502303,
+                    "timestamp": 1662502303,
+                    "name": "image.png",
+                    "title": "image.png",
+                    "mimetype": "image/png",
+                    "filetype": "png",
+                    "pretty_type": "PNG",
+                    "user": "U02T4HFA07Q",
+                    "editable": false,
+                    "size": 60778,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https://files.slack.com/files-pri/TC99SV7B6-F041P0XST0R/image.png",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F041P0XST0R/download/image.png",
+                    "media_display_type": "unknown",
+                    "thumb_64": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_64.png",
+                    "thumb_80": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_80.png",
+                    "thumb_360": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_360.png",
+                    "thumb_360_w": 360,
+                    "thumb_360_h": 124,
+                    "thumb_480": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_480.png",
+                    "thumb_480_w": 480,
+                    "thumb_480_h": 166,
+                    "thumb_160": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_160.png",
+                    "thumb_720": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_720.png",
+                    "thumb_720_w": 720,
+                    "thumb_720_h": 248,
+                    "thumb_800": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_800.png",
+                    "thumb_800_w": 800,
+                    "thumb_800_h": 276,
+                    "thumb_960": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_960.png",
+                    "thumb_960_w": 960,
+                    "thumb_960_h": 331,
+                    "thumb_1024": "https://files.slack.com/files-tmb/TC99SV7B6-F041P0XST0R-942cd54a56/image_1024.png",
+                    "thumb_1024_w": 1024,
+                    "thumb_1024_h": 353,
+                    "original_w": 1917,
+                    "original_h": 661,
+                    "thumb_tiny": "AwAQADChk+tOPQD1plOz0oAT8aM0pbmm0ASLGzRl8jApmT6mjJAxk49KSgD/2Q==",
+                    "permalink": "https://rebuildearth.slack.com/files/U02T4HFA07Q/F041P0XST0R/image.png",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F041P0XST0R-61f12b92dc",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                }
+            ],
+            "upload": false,
+            "user": "U02T4HFA07Q",
+            "team": "TC99SV7B6",
+            "ts": "1662502336.084389",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/cOs3",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Finished working on public asset page for care dashboard. Currently, the UI is consistent with "
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "care_fe",
+                                    "style": {
+                                        "code": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "client_msg_id": "922eeee0-d020-4cf7-afb0-e999bf548e44",
+            "thread_ts": "1662502336.084389",
+            "reply_count": 2,
+            "reply_users_count": 2,
+            "latest_reply": "1662524618.343719",
+            "reply_users": [
+                "U02TDGQQPMJ",
+                "U02T4HFA07Q"
+            ],
+            "is_locked": false,
+            "subscribed": false
+        },
+        {
+            "client_msg_id": "38f79f9e-bd5a-4bb0-925b-97a65255a34e",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care_fe/pull/3456|#3456> Made landing page with new goal's PR responsive. Test got approved while typing this :marioluigidancing:\n\u2022 <https://github.com/coronasafe/care_fe/pull/3520|#3520> Updated `goBack` utility PR to be in `utils.ts` instead of `goBack.ts`\n\u2022 <https://github.com/coronasafe/care_fe/pull/3458|#3458> Working on implementing `SearchSelectMenuV2` tailwind component in the Asset reg v2 PR.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662487389.110759",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "DX8Ei",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3456",
+                                            "text": "#3456",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Made landing page with new goal's PR responsive. Test got approved while typing this "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "marioluigidancing",
+                                            "display_team_id": "TC99SV7B6",
+                                            "display_url": "https://emoji.slack-edge.com/TC99SV7B6/marioluigidancing/d9dc4cdb3a4fb0fe.gif"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3520",
+                                            "text": "#3520",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Updated "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "goBack",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " utility PR to be in "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "utils.ts",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " instead of "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "goBack.ts",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3458",
+                                            "text": "#3458",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Working on implementing "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "SearchSelectMenuV2",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " tailwind component in the Asset reg v2 PR."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "b6813f00-ec1c-47fc-be45-f2571bdd5ebe",
+            "type": "message",
+            "text": "It's a <https://github.com/rabilrbl/care_fe/tree/cypress-delay-fix|cypress> day again! :disguised_face:",
+            "user": "U02TPSYRUPK",
+            "ts": "1662478420.414589",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "OwF",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "It's a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/rabilrbl/care_fe/tree/cypress-delay-fix",
+                                    "text": "cypress"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " day again! "
+                                },
+                                {
+                                    "type": "emoji",
+                                    "name": "disguised_face",
+                                    "unicode": "1f978"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "joy",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "U02TB83Q5V0"
+                    ],
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "2022-09-07 00:00:00": [
+        {
+            "client_msg_id": "36304989-ddfe-43bc-8bd9-3855cbcd41b8",
+            "type": "message",
+            "text": "\u2022 Had final practical exam on Micro-controllers and Embedded Systems\n*Cypress*\n\u2022 Made Test <https://github.com/coronasafe/care_fe/pull/3555|PR>\n*Ongoing*\n\u2022 Improvements with cypress actions on deployments\n\u2022 Debugging back-end limitations with rate limit and others.",
+            "user": "U02TPSYRUPK",
+            "ts": "1662569792.591199",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TPSYRUPK",
+                "ts": "1662569833.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662545959,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3555",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3555|#3555 Cypress Fix>",
+                    "text": "*Changes*\n\n\u2022 Tests are now faster and reliable\n\u2022 Remove all explicit mentions and standardize host url accross all tests\n\u2022 Refactored code for less repetitions\n\u2022 Enable 2 retry attempts on fail\n\u2022 Add script to run all tests in visual mode\n\n*Not working*\n\n\u2022 Roles and Profile Edits, Both related to backend errors.",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3555|#3555 Cypress Fix>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "work-in-progress",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "swrXN",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had final practical exam on Micro-controllers and Embedded Systems"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Cypress",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made Test "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3555",
+                                            "text": "PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Ongoing",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Improvements with cypress actions on deployments"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Debugging back-end limitations with rate limit and others."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "426e03b3-4922-4da3-826a-3b3cc9555df3",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care/pull/1006|care/#1006> Marked `warranty_details` as deprecated in BE.\n\u2022 <https://github.com/coronasafe/care/pull/885|care/#885> Resolved conflicts for modify covid category to patient category BE PR.\n\u2022 <https://github.com/coronasafe/care_fe/pull/3458|care_fe/#3458> Cleaned asset reg v2 PR and made ready for testing.\n\u2022 Working on `SearchSelectV2` tailwind component.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662564258.594409",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "T95G",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1006",
+                                            "text": "care/#1006"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Marked "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "warranty_details",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " as deprecated in BE."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/885",
+                                            "text": "care/#885"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Resolved conflicts for modify covid category to patient category BE PR."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3458",
+                                            "text": "care_fe/#3458"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Cleaned asset reg v2 PR and made ready for testing."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "SearchSelectV2",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " tailwind component."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "322376f4-df49-4713-9cc6-020e732ee131",
+            "type": "message",
+            "text": "Worked on previous PRs and studied for upcoming exams",
+            "user": "U02TPSYB1MF",
+            "ts": "1662562576.172499",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xn=tc",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PRs and studied for upcoming exams"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "fb4775de-a90e-4718-b4d7-589b5ee528b3",
+            "type": "message",
+            "text": "Created a PR <https://github.com/coronasafe/teleicu_middleware/pull/59|#59> to setup auth middleware in MSE server. Looked for new issues in care_fe",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662562510.221419",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662467362,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/teleicu_middleware/pull/59",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/teleicu_middleware/pull/59|#59 feat: authorization middleware for MSE server>",
+                    "text": "Fixes <https://github.com/coronasafe/care/issues/713|coronasafe/care#713>",
+                    "title": "<https://github.com/coronasafe/teleicu_middleware/pull/59|#59 feat: authorization middleware for MSE server>",
+                    "footer": "<https://github.com/coronasafe/teleicu_middleware|coronasafe/teleicu_middleware>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Oqh0",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Created a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/teleicu_middleware/pull/59",
+                                    "text": "#59",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to setup auth middleware in MSE server. Looked for new issues in care_fe"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-08 00:00:00": []
 }

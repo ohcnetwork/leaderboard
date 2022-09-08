@@ -1,6 +1,223 @@
 {
-  "last_updated": 1662050172.0,
+  "last_updated": 1662561733.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662561733.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239484963",
+      "text": "> @Ashesh3 @khavinshankar it is working now, do we need this PR or close it?\r\n\r\nWe still need this PR to fix it, This adds a conditional check to not print attributes which do not exist. This should make the care platform more robust and crash proof. This will ensure that crashes do not happen in future even if backend and frontend are not in sync."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1662557753.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539#issuecomment-1239400387",
+      "text": "> @Ashesh3 Reached out to @gigincg told me @aparnacoronasafe Will confirm whether this UI is confusing or not.\r\n\r\nSure! Please do let me know here once you have an update on that."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662538724.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239064727",
+      "text": "@khavinshankar The backend does have proper validation for feature ids.\r\n\r\nThis issue seemed to be due to an inconsistency between the features mapping on the backend and frontend.\r\n\r\nBackend:\r\n```\r\n FEATURE_CHOICES = [\r\n    (1, \"CT Scan Facility\"),\r\n    (2, \"Maternity Care\"),\r\n    (3, \"X-Ray facility\"),\r\n    (4, \"Neonatal care\"),\r\n    (5, \"Operation theater\"),\r\n    (6, \"Blood Bank\"),\r\n]\r\n```\r\n\r\nFrontend:\r\n```\r\nexport const FACILITY_FEATURE_TYPES = [\r\n  {\r\n    id: 1,\r\n    name: \"CT Scan\",\r\n    icon: \"circle-dot\",\r\n  },\r\n  {\r\n    id: 2,\r\n    name: \"Maternity Care\",\r\n    icon: \"person-breastfeeding\",\r\n  },\r\n  {\r\n    id: 3,\r\n    name: \"X-Ray\",\r\n    icon: \"x-ray\",\r\n  },\r\n  {\r\n    id: 4,\r\n    name: \"Neonatal Care\",\r\n    icon: \"baby\",\r\n  },\r\n  {\r\n    id: 5,\r\n    name: \"Operation Theater\",\r\n    icon: \"syringe\",\r\n  },\r\n];\r\n```\r\n\r\nFeature \"Blood Bank\" with id `6` has not been added to the frontend yet.\r\n\r\nIssue (Addition of Blood Bank): https://github.com/coronasafe/care_fe/issues/3469\r\n\r\nThe below two PRs ideally should have been merged together:\r\nBackend change: https://github.com/coronasafe/care/pull/993\r\nFrontend change: https://github.com/coronasafe/care_fe/pull/3474\r\n\r\nBut it seems that the backend change was merged but the frontend lagged behind, which caused this issue. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662537967.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239051392",
+      "text": "> @Ashesh3 can you please raise an issue about this in the backend?\r\n\r\nSure!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3552",
+      "time": 1662537129.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3552#issuecomment-1239037330",
+      "text": "> @nihal467 the issue was due to that, there was a facility that had a feature that was not there in our pre-defined list of features ![image](https://user-images.githubusercontent.com/29787772/188820763-26f017ee-04d4-49ee-92fc-09ad57fcc9ed.png)\r\n\r\nExactly! Any idea how could an invalid feature was set for this facility?\r\nhttps://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239032458"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662536841.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553#issuecomment-1239032458",
+      "text": "@nihal467 Should be fixed now. Somehow the facility \"test-nihal-001\" has a feature which doesn't exist (ID 6). This shouldn't be possible as the frontend has no option to set a feature with ID 6 during asset creation. Maybe there needs to be checks on the backend to disallow such invalid values."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1662535236.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539#issuecomment-1239005880",
+      "text": "@rabilrbl Which design looks better for you?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3552",
+      "time": 1662534405.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3552#issuecomment-1238993408",
+      "text": "@nihal467 resolved, please test."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3553",
+      "time": 1662534369.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3553",
+      "text": "Fix crash when feature's id is missing from feature_types"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3551",
+      "time": 1662532861.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3551",
+      "text": "Store Asset details URL in QR code"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/dashboard#144",
+      "time": 1662526416.0,
+      "link": "https://github.com/coronasafe/dashboard/issues/144#issuecomment-1238906568",
+      "text": "> Patient numbers appearing for MAJ Hospital is all off on patient export.\r\n> \r\n> CARE shows 24 live patients in the hospital. But the CSV export only shows 4 patients in the isolation rooms and 0 is all other bed types. In CARE there are 7 patients in the isolation room and a total of 24 live patients.\r\n> \r\n> The same thing may be happening for other facilities as well.\r\n> \r\n> [patient_export.csv](https://github.com/coronasafe/dashboard/files/6569282/patient_export.csv)\r\n\r\nI am unable to reproduce this issue, can you check if this still exists?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/dashboard#205",
+      "time": 1662503345.0,
+      "link": "https://github.com/coronasafe/dashboard/pull/205",
+      "text": "Add Asset details page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3550",
+      "time": 1662469086.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3550",
+      "text": "Fix slider fill width on ABGA page."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3544",
+      "time": 1662466590.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3544#issuecomment-1238068608",
+      "text": "> Why isn't the package-lock changed?\r\n\r\nApologies for the confusion, Added now!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3544",
+      "time": 1662440323.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3544#issuecomment-1237659849",
+      "text": "> Why isn't the package-lock changed?\r\n\r\nThat's a good question! Since we're using Yarn as our primary package manager, I've removed and added packages solely using `yarn` commands. It does not touch package-lock, instead it has it's own lock file `yarn.lock` which was indeed modified during this migration. So why isn't it there in this PR? \ud83e\udd14 It's apparently ignored in the `.gitignore` file [here](https://github.com/coronasafe/care_fe/blob/develop/.gitignore#L52).\r\nIt was recently added in [this commit](https://github.com/coronasafe/care_fe/commit/6e53406f168d005caa5ba4a9747dd4bf25e2b320#diff-bc37d034bad564583790a46f19d807abfe519c5671395fd494d8cce506c42947R50-R52) (probably unintentionally)\r\n\r\nIdeally, it should be checked out to source control. \r\n\r\nhttps://classic.yarnpkg.com/en/docs/migrating-from-npm\r\n\r\n> When you run either yarn or yarn add <package>, Yarn will generate a yarn.lock file within the root directory of your package. You don\u2019t need to read or understand this file - just check it into source control. When other people start using Yarn instead of npm, the yarn.lock file will ensure that they get precisely the same dependencies as you have.\r\n\r\nI made a PR resolving the above issue here: #3545"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3545",
+      "time": 1662440292.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3545",
+      "text": "Switch lockfile to Yarn and include in git"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3544",
+      "time": 1662413453.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3544",
+      "text": "Migrate bs-webapi to rescript-webapi"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1662411943.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539#issuecomment-1237456166",
+      "text": "> @Ashesh3 The UI is a bit confusing in small screens Can we have flex-col so that fields stack in mobile devices?\r\n\r\nI agree that the table is a bit hard to navigate on smaller screens but I am afraid I am aware of no better solution. MaterialUI Table does not allow us to display the cells stacked according to the screen size. \r\n\r\nhttps://mui.com/material-ui/api/table/\r\n\r\nAlthough we can indeed force the cells to stack, this might not achieve the best results:\r\n![image](https://user-images.githubusercontent.com/3626859/188512255-dff811d3-69dd-4d3c-ba16-316ea0ccdaf2.png)\r\n\r\nI believe that at it's current state (with this PR), it makes the table at least fully usable and represents it in an elegant manner.\r\nIf you know of any better way, feel free to suggest a change! "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3543",
+      "time": 1662411156.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3543",
+      "text": "Migrate bs-webapi (Deprecated) to rescript-webapi"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#998",
+      "time": 1662386438.0,
+      "link": "https://github.com/coronasafe/care/pull/998",
+      "text": "Add public asset fetch endpoint"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1662358688.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539",
+      "text": "Increase input width for Patient Investigation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2984",
+      "time": 1662356774.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2984#issuecomment-1236562085",
+      "text": "@nihal467 Any info on this?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1662265167.0,
+      "title": "coronasafe/care#998",
+      "link": "https://github.com/coronasafe/care/pull/998#pullrequestreview-1095610589",
+      "text": "Add public asset fetch endpoint"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#998",
+      "time": 1662265160.0,
+      "link": "https://github.com/coronasafe/care/pull/998#issuecomment-1236256551",
+      "text": "Added caching the asset for 24 hours by it's `external_id` and invalidating it on the `save` method.\r\n\r\n```\r\nCACHE MISS\r\n[04/Sep/2022 09:41:20] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 838\r\n\r\nCACHE HIT\r\n[04/Sep/2022 09:41:24] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 838\r\n\r\nCACHE HIT\r\n[04/Sep/2022 09:41:25] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 838\r\n\r\nCACHE HIT\r\n[04/Sep/2022 09:41:28] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 838\r\n\r\nCACHE INVALIDATED\r\nINFO 2022-09-04 09:41:37,580 receivers 1378112 281472209514784 AUDIT_LOG::put::7ab4a38924973defbfad1b5d484bcc29::20e5b23c0e0a46e1b8f00674ee50619b|devdistrictadmin|update|facility.Asset|ID:1|{\"name\": \"Testttttt122dddddd12\"}\r\nINFO 2022-09-04 09:41:37,618 middleware 1378112 281472209514784 PUT /api/v1/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ 200 User:[4|devdistrictadmin]\r\n[04/Sep/2022 09:41:37] \"PUT /api/v1/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 840\r\n\r\nCACHE MISS\r\n[04/Sep/2022 09:43:52] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 840\r\n\r\nCACHE HIT\r\n[04/Sep/2022 09:43:58] \"GET /api/v1/public/asset/b8b71bff-7cf0-4fad-9180-7fc79f2b060d/ HTTP/1.1\" 200 840\r\n```\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1662265021.0,
+      "title": "coronasafe/care#998",
+      "link": "https://github.com/coronasafe/care/pull/998#pullrequestreview-1095610424",
+      "text": "Add public asset fetch endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1662234526.0,
+      "title": "coronasafe/care#998",
+      "link": "https://github.com/coronasafe/care/pull/998#pullrequestreview-1095554112",
+      "text": "Add public asset fetch endpoint"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#998",
+      "time": 1662230121.0,
+      "link": "https://github.com/coronasafe/care/pull/998",
+      "text": "Add public asset fetch endpoint"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3532",
+      "time": 1662227026.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3532",
+      "text": "Bed name not centered on Patient Dashboard"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3532",
+      "time": 1662227026.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3532#issuecomment-1236170648",
+      "text": "@nihal467 yep that should resolve it!"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3532",
+      "time": 1662225905.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3532",
+      "text": "Bed name not centered on Patient Dashboard"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3503",
+      "time": 1662186082.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3503#issuecomment-1236058719",
+      "text": "Made the changes.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/188258518-867e802c-8013-4bbe-9239-1c80186dff16.png)\r\n\r\nOn hover:\r\n![msedge_b7bxCFuqe2](https://user-images.githubusercontent.com/3626859/188258595-037e0ae2-8441-42f2-8710-a477d3c5f6ac.gif)\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/leaderboard#77",
@@ -2215,6 +2432,30 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3551",
+      "title": "Store Asset details URL in QR code"
+    },
+    {
+      "link": "https://github.com/coronasafe/dashboard/pull/205",
+      "title": "Add Asset details page"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3550",
+      "title": "Fix slider fill width on ABGA page."
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3545",
+      "title": "Suggest npm in README"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3544",
+      "title": "Migrate bs-webapi to rescript-webapi"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3539",
+      "title": "Increase input width for Patient Investigation"
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3503",
       "title": "Fix bed badge alignment"

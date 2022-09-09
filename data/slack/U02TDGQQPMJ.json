@@ -5645,5 +5645,83 @@
                 }
             ]
         }
+    ],
+    "2022-09-08 00:00:00": [
+        {
+            "client_msg_id": "8c52208a-f8ed-41ed-93f4-0df68cabbc0a",
+            "type": "message",
+            "text": "\u2022 Reworked on Deprecating Covid Category BE PR: <https://github.com/coronasafe/care/pull/1007> as previous PR became too dirty.\n\u2022 Working on Select Menu with Search and FE for the above issue.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662653155.528909",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662616571,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/1007",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/1007|#1007 Deprecate Covid Category and adds Patient Category in Daily Rounds and Consultation>",
+                    "text": "Closes <https://github.com/coronasafe/care/issues/875|#875>  \nRelated FE issue: <https://github.com/coronasafe/care_fe/issues/2210|coronasafe/care_fe#2210>\n\n*Step by step changes:*\n\n\u2611\ufe0e 1. Deprecates existing `patient_category` of DailyRound and `category` of PatientConsultation to `deprecated_covid_category`\n\u2611\ufe0e 2. Migrations for the renamed deprecated fields.\n\u2611\ufe0e 3. Adds *mandatory* fields `patient_category` in DailyRound and `category` in PatientConsultation with new `CATEGORY_CHOICES`.\n\u2611\ufe0e 4. Migrations for the newly created fields.\n\n@coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care/pull/1007|#1007 Deprecate Covid Category and adds Patient Category in Daily Rounds and Consultation>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "WTM",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reworked on Deprecating Covid Category BE PR: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1007"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " as previous PR became too dirty."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on Select Menu with Search and FE for the above issue."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -34924,5 +34924,320 @@
             ]
         }
     ],
-    "2022-09-08 00:00:00": []
+    "2022-09-08 00:00:00": [
+        {
+            "client_msg_id": "306dbe01-db4d-481b-be47-94fd99fe9cbc",
+            "type": "message",
+            "text": "\u2022 completed Cypress in <https://github.com/coronasafe/care_fe/pull/3555|PR>\n    \u25e6 All PRs will now be validated",
+            "user": "U02TPSYRUPK",
+            "ts": "1662657023.256139",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662545959,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3555",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3555|#3555 Cypress Fix>",
+                    "text": "*Changes*\n\n\u2022 Tests are now more reliable\n\u2022 Remove all explicit mentions and standardize host url accross all tests\n\u2022 Refactored code for less repetitions\n\u2022 Enable 2 retry attempts on fail\n\u2022 Add script to run all tests in visual mode\n\n*Cypress Commands*  \n_To run all tests in headless mode_  \n`yarn cypress:run`  \n_To run all tests visually in headed mode_  \n`yarn cypress:run:gui`  \n_To debug tests_  \n`yarn cypress:open`\n\n*Note*\n\n\u2022 The test corresponding with _user roles_ is disabled until the back-end issue with login attempts is resolved, a separate issue will be taken later.",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3555|#3555 Cypress Fix>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "urgent, needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "dLzFN",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "completed Cypress in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3555",
+                                            "text": "PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "All PRs will now be validated"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 1,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "partying_face",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "8c52208a-f8ed-41ed-93f4-0df68cabbc0a",
+            "type": "message",
+            "text": "\u2022 Reworked on Deprecating Covid Category BE PR: <https://github.com/coronasafe/care/pull/1007> as previous PR became too dirty.\n\u2022 Working on Select Menu with Search and FE for the above issue.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662653155.528909",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662616571,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/1007",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/1007|#1007 Deprecate Covid Category and adds Patient Category in Daily Rounds and Consultation>",
+                    "text": "Closes <https://github.com/coronasafe/care/issues/875|#875>  \nRelated FE issue: <https://github.com/coronasafe/care_fe/issues/2210|coronasafe/care_fe#2210>\n\n*Step by step changes:*\n\n\u2611\ufe0e 1. Deprecates existing `patient_category` of DailyRound and `category` of PatientConsultation to `deprecated_covid_category`\n\u2611\ufe0e 2. Migrations for the renamed deprecated fields.\n\u2611\ufe0e 3. Adds *mandatory* fields `patient_category` in DailyRound and `category` in PatientConsultation with new `CATEGORY_CHOICES`.\n\u2611\ufe0e 4. Migrations for the newly created fields.\n\n@coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care/pull/1007|#1007 Deprecate Covid Category and adds Patient Category in Daily Rounds and Consultation>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "WTM",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reworked on Deprecating Covid Category BE PR: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1007"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " as previous PR became too dirty."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on Select Menu with Search and FE for the above issue."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "message",
+            "text": "Made a <https://github.com/coronasafe/leaderboard/pull/81|pr> with new <https://leaderboard-ic14dfp2m-coronasafe.vercel.app/contributors/Ashesh3|autonomy and responsibility badge>",
+            "files": [
+                {
+                    "id": "F041KAX8ERY",
+                    "created": 1662638395,
+                    "timestamp": 1662638395,
+                    "name": "image.png",
+                    "title": "image.png",
+                    "mimetype": "image/png",
+                    "filetype": "png",
+                    "pretty_type": "PNG",
+                    "user": "U02T4HE96KY",
+                    "editable": false,
+                    "size": 311664,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https://files.slack.com/files-pri/TC99SV7B6-F041KAX8ERY/image.png",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F041KAX8ERY/download/image.png",
+                    "media_display_type": "unknown",
+                    "thumb_64": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_64.png",
+                    "thumb_80": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_80.png",
+                    "thumb_360": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_360.png",
+                    "thumb_360_w": 360,
+                    "thumb_360_h": 191,
+                    "thumb_480": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_480.png",
+                    "thumb_480_w": 480,
+                    "thumb_480_h": 254,
+                    "thumb_160": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_160.png",
+                    "thumb_720": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_720.png",
+                    "thumb_720_w": 720,
+                    "thumb_720_h": 381,
+                    "thumb_800": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_800.png",
+                    "thumb_800_w": 800,
+                    "thumb_800_h": 423,
+                    "thumb_960": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_960.png",
+                    "thumb_960_w": 960,
+                    "thumb_960_h": 508,
+                    "thumb_1024": "https://files.slack.com/files-tmb/TC99SV7B6-F041KAX8ERY-3800f30740/image_1024.png",
+                    "thumb_1024_w": 1024,
+                    "thumb_1024_h": 542,
+                    "original_w": 2239,
+                    "original_h": 1185,
+                    "thumb_tiny": "AwAZADCiGAI7+1KG4xj9KZU0ZG0ZDE+1MQxWADA9xineYvmbsHGc44px2f3TmnbI/wDP/wCqmlcCHdgH3GOlKhBkX6ihuh4xTY/9Yv1FIBtTRSmNcDbz6moaKGrjTsWDKDnIQn1pBIf75/OoKKLWC7Huc5ORSR/6xfqKbTo/9Yv1FAj/2Q==",
+                    "permalink": "https://rebuildearth.slack.com/files/U02T4HE96KY/F041KAX8ERY/image.png",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F041KAX8ERY-cdfc9ea09a",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                }
+            ],
+            "upload": false,
+            "user": "U02T4HE96KY",
+            "display_as_bot": false,
+            "team": "TC99SV7B6",
+            "ts": "1662638406.331419",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RqN",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/pull/81",
+                                    "text": "pr"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " with new "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://leaderboard-ic14dfp2m-coronasafe.vercel.app/contributors/Ashesh3",
+                                    "text": "autonomy and responsibility badge"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "client_msg_id": "6d99b828-fcd7-4f85-b612-13639829c422",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662632599,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/pull/81",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/pull/81|#81 Capture Autonomy And Responsibility >",
+                    "text": "Closes <https://github.com/coronasafe/leaderboard/issues/69|#69>",
+                    "title": "<https://github.com/coronasafe/leaderboard/pull/81|#81 Capture Autonomy And Responsibility >",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "fire",
+                    "users": [
+                        "U02U1035G0G",
+                        "U02TPSYRUPK",
+                        "U02TDGQQPMJ",
+                        "U02TB8XHZD1",
+                        "U02TPSYB1MF",
+                        "U02TB8XCDU3"
+                    ],
+                    "count": 6
+                },
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-09-09 00:00:00": []
 }

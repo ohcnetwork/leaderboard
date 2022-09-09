@@ -2148,5 +2148,102 @@
                 }
             ]
         }
+    ],
+    "2022-09-08 00:00:00": [
+        {
+            "client_msg_id": "306dbe01-db4d-481b-be47-94fd99fe9cbc",
+            "type": "message",
+            "text": "\u2022 completed Cypress in <https://github.com/coronasafe/care_fe/pull/3555|PR>\n    \u25e6 All PRs will now be validated",
+            "user": "U02TPSYRUPK",
+            "ts": "1662657023.256139",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662545959,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3555",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3555|#3555 Cypress Fix>",
+                    "text": "*Changes*\n\n\u2022 Tests are now more reliable\n\u2022 Remove all explicit mentions and standardize host url accross all tests\n\u2022 Refactored code for less repetitions\n\u2022 Enable 2 retry attempts on fail\n\u2022 Add script to run all tests in visual mode\n\n*Cypress Commands*  \n_To run all tests in headless mode_  \n`yarn cypress:run`  \n_To run all tests visually in headed mode_  \n`yarn cypress:run:gui`  \n_To debug tests_  \n`yarn cypress:open`\n\n*Note*\n\n\u2022 The test corresponding with _user roles_ is disabled until the back-end issue with login attempts is resolved, a separate issue will be taken later.",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3555|#3555 Cypress Fix>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "urgent, needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "dLzFN",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "completed Cypress in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3555",
+                                            "text": "PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "All PRs will now be validated"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 1,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "partying_face",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

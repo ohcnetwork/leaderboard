@@ -1742,5 +1742,94 @@
                 }
             ]
         }
+    ],
+    "2022-09-09 00:00:00": [
+        {
+            "client_msg_id": "e11f7c04-87f7-4eea-8803-4e98162f7309",
+            "type": "message",
+            "text": "EOD updates:\n\u2022 worked on <https://github.com/coronasafe/care/pull/999|#999> (add migration to migrate existing data)\n\u2022 done with on-campus placements",
+            "user": "U02U102TL0G",
+            "ts": "1662748563.052209",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662365249,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/999",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/999|#999 add enhancements for pressure sore (push score)>",
+                    "text": "*Proposed Changes*\n\n\u2022 add `pressure_sore_enhanced` field\n\u2022 create schema to validate the field\n\u2022 add save/update logic for push score calculation\n\nfixes: <https://github.com/coronasafe/care/issues/986|#986>  \n@coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care/pull/999|#999 add enhancements for pressure sore (push score)>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "4",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ILg",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD updates:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "worked on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/999",
+                                            "text": "#999",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (add migration to migrate existing data)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "done with on-campus placements"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

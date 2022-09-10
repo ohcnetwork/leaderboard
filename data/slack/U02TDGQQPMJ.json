@@ -5723,5 +5723,66 @@
                 }
             ]
         }
+    ],
+    "2022-09-09 00:00:00": [
+        {
+            "client_msg_id": "2a8d6595-20df-4fd1-9ed8-c1fe87ac0f56",
+            "type": "message",
+            "text": "PR <https://github.com/coronasafe/care_fe/pull/3565>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1662733948.903849",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/25143503/189366217-a9f2053a-3fd7-45a2-b458-dda4edbbda23.png",
+                    "image_width": 837,
+                    "image_height": 147,
+                    "image_bytes": 10744,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662731860,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3565",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "837x147px image",
+                    "text": "Functional changes as per <https://github.com/coronasafe/care_fe/issues/2210|#2210>  \nColors and styling updates will be made once <https://github.com/coronasafe/care_fe/pull/3458|#3458> is merged.\n\n*Proposed Changes*\n\n\u2022 Adds mandatory patient category field in Patient Consultation form.  \n    <https://user-images.githubusercontent.com/25143503/189366217-a9f2053a-3fd7-45a2-b458-dda4edbbda23.png|image>\n\u2022 Adds mandatory patient category field in Daily Rounds form.  \n    <https://user-images.githubusercontent.com/25143503/189366088-ca053eb9-8406-400f-b5fa-d96c3e26cfb3.png|image>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3565|#3565 Adds Patient Category in Daily Rounds and Consultation>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "lQL",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3565"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

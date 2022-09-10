@@ -744,5 +744,62 @@
                 }
             ]
         }
+    ],
+    "2022-09-09 00:00:00": [
+        {
+            "client_msg_id": "d854d5da-966d-47fe-b16c-d41ebc32a07d",
+            "type": "message",
+            "text": "PR: <https://github.com/coronasafe/care/pull/1016>",
+            "user": "U02TB8X9WRZ",
+            "ts": "1662746313.141469",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1662707678,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/1016",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/1016|#1016 modify pressure_sore and create new pain_scale_enhanced field>",
+                    "text": "fixes <https://github.com/coronasafe/care_fe/issues/3556|coronasafe/care_fe#3556>\n\n*Changes*\n\n\u2022 pain scale in Vitals need the properties of region and scale similar to pressure sore section\n\u2022 Add description fields for each region in pressure sore section in Record updates\n\u2022 Add description fields for each region in pain scale in Vitals [Record updates]\n\n@coronasafe/care-developers",
+                    "title": "<https://github.com/coronasafe/care/pull/1016|#1016 modify pressure_sore and create new pain_scale_enhanced field>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "6",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1=M=",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/1016"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

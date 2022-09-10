@@ -1,6 +1,55 @@
 {
-  "last_updated": 1662648765.0,
+  "last_updated": 1662740179.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2747",
+      "time": 1662740179.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2747#issuecomment-1242178894",
+      "text": "@aparnacoronasafe We're talking only about edits here."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#999",
+      "time": 1662734431.0,
+      "link": "https://github.com/coronasafe/care/pull/999#issuecomment-1242059809",
+      "text": "@iamsdas Staying inline with the EOD Discussion with @aparnacoronasafe let's migrate the existing data(0-5) itself, propotional to the PUSH score (0-17) using the following logic.\r\n\r\nbase = existing_simple_pressure_sore\r\npush_score = (base/5)*17\r\npressure_sore = { push_score }"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1016",
+      "time": 1662733754.0,
+      "link": "https://github.com/coronasafe/care/pull/1016#issuecomment-1242046699",
+      "text": "@Pragati1610 What did you modify in Pressure Sores?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#979",
+      "time": 1662733624.0,
+      "link": "https://github.com/coronasafe/care/pull/979#issuecomment-1242043466",
+      "text": "@cp-Coder to Add Screenshot of Swagger Docs for the new Consultation API"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#979",
+      "time": 1662733604.0,
+      "link": "https://github.com/coronasafe/care/pull/979#issuecomment-1242042717",
+      "text": "Waiting for FE before merging"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1004",
+      "time": 1662723610.0,
+      "link": "https://github.com/coronasafe/care/pull/1004#issuecomment-1241871333",
+      "text": "@Krishna-Sivakumar https://github.com/coronasafe/care/pull/1001 was created after putting some more thought on the issue. `initiated_by` and `called_at` doesn't make any sense since it's the same as `created_by` and `created_at`\r\n\r\nCan you take up https://github.com/coronasafe/care/pull/1001 Test it out and add the `waiting for review` tag after that. I'm closing this PR."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1014",
+      "time": 1662703773.0,
+      "link": "https://github.com/coronasafe/care/issues/1014",
+      "text": "OCR for ABG Readings"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#3227",

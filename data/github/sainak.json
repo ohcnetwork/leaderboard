@@ -1,6 +1,27 @@
 {
-  "last_updated": 1662746797.0,
+  "last_updated": 1662834520.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1019",
+      "time": 1662834520.0,
+      "link": "https://github.com/coronasafe/care/pull/1019#issuecomment-1242782897",
+      "text": "> Let's not give the internal name out, our goal here was to break the relationship between the file name and the patient in the unlikely case our buckets are attacked. Let's serialize only the extension.\r\n\r\nyeah I thought returning the extension would be a better solution\r\ndo you have any suggestions for implementing that?\r\nI have 2 implementations in mind \r\n- making the query return the extension\r\n- make a model method to return extension or file type"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1662834316.0,
+      "title": "coronasafe/care#1007",
+      "link": "https://github.com/coronasafe/care/pull/1007#pullrequestreview-1103163527",
+      "text": "Deprecate Covid Category and adds Patient Category in Daily Rounds and Consultation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1011",
+      "time": 1662825924.0,
+      "link": "https://github.com/coronasafe/care/pull/1011",
+      "text": "delete unused views and templates"
+    },
     {
       "type": "pr_reviewed",
       "time": 1662746797.0,
@@ -160,10 +181,6 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1019",
       "title": "return internal name in file list to make determining the file extension easier"
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1011",
-      "title": "delete unused views and templates"
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1003",

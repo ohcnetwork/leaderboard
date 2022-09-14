@@ -1605,5 +1605,64 @@
                 }
             ]
         }
+    ],
+    "2022-09-13 00:00:00": [
+        {
+            "client_msg_id": "2e1e6173-c423-496f-9085-70bbbaa54840",
+            "type": "message",
+            "text": "Worked on previous PRs and worked on <https://github.com/coronasafe/care/issues/989|#989>",
+            "user": "U02TB823H8A",
+            "ts": "1663078374.471419",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1661241555,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/issues/989",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/issues/989|#989 Check availability of username>",
+                    "text": "Build a test to check availability of username to be placed in the User creation page",
+                    "title": "<https://github.com/coronasafe/care/issues/989|#989 Check availability of username>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/khavinshankar|@khavinshankar>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "pFJ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PRs and worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/issues/989",
+                                    "text": "#989",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

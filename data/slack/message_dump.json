@@ -35765,5 +35765,305 @@
             "subscribed": false
         }
     ],
-    "2022-09-13 00:00:00": []
+    "2022-09-13 00:00:00": [
+        {
+            "type": "message",
+            "text": "Implemented Tailwind Component `SwitchV2` . Coming via <https://github.com/coronasafe/care_fe/pull/3458|care_fe/3458>\nWorking on data fetching hooks for dashboard and combobox tailwind component",
+            "files": [
+                {
+                    "id": "F0429NM75SQ",
+                    "created": 1663085458,
+                    "timestamp": 1663085458,
+                    "name": "image.png",
+                    "title": "image.png",
+                    "mimetype": "image/png",
+                    "filetype": "png",
+                    "pretty_type": "PNG",
+                    "user": "U02TDGQQPMJ",
+                    "editable": false,
+                    "size": 20390,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https://files.slack.com/files-pri/TC99SV7B6-F0429NM75SQ/image.png",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F0429NM75SQ/download/image.png",
+                    "media_display_type": "unknown",
+                    "thumb_64": "https://files.slack.com/files-tmb/TC99SV7B6-F0429NM75SQ-c93cb557a1/image_64.png",
+                    "thumb_80": "https://files.slack.com/files-tmb/TC99SV7B6-F0429NM75SQ-c93cb557a1/image_80.png",
+                    "thumb_360": "https://files.slack.com/files-tmb/TC99SV7B6-F0429NM75SQ-c93cb557a1/image_360.png",
+                    "thumb_360_w": 360,
+                    "thumb_360_h": 152,
+                    "thumb_480": "https://files.slack.com/files-tmb/TC99SV7B6-F0429NM75SQ-c93cb557a1/image_480.png",
+                    "thumb_480_w": 480,
+                    "thumb_480_h": 203,
+                    "thumb_160": "https://files.slack.com/files-tmb/TC99SV7B6-F0429NM75SQ-c93cb557a1/image_160.png",
+                    "thumb_720": "https://files.slack.com/files-tmb/TC99SV7B6-F0429NM75SQ-c93cb557a1/image_720.png",
+                    "thumb_720_w": 720,
+                    "thumb_720_h": 305,
+                    "thumb_800": "https://files.slack.com/files-tmb/TC99SV7B6-F0429NM75SQ-c93cb557a1/image_800.png",
+                    "thumb_800_w": 800,
+                    "thumb_800_h": 339,
+                    "original_w": 801,
+                    "original_h": 339,
+                    "thumb_tiny": "AwAUADDSOKAPQ0ySPfj5mGPQ05V2qBknHrQAuD60o+tFFABRRRQAUUUUAFFFFABRRRQB/9k=",
+                    "permalink": "https://rebuildearth.slack.com/files/U02TDGQQPMJ/F0429NM75SQ/image.png",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F0429NM75SQ-0648c40670",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                },
+                {
+                    "id": "F041SNF926B",
+                    "created": 1663085466,
+                    "timestamp": 1663085466,
+                    "name": "image.png",
+                    "title": "image.png",
+                    "mimetype": "image/png",
+                    "filetype": "png",
+                    "pretty_type": "PNG",
+                    "user": "U02TDGQQPMJ",
+                    "editable": false,
+                    "size": 27711,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https://files.slack.com/files-pri/TC99SV7B6-F041SNF926B/image.png",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F041SNF926B/download/image.png",
+                    "media_display_type": "unknown",
+                    "thumb_64": "https://files.slack.com/files-tmb/TC99SV7B6-F041SNF926B-0bc7f7b518/image_64.png",
+                    "thumb_80": "https://files.slack.com/files-tmb/TC99SV7B6-F041SNF926B-0bc7f7b518/image_80.png",
+                    "thumb_360": "https://files.slack.com/files-tmb/TC99SV7B6-F041SNF926B-0bc7f7b518/image_360.png",
+                    "thumb_360_w": 360,
+                    "thumb_360_h": 232,
+                    "thumb_480": "https://files.slack.com/files-tmb/TC99SV7B6-F041SNF926B-0bc7f7b518/image_480.png",
+                    "thumb_480_w": 480,
+                    "thumb_480_h": 309,
+                    "thumb_160": "https://files.slack.com/files-tmb/TC99SV7B6-F041SNF926B-0bc7f7b518/image_160.png",
+                    "thumb_720": "https://files.slack.com/files-tmb/TC99SV7B6-F041SNF926B-0bc7f7b518/image_720.png",
+                    "thumb_720_w": 720,
+                    "thumb_720_h": 464,
+                    "original_w": 761,
+                    "original_h": 490,
+                    "thumb_tiny": "AwAeADDSIzRg+v6UH/PNRFpgTtVSO2TQNK5Lg+tAz60LnaM9e9LQIKKKKACjFJjNLQAUUUUAFFFFAH//2Q==",
+                    "permalink": "https://rebuildearth.slack.com/files/U02TDGQQPMJ/F041SNF926B/image.png",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F041SNF926B-58ae3eb137",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                }
+            ],
+            "upload": false,
+            "user": "U02TDGQQPMJ",
+            "team": "TC99SV7B6",
+            "ts": "1663085544.877389",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "AReO",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Implemented Tailwind Component "
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "SwitchV2",
+                                    "style": {
+                                        "code": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " . Coming via "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3458",
+                                    "text": "care_fe/3458"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nWorking on data fetching hooks for dashboard and combobox tailwind component"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1663085637.000000"
+            },
+            "client_msg_id": "103414c1-8e01-479f-ab5b-95525bf79edc",
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02U1035G0G"
+                    ],
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "client_msg_id": "2e1e6173-c423-496f-9085-70bbbaa54840",
+            "type": "message",
+            "text": "Worked on previous PRs and worked on <https://github.com/coronasafe/care/issues/989|#989>",
+            "user": "U02TB823H8A",
+            "ts": "1663078374.471419",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1661241555,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/issues/989",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/issues/989|#989 Check availability of username>",
+                    "text": "Build a test to check availability of username to be placed in the User creation page",
+                    "title": "<https://github.com/coronasafe/care/issues/989|#989 Check availability of username>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/khavinshankar|@khavinshankar>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "pFJ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PRs and worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/issues/989",
+                                    "text": "#989",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "message",
+            "text": "worked on implementing filters in care_dashboard",
+            "files": [
+                {
+                    "id": "F0425LHLQLT",
+                    "created": 1663071448,
+                    "timestamp": 1663071448,
+                    "name": "image.png",
+                    "title": "image.png",
+                    "mimetype": "image/png",
+                    "filetype": "png",
+                    "pretty_type": "PNG",
+                    "user": "U02T4HE96KY",
+                    "editable": false,
+                    "size": 138267,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https://files.slack.com/files-pri/TC99SV7B6-F0425LHLQLT/image.png",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F0425LHLQLT/download/image.png",
+                    "media_display_type": "unknown",
+                    "thumb_64": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_64.png",
+                    "thumb_80": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_80.png",
+                    "thumb_360": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_360.png",
+                    "thumb_360_w": 360,
+                    "thumb_360_h": 197,
+                    "thumb_480": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_480.png",
+                    "thumb_480_w": 480,
+                    "thumb_480_h": 262,
+                    "thumb_160": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_160.png",
+                    "thumb_720": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_720.png",
+                    "thumb_720_w": 720,
+                    "thumb_720_h": 393,
+                    "thumb_800": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_800.png",
+                    "thumb_800_w": 800,
+                    "thumb_800_h": 437,
+                    "thumb_960": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_960.png",
+                    "thumb_960_w": 960,
+                    "thumb_960_h": 525,
+                    "thumb_1024": "https://files.slack.com/files-tmb/TC99SV7B6-F0425LHLQLT-dde7676179/image_1024.png",
+                    "thumb_1024_w": 1024,
+                    "thumb_1024_h": 560,
+                    "original_w": 2240,
+                    "original_h": 1224,
+                    "thumb_tiny": "AwAaADChSUtFUISilooAUMAuNqn60Fs/wqPwptFIYtFFBpiCiiigBKKKKAP/2Q==",
+                    "permalink": "https://rebuildearth.slack.com/files/U02T4HE96KY/F0425LHLQLT/image.png",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F0425LHLQLT-e861a71253",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                }
+            ],
+            "upload": false,
+            "user": "U02T4HE96KY",
+            "display_as_bot": false,
+            "team": "TC99SV7B6",
+            "ts": "1663077789.017369",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "cTqcq",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on implementing filters in care_dashboard"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "client_msg_id": "1b9627f3-e2bb-42e4-b399-b36f564e1f28",
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ",
+                        "U02U1035G0G"
+                    ],
+                    "count": 2
+                }
+            ]
+        }
+    ],
+    "2022-09-14 00:00:00": []
 }

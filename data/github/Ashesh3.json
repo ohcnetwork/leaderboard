@@ -1,6 +1,83 @@
 {
-  "last_updated": 1663003327.0,
+  "last_updated": 1663171951.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3580",
+      "time": 1663171951.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3580#issuecomment-1246997816",
+      "text": "It seems like file uploads are still failing for local and netlify deployments (develop branch) but working fine on staging."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1663171823.0,
+      "title": "coronasafe/care_fe#3580",
+      "link": "https://github.com/coronasafe/care_fe/pull/3580#pullrequestreview-1107819327",
+      "text": "Update files list after upload"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2984",
+      "time": 1663158511.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2984",
+      "text": "Readmit Malfunction : Patient File"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2984",
+      "time": 1663158505.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2984#issuecomment-1246690731",
+      "text": "> @Ashesh3 the issue seem resolved, you can close it\r\n\r\nGreat! Thanks for letting me know."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3580",
+      "time": 1663156758.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3580#issuecomment-1246658942",
+      "text": "@nihal467 Your internet connection isn't the issue here, it seems that the CORS misconfiguration Mathew [mentioned](https://github.com/coronasafe/care_fe/issues/3579#issuecomment-1246470517) was not resolved when you tried the upload (I had the same issue). The browser will report such errors are Network errors, since it's not able to contact the `signing_url` to upload the file due to this CORS restriction. \r\n\r\nHowever, this seems to have been fixed now! Could you retry the upload? If it still fails, please do send me the error logged on to the browser's console.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2984",
+      "time": 1663156171.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2984#issuecomment-1246648258",
+      "text": "@nihal467 I messaged you on Slack and Zoom regarding this, have you got a chance to look into this issue?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3584",
+      "time": 1663156100.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3584",
+      "text": "Show review time only on creation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3582",
+      "time": 1663154971.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3582#issuecomment-1246629016",
+      "text": "It seems like according to the current workflow, an entry for a file is created before the actual upload takes place. The backend first creates an entry and returns the signed_url which is used on the frontend side to make the actual upload. If the upload fails, the backend has no way of knowing the same and frontend does nothing to remedy that. \r\n\r\nPossible fix: Currently all files have an attribute `upload_completed` which defaults to `False`. Once an upload is actually successful, the frontend can send a separate request to set that to `True`.\r\nThe file list on the frontend would then only show files which have `upload_completed = True`.\r\n\r\n@vigneshhari What's your take on this?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3580",
+      "time": 1663153620.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3580#issuecomment-1246605044",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/190124995-116c82ea-b97b-41a4-b4a9-1b0ec3a0f574.png)\r\n> \r\n> now the page is auto-refreshed, but the file name is still there under the box, can you fix that also\r\n\r\nThat should only happen if the file upload fails, I've added an error message when that happens.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/190131758-b5753df7-d014-448a-bf06-da16c94c9eae.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3579",
+      "time": 1663144497.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3579#issuecomment-1246429466",
+      "text": "@nihal467 The linked PR should fix the 1st issue:\r\n\r\n- [x] after the file is uploaded, we have to manually reload the page to see the reflection\r\n\r\nFor the other issue, it seems that there's a misconfiguration from the AWS side of things, Someone with AWS access needs to take a look there. The key seems to have been removed? `NoSuchKey`. @gigincg Can you take a look into this?\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3580",
+      "time": 1663144369.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3580",
+      "text": "Update files list after upload"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3550",
@@ -2566,8 +2643,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3572",
-      "title": "Make Volunteer pop-up responsive"
+      "link": "https://github.com/coronasafe/care_fe/pull/3584",
+      "title": "Show review time only on creation"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3580",
+      "title": "Update files list after upload"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3570",
@@ -2576,10 +2657,6 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3569",
       "title": "Removed 'updated at' from asset card"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3568",
-      "title": "Make user delete dialog responsive"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3551",
@@ -2592,10 +2669,6 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3550",
       "title": "Fix slider fill width on ABGA page."
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3545",
-      "title": "Suggest npm in README"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3544",

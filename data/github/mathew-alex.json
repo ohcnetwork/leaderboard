@@ -1,6 +1,27 @@
 {
-  "last_updated": 1662916914.0,
+  "last_updated": 1663160315.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3580",
+      "time": 1663160315.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3580#issuecomment-1246728503",
+      "text": "@Ashesh3 @nihal467 -  CORS policy updated to include deploy previews as well."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3579",
+      "time": 1663146648.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3579#issuecomment-1246470517",
+      "text": "It was a CORS issue due to a misconfiguration in AWS. I have fixed it. Another problem noted is that even if a file is not uploaded to S3, it shows up in UI as an uploaded file. A preview of that file will not give any results because of that. \r\nIssue #3582 "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3582",
+      "time": 1663146548.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3582",
+      "text": "File upload entry for failed uploads"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1020",

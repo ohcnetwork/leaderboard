@@ -5915,6 +5915,7 @@
                     "filetype": "png",
                     "pretty_type": "PNG",
                     "user": "U02TDGQQPMJ",
+                    "user_team": "TC99SV7B6",
                     "editable": false,
                     "size": 20390,
                     "mode": "hosted",
@@ -5961,6 +5962,7 @@
                     "filetype": "png",
                     "pretty_type": "PNG",
                     "user": "U02TDGQQPMJ",
+                    "user_team": "TC99SV7B6",
                     "editable": false,
                     "size": 27711,
                     "mode": "hosted",
@@ -6048,6 +6050,86 @@
                         "U02U1035G0G"
                     ],
                     "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-09-14 00:00:00": [
+        {
+            "client_msg_id": "6aae2343-c678-42a0-8d68-cb6cfee001b7",
+            "type": "message",
+            "text": "\u2022 Backend for covid category deprecation and new patient category got merged. <https://github.com/coronasafe/care_fe/pull/3565/commits/0f41d35874d9c0433ddfd7d3602db77bdd2e33f1|Fixed a minor bug> in it's corresponding front end PR.\n\u2022 Working on Cypress workflow needs local care. Issue: <https://github.com/coronasafe/care_fe/issues/3587|care_fe#3587>\n",
+            "user": "U02TDGQQPMJ",
+            "ts": "1663172219.535659",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1663166014,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/3587",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/3587|#3587 Cypress needs local BE>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/3587|#3587 Cypress needs local BE>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "0SJ4r",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Backend for covid category deprecation and new patient category got merged. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3565/commits/0f41d35874d9c0433ddfd7d3602db77bdd2e33f1",
+                                            "text": "Fixed a minor bug"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " in it's corresponding front end PR."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on Cypress workflow needs local care. Issue: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3587",
+                                            "text": "care_fe#3587"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
                 }
             ]
         }

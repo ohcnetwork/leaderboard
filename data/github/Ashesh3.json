@@ -1,6 +1,62 @@
 {
-  "last_updated": 1663171951.0,
+  "last_updated": 1663249897.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3591",
+      "time": 1663249897.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3591#issuecomment-1248131998",
+      "text": "Wouldn't this issue be suppressed by #3587?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2747",
+      "time": 1663235152.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2747",
+      "text": "\"Decision after Consultation\" option if changed to \"Admission\" the consultation form doesnot Update !"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3584",
+      "time": 1663226709.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1247688809",
+      "text": "> @Ashesh3 can you merge the latest develop, as there's a new mandatory field `category` added in the consultation form, hence form submission without this field would be rejected by the API.\r\n\r\nThanks for the heads up! Done."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3570",
+      "time": 1663226634.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3570#issuecomment-1247687649",
+      "text": "- [x] make the buttons also aligned"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3569",
+      "time": 1663224344.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3569#issuecomment-1247653078",
+      "text": "> @Ashesh3 can you please check out failing cypress tests\r\n\r\nHey, the tests failing are an issue with the cypress configuration itself and @vigneshhari told us to completely ignore all Cypress tests, till they are fixed (I quote, \"pretend they don't exist\"). Even then, I've manually checked the tests and the failing components have nothing to do with the changes in this PR."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3539",
+      "time": 1663224059.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3539#issuecomment-1247649022",
+      "text": "@rabilrbl @aparnacoronasafe Any updates on this?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3544",
+      "time": 1663223974.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3544#issuecomment-1247647880",
+      "text": "> @Ashesh3 can you merge the latest develop branch\r\n\r\nDone."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3580",
+      "time": 1663223834.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3580#issuecomment-1247646103",
+      "text": "> > It seems like file uploads are still failing for local and netlify deployments (develop branch) but working fine on staging.\r\n> \r\n> Is it still failing?\r\n\r\nUnfortunately, yes.\r\n![image](https://user-images.githubusercontent.com/3626859/190331989-7d641647-d84e-42ef-a015-fe81fc1841b8.png)\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3580",

@@ -36588,9 +36588,10 @@
                 {
                     "name": "rocket",
                     "users": [
-                        "U02TDGQQPMJ"
+                        "U02TDGQQPMJ",
+                        "U01JB8L8P7Y"
                     ],
-                    "count": 1
+                    "count": 2
                 }
             ]
         },
@@ -36714,5 +36715,45 @@
             ]
         }
     ],
-    "2022-09-20 00:00:00": []
+    "2022-09-20 00:00:00": [
+        {
+            "client_msg_id": "6ed8c8a2-dda8-446a-9147-4944ec0487fb",
+            "type": "message",
+            "text": "Made single column layout for <https://github.com/coronasafe/care_fe/pull/3458|Asset Registration V2>\nYet to make the current section highlight and sidebar persistent.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1663686999.042289",
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1663687023.000000"
+            },
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "foU5o",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made single column layout for "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3458",
+                                    "text": "Asset Registration V2"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nYet to make the current section highlight and sidebar persistent."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-21 00:00:00": []
 }

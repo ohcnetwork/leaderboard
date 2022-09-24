@@ -1424,5 +1424,82 @@
                 }
             ]
         }
+    ],
+    "2022-09-23 00:00:00": [
+        {
+            "client_msg_id": "67f9a368-97d4-4ed0-84ef-1c110ef24014",
+            "type": "message",
+            "text": "Made PRs: <https://github.com/coronasafe/care_fe/pull/3624|#3624> <https://github.com/coronasafe/care_fe/pull/3623|#3623>",
+            "user": "U02T4HFA07Q",
+            "ts": "1663909178.598149",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1663836904,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3624",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3624|#3624 Add Stat on top of Prescription frequency>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3624|#3624 Add Stat on top of Prescription frequency>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1663835431,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3623",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3623|#3623 Make user's last seen responsive>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3623|#3623 Make user's last seen responsive>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "b=d",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PRs: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3624",
+                                    "text": "#3624",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3623",
+                                    "text": "#3623",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

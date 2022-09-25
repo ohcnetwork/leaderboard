@@ -1655,5 +1655,67 @@
                 }
             ]
         }
+    ],
+    "2022-09-24 00:00:00": [
+        {
+            "client_msg_id": "2f8382de-a02e-42b5-bb52-b0f503e22681",
+            "type": "message",
+            "text": "Working on <https://github.com/coronasafe/care_fe/issues/3605|https://github.com/coronasafe/care_fe/issues/3605>",
+            "user": "U02U1035G0G",
+            "ts": "1664024921.356129",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/57055998/190898222-714dccf6-6d3b-4bb9-a714-e12a89dc86e2.png",
+                    "image_width": 1147,
+                    "image_height": 965,
+                    "image_bytes": 68122,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1663498098,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/3605",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1147x965px image",
+                    "text": "*Describe the bug*\n\nUI of the treatment summary in the consultation of a patient page is not responsive\n\n*To Reproduce*\n\n<https://care.coronasafe.in/facility/273fe202-5325-4d5f-9a20-f7da9cb79e4d/patient/b26ba421-064b-4d94-8eb0-70a0d7b70a1b/consultation/fe13b086-15b0-4be8-b33c-0f0eb2b9f6e7/treatment-summary|https://care.coronasafe.in/facility/273fe202-5325-4d5f-9a20-f7da9cb79e4d/patient/b26ba421-064b-4d94-8eb0-70a0d7b70a1b/consultation/fe13b086-15b0-4be8-b33c-0f0eb2b9f6e7/treatment-summary>\n\n*Expected behavior*\n\nmake the page responsive\n\n*Screenshots*\n\n<https://user-images.githubusercontent.com/57055998/190898222-714dccf6-6d3b-4bb9-a714-e12a89dc86e2.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/3605|#3605 Treatment Summary is not responsive in galaxy fold>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/GokulramGHV|@GokulramGHV>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "rq1",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/3605",
+                                    "text": "https://github.com/coronasafe/care_fe/issues/3605"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -1,6 +1,55 @@
 {
-  "last_updated": 1663572644.0,
+  "last_updated": 1663945001.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3584",
+      "time": 1663945001.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1256322647",
+      "text": "@rithviknishad @Ashesh3 @developedBySJ \r\n\r\nThe review time needs to be stored in the BD and shown in the edit consultation form. \r\n\r\nA detailed explaination to what needs to be done is added to the issue #1255 Please refer to it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1255",
+      "time": 1663944626.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1255#issuecomment-1256315589",
+      "text": "Clarification on the Issue:\r\n\r\n**How the Review Feature should work:**\r\n- The user must be able to set a review time in the consultation/edit consultation form. Or later on in a log update form.\r\n- Once the review time is set, then within that time if a Log Update is not filed for the patient, then the \"Review Missed\" Badge must appear on the patient card.\r\n- When a log update is filed for the patient, the preselected review time must come pre-filled in the 'review after' field in log update.\r\n- With every log update filed, the review clock must reset.\r\n- If the user, the the log update doesnt edit the 'review after' field, the same interval will continue for review, with the review call resetting with every log update.\r\n\r\nEg: I file a 1 hr review in consultation form. I file a log update in half an hr. The log update form will come prefilled with 1hr in review after field. I can choose to edit it to 2 hrs. Then once i save the log update, the clock for review must reset. If no logupdate is filed in another 2 hrs, the \"review missed\" label must appear on the patient grid in patient list. Then once i file a log update, the clock must be reset again with whatever time is mentioned for review in the latest log update.\r\n\r\n**Issues in CARE now - to be resolved**\r\n\r\n- [ ] When I select a review after time in consultation form, and later open the edit consultation form, I see the review after field as blank. I must be able to see the review time i had set previously and also have the option to edit it.\r\n- [ ] When i edit the consultation form to add/edit review time, such time must be considered from the time I edited the consultation, and not the time the original consultation was filed.\r\n- [ ] When a review is missed, an a \"review Missed\" flag appears on patient card, the flag must dissappear once I file a log update. \r\n- [ ] The log update form must come pre-filled with the previoud review time set (either on the consultation form, or on the previous log update)- the user must have option to edit it. \r\n- [ ] The \"review missed\" flag must come right below the patients name on the patient dashboard as well (https://care.coronasafe.in/facility/7ab27974-32c8-4e36-bdf9-dbf102524718/patient/cc52390c-ac8a-4af5-9806-f3df7ee1795a/consultation/7037609e-3c25-45ed-bfd8-e01c346cbd45)\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3366",
+      "time": 1663942350.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3366#issuecomment-1256268648",
+      "text": "An archived file should not be downloadable "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3619",
+      "time": 1663835243.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3619#issuecomment-1254695452",
+      "text": "You are looking at investigation section.\n\nPlease look at the prescription"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3619",
+      "time": 1663661454.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3619",
+      "text": "Frequency dropdown: prescriptions"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3618",
+      "time": 1663659428.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3618",
+      "text": "Symptoms: Building depth in consultation"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3616",
+      "time": 1663658068.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3616",
+      "text": "BUG: Doctor connect- last logged in"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#3607",

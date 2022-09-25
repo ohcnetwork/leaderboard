@@ -1,6 +1,139 @@
 {
-  "last_updated": 1663610884.0,
+  "last_updated": 1664037626.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3641",
+      "time": 1664037626.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3641",
+      "text": "Visual bug when no users are assigned to a facility"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3640",
+      "time": 1664036784.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3640",
+      "text": "Delete button not shown for users in Facility Users page."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3639",
+      "time": 1664036452.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3639",
+      "text": "Improve re-fetching updated data"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3631",
+      "time": 1663945987.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3631",
+      "text": "Hide live feed for discharged patients"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#989",
+      "time": 1663910774.0,
+      "link": "https://github.com/coronasafe/care/issues/989#issuecomment-1255812944",
+      "text": "@siddnikh Hey, are you currently working on this PR? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3495",
+      "time": 1663910256.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3495#issuecomment-1255809621",
+      "text": "This PR appears to be related to this issue: https://github.com/coronasafe/care_fe/issues/3366 \r\n\r\n@aparnacoronasafe suggested an archive option rather than a delete button"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1663910104.0,
+      "title": "coronasafe/care_fe#3507",
+      "link": "https://github.com/coronasafe/care_fe/pull/3507#pullrequestreview-1117927354",
+      "text": "Added Medicine Administration Record"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1663909716.0,
+      "title": "coronasafe/care_fe#3558",
+      "link": "https://github.com/coronasafe/care_fe/pull/3558#pullrequestreview-1117924726",
+      "text": "sentry reports are made only in production"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1663909440.0,
+      "title": "coronasafe/care_fe#3598",
+      "link": "https://github.com/coronasafe/care_fe/pull/3598#pullrequestreview-1117922619",
+      "text": "fix (LiveFeed): gets preset only when hostname is available"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1663909418.0,
+      "title": "coronasafe/care_fe#3628",
+      "link": "https://github.com/coronasafe/care_fe/pull/3628#pullrequestreview-1117922481",
+      "text": "Fixed overlapping issue in the line plot"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1663909338.0,
+      "title": "coronasafe/care_fe#3622",
+      "link": "https://github.com/coronasafe/care_fe/pull/3622#pullrequestreview-1117921905",
+      "text": "Fixed patient buttons"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3625",
+      "time": 1663850454.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3625#issuecomment-1254967777",
+      "text": "> We should hide the Feed Tab and The Live Vitals Section for any Patient who's discharged\r\n\r\nHey, what exactly do you mean by the feed tab?\r\n\r\nAnd just to confirm, is this the Live Vitals Section?\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/191749578-7fa76c58-0f12-4639-9f8e-913527a1adf6.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3624",
+      "time": 1663836904.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3624",
+      "text": "Add Stat on top of Prescription frequency"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3623",
+      "time": 1663835432.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3623",
+      "text": "Make user's last seen responsive"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3619",
+      "time": 1663835369.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3619#issuecomment-1254697881",
+      "text": "> You are looking at investigation section.\r\n> \r\n> Please look at the prescription\r\n\r\nThanks! It should be this one then, right?\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/191697865-a33deb48-f9ae-4171-9c20-e5f2da70b197.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3619",
+      "time": 1663833725.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3619#issuecomment-1254668254",
+      "text": "@aparnacoronasafe Do you mean this dropdown?\r\n![image](https://user-images.githubusercontent.com/3626859/191691534-52b0977e-685d-4413-be3f-8874dd30d006.png)\r\n\r\nIt's in Consultation."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1029",
+      "time": 1663781124.0,
+      "link": "https://github.com/coronasafe/care/pull/1029",
+      "text": "Expose upload_completed for FileUpload"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1030",
+      "time": 1663688718.0,
+      "link": "https://github.com/coronasafe/care/pull/1030",
+      "text": "Send pretty details when password reset fails"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3617",
+      "time": 1663659123.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3617",
+      "text": "Add null check for last login"
+    },
     {
       "type": "pr_reviewed",
       "time": 1663610884.0,
@@ -2790,40 +2923,28 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1030",
-      "title": "Send pretty details when password reset fails"
+      "link": "https://github.com/coronasafe/care_fe/pull/3639",
+      "title": "Improve re-fetching updated data"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3612",
-      "title": "Minor UI Change in the investigation page"
+      "link": "https://github.com/coronasafe/care_fe/pull/3631",
+      "title": "Hide live feed for discharged patients"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3610",
-      "title": "Remove extra close button on Switch Bed Pop-Up"
+      "link": "https://github.com/coronasafe/care_fe/pull/3624",
+      "title": "Add Stat on top of Prescription frequency"
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3623",
+      "title": "Make user's last seen responsive"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3609",
       "title": "Set file as uploaded on a successful upload"
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1029",
-      "title": "Expose upload_completed for FileUpload"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3593",
-      "title": "Investigation Suggestions UI and BP search fix"
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3584",
       "title": "Show review time only on creation"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3570",
-      "title": "Make Patient Form UI responsive"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3569",
-      "title": "Removed 'updated at' from asset card"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3551",
@@ -2832,10 +2953,6 @@
     {
       "link": "https://github.com/coronasafe/dashboard/pull/205",
       "title": "Add Asset details page"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3550",
-      "title": "Fix slider fill width on ABGA page."
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3544",

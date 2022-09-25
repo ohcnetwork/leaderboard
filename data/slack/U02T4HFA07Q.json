@@ -1397,5 +1397,177 @@
                 }
             ]
         }
+    ],
+    "2022-09-21 00:00:00": [
+        {
+            "client_msg_id": "16021028-f5aa-4193-ab47-948af3fd8d3b",
+            "type": "message",
+            "text": "Couldn't do much today, travelling.",
+            "user": "U02T4HFA07Q",
+            "ts": "1663770764.788979",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "uc=HT",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Couldn't do much today, travelling."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-23 00:00:00": [
+        {
+            "client_msg_id": "67f9a368-97d4-4ed0-84ef-1c110ef24014",
+            "type": "message",
+            "text": "Made PRs: <https://github.com/coronasafe/care_fe/pull/3624|#3624> <https://github.com/coronasafe/care_fe/pull/3623|#3623>",
+            "user": "U02T4HFA07Q",
+            "ts": "1663909178.598149",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1663836904,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3624",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3624|#3624 Add Stat on top of Prescription frequency>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3624|#3624 Add Stat on top of Prescription frequency>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1663835431,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3623",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3623|#3623 Make user's last seen responsive>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3623|#3623 Make user's last seen responsive>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "b=d",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PRs: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3624",
+                                    "text": "#3624",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3623",
+                                    "text": "#3623",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-24 00:00:00": [
+        {
+            "client_msg_id": "d90b1ecd-7709-45f7-a6d2-dd66269d66ee",
+            "type": "message",
+            "text": "Made PR <https://github.com/coronasafe/care_fe/pull/3631|#3631>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664035978.337429",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/191994109-38c3686e-b1cf-45c5-830f-d39a18d31363.png",
+                    "image_width": 1431,
+                    "image_height": 756,
+                    "image_bytes": 58731,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1663945987,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3631",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1431x756px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3625|#3625>\n\n*Proposed Changes*\n\n\u2022 Hide the live feed for discharged patients\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n<https://user-images.githubusercontent.com/3626859/191994109-38c3686e-b1cf-45c5-830f-d39a18d31363.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3631|#3631 Hide live feed for discharged patients>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tH+x",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3631",
+                                    "text": "#3631",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

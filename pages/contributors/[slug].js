@@ -4,16 +4,16 @@ import {
   professionalSelfSkills,
   professionalTeamSkills,
   resolveGraduateAttributes,
-} from '../../config/GraduateAttributes';
-import { getContributorBySlug, getContributors } from '../../lib/api';
+} from "../../config/GraduateAttributes";
+import { getContributorBySlug, getContributors } from "../../lib/api";
 
-import ActivityCalendarGit from '../../components/contributors/ActivityCalendarGitHub';
-import BadgeIcons from '../../components/contributors/BadgeIcons';
-import GithubActivity from '../../components/contributors/GithubActivity';
-import GraduateAttributeBadge from '../../components/contributors/GraduateAttributeBadge';
-import InfoCard from '../../components/contributors/InfoCard';
-import React from 'react';
-import markdownToHtml from '../../lib/markdownToHtml';
+import ActivityCalendarGit from "../../components/contributors/ActivityCalendarGitHub";
+import BadgeIcons from "../../components/contributors/BadgeIcons";
+import GithubActivity from "../../components/contributors/GithubActivity";
+import GraduateAttributeBadge from "../../components/contributors/GraduateAttributeBadge";
+import InfoCard from "../../components/contributors/InfoCard";
+import React from "react";
+import markdownToHtml from "../../lib/markdownToHtml";
 
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
@@ -127,8 +127,8 @@ export default function Contributor({ contributor, slug }) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-green-600'}
-                      colorDark={'bg-green-700'}
+                      color={"bg-green-600"}
+                      colorDark={"bg-green-700"}
                     />
                   ))}
                 </div>
@@ -144,8 +144,8 @@ export default function Contributor({ contributor, slug }) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-indigo-500'}
-                      colorDark={'bg-indigo-700'}
+                      color={"bg-indigo-500"}
+                      colorDark={"bg-indigo-700"}
                     />
                   ))}
                 </div>
@@ -156,8 +156,8 @@ export default function Contributor({ contributor, slug }) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-orange-500'}
-                      colorDark={'bg-orange-700'}
+                      color={"bg-orange-500"}
+                      colorDark={"bg-orange-700"}
                     />
                   ))}
                 </div>
@@ -173,8 +173,8 @@ export default function Contributor({ contributor, slug }) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-rose-500'}
-                      colorDark={'bg-rose-700'}
+                      color={"bg-rose-500"}
+                      colorDark={"bg-rose-700"}
                     />
                   ))}
                 </div>
@@ -302,21 +302,21 @@ export default function Contributor({ contributor, slug }) {
           </dl>
         </div>
 
-        {contributor['activityData'] &&
-          contributor['activityData']['open_prs'] &&
-          contributor['activityData']['open_prs'].length > 0 && (
+        {contributor["activityData"] &&
+          contributor["activityData"]["open_prs"] &&
+          contributor["activityData"]["open_prs"].length > 0 && (
             <div className="px-4 md:p-0">
               <h3 className="font-bold text-gray-100 mt-6">
                 Currently Working on
               </h3>
               <div className="mt-4">
-                {contributor['activityData']['open_prs'].map((pr, index) => (
-                  <a href={pr.link} key={index}>
+                {contributor["activityData"]["open_prs"].map((pr, index) => (
+                  <a href={pr.link} key={index} className="flex gap-2">
+                    <span className="text-primary-500 text-sm pr-2">➞</span>
                     <p
                       className="text-sm text-gray-300 hover:text-primary-300"
                       key={index}
                     >
-                      <span className="text-primary-500 text-sm pr-2">➞</span>
                       {pr.title}
                     </p>
                   </a>
@@ -325,11 +325,11 @@ export default function Contributor({ contributor, slug }) {
             </div>
           )}
 
-        {contributor['activityData'] &&
-          contributor['activityData']['activity'] && (
+        {contributor["activityData"] &&
+          contributor["activityData"]["activity"] && (
             <div className="mt-6 overflow-x-hidden px-4 md:p-0">
               <h3 className="font-bold text-gray-100">Contributions</h3>
-              <GithubActivity activityData={contributor['activityData']} />
+              <GithubActivity activityData={contributor["activityData"]} />
             </div>
           )}
       </div>
@@ -339,7 +339,7 @@ export default function Contributor({ contributor, slug }) {
 
 export async function getStaticProps({ params }) {
   const contributor = getContributorBySlug(params.slug, true);
-  const content = await markdownToHtml(contributor.content || '');
+  const content = await markdownToHtml(contributor.content || "");
 
   return {
     props: {

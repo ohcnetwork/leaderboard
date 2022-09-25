@@ -239,6 +239,8 @@ export let resolveGraduateAttributes = (attribute, contributor) => {
       return resolveLevel(attribute, contributor.highlights.issue_opened);
     case "problem_solving":
       return resolveLevel(attribute, contributor.highlights.pr_merged);
+    case "collaboration":
+      return resolveLevel(attribute, contributor.highlights.pr_collaborated);
     case "communication_skills":
       return resolveLevel(
         attribute,

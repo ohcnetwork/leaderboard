@@ -189,10 +189,15 @@ class GitHubScraper:
         pulls = resp.json()["items"]
 
         for pr in pulls:
+            today = datetime.now()
+            pr_last_updated = datetime.strptime(pr['updated_at'], "%Y-%m-%dT%H:%M:%SZ")
+
             self.data[user]["open_prs"].append(
                 {
                     "link": pr["html_url"],
                     "title": pr["title"],
+                    "stale_for": (today.replace(tzinfo=None) - pr_last_updated.replace(tzinfo=None)).days,
+                    "labels": [label["name"] for label in pr["labels"]],
                 }
             )
         self.log.debug(f"Fetched {len(pulls)} open pull requests for {user}")

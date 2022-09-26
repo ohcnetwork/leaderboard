@@ -14,6 +14,7 @@ import GraduateAttributeBadge from '../../components/contributors/GraduateAttrib
 import InfoCard from '../../components/contributors/InfoCard';
 import React from 'react';
 import markdownToHtml from '../../lib/markdownToHtml';
+import clsx from 'clsx';
 
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
@@ -313,7 +314,10 @@ export default function Contributor({ contributor, slug }) {
                 {contributor['activityData']['open_prs'].map((pr, index) => (
                   <a href={pr.link} key={index}>
                     <p
-                      className="text-sm text-gray-300 hover:text-primary-300"
+                      className={clsx(
+                        "text-sm",
+                        pr?.stale_for >= 7 ? "text-gray-600 hover:text-primary-200" : "text-gray-300 hover:text-primary-300"
+                      )}
                       key={index}
                     >
                       <span className="text-primary-500 text-sm pr-2">➞</span>

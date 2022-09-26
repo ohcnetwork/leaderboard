@@ -37069,9 +37069,11 @@
                     "users": [
                         "U02TB83Q5V0",
                         "U02U102TL0G",
-                        "U02T4HFA07Q"
+                        "U02T4HFA07Q",
+                        "U02U1035G0G",
+                        "U02TPSYB1MF"
                     ],
-                    "count": 3
+                    "count": 5
                 }
             ]
         },
@@ -37378,5 +37380,98 @@
             ]
         }
     ],
-    "2022-09-25 00:00:00": []
+    "2022-09-25 00:00:00": [
+        {
+            "client_msg_id": "27fe03d0-9497-4719-9acf-5a1cc67bbaf3",
+            "type": "message",
+            "text": "Made a PR in leaderbord repo",
+            "user": "U02TPSYB1MF",
+            "ts": "1664119689.162609",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "zSuO3",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a PR in leaderbord repo"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "a0016871-7b68-4aee-b5cb-77c30fec8ae2",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3639|#3639>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664104179.778779",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/192108243-826e1763-5c52-4979-be86-eb64900ab1ed.png",
+                    "image_width": 1128,
+                    "image_height": 725,
+                    "image_bytes": 83473,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664036451,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3639",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1128x725px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3614|#3614>\n\n*Proposed Changes*\n\n\u2022 This PR improves how data is re-fetched. Instead of using window reload, (which reloads the entire page) we now use proper fetchData functions to refresh and present the new data to the user without reloading the entire page.\n\nPlaces where this has changed: (Notice how the notifications stay on the page instead of immediately getting lost on a page reload)\n\n1. Allocating a bed  \n    <https://user-images.githubusercontent.com/3626859/192108243-826e1763-5c52-4979-be86-eb64900ab1ed.png|image>\n2. Deleting users  \n    <https://user-images.githubusercontent.com/3626859/192108298-fe2d0c04-6305-4042-a699-52308316ec0c.png|image>\n3. Inventory Log  \n    <https://user-images.githubusercontent.com/3626859/192108371-6221cd0b-7cf0-47de-8d0d-df4131412ad2.png|image>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3639|#3639 Improve re-fetching updated data>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1Mjs",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3639",
+                                    "text": "#3639",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-26 00:00:00": []
 }

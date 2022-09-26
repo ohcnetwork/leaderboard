@@ -15,6 +15,7 @@ import InfoCard from '../../components/contributors/InfoCard';
 import React from 'react';
 import markdownToHtml from '../../lib/markdownToHtml';
 import clsx from 'clsx';
+import Tooltip from "../../components/filters/Tooltip";
 
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
@@ -128,8 +129,8 @@ export default function Contributor({ contributor, slug }) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-green-600'}
-                      colorDark={'bg-green-700'}
+                      color={"bg-green-600"}
+                      colorDark={"bg-green-700"}
                     />
                   ))}
                 </div>
@@ -145,8 +146,8 @@ export default function Contributor({ contributor, slug }) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-indigo-500'}
-                      colorDark={'bg-indigo-700'}
+                      color={"bg-indigo-500"}
+                      colorDark={"bg-indigo-700"}
                     />
                   ))}
                 </div>
@@ -157,8 +158,8 @@ export default function Contributor({ contributor, slug }) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-orange-500'}
-                      colorDark={'bg-orange-700'}
+                      color={"bg-orange-500"}
+                      colorDark={"bg-orange-700"}
                     />
                   ))}
                 </div>
@@ -174,8 +175,8 @@ export default function Contributor({ contributor, slug }) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-rose-500'}
-                      colorDark={'bg-rose-700'}
+                      color={"bg-rose-500"}
+                      colorDark={"bg-rose-700"}
                     />
                   ))}
                 </div>
@@ -303,25 +304,35 @@ export default function Contributor({ contributor, slug }) {
           </dl>
         </div>
 
-        {contributor['activityData'] &&
-          contributor['activityData']['open_prs'] &&
-          contributor['activityData']['open_prs'].length > 0 && (
+        {contributor["activityData"] &&
+          contributor["activityData"]["open_prs"] &&
+          contributor["activityData"]["open_prs"].length > 0 && (
             <div className="px-4 md:p-0">
               <h3 className="font-bold text-gray-100 mt-6">
                 Currently Working on
               </h3>
               <div className="mt-4">
-                {contributor['activityData']['open_prs'].map((pr, index) => (
+                {contributor["activityData"]["open_prs"].map((pr, index) => (
                   <a href={pr.link} key={index}>
                     <p
                       className={clsx(
-                        "text-sm",
-                        pr?.stale_for >= 7 ? "text-gray-600 hover:text-primary-200" : "text-gray-300 hover:text-primary-300"
+                        "text-sm mb-2",
+                        pr?.stale_for >= 7
+                          ? "text-gray-600 hover:text-primary-200"
+                          : "text-gray-300 hover:text-primary-300"
                       )}
                       key={index}
                     >
-                      <span className="text-primary-500 text-sm pr-2">➞</span>
-                      {pr.title}
+                      <Tooltip
+                        tip={
+                          pr?.stale_for >= 7 &&
+                          `Stale for ${pr?.stale_for} days`
+                        }
+                        tipStyle="absolute w-48 -top-8 left-10 text-white text-sm"
+                      >
+                        <span className="text-primary-500 text-sm pr-2">➞</span>
+                        {pr.title}
+                      </Tooltip>
                     </p>
                   </a>
                 ))}
@@ -329,11 +340,11 @@ export default function Contributor({ contributor, slug }) {
             </div>
           )}
 
-        {contributor['activityData'] &&
-          contributor['activityData']['activity'] && (
+        {contributor["activityData"] &&
+          contributor["activityData"]["activity"] && (
             <div className="mt-6 overflow-x-hidden px-4 md:p-0">
               <h3 className="font-bold text-gray-100">Contributions</h3>
-              <GithubActivity activityData={contributor['activityData']} />
+              <GithubActivity activityData={contributor["activityData"]} />
             </div>
           )}
       </div>

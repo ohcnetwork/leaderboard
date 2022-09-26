@@ -32,17 +32,25 @@ export default function InfoCard({
         </Link>
         <div className={minimal ? "" : "flex flex-col items-center space-y-2"}>
           <div className="font-medium text-lg space-y-1">
-            <Link
+          <Link
               href={isClickable ? `/contributors/${contributor.github}` : `#`}
               className=""
             >
-              <h3
-                className={`text-lg md:text-2xl leading-tight text-white ${
-                  isClickable && `cursor-pointer hover:text-primary-200`
-                }`}
-              >
-                {contributor.name}
-              </h3>
+                <h3
+                  className={`relative text-lg md:text-2xl leading-tight text-white w-max ${
+                    isClickable && `cursor-pointer hover:text-primary-200`
+                  }`}
+                >
+                  {contributor.name}
+
+                  { contributor.activityData?.open_prs?.some(pr => pr?.stale_for >= 7) && (
+                    <span className="flex absolute h-4 w-4 -top-1 -right-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-4 w-4 bg-yellow-600"></span>
+                    </span>
+                  )}
+                </h3>
+                
             </Link>
             <p className="text-sm md:text-base text-gray-400">
               {contributor.title}

@@ -62,6 +62,7 @@ class GitHubScraper:
                 "last_updated": event["time"],
                 "activity": [event],
                 "open_prs": [],
+                "authored_issue_and_pr":[],
             }
 
     def parse_event(self, event, event_time):
@@ -76,7 +77,8 @@ class GitHubScraper:
 
         self.log.debug(f"Parsing event for {user}")
         self.log.debug(f"event_id: {event['id']}")
-
+        # if event["type"] == "cross-referenced":
+        #     print(event)
         if event["type"] == "IssueCommentEvent":
             if event["payload"]["action"] in ("created",):
                 self.append(
@@ -161,7 +163,8 @@ class GitHubScraper:
 
         events_count = 0
         for event in events:
-            event_time = datetime.strptime(event["created_at"], "%Y-%m-%dT%H:%M:%S%z")
+            event_time = datetime.strptime(
+                event["created_at"], "%Y-%m-%dT%H:%M:%S%z")
 
             if event_time.date() > self.end_date:
                 continue
@@ -199,11 +202,55 @@ class GitHubScraper:
 
         return self.data
 
+    def resolve_autonomy_responsibility(self, event, user):
+        if event["event"] == "cross-referenced" and event["source"]["type"] == "issue":
+            return event["source"]["issue"]["user"]["login"] == user
+        return False
+
+    def fetch_merge_events(self, user):
+        self.log.debug(f"Merge events for {user}")
+        # check for those issues which are closed today (reduce number of issues to be calculated)
+        resp = requests.get(
+            f"https://api.github.com/search/issues?q=is:issue+is:closed+org:{self.org}+author:{user}",
+            headers=self.headers,
+        )
+        if resp.status_code == 422:
+            self.log.warning("Last page reached")  # stop pagination
+            return self.data
+        resp.raise_for_status()
+        issues = resp.json()["items"]
+        merged_prs = []
+        for issue in issues:
+            timeline_events = requests.get(
+                issue["timeline_url"],
+                headers=self.headers,
+            )
+            if timeline_events.status_code != 200:
+                return
+            timeline_events.raise_for_status()
+            events = timeline_events.json()
+            for event in events:
+                if self.resolve_autonomy_responsibility(event, user):
+                    if 'pull_request' in event["source"]["issue"]:
+                        pr = event["source"]["issue"]["pull_request"]
+                        if pr["merged_at"]:
+                            merged_prs.append(
+                                {
+                                    "issue_link": issue["html_url"],
+                                    "pr_link": pr["html_url"]
+                                }
+                            )
+        for pr in merged_prs:
+            self.data[user]["authored_issue_and_pr"].append(pr)
+        self.log.debug(f"Fetched {len(merged_prs)} merged pull requests and issues for {user}")
+        return self.data
+
     def scrape(self):
         self.log.info(f"Scraping {self.org}")
         self.fetch_events(1)
         self.log.info(f"Scraping open pull requests for {len(self.data)} users")
         for user in self.data.keys():
+            self.fetch_merge_events(user)
             self.fetch_open_pulls(user)
         self.log.info(f"Scraped {self.org}")
         return self.data

@@ -28,7 +28,7 @@ export default function LeaderBoardCard({ contributor, position }) {
       href={"/contributors/" + contributor.github}
       className="block hover:bg-gray-50"
     >
-      <div className="flex md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:-translate-x-1 hover:scale-105 duration-200">
+      <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer">
         {!hideBadges && (
           <div
             className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr ${badgeColors} border-4 mr-4 shrink-0`}
@@ -36,7 +36,7 @@ export default function LeaderBoardCard({ contributor, position }) {
             {position + 1}
           </div>
         )}
-        <div className="flex hover:border-2 hover:border-primary-500 rounded-lg md:flex-row flex-col md:items-center justify-between w-full space-y-4">
+        <div className="flex lg:pb-6 rounded-lg md:flex-row flex-col md:items-center justify-between w-full space-y-4">
           <div className="flex w-full">
             <div className="min-w-0 flex-1 flex items-center">
               <div className="flex-shrink-0">

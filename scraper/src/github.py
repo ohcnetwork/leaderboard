@@ -3,6 +3,7 @@
 import argparse
 import json
 import logging
+import re
 from datetime import datetime, timedelta
 from os import getenv
 from pathlib import Path
@@ -37,7 +38,7 @@ class GitHubScraper:
         self.log.setLevel(log_level)
         self.org = org
         self.token = token
-        self.start_date = (date - timedelta(days=days_back)).date()
+        self.start_date = (date - timedelta(days=int(days_back))).date()
         self.end_date = date.date()
         self.data = {}
         self.data_dir = data_dir
@@ -137,6 +138,8 @@ class GitHubScraper:
                     },
                 )
 
+                self.add_collaborations(event, event_time)
+
         elif event["type"] == "PullRequestReviewEvent":
             self.append(
                 user,
@@ -148,6 +151,56 @@ class GitHubScraper:
                     "text": event["payload"]["pull_request"]["title"],
                 },
             )
+    
+    def add_collaborations(self, event, event_time):
+        collaborators = set()
+        
+        commits = requests.get(
+            event['payload']['pull_request']['commits_url'],
+            headers=self.headers,
+        ).json()
+
+        for commit in commits:
+            collaborators.add(commit['author']['login'])
+
+            co_authors = re.findall('Co-authored-by: (.+) <(.+)>', commit['commit']['message'])
+            if co_authors:
+                for (name, email) in co_authors:
+                    users = requests.get(
+                        'https://api.github.com/search/users',
+                        params={'q': email},
+                        headers=self.headers
+                    ).json()
+
+                    if users['total_count'] > 0:
+                        collaborators.add(users['items'][0]['login'])
+                        continue
+
+                    users = requests.get(
+                        'https://api.github.com/search/users',
+                        params={'q': name},
+                        headers=self.headers
+                    ).json()
+
+                    if users['total_count'] == 1:
+                        collaborators.add(users['items'][0]['login'])
+            
+            if len(collaborators) > 1:
+                for user in collaborators:
+                    others = collaborators.copy()
+                    others.remove(user)
+                    self.append(
+                        user,
+                        {
+                            "type": "pr_collaborated",
+                            "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
+                            "time": event_time,
+                            "link": event["payload"]["pull_request"]["html_url"],
+                            "text": event["payload"]["pull_request"]["title"],
+                            "collaborated_with": list(others)
+                        },
+                    )
+
 
     def fetch_events(self, page=1):
         self.log.info(f"Fetching events page:{page}")

@@ -266,7 +266,7 @@ export let resolveGraduateAttributes = (attribute, contributor) => {
       return resolveLevel(
         attribute,
         contributor.highlights.comment_created +
-          contributor.highlights.eod_update
+        contributor.highlights.eod_update
       );
     case "community_engagement":
       return resolveLevel(attribute, contributor.highlights.points);

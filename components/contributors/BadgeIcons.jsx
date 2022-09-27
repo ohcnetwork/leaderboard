@@ -19,15 +19,32 @@ function useOnClickOutside(ref, handler) {
   }, [ref, handler]);
 }
 export default function BadgeIcons({ skill }) {
-  const [showModel, setShowModel] = useState();
+  const [showModel, setShowModel] = useState(false);
   const ref = useRef();
   useOnClickOutside(ref, () => setShowModel(false));
+
+  const currentLevel = skill.levels.indexOf(skill.currentLevel) + 1;
+  let glow = "";
+
+  switch (skill.levels.length - currentLevel) {
+    case 0:
+      glow = "glow-gold";
+      break;
+
+    case 1:
+      glow = "glow-silver";
+      break;
+
+    default:
+      break;
+  }
+
   return (
     <div ref={ref} className="" role="listitem">
-      <div className="relative w-14 h-14">
+      <div className="relative w-14 h-14 cursor-pointer">
         <img
           onClick={() => setShowModel(!showModel)}
-          className={skill.currentLevel ? "" : "grayscale opacity-30"}
+          className={skill.currentLevel ? `badge-glow ${glow}` : "grayscale opacity-30"}
           src={skill.icon}
           alt="Graduate attribute"
         />
@@ -36,49 +53,48 @@ export default function BadgeIcons({ skill }) {
             <span className="text-xs font-medium">{skill.currentLevel.label}</span>
           </div>
         )}
-      </div>
-      {/* model */}
-      {showModel && (
-        <div className="inset-x-0 md:inset-auto absolute z-20 bg-white rounded-lg shadow-2xl md:max-w-xs mt-1 mx-4 md:mx-0">
-          <div className="bg-gray-50 rounded-t-lg px-4 py-2 border-b">
+
+        {/* model */}
+
+        <div className={`inset-x-0 md:top-[calc(100%+10px)] md:inset-auto md:-left-[calc(125px-50%)] absolute z-20 bg-gray-800 rounded-lg shadow-2xl md:w-[250px] translate-y-5 transition-all mt-1 mx-4 md:mx-0 text-white ${showModel ? "opacity-100 translate-y-0 visible" : "invisible opacity-0"}`}>
+          <div className="bg-gray-900 rounded-t-lg px-4 py-3 border-b border-gray-700">
             <img
               onClick={() => setShowModel(!showModel)}
-              className={`w-24 h-24 mx-auto ${skill.currentLevel ? "" : "grayscale opacity-30"}`}
+              className={`w-24 h-24 mx-auto ${skill.currentLevel ? `badge-glow ${glow}` : "grayscale opacity-30"}`}
               src={skill.icon}
               alt="Graduate attribute"
             />
+            <i className="fas fa-circle" />
           </div>
           <div className="px-4 pt-2 pb-4">
             <p className="font-bold pb-2">{skill.label}</p>
             <div className="space-y-1 text-sm">
-            {skill.levels.map((level) => (
-              <div key={level.value} className="flex items-center font-medium">
-                <p
-                  className={`flex-shrink-0 bg-gray-100 px-1 py-0.5 rounded ${
-                    skill.currentLevel?.value >= level.value
-                      ? "bg-green-500 text-white"
-                      : ""
-                  }`}
-                >
-                  {level.label}
-                </p>
-                <div className="flex-grow pl-4">
+              {skill.levels.map((level) => (
+                <div key={level.value} className="flex items-center font-medium text-gray-400">
                   <p
-                    className={`flex items-center ${
-                      skill.currentLevel?.value >= level.value
-                        ? "text-green-700"
-                        : ""
-                    }`}
+                    className={`flex-shrink-0 bg-gray-700 px-1 py-0.5 rounded ${skill.currentLevel?.value >= level.value
+                      ? "bg-green-400 text-white"
+                      : ""
+                      }`}
                   >
-                    {level.description}
+                    {level.label}
                   </p>
+                  <div className="flex-grow pl-4">
+                    <p
+                      className={`flex items-center ${skill.currentLevel?.value >= level.value
+                        ? "text-green-500"
+                        : ""
+                        }`}
+                    >
+                      {level.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
             </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

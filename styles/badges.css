@@ -1,0 +1,29 @@
+.badge-glow {
+    --color: transparent;
+    --pulseStart: 10px;
+    --pulseEnd: 20px;
+    filter: drop-shadow(0px 0px 10px var(--color));
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0px 0px var(--pulseStart) var(--color));
+    }
+
+    to {
+        filter: drop-shadow(0px 0px var(--pulseEnd) var(--color));
+    }
+}
+
+.glow-gold {
+    --color: #FFD700;
+    --pulseStart: 1px;
+    --pulseEnd: 15px;
+}
+
+.glow-silver {
+    --pulseStart: 1px;
+    --pulseEnd: 10px;
+    --color: #C0C0C0;
+}

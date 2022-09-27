@@ -91,7 +91,7 @@ export default function Home(props) {
         <div className="border-gray-600 mx-4 xl:mx-0">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
             <div className="lg:col-span-7 2xl:col-span-8">
-              <div className="sticky top-0 pt-24">
+              <div className="sticky top-0 pt-6">
                 <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                     <span>

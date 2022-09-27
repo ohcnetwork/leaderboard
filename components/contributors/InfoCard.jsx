@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import clsx from "clsx";
 import Link from "next/link";
 export default function InfoCard({
   contributor,
@@ -7,10 +8,11 @@ export default function InfoCard({
 }) {
   return (
     <div
-      className={`xl:text-left ${
+      className={clsx(
+        "xl:text-left",
         isClickable &&
-        `border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4`
-      }`}
+          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4"
+      )}
       role="listitem"
     >
       <div className="flex flex-shrink-0 items-center space-x-4 md:space-y-6 xl:space-y-1 ">
@@ -32,25 +34,18 @@ export default function InfoCard({
         </Link>
         <div className={minimal ? "" : "flex flex-col items-center space-y-2"}>
           <div className="font-medium text-lg space-y-1">
-          <Link
+            <Link
               href={isClickable ? `/contributors/${contributor.github}` : `#`}
               className=""
             >
-                <h3
-                  className={`relative text-lg md:text-2xl leading-tight text-white w-max ${
-                    isClickable && `cursor-pointer hover:text-primary-200`
-                  }`}
-                >
-                  {contributor.name}
-
-                  { contributor.activityData?.open_prs?.some(pr => pr?.stale_for >= 7) && (
-                    <span className="flex absolute h-4 w-4 -top-1 -right-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-4 w-4 bg-yellow-600"></span>
-                    </span>
-                  )}
-                </h3>
-                
+              <h3
+                className={clsx(
+                  "text-lg md:text-2xl leading-tight text-white",
+                  isClickable && "cursor-pointer hover:text-primary-200"
+                )}
+              >
+                {contributor.name}
+              </h3>
             </Link>
             <p className="text-sm md:text-base text-gray-400">
               {contributor.title}

@@ -199,22 +199,22 @@ export let humanValues = [
       {
         label: "1x",
         value: 2,
-        description: "2 issues and pulls closed",
+        description: "2 issues identified and resolved",
       },
       {
         label: "2x",
         value: 16,
-        description: "16 issues and pulls closed",
+        description: "16 issues identified and resolved",
       },
       {
         label: "3x",
         value: 128,
-        description: "128 issues and pulls closed",
+        description: "128 issues identified and resolved",
       },
       {
         label: "4x",
         value: 1024,
-        description: "1024 issues and pulls closed",
+        description: "1024 issues identified and resolved",
       },
     ],
   },

@@ -10,7 +10,7 @@ const Sort = ({
 }) => {
   return (
     <div className={className}>
-      <span className="relative z-0 inline-flex shadow-sm rounded-md">
+      <span className="w-full relative z-0 inline-flex shadow-sm rounded-md">
         <span
           onClick={handleSortOrderChange}
           className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 cursor-pointer"
@@ -24,7 +24,7 @@ const Sort = ({
         <select
           id="message-type"
           name="message-type"
-          className="-ml-px block max-w-fit pl-2 rounded-l-none rounded-r-md border border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-white"
+          className="-ml-px block w-full pl-2 rounded-l-none rounded-r-md border border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-white"
           onChange={handleSortByChange}
           defaultValue={sortBy}
         >

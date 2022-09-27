@@ -1637,5 +1637,69 @@
                 }
             ]
         }
+    ],
+    "2022-09-26 00:00:00": [
+        {
+            "client_msg_id": "38e711f1-5df9-474e-b0eb-8df3f9056d67",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3645|#3645>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664200908.417609",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664175321,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3645",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3645|#3645 Add bots for notifying on merge conflicts and mark inactive issues>",
+                    "text": "Closes <https://github.com/coronasafe/care_fe/issues/3629|#3629>\n\n*Proposed Changes*\n\n\u2022 Added <https://github.com/marketplace/actions/label-merge-conflicts|https://github.com/marketplace/actions/label-merge-conflicts> to automatically label merge conflicts and notify the author about it.\n\u2022 Tweaked and fixed the configuration for <https://github.com/marketplace/stale|https://github.com/marketplace/stale> to mark inactive issues as stale and request updates on them.\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3645|#3645 Add bots for notifying on merge conflicts and mark inactive issues>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "dKBE",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3645",
+                                    "text": "#3645",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

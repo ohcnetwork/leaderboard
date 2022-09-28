@@ -1701,5 +1701,73 @@
                 }
             ]
         }
+    ],
+    "2022-09-27 00:00:00": [
+        {
+            "client_msg_id": "c2959ff0-5268-40a6-aa91-1862b02226f2",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3654|#3654>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664290497.116869",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/192448604-b0788d51-dd85-4ca5-bd49-acb46b8576e7.png",
+                    "image_width": 1075,
+                    "image_height": 489,
+                    "image_bytes": 26868,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664259902,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3654",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1075x489px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3640|#3640>\n\n*Proposed Changes*\n\n\u2022 Makes the `showDelete` function consistent with User Management page.\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\nBefore:  \n<https://user-images.githubusercontent.com/3626859/192448604-b0788d51-dd85-4ca5-bd49-acb46b8576e7.png|image>  \n<https://user-images.githubusercontent.com/3626859/192448561-708d1018-9886-4fe4-9abb-ffb0e86e9785.png|image>\n\nAfter:  \n<https://user-images.githubusercontent.com/3626859/192447957-66f340cf-5ba0-4cb7-9a86-7008113c3a93.png|image>  \n<https://user-images.githubusercontent.com/3626859/192447997-a3202179-748f-4a96-ac39-496bb19fe1f0.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3654|#3654 Fix delete button visibility on Facility Users page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "sD6PZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3654",
+                                    "text": "#3654",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

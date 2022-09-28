@@ -1,6 +1,27 @@
 {
-  "last_updated": 1664201001.0,
+  "last_updated": 1664272903.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3645",
+      "time": 1664272903.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3645",
+      "text": "Add bots for notifying on merge conflicts and mark inactive issues"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3623",
+      "time": 1664262015.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3623#issuecomment-1259069370",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/192455262-579514ed-73d5-4612-b618-ebe207e500fe.png)\r\n> \r\n> the last seen in coming down in the normal view, is it intentional\r\n\r\nYes, that'll only happen if it can't fit the whole last seen on the same line, in rare cases of \"extremely long usernames\". So instead of clipping it'd shift it to the next line. All depends on the screen size and username length."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3654",
+      "time": 1664259903.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3654",
+      "text": "Fix delete button visibility on Facility Users page"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3645",
@@ -3035,8 +3056,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3645",
-      "title": "Add bots for notifying on merge conflicts and mark inactive issues"
+      "link": "https://github.com/coronasafe/care_fe/pull/3654",
+      "title": "Fix delete button visibility on Facility Users page"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3639",
@@ -3047,16 +3068,8 @@
       "title": "Hide live feed for discharged patients"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3624",
-      "title": "Add Stat on top of Prescription frequency"
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3623",
       "title": "Make user's last seen responsive"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3609",
-      "title": "Set file as uploaded on a successful upload"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3584",
@@ -3069,14 +3082,6 @@
     {
       "link": "https://github.com/coronasafe/dashboard/pull/205",
       "title": "Add Asset details page"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3544",
-      "title": "Migrate bs-webapi to rescript-webapi"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3539",
-      "title": "Increase input width for Patient Investigation"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2659",
@@ -3092,6 +3097,14 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3573",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3593"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3543",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3544"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3445",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3450"

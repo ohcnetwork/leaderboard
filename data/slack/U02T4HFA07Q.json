@@ -1769,5 +1769,73 @@
                 }
             ]
         }
+    ],
+    "2022-09-28 00:00:00": [
+        {
+            "client_msg_id": "4228b8c2-b411-4f06-82df-90d2cbf21520",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3660|#3660> and working on other issues.",
+            "user": "U02T4HFA07Q",
+            "ts": "1664379599.066189",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664368185,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3660",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3660|#3660 Use GITHUB_TOKEN for merge conflict workflow>",
+                    "text": "*Proposed Changes*\n\n\u2022 Instead of using the personal access token, it's better to use the `GITHUB_TOKEN` which is provided by default for all Github Action Workflows. The token is temporarily generated and destroyed after the workflow is over.\n\u2022 This should also make all the comments appear to be made by the \"Github actions\" bot, instead of <https://github.com/mathew-alex|@mathew-alex> .\n\u2022 More about it here: <https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret|https://docs.github.com/en/actions/security-guides/automatic-token-authentication>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3660|#3660 Use GITHUB_TOKEN for merge conflict workflow>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "DX4ml",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3660",
+                                    "text": "#3660",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " and working on other issues."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

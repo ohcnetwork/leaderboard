@@ -1,6 +1,62 @@
 {
-  "last_updated": 1664272903.0,
+  "last_updated": 1664395029.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3584",
+      "time": 1664395029.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459",
+      "text": "@aparnacoronasafe I have made the required changes, a summary of the current implementation is as follows:\r\n\r\n- [X] The user is now able to set a review time in the consultation/edit consultation form or at any time in the log update form.\r\n![image](https://user-images.githubusercontent.com/3626859/192874939-df9c8131-5337-4781-b3d5-436e847c5e21.png)\r\n\r\n- [X] When a log update is filed for the patient, the preselected review time now comes pre-filled in the 'review after' field in log update and is also available to edit on the Consultation form.\r\n\r\nConsultation Form: (Stored Value auto filled)\r\n![image](https://user-images.githubusercontent.com/3626859/192873532-126f75c9-3840-4b27-a1e4-ca462aa5cf06.png)\r\nDaily Rounds Form: (Stored Value auto filled)\r\n![image](https://user-images.githubusercontent.com/3626859/192873623-03a45aed-3c9e-4acb-8127-69e2d22ea8fd.png)\r\n\r\n- [X] After review time is set, then within that time if a Log Update is not filed for the patient, then the \"Review Missed\" Badge appears on the Patient badge, on the Patient list page, on patient summary page and on the patient details page.\r\n![image](https://user-images.githubusercontent.com/3626859/192874704-34486105-b280-4e56-9b3d-1f9b88a22073.png)\r\n![image](https://user-images.githubusercontent.com/3626859/192874745-dc0e4d3c-9683-45cf-b7b5-1bb1f1bfb4a0.png)\r\n![image](https://user-images.githubusercontent.com/3626859/192874789-098339e2-5c39-4f8d-98a3-71a289157386.png)\r\n\r\n- [X] After review time is set, then the \"Next review\" time appears on the Patient Summary and Patient details page.\r\n![image](https://user-images.githubusercontent.com/3626859/192874405-83470d4d-d8c0-422e-b710-6549e46131c0.png)\r\n![image](https://user-images.githubusercontent.com/3626859/192875394-7a6e440e-f176-485b-af21-edf505c6faba.png)\r\n\r\n- [X] With every log update filed, the review clock resets to the next date according to the Review time set.\r\n![image](https://user-images.githubusercontent.com/3626859/192875764-9a132ab7-cf6d-4806-b225-1ebdad484288.png)\r\n\r\n- [X] If the user does not edit the 'review after' field in Log Update form, the same interval will continue for review, with the review call resetting with every log update.\r\n![image](https://user-images.githubusercontent.com/3626859/192873623-03a45aed-3c9e-4acb-8127-69e2d22ea8fd.png)\r\n\r\nSample Workflow:\r\n- At 12:00, You file a 30 mins review time for a patient \r\n- Next review time is shown as 12:30\r\n- You make a review at 12:15, keeping the review time as previous (30 mins) [You do have an option to change it]\r\n- Next review time automatically shows as 12:45 now (12:15 + 30 mins)\r\n- You miss the review, A \"Review missed\" badge is shown now since the time review was missed.\r\n- It's 1:00 now, you file a log update, but this time you decide to change the review time to 2 hours (instead of previous 30 minutes).\r\n- Now next review time shows as 3:00 (1:00 + 2 hours)\r\n- You file an update at 2:00\r\n- Next review time shows as 4:00 now (2:00 + 2 hours)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3660",
+      "time": 1664368186.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3660",
+      "text": "Use GITHUB_TOKEN for merge conflict workflow"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3645",
+      "time": 1664347885.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3645#issuecomment-1260465299",
+      "text": "@mathew-alex The runs seem to be failing due to absence of `github_token`, Did you happen to remove `secrets.PERSONAL_ACCESS_TOKEN` from GitHub Action Secrets recently?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#789",
+      "time": 1664346654.0,
+      "link": "https://github.com/coronasafe/care/pull/789#issuecomment-1260449196",
+      "text": "@vigneshhari Any updates on this being merged? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3639",
+      "time": 1664346451.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3639#issuecomment-1260446513",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/192687060-c0f26485-0e18-4f20-b710-128908377ad0.png)\r\n> \r\n> even after the bed is allocated, the pop-up stays there itself, which doesn't give a good user experience\r\n\r\nShould be fixed now."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3631",
+      "time": 1664345003.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3631#issuecomment-1260428392",
+      "text": "@nihal467 That happened because this PR was quite behind the `develop` branch, merged now, the graph should be the same both sides.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/192700065-6f920bc5-58fa-4dfc-8f0e-affb47a9e216.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3654",
+      "time": 1664344451.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3654#issuecomment-1260422596",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/192689388-8c077496-2360-4c02-a405-45dbcb2c71ff.png)\r\n> \r\n> lot of white space is been wasted for a single button, to better the experience, you can take an opinion in the EOD call and work on it\r\n\r\nThat's totally unintentional, the delete button should be consistent with how it appears on the Users page. Should be fixed and should be just the way it is on Users page. Could you test it once again now?\r\n\r\n\r\nUser Management Page:\r\n![image](https://user-images.githubusercontent.com/3626859/192698686-308da634-6e98-4fab-8e04-c3facfae5413.png)\r\n\r\nFacility Users Page:\r\n![image](https://user-images.githubusercontent.com/3626859/192698650-aabcecd5-7daf-4123-a00e-bcb9db70acfd.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3631",
+      "time": 1664341504.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3631#issuecomment-1260392119",
+      "text": "@nihal467 That shouldn't happen, this PR is pure cosmetic change, it just hides the live feed tab if the person has a discharge date. That's it. It doesn't alter anything else anywhere. It shouldn't affect the graphs at all. I'll test this once locally and with other deployments and update here."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#3645",
@@ -3056,6 +3112,10 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3660",
+      "title": "Use GITHUB_TOKEN for merge conflict workflow"
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3654",
       "title": "Fix delete button visibility on Facility Users page"
     },
@@ -3064,28 +3124,12 @@
       "title": "Improve re-fetching updated data"
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3631",
-      "title": "Hide live feed for discharged patients"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3623",
-      "title": "Make user's last seen responsive"
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3584",
-      "title": "Show review time only on creation"
+      "title": "Patient Review feature fixes"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3551",
       "title": "Store Asset details URL in QR code"
-    },
-    {
-      "link": "https://github.com/coronasafe/dashboard/pull/205",
-      "title": "Add Asset details page"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2659",
-      "title": "Remove admitted_to filter"
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2536",

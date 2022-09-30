@@ -1837,5 +1837,61 @@
                 }
             ]
         }
+    ],
+    "2022-09-29 00:00:00": [
+        {
+            "client_msg_id": "9e6bc3e2-4a23-4d64-8941-81a9f950331f",
+            "type": "message",
+            "text": "Worked on: <https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459|#3584>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664453505.637329",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/192874939-df9c8131-5337-4781-b3d5-436e847c5e21.png",
+                    "image_width": 438,
+                    "image_height": 356,
+                    "image_bytes": 13601,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664395028,
+                    "color": "24292f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "438x356px image",
+                    "text": "<https://github.com/aparnacoronasafe|@aparnacoronasafe> I have made the required changes, a summary of the current implementation is as follows:\n\nThe user is now able to set a review time in the consultation/edit consultation form or at any time in the log update form.  \n    <https://user-images.githubusercontent.com/3626859/192874939-df9c8131-5337-4781-b3d5-436e847c5e21.png|image>\nWhen a log update is filed for the patient, the preselected review time now comes pre-filled in the 'review after' field in log update and is also available to edit on the Consultation form.\n\nConsultation Form: (Stored Value auto filled)  \n<https://user-images.githubusercontent.com/3626859/192873532-126f75c9-3840-4b27-a1e4-ca462aa5cf06.png|image>  \nDaily Rounds Form: (Stored Value auto filled)  \n<https://user-images.githubusercontent.com/3626859/192873623-03a45aed-3c9e-4acb-8127-69e2d22ea8fd.png|image>\n\nAfter review time is set, then within that time if a Log Update is not filed for the patient, then the \"Review Missed\" Badge appears on the Patient badge, on the Patient list page, on patient summary page and on the patient details page.  \n    <https://user-images.githubusercontent.com/3626859/192874704-34486105-b280-4e56-9b3d-1f9b88a22073.png|image>  \n    <https://user-images.githubusercontent.com/3626859/192874745-dc0e4d3c-9683-45cf-b7b5-1bb1f1bfb4a0.png|image>  \n    <https://user-images.githubusercontent.com/3626859/192874789-098339e2-5c39-4f8d-98a3-71a289157386.png|image>\nAfter review time is set, then the \"Next review\" time appears on the Patient Summary and Patient details page. (Note that review is not missed in this scenario, it shows just the future date for next review)  \n    <https://user-images.githubusercontent.com/3626859/192874405-83470d4d-d8c0-422e-b710-6549e46131c0.png|image>  \n    <https://user-images.githubusercontent.com/3626859/192875394-7a6e440e-f176-485b-af21-edf505c6faba.png|image>\nWith every log update filed, the review clock resets to the next date according to the Review time set.  \n    <https://user-images.githubusercontent.com/3626859/192875764-9a132ab7-cf6d-4806-b225-1ebdad484288.png|image>\nIf the user does not edit the 'review after' field in Log Update form, the same interval will continue for review, with the review call resetting with every log update.  \n    <https://user-images.githubusercontent.com/3626859/192873623-03a45aed-3c9e-4acb-8127-69e2d22ea8fd.png|image>\n\nSample Workflow:\n\n\u2022 At 12:00, You file a 30 mins review time for a patient\n\u2022 Next review time is shown as 12:30\n\u2022 You make a review at 12:15, keeping the review time as previous (30 mins) [You do have an option to change it]\n\u2022 Next review time automatically shows as 12:45 now (12:15 + 30 mins)\n\u2022 You miss the review, A \"Review missed\" badge is shown now since the time review was missed.\n\u2022 It's 1:00 now, you file a log update, but this time you decide to change the review time to 2 hours (instead of previous 30 minutes).\n\u2022 Now next review time shows as 3:00 (1:00 + 2 hours)\n\u2022 You file an update at 2:00\n\u2022 Next review time shows as 4:00 now (2:00 + 2 hours)",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459|Comment on #3584 Patient Review feature fixes>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Vgt",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459",
+                                    "text": "#3584",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

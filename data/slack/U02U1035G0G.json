@@ -1717,5 +1717,64 @@
                 }
             ]
         }
+    ],
+    "2022-10-02 00:00:00": [
+        {
+            "client_msg_id": "1f23e3b0-7a96-47d6-83d9-2f204041e776",
+            "type": "message",
+            "text": "Worked on pull <https://github.com/coronasafe/care_fe/pull/3687|#3687>",
+            "user": "U02U1035G0G",
+            "ts": "1664732542.654049",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664704506,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3687",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3687|#3687 Uniform date/time format across CARE>",
+                    "text": "fixes <https://github.com/coronasafe/care_fe/issues/3658|#3658>\n\n*Proposed Changes*\n\nUniform format: \"12:00 AM; DD/MM/YYY\"\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3687|#3687 Uniform date/time format across CARE>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "vLV4",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on pull "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3687",
+                                    "text": "#3687",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

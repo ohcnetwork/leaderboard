@@ -1718,5 +1718,67 @@
                 }
             ]
         }
+    ],
+    "2022-10-03 00:00:00": [
+        {
+            "client_msg_id": "834ae76e-d539-40e9-9fd6-cdb1dfab0540",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3700>",
+            "user": "U02TB823H8A",
+            "ts": "1664811452.248749",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664810073,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3700",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3700|#3700 Removed unnecessary imports and added checkUsername route for User Creation page >",
+                    "text": "Added api route for checking username availability (backend PR yet to be merged <https://github.com/coronasafe/care/pull/1043|coronasafe/care#1043>)\n\nWill help in solving <https://github.com/coronasafe/care_fe/issues/3285|#3285>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3700|#3700 Removed unnecessary imports and added checkUsername route for User Creation page >",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "waiting for back end",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "gH0Y=",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3700"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

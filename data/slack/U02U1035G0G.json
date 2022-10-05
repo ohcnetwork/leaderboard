@@ -1776,5 +1776,77 @@
                 }
             ]
         }
+    ],
+    "2022-10-04 00:00:00": [
+        {
+            "client_msg_id": "f8dd50f0-07ac-467a-886f-71bd86472334",
+            "type": "message",
+            "text": "Submitted a PR <https://github.com/coronasafe/care_fe/pull/3707|#3707> and worked on previous PRs",
+            "user": "U02U1035G0G",
+            "ts": "1664891949.844579",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/40627011/193786067-0b68091a-7d6d-4f80-81ed-09d7753efb4d.png",
+                    "image_width": 611,
+                    "image_height": 163,
+                    "image_bytes": 10740,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664876004,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3707",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "611x163px image",
+                    "text": "fixes <https://github.com/coronasafe/care_fe/issues/3705|#3705>\n\n*Proposed Changes*\n\n\u2022 Made the aligment of the created date in the audit log section of the shifting details page\n\n*Screenshot*\n\n<https://user-images.githubusercontent.com/40627011/193786067-0b68091a-7d6d-4f80-81ed-09d7753efb4d.png|image>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3707|#3707 Fix: audit log alignment on shifting details page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "tested",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/Kf1q",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3707",
+                                    "text": "#3707",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " and worked on previous PRs"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -1,6 +1,48 @@
 {
-  "last_updated": 1664819600.0,
+  "last_updated": 1664869720.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3701",
+      "time": 1664869720.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3701#issuecomment-1266540290",
+      "text": "> @patelaryan7751 how about keeping all the breakpoint constants as a const record like below, and use it like:\n> \n> ```ts\n> // breakpoints.ts\n> \n> const breakpoints = {\n>   extremeSmall: ...,\n>   mobile: ...,\n> };\n> \n> export const breakpoints;\n> ```\n> \n> ```ts\n> // exampleUsage.ts\n> \n> import breakpoints.ts\n> const width = useWindowDimensions();\n> const isMobile = width < breakpoints.mobile;\n> ```\n\n@rithviknishad the breakpoint is on your requirement what you want 348 can be extremely small 640 can be for Mobile\nit totally depends upon the user hence i didn't make global because regular breakpoints are already present md,xl,vs. ,lg"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3701",
+      "time": 1664867753.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3701#issuecomment-1266510378",
+      "text": "Hey @rithviknishad i have made the changes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3701",
+      "time": 1664856833.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3701#issuecomment-1266373997",
+      "text": "@rithviknishad got it."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3702",
+      "time": 1664855797.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3702",
+      "text": "Remove Usage of UseMediaQuery hook from care codebase "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3366",
+      "time": 1664854569.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3366#issuecomment-1266353138",
+      "text": "The backend issue https://github.com/coronasafe/care_fe/issues/3366 is tracked here"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1051",
+      "time": 1664854546.0,
+      "link": "https://github.com/coronasafe/care/issues/1051",
+      "text": "Api for archieving consultation files"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3701",
@@ -3408,14 +3450,6 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3701",
-      "title": "Added a global hook to give screen width and height at any component"
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3680",
-      "title": "Made asset warranty card responsive in extreme small devices"
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3669",
       "title": "Made the teleicuvitalcard responsive"
     },
@@ -3441,6 +3475,18 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3702",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3701"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3692",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3701"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3675",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3680"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3673",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3691"
@@ -3516,10 +3562,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2805",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2812"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2773",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2786"
     }
   ]
 }

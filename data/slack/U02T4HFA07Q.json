@@ -2050,5 +2050,61 @@
                 }
             ]
         }
+    ],
+    "2022-10-04 00:00:00": [
+        {
+            "client_msg_id": "35503b81-225b-476c-b552-bfff7862a543",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care/pull/1052|#1052>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664875880.435879",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/193784703-24864d12-4bf5-42c1-a0e8-d05442ec6128.png",
+                    "image_width": 190,
+                    "image_height": 148,
+                    "image_bytes": 8944,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664875846,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/1052",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "190x148px image",
+                    "text": "*Proposed Changes*\n\n\u2022 Adds a new field `is_archived` which represents whether the file has been archived or not.\n\n*Associated Issue*\n\n\u2022 Fixes <https://github.com/coronasafe/care/issues/1051|#1051>\n\n<https://user-images.githubusercontent.com/3626859/193784703-24864d12-4bf5-42c1-a0e8-d05442ec6128.png|image>\n\n@coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care/pull/1052|#1052 Add is_archived field to FileUpload>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "L4jC1",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/1052",
+                                    "text": "#1052",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

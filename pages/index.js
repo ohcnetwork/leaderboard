@@ -84,7 +84,7 @@ export default function Home(props) {
                               key={index}
                               href={`/contributors/${contributor.github}`}
                             >
-                              <span className="flex space-x-3 items-center cursor-pointer bg-gray-900 bg-opacity-75 px-2 py-3 rounded-lg hover:bg-opacity-30 transition">
+                              <span className="hover:shadow-lg hover:shadow-primary-500 flex space-x-3 items-center cursor-pointer bg-gray-900 bg-opacity-75 px-2 py-3 rounded-lg hover:bg-opacity-30 transition">
                                 <span className="flex items-center justify-center text-lg h-10 w-10 bg-gray-800 rounded-full">
                                   {index + 1}
                                 </span>

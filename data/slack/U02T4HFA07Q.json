@@ -2106,5 +2106,82 @@
                 }
             ]
         }
+    ],
+    "2022-10-07 00:00:00": [
+        {
+            "client_msg_id": "3aea9fc3-d95a-4a52-8f5b-cd92690128bf",
+            "type": "message",
+            "text": "Made PRs: <https://github.com/coronasafe/care_fe/pull/3717|#3717> <https://github.com/coronasafe/care_fe/pull/3718|#3718>",
+            "user": "U02T4HFA07Q",
+            "ts": "1665158561.721689",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665133189,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3717",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3717|#3717 Add loading tile for Update Log>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3717|#3717 Add loading tile for Update Log>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665134241,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3718",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3718|#3718 Fix alignment issue in DailyRounds>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3718|#3718 Fix alignment issue in DailyRounds>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "BIX7V",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PRs: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3717",
+                                    "text": "#3717",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3718",
+                                    "text": "#3718",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

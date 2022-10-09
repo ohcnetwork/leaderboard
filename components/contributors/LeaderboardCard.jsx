@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FiAlertTriangle } from "react-icons/fi";
 
 /* eslint-disable @next/next/no-img-element */
 export default function LeaderBoardCard({ contributor, position }) {
@@ -29,11 +30,13 @@ export default function LeaderBoardCard({ contributor, position }) {
       className="block hover:bg-gray-50"
     >
       <div className="flex md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:-translate-x-1 hover:scale-105 duration-200">
-       {!hideBadges &&  <div
-          className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr ${badgeColors} border-4 mr-4 shrink-0`}
-        >
-          {position + 1}
-        </div>}
+        {!hideBadges && (
+          <div
+            className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr ${badgeColors} border-4 mr-4 shrink-0`}
+          >
+            {position + 1}
+          </div>
+        )}
         <div className="flex md:flex-row flex-col md:items-center justify-between w-full space-y-4">
           <div className="flex w-full">
             <div className="min-w-0 flex-1 flex items-center">
@@ -97,6 +100,16 @@ export default function LeaderBoardCard({ contributor, position }) {
                     </span>
                   </div>
                 </dd>
+                {contributor.weekSummary?.pr_stale ? (
+                  <dd className="flex mt-2">
+                    <div className="flex items-center">
+                      <span className="flex text-sm leading-5 text-yellow-200">
+                        <FiAlertTriangle size={18} className="mr-2" />{" "}
+                        {contributor.weekSummary?.pr_stale} stale
+                      </span>
+                    </div>
+                  </dd>
+                ) : null}
               </dl>
               <dl className="">
                 <dt className="text-sm leading-5 font-medium text-gray-300 truncate mt-4">

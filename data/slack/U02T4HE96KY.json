@@ -2652,5 +2652,72 @@
             "is_locked": false,
             "subscribed": false
         }
+    ],
+    "2022-10-08 00:00:00": [
+        {
+            "client_msg_id": "02540b48-7159-49a2-8cc0-3c79cb89f3d1",
+            "type": "message",
+            "text": "made a <https://github.com/coronasafe/care_fe/pull/3731|pr> and worked on care dashboard",
+            "user": "U02T4HE96KY",
+            "ts": "1665240017.351039",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665239863,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3731",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3731|#3731 Issue 2962 - scroll to top if in whitelist>",
+                    "text": "*Proposed Changes*\n\n\u2022 scroll to top only if link regex in whitelist\n\n<https://github.com/orgs/coronasafe/teams/care-fe-code-reviewers|@coronasafe/care-fe-code-reviewers> <https://github.com/orgs/coronasafe/teams/code-reviewers|@coronasafe/code-reviewers>\n\n*Merge Checklist*\n\n\u2611\ufe0e Add specs that demonstrate bug / test a new feature.\n\u2611\ufe0e Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2611\ufe0e Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3731|#3731 Issue 2962 - scroll to top if in whitelist>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "axeL5",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "made a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3731",
+                                    "text": "pr"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " and worked on care dashboard"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

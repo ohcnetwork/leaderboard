@@ -1,6 +1,13 @@
 {
-  "last_updated": 1664369790.0,
+  "last_updated": 1665306307.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1061",
+      "time": 1665306307.0,
+      "link": "https://github.com/coronasafe/care/issues/1061",
+      "text": "Do Not Update last_daily_round When Creating Automated Daily Rounds"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1040",
@@ -40,11 +47,19 @@
   "open_prs": [
     {
       "link": "https://github.com/coronasafe/care/pull/1018",
-      "title": "Add serializer constraints to AssetBed"
+      "title": "Add serializer constraints to AssetBed",
+      "stale_for": 2,
+      "labels": [
+        "waiting for confirmation"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3558",
-      "title": "sentry reports are made only in production"
+      "title": "sentry reports are made only in production",
+      "stale_for": 1,
+      "labels": [
+        "stale"
+      ]
     }
   ],
   "authored_issue_and_pr": []

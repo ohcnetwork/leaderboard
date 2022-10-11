@@ -1807,5 +1807,75 @@
                 }
             ]
         }
+    ],
+    "2022-10-10 00:00:00": [
+        {
+            "client_msg_id": "f3060590-f181-428a-a71e-adb06ccf9df8",
+            "type": "message",
+            "text": "Couldn\u2019t get anything done today. Worked on <https://github.com/coronasafe/care_fe/issues/2759> yesterday. Prepped for exams starting tomorrow. Will get back to active work starting Wednesday.",
+            "user": "U02TB823H8A",
+            "ts": "1665410715.392169",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/67050716/174438832-68101797-8cde-402e-b085-bf920030f6d9.png",
+                    "image_width": 904,
+                    "image_height": 336,
+                    "image_bytes": 413383,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655557267,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2759",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "904x336px image",
+                    "text": "in facility list (<https://care.coronasafe.in/facility|https://care.coronasafe.in/facility>), against each facility list, add icons for\n\n\u2022 No. of live patients / Total capacity\n\u2022 Whether hospital cameras are live (if live green, if offline red and no icon if the hospital doesn't have a server for the camera )\n\u2022 Whether the hospital server is online\n\u2022 Whether any user is online from the hospital.\n\n<https://user-images.githubusercontent.com/67050716/174438832-68101797-8cde-402e-b085-bf920030f6d9.png|Screenshot 2022-06-18 at 6 27 47 PM>\n\nchange position and size of icons to fit minimally in the card",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2759|#2759 Add icons to facility listing>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/patelaryan7751|@patelaryan7751>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "waiting for back end",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "QDBc",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Couldn\u2019t get anything done today. Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2759"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " yesterday. Prepped for exams starting tomorrow. Will get back to active work starting Wednesday."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

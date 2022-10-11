@@ -2219,5 +2219,64 @@
             "is_locked": false,
             "subscribed": false
         }
+    ],
+    "2022-10-10 00:00:00": [
+        {
+            "client_msg_id": "623c2115-1246-418d-a829-7803ceb5206f",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3741|#3741>",
+            "user": "U02T4HFA07Q",
+            "ts": "1665416914.983669",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665400976,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3741",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3741|#3741 Fix patient category selection>",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3729|#3729>\n\n\u2022 Fixes the category value to match with the backend, this resolves the error where the category value is an invalid choice.\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3741|#3741 Fix patient category selection>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tspRI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3741",
+                                    "text": "#3741",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

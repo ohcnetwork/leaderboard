@@ -39745,6 +39745,292 @@
             ]
         }
     ],
-    "2022-10-10 00:00:00": [],
-    "2022-10-09 00:00:00": []
+    "2022-10-10 00:00:00": [
+        {
+            "client_msg_id": "623c2115-1246-418d-a829-7803ceb5206f",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3741|#3741>",
+            "user": "U02T4HFA07Q",
+            "ts": "1665416914.983669",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665400976,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3741",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3741|#3741 Fix patient category selection>",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3729|#3729>\n\n\u2022 Fixes the category value to match with the backend, this resolves the error where the category value is an invalid choice.\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3741|#3741 Fix patient category selection>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tspRI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3741",
+                                    "text": "#3741",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "43f9284d-d981-4f0c-b6e2-276dbbff3fc6",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care_dashboard/pull/35|Implemented Data Fetching Hooks for Care Dashboard>\n\u2022 Raised an <https://github.com/coronasafe/care_fe/issues/3742|epic issue> to track tailwinding care.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1665413334.740909",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665385053,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_dashboard/pull/35",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_dashboard/pull/35|#35 Implements Data Fetching Hooks>",
+                    "title": "<https://github.com/coronasafe/care_dashboard/pull/35|#35 Implements Data Fetching Hooks>",
+                    "footer": "<https://github.com/coronasafe/care_dashboard|coronasafe/care_dashboard>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665412288,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/3742",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/3742|#3742 :hammer_and_wrench: Tailwinding Care>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/3742|#3742 :hammer_and_wrench: Tailwinding Care>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "R=rV",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_dashboard/pull/35",
+                                            "text": "Implemented Data Fetching Hooks for Care Dashboard"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Raised an "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3742",
+                                            "text": "epic issue"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to track tailwinding care."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "e9f0075f-e304-4369-b3c7-d9260c179755",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care_dashboard/pull/36|care dashboard pr>\n\u2022 dark mode in dashboard filters\n",
+            "user": "U02T4HE96KY",
+            "ts": "1665410794.668179",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665387858,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_dashboard/pull/36",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_dashboard/pull/36|#36 fix light mode css for small screens>",
+                    "text": "closes <https://github.com/coronasafe/care_dashboard/issues/31|#31>",
+                    "title": "<https://github.com/coronasafe/care_dashboard/pull/36|#36 fix light mode css for small screens>",
+                    "footer": "<https://github.com/coronasafe/care_dashboard|coronasafe/care_dashboard>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "UZv8f",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_dashboard/pull/36",
+                                            "text": "care dashboard pr"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "dark mode in dashboard filters"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "f3060590-f181-428a-a71e-adb06ccf9df8",
+            "type": "message",
+            "text": "Couldn\u2019t get anything done today. Worked on <https://github.com/coronasafe/care_fe/issues/2759> yesterday. Prepped for exams starting tomorrow. Will get back to active work starting Wednesday.",
+            "user": "U02TB823H8A",
+            "ts": "1665410715.392169",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/67050716/174438832-68101797-8cde-402e-b085-bf920030f6d9.png",
+                    "image_width": 904,
+                    "image_height": 336,
+                    "image_bytes": 413383,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1655557267,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/2759",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "904x336px image",
+                    "text": "in facility list (<https://care.coronasafe.in/facility|https://care.coronasafe.in/facility>), against each facility list, add icons for\n\n\u2022 No. of live patients / Total capacity\n\u2022 Whether hospital cameras are live (if live green, if offline red and no icon if the hospital doesn't have a server for the camera )\n\u2022 Whether the hospital server is online\n\u2022 Whether any user is online from the hospital.\n\n<https://user-images.githubusercontent.com/67050716/174438832-68101797-8cde-402e-b085-bf920030f6d9.png|Screenshot 2022-06-18 at 6 27 47 PM>\n\nchange position and size of icons to fit minimally in the card",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/2759|#2759 Add icons to facility listing>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/patelaryan7751|@patelaryan7751>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "waiting for back end",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "QDBc",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Couldn\u2019t get anything done today. Worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/2759"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " yesterday. Prepped for exams starting tomorrow. Will get back to active work starting Wednesday."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-09 00:00:00": [],
+    "2022-10-11 00:00:00": []
 }

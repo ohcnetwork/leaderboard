@@ -2719,5 +2719,80 @@
                 }
             ]
         }
+    ],
+    "2022-10-10 00:00:00": [
+        {
+            "client_msg_id": "e9f0075f-e304-4369-b3c7-d9260c179755",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care_dashboard/pull/36|care dashboard pr>\n\u2022 dark mode in dashboard filters\n",
+            "user": "U02T4HE96KY",
+            "ts": "1665410794.668179",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665387858,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_dashboard/pull/36",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_dashboard/pull/36|#36 fix light mode css for small screens>",
+                    "text": "closes <https://github.com/coronasafe/care_dashboard/issues/31|#31>",
+                    "title": "<https://github.com/coronasafe/care_dashboard/pull/36|#36 fix light mode css for small screens>",
+                    "footer": "<https://github.com/coronasafe/care_dashboard|coronasafe/care_dashboard>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "UZv8f",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_dashboard/pull/36",
+                                            "text": "care dashboard pr"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "dark mode in dashboard filters"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

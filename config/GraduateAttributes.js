@@ -195,7 +195,28 @@ export let humanValues = [
     key: "autonomy_and_responsibility",
     label: "Autonomy And Responsibility",
     icon: "/images/Human-Values/Autonomy-and-Responsibility.svg",
-    levels: [],
+    levels: [
+      {
+        label: "1x",
+        value: 2,
+        description: "2 issues identified and resolved",
+      },
+      {
+        label: "2x",
+        value: 16,
+        description: "16 issues identified and resolved",
+      },
+      {
+        label: "3x",
+        value: 128,
+        description: "128 issues identified and resolved",
+      },
+      {
+        label: "4x",
+        value: 1024,
+        description: "1024 issues identified and resolved",
+      },
+    ],
   },
   {
     key: "empathy",
@@ -239,6 +260,8 @@ export let resolveGraduateAttributes = (attribute, contributor) => {
       return resolveLevel(attribute, contributor.highlights.issue_opened);
     case "problem_solving":
       return resolveLevel(attribute, contributor.highlights.pr_merged);
+    case "collaboration":
+      return resolveLevel(attribute, contributor.highlights.pr_collaborated);
     case "communication_skills":
       return resolveLevel(
         attribute,
@@ -253,6 +276,8 @@ export let resolveGraduateAttributes = (attribute, contributor) => {
       return resolveLevel(attribute, contributor.courses_completed?.length);
     case "skills_to_apply_dt_solutions":
       return resolveLevel(attribute, contributor.courses_completed?.length);
+    case "autonomy_and_responsibility":
+      return resolveLevel(attribute, contributor.activityData?.authored_issue_and_pr?.length);
     default:
       return { ...attribute };
   }

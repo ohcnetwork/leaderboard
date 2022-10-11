@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import clsx from "clsx";
 import Link from "next/link";
 export default function InfoCard({
   contributor,
@@ -7,10 +8,11 @@ export default function InfoCard({
 }) {
   return (
     <div
-      className={`xl:text-left ${
+      className={clsx(
+        "xl:text-left",
         isClickable &&
-        `border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4`
-      }`}
+          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4"
+      )}
       role="listitem"
     >
       <div className="flex flex-shrink-0 items-center space-x-4 md:space-y-6 xl:space-y-1 ">
@@ -37,9 +39,10 @@ export default function InfoCard({
               className=""
             >
               <h3
-                className={`text-lg md:text-2xl leading-tight text-white ${
-                  isClickable && `cursor-pointer hover:text-primary-200`
-                }`}
+                className={clsx(
+                  "text-lg md:text-2xl leading-tight text-white",
+                  isClickable && "cursor-pointer hover:text-primary-200"
+                )}
               >
                 {contributor.name}
               </h3>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FiAlertTriangle } from "react-icons/fi";
 
 /* eslint-disable @next/next/no-img-element */
 export default function LeaderBoardCard({ contributor, position }) {
@@ -36,7 +37,7 @@ export default function LeaderBoardCard({ contributor, position }) {
             {position + 1}
           </div>
         )}
-        <div className="flex lg:pb-6 rounded-lg md:flex-row flex-col md:items-center justify-between w-full space-y-4">
+        <div className="flex md:flex-row flex-col md:items-center justify-between w-full space-y-4">
           <div className="flex w-full">
             <div className="min-w-0 flex-1 flex items-center">
               <div className="flex-shrink-0">
@@ -99,6 +100,16 @@ export default function LeaderBoardCard({ contributor, position }) {
                     </span>
                   </div>
                 </dd>
+                {contributor.weekSummary?.pr_stale ? (
+                  <dd className="flex mt-2">
+                    <div className="flex items-center">
+                      <span className="flex text-sm leading-5 text-yellow-200">
+                        <FiAlertTriangle size={18} className="mr-2" />{" "}
+                        {contributor.weekSummary?.pr_stale} stale
+                      </span>
+                    </div>
+                  </dd>
+                ) : null}
               </dl>
               <dl className="">
                 <dt className="text-sm leading-5 font-medium text-gray-300 truncate mt-4">

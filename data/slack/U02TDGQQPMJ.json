@@ -6562,9 +6562,928 @@
                     "users": [
                         "U02TB83Q5V0",
                         "U02U102TL0G",
-                        "U02T4HFA07Q"
+                        "U02T4HFA07Q",
+                        "U02U1035G0G",
+                        "U02TPSYB1MF"
                     ],
-                    "count": 3
+                    "count": 5
+                }
+            ]
+        }
+    ],
+    "2022-09-26 00:00:00": [
+        {
+            "client_msg_id": "72814e55-5d31-4f14-9679-f56e5da5cc90",
+            "type": "message",
+            "text": "Populated dummy data and all cypress tests passing except for Sample Test's test. Working on populating sample tests too. Made a management command `load_dummy_data` that can be run only in local environment.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1664212652.309739",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "uHEp",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Populated dummy data and all cypress tests passing except for Sample Test's test. Working on populating sample tests too. Made a management command "
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "load_dummy_data",
+                                    "style": {
+                                        "code": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " that can be run only in local environment."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-27 00:00:00": [
+        {
+            "client_msg_id": "bbd4e175-b0b5-4ba2-8a30-62f263629d16",
+            "type": "message",
+            "text": "All cypress test cases passing with local care in workflow :slightly_smiling_face:\n\n*PRs:*\n\u2022 <https://github.com/coronasafe/care/pull/1037|care/1037>: Implements `load_dummy_data` management command to seed the DB so that cypress can work with local care in the workflow.\n\u2022 <https://github.com/coronasafe/care/pull/1039|care#1039>: Docs for the new management command `load_dummy_data`\n\u2022 <https://github.com/coronasafe/care_fe/pull/3588|care_fe/3588>: Cypress workflow with local care is ready. Waiting for it to be merged.\n*Issues Raised:*\n\u2022 <https://github.com/coronasafe/care_fe/issues/3653|care_fe/3653>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1664294540.113799",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "+O2",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "All cypress test cases passing with local care in workflow "
+                                },
+                                {
+                                    "type": "emoji",
+                                    "name": "slightly_smiling_face",
+                                    "unicode": "1f642"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "PRs:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1037",
+                                            "text": "care/1037"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Implements "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "load_dummy_data",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " management command to seed the DB so that cypress can work with local care in the workflow."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1039",
+                                            "text": "care#1039"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Docs for the new management command "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "load_dummy_data",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3588",
+                                            "text": "care_fe/3588"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Cypress workflow with local care is ready. Waiting for it to be merged."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "Issues Raised:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3653",
+                                            "text": "care_fe/3653"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-29 00:00:00": [
+        {
+            "client_msg_id": "90e8b46f-13ea-4a10-babb-7de126bf4aae",
+            "type": "message",
+            "text": "Tailwinding :hammer: the consultation form",
+            "user": "U02TDGQQPMJ",
+            "ts": "1664469863.567879",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "MfDkL",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Tailwinding "
+                                },
+                                {
+                                    "type": "emoji",
+                                    "name": "hammer",
+                                    "unicode": "1f528"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " the consultation form"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                },
+                {
+                    "name": "heart",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-10-01 00:00:00": [
+        {
+            "client_msg_id": "faf3c6eb-f80e-4842-9187-41d7743e19b8",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care_fe/pull/3672|care_fe#3672> Updated care_fe's README. See <https://github.com/rithviknishad/care_fe/blob/update-readme/README.md|preview>.\n\u2022 <https://github.com/coronasafe/care_fe/pull/3681|care_fe#3681> Working on minor improvements asset manage / update form.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1664638518.085119",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "mT3B",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3672",
+                                            "text": "care_fe#3672"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Updated care_fe's README. See "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/rithviknishad/care_fe/blob/update-readme/README.md",
+                                            "text": "preview"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3681",
+                                            "text": "care_fe#3681"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Working on minor improvements asset manage / update form."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-02 00:00:00": [
+        {
+            "client_msg_id": "c61e06d7-1865-4cb2-9448-ea1beb90a6db",
+            "type": "message",
+            "text": "\u2022 Made a PR along with <@U02TB83Q5V0> <https://github.com/coronasafe/care_fe/pull/3681|#3681> that improves various minor issues in the asset manage and create page.\n\u2022 Use `Inter` font as per figma design <https://github.com/coronasafe/care_fe/pull/3683|#3683>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1664726550.310819",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664637785,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3681",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3681|#3681 Improve Asset Manage and Create Page>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3681|#3681 Improve Asset Manage and Create Page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664693470,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3683",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3683|#3683 Use `Inter` font as the sans font>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3683|#3683 Use `Inter` font as the sans font>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Egqx",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made a PR along with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TB83Q5V0"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3681",
+                                            "text": "#3681",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " that improves various minor issues in the asset manage and create page."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Use "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Inter",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " font as per figma design "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3683",
+                                            "text": "#3683",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-03 00:00:00": [
+        {
+            "client_msg_id": "5e57b06d-354a-459a-813b-1b777324890e",
+            "type": "message",
+            "text": "Working on:\n\u2022 Redesign Patient Filters <https://github.com/coronasafe/care_fe/pull/3697|#3697>\n\u2022 Facility cover image upload feat.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1664813692.534089",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "yvo",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Redesign Patient Filters "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3697",
+                                            "text": "#3697",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Facility cover image upload feat."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-04 00:00:00": [
+        {
+            "client_msg_id": "f5975058-4286-48ed-a1ab-cce87984d2f3",
+            "type": "message",
+            "text": "Nothing much today, focused on my power grid project.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1664901711.190219",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "szf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Nothing much today, focused on my power grid project."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-06 00:00:00": [
+        {
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care/pull/1053| adds facility s3 region code> in care BE.\n\u2022 Adds support for option specific icon in select menu (coming via Patient Filters redesign PR)",
+            "files": [
+                {
+                    "id": "F0458GGDUJJ",
+                    "created": 1665069189,
+                    "timestamp": 1665069189,
+                    "name": "image.png",
+                    "title": "image.png",
+                    "mimetype": "image/png",
+                    "filetype": "png",
+                    "pretty_type": "PNG",
+                    "user": "U02TDGQQPMJ",
+                    "user_team": "TC99SV7B6",
+                    "editable": false,
+                    "size": 24829,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https://files.slack.com/files-pri/TC99SV7B6-F0458GGDUJJ/image.png",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F0458GGDUJJ/download/image.png",
+                    "media_display_type": "unknown",
+                    "thumb_64": "https://files.slack.com/files-tmb/TC99SV7B6-F0458GGDUJJ-14439b0cb7/image_64.png",
+                    "thumb_80": "https://files.slack.com/files-tmb/TC99SV7B6-F0458GGDUJJ-14439b0cb7/image_80.png",
+                    "thumb_360": "https://files.slack.com/files-tmb/TC99SV7B6-F0458GGDUJJ-14439b0cb7/image_360.png",
+                    "thumb_360_w": 200,
+                    "thumb_360_h": 360,
+                    "thumb_480": "https://files.slack.com/files-tmb/TC99SV7B6-F0458GGDUJJ-14439b0cb7/image_480.png",
+                    "thumb_480_w": 267,
+                    "thumb_480_h": 480,
+                    "thumb_160": "https://files.slack.com/files-tmb/TC99SV7B6-F0458GGDUJJ-14439b0cb7/image_160.png",
+                    "original_w": 383,
+                    "original_h": 689,
+                    "thumb_tiny": "AwAwABrSxzRijv8A/XpeaAI3jdmBWQqPQCn4peaM0BYb36ilqFrlFYg7uDjpSfa4/RvyoFzInpKh+1x+jflUoIYAjoeaATT2EMaFslAfwo8qP/nmv5U/vxil5oCyI/Kj/wCea/lTsY6Dinc0UDP/2Q==",
+                    "permalink": "https://rebuildearth.slack.com/files/U02TDGQQPMJ/F0458GGDUJJ/image.png",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F0458GGDUJJ-0ec5e5dfb8",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                }
+            ],
+            "upload": false,
+            "user": "U02TDGQQPMJ",
+            "display_as_bot": false,
+            "team": "TC99SV7B6",
+            "ts": "1665069272.387509",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/rD",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1053",
+                                            "text": " adds facility s3 region code"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " in care BE."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Adds support for option specific icon in select menu (coming via Patient Filters redesign PR)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "client_msg_id": "a0b45a07-c4e2-424c-98d6-d588bc831444"
+        }
+    ],
+    "2022-10-07 00:00:00": [
+        {
+            "client_msg_id": "d484f1c5-fa72-42fe-9917-92540ec84cba",
+            "type": "message",
+            "text": "\u2022 Working on <https://github.com/coronasafe/care_fe/pull/3719|Tailwinds the Patient Registration> with <@U02T4HD63P0> \n\u2022 <https://github.com/coronasafe/care/pull/1055|Adds `archive_reason` to FileUpload and validate if is_archived>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1665158964.412889",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665140322,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3719",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3719|#3719 Tailwinds the Patient Registration>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3719|#3719 Tailwinds the Patient Registration>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665112018,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/1055",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care/pull/1055|#1055 Adds `archive_reason` to `FileUpload` and validate if `is_archived`>",
+                    "title": "<https://github.com/coronasafe/care/pull/1055|#1055 Adds `archive_reason` to `FileUpload` and validate if `is_archived`>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "W5Tyv",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3719",
+                                            "text": "Tailwinds the Patient Registration"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02T4HD63P0"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1055",
+                                            "text": "Adds `archive_reason` to FileUpload and validate if is_archived"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-08 00:00:00": [
+        {
+            "type": "message",
+            "text": "\u2022 Implements colours for patient category <https://github.com/coronasafe/care_fe/pull/3728|#3728>\n\u2022 Got storybook working. <https://github.com/coronasafe/care_fe/pull/3726|#3726>",
+            "files": [
+                {
+                    "id": "F045QBGMTD1",
+                    "created": 1665241090,
+                    "timestamp": 1665241090,
+                    "name": "2022-10-08 20-21-51.mp4",
+                    "title": "2022-10-08 20-21-51.mp4",
+                    "mimetype": "video/mp4",
+                    "filetype": "mp4",
+                    "pretty_type": "MPEG 4 Video",
+                    "user": "U02TDGQQPMJ",
+                    "user_team": "TC99SV7B6",
+                    "editable": false,
+                    "size": 2749862,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "transcription": {
+                        "status": "none"
+                    },
+                    "mp4": "https://files.slack.com/files-tmb/TC99SV7B6-F045QBGMTD1-74b56dc120/2022-10-08_20-21-51.mp4",
+                    "url_private": "https://files.slack.com/files-tmb/TC99SV7B6-F045QBGMTD1-74b56dc120/2022-10-08_20-21-51.mp4",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F045QBGMTD1/download/2022-10-08_20-21-51.mp4",
+                    "hls": "https://files.slack.com/files-tmb/TC99SV7B6-F045QBGMTD1-74b56dc120/file.m3u8?_xcb=86f2a",
+                    "hls_embed": "data:application/vnd.apple.mpegurl;base64,I0VYVE0zVQojRVhULVgtVkVSU0lPTjozCiNFWFQtWC1JTkRFUEVOREVOVC1TRUdNRU5UUwojRVhULVgtU1RSRUFNLUlORjpCQU5EV0lEVEg9MTE0MjM5OCxBVkVSQUdFLUJBTkRXSURUSD05NDkyMjcsQ09ERUNTPSJhdmMxLjY0MDAyOCxtcDRhLjQwLjUiLFJFU09MVVRJT049MTkyMHgxMDgwLEZSQU1FLVJBVEU9MjkuOTcwCmRhdGE6YXBwbGljYXRpb24vdm5kLmFwcGxlLm1wZWd1cmw7YmFzZTY0LEkwVllWRTB6VlFvalJWaFVMVmd0VmtWU1UwbFBUam96Q2lORldGUXRXQzFVUVZKSFJWUkVWVkpCVkVsUFRqbzNDaU5GV0ZRdFdDMU5SVVJKUVMxVFJWRlZSVTVEUlRveENpTkZXRlF0V0MxUVRFRlpURWxUVkMxVVdWQkZPbFpQUkFvalJWaFVTVTVHT2pZdU1EQTJMQXBvZEhSd2N6b3ZMMlpwYkdWekxuTnNZV05yTG1OdmJTOW1hV3hsY3kxMGJXSXZWRU01T1ZOV04wSTJMVVl3TkRWUlFrZE5WRVF4TFRjMFlqVTJaR014TWpBdlptbHNaVjlJWHpJMk5GOHhPVEl3ZURFd09EQmZOalV3TUV0Q1VGTmZOMUZXUWxKZk1EQXdNREV1ZEhNS0kwVllWRWxPUmpvMkxqQXdOaXdLYUhSMGNITTZMeTltYVd4bGN5NXpiR0ZqYXk1amIyMHZabWxzWlhNdGRHMWlMMVJET1RsVFZqZENOaTFHTURRMVVVSkhUVlJFTVMwM05HSTFObVJqTVRJd0wyWnBiR1ZmU0Y4eU5qUmZNVGt5TUhneE1EZ3dYelkxTURCTFFsQlRYemRSVmtKU1h6QXdNREF5TG5SekNpTkZXRlJKVGtZNk5pNHdNRFlzQ21oMGRIQnpPaTh2Wm1sc1pYTXVjMnhoWTJzdVkyOXRMMlpwYkdWekxYUnRZaTlVUXprNVUxWTNRall0UmpBME5WRkNSMDFVUkRFdE56UmlOVFprWXpFeU1DOW1hV3hsWDBoZk1qWTBYekU1TWpCNE1UQTRNRjgyTlRBd1MwSlFVMTgzVVZaQ1VsOHdNREF3TXk1MGN3b2pSVmhVU1U1R09qWXVNREEyTEFwb2RIUndjem92TDJacGJHVnpMbk5zWVdOckxtTnZiUzltYVd4bGN5MTBiV0l2VkVNNU9WTldOMEkyTFVZd05EVlJRa2ROVkVReExUYzBZalUyWkdNeE1qQXZabWxzWlY5SVh6STJORjh4T1RJd2VERXdPREJmTmpVd01FdENVRk5mTjFGV1FsSmZNREF3TURRdWRITUtJMFZZVkVsT1JqbzJMakF3Tml3S2FIUjBjSE02THk5bWFXeGxjeTV6YkdGamF5NWpiMjB2Wm1sc1pYTXRkRzFpTDFSRE9UbFRWamRDTmkxR01EUTFVVUpIVFZSRU1TMDNOR0kxTm1Sak1USXdMMlpwYkdWZlNGOHlOalJmTVRreU1IZ3hNRGd3WHpZMU1EQkxRbEJUWHpkUlZrSlNYekF3TURBMUxuUnpDaU5GV0ZSSlRrWTZOUzQxTnpJc0NtaDBkSEJ6T2k4dlptbHNaWE11YzJ4aFkyc3VZMjl0TDJacGJHVnpMWFJ0WWk5VVF6azVVMVkzUWpZdFJqQTBOVkZDUjAxVVJERXROelJpTlRaa1l6RXlNQzltYVd4bFgwaGZNalkwWHpFNU1qQjRNVEE0TUY4Mk5UQXdTMEpRVTE4M1VWWkNVbDh3TURBd05pNTBjd29qUlZoVUxWZ3RSVTVFVEVsVFZBbz0KI0VYVC1YLVNUUkVBTS1JTkY6QkFORFdJRFRIPTcwNjY3NCxBVkVSQUdFLUJBTkRXSURUSD02MDMwMDIsQ09ERUNTPSJhdmMxLjY0MDAxZixtcDRhLjQwLjUiLFJFU09MVVRJT049MTI4MHg3MjAsRlJBTUUtUkFURT0yOS45NzAKaHR0cHM6Ly9maWxlcy5zbGFjay5jb20vZmlsZXMtdG1iL1RDOTlTVjdCNi1GMDQ1UUJHTVREMS03NGI1NmRjMTIwL2ZpbGVfSF8yNjRfMTI4MHg3MjBfMzUwMEtCUFNfN1FWQlIubTN1OAo=",
+                    "mp4_low": "https://files.slack.com/files-tmb/TC99SV7B6-F045QBGMTD1-74b56dc120/2022-10-08_20-21-51_trans.mp4",
+                    "duration_ms": 35602,
+                    "media_display_type": "video",
+                    "thumb_video": "https://files.slack.com/files-tmb/TC99SV7B6-F045QBGMTD1-74b56dc120/2022-10-08_20-21-51_thumb_video.jpeg",
+                    "thumb_video_w": 1920,
+                    "thumb_video_h": 1080,
+                    "permalink": "https://rebuildearth.slack.com/files/U02TDGQQPMJ/F045QBGMTD1/2022-10-08_20-21-51.mp4",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F045QBGMTD1-9809cec257",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                }
+            ],
+            "upload": false,
+            "user": "U02TDGQQPMJ",
+            "display_as_bot": false,
+            "team": "TC99SV7B6",
+            "ts": "1665241120.708459",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Awlo",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Implements colours for patient category "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3728",
+                                            "text": "#3728",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Got storybook working. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3726",
+                                            "text": "#3726",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "client_msg_id": "dd0bbba7-d63e-48cb-8044-479478ba8ead",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665215169,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3728",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3728|#3728 Patient Category Colors>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3728|#3728 Patient Category Colors>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665204479,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3726",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3726|#3726 :book: Storybook>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3726|#3726 :book: Storybook>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-10 00:00:00": [
+        {
+            "client_msg_id": "43f9284d-d981-4f0c-b6e2-276dbbff3fc6",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care_dashboard/pull/35|Implemented Data Fetching Hooks for Care Dashboard>\n\u2022 Raised an <https://github.com/coronasafe/care_fe/issues/3742|epic issue> to track tailwinding care.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1665413334.740909",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665385053,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_dashboard/pull/35",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_dashboard/pull/35|#35 Implements Data Fetching Hooks>",
+                    "title": "<https://github.com/coronasafe/care_dashboard/pull/35|#35 Implements Data Fetching Hooks>",
+                    "footer": "<https://github.com/coronasafe/care_dashboard|coronasafe/care_dashboard>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665412288,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/3742",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/issues/3742|#3742 :hammer_and_wrench: Tailwinding Care>",
+                    "title": "<https://github.com/coronasafe/care_fe/issues/3742|#3742 :hammer_and_wrench: Tailwinding Care>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "R=rV",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_dashboard/pull/35",
+                                            "text": "Implemented Data Fetching Hooks for Care Dashboard"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Raised an "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3742",
+                                            "text": "epic issue"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to track tailwinding care."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
                 }
             ]
         }

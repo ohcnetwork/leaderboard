@@ -23,24 +23,25 @@ const Filters = ({
     { value: "pr_merged", text: "PR Merged" },
     { value: "pr_opened", text: "PR Opened" },
     { value: "pr_reviewed", text: "PR Reviewed" },
+    { value: "pr_stale", text: "Stale PRs" },
   ];
 
   return (
-    <div className="w-4/5 m-auto mt-4 p-4 border border-primary-500 rounded-lg">
+    <div className="mx-4 md:mx-0 mt-4 p-4 border border-primary-500 rounded-lg">
       <div className="flex flex-col md:flex-row justify-evenly items-center md:items-start gap-4">
         <Search
           value={searchTerm}
           handleOnChange={(e) => setSearchTerm(e.target.value)}
           className="w-full"
         />
-        <div className="w-full md:w-44 flex md:flex-col items-end justify-end gap-2">
+        <div className="w-full flex items-end justify-start gap-2">
           <Sort
             sortByOptions={sortParams}
             sortBy={sortBy}
             sortDescending={sortDescending}
             handleSortByChange={(e) => setSortBy(e.target.value)}
             handleSortOrderChange={() => setSortDescending((prev) => !prev)}
-            className="w-fit"
+            className="w-full"
           />
           <Tooltip
             tip={showCoreMembers ? "Hide Core Members" : "Show Core Members"}

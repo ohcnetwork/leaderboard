@@ -185,21 +185,21 @@ class GitHubScraper:
                     if users['total_count'] == 1:
                         collaborators.add(users['items'][0]['login'])
             
-            if len(collaborators) > 1:
-                for user in collaborators:
-                    others = collaborators.copy()
-                    others.remove(user)
-                    self.append(
-                        user,
-                        {
-                            "type": "pr_collaborated",
-                            "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
-                            "time": event_time,
-                            "link": event["payload"]["pull_request"]["html_url"],
-                            "text": event["payload"]["pull_request"]["title"],
-                            "collaborated_with": list(others)
-                        },
-                    )
+        if len(collaborators) > 1:
+            for user in collaborators:
+                others = collaborators.copy()
+                others.remove(user)
+                self.append(
+                    user,
+                    {
+                        "type": "pr_collaborated",
+                        "title": f'{event["repo"]["name"]}#{event["payload"]["pull_request"]["number"]}',
+                        "time": event_time,
+                        "link": event["payload"]["pull_request"]["html_url"],
+                        "text": event["payload"]["pull_request"]["title"],
+                        "collaborated_with": list(others)
+                    },
+                )
 
 
     def fetch_events(self, page=1):

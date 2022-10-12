@@ -24,21 +24,20 @@ export default function BadgeIcons({ skill }) {
   const ref = useRef();
   useOnClickOutside(ref, () => setShowModel(false));
 
-  const currentLevel = skill.levels.indexOf(skill.currentLevel) + 1;
-  let glow = "";
+ const glow = () => {
+    const currentLevel = skill.levels.indexOf(skill.currentLevel) + 1;
 
-  switch (skill.levels.length - currentLevel) {
-    case 0:
-      glow = "glow-gold";
-      break;
-
-    case 1:
-      glow = "glow-silver";
-      break;
-
-    default:
-      break;
-  }
+    switch (skill.levels.length - currentLevel) {
+      case 0:
+        return "glow-gold";
+  
+      case 1:
+        return "glow-silver";
+  
+      default:
+        return "";
+    }
+ }
 
   return (
     <div ref={ref} className="" role="listitem">

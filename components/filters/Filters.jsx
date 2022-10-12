@@ -23,6 +23,7 @@ const Filters = ({
     { value: "pr_merged", text: "PR Merged" },
     { value: "pr_opened", text: "PR Opened" },
     { value: "pr_reviewed", text: "PR Reviewed" },
+    { value: "pr_stale", text: "Stale PRs" },
   ];
 
   return (

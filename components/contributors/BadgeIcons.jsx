@@ -24,27 +24,27 @@ export default function BadgeIcons({ skill }) {
   const ref = useRef();
   useOnClickOutside(ref, () => setShowModel(false));
 
- const glow = () => {
+  const glow = () => {
     const currentLevel = skill.levels.indexOf(skill.currentLevel) + 1;
 
     switch (skill.levels.length - currentLevel) {
       case 0:
         return "glow-gold";
-  
+
       case 1:
         return "glow-silver";
-  
+
       default:
         return "";
     }
- }
+  }
 
   return (
     <div ref={ref} className="" role="listitem">
       <div className="relative w-14 h-14 cursor-pointer">
         <img
           onClick={() => setShowModel(!showModel)}
-          className={skill.currentLevel ? `badge-glow ${glow}` : "grayscale opacity-30"}
+          className={skill.currentLevel ? `badge-glow ${glow()}` : "grayscale opacity-30"}
           src={skill.icon}
           alt="Graduate attribute"
         />
@@ -94,7 +94,7 @@ export default function BadgeIcons({ skill }) {
               )}
               <img
                 onClick={() => setShowModel(!showModel)}
-                className={`mx-auto ${skill.currentLevel ? `badge-glow ${glow}` : "grayscale opacity-30"}`}
+                className={`mx-auto ${skill.currentLevel ? `badge-glow ${glow()}` : "grayscale opacity-30"}`}
                 src={skill.icon}
                 alt="Graduate attribute"
               />

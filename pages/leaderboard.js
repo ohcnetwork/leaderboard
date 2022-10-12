@@ -165,10 +165,22 @@ export default function Home(props) {
 export async function getStaticProps() {
   const contributors = getContributors();
 
+  const calculateStalePrs = (contributor) =>
+    contributor.activityData?.open_prs?.reduce(
+      (acc, pr) => (pr?.stale_for >= 7 ? acc + 1 : acc),
+      0
+    );
+
   return {
     props: {
       title: "Leaderboard",
-      contributors: contributors,
+      contributors: contributors.map((contributor) => ({
+        ...contributor,
+        weekSummary: {
+          ...contributor.weekSummary,
+          pr_stale: calculateStalePrs(contributor),
+        },
+      })),
     },
   };
 }

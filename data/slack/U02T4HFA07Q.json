@@ -1701,5 +1701,582 @@
                 }
             ]
         }
+    ],
+    "2022-09-27 00:00:00": [
+        {
+            "client_msg_id": "c2959ff0-5268-40a6-aa91-1862b02226f2",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3654|#3654>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664290497.116869",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/192448604-b0788d51-dd85-4ca5-bd49-acb46b8576e7.png",
+                    "image_width": 1075,
+                    "image_height": 489,
+                    "image_bytes": 26868,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664259902,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3654",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1075x489px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3640|#3640>\n\n*Proposed Changes*\n\n\u2022 Makes the `showDelete` function consistent with User Management page.\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\nBefore:  \n<https://user-images.githubusercontent.com/3626859/192448604-b0788d51-dd85-4ca5-bd49-acb46b8576e7.png|image>  \n<https://user-images.githubusercontent.com/3626859/192448561-708d1018-9886-4fe4-9abb-ffb0e86e9785.png|image>\n\nAfter:  \n<https://user-images.githubusercontent.com/3626859/192447957-66f340cf-5ba0-4cb7-9a86-7008113c3a93.png|image>  \n<https://user-images.githubusercontent.com/3626859/192447997-a3202179-748f-4a96-ac39-496bb19fe1f0.png|image>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3654|#3654 Fix delete button visibility on Facility Users page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "sD6PZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3654",
+                                    "text": "#3654",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-28 00:00:00": [
+        {
+            "client_msg_id": "4228b8c2-b411-4f06-82df-90d2cbf21520",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3660|#3660> and working on other issues.",
+            "user": "U02T4HFA07Q",
+            "ts": "1664379599.066189",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664368185,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3660",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3660|#3660 Use GITHUB_TOKEN for merge conflict workflow>",
+                    "text": "*Proposed Changes*\n\n\u2022 Instead of using the personal access token, it's better to use the `GITHUB_TOKEN` which is provided by default for all Github Action Workflows. The token is temporarily generated and destroyed after the workflow is over.\n\u2022 This should also make all the comments appear to be made by the \"Github actions\" bot, instead of <https://github.com/mathew-alex|@mathew-alex> .\n\u2022 More about it here: <https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret|https://docs.github.com/en/actions/security-guides/automatic-token-authentication>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3660|#3660 Use GITHUB_TOKEN for merge conflict workflow>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "DX4ml",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3660",
+                                    "text": "#3660",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " and working on other issues."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-29 00:00:00": [
+        {
+            "client_msg_id": "9e6bc3e2-4a23-4d64-8941-81a9f950331f",
+            "type": "message",
+            "text": "Worked on: <https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459|#3584>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664453505.637329",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/192874939-df9c8131-5337-4781-b3d5-436e847c5e21.png",
+                    "image_width": 438,
+                    "image_height": 356,
+                    "image_bytes": 13601,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664395028,
+                    "color": "24292f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "438x356px image",
+                    "text": "<https://github.com/aparnacoronasafe|@aparnacoronasafe> I have made the required changes, a summary of the current implementation is as follows:\n\nThe user is now able to set a review time in the consultation/edit consultation form or at any time in the log update form.  \n    <https://user-images.githubusercontent.com/3626859/192874939-df9c8131-5337-4781-b3d5-436e847c5e21.png|image>\nWhen a log update is filed for the patient, the preselected review time now comes pre-filled in the 'review after' field in log update and is also available to edit on the Consultation form.\n\nConsultation Form: (Stored Value auto filled)  \n<https://user-images.githubusercontent.com/3626859/192873532-126f75c9-3840-4b27-a1e4-ca462aa5cf06.png|image>  \nDaily Rounds Form: (Stored Value auto filled)  \n<https://user-images.githubusercontent.com/3626859/192873623-03a45aed-3c9e-4acb-8127-69e2d22ea8fd.png|image>\n\nAfter review time is set, then within that time if a Log Update is not filed for the patient, then the \"Review Missed\" Badge appears on the Patient badge, on the Patient list page, on patient summary page and on the patient details page.  \n    <https://user-images.githubusercontent.com/3626859/192874704-34486105-b280-4e56-9b3d-1f9b88a22073.png|image>  \n    <https://user-images.githubusercontent.com/3626859/192874745-dc0e4d3c-9683-45cf-b7b5-1bb1f1bfb4a0.png|image>  \n    <https://user-images.githubusercontent.com/3626859/192874789-098339e2-5c39-4f8d-98a3-71a289157386.png|image>\nAfter review time is set, then the \"Next review\" time appears on the Patient Summary and Patient details page. (Note that review is not missed in this scenario, it shows just the future date for next review)  \n    <https://user-images.githubusercontent.com/3626859/192874405-83470d4d-d8c0-422e-b710-6549e46131c0.png|image>  \n    <https://user-images.githubusercontent.com/3626859/192875394-7a6e440e-f176-485b-af21-edf505c6faba.png|image>\nWith every log update filed, the review clock resets to the next date according to the Review time set.  \n    <https://user-images.githubusercontent.com/3626859/192875764-9a132ab7-cf6d-4806-b225-1ebdad484288.png|image>\nIf the user does not edit the 'review after' field in Log Update form, the same interval will continue for review, with the review call resetting with every log update.  \n    <https://user-images.githubusercontent.com/3626859/192873623-03a45aed-3c9e-4acb-8127-69e2d22ea8fd.png|image>\n\nSample Workflow:\n\n\u2022 At 12:00, You file a 30 mins review time for a patient\n\u2022 Next review time is shown as 12:30\n\u2022 You make a review at 12:15, keeping the review time as previous (30 mins) [You do have an option to change it]\n\u2022 Next review time automatically shows as 12:45 now (12:15 + 30 mins)\n\u2022 You miss the review, A \"Review missed\" badge is shown now since the time review was missed.\n\u2022 It's 1:00 now, you file a log update, but this time you decide to change the review time to 2 hours (instead of previous 30 minutes).\n\u2022 Now next review time shows as 3:00 (1:00 + 2 hours)\n\u2022 You file an update at 2:00\n\u2022 Next review time shows as 4:00 now (2:00 + 2 hours)",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459|Comment on #3584 Patient Review feature fixes>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Vgt",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1261401459",
+                                    "text": "#3584",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-09-30 00:00:00": [
+        {
+            "client_msg_id": "bd5bb4a7-799e-40fd-b95f-9c4215a21820",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3667|#3667>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664565611.242969",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/193225090-a1046966-bf19-473c-9f35-5f476f9403e8.png",
+                    "image_width": 692,
+                    "image_height": 395,
+                    "image_bytes": 10926,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664525902,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3667",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "692x395px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3641|#3641>\n\n<https://user-images.githubusercontent.com/3626859/193225090-a1046966-bf19-473c-9f35-5f476f9403e8.png|image>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3667|#3667 Hide userTypes length on Facility Users Page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Mfel",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3667",
+                                    "text": "#3667",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-02 00:00:00": [
+        {
+            "client_msg_id": "0bd381a7-ab18-4c8a-a52f-ec3bb5962727",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3688|#3688>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664705314.861489",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/193448809-1d4824e6-7dd7-47c1-88cf-dc6649d190a8.png",
+                    "image_width": 325,
+                    "image_height": 700,
+                    "image_bytes": 36721,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664705285,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3688",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "325x700px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3677|#3677>\n\n<https://user-images.githubusercontent.com/3626859/193448809-1d4824e6-7dd7-47c1-88cf-dc6649d190a8.png|image>\n\n<https://user-images.githubusercontent.com/3626859/193448811-0a7db1e4-a8ef-4ff7-9726-dd4a326154c2.png|image>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3688|#3688 Make Facility select dialog responsive>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "WSURU",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3688",
+                                    "text": "#3688",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-03 00:00:00": [
+        {
+            "client_msg_id": "9e69d3f0-b532-4e05-9b05-bba5585a4817",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3699|#3699>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664808222.379629",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "GFss",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3699",
+                                    "text": "#3699",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-04 00:00:00": [
+        {
+            "client_msg_id": "35503b81-225b-476c-b552-bfff7862a543",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care/pull/1052|#1052>",
+            "user": "U02T4HFA07Q",
+            "ts": "1664875880.435879",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/3626859/193784703-24864d12-4bf5-42c1-a0e8-d05442ec6128.png",
+                    "image_width": 190,
+                    "image_height": 148,
+                    "image_bytes": 8944,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1664875846,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/1052",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "190x148px image",
+                    "text": "*Proposed Changes*\n\n\u2022 Adds a new field `is_archived` which represents whether the file has been archived or not.\n\n*Associated Issue*\n\n\u2022 Fixes <https://github.com/coronasafe/care/issues/1051|#1051>\n\n<https://user-images.githubusercontent.com/3626859/193784703-24864d12-4bf5-42c1-a0e8-d05442ec6128.png|image>\n\n@coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care/pull/1052|#1052 Add is_archived field to FileUpload>",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "L4jC1",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/1052",
+                                    "text": "#1052",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-07 00:00:00": [
+        {
+            "client_msg_id": "3aea9fc3-d95a-4a52-8f5b-cd92690128bf",
+            "type": "message",
+            "text": "Made PRs: <https://github.com/coronasafe/care_fe/pull/3717|#3717> <https://github.com/coronasafe/care_fe/pull/3718|#3718>",
+            "user": "U02T4HFA07Q",
+            "ts": "1665158561.721689",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665133189,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3717",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3717|#3717 Add loading tile for Update Log>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3717|#3717 Add loading tile for Update Log>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665134241,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3718",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3718|#3718 Fix alignment issue in DailyRounds>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3718|#3718 Fix alignment issue in DailyRounds>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "BIX7V",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PRs: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3717",
+                                    "text": "#3717",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3718",
+                                    "text": "#3718",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-10-08 00:00:00": [
+        {
+            "client_msg_id": "9e9a4184-81f6-4e21-9f5c-d8781fc054f5",
+            "type": "message",
+            "text": "Finding new issues to work on.",
+            "user": "U02T4HFA07Q",
+            "ts": "1665233735.059639",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "hue",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Finding new issues to work on."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "thread_ts": "1665233735.059639",
+            "reply_count": 1,
+            "reply_users_count": 1,
+            "latest_reply": "1665233881.207479",
+            "reply_users": [
+                "U02TDGQQPMJ"
+            ],
+            "is_locked": false,
+            "subscribed": false
+        }
+    ],
+    "2022-10-10 00:00:00": [
+        {
+            "client_msg_id": "623c2115-1246-418d-a829-7803ceb5206f",
+            "type": "message",
+            "text": "Made PR: <https://github.com/coronasafe/care_fe/pull/3741|#3741>",
+            "user": "U02T4HFA07Q",
+            "ts": "1665416914.983669",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665400976,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3741",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3741|#3741 Fix patient category selection>",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3729|#3729>\n\n\u2022 Fixes the category value to match with the backend, this resolves the error where the category value is an invalid choice.\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3741|#3741 Fix patient category selection>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tspRI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3741",
+                                    "text": "#3741",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

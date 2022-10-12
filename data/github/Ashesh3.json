@@ -1,6 +1,48 @@
 {
-  "last_updated": 1665431664.0,
+  "last_updated": 1665515719.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3748",
+      "time": 1665515719.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3748",
+      "text": "Update packages and remove obsolete dependencies"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3741",
+      "time": 1665496974.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3741#issuecomment-1274740988",
+      "text": "> @Ashesh3 three things:\r\n> \r\n> * [ ]  Consultation updates for \"Slightly Abnormal\" and \"Comfort Care\" not working.\r\n> * [ ]  New log updates page not working.\r\n> * [ ]  Edit log updates not working.\r\n> \r\n>  2022-10-11.14-16-28.mp4\r\n\r\nShould be fixed now."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3699",
+      "time": 1665490591.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3699#issuecomment-1274590878",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/195082271-374b4399-bdaa-4094-86f5-bbb48138ed1e.png)\r\n> \r\n> https://deploy-preview-3699--care-net.netlify.app/facility/ee6d73a9-ac6e-4b80-a370-abce9e41d159/patient/25ea51b1-fedc-432a-a9df-9071a07862c6/consultation/1999ef08-edcd-455d-91a9-68c401209c3e/summary\r\n> \r\n> the graph is breaking in normal view\r\n\r\nIt works fine here, I think the page is cached for you? Could you check again?\r\n![gif_graph](https://user-images.githubusercontent.com/3626859/195086940-fcdebced-a817-44a7-ae19-5a43a6feae9c.gif)\r\n\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3717",
+      "time": 1665489525.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3717",
+      "text": "Add loading tile for Update Log"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3718",
+      "time": 1665483045.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3718",
+      "text": "Fix alignment issue in DailyRounds"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3712",
+      "time": 1665475885.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3712#issuecomment-1274276933",
+      "text": "Is this not intentional? Since one of the cards in the last row need more height to display its contents, the rest of the cards in the same row adjust accordingly and have a uniform height, not necessarily in line with the cards in other rows.\r\nDo you have any suggestions for resolving this design?"
+    },
     {
       "type": "pr_reviewed",
       "time": 1665431664.0,
@@ -3889,6 +3931,12 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3748",
+      "title": "Update packages and remove obsolete dependencies",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3741",
       "title": "Fix patient category selection",
       "stale_for": 0,
@@ -3897,47 +3945,35 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3718",
-      "title": "Fix alignment issue in DailyRounds",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3717",
-      "title": "Add loading tile for Update Log",
-      "stale_for": 2,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3699",
       "title": "Make Patient summary plots responsive",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "hacktoberfest"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1042",
       "title": "Store review_interval and use it to compute next review_time",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3584",
       "title": "Patient Review feature fixes",
-      "stale_for": 11,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "waiting for back end",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "reviewed"
       ]

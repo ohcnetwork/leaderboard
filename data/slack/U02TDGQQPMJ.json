@@ -7527,5 +7527,74 @@
                 }
             ]
         }
+    ],
+    "2022-10-12 00:00:00": [
+        {
+            "client_msg_id": "c0806fd3-808a-49e9-89f0-87fdca83ad7c",
+            "type": "message",
+            "text": "\u2022 Shows facility cover photo in facility home (<https://deploy-preview-3528--care-net.netlify.app/facility/eeb23cb7-1524-479a-825e-660311386b47|preview>) and edit as per discussed permissions.\n\u2022 Made `MultiSelectMenuV2` tailwind component, coming via <https://github.com/coronasafe/care_fe/pull/3744|Patient Filters redesign PR.>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1665586154.335799",
+            "team": "TC99SV7B6",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Kjwbl",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Shows facility cover photo in facility home ("
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://deploy-preview-3528--care-net.netlify.app/facility/eeb23cb7-1524-479a-825e-660311386b47",
+                                            "text": "preview"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ") and edit as per discussed permissions."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "MultiSelectMenuV2",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " tailwind component, coming via "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3744",
+                                            "text": "Patient Filters redesign PR."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

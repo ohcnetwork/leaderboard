@@ -1,6 +1,107 @@
 {
-  "last_updated": 1665496376.0,
+  "last_updated": 1665587326.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3598",
+      "time": 1665587326.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3598",
+      "text": "fix (LiveFeed): gets preset only when hostname is available"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3274",
+      "time": 1665583037.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3274",
+      "text": "Bed Assign Malfunction : Consultation Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665583018.0,
+      "title": "coronasafe/care_fe#3690",
+      "link": "https://github.com/coronasafe/care_fe/pull/3690#pullrequestreview-1139148306",
+      "text": "Fixed: Bed assign malfunction in consultation form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3658",
+      "time": 1665569438.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3658",
+      "text": "Follow uniform date/time format "
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#3687",
+      "time": 1665569437.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3687",
+      "text": "Uniform date/time format across CARE",
+      "collaborated_with": [
+        "GokulramGHV"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665568127.0,
+      "title": "coronasafe/care_fe#3687",
+      "link": "https://github.com/coronasafe/care_fe/pull/3687#pullrequestreview-1138733743",
+      "text": "Uniform date/time format across CARE"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665568127.0,
+      "title": "coronasafe/care_fe#3687",
+      "link": "https://github.com/coronasafe/care_fe/pull/3687#pullrequestreview-1138733743",
+      "text": "Uniform date/time format across CARE"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3731",
+      "time": 1665567666.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3731#issuecomment-1275881601",
+      "text": "@Ritesh-Aggarwal can you double-check it once again, when I go to the pressure sore tab, it scrolls to the top, also when I go to a different tab and go back to updates, it scrolls back to the top, also check other tabs too"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665567333.0,
+      "title": "coronasafe/care_fe#3690",
+      "link": "https://github.com/coronasafe/care_fe/pull/3690#pullrequestreview-1138767352",
+      "text": "Fixed: Bed assign malfunction in consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665567333.0,
+      "title": "coronasafe/care_fe#3690",
+      "link": "https://github.com/coronasafe/care_fe/pull/3690#pullrequestreview-1138767352",
+      "text": "Fixed: Bed assign malfunction in consultation form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3419",
+      "time": 1665558547.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3419#issuecomment-1275692902",
+      "text": "@Pranshu1902, I think reducing the icon size might help, and I also think the color is off"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_dashboard#37",
+      "time": 1665554333.0,
+      "link": "https://github.com/coronasafe/care_dashboard/pull/37#issuecomment-1275631198",
+      "text": "@Ritesh-Aggarwal is this ready to be reviewed? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3742",
+      "time": 1665554211.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3742#issuecomment-1275629422",
+      "text": "@rithviknishad do you need any help with this?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#94",
+      "time": 1665554035.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/94",
+      "text": "Fixed multiple entries of collaboration event"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#3703",
@@ -6302,23 +6403,21 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3739",
-      "title": "Added git precommit hook",
-      "stale_for": 1,
+      "link": "https://github.com/coronasafe/leaderboard/pull/94",
+      "title": "Fixed multiple entries of collaboration event",
+      "stale_for": 0,
       "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3598",
-      "title": "fix (LiveFeed): gets preset only when hostname is available",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
+      "link": "https://github.com/coronasafe/care_fe/pull/3739",
+      "title": "Added git precommit hook",
+      "stale_for": 2,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2921",
       "title": "Changed leaflet location picker to gmap",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested"
       ]
@@ -6326,25 +6425,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 298,
+      "stale_for": 299,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 304,
+      "stale_for": 305,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 305,
+      "stale_for": 306,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 500,
+      "stale_for": 501,
       "labels": []
     }
   ],
@@ -6376,6 +6475,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3627",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3628"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3597",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3598"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3576",
@@ -6436,10 +6539,6 @@
     {
       "issue_link": "https://github.com/coronasafe/arike/issues/111",
       "pr_link": "https://github.com/coronasafe/arike/pull/113"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/arike/issues/109",
-      "pr_link": "https://github.com/coronasafe/arike/pull/110"
     }
   ]
 }

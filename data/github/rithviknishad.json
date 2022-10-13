@@ -1,6 +1,34 @@
 {
-  "last_updated": 1665504437.0,
+  "last_updated": 1665594257.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_dashboard#35",
+      "time": 1665594257.0,
+      "link": "https://github.com/coronasafe/care_dashboard/pull/35",
+      "text": "Implements Data Fetching Hooks"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665593329.0,
+      "title": "coronasafe/care_dashboard#39",
+      "link": "https://github.com/coronasafe/care_dashboard/pull/39#pullrequestreview-1139429306",
+      "text": "change scrollbar css according to theme"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665569539.0,
+      "title": "coronasafe/leaderboard#94",
+      "link": "https://github.com/coronasafe/leaderboard/pull/94#pullrequestreview-1138819816",
+      "text": "Fixed multiple entries of collaboration event"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3742",
+      "time": 1665559294.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3742#issuecomment-1275705355",
+      "text": "@khavinshankar definitely!! Could you help tailwind the async autocomplete field in the https://github.com/coronasafe/care_fe/pull/3744 patient filters?\r\n\r\nGenerally, apart from that, I was thinking of having all the input components have their own validators and also be compliant with form reducers across care since we mostly have only `set_form` and `set_error` only.\r\n\r\nso that, the component's API interface would just take in the additional props (validator, reducerProps) [see this](https://github.com/coronasafe/care_fe/pull/3744/files#diff-2c391d69e3a85e37959e9843913cba1d1db5aa23dac46c81625b168a38c78d9cR18-R29).\r\n\r\nhowever, the components API should still be usable when not used with reducers.\r\nSo I was just taking time to document it clearly so that it's easily maintainable by everyone and changing the component API interface later would be a hassle.\r\n\r\nFor example, the text input is composed like this:\r\nhttps://github.com/coronasafe/care_fe/pull/3744/files#diff-e0e39dd41cb8f0b76d60275fa706cd765c8648107e45183f24781aa0cd51145f\r\nand when used with reducers, the amount of code we write would be so less, but still, it'll render out the errors and field labels without having to write separate components each time."
+    },
     {
       "type": "pr_reviewed",
       "time": 1665504437.0,
@@ -3563,28 +3591,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3744",
       "title": "\ud83d\udee0 Tailwind Patient Filters",
-      "stale_for": 1,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_dashboard/pull/35",
-      "title": "Implements Data Fetching Hooks",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3728",
       "title": "Patient Category Colors",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "needs testing",
-        "need Review"
+        "need Review",
+        "Done"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3726",
       "title": "\ud83d\udcd6 Storybook",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "work-in-progress",
         "Major Code Change"
@@ -3593,7 +3616,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3719",
       "title": "Tailwinds the Patient Registration",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "work-in-progress",
         "Major Code Change"
@@ -3606,8 +3629,7 @@
       "labels": [
         "needs testing",
         "need Review",
-        "Done",
-        "merge conflict"
+        "Done"
       ]
     },
     {
@@ -3615,19 +3637,21 @@
       "title": "feat. facility cover image upload",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "needs testing",
+        "need Review",
+        "Done"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/66",
       "title": "Scrapper support for datetime based scrapping instead of date",
-      "stale_for": 100,
+      "stale_for": 101,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 112,
+      "stale_for": 113,
       "labels": []
     }
   ],
@@ -3707,10 +3731,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2469",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2470"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2374",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2381"
     }
   ]
 }

@@ -1,6 +1,55 @@
 {
-  "last_updated": 1665515719.0,
+  "last_updated": 1665602574.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1042",
+      "time": 1665602574.0,
+      "link": "https://github.com/coronasafe/care/pull/1042",
+      "text": "Store review_interval and use it to compute next review_time"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665598574.0,
+      "title": "coronasafe/care#1042",
+      "link": "https://github.com/coronasafe/care/pull/1042#pullrequestreview-1139532593",
+      "text": "Store review_interval and use it to compute next review_time"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665598507.0,
+      "title": "coronasafe/care#1042",
+      "link": "https://github.com/coronasafe/care/pull/1042#pullrequestreview-1139531361",
+      "text": "Store review_interval and use it to compute next review_time"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3712",
+      "time": 1665587858.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3712",
+      "text": "Patient card size is not consistent when labels overflow."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3712",
+      "time": 1665587858.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3712#issuecomment-1276350345",
+      "text": "Discussed on EOD. Will just keep the current behavior for now."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3748",
+      "time": 1665585180.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3748#issuecomment-1276282942",
+      "text": "TODO: add back `autoprefixer` as a devdependency"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3749",
+      "time": 1665580241.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3749#issuecomment-1276151694",
+      "text": "@aparnacoronasafe Do you want the field to be in the [1] main page or hidden in the [2] advanced patient filter section? \r\n\r\n![image](https://user-images.githubusercontent.com/3626859/195351548-a15f7072-e21b-4d04-8276-1254beabd11c.png)\r\n\r\n\r\n"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3748",
@@ -3934,14 +3983,16 @@
       "link": "https://github.com/coronasafe/care_fe/pull/3748",
       "title": "Update packages and remove obsolete dependencies",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3741",
       "title": "Fix patient category selection",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
@@ -3949,16 +4000,8 @@
       "title": "Make Patient summary plots responsive",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "hacktoberfest"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1042",
-      "title": "Store review_interval and use it to compute next review_time",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
+        "hacktoberfest",
+        "tested"
       ]
     },
     {
@@ -3966,14 +4009,13 @@
       "title": "Patient Review feature fixes",
       "stale_for": 0,
       "labels": [
-        "waiting for back end",
-        "merge conflict"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "reviewed"
       ]

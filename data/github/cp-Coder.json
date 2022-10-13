@@ -1,6 +1,34 @@
 {
-  "last_updated": 1665500537.0,
+  "last_updated": 1665583036.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3690",
+      "time": 1665583036.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3690",
+      "text": "Fixed: Bed assign malfunction in consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665571016.0,
+      "title": "coronasafe/care#1059",
+      "link": "https://github.com/coronasafe/care/pull/1059#pullrequestreview-1138851137",
+      "text": "Fixes: Permission Error during Facility Delete"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3690",
+      "time": 1665570775.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3690#issuecomment-1275947955",
+      "text": "@khavinshankar I have checked the types of consultation form. In consultation model, `bed` has type of `BedModel`, so I have set that type in consultation form too.\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3690",
+      "time": 1665570731.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3690#issuecomment-1275947127",
+      "text": "@khavinshankar I have checked the types of consultation form. In consultation model,  has type of , so I have set that type in consultation form too."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3690",
@@ -5363,14 +5391,14 @@
       "title": "Fixed: Minor UI change in the asset page",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "hacktoberfest"
+        "hacktoberfest",
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1060",
       "title": "Fixed: Added in_use field to track used bed",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5379,7 +5407,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "done"
       ]
@@ -5387,7 +5415,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5396,10 +5424,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3698",
       "title": "Fixes: Add Health Details in Consultation form",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
         "hacktoberfest",
+        "work-in-progress",
         "Major Code Change"
       ]
     },
@@ -5408,23 +5436,14 @@
       "title": "Fixed: Update Facility Malfunction",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "hacktoberfest"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3690",
-      "title": "Fixed: Bed assign malfunction in consultation form",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "hacktoberfest"
+        "hacktoberfest",
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5433,7 +5452,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/979",
       "title": "Added more fields to Consultation Form",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "do-not-merge"
       ]
@@ -5441,7 +5460,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3151",
       "title": "fix(bed history): hided currently used bed",
-      "stale_for": 76,
+      "stale_for": 0,
       "labels": [
         "urgent",
         "waiting for back end"
@@ -5450,7 +5469,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2929",
       "title": "Upgrade to mui v5",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "stale"
@@ -5459,7 +5478,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/882",
       "title": "Removed current health field",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "ops-review-pending",
         "reviewed"
@@ -5468,7 +5487,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 110,
+      "stale_for": 111,
       "labels": [
         "waiting-for-review"
       ]

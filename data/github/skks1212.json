@@ -1,6 +1,41 @@
 {
-  "last_updated": 1665346566.0,
+  "last_updated": 1665651845.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3752",
+      "time": 1665651845.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3752",
+      "text": "Indicate if bed is already occupied in bed listings, and who is the current occupant"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3752",
+      "time": 1665651830.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3752#issuecomment-1277279065",
+      "text": "> @skks1212 there is already a similar issue #3149. I have opened the PR to fix that issue in both frontend and backend.\n\nAlright! Closing this issue. Do check out the comment I made on your backend PR!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#936",
+      "time": 1665651727.0,
+      "link": "https://github.com/coronasafe/care/issues/936#issuecomment-1277277085",
+      "text": "@cp-Coder Can you change this to `assigned_to` that will have the entire patient object? If there is no one assigned it will show null."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3752",
+      "time": 1665649012.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3752",
+      "text": "Indicate if bed is already occupied in the dropdown menu"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3464",
+      "time": 1665640290.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3464",
+      "text": "Refactored Hemodynamics"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#3736",
@@ -2802,26 +2837,16 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/89",
       "title": "Added badge glow and sparkle.",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3507",
       "title": "Added Medicine Administration Record",
-      "stale_for": 1,
+      "stale_for": 5,
       "labels": [
         "work-in-progress",
         "merge conflict",
-        "stale"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3464",
-      "title": "Refactored Hemodynamics",
-      "stale_for": 1,
-      "labels": [
-        "question",
-        "tested",
         "stale"
       ]
     }
@@ -2902,10 +2927,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2405",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2563"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2352",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2386"
     }
   ]
 }

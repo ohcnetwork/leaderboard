@@ -7693,5 +7693,150 @@
             ],
             "client_msg_id": "f9784d95-8e63-44ec-a4a8-b9ac48b4ed07"
         }
+    ],
+    "2022-10-14 00:00:00": [
+        {
+            "type": "message",
+            "text": "\u2022 Added a new component `ImageWithFallback` which wraps `img` component, to show loading animation, to show fallback component if error while fetching, and to retry fetching the image.  <https://github.com/coronasafe/care_fe/pull/3528#issuecomment-1278496912|PR>.\n\u2022 Tested out deploying storybook to vercel.\n\u2022 Implemented `ButtonV2` component with various presets and styling options to have consistent styling across app.  Component API inspired from <https://vercel.com/design/button|Vercel Style Guide's Button>",
+            "files": [
+                {
+                    "id": "F0465GL9NET",
+                    "created": 1665761673,
+                    "timestamp": 1665761673,
+                    "name": "image.png",
+                    "title": "image.png",
+                    "mimetype": "image/png",
+                    "filetype": "png",
+                    "pretty_type": "PNG",
+                    "user": "U02TDGQQPMJ",
+                    "user_team": "TC99SV7B6",
+                    "editable": false,
+                    "size": 34280,
+                    "mode": "hosted",
+                    "is_external": false,
+                    "external_type": "",
+                    "is_public": false,
+                    "public_url_shared": false,
+                    "display_as_bot": false,
+                    "username": "",
+                    "url_private": "https://files.slack.com/files-pri/TC99SV7B6-F0465GL9NET/image.png",
+                    "url_private_download": "https://files.slack.com/files-pri/TC99SV7B6-F0465GL9NET/download/image.png",
+                    "media_display_type": "unknown",
+                    "thumb_64": "https://files.slack.com/files-tmb/TC99SV7B6-F0465GL9NET-2f9e817576/image_64.png",
+                    "thumb_80": "https://files.slack.com/files-tmb/TC99SV7B6-F0465GL9NET-2f9e817576/image_80.png",
+                    "thumb_360": "https://files.slack.com/files-tmb/TC99SV7B6-F0465GL9NET-2f9e817576/image_360.png",
+                    "thumb_360_w": 360,
+                    "thumb_360_h": 274,
+                    "thumb_480": "https://files.slack.com/files-tmb/TC99SV7B6-F0465GL9NET-2f9e817576/image_480.png",
+                    "thumb_480_w": 480,
+                    "thumb_480_h": 365,
+                    "thumb_160": "https://files.slack.com/files-tmb/TC99SV7B6-F0465GL9NET-2f9e817576/image_160.png",
+                    "original_w": 552,
+                    "original_h": 420,
+                    "thumb_tiny": "AwAkADC68QOcSMCfeoZF2ZXzTu49asyb9h8v71VmLGT5jF93nOOtMloWGRY2O+TOcY6mphPGTjJ9OlRKR8u/ysg89Kl/cg/wZ/CkzRRS0HCRSevX2p1N/dg/w5p1JX6iYY56VGYEJJK9fen/AIUfhTE1cj+zxnOV6/7VL5CHqv60/wDCjt0oeu402hPLX0/WnUnbpSj6UkkguGKMUUUxBijFFFABijFFFAH/2Q==",
+                    "permalink": "https://rebuildearth.slack.com/files/U02TDGQQPMJ/F0465GL9NET/image.png",
+                    "permalink_public": "https://slack-files.com/TC99SV7B6-F0465GL9NET-b445d0ec64",
+                    "is_starred": false,
+                    "has_rich_preview": false,
+                    "file_access": "visible"
+                }
+            ],
+            "upload": false,
+            "user": "U02TDGQQPMJ",
+            "display_as_bot": false,
+            "team": "TC99SV7B6",
+            "ts": "1665761751.137189",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "upZAF",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added a new component "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "ImageWithFallback",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " which wraps "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "img",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " component, to show loading animation, to show fallback component if error while fetching, and to retry fetching the image.  "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3528#issuecomment-1278496912",
+                                            "text": "PR"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tested out deploying storybook to vercel."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Implemented "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "ButtonV2",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " component with various presets and styling options to have consistent styling across app.  Component API inspired from "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://vercel.com/design/button",
+                                            "text": "Vercel Style Guide's Button"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "client_msg_id": "624708af-0452-424b-80af-3be95bbddd23"
+        }
     ]
 }

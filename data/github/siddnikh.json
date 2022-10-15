@@ -1,6 +1,20 @@
 {
-  "last_updated": 1665658085.0,
+  "last_updated": 1665739339.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3755",
+      "time": 1665739339.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3755",
+      "text": "Fixed minor UI break in Facility Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3713",
+      "time": 1665738171.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3713#issuecomment-1278708938",
+      "text": "So that blue colour comes if the link has already been visited. The default colour is black only. I'll add a small icon and change the visited link colour."
+    },
     {
       "type": "pr_reviewed",
       "time": 1665658085.0,
@@ -515,9 +529,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3755",
+      "title": "Fixed minor UI break in Facility Page",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3700",
       "title": "Removed unnecessary imports and added checkUsername route for User Creation page ",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "waiting for back end"
       ]
@@ -525,7 +545,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1043",
       "title": "Added API View to check availability of username",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -533,13 +553,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1038",
       "title": "Added constraints to models to not allot multiple patients the same bed",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3275",
       "title": "Added image for locations not found",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "test failed",
         "stale"

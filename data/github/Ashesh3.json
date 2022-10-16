@@ -1,6 +1,13 @@
 {
-  "last_updated": 1665673552.0,
+  "last_updated": 1665866650.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3761",
+      "time": 1665866650.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3761",
+      "text": "Added patient search by IP number"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3754",
@@ -4031,24 +4038,31 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3761",
+      "title": "Added patient search by IP number",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3754",
       "title": "Keep loading spinner during a page redirect on login page",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3748",
       "title": "Update packages and remove obsolete dependencies",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
-        "needs testing",
-        "merge conflict"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3584",
       "title": "Patient Review feature fixes",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -4056,7 +4070,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 15,
+      "stale_for": 17,
       "labels": [
         "reviewed"
       ]

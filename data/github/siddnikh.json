@@ -1,6 +1,69 @@
 {
-  "last_updated": 1664033081.0,
+  "last_updated": 1665739339.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3755",
+      "time": 1665739339.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3755",
+      "text": "Fixed minor UI break in Facility Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3713",
+      "time": 1665738171.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3713#issuecomment-1278708938",
+      "text": "So that blue colour comes if the link has already been visited. The default colour is black only. I'll add a small icon and change the visited link colour."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665658085.0,
+      "title": "coronasafe/care#1038",
+      "link": "https://github.com/coronasafe/care/pull/1038#pullrequestreview-1140549929",
+      "text": "Added constraints to models to not allot multiple patients the same bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3423",
+      "time": 1665657716.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3423#issuecomment-1277408011",
+      "text": "@gigincg we can add an \"admitted but not allocated\" category to this filter from the backend if you suggest. What do you say?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3700",
+      "time": 1664810073.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3700",
+      "text": "Removed unnecessary imports and added checkUsername route for User Creation page "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1043",
+      "time": 1664521484.0,
+      "link": "https://github.com/coronasafe/care/pull/1043",
+      "text": "Added API View to check availability of username"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3371",
+      "time": 1664462168.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3371#issuecomment-1262376000",
+      "text": "@kunatastic hey, are you working on this?\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1038",
+      "time": 1664274456.0,
+      "link": "https://github.com/coronasafe/care/pull/1038",
+      "text": "Added constraints to models to not allot multiple patients the same bed"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2055",
+      "time": 1664266547.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2055",
+      "text": "Add Filter : Assets"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#989",
@@ -466,16 +529,51 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3351",
-      "title": "Reposition Blood Group field in Patient Registration form"
+      "link": "https://github.com/coronasafe/care_fe/pull/3755",
+      "title": "Fixed minor UI break in Facility Page",
+      "stale_for": 0,
+      "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3302",
-      "title": "Added filter for working/non-working assets"
+      "link": "https://github.com/coronasafe/care_fe/pull/3700",
+      "title": "Removed unnecessary imports and added checkUsername route for User Creation page ",
+      "stale_for": 11,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1043",
+      "title": "Added API View to check availability of username",
+      "stale_for": 1,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1038",
+      "title": "Added constraints to models to not allot multiple patients the same bed",
+      "stale_for": 1,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3275",
-      "title": "Added image for locations not found"
+      "title": "Added image for locations not found",
+      "stale_for": 6,
+      "labels": [
+        "test failed",
+        "stale"
+      ]
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2955",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2956"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2807",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2808"
     }
   ]
 }

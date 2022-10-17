@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/badges.css";
 import Header from "../components/Header";
 import PageHead from "../components/PageHead";
 import Footer from "../components/Footer";

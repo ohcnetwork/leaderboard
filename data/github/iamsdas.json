@@ -1,6 +1,35 @@
 {
-  "last_updated": 1662830980.0,
+  "last_updated": 1665955480.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1065",
+      "time": 1665955480.0,
+      "link": "https://github.com/coronasafe/care/pull/1065",
+      "text": "Production Release; Oct Week 3",
+      "collaborated_with": [
+        "vigneshhari",
+        "Ashesh3",
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#999",
+      "time": 1665849935.0,
+      "link": "https://github.com/coronasafe/care/pull/999",
+      "text": "add enhancements for pressure sore (push score)"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#999",
+      "time": 1665849935.0,
+      "link": "https://github.com/coronasafe/care/pull/999",
+      "text": "add enhancements for pressure sore (push score)",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#999",
@@ -648,20 +677,28 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/999",
-      "title": "add enhancements for pressure sore (push score)"
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/953",
-      "title": "add ONVIF action to get streaming token"
+      "title": "add ONVIF action to get streaming token",
+      "stale_for": 43,
+      "labels": [
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/860",
-      "title": "HBA1C parameter"
+      "title": "HBA1C parameter",
+      "stale_for": 99,
+      "labels": [
+        "ops-review-pending",
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/742",
-      "title": "Summarize beds under facility"
+      "title": "Summarize beds under facility",
+      "stale_for": 149,
+      "labels": []
     }
-  ]
+  ],
+  "authored_issue_and_pr": []
 }

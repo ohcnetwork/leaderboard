@@ -46,47 +46,21 @@ export default function Contributor({ contributor, slug }) {
           <div className="md:w-2/3">
             <InfoCard contributor={contributor} />
           </div>
-          <div className="flex md:grid md:grid-cols-7 mt-6 md:mt-0 w-full overflow-x-auto gap-2">
-            {professionalSelfSkills.map((skill) => (
-              <div
-                className="p-1 flex items-center justify-center flex-shrink-0 bg-gray-900 bg-opacity-40 rounded-lg"
-                key={skill.key}
-              >
-                <BadgeIcons
-                  skill={resolveGraduateAttributes(skill, contributor)}
-                />
-              </div>
-            ))}
-            {professionalTeamSkills.map((skill) => (
-              <div
-                className="p-1 flex items-center justify-center flex-shrink-0 bg-gray-900 bg-opacity-40 rounded-lg"
-                key={skill.key}
-              >
-                <BadgeIcons
-                  skill={resolveGraduateAttributes(skill, contributor)}
-                />
-              </div>
-            ))}
-            {advancedSkills.map((skill) => (
-              <div
-                className="p-1 flex items-center justify-center flex-shrink-0 bg-gray-900 bg-opacity-40 rounded-lg"
-                key={skill.key}
-              >
-                <BadgeIcons
-                  skill={resolveGraduateAttributes(skill, contributor)}
-                />
-              </div>
-            ))}
-            {humanValues.map((skill) => (
-              <div
-                className="p-1 flex items-center justify-center flex-shrink-0 bg-gray-900 bg-opacity-40 rounded-lg"
-                key={skill.key}
-              >
-                <BadgeIcons
-                  skill={resolveGraduateAttributes(skill, contributor)}
-                />
-              </div>
-            ))}
+          <div className="flex md:grid md:grid-cols-7 mt-6 md:mt-0 w-full overflow-x-auto md:overflow-x-visible gap-2">
+            {
+              [professionalSelfSkills, professionalTeamSkills, advancedSkills, humanValues].map((attributeGroup) => {
+                return attributeGroup.map((skill) => (
+                  <div
+                    className="flex items-center justify-center flex-shrink-0  bg-opacity-40 rounded-lg"
+                    key={skill.key}
+                  >
+                    <BadgeIcons
+                      skill={resolveGraduateAttributes(skill, contributor)}
+                    />
+                  </div>
+                ));
+              })
+            }
           </div>
         </div>
       </section>

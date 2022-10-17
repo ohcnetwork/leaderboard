@@ -100,7 +100,7 @@ export default function Home(props) {
                     </span>
                   </div>
                   {contributors.length ? (
-                    <ul className="space-y-6 lg:space-y-8 p-2 lg:p-2 overflow-x-auto">
+                    <ul className="space-y-6 lg:space-y-8 overflow-x-auto p-6">
                       {contributors.map((contributor, index) => {
                         return (
                           <li key={contributor.github}>

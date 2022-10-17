@@ -1848,5 +1848,78 @@
                 }
             ]
         }
+    ],
+    "2022-10-16 00:00:00": [
+        {
+            "client_msg_id": "70d480aa-40e2-44e5-9434-6cd11e306bb9",
+            "type": "message",
+            "text": "Submitted a PR <https://github.com/coronasafe/care_fe/pull/3762|#3762>",
+            "user": "U02U1035G0G",
+            "ts": "1665936882.611989",
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665896108,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3762",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3762|#3762 Added `AccordionV2`  and `CollapseV2` components to replace MUI's Accordion and Collapse components>",
+                    "text": "fixes <https://github.com/coronasafe/care_fe/issues/3763|#3763>\n\n*Proposed Changes*\n\n\u2022 Added `AccordionV2` and `CollapseV2` components\n\u2022 Replaced all code where the MUI's Accordion was used to `AccordionV2` Component.\n\u2022 Replaced all code where the MUI's Collapse was used to `CollapseV2` Component.\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3762|#3762 Added `AccordionV2`  and `CollapseV2` components to replace MUI's Accordion and Collapse components>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing, peer-reviewed",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "4",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "dhh5W",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Submitted a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3762",
+                                    "text": "#3762",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "tada",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

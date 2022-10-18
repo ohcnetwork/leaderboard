@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import LeaderboardCard from "../../components/contributors/LeaderboardCard";
 import TopContributor from "../../components/contributors/TopContributor";
-import Header from "../../components/Header";
-import PageHead from "../../components/PageHead";
-import Filters from "../components/filters/Filters";
+import Filters from "../../components/filters/Filters";
 import { getContributors } from "../../lib/api";
-import { getWeek, getWeekNumber } from "../../lib/utils";
-import Image from "next/image";
+import { getWeekNumber } from "../../lib/utils";
 import { TbZoomQuestion } from "react-icons/tb";
 
 export const categories = [

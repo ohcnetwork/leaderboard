@@ -4,9 +4,12 @@ import TopContributor from "../components/contributors/TopContributor";
 import Filters from "../components/filters/Filters";
 import { getContributors } from "../lib/api";
 import Image from "next/image";
-import { getWeek, getWeekNumber } from "../lib/utils";
+import {
+  getLastWeekDateRangeString,
+  getWeek,
+  getWeekNumber,
+} from "../lib/utils";
 import { TbZoomQuestion } from "react-icons/tb";
-
 
 const categories = [
   { slug: "eod_update", title: "EOD Updates" },
@@ -89,7 +92,8 @@ export default function Home(props) {
                 <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                     <span>
-                      Live Leaderboard of last 7 days | Week{" "}
+                      Live Leaderboard of last 7 days |{" "}
+                      {getLastWeekDateRangeString()} | Week{" "}
                       {getWeekNumber(new Date())} of {new Date().getFullYear()}
                     </span>
                   </div>

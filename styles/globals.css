@@ -8,11 +8,13 @@
       column-gap: 1.5em;
       column-count: 2;
     }
+
     .break-inside {
       break-inside: avoid;
     }
   }
 }
+
 body {
   @apply font-inter;
   -webkit-font-smoothing: antialiased;
@@ -42,7 +44,10 @@ body {
   }
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   @apply font-bold;
 }
 

@@ -1,6 +1,308 @@
 {
-  "last_updated": 1657131455.0,
+  "last_updated": 1665955480.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1065",
+      "time": 1665955480.0,
+      "link": "https://github.com/coronasafe/care/pull/1065",
+      "text": "Production Release; Oct Week 3",
+      "collaborated_with": [
+        "vigneshhari",
+        "Ashesh3",
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#999",
+      "time": 1665849935.0,
+      "link": "https://github.com/coronasafe/care/pull/999",
+      "text": "add enhancements for pressure sore (push score)"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#999",
+      "time": 1665849935.0,
+      "link": "https://github.com/coronasafe/care/pull/999",
+      "text": "add enhancements for pressure sore (push score)",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#999",
+      "time": 1662830980.0,
+      "link": "https://github.com/coronasafe/care/pull/999#issuecomment-1242772909",
+      "text": "> is #1016 a duplicate of this ?\r\n\r\nIt seems like that PR is required for a different issue. The only part overlapping with that PR is the addition of the description field in the `pressure_sore` schema. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#999",
+      "time": 1662748177.0,
+      "link": "https://github.com/coronasafe/care/pull/999#issuecomment-1242329278",
+      "text": "Added migration to migrate the existing `pressure_sore` data from the old schema to the new one. Also, since we are able to migrate the older data we don't need to create a new `pressure_sore_enhanced` field anymore."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#999",
+      "time": 1662659464.0,
+      "link": "https://github.com/coronasafe/care/pull/999#issuecomment-1241042425",
+      "text": "**Note**: currently created a `pressure_sore_enhance` field as I'm not sure if it's alright to delete the pre-existing data in the `pressure_sore` field.  (The previous schema only stored the region and scale of the entries.)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3432",
+      "time": 1662478737.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3432#issuecomment-1238322409",
+      "text": "> @aparnacoronasafe Can we have a default value for each of these for migrating the existing data?\r\n> \r\n> cc: @iamsdas\r\n\r\nRight now we have a default value of an empty list. The main question is if there would be any problem deleting the existing data for the `pressure_sore` column (it currently contains a list of entries having `region` and `scale`)."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#999",
+      "time": 1662365250.0,
+      "link": "https://github.com/coronasafe/care/pull/999",
+      "text": "add enhancements for pressure sore (push score)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3110",
+      "time": 1662028650.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3110#issuecomment-1234088847",
+      "text": "> Hey @iamsdas actually the camera_type variable is required in the api so in that day Gigin told to remove the required thing as there is no need of the field. \n\nI made the required changes that very day. \n\n> Let's discuss it one to one?\n\nSure"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3110",
+      "time": 1662023722.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3110#issuecomment-1233995890",
+      "text": "@patelaryan7751 what was the (backend) issue about? I am not working on anything related to this right now. Maybe I have already merged it?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#987",
+      "time": 1661398876.0,
+      "link": "https://github.com/coronasafe/care/pull/987#issuecomment-1226735429",
+      "text": "Closing this PR, as will make a new one from the beginning."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#987",
+      "time": 1661080976.0,
+      "link": "https://github.com/coronasafe/care/pull/987",
+      "text": "add fields for push score"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#982",
+      "time": 1660918298.0,
+      "link": "https://github.com/coronasafe/care/pull/982",
+      "text": "make camera_type optional for onvif schema"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#981",
+      "time": 1660918243.0,
+      "link": "https://github.com/coronasafe/care/pull/981",
+      "text": "add update and delete apis for consultation files"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#982",
+      "time": 1660832552.0,
+      "link": "https://github.com/coronasafe/care/pull/982",
+      "text": "make camera_type optional for onvif schema"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1660829745.0,
+      "title": "coronasafe/care#981",
+      "link": "https://github.com/coronasafe/care/pull/981#pullrequestreview-1077361081",
+      "text": "add update and delete apis for consultation files"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1660798562.0,
+      "title": "coronasafe/care#981",
+      "link": "https://github.com/coronasafe/care/pull/981#pullrequestreview-1076696578",
+      "text": "add update and delete apis for consultation files"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#981",
+      "time": 1660763419.0,
+      "link": "https://github.com/coronasafe/care/pull/981",
+      "text": "add update and delete apis for consultation files"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#971",
+      "time": 1660057587.0,
+      "link": "https://github.com/coronasafe/care/pull/971",
+      "text": "clear current_bed on discharge"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#971",
+      "time": 1660056356.0,
+      "link": "https://github.com/coronasafe/care/pull/971#issuecomment-1209477305",
+      "text": "@vigneshhari It is already being updated over [here](https://github.com/coronasafe/care/blob/d56b6b0034a23ec70cc66a5a73aa11b4d8a5f45f/care/facility/api/viewsets/patient.py#L365). (We are filtering and updating it if exists)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#971",
+      "time": 1660052209.0,
+      "link": "https://github.com/coronasafe/care/pull/971",
+      "text": "clear current_bed on discharge"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#966",
+      "time": 1659720937.0,
+      "link": "https://github.com/coronasafe/care/pull/966",
+      "text": "add asset_type to asset meta schema"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#966",
+      "time": 1659720367.0,
+      "link": "https://github.com/coronasafe/care/pull/966",
+      "text": "add asset_type to asset meta schema"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3309",
+      "time": 1659539772.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3309#issuecomment-1204087789",
+      "text": "> Why is port required @iamsdas \n\nCamera port is a required parameter in the backend for onvif asset type. And is currently required by the schema. Not having this field in the frontend is currently causing validation errors."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3309",
+      "time": 1659539482.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3309",
+      "text": "update fields in configure asset page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#963",
+      "time": 1659537970.0,
+      "link": "https://github.com/coronasafe/care/pull/963",
+      "text": "add camera_type to onvif asset schema"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#955",
+      "time": 1659195711.0,
+      "link": "https://github.com/coronasafe/care/pull/955",
+      "text": "update facility write access for users"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#935",
+      "time": 1659190662.0,
+      "link": "https://github.com/coronasafe/care/pull/935",
+      "text": "add schema for validating meta field of assets"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#954",
+      "time": 1659186583.0,
+      "link": "https://github.com/coronasafe/care/pull/954",
+      "text": "add home_facility field to user serializer"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#955",
+      "time": 1659115702.0,
+      "link": "https://github.com/coronasafe/care/pull/955",
+      "text": "update facility write access for users"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#954",
+      "time": 1659114949.0,
+      "link": "https://github.com/coronasafe/care/pull/954",
+      "text": "add home_facility field to user serializer"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#946",
+      "time": 1659110026.0,
+      "link": "https://github.com/coronasafe/care/pull/946",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#953",
+      "time": 1659095636.0,
+      "link": "https://github.com/coronasafe/care/pull/953",
+      "text": "add ONVIF action to get streaming token"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658947457.0,
+      "title": "coronasafe/care#946",
+      "link": "https://github.com/coronasafe/care/pull/946#pullrequestreview-1053071855",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658855029.0,
+      "title": "coronasafe/care#935",
+      "link": "https://github.com/coronasafe/care/pull/935#pullrequestreview-1051340624",
+      "text": "add schema for validating meta field of assets"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#946",
+      "time": 1658848147.0,
+      "link": "https://github.com/coronasafe/care/pull/946#issuecomment-1195608795",
+      "text": "> Why the force pushes ?\r\n\r\nI thought that it would have been better to have a single commit for smaller changes."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658845776.0,
+      "title": "coronasafe/care#935",
+      "link": "https://github.com/coronasafe/care/pull/935#pullrequestreview-1051089426",
+      "text": "add schema for validating meta field of assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658837630.0,
+      "title": "coronasafe/care#946",
+      "link": "https://github.com/coronasafe/care/pull/946#pullrequestreview-1050873730",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658837000.0,
+      "title": "coronasafe/care#946",
+      "link": "https://github.com/coronasafe/care/pull/946#pullrequestreview-1050860273",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658836938.0,
+      "title": "coronasafe/care#946",
+      "link": "https://github.com/coronasafe/care/pull/946#pullrequestreview-1050858933",
+      "text": "update permissions for write access"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#935",
+      "time": 1658220788.0,
+      "link": "https://github.com/coronasafe/care/pull/935",
+      "text": "add schema for validating meta field of assets"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#920",
+      "time": 1657291554.0,
+      "link": "https://github.com/coronasafe/care/issues/920",
+      "text": "Create a dummy data generator for database"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#854",
@@ -375,16 +677,28 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/909",
-      "title": "update asset integration actions"
+      "link": "https://github.com/coronasafe/care/pull/953",
+      "title": "add ONVIF action to get streaming token",
+      "stale_for": 43,
+      "labels": [
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/860",
-      "title": "HBA1C parameter"
+      "title": "HBA1C parameter",
+      "stale_for": 99,
+      "labels": [
+        "ops-review-pending",
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/742",
-      "title": "Summarize beds under facility"
+      "title": "Summarize beds under facility",
+      "stale_for": 149,
+      "labels": []
     }
-  ]
+  ],
+  "authored_issue_and_pr": []
 }

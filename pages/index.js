@@ -1,17 +1,11 @@
-import Link from "next/link";
 import InfoCard from "../components/contributors/InfoCard";
-import Header from "../components/Header";
-import PageHead from "../components/PageHead";
+import Link from "next/link";
 import { getContributors } from "../lib/api";
-import { getWeek } from '../lib/utils';
+import { getLastWeekDateRangeString } from "../lib/utils";
 
 export default function Home(props) {
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead />
-      <div className="bg-gray-800 bg-opacity-50">
-        <Header />
-      </div>
       <section className="bg-gray-900 border-t border-gray-700 ">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
@@ -45,7 +39,7 @@ export default function Home(props) {
                         <h2 className="text-3xl font-bold text-white tracking-tight sm:text-5xl">
                           Our Contributors
                         </h2>
-                        <p className="text-xl text-gray-300">
+                        <p className="text-xl text-gray-300 hidden">
                           Ornare sagittis, suspendisse in hendrerit quis. Sed
                           dui aliquet lectus sit pretium egestas vel mattis
                           neque.
@@ -53,14 +47,15 @@ export default function Home(props) {
                       </div>
                       <ul
                         role="list"
-                        className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
+                        className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8 mt-4"
                       >
                         {props.contributors.map((contributor, index) => {
                           return (
                             <InfoCard
                               key={index}
                               contributor={contributor}
-                              minimal={true}
+                              minimal
+                              isClickable
                             />
                           );
                         })}
@@ -76,7 +71,7 @@ export default function Home(props) {
                     <div className="flex justify-between items-end bg-gray-800 rounded-t-lg px-6 py-4 border-b border-gray-700 ">
                       <p className="text-xl font-medium">Leaderboard</p>
                       <span className="block text-gray-400">
-                        <span>Leaderboard | {getWeek(new Date())} </span>
+                        {props.dateRange}
                       </span>
                     </div>
                     <div className="space-y-2 p-4 ">
@@ -89,7 +84,7 @@ export default function Home(props) {
                               key={index}
                               href={`/contributors/${contributor.github}`}
                             >
-                              <span className="flex space-x-3 items-center cursor-pointer bg-gray-900 bg-opacity-75 px-2 py-3 rounded-lg hover:bg-opacity-30 transition">
+                              <span className="hover:shadow-lg hover:shadow-primary-500 transition duration-300 flex space-x-3 items-center cursor-pointer bg-gray-900 bg-opacity-75 px-2 py-3 rounded-lg hover:bg-opacity-30">
                                 <span className="flex items-center justify-center text-lg h-10 w-10 bg-gray-800 rounded-full">
                                   {index + 1}
                                 </span>
@@ -117,28 +112,18 @@ export default function Home(props) {
           </div>
         </div>
       </section>
-
-      <footer className="">
-        <div className="bg-gray-800 p-4 lg:p-10 border-t border-gray-700 h-full">
-          <div className="max-w-5xl font-bold text-primary-500 text-center text-sm lg:leading-tight lg:mx-auto">
-            <div className="flex items-center justify-center w-full">
-              Powered by{" "}
-              <span className={"w-20 ml-4"}>
-                <img src="/logo.webp" alt="Coronasafe" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
 
 export async function getStaticProps() {
   const contributors = getContributors();
+  const dateRange = getLastWeekDateRangeString();
+
   return {
     props: {
-      contributors: contributors,
+      contributors,
+      dateRange,
     },
   };
 }

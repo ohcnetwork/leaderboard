@@ -1,25 +1,22 @@
-import React from "react";
-import markdownToHtml from "../../lib/markdownToHtml";
-import Head from "next/head";
-
-import InfoCard from "../../components/contributors/InfoCard";
-import GithubActivity from "../../components/contributors/GithubActivity";
-import BadgeIcons from "../../components/contributors/BadgeIcons";
-import GraduateAttributeBadge from "../../components/contributors/GraduateAttributeBadge";
 import {
-  professionalSelfSkills,
-  professionalTeamSkills,
   advancedSkills,
   humanValues,
+  professionalSelfSkills,
+  professionalTeamSkills,
   resolveGraduateAttributes,
-} from "../../config/GraduateAttributes";
+} from '../../config/GraduateAttributes';
+import { getContributorBySlug, getContributors } from '../../lib/api';
 
-import { getContributorBySlug, getContributors } from "../../lib/api";
-import Link from "next/link";
+import ActivityCalendarGit from '../../components/contributors/ActivityCalendarGitHub';
+import BadgeIcons from '../../components/contributors/BadgeIcons';
+import GithubActivity from '../../components/contributors/GithubActivity';
+import GraduateAttributeBadge from '../../components/contributors/GraduateAttributeBadge';
+import InfoCard from '../../components/contributors/InfoCard';
+import React from 'react';
+import markdownToHtml from '../../lib/markdownToHtml';
+import clsx from 'clsx';
+import Tooltip from "../../components/filters/Tooltip";
 
-import ActivityCalendar from "react-activity-calendar";
-import PageHead from "../../components/PageHead";
-import Header from "../../components/Header";
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
 //     // Current Date - i
@@ -36,11 +33,8 @@ import Header from "../../components/Header";
 // }
 
 export default function Contributor({ contributor, slug }) {
-  // const md_content = xss(marked.parse(contributor.content));
-
   return (
     <div className="bg-gray-900 min-h-screen">
-      <PageHead title={contributor.name} />
       {/* <Header /> */}
       <div className="pt-2 pb-3 border-b border-gray-700 shadow-md bg-gray-700 bg-opacity-50">
         <h1 className="max-w-6xl mx-auto text-sm md:text-xl text-gray-400 text-center">
@@ -52,47 +46,21 @@ export default function Contributor({ contributor, slug }) {
           <div className="md:w-2/3">
             <InfoCard contributor={contributor} />
           </div>
-          <div className="flex md:grid md:grid-cols-7 mt-6 md:mt-0 w-full overflow-x-auto gap-2">
-            {professionalSelfSkills.map((skill) => (
-              <div
-                className="p-1 flex items-center justify-center flex-shrink-0 bg-gray-900 bg-opacity-40 rounded-lg"
-                key={skill.key}
-              >
-                <BadgeIcons
-                  skill={resolveGraduateAttributes(skill, contributor)}
-                />
-              </div>
-            ))}
-            {professionalTeamSkills.map((skill) => (
-              <div
-                className="p-1 flex items-center justify-center flex-shrink-0 bg-gray-900 bg-opacity-40 rounded-lg"
-                key={skill.key}
-              >
-                <BadgeIcons
-                  skill={resolveGraduateAttributes(skill, contributor)}
-                />
-              </div>
-            ))}
-            {advancedSkills.map((skill) => (
-              <div
-                className="p-1 flex items-center justify-center flex-shrink-0 bg-gray-900 bg-opacity-40 rounded-lg"
-                key={skill.key}
-              >
-                <BadgeIcons
-                  skill={resolveGraduateAttributes(skill, contributor)}
-                />
-              </div>
-            ))}
-            {humanValues.map((skill) => (
-              <div
-                className="p-1 flex items-center justify-center flex-shrink-0 bg-gray-900 bg-opacity-40 rounded-lg"
-                key={skill.key}
-              >
-                <BadgeIcons
-                  skill={resolveGraduateAttributes(skill, contributor)}
-                />
-              </div>
-            ))}
+          <div className="flex md:grid md:grid-cols-7 mt-6 md:mt-0 w-full overflow-x-auto md:overflow-x-visible gap-2">
+            {
+              [professionalSelfSkills, professionalTeamSkills, advancedSkills, humanValues].map((attributeGroup) => {
+                return attributeGroup.map((skill) => (
+                  <div
+                    className="flex items-center justify-center flex-shrink-0  bg-opacity-40 rounded-lg"
+                    key={skill.key}
+                  >
+                    <BadgeIcons
+                      skill={resolveGraduateAttributes(skill, contributor)}
+                    />
+                  </div>
+                ));
+              })
+            }
           </div>
         </div>
       </section>
@@ -269,17 +237,8 @@ export default function Contributor({ contributor, slug }) {
         </div>
 
         <div className="px-4 md:p-0">
-          <h3 className="font-bold text-gray-100 mt-4">Learning Activity</h3>
-          <div className="p-2 py-8 bg-white text-center rounded-lg px-6 sm:px-10 xl:text-left mt-4">
-            {/* <p className="text-xl text-gray-300">
-                  ...to add activity visualization...
-                </p> */}
-
-            <ActivityCalendar
-              showWeekdayLabels
-              data={contributor.calendarData}
-            />
-          </div>
+          <h3 className="font-bold text-gray-100 my-4">Learning Activity</h3>
+          <ActivityCalendarGit calendarData={contributor.calendarData} />
         </div>
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-gray-100 mt-6">Highlights</h3>
@@ -330,11 +289,24 @@ export default function Contributor({ contributor, slug }) {
                 {contributor["activityData"]["open_prs"].map((pr, index) => (
                   <a href={pr.link} key={index}>
                     <p
-                      className="text-sm text-gray-300 hover:text-primary-300"
+                      className={clsx(
+                        "text-sm mb-2",
+                        pr?.stale_for >= 7
+                          ? "text-gray-600 hover:text-primary-200"
+                          : "text-gray-300 hover:text-primary-300"
+                      )}
                       key={index}
                     >
-                      <span className="text-primary-500 text-sm pr-2">➞</span>
-                      {pr.title}
+                      <Tooltip
+                        tip={
+                          pr?.stale_for >= 7 &&
+                          `Stale for ${pr?.stale_for} days`
+                        }
+                        tipStyle="absolute w-48 -top-8 left-10 text-white text-sm"
+                      >
+                        <span className="text-primary-500 text-sm pr-2">➞</span>
+                        {pr.title}
+                      </Tooltip>
                     </p>
                   </a>
                 ))}
@@ -356,10 +328,11 @@ export default function Contributor({ contributor, slug }) {
 
 export async function getStaticProps({ params }) {
   const contributor = getContributorBySlug(params.slug, true);
-  const content = await markdownToHtml(contributor.content || "");
+  const content = await markdownToHtml(contributor.content || '');
 
   return {
     props: {
+      title: contributor.name,
       contributor: {
         ...contributor,
         content,

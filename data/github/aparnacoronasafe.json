@@ -1,6 +1,2232 @@
 {
-  "last_updated": 1654522012.0,
+  "last_updated": 1665563443.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3749",
+      "time": 1665563443.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3749",
+      "text": "Patient Search: IP No."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3584",
+      "time": 1664461284.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1262356803",
+      "text": "@Ashesh3 \r\n\r\nGreat job at summarizing all the changes..:-)\r\n\r\nHowever, I think the code is breaking somewhere. Tried testing this patient (https://deploy-preview-3584--care-net.netlify.app/facility/7ab27974-32c8-4e36-bdf9-dbf102524718/patient/cc52390c-ac8a-4af5-9806-f3df7ee1795a/consultation/7037609e-3c25-45ed-bfd8-e01c346cbd45)\r\nMultiple log updates are filed, but the review missed badge stays. \r\n\r\nPlease check."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3658",
+      "time": 1664286108.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3658",
+      "text": "Follow uniform date/time format "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3584",
+      "time": 1663945001.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3584#issuecomment-1256322647",
+      "text": "@rithviknishad @Ashesh3 @developedBySJ \r\n\r\nThe review time needs to be stored in the BD and shown in the edit consultation form. \r\n\r\nA detailed explaination to what needs to be done is added to the issue #1255 Please refer to it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1255",
+      "time": 1663944626.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1255#issuecomment-1256315589",
+      "text": "Clarification on the Issue:\r\n\r\n**How the Review Feature should work:**\r\n- The user must be able to set a review time in the consultation/edit consultation form. Or later on in a log update form.\r\n- Once the review time is set, then within that time if a Log Update is not filed for the patient, then the \"Review Missed\" Badge must appear on the patient card.\r\n- When a log update is filed for the patient, the preselected review time must come pre-filled in the 'review after' field in log update.\r\n- With every log update filed, the review clock must reset.\r\n- If the user, the the log update doesnt edit the 'review after' field, the same interval will continue for review, with the review call resetting with every log update.\r\n\r\nEg: I file a 1 hr review in consultation form. I file a log update in half an hr. The log update form will come prefilled with 1hr in review after field. I can choose to edit it to 2 hrs. Then once i save the log update, the clock for review must reset. If no logupdate is filed in another 2 hrs, the \"review missed\" label must appear on the patient grid in patient list. Then once i file a log update, the clock must be reset again with whatever time is mentioned for review in the latest log update.\r\n\r\n**Issues in CARE now - to be resolved**\r\n\r\n- [ ] When I select a review after time in consultation form, and later open the edit consultation form, I see the review after field as blank. I must be able to see the review time i had set previously and also have the option to edit it.\r\n- [ ] When i edit the consultation form to add/edit review time, such time must be considered from the time I edited the consultation, and not the time the original consultation was filed.\r\n- [ ] When a review is missed, an a \"review Missed\" flag appears on patient card, the flag must dissappear once I file a log update. \r\n- [ ] The log update form must come pre-filled with the previoud review time set (either on the consultation form, or on the previous log update)- the user must have option to edit it. \r\n- [ ] The \"review missed\" flag must come right below the patients name on the patient dashboard as well (https://care.coronasafe.in/facility/7ab27974-32c8-4e36-bdf9-dbf102524718/patient/cc52390c-ac8a-4af5-9806-f3df7ee1795a/consultation/7037609e-3c25-45ed-bfd8-e01c346cbd45)\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3366",
+      "time": 1663942350.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3366#issuecomment-1256268648",
+      "text": "An archived file should not be downloadable "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3619",
+      "time": 1663835243.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3619#issuecomment-1254695452",
+      "text": "You are looking at investigation section.\n\nPlease look at the prescription"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3619",
+      "time": 1663661454.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3619",
+      "text": "Frequency dropdown: prescriptions"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3618",
+      "time": 1663659428.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3618",
+      "text": "Symptoms: Building depth in consultation"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3616",
+      "time": 1663658068.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3616",
+      "text": "BUG: Doctor connect- last logged in"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3607",
+      "time": 1663572644.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3607",
+      "text": "Guide for Frequencies: Prescription"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2014",
+      "time": 1663223769.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2014#issuecomment-1247645241",
+      "text": "Redundant issue. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2747",
+      "time": 1662742578.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2747#issuecomment-1242223968",
+      "text": "Let's keep both editable "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3500",
+      "time": 1662363337.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3500#issuecomment-1236642823",
+      "text": "hey. looks great, but when i tested it, the UI was a bit off for me. Maybe because i use a smaller screen\r\n<img width=\"849\" alt=\"Screenshot 2022-09-05 at 1 00 31 PM\" src=\"https://user-images.githubusercontent.com/67050716/188393984-fb945e63-d56e-45b5-b5ef-17fcc8073a4f.png\">\r\n\r\n1. Can you improve on the placement of the Delete Icon.\r\n2. Also, for me, another thing thats a bit off is the level of \"Search for investigation\" and \"Notes\" is never aligned. I know its also because the height of the investigation labels are different from the input fields. But can you do something to improve it?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3500",
+      "time": 1662362788.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3500#issuecomment-1236634296",
+      "text": "@skks1212 This looks awesome!!!\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3526",
+      "time": 1662129927.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3526",
+      "text": "Provisional Diagnosis in Consultation Form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3522",
+      "time": 1662092506.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3522",
+      "text": "APACHE Score for patients"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3517",
+      "time": 1662042483.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3517",
+      "text": "Utilising Whatsapp Business APIs"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#1716",
+      "time": 1662039990.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1716",
+      "text": "ICU Module: Hemodynamic Parameters"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1716",
+      "time": 1662039990.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1716#issuecomment-1234305258",
+      "text": "Another issue filed to take care of this. #3429 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3435",
+      "time": 1662039832.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3435#issuecomment-1234301980",
+      "text": "The investigation module is currently seeded with a list of tests. Those tests are here at https://docs.google.com/spreadsheets/d/1hN13p-BDbb1Pkl3a8tcVdWFsFxncju2QPfeOEkKh51E/edit?usp=sharing\r\nIn investigations, as you can see the tests are also grouped (mentioned in Tab 2 above) It would be great to give user the option to select a group, whereby all tests in the group must come up. This is an advanced feature.\r\n\r\nPlacement: Above prescriptions in consultation form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3437",
+      "time": 1661867586.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3437#issuecomment-1231701786",
+      "text": "@skks1212 Hey. can you give me a quick update on the progress here?\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3506",
+      "time": 1661867045.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3506",
+      "text": "ICD-11: Multi Select"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3440",
+      "time": 1661865780.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3440#issuecomment-1231663454",
+      "text": "This is good. \"general instructions\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3455",
+      "time": 1661861390.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3455#issuecomment-1231578644",
+      "text": "Tamil: \u0b9f\u0bbf\u0b9c\u0bbf\u0b9f\u0bcd\u0b9f\u0bb2\u0bcd \u0b95\u0bb0\u0bc1\u0bb5\u0bbf\u0b95\u0bb3\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf \u0baa\u0bca\u0ba4\u0bc1 \u0b9a\u0bc1\u0b95\u0bbe\u0ba4\u0bbe\u0bb0 \u0b9a\u0bc7\u0bb5\u0bc8\u0b95\u0bb3\u0bbf\u0ba9\u0bcd \u0ba4\u0bb0\u0bae\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0b85\u0ba3\u0bc1\u0b95\u0bb2\u0bcd\u0ba4\u0ba9\u0bcd\u0bae\u0bc8\u0baf\u0bc8 \u0ba4\u0bca\u0b9f\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4\u0bc1 \u0bae\u0bc7\u0bae\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5\u0ba4\u0bc7 \u0b8e\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b95\u0bc1\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bcb\u0bb3\u0bcd."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3455",
+      "time": 1661851800.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3455#issuecomment-1231410004",
+      "text": "kannada:\r\n\u0ca1\u0cbf\u0c9c\u0cbf\u0c9f\u0cb2\u0ccd \u0c89\u0caa\u0c95\u0cb0\u0ca3\u0c97\u0cb3\u0ca8\u0ccd\u0ca8\u0cc1 \u0cac\u0cb3\u0cb8\u0cbf\u0c95\u0cca\u0c82\u0ca1\u0cc1 \u0cb8\u0cbe\u0cb0\u0ccd\u0cb5\u0c9c\u0ca8\u0cbf\u0c95 \u0c86\u0cb0\u0ccb\u0c97\u0ccd\u0caf \u0cb8\u0cc7\u0cb5\u0cc6\u0c97\u0cb3 \u0c97\u0cc1\u0ca3\u0cae\u0c9f\u0ccd\u0c9f \u0cae\u0ca4\u0ccd\u0ca4\u0cc1 \u0caa\u0ccd\u0cb0\u0cb5\u0cc7\u0cb6\u0cb5\u0ca8\u0ccd\u0ca8\u0cc1 \u0ca8\u0cbf\u0cb0\u0c82\u0ca4\u0cb0\u0cb5\u0cbe\u0c97\u0cbf \u0cb8\u0cc1\u0ca7\u0cbe\u0cb0\u0cbf\u0cb8\u0cc1\u0cb5\u0cc1\u0ca6\u0cc1 \u0ca8\u0cae\u0ccd\u0cae \u0c97\u0cc1\u0cb0\u0cbf\u0caf\u0cbe\u0c97\u0cbf\u0ca6\u0cc6."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3453",
+      "time": 1661851381.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3453#issuecomment-1231401873",
+      "text": "More thought: Since 5-para monitors and ventilators and integrated directly to the device, isnt it better to keep both of those as separate forms. \r\n\r\nDo we have the bandwidth to develop and maintain 5 forms for log updates?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3498",
+      "time": 1661759664.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3498",
+      "text": "BUG: Medicine tab in Patient dashboard"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3497",
+      "time": 1661750854.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3497",
+      "text": "Bug: Bed badge allignment"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3482",
+      "time": 1661527548.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3482",
+      "text": "BUG \"Something went wrong\": Last admitted to advanced filter on patient list"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3429",
+      "time": 1661525826.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3429#issuecomment-1228600026",
+      "text": "But 2 separate values appearing on a patient file may confuse the user. Let me take this back to Dr. Athul and try and make more sense. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1661525741.0,
+      "title": "coronasafe/care#987",
+      "link": "https://github.com/coronasafe/care/pull/987#pullrequestreview-1087092700",
+      "text": "add fields for push score"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3432",
+      "time": 1661525534.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3432#issuecomment-1228594404",
+      "text": "Clarification:\r\n\r\nSuggestive design\r\n<img width=\"734\" alt=\"Screenshot 2022-08-26 at 8 18 31 PM\" src=\"https://user-images.githubusercontent.com/67050716/186932487-3ee4e953-9a67-469d-8abc-ea22122b2e9c.png\">\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#986",
+      "time": 1661525422.0,
+      "link": "https://github.com/coronasafe/care/issues/986#issuecomment-1228592336",
+      "text": "Clarification:\r\n\r\nA suggestive design would be something like this\r\n<img width=\"734\" alt=\"Screenshot 2022-08-26 at 8 18 31 PM\" src=\"https://user-images.githubusercontent.com/67050716/186932068-ae57c78e-6717-40b5-834f-ed5c93369a8d.png\">\r\n\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3480",
+      "time": 1661524049.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3480",
+      "text": "Public facing Asset details page : Asset QR"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3479",
+      "time": 1661523890.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3479",
+      "text": "Asset Management: Log of transaction history with revised QR Code"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3476",
+      "time": 1661499873.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3476",
+      "text": "Bed No. Badges: Consistancy"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3261",
+      "time": 1661498616.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3261#issuecomment-1228147062",
+      "text": "@khavinshankar DONOT close the issue. Even though patient page is redisigned, The bed no. badges are not added .\r\n\r\nPlease be very careful to read through the issue to see if all the tasks are completed. \r\n\r\nThe bed badges with the above specifications needs to be added to the new patient UI."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3455",
+      "time": 1661352061.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3455#issuecomment-1225820700",
+      "text": "Marathi: \u0921\u093f\u091c\u093f\u091f\u0932 \u0938\u093e\u0927\u0928\u093e\u0902\u091a\u093e \u0935\u093e\u092a\u0930 \u0915\u0930\u0942\u0928 \u0938\u093e\u0930\u094d\u0935\u091c\u0928\u093f\u0915 \u0906\u0930\u094b\u0917\u094d\u092f \u0938\u0947\u0935\u093e\u0902\u091a\u0940 \u0917\u0941\u0923\u0935\u0924\u094d\u0924\u093e \u0906\u0923\u093f \u0938\u0941\u0932\u092d\u0924\u093e \u0938\u0924\u0924 \u0938\u0941\u0927\u093e\u0930\u0923\u0947 \u0939\u0947 \u0906\u092e\u091a\u0947 \u0927\u094d\u092f\u0947\u092f \u0906\u0939\u0947.\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3469",
+      "time": 1661351094.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3469",
+      "text": "Blood bank : As feature in a facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3440",
+      "time": 1661346334.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3440#issuecomment-1225699953",
+      "text": "> @aparnacoronasafe \n> \n> ![image](https://user-images.githubusercontent.com/57055998/186334358-b51c9e28-dfbc-4627-a7fa-4c8186992d93.png)\n> \n> we should be changing here too right?\n\n@nihal467 @skks1212 \n\nYes. You need to make change suggested above by nihal too. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3434",
+      "time": 1661315321.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3434#issuecomment-1225175927",
+      "text": "@nihal467 let's approve this PR. \n\nLets make a separate issue to change in the places you pointed out. \n\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/dashboard#204",
+      "time": 1661251463.0,
+      "link": "https://github.com/coronasafe/dashboard/issues/204",
+      "text": "Meta Dashboard: Metrix for TeleICU"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/dashboard#203",
+      "time": 1661251205.0,
+      "link": "https://github.com/coronasafe/dashboard/issues/203#issuecomment-1223885334",
+      "text": "Issue resolved by Gigin"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3455",
+      "time": 1661242029.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3455#issuecomment-1223709296",
+      "text": "Malayalm : \u0d21\u0d3f\u0d1c\u0d3f\u0d31\u0d4d\u0d31\u0d7d \u0d1f\u0d42\u0d33\u0d41\u0d15\u0d7e \u0d09\u0d2a\u0d2f\u0d4b\u0d17\u0d3f\u0d1a\u0d4d\u0d1a\u0d4d \u0d2a\u0d4a\u0d24\u0d41\u0d1c\u0d28\u0d3e\u0d30\u0d4b\u0d17\u0d4d\u0d2f \u0d38\u0d47\u0d35\u0d28\u0d19\u0d4d\u0d19\u0d33\u0d41\u0d1f\u0d46 \u0d17\u0d41\u0d23\u0d28\u0d3f\u0d32\u0d35\u0d3e\u0d30\u0d35\u0d41\u0d02 \u0d2a\u0d4d\u0d30\u0d35\u0d47\u0d36\u0d28\u0d15\u0d4d\u0d37\u0d2e\u0d24\u0d2f\u0d41\u0d02 \u0d24\u0d41\u0d1f\u0d7c\u0d1a\u0d4d\u0d1a\u0d2f\u0d3e\u0d2f\u0d3f \u0d2e\u0d46\u0d1a\u0d4d\u0d1a\u0d2a\u0d4d\u0d2a\u0d46\u0d1f\u0d41\u0d24\u0d4d\u0d24\u0d41\u0d15\u0d2f\u0d3e\u0d23\u0d4d \u0d1e\u0d19\u0d4d\u0d19\u0d33\u0d41\u0d1f\u0d46 \u0d32\u0d15\u0d4d\u0d37\u0d4d\u0d2f\u0d02.\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3261",
+      "time": 1661241759.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3261#issuecomment-1223703623",
+      "text": "@developedBySJ please do work on the above issue, or unassign yourself so that someone else can work."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#980",
+      "time": 1661241614.0,
+      "link": "https://github.com/coronasafe/care/issues/980#issuecomment-1223700853",
+      "text": "https://github.com/coronasafe/care/issues/989 @vigneshhari \r\n\r\nCreated one in care repo. Is there anything to be done on the FE? Should we close this issue?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#989",
+      "time": 1661241555.0,
+      "link": "https://github.com/coronasafe/care/issues/989",
+      "text": "Check availability of username"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#980",
+      "time": 1661230667.0,
+      "link": "https://github.com/coronasafe/care/issues/980#issuecomment-1223543620",
+      "text": "@vigneshhari can we have an issue for that?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3455",
+      "time": 1661230161.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3455#issuecomment-1223537438",
+      "text": "@rithviknishad let me get help on this.\r\n\r\n@rithviknishad this needs to be a customizable component. With each deployment, there must be option to change it. The default will be the above phrase."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3432",
+      "time": 1661230078.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3432#issuecomment-1223536122",
+      "text": "@arpancodes yes. total score will be sum of all subscores for a particular pressure sore. There will be one score for each of the pressure sores on the body\r\n\r\n@gigincg @nihal467 Yes, we need a redesign. I was imagining the OUSH score to appear in a floating window against each selected body part. It would be nice if someone can create a mockup design and we can start a discussion from there."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#980",
+      "time": 1661229894.0,
+      "link": "https://github.com/coronasafe/care/issues/980#issuecomment-1223533971",
+      "text": "@vigneshhari Currently we do have a Username availability check happening on the UI itself. That said that the username is available. \r\n\r\nWe need to make that availability check more accurate.\r\n\r\nCan you guys file an issue? @vigneshhari @gigincg @khavinshankar ? and then close this issue?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#983",
+      "time": 1661229775.0,
+      "link": "https://github.com/coronasafe/care/issues/983#issuecomment-1223532636",
+      "text": "@cp-Coder Thanks for pointing it out. I will be more careful in checking if an issue is already filed. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3356",
+      "time": 1661229693.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3356#issuecomment-1223531792",
+      "text": "@arpancodes I see changes requested. Please look into this and try closing it this week"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3433",
+      "time": 1661229576.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3433#issuecomment-1223530442",
+      "text": "@skks1212 Yes please!!"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3454",
+      "time": 1661148159.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3454",
+      "text": "Medicine: Lo Update"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3453",
+      "time": 1661147798.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3453",
+      "text": "Revamping Log Update"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3324",
+      "time": 1660930949.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3324#issuecomment-1220937080",
+      "text": "@developedBySJ The design looks great. Let push this out ASAP \r\n\r\n@gigincg @bodhish @nihal467 "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3438",
+      "time": 1660930709.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3438",
+      "text": "Prescription: Dosage"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3437",
+      "time": 1660926348.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3437#issuecomment-1220865414",
+      "text": "Blocked since the relevant fields in consultation has not been added yet. "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3437",
+      "time": 1660926304.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3437",
+      "text": "I/O balance to be changed to \"Administration Record\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3105",
+      "time": 1660924050.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3105#issuecomment-1220825488",
+      "text": "@gigincg I dont see this in staging!"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3436",
+      "time": 1660922933.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3436",
+      "text": "Advice: Consultation"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3435",
+      "time": 1660922310.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3435",
+      "text": "Investigation suggestion in consultation"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3433",
+      "time": 1660920810.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3433",
+      "text": "Rename \"Create Investigation\" button to \"Log Lab Result\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3356",
+      "time": 1660920457.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3356#issuecomment-1220767292",
+      "text": "@arpancodes Can we close this ASAP?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3432",
+      "time": 1660919946.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3432",
+      "text": "Pressure Sore: Enhancement (PUSH score)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3430",
+      "time": 1660916552.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3430",
+      "text": "Hemodynamic Parameters (vitals): Pain Scale"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3429",
+      "time": 1660916053.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3429",
+      "text": "Hemodynamic Parameters: Enhance content"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3428",
+      "time": 1660915426.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3428",
+      "text": "Hemodynamic parameters: edit heading"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2011",
+      "time": 1660915197.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2011",
+      "text": "Presets for Infusion/Output"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2011",
+      "time": 1660915196.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2011#issuecomment-1220673233",
+      "text": "Cant make sense of this either. Closing this issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2212",
+      "time": 1660913769.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2212#issuecomment-1220644375",
+      "text": "I am revising this requirement and breaking down the same to smaller issues\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3426",
+      "time": 1660913716.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3426",
+      "text": "Asset registration enhancements"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#983",
+      "time": 1660912742.0,
+      "link": "https://github.com/coronasafe/care/issues/983",
+      "text": "Bug: Asset Creation UI"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2747",
+      "time": 1660912013.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2747#issuecomment-1220615724",
+      "text": "@gigincg . We MUST allow both admission date and decision after consultation. Why would we disallow it?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3423",
+      "time": 1660834803.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3423",
+      "text": "Advanced filter: Last admitted to Bed: Sync with new bed management"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3413",
+      "time": 1660657824.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3413#issuecomment-1216666586",
+      "text": "Thanks Nihal. \r\n\r\n@gigincg point 1 above"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#980",
+      "time": 1660656507.0,
+      "link": "https://github.com/coronasafe/care/issues/980",
+      "text": "Bug: User registration"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3413",
+      "time": 1660634417.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3413#issuecomment-1216245003",
+      "text": "> Staff can create users with their own home facility as home facility. Manipur needed District Admin intervention for migration existing users. I don't see the need for such an intervention in the future\n\n@gigincg tested in staging. Currently staff is unable to assign home facility \n@nihal467 can you please test too"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3413",
+      "time": 1660631294.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3413#issuecomment-1216200642",
+      "text": "@vigneshhari @gigincg "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3413",
+      "time": 1660631272.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3413",
+      "text": "Assigning home facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2283",
+      "time": 1660306681.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2283#issuecomment-1213051695",
+      "text": "@arpancodes this is also resolved. Thank you"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2942",
+      "time": 1660306608.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2942",
+      "text": "Add BP to vitals"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2942",
+      "time": 1660306608.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2942#issuecomment-1213050771",
+      "text": "@arpancodes This is already taken care of. Thanks for bringing this to my notice. Closing the issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2738",
+      "time": 1660306414.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2738#issuecomment-1213048167",
+      "text": "@skks1212 @patelaryan7751 I have broken this issue down further in the following issues\r\n#3332 Allergies\r\n#3333 Vaccine\r\n#3335 Blood group\r\n#3336 Height weight\r\n#3338 Family details"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3331",
+      "time": 1660306275.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3331#issuecomment-1213046249",
+      "text": "A quick clarification on the content of the Patient registration form and consultation form\r\n<img width=\"932\" alt=\"Screenshot 2022-08-12 at 5 22 32 PM\" src=\"https://user-images.githubusercontent.com/67050716/184351271-1a9feb50-2550-43f0-a4b0-491af4f2349a.png\">\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3332",
+      "time": 1660306187.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3332#issuecomment-1213045029",
+      "text": "A quick clarification on the content of the Patient registration form and consultation form\r\n<img width=\"932\" alt=\"Screenshot 2022-08-12 at 5 22 32 PM\" src=\"https://user-images.githubusercontent.com/67050716/184351022-bb886b89-e4b3-45c1-b0e2-6e15148ceccb.png\">\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3333",
+      "time": 1660306138.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3333#issuecomment-1213044392",
+      "text": "A quick clarification on the content of the Patient registration form and consultation form\r\n![Uploading Screenshot 2022-08-12 at 5.22.32 PM.png\u2026]()\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3335",
+      "time": 1660306018.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3335#issuecomment-1213042680",
+      "text": "A quick clarification on the content of the Patient registration form and consultation form\r\n<img width=\"932\" alt=\"Screenshot 2022-08-12 at 5 22 32 PM\" src=\"https://user-images.githubusercontent.com/67050716/184350633-8bc22ba3-03e8-4909-a050-ac0e64446604.png\">\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3336",
+      "time": 1660305951.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3336#issuecomment-1213041727",
+      "text": "A quick clarification on the content of the Patient registration form and consultation form\r\n<img width=\"932\" alt=\"Screenshot 2022-08-12 at 5 22 32 PM\" src=\"https://user-images.githubusercontent.com/67050716/184350480-764cd785-a8ab-49fc-9451-7e620ac779c6.png\">\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3361",
+      "time": 1660305842.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3361#issuecomment-1213040206",
+      "text": "Clarification on the revised content in patient registration form and consultation form\r\n<img width=\"932\" alt=\"Screenshot 2022-08-12 at 5 22 32 PM\" src=\"https://user-images.githubusercontent.com/67050716/184350214-ef9ba8ce-98e3-42e2-a328-83e8a05e6b93.png\">\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3341",
+      "time": 1660305761.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3341#issuecomment-1213039126",
+      "text": "@arpancodes Family details must go to the \"Health details in consultation form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3341",
+      "time": 1660305583.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3341#issuecomment-1213036761",
+      "text": "@arpancodes \r\nYes, please rename the existing section in patient registration form to \"COVID Specific Info\"\r\n\r\nHowever, for your clarification please look at the below\r\n<img width=\"932\" alt=\"Screenshot 2022-08-12 at 5 22 32 PM\" src=\"https://user-images.githubusercontent.com/67050716/184349491-ec8f4ede-cfb0-477e-8029-a6758f9a113e.png\">\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3338",
+      "time": 1660305246.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3338#issuecomment-1213032672",
+      "text": "@arpancodes \r\n<img width=\"932\" alt=\"Screenshot 2022-08-12 at 5 22 32 PM\" src=\"https://user-images.githubusercontent.com/67050716/184348616-eb6513d1-ef10-4a02-8283-0d6d62296893.png\">\r\n\r\n\r\nThere are 2 forms:\r\n1: Patient registration form to have personal details of patients and COVID specific details\r\n2: Cnsultation form is to have Medical history, health details, consultation\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3325",
+      "time": 1660299903.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3325#issuecomment-1212960404",
+      "text": "@Ashesh3 That's great. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3331",
+      "time": 1660149089.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3331#issuecomment-1210963624",
+      "text": "Preserving the COVID Specific details, made edits to #3341 \r\n\r\nI have further broken down the issues to have each of the points above as one separate issue. Since for many fields, more details have to be added in, I thought its best to break things down.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3333",
+      "time": 1660148670.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3333#issuecomment-1210954158",
+      "text": "For medical purposes, COVID ID is not going to be very relevant. I checked it with Dr. Athul as well @gigincg "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3325",
+      "time": 1660148561.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3325#issuecomment-1210951941",
+      "text": "@gigincg contact tracing for covid has become a thing of the past. Therefore, even though i recommend keeping the covid positive label, i do not support having the label for \"contact with confirmed carrier\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3341",
+      "time": 1660148133.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3341#issuecomment-1210940308",
+      "text": "Agreed. Edited issue to call this section \"COVID Specific Details\""
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3367",
+      "time": 1660106814.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3367",
+      "text": "File Upload: Rename permission to owner"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3366",
+      "time": 1660106617.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3366",
+      "text": "File Upload: Option to delete"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3361",
+      "time": 1660031596.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3361",
+      "text": "Medical History: Introduce timeline format"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2091",
+      "time": 1659967957.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2091#issuecomment-1208184546",
+      "text": "The Tab may be called \"Live Monitoring\"\r\n\r\nLet's have a list of various hospitals on top like the various tabs on the patient dashboard for \"Update\", \"Summary\", \"medicines, etc. as the user clicks on various tabs, all cameras from the hospital must show up.\r\n\r\nThe Feed must show the bed no. its looking at. the default view must be a \"Patient view\" for any bed. \r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3341",
+      "time": 1659804433.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3341#issuecomment-1207245532",
+      "text": "I completely agree you on the COVID , non covid option. Lets hide it for now. \n\nI will work on studying the scope of creating various clinical option like covid, non covid. \n\nSo let's go ahead and hide it for now "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3341",
+      "time": 1659728630.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3341",
+      "text": "Remove redundant fields from Health details"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3338",
+      "time": 1659727861.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3338",
+      "text": "Family History- add field in health details"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3336",
+      "time": 1659727558.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3336",
+      "text": "Height and Weight : Reposition"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3335",
+      "time": 1659727247.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3335",
+      "text": "Blood Group: reposition"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3333",
+      "time": 1659726616.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3333",
+      "text": "Vaccinations: in Health details"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3332",
+      "time": 1659725506.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3332",
+      "text": "Allergies: to be added to health details"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3331",
+      "time": 1659715157.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3331",
+      "text": "Move \"Health Details\" and \"Medical History\" from patient registration form to consultation form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3325",
+      "time": 1659683677.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3325",
+      "text": "Removing \"Contact with confirmed carrier\" label from patient list"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3324",
+      "time": 1659683386.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3324#issuecomment-1206120154",
+      "text": "@developedBySJ can we have size of cards consistent?\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/dashboard#203",
+      "time": 1659680673.0,
+      "link": "https://github.com/coronasafe/dashboard/issues/203",
+      "text": "Meta Dashboard for Manipur- error in Patient by Age"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3316",
+      "time": 1659623822.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3316",
+      "text": "Removing \"(COVID)Negative/Positive\" label from patient list"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3261",
+      "time": 1659530348.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3261#issuecomment-1203896071",
+      "text": "Let's revert the design to the old one. \r\n\r\nLet there be evenly sized rectangles on the left side of the name of patients for all .\r\n- Where bed is allocated, we show location and bed no. in the box\r\n- For patients that have consultation filed and no bed assigned, show their \"decision after consultation input\"\r\n<img width=\"757\" alt=\"Screenshot 2022-08-03 at 6 00 34 PM\" src=\"https://user-images.githubusercontent.com/67050716/182608770-d260eb12-d86f-4688-99b0-bb6262ffcc2c.png\">\r\n- For patients that are only registered and no consultation is filed, lets have No Consultation filed and lets also make the box in red. With this we can get rid of the lable that we have otherwise on the right side for no consultation filed. \r\n\r\nThis is my suggestion.\r\n\r\n@gigincg @bodhish @nihal467 What do you guys think?\r\n\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2487",
+      "time": 1659452322.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2487#issuecomment-1202757962",
+      "text": "@gigincg @khavinshankar Please review this. Lets close this this week"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2487",
+      "time": 1659452153.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2487#issuecomment-1202751337",
+      "text": "@nihal467 I have tested this in preview. It looks good to me. Check for the patient \"Annie Philip\" Lets try and merge it this week itself"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#809",
+      "time": 1659450957.0,
+      "link": "https://github.com/coronasafe/care/pull/809#issuecomment-1202709903",
+      "text": "@Marmik2003 can you make the changes and close this ASAP? been pending for a long time"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3301",
+      "time": 1659449924.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3301",
+      "text": "Allow decimals of dosage "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3237",
+      "time": 1658842658.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3237",
+      "text": "Integrate Digital Stethoscope to CARE"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3235",
+      "time": 1658835797.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3235",
+      "text": "Leave Against Medical Advise (LAMA)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3195",
+      "time": 1658490620.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3195",
+      "text": "Adding Procedure to Consultation"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3194",
+      "time": 1658489177.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3194",
+      "text": "PRN Prescription"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3188",
+      "time": 1658471754.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3188",
+      "text": "Notification for Notice Board"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3176",
+      "time": 1658406678.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3176",
+      "text": "Facility Faetures"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3166",
+      "time": 1658227479.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3166",
+      "text": "Expand Facility Type"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/10bedicu#51",
+      "time": 1658162157.0,
+      "link": "https://github.com/coronasafe/10bedicu/issues/51#issuecomment-1187718634",
+      "text": "This is deployed. Closing the issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/10bedicu#51",
+      "time": 1658162157.0,
+      "link": "https://github.com/coronasafe/10bedicu/issues/51",
+      "text": "Add modal to show images (Hospital Image gallery)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2941",
+      "time": 1657555211.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2941#issuecomment-1180589099",
+      "text": "yes @skks1212 \r\n\r\nYou are working on this right? \r\n\r\nYou had a discussion with gigin the other day right. To rename heart-rate as pulse rate and repurpose it. \r\n\r\nCan you add more details of what exactly you are doing and take it forward?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3105",
+      "time": 1657554648.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3105",
+      "text": "Prescription- Notes"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3104",
+      "time": 1657554363.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3104",
+      "text": "Prescription- Route"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3103",
+      "time": 1657554094.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3103",
+      "text": "Prescription- Dosage/frequency option"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3102",
+      "time": 1657553792.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3102",
+      "text": "Prescription: Dosage"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/10bedicu#50",
+      "time": 1657540281.0,
+      "link": "https://github.com/coronasafe/10bedicu/pull/50#issuecomment-1180314501",
+      "text": "@kunatastic We still have the header on the images in Preview deployment. Can we have it updated and pushed to production ASAP?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1789",
+      "time": 1657256665.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1789#issuecomment-1178555161",
+      "text": "Hey @ishanExtreme any progress on this?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2598",
+      "time": 1656951498.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2598#issuecomment-1173980050",
+      "text": "The log update form is to be bifurcated.\r\n\r\n\r\n\r\n- Periodic monitoring, like vitals\r\n- Events- nursing care, Dialysis\r\n- Investigation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#876",
+      "time": 1656596309.0,
+      "link": "https://github.com/coronasafe/care/pull/876#issuecomment-1171232323",
+      "text": "@cp-Coder Hey, whats the status on this?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2943",
+      "time": 1656572763.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2943#issuecomment-1170847390",
+      "text": "This is happening for the first log update in a consultation.\r\n\r\nTry patient https://care.coronasafe.in/facility/c92cc4df-0fea-4d37-9c24-1c9f07bfac23/patient/938fd193-fd96-41ab-88d0-439e4d6fcd37/consultation/5c88404b-4fb0-4c01-9a10-116457b7b344\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2942",
+      "time": 1656427896.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2942",
+      "text": "Add BP to vitals"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2941",
+      "time": 1656427881.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2941",
+      "text": "Reconcile Pulse rate and heart rate"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2931",
+      "time": 1656397704.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2931",
+      "text": "Re-admission of patient"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2942",
+      "time": 1656427896.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2942",
+      "text": "Add BP to vitals"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2941",
+      "time": 1656427881.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2941",
+      "text": "Reconcile Pulse rate and heart rate"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2931",
+      "time": 1656397704.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2931",
+      "text": "Re-admission of patient"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2210",
+      "time": 1655871199.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2210#issuecomment-1162617193",
+      "text": "Yes. But we need to change the drop-down with the above 5 options. \n\n@gigincg please confirm that we are reusing the COVID category for this categorisation "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2160",
+      "time": 1655815231.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2160",
+      "text": "Patrol Mode for Cameras"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2151",
+      "time": 1655815166.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2151#issuecomment-1161694068",
+      "text": "Only building flags for beds remains"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2137",
+      "time": 1655815101.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2137#issuecomment-1161692995",
+      "text": "@gigincg is this good to close?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2074",
+      "time": 1655814946.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2074",
+      "text": "Hide External result feature on GCP "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2074",
+      "time": 1655814945.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2074#issuecomment-1161690375",
+      "text": "The decision is to not hide any feature. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2200",
+      "time": 1655814909.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2200",
+      "text": "Usability bugs"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2070",
+      "time": 1655814873.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2070#issuecomment-1161689158",
+      "text": "working fine now. closing issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2070",
+      "time": 1655814873.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2070",
+      "text": "PDF Preview not Working : Sample Test "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2056",
+      "time": 1655814785.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2056#issuecomment-1161687687",
+      "text": "@gigincg "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2046",
+      "time": 1655814699.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2046",
+      "text": "Patient Consultation Form UI Change"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2048",
+      "time": 1655814379.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2048",
+      "text": "UI Change : Consultation Update page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2048",
+      "time": 1655814379.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2048#issuecomment-1161680530",
+      "text": "issue to be filed to revamp the consultation form. will be taken care off. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2044",
+      "time": 1655814335.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2044",
+      "text": "Alignment Issue : Consultation Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2044",
+      "time": 1655814335.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2044#issuecomment-1161679743",
+      "text": "redundant"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1788",
+      "time": 1655814307.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1788#issuecomment-1161679200",
+      "text": "this was a feature that was relevant during covid. \n\nThis is however a good to have feature. to have a flag, whenever a patient is diagnosed with a disease, cured and then rediagnosed with the same disease again"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1789",
+      "time": 1655814167.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1789#issuecomment-1161676636",
+      "text": "The issue is, if there is a patient admitted in a hospital from 5th to 15th of a month, the user must be able to fetch admission list of any particular day, 10th. This patients records must also come up."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1811",
+      "time": 1655813961.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1811#issuecomment-1161672988",
+      "text": "redundant"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#1811",
+      "time": 1655813962.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1811",
+      "text": "Summary by Email"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2015",
+      "time": 1655813941.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2015",
+      "text": "Check relevance of prescriptions"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2015",
+      "time": 1655813940.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2015#issuecomment-1161672586",
+      "text": "Prescription builder is being revamped"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2174",
+      "time": 1655813246.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2174",
+      "text": "Add empty state for Tele-ICU page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2174",
+      "time": 1655813246.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2174#issuecomment-1161659857",
+      "text": "Redundant issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2199",
+      "time": 1655813148.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2199#issuecomment-1161658050",
+      "text": "Already fixed. tested in staging"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2199",
+      "time": 1655813148.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2199",
+      "text": "Marking is missing in graph : Consultation page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2160",
+      "time": 1655815231.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2160",
+      "text": "Patrol Mode for Cameras"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2151",
+      "time": 1655815166.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2151#issuecomment-1161694068",
+      "text": "Only building flags for beds remains"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2137",
+      "time": 1655815101.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2137#issuecomment-1161692995",
+      "text": "@gigincg is this good to close?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2074",
+      "time": 1655814946.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2074",
+      "text": "Hide External result feature on GCP "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2074",
+      "time": 1655814945.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2074#issuecomment-1161690375",
+      "text": "The decision is to not hide any feature. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2200",
+      "time": 1655814909.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2200",
+      "text": "Usability bugs"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2070",
+      "time": 1655814873.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2070#issuecomment-1161689158",
+      "text": "working fine now. closing issue"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2070",
+      "time": 1655814873.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2070",
+      "text": "PDF Preview not Working : Sample Test "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2056",
+      "time": 1655814785.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2056#issuecomment-1161687687",
+      "text": "@gigincg "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2046",
+      "time": 1655814699.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2046",
+      "text": "Patient Consultation Form UI Change"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2048",
+      "time": 1655814379.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2048",
+      "text": "UI Change : Consultation Update page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2048",
+      "time": 1655814379.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2048#issuecomment-1161680530",
+      "text": "issue to be filed to revamp the consultation form. will be taken care off. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2044",
+      "time": 1655814335.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2044",
+      "text": "Alignment Issue : Consultation Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2044",
+      "time": 1655814335.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2044#issuecomment-1161679743",
+      "text": "redundant"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1788",
+      "time": 1655814307.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1788#issuecomment-1161679200",
+      "text": "this was a feature that was relevant during covid. \n\nThis is however a good to have feature. to have a flag, whenever a patient is diagnosed with a disease, cured and then rediagnosed with the same disease again"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1789",
+      "time": 1655814167.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1789#issuecomment-1161676636",
+      "text": "The issue is, if there is a patient admitted in a hospital from 5th to 15th of a month, the user must be able to fetch admission list of any particular day, 10th. This patients records must also come up."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1811",
+      "time": 1655813961.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1811#issuecomment-1161672988",
+      "text": "redundant"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#1811",
+      "time": 1655813962.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1811",
+      "text": "Summary by Email"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2015",
+      "time": 1655813941.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2015",
+      "text": "Check relevance of prescriptions"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2015",
+      "time": 1655813940.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2015#issuecomment-1161672586",
+      "text": "Prescription builder is being revamped"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2174",
+      "time": 1655813246.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2174",
+      "text": "Add empty state for Tele-ICU page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2174",
+      "time": 1655813246.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2174#issuecomment-1161659857",
+      "text": "Redundant issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2199",
+      "time": 1655813148.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2199#issuecomment-1161658050",
+      "text": "Already fixed. tested in staging"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2199",
+      "time": 1655813148.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2199",
+      "text": "Marking is missing in graph : Consultation page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/10bedicu#44",
+      "time": 1655734127.0,
+      "link": "https://github.com/coronasafe/10bedicu/issues/44#issuecomment-1160495173",
+      "text": "@shrihari689 @gigincg What is happening here? We need this website update. Are there any blockers? Srihari is already given editor access to the website sheet"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2212",
+      "time": 1655705243.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2212#issuecomment-1160011998",
+      "text": "@developedBySJ I have made some changes to simplify the module. In the earlier design we were registering if the asset was a 10bedicu asset and if yet, there were a lot of fields to be autofilled. I have taken out all that and simplifies the design a bit. \r\n\r\nNow, we need to only record if the asset is an external/internal asset like we have now and then record all the fields as in the design. Please feel free to get in touch if there is any confucion.\r\n\r\n\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/10bedicu#44",
+      "time": 1655734127.0,
+      "link": "https://github.com/coronasafe/10bedicu/issues/44#issuecomment-1160495173",
+      "text": "@shrihari689 @gigincg What is happening here? We need this website update. Are there any blockers? Srihari is already given editor access to the website sheet"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2212",
+      "time": 1655705243.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2212#issuecomment-1160011998",
+      "text": "@developedBySJ I have made some changes to simplify the module. In the earlier design we were registering if the asset was a 10bedicu asset and if yet, there were a lot of fields to be autofilled. I have taken out all that and simplifies the design a bit. \r\n\r\nNow, we need to only record if the asset is an external/internal asset like we have now and then record all the fields as in the design. Please feel free to get in touch if there is any confucion.\r\n\r\n\r\n\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2234",
+      "time": 1655559279.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2234",
+      "text": "Move Health Details to Consulation Form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2234",
+      "time": 1655559278.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2234#issuecomment-1159466295",
+      "text": "already covered in #2218"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2246",
+      "time": 1655559234.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2246",
+      "text": "CARE: Prep for Manipur launch"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2765",
+      "time": 1655559205.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2765",
+      "text": "Insulin frequency : wrong visualisation"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2764",
+      "time": 1655558945.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2764",
+      "text": "IO- only positive quantities to be mentioned"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2763",
+      "time": 1655558729.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2763",
+      "text": "Preview Icon"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2246",
+      "time": 1655558025.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2246#issuecomment-1159463184",
+      "text": "#2759 , #2760, #2761 , #2762\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2762",
+      "time": 1655557910.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2762",
+      "text": "Patient details- cleanup"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2761",
+      "time": 1655557630.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2761",
+      "text": "Remove redundant fields from Log update"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2760",
+      "time": 1655557495.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2760",
+      "text": "Consultation form- remove redundant fields "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2759",
+      "time": 1655557268.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2759",
+      "text": "Add icons to facility listing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2247",
+      "time": 1655556958.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2247#issuecomment-1159460047",
+      "text": "@gigincg what needs to be done with this issue?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2260",
+      "time": 1655556674.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2260#issuecomment-1159459408",
+      "text": "@nihal467 Please test again, if resolved close issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2399",
+      "time": 1655556535.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2399#issuecomment-1159459102",
+      "text": "When there are unread notifications, let's have a red icon with the number of notifications appear near \"Notifications\" on the sidebar. When the sidebar is collapsed, a red dot near the notifications icon would suffice. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2430",
+      "time": 1655555901.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2430#issuecomment-1159457603",
+      "text": "Align with #2212"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#757",
+      "time": 1655555852.0,
+      "link": "https://github.com/coronasafe/care/issues/757#issuecomment-1159457472",
+      "text": "align with #2212"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2431",
+      "time": 1655555801.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2431#issuecomment-1159457384",
+      "text": "Please align with #2212"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2451",
+      "time": 1655555525.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2451",
+      "text": "Validation: New Bed Assignment should be newer than oldest start time"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2451",
+      "time": 1655555525.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2451#issuecomment-1159456723",
+      "text": "The issue seemed resolved in staging"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2647",
+      "time": 1655555466.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2647#issuecomment-1159456566",
+      "text": "This issue seems resolved in staging"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2471",
+      "time": 1655554632.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2471",
+      "text": "Remove overlap and improve spacing in mobile view"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2550",
+      "time": 1655554286.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2550",
+      "text": "Patient Registration Form: Move Vaccination related Fields to Medical History"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2550",
+      "time": 1655554286.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2550#issuecomment-1159453846",
+      "text": "redundant issue. refer #2218"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2557",
+      "time": 1655554162.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2557#issuecomment-1159453501",
+      "text": "Make all the above fields manadatory."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2598",
+      "time": 1655553847.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2598#issuecomment-1159452723",
+      "text": "@gigincg lets finalise on the changes and move ahead"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2642",
+      "time": 1655553670.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2642",
+      "text": "Patient list filter \"Last Admitted\" fails"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2642",
+      "time": 1655553669.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2642#issuecomment-1159452131",
+      "text": "The bed types in the advanced filter option needs to sync with the updated bedtypes. taken care of in #2752"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#370",
+      "time": 1655553445.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/370#issuecomment-1159451571",
+      "text": "Let's have a feature to list facilities in any hospital.  \n\nAdd a field for \"Services available\" and give a dropdown with the Multi-select option.\n\nA few options must be \n- CT Scan\n- Maternity care\n- X-Ray facility\n- Neonatal care\n- Operation theater\n\nThis information must be visible as small flags below phone. no. on hospital dashboard (https://care.coronasafe.in/facility/551f9e09-04a3-4f52-ade2-1db45588741d) as well as on facilities list (https://care.coronasafe.in/facility)\n\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2649",
+      "time": 1655552850.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2649",
+      "text": "Hide the Configure button if asset_class = null"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2649",
+      "time": 1655552850.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2649#issuecomment-1159450406",
+      "text": "@rithviknishad feel free to close the issue with above comment, if you find duplicates"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2656",
+      "time": 1655552695.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2656",
+      "text": "Longitude value doesnot accepts more than 90 and less than -90"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2656",
+      "time": 1655552695.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2656#issuecomment-1159450090",
+      "text": "Done in #2741"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2661",
+      "time": 1655552616.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2661",
+      "text": "Assets: pagination buttons are disfunctional on intital page load"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2661",
+      "time": 1655552615.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2661#issuecomment-1159449939",
+      "text": "duplicate issue #2700"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2673",
+      "time": 1655552338.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2673#issuecomment-1159449391",
+      "text": "Similar to #847 where PR is submitted for review. Please note @patelaryan7751 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#850",
+      "time": 1655551889.0,
+      "link": "https://github.com/coronasafe/care/issues/850#issuecomment-1159448522",
+      "text": "Multiple people can be assigned to the same bed.\n\nEg: https://care.coronasafe.in/facility/015ad911-39b7-4104-b304-bf8178c33830/patients\n2 patients are assigned to Bed10- 10bedicu.\n\nAdd rule that if a bed is occupied by any patient, that bed must not appear as an option in the dropdown in \"Assign bed\" window.\n\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2683",
+      "time": 1655551591.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2683#issuecomment-1159447902",
+      "text": "Comes up properly now. The issue seems resolved. Reopen issue if the issue persists @nihal467 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2683",
+      "time": 1655551591.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2683",
+      "text": "Camera UI button is missing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2700",
+      "time": 1655551407.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2700#issuecomment-1159447526",
+      "text": "This page navigation issue exists in Patient listing also"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2756",
+      "time": 1655550723.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2756#issuecomment-1159446110",
+      "text": "@gigincg is this intentionally made transparent?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2079",
+      "time": 1655541713.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2079#issuecomment-1159398778",
+      "text": "@arpancodes let's clear out all stale issues. Close it/work on it/ unassign so that someone else works on it"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2086",
+      "time": 1655541367.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2086",
+      "text": "Tele ICU Issues"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2086",
+      "time": 1655541367.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2086#issuecomment-1159397987",
+      "text": "- Patients feed is disabled for discharged patients.\r\n- blinking is resolved\r\n- https://github.com/coronasafe/care_fe/issues/2753\r\n- Breadcrumbs removed\r\n- must NOT encourage users to take screenshots. to promote more privacy-sensitive behavior\r\n- same"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2753",
+      "time": 1655541242.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2753",
+      "text": "Stop button on Live feed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2752",
+      "time": 1655540840.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2752",
+      "text": "Sync Bed Types in Advanced filter"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2751",
+      "time": 1655540479.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2751",
+      "text": "Add Location to list of beds in Update bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2326",
+      "time": 1655539919.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2326#issuecomment-1159393851",
+      "text": "Cant see this change in CARE. @gigincg "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2750",
+      "time": 1655539640.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2750",
+      "text": "Patients with no consultation filed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2749",
+      "time": 1655539210.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2749",
+      "text": "Diagnosis- Remove from Notes"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2234",
+      "time": 1655559279.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2234",
+      "text": "Move Health Details to Consulation Form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2234",
+      "time": 1655559278.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2234#issuecomment-1159466295",
+      "text": "already covered in #2218"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2246",
+      "time": 1655559234.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2246",
+      "text": "CARE: Prep for Manipur launch"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2765",
+      "time": 1655559205.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2765",
+      "text": "Insulin frequency : wrong visualisation"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2764",
+      "time": 1655558945.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2764",
+      "text": "IO- only positive quantities to be mentioned"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2763",
+      "time": 1655558729.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2763",
+      "text": "Preview Icon"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2246",
+      "time": 1655558025.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2246#issuecomment-1159463184",
+      "text": "#2759 , #2760, #2761 , #2762\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2762",
+      "time": 1655557910.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2762",
+      "text": "Patient details- cleanup"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2761",
+      "time": 1655557630.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2761",
+      "text": "Remove redundant fields from Log update"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2760",
+      "time": 1655557495.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2760",
+      "text": "Consultation form- remove redundant fields "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2759",
+      "time": 1655557268.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2759",
+      "text": "Add icons to facility listing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2247",
+      "time": 1655556958.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2247#issuecomment-1159460047",
+      "text": "@gigincg what needs to be done with this issue?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2260",
+      "time": 1655556674.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2260#issuecomment-1159459408",
+      "text": "@nihal467 Please test again, if resolved close issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2399",
+      "time": 1655556535.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2399#issuecomment-1159459102",
+      "text": "When there are unread notifications, let's have a red icon with the number of notifications appear near \"Notifications\" on the sidebar. When the sidebar is collapsed, a red dot near the notifications icon would suffice. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2430",
+      "time": 1655555901.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2430#issuecomment-1159457603",
+      "text": "Align with #2212"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#757",
+      "time": 1655555852.0,
+      "link": "https://github.com/coronasafe/care/issues/757#issuecomment-1159457472",
+      "text": "align with #2212"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2431",
+      "time": 1655555801.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2431#issuecomment-1159457384",
+      "text": "Please align with #2212"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2451",
+      "time": 1655555525.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2451",
+      "text": "Validation: New Bed Assignment should be newer than oldest start time"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2451",
+      "time": 1655555525.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2451#issuecomment-1159456723",
+      "text": "The issue seemed resolved in staging"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2647",
+      "time": 1655555466.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2647#issuecomment-1159456566",
+      "text": "This issue seems resolved in staging"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2471",
+      "time": 1655554632.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2471",
+      "text": "Remove overlap and improve spacing in mobile view"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2550",
+      "time": 1655554286.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2550",
+      "text": "Patient Registration Form: Move Vaccination related Fields to Medical History"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2550",
+      "time": 1655554286.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2550#issuecomment-1159453846",
+      "text": "redundant issue. refer #2218"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2557",
+      "time": 1655554162.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2557#issuecomment-1159453501",
+      "text": "Make all the above fields manadatory."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2598",
+      "time": 1655553847.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2598#issuecomment-1159452723",
+      "text": "@gigincg lets finalise on the changes and move ahead"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2642",
+      "time": 1655553670.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2642",
+      "text": "Patient list filter \"Last Admitted\" fails"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2642",
+      "time": 1655553669.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2642#issuecomment-1159452131",
+      "text": "The bed types in the advanced filter option needs to sync with the updated bedtypes. taken care of in #2752"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#370",
+      "time": 1655553445.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/370#issuecomment-1159451571",
+      "text": "Let's have a feature to list facilities in any hospital.  \n\nAdd a field for \"Services available\" and give a dropdown with the Multi-select option.\n\nA few options must be \n- CT Scan\n- Maternity care\n- X-Ray facility\n- Neonatal care\n- Operation theater\n\nThis information must be visible as small flags below phone. no. on hospital dashboard (https://care.coronasafe.in/facility/551f9e09-04a3-4f52-ade2-1db45588741d) as well as on facilities list (https://care.coronasafe.in/facility)\n\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2649",
+      "time": 1655552850.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2649",
+      "text": "Hide the Configure button if asset_class = null"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2649",
+      "time": 1655552850.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2649#issuecomment-1159450406",
+      "text": "@rithviknishad feel free to close the issue with above comment, if you find duplicates"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2656",
+      "time": 1655552695.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2656",
+      "text": "Longitude value doesnot accepts more than 90 and less than -90"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2656",
+      "time": 1655552695.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2656#issuecomment-1159450090",
+      "text": "Done in #2741"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2661",
+      "time": 1655552616.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2661",
+      "text": "Assets: pagination buttons are disfunctional on intital page load"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2661",
+      "time": 1655552615.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2661#issuecomment-1159449939",
+      "text": "duplicate issue #2700"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2673",
+      "time": 1655552338.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2673#issuecomment-1159449391",
+      "text": "Similar to #847 where PR is submitted for review. Please note @patelaryan7751 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#850",
+      "time": 1655551889.0,
+      "link": "https://github.com/coronasafe/care/issues/850#issuecomment-1159448522",
+      "text": "Multiple people can be assigned to the same bed.\n\nEg: https://care.coronasafe.in/facility/015ad911-39b7-4104-b304-bf8178c33830/patients\n2 patients are assigned to Bed10- 10bedicu.\n\nAdd rule that if a bed is occupied by any patient, that bed must not appear as an option in the dropdown in \"Assign bed\" window.\n\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2683",
+      "time": 1655551591.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2683#issuecomment-1159447902",
+      "text": "Comes up properly now. The issue seems resolved. Reopen issue if the issue persists @nihal467 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2683",
+      "time": 1655551591.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2683",
+      "text": "Camera UI button is missing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2700",
+      "time": 1655551407.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2700#issuecomment-1159447526",
+      "text": "This page navigation issue exists in Patient listing also"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2756",
+      "time": 1655550723.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2756#issuecomment-1159446110",
+      "text": "@gigincg is this intentionally made transparent?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2079",
+      "time": 1655541713.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2079#issuecomment-1159398778",
+      "text": "@arpancodes let's clear out all stale issues. Close it/work on it/ unassign so that someone else works on it"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2086",
+      "time": 1655541367.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2086",
+      "text": "Tele ICU Issues"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2086",
+      "time": 1655541367.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2086#issuecomment-1159397987",
+      "text": "- Patients feed is disabled for discharged patients.\r\n- blinking is resolved\r\n- https://github.com/coronasafe/care_fe/issues/2753\r\n- Breadcrumbs removed\r\n- must NOT encourage users to take screenshots. to promote more privacy-sensitive behavior\r\n- same"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2753",
+      "time": 1655541242.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2753",
+      "text": "Stop button on Live feed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2752",
+      "time": 1655540840.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2752",
+      "text": "Sync Bed Types in Advanced filter"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2751",
+      "time": 1655540479.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2751",
+      "text": "Add Location to list of beds in Update bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2326",
+      "time": 1655539919.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2326#issuecomment-1159393851",
+      "text": "Cant see this change in CARE. @gigincg "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2750",
+      "time": 1655539640.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2750",
+      "text": "Patients with no consultation filed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2749",
+      "time": 1655539210.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2749",
+      "text": "Diagnosis- Remove from Notes"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2742",
+      "time": 1655473360.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2742",
+      "text": "History of present illness"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2159",
+      "time": 1655466404.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2159#issuecomment-1158791742",
+      "text": "Asset type covered in #2212 "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2741",
+      "time": 1655466305.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2741",
+      "text": "Unable to enter longitude above 91"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2018",
+      "time": 1655461489.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2018",
+      "text": "Irregular rhythm vital values"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2018",
+      "time": 1655461489.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2018#issuecomment-1158732311",
+      "text": "Vitals are anyways visible in the patient dashboard. Redundant issue. closing "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2020",
+      "time": 1655461339.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2020#issuecomment-1158730407",
+      "text": "HBA1C must be added to the seeded data in investigations. \r\ndetails in row 134 of https://docs.google.com/spreadsheets/d/1hN13p-BDbb1Pkl3a8tcVdWFsFxncju2QPfeOEkKh51E/edit?usp=sharing "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2017",
+      "time": 1655460532.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2017",
+      "text": "UI rework for \"Normal\" Consultation Update"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2017",
+      "time": 1655460532.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2017#issuecomment-1158720200",
+      "text": "lack of detail. closing the issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2014",
+      "time": 1655460496.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2014#issuecomment-1158719732",
+      "text": "There are more changes required in medical history than simply adding ICD-11. it is explained in https://github.com/coronasafe/care_fe/issues/2218.\r\n\r\nTrack it in #2218 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2014",
+      "time": 1655460497.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2014",
+      "text": "UI change in Medical History"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2437",
+      "time": 1655460034.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2437#issuecomment-1158713213",
+      "text": "Review required"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2437",
+      "time": 1655459868.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2437",
+      "text": "Inventory Summary Malfunction "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2011",
+      "time": 1655459769.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2011#issuecomment-1158709713",
+      "text": "@gigincg what is intended here?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#693",
+      "time": 1655459664.0,
+      "link": "https://github.com/coronasafe/care/issues/693#issuecomment-1158708400",
+      "text": "Patient Flow: ![Process Flow](https://user-images.githubusercontent.com/67050716/174274685-a03e2e02-c896-482e-9b23-ed18aff4bd25.png)\r\n\r\nTeleICU concept diagram: \r\n![CARE : Concepts 3](https://user-images.githubusercontent.com/67050716/174274827-f1955dd5-c8fe-466a-9524-803b8d8ea0b4.png)\r\n\r\nTeleICU product documentation: https://docs.google.com/document/d/1MXHtQ7nLxms73znV8bURpSyDU3KWxWp-9MiB1hKNzqk/edit?usp=sharing\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#693",
+      "time": 1655459664.0,
+      "link": "https://github.com/coronasafe/care/issues/693",
+      "text": "Design Documentation for TeleICU Modules"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2016",
+      "time": 1655459298.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2016#issuecomment-1158703515",
+      "text": "The \"Diagnosis\" field must be a text field. This text field must allow the user to type and search through any disease in ICD-11 (Internal Classification of diseases available at https://icd.who.int/en . The user must be able to find the right disease and select it. We need to also have an \"Others\" option here for when the user is not sure about the ICD category. The other option must allow the user the type and enter any text."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2732",
+      "time": 1655458124.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2732",
+      "text": "Pain scale- Log Update"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2731",
+      "time": 1655457717.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2731",
+      "text": "Investigation View"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#59",
+      "time": 1655389331.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/59",
+      "text": "Time range for leaderboard"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2701",
+      "time": 1655118449.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2701",
+      "text": "Deleted doctors appear in Doctor Connect "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2700",
+      "time": 1655117979.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2700",
+      "text": "Asset View: Next page arrow"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#2655",
@@ -128,5 +2354,6 @@
       "text": "Doctor Video Menu"
     }
   ],
-  "open_prs": []
+  "open_prs": [],
+  "authored_issue_and_pr": []
 }

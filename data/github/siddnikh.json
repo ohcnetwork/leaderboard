@@ -1,6 +1,342 @@
 {
-  "last_updated": 1654533175.0,
+  "last_updated": 1665739339.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3755",
+      "time": 1665739339.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3755",
+      "text": "Fixed minor UI break in Facility Page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3713",
+      "time": 1665738171.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3713#issuecomment-1278708938",
+      "text": "So that blue colour comes if the link has already been visited. The default colour is black only. I'll add a small icon and change the visited link colour."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1665658085.0,
+      "title": "coronasafe/care#1038",
+      "link": "https://github.com/coronasafe/care/pull/1038#pullrequestreview-1140549929",
+      "text": "Added constraints to models to not allot multiple patients the same bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3423",
+      "time": 1665657716.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3423#issuecomment-1277408011",
+      "text": "@gigincg we can add an \"admitted but not allocated\" category to this filter from the backend if you suggest. What do you say?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3700",
+      "time": 1664810073.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3700",
+      "text": "Removed unnecessary imports and added checkUsername route for User Creation page "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1043",
+      "time": 1664521484.0,
+      "link": "https://github.com/coronasafe/care/pull/1043",
+      "text": "Added API View to check availability of username"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3371",
+      "time": 1664462168.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3371#issuecomment-1262376000",
+      "text": "@kunatastic hey, are you working on this?\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1038",
+      "time": 1664274456.0,
+      "link": "https://github.com/coronasafe/care/pull/1038",
+      "text": "Added constraints to models to not allot multiple patients the same bed"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2055",
+      "time": 1664266547.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2055",
+      "text": "Add Filter : Assets"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#989",
+      "time": 1664033081.0,
+      "link": "https://github.com/coronasafe/care/issues/989#issuecomment-1256993875",
+      "text": "@Ashesh3 hi! No, I'm not. Please go ahead."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2459",
+      "time": 1663076958.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2459",
+      "text": "User can't changed Password"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#785",
+      "time": 1663076909.0,
+      "link": "https://github.com/coronasafe/care/issues/785",
+      "text": "Facility Filter for GET Users API"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2807",
+      "time": 1663076853.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2807",
+      "text": "Add a District ID filter for viewing users"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2460",
+      "time": 1661623553.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2460#issuecomment-1229238151",
+      "text": "@Ritesh-Aggarwal can I work on this?\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#802",
+      "time": 1661620756.0,
+      "link": "https://github.com/coronasafe/care/issues/802#issuecomment-1229230759",
+      "text": "According to the [docs](https://careapi.coronasafe.in/swagger/), `/api/v1/facility/{facility_external_id}/inventorysummary/{external_id}/` will send the min_count. `/api/v1/facility/:facility_id/inventorysummary/` will not."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3351",
+      "time": 1659937137.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3351",
+      "text": "Reposition Blood Group field in Patient Registration form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3302",
+      "time": 1659510258.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3302",
+      "text": "Added filter for working/non-working assets"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3275",
+      "time": 1659222593.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3275",
+      "text": "Added image for locations not found"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3080",
+      "time": 1658935235.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3080",
+      "text": "Added feature for user to change password"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2808",
+      "time": 1658935041.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2808",
+      "text": "Issue#2807 - District filter for Users."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#950",
+      "time": 1658868951.0,
+      "link": "https://github.com/coronasafe/care/pull/950",
+      "text": "Added constraints in models to allow one patient per bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1658566438.0,
+      "title": "coronasafe/care_fe#3080",
+      "link": "https://github.com/coronasafe/care_fe/pull/3080#pullrequestreview-1048518317",
+      "text": "Added feature for user to change password"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2956",
+      "time": 1657705039.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2956",
+      "text": "Added link from facility page to /facility/<external_id>/users/"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3080",
+      "time": 1657357403.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3080",
+      "text": "Added feature for user to change password"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#797",
+      "time": 1657217653.0,
+      "link": "https://github.com/coronasafe/care/pull/797",
+      "text": "Added API Route for User Password Change"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#821",
+      "time": 1656877375.0,
+      "link": "https://github.com/coronasafe/care/pull/821",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2956",
+      "time": 1656675131.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2956#issuecomment-1172248911",
+      "text": "Corresponding backend pr: https://github.com/coronasafe/care/pull/905\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2954",
+      "time": 1656675118.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2954#issuecomment-1172248703",
+      "text": "Corresponding backend pr: https://github.com/coronasafe/care/pull/905"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2956",
+      "time": 1656675036.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2956",
+      "text": "Added link from facility page to /users?facility=xxx"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2955",
+      "time": 1656674637.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2955",
+      "text": "Add link from Facility Home to see users in that facility"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2954",
+      "time": 1656674323.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2954",
+      "text": "Added Facility filter for users listing page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2952",
+      "time": 1656672255.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2952",
+      "text": "Add filter for Facility in users list page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#905",
+      "time": 1656672146.0,
+      "link": "https://github.com/coronasafe/care/pull/905",
+      "text": "Facility filter for GET users API"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2055",
+      "time": 1656313080.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2055",
+      "text": "Add Filter : Assets"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2037",
+      "time": 1656313063.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2037",
+      "text": "Add Booster dose option "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2055",
+      "time": 1656313080.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2055",
+      "text": "Add Filter : Assets"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2037",
+      "time": 1656313063.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2037",
+      "text": "Add Booster dose option "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2808",
+      "time": 1655985659.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2808",
+      "text": "Issue#2807 - District filter for Users."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#785",
+      "time": 1655985499.0,
+      "link": "https://github.com/coronasafe/care/issues/785#issuecomment-1164318418",
+      "text": "@gigincg there's one for districts. I'm working on adding the facilities filter to the GET users API."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2807",
+      "time": 1655978605.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2807",
+      "text": "Add a District ID filter for viewing users"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#2808",
+      "time": 1655985659.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2808",
+      "text": "Issue#2807 - District filter for Users."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#785",
+      "time": 1655985499.0,
+      "link": "https://github.com/coronasafe/care/issues/785#issuecomment-1164318418",
+      "text": "@gigincg there's one for districts. I'm working on adding the facilities filter to the GET users API."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#2807",
+      "time": 1655978605.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2807",
+      "text": "Add a District ID filter for viewing users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655702180.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-1011700030",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1655702180.0,
+      "title": "coronasafe/care#821",
+      "link": "https://github.com/coronasafe/care/pull/821#pullrequestreview-1011700030",
+      "text": "Add a \"working\" filter for Assets"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2651",
+      "time": 1654853312.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2651#issuecomment-1152164638",
+      "text": "@nihal467 the backend pull request needs to be merged, first. Here's the PR: https://github.com/coronasafe/care/pull/821"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2468",
+      "time": 1654852160.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2468",
+      "text": "Added option for 3rd dose"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#829",
+      "time": 1654573099.0,
+      "link": "https://github.com/coronasafe/care/pull/829",
+      "text": "Allow DELETE option for Assets"
+    },
     {
       "type": "pr_reviewed",
       "time": 1654533175.0,
@@ -193,24 +529,51 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2651",
-      "title": "Added filter for working/non-working assets"
+      "link": "https://github.com/coronasafe/care_fe/pull/3755",
+      "title": "Fixed minor UI break in Facility Page",
+      "stale_for": 0,
+      "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/821",
-      "title": "Add a \"working\" filter for Assets"
+      "link": "https://github.com/coronasafe/care_fe/pull/3700",
+      "title": "Removed unnecessary imports and added checkUsername route for User Creation page ",
+      "stale_for": 11,
+      "labels": [
+        "waiting for back end"
+      ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2592",
-      "title": "Added option for user to change password."
+      "link": "https://github.com/coronasafe/care/pull/1043",
+      "title": "Added API View to check availability of username",
+      "stale_for": 1,
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/797",
-      "title": "Added API Route for User Password Change"
+      "link": "https://github.com/coronasafe/care/pull/1038",
+      "title": "Added constraints to models to not allot multiple patients the same bed",
+      "stale_for": 1,
+      "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/2468",
-      "title": "Added option for 3rd dose"
+      "link": "https://github.com/coronasafe/care_fe/pull/3275",
+      "title": "Added image for locations not found",
+      "stale_for": 6,
+      "labels": [
+        "test failed",
+        "stale"
+      ]
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2955",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2956"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2807",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2808"
     }
   ]
 }

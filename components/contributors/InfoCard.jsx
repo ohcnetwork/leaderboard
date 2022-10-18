@@ -1,30 +1,61 @@
 /* eslint-disable @next/next/no-img-element */
+import clsx from "clsx";
 import Link from "next/link";
-export default function InfoCard({ contributor, minimal = false }) {
+export default function InfoCard({
+  contributor,
+  minimal = true,
+  isClickable = false,
+}) {
   return (
-    <div className="py-10 px-6 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left" role="listitem">
-      <div className="space-y-6 xl:space-y-10">
-        <img
-          className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-          src={`https://github.com/${contributor.github}.png`}
-          alt={contributor.github}
-        />
-        <div className={minimal ? "text-center" : "space-y-2"}>
-          <div className="font-medium text-lg leading-6 space-y-1">
-            <Link href={`/contributors/${contributor.github}`} className="">
-              <h3 className="text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">
+    <div
+      className={clsx(
+        "xl:text-left",
+        isClickable &&
+          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4"
+      )}
+      role="listitem"
+    >
+      <div className="flex flex-shrink-0 items-center space-x-4 md:space-y-6 xl:space-y-1 ">
+        <Link
+          href={isClickable ? `/contributors/${contributor.github}` : `#`}
+          className=""
+        >
+          <div
+            className={`flex flex-shrink-0 items-center bg-gray-900 bg-opacity-50 rounded-full md:p-1 relative z-10 ${
+              isClickable && `cursor-pointer`
+            }`}
+          >
+            <img
+              className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-2 border-indigo-500"
+              src={`https://github.com/${contributor.github}.png`}
+              alt={contributor.github}
+            />
+          </div>
+        </Link>
+        <div className={minimal ? "" : "flex flex-col items-center space-y-2"}>
+          <div className="font-medium text-lg space-y-1">
+            <Link
+              href={isClickable ? `/contributors/${contributor.github}` : `#`}
+              className=""
+            >
+              <h3
+                className={clsx(
+                  "text-lg md:text-2xl leading-tight text-white",
+                  isClickable && "cursor-pointer hover:text-primary-200"
+                )}
+              >
                 {contributor.name}
               </h3>
             </Link>
-            <p className="text-primary-400">{contributor.title}</p>
+            <p className="text-sm md:text-base text-gray-400">
+              {contributor.title}
+            </p>
           </div>
 
           <ul
             role="list"
             className={
-              minimal
-                ? "flex items-center space-x-2 justify-center mt-2"
-                : "space-y-2"
+              minimal ? "flex items-center space-x-4 mt-4" : "space-y-2"
             }
           >
             {contributor.github && (
@@ -34,12 +65,12 @@ export default function InfoCard({ contributor, minimal = false }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
+                  <span className="text-gray-500 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Github</span>
                     <svg
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className="mr-2 w-5 h-5"
+                      className="w-6 md:w-8 h-6 md:h-8"
                     >
                       <path
                         fillRule="evenodd"
@@ -48,7 +79,7 @@ export default function InfoCard({ contributor, minimal = false }) {
                       ></path>
                     </svg>
                     {!minimal && `@${contributor.github}`}
-                  </div>
+                  </span>
                 </a>
               </li>
             )}
@@ -59,10 +90,10 @@ export default function InfoCard({ contributor, minimal = false }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-500 hover:text-primary-300 flex items-center">
                     <span className="sr-only">Twitter</span>
                     <svg
-                      className="w-5 h-5 mr-2"
+                      className="w-6 md:w-7 h-6 md:h-7"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       aria-hidden="true"
@@ -81,10 +112,10 @@ export default function InfoCard({ contributor, minimal = false }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="text-gray-300 hover:text-primary-300 flex items-center">
+                  <div className="text-gray-500 hover:text-primary-300 flex items-center">
                     <span className="sr-only">LinkedIn</span>
                     <svg
-                      className="w-5 h-5 mr-2"
+                      className="w-6 md:w-7 h-6 md:h-7"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       aria-hidden="true"

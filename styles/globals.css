@@ -8,13 +8,15 @@
       column-gap: 1.5em;
       column-count: 2;
     }
+
     .break-inside {
       break-inside: avoid;
     }
   }
 }
+
 body {
-  @apply font-spacemono;
+  @apply font-inter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -42,7 +44,10 @@ body {
   }
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   @apply font-bold;
 }
 
@@ -60,4 +65,15 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
+}
+
+.journey-map__milestone {
+  transform: perspective(200px) rotateX(75deg);
+  transform-style: preserve-3d;
+  @apply top-8;
+}
+
+.journey-map__container {
+  background-image: url("/images/map-bg.svg");
+  @apply bg-no-repeat bg-cover;
 }

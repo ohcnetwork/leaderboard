@@ -5,6 +5,7 @@ import { getWeekDateRangeString, getWeekNumber } from "../../lib/utils";
 import { categories } from "./index";
 import Filters from "../../components/filters/Filters";
 import { useEffect, useState } from "react";
+import { TbZoomQuestion } from "react-icons/tb";
 
 export default function Home(props) {
   const [contributors, setContributors] = useState(props.contributors);

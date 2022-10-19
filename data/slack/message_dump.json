@@ -40695,7 +40695,6 @@
             "text": "Worked on `FieldValidator` for form field components",
             "user": "U02TDGQQPMJ",
             "ts": "1666026571.123999",
-            "team": "TC99SV7B6",
             "blocks": [
                 {
                     "type": "rich_text",
@@ -40723,8 +40722,185 @@
                         }
                     ]
                 }
+            ],
+            "team": "TC99SV7B6",
+            "reactions": [
+                {
+                    "name": "+1",
+                    "users": [
+                        "U02TPSYRUPK"
+                    ],
+                    "count": 1
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
             ]
         }
     ],
-    "2022-10-18 00:00:00": []
+    "2022-10-18 00:00:00": [
+        {
+            "client_msg_id": "12370ede-6b5d-4b03-8824-e25c672cdb14",
+            "type": "message",
+            "text": "\u2022 Wrapped DatePicker as FormField and fixed auto close datepicker on focus lost, by making it a popover component in both dashboard and care_fe.\n\u2022 Fixed minor issues in async autocomplete field.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1666121070.930299",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "CnyFb",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Wrapped DatePicker as FormField and fixed auto close datepicker on focus lost, by making it a popover component in both dashboard and care_fe."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed minor issues in async autocomplete field."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "cb03d933-f94b-4b33-9dd2-2e090d3139ad",
+            "type": "message",
+            "text": "Worked on previous PRs",
+            "user": "U02TB823H8A",
+            "ts": "1666101754.625809",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "E1E",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on previous PRs"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "c2dbca1f-814c-4ca0-b8e6-a64c38d2c951",
+            "type": "message",
+            "text": "\u2022 resolve merge confilcts in old leaderboard prs\n\u2022 worked on datepicker for care_fe\n\u2022 working on <https://github.com/coronasafe/care_dashboard/issues/40|issues/40>",
+            "user": "U02T4HE96KY",
+            "ts": "1666100367.232389",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "6E2",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "resolve merge confilcts in old leaderboard prs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "worked on datepicker for care_fe"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "working on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_dashboard/issues/40",
+                                            "text": "issues/40"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665913114,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_dashboard/issues/40",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_dashboard/issues/40|#40 Auto close datepicker on focus change>",
+                    "title": "<https://github.com/coronasafe/care_dashboard/issues/40|#40 Auto close datepicker on focus change>",
+                    "footer": "<https://github.com/coronasafe/care_dashboard|coronasafe/care_dashboard>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ritesh-Aggarwal|@Ritesh-Aggarwal>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-10-19 00:00:00": []
 }

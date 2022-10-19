@@ -2860,5 +2860,98 @@
                 }
             ]
         }
+    ],
+    "2022-10-18 00:00:00": [
+        {
+            "client_msg_id": "c2dbca1f-814c-4ca0-b8e6-a64c38d2c951",
+            "type": "message",
+            "text": "\u2022 resolve merge confilcts in old leaderboard prs\n\u2022 worked on datepicker for care_fe\n\u2022 working on <https://github.com/coronasafe/care_dashboard/issues/40|issues/40>",
+            "user": "U02T4HE96KY",
+            "ts": "1666100367.232389",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "6E2",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "resolve merge confilcts in old leaderboard prs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "worked on datepicker for care_fe"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "working on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_dashboard/issues/40",
+                                            "text": "issues/40"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1665913114,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_dashboard/issues/40",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_dashboard/issues/40|#40 Auto close datepicker on focus change>",
+                    "title": "<https://github.com/coronasafe/care_dashboard/issues/40|#40 Auto close datepicker on focus change>",
+                    "footer": "<https://github.com/coronasafe/care_dashboard|coronasafe/care_dashboard>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/Ritesh-Aggarwal|@Ritesh-Aggarwal>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1665739339.0,
+  "last_updated": 1666199250.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1043",
+      "time": 1666199250.0,
+      "link": "https://github.com/coronasafe/care/pull/1043",
+      "text": "Added API View to check availability of username"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3755",
@@ -531,38 +538,31 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3755",
       "title": "Fixed minor UI break in Facility Page",
-      "stale_for": 0,
-      "labels": []
+      "stale_for": 3,
+      "labels": [
+        "Waiting UI Approval"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3700",
       "title": "Removed unnecessary imports and added checkUsername route for User Creation page ",
-      "stale_for": 11,
+      "stale_for": 16,
       "labels": [
         "waiting for back end"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1043",
-      "title": "Added API View to check availability of username",
-      "stale_for": 1,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1038",
       "title": "Added constraints to models to not allot multiple patients the same bed",
-      "stale_for": 1,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3275",
       "title": "Added image for locations not found",
-      "stale_for": 6,
+      "stale_for": 2,
       "labels": [
-        "test failed",
-        "stale"
+        "work-in-progress"
       ]
     }
   ],

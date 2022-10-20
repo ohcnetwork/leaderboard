@@ -1,6 +1,27 @@
 {
-  "last_updated": 1665982261.0,
+  "last_updated": 1666186691.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_dashboard#43",
+      "time": 1666186691.0,
+      "link": "https://github.com/coronasafe/care_dashboard/pull/43",
+      "text": "Added responsiveness on patients page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_dashboard#42",
+      "time": 1666186567.0,
+      "link": "https://github.com/coronasafe/care_dashboard/issues/42",
+      "text": "Improve card placements on patients page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3419",
+      "time": 1666185200.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3419#issuecomment-1283994513",
+      "text": "@nihal467 \r\nUpdated view:\r\n![image](https://user-images.githubusercontent.com/70687348/196700888-f562acd9-f050-40c9-8f03-a6452a5d6a90.png)\r\n\r\nDesktop view:\r\n![image](https://user-images.githubusercontent.com/70687348/196700888-f562acd9-f050-40c9-8f03-a6452a5d6a90.png)\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/leaderboard#86",
@@ -2512,9 +2533,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_dashboard/pull/43",
+      "title": "Added responsiveness on patients page",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/leaderboard/pull/86",
       "title": "Added indentation at left of text in \"Currently Working on\" tab",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
@@ -2522,8 +2549,8 @@
       "title": "Revamped Upload files buttons",
       "stale_for": 0,
       "labels": [
-        "need Review",
-        "test failed"
+        "needs testing",
+        "need Review"
       ]
     }
   ],

@@ -1,6 +1,34 @@
 {
-  "last_updated": 1665955501.0,
+  "last_updated": 1666271074.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3710",
+      "time": 1666271074.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3710",
+      "text": "fix buggy redirect after clicking on cancel button in add more bed types"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3467",
+      "time": 1666269581.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3467#issuecomment-1285474694",
+      "text": "> Wouldn't this show the loading component even when the external results list from the backend is empty?\r\n\r\nThere is no other way to know about it otherwise\r\n\r\nIf it is empty, it will show the loader and then show that no results found.\r\n\r\nTechnically a loader is to wait for results irrespective of what is in the results I suppose, so ig it shouldn't be a problem though if you have any ideas on making this better in user experience do share."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666268249.0,
+      "title": "coronasafe/care_fe#3637",
+      "link": "https://github.com/coronasafe/care_fe/pull/3637#pullrequestreview-1149132606",
+      "text": "fix: parent url when clicking back icon"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666268240.0,
+      "title": "coronasafe/care_fe#3637",
+      "link": "https://github.com/coronasafe/care_fe/pull/3637#pullrequestreview-1149132363",
+      "text": "fix: parent url when clicking back icon"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#3766",
@@ -662,34 +690,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3710",
-      "title": "fix buggy redirect after clicking on cancel button in add more bed types",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3637",
       "title": "fix: parent url when clicking back icon",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
         "question",
         "need Review",
-        "work-in-progress",
-        "merge conflict"
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/59",
       "title": "feat: authorization middleware for MSE server",
-      "stale_for": 27,
+      "stale_for": 31,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3467",
       "title": "fix: add loader to external results section",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "question",
         "need Review",
@@ -700,14 +719,18 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3307",
       "title": "fix: remove raw css file import from .res files in critical care recording",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "need Review",
-        "merge conflict"
+        "Done"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3636",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3710"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3635",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3666"

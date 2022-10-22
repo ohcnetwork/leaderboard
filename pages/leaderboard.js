@@ -51,8 +51,10 @@ export default function Home(props) {
       );
     }
 
-    filteredContributors = filteredContributors.sort(
-      (a, b) => a.weekSummary[sortBy] - b.weekSummary[sortBy]
+    filteredContributors = filteredContributors.sort((a, b) =>
+      a.weekSummary[sortBy] !== b.weekSummary[sortBy]
+        ? a.weekSummary[sortBy] - b.weekSummary[sortBy]
+        : a.weekSummary.points - b.weekSummary.points
     );
 
     if (sortDescending) {
@@ -66,9 +68,13 @@ export default function Home(props) {
       }
       return categories.map((category) => ({
         ...category,
-        contributor: temp.sort(
-          (a, b) => b.weekSummary[category.slug] - a.weekSummary[category.slug]
-        )[0],
+        contributor: temp
+          .sort((a, b) =>
+            a.weekSummary[category.slug] !== b.weekSummary[category.slug]
+              ? a.weekSummary[category.slug] - b.weekSummary[category.slug]
+              : a.weekSummary.points - b.weekSummary.points
+          )
+          .reverse()[0],
       }));
     });
 

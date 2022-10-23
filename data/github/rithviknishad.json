@@ -1,6 +1,49 @@
 {
-  "last_updated": 1666365062.0,
+  "last_updated": 1666457140.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1666457140.0,
+      "title": "coronasafe/care_fe#3771",
+      "link": "https://github.com/coronasafe/care_fe/pull/3771#pullrequestreview-1152070366",
+      "text": "Changed asset page layout"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666457134.0,
+      "title": "coronasafe/care_fe#3771",
+      "link": "https://github.com/coronasafe/care_fe/pull/3771#pullrequestreview-1152070345",
+      "text": "Changed asset page layout"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3795",
+      "time": 1666443874.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3795#issuecomment-1287785510",
+      "text": "Use the new tailwind components and FilterButtons component coming via: https://github.com/coronasafe/care_fe/pull/3744"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3803",
+      "time": 1666443246.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3803",
+      "text": "fix `animate-ping` effect of no consultation filed in patient card"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#3798",
+      "time": 1666403359.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3798",
+      "text": "Cypress: Fixes & Refactoring",
+      "collaborated_with": [
+        "Pragati1610",
+        "bodhish",
+        "rabilrbl",
+        "khavinshankar",
+        "Ashesh3",
+        "patelaryan7751"
+      ]
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#3728",
@@ -3795,9 +3838,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3803",
+      "title": "fix `animate-ping` effect of no consultation filed in patient card",
+      "stale_for": 0,
+      "labels": [
+        "enhancement",
+        "needs testing",
+        "need Review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Make datepicker a popover component to fix closing on focus lost",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
@@ -3809,7 +3862,6 @@
         "needs testing",
         "need Review",
         "redesign",
-        "merge conflict",
         "Major Code Change"
       ]
     },
@@ -3826,7 +3878,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/66",
       "title": "Scrapper support for datetime based scrapping instead of date",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "merge conflict"
       ]
@@ -3834,7 +3886,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "merge conflict"
       ]

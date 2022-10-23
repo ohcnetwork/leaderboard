@@ -1,6 +1,62 @@
 {
-  "last_updated": 1666156919.0,
+  "last_updated": 1666431014.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3802",
+      "time": 1666431014.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3802",
+      "text": "fix: inventory management buttons are not uniform"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3801",
+      "time": 1666430254.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3801",
+      "text": "fix: misalignment of No Assets Found text"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3800",
+      "time": 1666415456.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3800",
+      "text": "Add \"mark as cured\" checkbox in new medical history"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3799",
+      "time": 1666414998.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3799",
+      "text": "feat: added health details and medical history fields to consultation form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3698",
+      "time": 1666414872.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3698#issuecomment-1287619462",
+      "text": "Will open a new PR squashing all the commits"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1073",
+      "time": 1666411062.0,
+      "link": "https://github.com/coronasafe/care/pull/1073#issuecomment-1287603618",
+      "text": "**SWAGGER DOCUMENTATION**\r\n- [x] HEALTH DETAILS\r\n![image](https://user-images.githubusercontent.com/77210185/197318013-494bb7a5-160b-4519-b98b-a96a87d771fc.png)\r\n- [x] MEDICAL HISTORY\r\n![image](https://user-images.githubusercontent.com/77210185/197318026-f2484f91-8666-4411-afcd-d7dc40b4219b.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1073",
+      "time": 1666409671.0,
+      "link": "https://github.com/coronasafe/care/pull/1073",
+      "text": "feat: Added more field in consultation form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#979",
+      "time": 1666409431.0,
+      "link": "https://github.com/coronasafe/care/pull/979#issuecomment-1287599461",
+      "text": "Will open a new PR squashing the commits"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#3783",
@@ -5462,9 +5518,43 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3802",
+      "title": "fix: inventory management buttons are not uniform",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3801",
+      "title": "fix: misalignment of No Assets Found text",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "hacktoberfest"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3799",
+      "title": "feat: added health details and medical history fields to consultation form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "Done",
+        "hacktoberfest",
+        "Major Code Change"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1073",
+      "title": "feat: Added more field in consultation form",
+      "stale_for": 0,
+      "labels": [
+        "do-not-merge"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 3,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5473,16 +5563,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1060",
       "title": "Fixed: Added in_use field to track used bed",
-      "stale_for": 10,
-      "labels": [
-        "waiting-for-review",
-        "done"
-      ]
+      "stale_for": 0,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 7,
+      "stale_for": 10,
       "labels": [
         "done"
       ]
@@ -5490,43 +5577,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 8,
+      "stale_for": 11,
       "labels": [
         "waiting-for-review",
         "done"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3698",
-      "title": "Fixes: Add Health Details in Consultation form",
-      "stale_for": 0,
-      "labels": [
-        "hacktoberfest",
-        "work-in-progress",
-        "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 10,
+      "stale_for": 13,
       "labels": [
         "waiting-for-review",
         "done"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/979",
-      "title": "Added more fields to Consultation Form",
-      "stale_for": 0,
-      "labels": [
-        "do-not-merge"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3151",
       "title": "fix(bed history): hided currently used bed",
-      "stale_for": 7,
+      "stale_for": 10,
       "labels": [
         "urgent",
         "waiting for back end"
@@ -5535,7 +5604,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/882",
       "title": "Removed current health field",
-      "stale_for": 26,
+      "stale_for": 29,
       "labels": [
         "ops-review-pending",
         "reviewed"
@@ -5544,7 +5613,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 118,
+      "stale_for": 121,
       "labels": [
         "waiting-for-review"
       ]

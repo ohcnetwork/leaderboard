@@ -1,6 +1,27 @@
 {
-  "last_updated": 1666403359.0,
+  "last_updated": 1666550311.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3811",
+      "time": 1666550311.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3811",
+      "text": "fixed queueData overflow issue in Waveform"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3811",
+      "time": 1666541583.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3811",
+      "text": "fixed queueData overflow issue in Waveform"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1074",
+      "time": 1666494776.0,
+      "link": "https://github.com/coronasafe/care/pull/1074",
+      "text": "(minor) updated installation guide"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#3797",
@@ -6942,15 +6963,33 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3816",
+      "title": "Fixed death report check in PatientHome",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3815",
+      "title": "Fixed null issue in review_interval in DailyRounds",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1074",
       "title": "(minor) updated installation guide",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3796",
       "title": "Added new UI to log additional details in PressureSore",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "urgent",
         "needs testing"
@@ -6959,25 +6998,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 309,
+      "stale_for": 310,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 315,
+      "stale_for": 316,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 316,
+      "stale_for": 317,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 511,
+      "stale_for": 512,
       "labels": []
     }
   ],

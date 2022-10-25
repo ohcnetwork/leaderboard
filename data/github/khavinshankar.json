@@ -1,6 +1,83 @@
 {
-  "last_updated": 1666550311.0,
+  "last_updated": 1666629745.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1666629745.0,
+      "title": "coronasafe/care_fe#3528",
+      "link": "https://github.com/coronasafe/care_fe/pull/3528#pullrequestreview-1153456521",
+      "text": "feat. facility cover image upload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666621888.0,
+      "title": "coronasafe/care#1076",
+      "link": "https://github.com/coronasafe/care/pull/1076#pullrequestreview-1153249303",
+      "text": "fix(Patient): Updated review_time logic"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666621888.0,
+      "title": "coronasafe/care#1076",
+      "link": "https://github.com/coronasafe/care/pull/1076#pullrequestreview-1153249303",
+      "text": "fix(Patient): Updated review_time logic"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666620449.0,
+      "title": "coronasafe/care#1076",
+      "link": "https://github.com/coronasafe/care/pull/1076#pullrequestreview-1153208234",
+      "text": "fix(Patient): Updated review_time logic"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1075",
+      "time": 1666601804.0,
+      "link": "https://github.com/coronasafe/care/issues/1075#issuecomment-1288679758",
+      "text": "@cp-Coder can you push the pr for this issue by EOD, it's an urgent one\r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3815",
+      "time": 1666600549.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3815#issuecomment-1288641741",
+      "text": "@nihal467 In the above-mentioned issues, the first will be fixed in the pr for https://github.com/coronasafe/care/issues/1075, and the second one should already be fixed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1075",
+      "time": 1666600278.0,
+      "link": "https://github.com/coronasafe/care/issues/1075",
+      "text": "update review_time logic"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3817",
+      "time": 1666583576.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3817",
+      "text": "Added close and currect location select buttons in GLocationPicker"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3816",
+      "time": 1666580321.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3816",
+      "text": "Fixed death report check in PatientHome"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3815",
+      "time": 1666578930.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3815",
+      "text": "Fixed null issue in review_interval in DailyRounds"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3814",
+      "time": 1666575365.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3814#issuecomment-1288289992",
+      "text": "@nihal467 this has been a recent change in the backend regarding https://github.com/coronasafe/care_fe/issues/1255#issuecomment-1256315589. \r\n\r\n@aparnacoronasafe @gigincg So should I have to make the Review After optional?"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#3811",
@@ -6963,9 +7040,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3817",
+      "title": "Added close and currect location select buttons in GLocationPicker",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3816",
       "title": "Fixed death report check in PatientHome",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "urgent",
         "needs testing"
@@ -6977,19 +7062,20 @@
       "stale_for": 0,
       "labels": [
         "urgent",
-        "needs testing"
+        "needs testing",
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1074",
       "title": "(minor) updated installation guide",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3796",
       "title": "Added new UI to log additional details in PressureSore",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "urgent",
         "needs testing"
@@ -6998,25 +7084,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 310,
+      "stale_for": 311,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 316,
+      "stale_for": 317,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 317,
+      "stale_for": 318,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 512,
+      "stale_for": 513,
       "labels": []
     }
   ],

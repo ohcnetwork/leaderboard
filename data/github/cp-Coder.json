@@ -1,6 +1,13 @@
 {
-  "last_updated": 1666619432.0,
+  "last_updated": 1666763804.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3802",
+      "time": 1666763804.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3802",
+      "text": "fix: inventory management buttons are not uniform"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1076",
@@ -5525,33 +5532,18 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1076",
-      "title": "fix(Patient): Updated review_time logic",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3802",
-      "title": "fix: inventory management buttons are not uniform",
-      "stale_for": 1,
-      "labels": [
-        "needs testing",
-        "hacktoberfest"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3801",
       "title": "fix: misalignment of No Assets Found text",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "hacktoberfest"
+        "hacktoberfest",
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "Done",
@@ -5562,7 +5554,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "do-not-merge"
       ]
@@ -5570,7 +5562,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 8,
+      "stale_for": 10,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5579,21 +5571,22 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1060",
       "title": "Fixed: Added in_use field to track used bed",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 12,
+      "stale_for": 0,
       "labels": [
+        "waiting-for-review",
         "done"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 13,
+      "stale_for": 15,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5602,7 +5595,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 15,
+      "stale_for": 17,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5611,7 +5604,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3151",
       "title": "fix(bed history): hided currently used bed",
-      "stale_for": 12,
+      "stale_for": 14,
       "labels": [
         "urgent",
         "waiting for back end"
@@ -5620,7 +5613,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/882",
       "title": "Removed current health field",
-      "stale_for": 31,
+      "stale_for": 33,
       "labels": [
         "ops-review-pending",
         "reviewed"
@@ -5629,7 +5622,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 123,
+      "stale_for": 125,
       "labels": [
         "waiting-for-review"
       ]

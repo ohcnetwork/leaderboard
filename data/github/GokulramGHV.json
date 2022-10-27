@@ -1,6 +1,20 @@
 {
-  "last_updated": 1666616104.0,
+  "last_updated": 1666785161.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3810",
+      "time": 1666785161.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3810",
+      "text": "Fix: Dates not visible in graph (consultation page of patient)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3762",
+      "time": 1666764341.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3762",
+      "text": "Added `AccordionV2`  and `CollapseV2` components to replace MUI's Accordion and Collapse components"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3819",
@@ -1248,24 +1262,8 @@
       "stale_for": 0,
       "labels": [
         "work-in-progress",
-        "redesign"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3810",
-      "title": "Fix: Dates not visible in graph (consultation page of patient)",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3762",
-      "title": "Added `AccordionV2`  and `CollapseV2` components to replace MUI's Accordion and Collapse components",
-      "stale_for": 3,
-      "labels": [
-        "needs testing",
-        "peer-reviewed"
+        "redesign",
+        "merge conflict"
       ]
     }
   ],

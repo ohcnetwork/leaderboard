@@ -1,6 +1,51 @@
 {
-  "last_updated": 1666621654.0,
+  "last_updated": 1666790572.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3801",
+      "time": 1666790572.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3801#issuecomment-1292028750",
+      "text": "@khavinshankar can be ignored, or merge the latest develop for the storybook.\r\nStorybook is currently not there in this branch, that's why deploy is failing."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3803",
+      "time": 1666784895.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3803",
+      "text": "fix `animate-ping` effect of no consultation filed in patient card"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3744",
+      "time": 1666784548.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3744",
+      "text": "\ud83d\udcd6 Storybook + \ud83d\udee0 Tailwind Patient Filters"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3832",
+      "time": 1666777276.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3832",
+      "text": "Issues in patient page responsive layout"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3528",
+      "time": 1666764405.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3528",
+      "text": "feat. facility cover image upload"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#3528",
+      "time": 1666764405.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3528",
+      "text": "feat. facility cover image upload",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3781",
@@ -3845,47 +3890,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3803",
-      "title": "fix `animate-ping` effect of no consultation filed in patient card",
-      "stale_for": 2,
-      "labels": [
-        "enhancement",
-        "needs testing",
-        "need Review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Make datepicker a popover component to fix closing on focus lost",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3744",
-      "title": "\ud83d\udcd6 Storybook + \ud83d\udee0 Tailwind Patient Filters",
-      "stale_for": 0,
-      "labels": [
-        "enhancement",
-        "need Review",
-        "test failed",
-        "redesign",
-        "Major Code Change"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3528",
-      "title": "feat. facility cover image upload",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "Done",
-        "tested"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/66",
       "title": "Scrapper support for datetime based scrapping instead of date",
-      "stale_for": 8,
+      "stale_for": 10,
       "labels": [
         "merge conflict"
       ]
@@ -3893,13 +3906,29 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 8,
+      "stale_for": 10,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3784",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3744"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3763",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3744"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3743",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3744"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3686",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3744"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3668",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3672"
@@ -3923,6 +3952,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_dashboard/issues/15",
       "pr_link": "https://github.com/coronasafe/care_dashboard/pull/16"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3527",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3528"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3519",
@@ -3963,14 +3996,6 @@
     {
       "issue_link": "https://github.com/coronasafe/leaderboard/issues/8",
       "pr_link": "https://github.com/coronasafe/leaderboard/pull/9"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2560",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2622"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2483",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2485"
     }
   ]
 }

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1666199250.0,
+  "last_updated": 1666958637.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3275",
+      "time": 1666958637.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3275#issuecomment-1294914819",
+      "text": "> @siddnikh ![image](https://user-images.githubusercontent.com/57055998/197777522-01decd66-95bf-4498-ba65-d99531eee005.png)\r\n> \r\n> the page is still having the scroller, reduce the size of the icon and bring it little bit upward\r\n\r\nI have tested on all device dimensions on my laptop. I hope this works now. If it does not, can you tell me your screen dimensions? Thanks. @nihal467 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666958435.0,
+      "title": "coronasafe/care_fe#3700",
+      "link": "https://github.com/coronasafe/care_fe/pull/3700#pullrequestreview-1159946650",
+      "text": "Removed unnecessary imports and added checkUsername route for User Creation page "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3843",
+      "time": 1666956709.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3843#issuecomment-1294885102",
+      "text": "<img width=\"1680\" alt=\"Screenshot 2022-10-28 at 4 58 07 PM\" src=\"https://user-images.githubusercontent.com/51060067/198577053-a7137ae2-2d1d-4edc-8687-d06c9f5fc8d8.png\">\r\nI think it looks really nice, but the user info (here, Bodhish Thomas) seems a little off center. Also, how about repositioning the minimise icon? I think it might look better in some other place - just a suggestion."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1043",
@@ -538,29 +559,32 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3755",
       "title": "Fixed minor UI break in Facility Page",
-      "stale_for": 3,
+      "stale_for": 2,
       "labels": [
-        "Waiting UI Approval"
+        "Waiting UI Approval",
+        "Team Discuss Required"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3700",
       "title": "Removed unnecessary imports and added checkUsername route for User Creation page ",
-      "stale_for": 16,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "question",
+        "API Done",
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1038",
       "title": "Added constraints to models to not allot multiple patients the same bed",
-      "stale_for": 6,
+      "stale_for": 15,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3275",
       "title": "Added image for locations not found",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "work-in-progress"
       ]

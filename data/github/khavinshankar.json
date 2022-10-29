@@ -1,6 +1,62 @@
 {
-  "last_updated": 1666797556.0,
+  "last_updated": 1666949879.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3849",
+      "time": 1666949879.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3849",
+      "text": "Fixed cypress failing tests"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666949554.0,
+      "title": "coronasafe/care_fe#3843",
+      "link": "https://github.com/coronasafe/care_fe/pull/3843#pullrequestreview-1159761719",
+      "text": "Redesigned Sidebar"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1084",
+      "time": 1666948853.0,
+      "link": "https://github.com/coronasafe/care/issues/1084",
+      "text": "Create `is_occupied` property in Bed model"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1083",
+      "time": 1666948152.0,
+      "link": "https://github.com/coronasafe/care/pull/1083",
+      "text": "Added is_occupied read-only field in Bed"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3844",
+      "time": 1666946656.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3844",
+      "text": "Show bed field while creation in ConsultationForm"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3844",
+      "time": 1666945888.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3844",
+      "text": "Show bed field while creation in ConsultationForm"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1083",
+      "time": 1666944803.0,
+      "link": "https://github.com/coronasafe/care/pull/1083",
+      "text": "Added is_occupied read-only field in Bed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1082",
+      "time": 1666944057.0,
+      "link": "https://github.com/coronasafe/care/issues/1082",
+      "text": "Add `is_occupied` read_only field to bed"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3835",
@@ -7302,75 +7358,53 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3835",
-      "title": "Fixed camera is offline error in other than staging ",
+      "link": "https://github.com/coronasafe/care_fe/pull/3849",
+      "title": "Fixed cypress failing tests",
       "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3834",
-      "title": "Fixed the vital waveform initial breaking",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "tested"
-      ]
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3817",
       "title": "Added close and currect location select buttons in GLocationPicker",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "work-in-progress"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3816",
-      "title": "Fixed death report check in PatientHome",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "tested",
-        "good to merge"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3796",
-      "title": "Added new UI to log additional details in PressureSore",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 313,
+      "stale_for": 315,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 319,
+      "stale_for": 321,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 320,
+      "stale_for": 322,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 515,
+      "stale_for": 517,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1082",
+      "pr_link": "https://github.com/coronasafe/care/pull/1083"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3829",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3835"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1075",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3815"
@@ -7446,14 +7480,6 @@
     {
       "issue_link": "https://github.com/coronasafe/arike/issues/135",
       "pr_link": "https://github.com/coronasafe/arike/pull/136"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/arike/issues/127",
-      "pr_link": "https://github.com/coronasafe/arike/pull/128"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/arike/issues/121",
-      "pr_link": "https://github.com/coronasafe/arike/pull/122"
     }
   ]
 }

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1666542488.0,
+  "last_updated": 1666960873.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3851",
+      "time": 1666960873.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3851",
+      "text": "fix: back button redirection in patient details page"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#3812",
@@ -712,9 +719,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3851",
+      "title": "fix: back button redirection in patient details page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3637",
       "title": "fix: parent url when clicking back icon",
-      "stale_for": 3,
+      "stale_for": 8,
       "labels": [
         "question",
         "need Review",
@@ -724,13 +740,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/59",
       "title": "feat: authorization middleware for MSE server",
-      "stale_for": 34,
+      "stale_for": 39,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3467",
       "title": "fix: add loader to external results section",
-      "stale_for": 3,
+      "stale_for": 8,
       "labels": [
         "question",
         "need Review",
@@ -744,7 +760,8 @@
       "stale_for": 2,
       "labels": [
         "need Review",
-        "Done"
+        "Done",
+        "merge conflict"
       ]
     }
   ],

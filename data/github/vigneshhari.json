@@ -1,6 +1,27 @@
 {
-  "last_updated": 1666366240.0,
+  "last_updated": 1666948152.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1082",
+      "time": 1666948152.0,
+      "link": "https://github.com/coronasafe/care/issues/1082",
+      "text": "Add `is_occupied` read_only field to bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666948143.0,
+      "title": "coronasafe/care#1083",
+      "link": "https://github.com/coronasafe/care/pull/1083#pullrequestreview-1159728904",
+      "text": "Added is_occupied read-only field in Bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1083",
+      "time": 1666948116.0,
+      "link": "https://github.com/coronasafe/care/pull/1083#issuecomment-1294737068",
+      "text": "I would rather create a variable and store it in the database, this method fires a query per object retrieval, which can be DB intensive when multiple objects are rendered. @khavinshankar can you create a separate ticket for this. \r\nI will approve this on the condition that it will be improved later. "
+    },
     {
       "type": "pr_reviewed",
       "time": 1666366240.0,

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1666960873.0,
+  "last_updated": 1667030707.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3865",
+      "time": 1667030707.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3865",
+      "text": "fix: patient creation form back button"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3851",
@@ -719,9 +726,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3865",
+      "title": "fix: patient creation form back button",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3851",
       "title": "fix: back button redirection in patient details page",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review"
@@ -730,7 +745,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3637",
       "title": "fix: parent url when clicking back icon",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "question",
         "need Review",
@@ -740,13 +755,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/59",
       "title": "feat: authorization middleware for MSE server",
-      "stale_for": 39,
+      "stale_for": 40,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3467",
       "title": "fix: add loader to external results section",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "question",
         "need Review",
@@ -757,7 +772,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3307",
       "title": "fix: remove raw css file import from .res files in critical care recording",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "need Review",
         "Done",

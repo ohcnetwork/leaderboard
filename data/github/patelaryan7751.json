@@ -1,6 +1,34 @@
 {
-  "last_updated": 1666816444.0,
+  "last_updated": 1667212462.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3897",
+      "time": 1667212462.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3897",
+      "text": "Added Home Facility name beside doctors name while assigning doctor in Consutation Page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3896",
+      "time": 1667207416.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3896",
+      "text": "Having images of Facility in mobile devices"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3895",
+      "time": 1667206502.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3895#issuecomment-1296784218",
+      "text": "Hey @mathew-alex i think we need to allow localhost."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3895",
+      "time": 1667206426.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3895",
+      "text": "We cannot upload files from localhost in FileUpload Page "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3716",
@@ -4015,9 +4043,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3897",
+      "title": "Added Home Facility name beside doctors name while assigning doctor in Consutation Page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3892",
+      "title": "Enhanced the Ui in Updates tab of a particular patient in tab devices",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3716",
       "title": "File name can be changed and it can be archived",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "hacktoberfest",
         "work-in-progress"
@@ -4026,7 +4070,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3647",
       "title": "Changed name of the label Active to transfer status: active in asset page",
-      "stale_for": 2,
+      "stale_for": 7,
       "labels": [
         "question",
         "work-in-progress",
@@ -4036,10 +4080,11 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3586",
       "title": "Added validation to onvif and hl7monitor asset pages",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "changes required",
-        "peer-reviewed"
+        "peer-reviewed",
+        "merge conflict"
       ]
     }
   ],

@@ -1,6 +1,34 @@
 {
-  "last_updated": 1666403359.0,
+  "last_updated": 1667258593.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3900",
+      "time": 1667258593.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3900",
+      "text": "Cypress: Refactor waits in api requests"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3750",
+      "time": 1667244982.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3750#issuecomment-1297577545",
+      "text": "@gigincg Could you please be specific where we have used wait for completiing requests?\r\nI just checked besides for UI delays, I couldn't find `wait` for request delays.\r\n\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3899",
+      "time": 1667243058.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3899",
+      "text": "Bump node LTS version to `18.x`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3767",
+      "time": 1667241919.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3767#issuecomment-1297518592",
+      "text": "@nihal467 I haven't made any UI changes in this PR.\r\n Could you please verify if the same issue persist in default staging server?"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#3798",
@@ -1073,12 +1101,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3900",
+      "title": "Cypress: Refactor waits in api requests",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3899",
+      "title": "Bump node LTS version to `18.x`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3767",
       "title": "Proxy camera feed PTZ requests through backend",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "test failed",
-        "merge conflict"
+        "question",
+        "test failed"
       ]
     }
   ],

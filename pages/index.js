@@ -120,10 +120,13 @@ export async function getStaticProps() {
   const contributors = getContributors();
   const dateRange = getLastWeekDateRangeString();
 
+  const metaTags = [{ name: "og:image", content: "/logo.webp" }];
+
   return {
     props: {
       contributors,
       dateRange,
+      metaTags,
     },
   };
 }

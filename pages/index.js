@@ -121,7 +121,7 @@ export async function getStaticProps() {
   const dateRange = getLastWeekDateRangeString();
 
   const metaTags = [
-    { name: "og:image", content: "/logo.webp" },
+    { name: "og:image", content: "/images/map-check.png" },
     {
       name: "og:title",
       content: "Coronasafe Leaderboard",

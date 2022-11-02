@@ -5,7 +5,7 @@ export default function PageHead({ title, metaTags }) {
       <title>{title && title + " | "}Coronasafe Contributors</title>
       <meta
         property="og:url"
-        content={"https://contributors.coronasafe.network/"}
+        content={"https://contributors.coronasafe.network"}
       />
       <meta
         name="description"

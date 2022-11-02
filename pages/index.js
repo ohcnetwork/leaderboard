@@ -123,8 +123,7 @@ export async function getStaticProps() {
   const metaTags = [
     {
       name: "og:image",
-      // content: "",
-      content: `https://leaderboard-git-fork-ritesh-aggarwal-preview-links-coronasafe.vercel.app/images/map-check.png`,
+      content: `/logo.webp`,
     },
     {
       name: "og:title",

@@ -1,6 +1,41 @@
 {
-  "last_updated": 1667258593.0,
+  "last_updated": 1667323386.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3905",
+      "time": 1667323386.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3905#issuecomment-1298863385",
+      "text": "Possble solution is by switching cypress workflow trigger from `pull_request` to `pull_request_target`. [Ref](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request_target)\r\n\r\ncc: @khavinshankar "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3899",
+      "time": 1667319941.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3899",
+      "text": "Bump node LTS version to `18.x`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3900",
+      "time": 1667319926.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3900",
+      "text": "Cypress: Refactor waits in api requests"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3905",
+      "time": 1667296338.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3905",
+      "text": "Cypress failed Label not working within actions"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3903",
+      "time": 1667294791.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3903",
+      "text": "Fix permission issue for cypress labels"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3900",
@@ -1101,25 +1136,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3900",
-      "title": "Cypress: Refactor waits in api requests",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3899",
-      "title": "Bump node LTS version to `18.x`",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3767",
       "title": "Proxy camera feed PTZ requests through backend",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "question",
         "test failed"

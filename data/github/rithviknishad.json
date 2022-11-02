@@ -1,6 +1,41 @@
 {
-  "last_updated": 1667227201.0,
+  "last_updated": 1667318878.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3832",
+      "time": 1667318878.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3832",
+      "text": "Issues in patient page responsive layout"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3832",
+      "time": 1667318865.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3832#issuecomment-1298765535",
+      "text": "Duplicate of #3912"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3908",
+      "time": 1667298806.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3908#issuecomment-1298329737",
+      "text": "### Components to be built\r\n\r\n- [ ] `Dialog`\r\n\r\n```\r\nexpected props:\r\n- title\r\n- description (optional)\r\n- children\r\n- onClose (optional)\r\n- show\r\n```\r\n\r\n- [ ] `ConfirmActionDialog` (useful for confirm archive/delete or other critical operations)\r\n```\r\nprops additional to above:\r\n- action: string (eg. \"Delete\")\r\n- severity: warning / danger\r\n- onConfirm\r\n- onCancel\r\n- confirmationText\r\n```\r\n\r\nexample: \r\n![image](https://user-images.githubusercontent.com/25143503/199214031-c0d8cc26-de3f-4c35-8b73-6f221a52e35e.png)\r\n\r\n\r\ncc: @khavinshankar @gigincg "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3901",
+      "time": 1667298752.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3901#issuecomment-1298328804",
+      "text": "@nihal467 you can test. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667284847.0,
+      "title": "coronasafe/care_fe#3901",
+      "link": "https://github.com/coronasafe/care_fe/pull/3901#pullrequestreview-1162900939",
+      "text": "Now facility icons are visible in mobile devices"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#3898",
@@ -3969,7 +4004,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3843",
       "title": "Redesigned Sidebar",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "need Review",
@@ -3980,13 +4015,13 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Datepicker wrapped with `Popover` + ability to select year",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/66",
       "title": "Scrapper support for datetime based scrapping instead of date",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": [
         "merge conflict"
       ]
@@ -3994,7 +4029,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": [
         "merge conflict"
       ]

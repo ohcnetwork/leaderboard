@@ -1,6 +1,76 @@
 {
-  "last_updated": 1667193974.0,
+  "last_updated": 1667320114.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3916",
+      "time": 1667320114.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3916",
+      "text": "Fix patient page header position on scroll"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3893",
+      "time": 1667319703.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3893",
+      "text": "Fix outer border for OnlineUsersSelect"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3894",
+      "time": 1667319645.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3894",
+      "text": "Close user select dropdown on blur"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3915",
+      "time": 1667319146.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3915#issuecomment-1298771609",
+      "text": "@nihal467 can we merge this with #3886 ? "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3914",
+      "time": 1667318330.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3914",
+      "text": "Scroll Facility page to top on load"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3901",
+      "time": 1667317387.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3901#issuecomment-1298730431",
+      "text": "> How about using tailwind modifiers like `md:hidden md:visible` instead of useWindowDimensions hook?\r\n\r\nI think this should be the proper approach, I tried to use the above modifiers and was able to achieve the same results."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667317200.0,
+      "title": "coronasafe/care_fe#3901",
+      "link": "https://github.com/coronasafe/care_fe/pull/3901#pullrequestreview-1163555774",
+      "text": "Now facility icons are visible in mobile devices"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667317199.0,
+      "title": "coronasafe/care_fe#3901",
+      "link": "https://github.com/coronasafe/care_fe/pull/3901#pullrequestreview-1163555774",
+      "text": "Now facility icons are visible in mobile devices"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667316175.0,
+      "title": "coronasafe/care_fe#3909",
+      "link": "https://github.com/coronasafe/care_fe/pull/3909#pullrequestreview-1163532907",
+      "text": "update notification card UI"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3910",
+      "time": 1667311407.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3910",
+      "text": "Fix error message position"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3894",
@@ -4290,16 +4360,24 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3894",
-      "title": "Close user select dropdown on blur",
+      "link": "https://github.com/coronasafe/care_fe/pull/3916",
+      "title": "Fix patient page header position on scroll",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3893",
-      "title": "Fix outer border for OnlineUsersSelect",
+      "link": "https://github.com/coronasafe/care_fe/pull/3914",
+      "title": "Scroll Facility page to top on load",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3910",
+      "title": "Fix error message position",
       "stale_for": 0,
       "labels": [
         "needs testing"
@@ -4308,15 +4386,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3840",
       "title": "Add Session Expired page and change illustrations",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 33,
+      "stale_for": 34,
       "labels": [
         "reviewed"
       ]

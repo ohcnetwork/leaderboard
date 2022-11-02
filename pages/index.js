@@ -120,7 +120,27 @@ export async function getStaticProps() {
   const contributors = getContributors();
   const dateRange = getLastWeekDateRangeString();
 
-  const metaTags = [{ name: "og:image", content: "/logo.webp" }];
+  const metaTags = [
+    { name: "og:image", content: "/logo.webp" },
+    {
+      name: "og:title",
+      content: "Coronasafe Leaderboard",
+    },
+    {
+      name: "description",
+      content:
+        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+    },
+    {
+      name: "og:description",
+      content:
+        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+    },
+    {
+      name: "og:type",
+      content: "article",
+    },
+  ];
 
   return {
     props: {

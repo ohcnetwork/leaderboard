@@ -121,7 +121,11 @@ export async function getStaticProps() {
   const dateRange = getLastWeekDateRangeString();
 
   const metaTags = [
-    { name: "og:image", content: "/images/map-check.png" },
+    {
+      name: "og:image",
+      // content: "",
+      content: `https://leaderboard-git-fork-ritesh-aggarwal-preview-links-coronasafe.vercel.app/images/map-check.png`,
+    },
     {
       name: "og:title",
       content: "Coronasafe Leaderboard",
@@ -146,7 +150,7 @@ export async function getStaticProps() {
     props: {
       contributors,
       dateRange,
-      metaTags,
+      metaTags: metaTags,
     },
   };
 }

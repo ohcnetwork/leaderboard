@@ -1,6 +1,13 @@
 {
-  "last_updated": 1666958637.0,
+  "last_updated": 1667367232.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1088",
+      "time": 1667367232.0,
+      "link": "https://github.com/coronasafe/care/issues/1088",
+      "text": "Add a 'none' field to bed-type-occupied by patient"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3275",
@@ -559,16 +566,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3755",
       "title": "Fixed minor UI break in Facility Page",
-      "stale_for": 2,
+      "stale_for": 1,
       "labels": [
-        "Waiting UI Approval",
-        "Team Discuss Required"
+        "hold",
+        "Waiting UI Approval"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3700",
       "title": "Removed unnecessary imports and added checkUsername route for User Creation page ",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": [
         "question",
         "API Done",
@@ -578,13 +585,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1038",
       "title": "Added constraints to models to not allot multiple patients the same bed",
-      "stale_for": 15,
+      "stale_for": 20,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3275",
       "title": "Added image for locations not found",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress"
       ]

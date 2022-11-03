@@ -41966,5 +41966,209 @@
         }
     ],
     "2022-10-31 00:00:00": [],
-    "2022-11-02 00:00:00": []
+    "2022-11-02 00:00:00": [
+        {
+            "client_msg_id": "d327e916-f894-4be0-abd4-4b86c7406b21",
+            "type": "message",
+            "text": "Raised a <https://github.com/coronasafe/care_fe/pull/3922|PR>",
+            "user": "U02TPSYB1MF",
+            "ts": "1667405163.430939",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "SD7hk",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Raised a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3922",
+                                    "text": "PR"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/70687348/199404369-ce977a59-1dd5-40c4-abc2-9656bdf3bcd7.png",
+                    "image_width": 534,
+                    "image_height": 277,
+                    "image_bytes": 9820,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1667366326,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3922",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "534x277px image",
+                    "text": "Fixes <https://github.com/coronasafe/care_fe/issues/3921|#3921>  \nAdded the same loader on patients page as that on other pages  \n<https://user-images.githubusercontent.com/70687348/199404369-ce977a59-1dd5-40c4-abc2-9656bdf3bcd7.png|Screenshot from 2022-11-02 10-44-26>",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3922|#3922 Added same loader on Patients page>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing, Team Discuss Required",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "4",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "9fd57335-4527-4fd2-a4e5-5c366eb9f8ec",
+            "type": "message",
+            "text": "Won't be able to join EOD today.\n\u2022 Completed: <https://github.com/coronasafe/care_fe/pull/3920>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1667392748.454149",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "=VU1f",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Won't be able to join EOD today.\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Completed: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3920"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1667392769.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1667365728,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3920",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3920|#3920 Tailwind `SearchInput` with keyboard shortcut to focus>",
+                    "text": "*Proposed Changes*\n\n\u2611\ufe0e Tailwind search bar with shortcut input\n\u2611\ufe0e Support it to be focused on shortcut `Ctrl K` (`\u2318K` on Apple devices)\n\u2611\ufe0e Hide the shortcut key in mobile\n\u2022 Closes <https://github.com/coronasafe/care_fe/issues/3898|#3898>\n\n2022-11-02.14-57-16.mp4\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3920|#3920 Tailwind `SearchInput` with keyboard shortcut to focus>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing, need Review, redesign",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "4",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "f34a14f0-8221-4c3a-87ba-e73a27070867",
+            "type": "message",
+            "text": "worked on <https://github.com/coronasafe/leaderboard/pull/100|pr>",
+            "user": "U02T4HE96KY",
+            "ts": "1667391685.387189",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "XEki",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "worked on "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/leaderboard/pull/100",
+                                    "text": "pr"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1667388303,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/leaderboard/pull/100",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/leaderboard/pull/100|#100 Preview images for links>",
+                    "text": "closes <https://github.com/coronasafe/leaderboard/issues/99|#99>",
+                    "title": "<https://github.com/coronasafe/leaderboard/pull/100|#100 Preview images for links>",
+                    "footer": "<https://github.com/coronasafe/leaderboard|coronasafe/leaderboard>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-11-03 00:00:00": []
 }

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1667399892.0,
+  "last_updated": 1667575104.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3952",
+      "time": 1667575104.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3952",
+      "text": "Added show details modal in preview mode for PressureSore"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_dashboard#61",
+      "time": 1667539755.0,
+      "link": "https://github.com/coronasafe/care_dashboard/pull/61",
+      "text": "Show all facilities"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_dashboard#60",
+      "time": 1667537735.0,
+      "link": "https://github.com/coronasafe/care_dashboard/pull/60",
+      "text": "Simplified env for deployment"
+    },
     {
       "type": "pr_reviewed",
       "time": 1667399892.0,
@@ -7732,70 +7753,65 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3927",
-      "title": "Added procedures in ConsultationForm",
+      "link": "https://github.com/coronasafe/care_fe/pull/3952",
+      "title": "Added show details modal in preview mode for PressureSore",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_dashboard/pull/61",
+      "title": "Show all facilities",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_dashboard/pull/60",
+      "title": "Simplified env for deployment",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3919",
       "title": "Minor changes to stale and cypress workflow",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "work-in-progress",
         "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3906",
-      "title": "Show dropdown list over mui modal in LinkFacilityDialog",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3889",
-      "title": "Fixed multiple selection issue in AutoCompleteAsync",
-      "stale_for": 1,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3817",
       "title": "Added close and currect location select buttons in GLocationPicker",
-      "stale_for": 7,
+      "stale_for": 1,
       "labels": [
-        "work-in-progress"
+        "work-in-progress",
+        "stale"
       ]
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 320,
+      "stale_for": 322,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 326,
+      "stale_for": 328,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 327,
+      "stale_for": 329,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 522,
+      "stale_for": 524,
       "labels": []
     }
   ],

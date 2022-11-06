@@ -8478,5 +8478,67 @@
                 }
             ]
         }
+    ],
+    "2022-11-05 00:00:00": [
+        {
+            "client_msg_id": "26635ae7-2ef1-4695-a2a3-53709e9c3c81",
+            "type": "message",
+            "text": "\u2022 Corrected few issues with AsyncAutocomplete component\n\u2022 PR: <https://github.com/coronasafe/care_fe/pull/3959|Fixes facility card layout spacing issue below the action buttons bar>\n\u2022 Working on implementing modals with tailwind (will be replacing Notify Facility's as of now)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1667656610.449049",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "cYjNX",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Corrected few issues with AsyncAutocomplete component"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "PR: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3959",
+                                            "text": "Fixes facility card layout spacing issue below the action buttons bar"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on implementing modals with tailwind (will be replacing Notify Facility's as of now)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1667656766.000000"
+            }
+        }
     ]
 }

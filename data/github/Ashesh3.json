@@ -1,6 +1,20 @@
 {
-  "last_updated": 1667551108.0,
+  "last_updated": 1667678625.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3964",
+      "time": 1667678625.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3964",
+      "text": "Add and redirect to invalid password reset link"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1091",
+      "time": 1667678589.0,
+      "link": "https://github.com/coronasafe/care/pull/1091",
+      "text": "Add endpoint to check the validity of a password reset token"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3947",
@@ -4395,9 +4409,26 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3964",
+      "title": "Add and redirect to invalid password reset page",
+      "stale_for": 0,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1091",
+      "title": "Add endpoint to check the validity of a password reset token",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "done"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3947",
       "title": "Allow only image files for facility cover file input",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -4405,7 +4436,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3934",
       "title": "Show password requirement error during input",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -4413,7 +4444,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 37,
+      "stale_for": 38,
       "labels": [
         "reviewed"
       ]

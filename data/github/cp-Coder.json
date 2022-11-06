@@ -1,6 +1,41 @@
 {
-  "last_updated": 1667319848.0,
+  "last_updated": 1667651014.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3963",
+      "time": 1667651014.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3963#issuecomment-1304536702",
+      "text": "@nihal467 This PR can bed tested once the backend PR coronasafe/care#1090 merges "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3963",
+      "time": 1667650751.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3963",
+      "text": "feat: added admitted bed type filter"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1090",
+      "time": 1667647194.0,
+      "link": "https://github.com/coronasafe/care/pull/1090",
+      "text": "feat: Added admitted bed type filter"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1089",
+      "time": 1667646692.0,
+      "link": "https://github.com/coronasafe/care/issues/1089",
+      "text": "Feature: Admitted Bed type filter"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3953",
+      "time": 1667643278.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3953#issuecomment-1304474068",
+      "text": "Sure @nihal467 "
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#3883",
@@ -5588,35 +5623,44 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3882",
-      "title": "fix(asset): droplist is stretching the asset page",
+      "link": "https://github.com/coronasafe/care_fe/pull/3963",
+      "title": "feat: added admitted bed type filter",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1090",
+      "title": "feat: Added admitted bed type filter",
+      "stale_for": 0,
+      "labels": [
+        "done",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3882",
+      "title": "fix(asset): droplist is stretching the asset page",
+      "stale_for": 1,
+      "labels": [
+        "needs testing",
+        "changes required"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 5,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review",
         "done"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3801",
-      "title": "fix: misalignment of No Assets Found text",
-      "stale_for": 0,
-      "labels": [
-        "hacktoberfest",
-        "test failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 6,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "Done",
@@ -5627,7 +5671,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 10,
+      "stale_for": 14,
       "labels": [
         "do-not-merge"
       ]
@@ -5635,7 +5679,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 5,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5644,7 +5688,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 5,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5653,7 +5697,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 4,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5662,7 +5706,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 23,
+      "stale_for": 27,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5671,7 +5715,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3151",
       "title": "fix(bed history): hided currently used bed",
-      "stale_for": 20,
+      "stale_for": 24,
       "labels": [
         "urgent",
         "waiting for back end"
@@ -5680,7 +5724,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/882",
       "title": "Removed current health field",
-      "stale_for": 39,
+      "stale_for": 43,
       "labels": [
         "ops-review-pending",
         "reviewed"
@@ -5689,7 +5733,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 131,
+      "stale_for": 135,
       "labels": [
         "waiting-for-review"
       ]

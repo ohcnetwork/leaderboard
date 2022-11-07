@@ -1,6 +1,118 @@
 {
-  "last_updated": 1667669897.0,
+  "last_updated": 1667748625.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3986",
+      "time": 1667748625.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3986",
+      "text": "When shifting between pages in log update, the screen scrolls to the top"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3985",
+      "time": 1667748083.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3985",
+      "text": "Too much whitespace when a log updates list page has too little cards on the current page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3984",
+      "time": 1667746623.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3984",
+      "text": "Improve the way we display the linked facilities of a user such that it does not affect other users cards."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3983",
+      "time": 1667745977.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3983",
+      "text": "DateRangePickerV2 should not allow selecting end date that's before start date."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3982",
+      "time": 1667745647.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3982",
+      "text": "Clear the input fields in patient filters when Clear Filter is pressed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3981",
+      "time": 1667745309.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3981",
+      "text": "Disallow incorrect entry from patient's age filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667731601.0,
+      "title": "coronasafe/care_fe#3979",
+      "link": "https://github.com/coronasafe/care_fe/pull/3979#pullrequestreview-1169575989",
+      "text": "Fixed the blank space at the bottom in ConsultationForm while updating"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3979",
+      "time": 1667731523.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3979#issuecomment-1304771277",
+      "text": "@khavinshankar got it, it wasn't reproducible in firefox consistently but it was reproducible in chrome consistently."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667730032.0,
+      "title": "coronasafe/care_fe#3977",
+      "link": "https://github.com/coronasafe/care_fe/pull/3977#pullrequestreview-1169572964",
+      "text": "fix: replaced multiselect with new tailwind component"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667728866.0,
+      "title": "coronasafe/care_fe#3979",
+      "link": "https://github.com/coronasafe/care_fe/pull/3979#pullrequestreview-1169570253",
+      "text": "Fixed the blank space at the bottom in ConsultationForm while updating"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3979",
+      "time": 1667728708.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3979#issuecomment-1304762072",
+      "text": "@khavinshankar the issue is still present. However, it's solved in #3977 \r\n![image](https://user-images.githubusercontent.com/25143503/200164517-8b5cc074-b22c-4bff-bf4d-48d62a0fa414.png)\r\n\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667722340.0,
+      "title": "coronasafe/care_fe#3897",
+      "link": "https://github.com/coronasafe/care_fe/pull/3897#pullrequestreview-1169556877",
+      "text": "Added Home Facility name beside doctors name while assigning doctor in Consutation Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667722022.0,
+      "title": "coronasafe/care_fe#3977",
+      "link": "https://github.com/coronasafe/care_fe/pull/3977#pullrequestreview-1169556375",
+      "text": "fix: replaced multiselect with new tailwind component"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3973",
+      "time": 1667721740.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3973#issuecomment-1304742140",
+      "text": "@nihal467 @khavinshankar the issue is not present in #3882 as it was changed to the newer `SelectMenuV2` from `SelectMenu`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3970",
+      "time": 1667716737.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3970",
+      "text": "User filters: fix phone number parse issue when cleared"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667708608.0,
+      "title": "coronasafe/care_fe#3965",
+      "link": "https://github.com/coronasafe/care_fe/pull/3965#pullrequestreview-1169541316",
+      "text": "feat: Add query params while using pagination"
+    },
     {
       "type": "pr_reviewed",
       "time": 1667669897.0,
@@ -4289,9 +4401,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3970",
+      "title": "User filters: fix phone number parse issue when cleared",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3959",
       "title": "Fixes facility card layout spacing issue below the action buttons bar",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review"
@@ -4300,7 +4421,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3942",
       "title": "AutoCompleteAsync: make button and input as peers instead of parent children",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "urgent",
         "needs testing",
@@ -4311,7 +4432,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3936",
       "title": "use correct patient category colors for badge in log update tiles",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "need Review"
@@ -4320,7 +4441,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3920",
       "title": "Tailwind `SearchInput` with keyboard shortcut to focus",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "enhancement",
         "needs testing",
@@ -4331,13 +4452,13 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Datepicker wrapped with `Popover` + ability to select year",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "merge conflict"
       ]

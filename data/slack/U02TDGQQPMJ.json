@@ -8540,5 +8540,207 @@
                 "ts": "1667656766.000000"
             }
         }
+    ],
+    "2022-11-06 00:00:00": [
+        {
+            "client_msg_id": "c64b317d-ed20-4927-8b70-b8160b2f32c9",
+            "type": "message",
+            "text": "*Worked on:*\n\u2022 Introduced `authorisedFor` callback prop (defaulting to `AuthorisedFor.Anyone`) for ButtonV2, to bring in functionality equivalent to RoleButton (coming along with Gokuls PR for facility home page redesign).\n\u2022 User filters: fix phone number parse issue when cleared <https://github.com/coronasafe/care_fe/pull/3970|#3970>\n*Issues raised:*\n\u2022 When shifting between pages in log update, the screen scrolls to the top <https://github.com/coronasafe/care_fe/issues/3986|#3986>\n\u2022 Too much whitespace when a log updates list page has too little cards on the current page <https://github.com/coronasafe/care_fe/issues/3985|#3985>\n\u2022 Improve the way we display the linked facilities of a user such that it does not affect other users cards. <https://github.com/coronasafe/care_fe/issues/3984|#3984>\n\u2022 DateRangePickerV2 should not allow selecting end date that's before start date. <https://github.com/coronasafe/care_fe/issues/3983|#3983>\n\u2022 Clear the input fields in patient filters when Clear Filter is pressed <https://github.com/coronasafe/care_fe/issues/3982|#3982>\n\u2022 Disallow incorrect entry from patient's age filter <https://github.com/coronasafe/care_fe/issues/3981|#3981>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1667749074.335279",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "7l3",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Introduced "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "authorisedFor",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " callback prop (defaulting to "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "AuthorisedFor.Anyone",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ") for ButtonV2, to bring in functionality equivalent to RoleButton (coming along with Gokuls PR for facility home page redesign)."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "User filters: fix phone number parse issue when cleared "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3970",
+                                            "text": "#3970",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues raised:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "When shifting between pages in log update, the screen scrolls to the top "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3986",
+                                            "text": "#3986",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Too much whitespace when a log updates list page has too little cards on the current page "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3985",
+                                            "text": "#3985",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Improve the way we display the linked facilities of a user such that it does not affect other users cards. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3984",
+                                            "text": "#3984",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "DateRangePickerV2 should not allow selecting end date that's before start date. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3983",
+                                            "text": "#3983",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Clear the input fields in patient filters when Clear Filter is pressed "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3982",
+                                            "text": "#3982",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Disallow incorrect entry from patient's age filter "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3981",
+                                            "text": "#3981",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -1,6 +1,87 @@
 {
-  "last_updated": 1667748625.0,
+  "last_updated": 1667849446.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3997",
+      "time": 1667849446.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3997",
+      "text": "NotificationList: replace legacy select and buttons with tailwind components."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3996",
+      "time": 1667844423.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3996",
+      "text": "Slideover tailwind component"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3993",
+      "time": 1667827300.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3993",
+      "text": "`useActiveLink` hook for detecting sidebar selected or not."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#3992",
+      "time": 1667824245.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3992",
+      "text": "Placeholder and autofill credentials overlap in chrome."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667820978.0,
+      "title": "coronasafe/care_fe#3991",
+      "link": "https://github.com/coronasafe/care_fe/pull/3991#pullrequestreview-1170242170",
+      "text": "Added sidebar indicator"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667820206.0,
+      "title": "coronasafe/care_fe#3987",
+      "link": "https://github.com/coronasafe/care_fe/pull/3987#pullrequestreview-1170225840",
+      "text": "fix: additional space between pagination bar and components in update log component"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667818949.0,
+      "title": "coronasafe/care_fe#3991",
+      "link": "https://github.com/coronasafe/care_fe/pull/3991#pullrequestreview-1170198703",
+      "text": "Added sidebar indicator"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3990",
+      "time": 1667813863.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3990#issuecomment-1305339364",
+      "text": "@skks1212 duplicate of #3966 "
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#3989",
+      "time": 1667811837.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3989",
+      "text": "Production Release; Nov Week 1",
+      "collaborated_with": [
+        "ishanExtreme",
+        "cp-Coder",
+        "khavinshankar",
+        "patelaryan7751",
+        "skks1212",
+        "Pranshu1902",
+        "Ritesh-Aggarwal",
+        "rabilrbl",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3819",
+      "time": 1667810003.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3819#issuecomment-1305257824",
+      "text": "## Changes\r\n\r\n- Improve how ButtonV2 and DropdownMenuItem authorization works\r\n- Unauthorized actions are hidden in dropdown menu:\r\n![image](https://user-images.githubusercontent.com/25143503/200262737-0c9557a8-3ba3-44d9-add2-035f0576ea85.png)\r\n![image](https://user-images.githubusercontent.com/25143503/200262817-88e7f166-7476-4e25-8b95-0e9a91ace6f6.png)\r\n\r\n"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#3986",
@@ -4401,9 +4482,36 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/3997",
+      "title": "NotificationList: replace legacy select and buttons with tailwind components.",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3996",
+      "title": "Slideover tailwind component",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress",
+        "redesign"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/3993",
+      "title": "`useActiveLink` hook for detecting sidebar selected or not.",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3970",
       "title": "User filters: fix phone number parse issue when cleared",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review"
@@ -4412,7 +4520,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3959",
       "title": "Fixes facility card layout spacing issue below the action buttons bar",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "need Review"
@@ -4421,7 +4529,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3942",
       "title": "AutoCompleteAsync: make button and input as peers instead of parent children",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "urgent",
         "needs testing",
@@ -4432,7 +4540,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3936",
       "title": "use correct patient category colors for badge in log update tiles",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "need Review"
@@ -4441,7 +4549,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3920",
       "title": "Tailwind `SearchInput` with keyboard shortcut to focus",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "enhancement",
         "needs testing",
@@ -4452,13 +4560,13 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Datepicker wrapped with `Popover` + ability to select year",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "merge conflict"
       ]

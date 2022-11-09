@@ -1,6 +1,27 @@
 {
-  "last_updated": 1667668407.0,
+  "last_updated": 1667914431.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4004",
+      "time": 1667914431.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4004",
+      "text": "Fixed facility search offset"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4003",
+      "time": 1667914208.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4003",
+      "text": "Facility search not working properly"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3819",
+      "time": 1667909287.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3819#issuecomment-1307105696",
+      "text": "> @GokulramGHV see a comment by rithvik, once completed, change it to need testing\r\n\r\n@nihal467  I've made all the changes that rithvik suggested. The PR is ready for testing."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3819",
@@ -1278,11 +1299,20 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4004",
+      "title": "Fixed facility search offset",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3819",
       "title": "Redesigned Facility Home Page",
       "stale_for": 0,
       "labels": [
         "needs testing",
+        "Done",
         "redesign"
       ]
     }

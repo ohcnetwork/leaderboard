@@ -1,6 +1,48 @@
 {
-  "last_updated": 1667849446.0,
+  "last_updated": 1667930495.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#104",
+      "time": 1667930495.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/104",
+      "text": "Prefix currently working on PR's with `{repo}/{pr-number}`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3819",
+      "time": 1667910516.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3819#issuecomment-1307133330",
+      "text": "@nihal the last comment by me was just about the changes that I have pushed. Not a request for changes to be made"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3997",
+      "time": 1667905715.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3997#issuecomment-1307032766",
+      "text": "Closing as merged to #3996 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667892212.0,
+      "title": "coronasafe/care_fe#3882",
+      "link": "https://github.com/coronasafe/care_fe/pull/3882#pullrequestreview-1171548012",
+      "text": "fix(asset): droplist is stretching the asset page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3999",
+      "time": 1667873659.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3999#issuecomment-1306521009",
+      "text": "@kunatastic solved in #3882 by using the newer SelectMenuV2 components."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3998",
+      "time": 1667873015.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3998#issuecomment-1306509777",
+      "text": "Duplicate of #3882 @kunatastic "
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3997",
@@ -4482,17 +4524,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3997",
-      "title": "NotificationList: replace legacy select and buttons with tailwind components.",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "need Review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
-      "title": "Slideover tailwind component",
+      "title": "Adds Slideover tailwind component + UI tweaks in Notification List",
       "stale_for": 0,
       "labels": [
         "work-in-progress",
@@ -4502,7 +4535,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3993",
       "title": "`useActiveLink` hook for detecting sidebar selected or not.",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review"
@@ -4511,16 +4544,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3970",
       "title": "User filters: fix phone number parse issue when cleared",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "need Review"
+        "need Review",
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3959",
       "title": "Fixes facility card layout spacing issue below the action buttons bar",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "need Review"
@@ -4529,7 +4562,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3942",
       "title": "AutoCompleteAsync: make button and input as peers instead of parent children",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "urgent",
         "needs testing",
@@ -4540,16 +4573,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3936",
       "title": "use correct patient category colors for badge in log update tiles",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "need Review"
+        "need Review",
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3920",
       "title": "Tailwind `SearchInput` with keyboard shortcut to focus",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "enhancement",
         "needs testing",
@@ -4560,13 +4593,13 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Datepicker wrapped with `Popover` + ability to select year",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 22,
+      "stale_for": 23,
       "labels": [
         "merge conflict"
       ]

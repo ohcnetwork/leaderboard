@@ -1,6 +1,160 @@
 {
-  "last_updated": 1667930495.0,
+  "last_updated": 1668019463.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3819",
+      "time": 1668019463.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3819#issuecomment-1309207510",
+      "text": "This looks fine I feel. Can you also add `tracking-widest` or `tracking-wider` class to the phone number? Phone numbers would be easier to read.\r\n\r\nAlso lets wrap that to a component `ContactLink` which has props:\r\n```jsx\r\nconst ContactLinkProps =\r\n  | { mailto: string; tel: undefined }\r\n  | { mailto: undefined; tel: string };\r\n```\r\n\r\nThis way we can re-use the component with the same consistent design everywhere in future."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3942",
+      "time": 1668008432.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3942",
+      "text": "AutoCompleteAsync: make button and input as peers instead of parent children"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4015",
+      "time": 1668001937.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4015",
+      "text": "Fix issues in #4009"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4014",
+      "time": 1668001365.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4014",
+      "text": "Movement of icons in Sidebar"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4014",
+      "time": 1668001290.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4014#issuecomment-1308780165",
+      "text": "Already been solved by #3991 and it's been merged. Issue not present in staging. Could you try hard refreshing the page?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3993",
+      "time": 1668001145.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3993",
+      "text": "`useActiveLink` hook for detecting sidebar selected or not."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4013",
+      "time": 1667992338.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4013",
+      "text": "Facility cover photo in mobile view has is not clipped if height is too high"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4012",
+      "time": 1667991924.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4012#issuecomment-1308583788",
+      "text": "@aparnacoronasafe duplicate of #3954"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3999",
+      "time": 1667990659.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3999#issuecomment-1308557893",
+      "text": "Closing as #3882 is merged and this issue is no longer present in staging. Re-open if this PR solves additional problems."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3998",
+      "time": 1667990557.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3998",
+      "text": "Update Asset dropdown bug"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3998",
+      "time": 1667990556.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3998#issuecomment-1308555942",
+      "text": "Closing as #3882 is merged and this issue is no longer present in staging."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667989997.0,
+      "title": "coronasafe/care_fe#4004",
+      "link": "https://github.com/coronasafe/care_fe/pull/4004#pullrequestreview-1173777208",
+      "text": "Fixed facility search offset"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1046",
+      "time": 1667989572.0,
+      "link": "https://github.com/coronasafe/care/issues/1046",
+      "text": "Cypress tests are timing out by waiting for response from backend in GH CI Workflow"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667989316.0,
+      "title": "coronasafe/care_fe#4010",
+      "link": "https://github.com/coronasafe/care_fe/pull/4010#pullrequestreview-1173757687",
+      "text": "Patient Details page redesign"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667989195.0,
+      "title": "coronasafe/care_fe#4010",
+      "link": "https://github.com/coronasafe/care_fe/pull/4010#pullrequestreview-1173754555",
+      "text": "Patient Details page redesign"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3936",
+      "time": 1667988868.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3936",
+      "text": "use correct patient category colors for badge in log update tiles"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3970",
+      "time": 1667988533.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3970",
+      "text": "User filters: fix phone number parse issue when cleared"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667985786.0,
+      "title": "coronasafe/care_fe#4010",
+      "link": "https://github.com/coronasafe/care_fe/pull/4010#pullrequestreview-1173653571",
+      "text": "Patient Details page redesign"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4009",
+      "time": 1667980060.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4009",
+      "text": "#3965 and #4004 merged for testing"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667979523.0,
+      "title": "coronasafe/care_fe#4004",
+      "link": "https://github.com/coronasafe/care_fe/pull/4004#pullrequestreview-1173482222",
+      "text": "Fixed facility search offset"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4007",
+      "time": 1667971892.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4007#issuecomment-1308233972",
+      "text": "https://deploy-preview-3819--care-net.netlify.app/"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4007",
+      "time": 1667971548.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4007#issuecomment-1308230703",
+      "text": "This is Facility Dashboard, which will be redesigned"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/leaderboard#104",
@@ -4524,59 +4678,31 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4009",
+      "title": "#3965 #4004 #3920 merged for testing",
+      "stale_for": 0,
+      "labels": [
+        "do not merge",
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List",
       "stale_for": 0,
       "labels": [
         "work-in-progress",
-        "redesign"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3993",
-      "title": "`useActiveLink` hook for detecting sidebar selected or not.",
-      "stale_for": 1,
-      "labels": [
-        "needs testing",
-        "need Review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3970",
-      "title": "User filters: fix phone number parse issue when cleared",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "tested"
+        "redesign",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3959",
-      "title": "Fixes facility card layout spacing issue below the action buttons bar",
-      "stale_for": 3,
+      "title": "Fixes issues in Facility Card's layout and minor UI tweaks",
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "need Review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3942",
-      "title": "AutoCompleteAsync: make button and input as peers instead of parent children",
-      "stale_for": 3,
-      "labels": [
-        "urgent",
-        "needs testing",
-        "need Review",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3936",
-      "title": "use correct patient category colors for badge in log update tiles",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "tested"
       ]
     },
     {
@@ -4585,27 +4711,36 @@
       "stale_for": 0,
       "labels": [
         "enhancement",
-        "needs testing",
+        "hold",
         "need Review",
+        "tested",
         "redesign"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Datepicker wrapped with `Popover` + ability to select year",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 23,
+      "stale_for": 24,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3958",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3993"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3932",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3936"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3784",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3744"
@@ -4673,18 +4808,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/875",
       "pr_link": "https://github.com/coronasafe/care/pull/1007"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2649",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2654"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/leaderboard/issues/18",
-      "pr_link": "https://github.com/coronasafe/leaderboard/pull/19"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/leaderboard/issues/16",
-      "pr_link": "https://github.com/coronasafe/leaderboard/pull/17"
     }
   ]
 }

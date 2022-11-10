@@ -1,6 +1,41 @@
 {
-  "last_updated": 1667811837.0,
+  "last_updated": 1668020477.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3934",
+      "time": 1668020477.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3934#issuecomment-1309224286",
+      "text": "> @Ashesh3 can you make a separate component or function for the validation rules, something like,\r\n> \r\n> ```js\r\n> const validationRule = (valid, content) => {\r\n> return (\r\n>   <div>\r\n>       {valid ? (\r\n>         <i className=\"fas fa-circle-xmark text-red-500\" />\r\n>       ) : (\r\n>         <i className=\"fas fa-circle-check text-green-500\" />\r\n>       )}{\" \"}\r\n>       <span\r\n>         className={clsx(\r\n>           valid\r\n>             ? \"text-red-500\"\r\n>             : \"text-primary-500\"\r\n>         )}\r\n>       >\r\n>         {content}\r\n>       </span>\r\n>     </div>\r\n> )\r\n> }\r\n> ```\r\n\r\nThat's a good suggestion, definitely makes the code cleaner. Done!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667989719.0,
+      "title": "coronasafe/care_fe#4010",
+      "link": "https://github.com/coronasafe/care_fe/pull/4010#pullrequestreview-1173770077",
+      "text": "Patient Details page redesign"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667988905.0,
+      "title": "coronasafe/care_fe#4010",
+      "link": "https://github.com/coronasafe/care_fe/pull/4010#pullrequestreview-1173746653",
+      "text": "Patient Details page redesign"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3947",
+      "time": 1667988626.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3947",
+      "text": "Allow only image files for facility cover file input"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4010",
+      "time": 1667984245.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4010",
+      "text": "Patient Details page redesign"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#3989",
@@ -4427,9 +4462,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4010",
+      "title": "Patient Details page redesign",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "redesign",
+        "Major Code Change"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3964",
       "title": "Add and redirect to invalid password reset page",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "waiting for back end"
       ]
@@ -4437,32 +4482,24 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1091",
       "title": "Add endpoint to check the validity of a password reset token",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review",
         "done"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3947",
-      "title": "Allow only image files for facility cover file input",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3934",
       "title": "Show password requirement error during input",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 40,
+      "stale_for": 42,
       "labels": [
         "reviewed"
       ]

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1667030707.0,
+  "last_updated": 1667972101.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3812",
+      "time": 1667972100.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3812#issuecomment-1308235963",
+      "text": "No it has been fixed"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3812",
+      "time": 1667972101.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3812",
+      "text": "Back button in update patient details is not redirecting to patient details page when user doesn't have any consultation"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#3865",
@@ -726,42 +740,24 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3865",
-      "title": "fix: patient creation form back button",
-      "stale_for": 0,
-      "labels": [
-        "work-in-progress"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3851",
-      "title": "fix: back button redirection in patient details page",
-      "stale_for": 1,
-      "labels": [
-        "needs testing",
-        "need Review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/3637",
       "title": "fix: parent url when clicking back icon",
-      "stale_for": 9,
+      "stale_for": 7,
       "labels": [
-        "question",
         "need Review",
-        "work-in-progress"
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/59",
       "title": "feat: authorization middleware for MSE server",
-      "stale_for": 40,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3467",
       "title": "fix: add loader to external results section",
-      "stale_for": 9,
+      "stale_for": 20,
       "labels": [
         "question",
         "need Review",
@@ -772,7 +768,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3307",
       "title": "fix: remove raw css file import from .res files in critical care recording",
-      "stale_for": 3,
+      "stale_for": 14,
       "labels": [
         "need Review",
         "Done",
@@ -781,6 +777,10 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3812",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3865"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3636",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3710"

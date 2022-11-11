@@ -1,6 +1,48 @@
 {
-  "last_updated": 1668020477.0,
+  "last_updated": 1668092781.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4028",
+      "time": 1668092781.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4028",
+      "text": "Remove broken pagination and disable inputs on Inventory Management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668091113.0,
+      "title": "coronasafe/care_fe#4026",
+      "link": "https://github.com/coronasafe/care_fe/pull/4026#pullrequestreview-1175903020",
+      "text": "Fix 4025: Default Value for hideBack prop"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4010",
+      "time": 1668090804.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4010#issuecomment-1310380364",
+      "text": "This should also resolve #3268 , can you confirm that @nihal467 ?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4022",
+      "time": 1668089662.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4022",
+      "text": "Relative timestamps for Consultation history and Sample Test cards"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4018",
+      "time": 1668065340.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4018",
+      "text": "Fix text overlapping on Manage Users page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668063063.0,
+      "title": "coronasafe/care#1091",
+      "link": "https://github.com/coronasafe/care/pull/1091#pullrequestreview-1175157093",
+      "text": "Add endpoint to check the validity of a password reset token"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3934",
@@ -4462,6 +4504,22 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4028",
+      "title": "Remove broken pagination and disable inputs on Inventory Management",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4018",
+      "title": "Fix text overlapping on Manage Users page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4010",
       "title": "Patient Details page redesign",
       "stale_for": 0,
@@ -4474,7 +4532,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3964",
       "title": "Add and redirect to invalid password reset page",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "waiting for back end"
       ]
@@ -4489,17 +4547,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/3934",
-      "title": "Show password requirement error during input",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 42,
+      "stale_for": 43,
       "labels": [
         "reviewed"
       ]

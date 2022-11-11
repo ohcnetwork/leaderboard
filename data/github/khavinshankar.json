@@ -1,6 +1,76 @@
 {
-  "last_updated": 1668008585.0,
+  "last_updated": 1668093097.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4020",
+      "time": 1668093097.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4020",
+      "text": "Add link to issue in pr template"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668093081.0,
+      "title": "coronasafe/care_fe#4021",
+      "link": "https://github.com/coronasafe/care_fe/pull/4021#pullrequestreview-1175963965",
+      "text": "add link to issue in pr template"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1097",
+      "time": 1668085178.0,
+      "link": "https://github.com/coronasafe/care/pull/1097",
+      "text": "check_availability api will also consider deleted users"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3965",
+      "time": 1668081004.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3965#issuecomment-1310168816",
+      "text": "Putting this pr on hold till #4017 is tested"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3898",
+      "time": 1668080490.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3898",
+      "text": "Ctrl + K shortcut for focus to search box in main pages where search bar is present."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668080379.0,
+      "title": "coronasafe/care_fe#3920",
+      "link": "https://github.com/coronasafe/care_fe/pull/3920#pullrequestreview-1175560271",
+      "text": "Tailwind `SearchInput` with keyboard shortcut to focus"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3965",
+      "time": 1668080165.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3965#issuecomment-1310151489",
+      "text": "@cp-Coder \r\nIn assets, changing the page and filtering doesn't reset it to page 1. Test other pages too.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3817",
+      "time": 1668069273.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3817#issuecomment-1309943105",
+      "text": "@nihal467 the icon on the top left is used to get the current location\r\n![image](https://user-images.githubusercontent.com/29787772/201040906-ec9e0df3-2b63-49c5-af00-b3c3a86473ce.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4004",
+      "time": 1668067463.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4004#issuecomment-1309912016",
+      "text": "Closing this pr, ref: #4017"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668061654.0,
+      "title": "coronasafe/care_fe#3768",
+      "link": "https://github.com/coronasafe/care_fe/pull/3768#pullrequestreview-1175138688",
+      "text": "Waveform Refresh Mode"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#3862",
@@ -8110,47 +8180,57 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1097",
+      "title": "check_availability api will also consider deleted users",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4016",
       "title": "Fixed the navigation issue in BedManagement",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 1,
-      "labels": []
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3952",
       "title": "Added show details modal in preview mode for PressureSore",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/60",
       "title": "Simplified env for deployment",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3919",
       "title": "Minor changes to stale and cypress workflow",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
         "work-in-progress",
+        "stale",
         "cypress failed"
       ]
     },
@@ -8159,32 +8239,31 @@
       "title": "Added close and currect location select buttons in GLocationPicker",
       "stale_for": 0,
       "labels": [
-        "work-in-progress",
-        "stale"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 327,
+      "stale_for": 328,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 333,
+      "stale_for": 334,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 334,
+      "stale_for": 335,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 529,
+      "stale_for": 530,
       "labels": []
     }
   ],

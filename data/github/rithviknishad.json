@@ -1,6 +1,104 @@
 {
-  "last_updated": 1668104592.0,
+  "last_updated": 1668189453.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4037",
+      "time": 1668189453.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4037#issuecomment-1312003470",
+      "text": "@nihal467 could you check now"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4037",
+      "time": 1668188977.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4037#issuecomment-1311991524",
+      "text": "@nihal467 hold. quick fixing it."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4037",
+      "time": 1668188563.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4037#issuecomment-1311985503",
+      "text": "@nihal467 pagination issue is not covered in this PR. This PR just prevents the search input from invoking the debounced onChange"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4040",
+      "time": 1668182630.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4040",
+      "text": "Duplicate re-definitions of `useMergeState` hook."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4038",
+      "time": 1668177227.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4038",
+      "text": "Add asset class to asset advanced filters"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4037",
+      "time": 1668174834.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4037",
+      "text": "fix issue with searcch input accidentally debocuncing"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4036",
+      "time": 1668174813.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4036",
+      "text": "Unable to clear search"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3590",
+      "time": 1668172176.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3590",
+      "text": "Users page link to new facilty stretches the card vertically"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3590",
+      "time": 1668172176.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3590#issuecomment-1311679159",
+      "text": "duplicate of #3984 \r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4023",
+      "time": 1668170555.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4023#issuecomment-1311654955",
+      "text": "@nihal467 \r\n![image](https://user-images.githubusercontent.com/25143503/201342750-b4559665-659c-4fd1-85a8-45070e894fd9.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668155589.0,
+      "title": "coronasafe/care_fe#4030",
+      "link": "https://github.com/coronasafe/care_fe/pull/4030#pullrequestreview-1177005235",
+      "text": "Fix username clipping in sidebar"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668155567.0,
+      "title": "coronasafe/care_fe#4030",
+      "link": "https://github.com/coronasafe/care_fe/pull/4030#pullrequestreview-1177004810",
+      "text": "Fix username clipping in sidebar"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668154878.0,
+      "title": "coronasafe/care_fe#4030",
+      "link": "https://github.com/coronasafe/care_fe/pull/4030#pullrequestreview-1176992407",
+      "text": "Fix username clipping in sidebar"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#105",
+      "time": 1668138325.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/105",
+      "text": "Bug in the reviews count"
+    },
     {
       "type": "pr_reviewed",
       "time": 1668104592.0,
@@ -4741,30 +4839,39 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4037",
+      "title": "fix issue with search input accidentally debouncing",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "tested"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4017",
       "title": "Fix issues with 3965 4004 3920",
       "stale_for": 0,
       "labels": [
-        "needs testing",
         "need Review",
         "Done",
-        "P1",
-        "made_changes"
+        "test failed",
+        "P1"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
-      "title": "Adds Slideover tailwind component + UI tweaks in Notification List",
+      "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
       "stale_for": 0,
       "labels": [
         "work-in-progress",
-        "redesign"
+        "redesign",
+        "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3959",
       "title": "Fixes issues in Facility Card's layout and minor UI tweaks",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review"
@@ -4773,7 +4880,7 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Datepicker wrapped with `Popover` + ability to select year",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": []
     },
     {

@@ -1,6 +1,41 @@
 {
-  "last_updated": 1668093097.0,
+  "last_updated": 1668171253.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3817",
+      "time": 1668171253.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3817#issuecomment-1311665892",
+      "text": "> @khavinshankar the button is not working\r\n\r\n@nihal467 can you try it in incognito, it seems to be working fine"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4017",
+      "time": 1668168193.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4017#issuecomment-1311613328",
+      "text": "@rithviknishad @nihal467 \r\n\r\nThere seem to be some side effects:\r\n**Steps:**\r\n_in facilities page_\r\n1. Search something in the facility search\r\n2. Remove the search term\r\n3. Now try to change page\r\n4. *Problem: * the page seems to reset to 1\r\n\r\nalso test the same in others too\r\n\r\n\r\n@nihal467 _lets hold this on for next production release_"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668167575.0,
+      "title": "coronasafe/care_fe#4017",
+      "link": "https://github.com/coronasafe/care_fe/pull/4017#pullrequestreview-1177238221",
+      "text": "Fix issues with 3965 4004 3920"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3477",
+      "time": 1668164974.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3477#issuecomment-1311558874",
+      "text": "@Ritesh-Aggarwal initially we had results from the backend that was not an exact match of the search term but now it has been improved.\r\n\r\nI think this issue can be closed, but if there is any improvement you can do to the filter then feel free to try it out."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4034",
+      "time": 1668163369.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4034",
+      "text": "Fixed feed full screen issue with iOS devices"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4020",
@@ -8180,9 +8215,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4034",
+      "title": "Fixed feed full screen issue with iOS devices",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1097",
       "title": "check_availability api will also consider deleted users",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -8199,7 +8242,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -8207,7 +8250,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3952",
       "title": "Added show details modal in preview mode for PressureSore",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed"
       ]
@@ -8215,19 +8258,19 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/60",
       "title": "Simplified env for deployment",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3919",
       "title": "Minor changes to stale and cypress workflow",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "stale",
@@ -8245,25 +8288,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 328,
+      "stale_for": 329,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 334,
+      "stale_for": 335,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 335,
+      "stale_for": 336,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 530,
+      "stale_for": 531,
       "labels": []
     }
   ],

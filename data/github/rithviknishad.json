@@ -1,6 +1,34 @@
 {
-  "last_updated": 1668189453.0,
+  "last_updated": 1668236424.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4041",
+      "time": 1668236424.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4041",
+      "text": "Generalize handling of filters and pagination with `usePaginatedQueryParam` hook"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668227943.0,
+      "title": "coronasafe/care_fe#3919",
+      "link": "https://github.com/coronasafe/care_fe/pull/3919#pullrequestreview-1178011556",
+      "text": "Minor changes to stale and cypress workflow"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4017",
+      "time": 1668227069.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4017#issuecomment-1312358673",
+      "text": "Closing as base PR #4004 is closed, base PR #3920 is merged and a follow-up PR was made to fix the side-effect caused by the new Search Input in #4037.\r\nThe only issue left to solve is resetting to page 1 when filters are updated, and will be continued in a new branch / PR since this PR contains many hacks to solve multiple issues present before.\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4037",
+      "time": 1668223666.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4037",
+      "text": "fix issue with search input accidentally debouncing"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4037",
@@ -4839,29 +4867,18 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4037",
-      "title": "fix issue with search input accidentally debouncing",
+      "link": "https://github.com/coronasafe/care_fe/pull/4041",
+      "title": "Generalize handling of filters and pagination with `usePaginatedQueryParam` hook",
       "stale_for": 0,
       "labels": [
-        "urgent",
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4017",
-      "title": "Fix issues with 3965 4004 3920",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "Done",
-        "test failed",
-        "P1"
+        "work-in-progress",
+        "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -4871,7 +4888,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3959",
       "title": "Fixes issues in Facility Card's layout and minor UI tweaks",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "need Review"
@@ -4880,19 +4897,23 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Datepicker wrapped with `Popover` + ability to select year",
-      "stale_for": 13,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 25,
+      "stale_for": 27,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4036",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4037"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3958",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3993"
@@ -4968,10 +4989,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/886",
       "pr_link": "https://github.com/coronasafe/care/pull/887"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/875",
-      "pr_link": "https://github.com/coronasafe/care/pull/1007"
     }
   ]
 }

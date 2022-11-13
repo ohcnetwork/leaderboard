@@ -1,6 +1,13 @@
 {
-  "last_updated": 1668018817.0,
+  "last_updated": 1668255816.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4046",
+      "time": 1668255816.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4046",
+      "text": "Added drag and drop to facility image upload"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3819",
@@ -1306,12 +1313,11 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4004",
-      "title": "Fixed facility search offset",
+      "link": "https://github.com/coronasafe/care_fe/pull/4046",
+      "title": "Added drag and drop to facility image upload",
       "stale_for": 0,
       "labels": [
-        "hold",
-        "changes required"
+        "needs testing"
       ]
     },
     {
@@ -1319,8 +1325,8 @@
       "title": "Redesigned Facility Home Page",
       "stale_for": 0,
       "labels": [
+        "needs testing",
         "Done",
-        "work-in-progress",
         "redesign"
       ]
     }

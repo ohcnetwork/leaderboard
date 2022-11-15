@@ -1,6 +1,20 @@
 {
-  "last_updated": 1668367245.0,
+  "last_updated": 1668431709.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/qr-generator#4",
+      "time": 1668431709.0,
+      "link": "https://github.com/coronasafe/qr-generator/pull/4",
+      "text": "Fix issue with Range slider"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4053",
+      "time": 1668414844.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4053",
+      "text": "Auto scroll to error on Asset Creation"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4052",
@@ -4569,9 +4583,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/qr-generator/pull/4",
+      "title": "Fix issue with Range slider",
+      "stale_for": 0,
+      "labels": [
+        "bug"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4053",
+      "title": "Auto scroll to error on Asset Creation",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4051",
       "title": "Update username availability message",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -4579,7 +4609,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4048",
       "title": "Switch to ButtonV2 for Location and Bed management",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -4587,7 +4617,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4039",
       "title": "Improve applied filter badges on Users page",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -4595,7 +4625,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4030",
       "title": "Fix username clipping in sidebar",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -4603,7 +4633,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing"
       ]
@@ -4611,7 +4641,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4018",
       "title": "Fix text overlapping on Manage Users page",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing"
       ]
@@ -4619,7 +4649,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4010",
       "title": "Patient Details page redesign",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "redesign",
@@ -4629,7 +4659,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3964",
       "title": "Add and redirect to invalid password reset page",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting for back end"
       ]
@@ -4637,7 +4667,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1091",
       "title": "Add endpoint to check the validity of a password reset token",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review",
         "done"
@@ -4646,7 +4676,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 46,
+      "stale_for": 47,
       "labels": [
         "reviewed"
       ]

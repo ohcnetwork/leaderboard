@@ -1,6 +1,55 @@
 {
-  "last_updated": 1668431709.0,
+  "last_updated": 1668517724.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4051",
+      "time": 1668517724.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4051",
+      "text": "Update username availability message"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4055",
+      "time": 1668517708.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4055",
+      "text": "Smooth scroll to top on pagination"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4048",
+      "time": 1668517240.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4048#issuecomment-1315277460",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/201910757-ec14d9bc-612b-4551-8c7b-c35e011e8143.png)\r\n> \r\n> both the buttons are misaligned with cancel button\r\n\r\nFixed.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/201925624-cf56606e-0631-4164-987b-623ee8fe7845.png)\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/201925708-4d27463b-2157-4fc6-b623-f740074eece0.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1091",
+      "time": 1668515890.0,
+      "link": "https://github.com/coronasafe/care/pull/1091#issuecomment-1315253336",
+      "text": "@vigneshhari Any updates on getting this merged? \ud83d\ude03 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1091",
+      "time": 1668515816.0,
+      "link": "https://github.com/coronasafe/care/pull/1091#issuecomment-1315252121",
+      "text": "> @Ashesh3 please make sure the lint checks are passing\r\n\r\nFixed them!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4053",
+      "time": 1668514074.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4053#issuecomment-1315221006",
+      "text": "> @Ashesh3\r\n> \r\n> ![image](https://user-images.githubusercontent.com/57055998/201891535-334452ee-28c6-4c2a-a919-9f0120291a61.png)\r\n> \r\n> not working is breaking in your PR\r\n\r\nIt seems to work fine for me. Could you let me know the steps to reproduce the error?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4055",
+      "time": 1668496687.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4055",
+      "text": "Smooth scroll to top on pagination"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/qr-generator#4",
@@ -4585,7 +4634,7 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/4",
       "title": "Fix issue with Range slider",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "bug"
       ]
@@ -4599,17 +4648,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4051",
-      "title": "Update username availability message",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4048",
       "title": "Switch to ButtonV2 for Location and Bed management",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
@@ -4617,7 +4658,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4039",
       "title": "Improve applied filter badges on Users page",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing"
       ]
@@ -4625,7 +4666,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4030",
       "title": "Fix username clipping in sidebar",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing"
       ]
@@ -4633,7 +4674,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "needs testing"
       ]
@@ -4641,7 +4682,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4018",
       "title": "Fix text overlapping on Manage Users page",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "needs testing"
       ]
@@ -4649,7 +4690,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4010",
       "title": "Patient Details page redesign",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "needs testing",
         "redesign",
@@ -4659,7 +4700,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3964",
       "title": "Add and redirect to invalid password reset page",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "waiting for back end"
       ]
@@ -4667,7 +4708,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1091",
       "title": "Add endpoint to check the validity of a password reset token",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review",
         "done"
@@ -4676,7 +4717,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 47,
+      "stale_for": 48,
       "labels": [
         "reviewed"
       ]

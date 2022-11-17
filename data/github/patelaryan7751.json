@@ -1,6 +1,20 @@
 {
-  "last_updated": 1668454675.0,
+  "last_updated": 1668602068.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4035",
+      "time": 1668602068.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4035",
+      "text": "Made the Patients page Ui Responsive in Tab devices"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4043",
+      "time": 1668601940.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4043",
+      "text": "Now on hovering on patient card the ui stays uniform in patient page"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/qr-generator#6",
@@ -4194,35 +4208,19 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/5",
       "title": "Disallow negative inputs",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4043",
-      "title": "Now on hovering on patient card the ui stays uniform in patient page",
       "stale_for": 2,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4035",
-      "title": "Made the Patients page Ui Responsive in Tab devices",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
-      ]
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4008",
       "title": "Added a modal to notify user if a existing triage exist",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "work-in-progress"
       ]
@@ -4230,7 +4228,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3716",
       "title": "File name can be changed and it can be archived",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "hacktoberfest",
         "work-in-progress",
@@ -4240,16 +4238,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3586",
       "title": "Added validation to onvif and hl7monitor asset pages",
-      "stale_for": 10,
+      "stale_for": 0,
       "labels": [
         "changes required",
         "peer-reviewed",
-        "merge conflict",
         "stale"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3967",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4043"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3966",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4035"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3896",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3901"

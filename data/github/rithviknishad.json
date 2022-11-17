@@ -1,6 +1,33 @@
 {
-  "last_updated": 1668424578.0,
+  "last_updated": 1668602883.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4019",
+      "time": 1668602883.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4019",
+      "text": "use tailwind buttons and make btns responsive",
+      "collaborated_with": [
+        "Ritesh-Aggarwal"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668599882.0,
+      "title": "coronasafe/care_fe#4030",
+      "link": "https://github.com/coronasafe/care_fe/pull/4030#pullrequestreview-1182434370",
+      "text": "Fix username clipping in sidebar"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#3919",
+      "time": 1668592952.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3919",
+      "text": "Added addtional labels to stale bot",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1668424578.0,
@@ -4913,8 +4940,9 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4041",
       "title": "Generalize handling of filters and pagination with `useFilters` hook",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
+        "need Review",
         "work-in-progress",
         "Major Code Change"
       ]
@@ -4922,7 +4950,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -4932,22 +4960,22 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3959",
       "title": "Fixes issues in Facility Card's layout and minor UI tweaks",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "need Review"
+        "need Review",
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/41",
       "title": "Datepicker wrapped with `Popover` + ability to select year",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 28,
+      "stale_for": 30,
       "labels": [
         "merge conflict"
       ]
@@ -5029,10 +5057,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2918",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2919"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/886",
-      "pr_link": "https://github.com/coronasafe/care/pull/887"
     }
   ]
 }

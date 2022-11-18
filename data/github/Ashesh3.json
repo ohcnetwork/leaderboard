@@ -1,6 +1,41 @@
 {
-  "last_updated": 1668620013.0,
+  "last_updated": 1668697934.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1091",
+      "time": 1668697934.0,
+      "link": "https://github.com/coronasafe/care/pull/1091",
+      "text": "Add endpoint to check the validity of a password reset token"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668689660.0,
+      "title": "coronasafe/care_fe#4028",
+      "link": "https://github.com/coronasafe/care_fe/pull/4028#pullrequestreview-1184251432",
+      "text": "Remove broken pagination and disable inputs on Inventory Management"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2366",
+      "time": 1668666137.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2366#issuecomment-1318144140",
+      "text": "@khavinshankar Isn't this issue resolved since we now have Facility covers?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3479",
+      "time": 1668665922.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3479#issuecomment-1318140729",
+      "text": "Hey @aparnacoronasafe , as per my understanding, you want the QR code generated outside CARE to point to the Transaction History of the asset stored within the CARE deployment, is that accurate? Where are these QR codes generated from?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4048",
+      "time": 1668659916.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4048",
+      "text": "Switch to ButtonV2 for Location and Bed management"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4010",
@@ -4683,18 +4718,9 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/4",
       "title": "Fix issue with Range slider",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "bug"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4048",
-      "title": "Switch to ButtonV2 for Location and Bed management",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "good to merge"
       ]
     },
     {
@@ -4703,13 +4729,14 @@
       "stale_for": 0,
       "labels": [
         "question",
-        "tested"
+        "tested",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4010",
       "title": "Patient Details page redesign",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "redesign",
@@ -4719,24 +4746,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3964",
       "title": "Add and redirect to invalid password reset page",
-      "stale_for": 11,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1091",
-      "title": "Add endpoint to check the validity of a password reset token",
-      "stale_for": 1,
-      "labels": [
-        "waiting-for-review",
-        "done"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 49,
+      "stale_for": 50,
       "labels": [
         "reviewed"
       ]

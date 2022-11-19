@@ -1,6 +1,48 @@
 {
-  "last_updated": 1668703786.0,
+  "last_updated": 1668783051.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4077",
+      "time": 1668783051.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4077",
+      "text": "Pages under `/teleicu/...` are no longer needed."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4076",
+      "time": 1668782531.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4076",
+      "text": "Remove `classNames` and `clsx` package and use a utility function to achieve the same"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4075",
+      "time": 1668768002.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4075",
+      "text": "make buttons stick to bottom on facilities page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4075",
+      "time": 1668768001.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4075#issuecomment-1319825849",
+      "text": "@Ritesh-Aggarwal duplicate of #3954 and resolved in #3959"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4071",
+      "time": 1668754552.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4071",
+      "text": "`<CareIcon className=\"care-icon-name\" />"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4041",
+      "time": 1668752009.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4041#issuecomment-1319594208",
+      "text": "![image](https://user-images.githubusercontent.com/25143503/202633639-031ff76e-0dd3-4fae-b9aa-465b38790fe7.png)\r\n"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4069",
@@ -5010,20 +5052,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4071",
+      "title": "`<CareIcon />`",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4041",
       "title": "Generalize handling of filters and pagination with `useFilters` hook",
       "stale_for": 0,
       "labels": [
+        "needs testing",
         "need Review",
-        "work-in-progress",
-        "merge conflict",
         "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -5037,14 +5087,13 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "need Review",
-        "merge conflict"
+        "need Review"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 31,
+      "stale_for": 32,
       "labels": [
         "merge conflict"
       ]

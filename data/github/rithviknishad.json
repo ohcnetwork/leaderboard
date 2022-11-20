@@ -1,6 +1,13 @@
 {
-  "last_updated": 1668783051.0,
+  "last_updated": 1668866030.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2776",
+      "time": 1668866030.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2776#issuecomment-1320890653",
+      "text": "@skks1212 shall we close this as continued in a more detailed EPIC: https://github.com/coronasafe/care_fe/issues/3742?"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4077",
@@ -5053,17 +5060,18 @@
   "open_prs": [
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4071",
-      "title": "`<CareIcon />`",
+      "title": "Removes unicons support and introduces `CareIcons` library for internal use",
       "stale_for": 0,
       "labels": [
-        "work-in-progress",
+        "needs testing",
+        "need Review",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4041",
       "title": "Generalize handling of filters and pagination with `useFilters` hook",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review",
@@ -5073,7 +5081,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -5084,7 +5092,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3959",
       "title": "Fixes issues in Facility Card's layout and minor UI tweaks",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review"
@@ -5093,7 +5101,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 32,
+      "stale_for": 33,
       "labels": [
         "merge conflict"
       ]

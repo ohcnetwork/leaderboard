@@ -1,6 +1,20 @@
 {
-  "last_updated": 1668689420.0,
+  "last_updated": 1669038744.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4092",
+      "time": 1669038744.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4092",
+      "text": "Fix: Clear date fields  and age field in patient filters "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4091",
+      "time": 1669035532.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4091",
+      "text": "Fix: disallow negative values on age field in patient filters"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#3819",
@@ -1335,7 +1349,24 @@
       "text": "Renamed the page heading  from 'Covid Suspect Details' to 'Patient Details'"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4092",
+      "title": "Fix: Clear date fields  and age field in patient filters ",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4091",
+      "title": "Fix: disallow negative values on age field in patient filters",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    }
+  ],
   "authored_issue_and_pr": [
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3705",

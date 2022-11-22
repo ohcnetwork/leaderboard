@@ -1,6 +1,27 @@
 {
-  "last_updated": 1668838468.0,
+  "last_updated": 1669057878.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4010",
+      "time": 1669057878.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4010#issuecomment-1322525464",
+      "text": "@nihal467 Changes are done. Yes, the button change is intentional since we switched to ButtonV2."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4087",
+      "time": 1669027717.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4087#issuecomment-1321859814",
+      "text": "Fixed."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3964",
+      "time": 1669021162.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3964#issuecomment-1321719473",
+      "text": "Seems like backend changes are merged but not live yet. Waiting on that."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4079",
@@ -4737,9 +4758,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4087",
+      "title": "Remove stop button from Live asset preview",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/qr-generator/pull/4",
       "title": "Fix issue with Range slider",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "bug"
       ]
@@ -4747,7 +4776,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "question",
         "tested",
@@ -4757,7 +4786,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4010",
       "title": "Patient Details page redesign",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "redesign",
@@ -4767,15 +4796,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3964",
       "title": "Add and redirect to invalid password reset page",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 52,
+      "stale_for": 54,
       "labels": [
         "reviewed"
       ]

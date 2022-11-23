@@ -1,6 +1,34 @@
 {
-  "last_updated": 1669038229.0,
+  "last_updated": 1669119791.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1097",
+      "time": 1669119791.0,
+      "link": "https://github.com/coronasafe/care/pull/1097",
+      "text": "check_availability api will also consider deleted users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3557",
+      "time": 1669119255.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3557",
+      "text": "Sentry Calls are Made In Development Instances"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4060",
+      "time": 1669119184.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4060",
+      "text": "Upload file still working for discharged patients"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4095",
+      "time": 1669107318.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4095",
+      "text": "test: cover image compression"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3307",
@@ -8660,9 +8688,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4095",
+      "title": "test: cover image compression",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4081",
       "title": "cicd: added EPIC label to stale exempt list",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "cypress failed"
       ]
@@ -8670,7 +8706,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -8678,7 +8714,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "cypress failed"
       ]
@@ -8686,30 +8722,21 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4062",
       "title": "Fixed Cypress Tests",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1097",
-      "title": "check_availability api will also consider deleted users",
-      "stale_for": 1,
-      "labels": [
-        "waiting-for-review",
-        "done"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "waiting-for-review"
       ]
@@ -8717,31 +8744,31 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 17,
+      "stale_for": 18,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 339,
+      "stale_for": 340,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 345,
+      "stale_for": 346,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 346,
+      "stale_for": 347,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 541,
+      "stale_for": 542,
       "labels": []
     }
   ],
@@ -8749,6 +8776,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4085",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4086"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1096",
+      "pr_link": "https://github.com/coronasafe/care/pull/1097"
     },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1082",
@@ -8821,10 +8852,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2005",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2006"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/1996",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/1997"
     }
   ]
 }

@@ -1,6 +1,90 @@
 {
-  "last_updated": 1669119791.0,
+  "last_updated": 1669214223.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3981",
+      "time": 1669214223.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3981",
+      "text": "Disallow incorrect entry from patient's age filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669214213.0,
+      "title": "coronasafe/care_fe#4091",
+      "link": "https://github.com/coronasafe/care_fe/pull/4091#pullrequestreview-1191766721",
+      "text": "Fix: disallow negative values on age field in patient filters"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669213060.0,
+      "title": "coronasafe/care_fe#4094",
+      "link": "https://github.com/coronasafe/care_fe/pull/4094#pullrequestreview-1191730014",
+      "text": "Don't allow future dates for facility triage"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3512",
+      "time": 1669208487.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3512",
+      "text": "Proxy all camera feed PTZ requests through back end"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2753",
+      "time": 1669208380.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2753",
+      "text": "Remove Stop button from Live feed preview in asset page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669208361.0,
+      "title": "coronasafe/care_fe#4087",
+      "link": "https://github.com/coronasafe/care_fe/pull/4087#pullrequestreview-1191608264",
+      "text": "Remove stop button from Live asset preview"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4097",
+      "time": 1669208220.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4097",
+      "text": "Vendor name not being saved on Asset Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669208209.0,
+      "title": "coronasafe/care_fe#4101",
+      "link": "https://github.com/coronasafe/care_fe/pull/4101#pullrequestreview-1191602569",
+      "text": "Fix vendor name input on Asset page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1106",
+      "time": 1669187986.0,
+      "link": "https://github.com/coronasafe/care/pull/1106",
+      "text": "Resize facility cover image before upload"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1105",
+      "time": 1669187959.0,
+      "link": "https://github.com/coronasafe/care/issues/1105",
+      "text": "Compress/Resize Facility cover images"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3879",
+      "time": 1669187356.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3879",
+      "text": "Back button malfunction in bed management page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3879",
+      "time": 1669187355.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3879#issuecomment-1324635265",
+      "text": "Fixed in https://github.com/coronasafe/care_fe/pull/4016"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1097",
@@ -8688,17 +8772,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4095",
-      "title": "test: cover image compression",
+      "link": "https://github.com/coronasafe/care/pull/1106",
+      "title": "Resize facility cover image before upload",
       "stale_for": 0,
       "labels": [
-        "cypress failed"
+        "waiting-for-review"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4081",
       "title": "cicd: added EPIC label to stale exempt list",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -8706,15 +8790,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "cypress failed"
       ]
@@ -8722,21 +8806,21 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4062",
       "title": "Fixed Cypress Tests",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "waiting-for-review"
       ]
@@ -8744,31 +8828,31 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 340,
+      "stale_for": 341,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 346,
+      "stale_for": 347,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 347,
+      "stale_for": 348,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 542,
+      "stale_for": 543,
       "labels": []
     }
   ],

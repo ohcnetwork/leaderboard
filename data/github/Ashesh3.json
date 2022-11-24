@@ -1,6 +1,48 @@
 {
-  "last_updated": 1669121411.0,
+  "last_updated": 1669217448.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4071",
+      "time": 1669217448.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4071#issuecomment-1325258378",
+      "text": "> @rithviknishad ![image](https://user-images.githubusercontent.com/57055998/203583305-76d65957-79e2-43af-a95f-b446f3427c0e.png) ![image](https://user-images.githubusercontent.com/57055998/203583490-9c2f60c5-1c14-46a7-9b7f-473901db63c5.png)\r\n> \r\n> * [ ]  neonatal care logo in current staging and this PR is different, was it intentionally changed\r\n> \r\n> ![image](https://user-images.githubusercontent.com/57055998/203584004-266dbead-ab45-4eac-9285-4aef7e41aa1b.png)\r\n> \r\n> * [ ]  the icon in the search bar, seems to be misaligned and colour is also really dark\r\n\r\nNot intentional! I will take a look."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3964",
+      "time": 1669214846.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3964#issuecomment-1325188035",
+      "text": "@nihal467 Seems to work now. Can you re-test?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/qr-generator#4",
+      "time": 1669214010.0,
+      "link": "https://github.com/coronasafe/qr-generator/pull/4",
+      "text": "Fix issue with Range slider"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4087",
+      "time": 1669208379.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4087",
+      "text": "Remove stop button from Live asset preview"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4101",
+      "time": 1669208219.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4101",
+      "text": "Fix vendor name input on Asset page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4101",
+      "time": 1669201084.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4101",
+      "text": "Fix vendor name input on Asset page"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4097",
@@ -4779,25 +4821,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4087",
-      "title": "Remove stop button from Live asset preview",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/qr-generator/pull/4",
-      "title": "Fix issue with Range slider",
-      "stale_for": 8,
-      "labels": [
-        "bug"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested"
       ]
@@ -4807,7 +4833,7 @@
       "title": "Patient Details page redesign",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "redesign",
         "Major Code Change"
       ]
@@ -4815,21 +4841,25 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3964",
       "title": "Add and redirect to invalid password reset page",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 55,
+      "stale_for": 56,
       "labels": [
         "reviewed"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4097",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4101"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4078",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4079"
@@ -4929,10 +4959,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2712",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2714"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2642",
-      "pr_link": "https://github.com/coronasafe/care/pull/841"
     }
   ]
 }

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1669208481.0,
+  "last_updated": 1669294107.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4110",
+      "time": 1669294107.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4110",
+      "text": "Fix query params not preserved between views"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#3767",
@@ -1185,13 +1192,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4110",
+      "title": "Fix query params not preserved between views",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4005",
       "title": "Hub Camera Monitoring Screen",
       "stale_for": 0,
-      "labels": [
-        "merge conflict",
-        "stale"
-      ]
+      "labels": []
     }
   ],
   "authored_issue_and_pr": [

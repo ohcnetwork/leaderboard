@@ -1,6 +1,13 @@
 {
-  "last_updated": 1669214130.0,
+  "last_updated": 1669412614.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4119",
+      "time": 1669412614.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4119",
+      "text": "Remove unwanted console log from facility pages"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/qr-generator#5",
@@ -4248,23 +4255,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4089",
-      "title": "Added a feature take cove Image photos directly from Care",
-      "stale_for": 2,
+      "link": "https://github.com/coronasafe/care_fe/pull/4119",
+      "title": "Remove unwanted console log from facility pages",
+      "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/qr-generator/pull/6",
-      "title": "Added a visible loader between the genration and download time",
+      "link": "https://github.com/coronasafe/care_fe/pull/4089",
+      "title": "Added a feature take cove Image photos directly from Care",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4008",
       "title": "Added a modal to notify user if a existing triage exist",
-      "stale_for": 14,
+      "stale_for": 16,
       "labels": [
         "work-in-progress"
       ]
@@ -4272,7 +4281,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3716",
       "title": "File name can be changed and it can be archived",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "hacktoberfest",
         "work-in-progress"
@@ -4281,7 +4290,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3586",
       "title": "Added validation to onvif and hl7monitor asset pages",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "changes required",
         "peer-reviewed",
@@ -4377,10 +4386,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3348",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3408"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3291",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3278"
     }
   ]
 }

@@ -4,17 +4,17 @@ import {
   professionalSelfSkills,
   professionalTeamSkills,
   resolveGraduateAttributes,
-} from '../../config/GraduateAttributes';
-import { getContributorBySlug, getContributors } from '../../lib/api';
+} from "../../config/GraduateAttributes";
+import { getContributorBySlug, getContributors } from "../../lib/api";
 
-import ActivityCalendarGit from '../../components/contributors/ActivityCalendarGitHub';
-import BadgeIcons from '../../components/contributors/BadgeIcons';
-import GithubActivity from '../../components/contributors/GithubActivity';
-import GraduateAttributeBadge from '../../components/contributors/GraduateAttributeBadge';
-import InfoCard from '../../components/contributors/InfoCard';
-import React from 'react';
-import markdownToHtml from '../../lib/markdownToHtml';
-import clsx from 'clsx';
+import ActivityCalendarGit from "../../components/contributors/ActivityCalendarGitHub";
+import BadgeIcons from "../../components/contributors/BadgeIcons";
+import GithubActivity from "../../components/contributors/GithubActivity";
+import GraduateAttributeBadge from "../../components/contributors/GraduateAttributeBadge";
+import InfoCard from "../../components/contributors/InfoCard";
+import React from "react";
+import markdownToHtml from "../../lib/markdownToHtml";
+import clsx from "clsx";
 import Tooltip from "../../components/filters/Tooltip";
 
 // export function defaultCalendarData() {
@@ -47,20 +47,23 @@ export default function Contributor({ contributor, slug }) {
             <InfoCard contributor={contributor} />
           </div>
           <div className="flex md:grid md:grid-cols-7 mt-6 md:mt-0 w-full overflow-x-auto md:overflow-x-visible gap-2">
-            {
-              [professionalSelfSkills, professionalTeamSkills, advancedSkills, humanValues].map((attributeGroup) => {
-                return attributeGroup.map((skill) => (
-                  <div
-                    className="flex items-center justify-center flex-shrink-0  bg-opacity-40 rounded-lg"
-                    key={skill.key}
-                  >
-                    <BadgeIcons
-                      skill={resolveGraduateAttributes(skill, contributor)}
-                    />
-                  </div>
-                ));
-              })
-            }
+            {[
+              professionalSelfSkills,
+              professionalTeamSkills,
+              advancedSkills,
+              humanValues,
+            ].map((attributeGroup) => {
+              return attributeGroup.map((skill) => (
+                <div
+                  className="flex items-center justify-center flex-shrink-0  bg-opacity-40 rounded-lg"
+                  key={skill.key}
+                >
+                  <BadgeIcons
+                    skill={resolveGraduateAttributes(skill, contributor)}
+                  />
+                </div>
+              ));
+            })}
           </div>
         </div>
       </section>
@@ -328,11 +331,35 @@ export default function Contributor({ contributor, slug }) {
 
 export async function getStaticProps({ params }) {
   const contributor = getContributorBySlug(params.slug, true);
-  const content = await markdownToHtml(contributor.content || '');
-
+  const content = await markdownToHtml(contributor.content || "");
+  const metaTags = [
+    {
+      name: "og:image",
+      content: `https://github.com/${params.slug}.png`,
+    },
+    {
+      name: "og:title",
+      content: "Coronasafe Leaderboard",
+    },
+    {
+      name: "description",
+      content:
+        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+    },
+    {
+      name: "og:description",
+      content:
+        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+    },
+    {
+      name: "og:type",
+      content: "article",
+    },
+  ];
   return {
     props: {
       title: contributor.name,
+      metaTags: metaTags,
       contributor: {
         ...contributor,
         content,

@@ -1,6 +1,41 @@
 {
-  "last_updated": 1668367245.0,
+  "last_updated": 1669574313.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4136",
+      "time": 1669574313.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4136",
+      "text": "Fix user add page checkUsername function"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4132",
+      "time": 1669569663.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4132",
+      "text": "Username check issue in User Add page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669540712.0,
+      "title": "coronasafe/care_fe#3275",
+      "link": "https://github.com/coronasafe/care_fe/pull/3275#pullrequestreview-1194952956",
+      "text": "Added image for locations not found"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3275",
+      "time": 1669540665.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3275#issuecomment-1328203734",
+      "text": "@nihal467 https://deploy-preview-3275--care-net.netlify.app/facility/6fcc52a3-f917-4e5c-ab33-d9af2cd26a16/location\r\nhere, please try this out and lmk if there still exists any issue on your side.\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3285",
+      "time": 1669538160.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3285",
+      "text": "User Creation Malfunction"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4052",
@@ -587,25 +622,31 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4136",
+      "title": "Fix user add page checkUsername function",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3755",
       "title": "Fixed minor UI break in Facility Page",
-      "stale_for": 4,
+      "stale_for": 8,
       "labels": [
         "hold",
-        "Waiting UI Approval",
-        "stale"
+        "merge conflict",
+        "Waiting UI Approval"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1038",
       "title": "Added constraints to models to not allot multiple patients the same bed",
-      "stale_for": 31,
+      "stale_for": 45,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3275",
       "title": "Added image for locations not found",
-      "stale_for": 12,
+      "stale_for": 0,
       "labels": [
         "work-in-progress"
       ]

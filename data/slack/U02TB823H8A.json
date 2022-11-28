@@ -1990,5 +1990,68 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2022-11-27 00:00:00": [
+        {
+            "client_msg_id": "9bedd611-70d9-4b58-84fc-2206007fb72a",
+            "type": "message",
+            "text": "Raised a <https://github.com/coronasafe/care_fe/pull/4136|PR> in care_fe.",
+            "user": "U02TB823H8A",
+            "ts": "1669574571.118379",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "NJKTw",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Raised a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/4136",
+                                    "text": "PR"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " in care_fe."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1669574313,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4136",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4136 Fix user add page checkUsername function",
+                    "text": "\u2022 Fixes <https://github.com/coronasafe/care_fe/issues/4132|#4132>  \n    Modified UserAdd.tsx file to display \"Username is not available\" when username already exists.",
+                    "title": "#4136 Fix user add page checkUsername function",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4136",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

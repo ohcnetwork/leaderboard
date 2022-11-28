@@ -1,6 +1,26 @@
 {
-  "last_updated": 1669119881.0,
+  "last_updated": 1669574079.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1110",
+      "time": 1669574079.0,
+      "link": "https://github.com/coronasafe/care/pull/1110",
+      "text": "Production Release; Nov Week 4",
+      "collaborated_with": [
+        "mathew-alex",
+        "cp-Coder",
+        "gigincg",
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1108",
+      "time": 1669527319.0,
+      "link": "https://github.com/coronasafe/care/issues/1108#issuecomment-1328175679",
+      "text": "We can store a log table to store the ping results, if this data is not needed for long we can keep it in redis. If we choose to use the DB, we can delete it after a given number of days."
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care#1089",

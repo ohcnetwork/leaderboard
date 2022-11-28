@@ -1,6 +1,64 @@
 {
-  "last_updated": 1669268542.0,
+  "last_updated": 1669577786.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1112",
+      "time": 1669577786.0,
+      "link": "https://github.com/coronasafe/care/pull/1112",
+      "text": "feat(file_upload): added a filter to filter out the archive file"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1111",
+      "time": 1669575694.0,
+      "link": "https://github.com/coronasafe/care/issues/1111",
+      "text": "Add a filter to filter out archive files"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4135",
+      "time": 1669574099.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4135",
+      "text": "Production Release; Nov Week 4",
+      "collaborated_with": [
+        "Ashesh3",
+        "Krishna-Sivakumar",
+        "Pranshu1902",
+        "rabilrbl",
+        "rithviknishad",
+        "khavinshankar",
+        "GokulramGHV",
+        "gigincg"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1110",
+      "time": 1669574079.0,
+      "link": "https://github.com/coronasafe/care/pull/1110",
+      "text": "Production Release; Nov Week 4",
+      "collaborated_with": [
+        "mathew-alex",
+        "gigincg",
+        "vigneshhari",
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1109",
+      "time": 1669564753.0,
+      "link": "https://github.com/coronasafe/care/pull/1109",
+      "text": "feat(file_upload): added new fields in file model and fixed file update permission"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4063",
+      "time": 1669535264.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4063#issuecomment-1328189756",
+      "text": "> @cp-Coder can you also handle issue #4126 in this pr?\r\n\r\nSure"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4041",
@@ -5765,27 +5823,43 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4064",
-      "title": "fix(FacilitySelect): Minor UI fix in patient popup",
+      "link": "https://github.com/coronasafe/care/pull/1112",
+      "title": "feat(file_upload): added a filter to filter out the archive file",
       "stale_for": 0,
       "labels": [
-        "changes required",
-        "merge conflict",
-        "stale"
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1109",
+      "title": "feat(file_upload): added new fields in file model and fixed file update permission",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4064",
+      "title": "fix(FacilitySelect): Minor UI fix in patient popup",
+      "stale_for": 1,
+      "labels": [
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4063",
       "title": "fix(UserProfile): Unable to update user details",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "needs testing",
+        "P1"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3980",
       "title": "fixed: csv files are not in proper format",
-      "stale_for": 8,
+      "stale_for": 11,
       "labels": [
         "test failed",
         "stale"
@@ -5794,15 +5868,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3977",
       "title": "fix: replaced multiselect with new tailwind component",
-      "stale_for": 8,
+      "stale_for": 1,
       "labels": [
-        "work-in-progress"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3965",
       "title": "feat: Add query params while using pagination",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "hold",
         "merge conflict"
@@ -5813,14 +5887,13 @@
       "title": "feat: added admitted bed type filter",
       "stale_for": 1,
       "labels": [
-        "test failed",
-        "merge conflict"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 16,
+      "stale_for": 19,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5829,7 +5902,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 8,
+      "stale_for": 11,
       "labels": [
         "needs testing",
         "Done",
@@ -5842,7 +5915,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 33,
+      "stale_for": 36,
       "labels": [
         "do-not-merge"
       ]
@@ -5850,7 +5923,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 18,
+      "stale_for": 21,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5859,7 +5932,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 18,
+      "stale_for": 21,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5868,7 +5941,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 18,
+      "stale_for": 21,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5877,7 +5950,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 7,
+      "stale_for": 10,
       "labels": [
         "waiting-for-review",
         "done"
@@ -5886,7 +5959,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3151",
       "title": "fix(bed history): hided currently used bed",
-      "stale_for": 43,
+      "stale_for": 46,
       "labels": [
         "urgent",
         "waiting for back end"
@@ -5895,7 +5968,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/882",
       "title": "Removed current health field",
-      "stale_for": 62,
+      "stale_for": 65,
       "labels": [
         "ops-review-pending",
         "reviewed"
@@ -5904,7 +5977,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 154,
+      "stale_for": 157,
       "labels": [
         "waiting-for-review"
       ]

@@ -1,6 +1,104 @@
 {
-  "last_updated": 1669600947.0,
+  "last_updated": 1669817484.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4081",
+      "time": 1669817484.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4081",
+      "text": "cicd: added EPIC label to stale exempt list"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4147",
+      "time": 1669808112.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4147",
+      "text": "Input type issue in LegendInput"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669808099.0,
+      "title": "coronasafe/care_fe#4148",
+      "link": "https://github.com/coronasafe/care_fe/pull/4148#pullrequestreview-1199162845",
+      "text": "Fix input type for LegendInput"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4120",
+      "time": 1669807969.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4120",
+      "text": "View/Eye Button for AssetConfigure/Credentials Field"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3858",
+      "time": 1669807923.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3858",
+      "text": "Upgrade Drop down in Facility Creation Page and Consultation Creation List"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669807890.0,
+      "title": "coronasafe/care_fe#3977",
+      "link": "https://github.com/coronasafe/care_fe/pull/3977#pullrequestreview-1199158308",
+      "text": "fix: replaced multiselect with new tailwind component"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3886",
+      "time": 1669807565.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3886",
+      "text": "Minor UI Fix in the add patient Pop-up at patient tab"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3908",
+      "time": 1669807566.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3908",
+      "text": "Create custom Modals"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669807555.0,
+      "title": "coronasafe/care_fe#4064",
+      "link": "https://github.com/coronasafe/care_fe/pull/4064#pullrequestreview-1199150871",
+      "text": "fix(FacilitySelect): Minor UI fix in patient popup"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669807430.0,
+      "title": "coronasafe/care_fe#4094",
+      "link": "https://github.com/coronasafe/care_fe/pull/4094#pullrequestreview-1199148128",
+      "text": "Don't allow future dates for facility triage"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4074",
+      "time": 1669807290.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4074",
+      "text": "Unwanted Reload button in facility page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669807281.0,
+      "title": "coronasafe/care_fe#4143",
+      "link": "https://github.com/coronasafe/care_fe/pull/4143#pullrequestreview-1199144929",
+      "text": "Removes reload button in facility page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4145",
+      "time": 1669807259.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4145#issuecomment-1332000062",
+      "text": "@rithviknishad can u re-review this"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669807222.0,
+      "title": "coronasafe/care_fe#4145",
+      "link": "https://github.com/coronasafe/care_fe/pull/4145#pullrequestreview-1199143640",
+      "text": "Add toggle for camera access key visibility"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4130",
@@ -8974,14 +9072,15 @@
       "title": "FileUpload: Added an option to rotate images in preview",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "test failed",
+        "merge conflict",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4121",
       "title": "Made sidebar scrollable in small screens and landscape mode",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -8990,24 +9089,15 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4081",
-      "title": "cicd: added EPIC label to stale exempt list",
-      "stale_for": 0,
-      "labels": [
-        "stale",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "work-in-progress"
       ]
@@ -9015,16 +9105,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "stale",
+        "work-in-progress",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4062",
       "title": "Fixed Cypress Tests",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "cypress failed"
       ]
@@ -9032,7 +9122,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "work-in-progress"
       ]
@@ -9040,7 +9130,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 18,
+      "stale_for": 20,
       "labels": [
         "waiting-for-review"
       ]
@@ -9048,31 +9138,31 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 24,
+      "stale_for": 26,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 346,
+      "stale_for": 348,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 352,
+      "stale_for": 354,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 353,
+      "stale_for": 355,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 548,
+      "stale_for": 550,
       "labels": []
     }
   ],
@@ -9152,10 +9242,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2429",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2730"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2005",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2006"
     }
   ]
 }

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1669386776.0,
+  "last_updated": 1669897787.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1669897787.0,
+      "title": "coronasafe/care_fe#4159",
+      "link": "https://github.com/coronasafe/care_fe/pull/4159#pullrequestreview-1200900550",
+      "text": "Switched to CARE UI components in facility tiles"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4159",
+      "time": 1669893819.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4159",
+      "text": "Switched to CARE UI components in facility tiles"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4112",
+      "time": 1669866132.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4112",
+      "text": "Solve patient tiles glitch"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4116",
@@ -3059,16 +3080,21 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4112",
-      "title": "Solve patient tiles glitch",
+      "link": "https://github.com/coronasafe/care_fe/pull/4159",
+      "title": "Switched to CARE UI components in facility tiles",
       "stale_for": 0,
       "labels": [
         "needs testing",
+        "merge conflict",
         "cypress failed"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4006",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4112"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3769",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3771"
@@ -3132,14 +3158,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/832",
       "pr_link": "https://github.com/coronasafe/care/pull/835"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2562",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2639"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2561",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2599"
     }
   ]
 }

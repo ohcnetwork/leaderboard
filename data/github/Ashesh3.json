@@ -1,6 +1,48 @@
 {
-  "last_updated": 1669816094.0,
+  "last_updated": 1669919108.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4131",
+      "time": 1669919108.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4131",
+      "text": "Add asset Import/Export for a Facility"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1114",
+      "time": 1669918346.0,
+      "link": "https://github.com/coronasafe/care/pull/1114",
+      "text": "Refactor home_facility to home_facility_obj"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4177",
+      "time": 1669918314.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4177",
+      "text": "Refactor home_facility to home_facility_obj"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4131",
+      "time": 1669909944.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4131#issuecomment-1333976961",
+      "text": "@gigincg @nihal467 The changes discussed on the EOD are done."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4158",
+      "time": 1669898838.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4158",
+      "text": "Fix updatePreset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4158",
+      "time": 1669878773.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4158",
+      "text": "Fix updatePreset"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4071",
@@ -4957,11 +4999,19 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4131",
-      "title": "Add asset Import/Export for a Facility",
-      "stale_for": 2,
+      "link": "https://github.com/coronasafe/care/pull/1114",
+      "title": "Refactor home_facility to home_facility_obj",
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4177",
+      "title": "Refactor home_facility to home_facility_obj",
+      "stale_for": 0,
+      "labels": [
+        "waiting for back end"
       ]
     },
     {
@@ -4975,16 +5025,17 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "question",
-        "tested"
+        "tested",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 63,
+      "stale_for": 64,
       "labels": [
         "reviewed"
       ]

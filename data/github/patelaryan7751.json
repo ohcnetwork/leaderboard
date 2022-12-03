@@ -1,6 +1,62 @@
 {
-  "last_updated": 1669934758.0,
+  "last_updated": 1670006750.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4195",
+      "time": 1670006750.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4195",
+      "text": "Added a seperate component for headed tabs and reused in FileUpload Component"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4188",
+      "time": 1669974472.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4188",
+      "text": "Make a seperate navigation tab component and reuse it"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4187",
+      "time": 1669974292.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4187",
+      "text": "Now only state admin and district and user who uploaded the file can edit and archive it"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4181",
+      "time": 1669971440.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4181",
+      "text": "Allow stateadmin, districtadmin and the user who uploaded the file to edit it's name and archive it"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4180",
+      "time": 1669962610.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4180",
+      "text": "Add the name of user and time details of Archived File to the Modal in File Upload Modal"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4179",
+      "time": 1669959395.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4179",
+      "text": "Solve the pagination Bug for Archived and Unarchived Files in FileUpload Component"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4178",
+      "time": 1669958747.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4178",
+      "text": "Change all buttons to buttonV2 and mui modal to custom modal in File Upload component"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3716",
+      "time": 1669953576.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3716",
+      "text": "File name can be changed and it can be archived"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3716",
@@ -4318,9 +4374,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4195",
+      "title": "Added a seperate component for headed tabs and reused in FileUpload Component",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4187",
+      "title": "Now only state admin and district and user who uploaded the file can edit and archive it",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4149",
       "title": "Made the adding cover image feature visible in mobile devices when there is no cover image",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "work-in-progress"
       ]
@@ -4328,7 +4400,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4144",
       "title": "Made the Ui uniform by changing the phone number field bg color to white",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "question",
         "work-in-progress"
@@ -4337,7 +4409,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4089",
       "title": "Added a feature take cove Image photos directly from Care",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed"
       ]
@@ -4345,23 +4417,15 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4008",
       "title": "Added a modal to notify user if a existing triage exist",
-      "stale_for": 22,
+      "stale_for": 23,
       "labels": [
         "work-in-progress"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3716",
-      "title": "File name can be changed and it can be archived",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
       ]
     }
   ],

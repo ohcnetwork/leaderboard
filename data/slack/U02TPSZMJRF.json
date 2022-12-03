@@ -876,5 +876,98 @@
                 }
             ]
         }
+    ],
+    "2022-12-02 00:00:00": [
+        {
+            "client_msg_id": "7e4c9132-95d5-4841-bb00-652d0ed12679",
+            "type": "message",
+            "text": "Issues Raised:\n1. <https://github.com/coronasafe/care_fe/issues/4190|#4190: Facility Notify Textarea Not Accepting Input>\n2. <https://github.com/coronasafe/care_fe/issues/4191|#4191: Clearing Advanced Filters For Facilities Collapses the Sidebar>",
+            "user": "U02TPSZMJRF",
+            "ts": "1670015483.946609",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "MNXnx",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues Raised:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/4190",
+                                            "text": "#4190: Facility Notify Textarea Not Accepting Input",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/4191",
+                                            "text": "#4191: Clearing Advanced Filters For Facilities Collapses the Sidebar",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "ordered",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1669991304,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/4190",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4190 Facility Notify Textarea Not Accepting Input",
+                    "title": "#4190 Facility Notify Textarea Not Accepting Input",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/4190",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1669991813,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/4191",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4191 Clearing Advanced Filters For Facilities Collapses the Sidebar",
+                    "title": "#4191 Clearing Advanced Filters For Facilities Collapses the Sidebar",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/4191",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

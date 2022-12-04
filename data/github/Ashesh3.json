@@ -1,6 +1,30 @@
 {
-  "last_updated": 1669919108.0,
+  "last_updated": 1670082756.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4071",
+      "time": 1670082756.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4071",
+      "text": "Removes unicons support and introduces `CareIcons` library for internal use",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4071",
+      "time": 1670078693.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4071#issuecomment-1336174260",
+      "text": "> @Ashesh3 @rithviknishad\r\n> \r\n> ![Untitled](https://user-images.githubusercontent.com/57055998/205443614-dd3c383c-5fbd-479d-9e5c-83f5980ec2b8.jpg)\r\n> \r\n> the search icon is still dark and feels misaligned, it was already mentioned in a previous comment, did you forget to push the change?\r\n\r\nI accidently pushed it to my fork :/ Fixed now.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/205444691-2efca465-bc74-4deb-a761-57f44c65cd73.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4198",
+      "time": 1670067392.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4198",
+      "text": "Relative timestamps for Patient Details"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4131",
@@ -4999,9 +5023,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4198",
+      "title": "Relative timestamps for Patient Details",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1114",
       "title": "Refactor home_facility to home_facility_obj",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -5009,7 +5041,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4177",
       "title": "Refactor home_facility to home_facility_obj",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "waiting for back end"
       ]
@@ -5017,7 +5049,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4109",
       "title": "Add cause of death for expired patients",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "tested"
       ]
@@ -5025,7 +5057,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "question",
         "tested",
@@ -5035,7 +5067,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 64,
+      "stale_for": 66,
       "labels": [
         "reviewed"
       ]

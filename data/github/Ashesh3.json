@@ -1,6 +1,44 @@
 {
-  "last_updated": 1670082756.0,
+  "last_updated": 1670189275.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4218",
+      "time": 1670189275.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4218",
+      "text": "Fix buttons size and space on Asset page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4217",
+      "time": 1670188323.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4217",
+      "text": "Fix PRN and Prescription alignment"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4216",
+      "time": 1670174141.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4216",
+      "text": "Production Release; Dec Week 1",
+      "collaborated_with": [
+        "skks1212",
+        "rithviknishad",
+        "rabilrbl",
+        "patelaryan7751",
+        "gigincg",
+        "cp-Coder",
+        "dependabot[bot]",
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4028",
+      "time": 1670129750.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4028#issuecomment-1336321863",
+      "text": "> @Ashesh3 what is the update on this PR\r\n\r\nHey, @khavinshankar mentioned you in the review above and requested your take on what should be done here for inputs. If you could respond there and let me know, i can proceed accordingly. "
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4071",
@@ -5023,9 +5061,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4218",
+      "title": "Fix buttons size and space on Asset page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4217",
+      "title": "Fix PRN and Prescription alignment",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4198",
       "title": "Relative timestamps for Patient Details",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5033,7 +5087,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1114",
       "title": "Refactor home_facility to home_facility_obj",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -5041,7 +5095,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4177",
       "title": "Refactor home_facility to home_facility_obj",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting for back end"
       ]
@@ -5049,7 +5103,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4109",
       "title": "Add cause of death for expired patients",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "tested"
       ]
@@ -5057,7 +5111,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "question",
         "tested",
@@ -5067,7 +5121,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 66,
+      "stale_for": 67,
       "labels": [
         "reviewed"
       ]

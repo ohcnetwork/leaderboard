@@ -1,6 +1,20 @@
 {
-  "last_updated": 1670174141.0,
+  "last_updated": 1670262196.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1670262196.0,
+      "title": "coronasafe/care_fe#4226",
+      "link": "https://github.com/coronasafe/care_fe/pull/4226#pullrequestreview-1204985962",
+      "text": "Fix minor alignment issue on patients page (filter badges)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4223",
+      "time": 1670248165.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4223",
+      "text": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4216",
@@ -5624,9 +5638,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4223",
+      "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
+      "stale_for": 0,
+      "labels": [
+        "do not merge"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -5637,7 +5659,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 48,
+      "stale_for": 49,
       "labels": [
         "merge conflict"
       ]

@@ -969,5 +969,73 @@
                 }
             ]
         }
+    ],
+    "2022-12-05 00:00:00": [
+        {
+            "client_msg_id": "7af5481c-cbae-49ce-97a5-d022287bd901",
+            "type": "message",
+            "text": "Raised a <https://github.com/coronasafe/care_fe/pull/4227|PR>  in care_fe",
+            "user": "U02TPSZMJRF",
+            "ts": "1670271557.187489",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "oDr",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Raised a "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/4227",
+                                    "text": "PR"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "  in care_fe"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1670271344,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4227",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4227 Fix (HospitalList): textarea of notify facility modal",
+                    "text": "*Proposed Changes*\n\n\u2022 Fixes <https://github.com/coronasafe/care_fe/issues/4190|#4190>\n\u2022 The issue was caused because a child component (`FacilityCard`) was defined _inside_ its parent (`HospitalList`) <https://stackoverflow.com/questions/22573494/react-js-input-losing-focus-when-rerendering|Ref>\n\u2022 Refactored `HospitalList` by creating a separate component for `FacilityCard`\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "#4227 Fix (HospitalList): textarea of notify facility modal",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4227",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need Review",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

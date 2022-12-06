@@ -1,6 +1,27 @@
 {
-  "last_updated": 1669830752.0,
+  "last_updated": 1670260152.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4226",
+      "time": 1670260152.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4226",
+      "text": "Fix minor alignment issue on patients page (filter badges)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4225",
+      "time": 1670257924.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4225",
+      "text": "Minor alignment issue on the filters applied in the patients page."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4224",
+      "time": 1670257526.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4224",
+      "text": "Patient Filter Bed Type: None, not working"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#2726",
@@ -650,15 +671,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4226",
+      "title": "Fix minor alignment issue on patients page (filter badges)",
+      "stale_for": 0,
+      "labels": [
+        "changes required"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4136",
       "title": "Fix user add page checkUsername function",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3755",
       "title": "Fixed minor UI break in Facility Page",
-      "stale_for": 11,
+      "stale_for": 16,
       "labels": [
         "hold",
         "merge conflict",
@@ -668,7 +697,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3275",
       "title": "Added image for locations not found",
-      "stale_for": 3,
+      "stale_for": 8,
       "labels": [
         "work-in-progress"
       ]

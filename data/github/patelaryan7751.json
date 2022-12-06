@@ -1,6 +1,27 @@
 {
-  "last_updated": 1670184152.0,
+  "last_updated": 1670237654.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4222",
+      "time": 1670237654.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4222",
+      "text": "Removed extra space in login page and fit it to screen size"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4008",
+      "time": 1670233452.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4008#issuecomment-1337039850",
+      "text": "Hey @nihal467 all the modal Ui changes are done.\r\n![image](https://user-images.githubusercontent.com/59426397/205605202-64fdba94-853a-4477-8951-46135bb41624.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4144",
+      "time": 1670229663.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4144#issuecomment-1336961961",
+      "text": "Hey @nihal467 it is the same i have only done some code refactoring it's the whole same thing."
+    },
     {
       "type": "pr_reviewed",
       "time": 1670184152.0,
@@ -4419,9 +4440,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4222",
+      "title": "Removed extra space in login page and fit it to screen size",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4195",
       "title": "Added a seperate component for headed tabs and reused in FileUpload Component",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -4429,7 +4459,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4187",
       "title": "Now only state admin and district and user who uploaded the file can edit and archive it",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -4437,7 +4467,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4149",
       "title": "Made the adding cover image feature visible in mobile devices when there is no cover image",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -4453,7 +4483,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4089",
       "title": "Added a feature take cove Image photos directly from Care",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "test failed"
       ]
@@ -4461,7 +4491,7 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
@@ -4469,7 +4499,7 @@
       "title": "Added a modal to notify user if a existing triage exist",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "needs testing"
       ]
     }
   ],
@@ -4489,6 +4519,18 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3896",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3901"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1080",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3716"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1079",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3716"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1078",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3716"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3780",
@@ -4545,14 +4587,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3385",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3409"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3384",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3408"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3383",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3386"
     }
   ]
 }

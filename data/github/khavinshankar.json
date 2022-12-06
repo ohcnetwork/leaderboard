@@ -1,6 +1,48 @@
 {
-  "last_updated": 1670174141.0,
+  "last_updated": 1670239958.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3826",
+      "time": 1670239958.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3826",
+      "text": "Screen goes blank in small screens in Patient Consultation when camera is not working"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3826",
+      "time": 1670239957.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3826#issuecomment-1337181017",
+      "text": "This was happening specifically when we change devices i.e., from IOS to other or vice versa, when we switch devices inside inspector the order of the hooks were changed which caused this issue\r\n\r\n![image](https://user-images.githubusercontent.com/29787772/205627002-3f0c3b88-c10e-416c-8ace-f7dbfdab3d5d.png)\r\n\r\nThis is unlikely to occur in prod, so closing this issue"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4221",
+      "time": 1670235404.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4221",
+      "text": "Removed hover effect for push score details in preview mode in Pressure Sore"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4219",
+      "time": 1670224170.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4219",
+      "text": "Auto focus while selecting current location in LocationPicker in Facility Create"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1670213924.0,
+      "title": "coronasafe/care_fe#4214",
+      "link": "https://github.com/coronasafe/care_fe/pull/4214#pullrequestreview-1203838846",
+      "text": "fix(facility): cancel button is malfunction in facility update page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1670213924.0,
+      "title": "coronasafe/care_fe#4214",
+      "link": "https://github.com/coronasafe/care_fe/pull/4214#pullrequestreview-1203838846",
+      "text": "fix(facility): cancel button is malfunction in facility update page"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4216",
@@ -9274,9 +9316,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4221",
+      "title": "Removed hover effect for push score details in preview mode in Pressure Sore",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4219",
+      "title": "Auto focus while selecting current location in LocationPicker in Facility Create",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4130",
       "title": "FileUpload: Added an option to rotate images in preview",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -9285,7 +9345,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4121",
       "title": "Made sidebar scrollable in small screens and landscape mode",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -9294,7 +9354,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "waiting-for-review"
       ]
@@ -9302,7 +9362,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "work-in-progress"
       ]
@@ -9310,7 +9370,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "work-in-progress",
         "cypress failed"
@@ -9319,7 +9379,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4062",
       "title": "Fixed Cypress Tests",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "need Review"
       ]
@@ -9327,7 +9387,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "work-in-progress"
       ]
@@ -9335,7 +9395,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 24,
+      "stale_for": 25,
       "labels": [
         "waiting-for-review"
       ]
@@ -9343,31 +9403,31 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 30,
+      "stale_for": 31,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 352,
+      "stale_for": 353,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 358,
+      "stale_for": 359,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 359,
+      "stale_for": 360,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 554,
+      "stale_for": 555,
       "labels": []
     }
   ],

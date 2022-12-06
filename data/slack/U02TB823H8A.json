@@ -2080,5 +2080,77 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2022-12-05 00:00:00": [
+        {
+            "client_msg_id": "705d23c1-9948-422e-bd49-fb217e510c47",
+            "type": "message",
+            "text": "Made some new issues, worked on them and <https://github.com/coronasafe/care_fe/issues/3984|this>.",
+            "user": "U02TB823H8A",
+            "ts": "1670263548.661579",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Km0",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made some new issues, worked on them and "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/3984",
+                                    "text": "this"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/25143503/200178010-c946137f-27c7-41ff-9ec6-b8800dd826d3.png",
+                    "image_width": 1920,
+                    "image_height": 1080,
+                    "image_bytes": 188465,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1667746623,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/3984",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1920x1080px image",
+                    "text": "*Describe the bug*  \nCurrently when we select show linked facilities for a user, it simply resizes the card, such that the grid size affects every users card size in the same row.\n\n*To Reproduce*  \nSteps to reproduce the behavior:\n\n1. Go to users page\n2. Show linked facilities of any user\n\n*Expected behavior*  \nShow a simpler card, with a view more details button, and then we can show linked facilities in a modal.\n\n*Screenshots*  \n<https://user-images.githubusercontent.com/25143503/200178010-c946137f-27c7-41ff-9ec6-b8800dd826d3.png|image>\n\n*Desktop (please complete the following information):*\n\n\u2022 OS: [e.g. iOS]\n\u2022 Browser [e.g. chrome, safari]\n\u2022 Version [e.g. 22]\n\n*Smartphone (please complete the following information):*\n\n\u2022 Device: [e.g. iPhone6]\n\u2022 OS: [e.g. iOS8.1]\n\u2022 Browser [e.g. stock browser, safari]\n\u2022 Version [e.g. 22]\n\n*Additional context*  \nAdd any other context about the problem here.",
+                    "title": "#3984 Improve the way we display the linked facilities of a user such that it does not affect other users cards.",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/3984",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "stale",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

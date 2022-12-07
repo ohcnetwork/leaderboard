@@ -1,6 +1,41 @@
 {
-  "last_updated": 1670252682.0,
+  "last_updated": 1670335936.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4239",
+      "time": 1670335936.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4239",
+      "text": "Skip esc key trigger on empty search input"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1670325382.0,
+      "title": "coronasafe/care_fe#4124",
+      "link": "https://github.com/coronasafe/care_fe/pull/4124#pullrequestreview-1206389361",
+      "text": "Removed auto scroll to top on Users page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4217",
+      "time": 1670309560.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4217",
+      "text": "Fix PRN and Prescription alignment"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4109",
+      "time": 1670309463.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4109",
+      "text": "Add cause of death for expired patients"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4218",
+      "time": 1670309017.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4218",
+      "text": "Fix buttons size and space on Asset page"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4177",
@@ -5075,16 +5110,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4218",
-      "title": "Fix buttons size and space on Asset page",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4217",
-      "title": "Fix PRN and Prescription alignment",
+      "link": "https://github.com/coronasafe/care_fe/pull/4239",
+      "title": "Skip esc key trigger on empty search input",
       "stale_for": 0,
       "labels": [
         "tested"
@@ -5093,15 +5120,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4198",
       "title": "Relative timestamps for Patient Details",
-      "stale_for": 2,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4109",
-      "title": "Add cause of death for expired patients",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "tested"
       ]
@@ -5109,7 +5128,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "question",
         "tested",
@@ -5119,7 +5138,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 68,
+      "stale_for": 69,
       "labels": [
         "reviewed"
       ]

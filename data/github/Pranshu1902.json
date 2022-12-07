@@ -1,6 +1,34 @@
 {
-  "last_updated": 1670133427.0,
+  "last_updated": 1670325763.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4124",
+      "time": 1670325763.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4124",
+      "text": "Removed auto scroll to top on Users page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4230",
+      "time": 1670316991.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4230",
+      "text": "Made minor UI fixes on facility and shifting details page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4229",
+      "time": 1670316800.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4229",
+      "text": "Minor UI fixes on Facility and Shifting details page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4094",
+      "time": 1670315451.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4094",
+      "text": "Don't allow future dates for facility triage"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4124",
@@ -2855,48 +2883,43 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4124",
-      "title": "Removed auto scroll to top on Users page",
+      "link": "https://github.com/coronasafe/care_fe/pull/4230",
+      "title": "Made minor UI fixes on facility and shifting details page",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4094",
-      "title": "Don't allow future dates for facility triage",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1102",
       "title": "Added Patient is_active validation when uploading a Patient file",
-      "stale_for": 11,
+      "stale_for": 13,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 40,
+      "stale_for": 42,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 40,
+      "stale_for": 42,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/86",
       "title": "Added indentation at left of text in \"Currently Working on\" tab",
-      "stale_for": 48,
+      "stale_for": 50,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4093",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4094"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4060",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4061"
@@ -2996,10 +3019,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3400",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3401"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3380",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3381"
     }
   ]
 }

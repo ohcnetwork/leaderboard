@@ -1,6 +1,51 @@
 {
-  "last_updated": 1670262196.0,
+  "last_updated": 1670336122.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4238",
+      "time": 1670336122.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4238#issuecomment-1339453534",
+      "text": "@nihal467 fixed it"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4238",
+      "time": 1670334162.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4238",
+      "text": "Migrate leaked unicons to CareIcons"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4237",
+      "time": 1670333796.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4237",
+      "text": "Unicons leaked into care"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4224",
+      "time": 1670330711.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4224",
+      "text": "Patient Filter Last Admitted To (Bed Type), not working"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4224",
+      "time": 1670330711.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4224#issuecomment-1339269924",
+      "text": "Duplicate of #3953"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4196",
+      "time": 1670309203.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4196",
+      "text": "chore(deps): remove clsx package",
+      "collaborated_with": [
+        "cp-Coder"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1670262196.0,
@@ -5638,28 +5683,39 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4238",
+      "title": "Migrate leaked unicons to CareIcons",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "tested",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
       "stale_for": 0,
       "labels": [
-        "do not merge"
+        "need Review",
+        "Done"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "work-in-progress",
         "redesign",
-        "merge conflict",
         "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 49,
+      "stale_for": 50,
       "labels": [
         "merge conflict"
       ]
@@ -5703,6 +5759,10 @@
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4142"
     },
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4076",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4160"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4036",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4037"
     },
@@ -5737,14 +5797,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3850",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4071"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3784",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3744"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3763",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3744"
     }
   ]
 }

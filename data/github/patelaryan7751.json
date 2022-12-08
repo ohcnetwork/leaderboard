@@ -1,6 +1,48 @@
 {
-  "last_updated": 1670237654.0,
+  "last_updated": 1670411580.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4144",
+      "time": 1670411580.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4144",
+      "text": "Made the Ui uniform by changing the phone number field bg color to white"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4187",
+      "time": 1670411522.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4187",
+      "text": "Now only state admin and district and user who uploaded the file can edit and archive it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4144",
+      "time": 1670394768.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4144#issuecomment-1340462387",
+      "text": "> Design For Fields discussed in EOD @nihal467 ![image](https://user-images.githubusercontent.com/59426397/205077826-9523e671-5eb5-4292-93c2-53950d9d0ad3.png)\r\n\r\n@nihal467 this is the image he told to refer while having color in input and textarea boxes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4144",
+      "time": 1670394638.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4144#issuecomment-1340460909",
+      "text": "Hey @nihal467 according to the discussion in EOD Gigin told to keep the input box white so i have changed it from grey to white . Gigin told to keep small input box white and textarea fields grey in color"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4195",
+      "time": 1670393774.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4195",
+      "text": "Added a seperate component for headed tabs and reused in FileUpload Component"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4222",
+      "time": 1670393229.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4222",
+      "text": "Removed extra space in login page and fit it to screen size"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4222",
@@ -4440,50 +4482,18 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4222",
-      "title": "Removed extra space in login page and fit it to screen size",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4195",
-      "title": "Added a seperate component for headed tabs and reused in FileUpload Component",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4187",
-      "title": "Now only state admin and district and user who uploaded the file can edit and archive it",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4149",
       "title": "Made the adding cover image feature visible in mobile devices when there is no cover image",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4144",
-      "title": "Made the Ui uniform by changing the phone number field bg color to white",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested",
+        "changes required"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4089",
       "title": "Added a feature take cove Image photos directly from Care",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "test failed"
       ]
@@ -4491,19 +4501,32 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4008",
       "title": "Added a modal to notify user if a existing triage exist",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
-        "needs testing"
+        "tested",
+        "changes required"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4188",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4195"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4181",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4187"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4140",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4144"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4100",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4119"
@@ -4579,14 +4602,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3536",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3549"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3412",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3530"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3385",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3409"
     }
   ]
 }

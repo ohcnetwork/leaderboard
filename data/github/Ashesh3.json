@@ -1,6 +1,34 @@
 {
-  "last_updated": 1670335936.0,
+  "last_updated": 1670411424.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4198",
+      "time": 1670411424.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4198",
+      "text": "Relative timestamps for Patient Details"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1107",
+      "time": 1670410743.0,
+      "link": "https://github.com/coronasafe/care/issues/1107#issuecomment-1340790576",
+      "text": "> Why is this required? We wont proxy any requests in the backend, we will have to populate the values in the tables we have to store geo structures.\r\n\r\nThis is required to autofill the district and state when the user enters a pin code (See https://github.com/coronasafe/care_fe/issues/3940).\r\n\r\nAs per your response, I assume we are not going to proxy the discussed api endpoint. Are you suggesting populating the pin code details into the database as a separate table and make an endpoint out of it?\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4028",
+      "time": 1670410528.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4028#issuecomment-1340782869",
+      "text": "@nihal467 Any updates on this? Please check the conversation above."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4239",
+      "time": 1670392782.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4239",
+      "text": "Skip esc key trigger on empty search input"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4239",
@@ -5110,25 +5138,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4239",
-      "title": "Skip esc key trigger on empty search input",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4198",
-      "title": "Relative timestamps for Patient Details",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "question",
         "tested",
@@ -5138,7 +5150,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 69,
+      "stale_for": 70,
       "labels": [
         "reviewed"
       ]
@@ -5156,6 +5168,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4078",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4079"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4022",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4198"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3866",
@@ -5244,10 +5260,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2938",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2946"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2795",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2796"
     }
   ]
 }

@@ -1,6 +1,48 @@
 {
-  "last_updated": 1670336122.0,
+  "last_updated": 1670426758.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4243",
+      "time": 1670426758.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4243",
+      "text": "gitignore `pnpm-lock.yaml`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4244",
+      "time": 1670411267.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4244",
+      "text": "Made 'Export Asset' as secondary button"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4243",
+      "time": 1670406771.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4243",
+      "text": "gitignore `pnpm-lock.yaml` and `.npmrc`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4242",
+      "time": 1670406739.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4242",
+      "text": "gitignore pnpm package manager files"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4205",
+      "time": 1670404573.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4205#issuecomment-1340631104",
+      "text": "It was discussed to make this a secondary variant button instead of adding it to a dropdown.\r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4238",
+      "time": 1670392502.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4238",
+      "text": "Migrate leaked unicons to CareIcons"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4238",
@@ -5683,20 +5725,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4238",
-      "title": "Migrate leaked unicons to CareIcons",
+      "link": "https://github.com/coronasafe/care_fe/pull/4244",
+      "title": "Made 'Export Asset' as secondary button",
       "stale_for": 0,
       "labels": [
-        "urgent",
-        "tested",
-        "P1",
-        "cypress failed"
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "need Review",
         "Done"
@@ -5709,19 +5748,28 @@
       "labels": [
         "work-in-progress",
         "redesign",
+        "merge conflict",
         "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 50,
+      "stale_for": 51,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4242",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4243"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4237",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4238"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4193",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4194"
@@ -5789,14 +5837,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3932",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3936"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3898",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3920"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3850",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4071"
     }
   ]
 }

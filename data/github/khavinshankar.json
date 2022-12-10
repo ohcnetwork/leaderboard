@@ -1,6 +1,27 @@
 {
-  "last_updated": 1670423295.0,
+  "last_updated": 1670566802.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4122",
+      "time": 1670566802.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4122",
+      "text": "Facility Config Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1670566776.0,
+      "title": "coronasafe/care_fe#4260",
+      "link": "https://github.com/coronasafe/care_fe/pull/4260#pullrequestreview-1211180580",
+      "text": "Added middleware update feature"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/teleicu_middleware#62",
+      "time": 1670552513.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/62#issuecomment-1343754390",
+      "text": "> @khavinshankar We need a 200+ Response when `within_last_minute` is true, and a 400+ Response when it's false. This is to allow monitoring the status of the CNS\r\n\r\n@gigincg done, if the request is within the last minute the response is 200 Ok, else it is 412 Precondition Failed"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4115",
@@ -9717,54 +9738,9 @@
       "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4232",
-      "title": "Added max, min props to DateInputV2",
-      "stale_for": 1,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4221",
-      "title": "Removed hover effect for push score details in preview mode in Pressure Sore",
-      "stale_for": 1,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4219",
-      "title": "Auto focus while selecting current location in LocationPicker in Facility Create",
-      "stale_for": 2,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4130",
-      "title": "FileUpload: Added an option to rotate images in preview",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4121",
-      "title": "Made sidebar scrollable in small screens and landscape mode",
-      "stale_for": 0,
-      "labels": [
-        "work-in-progress",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]
@@ -9772,7 +9748,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 14,
+      "stale_for": 16,
       "labels": [
         "work-in-progress"
       ]
@@ -9780,24 +9756,27 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
         "work-in-progress",
+        "merge conflict",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4062",
       "title": "Fixed Cypress Tests",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
-        "need Review"
+        "need Review",
+        "merge conflict",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 14,
+      "stale_for": 16,
       "labels": [
         "work-in-progress"
       ]
@@ -9805,7 +9784,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 27,
+      "stale_for": 29,
       "labels": [
         "waiting-for-review"
       ]
@@ -9813,35 +9792,39 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 33,
+      "stale_for": 35,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 355,
+      "stale_for": 357,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 361,
+      "stale_for": 363,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 362,
+      "stale_for": 364,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 557,
+      "stale_for": 559,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4228",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4232"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4085",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4086"
@@ -9908,10 +9891,6 @@
     },
     {
       "issue_link": "https://github.com/coronasafe/leaderboard/issues/56",
-      "pr_link": "https://github.com/coronasafe/leaderboard/pull/60"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/leaderboard/issues/55",
       "pr_link": "https://github.com/coronasafe/leaderboard/pull/60"
     }
   ]

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1670411580.0,
+  "last_updated": 1670614240.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4266",
+      "time": 1670614240.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4266",
+      "text": "Handle situation when coverimg fails to upload also added hints for uploading coverimage"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4144",
@@ -4482,32 +4489,32 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4149",
-      "title": "Made the adding cover image feature visible in mobile devices when there is no cover image",
+      "link": "https://github.com/coronasafe/care_fe/pull/4266",
+      "title": "Handle situation when coverimg fails to upload also added hints for uploading coverimage",
       "stale_for": 0,
       "labels": [
-        "tested",
-        "changes required"
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4089",
       "title": "Added a feature take cove Image photos directly from Care",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
-        "test failed"
+        "test failed",
+        "stale"
       ]
     },
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 9,
+      "stale_for": 11,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4008",
       "title": "Added a modal to notify user if a existing triage exist",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "tested",
         "changes required"
@@ -4522,6 +4529,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4181",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4187"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4146",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4149"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4140",
@@ -4598,10 +4609,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3589",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3648"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3536",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3549"
     }
   ]
 }

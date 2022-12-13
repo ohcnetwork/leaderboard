@@ -1,6 +1,51 @@
 {
-  "last_updated": 1670726135.0,
+  "last_updated": 1670855206.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4062",
+      "time": 1670855206.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4062",
+      "text": "Fixed Cypress Tests"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4278",
+      "time": 1670828280.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4278",
+      "text": "Fixed card height inconsistency in PatientHome"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4275",
+      "time": 1670820175.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4275",
+      "text": "Other symptom details text area is not visible when 'other' symptoms is selected."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1670819590.0,
+      "title": "coronasafe/care_fe#4274",
+      "link": "https://github.com/coronasafe/care_fe/pull/4274#pullrequestreview-1212886764",
+      "text": "Fix other symptomps text area not showing"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4273",
+      "time": 1670807705.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4273",
+      "text": "Production Release; Dec Week 2",
+      "collaborated_with": [
+        "rithviknishad",
+        "Pranshu1902",
+        "gigincg",
+        "Ashesh3",
+        "cp-Coder",
+        "naman114",
+        "skks1212",
+        "patelaryan7751"
+      ]
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4269",
@@ -9746,15 +9791,26 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4278",
+      "title": "Fixed card height inconsistency in PatientHome",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review",
+        "P2",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "waiting-for-review"
       ]
@@ -9762,7 +9818,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "work-in-progress"
       ]
@@ -9770,7 +9826,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -9778,19 +9834,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4062",
-      "title": "Fixed Cypress Tests",
-      "stale_for": 2,
-      "labels": [
-        "need Review",
-        "merge conflict",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "work-in-progress"
       ]
@@ -9798,7 +9844,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 31,
+      "stale_for": 32,
       "labels": [
         "waiting-for-review"
       ]
@@ -9806,31 +9852,31 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 37,
+      "stale_for": 38,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 359,
+      "stale_for": 360,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 365,
+      "stale_for": 366,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 366,
+      "stale_for": 367,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 561,
+      "stale_for": 562,
       "labels": []
     }
   ],

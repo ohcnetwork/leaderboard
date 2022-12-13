@@ -1,6 +1,86 @@
 {
-  "last_updated": 1670765380.0,
+  "last_updated": 1670864951.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4285",
+      "time": 1670864951.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4285",
+      "text": "Empty cache and hard reload when new version of care is detected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1670851336.0,
+      "title": "coronasafe/care_fe#4062",
+      "link": "https://github.com/coronasafe/care_fe/pull/4062#pullrequestreview-1213542756",
+      "text": "Fixed Cypress Tests"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4277",
+      "time": 1670823318.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4277",
+      "text": "Update the colors used by the new tailwind input components"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4276",
+      "time": 1670821171.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4276",
+      "text": "Fix textarea borderline in consultation form"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4274",
+      "time": 1670820175.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4274",
+      "text": "Fix other symptomps text area not showing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4275",
+      "time": 1670819428.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4275#issuecomment-1345860548",
+      "text": "Acknowledged"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4275",
+      "time": 1670819399.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4275",
+      "text": "Other symptom details text area is not visible when 'other' symptoms is selected."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4274",
+      "time": 1670819128.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4274",
+      "text": "Fix other symptomps text area not showing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4271",
+      "time": 1670815394.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4271#issuecomment-1345814974",
+      "text": "@nihal467 I've made the changes by using the new tailwinding components there. However now the form looks half old half new design and the new text area feels disabled because the new text area is gray background. \n\nWill update the colors of the component itself to white and link a PR by 11 AM."
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4273",
+      "time": 1670807705.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4273",
+      "text": "Production Release; Dec Week 2",
+      "collaborated_with": [
+        "Pranshu1902",
+        "gigincg",
+        "Ashesh3",
+        "khavinshankar",
+        "cp-Coder",
+        "naman114",
+        "skks1212",
+        "patelaryan7751"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1670765380.0,
@@ -5809,9 +5889,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4276",
+      "title": "Fix textarea borderline in consultation form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "redesign"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "need Review",
         "cypress failed"
@@ -5820,7 +5909,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4254",
       "title": "Fix Sample Tests CSV download filename",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing"
       ]
@@ -5828,15 +5917,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4244",
       "title": "Move export asset button beside asset name and improve import/export icons and fix button border control",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
+        "needs testing",
         "made_changes"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "need Review",
         "Done"
@@ -5845,7 +5935,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -5856,13 +5946,17 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 55,
+      "stale_for": 56,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4275",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4274"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4259",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4256"
@@ -5926,10 +6020,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4013",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3959"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3958",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3993"
     }
   ]
 }

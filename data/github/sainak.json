@@ -1,6 +1,27 @@
 {
-  "last_updated": 1670159838.0,
+  "last_updated": 1670939895.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2759",
+      "time": 1670939895.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2759#issuecomment-1348622293",
+      "text": "@aparnacoronasafe @gigincg is this still needed?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1107",
+      "time": 1670939061.0,
+      "link": "https://github.com/coronasafe/care/issues/1107",
+      "text": "Endpoint for pin code details"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1107",
+      "time": 1670937329.0,
+      "link": "https://github.com/coronasafe/care/issues/1107#issuecomment-1348519980",
+      "text": "I think this is what you are looking for:\r\n```shell\r\ncurl -X 'GET' \\\r\n  'https://api.data.gov.in/resource/5c2f62fe-5afa-4119-a499-fec9d604d5bd?api-key=579b464db66ec23bdd00000115f15ab447b749065c58768a487d76bb&format=json&filters%5Bpincode%5D=400001' \\\r\n  -H 'accept: application/json'\r\n```\r\nref: https://data.gov.in/apis/5c2f62fe-5afa-4119-a499-fec9d604d5bd\r\nthe public api key is good for upto 10 records per request so we can directly use this in the frontend"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care#1113",
@@ -1664,13 +1685,13 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 130,
+      "stale_for": 139,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/772",
       "title": "fix: Inventory unexpectedly marked as Low Stock",
-      "stale_for": 192,
+      "stale_for": 201,
       "labels": []
     }
   ],

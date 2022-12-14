@@ -1,6 +1,60 @@
 {
-  "last_updated": 1670864951.0,
+  "last_updated": 1670948703.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4301",
+      "time": 1670948703.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4301",
+      "text": "Camera feed of patient does not respect the aspect ratio in responsive views"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4298",
+      "time": 1670932401.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4298#issuecomment-1348359940",
+      "text": "@gigincg regd. if `build-meta.json` is cached: Nope, its not.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/207310860-95f92a4c-423b-415d-935d-11c8eabc2fba.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4276",
+      "time": 1670931073.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4276#issuecomment-1348296610",
+      "text": "@nihal467 not intentional. however the color pallete of gray for the entire app was updated to respect color palette as per figma design.\r\n\r\nWill update the background shade to a lighter shade in this PR itself."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4298",
+      "time": 1670928643.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4298",
+      "text": "Update CARE prompt when new version available"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4297",
+      "time": 1670922729.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4297",
+      "text": "App crashes when using `ButtonV2` in unauthorized pages"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4287",
+      "time": 1670906160.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4287",
+      "text": "De-duplicate implementation of `useMergeState` hook"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4286",
+      "time": 1670898364.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4286",
+      "text": "Production Release; Dec Week 2",
+      "collaborated_with": [
+        "gigincg",
+        "Ashesh3",
+        "khavinshankar"
+      ]
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4285",
@@ -5889,29 +5943,44 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4298",
+      "title": "Update CARE prompt when new version available",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4287",
+      "title": "De-duplicate implementation of `useMergeState` hook",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4276",
       "title": "Fix textarea borderline in consultation form",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "work-in-progress",
         "redesign"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "need Review",
-        "cypress failed"
+        "good to merge"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4254",
       "title": "Fix Sample Tests CSV download filename",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
@@ -5919,14 +5988,14 @@
       "title": "Move export asset button beside asset name and improve import/export icons and fix button border control",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "made_changes"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "need Review",
         "Done"
@@ -5935,7 +6004,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -5946,7 +6015,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 56,
+      "stale_for": 57,
       "labels": [
         "merge conflict"
       ]

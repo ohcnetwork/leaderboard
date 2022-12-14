@@ -1,6 +1,48 @@
 {
-  "last_updated": 1670807705.0,
+  "last_updated": 1670959482.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4294",
+      "time": 1670959482.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4294#issuecomment-1349574138",
+      "text": "@nihal467 @gigincg @khavinshankar I have now only allowed 11 digits to be entered if the number starts with `1800`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4304",
+      "time": 1670955316.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4304",
+      "text": "Delete asset button"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4300",
+      "time": 1670941706.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4300",
+      "text": "Make the secondary variant for ButtonV2 not look like its disabled"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1670939919.0,
+      "title": "coronasafe/care_fe#4298",
+      "link": "https://github.com/coronasafe/care_fe/pull/4298#pullrequestreview-1215520878",
+      "text": "Update CARE prompt when new version available"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4295",
+      "time": 1670920963.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4295",
+      "text": "Made verified by field in consultation required"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4294",
+      "time": 1670920431.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4294",
+      "text": "Removed 10 digit restriction for phone numbers"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4273",
@@ -3128,9 +3170,37 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4304",
+      "title": "Delete asset button",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "work-in-progress",
+        "Deploy-Failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4295",
+      "title": "Made verified by field in consultation required",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4294",
+      "title": "Added 11 digit restriction for toll free numbers",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4159",
       "title": "Switched to CARE UI components in facility tiles",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "work-in-progress",
         "merge conflict",

@@ -1,6 +1,39 @@
 {
-  "last_updated": 1670860505.0,
+  "last_updated": 1670939803.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4299",
+      "time": 1670939803.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4299",
+      "text": "Add gram to PrescriptionBuilder units"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4028",
+      "time": 1670935459.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4028#issuecomment-1348479514",
+      "text": "> @Ashesh3 @khavinshankar so what are we doing now of this PR\r\n\r\nTried a few different designs, will showcase the modal design tomorrow."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4290",
+      "time": 1670920475.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4290#issuecomment-1347928287",
+      "text": "@nihal467 Currently asset creation is specific to a particular facility, when you click the create asset button on a facility page, you see a list of locations within the facility itself where you can create assets. \r\n\r\nWe can add a create asset button here on the asset page and show facility selection menu in the creation form itself so that the user can select the facility + location, is that what you are looking for?"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4286",
+      "time": 1670898364.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4286",
+      "text": "Production Release; Dec Week 2",
+      "collaborated_with": [
+        "gigincg",
+        "rithviknishad",
+        "khavinshankar"
+      ]
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4284",
@@ -5194,25 +5227,33 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4272",
-      "title": "Switch to Tailwind elements for bed capacity",
-      "stale_for": 1,
+      "link": "https://github.com/coronasafe/care_fe/pull/4299",
+      "title": "Add gram to PrescriptionBuilder units",
+      "stale_for": 0,
       "labels": [
         "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4272",
+      "title": "Switch to Tailwind elements for bed capacity",
+      "stale_for": 0,
+      "labels": [
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4255",
       "title": "Fix form submission on enter key for Patient Details",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
@@ -5220,10 +5261,11 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "question",
         "tested",
+        "waiting for update",
         "merge conflict",
         "Team Discuss Required"
       ]
@@ -5231,7 +5273,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 75,
+      "stale_for": 76,
       "labels": [
         "reviewed"
       ]
@@ -5337,10 +5379,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2939",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2940"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2938",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2946"
     }
   ]
 }

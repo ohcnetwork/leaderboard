@@ -1,6 +1,41 @@
 {
-  "last_updated": 1670948703.0,
+  "last_updated": 1671041378.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4311",
+      "time": 1671041378.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4311",
+      "text": "Incosistent padding for patients list page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4310",
+      "time": 1671031644.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4310",
+      "text": "Generalize Import and Export + (@ashesh replace this with your changes)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4276",
+      "time": 1671015310.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4276#issuecomment-1350915828",
+      "text": "Since the changes in this PR are no longer required to solve the problem, made a new PR #4309 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4309",
+      "time": 1671015222.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4309",
+      "text": "Fix text area border issue in consultation form and tailiwnd discharge patient dialog"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4279",
+      "time": 1671007960.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4279#issuecomment-1350658538",
+      "text": "@dependabot duplicate of #4307 "
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4301",
@@ -5943,9 +5978,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4310",
+      "title": "Generalize Import and Export + Add create asset button on asset list page + Fix patients page padding",
+      "stale_for": 0,
+      "labels": [
+        "P1",
+        "work-in-progress"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4309",
+      "title": "Fix text area border issue in consultation form and tailiwnd discharge patient dialog",
+      "stale_for": 0,
+      "labels": [
+        "P1",
+        "work-in-progress",
+        "redesign"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4298",
       "title": "Update CARE prompt when new version available",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5953,24 +6007,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4287",
       "title": "De-duplicate implementation of `useMergeState` hook",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4276",
-      "title": "Fix textarea borderline in consultation form",
-      "stale_for": 0,
-      "labels": [
-        "work-in-progress",
-        "redesign"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "good to merge"
       ]
@@ -5978,7 +6023,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4254",
       "title": "Fix Sample Tests CSV download filename",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested"
       ]
@@ -5986,7 +6031,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4244",
       "title": "Move export asset button beside asset name and improve import/export icons and fix button border control",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "made_changes"
@@ -5995,7 +6040,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "need Review",
         "Done"
@@ -6004,7 +6049,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6015,7 +6060,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 57,
+      "stale_for": 58,
       "labels": [
         "merge conflict"
       ]

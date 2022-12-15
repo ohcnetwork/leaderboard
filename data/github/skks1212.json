@@ -1,6 +1,34 @@
 {
-  "last_updated": 1670959482.0,
+  "last_updated": 1671046735.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1122",
+      "time": 1671046735.0,
+      "link": "https://github.com/coronasafe/care/pull/1122",
+      "text": "Added delete endpoint for assets"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1121",
+      "time": 1671042080.0,
+      "link": "https://github.com/coronasafe/care/pull/1121",
+      "text": "Added validation for 11 digit toll free numbers"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4295",
+      "time": 1671015724.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4295#issuecomment-1350945419",
+      "text": "@nihal467 seems to be working for me \ud83e\udd14\ud83e\udd14\r\n![image](https://user-images.githubusercontent.com/23238460/207578054-6dda0d07-0d68-4b8f-85c0-653e97fb28a3.png)\r\n\r\nI added a few more checks, can you test again?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4294",
+      "time": 1671015288.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4294#issuecomment-1350914707",
+      "text": "@nihal467 will have to create a backend PR to handle backend validation. Marking PR as waiting"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4294",
@@ -3170,13 +3198,31 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1122",
+      "title": "Added delete endpoint for assets",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1121",
+      "title": "Added validation for 11 digit toll free numbers",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4304",
       "title": "Delete asset button",
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "work-in-progress",
-        "Deploy-Failed"
+        "P1",
+        "waiting for back end"
       ]
     },
     {
@@ -3194,13 +3240,14 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "P1"
+        "P1",
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4159",
       "title": "Switched to CARE UI components in facility tiles",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "merge conflict",

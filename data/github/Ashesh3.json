@@ -1,6 +1,13 @@
 {
-  "last_updated": 1670939803.0,
+  "last_updated": 1671006402.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4307",
+      "time": 1671006402.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4307",
+      "text": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4299",
@@ -5227,17 +5234,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4307",
+      "title": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "Deploy-Failed",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "hold"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4272",
       "title": "Switch to Tailwind elements for bed capacity",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested"
       ]
@@ -5245,7 +5263,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4255",
       "title": "Fix form submission on enter key for Patient Details",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested"
       ]
@@ -5253,7 +5271,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5261,7 +5279,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "question",
         "tested",
@@ -5273,7 +5291,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 76,
+      "stale_for": 77,
       "labels": [
         "reviewed"
       ]

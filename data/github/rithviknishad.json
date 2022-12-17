@@ -1,6 +1,65 @@
 {
-  "last_updated": 1671041378.0,
+  "last_updated": 1671209124.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4325",
+      "time": 1671209124.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4325",
+      "text": "Use the `PatientCategorySelect` form field component for patient category selections"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4310",
+      "time": 1671202174.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4310",
+      "text": "Generalize Import and Export + Add create asset button on asset list page + Fix patients page padding"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4310",
+      "time": 1671202174.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4310",
+      "text": "Generalize Import and Export + Add create asset button on asset list page + Fix patients page padding",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4310",
+      "time": 1671196055.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4310#issuecomment-1354740704",
+      "text": "@khavinshankar yes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4310",
+      "time": 1671191862.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4310#issuecomment-1354638339",
+      "text": "@nihal467 I've updated the cypress test for external results"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#107",
+      "time": 1671166063.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/107",
+      "text": "retry scrapper if failed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#106",
+      "time": 1671164785.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/106",
+      "text": "Workflow: retry scrapper if failed"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#103",
+      "time": 1671164739.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/103",
+      "text": "scrapper workflows are failing more frequently"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4311",
@@ -5978,22 +6037,21 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4310",
-      "title": "Generalize Import and Export + Add create asset button on asset list page + Fix patients page padding",
+      "link": "https://github.com/coronasafe/leaderboard/pull/107",
+      "title": "retry scrapper if failed",
       "stale_for": 0,
-      "labels": [
-        "P1",
-        "work-in-progress"
-      ]
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4309",
-      "title": "Fix text area border issue in consultation form and tailiwnd discharge patient dialog",
+      "title": "Upgrade the colors of tailwind input components + Fix text area border issue in consultation form + tailiwnd discharge patient dialog",
       "stale_for": 0,
       "labels": [
+        "Done",
         "P1",
         "work-in-progress",
-        "redesign"
+        "redesign",
+        "merge conflict"
       ]
     },
     {
@@ -6007,7 +6065,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4287",
       "title": "De-duplicate implementation of `useMergeState` hook",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -6015,32 +6073,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "good to merge"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4254",
-      "title": "Fix Sample Tests CSV download filename",
-      "stale_for": 1,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4244",
-      "title": "Move export asset button beside asset name and improve import/export icons and fix button border control",
-      "stale_for": 1,
-      "labels": [
-        "tested",
-        "made_changes"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "need Review",
         "Done"
@@ -6049,7 +6090,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 7,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6060,7 +6101,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 58,
+      "stale_for": 60,
       "labels": [
         "merge conflict"
       ]
@@ -6068,12 +6109,28 @@
   ],
   "authored_issue_and_pr": [
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4311",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4310"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4275",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4274"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4259",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4256"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4253",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4254"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4252",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4310"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4247",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4244"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4242",

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1671046735.0,
+  "last_updated": 1671198430.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1671198430.0,
+      "title": "coronasafe/care_fe#4294",
+      "link": "https://github.com/coronasafe/care_fe/pull/4294#pullrequestreview-1220876180",
+      "text": "Added 11 digit restriction for toll free numbers"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1121",
+      "time": 1671179855.0,
+      "link": "https://github.com/coronasafe/care/pull/1121",
+      "text": "Added validation for 11 digit toll free numbers"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1122",
@@ -3202,17 +3216,7 @@
       "title": "Added delete endpoint for assets",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1121",
-      "title": "Added validation for 11 digit toll free numbers",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review",
-        "P1"
+        "waiting-for-review"
       ]
     },
     {
@@ -3221,7 +3225,6 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "P1",
         "waiting for back end"
       ]
     },
@@ -3230,7 +3233,8 @@
       "title": "Made verified by field in consultation required",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "question",
+        "tested",
         "P1"
       ]
     },
@@ -3239,15 +3243,14 @@
       "title": "Added 11 digit restriction for toll free numbers",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "P1",
-        "waiting for back end"
+        "test failed",
+        "P1"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4159",
       "title": "Switched to CARE UI components in facility tiles",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "work-in-progress",
         "merge conflict",

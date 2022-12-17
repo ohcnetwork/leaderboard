@@ -1,6 +1,30 @@
 {
-  "last_updated": 1671006402.0,
+  "last_updated": 1671207416.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4314",
+      "time": 1671207416.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4314#issuecomment-1355160726",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/208058967-9dd825cb-6a48-4ea3-bf1f-27c4699daee6.png)\r\n> \r\n> make the three button in three rows when it is in responsive view\r\n\r\nDone!\r\n![image](https://user-images.githubusercontent.com/3626859/208141983-63bb30d6-ffb5-46ac-bbe2-9fe70387ff55.png)\r\n"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4310",
+      "time": 1671202174.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4310",
+      "text": "Generalize Import and Export + Add create asset button on asset list page + Fix patients page padding",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4272",
+      "time": 1671163144.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4272",
+      "text": "Switch to Tailwind elements for bed capacity"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4307",
@@ -5234,52 +5258,43 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4314",
+      "title": "Refactor doctor capacity page to use Tailwind",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4307",
       "title": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5",
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "Deploy-Failed",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "hold"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4272",
-      "title": "Switch to Tailwind elements for bed capacity",
-      "stale_for": 1,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4255",
-      "title": "Fix form submission on enter key for Patient Details",
-      "stale_for": 1,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "good to merge"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "question",
         "tested",
@@ -5291,7 +5306,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 77,
+      "stale_for": 79,
       "labels": [
         "reviewed"
       ]

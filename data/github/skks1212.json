@@ -1,6 +1,44 @@
 {
-  "last_updated": 1671198430.0,
+  "last_updated": 1671288467.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4294",
+      "time": 1671288467.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4294#issuecomment-1356292101",
+      "text": "@nihal467 \r\n![image](https://user-images.githubusercontent.com/23238460/208247553-d9b13bc4-a1c7-44f1-a8c5-16b7658a2230.png)\r\nLooks like Deploy issue has been fixed. Can you try testing again? \ud83e\udd72"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4294",
+      "time": 1671288244.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4294#issuecomment-1356291554",
+      "text": "@khavinshankar @nihal467 There appears to be a problem with care backend not deploying. Im adding a waiting for backend label to the PR again.\r\n\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4295",
+      "time": 1671276191.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4295",
+      "text": "Made verified by field in consultation required"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4295",
+      "time": 1671276191.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4295",
+      "text": "Made verified by field in consultation required",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1122",
+      "time": 1671273465.0,
+      "link": "https://github.com/coronasafe/care/pull/1122",
+      "text": "Added delete endpoint for assets"
+    },
     {
       "type": "pr_reviewed",
       "time": 1671198430.0,
@@ -3212,30 +3250,11 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1122",
-      "title": "Added delete endpoint for assets",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4304",
       "title": "Delete asset button",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "waiting for back end"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4295",
-      "title": "Made verified by field in consultation required",
-      "stale_for": 0,
-      "labels": [
-        "question",
-        "tested",
-        "P1"
+        "needs testing"
       ]
     },
     {
@@ -3243,14 +3262,14 @@
       "title": "Added 11 digit restriction for toll free numbers",
       "stale_for": 0,
       "labels": [
-        "test failed",
+        "needs testing",
         "P1"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4159",
       "title": "Switched to CARE UI components in facility tiles",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "merge conflict",

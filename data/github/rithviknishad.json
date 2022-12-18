@@ -1,6 +1,62 @@
 {
-  "last_updated": 1671209124.0,
+  "last_updated": 1671264932.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4329",
+      "time": 1671264932.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4329#issuecomment-1356114469",
+      "text": "I guess we could achieve that by manipulating the min and max prop of DateInput during onChange?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4329",
+      "time": 1671264851.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4329#issuecomment-1356114192",
+      "text": "@Ashesh3 the swapping feels weird, one might feel that it didn't select what I clicked. \r\n\r\nJust a suggestion, how about disabling users from selecting a date that beyond constraint? \r\nFor example: If I select start: Dec 1, in the end-picker, dates on or before Dec-1 shall be disabled."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671264646.0,
+      "title": "coronasafe/care_fe#4329",
+      "link": "https://github.com/coronasafe/care_fe/pull/4329#pullrequestreview-1221751402",
+      "text": "Add end>start constraint to DateRangeInputV2"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3983",
+      "time": 1671260731.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3983#issuecomment-1356079325",
+      "text": "Issue is still present in the patient filters"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4328",
+      "time": 1671260012.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4328",
+      "text": "Diagnosis Select causes to select/unselect unintended option when dropdown goes out of focus"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4326",
+      "time": 1671257596.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4326#issuecomment-1356061668",
+      "text": "@Pranshu1902 just a heads up, since we are moving to tailwind based components, can u implement this fix for `DateInputV2` instead? and then replace the DatePicker used in asset form with `DateFormField`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2380",
+      "time": 1671238464.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2380#issuecomment-1355886062",
+      "text": "Closing this as we have custom-built `DateFormField` and `DateRangeFormField` using tailwind as of now."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2380",
+      "time": 1671238464.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2380",
+      "text": "Replace react-dates with material ui date picker"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4325",
@@ -6039,25 +6095,24 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/107",
       "title": "retry scrapper if failed",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4309",
-      "title": "Upgrade the colors of tailwind input components + Fix text area border issue in consultation form + tailiwnd discharge patient dialog",
+      "title": "\ud83d\udee0 Upgrade the colors of tailwind input components + \ud83d\udee0 Tailwind Consultation Form + \ud83d\udee0 Tailiwnd discharge patient dialog",
       "stale_for": 0,
       "labels": [
-        "Done",
         "P1",
         "work-in-progress",
         "redesign",
-        "merge conflict"
+        "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4298",
       "title": "Update CARE prompt when new version available",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -6065,7 +6120,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4287",
       "title": "De-duplicate implementation of `useMergeState` hook",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing"
       ]
@@ -6073,7 +6128,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "good to merge"
       ]
@@ -6081,7 +6136,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "need Review",
         "Done"
@@ -6090,7 +6145,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6101,7 +6156,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 60,
+      "stale_for": 61,
       "labels": [
         "merge conflict"
       ]

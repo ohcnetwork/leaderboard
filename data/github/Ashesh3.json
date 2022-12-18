@@ -1,6 +1,27 @@
 {
-  "last_updated": 1671207416.0,
+  "last_updated": 1671281389.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4333",
+      "time": 1671281389.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4333",
+      "text": "Fix button layout on Facility page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4333",
+      "time": 1671278412.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4333",
+      "text": "Fix button layout"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4329",
+      "time": 1671263891.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4329",
+      "text": "Add end>start constraint to DateRangeInputV2"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4314",
@@ -5258,9 +5279,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4329",
+      "title": "Add end>start constraint to DateRangeInputV2",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4314",
       "title": "Refactor doctor capacity page to use Tailwind",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5268,7 +5297,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4307",
       "title": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -5277,7 +5306,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "hold"
@@ -5286,7 +5315,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "good to merge"
       ]
@@ -5294,7 +5323,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "question",
         "tested",
@@ -5306,7 +5335,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 79,
+      "stale_for": 80,
       "labels": [
         "reviewed"
       ]

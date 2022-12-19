@@ -1,6 +1,67 @@
 {
-  "last_updated": 1671281389.0,
+  "last_updated": 1671387352.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4354",
+      "time": 1671387352.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4354",
+      "text": "Production Release; Dec Week 3",
+      "collaborated_with": [
+        "cp-Coder",
+        "siddnikh",
+        "mathew-alex",
+        "khavinshankar",
+        "rithviknishad",
+        "naman114",
+        "Pranshu1902",
+        "skks1212",
+        "Pragati1610",
+        "patelaryan7751"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4355",
+      "time": 1671383584.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4355",
+      "text": "Switch labels to FieldLabel on Facility Creation page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4351",
+      "time": 1671379249.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4351",
+      "text": "Use cursor-pointer class for tab names in view consultation files"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4347",
+      "time": 1671377628.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4347#issuecomment-1356822887",
+      "text": "> along with `gap-2` also maybe? it's still overridable since the `classNames` passed as a prop is appended to the end\r\n\r\nYep, a default template for a button would make it much easier to use by default, while also allowing it to be overridden by `classNames`. So yea i think we can add those properties by default. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4347",
+      "time": 1671377474.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4347#issuecomment-1356822539",
+      "text": "> @Ashesh3 what do you think about updating the `ButtonV2` component to have `inline-flex items-center` already present in it's classNames?\r\n\r\nThat'd be super clean and helpful!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4347",
+      "time": 1671377281.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4347#issuecomment-1356822085",
+      "text": "@rithviknishad `justify-flex` along with `items-center` seem to help remedy the alignment problem.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/208306517-94d2a71c-6822-46bb-9ed2-473f5314f72c.png)\r\n\r\nBefore:\r\n![image](https://user-images.githubusercontent.com/3626859/208306549-8d2ecb20-1097-4968-8ca9-20d4669e1ca8.png)\r\n\r\nAfter:\r\n![image](https://user-images.githubusercontent.com/3626859/208306553-1a6f2708-9950-45ff-9d88-6356445088ba.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4028",
+      "time": 1671369979.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4028#issuecomment-1356798226",
+      "text": "@nihal467 @khavinshankar Thoughts on the new design? \r\n\r\n- Replaced the page with a modal\r\n\r\n![TomatoIndianskimmer](https://user-images.githubusercontent.com/3626859/208300848-df1c1f8b-305b-4284-9e74-3a3662603353.gif)\r\n"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4333",
@@ -5279,9 +5340,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4355",
+      "title": "Switch labels to FieldLabel on Facility Creation page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4351",
+      "title": "Use cursor-pointer class for tab names in view consultation files",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4329",
       "title": "Add end>start constraint to DateRangeInputV2",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5289,7 +5366,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4314",
       "title": "Refactor doctor capacity page to use Tailwind",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -5297,7 +5374,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4307",
       "title": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -5306,7 +5383,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "hold"
@@ -5315,7 +5392,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "good to merge"
       ]
@@ -5323,19 +5400,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4028",
       "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "question",
-        "tested",
-        "waiting for update",
-        "merge conflict",
-        "Team Discuss Required"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 80,
+      "stale_for": 81,
       "labels": [
         "reviewed"
       ]

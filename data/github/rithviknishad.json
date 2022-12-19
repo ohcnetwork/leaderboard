@@ -1,6 +1,116 @@
 {
-  "last_updated": 1671264932.0,
+  "last_updated": 1671387352.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4354",
+      "time": 1671387352.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4354",
+      "text": "Production Release; Dec Week 3",
+      "collaborated_with": [
+        "cp-Coder",
+        "Ashesh3",
+        "siddnikh",
+        "mathew-alex",
+        "khavinshankar",
+        "naman114",
+        "Pranshu1902",
+        "skks1212",
+        "Pragati1610",
+        "patelaryan7751"
+      ]
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4353",
+      "time": 1671380023.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4353",
+      "text": "Add patient details button is jumping when we open advanced patient filters"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4343",
+      "time": 1671378124.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4343#issuecomment-1356824228",
+      "text": "@cp-Coder the icon text alignment issue inside button will be resolved in one shot by PR of #4347 as discussed in it's comments.\r\n\r\n@Ashesh3 do link this PR too when the issue is fixed."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4350",
+      "time": 1671377706.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4350",
+      "text": "Use angle icons instead of `<<<`, `<`, `>>>`, `>` texts in pagination component."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4347",
+      "time": 1671377509.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4347#issuecomment-1356822614",
+      "text": "along with `gap-2` also maybe? it's still overridable since the `classNames` passed as a prop is appended to the end"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4347",
+      "time": 1671377431.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4347#issuecomment-1356822437",
+      "text": "@Ashesh3 what do you think about updating the `ButtonV2` component to have `inline-flex items-center` already present in it's classNames?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4349",
+      "time": 1671377149.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4349",
+      "text": "Facility card height is not consistent with different information"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4348",
+      "time": 1671376365.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4348",
+      "text": "Use `cursor-pointer` class for tab names in view consultation files"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4347",
+      "time": 1671376110.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4347#issuecomment-1356818812",
+      "text": "I had to manually do `mt-0.5` or `mt-1` at places where font-awesome was replaced with CareIcon"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4347",
+      "time": 1671376063.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4347#issuecomment-1356818637",
+      "text": "@Ashesh3 i think all the icons are misaligned when we use care icons even after setting `flex gap-2 items-center`."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4346",
+      "time": 1671374443.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4346",
+      "text": "Camera feed of patient does not respect the aspect ratio in responsive views"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4301",
+      "time": 1671374436.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4301",
+      "text": "Camera feed of patient does not respect the aspect ratio in responsive views"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4345",
+      "time": 1671374017.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4345",
+      "text": "CareIcons: missing ascending/descending icons in patient ordering filter"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4344",
+      "time": 1671373345.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4344#issuecomment-1356809872",
+      "text": "@nihal467 @cp-Coder solved in https://github.com/coronasafe/care_fe/pull/4226\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4329",
@@ -6095,7 +6205,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/107",
       "title": "retry scrapper if failed",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
@@ -6103,8 +6213,8 @@
       "title": "\ud83d\udee0 Upgrade the colors of tailwind input components + \ud83d\udee0 Tailwind Consultation Form + \ud83d\udee0 Tailiwnd discharge patient dialog",
       "stale_for": 0,
       "labels": [
+        "needs testing",
         "P1",
-        "work-in-progress",
         "redesign",
         "Major Code Change"
       ]
@@ -6112,7 +6222,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4298",
       "title": "Update CARE prompt when new version available",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -6120,7 +6230,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4287",
       "title": "De-duplicate implementation of `useMergeState` hook",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "needs testing"
       ]
@@ -6128,7 +6238,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "good to merge"
       ]
@@ -6136,7 +6246,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "need Review",
         "Done"
@@ -6145,7 +6255,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6156,7 +6266,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 61,
+      "stale_for": 62,
       "labels": [
         "merge conflict"
       ]
@@ -6242,10 +6352,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4015",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4041"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4013",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3959"
     }
   ]
 }

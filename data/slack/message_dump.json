@@ -43397,5 +43397,141 @@
     "2022-12-15 00:00:00": [],
     "2022-12-17 00:00:00": [],
     "2022-12-16 00:00:00": [],
-    "2022-12-18 00:00:00": []
+    "2022-12-18 00:00:00": [
+        {
+            "client_msg_id": "04c2cf7a-b931-4423-a269-bdc75702fde5",
+            "type": "message",
+            "text": "Raised PR <https://github.com/coronasafe/care_fe/pull/4339|#4339> in care_fe",
+            "user": "U02TPSZMJRF",
+            "ts": "1671377775.402759",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ciY",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Raised PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/4339",
+                                    "text": "#4339",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " in care_fe"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671354798,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4339",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4339 Fix (UpdateFacilityMiddleware): made the facility middleware form responsive",
+                    "text": "*Proposed Changes*\n\n\u2022 Fixes <https://github.com/coronasafe/care_fe/issues/4338|#4338>\n\nAwesomeScreenshot-12_18_2022.2.41.24PM.mp4\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "#4339 Fix (UpdateFacilityMiddleware): made the facility middleware form responsive",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4339",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "abaf79cb-c74b-474b-acfb-379ca52dd37e",
+            "type": "message",
+            "text": "PR Raised (yesterday): <https://github.com/coronasafe/care_fe/pull/4337|#4337>",
+            "user": "U02TPSZMJRF",
+            "ts": "1671347822.820049",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Thtw2",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PR Raised (yesterday): "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/4337",
+                                    "text": "#4337",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TPSZMJRF",
+                "ts": "1671347865.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671300084,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4337",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4337 Fix (FacilityFilter): sidebar collapses on clearing facility advanced filters",
+                    "text": "*Proposed Changes*\n\n\u2022 Fixes <https://github.com/coronasafe/care_fe/issues/4191|#4191>\n\u2022 Currently, the `Clear Filter` button closes the advanced filters. Now, it removes the filters and the sidebar stays visible as well\n\u2022 The `Local Body` form field is handled separately in `LocalBodySelect.tsx`. I moved the `selectedLocalBodyObject` state into the parent component i.e. `FacilityFilter/index.tsx` to manage state (reset the form) in the parent itself\n\n<https://www.loom.com/share/226d2c19c6d94cc584ca23cf9ddc834a|Facilities | CARE - 17 December 2022 - Watch Video>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "#4337 Fix (FacilityFilter): sidebar collapses on clearing facility advanced filters",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4337",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-12-19 00:00:00": []
 }

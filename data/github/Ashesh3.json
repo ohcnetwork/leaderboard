@@ -1,6 +1,41 @@
 {
-  "last_updated": 1671387352.0,
+  "last_updated": 1671463557.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4351",
+      "time": 1671463557.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4351#issuecomment-1357840797",
+      "text": "@nihal467 should be fixed now."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671461853.0,
+      "title": "coronasafe/care_fe#4358",
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#pullrequestreview-1223046953",
+      "text": "Upgrade pagination component + fix disappeard classes of ButtonV2 + adjust baseline vertical alignment of `CareIcons`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4364",
+      "time": 1671446385.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4364",
+      "text": "Fix cancel button on asset create/update page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4358",
+      "time": 1671440601.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#issuecomment-1357313909",
+      "text": "@rithviknishad The Cypress tests might need to be updated too.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/208387934-9ff0a1db-58bd-4d45-b2e8-e07d49035436.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671439483.0,
+      "title": "coronasafe/care_fe#4358",
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#pullrequestreview-1222497080",
+      "text": "Upgrade pagination component + fix disappeard classes of ButtonV2 + adjust baseline vertical alignment of `CareIcons`"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4354",
@@ -5340,11 +5375,20 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4364",
+      "title": "Fix cancel button on asset create/update page",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4355",
       "title": "Switch labels to FieldLabel on Facility Creation page",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
@@ -5358,23 +5402,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4329",
       "title": "Add end>start constraint to DateRangeInputV2",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4314",
       "title": "Refactor doctor capacity page to use Tailwind",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4307",
       "title": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -5383,7 +5427,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "needs testing",
         "hold"
@@ -5392,7 +5436,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "good to merge"
       ]
@@ -5402,13 +5446,13 @@
       "title": "Remove broken pagination and disable inputs on Inventory Management",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 81,
+      "stale_for": 82,
       "labels": [
         "reviewed"
       ]

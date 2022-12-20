@@ -1,6 +1,83 @@
 {
-  "last_updated": 1671387352.0,
+  "last_updated": 1671460754.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4358",
+      "time": 1671460754.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#issuecomment-1357767690",
+      "text": "Merged latest develop too, cypress would pass now"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4367",
+      "time": 1671455152.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4367",
+      "text": "Goodbye `CheckCircleOutline` icon of material UI"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4353",
+      "time": 1671455141.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4353#issuecomment-1357636267",
+      "text": "@khavinshankar I think it should work, but I wonder how it also affects the add patient details button too? "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671454655.0,
+      "title": "coronasafe/care_fe#4329",
+      "link": "https://github.com/coronasafe/care_fe/pull/4329#pullrequestreview-1222838147",
+      "text": "Add end>start constraint to DateRangeInputV2"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4353",
+      "time": 1671454149.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4353#issuecomment-1357617273",
+      "text": "@khavinshankar I understood the problem. I should make sure I stop inlining components \ud83d\ude05 \r\n\r\nBtw, do you mean to refactor out the ExportMenu, ExportButton, and _CSVLink outside of the hook?\r\n\r\nOr to create two components ExportMenu, and ExportButton that replicates the functionality of the useExport hook inside it?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4362",
+      "time": 1671444118.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4362",
+      "text": "Cypress: Fix external result's import test"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4358",
+      "time": 1671443501.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#issuecomment-1357377312",
+      "text": "@nihal467 fixed. could you check now"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4358",
+      "time": 1671443343.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#issuecomment-1357374322",
+      "text": "@nihal467 yes."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4362",
+      "time": 1671441602.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4362",
+      "text": "Cypress: Fix external result's import test"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4358",
+      "time": 1671441100.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#issuecomment-1357327391",
+      "text": "@Ashesh3 yea on it. just finished, pushing it"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4358",
+      "time": 1671434774.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4358",
+      "text": "Upgrade pagination component + fix disappeard classes of ButtonV2 that caused alignment issue across platform"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4354",
@@ -6203,9 +6280,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4358",
+      "title": "Upgrade pagination component + fix disappeard classes of ButtonV2 + adjust baseline vertical alignment of `CareIcons`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "redesign",
+        "Major Code Change"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/leaderboard/pull/107",
       "title": "retry scrapper if failed",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
@@ -6213,8 +6300,8 @@
       "title": "\ud83d\udee0 Upgrade the colors of tailwind input components + \ud83d\udee0 Tailwind Consultation Form + \ud83d\udee0 Tailiwnd discharge patient dialog",
       "stale_for": 0,
       "labels": [
-        "needs testing",
         "P1",
+        "work-in-progress",
         "redesign",
         "Major Code Change"
       ]
@@ -6222,23 +6309,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4298",
       "title": "Update CARE prompt when new version available",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4287",
       "title": "De-duplicate implementation of `useMergeState` hook",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "good to merge"
       ]
@@ -6246,7 +6333,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "need Review",
         "Done"
@@ -6255,7 +6342,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6266,7 +6353,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 62,
+      "stale_for": 63,
       "labels": [
         "merge conflict"
       ]

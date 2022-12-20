@@ -1256,5 +1256,117 @@
                 }
             ]
         }
+    ],
+    "2022-12-19 00:00:00": [
+        {
+            "client_msg_id": "472aa665-f1fa-4a47-8bf1-774e838a11ad",
+            "type": "message",
+            "text": "Issues Raised:\n\u2022 The tooltip displayed on the `Import/Export` button on the Assets page is not responsive <https://github.com/coronasafe/care_fe/issues/4371|#4371>\n\u2022 Clicking the active/current tab in the mobile sidebar does not collapse the sidebar <https://github.com/coronasafe/care_fe/issues/4372|#4372>",
+            "user": "U02TPSZMJRF",
+            "ts": "1671473850.243269",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "gr0",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues Raised:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "The tooltip displayed on the "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Import/Export",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " button on the Assets page is not responsive "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/4371",
+                                            "text": "#4371",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Clicking the active/current tab in the mobile sidebar does not collapse the sidebar "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/4372",
+                                            "text": "#4372",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671467694,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/4371",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4371 Assets Import/Export button's tooltip is not responsive",
+                    "title": "#4371 Assets Import/Export button's tooltip is not responsive",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/4371",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671473472,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/4372",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4372 MobileSidebar doesn't collapse on clicking the active tab",
+                    "title": "#4372 MobileSidebar doesn't collapse on clicking the active tab",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/4372",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

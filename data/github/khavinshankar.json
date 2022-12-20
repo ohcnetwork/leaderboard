@@ -1,6 +1,55 @@
 {
-  "last_updated": 1671387352.0,
+  "last_updated": 1671454670.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4353",
+      "time": 1671454670.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4353#issuecomment-1357625237",
+      "text": "@rithviknishad something of that sort"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4353",
+      "time": 1671452819.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4353#issuecomment-1357596582",
+      "text": "@rithviknishad  \r\nThe jumping around seems to be caused because of the useExport hook. We are exporting ExportMenu and ExportButton JSX components from the useExport hook, so as the useExport hook is called at every render, these also are changing _(function signatures)_ and rerendered. The jumping is because of the difference in time taken to render the icons used inside the 2 above-mentioned functions. \r\n\r\nI think converting the hook to a component should fix it, what are ur thoughts?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4366",
+      "time": 1671449335.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4366",
+      "text": "Allow 11 digits only when a phone number starts with 18001"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4365",
+      "time": 1671449167.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4365",
+      "text": "Allow 11 digits only when a phone number starts with 18001"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671448924.0,
+      "title": "coronasafe/care_fe#4364",
+      "link": "https://github.com/coronasafe/care_fe/pull/4364#pullrequestreview-1222722313",
+      "text": "Fix cancel button on asset create/update page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671444106.0,
+      "title": "coronasafe/care_fe#4362",
+      "link": "https://github.com/coronasafe/care_fe/pull/4362#pullrequestreview-1222606676",
+      "text": "Cypress: Fix external result's import test"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4357",
+      "time": 1671433568.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4357",
+      "text": "Use facility.middleware_address for asset.meta.middleware_hostname"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4354",
@@ -10153,15 +10202,33 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4366",
+      "title": "Allow 11 digits only when a phone number starts with 18001",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4357",
+      "title": "Use facility.middleware_address for asset.meta.middleware_hostname",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 18,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -10169,7 +10236,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "work-in-progress",
         "waiting for update"
@@ -10178,7 +10245,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -10188,7 +10255,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "work-in-progress",
         "waiting for update"
@@ -10197,7 +10264,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 38,
+      "stale_for": 39,
       "labels": [
         "waiting-for-review"
       ]
@@ -10205,31 +10272,31 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 44,
+      "stale_for": 45,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 366,
+      "stale_for": 367,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 372,
+      "stale_for": 373,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 373,
+      "stale_for": 374,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 568,
+      "stale_for": 569,
       "labels": []
     }
   ],

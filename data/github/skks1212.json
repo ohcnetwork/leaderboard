@@ -1,6 +1,13 @@
 {
-  "last_updated": 1671387352.0,
+  "last_updated": 1671464325.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1671464325.0,
+      "title": "coronasafe/care_fe#4366",
+      "link": "https://github.com/coronasafe/care_fe/pull/4366#pullrequestreview-1223113689",
+      "text": "Allow 11 digits only when a phone number starts with 18001"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4354",
@@ -3288,18 +3295,18 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4304",
       "title": "Delete asset button",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4159",
       "title": "Switched to CARE UI components in facility tiles",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "work-in-progress",
-        "merge conflict",
+        "needs testing",
         "cypress failed"
       ]
     }

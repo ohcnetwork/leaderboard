@@ -1,6 +1,104 @@
 {
-  "last_updated": 1671460754.0,
+  "last_updated": 1671648425.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4386",
+      "time": 1671648425.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4386",
+      "text": "Create Asset in asset list page should not ask to select a facility if view assets is clicked from a facility home page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4385",
+      "time": 1671648054.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4385",
+      "text": "If no facility is selected, show `FacilitySelectDialog` when Import/Export asset is clicked"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671647224.0,
+      "title": "coronasafe/care_fe#4378",
+      "link": "https://github.com/coronasafe/care_fe/pull/4378#pullrequestreview-1226567234",
+      "text": "fix: Tailwind the Add User page + cypress tests for user feature"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#108",
+      "time": 1671646647.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/108",
+      "text": "Scrapper fails to run when github email and git local email ID does not match"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4384",
+      "time": 1671645189.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4384",
+      "text": "Removes `app-updated` from localStorage immediatley after showing update success notification"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4383",
+      "time": 1671644698.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4383",
+      "text": "Fixes asset Import/Export tooltip"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671634386.0,
+      "title": "coronasafe/care_fe#4358",
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#pullrequestreview-1226228950",
+      "text": "Upgrade pagination component + fix disappeard classes of ButtonV2 + adjust baseline vertical alignment of `CareIcons`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3872",
+      "time": 1671607394.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3872#issuecomment-1360946593",
+      "text": "Will be worked on after #4309 is merged, along with adding the `Form` component."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4374",
+      "time": 1671606235.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4374#issuecomment-1360931115",
+      "text": "A bug reported 10 years ago: https://bugzilla.mozilla.org/show_bug.cgi?id=786108\r\n\r\nNot sure if this would help: https://codepen.io/tigt/post/improving-svg-rendering-performance#to-animate-svg-give-it-a-div-parent-and-animate-that-instead-16\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/208841818-7a92e45d-e510-4365-9b8d-8730b5de7162.png)\r\n\r\ncc: @skks1212 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#97",
+      "time": 1671598452.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/97#issuecomment-1360857306",
+      "text": "A very big page is rendered nowadays since we have lots of data, so how about we introduce:\r\n\r\n- A tab (I vote for this) or filters to filter out event sources: [GitHub, Slack].\r\n- And also pagination or month-based filter similar to a style of pagination?\r\n\r\ncc: @bodhish what do you think about this?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671597987.0,
+      "title": "coronasafe/leaderboard#98",
+      "link": "https://github.com/coronasafe/leaderboard/pull/98#pullrequestreview-1225455827",
+      "text": "sort by points if category points same"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard#107",
+      "time": 1671596348.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/107",
+      "text": "retry scrapper if failed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4378",
+      "time": 1671595078.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4378#issuecomment-1360824381",
+      "text": "Coming via #4309 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4378",
+      "time": 1671595057.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4378#issuecomment-1360824101",
+      "text": "@cp-Coder marking it as hold, since we will now have `FormField` compliant components coming, for example `SelectFormField` shall be used in place of `SelectMenuV2`.\r\n\r\n`FormField` components have similar design and API to that of `TextFormField` which you have used so far in many places."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4358",
@@ -6280,8 +6378,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4384",
+      "title": "Removes `app-updated` from localStorage immediatley after showing update success notification",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4383",
+      "title": "Fixes asset Import/Export tooltip",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4358",
-      "title": "Upgrade pagination component + fix disappeard classes of ButtonV2 + adjust baseline vertical alignment of `CareIcons`",
+      "title": "Upgrade `Pagination` comp. + fix `ButtonV2` + adj. vertical-align of `CareIcons` + Generalize `Submit` and `Cancel` buttons",
       "stale_for": 0,
       "labels": [
         "needs testing",
@@ -6290,50 +6404,29 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/leaderboard/pull/107",
-      "title": "retry scrapper if failed",
-      "stale_for": 3,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4309",
       "title": "\ud83d\udee0 Upgrade the colors of tailwind input components + \ud83d\udee0 Tailwind Consultation Form + \ud83d\udee0 Tailiwnd discharge patient dialog",
       "stale_for": 0,
       "labels": [
+        "needs testing",
         "P1",
-        "work-in-progress",
         "redesign",
         "Major Code Change"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4298",
-      "title": "Update CARE prompt when new version available",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4287",
-      "title": "De-duplicate implementation of `useMergeState` hook",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
-        "good to merge"
+        "good to merge",
+        "stale"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 6,
+      "stale_for": 8,
       "labels": [
         "need Review",
         "Done"
@@ -6342,7 +6435,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6353,7 +6446,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 63,
+      "stale_for": 65,
       "labels": [
         "merge conflict"
       ]
@@ -6361,8 +6454,20 @@
   ],
   "authored_issue_and_pr": [
     {
+      "issue_link": "https://github.com/coronasafe/leaderboard/issues/106",
+      "pr_link": "https://github.com/coronasafe/leaderboard/pull/107"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4311",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4310"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4297",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4298"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4285",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4298"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4275",
@@ -6427,18 +6532,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4077",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4142"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4076",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4160"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4036",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4037"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4015",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4041"
     }
   ]
 }

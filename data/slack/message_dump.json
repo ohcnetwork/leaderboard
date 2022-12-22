@@ -43645,5 +43645,157 @@
             ]
         }
     ],
-    "2022-12-20 00:00:00": []
+    "2022-12-20 00:00:00": [
+        {
+            "client_msg_id": "3fb65631-aa80-4144-8a2a-1f524830e12a",
+            "type": "message",
+            "text": "Raised PR <https://github.com/coronasafe/care_fe/pull/4377|#4377>  in care_fe",
+            "user": "U02TPSZMJRF",
+            "ts": "1671559740.337989",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/H0",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Raised PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/4377",
+                                    "text": "#4377",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "  in care_fe"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671559442,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4377",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4377 Fix (Sidebar): made the sidebar collapse on clicking active links",
+                    "text": "*Proposed Changes*\n\n\u2022 Fixes <https://github.com/coronasafe/care_fe/issues/4372|#4372>\n\u2022 Made the mobile sidebar collapse on clicking the active/current tab\n\n2022-12-20_23-31-49.mp4\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "#4377 Fix (Sidebar): made the sidebar collapse on clicking active links",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4377",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-12-22 00:00:00": [],
+    "2022-12-21 00:00:00": [
+        {
+            "client_msg_id": "141b98bf-c62b-412a-9f5f-9743bc74957b",
+            "type": "message",
+            "text": "Modified PR <https://github.com/coronasafe/care_fe/pull/4337|#4337> to collapse all sidebars upon clearing advanced filters (as discussed in the EOD)\nFiled issue <https://github.com/coronasafe/care_fe/issues/4387|#4387>",
+            "user": "U02TPSZMJRF",
+            "ts": "1671653555.383369",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xFx8",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Modified PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/4337",
+                                    "text": "#4337",
+                                    "unsafe": true
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to collapse all sidebars upon clearing advanced filters (as discussed in the EOD)\nFiled issue "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/4387",
+                                    "text": "#4387",
+                                    "unsafe": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TPSZMJRF",
+                "ts": "1671653568.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671300084,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4337",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4337 Fix (Advanced Filters): made all filter sidebars collapse on clearing filters",
+                    "title": "#4337 Fix (Advanced Filters): made all filter sidebars collapse on clearing filters",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4337",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671653439,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/4387",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4387 Notifications sidebar is not responsive",
+                    "title": "#4387 Notifications sidebar is not responsive",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/4387",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ]
 }

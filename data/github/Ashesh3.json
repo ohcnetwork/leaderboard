@@ -1,6 +1,55 @@
 {
-  "last_updated": 1671463557.0,
+  "last_updated": 1671633359.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1671633359.0,
+      "title": "coronasafe/care_fe#4358",
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#pullrequestreview-1226199926",
+      "text": "Upgrade pagination component + fix disappeard classes of ButtonV2 + adjust baseline vertical alignment of `CareIcons`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4382",
+      "time": 1671627472.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4382",
+      "text": "Preserve file name when downloading Consultation files"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4329",
+      "time": 1671608771.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4329",
+      "text": "Add end>start constraint to DateRangeInputV2"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4355",
+      "time": 1671602089.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4355",
+      "text": "Switch labels to FieldLabel on Facility Creation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671601794.0,
+      "title": "coronasafe/care_fe#4028",
+      "link": "https://github.com/coronasafe/care_fe/pull/4028#pullrequestreview-1225491964",
+      "text": "Remove broken pagination and disable inputs on Inventory Management"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4314",
+      "time": 1671599239.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4314",
+      "text": "Refactor doctor capacity page to use Tailwind"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4351",
+      "time": 1671598592.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4351",
+      "text": "Use cursor-pointer class for tab names in view consultation files"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4351",
@@ -5375,50 +5424,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4364",
-      "title": "Fix cancel button on asset create/update page",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4355",
-      "title": "Switch labels to FieldLabel on Facility Creation page",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4351",
-      "title": "Use cursor-pointer class for tab names in view consultation files",
+      "link": "https://github.com/coronasafe/care_fe/pull/4382",
+      "title": "Preserve file name when downloading Consultation files",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4329",
-      "title": "Add end>start constraint to DateRangeInputV2",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4314",
-      "title": "Refactor doctor capacity page to use Tailwind",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4307",
       "title": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -5427,7 +5443,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "needs testing",
         "hold"
@@ -5436,7 +5452,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "good to merge"
       ]
@@ -5452,7 +5468,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 82,
+      "stale_for": 84,
       "labels": [
         "reviewed"
       ]

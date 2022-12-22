@@ -1,6 +1,20 @@
 {
-  "last_updated": 1671362072.0,
+  "last_updated": 1671617322.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4381",
+      "time": 1671617322.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4381",
+      "text": "hide x overflow in sidebar"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#98",
+      "time": 1671612313.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/98#issuecomment-1361018867",
+      "text": "> @Ritesh-Aggarwal can we do this sorting inside getStaticProps()?\r\n> \r\n> The order wouldn't change for a given day right, so let the server side do the computation and keep the client-side light.\r\n\r\nI don't think that would improve performance as we have sorting/filtering parameters like show/hide core members, and many more in client side, so we need to have this logic in client side itself.\r\nIf we pre-calculate all the sorted arrays for every condition it may increase the size of page and nextjs recommends only passing required data in `getStaticProps()`\r\nhttps://nextjs.org/docs/messages/large-page-data"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4341",
@@ -1140,27 +1154,35 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4381",
+      "title": "hide x overflow in sidebar",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/leaderboard/pull/98",
       "title": "sort by points if category points same",
-      "stale_for": 57,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/970",
       "title": "api - update role of user",
-      "stale_for": 111,
+      "stale_for": 114,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/39",
       "title": "change leaderboard week dates dynamically",
-      "stale_for": 61,
+      "stale_for": 64,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/37",
       "title": "Leaderboard history page",
-      "stale_for": 61,
+      "stale_for": 64,
       "labels": []
     }
   ],

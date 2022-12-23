@@ -1,6 +1,27 @@
 {
-  "last_updated": 1671633359.0,
+  "last_updated": 1671709932.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4382",
+      "time": 1671709932.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4382",
+      "text": "Preserve file name when downloading Consultation files"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4028",
+      "time": 1671689186.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4028",
+      "text": "Remove broken pagination and disable inputs on Inventory Management"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671687516.0,
+      "title": "coronasafe/care_fe#4388",
+      "link": "https://github.com/coronasafe/care_fe/pull/4388#pullrequestreview-1227145451",
+      "text": "Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox"
+    },
     {
       "type": "pr_reviewed",
       "time": 1671633359.0,
@@ -5424,26 +5445,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4382",
-      "title": "Preserve file name when downloading Consultation files",
+      "link": "https://github.com/coronasafe/care_fe/pull/4307",
+      "title": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4307",
-      "title": "Bump tailwindcss:3.2.4 @headlessui/react:1.7.5",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "needs testing",
         "hold"
@@ -5452,23 +5464,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "good to merge"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4028",
-      "title": "Remove broken pagination and disable inputs on Inventory Management",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 84,
+      "stale_for": 85,
       "labels": [
         "reviewed"
       ]

@@ -1,6 +1,265 @@
 {
-  "last_updated": 1671608772.0,
+  "last_updated": 1671729776.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4357",
+      "time": 1671729776.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4357#issuecomment-1363135748",
+      "text": "@nihal467 I have made a pr https://github.com/coronasafe/care/pull/1127 in the backend related to the above-mentioned issue, once that is merged this pr can be tested."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1127",
+      "time": 1671729686.0,
+      "link": "https://github.com/coronasafe/care/pull/1127",
+      "text": "Used facility.middleware_address for asset.meta.middleware_hostname in AssetIntgration"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1126",
+      "time": 1671729346.0,
+      "link": "https://github.com/coronasafe/care/issues/1126",
+      "text": "Use `facility.middleware_address` instead of `asset.meta.middleware_hostname`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4357",
+      "time": 1671721050.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4357#issuecomment-1362937664",
+      "text": "@nihal467 the above-mentioned error is from the backend. In the backend, it is still using `asset.meta.middleware_hostname`\r\n\r\n_get_url function in the image_\r\n![image](https://user-images.githubusercontent.com/29787772/209161227-b66c7e28-c21a-4f90-800f-100193536267.png)\r\n "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4367",
+      "time": 1671718849.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4367",
+      "text": "Goodbye `CheckCircleOutline` icon of material UI"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4350",
+      "time": 1671718849.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4350",
+      "text": "Use angle icons instead of `<<<`, `<`, `>>>`, `>` texts in pagination component."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4343",
+      "time": 1671718849.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4343",
+      "text": "Misalignment across the platform across multiple location"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4347",
+      "time": 1671718848.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4347",
+      "text": "Misalignment across the platform across asset page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671716940.0,
+      "title": "coronasafe/care_fe#4388",
+      "link": "https://github.com/coronasafe/care_fe/pull/4388#pullrequestreview-1227697007",
+      "text": "Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4358",
+      "time": 1671716570.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#issuecomment-1362854679",
+      "text": "@rithviknishad can you checkout the merge conflict\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4336",
+      "time": 1671716535.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4336",
+      "text": "Create consultation button is misaligned"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4328",
+      "time": 1671716535.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4328",
+      "text": "Diagnosis Select causes to select/unselect unintended option when dropdown goes out of focus"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4318",
+      "time": 1671716535.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4318",
+      "text": "Migrate to TextAreaFormField Part 1 (9 migrations)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4277",
+      "time": 1671716534.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4277",
+      "text": "Update the colors used by the new tailwind input components"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4271",
+      "time": 1671716534.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4271",
+      "text": "Text box and borderline are different across the platform"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3594",
+      "time": 1671716533.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3594",
+      "text": "Tailwind Consultation Form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671716391.0,
+      "title": "coronasafe/care_fe#4309",
+      "link": "https://github.com/coronasafe/care_fe/pull/4309#pullrequestreview-1227682900",
+      "text": "\ud83d\udee0 Upgrade the colors of tailwind input components + \ud83d\udee0 Tailwind Consultation Form + \ud83d\udee0 Tailiwnd discharge patient dialog"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671716050.0,
+      "title": "coronasafe/care_fe#4358",
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#pullrequestreview-1227675405",
+      "text": "Upgrade `Pagination` comp. + fix `ButtonV2` + adj. vertical-align of `CareIcons` + Generalize `Submit` and `Cancel` buttons"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4324",
+      "time": 1671712367.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4324#issuecomment-1362785332",
+      "text": "@Pranshu1902 clear the failing cypress tests"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671712336.0,
+      "title": "coronasafe/care_fe#4324",
+      "link": "https://github.com/coronasafe/care_fe/pull/4324#pullrequestreview-1227596905",
+      "text": "Hide Linked Facility button added on Users page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4191",
+      "time": 1671712249.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4191",
+      "text": "Clearing Advanced Filters For Facilities Collapses the Sidebar"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671712238.0,
+      "title": "coronasafe/care_fe#4337",
+      "link": "https://github.com/coronasafe/care_fe/pull/4337#pullrequestreview-1227595123",
+      "text": "Fix (Advanced Filters): made all filter sidebars collapse on clearing filters"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671712132.0,
+      "title": "coronasafe/care_fe#4377",
+      "link": "https://github.com/coronasafe/care_fe/pull/4377#pullrequestreview-1227587760",
+      "text": "Fix (Sidebar): made the sidebar collapse on clicking active links"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671712131.0,
+      "title": "coronasafe/care_fe#4377",
+      "link": "https://github.com/coronasafe/care_fe/pull/4377#pullrequestreview-1227587760",
+      "text": "Fix (Sidebar): made the sidebar collapse on clicking active links"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4341",
+      "time": 1671710022.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4341",
+      "text": "x-scrollbar visible in sidebar"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671710012.0,
+      "title": "coronasafe/care_fe#4381",
+      "link": "https://github.com/coronasafe/care_fe/pull/4381#pullrequestreview-1227552656",
+      "text": "hide x overflow in sidebar"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4378",
+      "time": 1671709983.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4378#issuecomment-1362750332",
+      "text": "@cp-Coder do fix the failing cypress tests"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4352",
+      "time": 1671709933.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4352",
+      "text": "Downloaded File name is not same as in the patient consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671709925.0,
+      "title": "coronasafe/care_fe#4382",
+      "link": "https://github.com/coronasafe/care_fe/pull/4382#pullrequestreview-1227551177",
+      "text": "Preserve file name when downloading Consultation files"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4371",
+      "time": 1671709911.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4371",
+      "text": "Assets Import/Export button's tooltip is not responsive"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671709902.0,
+      "title": "coronasafe/care_fe#4383",
+      "link": "https://github.com/coronasafe/care_fe/pull/4383#pullrequestreview-1227550696",
+      "text": "Fixes asset Import/Export tooltip"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4389",
+      "time": 1671703359.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4389#issuecomment-1362641884",
+      "text": "@Pranshu1902 yes that would be nice, for totals instead of having a separate card, we could show it near the title greyed out\n\n\n@nihal467 your thoughts "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4027",
+      "time": 1671689187.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4027",
+      "text": "Possible issue with Pagination"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671689174.0,
+      "title": "coronasafe/care_fe#4028",
+      "link": "https://github.com/coronasafe/care_fe/pull/4028#pullrequestreview-1227161730",
+      "text": "Remove broken pagination and disable inputs on Inventory Management"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4326",
+      "time": 1671688009.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4326",
+      "text": "Don't allow past dates for Waranty Expiry on Asset Creating form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671687997.0,
+      "title": "coronasafe/care_fe#4327",
+      "link": "https://github.com/coronasafe/care_fe/pull/4327#pullrequestreview-1227149806",
+      "text": "Disable past dates for warranty expiry date on create assets page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4324",
+      "time": 1671683260.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4324#issuecomment-1362397101",
+      "text": "@nihal467 can you retest this pr"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#3983",
@@ -10363,18 +10622,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1127",
+      "title": "Used facility.middleware_address for asset.meta.middleware_hostname in AssetIntgration",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4376",
       "title": "Seperated hook and component in useExport",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "need Review"
+        "need Review",
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4366",
       "title": "Allow 11 digits only when a phone number starts with 1800",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed"
       ]
@@ -10386,19 +10651,19 @@
       "labels": [
         "need Review",
         "P1",
-        "work-in-progress"
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -10406,7 +10671,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "work-in-progress",
         "waiting for update"
@@ -10415,7 +10680,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -10425,7 +10690,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "work-in-progress",
         "waiting for update"
@@ -10434,7 +10699,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 41,
+      "stale_for": 42,
       "labels": [
         "waiting-for-review"
       ]
@@ -10442,31 +10707,31 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 47,
+      "stale_for": 48,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 369,
+      "stale_for": 370,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 375,
+      "stale_for": 376,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 376,
+      "stale_for": 377,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 571,
+      "stale_for": 572,
       "labels": []
     }
   ],

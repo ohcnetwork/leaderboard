@@ -43714,7 +43714,112 @@
             ]
         }
     ],
-    "2022-12-22 00:00:00": [],
+    "2022-12-22 00:00:00": [
+        {
+            "client_msg_id": "bc1e5d67-2b2e-4079-90e9-2aa49ea20164",
+            "type": "message",
+            "text": "*PRs:*\n\u2022 <https://github.com/coronasafe/care_fe/pull/4384|care_fe/4384> (the high memory usage for firefox is fixed)\n\u2022 <https://github.com/coronasafe/care_fe/pull/4388|care_fe/4388> ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1671724687.464169",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "FVn7",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/4384",
+                                            "text": "care_fe/4384"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (the high memory usage for firefox is fixed)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/4388",
+                                            "text": "care_fe/4388"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671645188,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4384",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4384 Removes `app-updated` from localStorage immediatley after showing update success notification",
+                    "title": "#4384 Removes `app-updated` from localStorage immediatley after showing update success notification",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4384",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671682882,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4388",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4388 Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox",
+                    "title": "#4388 Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4388",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
     "2022-12-21 00:00:00": [
         {
             "client_msg_id": "141b98bf-c62b-412a-9f5f-9743bc74957b",
@@ -43795,7 +43900,17 @@
                         "text"
                     ]
                 }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
             ]
         }
-    ]
+    ],
+    "2022-12-23 00:00:00": []
 }

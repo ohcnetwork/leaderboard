@@ -1,6 +1,90 @@
 {
-  "last_updated": 1671648425.0,
+  "last_updated": 1671718847.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4358",
+      "time": 1671718847.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4358",
+      "text": "Upgrade `Pagination` comp. + fix `ButtonV2` + adj. vertical-align of `CareIcons` + Generalize `Submit` and `Cancel` buttons"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4309",
+      "time": 1671716533.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4309",
+      "text": "\ud83d\udee0 Upgrade the colors of tailwind input components + \ud83d\udee0 Tailwind Consultation Form + \ud83d\udee0 Tailiwnd discharge patient dialog"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671714443.0,
+      "title": "coronasafe/care_fe#4358",
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#pullrequestreview-1227638503",
+      "text": "Upgrade `Pagination` comp. + fix `ButtonV2` + adj. vertical-align of `CareIcons` + Generalize `Submit` and `Cancel` buttons"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671714288.0,
+      "title": "coronasafe/care_fe#4358",
+      "link": "https://github.com/coronasafe/care_fe/pull/4358#pullrequestreview-1227635461",
+      "text": "Upgrade `Pagination` comp. + fix `ButtonV2` + adj. vertical-align of `CareIcons` + Generalize `Submit` and `Cancel` buttons"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4388",
+      "time": 1671711076.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4388#issuecomment-1362766700",
+      "text": "Nah, nevermind \ud83d\ude05 \r\nIt was failing locally because in my local I had the git ignored `/build-meta.json` being served and forgot to remove it after completing the work with Update CARE prompt PR.\r\n\r\nThe update available prompt wouldn't be triggered if it failed to fetch the `/build-meta.json` file."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4388",
+      "time": 1671710264.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4388#issuecomment-1362754205",
+      "text": "The cypress test is failing here for the external result (which is not at all related to the PR). locally too, coz the update care prompt is hiding the active button.\r\n\r\nIt fails for my other PR branch too locally, but not sure how it's passing in CI in those PRs.\r\n\r\ncc: @khavinshankar "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4383",
+      "time": 1671709911.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4383",
+      "text": "Fixes asset Import/Export tooltip"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671692632.0,
+      "title": "coronasafe/leaderboard#98",
+      "link": "https://github.com/coronasafe/leaderboard/pull/98#pullrequestreview-1227201168",
+      "text": "sort by points if category points same"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671692589.0,
+      "title": "coronasafe/care_fe#4378",
+      "link": "https://github.com/coronasafe/care_fe/pull/4378#pullrequestreview-1227200627",
+      "text": "fix: Tailwind the Add User page + cypress tests for user feature"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4378",
+      "time": 1671691825.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4378#issuecomment-1362479481",
+      "text": "unholding coz just realized its a plug-and-play replacement anyways which can be done later too :) "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4388",
+      "time": 1671682883.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4388",
+      "text": "Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4374",
+      "time": 1671682449.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4374#issuecomment-1362390886",
+      "text": "Yeay! Having it as PNG seems to be using very less memory\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/209054278-a02822b1-3858-4eda-9899-496712d5c934.png)\r\n"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4386",
@@ -6378,6 +6462,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4388",
+      "title": "Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox",
+      "stale_for": 0,
+      "labels": [
+        "good to merge"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4384",
       "title": "Removes `app-updated` from localStorage immediatley after showing update success notification",
       "stale_for": 0,
@@ -6386,38 +6478,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4383",
-      "title": "Fixes asset Import/Export tooltip",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4358",
-      "title": "Upgrade `Pagination` comp. + fix `ButtonV2` + adj. vertical-align of `CareIcons` + Generalize `Submit` and `Cancel` buttons",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "redesign",
-        "Major Code Change"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4309",
-      "title": "\ud83d\udee0 Upgrade the colors of tailwind input components + \ud83d\udee0 Tailwind Consultation Form + \ud83d\udee0 Tailiwnd discharge patient dialog",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "redesign",
-        "Major Code Change"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4257",
       "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "good to merge",
         "stale"
@@ -6426,16 +6489,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 8,
+      "stale_for": 0,
       "labels": [
-        "need Review",
-        "Done"
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6446,7 +6508,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 65,
+      "stale_for": 66,
       "labels": [
         "merge conflict"
       ]
@@ -6454,8 +6516,24 @@
   ],
   "authored_issue_and_pr": [
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4367",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4358"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4350",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4358"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4328",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4309"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/leaderboard/issues/106",
       "pr_link": "https://github.com/coronasafe/leaderboard/pull/107"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4318",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4309"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4311",
@@ -6468,6 +6546,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4285",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4298"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4277",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4309"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4275",
@@ -6516,22 +6598,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4163",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4175"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4162",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4172"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4161",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4171"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4157",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4189"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4077",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4142"
     }
   ]
 }

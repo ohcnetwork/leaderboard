@@ -1,6 +1,48 @@
 {
-  "last_updated": 1671628954.0,
+  "last_updated": 1671702364.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#109",
+      "time": 1671702364.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/109",
+      "text": "Updated linkedin URL"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1125",
+      "time": 1671701659.0,
+      "link": "https://github.com/coronasafe/care/pull/1125",
+      "text": "Added validations for create asset"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1124",
+      "time": 1671701487.0,
+      "link": "https://github.com/coronasafe/care/issues/1124",
+      "text": "Add Validations for create asset"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4389",
+      "time": 1671700072.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4389#issuecomment-1362587777",
+      "text": "@nihal467 @khavinshankar "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4389",
+      "time": 1671700045.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4389",
+      "text": "Display total bed count on facility page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4327",
+      "time": 1671688008.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4327",
+      "text": "Disable past dates for warranty expiry date on create assets page"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4324",
@@ -3055,12 +3097,16 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4327",
-      "title": "Disable past dates for warranty expiry date on create assets page",
+      "link": "https://github.com/coronasafe/leaderboard/pull/109",
+      "title": "Updated linkedin URL",
       "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1125",
+      "title": "Added validations for create asset",
+      "stale_for": 0,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4324",
@@ -3068,29 +3114,33 @@
       "stale_for": 0,
       "labels": [
         "tested",
-        "made_changes"
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 57,
+      "stale_for": 58,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 57,
+      "stale_for": 58,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/86",
       "title": "Added indentation at left of text in \"Currently Working on\" tab",
-      "stale_for": 65,
+      "stale_for": 66,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4326",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4327"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4312",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4313"
@@ -3194,10 +3244,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3509",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3510"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3471",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3472"
     }
   ]
 }

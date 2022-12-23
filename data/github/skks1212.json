@@ -1,6 +1,13 @@
 {
-  "last_updated": 1671629769.0,
+  "last_updated": 1671713431.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1671713431.0,
+      "title": "coronasafe/care_fe#4388",
+      "link": "https://github.com/coronasafe/care_fe/pull/4388#pullrequestreview-1227618297",
+      "text": "Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4047",
@@ -3312,15 +3319,17 @@
       "stale_for": 0,
       "labels": [
         "tested",
+        "merge conflict",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4159",
       "title": "Switched to CARE UI components in facility tiles",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "tested",
+        "merge conflict",
         "cypress failed"
       ]
     }

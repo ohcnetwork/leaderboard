@@ -1,6 +1,89 @@
 {
-  "last_updated": 1671718847.0,
+  "last_updated": 1671805658.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4257",
+      "time": 1671805658.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4257",
+      "text": "Optimize job runs of deploy failed labeller"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1131",
+      "time": 1671805390.0,
+      "link": "https://github.com/coronasafe/care/pull/1131",
+      "text": "Restructure compose config"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4390",
+      "time": 1671805236.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4390",
+      "text": "remove docker cache, use prebuilt care"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1131",
+      "time": 1671803984.0,
+      "link": "https://github.com/coronasafe/care/pull/1131",
+      "text": "Restructure compose config"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1130",
+      "time": 1671798258.0,
+      "link": "https://github.com/coronasafe/care/pull/1130",
+      "text": "Prebuilt",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1129",
+      "time": 1671797501.0,
+      "link": "https://github.com/coronasafe/care/pull/1129",
+      "text": "Prebuilt",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4390",
+      "time": 1671778978.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4390",
+      "text": "remove docker cache, use prebuilt care"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1128",
+      "time": 1671778692.0,
+      "link": "https://github.com/coronasafe/care/pull/1128",
+      "text": "Support compose-up for pre-built `care:latest` image"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4388",
+      "time": 1671777537.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4388",
+      "text": "Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671775381.0,
+      "title": "coronasafe/care_fe#4376",
+      "link": "https://github.com/coronasafe/care_fe/pull/4376#pullrequestreview-1228563511",
+      "text": "Seperated hook and component in useExport"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4384",
+      "time": 1671773993.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4384",
+      "text": "Removes `app-updated` from localStorage immediatley after showing update success notification"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4358",
@@ -6462,34 +6545,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4388",
-      "title": "Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox",
-      "stale_for": 0,
-      "labels": [
-        "good to merge"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4384",
-      "title": "Removes `app-updated` from localStorage immediatley after showing update success notification",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4257",
-      "title": "Optimize job runs of deploy failed labeller",
-      "stale_for": 1,
-      "labels": [
-        "good to merge",
-        "stale"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4223",
       "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict"
       ]
@@ -6497,7 +6555,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6508,13 +6566,21 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 66,
+      "stale_for": 67,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4374",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4388"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4373",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4384"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4367",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4358"
@@ -6560,6 +6626,10 @@
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4256"
     },
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4258",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4257"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4253",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4254"
     },
@@ -6594,10 +6664,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4167",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4173"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4163",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4175"
     }
   ]
 }

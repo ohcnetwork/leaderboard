@@ -1,6 +1,124 @@
 {
-  "last_updated": 1671729776.0,
+  "last_updated": 1671814750.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1133",
+      "time": 1671814750.0,
+      "link": "https://github.com/coronasafe/care/pull/1133",
+      "text": "Remove unique contraint from facility.middleware_address"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4366",
+      "time": 1671810445.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4366",
+      "text": "Allow 11 digits only when a phone number starts with 1800"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4376",
+      "time": 1671810376.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4376",
+      "text": "Seperated hook and component in useExport"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1133",
+      "time": 1671806141.0,
+      "link": "https://github.com/coronasafe/care/pull/1133",
+      "text": "Remove unique contraint from facility.middleware_address"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1132",
+      "time": 1671805970.0,
+      "link": "https://github.com/coronasafe/care/issues/1132",
+      "text": "Remove unique constraint in `facility.middleware_address`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4258",
+      "time": 1671805659.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4258",
+      "text": "Curently the deploy failed label job runs on every issue comment create/edit"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671805649.0,
+      "title": "coronasafe/care_fe#4257",
+      "link": "https://github.com/coronasafe/care_fe/pull/4257#pullrequestreview-1229031827",
+      "text": "Optimize job runs of deploy failed labeller"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4307",
+      "time": 1671777763.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4307",
+      "text": "Bump tailwindcss:3.2.4",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4307",
+      "time": 1671777754.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4307#issuecomment-1363666543",
+      "text": "LGTM"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671777675.0,
+      "title": "coronasafe/care_fe#4307",
+      "link": "https://github.com/coronasafe/care_fe/pull/4307#pullrequestreview-1228587472",
+      "text": "Bump tailwindcss:3.2.4"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4374",
+      "time": 1671777538.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4374",
+      "text": "Very high memory usage!"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1127",
+      "time": 1671776442.0,
+      "link": "https://github.com/coronasafe/care/pull/1127",
+      "text": "Used facility.middleware_address for asset.meta.middleware_hostname in AssetIntgration"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1127",
+      "time": 1671776442.0,
+      "link": "https://github.com/coronasafe/care/pull/1127",
+      "text": "Used facility.middleware_address for asset.meta.middleware_hostname in AssetIntgration",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671775301.0,
+      "title": "coronasafe/care_fe#4376",
+      "link": "https://github.com/coronasafe/care_fe/pull/4376#pullrequestreview-1228562842",
+      "text": "Seperated hook and component in useExport"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4373",
+      "time": 1671773993.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4373",
+      "text": "Update succesfull prompt is shown two times if updated before login, and logged in very quickly"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671773977.0,
+      "title": "coronasafe/care_fe#4384",
+      "link": "https://github.com/coronasafe/care_fe/pull/4384#pullrequestreview-1228551424",
+      "text": "Removes `app-updated` from localStorage immediatley after showing update success notification"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4357",
@@ -10622,48 +10740,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1127",
-      "title": "Used facility.middleware_address for asset.meta.middleware_hostname in AssetIntgration",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4376",
-      "title": "Seperated hook and component in useExport",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4366",
-      "title": "Allow 11 digits only when a phone number starts with 1800",
-      "stale_for": 1,
-      "labels": [
-        "test failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4357",
       "title": "Use facility.middleware_address for asset.meta.middleware_hostname",
       "stale_for": 0,
       "labels": [
         "need Review",
-        "P1",
-        "waiting for back end"
+        "tested",
+        "P1"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -10671,7 +10766,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "work-in-progress",
         "waiting for update"
@@ -10680,7 +10775,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -10690,7 +10785,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "work-in-progress",
         "waiting for update"
@@ -10699,7 +10794,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 42,
+      "stale_for": 43,
       "labels": [
         "waiting-for-review"
       ]
@@ -10707,35 +10802,47 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/61",
       "title": "Show all facilities",
-      "stale_for": 48,
+      "stale_for": 49,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 370,
+      "stale_for": 371,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 376,
+      "stale_for": 377,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 377,
+      "stale_for": 378,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 572,
+      "stale_for": 573,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1132",
+      "pr_link": "https://github.com/coronasafe/care/pull/1133"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1126",
+      "pr_link": "https://github.com/coronasafe/care/pull/1127"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4365",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4366"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4228",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4232"
@@ -10799,14 +10906,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3566",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3567"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2728",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2729"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/leaderboard/issues/56",
-      "pr_link": "https://github.com/coronasafe/leaderboard/pull/60"
     }
   ]
 }

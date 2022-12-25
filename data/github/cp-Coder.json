@@ -1,6 +1,20 @@
 {
-  "last_updated": 1671456876.0,
+  "last_updated": 1671881438.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4399",
+      "time": 1671881438.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4399",
+      "text": "Fix(asset): Asset configuration warranty date is malfunctioning"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4399",
+      "time": 1671877026.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4399",
+      "text": "Fix(asset): Asset configuration warranty date is malfunctioning"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4151",
@@ -6159,17 +6173,19 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4151",
+      "link": "https://github.com/coronasafe/care_fe/pull/4378",
       "title": "fix: Tailwind the Add User page + cypress tests for user feature",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
-        "needs testing"
+        "tested",
+        "merge conflict",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1112",
       "title": "feat(file_upload): added a filter to filter out the archive file",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": [
         "waiting-for-review"
       ]
@@ -6177,7 +6193,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 41,
+      "stale_for": 46,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6186,7 +6202,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 2,
+      "stale_for": 7,
       "labels": [
         "needs testing",
         "Done",
@@ -6198,7 +6214,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": [
         "do-not-merge"
       ]
@@ -6206,7 +6222,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 43,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6215,7 +6231,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 43,
+      "stale_for": 48,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6224,7 +6240,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 43,
+      "stale_for": 48,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6233,7 +6249,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 32,
+      "stale_for": 37,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6242,7 +6258,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/882",
       "title": "Removed current health field",
-      "stale_for": 87,
+      "stale_for": 92,
       "labels": [
         "ops-review-pending",
         "reviewed"
@@ -6251,7 +6267,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 179,
+      "stale_for": 184,
       "labels": [
         "waiting-for-review"
       ]

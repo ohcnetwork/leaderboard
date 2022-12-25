@@ -1,6 +1,34 @@
 {
-  "last_updated": 1671787883.0,
+  "last_updated": 1671882670.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4401",
+      "time": 1671882670.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4401",
+      "text": "Remove initial red border for invalid input"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4394",
+      "time": 1671882181.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4394#issuecomment-1364515854",
+      "text": "> I thought there was something like (HTML way) since it's pretty common behaviour in other websites to not validate until focus.\r\n> \r\n> Additional JS, I also wouldn't proceed \ud83d\ude05\r\n\r\nI am personally not aware of any such method, tried asking OpenAI too \ud83d\ude2c .\r\n![image](https://user-images.githubusercontent.com/3626859/209434380-ae4bcbe8-79bf-484f-a91e-50dbc9dca885.png)\r\n\r\nSo, I guess we'll have to keep the existing behavior in this case.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4394",
+      "time": 1671881148.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4394#issuecomment-1364513362",
+      "text": "> or is there a way to not validate the input until the element got focus or something?\r\n\r\n@rithviknishad I am afraid that'd require additional JS to keep a watch for the initial focus, how about we keep the existing behavior where the fields will only be validated after a form submission?  \r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4393",
+      "time": 1671879444.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4393#issuecomment-1364509501",
+      "text": "Unable to replicate the issue.\r\nTested on Chrome v108 running on Windows 10/11. I always get the dark blue variant. \r\n\r\n`Win 11 / Chrome 108`\r\n![image](https://user-images.githubusercontent.com/3626859/209432667-4c838def-bb07-4c56-9492-b0f7a2813852.png)\r\n\r\n`Win 10 / Chrome 108`\r\n![image](https://user-images.githubusercontent.com/3626859/209432670-a1d23947-48f1-4325-b9bd-e2ed5a21d85b.png)\r\n\r\n`Win 11 / Opera 94`\r\n![image](https://user-images.githubusercontent.com/3626859/209432761-f0fce5d3-d1c1-4d23-8b7e-7ae9b7ba8152.png)\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4251",
@@ -5476,9 +5504,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4401",
+      "title": "Remove initial red border for invalid input",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "needs testing",
         "hold"
@@ -5487,7 +5523,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "good to merge"
       ]
@@ -5495,7 +5531,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 86,
+      "stale_for": 87,
       "labels": [
         "reviewed"
       ]

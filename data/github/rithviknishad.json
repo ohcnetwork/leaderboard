@@ -1,6 +1,13 @@
 {
-  "last_updated": 1672030115.0,
+  "last_updated": 1672135102.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4223",
+      "time": 1672135102.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4223",
+      "text": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config"
+    },
     {
       "type": "pr_reviewed",
       "time": 1672030115.0,
@@ -6926,45 +6933,37 @@
       "title": "Disable picking future dates in consultation form's admission and symptoms onset date fields",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4422",
       "title": "Show default cursor in log update tile and upgrade its buttons",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4421",
       "title": "Use std. Cancel, Submit buttons in Discharge modal",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4420",
       "title": "Reposition primary buttons in asset create form",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4223",
-      "title": "Adds `config.json`, `useConfig` hook and move `dashboard_url` from env to config",
-      "stale_for": 4,
-      "labels": [
-        "merge conflict"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -6975,7 +6974,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 70,
+      "stale_for": 71,
       "labels": [
         "merge conflict"
       ]

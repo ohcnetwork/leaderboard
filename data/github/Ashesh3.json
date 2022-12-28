@@ -1,6 +1,13 @@
 {
-  "last_updated": 1672090851.0,
+  "last_updated": 1672136290.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4431",
+      "time": 1672136290.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4431",
+      "text": "Move cancel button to left on Consultation form"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4430",
@@ -5533,11 +5540,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4431",
+      "title": "Move cancel button to left on Consultation form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4430",
       "title": "Add margin after Warranty / AMC Expiry label",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
@@ -5551,15 +5566,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4401",
       "title": "Remove initial red border for invalid input",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "needs testing",
         "hold"
@@ -5568,7 +5583,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "good to merge"
       ]
@@ -5576,7 +5591,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 89,
+      "stale_for": 90,
       "labels": [
         "reviewed"
       ]

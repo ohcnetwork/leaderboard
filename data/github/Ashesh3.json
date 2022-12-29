@@ -1,6 +1,62 @@
 {
-  "last_updated": 1672136290.0,
+  "last_updated": 1672239889.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1672239889.0,
+      "title": "coronasafe/care_fe#4437",
+      "link": "https://github.com/coronasafe/care_fe/pull/4437#pullrequestreview-1231691174",
+      "text": "Added support for xlsx files in Asset Import"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672239888.0,
+      "title": "coronasafe/care_fe#4437",
+      "link": "https://github.com/coronasafe/care_fe/pull/4437#pullrequestreview-1231691174",
+      "text": "Added support for xlsx files in Asset Import"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1139",
+      "time": 1672238853.0,
+      "link": "https://github.com/coronasafe/care/issues/1139#issuecomment-1366704999",
+      "text": "cc: @gigincg @vigneshhari "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1139",
+      "time": 1672238821.0,
+      "link": "https://github.com/coronasafe/care/issues/1139",
+      "text": "Update and revamp state and district list"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4429",
+      "time": 1672230498.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4429#issuecomment-1366615892",
+      "text": "@nihal467 the autofill only happens when a valid state/district match is found.\r\n\r\nYour Pincode (`671310`) is for:\r\nState: `Kerla`\r\nDistrict: `Kasaragod`\r\n\r\nBut we do not have that district in our list, hence autofill does not do anything in that case and lets the user select the fields manually.\r\n\r\nIt seems we do have a similar district, `Kasargode`. Maybe it's misspelt or something. But the autofill works correctly as it's supposed to, i.e, not autofill the state and district if no match is found."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4431",
+      "time": 1672227019.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4431",
+      "text": "Move cancel button to left on Consultation form"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4401",
+      "time": 1672207575.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4401",
+      "text": "Remove initial red border for invalid input"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4430",
+      "time": 1672203193.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4430",
+      "text": "Add margin after Warranty / AMC Expiry label"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4431",
@@ -5540,22 +5596,6 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4431",
-      "title": "Move cancel button to left on Consultation form",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4430",
-      "title": "Add margin after Warranty / AMC Expiry label",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4429",
       "title": "Autofill state and district from pincode",
       "stale_for": 0,
@@ -5564,17 +5604,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4401",
-      "title": "Remove initial red border for invalid input",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4299",
       "title": "Add gram to PrescriptionBuilder units",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "needs testing",
         "hold"
@@ -5583,7 +5615,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "good to merge"
       ]
@@ -5591,7 +5623,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 90,
+      "stale_for": 91,
       "labels": [
         "reviewed"
       ]

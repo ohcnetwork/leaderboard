@@ -1,6 +1,68 @@
 {
-  "last_updated": 1672070436.0,
+  "last_updated": 1672204816.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4408",
+      "time": 1672204816.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4408",
+      "text": "Migrated all buttons to buttonv2 and modal to dialog modal in fileupload component"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4008",
+      "time": 1672203660.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4008",
+      "text": "Added a modal to notify user if a existing triage exist"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4411",
+      "time": 1672203504.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4411",
+      "text": "Migrated all Multilineinput component to textareaform field and input label to field label in patient register component"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4411",
+      "time": 1672203504.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4411",
+      "text": "Migrated all Multilineinput component to textareaform field and input label to field label in patient register component",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4413",
+      "time": 1672203442.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4413",
+      "text": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in sample test component"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4413",
+      "time": 1672203442.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4413",
+      "text": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in sample test component",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4089",
+      "time": 1672197200.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4089#issuecomment-1366335753",
+      "text": "Closing this openning a fresh and clean PR"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4432",
+      "time": 1672197153.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4432",
+      "text": "Added a feature take cover Image photos directly from Care"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4428",
@@ -4673,11 +4735,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4432",
+      "title": "Added a feature take cover Image photos directly from Care",
+      "stale_for": 0,
+      "labels": [
+        "changes required"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4428",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Create shift and update shift components",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "test failed"
       ]
     },
     {
@@ -4685,37 +4755,14 @@
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Daily Rounds component",
       "stale_for": 0,
       "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4413",
-      "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in sample test component",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4411",
-      "title": "Migrated all Multilineinput component to textareaform field and input label to field label in patient register component",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4408",
-      "title": "Migrated all buttons to buttonv2 and modal to dialog modal in fileupload component",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
+        "changes required",
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4369",
       "title": "Now on hovering the Post Doctor notes btn in discharged patient UI disabled symbol is shown",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "work-in-progress"
       ]
@@ -4723,15 +4770,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4266",
       "title": "Handle situation when coverimg fails to upload also added hints for uploading coverimage",
-      "stale_for": 17,
-      "labels": [
-        "work-in-progress"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4089",
-      "title": "Added a feature take cove Image photos directly from Care",
-      "stale_for": 0,
+      "stale_for": 19,
       "labels": [
         "work-in-progress"
       ]
@@ -4739,19 +4778,19 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 28,
+      "stale_for": 30,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4008",
-      "title": "Added a modal to notify user if a existing triage exist",
-      "stale_for": 2,
-      "labels": [
-        "needs testing"
-      ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4412",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4413"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4410",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4411"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4212",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4368"
@@ -4767,6 +4806,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4180",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4281"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4178",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4408"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4146",
@@ -4839,10 +4882,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3673",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3691"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3650",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3651"
     }
   ]
 }

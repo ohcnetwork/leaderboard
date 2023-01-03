@@ -1,6 +1,69 @@
 {
-  "last_updated": 1672584561.0,
+  "last_updated": 1672675028.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4465",
+      "time": 1672675028.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4465",
+      "text": "Use the standard `Cancel` and `Submit` buttons for Facility Notify modal"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4464",
+      "time": 1672674269.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4464",
+      "text": "hide the update log button if discharged in daily rounds list"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4024",
+      "time": 1672673451.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4024#issuecomment-1369038188",
+      "text": "Will be continued in a separate PR."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4445",
+      "time": 1672671210.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4445#issuecomment-1369009069",
+      "text": "As discussed in EOD, we should be validating the phone number and show phone number not valid if invalid and Trigger search only if phone number is valid."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4448",
+      "time": 1672671154.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4448",
+      "text": "Restrict what types of files can be uploaded to patient consultation?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4448",
+      "time": 1672671154.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4448#issuecomment-1369008548",
+      "text": "Followed up in coronasafe/care#1141"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1141",
+      "time": 1672671112.0,
+      "link": "https://github.com/coronasafe/care/issues/1141",
+      "text": "Restrict the file size to 100 mb for consultation files"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4452",
+      "time": 1672670923.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4452#issuecomment-1369006318",
+      "text": "As discussed, we'll be trying to have auto update regardless of what branch, and use automated versioning based on `github.run_number`\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4463",
+      "time": 1672667718.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4463",
+      "text": "Autocomplete for location field in asset create form"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4454",
@@ -7200,9 +7263,34 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4465",
+      "title": "Use the standard `Cancel` and `Submit` buttons for Facility Notify modal",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4464",
+      "title": "hide the update log button if discharged in daily rounds list",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4463",
+      "title": "Autocomplete for location field in asset create form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4424",
       "title": "Disable picking future dates in consultation form's admission and symptoms onset date fields",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "test failed"
       ]
@@ -7210,7 +7298,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 17,
+      "stale_for": 18,
       "labels": [
         "work-in-progress",
         "redesign",
@@ -7221,7 +7309,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 76,
+      "stale_for": 77,
       "labels": [
         "merge conflict"
       ]

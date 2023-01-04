@@ -1,6 +1,13 @@
 {
-  "last_updated": 1672326536.0,
+  "last_updated": 1672724551.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4440",
+      "time": 1672724551.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4440",
+      "text": "Fixed border-lines of login input fields"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4440",
@@ -1424,19 +1431,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4440",
-      "title": "Fixed border-lines of login input fields",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4439",
       "title": "Show modal for asset delete confirmation",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested",
+        "cypress failed"
       ]
     },
     {
@@ -1444,7 +1444,6 @@
       "title": "Added Cypress Spec for asset creation",
       "stale_for": 0,
       "labels": [
-        "merge conflict",
         "cypress failed"
       ]
     }

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1672696015.0,
+  "last_updated": 1672760719.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4441",
+      "time": 1672760719.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4441#issuecomment-1369921283",
+      "text": "@rithviknishad  Here, we just have the `AppRouter` component as the parent with the `Sidebar` and `NotificationList` as the children components.  Since the component hierarchy doesn't extend beyond parent-child, won't Redux be overkill?\r\n\r\nAlso, even if Redux is used, the Sidebar will have to update the opening/closing state of the Notifications Modal so it's still not really like - the sidebar handling the logic of sidebar only"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4441",
+      "time": 1672759253.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4441#issuecomment-1369892403",
+      "text": "How would you handle it? @rithviknishad"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4441",
@@ -649,7 +663,7 @@
       "title": "Fix (NotificationsList): made the Notifications sidebar responsive",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     }
   ],

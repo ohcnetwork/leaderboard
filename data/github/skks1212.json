@@ -1,6 +1,20 @@
 {
-  "last_updated": 1672749664.0,
+  "last_updated": 1672840795.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4510",
+      "time": 1672840795.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4510",
+      "text": "Fixed responsive bug in asset details"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672810259.0,
+      "title": "coronasafe/care_fe#4487",
+      "link": "https://github.com/coronasafe/care_fe/pull/4487#pullrequestreview-1235365834",
+      "text": "Care UI Slideover, upgrades Notifications List and Mobile Sidebar"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4349",
@@ -3369,9 +3383,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4510",
+      "title": "Fixed responsive bug in asset details",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4469",
       "title": "Made secondary button look like its not disabled",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -3380,9 +3403,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4159",
       "title": "Switched to CARE UI components in facility tiles",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "tested",
+        "merge conflict",
         "cypress failed"
       ]
     }

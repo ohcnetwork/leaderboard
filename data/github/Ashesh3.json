@@ -1,6 +1,34 @@
 {
-  "last_updated": 1672724741.0,
+  "last_updated": 1672842938.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1672842938.0,
+      "title": "coronasafe/care_fe#4506",
+      "link": "https://github.com/coronasafe/care_fe/pull/4506#pullrequestreview-1235978117",
+      "text": "\ud83d\udd04 Auto update CARE"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4511",
+      "time": 1672841051.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4511",
+      "text": "Mention ICD for diagnosis field"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4509",
+      "time": 1672840459.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4509",
+      "text": "Fix padding for Pressure sore drop down"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4503",
+      "time": 1672829301.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4503",
+      "text": "Disable camera feed errors if not configured"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4429",
@@ -5662,9 +5690,33 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4511",
+      "title": "Mention ICD for diagnosis field",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4509",
+      "title": "Fix padding for Pressure sore drop down",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4503",
+      "title": "Disable camera feed errors if not configured",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4462",
       "title": "Popups for \"Edit/ Add Bed Capacity\" & \"Edit/Add Doctor Capacity\"",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5680,7 +5732,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4251",
       "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "good to merge",
         "stale"
@@ -5689,7 +5741,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 97,
+      "stale_for": 98,
       "labels": [
         "reviewed"
       ]

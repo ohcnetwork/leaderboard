@@ -1,6 +1,20 @@
 {
-  "last_updated": 1672850812.0,
+  "last_updated": 1672903052.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_deploy_configs#6",
+      "time": 1672903052.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/issues/6",
+      "text": "Pre-commit hook that tests config"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4514",
+      "time": 1672902630.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4514",
+      "text": "Changes for updating config.json pre-deploy"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_deploy_configs#3",
@@ -2196,6 +2210,15 @@
       "text": "React 18; Tailwind v3; Minor Refactoring"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4514",
+      "title": "Changes for updating config.json pre-deploy",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

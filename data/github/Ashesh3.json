@@ -1,6 +1,62 @@
 {
-  "last_updated": 1672842938.0,
+  "last_updated": 1672928994.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4517",
+      "time": 1672928994.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4517",
+      "text": "Fetch localbodies when district is auto filled from pincode"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4462",
+      "time": 1672927492.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4462#issuecomment-1372255239",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/210793792-0cc48f98-0c85-4419-ac3c-02a0ae17d851.png)\r\n> \r\n> can you get the alignment to the left for both pop-up\r\n\r\nFixed."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4515",
+      "time": 1672912269.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4515",
+      "text": "Switch to FieldLabel for PrescriptionBuilder and improve error messages"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4462",
+      "time": 1672907896.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4462#issuecomment-1371925073",
+      "text": "> @Ashesh3 as per our slack communication, you have mentioned about minor changes, so changing this to work in progress\r\n\r\nChanges are done.\r\n![image](https://user-images.githubusercontent.com/3626859/210737013-8054bc90-fbbc-41e6-897e-b53bb0f87808.png)\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/210736996-6f25301b-82f9-40b7-9019-168e7f0d0f04.png)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4251",
+      "time": 1672896112.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4251",
+      "text": "Add workflow to auto label issues as WIP"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4509",
+      "time": 1672895074.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4509",
+      "text": "Fix padding for Pressure sore drop down"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4511",
+      "time": 1672894951.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4511",
+      "text": "Mention ICD for diagnosis field"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4444",
+      "time": 1672894697.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4444",
+      "text": "Improvements to Sign out button"
+    },
     {
       "type": "pr_reviewed",
       "time": 1672842938.0,
@@ -5690,19 +5746,20 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4511",
-      "title": "Mention ICD for diagnosis field",
+      "link": "https://github.com/coronasafe/care_fe/pull/4517",
+      "title": "Fetch localbodies when district is auto filled from pincode",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested",
+        "P1"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4509",
-      "title": "Fix padding for Pressure sore drop down",
+      "link": "https://github.com/coronasafe/care_fe/pull/4515",
+      "title": "Switch to FieldLabel for PrescriptionBuilder and improve error messages",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
@@ -5710,38 +5767,21 @@
       "title": "Disable camera feed errors if not configured",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4462",
       "title": "Popups for \"Edit/ Add Bed Capacity\" & \"Edit/Add Doctor Capacity\"",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4444",
-      "title": "Improvements to Sign out button",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4251",
-      "title": "Add workflow to auto label issues as WIP",
-      "stale_for": 3,
-      "labels": [
-        "good to merge",
-        "stale"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 98,
+      "stale_for": 99,
       "labels": [
         "reviewed"
       ]

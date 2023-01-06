@@ -1,6 +1,90 @@
 {
-  "last_updated": 1672850811.0,
+  "last_updated": 1672931276.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4501",
+      "time": 1672931276.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4501#issuecomment-1372337481",
+      "text": "@aparnacoronasafe yes :) "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4487",
+      "time": 1672929276.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4487",
+      "text": "Care UI Slideover, upgrades Notifications List and Mobile Sidebar"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4507",
+      "time": 1672924482.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4507",
+      "text": "Adds \"Submit\" and \"Cancel\" to `en` locale"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672912623.0,
+      "title": "coronasafe/care_fe#4515",
+      "link": "https://github.com/coronasafe/care_fe/pull/4515#pullrequestreview-1237117541",
+      "text": "Switch to FieldLabel for PrescriptionBuilder and improve error messages"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4495",
+      "time": 1672909124.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4495#issuecomment-1371944170",
+      "text": "@cp-Coder the pop-up dialogue is an unnecessary step present if we are viewing assets after landing from the facility home page.\r\n\r\ncc: @nihal467 \r\n\r\nhttps://user-images.githubusercontent.com/25143503/210740685-2c15a4e1-c833-469e-abe7-8b09bab3cd83.mp4\r\n\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_deploy_configs#7",
+      "time": 1672903051.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/7",
+      "text": "Adds pre-commit hook"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672902813.0,
+      "title": "coronasafe/care_fe#4495",
+      "link": "https://github.com/coronasafe/care_fe/pull/4495#pullrequestreview-1236925928",
+      "text": "Fix: create asset asking to select a facility when viewing asset of filtered facility"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4424",
+      "time": 1672896357.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4424",
+      "text": "Disable picking future dates in consultation form's admission and symptoms onset date fields"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672895885.0,
+      "title": "coronasafe/care_fe#4226",
+      "link": "https://github.com/coronasafe/care_fe/pull/4226#pullrequestreview-1236851492",
+      "text": "Fix minor alignment issue on patients page (filter badges)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4463",
+      "time": 1672894851.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4463",
+      "text": "Autocomplete for location field in asset create form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672894658.0,
+      "title": "coronasafe/care_fe#4511",
+      "link": "https://github.com/coronasafe/care_fe/pull/4511#pullrequestreview-1236841322",
+      "text": "Mention ICD for diagnosis field"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4428",
+      "time": 1672892791.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4428#issuecomment-1371768296",
+      "text": "@patelaryan7751 wait for https://github.com/coronasafe/care_fe/pull/4470 for the `PhoneNumberFormField`"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_deploy_configs#5",
@@ -7634,14 +7718,6 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_deploy_configs/pull/7",
-      "title": "Adds pre-commit hook",
-      "stale_for": 0,
-      "labels": [
-        "Ready"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4508",
       "title": "Use `URLSearchParam` instead of the deprecated `querystring`",
       "stale_for": 0,
@@ -7650,59 +7726,25 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4507",
-      "title": "Adds \"Submit\" and \"Cancel\" to `en` locale",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4506",
       "title": "\ud83d\udd04 Auto update CARE",
       "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4487",
-      "title": "Care UI Slideover, upgrades Notifications List and Mobile Sidebar",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "redesign"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4470",
-      "title": "Prevent `updateQuery` invocation if invalid phone number length",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4463",
-      "title": "Autocomplete for location field in asset create form",
-      "stale_for": 1,
       "labels": [
         "tested"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4424",
-      "title": "Disable picking future dates in consultation form's admission and symptoms onset date fields",
+      "link": "https://github.com/coronasafe/care_fe/pull/4470",
+      "title": "Prevent `updateQuery` invocation if invalid phone number length",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "wontfix",
         "redesign",
@@ -7713,13 +7755,17 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 79,
+      "stale_for": 80,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_deploy_configs/issues/6",
+      "pr_link": "https://github.com/coronasafe/care_deploy_configs/pull/7"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_deploy_configs/issues/4",
       "pr_link": "https://github.com/coronasafe/care_deploy_configs/pull/5"
@@ -7741,8 +7787,20 @@
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4464"
     },
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4423",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4507"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4407",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4420"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4406",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4463"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4405",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4424"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4404",
@@ -7783,30 +7841,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4311",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4310"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4297",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4298"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4285",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4298"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4277",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4309"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4275",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4274"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4259",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4256"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4258",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4257"
     }
   ]
 }

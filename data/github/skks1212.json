@@ -1,6 +1,27 @@
 {
-  "last_updated": 1672840795.0,
+  "last_updated": 1672929634.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1145",
+      "time": 1672929634.0,
+      "link": "https://github.com/coronasafe/care/pull/1145",
+      "text": "Added declare death option to decision after consultation"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4518",
+      "time": 1672929510.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4518",
+      "text": "Added option for declare death in decision after consultation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4510",
+      "time": 1672894989.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4510",
+      "text": "Fixed responsive bug in asset details"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4510",
@@ -3383,20 +3404,27 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4510",
-      "title": "Fixed responsive bug in asset details",
+      "link": "https://github.com/coronasafe/care/pull/1145",
+      "title": "Added declare death option to decision after consultation",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4518",
+      "title": "Added option for declare death in decision after consultation",
       "stale_for": 0,
       "labels": [
         "needs testing",
+        "waiting for back end",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4469",
       "title": "Made secondary button look like its not disabled",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress failed"
       ]
     },
@@ -3406,7 +3434,6 @@
       "stale_for": 0,
       "labels": [
         "tested",
-        "merge conflict",
         "cypress failed"
       ]
     }

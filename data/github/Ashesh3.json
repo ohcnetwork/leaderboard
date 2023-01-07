@@ -1,6 +1,27 @@
 {
-  "last_updated": 1672928994.0,
+  "last_updated": 1672980006.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4503",
+      "time": 1672980006.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4503",
+      "text": "Disable camera feed errors if not configured"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4515",
+      "time": 1672979932.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4515",
+      "text": "Switch to FieldLabel for PrescriptionBuilder and improve error messages"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4517",
+      "time": 1672979884.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4517",
+      "text": "Fetch localbodies when district is auto filled from pincode"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4517",
@@ -5746,42 +5767,18 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4517",
-      "title": "Fetch localbodies when district is auto filled from pincode",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4515",
-      "title": "Switch to FieldLabel for PrescriptionBuilder and improve error messages",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4503",
-      "title": "Disable camera feed errors if not configured",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4462",
       "title": "Popups for \"Edit/ Add Bed Capacity\" & \"Edit/Add Doctor Capacity\"",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 99,
+      "stale_for": 100,
       "labels": [
         "reviewed"
       ]

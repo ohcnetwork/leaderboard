@@ -1,6 +1,13 @@
 {
-  "last_updated": 1672903052.0,
+  "last_updated": 1672981429.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4519",
+      "time": 1672981429.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4519",
+      "text": "New Crowdin updates"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_deploy_configs#6",
@@ -2212,10 +2219,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4519",
+      "title": "New Crowdin updates",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4514",
       "title": "Changes for updating config.json pre-deploy",
       "stale_for": 0,
       "labels": [
+        "merge conflict",
         "cypress failed"
       ]
     }

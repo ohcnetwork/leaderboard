@@ -1,6 +1,20 @@
 {
-  "last_updated": 1672895037.0,
+  "last_updated": 1673021489.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4535",
+      "time": 1673021489.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4535",
+      "text": "Replaced DateInputV2 with TextFormField"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4534",
+      "time": 1673021053.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4534",
+      "text": "DateInputV2 is Malfunctioning "
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4439",
@@ -1438,9 +1452,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4535",
+      "title": "Replaced DateInputV2 with TextFormField",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
         "cypress failed"

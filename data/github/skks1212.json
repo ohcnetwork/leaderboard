@@ -1,6 +1,38 @@
 {
-  "last_updated": 1672929634.0,
+  "last_updated": 1672992812.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4522",
+      "time": 1672992812.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4522",
+      "text": "Added indicators for no updates in last 24 hours"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4159",
+      "time": 1672980505.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4159",
+      "text": "Switched to CARE UI components in facility tiles"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4159",
+      "time": 1672980505.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4159",
+      "text": "Switched to CARE UI components in facility tiles",
+      "collaborated_with": [
+        "khavinshankar",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4469",
+      "time": 1672980279.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4469",
+      "text": "Made secondary button look like its not disabled"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1145",
@@ -3404,41 +3436,40 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4522",
+      "title": "Added indicators for no updates in last 24 hours",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1145",
       "title": "Added declare death option to decision after consultation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4518",
       "title": "Added option for declare death in decision after consultation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "waiting for back end",
         "cypress failed"
       ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4469",
-      "title": "Made secondary button look like its not disabled",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4159",
-      "title": "Switched to CARE UI components in facility tiles",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4300",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4469"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4113",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4159"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4006",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4112"
@@ -3502,10 +3533,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2664",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2665"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/832",
-      "pr_link": "https://github.com/coronasafe/care/pull/835"
     }
   ]
 }

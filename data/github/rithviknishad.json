@@ -1,6 +1,108 @@
 {
-  "last_updated": 1672931276.0,
+  "last_updated": 1673014857.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4532",
+      "time": 1673014857.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4532",
+      "text": "Fix Patient List Breadcrumbs"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4521",
+      "time": 1673014248.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4521",
+      "text": "Run `lint-staged` only for `*.{ts,tsx,js,jsx}` files"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4527",
+      "time": 1673013698.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4527",
+      "text": "Migrate all existing usages `PhoneNumberField` to `PhoneNumberFormField` and deprecates the legacy component"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4527",
+      "time": 1673011901.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4527#issuecomment-1373628728",
+      "text": "@nihal467 should be fixed now"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4530",
+      "time": 1673011301.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4530",
+      "text": "Use `cui-input-base` class for inputs pressure sore popup"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4527",
+      "time": 1673010809.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4527",
+      "text": "Migrate all existing usages `PhoneNumberField` to `PhoneNumberFormField` and deprecates the legacy component"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4525",
+      "time": 1673009200.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4525",
+      "text": "Fix issue with Autocomplete placeholder"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4525",
+      "time": 1673008301.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4525",
+      "text": "Fix issue with Autocomplete placeholder"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4521",
+      "time": 1672984967.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4521",
+      "text": "Run `lint-staged` only for `*.{ts,tsx,js,jsx}` files"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4520",
+      "time": 1672983215.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4520",
+      "text": "Run `eslint` only for files in `src` dir, and for `ts, tsx, js, jsx` extensions"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4508",
+      "time": 1672981133.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4508",
+      "text": "Use `URLSearchParam` instead of the deprecated `querystring`"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4159",
+      "time": 1672980505.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4159",
+      "text": "Switched to CARE UI components in facility tiles",
+      "collaborated_with": [
+        "khavinshankar",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4470",
+      "time": 1672980255.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4470",
+      "text": "Prevent `updateQuery` invocation if invalid phone number length"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4506",
+      "time": 1672979970.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4506",
+      "text": "\ud83d\udd04 Auto update CARE"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4501",
@@ -7718,33 +7820,27 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4508",
-      "title": "Use `URLSearchParam` instead of the deprecated `querystring`",
+      "link": "https://github.com/coronasafe/care_fe/pull/4532",
+      "title": "Fix Patient List Breadcrumbs",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4506",
-      "title": "\ud83d\udd04 Auto update CARE",
+      "link": "https://github.com/coronasafe/care_fe/pull/4530",
+      "title": "Use `cui-input-base` class for inputs pressure sore popup",
       "stale_for": 0,
       "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4470",
-      "title": "Prevent `updateQuery` invocation if invalid phone number length",
-      "stale_for": 0,
-      "labels": [
-        "tested"
+        "needs testing",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "wontfix",
         "redesign",
@@ -7755,13 +7851,17 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 80,
+      "stale_for": 81,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4520",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4521"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_deploy_configs/issues/6",
       "pr_link": "https://github.com/coronasafe/care_deploy_configs/pull/7"
@@ -7779,12 +7879,20 @@
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4504"
     },
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4454",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4508"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4451",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4465"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4450",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4464"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4445",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4470"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4423",
@@ -7833,14 +7941,6 @@
     {
       "issue_link": "https://github.com/coronasafe/leaderboard/issues/106",
       "pr_link": "https://github.com/coronasafe/leaderboard/pull/107"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4318",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4309"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4311",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4310"
     }
   ]
 }

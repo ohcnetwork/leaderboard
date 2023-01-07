@@ -1,6 +1,13 @@
 {
-  "last_updated": 1672754443.0,
+  "last_updated": 1673020714.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1673020714.0,
+      "title": "coronasafe/care_fe#4513",
+      "link": "https://github.com/coronasafe/care_fe/pull/4513#pullrequestreview-1239032733",
+      "text": "Cypress: Made age calculation dynamic in patient_crud"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4471",
@@ -1268,19 +1275,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4471",
-      "title": "Cypress: Minor fix for patient crud occassional fail",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4236",
       "title": "Fix(cypress): Patient spec test",
       "stale_for": 0,
       "labels": [
         "work-in-progress",
+        "merge conflict",
         "cypress failed"
       ]
     }

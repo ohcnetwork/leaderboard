@@ -1,6 +1,29 @@
 {
-  "last_updated": 1673021489.0,
+  "last_updated": 1673115423.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4540",
+      "time": 1673115423.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4540",
+      "text": "Production Release; Jan Week 1",
+      "collaborated_with": [
+        "Ashesh3",
+        "rithviknishad",
+        "dependabot[bot]",
+        "siddnikh",
+        "khavinshankar",
+        "skks1212",
+        "cp-Coder"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4536",
+      "time": 1673082003.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4536",
+      "text": "Display QR Code ID on asset details page"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4535",
@@ -1452,17 +1475,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4536",
+      "title": "Display QR Code ID on asset details page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4535",
       "title": "Replaced DateInputV2 with TextFormField",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "merge conflict",
         "cypress failed"

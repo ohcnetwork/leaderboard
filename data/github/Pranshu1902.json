@@ -1,6 +1,34 @@
 {
-  "last_updated": 1673020012.0,
+  "last_updated": 1673091900.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1147",
+      "time": 1673091900.0,
+      "link": "https://github.com/coronasafe/care/pull/1147",
+      "text": "Added custom page_size for different pages"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4531",
+      "time": 1673091416.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4531",
+      "text": "One card is missing on all pages"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4531",
+      "time": 1673091416.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4531#issuecomment-1374450658",
+      "text": "Issue raised in backend [#1146](https://github.com/coronasafe/care/issues/1146)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1146",
+      "time": 1673091346.0,
+      "link": "https://github.com/coronasafe/care/issues/1146",
+      "text": "Allow custom page limit for different pages"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4533",
@@ -3211,17 +3239,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1147",
+      "title": "Added custom page_size for different pages",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4533",
-      "title": "Resolve missing card on multiple pages",
+      "title": "Minor UI fix",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4391",
       "title": "Added total bed count display on Facility Home page",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -3229,31 +3263,31 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/109",
       "title": "Updated linkedin URL",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1125",
       "title": "Added validations for create asset",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 73,
+      "stale_for": 74,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 73,
+      "stale_for": 74,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/86",
       "title": "Added indentation at left of text in \"Currently Working on\" tab",
-      "stale_for": 81,
+      "stale_for": 82,
       "labels": []
     }
   ],
@@ -3361,10 +3395,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3523",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3524"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3515",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3516"
     }
   ]
 }

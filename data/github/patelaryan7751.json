@@ -1,6 +1,13 @@
 {
-  "last_updated": 1672753254.0,
+  "last_updated": 1673147311.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1673147311.0,
+      "title": "coronasafe/care_fe#4432",
+      "link": "https://github.com/coronasafe/care_fe/pull/4432#pullrequestreview-1239725835",
+      "text": "Added a feature take cover Image photos directly from Care"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4340",
@@ -4810,23 +4817,24 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4432",
       "title": "Added a feature take cover Image photos directly from Care",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "changes required"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4428",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Create shift and update shift components",
-      "stale_for": 6,
+      "stale_for": 2,
       "labels": [
-        "test failed"
+        "test failed",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4426",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Daily Rounds component",
-      "stale_for": 6,
+      "stale_for": 11,
       "labels": [
         "changes required",
         "work-in-progress"
@@ -4835,7 +4843,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4369",
       "title": "Now on hovering the Post Doctor notes btn in discharged patient UI disabled symbol is shown",
-      "stale_for": 15,
+      "stale_for": 20,
       "labels": [
         "work-in-progress"
       ]
@@ -4843,7 +4851,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4266",
       "title": "Handle situation when coverimg fails to upload also added hints for uploading coverimage",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": [
         "tested",
         "changes required"
@@ -4852,7 +4860,7 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 36,
+      "stale_for": 41,
       "labels": []
     }
   ],

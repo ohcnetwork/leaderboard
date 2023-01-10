@@ -1,6 +1,41 @@
 {
-  "last_updated": 1673115423.0,
+  "last_updated": 1673287769.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4547",
+      "time": 1673287769.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4547#issuecomment-1376042549",
+      "text": "@rithviknishad Missed out on encoding, thanks for pointing it out! Should work now.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4547",
+      "time": 1673278028.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4547#issuecomment-1375794434",
+      "text": "@nihal467 can you check again? Bug has vanished \ud83d\udc40\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4547",
+      "time": 1673277190.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4547",
+      "text": "Fixed Query Params bug"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4543",
+      "time": 1673252551.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4543",
+      "text": "Fixed hover bug for anchor ButtonV2s"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4541",
+      "time": 1673250823.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4541",
+      "text": "Button Hover Effects not Working"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4540",
@@ -3452,9 +3487,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4547",
+      "title": "Fixed Query Params bug",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4543",
+      "title": "Fixed hover bug for anchor ButtonV2s",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4522",
       "title": "Added indicators for no updates in last 24 hours",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -3463,13 +3517,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1145",
       "title": "Added declare death option to decision after consultation",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4518",
       "title": "Added option for declare death in decision after consultation",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "waiting for back end",

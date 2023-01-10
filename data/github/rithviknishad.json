@@ -1,6 +1,55 @@
 {
-  "last_updated": 1673115423.0,
+  "last_updated": 1673288333.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1673288333.0,
+      "title": "coronasafe/care_fe#4547",
+      "link": "https://github.com/coronasafe/care_fe/pull/4547#pullrequestreview-1240973774",
+      "text": "Fixed Query Params bug"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673287225.0,
+      "title": "coronasafe/care_fe#4547",
+      "link": "https://github.com/coronasafe/care_fe/pull/4547#pullrequestreview-1240941705",
+      "text": "Fixed Query Params bug"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4501",
+      "time": 1673279606.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4501#issuecomment-1375845303",
+      "text": "@aparnacoronasafe I'll be proceeding to make all other fields except specialisation for now.\n\nSpecialisation will be made as an extension over UserSkills once @Pragati1610's PR #4455 is merged.\n\nAlso, the Years of Experience will be a Month and Year of begin selector.\n\ncc: @gigincg "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4501",
+      "time": 1673263947.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4501#issuecomment-1375492551",
+      "text": "Both front-end and back-end PRs would be ready by Tuesday 17th Jan, so very likely to be present by January Week 4 Release.\r\n\r\nI'm currently travelling this week, so if possible I'll try my best to push it earlier than above mentioned ETD."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4530",
+      "time": 1673263933.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4530#issuecomment-1375492295",
+      "text": "@nihal467 @khavinshankar cypress if failing for things not related to this PR :/\r\nCypress is even failing for staging.\r\n\r\n\r\n\r\n\r\n\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673253028.0,
+      "title": "coronasafe/care_fe#4543",
+      "link": "https://github.com/coronasafe/care_fe/pull/4543#pullrequestreview-1240087810",
+      "text": "Fixed hover bug for anchor ButtonV2s"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4542",
+      "time": 1673252250.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4542#issuecomment-1375250390",
+      "text": "https://github.com/coronasafe/care/issues/1146"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4540",
@@ -7855,16 +7904,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4530",
       "title": "Use `cui-input-base` class for inputs pressure sore popup",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "wontfix",
         "redesign",
@@ -7875,7 +7924,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 82,
+      "stale_for": 84,
       "labels": [
         "merge conflict"
       ]

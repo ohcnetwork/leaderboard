@@ -1,6 +1,20 @@
 {
-  "last_updated": 1673115423.0,
+  "last_updated": 1673266918.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4546",
+      "time": 1673266918.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4546",
+      "text": "fix(patient): validation in medical history"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4499",
+      "time": 1673259720.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4499#issuecomment-1375392187",
+      "text": "@aparnacoronasafe sure"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4540",
@@ -6328,9 +6342,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4546",
+      "title": "fix(patient): validation in medical history",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4505",
       "title": "Feat: Status during consultation",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "waiting for back end",
         "waiting for related PR"
@@ -6339,13 +6363,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1143",
       "title": "Feat: Add a consultation_status field in consultation model",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4495",
       "title": "Fix: create asset asking to select a facility when viewing asset of filtered facility",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "changes required"
       ]
@@ -6353,7 +6377,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4416",
       "title": "fix: Replace existing usages of TextInputFieldV2 with TextFormField",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "tested",
         "merge conflict",
@@ -6363,7 +6387,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4378",
       "title": "fix: Tailwind the Add User page + cypress tests for user feature",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "tested",
         "merge conflict",
@@ -6373,7 +6397,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 60,
+      "stale_for": 62,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6382,7 +6406,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 21,
+      "stale_for": 23,
       "labels": [
         "needs testing",
         "Done",
@@ -6394,7 +6418,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 13,
+      "stale_for": 15,
       "labels": [
         "do-not-merge"
       ]
@@ -6402,7 +6426,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 17,
+      "stale_for": 19,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6411,7 +6435,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 62,
+      "stale_for": 64,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6420,7 +6444,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 62,
+      "stale_for": 64,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6429,7 +6453,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 51,
+      "stale_for": 53,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6438,7 +6462,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/882",
       "title": "Removed current health field",
-      "stale_for": 106,
+      "stale_for": 108,
       "labels": [
         "ops-review-pending",
         "reviewed"
@@ -6447,7 +6471,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 198,
+      "stale_for": 200,
       "labels": [
         "waiting-for-review"
       ]

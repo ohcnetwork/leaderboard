@@ -1,6 +1,51 @@
 {
-  "last_updated": 1673287769.0,
+  "last_updated": 1673365344.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1145",
+      "time": 1673365344.0,
+      "link": "https://github.com/coronasafe/care/pull/1145",
+      "text": "Added declare death option to decision after consultation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4522",
+      "time": 1673356677.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4522",
+      "text": "Added indicators for no updates in last 24 hours"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4543",
+      "time": 1673356167.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4543",
+      "text": "Fixed hover bug for anchor ButtonV2s"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4547",
+      "time": 1673335235.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4547",
+      "text": "Fixed Query Params bug"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4547",
+      "time": 1673335235.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4547",
+      "text": "Fixed Query Params bug",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4547",
+      "time": 1673332346.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4547#issuecomment-1376794935",
+      "text": "> @nihal467 fixed the country code error, can you check it out\n> \n> cc: @skks1212 \n\n@khavinshankar works perfectly!"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4547",
@@ -3487,51 +3532,20 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4547",
-      "title": "Fixed Query Params bug",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4543",
-      "title": "Fixed hover bug for anchor ButtonV2s",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4522",
-      "title": "Added indicators for no updates in last 24 hours",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1145",
-      "title": "Added declare death option to decision after consultation",
-      "stale_for": 4,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4518",
       "title": "Added option for declare death in decision after consultation",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "needs testing",
-        "waiting for back end",
         "cypress failed"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4541",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4543"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4300",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4469"
@@ -3599,10 +3613,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2682",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2699"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2664",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2665"
     }
   ]
 }

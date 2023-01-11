@@ -1,6 +1,62 @@
 {
-  "last_updated": 1673288333.0,
+  "last_updated": 1673371449.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1673371449.0,
+      "title": "coronasafe/care_fe#4556",
+      "link": "https://github.com/coronasafe/care_fe/pull/4556#pullrequestreview-1242680040",
+      "text": "Debugged invisible button until hovered"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4530",
+      "time": 1673356334.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4530",
+      "text": "Use `cui-input-base` class for inputs pressure sore popup"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4551",
+      "time": 1673346652.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4551",
+      "text": "Doctor Specialisation"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4549",
+      "time": 1673330713.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4549",
+      "text": "Hide active tab indicator when `activeLink` is `undefined`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4548",
+      "time": 1673330358.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4548",
+      "text": "Sidebar current tab indicator not hidden when no current tab is selected"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1151",
+      "time": 1673329975.0,
+      "link": "https://github.com/coronasafe/care/pull/1151",
+      "text": "Adds doctor specialisation related fields to User Model"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4452",
+      "time": 1673320402.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4452#issuecomment-1376670351",
+      "text": "Now when the page loads with broken styling, the auto-update gets triggered and fetches the latest CSS files.\r\n\r\nSo now, first the page visibly loads with broken styling, but immediately refreshes because of the auto-update, and then visibly loads properly."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1150",
+      "time": 1673319977.0,
+      "link": "https://github.com/coronasafe/care/issues/1150",
+      "text": "Fields for Doctor Specialisation"
+    },
     {
       "type": "pr_reviewed",
       "time": 1673288333.0,
@@ -7902,18 +7958,32 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4530",
-      "title": "Use `cui-input-base` class for inputs pressure sore popup",
+      "link": "https://github.com/coronasafe/care_fe/pull/4551",
+      "title": "Doctor Specialisation",
       "stale_for": 0,
       "labels": [
-        "tested",
+        "merge conflict",
         "cypress failed"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4549",
+      "title": "Hide active tab indicator when `activeLink` is `undefined`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1151",
+      "title": "Adds doctor specialisation related fields to User Model",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "wontfix",
         "redesign",
@@ -7924,7 +7994,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 84,
+      "stale_for": 85,
       "labels": [
         "merge conflict"
       ]

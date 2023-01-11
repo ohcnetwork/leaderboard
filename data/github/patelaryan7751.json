@@ -1,6 +1,20 @@
 {
-  "last_updated": 1673276462.0,
+  "last_updated": 1673356817.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4266",
+      "time": 1673356817.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4266",
+      "text": "Handle situation when coverimg fails to upload also added hints for uploading coverimage"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4552",
+      "time": 1673347804.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4552",
+      "text": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Resource create and update components"
+    },
     {
       "type": "pr_reviewed",
       "time": 1673276462.0,
@@ -4864,17 +4878,26 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4552",
+      "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Resource create and update components",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4432",
       "title": "Added a feature take cover Image photos directly from Care",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4428",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Create shift and update shift components",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "test failed",
         "merge conflict"
@@ -4883,7 +4906,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4426",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Daily Rounds component",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "changes required",
         "work-in-progress"
@@ -4892,23 +4915,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4369",
       "title": "Now on hovering the Post Doctor notes btn in discharged patient UI disabled symbol is shown",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "work-in-progress"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4266",
-      "title": "Handle situation when coverimg fails to upload also added hints for uploading coverimage",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 42,
+      "stale_for": 43,
       "labels": []
     }
   ],

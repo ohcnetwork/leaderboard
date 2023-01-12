@@ -1,6 +1,55 @@
 {
-  "last_updated": 1673371449.0,
+  "last_updated": 1673418144.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4556",
+      "time": 1673418144.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4556#issuecomment-1378291601",
+      "text": "@Pranshu1902 closing this as solved by #4557"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4557",
+      "time": 1673417899.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4557",
+      "text": "Care UI: fix button `bg-color` being reset by styles from `index.css`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1141",
+      "time": 1673416791.0,
+      "link": "https://github.com/coronasafe/care/issues/1141#issuecomment-1378275724",
+      "text": "@siddnikh No. Only file size restriction is required as of now, since we do not have clear limits on what all file extensions are allowed.\r\nAlso, since doctors are uploading these files, it's very unlikely that they'll misuse this flaw."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4192",
+      "time": 1673416537.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4192#issuecomment-1378273365",
+      "text": "Waiting for \r\n- #4514"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4514",
+      "time": 1673416387.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4514#issuecomment-1378271978",
+      "text": "@mathew-alex I've reverted the eslint ignore patterns as #4521 solves the need for that by whitelisting instead of blacklisting."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4556",
+      "time": 1673415368.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4556#issuecomment-1378262864",
+      "text": "@Pranshu1902 fixed in #4557 (check the logic there)\r\nThe issue was, when the button classes were moved to CAREUI.css from index.css, for weird reason bg-color was getting overridden by a class that resets bg-color.\r\n\r\ncc: @skks1212 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4557",
+      "time": 1673408139.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4557",
+      "text": "fix button styles"
+    },
     {
       "type": "pr_reviewed",
       "time": 1673371449.0,
@@ -7960,7 +8009,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4551",
       "title": "Doctor Specialisation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -7971,19 +8020,20 @@
       "title": "Hide active tab indicator when `activeLink` is `undefined`",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested",
+        "good to merge"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1151",
       "title": "Adds doctor specialisation related fields to User Model",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3996",
       "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "wontfix",
         "redesign",
@@ -7994,7 +8044,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 85,
+      "stale_for": 86,
       "labels": [
         "merge conflict"
       ]

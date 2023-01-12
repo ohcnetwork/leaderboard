@@ -1,6 +1,27 @@
 {
-  "last_updated": 1673365344.0,
+  "last_updated": 1673442393.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1673442393.0,
+      "title": "coronasafe/care_fe#4549",
+      "link": "https://github.com/coronasafe/care_fe/pull/4549#pullrequestreview-1243873619",
+      "text": "Hide active tab indicator when `activeLink` is `undefined`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673416255.0,
+      "title": "coronasafe/care_fe#4549",
+      "link": "https://github.com/coronasafe/care_fe/pull/4549#pullrequestreview-1243318267",
+      "text": "Hide active tab indicator when `activeLink` is `undefined`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673416038.0,
+      "title": "coronasafe/care_fe#4557",
+      "link": "https://github.com/coronasafe/care_fe/pull/4557#pullrequestreview-1243316038",
+      "text": "Care UI: fix button `bg-color` being reset by styles from `index.css`"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1145",
@@ -3536,7 +3557,8 @@
       "title": "Added option for declare death in decision after consultation",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
+        "Team Discuss Required",
         "cypress failed"
       ]
     }

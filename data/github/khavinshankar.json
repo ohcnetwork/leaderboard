@@ -1,6 +1,62 @@
 {
-  "last_updated": 1673438504.0,
+  "last_updated": 1673564889.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4572",
+      "time": 1673564889.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4572",
+      "text": "Fixed date formatting in Sample Test exported file"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1153",
+      "time": 1673535463.0,
+      "link": "https://github.com/coronasafe/care/issues/1153#issuecomment-1380501112",
+      "text": "transferring this issue back to the front-end\r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4425",
+      "time": 1673505104.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4425",
+      "text": "New Popups for \"Edit/ Add Bed Capacity\" & \"Edit/Add Doctor Capacity\""
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673505025.0,
+      "title": "coronasafe/care_fe#4462",
+      "link": "https://github.com/coronasafe/care_fe/pull/4462#pullrequestreview-1245032963",
+      "text": "Popups for \"Edit/ Add Bed Capacity\" & \"Edit/Add Doctor Capacity\""
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4497",
+      "time": 1673504681.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4497",
+      "text": "Declare death"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673504658.0,
+      "title": "coronasafe/care_fe#4518",
+      "link": "https://github.com/coronasafe/care_fe/pull/4518#pullrequestreview-1245027003",
+      "text": "Added option for declare death in decision after consultation"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4548",
+      "time": 1673504640.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4548",
+      "text": "Sidebar current tab indicator not hidden when no current tab is selected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673504625.0,
+      "title": "coronasafe/care_fe#4549",
+      "link": "https://github.com/coronasafe/care_fe/pull/4549#pullrequestreview-1245026616",
+      "text": "Hide active tab indicator when `activeLink` is `undefined`"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4549",
@@ -12052,9 +12108,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4572",
+      "title": "Fixed date formatting in Sample Test exported file",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4561",
       "title": "Cypress fix 11 01",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "good to merge"
       ]
@@ -12062,13 +12127,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 33,
+      "stale_for": 34,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 23,
+      "stale_for": 24,
       "labels": [
         "waiting-for-review"
       ]
@@ -12076,7 +12141,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "work-in-progress",
         "waiting for update",
@@ -12086,7 +12151,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 33,
+      "stale_for": 34,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -12096,16 +12161,17 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 8,
+      "stale_for": 0,
       "labels": [
         "test failed",
+        "stale",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 62,
+      "stale_for": 63,
       "labels": [
         "waiting-for-review"
       ]
@@ -12113,25 +12179,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 390,
+      "stale_for": 391,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 396,
+      "stale_for": 397,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 397,
+      "stale_for": 398,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 592,
+      "stale_for": 593,
       "labels": []
     }
   ],

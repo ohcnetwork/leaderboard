@@ -1,6 +1,20 @@
 {
-  "last_updated": 1672915963.0,
+  "last_updated": 1673533921.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1144",
+      "time": 1673533921.0,
+      "link": "https://github.com/coronasafe/care/pull/1144",
+      "text": "Use configured middleware address for middleware authentication"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1144",
+      "time": 1673520059.0,
+      "link": "https://github.com/coronasafe/care/pull/1144#issuecomment-1380134129",
+      "text": "> Are we no longer pointing to local if a middleware address is not present?\r\n\r\nThis change would give more info to the admin about whats going wrong.\r\nwe were pointing it to local for testing, we can still set the value to localhost in the configurations"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1144",
@@ -1690,21 +1704,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1144",
-      "title": "Use configured middleware address for middleware authentication",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 162,
+      "stale_for": 169,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/772",
       "title": "fix: Inventory unexpectedly marked as Low Stock",
-      "stale_for": 224,
+      "stale_for": 231,
       "labels": []
     }
   ],

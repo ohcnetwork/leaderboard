@@ -1,6 +1,30 @@
 {
-  "last_updated": 1673418144.0,
+  "last_updated": 1673504637.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4549",
+      "time": 1673504637.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4549",
+      "text": "Hide active tab indicator when `activeLink` is `undefined`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3996",
+      "time": 1673504126.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3996#issuecomment-1379864206",
+      "text": "As mentioned in issue, we'll be fragmenting this PR (some fragments have been completed and merged already)"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4514",
+      "time": 1673495217.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4514",
+      "text": "Changes for updating config.json pre-deploy",
+      "collaborated_with": [
+        "mathew-alex"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4556",
@@ -8009,48 +8033,32 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4551",
       "title": "Doctor Specialisation",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "merge conflict",
         "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4549",
-      "title": "Hide active tab indicator when `activeLink` is `undefined`",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "good to merge"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1151",
       "title": "Adds doctor specialisation related fields to User Model",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3996",
-      "title": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter",
-      "stale_for": 7,
-      "labels": [
-        "wontfix",
-        "redesign",
-        "merge conflict",
-        "Major Code Change"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 86,
+      "stale_for": 87,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4548",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4549"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4520",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4521"
@@ -8130,10 +8138,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4328",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4309"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/leaderboard/issues/106",
-      "pr_link": "https://github.com/coronasafe/leaderboard/pull/107"
     }
   ]
 }

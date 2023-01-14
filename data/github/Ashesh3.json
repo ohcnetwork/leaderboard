@@ -1,6 +1,55 @@
 {
-  "last_updated": 1673505103.0,
+  "last_updated": 1673619761.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4578",
+      "time": 1673619761.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4578#issuecomment-1381927594",
+      "text": "Additional Context:\r\n\r\nThe validation for the middleware host was added yesterday on the backend.\r\nhttps://github.com/coronasafe/care/blame/master/care/facility/api/serializers/facility.py#L122\r\n\r\n```\r\ndef validate_middleware_address(self, value):\r\n\tvalue = value.strip()\r\n\tif not value or not value.startswith(\"http\"):\r\n\t\traise serializers.ValidationError(\"Invalid URL\")\r\n\tif value.endswith(\"/\"):\r\n\t\traise serializers.ValidationError(\"URL should not end with /\")\r\n\treturn value\r\n```"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4581",
+      "time": 1673618187.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4581",
+      "text": "Disallow past dates for asset warranty"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4578",
+      "time": 1673617409.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4578#issuecomment-1381867944",
+      "text": "> @Ashesh3 dev_middleware.coronasafe.live, this is the middleware\r\n\r\nI am able to enter `https://dev_middleware.coronasafe.live` for the middleware URL. It's not a valid URL without the protocol at the beginning. (http/https)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4578",
+      "time": 1673617109.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4578#issuecomment-1381861598",
+      "text": "@nihal467 are you sure you are using a valid URL for the configuration?\r\n`http://example.com` works fine\r\n`invalid_input` fails, as expected"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4577",
+      "time": 1673613242.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4577",
+      "text": "Fix alignment of location picker"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#789",
+      "time": 1673587965.0,
+      "link": "https://github.com/coronasafe/care/pull/789#issuecomment-1381335299",
+      "text": "@vigneshhari Any updates on this?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4574",
+      "time": 1673587759.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4574",
+      "text": "Fix filter buttons in advanced patient filters"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4462",
@@ -5804,9 +5853,33 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4581",
+      "title": "Disallow past dates for asset warranty",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4577",
+      "title": "Fix alignment of location picker",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4574",
+      "title": "Fix filter buttons in advanced patient filters",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 106,
+      "stale_for": 0,
       "labels": [
         "reviewed"
       ]

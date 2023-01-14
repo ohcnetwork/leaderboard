@@ -1,6 +1,41 @@
 {
-  "last_updated": 1673504637.0,
+  "last_updated": 1673618210.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4582",
+      "time": 1673618210.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4582",
+      "text": "Fixes form fields from being congested"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4580",
+      "time": 1673618175.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4580#issuecomment-1381891833",
+      "text": "Acknowledged"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4580",
+      "time": 1673618102.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4580",
+      "text": "Form Fields are cogested"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673596333.0,
+      "title": "coronasafe/care_fe#4574",
+      "link": "https://github.com/coronasafe/care_fe/pull/4574#pullrequestreview-1247069825",
+      "text": "Fix filter buttons in advanced patient filters"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3872",
+      "time": 1673587508.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3872#issuecomment-1381331700",
+      "text": "@nihal467 I've built the form builder, will continue working on it and open a draft PR once other priority issues assigned to me are completed."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4549",
@@ -8031,9 +8066,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4582",
+      "title": "Fixes form fields from being congested",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4551",
       "title": "Doctor Specialisation",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -8042,13 +8086,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1151",
       "title": "Adds doctor specialisation related fields to User Model",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 87,
+      "stale_for": 88,
       "labels": [
         "merge conflict"
       ]

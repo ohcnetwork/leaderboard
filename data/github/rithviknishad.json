@@ -1,6 +1,69 @@
 {
-  "last_updated": 1673618210.0,
+  "last_updated": 1673712773.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4597",
+      "time": 1673712773.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4597",
+      "text": "Fixes icon size to the standard size used for patient dashboard buttons"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4592",
+      "time": 1673704966.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4592",
+      "text": "App history provider"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4589",
+      "time": 1673700560.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4589",
+      "text": "Icons used in patient dashboard's buttons looks to smaller than the standard size used across the app"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4588",
+      "time": 1673700290.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4588",
+      "text": "Patient Notes page looks too wide in desktop view"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4587",
+      "time": 1673699780.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4587",
+      "text": "Log update card size is not persistent"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4586",
+      "time": 1673698842.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4586",
+      "text": "CARE is blank forever randomly on initial load"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673687826.0,
+      "title": "coronasafe/care_fe#4583",
+      "link": "https://github.com/coronasafe/care_fe/pull/4583#pullrequestreview-1248745212",
+      "text": "fix: Tailwind delete user confirm dialog to use ConfirmDialog component"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673687825.0,
+      "title": "coronasafe/care_fe#4583",
+      "link": "https://github.com/coronasafe/care_fe/pull/4583#pullrequestreview-1248745212",
+      "text": "fix: Tailwind delete user confirm dialog to use ConfirmDialog component"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4582",
+      "time": 1673680142.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4582",
+      "text": "Fixes form fields from being congested"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4582",
@@ -8066,18 +8129,26 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4582",
-      "title": "Fixes form fields from being congested",
+      "link": "https://github.com/coronasafe/care_fe/pull/4597",
+      "title": "Fixes icon size to the standard size used for patient dashboard buttons",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4592",
+      "title": "App history provider",
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "P1"
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4551",
       "title": "Doctor Specialisation",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -8086,19 +8157,23 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1151",
       "title": "Adds doctor specialisation related fields to User Model",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 88,
+      "stale_for": 89,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4580",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4582"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4548",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4549"
@@ -8178,10 +8253,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4350",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4358"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4328",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4309"
     }
   ]
 }

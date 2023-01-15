@@ -1,6 +1,13 @@
 {
-  "last_updated": 1673533520.0,
+  "last_updated": 1673690426.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4584",
+      "time": 1673690426.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4584",
+      "text": "Added Page Component to make padding across pages to be consistent"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4568",
@@ -1517,15 +1524,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4584",
+      "title": "Added Page Component to make padding across pages to be consistent",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress",
+        "Deploy-Failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4568",
       "title": "Removed expired option from COVID disease status (Patient Registration)",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "cypress failed"

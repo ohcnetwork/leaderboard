@@ -1,6 +1,20 @@
 {
-  "last_updated": 1673361139.0,
+  "last_updated": 1673804446.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4605",
+      "time": 1673804446.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4605",
+      "text": "Localizations for texts in `Auth` "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4558",
+      "time": 1673801497.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4558#issuecomment-1383198593",
+      "text": "@gigincg Currently camera feed looks like this\r\n![image](https://user-images.githubusercontent.com/63334479/212554433-1a534e7d-f969-4742-a087-7a80c2e0f63c.png)\r\n\r\nBesides making camera presets responsive\r\n What else to improve on? Please specify"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#2591",
@@ -1296,13 +1310,30 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4605",
+      "title": "Localizations for texts in `Auth` ",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4236",
       "title": "Fix(cypress): Patient spec test",
-      "stale_for": 1,
+      "stale_for": 6,
       "labels": [
         "work-in-progress",
         "merge conflict",
         "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4005",
+      "title": "Hub Camera Monitoring Screen",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress"
       ]
     }
   ],

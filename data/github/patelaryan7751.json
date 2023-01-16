@@ -1,6 +1,43 @@
 {
-  "last_updated": 1673498130.0,
+  "last_updated": 1673817949.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4609",
+      "time": 1673817949.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4609",
+      "text": "Made the sidebar tooltip visible"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4608",
+      "time": 1673815537.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4608",
+      "text": "Made  mandatory validation in ONVIF camera and HL7 monitor asset page and migrated all possible input to textformfield"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4604",
+      "time": 1673804553.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4604",
+      "text": "Production Release; Jan Week 2",
+      "collaborated_with": [
+        "Pranshu1902",
+        "rithviknishad",
+        "cp-Coder",
+        "GokulramGHV",
+        "Ashesh3",
+        "mathew-alex",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4598",
+      "time": 1673757199.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4598",
+      "text": "Declare by death now  leads to discharge of patient in Consultation form"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4564",
@@ -4885,9 +4922,34 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4609",
+      "title": "Made the sidebar tooltip visible",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4608",
+      "title": "Made  mandatory validation in ONVIF camera and HL7 monitor asset page and migrated all possible input to textformfield",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4598",
+      "title": "Declare by death now  leads to discharge of patient in Consultation form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4564",
       "title": "Made the tooltip of linked facility visible in Users page",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -4895,7 +4957,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4552",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Resource create and update components",
-      "stale_for": 2,
+      "stale_for": 5,
       "labels": [
         "work-in-progress"
       ]
@@ -4903,16 +4965,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4432",
       "title": "Added a feature take cover Image photos directly from Care",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
-        "work-in-progress",
-        "merge conflict"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4428",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Create shift and update shift components",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "test failed",
         "merge conflict"
@@ -4921,7 +4982,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4426",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Daily Rounds component",
-      "stale_for": 15,
+      "stale_for": 18,
       "labels": [
         "changes required",
         "work-in-progress"
@@ -4930,7 +4991,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4369",
       "title": "Now on hovering the Post Doctor notes btn in discharged patient UI disabled symbol is shown",
-      "stale_for": 24,
+      "stale_for": 27,
       "labels": [
         "work-in-progress"
       ]
@@ -4938,7 +4999,7 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 45,
+      "stale_for": 48,
       "labels": []
     }
   ],

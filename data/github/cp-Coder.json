@@ -1,6 +1,46 @@
 {
-  "last_updated": 1673707220.0,
+  "last_updated": 1673804558.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1159",
+      "time": 1673804558.0,
+      "link": "https://github.com/coronasafe/care/pull/1159",
+      "text": "Production Release; Jan Week 2",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4604",
+      "time": 1673804553.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4604",
+      "text": "Production Release; Jan Week 2",
+      "collaborated_with": [
+        "Pranshu1902",
+        "rithviknishad",
+        "patelaryan7751",
+        "GokulramGHV",
+        "Ashesh3",
+        "mathew-alex",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4603",
+      "time": 1673790530.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4603",
+      "text": "fix: Minor UI fixes"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4573",
+      "time": 1673766349.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4573",
+      "text": "fix: Discharging patients"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4573",
@@ -6398,27 +6438,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4583",
-      "title": "fix: Tailwind delete user confirm dialog to use ConfirmDialog component",
+      "link": "https://github.com/coronasafe/care_fe/pull/4603",
+      "title": "fix: Minor UI fixes",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4573",
-      "title": "fix: Discharging patients",
-      "stale_for": 0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4583",
+      "title": "fix: Tailwind delete user confirm dialog to use ConfirmDialog component",
+      "stale_for": 1,
       "labels": [
-        "urgent",
-        "needs testing",
-        "P1"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4505",
       "title": "Feat: Status during consultation",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "waiting for back end",
         "waiting for related PR"
@@ -6435,7 +6473,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4495",
       "title": "Fix: create asset asking to select a facility when viewing asset of filtered facility",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "changes required",
         "stale"
@@ -6444,7 +6482,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4416",
       "title": "fix: Replace existing usages of TextInputFieldV2 with TextFormField",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -6452,7 +6490,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4378",
       "title": "fix: Tailwind the Add User page + cypress tests for user feature",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested"
       ]
@@ -6460,7 +6498,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 67,
+      "stale_for": 68,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6469,7 +6507,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 28,
+      "stale_for": 29,
       "labels": [
         "needs testing",
         "Done",
@@ -6481,7 +6519,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "do-not-merge"
       ]
@@ -6489,7 +6527,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 24,
+      "stale_for": 25,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6498,7 +6536,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 69,
+      "stale_for": 70,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6507,7 +6545,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 69,
+      "stale_for": 70,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6516,7 +6554,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 58,
+      "stale_for": 59,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6525,7 +6563,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/882",
       "title": "Removed current health field",
-      "stale_for": 113,
+      "stale_for": 114,
       "labels": [
         "ops-review-pending",
         "reviewed"
@@ -6534,7 +6572,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 205,
+      "stale_for": 206,
       "labels": [
         "waiting-for-review"
       ]

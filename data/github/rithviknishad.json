@@ -1,6 +1,62 @@
 {
-  "last_updated": 1673967259.0,
+  "last_updated": 1674063691.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4633",
+      "time": 1674063691.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4633",
+      "text": "CareUI: Adds a higher-order `Form` component"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_deploy_configs#9",
+      "time": 1674062144.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/9",
+      "text": "Adds optional flag: `state_logo_white` to render the logo in white only"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_deploy_configs#9",
+      "time": 1674059697.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/9",
+      "text": "Adds optional flag: `state_logo_white` to render the logo in white only"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674037327.0,
+      "title": "coronasafe/care_fe#4596",
+      "link": "https://github.com/coronasafe/care_fe/pull/4596#pullrequestreview-1253202461",
+      "text": "Add asset class to the Assets advanced filters"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_deploy_configs#8",
+      "time": 1674028337.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/8",
+      "text": "Adds config: `gov_data_api_key`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4627",
+      "time": 1674024660.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4627",
+      "text": "Add state logo on login page and migrates envs to read from `/config.json`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4626",
+      "time": 1674023983.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4626",
+      "text": "CareUI: `bg-white` for `secondary` variant `ButtonV2`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4625",
+      "time": 1674021142.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4625",
+      "text": "Facility card is having excess whitespace for random rows of cards"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4624",
@@ -8274,17 +8330,44 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4622",
-      "title": "Moves Ordering Filter out of Advanced Filters",
+      "link": "https://github.com/coronasafe/care_fe/pull/4633",
+      "title": "CareUI: Adds a higher-order `Form` component",
       "stale_for": 0,
       "labels": [
         "cypress failed"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4627",
+      "title": "Add state logo on login page and migrates envs to read from `/config.json`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4626",
+      "title": "CareUI: `bg-white` for `secondary` variant `ButtonV2`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4622",
+      "title": "Moves Ordering Filter out of Advanced Filters",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4592",
       "title": "App history provider",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -8293,16 +8376,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4551",
       "title": "Doctor Specialisation",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting for back end",
-        "merge conflict"
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1151",
       "title": "Adds doctor specialisation related fields to User Model",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -8310,7 +8393,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 92,
+      "stale_for": 93,
       "labels": [
         "merge conflict"
       ]

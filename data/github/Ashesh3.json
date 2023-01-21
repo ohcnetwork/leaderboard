@@ -1,6 +1,20 @@
 {
-  "last_updated": 1674131901.0,
+  "last_updated": 1674245858.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1160",
+      "time": 1674245858.0,
+      "link": "https://github.com/coronasafe/care/pull/1160",
+      "text": "Add facility_id filter to User"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4642",
+      "time": 1674245806.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4642",
+      "text": "Add facility filter to Users page and redirect facility users to this"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1158",
@@ -5960,9 +5974,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1160",
+      "title": "Add facility_id filter to User",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4642",
+      "title": "Add facility filter to Users page and redirect facility users to this",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4618",
       "title": "Add preview for bed and doctor capacity in FacilityCreate",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -5970,7 +5998,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4596",
       "title": "Add asset class to the Assets advanced filters",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5978,7 +6006,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "reviewed"
       ]

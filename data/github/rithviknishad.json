@@ -1,6 +1,41 @@
 {
-  "last_updated": 1674063691.0,
+  "last_updated": 1674237153.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4627",
+      "time": 1674237153.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4627#issuecomment-1398741836",
+      "text": "@skks1212 There are two logos.\r\n1. `state_logo` which for staging uses DPG logo as a placeholder. This one's beside CARE logo.\r\n2. `static_dpg_white_logo` which as you suggested, added the DPG logo regardless of `state_logo` beside coronasafe\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4627",
+      "time": 1674223320.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4627#issuecomment-1398436796",
+      "text": "@skks1212 1/4 height for the div looks like this:\r\n![image](https://user-images.githubusercontent.com/25143503/213715182-26afe323-c1ed-4487-a86b-b97d5b6c0a29.png)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_deploy_configs#10",
+      "time": 1674223246.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/10",
+      "text": "Whitelabel for white logo of digital public goods"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674221830.0,
+      "title": "coronasafe/care#1151",
+      "link": "https://github.com/coronasafe/care/pull/1151#pullrequestreview-1263599245",
+      "text": "Adds doctor specialisation related fields to User Model"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4485",
+      "time": 1674193913.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4485#issuecomment-1397951163",
+      "text": "@nihal467 I'm not assigned to this issue. @Ashesh3 is :)"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4633",
@@ -8330,9 +8365,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/10",
+      "title": "Whitelabel for white logo of digital public goods",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4633",
       "title": "CareUI: Adds a higher-order `Form` component",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "cypress failed"
       ]
@@ -8342,14 +8383,15 @@
       "title": "Add state logo on login page and migrates envs to read from `/config.json`",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "work-in-progress",
+        "Deploy-Failed",
+        "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4626",
       "title": "CareUI: `bg-white` for `secondary` variant `ButtonV2`",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -8358,7 +8400,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4622",
       "title": "Moves Ordering Filter out of Advanced Filters",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -8367,7 +8409,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4592",
       "title": "App history provider",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -8376,7 +8418,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4551",
       "title": "Doctor Specialisation",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "waiting for back end",
         "cypress failed"
@@ -8385,7 +8427,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1151",
       "title": "Adds doctor specialisation related fields to User Model",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -8393,7 +8435,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 93,
+      "stale_for": 95,
       "labels": [
         "merge conflict"
       ]

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1674245858.0,
+  "last_updated": 1674308338.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1160",
+      "time": 1674308338.0,
+      "link": "https://github.com/coronasafe/care/pull/1160#issuecomment-1399253544",
+      "text": "> I would make this a separate api view, maybe under the facilities detailed view\r\n\r\nHi, I'm trying to understand your comment about making this a separate API view under the facilities detailed view. Are you suggesting that I create a new endpoint specifically for filtering users by facility and that this endpoint should be located under the detailed view of facilities? For example, `/facilities/<facility_id>/users`? Don't we already have a dedicated endpoint for this at: https://github.com/coronasafe/care/blob/master/care/users/api/viewsets/users.py#L218\r\n\r\nJust want to make sure I understand your suggestion correctly before implementing it."
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1160",
@@ -5984,13 +5991,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4642",
       "title": "Add facility filter to Users page and redirect facility users to this",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4618",
       "title": "Add preview for bed and doctor capacity in FacilityCreate",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing"
       ]
@@ -5998,7 +6005,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4596",
       "title": "Add asset class to the Assets advanced filters",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -6006,7 +6013,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/789",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "reviewed"
       ]

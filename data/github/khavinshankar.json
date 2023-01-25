@@ -1,6 +1,48 @@
 {
-  "last_updated": 1674477542.0,
+  "last_updated": 1674584787.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4624",
+      "time": 1674584787.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4624",
+      "text": "Make background of `secondary` variant `ButtonV2` to `white`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674584778.0,
+      "title": "coronasafe/care_fe#4626",
+      "link": "https://github.com/coronasafe/care_fe/pull/4626#pullrequestreview-1268036062",
+      "text": "CareUI: `bg-white` for `secondary` variant `ButtonV2`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674584708.0,
+      "title": "coronasafe/care_fe#4634",
+      "link": "https://github.com/coronasafe/care_fe/pull/4634#pullrequestreview-1268033467",
+      "text": "Added link to home page on sidebar logo"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4648",
+      "time": 1674584674.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4648",
+      "text": "Confirm delete asset button is to be of danger variant"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674584666.0,
+      "title": "coronasafe/care_fe#4650",
+      "link": "https://github.com/coronasafe/care_fe/pull/4650#pullrequestreview-1268031683",
+      "text": "danger variant for delete asset button"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4669",
+      "time": 1674555056.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4669",
+      "text": "Removed admission date past date validation in ConsultationForm"
+    },
     {
       "type": "pr_reviewed",
       "time": 1674477542.0,
@@ -12579,18 +12621,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4669",
+      "title": "Removed admission date past date validation in ConsultationForm",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
         "test failed",
+        "stale",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4572",
       "title": "Fixed date formatting in Sample Test exported file",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "tested",
         "cypress failed"
@@ -12599,13 +12648,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 45,
+      "stale_for": 46,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -12613,7 +12662,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "work-in-progress",
         "waiting for update",
@@ -12623,7 +12672,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 45,
+      "stale_for": 46,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -12633,7 +12682,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -12642,7 +12691,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 74,
+      "stale_for": 75,
       "labels": [
         "waiting-for-review"
       ]
@@ -12650,25 +12699,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 402,
+      "stale_for": 403,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 408,
+      "stale_for": 409,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 409,
+      "stale_for": 410,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 604,
+      "stale_for": 605,
       "labels": []
     }
   ],

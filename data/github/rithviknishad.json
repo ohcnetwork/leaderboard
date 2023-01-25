@@ -1,6 +1,34 @@
 {
-  "last_updated": 1674477949.0,
+  "last_updated": 1674584786.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4626",
+      "time": 1674584786.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4626",
+      "text": "CareUI: `bg-white` for `secondary` variant `ButtonV2`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4650",
+      "time": 1674584673.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4650",
+      "text": "danger variant for delete asset button"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_deploy_configs#10",
+      "time": 1674570730.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/10",
+      "text": "Adds additional white labels (url and logo of DPG and CSN, sample format files of asset and external results)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4627",
+      "time": 1674570462.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4627#issuecomment-1402039179",
+      "text": "@nihal467 \r\nThe first DPG logo is a placeholder for showing state logos in state-specific deployments.\r\nWill be removed once merged."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4592",
@@ -8518,14 +8546,13 @@
       "title": "Adds `RelativeTime` component",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4652",
       "title": "Tailwinds delete bed type and delete doctor type dialogs",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -8534,29 +8561,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4651",
       "title": "Set max limit for bed capacity occupied input",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4650",
-      "title": "danger variant for delete asset button",
-      "stale_for": 2,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_deploy_configs/pull/10",
-      "title": "Adds additional white labels (url and logo of DPG and CSN, sample format files of asset and external results)",
-      "stale_for": 2,
-      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4633",
       "title": "CareUI: Adds a higher-order `Form` component",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "cypress failed"
       ]
@@ -8568,37 +8581,37 @@
       "labels": [
         "needs testing",
         "merge conflict",
-        "Major Code Change"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4626",
-      "title": "CareUI: `bg-white` for `secondary` variant `ButtonV2`",
-      "stale_for": 5,
-      "labels": [
-        "needs testing",
+        "Major Code Change",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4551",
       "title": "Doctor Specialisation",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end",
+        "test failed",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 98,
+      "stale_for": 99,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4648",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4650"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4624",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4626"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4589",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4597"
@@ -8678,14 +8691,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4374",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4388"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4373",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4384"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4367",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4358"
     }
   ]
 }

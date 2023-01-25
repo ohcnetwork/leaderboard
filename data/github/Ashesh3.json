@@ -1,6 +1,27 @@
 {
-  "last_updated": 1674477298.0,
+  "last_updated": 1674567857.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1163",
+      "time": 1674567857.0,
+      "link": "https://github.com/coronasafe/care/pull/1163",
+      "text": "Refactor Symptoms"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4671",
+      "time": 1674567728.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4671",
+      "text": "Refactor Symptoms"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4670",
+      "time": 1674566664.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4670",
+      "text": "Add additional review time options"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4596",
@@ -6032,9 +6053,33 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1163",
+      "title": "Refactor Symptoms",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4671",
+      "title": "Refactor Symptoms",
+      "stale_for": 0,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4670",
+      "title": "Add additional review time options",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -6042,7 +6087,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4642",
       "title": "Add facility filter to Users page and redirect facility users to this",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
@@ -6050,7 +6095,7 @@
       "title": "Fix inconsistent type of visited countries attribute",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "work-in-progress",
         "merge conflict"
       ]
     }

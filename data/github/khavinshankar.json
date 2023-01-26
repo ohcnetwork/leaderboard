@@ -1,6 +1,118 @@
 {
-  "last_updated": 1674584787.0,
+  "last_updated": 1674662753.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4669",
+      "time": 1674662753.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4669",
+      "text": "Removed admission date past date validation in ConsultationForm"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4572",
+      "time": 1674662450.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4572",
+      "text": "Fixed date formatting in Sample Test exported file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674623874.0,
+      "title": "coronasafe/care_fe#4627",
+      "link": "https://github.com/coronasafe/care_fe/pull/4627#pullrequestreview-1268720370",
+      "text": "Add state logo on login page and migrates envs to read from `/config.json`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4628",
+      "time": 1674623549.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4628",
+      "text": "Bed allocation to be a pre-requisite for Log Update"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674623539.0,
+      "title": "coronasafe/care_fe#4631",
+      "link": "https://github.com/coronasafe/care_fe/pull/4631#pullrequestreview-1268717070",
+      "text": "Prevent log update without bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4627",
+      "time": 1674623301.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4627#issuecomment-1403103736",
+      "text": "@rithviknishad I believe that this was already discussed in the EOD (the color invention ...) and was approved, right?\r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674623130.0,
+      "title": "coronasafe/care_fe#4560",
+      "link": "https://github.com/coronasafe/care_fe/pull/4560#pullrequestreview-1268713063",
+      "text": "File size constraints for patient consultation files"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674623031.0,
+      "title": "coronasafe/care_fe#4636",
+      "link": "https://github.com/coronasafe/care_fe/pull/4636#pullrequestreview-1268712129",
+      "text": "Added theme responsive favicons"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674622640.0,
+      "title": "coronasafe/care_fe#4636",
+      "link": "https://github.com/coronasafe/care_fe/pull/4636#pullrequestreview-1268708470",
+      "text": "Added theme responsive favicons"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4637",
+      "time": 1674622565.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4637",
+      "text": "View Linked Facility button should be disabled when loading on Users page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674622557.0,
+      "title": "coronasafe/care_fe#4638",
+      "link": "https://github.com/coronasafe/care_fe/pull/4638#pullrequestreview-1268707714",
+      "text": "Disable View Linked Facility icon on users page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674622526.0,
+      "title": "coronasafe/care_fe#4641",
+      "link": "https://github.com/coronasafe/care_fe/pull/4641#pullrequestreview-1268707437",
+      "text": "Added some margin above live feed in asset configure page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4645",
+      "time": 1674622502.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4645",
+      "text": "Delete bed type dialog is using legacy dialog component"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4647",
+      "time": 1674622502.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4647",
+      "text": "Bed capacity occupied field allowing input above total capacity"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4646",
+      "time": 1674622501.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4646",
+      "text": "Delete doctor type is using legacy dialog component"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674622491.0,
+      "title": "coronasafe/care_fe#4652",
+      "link": "https://github.com/coronasafe/care_fe/pull/4652#pullrequestreview-1268707118",
+      "text": "Tailwinds delete bed type and delete doctor type dialogs"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4624",
@@ -12621,15 +12733,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4669",
-      "title": "Removed admission date past date validation in ConsultationForm",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "stale",
@@ -12637,24 +12743,15 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4572",
-      "title": "Fixed date formatting in Sample Test exported file",
-      "stale_for": 8,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 46,
+      "stale_for": 47,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -12662,7 +12759,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 19,
+      "stale_for": 20,
       "labels": [
         "work-in-progress",
         "waiting for update",
@@ -12672,7 +12769,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 46,
+      "stale_for": 47,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -12682,7 +12779,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4034",
       "title": "Fixed feed full screen issue with iOS devices",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -12691,7 +12788,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 75,
+      "stale_for": 76,
       "labels": [
         "waiting-for-review"
       ]
@@ -12699,25 +12796,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 403,
+      "stale_for": 404,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 409,
+      "stale_for": 410,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 410,
+      "stale_for": 411,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 605,
+      "stale_for": 606,
       "labels": []
     }
   ],

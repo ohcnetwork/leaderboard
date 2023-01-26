@@ -1,6 +1,48 @@
 {
-  "last_updated": 1674545450.0,
+  "last_updated": 1674640943.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4677",
+      "time": 1674640943.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4677",
+      "text": "Resolve crashing Sample Details page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4676",
+      "time": 1674638282.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4676",
+      "text": "Sample Details page is crashing"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4675",
+      "time": 1674638009.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4675",
+      "text": "Improved sample test history section on patients page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4674",
+      "time": 1674637768.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4674",
+      "text": "Remove white space on Sample Test History of Patient"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4632",
+      "time": 1674632001.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4632#issuecomment-1403205494",
+      "text": "@nihal467 \r\nUpdated view:\r\n![image](https://user-images.githubusercontent.com/70687348/214505165-9d54688e-8404-418b-80e9-56231d8ff5af.png)\r\n\r\nDesktop view:\r\n![image](https://user-images.githubusercontent.com/70687348/214505253-0427ca17-61a3-42e9-a0f0-ee01cd5fa8bd.png)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4638",
+      "time": 1674622565.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4638",
+      "text": "Disable View Linked Facility icon on users page"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4667",
@@ -3481,16 +3523,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4667",
-      "title": "Disable button when loading on Configure Assets page",
+      "link": "https://github.com/coronasafe/care_fe/pull/4677",
+      "title": "Resolve crashing Sample Details page",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4675",
+      "title": "Improved sample test history section on patients page",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4638",
-      "title": "Disable View Linked Facility icon on users page",
+      "link": "https://github.com/coronasafe/care_fe/pull/4667",
+      "title": "Disable button when loading on Configure Assets page",
       "stale_for": 0,
       "labels": [
         "needs testing"
@@ -3501,41 +3552,45 @@
       "title": "Added max height limit on facility card",
       "stale_for": 0,
       "labels": [
-        "test failed"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/109",
       "title": "Updated linkedin URL",
-      "stale_for": 33,
+      "stale_for": 34,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 91,
+      "stale_for": 92,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 91,
+      "stale_for": 92,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/86",
       "title": "Added indentation at left of text in \"Currently Working on\" tab",
-      "stale_for": 99,
+      "stale_for": 100,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4637",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4638"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4620",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4621"
@@ -3639,10 +3694,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3664",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3665"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3661",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3662"
     }
   ]
 }

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1674584786.0,
+  "last_updated": 1674635881.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4627",
+      "time": 1674635881.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4627#issuecomment-1403261186",
+      "text": "yes color inversion was a solution proposed during EOD meet itself."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4652",
+      "time": 1674622500.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4652",
+      "text": "Tailwinds delete bed type and delete doctor type dialogs"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4626",
@@ -8546,30 +8560,22 @@
       "title": "Adds `RelativeTime` component",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4652",
-      "title": "Tailwinds delete bed type and delete doctor type dialogs",
-      "stale_for": 3,
-      "labels": [
-        "needs testing",
-        "cypress failed"
+        "work-in-progress",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4651",
       "title": "Set max limit for bed capacity occupied input",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4633",
       "title": "CareUI: Adds a higher-order `Form` component",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "cypress failed"
       ]
@@ -8579,8 +8585,9 @@
       "title": "Add state logo on login page and migrates envs to read from `/config.json`",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "merge conflict",
+        "tested",
+        "good to merge",
+        "discussion",
         "Major Code Change",
         "cypress failed"
       ]
@@ -8588,7 +8595,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4551",
       "title": "Doctor Specialisation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "cypress failed"
@@ -8597,7 +8604,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 99,
+      "stale_for": 100,
       "labels": [
         "merge conflict"
       ]
@@ -8607,6 +8614,18 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4648",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4650"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4647",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4652"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4646",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4652"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4645",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4652"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4624",
@@ -8683,14 +8702,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4404",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4421"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4402",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4422"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4374",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4388"
     }
   ]
 }

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1674459560.0,
+  "last_updated": 1674743912.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1165",
+      "time": 1674743912.0,
+      "link": "https://github.com/coronasafe/care/pull/1165",
+      "text": "fix: Error during creating new asset"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1164",
+      "time": 1674742425.0,
+      "link": "https://github.com/coronasafe/care/issues/1164",
+      "text": "Error during creating new asset"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4612",
@@ -6537,9 +6551,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1165",
+      "title": "fix: Error during creating new asset",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "done",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4603",
       "title": "fix: Minor UI fixes",
-      "stale_for": 6,
+      "stale_for": 2,
       "labels": [
         "test failed"
       ]
@@ -6547,15 +6571,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4495",
       "title": "Fix: create asset asking to select a facility when viewing asset of filtered facility",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "changes required"
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 76,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6564,7 +6588,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 37,
+      "stale_for": 40,
       "labels": [
         "needs testing",
         "Done",
@@ -6576,7 +6600,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 29,
+      "stale_for": 32,
       "labels": [
         "do-not-merge"
       ]
@@ -6584,7 +6608,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 33,
+      "stale_for": 36,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6593,7 +6617,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 78,
+      "stale_for": 81,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6602,7 +6626,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 78,
+      "stale_for": 81,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6611,7 +6635,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 67,
+      "stale_for": 70,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6620,7 +6644,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 214,
+      "stale_for": 217,
       "labels": [
         "waiting-for-review"
       ]

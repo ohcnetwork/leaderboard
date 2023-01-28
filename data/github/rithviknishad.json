@@ -1,6 +1,55 @@
 {
-  "last_updated": 1674635881.0,
+  "last_updated": 1674836105.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4551",
+      "time": 1674836105.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4551#issuecomment-1406716441",
+      "text": "@nihal467 i've fixed it, could you checck now"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4586",
+      "time": 1674828007.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4586",
+      "text": "CARE is blank forever randomly on initial load"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4586",
+      "time": 1674828007.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4586#issuecomment-1406545105",
+      "text": "fixed by 4908a8ba54605f200fbb2870d77a7fdf269bbc5b"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_deploy_configs#11",
+      "time": 1674823458.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
+      "text": "Removes `state_logo` for staging"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4686",
+      "time": 1674823373.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4686",
+      "text": "Removes state logo for staging deploy"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4685",
+      "time": 1674823264.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4685",
+      "text": "Remove state logo from staging and preview deploys"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4627",
+      "time": 1674814838.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4627",
+      "text": "Add state logo on login page and migrates envs to read from `/config.json`"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4627",
@@ -8556,9 +8605,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
+      "title": "Removes `state_logo` for staging",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4653",
       "title": "Adds `RelativeTime` component",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -8569,48 +8624,32 @@
       "title": "Set max limit for bed capacity occupied input",
       "stale_for": 0,
       "labels": [
-        "test failed"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4633",
       "title": "CareUI: Adds a higher-order `Form` component",
-      "stale_for": 7,
-      "labels": [
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4627",
-      "title": "Add state logo on login page and migrates envs to read from `/config.json`",
       "stale_for": 0,
       "labels": [
-        "tested",
-        "good to merge",
-        "discussion",
-        "Major Code Change",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4551",
-      "title": "Doctor Specialisation",
-      "stale_for": 1,
-      "labels": [
-        "test failed",
-        "cypress failed"
+        "work-in-progress",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 100,
+      "stale_for": 102,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4685",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4686"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4648",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4650"
@@ -8694,14 +8733,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4406",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4463"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4405",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4424"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4404",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4421"
     }
   ]
 }

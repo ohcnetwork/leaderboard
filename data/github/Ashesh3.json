@@ -1,6 +1,96 @@
 {
-  "last_updated": 1674567857.0,
+  "last_updated": 1675439459.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4691",
+      "time": 1675439459.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4691",
+      "text": "Localizations for texts in Hub"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4691",
+      "time": 1675439459.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4691",
+      "text": "Localizations for texts in Hub",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4689",
+      "time": 1675436902.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4689",
+      "text": "Localizations for texts in ErrorPages"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4689",
+      "time": 1675436902.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4689",
+      "text": "Localizations for texts in ErrorPages",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4688",
+      "time": 1675436686.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4688",
+      "text": "Localizations for texts in Shifting"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4483",
+      "time": 1675436133.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4483",
+      "text": "Localizations for texts in `Patient`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2536",
+      "time": 1675416399.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2536#issuecomment-1415459290",
+      "text": "Waiting for: https://github.com/coronasafe/care/pull/1175"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1175",
+      "time": 1675416226.0,
+      "link": "https://github.com/coronasafe/care/pull/1175",
+      "text": "Fix symptomatic_international_traveller crash"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675416056.0,
+      "title": "coronasafe/care_fe#4741",
+      "link": "https://github.com/coronasafe/care_fe/pull/4741#pullrequestreview-1282592985",
+      "text": "Improve Patient Record Found Dialog"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4741",
+      "time": 1675413104.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4741",
+      "text": "Improve Patient Record Found Dialog"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4690",
+      "time": 1675395504.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4690",
+      "text": "Localizations for texts in Notifications"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4716",
+      "time": 1675394103.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4716",
+      "text": "Improve DateRange to show end date picker after the start date is picked"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1163",
@@ -6053,33 +6143,41 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1163",
-      "title": "Refactor Symptoms",
+      "link": "https://github.com/coronasafe/care/pull/1175",
+      "title": "Fix symptomatic_international_traveller crash",
       "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4671",
-      "title": "Refactor Symptoms",
-      "stale_for": 0,
-      "labels": [
-        "waiting for back end"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4670",
-      "title": "Add additional review time options",
+      "link": "https://github.com/coronasafe/care_fe/pull/4741",
+      "title": "Improve Patient Record Found Dialog",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care/pull/1163",
+      "title": "Refactor Symptoms",
+      "stale_for": 3,
+      "labels": [
+        "ops-review-pending"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4671",
+      "title": "Refactor Symptoms",
+      "stale_for": 10,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 2,
+      "stale_for": 12,
       "labels": [
         "waiting-for-review"
       ]
@@ -6088,15 +6186,16 @@
       "link": "https://github.com/coronasafe/care_fe/pull/4642",
       "title": "Add facility filter to Users page and redirect facility users to this",
       "stale_for": 4,
-      "labels": []
+      "labels": [
+        "hold"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2536",
       "title": "Fix inconsistent type of visited countries attribute",
       "stale_for": 0,
       "labels": [
-        "work-in-progress",
-        "merge conflict"
+        "waiting for back end"
       ]
     }
   ],
@@ -6192,10 +6291,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3179",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3186"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3164",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3165"
     }
   ]
 }

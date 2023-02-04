@@ -1,6 +1,44 @@
 {
-  "last_updated": 1674640943.0,
+  "last_updated": 1675449551.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4745",
+      "time": 1675449551.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4745",
+      "text": "Revamp Upload Audio file component"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4732",
+      "time": 1675410728.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4732",
+      "text": "Medicine tab of Patient Consultation is crashing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4732",
+      "time": 1675410727.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4732#issuecomment-1415264048",
+      "text": "Fixed in #4725 "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4712",
+      "time": 1675393613.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4712",
+      "text": "Removed MUI buttons from VoiceRecorder component"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4712",
+      "time": 1675393613.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4712",
+      "text": "Removed MUI buttons from VoiceRecorder component",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4677",
@@ -3523,18 +3561,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4677",
-      "title": "Resolve crashing Sample Details page",
+      "link": "https://github.com/coronasafe/care_fe/pull/4745",
+      "title": "Revamp Upload Audio file component",
       "stale_for": 0,
       "labels": [
-        "urgent",
-        "needs testing"
+        "work-in-progress"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4675",
-      "title": "Improved sample test history section on patients page",
-      "stale_for": 0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4738",
+      "title": "Added Total Doctors Count card on Facility home page",
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -3544,49 +3581,54 @@
       "title": "Disable button when loading on Configure Assets page",
       "stale_for": 0,
       "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4632",
-      "title": "Added max height limit on facility card",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
+        "need Review",
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 6,
+      "stale_for": 15,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/109",
       "title": "Updated linkedin URL",
-      "stale_for": 34,
+      "stale_for": 43,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 92,
+      "stale_for": 101,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 92,
+      "stale_for": 101,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/86",
       "title": "Added indentation at left of text in \"Currently Working on\" tab",
-      "stale_for": 100,
+      "stale_for": 109,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4711",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4712"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4676",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4677"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4674",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4675"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4637",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4638"
@@ -3674,26 +3716,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3836",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3837"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_dashboard/issues/25",
-      "pr_link": "https://github.com/coronasafe/care_dashboard/pull/26"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/leaderboard/issues/91",
-      "pr_link": "https://github.com/coronasafe/leaderboard/pull/92"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3703",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3704"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3684",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3685"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3664",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3665"
     }
   ]
 }

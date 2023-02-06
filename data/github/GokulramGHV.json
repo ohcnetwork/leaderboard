@@ -1,6 +1,20 @@
 {
-  "last_updated": 1675394570.0,
+  "last_updated": 1675612744.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4766",
+      "time": 1675612744.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4766",
+      "text": "Removed excess padding in total patients card"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4765",
+      "time": 1675610784.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4765",
+      "text": "Fixed facility cover photo"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4639",
@@ -1575,9 +1589,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4766",
+      "title": "Removed excess padding in total patients card",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4765",
+      "title": "Fixed facility cover photo",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4584",
       "title": "Added Page Component to make padding across pages to be consistent",
-      "stale_for": 11,
+      "stale_for": 13,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -1586,9 +1616,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 18,
+      "stale_for": 0,
       "labels": [
         "merge conflict",
+        "stale",
         "cypress failed"
       ]
     }

@@ -1,6 +1,69 @@
 {
-  "last_updated": 1675439460.0,
+  "last_updated": 1675616308.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4763",
+      "time": 1675616308.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4763",
+      "text": "Disable Skill Add button for all user below the district admin"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675616289.0,
+      "title": "coronasafe/care_fe#4767",
+      "link": "https://github.com/coronasafe/care_fe/pull/4767#pullrequestreview-1284288269",
+      "text": "Restrict Add skills button to DistrictAdmin"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1176",
+      "time": 1675612653.0,
+      "link": "https://github.com/coronasafe/care/pull/1176#issuecomment-1418079638",
+      "text": "@vigneshhari we don't actually give any API for the users to add any skills, This is the first time we are adding skills, will this still be a problem?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1178",
+      "time": 1675612101.0,
+      "link": "https://github.com/coronasafe/care/pull/1178",
+      "text": "Fixed get_users for users below district admins"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4752",
+      "time": 1675611520.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4752",
+      "text": "Error Popping-up in Linked facility sidebar"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675611505.0,
+      "title": "coronasafe/care_fe#4759",
+      "link": "https://github.com/coronasafe/care_fe/pull/4759#pullrequestreview-1284250435",
+      "text": "Fix error message when loading linked facilities"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1178",
+      "time": 1675611303.0,
+      "link": "https://github.com/coronasafe/care/pull/1178",
+      "text": "Fixed get_users for users below district admins"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4760",
+      "time": 1675606994.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4760",
+      "text": "Doctor connect is not working "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4760",
+      "time": 1675606993.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4760#issuecomment-1417962416",
+      "text": "The users are not showing up in the doctor connect as they don't have whatsapp number (alternate_phone_number) mentioned.\r\n\r\nAs this is an expected feature, closing this issue. A thought to improve UX, maybe we can also show the users without alternate number disabled and grayed out sorted to the end of the list\r\n\r\ncc: @nihal467 @aparnacoronasafe "
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4481",
@@ -13174,13 +13237,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 56,
+      "stale_for": 58,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 12,
+      "stale_for": 14,
       "labels": [
         "waiting-for-review"
       ]
@@ -13188,7 +13251,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4070",
       "title": "Fix no notification on hard refresh",
-      "stale_for": 29,
+      "stale_for": 31,
       "labels": [
         "work-in-progress",
         "waiting for update",
@@ -13198,7 +13261,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 56,
+      "stale_for": 58,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -13208,7 +13271,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 85,
+      "stale_for": 87,
       "labels": [
         "waiting-for-review"
       ]
@@ -13216,25 +13279,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 413,
+      "stale_for": 415,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 419,
+      "stale_for": 421,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 420,
+      "stale_for": 422,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 615,
+      "stale_for": 617,
       "labels": []
     }
   ],

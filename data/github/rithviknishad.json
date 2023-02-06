@@ -1,6 +1,41 @@
 {
-  "last_updated": 1675439401.0,
+  "last_updated": 1675598941.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1675598941.0,
+      "title": "coronasafe/care_fe#4757",
+      "link": "https://github.com/coronasafe/care_fe/pull/4757#pullrequestreview-1284193983",
+      "text": "Added required for email in user update with validation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675591052.0,
+      "title": "coronasafe/care_fe#4426",
+      "link": "https://github.com/coronasafe/care_fe/pull/4426#pullrequestreview-1284176611",
+      "text": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Daily Rounds component"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4750",
+      "time": 1675565039.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4750",
+      "text": "setup warnings for literals with i18next and errors to validate locale keys"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4749",
+      "time": 1675563764.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4749#issuecomment-1416903715",
+      "text": "#### Reasons for not going with rule `eslint-plugin-react/jsx-no-literals` solution:\r\n- Does not allow control over which props should be included or excluded from linting\r\n\r\nExample:\r\n\r\n```jsx\r\n// ignoreProps: true\r\n<TextFormField\r\n   ...\r\n   label=\"Full Name\" // no warning\r\n/>\r\n```\r\n\r\n```jsx\r\n// ignoreProps: false\r\n<TextFormField\r\n   ...\r\n   className=\"mt-2\" // warns about props that doesn't make sense for i18\r\n/>\r\n```\r\n\r\n#### [`edvardchen/eslint-plugin-i18next`](https://github.com/edvardchen/eslint-plugin-i18next) allows us to achieve this by setting with:\r\n```json\r\n\"i18next/no-literal-string\": [\r\n  \"warn\",\r\n  {\r\n    \"mode\": \"all\",\r\n    \"jsx-attributes\": {\r\n      \"include\": [\"label\", \"placeholder\", \"error\", \"title\"],\r\n      \"exclude\": [\".*\"]\r\n    }\r\n  }\r\n]\r\n```"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4749",
+      "time": 1675560667.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4749",
+      "text": "Setup eslint plugins to aid in handling localizations"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4744",
@@ -8797,25 +8832,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4740",
-      "title": "Fix facility create page responsiveness and adds `RadioFormField` component",
+      "link": "https://github.com/coronasafe/care_fe/pull/4750",
+      "title": "ESLint: warnings for string literals that aren't translated, errors for invalid locale keys",
       "stale_for": 0,
       "labels": [
         "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1174",
-      "title": "Update Patient CSV Export",
-      "stale_for": 1,
+      "link": "https://github.com/coronasafe/care_fe/pull/4740",
+      "title": "Fix facility create page responsiveness and adds `RadioFormField` component",
+      "stale_for": 2,
       "labels": [
-        "waiting-for-review"
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4726",
       "title": "Created by Virtual Nursing Assistant",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "cypress failed"
       ]
@@ -8823,13 +8858,13 @@
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4653",
       "title": "Adds `RelativeTime` component",
-      "stale_for": 9,
+      "stale_for": 11,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -8838,7 +8873,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 109,
+      "stale_for": 111,
       "labels": [
         "merge conflict"
       ]

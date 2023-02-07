@@ -25,7 +25,7 @@ jobs:
           command: python scraper/src/github.py coronasafe data/github -l DEBUG
           on_retry_command: git checkout . # to discard any changes made before retrying
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
 
       - name: run slack scraper
         run: python scraper/src/slack.py --lookback_days=2

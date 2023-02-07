@@ -1,6 +1,32 @@
 {
-  "last_updated": 1675394029.0,
+  "last_updated": 1675688043.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4776",
+      "time": 1675688043.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4776",
+      "text": "fix: Show Reason for discharge on patient dashboard"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4769",
+      "time": 1675642436.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4769",
+      "text": "Production Release; Fed Week 1",
+      "collaborated_with": [
+        "rithviknishad",
+        "siddnikh",
+        "skks1212",
+        "patelaryan7751",
+        "siva-balan",
+        "Ashesh3",
+        "Pranshu1902",
+        "GokulramGHV",
+        "khavinshankar",
+        "Pragati1610"
+      ]
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4603",
@@ -6558,9 +6584,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4776",
+      "title": "fix: Show Reason for discharge on patient dashboard",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 5,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6571,14 +6607,13 @@
       "title": "Fix: create asset asking to select a facility when viewing asset of filtered facility",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "Deploy-Failed"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 8,
+      "stale_for": 11,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6587,11 +6622,12 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 48,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "Done",
         "waiting for back end",
+        "discussion",
         "merge conflict",
         "Major Code Change"
       ]
@@ -6599,7 +6635,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 40,
+      "stale_for": 43,
       "labels": [
         "do-not-merge"
       ]
@@ -6607,7 +6643,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 44,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6616,7 +6652,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 89,
+      "stale_for": 92,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6625,7 +6661,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 89,
+      "stale_for": 92,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6634,7 +6670,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 78,
+      "stale_for": 81,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6643,7 +6679,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 225,
+      "stale_for": 228,
       "labels": [
         "waiting-for-review"
       ]

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1674429010.0,
+  "last_updated": 1675683616.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4005",
+      "time": 1675683616.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4005#issuecomment-1418946408",
+      "text": "Closing this, a new PR will be created with different branch"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4236",
+      "time": 1675683241.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4236#issuecomment-1418939386",
+      "text": "@GokulramGHV Any updates?"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4659",
@@ -1333,21 +1347,24 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4236",
-      "title": "Fix(cypress): Patient spec test",
-      "stale_for": 13,
+      "link": "https://github.com/coronasafe/care_fe/pull/4748",
+      "title": "Camera Feed: Optimize for mobile usage",
+      "stale_for": 2,
       "labels": [
-        "work-in-progress",
-        "merge conflict",
+        "needs testing",
         "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4005",
-      "title": "Hub Camera Monitoring Screen",
-      "stale_for": 7,
+      "link": "https://github.com/coronasafe/care_fe/pull/4236",
+      "title": "Fix(cypress): Patient spec test",
+      "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "work-in-progress",
+        "waiting for back end",
+        "merge conflict",
+        "stale",
+        "cypress failed"
       ]
     }
   ],

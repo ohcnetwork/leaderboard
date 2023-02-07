@@ -1,6 +1,87 @@
 {
-  "last_updated": 1675598941.0,
+  "last_updated": 1675692537.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1675692537.0,
+      "title": "coronasafe/care_fe#4771",
+      "link": "https://github.com/coronasafe/care_fe/pull/4771#pullrequestreview-1285258867",
+      "text": "Made the user add button consistent with others"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3995",
+      "time": 1675691880.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3995#issuecomment-1419123486",
+      "text": "@skks1212 shall I proceed with wrapping with Slideover for Advanced Filters without waiting for the schema-based filters thing? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3995",
+      "time": 1675691541.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3995#issuecomment-1419115807",
+      "text": "@nihal467 the related PR had been broken down into smaller PRs. Few of them are complete, filters are pending."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4774",
+      "time": 1675683053.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4774",
+      "text": "preserve query params in `useLocationHistory`'s history stack"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4773",
+      "time": 1675682735.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4773#issuecomment-1418929210",
+      "text": "An issue because useLocationChange's fullPath didn't preserve query params"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675669137.0,
+      "title": "coronasafe/care_fe#4771",
+      "link": "https://github.com/coronasafe/care_fe/pull/4771#pullrequestreview-1284677983",
+      "text": "Made the user add button consistent with others"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675662175.0,
+      "title": "coronasafe/care_fe#4757",
+      "link": "https://github.com/coronasafe/care_fe/pull/4757#pullrequestreview-1284576529",
+      "text": "Added required for email in user update with validation"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1179",
+      "time": 1675642443.0,
+      "link": "https://github.com/coronasafe/care/pull/1179",
+      "text": "Production Release; Fed Week 1",
+      "collaborated_with": [
+        "khavinshankar",
+        "skks1212",
+        "mathew-alex",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4769",
+      "time": 1675642436.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4769",
+      "text": "Production Release; Fed Week 1",
+      "collaborated_with": [
+        "siddnikh",
+        "skks1212",
+        "patelaryan7751",
+        "siva-balan",
+        "Ashesh3",
+        "Pranshu1902",
+        "GokulramGHV",
+        "khavinshankar",
+        "Pragati1610",
+        "cp-Coder"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1675598941.0,
@@ -8832,9 +8913,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4774",
+      "title": "preserve query params in `useLocationHistory`'s history stack",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4750",
       "title": "ESLint: warnings for string literals that aren't translated, errors for invalid locale keys",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "cypress failed"
       ]
@@ -8842,7 +8933,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4740",
       "title": "Fix facility create page responsiveness and adds `RadioFormField` component",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -8850,7 +8941,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4726",
       "title": "Created by Virtual Nursing Assistant",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "cypress failed"
       ]
@@ -8858,13 +8949,13 @@
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4653",
       "title": "Adds `RelativeTime` component",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -8873,7 +8964,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 111,
+      "stale_for": 112,
       "labels": [
         "merge conflict"
       ]

@@ -308,8 +308,14 @@ class GitHubScraper:
         self.fetch_events(1)
         self.log.info(f"Scraping open pull requests for {len(self.data)} users")
         for user in self.data.keys():
-            self.fetch_merge_events(user)
-            self.fetch_open_pulls(user)
+            try:
+                self.fetch_merge_events(user)
+            except Exception as e:
+                self.log.error(f"Error fetching merge events for {user}: {e}")
+            try:
+                self.fetch_open_pulls(user)
+            except Exception as e:
+                self.log.error(f"Error fetching open pulls for {user}: {e}")
         self.log.info(f"Scraped {self.org}")
         return self.data
 

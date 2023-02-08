@@ -1,6 +1,76 @@
 {
-  "last_updated": 1675642443.0,
+  "last_updated": 1675787224.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1160",
+      "time": 1675787224.0,
+      "link": "https://github.com/coronasafe/care/pull/1160#issuecomment-1421057899",
+      "text": "> @Ashesh3 if we already have a page then lets not work on this now; I think I missed that part during the call.\r\n> \r\n> I was thinking you where creating a new page just to get around this filter issue.\r\n\r\nYep, we already have a separate page just to show Facility users. The issue was to remove that separate page and move it into the Users page."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1160",
+      "time": 1675786669.0,
+      "link": "https://github.com/coronasafe/care/pull/1160#issuecomment-1421042839",
+      "text": "@vigneshhari We already have a separate component for showing facility users. An issue was made to move it within the Users page. I discussed this with @gigincg and @bodhish and they are willing to go ahead with adding facility filter support to the Users page so we can shift our Facility Users page to Users page. Can we reevaluate this PR?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1181",
+      "time": 1675785101.0,
+      "link": "https://github.com/coronasafe/care/pull/1181",
+      "text": "Migration for new Symptoms"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4741",
+      "time": 1675779242.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4741#issuecomment-1420843885",
+      "text": "> @Ashesh3 could you try setting `accent-[color]` class?\r\n\r\nDidn't have any effect here, but `text-[color]` worked."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4741",
+      "time": 1675779155.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4741#issuecomment-1420841484",
+      "text": "Fixed:\r\n![SecondhandAmbushbug](https://user-images.githubusercontent.com/3626859/217268224-a37ea224-4fb7-4a90-86c7-3e72d9a01186.gif)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4784",
+      "time": 1675778081.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4784#issuecomment-1420813507",
+      "text": "Waiting for https://github.com/coronasafe/care/pull/1181"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1181",
+      "time": 1675777866.0,
+      "link": "https://github.com/coronasafe/care/pull/1181",
+      "text": "Migration for new Symptoms"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4671",
+      "time": 1675776522.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4671",
+      "text": "Refactor Symptoms"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4784",
+      "time": 1675766537.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4784",
+      "text": "Add updated symptopms to DailyRound"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4782",
+      "time": 1675764893.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4782",
+      "text": "Add hover effect to Cancel button in Advanced Filters"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1179",
@@ -6210,15 +6280,33 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4784",
+      "title": "Add updated symptopms to DailyRound",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4782",
+      "title": "Add hover effect to Cancel button in Advanced Filters",
+      "stale_for": 0,
+      "labels": [
+        "changes required"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/10bedicu/pull/62",
       "title": "Fix Duplicate YouTube Video Placement and Add Support for Multiple Links",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4746",
       "title": "Localizations for texts in ExternalResult",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
@@ -6226,15 +6314,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4741",
       "title": "Improve Patient Record Found Dialog",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4671",
-      "title": "Refactor Symptoms",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
@@ -6242,7 +6322,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 15,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -6252,14 +6332,13 @@
       "title": "Add facility filter to Users page and redirect facility users to this",
       "stale_for": 0,
       "labels": [
-        "hold",
-        "stale"
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/2536",
       "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested"
       ]

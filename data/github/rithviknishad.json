@@ -1,6 +1,86 @@
 {
-  "last_updated": 1675792152.0,
+  "last_updated": 1675874991.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1183",
+      "time": 1675874991.0,
+      "link": "https://github.com/coronasafe/care/pull/1183",
+      "text": "Update datetime format to `DD/MM/YYYY HH:mm` for Patient CSV Export"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675865965.0,
+      "title": "coronasafe/care_fe#4765",
+      "link": "https://github.com/coronasafe/care_fe/pull/4765#pullrequestreview-1289274974",
+      "text": "Fixed facility cover photo"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675865965.0,
+      "title": "coronasafe/care_fe#4765",
+      "link": "https://github.com/coronasafe/care_fe/pull/4765#pullrequestreview-1289274974",
+      "text": "Fixed facility cover photo"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675862641.0,
+      "title": "coronasafe/care_fe#4495",
+      "link": "https://github.com/coronasafe/care_fe/pull/4495#pullrequestreview-1289173100",
+      "text": "Fix: create asset asking to select a facility when viewing asset of filtered facility"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4741",
+      "time": 1675862211.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4741",
+      "text": "Improve Patient Record Found Dialog",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4774",
+      "time": 1675862144.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4774",
+      "text": "preserve query params in `useLocationHistory`'s history stack"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1183",
+      "time": 1675855975.0,
+      "link": "https://github.com/coronasafe/care/pull/1183",
+      "text": "Update datetime format to `DD/MM/YYYY HH:mm` for Patient CSV Export"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675847970.0,
+      "title": "coronasafe/care_fe#3637",
+      "link": "https://github.com/coronasafe/care_fe/pull/3637#pullrequestreview-1288765584",
+      "text": "fix: parent url when clicking back icon"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675846649.0,
+      "title": "coronasafe/care_fe#4788",
+      "link": "https://github.com/coronasafe/care_fe/pull/4788#pullrequestreview-1288727730",
+      "text": "Consistent UI for filters across all pages"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1182",
+      "time": 1675844027.0,
+      "link": "https://github.com/coronasafe/care/issues/1182",
+      "text": "Fix date format for patient csv exports"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4709",
+      "time": 1675842715.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4709#issuecomment-1422175857",
+      "text": "@aparnacoronasafe shall I proceed with making it `DD/MM/YYY` or is there any specific format you want me to follow for the dates?"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/leaderboard#114",
@@ -9067,19 +9147,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4774",
-      "title": "preserve query params in `useLocationHistory`'s history stack",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "P1",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4750",
       "title": "ESLint: warnings for string literals that aren't translated, errors for invalid locale keys",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -9096,7 +9166,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4726",
       "title": "Virtual Nursing Assistant Log Update Card for Automated Daily Rounds",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "redesign",
@@ -9106,28 +9176,31 @@
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4653",
       "title": "Adds `RelativeTime` component",
-      "stale_for": 13,
+      "stale_for": 0,
       "labels": [
-        "work-in-progress",
-        "merge conflict"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 113,
+      "stale_for": 114,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1182",
+      "pr_link": "https://github.com/coronasafe/care/pull/1183"
+    },
     {
       "issue_link": "https://github.com/coronasafe/leaderboard/issues/111",
       "pr_link": "https://github.com/coronasafe/leaderboard/pull/112"

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1675784938.0,
+  "last_updated": 1675862171.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4766",
+      "time": 1675862171.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4766",
+      "text": "Removed excess padding in total patients card"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1180",
@@ -1636,26 +1643,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4766",
-      "title": "Removed excess padding in total patients card",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4765",
       "title": "Fixed facility cover photo",
       "stale_for": 0,
       "labels": [
-        "question",
-        "needs testing"
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting for back end",
         "cypress failed"

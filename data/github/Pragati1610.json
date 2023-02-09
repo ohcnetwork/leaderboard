@@ -1,6 +1,20 @@
 {
-  "last_updated": 1675642436.0,
+  "last_updated": 1675863048.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3307",
+      "time": 1675863048.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3307",
+      "text": "fix: remove raw css file import from .res files in critical care recording"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675840846.0,
+      "title": "coronasafe/care_fe#3307",
+      "link": "https://github.com/coronasafe/care_fe/pull/3307#pullrequestreview-1288599616",
+      "text": "fix: remove raw css file import from .res files in critical care recording"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4769",
@@ -945,30 +959,16 @@
       "title": "fix: parent url when clicking back icon",
       "stale_for": 0,
       "labels": [
+        "needs testing",
         "need Review",
-        "test failed",
-        "P2",
-        "Deploy-Failed",
-        "merge conflict",
-        "stale"
+        "P2"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/59",
       "title": "feat: authorization middleware for MSE server",
-      "stale_for": 73,
+      "stale_for": 75,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/3307",
-      "title": "fix: remove raw css file import from .res files in critical care recording",
-      "stale_for": 0,
-      "labels": [
-        "changes required",
-        "P2",
-        "Deploy-Failed",
-        "stale"
-      ]
     }
   ],
   "authored_issue_and_pr": [

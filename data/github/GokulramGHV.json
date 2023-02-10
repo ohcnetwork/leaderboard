@@ -1,6 +1,20 @@
 {
-  "last_updated": 1675862171.0,
+  "last_updated": 1675950467.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4796",
+      "time": 1675950467.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4796",
+      "text": "Added Page Component to make padding across pages to be consistent"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675944840.0,
+      "title": "coronasafe/care_fe#4765",
+      "link": "https://github.com/coronasafe/care_fe/pull/4765#pullrequestreview-1291008566",
+      "text": "Fixed facility cover photo"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4766",
@@ -1643,6 +1657,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4796",
+      "title": "Added Page Component to make padding across pages to be consistent",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4765",
       "title": "Fixed facility cover photo",
       "stale_for": 0,
@@ -1653,7 +1675,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting for back end",
         "cypress failed"

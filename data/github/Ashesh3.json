@@ -1,6 +1,27 @@
 {
-  "last_updated": 1675868915.0,
+  "last_updated": 1675935474.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#2536",
+      "time": 1675935474.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2536",
+      "text": "Fix inconsistent type of visited countries attribute"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4782",
+      "time": 1675931535.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4782#issuecomment-1423814224",
+      "text": "> Preserve white bg for default variant\r\n\r\nDone!\r\n\r\n![GenerousFantail](https://user-images.githubusercontent.com/3626859/217758533-87aca033-a925-4ac1-a8b5-d24bcf89a542.gif)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2536",
+      "time": 1675929564.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/2536#issuecomment-1423778319",
+      "text": "> @Ashesh3 initially we were using string and later we changed it to an array, so is that factored in?\r\n\r\nYes, that is factored in at both backend and frontend. It's strictly to array only now. (Backend PR merged already)"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3479",
@@ -6320,21 +6341,21 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4782",
       "title": "Add hover effect to Cancel button in Advanced Filters",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "changes required"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/10bedicu/pull/62",
       "title": "Fix Duplicate YouTube Video Placement and Add Support for Multiple Links",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -6342,18 +6363,9 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4642",
       "title": "Add facility filter to Users page and redirect facility users to this",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "work-in-progress"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/2536",
-      "title": "Fix inconsistent type of visited countries attribute",
-      "stale_for": 0,
-      "labels": [
-        "question",
-        "tested"
       ]
     }
   ],

@@ -1,6 +1,323 @@
 {
-  "last_updated": 1665955501.0,
+  "last_updated": 1673532756.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4067",
+      "time": 1673532756.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4067#issuecomment-1380414686",
+      "text": "I am yet to work on this, if anyone else wants they can pickup this issue, sry for the delay"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4453",
+      "time": 1672574259.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4453",
+      "text": "Production Release; Dec Week 5",
+      "collaborated_with": [
+        "Ashesh3",
+        "mathew-alex",
+        "naman114",
+        "Pranshu1902",
+        "khavinshankar",
+        "rithviknishad",
+        "patelaryan7751",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4400",
+      "time": 1672207603.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4400",
+      "text": "scroll to top on page change"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4409",
+      "time": 1672010594.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4409",
+      "text": "Production Release; Dec Week 4",
+      "collaborated_with": [
+        "Ashesh3",
+        "Pranshu1902",
+        "rithviknishad",
+        "naman114",
+        "khavinshankar",
+        "patelaryan7751"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4400",
+      "time": 1671877756.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4400",
+      "text": "scroll to top on page change"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4381",
+      "time": 1671710021.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4381",
+      "text": "hide x overflow in sidebar"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4381",
+      "time": 1671617322.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4381",
+      "text": "hide x overflow in sidebar"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#98",
+      "time": 1671612313.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/98#issuecomment-1361018867",
+      "text": "> @Ritesh-Aggarwal can we do this sorting inside getStaticProps()?\r\n> \r\n> The order wouldn't change for a given day right, so let the server side do the computation and keep the client-side light.\r\n\r\nI don't think that would improve performance as we have sorting/filtering parameters like show/hide core members, and many more in client side, so we need to have this logic in client side itself.\r\nIf we pre-calculate all the sorted arrays for every condition it may increase the size of page and nextjs recommends only passing required data in `getStaticProps()`\r\nhttps://nextjs.org/docs/messages/large-page-data"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4341",
+      "time": 1671362072.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4341",
+      "text": "x-scrollbar visible in sidebar"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4340",
+      "time": 1671358336.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4340",
+      "text": "Sidebar tooltip not visible"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard#100",
+      "time": 1669463995.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/100",
+      "text": "Preview images for links"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4075",
+      "time": 1668767136.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4075",
+      "text": "make buttons stick to bottom on facilities page"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_dashboard#41",
+      "time": 1668661028.0,
+      "link": "https://github.com/coronasafe/care_dashboard/pull/41",
+      "text": "Datepicker wrapped with `Popover` + ability to select year",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4019",
+      "time": 1668602883.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4019",
+      "text": "use tailwind buttons and make btns responsive"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4019",
+      "time": 1668602883.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4019",
+      "text": "use tailwind buttons and make btns responsive",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4052",
+      "time": 1668367245.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4052",
+      "text": "Production Release; Nov Week 2",
+      "collaborated_with": [
+        "rithviknishad",
+        "skks1212",
+        "Ashesh3",
+        "patelaryan7751",
+        "khavinshankar",
+        "cp-Coder",
+        "siddnikh"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_dashboard#41",
+      "time": 1668272386.0,
+      "link": "https://github.com/coronasafe/care_dashboard/pull/41#issuecomment-1312527374",
+      "text": "@developedBySJ Hey can you please merge this PR"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3477",
+      "time": 1668163764.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3477#issuecomment-1311538052",
+      "text": "Hey @khavinshankar , what the status on this issue, can I work on this?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4021",
+      "time": 1668093097.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4021",
+      "text": "add link to issue in pr template"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4021",
+      "time": 1668072872.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4021",
+      "text": "add link to issue in pr template"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4020",
+      "time": 1668072841.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4020",
+      "text": "Add link to issue in pr template"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4019",
+      "time": 1668072146.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4019",
+      "text": "use tailwind buttons and make btns responsive"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3948",
+      "time": 1668008497.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3948",
+      "text": "Scroll to top when add more assets is clicked"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667995282.0,
+      "title": "coronasafe/care_fe#3993",
+      "link": "https://github.com/coronasafe/care_fe/pull/3993#pullrequestreview-1173905031",
+      "text": "`useActiveLink` hook for detecting sidebar selected or not."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3175",
+      "time": 1667981039.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3175#issuecomment-1308359382",
+      "text": "Hey @patelaryan7751 , why was this PR closed, Is there any other PR fixing #3148 ? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3175",
+      "time": 1667980859.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3175#issuecomment-1308355944",
+      "text": "Hey @patelaryan7751, why was this PR closed , Is issue #3148 completed by some other PR? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3975",
+      "time": 1667900432.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3975#issuecomment-1306915528",
+      "text": "This issue is fixed in #3948 .\r\nhttps://deploy-preview-3948--care-egov-staging.netlify.app/facility/c4911f55-d4f7-4b36-bbcb-9b115d1bfe2c/patient/88986c19-3ab5-4820-b35d-7b7d95ac4f00"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#3989",
+      "time": 1667811837.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3989",
+      "text": "Production Release; Nov Week 1",
+      "collaborated_with": [
+        "ishanExtreme",
+        "cp-Coder",
+        "khavinshankar",
+        "patelaryan7751",
+        "skks1212",
+        "rithviknishad",
+        "Pranshu1902",
+        "rabilrbl",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3948",
+      "time": 1667552855.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3948",
+      "text": "Scroll to top when add more assets is clicked"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#100",
+      "time": 1667391539.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/100#issuecomment-1300263643",
+      "text": "<img width=\"570\" alt=\"image\" src=\"https://user-images.githubusercontent.com/57039447/199487890-1042ee47-8355-4780-a86f-78f57b5e3f1a.png\">\r\n\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#100",
+      "time": 1667388304.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/100",
+      "text": "Preview images for links"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#3909",
+      "time": 1667299739.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3909",
+      "text": "update notification card UI"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#3823",
+      "time": 1666784614.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3823",
+      "text": "Remove history of present illness card from medicine tab"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#99",
+      "time": 1666773101.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/99",
+      "text": "Preview link image"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#98",
+      "time": 1666447577.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/98",
+      "text": "sort by points if category points same"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_dashboard#41",
+      "time": 1666334483.0,
+      "link": "https://github.com/coronasafe/care_dashboard/pull/41#issuecomment-1286525975",
+      "text": "<img width=\"296\" alt=\"image\" src=\"https://user-images.githubusercontent.com/57039447/197129729-264253d5-689a-4e50-a7cc-b3c18c9bd8ab.png\">\r\n\r\n<img width=\"300\" alt=\"image\" src=\"https://user-images.githubusercontent.com/57039447/197129802-39e4c070-60c0-46be-80ba-5987622fbfc9.png\">\r\n\r\nThis PR also adds year select in datepicker"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3784",
+      "time": 1666188423.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3784#issuecomment-1284076919",
+      "text": "fixed by #3744 "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#96",
+      "time": 1666184807.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/96",
+      "text": "discrepancy in top contributors data"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666183019.0,
+      "title": "coronasafe/care_dashboard#41",
+      "link": "https://github.com/coronasafe/care_dashboard/pull/41#pullrequestreview-1147476132",
+      "text": "Make datepicker a popover component to fix closing on focus lost"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#3766",
@@ -897,30 +1214,45 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/leaderboard/pull/98",
+      "title": "sort by points if category points same",
+      "stale_for": 21,
+      "labels": [
+        "good to merge"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/970",
       "title": "api - update role of user",
-      "stale_for": 48,
+      "stale_for": 136,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/39",
       "title": "change leaderboard week dates dynamically",
-      "stale_for": 0,
-      "labels": [
-        "changes required",
-        "merge conflict"
-      ]
+      "stale_for": 86,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/37",
       "title": "Leaderboard history page",
-      "stale_for": 0,
-      "labels": [
-        "merge conflict"
-      ]
+      "stale_for": 86,
+      "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4341",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4381"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4020",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4021"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/leaderboard/issues/99",
+      "pr_link": "https://github.com/coronasafe/leaderboard/pull/100"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_dashboard/issues/38",
       "pr_link": "https://github.com/coronasafe/care_dashboard/pull/39"

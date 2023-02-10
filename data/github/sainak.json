@@ -1,6 +1,130 @@
 {
-  "last_updated": 1665346577.0,
+  "last_updated": 1673594407.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1156",
+      "time": 1673594407.0,
+      "link": "https://github.com/coronasafe/care/pull/1156",
+      "text": "Production Release; Assam lsg data update",
+      "collaborated_with": [
+        "vigneshhari",
+        "mathew-alex",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1144",
+      "time": 1673533921.0,
+      "link": "https://github.com/coronasafe/care/pull/1144",
+      "text": "Use configured middleware address for middleware authentication"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1144",
+      "time": 1673520059.0,
+      "link": "https://github.com/coronasafe/care/pull/1144#issuecomment-1380134129",
+      "text": "> Are we no longer pointing to local if a middleware address is not present?\r\n\r\nThis change would give more info to the admin about whats going wrong.\r\nwe were pointing it to local for testing, we can still set the value to localhost in the configurations"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1144",
+      "time": 1672915963.0,
+      "link": "https://github.com/coronasafe/care/pull/1144",
+      "text": "Use configured middleware address for middleware authentication"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2759",
+      "time": 1670939895.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2759#issuecomment-1348622293",
+      "text": "@aparnacoronasafe @gigincg is this still needed?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1107",
+      "time": 1670939061.0,
+      "link": "https://github.com/coronasafe/care/issues/1107",
+      "text": "Endpoint for pin code details"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1107",
+      "time": 1670937329.0,
+      "link": "https://github.com/coronasafe/care/issues/1107#issuecomment-1348519980",
+      "text": "I think this is what you are looking for:\r\n```shell\r\ncurl -X 'GET' \\\r\n  'https://api.data.gov.in/resource/5c2f62fe-5afa-4119-a499-fec9d604d5bd?api-key=579b464db66ec23bdd00000115f15ab447b749065c58768a487d76bb&format=json&filters%5Bpincode%5D=400001' \\\r\n  -H 'accept: application/json'\r\n```\r\nref: https://data.gov.in/apis/5c2f62fe-5afa-4119-a499-fec9d604d5bd\r\nthe public api key is good for upto 10 records per request so we can directly use this in the frontend"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1113",
+      "time": 1670159838.0,
+      "link": "https://github.com/coronasafe/care/issues/1113",
+      "text": "Stale label for issues and PRs"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1113",
+      "time": 1670159838.0,
+      "link": "https://github.com/coronasafe/care/issues/1113#issuecomment-1336409677",
+      "text": "done https://github.com/coronasafe/care/labels/stale"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/qr-generator#7",
+      "time": 1669315878.0,
+      "link": "https://github.com/coronasafe/qr-generator/pull/7",
+      "text": "Convert to vite \u26a1"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669222241.0,
+      "title": "coronasafe/qr-generator#7",
+      "link": "https://github.com/coronasafe/qr-generator/pull/7#pullrequestreview-1192000664",
+      "text": "Convert to vite \u26a1"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/qr-generator#7",
+      "time": 1668536187.0,
+      "link": "https://github.com/coronasafe/qr-generator/pull/7#issuecomment-1315696347",
+      "text": "It became so fast that we are skipping some images"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/qr-generator#7",
+      "time": 1668534863.0,
+      "link": "https://github.com/coronasafe/qr-generator/pull/7",
+      "text": "Convert to vite \u26a1"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1091",
+      "time": 1668343600.0,
+      "link": "https://github.com/coronasafe/care/pull/1091#issuecomment-1312722833",
+      "text": "@khavinshankar please make sure the lint checks are passing"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668343316.0,
+      "title": "coronasafe/care#1097",
+      "link": "https://github.com/coronasafe/care/pull/1097#pullrequestreview-1178235270",
+      "text": "check_availability api will also consider deleted users"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1071",
+      "time": 1666366250.0,
+      "link": "https://github.com/coronasafe/care/pull/1071",
+      "text": "fix facility cover delete permissions"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1071",
+      "time": 1666331821.0,
+      "link": "https://github.com/coronasafe/care/pull/1071",
+      "text": "fix facility cover delete permissions"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1062",
@@ -1594,13 +1718,13 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 74,
+      "stale_for": 170,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/772",
       "title": "fix: Inventory unexpectedly marked as Low Stock",
-      "stale_for": 136,
+      "stale_for": 232,
       "labels": []
     }
   ],

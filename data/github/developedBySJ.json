@@ -1,6 +1,72 @@
 {
-  "last_updated": 1665942935.0,
+  "last_updated": 1670309443.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1670309443.0,
+      "title": "coronasafe/care_fe#4109",
+      "link": "https://github.com/coronasafe/care_fe/pull/4109#pullrequestreview-1193867775",
+      "text": "Add cause of death for expired patients"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669356955.0,
+      "title": "coronasafe/care_fe#4109",
+      "link": "https://github.com/coronasafe/care_fe/pull/4109#pullrequestreview-1193867775",
+      "text": "Add cause of death for expired patients"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669356955.0,
+      "title": "coronasafe/care_fe#4109",
+      "link": "https://github.com/coronasafe/care_fe/pull/4109#pullrequestreview-1193867775",
+      "text": "Add cause of death for expired patients"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#3767",
+      "time": 1669208481.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3767",
+      "text": "Proxy camera feed PTZ requests through backend",
+      "collaborated_with": [
+        "rabilrbl"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4090",
+      "time": 1669010393.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4090",
+      "text": "Add badge for no consultation and decision after consultation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668749708.0,
+      "title": "coronasafe/care_fe#3767",
+      "link": "https://github.com/coronasafe/care_fe/pull/3767#pullrequestreview-1185517523",
+      "text": "Proxy camera feed PTZ requests through backend"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1668409664.0,
+      "title": "coronasafe/care_dashboard#41",
+      "link": "https://github.com/coronasafe/care_dashboard/pull/41#pullrequestreview-1178537712",
+      "text": "Datepicker wrapped with `Popover` + ability to select year"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_dashboard#46",
+      "time": 1666508453.0,
+      "link": "https://github.com/coronasafe/care_dashboard/issues/46#issuecomment-1288030496",
+      "text": "@nihal467 When previous and current data are unavailable, then `No data available ` is shown.\r\nIf one of them is present then the chart is rendered.\r\nEven if an ordinary bed is at `0%`, the chart is generated.\r\nThis design is inspired by the previous dashboard design."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_dashboard#44",
+      "time": 1666503574.0,
+      "link": "https://github.com/coronasafe/care_dashboard/issues/44#issuecomment-1288010645",
+      "text": "@nihal467 Api is taking time to generate summary. You can inspect request in developer tool."
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_dashboard#38",
@@ -1582,9 +1648,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4090",
+      "title": "Add badge for no consultation and decision after consultation",
+      "stale_for": 3,
+      "labels": [
+        "stale",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/volunteers/pull/4",
       "title": "Add  ```developedbysj```  link",
-      "stale_for": 272,
+      "stale_for": 323,
       "labels": []
     }
   ],

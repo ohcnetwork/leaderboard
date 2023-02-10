@@ -1,6 +1,249 @@
 {
-  "last_updated": 1664253987.0,
+  "last_updated": 1673207171.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1673207171.0,
+      "title": "coronasafe/care_fe#4533",
+      "link": "https://github.com/coronasafe/care_fe/pull/4533#pullrequestreview-1239827138",
+      "text": "Minor UI fix"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673185672.0,
+      "title": "coronasafe/care_fe#4536",
+      "link": "https://github.com/coronasafe/care_fe/pull/4536#pullrequestreview-1239785487",
+      "text": "Display QR Code ID on asset details page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4487",
+      "time": 1672835468.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4487#issuecomment-1370870873",
+      "text": "I am not able to see the back arrow even though it can be pressed @rithviknishad \r\n\r\nhttps://user-images.githubusercontent.com/57593654/210555516-418a697d-263f-492d-b3b2-afadfc83219f.mp4\r\n\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4441",
+      "time": 1672835227.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4441#issuecomment-1370867354",
+      "text": "Should I close this PR? @rithviknishad @khavinshankar"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4441",
+      "time": 1672760719.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4441#issuecomment-1369921283",
+      "text": "@rithviknishad  Here, we just have the `AppRouter` component as the parent with the `Sidebar` and `NotificationList` as the children components.  Since the component hierarchy doesn't extend beyond parent-child, won't Redux be overkill?\r\n\r\nAlso, even if Redux is used, the Sidebar will have to update the opening/closing state of the Notifications Modal so it's still not really like - the sidebar handling the logic of sidebar only"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4441",
+      "time": 1672759253.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4441#issuecomment-1369892403",
+      "text": "How would you handle it? @rithviknishad"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4441",
+      "time": 1672696015.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4441#issuecomment-1369230253",
+      "text": "Made the sidebar open from the right edge of the screen. Updated the video in the PR description showing the same\r\n\r\n@rithviknishad "
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4453",
+      "time": 1672574259.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4453",
+      "text": "Production Release; Dec Week 5",
+      "collaborated_with": [
+        "Ritesh-Aggarwal",
+        "Ashesh3",
+        "mathew-alex",
+        "Pranshu1902",
+        "khavinshankar",
+        "rithviknishad",
+        "patelaryan7751",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4441",
+      "time": 1672368062.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4441",
+      "text": "Fix (NotificationsList): made the Notifications sidebar responsive"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4377",
+      "time": 1672207732.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4377",
+      "text": "Fix (Sidebar): made the sidebar collapse on clicking active links"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4409",
+      "time": 1672010594.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4409",
+      "text": "Production Release; Dec Week 4",
+      "collaborated_with": [
+        "Ashesh3",
+        "Pranshu1902",
+        "rithviknishad",
+        "Ritesh-Aggarwal",
+        "khavinshankar",
+        "patelaryan7751"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4377",
+      "time": 1671919029.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4377#issuecomment-1364588128",
+      "text": "@khavinshankar I have removed the dependency from the useEffect hook"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4337",
+      "time": 1671712247.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4337",
+      "text": "Fix (Advanced Filters): made all filter sidebars collapse on clearing filters"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4387",
+      "time": 1671653439.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4387",
+      "text": "Notifications sidebar is not responsive"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4337",
+      "time": 1671652468.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4337#issuecomment-1362020582",
+      "text": "I have made all the `Advanced Filters` sidebars collapse on clearing the filters. The video showing the same is updated in the PR description\r\n\r\n@nihal467"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4353",
+      "time": 1671474213.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4353#issuecomment-1358066457",
+      "text": "The buttons seem to be jumping on several screens when the sidebar is opened\r\n\r\nhttps://user-images.githubusercontent.com/57593654/208493632-e3bcb511-e6f8-4d23-be21-cb5470b0deea.mp4\r\n\r\n@gigincg @khavinshankar @rithviknishad"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4372",
+      "time": 1671473473.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4372",
+      "text": "MobileSidebar doesn't collapse on clicking the active tab"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4371",
+      "time": 1671467694.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4371",
+      "text": "Assets Import/Export button's tooltip is not responsive"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4354",
+      "time": 1671387352.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4354",
+      "text": "Production Release; Dec Week 3",
+      "collaborated_with": [
+        "cp-Coder",
+        "Ashesh3",
+        "siddnikh",
+        "mathew-alex",
+        "khavinshankar",
+        "rithviknishad",
+        "Pranshu1902",
+        "skks1212",
+        "Pragati1610",
+        "patelaryan7751"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4339",
+      "time": 1671354798.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4339",
+      "text": "Fix (UpdateFacilityMiddleware): made the facility middleware form responsive"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4338",
+      "time": 1671348644.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4338",
+      "text": "Configure Facility page is not responsive"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4337",
+      "time": 1671300084.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4337",
+      "text": "Fix (FacilityFilter): sidebar collapses on clearing facility advanced filters"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4306",
+      "time": 1670959805.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4306",
+      "text": "Fix (AddLocationForm): location edit cancel button triggers notification"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4305",
+      "time": 1670958856.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4305",
+      "text": "Cancel button on Location Edit page triggers successful location update notification"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#4273",
+      "time": 1670807705.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4273",
+      "text": "Production Release; Dec Week 2",
+      "collaborated_with": [
+        "rithviknishad",
+        "Pranshu1902",
+        "gigincg",
+        "Ashesh3",
+        "khavinshankar",
+        "cp-Coder",
+        "skks1212",
+        "patelaryan7751"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4227",
+      "time": 1670271344.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4227",
+      "text": "Fix (HospitalList): textarea of notify facility modal"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4191",
+      "time": 1670015514.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4191",
+      "text": "Clearing Advanced Filters For Facilities Collapses the Sidebar"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4191",
+      "time": 1669991813.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4191",
+      "text": "Clearing Advanced Filters For Facilities Collapses the Sidebar"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4190",
+      "time": 1669991305.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4190",
+      "text": "Facility Notify Textarea Not Accepting Input"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/leaderboard#74",
@@ -444,6 +687,26 @@
   ],
   "open_prs": [],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4372",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4377"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4338",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4339"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4305",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4306"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4191",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4337"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4190",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4227"
+    },
     {
       "issue_link": "https://github.com/coronasafe/leaderboard/issues/73",
       "pr_link": "https://github.com/coronasafe/leaderboard/pull/74"

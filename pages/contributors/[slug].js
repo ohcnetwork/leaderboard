@@ -7,14 +7,14 @@ import {
 } from "../../config/GraduateAttributes";
 import { getContributorBySlug, getContributors } from "../../lib/api";
 
-import ActivityCalendarGit from '../../components/contributors/ActivityCalendarGitHub';
-import BadgeIcons from '../../components/contributors/BadgeIcons';
-import GithubActivity from '../../components/contributors/GithubActivity';
-import GraduateAttributeBadge from '../../components/contributors/GraduateAttributeBadge';
-import InfoCard from '../../components/contributors/InfoCard';
-import React from 'react';
-import markdownToHtml from '../../lib/markdownToHtml';
-import clsx from 'clsx';
+import ActivityCalendarGit from "../../components/contributors/ActivityCalendarGitHub";
+import BadgeIcons from "../../components/contributors/BadgeIcons";
+import GithubActivity from "../../components/contributors/GithubActivity";
+import GraduateAttributeBadge from "../../components/contributors/GraduateAttributeBadge";
+import InfoCard from "../../components/contributors/InfoCard";
+import React from "react";
+import markdownToHtml from "../../lib/markdownToHtml";
+import clsx from "clsx";
 import Tooltip from "../../components/filters/Tooltip";
 
 // export function defaultCalendarData() {
@@ -47,20 +47,23 @@ export default function Contributor({ contributor, slug }) {
             <InfoCard contributor={contributor} />
           </div>
           <div className="flex md:grid md:grid-cols-7 mt-6 md:mt-0 w-full overflow-x-auto md:overflow-x-visible gap-2">
-            {
-              [professionalSelfSkills, professionalTeamSkills, advancedSkills, humanValues].map((attributeGroup) => {
-                return attributeGroup.map((skill) => (
-                  <div
-                    className="flex items-center justify-center flex-shrink-0  bg-opacity-40 rounded-lg"
-                    key={skill.key}
-                  >
-                    <BadgeIcons
-                      skill={resolveGraduateAttributes(skill, contributor)}
-                    />
-                  </div>
-                ));
-              })
-            }
+            {[
+              professionalSelfSkills,
+              professionalTeamSkills,
+              advancedSkills,
+              humanValues,
+            ].map((attributeGroup) => {
+              return attributeGroup.map((skill) => (
+                <div
+                  className="flex items-center justify-center flex-shrink-0  bg-opacity-40 rounded-lg"
+                  key={skill.key}
+                >
+                  <BadgeIcons
+                    skill={resolveGraduateAttributes(skill, contributor)}
+                  />
+                </div>
+              ));
+            })}
           </div>
         </div>
       </section>
@@ -291,7 +294,7 @@ export default function Contributor({ contributor, slug }) {
                     <span className="text-primary-500 text-sm pr-2">➞</span>
                     <p
                       className={clsx(
-                        "text-sm mb-2",
+                        "text-sm mb-2 transition-colors duration-75 ease-in-out",
                         pr?.stale_for >= 7
                           ? "text-gray-600 hover:text-primary-200"
                           : "text-gray-300 hover:text-primary-300"
@@ -303,9 +306,23 @@ export default function Contributor({ contributor, slug }) {
                           pr?.stale_for >= 7 &&
                           `Stale for ${pr?.stale_for} days`
                         }
-                        tipStyle="absolute w-48 -top-8 left-10 text-white text-sm"
+                        tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm"
                       >
                         <span className="text-primary-500 text-sm pr-2">➞</span>
+                        <code
+                          className={clsx(
+                            "text-xs tracking-wide px-1.5 py-1 rounded mr-2",
+                            pr.stale_for >= 7
+                              ? "bg-gray-800 text-gray-600"
+                              : "bg-gray-600 text-white"
+                          )}
+                        >
+                          {pr.link
+                            .split("/")
+                            .slice("-3")
+                            .join("/")
+                            .replace("/pull", "")}
+                        </code>
                         {pr.title}
                       </Tooltip>
                     </p>
@@ -330,10 +347,34 @@ export default function Contributor({ contributor, slug }) {
 export async function getStaticProps({ params }) {
   const contributor = getContributorBySlug(params.slug, true);
   const content = await markdownToHtml(contributor.content || "");
-
+  const metaTags = [
+    {
+      name: "og:image",
+      content: `https://github.com/${params.slug}.png`,
+    },
+    {
+      name: "og:title",
+      content: "Coronasafe Leaderboard",
+    },
+    {
+      name: "description",
+      content:
+        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+    },
+    {
+      name: "og:description",
+      content:
+        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+    },
+    {
+      name: "og:type",
+      content: "article",
+    },
+  ];
   return {
     props: {
       title: contributor.name,
+      metaTags: metaTags,
       contributor: {
         ...contributor,
         content,

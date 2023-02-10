@@ -68,7 +68,7 @@ export default function Home(props) {
               <div className="lg:col-span-4">
                 <div className="sticky top-0 pt-20">
                   <div className=" text-white rounded-lg bg-gray-800 bg-opacity-50 shadow-lg border border-gray-800">
-                    <div className="flex justify-between items-end bg-gray-800 rounded-t-lg px-6 py-4 border-b border-gray-700 ">
+                    <div className="flex flex-col md:flex-row justify-between md:items-end bg-gray-800 rounded-t-lg px-6 py-4 border-b border-gray-700 ">
                       <p className="text-xl font-medium">Leaderboard</p>
                       <span className="block text-gray-400">
                         {props.dateRange}
@@ -120,10 +120,36 @@ export async function getStaticProps() {
   const contributors = getContributors();
   const dateRange = getLastWeekDateRangeString();
 
+  const metaTags = [
+    {
+      name: "og:image",
+      content: `/logo.webp`,
+    },
+    {
+      name: "og:title",
+      content: "Coronasafe Leaderboard",
+    },
+    {
+      name: "description",
+      content:
+        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+    },
+    {
+      name: "og:description",
+      content:
+        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+    },
+    {
+      name: "og:type",
+      content: "article",
+    },
+  ];
+
   return {
     props: {
       contributors,
       dateRange,
+      metaTags: metaTags,
     },
   };
 }

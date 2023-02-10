@@ -7944,5 +7944,1072 @@
             ],
             "client_msg_id": "1efe1ecc-1b27-4ae8-81cd-6dc2cc84e7ba"
         }
+    ],
+    "2022-10-17 00:00:00": [
+        {
+            "client_msg_id": "0afc0fb1-9e18-46df-bd84-a38d80e6b716",
+            "type": "message",
+            "text": "Worked on `FieldValidator` for form field components",
+            "user": "U02TDGQQPMJ",
+            "ts": "1666026571.123999",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "2lr",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on "
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "FieldValidator",
+                                    "style": {
+                                        "code": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " for form field components"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "reactions": [
+                {
+                    "name": "+1",
+                    "users": [
+                        "U02TPSYRUPK"
+                    ],
+                    "count": 1
+                },
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-10-18 00:00:00": [
+        {
+            "client_msg_id": "12370ede-6b5d-4b03-8824-e25c672cdb14",
+            "type": "message",
+            "text": "\u2022 Wrapped DatePicker as FormField and fixed auto close datepicker on focus lost, by making it a popover component in both dashboard and care_fe.\n\u2022 Fixed minor issues in async autocomplete field.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1666121070.930299",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "CnyFb",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Wrapped DatePicker as FormField and fixed auto close datepicker on focus lost, by making it a popover component in both dashboard and care_fe."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed minor issues in async autocomplete field."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-10-19 00:00:00": [
+        {
+            "client_msg_id": "429910a6-240e-4108-b65b-037a4b799b3d",
+            "type": "message",
+            "text": "\u2022 <https://github.com/coronasafe/care_fe/pull/3528|Cover Image PR> removed the image with fallback component, and set img alt as `facility.name`\n\u2022 :book:<https://github.com/coronasafe/care_fe/pull/3744| Storybook + >:hammer_and_wrench:<https://github.com/coronasafe/care_fe/pull/3744| Tailwind Patient Filters> add stories of new tailwind components, ready for testing and review.\nWon't be able to attend EODs today and tomorrow, off to Bangalore for Cisco Startup Summit event.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1666170885.112369",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "fz/SF",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3528",
+                                            "text": "Cover Image PR"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " removed the image with fallback component, and set img alt as "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "facility.name",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "emoji",
+                                            "name": "book",
+                                            "unicode": "1f4d6"
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3744",
+                                            "text": " Storybook + "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "hammer_and_wrench",
+                                            "unicode": "1f6e0-fe0f"
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3744",
+                                            "text": " Tailwind Patient Filters"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " add stories of new tailwind components, ready for testing and review."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWon't be able to attend EODs today and tomorrow, off to Bangalore for Cisco Startup Summit event."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-10-21 00:00:00": [
+        {
+            "client_msg_id": "617e82d7-3e67-4750-bcbd-544dd6282bc1",
+            "type": "message",
+            "text": "Made a PR <https://github.com/coronasafe/care/pull/1072>\nAnd fixed minor issues existing PRs.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1666371491.208979",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "sYSz",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a PR "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/1072"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nAnd fixed minor issues existing PRs."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-10-22 00:00:00": [
+        {
+            "client_msg_id": "db5c38b4-b927-47e3-a2cb-93629ba26b7e",
+            "type": "message",
+            "text": "\u2022 Made a PR <https://github.com/coronasafe/care_fe/pull/3803>\n\u2022 Working on sidebar redesign",
+            "user": "U02TDGQQPMJ",
+            "ts": "1666453651.602729",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "eDf",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made a PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3803"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on sidebar redesign"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "reactions": [
+                {
+                    "name": "white_check_mark",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2022-10-25 00:00:00": [
+        {
+            "client_msg_id": "236d70d4-f9d1-40f1-9eec-fc3a5988ec60",
+            "type": "message",
+            "text": "\u2022 Working on Sidebar Redesign",
+            "user": "U02TDGQQPMJ",
+            "ts": "1666706447.896669",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "dleF8",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on Sidebar Redesign"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-11-02 00:00:00": [
+        {
+            "client_msg_id": "9fd57335-4527-4fd2-a4e5-5c366eb9f8ec",
+            "type": "message",
+            "text": "Won't be able to join EOD today.\n\u2022 Completed: <https://github.com/coronasafe/care_fe/pull/3920>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1667392748.454149",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "=VU1f",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Won't be able to join EOD today.\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Completed: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3920"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1667392769.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1667365728,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3920",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "<https://github.com/coronasafe/care_fe/pull/3920|#3920 Tailwind `SearchInput` with keyboard shortcut to focus>",
+                    "text": "*Proposed Changes*\n\n\u2611\ufe0e Tailwind search bar with shortcut input\n\u2611\ufe0e Support it to be focused on shortcut `Ctrl K` (`\u2318K` on Apple devices)\n\u2611\ufe0e Hide the shortcut key in mobile\n\u2022 Closes <https://github.com/coronasafe/care_fe/issues/3898|#3898>\n\n2022-11-02.14-57-16.mp4\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3920|#3920 Tailwind `SearchInput` with keyboard shortcut to focus>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing, need Review, redesign",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "4",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-11-04 00:00:00": [
+        {
+            "client_msg_id": "2204a4a1-8b76-4c3a-9fb6-47144a2dc7cd",
+            "type": "message",
+            "text": "PRs:\n\u2022 <https://github.com/coronasafe/care_fe/pull/3951|fix antenatal and vaccinated doses filter issues in patient fitlers>\n\u2022 <https://github.com/coronasafe/care_fe/pull/3942|AutoCompleteAsync: make button and input as peers instead of parent children>\n\u2022 <https://github.com/coronasafe/care_fe/pull/3941|Sidebar: fix current tab detection logic>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1667572073.442599",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "DTk",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3951",
+                                            "text": "fix antenatal and vaccinated doses filter issues in patient fitlers"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3942",
+                                            "text": "AutoCompleteAsync: make button and input as peers instead of parent children"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3941",
+                                            "text": "Sidebar: fix current tab detection logic"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-11-03 00:00:00": [
+        {
+            "client_msg_id": "80bdcb8b-4055-474e-abc6-54a68d12a058",
+            "type": "message",
+            "text": "won't be able to attend eod today. made a pr:\n<https://github.com/coronasafe/care_fe/pull/3936|https://github.com/coronasafe/care_fe/pull/3936>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1667482574.683119",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "PE9U6",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "won't be able to attend eod today. made a pr:\n"
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/3936",
+                                    "text": "https://github.com/coronasafe/care_fe/pull/3936"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/25143503/199712748-101731e6-f0af-457c-83b0-113efd4bdba8.png",
+                    "image_width": 1912,
+                    "image_height": 1079,
+                    "image_bytes": 300383,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1667475708,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/3936",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1912x1079px image",
+                    "text": "*Proposed Changes*\n\n\u2022 Closes <https://github.com/coronasafe/care_fe/issues/3932|#3932>\n\n<https://user-images.githubusercontent.com/25143503/199712748-101731e6-f0af-457c-83b0-113efd4bdba8.png|image>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA",
+                    "title": "<https://github.com/coronasafe/care_fe/pull/3936|#3936 use correct patient category colors for badge in log update tiles>",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing, need Review",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2022-11-05 00:00:00": [
+        {
+            "client_msg_id": "26635ae7-2ef1-4695-a2a3-53709e9c3c81",
+            "type": "message",
+            "text": "\u2022 Corrected few issues with AsyncAutocomplete component\n\u2022 PR: <https://github.com/coronasafe/care_fe/pull/3959|Fixes facility card layout spacing issue below the action buttons bar>\n\u2022 Working on implementing modals with tailwind (will be replacing Notify Facility's as of now)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1667656610.449049",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "cYjNX",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Corrected few issues with AsyncAutocomplete component"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "PR: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3959",
+                                            "text": "Fixes facility card layout spacing issue below the action buttons bar"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on implementing modals with tailwind (will be replacing Notify Facility's as of now)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1667656766.000000"
+            }
+        }
+    ],
+    "2022-11-06 00:00:00": [
+        {
+            "client_msg_id": "c64b317d-ed20-4927-8b70-b8160b2f32c9",
+            "type": "message",
+            "text": "*Worked on:*\n\u2022 Introduced `authorisedFor` callback prop (defaulting to `AuthorisedFor.Anyone`) for ButtonV2, to bring in functionality equivalent to RoleButton (coming along with Gokuls PR for facility home page redesign).\n\u2022 User filters: fix phone number parse issue when cleared <https://github.com/coronasafe/care_fe/pull/3970|#3970>\n*Issues raised:*\n\u2022 When shifting between pages in log update, the screen scrolls to the top <https://github.com/coronasafe/care_fe/issues/3986|#3986>\n\u2022 Too much whitespace when a log updates list page has too little cards on the current page <https://github.com/coronasafe/care_fe/issues/3985|#3985>\n\u2022 Improve the way we display the linked facilities of a user such that it does not affect other users cards. <https://github.com/coronasafe/care_fe/issues/3984|#3984>\n\u2022 DateRangePickerV2 should not allow selecting end date that's before start date. <https://github.com/coronasafe/care_fe/issues/3983|#3983>\n\u2022 Clear the input fields in patient filters when Clear Filter is pressed <https://github.com/coronasafe/care_fe/issues/3982|#3982>\n\u2022 Disallow incorrect entry from patient's age filter <https://github.com/coronasafe/care_fe/issues/3981|#3981>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1667749074.335279",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "7l3",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Worked on:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Introduced "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "authorisedFor",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " callback prop (defaulting to "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "AuthorisedFor.Anyone",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ") for ButtonV2, to bring in functionality equivalent to RoleButton (coming along with Gokuls PR for facility home page redesign)."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "User filters: fix phone number parse issue when cleared "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3970",
+                                            "text": "#3970",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Issues raised:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "When shifting between pages in log update, the screen scrolls to the top "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3986",
+                                            "text": "#3986",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Too much whitespace when a log updates list page has too little cards on the current page "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3985",
+                                            "text": "#3985",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Improve the way we display the linked facilities of a user such that it does not affect other users cards. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3984",
+                                            "text": "#3984",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "DateRangePickerV2 should not allow selecting end date that's before start date. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3983",
+                                            "text": "#3983",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Clear the input fields in patient filters when Clear Filter is pressed "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3982",
+                                            "text": "#3982",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Disallow incorrect entry from patient's age filter "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/3981",
+                                            "text": "#3981",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-11-12 00:00:00": [
+        {
+            "client_msg_id": "24d03178-fd83-49ba-ad47-62fc6e1d6a6d",
+            "type": "message",
+            "text": "Implemented useFilters hook and completed migrating facilities page. <https://github.com/coronasafe/care_fe/pull/4041|https://github.com/coronasafe/care_fe/pull/4041>\n\nWon't be able to attend eod today",
+            "user": "U02TDGQQPMJ",
+            "ts": "1668261652.765809",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "qt0U",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Implemented useFilters hook and completed migrating facilities page. "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/4041",
+                                    "text": "https://github.com/coronasafe/care_fe/pull/4041"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nWon't be able to attend eod today"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-11-16 00:00:00": [
+        {
+            "client_msg_id": "932fb483-fd5d-4c45-b409-10ede5c63575",
+            "type": "message",
+            "text": "Working on failed tests for useFilters PR.\nWon't be able to attend today's EOD. Outside.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1668606886.833949",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "jlh9G",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Working on failed tests for useFilters PR.\nWon't be able to attend today's EOD. Outside."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-11-28 00:00:00": [
+        {
+            "client_msg_id": "f8b1882b-3fbb-47b4-9ff7-ae28fa5e82b6",
+            "type": "message",
+            "text": "\u2022 Followed up: <https://github.com/coronasafe/care_fe/pull/3959|Fixes issues in Facility Card's layout and minor UI tweaks>\n\u2022 Resolved conflicts: <https://github.com/coronasafe/care_fe/pull/3996|Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter>\n\u2022 Made a PR: <https://github.com/coronasafe/care_fe/pull/4142|Remove pages and components used under `/teleicu/...`>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1669644660.870599",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "iS9m",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3959",
+                                            "text": "Fixes issues in Facility Card's layout and minor UI tweaks"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved conflicts: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/3996",
+                                            "text": "Adds Slideover tailwind component + UI tweaks in Notification List + Adds asset class filter"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made a PR: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/4142",
+                                            "text": "Remove pages and components used under `/teleicu/...`"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-12-06 00:00:00": [
+        {
+            "client_msg_id": "046ab9e0-42bb-4182-b33c-d115915e2b2c",
+            "type": "message",
+            "text": "Made a PR: <https://github.com/coronasafe/care_fe/pull/4238|Migrate leaked unicons to CareIcons>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1670349977.300639",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "flOg",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Made a PR: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/4238",
+                                    "text": "Migrate leaked unicons to CareIcons"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2022-12-22 00:00:00": [
+        {
+            "client_msg_id": "bc1e5d67-2b2e-4079-90e9-2aa49ea20164",
+            "type": "message",
+            "text": "*PRs:*\n\u2022 <https://github.com/coronasafe/care_fe/pull/4384|care_fe/4384> (the high memory usage for firefox is fixed)\n\u2022 <https://github.com/coronasafe/care_fe/pull/4388|care_fe/4388> ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1671724687.464169",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "FVn7",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "PRs:",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/4384",
+                                            "text": "care_fe/4384"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (the high memory usage for firefox is fixed)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/4388",
+                                            "text": "care_fe/4388"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671645188,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4384",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4384 Removes `app-updated` from localStorage immediatley after showing update success notification",
+                    "title": "#4384 Removes `app-updated` from localStorage immediatley after showing update success notification",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4384",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1671682882,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/4388",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4388 Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox",
+                    "title": "#4388 Replace SVGs used by login-hero with PNGs to stop consuming lots of memory in firefox",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/4388",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

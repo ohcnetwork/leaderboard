@@ -1,6 +1,875 @@
 {
-  "last_updated": 1665955480.0,
+  "last_updated": 1675874994.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1182",
+      "time": 1675874994.0,
+      "link": "https://github.com/coronasafe/care/issues/1182",
+      "text": "Fix date format for patient csv exports"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675874984.0,
+      "title": "coronasafe/care#1183",
+      "link": "https://github.com/coronasafe/care/pull/1183#pullrequestreview-1289595189",
+      "text": "Update datetime format to `DD/MM/YYYY HH:mm` for Patient CSV Export"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675785087.0,
+      "title": "coronasafe/care#1181",
+      "link": "https://github.com/coronasafe/care/pull/1181#pullrequestreview-1287387716",
+      "text": "Migration for new Symptoms"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675784927.0,
+      "title": "coronasafe/care#1180",
+      "link": "https://github.com/coronasafe/care/pull/1180#pullrequestreview-1287382328",
+      "text": "Added dummy user data for cypress tests"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1177",
+      "time": 1675612102.0,
+      "link": "https://github.com/coronasafe/care/issues/1177",
+      "text": "Unable to update a staff id"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675612093.0,
+      "title": "coronasafe/care#1178",
+      "link": "https://github.com/coronasafe/care/pull/1178#pullrequestreview-1284252579",
+      "text": "Fixed get_users for users below district admins"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1176",
+      "time": 1675611906.0,
+      "link": "https://github.com/coronasafe/care/pull/1176#issuecomment-1418064334",
+      "text": "You are deleting all skills here, only duplicates have to be deleted, this inadvertently deletes all user-skill objects"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675611664.0,
+      "title": "coronasafe/care#1178",
+      "link": "https://github.com/coronasafe/care/pull/1178#pullrequestreview-1284250827",
+      "text": "Fixed get_users for users below district admins"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1675611663.0,
+      "title": "coronasafe/care#1178",
+      "link": "https://github.com/coronasafe/care/pull/1178#pullrequestreview-1284250827",
+      "text": "Fixed get_users for users below district admins"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1161",
+      "time": 1674429003.0,
+      "link": "https://github.com/coronasafe/care/pull/1161",
+      "text": "Production Release; Jan Week 3",
+      "collaborated_with": [
+        "Ashesh3",
+        "gigincg",
+        "Pranshu1902",
+        "rithviknishad",
+        "cp-Coder"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1106",
+      "time": 1674381111.0,
+      "link": "https://github.com/coronasafe/care/pull/1106#issuecomment-1399442539",
+      "text": "This PR will be marked stale and closed within the next 2 days."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1160",
+      "time": 1674381059.0,
+      "link": "https://github.com/coronasafe/care/pull/1160#issuecomment-1399442402",
+      "text": "Filtering users by facility involves the use of \"not-so-clean\" SQL queries, we already have a facility users list API, and we can use that API to show the users from a given facility if needed. maybe as a separate UI page. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1150",
+      "time": 1674308077.0,
+      "link": "https://github.com/coronasafe/care/issues/1150",
+      "text": "Fields for Doctor Specialisation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674307975.0,
+      "title": "coronasafe/care#1151",
+      "link": "https://github.com/coronasafe/care/pull/1151#pullrequestreview-1264625530",
+      "text": "Adds doctor specialisation related fields to User Model"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1160",
+      "time": 1674307826.0,
+      "link": "https://github.com/coronasafe/care/pull/1160#issuecomment-1399252144",
+      "text": "I would make this a separate api view, maybe under the facilities detailed view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674281165.0,
+      "title": "coronasafe/care#1151",
+      "link": "https://github.com/coronasafe/care/pull/1151#pullrequestreview-1264592557",
+      "text": "Adds doctor specialisation related fields to User Model"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1124",
+      "time": 1674211022.0,
+      "link": "https://github.com/coronasafe/care/issues/1124",
+      "text": "Add Validations for create asset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674211008.0,
+      "title": "coronasafe/care#1125",
+      "link": "https://github.com/coronasafe/care/pull/1125#pullrequestreview-1263304423",
+      "text": "Added validations for create asset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674204083.0,
+      "title": "coronasafe/care#1151",
+      "link": "https://github.com/coronasafe/care/pull/1151#pullrequestreview-1263146533",
+      "text": "Adds doctor specialisation related fields to User Model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674204083.0,
+      "title": "coronasafe/care#1151",
+      "link": "https://github.com/coronasafe/care/pull/1151#pullrequestreview-1263146533",
+      "text": "Adds doctor specialisation related fields to User Model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674131973.0,
+      "title": "coronasafe/care#1157",
+      "link": "https://github.com/coronasafe/care/pull/1157#pullrequestreview-1261704183",
+      "text": "Restrict Admin from unlinking users from other district"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674131973.0,
+      "title": "coronasafe/care#1157",
+      "link": "https://github.com/coronasafe/care/pull/1157#pullrequestreview-1261704183",
+      "text": "Restrict Admin from unlinking users from other district"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1674131890.0,
+      "title": "coronasafe/care#1158",
+      "link": "https://github.com/coronasafe/care/pull/1158#pullrequestreview-1261702419",
+      "text": "Add asset class to Asset filters"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1159",
+      "time": 1673804558.0,
+      "link": "https://github.com/coronasafe/care/pull/1159",
+      "text": "Production Release; Jan Week 2",
+      "collaborated_with": [
+        "cp-Coder"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673792510.0,
+      "title": "coronasafe/care#1143",
+      "link": "https://github.com/coronasafe/care/pull/1143#pullrequestreview-1249243051",
+      "text": "Feat: Add a consultation_status field in consultation model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673792398.0,
+      "title": "coronasafe/care#1158",
+      "link": "https://github.com/coronasafe/care/pull/1158#pullrequestreview-1249241866",
+      "text": "Add asset class to Asset filters"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673792398.0,
+      "title": "coronasafe/care#1158",
+      "link": "https://github.com/coronasafe/care/pull/1158#pullrequestreview-1249241866",
+      "text": "Add asset class to Asset filters"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1154",
+      "time": 1673595656.0,
+      "link": "https://github.com/coronasafe/care/issues/1154",
+      "text": "Add new fields for patient discharge feature"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1155",
+      "time": 1673595581.0,
+      "link": "https://github.com/coronasafe/care/pull/1155#issuecomment-1381427807",
+      "text": "Can you create another issue to move the discharge view to use a serializer? it was a rather simple view, now that it's complicated, i recommend using a serializer. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673595533.0,
+      "title": "coronasafe/care#1155",
+      "link": "https://github.com/coronasafe/care/pull/1155#pullrequestreview-1247051646",
+      "text": "fix: Add new fields for patient discharge feature"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1156",
+      "time": 1673594407.0,
+      "link": "https://github.com/coronasafe/care/pull/1156",
+      "text": "Production Release; Assam lsg data update",
+      "collaborated_with": [
+        "sainak",
+        "mathew-alex",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673534365.0,
+      "title": "coronasafe/care#1143",
+      "link": "https://github.com/coronasafe/care/pull/1143#pullrequestreview-1245728233",
+      "text": "Feat: Add a consultation_status field in consultation model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673534365.0,
+      "title": "coronasafe/care#1143",
+      "link": "https://github.com/coronasafe/care/pull/1143#pullrequestreview-1245728233",
+      "text": "Feat: Add a consultation_status field in consultation model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673533905.0,
+      "title": "coronasafe/care#1144",
+      "link": "https://github.com/coronasafe/care/pull/1144#pullrequestreview-1245715018",
+      "text": "Use configured middleware address for middleware authentication"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1144",
+      "time": 1673365758.0,
+      "link": "https://github.com/coronasafe/care/pull/1144#issuecomment-1377473479",
+      "text": "Are we no longer pointing to local if a middleware address is not present? "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673365705.0,
+      "title": "coronasafe/care#1144",
+      "link": "https://github.com/coronasafe/care/pull/1144#pullrequestreview-1242492279",
+      "text": "Use configured middleware address for middleware authentication"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673365634.0,
+      "title": "coronasafe/care#1144",
+      "link": "https://github.com/coronasafe/care/pull/1144#pullrequestreview-1242488956",
+      "text": "Use configured middleware address for middleware authentication"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4497",
+      "time": 1673365344.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4497",
+      "text": "Declare death"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673365337.0,
+      "title": "coronasafe/care#1145",
+      "link": "https://github.com/coronasafe/care/pull/1145#pullrequestreview-1242475010",
+      "text": "Added declare death option to decision after consultation"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1149",
+      "time": 1673281488.0,
+      "link": "https://github.com/coronasafe/care/pull/1149",
+      "text": "Production Release; Migrate Middleware Address for OpenID (#1148)",
+      "collaborated_with": [
+        "gigincg"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1148",
+      "time": 1673277469.0,
+      "link": "https://github.com/coronasafe/care/pull/1148",
+      "text": "Migrate Middleware Address for OpenID",
+      "collaborated_with": [
+        "gigincg"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673276121.0,
+      "title": "coronasafe/care#1148",
+      "link": "https://github.com/coronasafe/care/pull/1148#pullrequestreview-1240628769",
+      "text": "Migrate Middleware Address for OpenID"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673276004.0,
+      "title": "coronasafe/care#1148",
+      "link": "https://github.com/coronasafe/care/pull/1148#pullrequestreview-1240625483",
+      "text": "Migrate Middleware Address for OpenID"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673275681.0,
+      "title": "coronasafe/care#1148",
+      "link": "https://github.com/coronasafe/care/pull/1148#pullrequestreview-1240615874",
+      "text": "Migrate Middleware Address for OpenID"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1673275680.0,
+      "title": "coronasafe/care#1148",
+      "link": "https://github.com/coronasafe/care/pull/1148#pullrequestreview-1240615874",
+      "text": "Migrate Middleware Address for OpenID"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1140",
+      "time": 1672565139.0,
+      "link": "https://github.com/coronasafe/care/pull/1140",
+      "text": "Production Release; Dec Week 5",
+      "collaborated_with": [
+        "cp-Coder"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#860",
+      "time": 1672289236.0,
+      "link": "https://github.com/coronasafe/care/pull/860#issuecomment-1367069947",
+      "text": "Marking stale, will be closed within the next week. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1111",
+      "time": 1672247196.0,
+      "link": "https://github.com/coronasafe/care/issues/1111",
+      "text": "Add a filter to filter out archive files"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1112",
+      "time": 1672247195.0,
+      "link": "https://github.com/coronasafe/care/pull/1112",
+      "text": "feat(file_upload): added a filter to filter out the archive file",
+      "collaborated_with": [
+        "cp-Coder"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672247190.0,
+      "title": "coronasafe/care#1112",
+      "link": "https://github.com/coronasafe/care/pull/1112#pullrequestreview-1231801405",
+      "text": "feat(file_upload): added a filter to filter out the archive file"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1134",
+      "time": 1672247094.0,
+      "link": "https://github.com/coronasafe/care/issues/1134",
+      "text": "Documentation misleading in a few places"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672247087.0,
+      "title": "coronasafe/care#1138",
+      "link": "https://github.com/coronasafe/care/pull/1138#pullrequestreview-1231800164",
+      "text": "fix: Documentation for delete_facility endpoint for users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672247049.0,
+      "title": "coronasafe/care#1125",
+      "link": "https://github.com/coronasafe/care/pull/1125#pullrequestreview-1231799477",
+      "text": "Added validations for create asset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1672247049.0,
+      "title": "coronasafe/care#1125",
+      "link": "https://github.com/coronasafe/care/pull/1125#pullrequestreview-1231799477",
+      "text": "Added validations for create asset"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1137",
+      "time": 1672010586.0,
+      "link": "https://github.com/coronasafe/care/pull/1137",
+      "text": "Production Release; Dec Week 4",
+      "collaborated_with": [
+        "rithviknishad",
+        "khavinshankar",
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4398",
+      "time": 1671877328.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4398",
+      "text": "Unable to configure the asset "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1135",
+      "time": 1671877328.0,
+      "link": "https://github.com/coronasafe/care/issues/1135",
+      "text": "Can't save configuration for new HL7 Monitor assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671877294.0,
+      "title": "coronasafe/care#1136",
+      "link": "https://github.com/coronasafe/care/pull/1136#pullrequestreview-1229591063",
+      "text": "Make middleware_hostname optional"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1132",
+      "time": 1671814750.0,
+      "link": "https://github.com/coronasafe/care/issues/1132",
+      "text": "Remove unique constraint in `facility.middleware_address`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671814742.0,
+      "title": "coronasafe/care#1133",
+      "link": "https://github.com/coronasafe/care/pull/1133#pullrequestreview-1229199052",
+      "text": "Remove unique contraint from facility.middleware_address"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671805385.0,
+      "title": "coronasafe/care#1131",
+      "link": "https://github.com/coronasafe/care/pull/1131#pullrequestreview-1229023488",
+      "text": "Restructure compose config"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671805227.0,
+      "title": "coronasafe/care_fe#4390",
+      "link": "https://github.com/coronasafe/care_fe/pull/4390#pullrequestreview-1229020258",
+      "text": "remove docker cache, use prebuilt care"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1130",
+      "time": 1671798258.0,
+      "link": "https://github.com/coronasafe/care/pull/1130",
+      "text": "Prebuilt"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1130",
+      "time": 1671798258.0,
+      "link": "https://github.com/coronasafe/care/pull/1130",
+      "text": "Prebuilt",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1130",
+      "time": 1671798190.0,
+      "link": "https://github.com/coronasafe/care/pull/1130",
+      "text": "Prebuilt"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1129",
+      "time": 1671797501.0,
+      "link": "https://github.com/coronasafe/care/pull/1129",
+      "text": "Prebuilt"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1129",
+      "time": 1671797501.0,
+      "link": "https://github.com/coronasafe/care/pull/1129",
+      "text": "Prebuilt",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1129",
+      "time": 1671792480.0,
+      "link": "https://github.com/coronasafe/care/pull/1129",
+      "text": "Prebuilt"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1126",
+      "time": 1671776442.0,
+      "link": "https://github.com/coronasafe/care/issues/1126",
+      "text": "Use `facility.middleware_address` instead of `asset.meta.middleware_hostname`"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1127",
+      "time": 1671776442.0,
+      "link": "https://github.com/coronasafe/care/pull/1127",
+      "text": "Used facility.middleware_address for asset.meta.middleware_hostname in AssetIntgration",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671776424.0,
+      "title": "coronasafe/care#1127",
+      "link": "https://github.com/coronasafe/care/pull/1127#pullrequestreview-1228574953",
+      "text": "Used facility.middleware_address for asset.meta.middleware_hostname in AssetIntgration"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1099",
+      "time": 1671454667.0,
+      "link": "https://github.com/coronasafe/care/issues/1099",
+      "text": "Block Upload of Patient file for discharged patients"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1102",
+      "time": 1671454667.0,
+      "link": "https://github.com/coronasafe/care/pull/1102",
+      "text": "Added Patient is_active validation when uploading a Patient file",
+      "collaborated_with": [
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671454658.0,
+      "title": "coronasafe/care#1102",
+      "link": "https://github.com/coronasafe/care/pull/1102#pullrequestreview-1222838211",
+      "text": "Added Patient is_active validation when uploading a Patient file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671454091.0,
+      "title": "coronasafe/care#1073",
+      "link": "https://github.com/coronasafe/care/pull/1073#pullrequestreview-1222816632",
+      "text": "feat: Added more field in consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671454091.0,
+      "title": "coronasafe/care#1073",
+      "link": "https://github.com/coronasafe/care/pull/1073#pullrequestreview-1222816632",
+      "text": "feat: Added more field in consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671453264.0,
+      "title": "coronasafe/care#1106",
+      "link": "https://github.com/coronasafe/care/pull/1106#pullrequestreview-1222807890",
+      "text": "Resize facility cover image before upload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671453264.0,
+      "title": "coronasafe/care#1106",
+      "link": "https://github.com/coronasafe/care/pull/1106#pullrequestreview-1222807890",
+      "text": "Resize facility cover image before upload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671453073.0,
+      "title": "coronasafe/care#1112",
+      "link": "https://github.com/coronasafe/care/pull/1112#pullrequestreview-1222805502",
+      "text": "feat(file_upload): added a filter to filter out the archive file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671453073.0,
+      "title": "coronasafe/care#1112",
+      "link": "https://github.com/coronasafe/care/pull/1112#pullrequestreview-1222805502",
+      "text": "feat(file_upload): added a filter to filter out the archive file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1671273457.0,
+      "title": "coronasafe/care#1122",
+      "link": "https://github.com/coronasafe/care/pull/1122#pullrequestreview-1221779663",
+      "text": "Added delete endpoint for assets"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1107",
+      "time": 1670343922.0,
+      "link": "https://github.com/coronasafe/care/issues/1107#issuecomment-1339632985",
+      "text": "Why is this required? We wont proxy any requests in the backend, we will have to populate the values in the tables we have to store geo structures."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1080",
+      "time": 1670244717.0,
+      "link": "https://github.com/coronasafe/care/issues/1080",
+      "text": "while archiving the file we need to store the user name who archived the file and the time date the file was archived "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1079",
+      "time": 1670244716.0,
+      "link": "https://github.com/coronasafe/care/issues/1079",
+      "text": "only State admin, district admin, and author who uploaded the file can edit it's filename"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1078",
+      "time": 1670244716.0,
+      "link": "https://github.com/coronasafe/care/issues/1078",
+      "text": "only State admin ,District admin and author who uploaded can only archive the file uploaded"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1670244705.0,
+      "title": "coronasafe/care#1109",
+      "link": "https://github.com/coronasafe/care/pull/1109#pullrequestreview-1204498464",
+      "text": "feat(file_upload): added new fields in file model and fixed file update permission"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1110",
+      "time": 1669574079.0,
+      "link": "https://github.com/coronasafe/care/pull/1110",
+      "text": "Production Release; Nov Week 4",
+      "collaborated_with": [
+        "mathew-alex",
+        "cp-Coder",
+        "gigincg",
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1108",
+      "time": 1669527319.0,
+      "link": "https://github.com/coronasafe/care/issues/1108#issuecomment-1328175679",
+      "text": "We can store a log table to store the ping results, if this data is not needed for long we can keep it in redis. If we choose to use the DB, we can delete it after a given number of days."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1089",
+      "time": 1669119881.0,
+      "link": "https://github.com/coronasafe/care/issues/1089",
+      "text": "Feature: Admitted Bed type filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669119872.0,
+      "title": "coronasafe/care#1090",
+      "link": "https://github.com/coronasafe/care/pull/1090#pullrequestreview-1189953342",
+      "text": "feat: Added admitted bed type filter"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1096",
+      "time": 1669119792.0,
+      "link": "https://github.com/coronasafe/care/issues/1096",
+      "text": "The check username availability API should check for soft deleted users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669119749.0,
+      "title": "coronasafe/care#1097",
+      "link": "https://github.com/coronasafe/care/pull/1097#pullrequestreview-1189948365",
+      "text": "check_availability api will also consider deleted users"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1101",
+      "time": 1669119704.0,
+      "link": "https://github.com/coronasafe/care/pull/1101",
+      "text": "added two facility types",
+      "collaborated_with": [
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1669119699.0,
+      "title": "coronasafe/care#1101",
+      "link": "https://github.com/coronasafe/care/pull/1101#pullrequestreview-1189946348",
+      "text": "added two facility types"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1101",
+      "time": 1669119486.0,
+      "link": "https://github.com/coronasafe/care/pull/1101#issuecomment-1323575430",
+      "text": "Needs Migrations"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1102",
+      "time": 1669119456.0,
+      "link": "https://github.com/coronasafe/care/pull/1102#issuecomment-1323574910",
+      "text": "Can we have a validation check in the consultation as well? to not allow file uploads in consultations that have been completed ? "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3978",
+      "time": 1667985394.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3978",
+      "text": "Correction of the logos present in the  discharge summary of a patient"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667985386.0,
+      "title": "coronasafe/care#1094",
+      "link": "https://github.com/coronasafe/care/pull/1094#pullrequestreview-1173642143",
+      "text": "fix(report): correction of logo present in the patient discharge summary"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1667300684.0,
+      "title": "coronasafe/care#1085",
+      "link": "https://github.com/coronasafe/care/pull/1085#pullrequestreview-1163168824",
+      "text": "Made icd search case insensitive"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1085",
+      "time": 1667300441.0,
+      "link": "https://github.com/coronasafe/care/pull/1085#issuecomment-1298355254",
+      "text": "Any difference in performance ? "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1082",
+      "time": 1666948152.0,
+      "link": "https://github.com/coronasafe/care/issues/1082",
+      "text": "Add `is_occupied` read_only field to bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666948143.0,
+      "title": "coronasafe/care#1083",
+      "link": "https://github.com/coronasafe/care/pull/1083#pullrequestreview-1159728904",
+      "text": "Added is_occupied read-only field in Bed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1083",
+      "time": 1666948116.0,
+      "link": "https://github.com/coronasafe/care/pull/1083#issuecomment-1294737068",
+      "text": "I would rather create a variable and store it in the database, this method fires a query per object retrieval, which can be DB intensive when multiple objects are rendered. @khavinshankar can you create a separate ticket for this. \r\nI will approve this on the condition that it will be improved later. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666366240.0,
+      "title": "coronasafe/care#1071",
+      "link": "https://github.com/coronasafe/care/pull/1071#pullrequestreview-1151162699",
+      "text": "fix facility cover delete permissions"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#989",
+      "time": 1666361056.0,
+      "link": "https://github.com/coronasafe/care/issues/989",
+      "text": "Check availability of username"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666361046.0,
+      "title": "coronasafe/care#1072",
+      "link": "https://github.com/coronasafe/care/pull/1072#pullrequestreview-1151019845",
+      "text": "fix issues in #1043, username availability endpoint: `/users/{username}/check_availability/`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1070",
+      "time": 1666203754.0,
+      "link": "https://github.com/coronasafe/care/pull/1070",
+      "text": "Remove celery instance in tests. Switch to Eager mode"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1070",
+      "time": 1666203419.0,
+      "link": "https://github.com/coronasafe/care/pull/1070",
+      "text": "Remove celery instance in tests. Switch to Eager mode"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666199226.0,
+      "title": "coronasafe/care#1043",
+      "link": "https://github.com/coronasafe/care/pull/1043#pullrequestreview-1147981818",
+      "text": "Added API View to check availability of username"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1057",
+      "time": 1666199134.0,
+      "link": "https://github.com/coronasafe/care/issues/1057",
+      "text": "Swagger Docs for /operate_assets endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1666199105.0,
+      "title": "coronasafe/care#1069",
+      "link": "https://github.com/coronasafe/care/pull/1069#pullrequestreview-1147979214",
+      "text": "improve swagger docs for operate_assets API"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1068",
+      "time": 1666093009.0,
+      "link": "https://github.com/coronasafe/care/pull/1068",
+      "text": "Production Release; Hotfix",
+      "collaborated_with": [
+        "gigincg",
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1067",
+      "time": 1666087225.0,
+      "link": "https://github.com/coronasafe/care/pull/1067",
+      "text": "Disable enhanced score calculation"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1067",
+      "time": 1666087117.0,
+      "link": "https://github.com/coronasafe/care/pull/1067",
+      "text": "Disable enhanced score calculation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1066",
+      "time": 1666082927.0,
+      "link": "https://github.com/coronasafe/care/pull/1066",
+      "text": "Fix Bug in pressure sore calculation"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1066",
+      "time": 1666082865.0,
+      "link": "https://github.com/coronasafe/care/pull/1066",
+      "text": "Fix Bug in pressure sore calculation"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1065",

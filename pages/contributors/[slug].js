@@ -291,10 +291,9 @@ export default function Contributor({ contributor, slug }) {
               <div className="mt-4">
                 {contributor["activityData"]["open_prs"].map((pr, index) => (
                   <a href={pr.link} key={index} className="flex gap-2">
-                    <span className="text-primary-500 text-sm pr-2">➞</span>
                     <p
                       className={clsx(
-                        "text-sm mb-2 transition-colors duration-75 ease-in-out",
+                        "text-sm mb-2 transition-colors duration-75 ease-in-out flex gap-2",
                         pr?.stale_for >= 7
                           ? "text-gray-600 hover:text-primary-200"
                           : "text-gray-300 hover:text-primary-300"
@@ -306,24 +305,28 @@ export default function Contributor({ contributor, slug }) {
                           pr?.stale_for >= 7 &&
                           `Stale for ${pr?.stale_for} days`
                         }
-                        tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm"
+                        tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm flex flex-row gap-4"
                       >
-                        <span className="text-primary-500 text-sm pr-2">➞</span>
-                        <code
-                          className={clsx(
-                            "text-xs tracking-wide px-1.5 py-1 rounded mr-2",
-                            pr.stale_for >= 7
-                              ? "bg-gray-800 text-gray-600"
-                              : "bg-gray-600 text-white"
-                          )}
-                        >
-                          {pr.link
-                            .split("/")
-                            .slice("-3")
-                            .join("/")
-                            .replace("/pull", "")}
-                        </code>
-                        {pr.title}
+                        <div className="flex items-center">
+                          <span className="text-primary-500 text-sm pr-2">
+                            ➞
+                          </span>
+                          <code
+                            className={clsx(
+                              "text-xs tracking-wide px-1.5 py-1 rounded mr-2",
+                              pr.stale_for >= 7
+                                ? "bg-gray-800 text-gray-600"
+                                : "bg-gray-600 text-white"
+                            )}
+                          >
+                            {pr.link
+                              .split("/")
+                              .slice("-3")
+                              .join("/")
+                              .replace("/pull", "")}
+                          </code>
+                          {pr.title}
+                        </div>
                       </Tooltip>
                     </p>
                   </a>

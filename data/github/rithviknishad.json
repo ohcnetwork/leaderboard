@@ -1,6 +1,27 @@
 {
-  "last_updated": 1676125502.0,
+  "last_updated": 1676297316.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1192",
+      "time": 1676297316.0,
+      "link": "https://github.com/coronasafe/care/pull/1192",
+      "text": "Abbreviate Discharge Reason in Patient CSV Export"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1192",
+      "time": 1676296515.0,
+      "link": "https://github.com/coronasafe/care/pull/1192",
+      "text": "Abbreviate Discharge Reason in Patient CSV Export"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3799",
+      "time": 1676260433.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3799#issuecomment-1427299677",
+      "text": "@cp-Coder could you clear the merge conflicts too?"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4768",
@@ -9244,18 +9265,23 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4792",
-      "title": "Migrates usages of deprecated `goBack` utility to use the new goBack provided by `useAppHistory`",
-      "stale_for": 3,
+      "link": "https://github.com/coronasafe/care_fe/pull/4814",
+      "title": "Adds Config: `SENTRY_DSN`",
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "need Review"
+        "cypress failed"
       ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/12",
+      "title": "Adds required configuration: `SENTRY_DSN`, `SENTRY_ENVIRONMENT`",
+      "stale_for": 0,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4750",
       "title": "ESLint: warnings for string literals that aren't translated, errors for invalid locale keys",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "stale",
         "cypress failed"
@@ -9264,16 +9290,17 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4740",
       "title": "Fix facility create page responsiveness and adds `RadioFormField` component",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
+        "good to merge",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4726",
       "title": "Virtual Nursing Assistant Log Update Card for Automated Daily Rounds",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "needs testing",
         "redesign",
@@ -9283,21 +9310,23 @@
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 16,
+      "stale_for": 17,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4653",
       "title": "Adds `RelativeTime` component",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested",
+        "changes required",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 118,
+      "stale_for": 120,
       "labels": [
         "merge conflict"
       ]

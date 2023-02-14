@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
 
       - name: setup python
         uses: actions/setup-python@v3
@@ -42,9 +45,4 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add .
           git diff --staged --quiet || git commit -am "🌍 Update JSON - $(date -d '+5 hours +30 minutes' +'%d %b %Y | %I:%M %p')"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          branch: main
-          force: true
+          git push

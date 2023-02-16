@@ -1,6 +1,34 @@
 {
-  "last_updated": 1676359889.0,
+  "last_updated": 1676460907.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe_hcx#2",
+      "time": 1676460907.0,
+      "link": "https://github.com/coronasafe/care_fe_hcx/pull/2",
+      "text": "HCX Eligibility Check Workflow"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4824",
+      "time": 1676448454.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4824",
+      "text": "Hovering over an option causes hover effect on all doctor types in doctor capacity"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4824",
+      "time": 1676448454.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4824#issuecomment-1430911806",
+      "text": "@Ashesh3 is not reproducible in staging. For some reason, it's happening in the HCX fork only.\r\n\r\nFeel free to re-open this if you find it in staging."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4824",
+      "time": 1676446635.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4824",
+      "text": "Hovering over an option causes hover effect on all doctor types in doctor capacity"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4740",
@@ -9359,19 +9387,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe_hcx/pull/2",
+      "title": "HCX Eligibility Check Workflow",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4750",
       "title": "ESLint: warnings for string literals that aren't translated, errors for invalid locale keys",
       "stale_for": 0,
       "labels": [
         "merge conflict",
-        "stale",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4726",
       "title": "Virtual Nursing Assistant Log Update Card for Automated Daily Rounds",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "needs testing",
         "redesign",
@@ -9381,13 +9414,13 @@
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4653",
       "title": "Adds `RelativeTime` component",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "changes required",
@@ -9397,7 +9430,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 120,
+      "stale_for": 121,
       "labels": [
         "merge conflict"
       ]
@@ -9503,10 +9536,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_deploy_configs/issues/3",
       "pr_link": "https://github.com/coronasafe/care_deploy_configs/pull/5"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4489",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4504"
     }
   ]
 }

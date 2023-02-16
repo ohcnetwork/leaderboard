@@ -1,6 +1,13 @@
 {
-  "last_updated": 1676395107.0,
+  "last_updated": 1676432362.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4822",
+      "time": 1676432362.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4822",
+      "text": "Changed default patient ordering and added defaults to useFilters"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#4821",
@@ -3795,12 +3802,20 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4822",
+      "title": "Changed default patient ordering and added defaults to useFilters",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4818",
       "title": "Redesigned count block",
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "work-in-progress",
         "cypress failed"
       ]
     }

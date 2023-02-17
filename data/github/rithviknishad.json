@@ -1,6 +1,27 @@
 {
-  "last_updated": 1676460907.0,
+  "last_updated": 1676561178.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4836",
+      "time": 1676561178.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4836",
+      "text": "Enhancements for auth session when using Care in multiple tabs"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4835",
+      "time": 1676560107.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4835",
+      "text": "Bottom align description in the auth layout"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4833",
+      "time": 1676550934.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4833",
+      "text": "Fixes Date field positions in Consultation Form"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe_hcx#2",
@@ -9387,15 +9408,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4833",
+      "title": "Fixes Date field positions in Consultation Form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/2",
       "title": "HCX Eligibility Check Workflow",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4750",
       "title": "ESLint: warnings for string literals that aren't translated, errors for invalid locale keys",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -9404,7 +9433,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4726",
       "title": "Virtual Nursing Assistant Log Update Card for Automated Daily Rounds",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "redesign",
@@ -9414,13 +9443,13 @@
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 19,
+      "stale_for": 20,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4653",
       "title": "Adds `RelativeTime` component",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "tested",
         "changes required",
@@ -9430,7 +9459,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 121,
+      "stale_for": 122,
       "labels": [
         "merge conflict"
       ]

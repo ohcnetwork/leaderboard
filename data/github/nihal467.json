@@ -1,6 +1,111 @@
 {
-  "last_updated": 1676729106.0,
+  "last_updated": 1676905041.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4819",
+      "time": 1676905041.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4819#issuecomment-1437149495",
+      "text": "@cp-Coder after the EOD, change the following ASAP\r\n\r\n- [ ] make the icons bigger\r\n- [ ] add a tooltip to the icon\r\n- [ ] when someone clicks anywhere in the card, similar to the existing staging, by default, WhatsApp redirection should work"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4818",
+      "time": 1676904455.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4818#issuecomment-1437135353",
+      "text": "@skks1212 add the padding to the whole page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1972",
+      "time": 1676903281.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1972#issuecomment-1437110139",
+      "text": "@gigincg it is blocked dependent on events"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4753",
+      "time": 1676901617.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4753#issuecomment-1437067477",
+      "text": "@GokulramGHV what is the update on this issue"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4851",
+      "time": 1676901039.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4851#issuecomment-1437055004",
+      "text": "@Pranshu1902 \r\n\r\n![image](https://user-images.githubusercontent.com/57055998/220125796-59ca3720-de4f-40b3-81bf-58d9f36c2296.png)\r\n\r\n\r\nthe issue is not there, can you check was your file not corrupted"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4818",
+      "time": 1676878981.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4818#issuecomment-1436488676",
+      "text": "@skks1212 \r\n![image](https://user-images.githubusercontent.com/57055998/220042917-fcfaaf3f-8012-4d2c-97bc-a2d274cd2458.png)\r\n\r\nall the components are having rectangle curved padding, which gives a uniform feel, having data, is shown without padding on a whole page, which feels like losing consistency. Marking it for discussion "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4844",
+      "time": 1676877764.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4844#issuecomment-1436472143",
+      "text": "@aparnacoronasafe \r\n![image](https://user-images.githubusercontent.com/57055998/220038529-e1406558-a2fd-4add-a9ce-1fc5c2947a49.png)\r\n\r\n- [ ] as per the previous discussion, we mentioned showing only the latest symptoms of the patient, and as per the PR, it will be showing symptoms during the consultation and the last updated log update. is it okay?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4837",
+      "time": 1676877267.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4837#issuecomment-1436464049",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4833",
+      "time": 1676877186.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4833#issuecomment-1436461665",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4826",
+      "time": 1676876971.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4826#issuecomment-1436457659",
+      "text": "@Pranshu1902 \r\n![image](https://user-images.githubusercontent.com/57055998/220036332-b1b26781-59c1-403c-8197-5f59c9065641.png)\r\n\r\nmarking it for discussion required, to discuss the below point : \r\n\r\nUI doesn't look good, since the pulsing dot doesn't feel required in the current placed position."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4822",
+      "time": 1676876703.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4822#issuecomment-1436451016",
+      "text": "@skks1212 \r\n![image](https://user-images.githubusercontent.com/57055998/220035981-4a95b920-220c-47af-9979-1023711fdb65.png)\r\n\r\nthe pagination is broken for this PR"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4819",
+      "time": 1676876511.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4819#issuecomment-1436444162",
+      "text": "@cp-Coder \r\n\r\nhttps://deploy-preview-4819--care-net.netlify.app/facility/2797dc82-4216-47fa-969b-47f02019b6ca/patient/124b749e-8c86-4d3e-8631-53f66a4926f1/consultation/e6acf370-4dce-443e-b4be-9b9198b64cbc\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/220031082-1bad3e60-d957-4dd5-bd6c-d64b7e1ba5f1.png)\r\n\r\nmarking it for discussion for discussing following points\r\n\r\n- [ ] icon size is 14 * 14, where we use 18 * 18 in most of the places\r\n- [ ] add a tooltip to the icons\r\n- [ ] Currently, the card is not clickable, will it be a problem for the user, since going towards a small call icon and clicking, doesn't feel like a good experience\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4665",
+      "time": 1676874049.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4665#issuecomment-1436396994",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4664",
+      "time": 1676871362.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4664#issuecomment-1436361723",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4552",
+      "time": 1676870940.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4552#issuecomment-1436356480",
+      "text": "@patelaryan7751 \r\n![image](https://user-images.githubusercontent.com/57055998/220016665-f4838272-3209-4b85-ab8d-ce1d3dc73090.png)\r\n\r\nupgrade the existing droplist to tailwind dropdown"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4830",

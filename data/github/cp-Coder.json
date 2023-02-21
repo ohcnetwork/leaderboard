@@ -1,6 +1,34 @@
 {
-  "last_updated": 1676384156.0,
+  "last_updated": 1676903314.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4852",
+      "time": 1676903314.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4852",
+      "text": "fix: notification is missing for critical care log update"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4710",
+      "time": 1676899692.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4710#issuecomment-1437027367",
+      "text": "@nihal467 The issue has been resolved.\r\n\r\nhttps://user-images.githubusercontent.com/77210185/220121439-32adf108-fdbf-4230-aa7b-8f1559d43bf5.mp4\r\n\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4848",
+      "time": 1676887974.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4848",
+      "text": "fix: badges are malfunctioning in patient tab"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4831",
+      "time": 1676871862.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4831#issuecomment-1436366705",
+      "text": "The code has been fixed. Will push the PR ASAP"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4819",
@@ -6605,8 +6633,16 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4819",
-      "title": "fix: Enhancement of the patient doctor connect",
+      "link": "https://github.com/coronasafe/care_fe/pull/4852",
+      "title": "fix: notification is missing for critical care log update",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4848",
+      "title": "fix: badges are malfunctioning in patient tab",
       "stale_for": 0,
       "labels": [
         "needs testing",
@@ -6614,9 +6650,18 @@
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4819",
+      "title": "fix: Enhancement of the patient doctor connect",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress",
+        "P2"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 16,
+      "stale_for": 22,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6625,7 +6670,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4495",
       "title": "Fix: create asset asking to select a facility when viewing asset of filtered facility",
-      "stale_for": 0,
+      "stale_for": 6,
       "labels": [
         "tested",
         "changes required"
@@ -6634,7 +6679,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 19,
+      "stale_for": 25,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6643,7 +6688,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 1,
+      "stale_for": 7,
       "labels": [
         "Done",
         "work-in-progress",
@@ -6655,7 +6700,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 7,
+      "stale_for": 2,
       "labels": [
         "do-not-merge"
       ]
@@ -6663,7 +6708,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 10,
+      "stale_for": 16,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6672,7 +6717,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 1,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6681,7 +6726,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 1,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6690,7 +6735,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 89,
+      "stale_for": 95,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6699,7 +6744,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 236,
+      "stale_for": 242,
       "labels": [
         "waiting-for-review"
       ]

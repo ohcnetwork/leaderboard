@@ -1,6 +1,20 @@
 {
-  "last_updated": 1676432362.0,
+  "last_updated": 1676902965.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/medibase#3",
+      "time": 1676902965.0,
+      "link": "https://github.com/coronasafe/medibase/issues/3",
+      "text": "Modify (or create a new) scraper for generics"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4844",
+      "time": 1676865377.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4844",
+      "text": "Added daily round symptoms to symptoms card, and updated time handling"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#4822",
@@ -3802,11 +3816,20 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/4844",
+      "title": "Added daily round symptoms to symptoms card, and updated time handling",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4822",
       "title": "Changed default patient ordering and added defaults to useFilters",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "test failed",
         "cypress failed"
       ]
     },
@@ -3815,7 +3838,7 @@
       "title": "Redesigned count block",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "work-in-progress",
         "cypress failed"
       ]
     }
@@ -3884,10 +3907,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/2704",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/2758"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2703",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2717"
     }
   ]
 }

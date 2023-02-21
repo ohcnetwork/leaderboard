@@ -1,6 +1,20 @@
 {
-  "last_updated": 1676786411.0,
+  "last_updated": 1676903185.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1194",
+      "time": 1676903185.0,
+      "link": "https://github.com/coronasafe/care/pull/1194",
+      "text": "Add endpoint to clear user's home facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1194",
+      "time": 1676867549.0,
+      "link": "https://github.com/coronasafe/care/pull/1194#issuecomment-1436317365",
+      "text": "> if requesting user has permission to the selected user, do we need to check anything else?\r\n\r\nCorrect, we do not need to check for facility access with the user again because the facility to be removed is not specified by the user, but rather it is the facility already associated with the user. I've made the appropriate changes regarding this."
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4484",
@@ -6479,15 +6493,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1196",
       "title": "Allow skills access for any user",
-      "stale_for": 1,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1194",
-      "title": "Add endpoint to clear user's home facility",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -6495,15 +6501,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4838",
       "title": "Improvements to Home facility management",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "waiting-for-review"
       ]
@@ -6511,9 +6517,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4642",
       "title": "Add facility filter to Users page and redirect facility users to this",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
-        "hold"
+        "hold",
+        "stale"
       ]
     }
   ],

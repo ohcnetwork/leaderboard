@@ -1,6 +1,27 @@
 {
-  "last_updated": 1673594407.0,
+  "last_updated": 1676961187.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4857",
+      "time": 1676961187.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4857#issuecomment-1437926851",
+      "text": "This can be validated on the frontend itself the regex is `^(?!https?:\\/\\/)[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)*\\.[a-zA-Z]{2,}$`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4857",
+      "time": 1676960963.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4857",
+      "text": "The user is navigated to the next page even if backend responds with error"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1199",
+      "time": 1676960607.0,
+      "link": "https://github.com/coronasafe/care/pull/1199",
+      "text": "do not accept middleware address with scheme"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1156",
@@ -1716,15 +1737,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
-      "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 170,
+      "link": "https://github.com/coronasafe/care/pull/1199",
+      "title": "do not accept middleware address with scheme",
+      "stale_for": 0,
       "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/772",
-      "title": "fix: Inventory unexpectedly marked as Low Stock",
-      "stale_for": 232,
+      "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
+      "title": "fix requests not sending content-type header and minor refactor",
+      "stale_for": 209,
       "labels": []
     }
   ],

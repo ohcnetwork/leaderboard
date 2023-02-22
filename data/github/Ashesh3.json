@@ -1,6 +1,62 @@
 {
-  "last_updated": 1676903185.0,
+  "last_updated": 1676981175.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4856",
+      "time": 1676981175.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4856",
+      "text": "Disable delete skill button for unauthorized users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1676962423.0,
+      "title": "coronasafe/care#1196",
+      "link": "https://github.com/coronasafe/care/pull/1196#pullrequestreview-1306791758",
+      "text": "Allow skills access for any user"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1198",
+      "time": 1676960180.0,
+      "link": "https://github.com/coronasafe/care/pull/1198",
+      "text": "Only allow >=DistrictAdmin to clear home facility"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4856",
+      "time": 1676958744.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4856",
+      "text": "Disable delete skill button for unauthorized users"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#4855",
+      "time": 1676958590.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4855",
+      "text": "Delete Skill button visible to unauthorized users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1676958128.0,
+      "title": "coronasafe/care#1196",
+      "link": "https://github.com/coronasafe/care/pull/1196#pullrequestreview-1306673542",
+      "text": "Allow skills access for any user"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1198",
+      "time": 1676956044.0,
+      "link": "https://github.com/coronasafe/care/pull/1198#issuecomment-1437866379",
+      "text": "> @Ashesh3 But a District Admin should not be able to clear access for a State Admin. Is that edge handled here?\r\n\r\nShould be fixed. I didn't infer the edge case from the linked issue which stated that *any user* >= District admin should be able to clear home facility of *any* other user."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1198",
+      "time": 1676954986.0,
+      "link": "https://github.com/coronasafe/care/pull/1198",
+      "text": "Only allow >=DistrictAdmin to clear home facility"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1194",
@@ -6493,23 +6549,15 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1196",
       "title": "Allow skills access for any user",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4838",
-      "title": "Improvements to Home facility management",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "waiting-for-review"
       ]
@@ -6517,7 +6565,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4642",
       "title": "Add facility filter to Users page and redirect facility users to this",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "hold",
         "stale"
@@ -6525,6 +6573,10 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4855",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4856"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4613",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4614"
@@ -6612,10 +6664,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3180",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3187"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3179",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3186"
     }
   ]
 }

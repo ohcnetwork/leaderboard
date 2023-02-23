@@ -1,6 +1,27 @@
 {
-  "last_updated": 1676981175.0,
+  "last_updated": 1677077148.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4866",
+      "time": 1677077148.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4866",
+      "text": "Remove \"required\" attribute from oxygen capacity fields in FaclityCreate"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1196",
+      "time": 1677036176.0,
+      "link": "https://github.com/coronasafe/care/pull/1196",
+      "text": "Allow skills access for any user"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4838",
+      "time": 1677030592.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4838",
+      "text": "Improvements to Home facility management"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4856",
@@ -6547,17 +6568,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1196",
-      "title": "Allow skills access for any user",
+      "link": "https://github.com/coronasafe/care_fe/pull/4866",
+      "title": "Remove \"required\" attribute from oxygen capacity fields in FaclityCreate",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": [
         "waiting-for-review"
       ]
@@ -6565,7 +6586,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4642",
       "title": "Add facility filter to Users page and redirect facility users to this",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "hold",
         "stale"

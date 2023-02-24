@@ -1,6 +1,20 @@
 {
-  "last_updated": 1676961187.0,
+  "last_updated": 1677177712.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1199",
+      "time": 1677177712.0,
+      "link": "https://github.com/coronasafe/care/pull/1199",
+      "text": "do not accept middleware address with scheme"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1199",
+      "time": 1677176843.0,
+      "link": "https://github.com/coronasafe/care/pull/1199#issuecomment-1442238242",
+      "text": "> @sainak can you recheck the regex, even the valid URLs are failing\r\n> \r\n> ![image](https://user-images.githubusercontent.com/29787772/220268219-9815dfc2-ed52-4171-b8ba-af33f372ee6f.png)\r\n\r\nThat is the intended behavior because we use the same value for websockets in frontend as well, so saving it with scheme breaks the frontend requirement"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4857",
@@ -1737,15 +1751,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1199",
-      "title": "do not accept middleware address with scheme",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 209,
+      "stale_for": 211,
       "labels": []
     }
   ],

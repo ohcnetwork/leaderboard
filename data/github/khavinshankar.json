@@ -1,6 +1,34 @@
 {
-  "last_updated": 1677176433.0,
+  "last_updated": 1677319285.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1204",
+      "time": 1677319285.0,
+      "link": "https://github.com/coronasafe/care/pull/1204",
+      "text": "Allow read files in discharged consultations"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#2079",
+      "time": 1677311838.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2079",
+      "text": "Swap bulky packages with a better alternative"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2079",
+      "time": 1677311837.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2079#issuecomment-1445024783",
+      "text": "new more detailed issues will be created"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4070",
+      "time": 1677307441.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4070#issuecomment-1445012581",
+      "text": "will create a new pr"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_hcx#3",
@@ -14273,9 +14301,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1204",
+      "title": "Allow read files in discharged consultations",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4843",
       "title": "Hcx claims workflow",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "Deploy-Failed",
         "merge conflict"
@@ -14284,7 +14318,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4842",
       "title": "Hcx eligibility check",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "merge conflict"
       ]
@@ -14292,19 +14326,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 5,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1193",
-      "title": "HCX Integration",
-      "stale_for": 0,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4789",
       "title": "Abdm integration",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "stale"
@@ -14313,40 +14341,30 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "test failed",
+        "needs testing",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 76,
+      "stale_for": 79,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 32,
+      "stale_for": 34,
       "labels": [
         "waiting-for-review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4070",
-      "title": "Fix no notification on hard refresh",
-      "stale_for": 16,
-      "labels": [
-        "work-in-progress",
-        "waiting for update",
-        "merge conflict"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 76,
+      "stale_for": 78,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -14356,7 +14374,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 105,
+      "stale_for": 107,
       "labels": [
         "waiting-for-review"
       ]
@@ -14364,25 +14382,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 433,
+      "stale_for": 435,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 439,
+      "stale_for": 441,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 440,
+      "stale_for": 442,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 635,
+      "stale_for": 637,
       "labels": []
     }
   ],

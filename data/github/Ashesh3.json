@@ -1,6 +1,41 @@
 {
-  "last_updated": 1677255403.0,
+  "last_updated": 1677491545.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4896",
+      "time": 1677491545.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4896",
+      "text": "Add middleware_address validity check"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#4866",
+      "time": 1677486380.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4866",
+      "text": "Remove \"required\" attribute from oxygen capacity fields in FaclityCreate"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4896",
+      "time": 1677484470.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4896",
+      "text": "Add middleware_address validity check"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#4895",
+      "time": 1677482455.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4895",
+      "text": "Make Asset transactions work with qr_code_id"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1206",
+      "time": 1677482440.0,
+      "link": "https://github.com/coronasafe/care/pull/1206",
+      "text": "Add qr_code_id to AssetTransactionFilter"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#4881",
@@ -6612,28 +6647,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/4866",
-      "title": "Remove \"required\" attribute from oxygen capacity fields in FaclityCreate",
-      "stale_for": 1,
+      "link": "https://github.com/coronasafe/care_fe/pull/4895",
+      "title": "Make Asset transactions work with qr_code_id",
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "waiting for back end"
       ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1206",
+      "title": "Add qr_code_id to AssetTransactionFilter",
+      "stale_for": 0,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 17,
+      "stale_for": 20,
       "labels": [
         "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4642",
-      "title": "Add facility filter to Users page and redirect facility users to this",
-      "stale_for": 4,
-      "labels": [
-        "hold",
-        "stale"
       ]
     }
   ],

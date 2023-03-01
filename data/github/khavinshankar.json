@@ -1,6 +1,104 @@
 {
-  "last_updated": 1677491891.0,
+  "last_updated": 1677572356.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5011",
+      "time": 1677572356.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5011",
+      "text": "Update thank-you.yml"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5011",
+      "time": 1677572176.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5011",
+      "text": "Update thank-you.yml"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4418",
+      "time": 1677571980.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4418",
+      "text": "Migrate to  Part 6 (2 migrations under facility)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4649",
+      "time": 1677571549.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4649",
+      "text": "Add `RelativeTime` component which shows actual timestamp on hover else relative time (like GitHub relative-time)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4649",
+      "time": 1677571549.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4649",
+      "text": "Add `RelativeTime` component which shows actual timestamp on hover else relative time (like GitHub relative-time)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4386",
+      "time": 1677570717.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4386",
+      "text": "Create Asset in asset list page should not ask to select a facility if view assets is clicked from a facility home page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1677570694.0,
+      "title": "coronasafe/care_fe#4495",
+      "link": "https://github.com/coronasafe/care_fe/pull/4495#pullrequestreview-1316958941",
+      "text": "Fix: create asset asking to select a facility when viewing asset of filtered facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1677570678.0,
+      "title": "coronasafe/care_fe#4898",
+      "link": "https://github.com/coronasafe/care_fe/pull/4898#pullrequestreview-1316958632",
+      "text": "Migrated (migration under facility) part 6"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5008",
+      "time": 1677570638.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5008",
+      "text": "Added thankyou note github workflow"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1677570562.0,
+      "title": "coronasafe/care_fe#4653",
+      "link": "https://github.com/coronasafe/care_fe/pull/4653#pullrequestreview-1316956288",
+      "text": "Adds `RecordMeta` component"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1677565751.0,
+      "title": "coronasafe/care_fe#5007",
+      "link": "https://github.com/coronasafe/care_fe/pull/5007#pullrequestreview-1316873751",
+      "text": "adds missing type definition package `@types/react-transition-group`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4749",
+      "time": 1677565609.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4749",
+      "text": "Setup eslint plugins to aid in handling localizations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1677565570.0,
+      "title": "coronasafe/care_fe#4750",
+      "link": "https://github.com/coronasafe/care_fe/pull/4750#pullrequestreview-1316871197",
+      "text": "ESLint: warnings for string literals that aren't translated"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5008",
+      "time": 1677562814.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5008",
+      "text": "Added thankyou note github workflow"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3987",
@@ -14436,13 +14534,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1204",
       "title": "Allow read files in discharged consultations",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4843",
       "title": "Hcx claims workflow",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "Deploy-Failed",
         "merge conflict"
@@ -14451,22 +14549,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/4789",
-      "title": "Abdm integration",
-      "stale_for": 6,
-      "labels": [
-        "merge conflict",
-        "stale"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "cypress failed"
@@ -14475,13 +14564,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 81,
+      "stale_for": 82,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 36,
+      "stale_for": 37,
       "labels": [
         "waiting-for-review"
       ]
@@ -14489,7 +14578,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 80,
+      "stale_for": 81,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -14499,7 +14588,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 109,
+      "stale_for": 110,
       "labels": [
         "waiting-for-review"
       ]
@@ -14507,25 +14596,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 437,
+      "stale_for": 438,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 443,
+      "stale_for": 444,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 444,
+      "stale_for": 445,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 639,
+      "stale_for": 640,
       "labels": []
     }
   ],

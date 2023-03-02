@@ -1,6 +1,27 @@
 {
-  "last_updated": 1677588437.0,
+  "last_updated": 1677672696.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4963",
+      "time": 1677672696.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4963#issuecomment-1450041661",
+      "text": "Snatching this issue away since it was already solved in an active PR #4726 before raising this issue"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5021",
+      "time": 1677670657.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5021",
+      "text": "Auto sign out when `care_access_token` is no longer present in local storage."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5020",
+      "time": 1677669694.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5020",
+      "text": "fixes triage entry date date picker position"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4325",
@@ -11040,9 +11061,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5021",
+      "title": "Auto sign out when `care_access_token` is no longer present in local storage.",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5020",
+      "title": "fixes triage entry date date picker position",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
@@ -11052,20 +11087,19 @@
       "labels": [
         "needs testing",
         "redesign",
-        "merge conflict",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 32,
+      "stale_for": 33,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 134,
+      "stale_for": 135,
       "labels": [
         "merge conflict"
       ]

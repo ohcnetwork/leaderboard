@@ -1,6 +1,48 @@
 {
-  "last_updated": 1677565707.0,
+  "last_updated": 1677681112.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5022",
+      "time": 1677681112.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5022",
+      "text": "Fix thank you workflow"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5019",
+      "time": 1677668951.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5019",
+      "text": "Fix facility card height"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5019",
+      "time": 1677667747.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5019",
+      "text": "Fix facility card height"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5015",
+      "time": 1677661669.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5015#issuecomment-1449636809",
+      "text": "Unable to replicate.\r\n\r\n![msedge_dhMV8vIC2z](https://user-images.githubusercontent.com/3626859/222090699-814fb9b2-4e9a-477d-a92d-25f1f4a6866e.gif)\r\n\r\nTested on:\r\n- Iphone 14\r\n- iOS: v16.2\r\n- Safari: 16.3"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5017",
+      "time": 1677658231.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5017",
+      "text": "Fix facility buttons hidden on small screens"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5017",
+      "time": 1677657550.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5017",
+      "text": "Fix facility buttons hidden on small screens"
+    },
     {
       "type": "pr_reviewed",
       "time": 1677565707.0,
@@ -6661,9 +6703,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5022",
+      "title": "Fix thank you workflow",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4895",
       "title": "Make Asset transactions work with qr_code_id",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting for back end"
       ]
@@ -6671,13 +6722,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1206",
       "title": "Add qr_code_id to AssetTransactionFilter",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "waiting-for-review"
       ]

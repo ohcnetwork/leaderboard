@@ -1,6 +1,104 @@
 {
-  "last_updated": 1677672696.0,
+  "last_updated": 1677778575.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1677778575.0,
+      "title": "coronasafe/care_fe#5032",
+      "link": "https://github.com/coronasafe/care_fe/pull/5032#pullrequestreview-1322314393",
+      "text": "Error color change in patient creation form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4882",
+      "time": 1677773428.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4882#issuecomment-1452130272",
+      "text": "@siva-balan the Material UI's `Card` component can be replaced with a `div` if `Card` is causing the clipping.\r\n\r\nYou may remove these if so:\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/222484858-5d4fd20c-1e16-49c0-a590-264da59a4c3d.png)\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4882",
+      "time": 1677766799.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4882#issuecomment-1451942868",
+      "text": "@siva-balan this is probably because the parent container has `overflow-clip` class."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4882",
+      "time": 1677761081.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4882#issuecomment-1451811715",
+      "text": "@siva-balan once there are no more legacy input fields that's using `handleChange`, you may remove that old `handleChange` altogether."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4882",
+      "time": 1677761027.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4882#issuecomment-1451810762",
+      "text": "@siva-balan I'm guessing that you are using `handleChange` which is for old components and wouldn't work with `FormField` components. For `FormField` components you shall use `handleFormFieldChange`."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4882",
+      "time": 1677760013.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4882#issuecomment-1451788292",
+      "text": "Hey @siva-balan \ud83d\udc4b\ud83c\udffc sure, happy to help you out.\r\n\r\nHave a look at [`src/Components/Users/UserAdd.tsx`](https://github.com/coronasafe/care_fe/blob/develop/src/Components/Users/UserAdd.tsx#L887-L921) where similar State and District select menus were implemented using `SelectFormField`.\r\n\r\nLet me know if you are still facing issues after looking at this.\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/222427990-b0f20dac-2d83-4ed1-af7a-b4ce037795c0.png)\r\n\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5028",
+      "time": 1677744798.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5028",
+      "text": "Fixes incorrect validation check for asset warranty expiry"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5031",
+      "time": 1677744697.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5031",
+      "text": "Migrate Asset Class Icons to use Care Icons only"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5030",
+      "time": 1677744608.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5030",
+      "text": "Icons for Asset Class partially uses care icons and font-awesome icons"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5029",
+      "time": 1677743280.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5029",
+      "text": "Fixes asset import's facility select's cancel button"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5028",
+      "time": 1677742798.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5028",
+      "text": "Fixes incorrect validation check for asset warranty expiry"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4067",
+      "time": 1677730687.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4067#issuecomment-1451278023",
+      "text": "Started working on it from yesterday"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5024",
+      "time": 1677729389.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5024",
+      "text": "Remove local storage keys that are no longer used"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1677726708.0,
+      "title": "coronasafe/care_fe#5023",
+      "link": "https://github.com/coronasafe/care_fe/pull/5023#pullrequestreview-1320973671",
+      "text": "Added confirmation popup when replacing home facility"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4963",
@@ -11061,15 +11159,35 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5031",
+      "title": "Migrate Asset Class Icons to use Care Icons only",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5029",
+      "title": "Fixes asset import's facility select's cancel button",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5021",
       "title": "Auto sign out when `care_access_token` is no longer present in local storage.",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing",
+        "need Review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5020",
       "title": "fixes triage entry date date picker position",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -11077,13 +11195,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4726",
       "title": "Virtual Nursing Assistant Log Update Card for Automated Daily Rounds",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "redesign",
@@ -11093,13 +11211,13 @@
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 33,
+      "stale_for": 34,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 135,
+      "stale_for": 137,
       "labels": [
         "merge conflict"
       ]

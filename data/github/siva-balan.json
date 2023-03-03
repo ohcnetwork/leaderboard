@@ -1,6 +1,55 @@
 {
-  "last_updated": 1677491454.0,
+  "last_updated": 1677784988.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5032",
+      "time": 1677784988.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5032#issuecomment-1452432005",
+      "text": "> @siva-balan everything LGTM, except that pincode field isn't working.\r\n\r\nDone now, Had to change it into handleformfieldchange."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5032",
+      "time": 1677778330.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5032#issuecomment-1452251272",
+      "text": "@rithviknishad Please take a look at this pr. And thanks for the help."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5032",
+      "time": 1677778213.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5032",
+      "text": "Error color change in patient creation form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4882",
+      "time": 1677766689.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4882#issuecomment-1451940103",
+      "text": "@rithviknishad Thanks for the fix, I was able to implement them, but the drop-down options are not fully visible due to using the select form field. They are being hidden by the below component. Any idea on how to solve that?\r\n![image](https://user-images.githubusercontent.com/88849832/222453786-b89060f9-2395-44af-a3c2-edd263f8eef5.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4882",
+      "time": 1677760252.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4882#issuecomment-1451792864",
+      "text": "@rithviknishad I already had a look at that, and I tried to implement it similarly but I am not able to click the states in the drop-down. Could you take a look at this?\r\n![0d62c76b-532c-4814-9e17-70aeecaf40bb](https://user-images.githubusercontent.com/88849832/222429223-2479c895-da3e-4e42-9289-696f963868be.jpg)\r\n![e385ad7e-9c8d-4626-98ea-777363133cfb](https://user-images.githubusercontent.com/88849832/222429235-b8744e17-815a-4137-a49b-52de73dfbb62.jpg)\r\n\r\nTell me if there's anything I need to change.. Thanks for the help."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4882",
+      "time": 1677759527.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4882#issuecomment-1451778897",
+      "text": "@rithviknishad I am unable to use SelectFormField for the States and districts. I am getting some errors, can you help with that... I am able to use that for gender but not for others."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4867",
+      "time": 1677743320.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4867#issuecomment-1451434844",
+      "text": "> @siva-balan can you push a fix ASAP\n\nI will push it by today"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#4841",
@@ -211,6 +260,15 @@
       "text": "Made filter buttons in the facility page consistent with the others"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5032",
+      "title": "Error color change in patient creation form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

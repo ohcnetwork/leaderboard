@@ -1,6 +1,13 @@
 {
-  "last_updated": 1677681112.0,
+  "last_updated": 1677826703.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1206",
+      "time": 1677826703.0,
+      "link": "https://github.com/coronasafe/care/pull/1206",
+      "text": "Add qr_code_id to AssetTransactionFilter"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5022",
@@ -6705,7 +6712,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5022",
       "title": "Fix thank you workflow",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -6714,21 +6721,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4895",
       "title": "Make Asset transactions work with qr_code_id",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "needs testing"
       ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1206",
-      "title": "Add qr_code_id to AssetTransactionFilter",
-      "stale_for": 2,
-      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 22,
+      "stale_for": 24,
       "labels": [
         "waiting-for-review"
       ]

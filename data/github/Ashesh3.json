@@ -1,6 +1,41 @@
 {
-  "last_updated": 1677826703.0,
+  "last_updated": 1678049741.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5037",
+      "time": 1678049741.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5037",
+      "text": "Production Release; Mar Week 1",
+      "collaborated_with": [
+        "khavinshankar",
+        "siva-balan",
+        "rithviknishad",
+        "patelaryan7751",
+        "GokulramGHV",
+        "Pranshu1902",
+        "jeromtom",
+        "mathew-alex",
+        "cp-Coder"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1207",
+      "time": 1678049739.0,
+      "link": "https://github.com/coronasafe/care/pull/1207",
+      "text": "Production Release; Mar Week 1",
+      "collaborated_with": [
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5039",
+      "time": 1678003285.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5039",
+      "text": "Replace pain scale slider with pain editor component"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1206",
@@ -6710,18 +6745,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5039",
+      "title": "Replace pain scale slider with pain editor component",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5022",
       "title": "Fix thank you workflow",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "need Review",
+        "tested",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4895",
       "title": "Make Asset transactions work with qr_code_id",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -6729,7 +6773,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 24,
+      "stale_for": 26,
       "labels": [
         "waiting-for-review"
       ]

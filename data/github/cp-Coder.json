@@ -1,6 +1,27 @@
 {
-  "last_updated": 1678049741.0,
+  "last_updated": 1678123881.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5048",
+      "time": 1678123881.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5048",
+      "text": "fix: Showing Consultation and discharge dates"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5045",
+      "time": 1678115996.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5045",
+      "text": "fix: UI changes in the consultation form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5044",
+      "time": 1678099447.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5044",
+      "text": "fix: Pressure sore reflection in view details page is malfunctioning"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5037",
@@ -6757,9 +6778,35 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5048",
+      "title": "fix: Showing Consultation and discharge dates",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5045",
+      "title": "fix: UI changes in the consultation form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5044",
+      "title": "fix: Pressure sore reflection in view details page is malfunctioning",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 35,
+      "stale_for": 36,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6768,7 +6815,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 38,
+      "stale_for": 39,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6777,7 +6824,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "Done",
         "work-in-progress",
@@ -6788,7 +6835,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "do-not-merge"
       ]
@@ -6796,7 +6843,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 29,
+      "stale_for": 30,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6805,7 +6852,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6814,7 +6861,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6823,7 +6870,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 108,
+      "stale_for": 109,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6832,7 +6879,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 255,
+      "stale_for": 256,
       "labels": [
         "waiting-for-review"
       ]

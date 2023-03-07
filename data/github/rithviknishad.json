@@ -1,6 +1,44 @@
 {
-  "last_updated": 1678049741.0,
+  "last_updated": 1678110955.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5021",
+      "time": 1678110955.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5021",
+      "text": "Auto sign out when `care_access_token` is no longer present in local storage."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5020",
+      "time": 1678087349.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5020",
+      "text": "fixes triage entry date date picker position"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5034",
+      "time": 1678084410.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5034#issuecomment-1455533689",
+      "text": "@jeromtom I agree with that.\r\n\r\ncc: @aparnacoronasafe "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5029",
+      "time": 1678083880.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5029",
+      "text": "Fixes asset import's facility select's cancel button"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5013",
+      "time": 1678083798.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5013",
+      "text": "Added No linked facility text on users page",
+      "collaborated_with": [
+        "Pranshu1902"
+      ]
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5037",
@@ -11228,8 +11266,9 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5036",
       "title": "Adds Facility Central Nusring Station",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
+        "merge conflict",
         "cypress failed"
       ]
     },
@@ -11238,45 +11277,20 @@
       "title": "Migrate Asset Class Icons to use Care Icons only",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5029",
-      "title": "Fixes asset import's facility select's cancel button",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5021",
-      "title": "Auto sign out when `care_access_token` is no longer present in local storage.",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5020",
-      "title": "fixes triage entry date date picker position",
-      "stale_for": 0,
-      "labels": [
-        "tested"
+        "work-in-progress",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4726",
       "title": "Virtual Nursing Assistant Log Update Card for Automated Daily Rounds",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "redesign",
@@ -11286,17 +11300,22 @@
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 37,
+      "stale_for": 38,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 139,
+      "stale_for": 140,
       "labels": [
         "merge conflict"
       ]
     }
   ],
-  "authored_issue_and_pr": []
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5024",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5021"
+    }
+  ]
 }

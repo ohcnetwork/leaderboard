@@ -1,6 +1,125 @@
 {
-  "last_updated": 1678049741.0,
+  "last_updated": 1678110957.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5024",
+      "time": 1678110957.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5024",
+      "text": "Remove local storage keys that are no longer used"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4836",
+      "time": 1678110956.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4836",
+      "text": "Enhancements for auth session when using Care in multiple tabs"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678110946.0,
+      "title": "coronasafe/care_fe#5021",
+      "link": "https://github.com/coronasafe/care_fe/pull/5021#pullrequestreview-1326312927",
+      "text": "Auto sign out when `care_access_token` is no longer present in local storage."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5014",
+      "time": 1678110911.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5014",
+      "text": "Show popup when replacing a facility as home facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678110900.0,
+      "title": "coronasafe/care_fe#5023",
+      "link": "https://github.com/coronasafe/care_fe/pull/5023#pullrequestreview-1326310389",
+      "text": "Added confirmation popup when replacing home facility"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4821",
+      "time": 1678087413.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4821",
+      "text": "Change patient listing to be sorted by date modified by default."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678087403.0,
+      "title": "coronasafe/care_fe#4822",
+      "link": "https://github.com/coronasafe/care_fe/pull/4822#pullrequestreview-1325632067",
+      "text": "Changed default patient ordering and added defaults to useFilters"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4861",
+      "time": 1678087350.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4861",
+      "text": "Facility Triage calendar is clipped out in responsive view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678087341.0,
+      "title": "coronasafe/care_fe#5020",
+      "link": "https://github.com/coronasafe/care_fe/pull/5020#pullrequestreview-1325630992",
+      "text": "fixes triage entry date date picker position"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678087269.0,
+      "title": "coronasafe/care_fe#5022",
+      "link": "https://github.com/coronasafe/care_fe/pull/5022#pullrequestreview-1325629806",
+      "text": "Fix thank you workflow"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5025",
+      "time": 1678083880.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5025",
+      "text": "cancel button is malfunctioning in asset page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678083871.0,
+      "title": "coronasafe/care_fe#5029",
+      "link": "https://github.com/coronasafe/care_fe/pull/5029#pullrequestreview-1325579861",
+      "text": "Fixes asset import's facility select's cancel button"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5012",
+      "time": 1678083799.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5012",
+      "text": "User Linked Facility should show No Linked Facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678083784.0,
+      "title": "coronasafe/care_fe#5013",
+      "link": "https://github.com/coronasafe/care_fe/pull/5013#pullrequestreview-1325578680",
+      "text": "Added No linked facility text on users page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4886",
+      "time": 1678083723.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4886",
+      "text": "Transfer allowed flags on patient list- hide"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678083715.0,
+      "title": "coronasafe/care_fe#5040",
+      "link": "https://github.com/coronasafe/care_fe/pull/5040#pullrequestreview-1325577697",
+      "text": "Removed the transfer flags from the patient list"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4575",
+      "time": 1678073697.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4575#issuecomment-1455389020",
+      "text": "![image](https://user-images.githubusercontent.com/29787772/223013686-a18898b4-c355-411a-a19a-1fe05a6da701.png)\r\n\r\n@nihal467 can you retest this with a hard refresh or in incognito, it's working on my end."
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5037",
@@ -14601,13 +14720,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1204",
       "title": "Allow read files in discharged consultations",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4843",
       "title": "Hcx claims workflow",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "Deploy-Failed",
         "merge conflict",
@@ -14617,28 +14736,27 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
-        "test failed",
-        "cypress failed"
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 87,
+      "stale_for": 88,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 42,
+      "stale_for": 43,
       "labels": [
         "waiting-for-review"
       ]
@@ -14646,7 +14764,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 86,
+      "stale_for": 87,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -14656,7 +14774,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 115,
+      "stale_for": 116,
       "labels": [
         "waiting-for-review"
       ]
@@ -14664,25 +14782,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 443,
+      "stale_for": 444,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 449,
+      "stale_for": 450,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 450,
+      "stale_for": 451,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 645,
+      "stale_for": 646,
       "labels": []
     }
   ],

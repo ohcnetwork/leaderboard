@@ -1,6 +1,55 @@
 {
-  "last_updated": 1678123881.0,
+  "last_updated": 1678202620.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5042",
+      "time": 1678202620.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5042#issuecomment-1458360783",
+      "text": "@nihal467 Will add these functionality in PR #5044 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5045",
+      "time": 1678201253.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5045#issuecomment-1458323738",
+      "text": "After discussing in the EOD:\r\n- [ ] Make `Treatment Plan` a section similar to `Medical History` in the `Patient Details`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5052",
+      "time": 1678201061.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5052#issuecomment-1458318135",
+      "text": "After discussing in the EOD:\r\n- [ ] Make all the sections expandable by default\r\n- [ ] Change the UI of the Accordian"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5044",
+      "time": 1678195439.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5044#issuecomment-1458166742",
+      "text": "@nihal467 The PR is working fine. Can you check once again?\r\n__Here is the sample video__\r\n\r\nhttps://user-images.githubusercontent.com/77210185/223434553-31dbe4e9-9814-4529-ad76-fccd29affc07.mp4"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5051",
+      "time": 1678184652.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5051",
+      "text": "fix: Pagination is malfunctioning for the facility location management page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5052",
+      "time": 1678165439.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5052",
+      "text": "fix: reorder and group the patient filters"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5051",
+      "time": 1678163585.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5051",
+      "text": "fix: Pagination is malfunctioning for the facility location management page"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5048",
@@ -6778,6 +6827,16 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5052",
+      "title": "fix: reorder and group the patient filters",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "hold",
+        "merge conflict"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5048",
       "title": "fix: Showing Consultation and discharge dates",
       "stale_for": 0,
@@ -6790,7 +6849,7 @@
       "title": "fix: UI changes in the consultation form",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "hold"
       ]
     },
     {
@@ -6806,7 +6865,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 36,
+      "stale_for": 37,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6815,7 +6874,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 39,
+      "stale_for": 40,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6824,18 +6883,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 9,
+      "stale_for": 0,
       "labels": [
         "Done",
         "work-in-progress",
         "waiting for back end",
+        "merge conflict",
         "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "do-not-merge"
       ]
@@ -6843,7 +6903,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 30,
+      "stale_for": 31,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6852,7 +6912,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6861,7 +6921,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6870,7 +6930,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 109,
+      "stale_for": 110,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6879,7 +6939,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 256,
+      "stale_for": 257,
       "labels": [
         "waiting-for-review"
       ]

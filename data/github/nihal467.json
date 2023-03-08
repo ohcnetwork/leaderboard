@@ -1,6 +1,97 @@
 {
-  "last_updated": 1678114690.0,
+  "last_updated": 1678202991.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4726",
+      "time": 1678202991.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4726#issuecomment-1458370150",
+      "text": "@rithviknishad \r\n![image](https://user-images.githubusercontent.com/57055998/223468696-90e0aff7-bc9a-4e65-8b13-8e1cdf99a42d.png)\r\n\r\nthe card is not responsive in mobile view"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5046",
+      "time": 1678201307.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5046",
+      "text": "Delete all Bed capacity button"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5046",
+      "time": 1678201307.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5046#issuecomment-1458325411",
+      "text": "we decided not to go forward with it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5052",
+      "time": 1678183952.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5052#issuecomment-1457901653",
+      "text": "@cp-Coder \r\n![image](https://user-images.githubusercontent.com/57055998/223391696-58942871-809e-4e3e-9efd-27c5bef91f70.png)\r\n\r\nthe UI doesn't look good in my view, marking for discussion in EOD"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5051",
+      "time": 1678183798.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5051#issuecomment-1457897709",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5048",
+      "time": 1678181660.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5048#issuecomment-1457844870",
+      "text": "@cp-Coder \r\n![image](https://user-images.githubusercontent.com/57055998/223379151-ef1fdc24-8732-47ed-b835-41c6fc4a64ea.png)\r\n\r\n- [ ] it is specifically mentioned in the issue to use dd/mm/yyyy format, in the PR, it is showing mm/dd/yyyy format\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223379806-3ae0a870-d0c7-4935-95c6-c99c9d7621a3.png)\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223380053-082f3528-008b-413a-8c80-17ec670e1ab8.png)\r\n\r\n\r\nhttps://deploy-preview-5048--care-net.netlify.app/facility/41c73414-e95e-4e50-b0b9-84bafb3b7440/patient/fdea441a-cff6-46df-8e20-5c36e1ae8b2f/consultation/77a163d9-0a61-4230-a377-b2c1d2ecbd15/update\r\n\r\n- [ ] I mentioned the admission date of the previous week, (03/03/2023) and created a consultation today, the  \" admission on \" is showing today's date\r\n- [ ] the similar situation arises for a death declared patient if the patient is deaded on 11:59 Pm of 06/03/2023 and I created the consultation on 12: 05 Am, of 07/03/2023, the PR will show Declare death on 07/03/2023"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5047",
+      "time": 1678174220.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5047#issuecomment-1457684785",
+      "text": "@ayushjnv1 \r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223353266-4ae0e159-6977-468a-8167-5cd6bc7f2535.png)\r\n\r\n- [ ] the forgot password text should be left aligned similar to the existing staging\r\n- [ ] the login button should be of the same length as the text box, similar to the existing staging\r\n- [ ] by default, English is selected, so it should be much more highlighted from others and have an underline to make the user understand, the language English is selected, similar to the existing staging."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5032",
+      "time": 1678172982.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5032#issuecomment-1457663489",
+      "text": "@siva-balan @rithviknishad the PR LGTM , @khavinshankar you can review it and merge it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5032",
+      "time": 1678172387.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5032#issuecomment-1457643869",
+      "text": "LGTM, have a small issue with the blood group droplist expanding the page, it will be made as a new issue "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5045",
+      "time": 1678171319.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5045#issuecomment-1457627795",
+      "text": "@cp-Coder \r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223339198-cc0eecdf-473f-414c-9993-12c7e61b277d.png)\r\n\r\n- [ ] in all cases, the IP number is a mandatory field.\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223339867-d25ab8ce-e6bc-40c7-b313-8dd43d7a4424.png)\r\n\r\n- [ ] #4875 as per the issue, for patients brought dead, the history of the present illness field should be hidden\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223340479-4527c263-3c18-4b6a-a833-a3342d913c38.png)\r\n\r\n- [ ] increase the horizontal length of the weight and height column to make it equally aligned with other fields\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223342317-617af3e1-2630-449f-989a-fad3c1c10b3d.png)\r\n\r\n- [ ] the treatment plan should be made into a separate tile as we have for the update bed\r\n- [ ] the treatment plan should be in expanded view full-time, and we don't need a collapsible option for the section"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5044",
+      "time": 1678165414.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5044#issuecomment-1457538896",
+      "text": "@cp-Coder \r\n![image](https://user-images.githubusercontent.com/57055998/223324897-8b83ae71-1c96-4d19-a9b5-2c84d49aefa5.png)\r\n\r\nthe preview is in a tabular column, the issue specifically mentioned replacing a tabular column with a human anatomy preview, similar to a pressure sore, the sample screenshot is below:\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223325106-de2d0eb6-040b-4729-bbe1-b0df3980e42e.png)\r\n\r\n**make sure that you read the issue properly before pushing a fix**"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5039",
+      "time": 1678164598.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5039#issuecomment-1457526120",
+      "text": "LGTM"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5050",
+      "time": 1678162131.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5050",
+      "text": "Pagination is malfunctioning for the facility location management page"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#1346",

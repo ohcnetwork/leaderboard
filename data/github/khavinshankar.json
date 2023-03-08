@@ -1,6 +1,69 @@
 {
-  "last_updated": 1678110957.0,
+  "last_updated": 1678185470.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4867",
+      "time": 1678185470.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4867",
+      "text": "Change error statement colour from black to red in patient creation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678185460.0,
+      "title": "coronasafe/care_fe#5032",
+      "link": "https://github.com/coronasafe/care_fe/pull/5032#pullrequestreview-1328095117",
+      "text": "Error color change in patient creation form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3430",
+      "time": 1678185431.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3430",
+      "text": "Hemodynamic Parameters (vitals): Pain Scale"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678185419.0,
+      "title": "coronasafe/care_fe#5039",
+      "link": "https://github.com/coronasafe/care_fe/pull/5039#pullrequestreview-1328093948",
+      "text": "Replace pain scale slider with pain editor component"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5050",
+      "time": 1678184653.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5050",
+      "text": "Pagination is malfunctioning for the facility location management page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678184640.0,
+      "title": "coronasafe/care_fe#5051",
+      "link": "https://github.com/coronasafe/care_fe/pull/5051#pullrequestreview-1328072295",
+      "text": "fix: Pagination is malfunctioning for the facility location management page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678175783.0,
+      "title": "coronasafe/care#1073",
+      "link": "https://github.com/coronasafe/care/pull/1073#pullrequestreview-1327823157",
+      "text": "feat: Added more field in consultation form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#3479",
+      "time": 1678172876.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3479",
+      "text": "Asset Management: Log of transaction history with revised QR Code"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678172867.0,
+      "title": "coronasafe/care_fe#4895",
+      "link": "https://github.com/coronasafe/care_fe/pull/4895#pullrequestreview-1327752677",
+      "text": "Make Asset transactions work with qr_code_id"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#5024",
@@ -14720,13 +14783,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1204",
       "title": "Allow read files in discharged consultations",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4843",
       "title": "Hcx claims workflow",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "Deploy-Failed",
         "merge conflict",
@@ -14736,13 +14799,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 16,
+      "stale_for": 17,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/4779",
+      "title": "Abdm Integration",
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed"
       ]
@@ -14750,13 +14819,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 88,
+      "stale_for": 89,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 43,
+      "stale_for": 44,
       "labels": [
         "waiting-for-review"
       ]
@@ -14764,7 +14833,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 87,
+      "stale_for": 88,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -14774,7 +14843,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 116,
+      "stale_for": 117,
       "labels": [
         "waiting-for-review"
       ]
@@ -14782,25 +14851,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 444,
+      "stale_for": 445,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 450,
+      "stale_for": 451,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 451,
+      "stale_for": 452,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 646,
+      "stale_for": 647,
       "labels": []
     }
   ],

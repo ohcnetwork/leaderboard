@@ -1,6 +1,111 @@
 {
-  "last_updated": 1678202991.0,
+  "last_updated": 1678314310.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5074",
+      "time": 1678314310.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5074",
+      "text": "Normal log update view detail page is not showing full data recorded in the form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5072",
+      "time": 1678312993.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5072#issuecomment-1460936929",
+      "text": "LGTM"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5073",
+      "time": 1678312865.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5073",
+      "text": "Log update is malfunctioning in patient consultation form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5071",
+      "time": 1678311509.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5071",
+      "text": "SPO2 and time at field is malfunctioning in view details page of normal patient log update"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5070",
+      "time": 1678311213.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5070#issuecomment-1460906105",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5070",
+      "time": 1678309164.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5070#issuecomment-1460868374",
+      "text": "@Ashesh3 \r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223845367-0d93cc40-48be-412a-8f4e-5987e6f91525.png)\r\n\r\n\r\nhttps://deploy-preview-5070--care-net.netlify.app/facility/015ad911-39b7-4104-b304-bf8178c33830/patient/8db67f09-fa73-43e7-8728-d227e6397e79/consultation/6ea4b2d2-12c1-44eb-8c64-c41ec9ced4eb\r\n\r\n- the button is now working properly for all the patient in the PR, except for the patients who are having virtual nursing assist been activated\r\n- when we click view details button in the card for patients who are having virtual nurse assist activated, we are taken to entirely a new page, which is not the common view detail page of the log update."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5069",
+      "time": 1678303431.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5069",
+      "text": "View detail button of update log card is malfunctioning "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5067",
+      "time": 1678285872.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5067",
+      "text": "Redesign the Rhythm table in summary tab of patient consultation page. "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#1271",
+      "time": 1678270002.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1271",
+      "text": "Speciality for doctors"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1271",
+      "time": 1678270001.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1271#issuecomment-1459924713",
+      "text": "the issue is resolved in the PR #4455 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4726",
+      "time": 1678269623.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4726#issuecomment-1459916370",
+      "text": "LGTM , https://deploy-preview-4726--care-net.netlify.app/facility/015ad911-39b7-4104-b304-bf8178c33830/patient/8db67f09-fa73-43e7-8728-d227e6397e79/consultation/6ea4b2d2-12c1-44eb-8c64-c41ec9ced4eb\r\n@rithviknishad great work\r\n@khavinshankar you can review it and merge it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5031",
+      "time": 1678269419.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5031#issuecomment-1459911480",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5047",
+      "time": 1678263530.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5047#issuecomment-1459707700",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5042",
+      "time": 1678262003.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5042#issuecomment-1459681688",
+      "text": "@cp-Coder as per our slack communication, I agree with the statement that, the rhythm would be requiring a lot of space, can you think of a better UI to solve the problem, we can discuss it in today's EOD call"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5044",
+      "time": 1678260119.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5044#issuecomment-1459653286",
+      "text": "@cp-Coder \r\n![image](https://user-images.githubusercontent.com/57055998/223642115-4b1c61d6-81d6-417e-aab3-bfa538e2b6ea.png)\r\n\r\n**All the changes are been made in the summary section of the patient consultation page** \r\n\r\n- [ ] the issue is saying you need to remove the pain scale card from the place and replace it with the rhythm tabular column, then why do you change it to rhythm tabular data to a graph?\r\n- [ ] the pain scale should be in a human anatomy preview ( similar to a pressure sore ) at the bottom of the patient summary page, currently, it is not getting reflected anywhere on the summary page.\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/223647026-922e9551-df06-4f35-9482-8723cfa78ae2.png)\r\n\r\n- [ ] in the view details page of a log update, you are still showing a tabular column of data, whereas, the issue, specifically mentioned replacing the tabular column with human anatomy preview of the data. For example, check the pain scale, and how it is reflected on the same page, it is the same data reflection, we should be following also the pressure sore."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4726",

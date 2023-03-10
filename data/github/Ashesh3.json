@@ -1,6 +1,55 @@
 {
-  "last_updated": 1678311559.0,
+  "last_updated": 1678377410.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1212",
+      "time": 1678377410.0,
+      "link": "https://github.com/coronasafe/care/pull/1212",
+      "text": "Clone specific fields for 'Normal' type daily rounds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5076",
+      "time": 1678365532.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5076",
+      "text": "Fix for Rhythm field not updating in Daily Rounds"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5075",
+      "time": 1678365390.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5075",
+      "text": "Rhythm field not updating in Daily Rounds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1212",
+      "time": 1678344480.0,
+      "link": "https://github.com/coronasafe/care/pull/1212",
+      "text": "Clone specific fields for 'Normal' type daily rounds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678339926.0,
+      "title": "coronasafe/care_fe#5068",
+      "link": "https://github.com/coronasafe/care_fe/pull/5068#pullrequestreview-1332039287",
+      "text": "Tailwinding + Multiple select option for AutocompleteFormField"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5072",
+      "time": 1678333461.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5072",
+      "text": "Fix SPO2 and Taken at for daily rounds"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5070",
+      "time": 1678333399.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5070",
+      "text": "Fix view log update button"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5072",
@@ -6822,20 +6871,11 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5072",
-      "title": "Fix SPO2 and Taken at for daily rounds",
+      "link": "https://github.com/coronasafe/care_fe/pull/5076",
+      "title": "Fix for Rhythm field not updating in Daily Rounds",
       "stale_for": 0,
       "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5070",
-      "title": "Fix view log update button",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "P1"
+        "needs testing"
       ]
     },
     {
@@ -6843,13 +6883,13 @@
       "title": "Tailwinding + Multiple select option for AutocompleteFormField",
       "stale_for": 0,
       "labels": [
-        "changes required"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 29,
+      "stale_for": 30,
       "labels": [
         "waiting-for-review"
       ]

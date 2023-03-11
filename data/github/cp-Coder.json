@@ -1,6 +1,29 @@
 {
-  "last_updated": 1678271490.0,
+  "last_updated": 1678484496.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5090",
+      "time": 1678484496.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5090",
+      "text": "Production Release; Mar Week 2",
+      "collaborated_with": [
+        "jeromtom",
+        "ayushjnv1",
+        "siva-balan",
+        "Ashesh3",
+        "rithviknishad",
+        "skks1212",
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5091",
+      "time": 1678468776.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5091",
+      "text": "fix: Location to be added in the bed selection dropdown"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5044",
@@ -6834,9 +6857,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5091",
+      "title": "fix: Location to be added in the bed selection dropdown",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5052",
       "title": "fix: reorder and group the patient filters",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "hold",
         "merge conflict"
@@ -6845,7 +6877,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5048",
       "title": "fix: Showing Consultation and discharge dates",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -6853,7 +6885,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5045",
       "title": "fix: UI changes in the consultation form",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "hold"
       ]
@@ -6861,7 +6893,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 38,
+      "stale_for": 40,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6870,7 +6902,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 41,
+      "stale_for": 43,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6879,7 +6911,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "changes required",
         "waiting for back end",
@@ -6889,7 +6921,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "do-not-merge"
       ]
@@ -6897,7 +6929,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 32,
+      "stale_for": 34,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6906,7 +6938,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 23,
+      "stale_for": 25,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6915,7 +6947,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 23,
+      "stale_for": 25,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6924,7 +6956,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 111,
+      "stale_for": 113,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6933,7 +6965,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 258,
+      "stale_for": 260,
       "labels": [
         "waiting-for-review"
       ]

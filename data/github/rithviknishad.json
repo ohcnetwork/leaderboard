@@ -1,6 +1,106 @@
 {
-  "last_updated": 1678370757.0,
+  "last_updated": 1678484496.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5090",
+      "time": 1678484496.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5090",
+      "text": "Production Release; Mar Week 2",
+      "collaborated_with": [
+        "jeromtom",
+        "ayushjnv1",
+        "cp-Coder",
+        "siva-balan",
+        "Ashesh3",
+        "skks1212",
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678465510.0,
+      "title": "coronasafe/care_fe#5089",
+      "link": "https://github.com/coronasafe/care_fe/pull/5089#pullrequestreview-1335173476",
+      "text": "Added red border on select input fields and removed MUI"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5088",
+      "time": 1678461205.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5088",
+      "text": "Pressure pop-up not scrolling along with page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5085",
+      "time": 1678447711.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5085",
+      "text": "Show upto 20 options in bed select"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5084",
+      "time": 1678447582.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5084",
+      "text": "Show only occupied beds in consultation assign/shift bed dialog"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5080",
+      "time": 1678447147.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5080#issuecomment-1463659069",
+      "text": "Ack"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678441500.0,
+      "title": "coronasafe/care_fe#5058",
+      "link": "https://github.com/coronasafe/care_fe/pull/5058#pullrequestreview-1334475800",
+      "text": "Removed material UI Icons and replaced with Care Icons in GLocationPi\u2026"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678441460.0,
+      "title": "coronasafe/care_fe#5060",
+      "link": "https://github.com/coronasafe/care_fe/pull/5060#pullrequestreview-1334474838",
+      "text": "Removed material UI icons and replaced with Care icons in AssestList.tsx"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678441369.0,
+      "title": "coronasafe/care_fe#5061",
+      "link": "https://github.com/coronasafe/care_fe/pull/5061#pullrequestreview-1334472553",
+      "text": "Replaced MUI modal with custom DialogModal Component in AssetImportMo\u2026"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678441309.0,
+      "title": "coronasafe/care_fe#5063",
+      "link": "https://github.com/coronasafe/care_fe/pull/5063#pullrequestreview-1334471010",
+      "text": "Replaced MUI components with custom components in ResetPassword.tsx"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5078",
+      "time": 1678438733.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5078",
+      "text": "fix asset update warranty validation not working for today"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678437988.0,
+      "title": "coronasafe/care_fe#5062",
+      "link": "https://github.com/coronasafe/care_fe/pull/5062#pullrequestreview-1334385246",
+      "text": "Fix/#5049"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5078",
+      "time": 1678431803.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5078",
+      "text": "fix asset update warranty validation not working for today"
+    },
     {
       "type": "pr_reviewed",
       "time": 1678370757.0,
@@ -11480,9 +11580,29 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5085",
+      "title": "Show upto 20 options in bed select",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5084",
+      "title": "Show only occupied beds in consultation assign/shift bed dialog",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5059",
       "title": "Highlight English as default language if no language preference present.",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -11490,7 +11610,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5036",
       "title": "Adds Facility Central Nusring Station",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -11498,19 +11618,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 41,
+      "stale_for": 42,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 143,
+      "stale_for": 144,
       "labels": [
         "merge conflict"
       ]

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1678123894.0,
+  "last_updated": 1678459933.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5087",
+      "time": 1678459933.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5087",
+      "text": "Reordering Consultation Fields"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5082",
+      "time": 1678459652.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5082#issuecomment-1463910880",
+      "text": "@aparnacoronasafe \r\n\r\nInstead of listing only Bed Names in the Bed search. If we show `Bed - Location` and allow searching by `Bed-Location` would that work?\r\n\r\nSo `Bed 1` in location `RICU` will be listed as `Bed 1 - RICU` and searching `RICU` will give you the result.\r\n\r\nAdding another Dropdown makes the experience bad IMO."
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#5049",
@@ -5051,13 +5065,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1117",
       "title": "ABDM M1",
-      "stale_for": 63,
+      "stale_for": 67,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1001",
       "title": "Create Patient Tele Interaction",
-      "stale_for": 53,
+      "stale_for": 57,
       "labels": []
     }
   ],
@@ -5065,10 +5079,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4025",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4026"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/938",
-      "pr_link": "https://github.com/coronasafe/care/pull/960"
     }
   ]
 }

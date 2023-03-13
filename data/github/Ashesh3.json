@@ -1,6 +1,13 @@
 {
-  "last_updated": 1678484496.0,
+  "last_updated": 1678603844.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1215",
+      "time": 1678603844.0,
+      "link": "https://github.com/coronasafe/care/pull/1215",
+      "text": "Update Review Interval in Patient Consultation for Daily Round Entries "
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5090",
@@ -6898,25 +6905,34 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1215",
+      "title": "Update Review Interval in Patient Consultation for Daily Round Entries ",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P2"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5076",
       "title": "Fix for Rhythm field not updating in Daily Rounds",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5068",
       "title": "Tailwinding + Multiple select option for AutocompleteFormField",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 31,
+      "stale_for": 33,
       "labels": [
         "waiting-for-review"
       ]

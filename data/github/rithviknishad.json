@@ -1,6 +1,86 @@
 {
-  "last_updated": 1678623696.0,
+  "last_updated": 1678706283.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1678706283.0,
+      "title": "coronasafe/care_fe#3799",
+      "link": "https://github.com/coronasafe/care_fe/pull/3799#pullrequestreview-1336792532",
+      "text": "feat: added health details and medical history fields to consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678706135.0,
+      "title": "coronasafe/care_fe#3799",
+      "link": "https://github.com/coronasafe/care_fe/pull/3799#pullrequestreview-1336761907",
+      "text": "feat: added health details and medical history fields to consultation form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3799",
+      "time": 1678705721.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3799#issuecomment-1465939740",
+      "text": "We could take this up as a separate issue\r\n\r\n![image](https://user-images.githubusercontent.com/25143503/224684708-b45958f6-0204-456e-a23f-eb744bf55e89.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678705489.0,
+      "title": "coronasafe/care_fe#3799",
+      "link": "https://github.com/coronasafe/care_fe/pull/3799#pullrequestreview-1336761907",
+      "text": "feat: added health details and medical history fields to consultation form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5103",
+      "time": 1678703577.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5103",
+      "text": "Made Investigation suggestion-time to non mandatory"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5102",
+      "time": 1678703078.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5102",
+      "text": "Fixes merge options logic of `useAsyncOptions`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5085",
+      "time": 1678698574.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5085",
+      "text": "Show upto 20 options in bed select"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5062",
+      "time": 1678698403.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5062",
+      "text": "Uninstall and replaces all Material UI icons with Care Icons",
+      "collaborated_with": [
+        "ayushjnv1"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5062",
+      "time": 1678697339.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5062#issuecomment-1465731288",
+      "text": "@khavinshankar "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5059",
+      "time": 1678696349.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5059",
+      "text": "Highlight English as default language if no language preference present."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5084",
+      "time": 1678688615.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5084",
+      "text": "Show only occupied beds in consultation assign/shift bed dialog"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5074",
@@ -11643,18 +11723,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5085",
-      "title": "Show upto 20 options in bed select",
-      "stale_for": 1,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5084",
-      "title": "Show only occupied beds in consultation assign/shift bed dialog",
+      "link": "https://github.com/coronasafe/care_fe/pull/5103",
+      "title": "Made Investigation suggestion-time to non mandatory",
       "stale_for": 0,
       "labels": [
         "tested",
@@ -11663,17 +11733,20 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5059",
-      "title": "Highlight English as default language if no language preference present.",
+      "link": "https://github.com/coronasafe/care_fe/pull/5102",
+      "title": "Fixes merge options logic of `useAsyncOptions`",
       "stale_for": 0,
       "labels": [
-        "tested"
+        "urgent",
+        "tested",
+        "P1",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5036",
       "title": "Adds Facility Central Nusring Station",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "cypress failed"
       ]
@@ -11681,25 +11754,29 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 44,
+      "stale_for": 45,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 146,
+      "stale_for": 147,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5057",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5059"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5030",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5031"

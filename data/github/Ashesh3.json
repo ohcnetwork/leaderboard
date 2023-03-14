@@ -1,6 +1,48 @@
 {
-  "last_updated": 1678603844.0,
+  "last_updated": 1678709627.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5104",
+      "time": 1678709627.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5104",
+      "text": "Add patient name and bed number to Patient ordering"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1216",
+      "time": 1678709466.0,
+      "link": "https://github.com/coronasafe/care/pull/1216",
+      "text": "Add facility name, patient name and bed name to Patient's ordering_fields"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5068",
+      "time": 1678701913.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5068",
+      "text": "Tailwinding + Multiple select option for AutocompleteFormField"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5095",
+      "time": 1678698447.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5095",
+      "text": "Make at least one of Preliminary or final diagnosis required"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5076",
+      "time": 1678688907.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5076",
+      "text": "Fix for Rhythm field not updating in Daily Rounds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5095",
+      "time": 1678688338.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5095",
+      "text": "Make at least one of Preliminary or final diagnosis required"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1215",
@@ -6905,40 +6947,44 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5104",
+      "title": "Add patient name and bed number to Patient ordering",
+      "stale_for": 0,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1216",
+      "title": "Add facility name, patient name and bed name to Patient's ordering_fields",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1215",
       "title": "Update Review Interval in Patient Consultation for Daily Round Entries ",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review",
         "P2"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5076",
-      "title": "Fix for Rhythm field not updating in Daily Rounds",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5068",
-      "title": "Tailwinding + Multiple select option for AutocompleteFormField",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 33,
+      "stale_for": 34,
       "labels": [
         "waiting-for-review"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5075",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5076"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4855",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4856"
@@ -7026,10 +7072,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3181",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3200"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3180",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3187"
     }
   ]
 }

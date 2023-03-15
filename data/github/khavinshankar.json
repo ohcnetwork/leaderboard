@@ -1,6 +1,142 @@
 {
-  "last_updated": 1678701915.0,
+  "last_updated": 1678806816.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1073",
+      "time": 1678806816.0,
+      "link": "https://github.com/coronasafe/care/pull/1073#issuecomment-1468294850",
+      "text": "@nihal467 had a huddle with @cp-Coder, everything is working fine, and there was no error, I passed in the PatientRegistration model inside PatientConsultationSerializer\r\n\r\n@gigincg @vigneshhari can you review this and merge it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1073",
+      "time": 1678804356.0,
+      "link": "https://github.com/coronasafe/care/pull/1073#issuecomment-1468212465",
+      "text": "@cp-Coder To Reproduce the above issue,\r\nStep 1: Clone the repo `git clone git@github.com:coronasafe/care_fe.git`\r\nStep 2: Run the app `sudo make up`\r\nStep 3: Seed dummy data `sudo docker exec care python3 manage.py load_dummy_data`\r\nStep 4: Pull the changes from this pr `gh pr checkout 1073`\r\nStep 5: Migrate the data, `sudo docker exec care python3 manage.py migrate`\r\nStep 6: Try serializing patient instance in django shell `sudo docker exec -it care python3 manage.py shell`\r\n ```py\r\nfrom care.facility.models.patient import PatientRegistration\r\nfrom care.facility.api.serializers import PatientDetailsSerializer\r\nPatientDetailsSerializer(PatientRegistration.objects.first())\r\n ```\r\n \r\n cc: @gigincg "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5067",
+      "time": 1678801837.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5067",
+      "text": "Redesign the Rhythm table in summary tab of patient consultation page. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678801826.0,
+      "title": "coronasafe/care_fe#5097",
+      "link": "https://github.com/coronasafe/care_fe/pull/5097#pullrequestreview-1339332397",
+      "text": "Modified the rythm table ui to a new look"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5108",
+      "time": 1678797629.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5108",
+      "text": "HCX Integration - Claims Enabled"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5107",
+      "time": 1678796707.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5107",
+      "text": "HCX Integration"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5106",
+      "time": 1678796471.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5106",
+      "text": "HCX Integration"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1073",
+      "time": 1678795896.0,
+      "link": "https://github.com/coronasafe/care/pull/1073#issuecomment-1467988670",
+      "text": "@cp-Coder I'm getting this error, after migration,\r\n![image](https://user-images.githubusercontent.com/29787772/224997107-5d64df53-1d96-4d9d-bf62-3ac5ed976ddd.png)\r\n"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5055",
+      "time": 1678770392.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5055",
+      "text": "Add Red border color for all components on required error"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5089",
+      "time": 1678770391.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5089",
+      "text": "Added red border on select input fields and removed MUI",
+      "collaborated_with": [
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4785",
+      "time": 1678769319.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4785",
+      "text": "Total Patient card is not consistent"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5053",
+      "time": 1678769266.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5053",
+      "text": "Add Doctor Capacity form malfunction"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678769212.0,
+      "title": "coronasafe/care_fe#5054",
+      "link": "https://github.com/coronasafe/care_fe/pull/5054#pullrequestreview-1338421555",
+      "text": "Resolves malfunctioning Add Doctor Capacity form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678769063.0,
+      "title": "coronasafe/care_fe#5089",
+      "link": "https://github.com/coronasafe/care_fe/pull/5089#pullrequestreview-1338419710",
+      "text": "Added red border on select input fields and removed MUI"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678769063.0,
+      "title": "coronasafe/care_fe#5089",
+      "link": "https://github.com/coronasafe/care_fe/pull/5089#pullrequestreview-1338419710",
+      "text": "Added red border on select input fields and removed MUI"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5100",
+      "time": 1678768975.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5100",
+      "text": "Consultations: Investigation suggestion-time to be non mandatory"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5098",
+      "time": 1678768966.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5098",
+      "text": "Diagnosis Field is malfunctioning in the patient consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678768957.0,
+      "title": "coronasafe/care_fe#5102",
+      "link": "https://github.com/coronasafe/care_fe/pull/5102#pullrequestreview-1338418861",
+      "text": "Fixes merge options logic of `useAsyncOptions`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678768923.0,
+      "title": "coronasafe/care_fe#5103",
+      "link": "https://github.com/coronasafe/care_fe/pull/5103#pullrequestreview-1338418532",
+      "text": "Made Investigation suggestion-time to non mandatory"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4935",
@@ -15191,15 +15327,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5108",
+      "title": "HCX Integration - Claims Disabled",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5107",
+      "title": "HCX Integration - Claims Enabled",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_hcx/pull/7",
       "title": "Get ID from claim response identifier",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4843",
       "title": "Hcx claims workflow",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "Deploy-Failed",
         "merge conflict"
@@ -15208,13 +15356,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 23,
+      "stale_for": 24,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4779",
       "title": "Abdm Integration",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "merge conflict"
       ]
@@ -15222,21 +15370,22 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
-        "test failed"
+        "test failed",
+        "stale"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 94,
+      "stale_for": 95,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 50,
+      "stale_for": 51,
       "labels": [
         "waiting-for-review"
       ]
@@ -15244,7 +15393,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 94,
+      "stale_for": 95,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -15254,7 +15403,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 123,
+      "stale_for": 124,
       "labels": [
         "waiting-for-review"
       ]
@@ -15262,25 +15411,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 451,
+      "stale_for": 452,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 457,
+      "stale_for": 458,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 458,
+      "stale_for": 459,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 653,
+      "stale_for": 654,
       "labels": []
     }
   ],

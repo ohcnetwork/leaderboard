@@ -1,6 +1,69 @@
 {
-  "last_updated": 1678881374.0,
+  "last_updated": 1678983085.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5115",
+      "time": 1678983085.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5115",
+      "text": "Unable to create a new user in care"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678983065.0,
+      "title": "coronasafe/care_fe#5116",
+      "link": "https://github.com/coronasafe/care_fe/pull/5116#pullrequestreview-1344198167",
+      "text": "Fix validation check on user creation page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_deploy_configs#13",
+      "time": 1678979110.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/13",
+      "text": "added enable_hcx in staging"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5112",
+      "time": 1678973822.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5112",
+      "text": "Save doctor button is malfunctioning on doctors list of facility page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678973811.0,
+      "title": "coronasafe/care_fe#5114",
+      "link": "https://github.com/coronasafe/care_fe/pull/5114#pullrequestreview-1343783853",
+      "text": "fixes doctor capacity save and exit button"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5094",
+      "time": 1678956853.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5094",
+      "text": "Sort by: Patient list"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1678956841.0,
+      "title": "coronasafe/care_fe#5104",
+      "link": "https://github.com/coronasafe/care_fe/pull/5104#pullrequestreview-1343185392",
+      "text": "Add patient name and bed number to Patient ordering"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1219",
+      "time": 1678940049.0,
+      "link": "https://github.com/coronasafe/care/pull/1219",
+      "text": "HCX Integration"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_hcx#7",
+      "time": 1678939981.0,
+      "link": "https://github.com/coronasafe/care_hcx/pull/7",
+      "text": "Get ID from claim response identifier"
+    },
     {
       "type": "pr_reviewed",
       "time": 1678881374.0,
@@ -15334,10 +15397,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/13",
+      "title": "added enable_hcx in staging",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1219",
+      "title": "HCX Integration",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5108",
       "title": "HCX Integration - Claims Disabled",
       "stale_for": 0,
       "labels": [
+        "do not merge",
         "tested"
       ]
     },
@@ -15346,19 +15422,14 @@
       "title": "HCX Integration - Claims Enabled",
       "stale_for": 0,
       "labels": [
+        "do not merge",
         "tested"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_hcx/pull/7",
-      "title": "Get ID from claim response identifier",
-      "stale_for": 6,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/4843",
       "title": "Hcx claims workflow",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "Deploy-Failed",
         "merge conflict"
@@ -15367,13 +15438,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 25,
+      "stale_for": 26,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4779",
       "title": "Abdm Integration",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "merge conflict"
       ]
@@ -15381,7 +15452,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "test failed",
         "stale"
@@ -15390,13 +15461,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 96,
+      "stale_for": 97,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 52,
+      "stale_for": 53,
       "labels": [
         "waiting-for-review"
       ]
@@ -15404,7 +15475,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 96,
+      "stale_for": 97,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -15414,7 +15485,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 125,
+      "stale_for": 126,
       "labels": [
         "waiting-for-review"
       ]
@@ -15422,25 +15493,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 453,
+      "stale_for": 454,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 459,
+      "stale_for": 460,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 460,
+      "stale_for": 461,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 655,
+      "stale_for": 656,
       "labels": []
     }
   ],

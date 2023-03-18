@@ -1,6 +1,101 @@
 {
-  "last_updated": 1678983085.0,
+  "last_updated": 1679084114.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5124",
+      "time": 1679084114.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5124",
+      "text": "Production Release; Mar Week 3",
+      "collaborated_with": [
+        "cp-Coder",
+        "mathew-alex",
+        "Pranshu1902",
+        "GokulramGHV",
+        "gigincg",
+        "skks1212",
+        "ayushjnv1",
+        "rithviknishad",
+        "patelaryan7751",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1220",
+      "time": 1679083513.0,
+      "link": "https://github.com/coronasafe/care/pull/1220",
+      "text": "Production Release; Mar Week 3",
+      "collaborated_with": [
+        "gigincg",
+        "cp-Coder",
+        "mathew-alex",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5122",
+      "time": 1679070337.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5122",
+      "text": "added insurer id and name as plain text field when hcx disabled"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5122",
+      "time": 1679070008.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5122",
+      "text": "added insurer id and name as plain text field when hcx disabled"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1679064628.0,
+      "title": "coronasafe/care_fe#5121",
+      "link": "https://github.com/coronasafe/care_fe/pull/5121#pullrequestreview-1346101976",
+      "text": "patch: fix proxy to `careapi`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5108",
+      "time": 1679064208.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5108",
+      "text": "HCX Integration - Claims Disabled"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5108",
+      "time": 1679064208.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5108",
+      "text": "HCX Integration - Claims Disabled",
+      "collaborated_with": [
+        "mathew-alex",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1219",
+      "time": 1679064123.0,
+      "link": "https://github.com/coronasafe/care/pull/1219",
+      "text": "HCX Integration"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1219",
+      "time": 1679064123.0,
+      "link": "https://github.com/coronasafe/care/pull/1219",
+      "text": "HCX Integration",
+      "collaborated_with": [
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_deploy_configs#13",
+      "time": 1679037185.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/13",
+      "text": "added enable_hcx in staging"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#5115",
@@ -15397,62 +15492,44 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_deploy_configs/pull/13",
-      "title": "added enable_hcx in staging",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1219",
-      "title": "HCX Integration",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5108",
-      "title": "HCX Integration - Claims Disabled",
-      "stale_for": 0,
-      "labels": [
-        "do not merge",
-        "tested"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5107",
       "title": "HCX Integration - Claims Enabled",
       "stale_for": 0,
       "labels": [
         "do not merge",
-        "tested"
+        "tested",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4843",
       "title": "Hcx claims workflow",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
         "Deploy-Failed",
-        "merge conflict"
+        "merge conflict",
+        "stale"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 26,
+      "stale_for": 27,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4779",
       "title": "Abdm Integration",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
-        "merge conflict"
+        "merge conflict",
+        "stale"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "test failed",
         "stale"
@@ -15461,13 +15538,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 97,
+      "stale_for": 98,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 53,
+      "stale_for": 54,
       "labels": [
         "waiting-for-review"
       ]
@@ -15475,7 +15552,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 97,
+      "stale_for": 98,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -15485,7 +15562,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 126,
+      "stale_for": 127,
       "labels": [
         "waiting-for-review"
       ]
@@ -15493,25 +15570,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 454,
+      "stale_for": 455,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 460,
+      "stale_for": 461,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 461,
+      "stale_for": 462,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 656,
+      "stale_for": 657,
       "labels": []
     }
   ],

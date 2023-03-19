@@ -1,6 +1,20 @@
 {
-  "last_updated": 1679089415.0,
+  "last_updated": 1679166773.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5125",
+      "time": 1679166773.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5125#issuecomment-1474960598",
+      "text": "## Proposed Changes\r\n\r\n- Fixes #5123?\r\n- Reverted changes done in previous commit and vertically center aligned state logo with below changes\r\n```diff\r\n**Change**\r\n- <div className=\"hidden md:flex gap-6 mb-4\">\r\n+ <div className=\"hidden md:flex items-center gap-6 mb-4\">\r\n```\r\n- Issue Fix Screenshot\r\n![Issue #5123 - Fix](https://user-images.githubusercontent.com/127334545/226131320-760569ac-b036-485e-8765-7906fcee1e33.png)\r\n\r\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\r\n\r\n## Merge Checklist\r\n\r\n- [X] Add specs that demonstrate bug / test a new feature.\r\n- [X] Ensure that UI text is kept in I18n files.\r\n- [X] Prep screenshot or demo video for changelog entry, and attach it to issue.\r\n- [X] Request for Peer Reviews\r\n- [ ] Completion of QA\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5125",
+      "time": 1679117982.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5125#issuecomment-1474730399",
+      "text": "@rithviknishad - Got it, so state logo should be vertically center aligned in line with care logo right?"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5125",
@@ -14,7 +28,10 @@
       "link": "https://github.com/coronasafe/care_fe/pull/5125",
       "title": "Vertically center aligned State logo in Login page by modifying tailw\u2026",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing",
+        "peer-reviewed"
+      ]
     }
   ],
   "authored_issue_and_pr": []

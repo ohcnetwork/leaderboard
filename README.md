@@ -46,7 +46,7 @@ You will be able to see the users profile page at `http://localhost:3000/contrib
 
 1. To add or remove a badge, edit the `config/GraduateAttributes.js` file.
 
-2. To getup the repo for a new org, update the [scraper config](https://github.com/coronasafe/leaderboard/blob/d42c7b7ba608c4911d932e92679ab1914371c8a0/.github/workflows/main.yml#L32)
+2. To Setup the repo for a new org, update the [scraper config](https://github.com/coronasafe/leaderboard/blob/d42c7b7ba608c4911d932e92679ab1914371c8a0/.github/workflows/main.yml#L32)
 
 3. To change the colors, fonts, or plugins edit the `tailwind.config.js` file.
 

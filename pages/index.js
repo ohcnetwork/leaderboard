@@ -11,7 +11,7 @@ export default function Home(props) {
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
               <div className="lg:col-span-8 space-y-20">
-                {!process.env.NEXT_PUBLIC_ORG_INFO ? (
+                {process.env.NEXT_PUBLIC_ORG_INFO ? (
                   <div className="pt-20">
                     <div className="mx-auto max-w-7xl">
                       <div className="space-y-12">

@@ -3,7 +3,7 @@ name: Pranshu Aggarwal
 title: GDC Intern
 github: Pranshu1902
 twitter: Pranshu1902
-linkedin: pranshu-aggarwal-4aa8181b4/
+linkedin: pranshu1902/
 slack: U02TPSYB1MF
 joining_date: "09/05/2022"
 core: false

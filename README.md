@@ -46,6 +46,31 @@ You will be able to see the users profile page at `http://localhost:3000/contrib
 
 1. To add or remove a badge, edit the `config/GraduateAttributes.js` file.
 
-2. To getup the repo for a new org, update the [scraper config](https://github.com/coronasafe/leaderboard/blob/d42c7b7ba608c4911d932e92679ab1914371c8a0/.github/workflows/main.yml#L32)
+2. To Setup the repo for a new org, update the [scraper config](https://github.com/coronasafe/leaderboard/blob/d42c7b7ba608c4911d932e92679ab1914371c8a0/.github/workflows/main.yml#L32)
 
-3. Update variables in .env file to fit your organization's needs.
+3. To change the colors, fonts, or plugins edit the `tailwind.config.js` file.
+
+### Environment Variables
+#### **Organization Details**
+
+- **NEXT_PUBLIC_ORG_NAME**
+  - Will be displayed in the navbar.
+- **NEXT_PUBLIC_ORG_INFO**
+  - (Optional) Will be displayed in the "What do we do?" section.
+- **NEXT_PUBLIC_ORG_LOGO**
+  - Will be displayed in the footer.
+
+#### **SEO details**
+
+- **NEXT_PUBLIC_META_TITLE**
+- **NEXT_PUBLIC_META_IMG**
+- **NEXT_PUBLIC_META_DESCRIPTION**
+- **NEXT_PUBLIC_META_URL**
+
+#### **Page Details**
+
+- **NEXT_PUBLIC_PAGE_TITLE**
+  - Will be displayed in page title.
+- **NEXT_PUBLIC_CONTRIBUTORS_INFO**
+  - (Optional) Will be displayed next to "Our Contributors" section. You can use it to display a note about your contributors.
+

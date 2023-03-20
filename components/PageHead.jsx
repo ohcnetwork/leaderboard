@@ -2,14 +2,14 @@ import Head from "next/head";
 export default function PageHead({ title, metaTags }) {
   return (
     <Head>
-      <title>{title && title + " | "}Coronasafe Contributors</title>
+      <title>{title && title + " | "}{process.env.NEXT_PUBLIC_PAGE_TITLE}</title>
       <meta
         property="og:url"
-        content={"https://contributors.coronasafe.network"}
+        content={process.env.NEXT_PUBLIC_META_URL}
       />
       <meta
         name="description"
-        content="Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors."
+        content={process.env.NEXT_PUBLIC_META_DESCRIPTION}
       />
       {metaTags &&
         metaTags.map((tag) => (

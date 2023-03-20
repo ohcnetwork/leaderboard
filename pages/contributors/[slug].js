@@ -353,17 +353,16 @@ export async function getStaticProps({ params }) {
     },
     {
       name: "og:title",
-      content: "Coronasafe Leaderboard",
+      content: contributor.name + " | " + process.env.NEXT_PUBLIC_META_TITLE,
     },
     {
       name: "description",
       content:
-        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+        process.env.NEXT_PUBLIC_META_DESCRIPTION,
     },
     {
       name: "og:description",
-      content:
-        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+      content: process.env.NEXT_PUBLIC_META_DESCRIPTION,
     },
     {
       name: "og:type",

@@ -11,27 +11,23 @@ export default function Home(props) {
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
               <div className="lg:col-span-8 space-y-20">
-                <div className="pt-20">
-                  <div className="mx-auto max-w-7xl">
-                    <div className="space-y-12">
-                      <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                        <h2 className="text-3xl font-bold text-white tracking-tight sm:text-5xl">
-                          What do we do?
-                        </h2>
-                        <p className="text-xl text-gray-300">
-                          CoronaSafe Network is a free and open-source disaster
-                          management system that is used by National Health
-                          Mission, Government of India and various state
-                          governments for reimaging digital war rooms. The
-                          solution that students got an opportunity to intern
-                          with has supported 3.34Lac patient management and 1.29
-                          Lac ambulance shiftings and is approved by the United
-                          Nations as a Digital Public Good.
-                        </p>
+                {process.env.NEXT_PUBLIC_ORG_INFO ? (
+                  <div className="pt-20">
+                    <div className="mx-auto max-w-7xl">
+                      <div className="space-y-12">
+
+                        <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                          <h2 className="text-3xl font-bold text-white tracking-tight sm:text-5xl">
+                            What do we do?
+                          </h2>
+                          <p className="text-xl text-gray-300">
+                            {process.env.NEXT_PUBLIC_ORG_INFO}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                ) : <div className="pt-0" />}
                 <div>
                   <div className="mx-auto">
                     <div className="space-y-12">
@@ -40,9 +36,7 @@ export default function Home(props) {
                           Our Contributors
                         </h2>
                         <p className="text-xl text-gray-300 hidden">
-                          Ornare sagittis, suspendisse in hendrerit quis. Sed
-                          dui aliquet lectus sit pretium egestas vel mattis
-                          neque.
+                          {process.env.NEXT_PUBLIC_CONTRIBUTORS_INFO}
                         </p>
                       </div>
                       <ul
@@ -123,21 +117,19 @@ export async function getStaticProps() {
   const metaTags = [
     {
       name: "og:image",
-      content: `/logo.webp`,
+      content: process.env.NEXT_PUBLIC_META_IMG
     },
     {
       name: "og:title",
-      content: "Coronasafe Leaderboard",
+      content: process.env.NEXT_PUBLIC_META_TITLE,
     },
     {
       name: "description",
-      content:
-        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+      content: process.env.NEXT_PUBLIC_META_DESCRIPTION,
     },
     {
       name: "og:description",
-      content:
-        "Coronasafe Leaderboard tracks the weekly progress of all coronasafe contributors.",
+      content: process.env.NEXT_PUBLIC_META_DESCRIPTION
     },
     {
       name: "og:type",

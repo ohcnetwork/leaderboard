@@ -9,8 +9,8 @@ export default function Footer() {
             Powered by{" "}
             <span className={"w-20 ml-4"}>
               <Image
-                src="/logo.webp"
-                alt="Coronasafe"
+                src={process.env.NEXT_PUBLIC_ORG_LOGO}
+                alt={process.env.NEXT_PUBLIC_ORG_NAME}
                 width="80"
                 height="21.88"
                 layout="responsive"

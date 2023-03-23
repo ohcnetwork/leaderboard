@@ -1,6 +1,62 @@
 {
-  "last_updated": 1679387967.0,
+  "last_updated": 1679496653.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5132",
+      "time": 1679496653.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5132#issuecomment-1479709757",
+      "text": "Make two buttons for linked facilities and skills , name the buttons : \r\n\r\n1. linked facilities\r\n2. skills"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1787",
+      "time": 1679496516.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1787#issuecomment-1479705907",
+      "text": "feature: Search by encounters or consultations \r\nfeature: Search by admission\r\n-> dedicated page for the feature"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3799",
+      "time": 1679473498.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/3799#issuecomment-1479093795",
+      "text": "@cp-Coder \r\n<img width=\"959\" alt=\"image\" src=\"https://user-images.githubusercontent.com/57055998/226842586-975cf219-8d25-435c-b24a-e7e005eb0030.png\">\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5146",
+      "time": 1679472811.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5146",
+      "text": "Remove a option from ward droplist of patient creation form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5145",
+      "time": 1679472454.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5145",
+      "text": "Add : Booster Dose to vaccine filter in patient tab"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5144",
+      "time": 1679470628.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5144",
+      "text": "Age filter in patient advance filter is malfunctioning"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1787",
+      "time": 1679467797.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1787#issuecomment-1479002810",
+      "text": "@aparnacoronasafe \r\n\r\nhttps://care.coronasafe.in/facility/53a7266a-ed34-4616-85eb-7ae1be57d2cc/patient/4ae3b7de-800d-4b41-8ac9-00dbb741fe9f/consultation/54959916-9496-49ea-9ebe-e1ff579e5557\r\n\r\n![image](https://user-images.githubusercontent.com/57055998/226821072-3e58f58d-6d6c-4fd0-a9fd-9b8856e67541.png)\r\n\r\n**Issue:** \r\n\r\nA Patient named \"Test-daily-hospitalreport\" in the facility \"test-march-thirdweek\" was initially admitted to the hospital\r\n- on 01/03/2023 to a regular bed\r\n- later on 10/03/2023 he was shifted from a regular bed to icu.\r\n- again on 15/03/2023 he was again shifted back to regular bed.\r\n\r\nWhen we go to the patient tab, apply a filter, admitted to \"regular\", it is generating a list of all the patients in the regular bed, and we are not able to apply a filter to see, which all patients were admitted in a regular bed, for the period 08/03/2022 to 14/03/2022 because the admit date filter in the advance filter, is only checking the initial admit date of the patient and not the bed change date of the patient\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1787",
+      "time": 1679466723.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1787#issuecomment-1478986588",
+      "text": "@aparnacoronasafe the bug persists, and when won't be able to generate a report for the use case you mentioned, we can only filter patients with their initial admission details and not with the latest bed swapped details"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5110",

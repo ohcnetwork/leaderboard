@@ -1,6 +1,27 @@
 {
-  "last_updated": 1678103722.0,
+  "last_updated": 1679467245.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5140",
+      "time": 1679467245.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5140#issuecomment-1478991971",
+      "text": "@rithviknishad the issue is fixed now.\r\nWe will have to be careful with what external libraries we use."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5140",
+      "time": 1679457210.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5140#issuecomment-1478883709",
+      "text": "@rithviknishad the components contaning the phone number field break while previewing a production build, I'm not able to pin point the actual issue but here's the error that I got \r\n```\r\nElement type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: [missing argument].[missing argument]\r\n```\r\n\r\n![image](https://user-images.githubusercontent.com/46787056/226797774-98d91a15-d127-4ebb-b63c-3021f1c7c23e.png)\r\n\r\n\r\nplease check this issue"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5140",
+      "time": 1679456946.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5140",
+      "text": "vite migration"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/teleicu_middleware#65",
@@ -1777,9 +1798,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5140",
+      "title": "vite migration",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 222,
+      "stale_for": 238,
       "labels": []
     }
   ],

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1679413119.0,
+  "last_updated": 1679511219.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5129",
+      "time": 1679511219.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5129#issuecomment-1480098784",
+      "text": "@rithviknishad and @ayushjnv1 : I've made the changes as requested. \r\n<img width=\"898\" alt=\"Screenshot 2023-03-22 at 2 51 05 PM\" src=\"https://user-images.githubusercontent.com/109168765/227007700-c34aebbe-6429-4538-8439-e4ef450639d3.png\">\r\n- [ ] Renamed file since we don't follow .Components.tsx file naming formats.\r\n- [ ] Added const { t } = useTranslations(); and wrapped as mentioned.  I added three relevant strings to the en locale files in en/Common.json.\r\n- [ ] Added <CircularProgress/> inside the \"Add\" button. It replaces the \"Add\" instead of appearing beside it because IMO it looks better - otherwise the button grows and shrinks when the spinner appears/disappears. \r\n- [ ] CircularProgress was added instead of null\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5129",

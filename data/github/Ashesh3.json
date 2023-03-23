@@ -1,6 +1,20 @@
 {
-  "last_updated": 1679297954.0,
+  "last_updated": 1679490542.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5147",
+      "time": 1679490542.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5147",
+      "text": "[WIP] Integrate LiveKit for doctor connect"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1227",
+      "time": 1679490383.0,
+      "link": "https://github.com/coronasafe/care/pull/1227",
+      "text": "[WIP] Integrate LiveKit for doctor connect"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5131",
@@ -7042,17 +7056,30 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5131",
-      "title": "Ad bed occupancy to facility card",
+      "link": "https://github.com/coronasafe/care_fe/pull/5147",
+      "title": "[WIP] Integrate LiveKit for doctor connect",
       "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1227",
+      "title": "[WIP] Integrate LiveKit for doctor connect",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5131",
+      "title": "Add bed occupancy to facility card",
+      "stale_for": 1,
       "labels": [
-        "waiting for back end"
+        "waiting for back end",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -7060,7 +7087,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "waiting for back end"
       ]
@@ -7068,7 +7095,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -7076,7 +7103,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 41,
+      "stale_for": 43,
       "labels": [
         "waiting-for-review"
       ]

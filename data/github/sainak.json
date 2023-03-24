@@ -1,6 +1,13 @@
 {
-  "last_updated": 1679467245.0,
+  "last_updated": 1679566609.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5140",
+      "time": 1679566609.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5140#issuecomment-1480928059",
+      "text": "@gigincg changes to deployment config won't be needed as internally npm run build is calling vite\nYou can see the latest deploy preview, the components are working fine now but the css file is quite large as compared to cra builds, service worker might be broken, and I'm working on fixing the storybook"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5140",
@@ -1808,7 +1815,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 238,
+      "stale_for": 239,
       "labels": []
     }
   ],

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1679383321.0,
+  "last_updated": 1679584589.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5160",
+      "time": 1679584589.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5160",
+      "text": "Replaced MUI components in `src/Components/Shifting/ShiftDetails.tsx`"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5127",
@@ -1861,9 +1868,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5160",
+      "title": "Replaced MUI components in `src/Components/Shifting/ShiftDetails.tsx`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "work-in-progress",
         "merge conflict",

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1679597745.0,
+  "last_updated": 1679631092.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5140",
+      "time": 1679631092.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5140#issuecomment-1482223254",
+      "text": "Just to quantify the impact of this PR, starting the current *CRA app takes 1 minute and 36 seconds* on my laptop with 16 gb ram and an i5-11400H @ 2.70GHz  2.69 GHz CP.\r\nThe *Vite app takes just 40 seconds to start* which makes the app start *215%* faster than before. App hot reload also take considerably less time than before. This allows CARE to be developed in less powerful computers. Great feat @sainak "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1679630523.0,
+      "title": "coronasafe/care_fe#5158",
+      "link": "https://github.com/coronasafe/care_fe/pull/5158#pullrequestreview-1355969682",
+      "text": "Generalize Filters Slideover"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5158",
+      "time": 1679629192.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5158#issuecomment-1482204499",
+      "text": "@rithviknishad some filters have base dropdowns and inputs rather than CAREUI. Is that out of the scope of this PR?"
+    },
     {
       "type": "pr_reviewed",
       "time": 1679597745.0,
@@ -3976,7 +3997,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5110",
       "title": "Updated Investigations suggested table",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress failed"

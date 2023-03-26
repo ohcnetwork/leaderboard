@@ -34,17 +34,19 @@ function getNewContributors() {
 
 function main() {
   let token = process.env.GITHUB_TOKEN
+  let headers = {}
+  if (token !== undefined) {
+    headers = {
+      Authorization: `token ${token}`,
+    }
+  }
 
   let newContributors = getNewContributors()
   console.log(newContributors)
 
   newContributors.forEach(async (value) => {
     // fetch the user data from the github api
-    fetch(`https://api.github.com/users/${value}`, {
-      headers: {
-        // Authorization: `token ${token}`,
-      },
-    })
+    fetch(`https://api.github.com/users/${value}`, {headers})
       .then(async (res) => {
         if (res.status === 404) throw new Error("User not found")
         if (res.status !== 200) throw new Error("Error fetching data" + await res.text())

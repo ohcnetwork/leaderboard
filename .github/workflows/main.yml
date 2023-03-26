@@ -39,6 +39,9 @@ jobs:
         env:
           SLACK_API_TOKEN: ${{ secrets.SLACK_TOKEN }}
 
+      - name: geerate md for new contributors
+        run: node scripts/generateNewContributors.js
+
       - name: Commit files
         run: |
           git config --local user.email "matthewzalex@gmail.com"

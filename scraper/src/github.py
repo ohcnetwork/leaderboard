@@ -23,6 +23,7 @@ logger = logging.getLogger(__name__)
 user_blacklist = {
     "dependabot",
     "snyk-bot",
+    "codecov-commenter",
 }
 
 

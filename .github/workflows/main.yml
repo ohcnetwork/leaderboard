@@ -39,6 +39,11 @@ jobs:
         env:
           SLACK_API_TOKEN: ${{ secrets.SLACK_TOKEN }}
 
+      - name: generate md for new contributors
+        run: node scripts/generateNewContributors.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
+
       - name: Commit files
         run: |
           git config --local user.email "matthewzalex@gmail.com"

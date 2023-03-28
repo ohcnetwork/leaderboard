@@ -1,6 +1,27 @@
 {
-  "last_updated": 1679733844.0,
+  "last_updated": 1679925482.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5162",
+      "time": 1679925482.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5162#issuecomment-1485152066",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/227960389-d62fe33d-a12e-4f1c-a2fd-78c61e2855fd.png)\r\n> \r\n> rename it to booster dose , dont make it in full length\r\n\r\nDone"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5176",
+      "time": 1679918303.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5176",
+      "text": "Show errors on AddLocationForm"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1231",
+      "time": 1679918263.0,
+      "link": "https://github.com/coronasafe/care/pull/1231",
+      "text": "Add unique constraint for AssetLocation name and facility"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5167",
@@ -7126,9 +7147,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5176",
+      "title": "Show errors on AddLocationForm",
+      "stale_for": 0,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1231",
+      "title": "Add unique constraint for AssetLocation name and facility",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5167",
       "title": "Show all available skills when adding a skill to user",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -7136,7 +7173,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5162",
       "title": "Add Booster dose to patient vaccination filter",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
@@ -7144,33 +7181,34 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5157",
       "title": "Add support for freeflow text in Referred To Facility",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "waiting for back end",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1228",
       "title": "Add referred_to_external to PatientConsultation",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7179,7 +7217,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review"
       ]
@@ -7187,7 +7225,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "waiting for back end"
       ]
@@ -7195,7 +7233,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]
@@ -7203,7 +7241,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1160",
       "title": "Add facility_id filter to User",
-      "stale_for": 46,
+      "stale_for": 48,
       "labels": [
         "waiting-for-review"
       ]

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1679549143.0,
+  "last_updated": 1679940551.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5186",
+      "time": 1679940551.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5186",
+      "text": "Old discharged patient now  getting unlinked from the feed and camera"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5185",
+      "time": 1679937284.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5185",
+      "text": "Hide the history of illness field when brought by dead is selected"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5150",
@@ -5378,6 +5392,22 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5186",
+      "title": "Old discharged patient now  getting unlinked from the feed and camera",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5185",
+      "title": "Hide the history of illness field when brought by dead is selected",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5150",
       "title": "added facility name in asset card",
       "stale_for": 0,
@@ -5390,13 +5420,13 @@
       "title": "added camera feature in fileupload components",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4899",
       "title": "Migrate to Part 7 (5 migrations) #4317",
-      "stale_for": 24,
+      "stale_for": 28,
       "labels": [
         "work-in-progress"
       ]
@@ -5404,15 +5434,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4552",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Resource create and update components",
-      "stale_for": 25,
+      "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "work-in-progress",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 115,
+      "stale_for": 119,
       "labels": []
     }
   ],

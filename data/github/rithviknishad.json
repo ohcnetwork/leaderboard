@@ -1,6 +1,76 @@
 {
-  "last_updated": 1679818337.0,
+  "last_updated": 1679933209.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5184",
+      "time": 1679933209.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5184",
+      "text": "disables app force updates"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5182",
+      "time": 1679930213.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5182",
+      "text": "Update Treatment Plan icon in Consultation Form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5181",
+      "time": 1679928096.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5181",
+      "text": "Filter active patients in CNS"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5180",
+      "time": 1679925873.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5180",
+      "text": "Improve weight and height fields in consultation form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5178",
+      "time": 1679924288.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5178",
+      "text": "Improve Telemedicine rel. fields in Consultation form and Adds `CheckBoxFormField`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5175",
+      "time": 1679916003.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5175",
+      "text": "Hide CNS momentarily"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5136",
+      "time": 1679911953.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5136#issuecomment-1484874202",
+      "text": "@ayushjnv1 if you could merge the latest develop branch now, you'll be able to see all the old components have been renamed to `Legacy<ComponentName>` so that it's easier to track which needs to be migrated."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5173",
+      "time": 1679911481.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5173",
+      "text": "Mark all components from HelperInputFields as Deprecated"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5173",
+      "time": 1679911109.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5173",
+      "text": "Mark all components from HelperInputFields as Deprecated"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1679909514.0,
+      "title": "coronasafe/care_fe#5136",
+      "link": "https://github.com/coronasafe/care_fe/pull/5136#pullrequestreview-1358717076",
+      "text": "replace MUI CircularProgress"
+    },
     {
       "type": "pr_reviewed",
       "time": 1679818337.0,
@@ -12193,17 +12263,63 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5159",
-      "title": "Improved articulation of dependent select menus in patient registration form",
-      "stale_for": 3,
+      "link": "https://github.com/coronasafe/care_fe/pull/5184",
+      "title": "disables app force updates",
+      "stale_for": 0,
+      "labels": [
+        "need Review",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5182",
+      "title": "Update Treatment Plan icon in Consultation Form",
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5181",
+      "title": "Filter active patients in CNS",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5180",
+      "title": "Improve weight and height fields in consultation form",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P2"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5178",
+      "title": "Improve Telemedicine rel. fields in Consultation form and Adds `CheckBoxFormField`",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5159",
+      "title": "Improved dependent select menus in patient registration form",
+      "stale_for": 0,
+      "labels": [
+        "tested"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5158",
       "title": "Generalize Filters Slideover",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "redesign",
@@ -12213,19 +12329,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 17,
+      "stale_for": 18,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 58,
+      "stale_for": 59,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 160,
+      "stale_for": 161,
       "labels": [
         "merge conflict"
       ]

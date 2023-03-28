@@ -1,6 +1,20 @@
 {
-  "last_updated": 1679671432.0,
+  "last_updated": 1679926715.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1232",
+      "time": 1679926715.0,
+      "link": "https://github.com/coronasafe/care/pull/1232",
+      "text": "fix: added op_no field and respiratory support filter"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5045",
+      "time": 1679908559.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5045",
+      "text": "fix: UI changes in the consultation form"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5164",
@@ -6945,9 +6959,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1232",
+      "title": "fix: added op_no field and respiratory support filter",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5164",
       "title": "fix: icon for respiratory support",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -6957,7 +6979,7 @@
       "title": "fix: Pain Scale data to be added in summary page",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "test failed",
         "P2"
       ]
     },
@@ -6966,21 +6988,13 @@
       "title": "fix: reorder and group the patient filters",
       "stale_for": 0,
       "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5045",
-      "title": "fix: UI changes in the consultation form",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 54,
+      "stale_for": 57,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6989,7 +7003,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 57,
+      "stale_for": 60,
       "labels": [
         "waiting-for-review",
         "done"
@@ -6998,7 +7012,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 2,
+      "stale_for": 5,
       "labels": [
         "test failed",
         "waiting for back end",
@@ -7009,13 +7023,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 9,
+      "stale_for": 12,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 48,
+      "stale_for": 51,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7024,7 +7038,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 39,
+      "stale_for": 42,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7033,7 +7047,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 39,
+      "stale_for": 42,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7042,7 +7056,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1045",
       "title": "Updates consultation's category from daily_round's patient_category",
-      "stale_for": 127,
+      "stale_for": 130,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7051,7 +7065,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 274,
+      "stale_for": 277,
       "labels": [
         "waiting-for-review"
       ]

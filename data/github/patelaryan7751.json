@@ -1,6 +1,20 @@
 {
-  "last_updated": 1679940551.0,
+  "last_updated": 1680011516.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5185",
+      "time": 1680011516.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5185",
+      "text": "Hide the history of illness field when brought by dead is selected"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5186",
+      "time": 1680008652.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5186#issuecomment-1486850344",
+      "text": "hey @nihal467 \r\n![image](https://user-images.githubusercontent.com/59426397/228245139-a67e79bc-55da-4869-b4f6-f2e3519c5ce4.png)\r\ni have fixed the bug"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5186",
@@ -5396,29 +5410,15 @@
       "title": "Old discharged patient now  getting unlinked from the feed and camera",
       "stale_for": 0,
       "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5185",
-      "title": "Hide the history of illness field when brought by dead is selected",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5150",
-      "title": "added facility name in asset card",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
+        "urgent",
+        "test failed",
+        "P1"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5043",
       "title": "added camera feature in fileupload components",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed"
       ]
@@ -5426,15 +5426,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4899",
       "title": "Migrate to Part 7 (5 migrations) #4317",
-      "stale_for": 28,
+      "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "work-in-progress",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4552",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Resource create and update components",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -5443,7 +5444,7 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 119,
+      "stale_for": 120,
       "labels": []
     }
   ],

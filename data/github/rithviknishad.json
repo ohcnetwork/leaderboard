@@ -1,6 +1,79 @@
 {
-  "last_updated": 1679933209.0,
+  "last_updated": 1680027616.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1680027616.0,
+      "title": "coronasafe/care_fe#5190",
+      "link": "https://github.com/coronasafe/care_fe/pull/5190#pullrequestreview-1361680645",
+      "text": "Refresh CNS every 15 mins."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5190",
+      "time": 1680015238.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5190",
+      "text": "Refresh CNS every 15 mins."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5189",
+      "time": 1680015217.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5189",
+      "text": "Replaces \"Is Telemedicine\" to \"Is Telemedicine Required for the Patient\" in Consultation form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5188",
+      "time": 1680014236.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5188",
+      "text": "Refresh CNS every 15 mins"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5187",
+      "time": 1680014213.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5187",
+      "text": "Replace \"Is Telemedicine\" to \"Is Telemedicine Required for the Patient\" in Consultation form"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5182",
+      "time": 1680011603.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5182",
+      "text": "Update Treatment Plan icon in Consultation Form"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5110",
+      "time": 1680000229.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5110",
+      "text": "Updated Investigations suggested table",
+      "collaborated_with": [
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5181",
+      "time": 1680000102.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5181",
+      "text": "Filter active patients in CNS"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5178",
+      "time": 1680000072.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5178",
+      "text": "Improve Telemedicine rel. fields in Consultation form and Adds `CheckBoxFormField`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5159",
+      "time": 1679999877.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5159",
+      "text": "Improved dependent select menus in patient registration form"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5184",
@@ -12263,28 +12336,27 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5184",
-      "title": "disables app force updates",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5182",
-      "title": "Update Treatment Plan icon in Consultation Form",
+      "link": "https://github.com/coronasafe/care_fe/pull/5190",
+      "title": "Refresh CNS every 15 mins.",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5181",
-      "title": "Filter active patients in CNS",
+      "link": "https://github.com/coronasafe/care_fe/pull/5189",
+      "title": "Replaces \"Is Telemedicine\" to \"Is Telemedicine Required for the Patient\" in Consultation form",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5184",
+      "title": "disables app force updates",
+      "stale_for": 1,
+      "labels": [
+        "need Review",
         "cypress failed"
       ]
     },
@@ -12294,26 +12366,8 @@
       "stale_for": 0,
       "labels": [
         "urgent",
-        "needs testing",
+        "test failed",
         "P2"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5178",
-      "title": "Improve Telemedicine rel. fields in Consultation form and Adds `CheckBoxFormField`",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "needs testing",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5159",
-      "title": "Improved dependent select menus in patient registration form",
-      "stale_for": 0,
-      "labels": [
-        "tested"
       ]
     },
     {
@@ -12321,27 +12375,28 @@
       "title": "Generalize Filters Slideover",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "work-in-progress",
         "redesign",
+        "merge conflict",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 59,
+      "stale_for": 60,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 161,
+      "stale_for": 162,
       "labels": [
         "merge conflict"
       ]

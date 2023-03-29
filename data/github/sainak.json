@@ -1,6 +1,13 @@
 {
-  "last_updated": 1679902474.0,
+  "last_updated": 1679986904.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5140",
+      "time": 1679986904.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5140#issuecomment-1486321207",
+      "text": "@gigincg @mathew-alex  the PR is ready to be merged in develop with one breaking change that is the env variable `PUBLIC_URL` needs to be renamed to `REACT_PUBLIC_URL`"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/leaderboard#117",
@@ -1844,13 +1851,14 @@
       "title": "vite migration",
       "stale_for": 0,
       "labels": [
+        "needs testing",
         "need Review"
       ]
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 243,
+      "stale_for": 244,
       "labels": []
     }
   ],

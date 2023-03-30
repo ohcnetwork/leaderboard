@@ -1,6 +1,90 @@
 {
-  "last_updated": 1680011638.0,
+  "last_updated": 1680099686.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1680099686.0,
+      "title": "coronasafe/care_fe#5195",
+      "link": "https://github.com/coronasafe/care_fe/pull/5195#pullrequestreview-1363241903",
+      "text": "ESLint: set `no-literal-string` only for JSX"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5170",
+      "time": 1680083852.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5170",
+      "text": "Enhancement of weight and height fields in the patient consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680083840.0,
+      "title": "coronasafe/care_fe#5180",
+      "link": "https://github.com/coronasafe/care_fe/pull/5180#pullrequestreview-1362701899",
+      "text": "Improve weight and height fields in consultation form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5168",
+      "time": 1680083782.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5168",
+      "text": "Add date of discharge to Discharge patient pop-up in patient consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680083768.0,
+      "title": "coronasafe/care_fe#5191",
+      "link": "https://github.com/coronasafe/care_fe/pull/5191#pullrequestreview-1362699849",
+      "text": "added discharge date to LAMA and REF reasons"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680081523.0,
+      "title": "coronasafe/care_fe#5184",
+      "link": "https://github.com/coronasafe/care_fe/pull/5184#pullrequestreview-1362616795",
+      "text": "disables app force updates"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5177",
+      "time": 1680072537.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5177",
+      "text": "Old discharged patient are not getting unlinked from the bed, feed and camera "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680072513.0,
+      "title": "coronasafe/care_fe#5186",
+      "link": "https://github.com/coronasafe/care_fe/pull/5186#pullrequestreview-1362355921",
+      "text": "Old discharged patient now  getting unlinked from the feed and camera"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5188",
+      "time": 1680072491.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5188",
+      "text": "Refresh CNS every 15 mins"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680072476.0,
+      "title": "coronasafe/care_fe#5190",
+      "link": "https://github.com/coronasafe/care_fe/pull/5190#pullrequestreview-1362355151",
+      "text": "Refresh CNS every 30 seconds."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5187",
+      "time": 1680072463.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5187",
+      "text": "Replace \"Is Telemedicine\" to \"Is Telemedicine Required for the Patient\" in Consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680072453.0,
+      "title": "coronasafe/care_fe#5189",
+      "link": "https://github.com/coronasafe/care_fe/pull/5189#pullrequestreview-1362354689",
+      "text": "Replaces \"Is Telemedicine\" to \"Is Telemedicine Required for the Patient\" in Consultation form"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#5153",
@@ -15879,19 +15963,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 38,
+      "stale_for": 39,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4779",
       "title": "Abdm Integration",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "hold",
         "merge conflict",
@@ -15901,7 +15985,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "work-in-progress"
       ]
@@ -15909,13 +15993,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 109,
+      "stale_for": 110,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 65,
+      "stale_for": 66,
       "labels": [
         "waiting-for-review"
       ]
@@ -15923,7 +16007,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4066",
       "title": "Gsearch: Global Search and search based filtering",
-      "stale_for": 109,
+      "stale_for": 110,
       "labels": [
         "work-in-progress",
         "merge conflict",
@@ -15933,7 +16017,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 138,
+      "stale_for": 139,
       "labels": [
         "waiting-for-review"
       ]
@@ -15941,25 +16025,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 466,
+      "stale_for": 467,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 472,
+      "stale_for": 473,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 473,
+      "stale_for": 474,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 668,
+      "stale_for": 669,
       "labels": []
     }
   ],

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1680011516.0,
+  "last_updated": 1680111066.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5200",
+      "time": 1680111066.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5200",
+      "text": "Fixed Page redirection malfunction issue in the facility cns page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5186",
+      "time": 1680072536.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5186",
+      "text": "Old discharged patient now  getting unlinked from the feed and camera"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5186",
+      "time": 1680057645.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5186#issuecomment-1487867160",
+      "text": "Hey @nihal467 i have fixed the bug \r\n![image](https://user-images.githubusercontent.com/59426397/228412522-2efb9f83-1ac2-46b7-9d14-610e3aea4376.png)\r\n"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5185",
@@ -5406,19 +5427,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5186",
-      "title": "Old discharged patient now  getting unlinked from the feed and camera",
+      "link": "https://github.com/coronasafe/care_fe/pull/5200",
+      "title": "Fixed Page redirection malfunction issue in the facility cns page",
       "stale_for": 0,
       "labels": [
-        "urgent",
-        "test failed",
-        "P1"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5043",
       "title": "added camera feature in fileupload components",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "test failed"
       ]
@@ -5426,7 +5445,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4899",
       "title": "Migrate to Part 7 (5 migrations) #4317",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -5435,7 +5454,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4552",
       "title": "Migrated all Multilineinput component to textareaform field and inputlabel to field label in Resource create and update components",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -5444,7 +5463,7 @@
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 120,
+      "stale_for": 121,
       "labels": []
     }
   ],

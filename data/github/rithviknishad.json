@@ -1,6 +1,55 @@
 {
-  "last_updated": 1680099739.0,
+  "last_updated": 1680194286.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1680194286.0,
+      "title": "coronasafe/care_fe#5207",
+      "link": "https://github.com/coronasafe/care_fe/pull/5207#pullrequestreview-1365517604",
+      "text": "Update experience commenced labels to \"Years of experience\"."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680183859.0,
+      "title": "coronasafe/care_fe#5202",
+      "link": "https://github.com/coronasafe/care_fe/pull/5202#pullrequestreview-1365161611",
+      "text": "Added validation for 0 count in Add Bed Capacity"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680183785.0,
+      "title": "coronasafe/care_fe#5202",
+      "link": "https://github.com/coronasafe/care_fe/pull/5202#pullrequestreview-1365158846",
+      "text": "Added validation for 0 count in Add Bed Capacity"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680183510.0,
+      "title": "coronasafe/care_fe#5203",
+      "link": "https://github.com/coronasafe/care_fe/pull/5203#pullrequestreview-1365148118",
+      "text": "Enhanced Patient Sorting + Adds reusable component: `SortDropdownMenu` with locale support"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5204",
+      "time": 1680181933.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5204",
+      "text": "fix syntax error in `Auto Label WIP` workflow"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5203",
+      "time": 1680181547.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5203",
+      "text": "Enhanced Patient Sorting + Adds reusable component: `SortDropdownMenu` with locale support"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1234",
+      "time": 1680161122.0,
+      "link": "https://github.com/coronasafe/care/pull/1234",
+      "text": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5195",
@@ -12385,9 +12434,32 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5204",
+      "title": "fix syntax error in `Auto Label WIP` workflow",
+      "stale_for": 0,
+      "labels": [
+        "need Review",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5203",
+      "title": "Enhanced Patient Sorting + Adds reusable component: `SortDropdownMenu` with locale support",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1234",
+      "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5194",
       "title": "fix padding below bed select field in consultation form",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -12395,7 +12467,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5158",
       "title": "Generalize Filters Slideover",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "redesign",
@@ -12405,19 +12477,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 61,
+      "stale_for": 62,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 163,
+      "stale_for": 164,
       "labels": [
         "merge conflict"
       ]

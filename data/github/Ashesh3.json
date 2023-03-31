@@ -1,6 +1,41 @@
 {
-  "last_updated": 1680104430.0,
+  "last_updated": 1680206215.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5207",
+      "time": 1680206215.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5207#issuecomment-1490862550",
+      "text": "> @Ashesh3 @rithviknishad we need to convert the field, which will be a simple input field just to input the number of experience in years\r\n\r\nDone!\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/228949911-6b611017-d2a9-409f-83be-d110f625ff33.png)\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/228949928-19d277e6-4d22-4b92-8dbe-ae02f3f4b450.png)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5207",
+      "time": 1680194389.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5207#issuecomment-1490606167",
+      "text": "> I thought since the label has changed to `Years of Exp.` we had to change the field also to a number input and calculate experience_commenced_on based on input before firing the request\r\n\r\nI thought the same, @nihal467 could you take a look if we need to convert the field to a number input?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5207",
+      "time": 1680193351.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5207",
+      "text": "Update experience commenced labels to \"Years of experience\"."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5206",
+      "time": 1680184352.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5206",
+      "text": "Add severity category sort options"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1235",
+      "time": 1680182968.0,
+      "link": "https://github.com/coronasafe/care/pull/1235",
+      "text": "Add patient ordering by category"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5199",
@@ -7182,9 +7217,33 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5207",
+      "title": "Update experience commenced labels to \"Years of experience\".",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5206",
+      "title": "Add severity category sort options",
+      "stale_for": 0,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1235",
+      "title": "Add patient ordering by category",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5199",
       "title": "Refactor patient category text: \"Slightly Abnormal\" to \"Abnormal\"",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting for back end"
       ]
@@ -7192,7 +7251,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1233",
       "title": "Update patient category choices wording (Abnormal instead of Slightly Abnormal )",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -7200,7 +7259,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5176",
       "title": "Show errors on AddLocationForm",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting for back end"
       ]
@@ -7208,7 +7267,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1231",
       "title": "Add unique constraint for AssetLocation name and facility",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -7216,7 +7275,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5157",
       "title": "Add support for freeflow text in Referred To Facility",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7225,25 +7284,27 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1228",
       "title": "Add referred_to_external to PatientConsultation",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 7,
-      "labels": []
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7252,7 +7313,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "waiting-for-review"
       ]
@@ -7260,7 +7321,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "waiting for back end"
       ]
@@ -7268,7 +7329,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "waiting-for-review"
       ]

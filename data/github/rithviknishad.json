@@ -1,6 +1,78 @@
 {
-  "last_updated": 1680194286.0,
+  "last_updated": 1680288262.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5213",
+      "time": 1680288262.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5213",
+      "text": "Production Release; Mar Week 5",
+      "collaborated_with": [
+        "GokulramGHV",
+        "gigincg",
+        "Ashesh3",
+        "cp-Coder",
+        "AdrianaMoralesQ",
+        "patelaryan7751",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680271297.0,
+      "title": "coronasafe/care_fe#5212",
+      "link": "https://github.com/coronasafe/care_fe/pull/5212#pullrequestreview-1367003368",
+      "text": "Minor UI enhancement"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5211",
+      "time": 1680267710.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5211",
+      "text": "ignore validation for  `consultation_notes` if brought dead"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5211",
+      "time": 1680266851.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5211",
+      "text": "ignore validation for  `consultation_notes` if brought dead"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5209",
+      "time": 1680255230.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5209",
+      "text": "minor ui fix in investigation suggested dropdown"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5208",
+      "time": 1680254596.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5208",
+      "text": "In the investigations suggestion's dropdown is not green if selected and focused simultaneously. "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5194",
+      "time": 1680252316.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5194",
+      "text": "fix padding below bed select field in consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680229937.0,
+      "title": "coronasafe/care_fe#5207",
+      "link": "https://github.com/coronasafe/care_fe/pull/5207#pullrequestreview-1366168247",
+      "text": "Update experience commenced labels to \"Years of experience\"."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680229937.0,
+      "title": "coronasafe/care_fe#5207",
+      "link": "https://github.com/coronasafe/care_fe/pull/5207#pullrequestreview-1366168247",
+      "text": "Update experience commenced labels to \"Years of experience\"."
+    },
     {
       "type": "pr_reviewed",
       "time": 1680194286.0,
@@ -12434,9 +12506,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5209",
+      "title": "minor ui fix in investigation suggested dropdown",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5204",
       "title": "fix syntax error in `Auto Label WIP` workflow",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "need Review",
         "cypress failed"
@@ -12445,7 +12526,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5203",
       "title": "Enhanced Patient Sorting + Adds reusable component: `SortDropdownMenu` with locale support",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -12453,21 +12534,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1234",
       "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5194",
-      "title": "fix padding below bed select field in consultation form",
       "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5158",
       "title": "Generalize Filters Slideover",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "redesign",
@@ -12477,19 +12550,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 62,
+      "stale_for": 63,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 164,
+      "stale_for": 165,
       "labels": [
         "merge conflict"
       ]

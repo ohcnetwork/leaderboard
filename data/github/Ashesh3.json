@@ -1,6 +1,13 @@
 {
-  "last_updated": 1680288262.0,
+  "last_updated": 1680438040.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#9",
+      "time": 1680438040.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/9",
+      "text": "Add command to upsert data to Pinecone index"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5213",
@@ -7240,9 +7247,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma/pull/9",
+      "title": "Add command to upsert data to Pinecone index",
+      "stale_for": 0,
+      "labels": [
+        "STAGE 1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5207",
       "title": "Update experience commenced labels to \"Years of experience\".",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -7250,7 +7265,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5206",
       "title": "Add severity category sort options",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "waiting for back end"
       ]
@@ -7266,7 +7281,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5199",
       "title": "Refactor patient category text: \"Slightly Abnormal\" to \"Abnormal\"",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "waiting for back end"
       ]
@@ -7274,7 +7289,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1233",
       "title": "Update patient category choices wording (Abnormal instead of Slightly Abnormal )",
-      "stale_for": 2,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -7282,7 +7297,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5176",
       "title": "Show errors on AddLocationForm",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting for back end"
       ]
@@ -7290,7 +7305,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1231",
       "title": "Add unique constraint for AssetLocation name and facility",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -7298,7 +7313,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5157",
       "title": "Add support for freeflow text in Referred To Facility",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7307,13 +7322,15 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1228",
       "title": "Add referred_to_external to PatientConsultation",
-      "stale_for": 8,
-      "labels": []
+      "stale_for": 1,
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "work-in-progress"
       ]
@@ -7321,13 +7338,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 9,
+      "stale_for": 11,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 10,
+      "stale_for": 12,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7336,7 +7353,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 11,
+      "stale_for": 13,
       "labels": [
         "waiting-for-review"
       ]
@@ -7344,7 +7361,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 13,
+      "stale_for": 15,
       "labels": [
         "waiting for back end"
       ]
@@ -7352,7 +7369,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 13,
+      "stale_for": 15,
       "labels": [
         "waiting-for-review"
       ]

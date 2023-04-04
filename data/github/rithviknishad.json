@@ -1,6 +1,48 @@
 {
-  "last_updated": 1680421394.0,
+  "last_updated": 1680539857.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1680539857.0,
+      "title": "coronasafe/care_fe#5207",
+      "link": "https://github.com/coronasafe/care_fe/pull/5207#pullrequestreview-1369404778",
+      "text": "Update experience commenced labels to \"Years of experience\"."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5226",
+      "time": 1680533141.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5226#issuecomment-1494461591",
+      "text": "ack"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5226",
+      "time": 1680533118.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5226",
+      "text": "Add ICU location filter for CNS"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5196",
+      "time": 1680528667.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5196#issuecomment-1494330916",
+      "text": "@Ashesh3 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5222",
+      "time": 1680516197.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5222",
+      "text": "fixes bed types not shown when occupied = 0"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680515262.0,
+      "title": "coronasafe/care_fe#5207",
+      "link": "https://github.com/coronasafe/care_fe/pull/5207#pullrequestreview-1368678805",
+      "text": "Update experience commenced labels to \"Years of experience\"."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5217",
@@ -12548,18 +12590,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5222",
+      "title": "fixes bed types not shown when occupied = 0",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "tested",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5209",
       "title": "minor ui fix in investigation suggested dropdown",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5204",
       "title": "fix syntax error in `Auto Label WIP` workflow",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "need Review",
         "cypress failed"
@@ -12568,23 +12620,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5203",
       "title": "Enhanced Patient Sorting + Adds reusable component: `SortDropdownMenu` with locale support",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1234",
       "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5158",
       "title": "Generalize Filters Slideover",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "redesign",
         "cypress failed"
       ]
@@ -12592,19 +12644,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 24,
+      "stale_for": 25,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 65,
+      "stale_for": 66,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 167,
+      "stale_for": 168,
       "labels": [
         "merge conflict"
       ]

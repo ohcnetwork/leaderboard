@@ -1,6 +1,63 @@
 {
-  "last_updated": 1680539658.0,
+  "last_updated": 1680630092.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5140",
+      "time": 1680630092.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5140",
+      "text": "vite migration",
+      "collaborated_with": [
+        "rithviknishad",
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/ayushma#10",
+      "time": 1680617540.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/10",
+      "text": "Add an API route that converts text to vector embeddings using OpenAI API",
+      "collaborated_with": [
+        "siddnikh",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5233",
+      "time": 1680613971.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5233",
+      "text": "Refactor 'Description Advice' in ConsultationDetails component"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#17",
+      "time": 1680598681.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/17#issuecomment-1495600788",
+      "text": "> There is one already. I added it earlier, it's in `ayushma/utils/openaiapi.py`\r\n\r\nLooks good, I will refactor the `upsert` to use the method in utils."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680598432.0,
+      "title": "coronasafe/ayushma#10",
+      "link": "https://github.com/coronasafe/ayushma/pull/10#pullrequestreview-1370508666",
+      "text": "Add an API route that converts text to vector embeddings using OpenAI API"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680598432.0,
+      "title": "coronasafe/ayushma#10",
+      "link": "https://github.com/coronasafe/ayushma/pull/10#pullrequestreview-1370508666",
+      "text": "Add an API route that converts text to vector embeddings using OpenAI API"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680592745.0,
+      "title": "coronasafe/ayushma#10",
+      "link": "https://github.com/coronasafe/ayushma/pull/10#pullrequestreview-1370348025",
+      "text": "Add an API route that converts text to vector embeddings using OpenAI API"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5207",
@@ -7278,6 +7335,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5233",
+      "title": "Refactor 'Description Advice' in ConsultationDetails component",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5225",
       "title": "Remove caching logic from serviceworker",
       "stale_for": 0,
@@ -7290,13 +7355,13 @@
       "title": "Update experience commenced labels to \"Years of experience\".",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5206",
       "title": "Add severity category sort options",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "waiting for back end"
       ]
@@ -7304,7 +7369,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1235",
       "title": "Add patient ordering by category",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review",
         "P2"
@@ -7313,7 +7378,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5199",
       "title": "Refactor patient category text: \"Slightly Abnormal\" to \"Abnormal\"",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "waiting for back end"
       ]
@@ -7321,7 +7386,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1233",
       "title": "Update patient category choices wording (Abnormal instead of Slightly Abnormal )",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -7329,7 +7394,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5176",
       "title": "Show errors on AddLocationForm",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting for back end"
       ]
@@ -7337,7 +7402,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1231",
       "title": "Add unique constraint for AssetLocation name and facility",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]
@@ -7345,7 +7410,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5157",
       "title": "Add support for freeflow text in Referred To Facility",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7354,7 +7419,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1228",
       "title": "Add referred_to_external to PatientConsultation",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -7362,21 +7427,22 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "work-in-progress",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7385,7 +7451,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": [
         "waiting-for-review"
       ]
@@ -7393,7 +7459,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 16,
+      "stale_for": 17,
       "labels": [
         "waiting for back end"
       ]
@@ -7401,7 +7467,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 16,
+      "stale_for": 17,
       "labels": [
         "waiting-for-review"
       ]

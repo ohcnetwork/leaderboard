@@ -1,6 +1,73 @@
 {
-  "last_updated": 1680539857.0,
+  "last_updated": 1680630092.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5140",
+      "time": 1680630092.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5140",
+      "text": "vite migration",
+      "collaborated_with": [
+        "sainak",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680619059.0,
+      "title": "coronasafe/care_fe#5216",
+      "link": "https://github.com/coronasafe/care_fe/pull/5216#pullrequestreview-1371146289",
+      "text": "Replaced Material UI components in UpdateFacilityMiddleware.ts"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5232",
+      "time": 1680605133.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5232",
+      "text": "The `/session-expired` route shows \"Page Not Found\" instead of \"Session Expired\""
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_deploy_configs#14",
+      "time": 1680590233.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/14",
+      "text": "adds configurations for plausible"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5000",
+      "time": 1680589216.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5000#issuecomment-1495412666",
+      "text": "@ayushjnv1 if the work is not yet completed and you are willing to complete it, you may create a draft PR and link this issue to it.\r\n\r\nUnassigned to prevent this issue from being blocked.\r\n\r\nFeel free to ping if you are facing any blockers."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_deploy_configs#14",
+      "time": 1680587451.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/14",
+      "text": "adds config related to coronasafe/care_fe#5228"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5229",
+      "time": 1680586481.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5229",
+      "text": "useConfig for plausible analytics loading script instead of env"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5228",
+      "time": 1680586360.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5228",
+      "text": "move plausible analytics envs to config.json"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5227",
+      "time": 1680584979.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5227",
+      "text": "adds location filter to central nursing station"
+    },
     {
       "type": "pr_reviewed",
       "time": 1680539857.0,
@@ -12590,9 +12657,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5229",
+      "title": "Adds `Script` component and load plausible analytics script from useConfig instead of env",
+      "stale_for": 0,
+      "labels": [
+        "need Review",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5227",
+      "title": "adds location filter to central nursing station",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5222",
       "title": "fixes bed types not shown when occupied = 0",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "urgent",
         "tested",
@@ -12602,7 +12688,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5209",
       "title": "minor ui fix in investigation suggested dropdown",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "cypress failed"
@@ -12611,7 +12697,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5204",
       "title": "fix syntax error in `Auto Label WIP` workflow",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "need Review",
         "cypress failed"
@@ -12620,7 +12706,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5203",
       "title": "Enhanced Patient Sorting + Adds reusable component: `SortDropdownMenu` with locale support",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested"
       ]
@@ -12628,13 +12714,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1234",
       "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5158",
       "title": "Generalize Filters Slideover",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "redesign",
@@ -12644,25 +12730,29 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/4",
       "title": "Hcx/claims workflow",
-      "stale_for": 25,
+      "stale_for": 26,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_deploy_configs/pull/11",
       "title": "Removes `state_logo` for staging",
-      "stale_for": 66,
+      "stale_for": 67,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/52",
       "title": "Monthly leaderboard",
-      "stale_for": 168,
+      "stale_for": 169,
       "labels": [
         "merge conflict"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5228",
+      "pr_link": "https://github.com/coronasafe/care_deploy_configs/pull/14"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5188",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5190"

@@ -1,6 +1,156 @@
 {
-  "last_updated": 1680715836.0,
+  "last_updated": 1680780043.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5199",
+      "time": 1680780043.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5199",
+      "text": "Refactor patient category text: \"Slightly Abnormal\" to \"Abnormal\""
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5157",
+      "time": 1680780009.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5157",
+      "text": "Add support for freeflow text in Referred To Facility"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5157",
+      "time": 1680780009.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5157",
+      "text": "Add support for freeflow text in Referred To Facility",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5157",
+      "time": 1680778544.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5157#issuecomment-1498878620",
+      "text": "@nihal467 fixed the issues.\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/230355796-dd2eeb7f-03ff-4611-b6c9-5cd35f63ecb2.png)\r\n\r\n![image](https://user-images.githubusercontent.com/3626859/230356465-3fff6018-ea36-41d4-98a3-1644a8d40d22.png)\r\n\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5206",
+      "time": 1680776984.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5206",
+      "text": "Add severity category sort options"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5248",
+      "time": 1680776964.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5248",
+      "text": "Fix button width on patient page for smaller screens"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5248",
+      "time": 1680776964.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5248",
+      "text": "Fix button width on patient page for smaller screens",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1237",
+      "time": 1680771096.0,
+      "link": "https://github.com/coronasafe/care/pull/1237",
+      "text": "Fix conflicting migrations"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1237",
+      "time": 1680770599.0,
+      "link": "https://github.com/coronasafe/care/pull/1237",
+      "text": "Fix conflicting migrations"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1228",
+      "time": 1680764618.0,
+      "link": "https://github.com/coronasafe/care/pull/1228",
+      "text": "Add referred_to_external to PatientConsultation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1235",
+      "time": 1680764507.0,
+      "link": "https://github.com/coronasafe/care/pull/1235",
+      "text": "Add patient ordering by category"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5249",
+      "time": 1680761324.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5249#issuecomment-1498541253",
+      "text": "@rithviknishad Side note, any clue on cypress timing out waiting for care_fe to start? https://github.com/coronasafe/care_fe/actions/runs/4625566014/jobs/8181444664#step:10:31"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5249",
+      "time": 1680761199.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5249#issuecomment-1498539739",
+      "text": "> @Ashesh3 possible duplicate of #5204. Does your pr solve anything additionally?\r\n\r\nNothing additionally!"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5249",
+      "time": 1680760988.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5249",
+      "text": "Fix syntax error in label-wip.yml workflow file"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1235",
+      "time": 1680759534.0,
+      "link": "https://github.com/coronasafe/care/pull/1235#issuecomment-1498518850",
+      "text": "> If this is a requirement then i would recommend creating a migration and moving the values into something that is queryable. Do create an issue for that and track separately.\r\n\r\nFor the separate issue, you mean a migration to move the values to numeric? So that we can return the category sorted in any order without needing a custom `filter_backend`? In that case I'd imagine the numeric value to be lowest [0] (Comfort) to highest [n] (Critical)."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680759073.0,
+      "title": "coronasafe/care#1235",
+      "link": "https://github.com/coronasafe/care/pull/1235#pullrequestreview-1374074678",
+      "text": "Add patient ordering by category"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1233",
+      "time": 1680758450.0,
+      "link": "https://github.com/coronasafe/care/pull/1233",
+      "text": "Update patient category choices wording (Abnormal instead of Slightly Abnormal )"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5233",
+      "time": 1680754216.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5233",
+      "text": "Refactor 'Description Advice' in ConsultationDetails component"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5233",
+      "time": 1680754216.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5233",
+      "text": "Refactor 'Description Advice' in ConsultationDetails component",
+      "collaborated_with": [
+        "khavinshankar",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5247",
+      "time": 1680754160.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5247",
+      "text": "Fix patient card spacing when icon is present"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5248",
@@ -7440,69 +7590,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5248",
-      "title": "Fix button width on patient page for smaller screens",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5247",
-      "title": "Fix patient card spacing when icon is present",
-      "stale_for": 0,
-      "labels": [
-        "tested"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5233",
-      "title": "Refactor 'Description Advice' in ConsultationDetails component",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "tested",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5206",
-      "title": "Add severity category sort options",
-      "stale_for": 0,
-      "labels": [
-        "waiting for back end",
-        "merge conflict"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1235",
-      "title": "Add patient ordering by category",
-      "stale_for": 2,
-      "labels": [
-        "waiting-for-review",
-        "P2"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5199",
-      "title": "Refactor patient category text: \"Slightly Abnormal\" to \"Abnormal\"",
-      "stale_for": 7,
-      "labels": [
-        "waiting for back end"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1233",
-      "title": "Update patient category choices wording (Abnormal instead of Slightly Abnormal )",
-      "stale_for": 4,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5176",
       "title": "Show errors on AddLocationForm",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "waiting for back end"
       ]
@@ -7510,24 +7600,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1231",
       "title": "Add unique constraint for AssetLocation name and facility",
-      "stale_for": 9,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5157",
-      "title": "Add support for freeflow text in Referred To Facility",
-      "stale_for": 9,
-      "labels": [
-        "waiting for back end",
-        "merge conflict"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1228",
-      "title": "Add referred_to_external to PatientConsultation",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -7535,7 +7608,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -7544,13 +7617,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7559,7 +7632,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 16,
+      "stale_for": 17,
       "labels": [
         "waiting-for-review"
       ]
@@ -7567,7 +7640,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "waiting for back end"
       ]
@@ -7575,13 +7648,17 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "waiting-for-review"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5244",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5247"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5075",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5076"
@@ -7669,10 +7746,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3182",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3183"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3181",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3200"
     }
   ]
 }

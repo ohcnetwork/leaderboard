@@ -1,6 +1,90 @@
 {
-  "last_updated": 1680630054.0,
+  "last_updated": 1680793485.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5254",
+      "time": 1680793485.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5254#issuecomment-1499218537",
+      "text": "https://github.com/coronasafe/care_fe/pull/4810/files#diff-d87205b509f4d11a0ac60ff34e9eaec19d747ca0b553fc1d8227844299953727L162\r\n\r\nAdd Oxygen Support as a Separate Option.\r\n\r\nHandle the same in the Edit & Display Components as well\r\n\r\n - [ ] Post fixing this, @mathew-alex to check Daily Rounds Created in Production. \r\n - [ ] Create a `care_be` migration to set existing Records with other Ventilator Parameters set to `Oxygen Support`\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680793357.0,
+      "title": "coronasafe/care_fe#4810",
+      "link": "https://github.com/coronasafe/care_fe/pull/4810#pullrequestreview-1375063824",
+      "text": "Change Ventilator Parameters to Respiratory Support"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1041",
+      "time": 1680792144.0,
+      "link": "https://github.com/coronasafe/care/issues/1041",
+      "text": "Update consultation detail's `category` with daily round's `patient_category` when a daily round is created/updated."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1041",
+      "time": 1680792144.0,
+      "link": "https://github.com/coronasafe/care/issues/1041#issuecomment-1499178776",
+      "text": "This is unnecessary, the data is already present in consultaiton.last_daily_round"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1045",
+      "time": 1680792106.0,
+      "link": "https://github.com/coronasafe/care/pull/1045#issuecomment-1499177978",
+      "text": "This is unnecessary, the data is already present in consultaiton.last_daily_round"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680771089.0,
+      "title": "coronasafe/care#1237",
+      "link": "https://github.com/coronasafe/care/pull/1237#pullrequestreview-1374364072",
+      "text": "Fix conflicting migrations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680764607.0,
+      "title": "coronasafe/care#1228",
+      "link": "https://github.com/coronasafe/care/pull/1228#pullrequestreview-1374180013",
+      "text": "Add referred_to_external to PatientConsultation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1106",
+      "time": 1680764397.0,
+      "link": "https://github.com/coronasafe/care/pull/1106#issuecomment-1498585438",
+      "text": "@khavinshankar "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680764280.0,
+      "title": "coronasafe/care#1231",
+      "link": "https://github.com/coronasafe/care/pull/1231#pullrequestreview-1374173327",
+      "text": "Add unique constraint for AssetLocation name and facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680758790.0,
+      "title": "coronasafe/care#1232",
+      "link": "https://github.com/coronasafe/care/pull/1232#pullrequestreview-1374071121",
+      "text": "fix: added op_no field and respiratory support filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1680758440.0,
+      "title": "coronasafe/care#1233",
+      "link": "https://github.com/coronasafe/care/pull/1233#pullrequestreview-1374066442",
+      "text": "Update patient category choices wording (Abnormal instead of Slightly Abnormal )"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1234",
+      "time": 1680758376.0,
+      "link": "https://github.com/coronasafe/care/pull/1234#issuecomment-1498506231",
+      "text": "@mathew-alex Do we need this urgently? Let's cleanup the icd_11 implementation altogether and build the relation so that we're good in the long run\r\n"
+    },
     {
       "type": "pr_reviewed",
       "time": 1680630054.0,
@@ -5211,13 +5295,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1117",
       "title": "ABDM M1",
-      "stale_for": 92,
+      "stale_for": 94,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1001",
       "title": "Create Patient Tele Interaction",
-      "stale_for": 82,
+      "stale_for": 84,
       "labels": []
     }
   ],

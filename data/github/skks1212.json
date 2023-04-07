@@ -1,6 +1,41 @@
 {
-  "last_updated": 1680711043.0,
+  "last_updated": 1680820494.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1238",
+      "time": 1680820494.0,
+      "link": "https://github.com/coronasafe/care/pull/1238",
+      "text": "Added enum value for oxygen support in critical care"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5261",
+      "time": 1680817718.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5261",
+      "text": "Fixed oxygen support option in ventilator interface"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5254",
+      "time": 1680785956.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5254#issuecomment-1499027584",
+      "text": "Acknowledged"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5251",
+      "time": 1680776862.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5251",
+      "text": "Added OP number to patient consultation form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5251",
+      "time": 1680772233.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5251",
+      "text": "Added OP number to patient consultation form"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/ayushma#23",
@@ -4176,7 +4211,28 @@
       "text": "Updated Rhythm View to table for easy access and efficiency"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1238",
+      "title": "Added enum value for oxygen support in critical care",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5261",
+      "title": "Fixed oxygen support option in respiratory support",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "waiting for back end",
+        "cypress failed"
+      ]
+    }
+  ],
   "authored_issue_and_pr": [
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4821",

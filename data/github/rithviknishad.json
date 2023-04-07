@@ -1,6 +1,48 @@
 {
-  "last_updated": 1680699154.0,
+  "last_updated": 1680796636.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5232",
+      "time": 1680796636.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5232#issuecomment-1499289953",
+      "text": "https://docs.github.com/en/get-started/quickstart/contributing-to-projects"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5236",
+      "time": 1680796546.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5236#issuecomment-1499288223",
+      "text": "@pranit-yawalkar have you tried cloning and running `npm install` before `npm run dev`?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5232",
+      "time": 1680796308.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5232#issuecomment-1499282610",
+      "text": "@CouldBeFree you may create a branch in your fork, and raise a PR to this repo's develop branch."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5249",
+      "time": 1680775890.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5249#issuecomment-1498815590",
+      "text": "@Ashesh3 no idea at present. A bit occupied till tomorrow to try to replicate this locally."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5232",
+      "time": 1680767697.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5232#issuecomment-1498640996",
+      "text": "Yes @CouldBeFree \r\nIf the session is not expired and if user manually enters such a route, how about we redirect them back to the previous valid route if any is present in the history stack (checkout `useAppHistory` custom hook). If no history is present we may route them to `/` which will redirect them to `/facility` automatically."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5249",
+      "time": 1680761132.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5249#issuecomment-1498538830",
+      "text": "@Ashesh3 https://github.com/coronasafe/care_fe/pull/5204"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#5245",
@@ -12800,13 +12842,14 @@
       "title": "Adds `Script` component, load plausible analytics from useConfig instead of env, redact IDs in URLs",
       "stale_for": 0,
       "labels": [
+        "need Review",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5204",
       "title": "fix syntax error in `Auto Label WIP` workflow",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "need Review",
         "github_actions"
@@ -12815,8 +12858,10 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1234",
       "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
-      "stale_for": 6,
-      "labels": []
+      "stale_for": 0,
+      "labels": [
+        "changes required"
+      ]
     }
   ],
   "authored_issue_and_pr": [

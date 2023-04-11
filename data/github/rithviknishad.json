@@ -1,6 +1,97 @@
 {
-  "last_updated": 1681061030.0,
+  "last_updated": 1681148689.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5314",
+      "time": 1681148689.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5314#issuecomment-1502105627",
+      "text": "@aparnacoronasafe this behaviour is conflicting with the recently created issue #5296 where it's behaviour is to open of create shift request form. Could you confirm which behaviour is expected?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5313",
+      "time": 1681147152.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5313",
+      "text": "Critical Care: Adds Catheter Care in Nursing Care"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5305",
+      "time": 1681139790.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5305",
+      "text": "Change all absolute URLs attempting to access public/static contents to use relative URLs"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5303",
+      "time": 1681139461.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5303#issuecomment-1501936737",
+      "text": "Issue seems to be different. All of the in-app usages of REACT_PUBLIC_URL is to access static assets of public dir. Replacing it with relative URL should do"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5303",
+      "time": 1681138947.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5303",
+      "text": "Move usages of `REACT_PUBLIC_URL` to use `config.json`'s `site_url`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5293",
+      "time": 1681137994.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5293#issuecomment-1501905407",
+      "text": "Currently, we do not store enough attributes/information about ICD11 Diagnoses in the ICD11 in-memory database.\r\n\r\nPossible solutions is to use [ICD API](https://icd.who.int/icdapi) (see [Swagger Docs](https://id.who.int/swagger/index.html))\r\n\r\nIt may break things since we are not aware if they might make changes in the ICD v11 API itself or not.\r\n\r\nA possible workaround for this issue could be to use ICD API to query, extract the entries out, match them with the ICD11 entries present in our backend, and give that response."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5295",
+      "time": 1681137662.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5295",
+      "text": "Consultation form- Referral outside CARE network"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5295",
+      "time": 1681137662.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5295#issuecomment-1501899761",
+      "text": "Duplicate of #4876 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5298",
+      "time": 1681132453.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5298",
+      "text": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5295",
+      "time": 1681131471.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5295#issuecomment-1501783213",
+      "text": "@Ashesh3 maybe we should have separate input fields for it so that user is clear about this feature. (Although we could make use of the same backend field)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5294",
+      "time": 1681127276.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5294",
+      "text": "Consultation Form: Moved Diagnosis Field to a separate section"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5292",
+      "time": 1681125037.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5292",
+      "text": "Consultation Form: Moves Review after and Action before Tele-medicine "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5284",
+      "time": 1681119201.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5284#issuecomment-1501607262",
+      "text": "@pamnanaimanish169 this issue already has a PR (#5290) linked to it. \r\nFeel free to checkout other good first issues here: https://github.com/coronasafe/care_fe/contribute"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5289",
@@ -12929,9 +13020,56 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5313",
+      "title": "Critical Care: Adds Catheter Care in Nursing Care",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5305",
+      "title": "Change all absolute URLs attempting to access public/static contents to use relative URLs",
+      "stale_for": 0,
+      "labels": [
+        "need Review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5298",
+      "title": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\"",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5294",
+      "title": "Consultation Form: Moved Diagnosis Field to a separate section",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5292",
+      "title": "Consultation Form: Moves Review after and Action before Tele-medicine ",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5286",
       "title": "fix ventilator type label unknown to none",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -12940,7 +13078,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5204",
       "title": "fix syntax error in `Auto Label WIP` workflow",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "need Review",
         "github_actions"
@@ -12949,7 +13087,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1234",
       "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "changes required"
       ]

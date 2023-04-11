@@ -1,6 +1,139 @@
 {
-  "last_updated": 1680944053.0,
+  "last_updated": 1681149066.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5315",
+      "time": 1681149066.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5315",
+      "text": "Discharged date in patient dashboard"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5314",
+      "time": 1681148353.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5314",
+      "text": "Referred to another hospital: Consultation form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5312",
+      "time": 1681146834.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5312",
+      "text": "State logo on CARE homepage: Mobile view"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5310",
+      "time": 1681146113.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5310",
+      "text": "Catheter Care- Nursing Care"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5309",
+      "time": 1681141880.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5309",
+      "text": "Improving patient export"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5307",
+      "time": 1681140236.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5307",
+      "text": "Policy ID in insurance details"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5306",
+      "time": 1681140007.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5306",
+      "text": "Asset registration- Support tollfree No."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5304",
+      "time": 1681139521.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5304",
+      "text": "Software Update button- profile"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5300",
+      "time": 1681137748.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5300#issuecomment-1501901223",
+      "text": "@Ashesh3 Todo No. 2. "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5302",
+      "time": 1681135821.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5302",
+      "text": "Shifting Kanban- editing the process"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5300",
+      "time": 1681132975.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5300",
+      "text": "Changes to shifting form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5297",
+      "time": 1681131733.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5297",
+      "text": "Shift Patient- add button to patient dashboard"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5296",
+      "time": 1681131372.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5296",
+      "text": "Consultation- referral- shifting request"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5295",
+      "time": 1681131097.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5295",
+      "text": "Consultation form- Referral outside CARE network"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5293",
+      "time": 1681126427.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5293",
+      "text": "ICD-11 Search enhancement"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5237",
+      "time": 1681126137.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5237#issuecomment-1501714052",
+      "text": "@Ashesh3 what is the Expected date of completion for this?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5272",
+      "time": 1681120604.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5272#issuecomment-1501625151",
+      "text": "Please refer to #5271 also"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5271",
+      "time": 1681120557.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5271#issuecomment-1501624582",
+      "text": "**Relevance of \"recommend discharge\"**\r\nThe reason we have an option to Note \"Recommend Discharge\" in log update and then a separate \"Discharge from CARE\" option is because in most cases, the Treating physician would clear the patient for discharge, but the actual discharge may only happen after one of multiple of the following events are done:\r\n1) The patient is on an infusion (medication given through drip) and the doctors may have asked nurse to wait 2-3 hours for drip to complete before sending the patient\r\n2) The patients bill may need to be settled\r\n3) The patient insurance claim process maybe ongoing\r\netc. \r\n\r\nTherefore the actual discharge (noted in CARE through \"discharge from CARE\" on patient dashboard) may only be done hours after the treating physician recommends discharge. \r\n\r\n**To-Do**\r\n\r\n- [ ] Design a flag for \"recommended Discharge\" to be visible on the patient list and patient dashboard. the design may be kept consistent with the design for \"Action\". refer to #5272 . or better the design of actions may be reimagined keeping this use-case also in mind.\r\n\r\n\r\n\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5291",
+      "time": 1681118472.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5291",
+      "text": "Correction in Consultation form- review time and action"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5278",

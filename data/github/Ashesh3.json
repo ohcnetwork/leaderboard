@@ -1,6 +1,62 @@
 {
-  "last_updated": 1680780043.0,
+  "last_updated": 1681164040.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5316",
+      "time": 1681164040.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5316",
+      "text": "Add state logo to login page on mobile view"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5311",
+      "time": 1681146297.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5311",
+      "text": "Show software update button on UserProfile"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5308",
+      "time": 1681141360.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5308",
+      "text": "Change \"Policy ID\" to \"Policy ID / Policy Name\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5301",
+      "time": 1681135200.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5301",
+      "text": "Show current consultation details on Patient Dashboard"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5299",
+      "time": 1681132650.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5299",
+      "text": "Add \"Shift Patient\" button to patient dashboard"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5295",
+      "time": 1681131630.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5295#issuecomment-1501786096",
+      "text": "> @Ashesh3 maybe we should have separate input fields for it so that user is clear about this feature. (Although we could make use of the same backend field)\r\n\r\nThat would be more intuitive correct. Though I remember discussing both options (with and without the addition input) with Gigin and deciding on the current implementation. Let's take it up for discussion again."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5295",
+      "time": 1681131234.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5295#issuecomment-1501780120",
+      "text": "Possible duplicate of #4876 , that was resolved by allowing free flow text in the input itself if no hospitals matched the query.\r\n@aparnacoronasafe can you confirm?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5237",
+      "time": 1681127585.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5237#issuecomment-1501730534",
+      "text": "> @Ashesh3 what is the Expected date of completion for this?\r\n\r\nWe had some issues last week regarding patient discharge. All those are resolved now. I'll get this feature done by tonight."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5199",
@@ -7590,9 +7646,63 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5316",
+      "title": "Add state logo to login page on mobile view",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5311",
+      "title": "Show software update button on UserProfile",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5308",
+      "title": "Change \"Policy ID\" to \"Policy ID / Policy Name\"",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P2"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5301",
+      "title": "Show current consultation details on Patient Dashboard",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5299",
+      "title": "Add \"Shift Patient\" button to patient dashboard",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5283",
+      "title": "Fix search input on various pages",
+      "stale_for": 3,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5176",
       "title": "Show errors on AddLocationForm",
-      "stale_for": 10,
+      "stale_for": 14,
       "labels": [
         "waiting for back end"
       ]
@@ -7600,7 +7710,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1231",
       "title": "Add unique constraint for AssetLocation name and facility",
-      "stale_for": 0,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -7608,7 +7718,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 2,
+      "stale_for": 6,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -7617,13 +7727,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 15,
+      "stale_for": 19,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 16,
+      "stale_for": 20,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7632,7 +7742,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 17,
+      "stale_for": 21,
       "labels": [
         "waiting-for-review"
       ]
@@ -7640,7 +7750,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 19,
+      "stale_for": 23,
       "labels": [
         "waiting for back end"
       ]
@@ -7648,7 +7758,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 19,
+      "stale_for": 23,
       "labels": [
         "waiting-for-review"
       ]

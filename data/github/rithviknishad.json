@@ -1,6 +1,135 @@
 {
-  "last_updated": 1681148689.0,
+  "last_updated": 1681308826.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5318",
+      "time": 1681308826.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5318",
+      "text": "Should `state_logo` be used instead of `KeralaLogo` in Resource Approval Letter?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5329",
+      "time": 1681307801.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5329",
+      "text": "Cleanup: Deletes unused `PatientFilterV2.tsx`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1245",
+      "time": 1681306913.0,
+      "link": "https://github.com/coronasafe/care/pull/1245",
+      "text": "Fixes Patient Category Filter"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1245",
+      "time": 1681304132.0,
+      "link": "https://github.com/coronasafe/care/pull/1245",
+      "text": "Fixes Patient Category Filter"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5327",
+      "time": 1681301456.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5327",
+      "text": "Patient Category Filters not filtering based on last daily round"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5326",
+      "time": 1681299735.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5326",
+      "text": "Revert \"fix: reorder and group the patient filters (#5052)\""
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5286",
+      "time": 1681289847.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5286",
+      "text": "fix ventilator type label unknown to none"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5286",
+      "time": 1681289847.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5286",
+      "text": "fix ventilator type label unknown to none",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5288",
+      "time": 1681289817.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5288",
+      "text": "Place buttons in new line in Search Facility Popup #5287",
+      "collaborated_with": [
+        "nihal467",
+        "AbhishekPSingh07"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5320",
+      "time": 1681289702.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5320",
+      "text": "Consultation Form: Adds an asterisks for Diagnosis section title"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5320",
+      "time": 1681289702.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5320",
+      "text": "Consultation Form: Adds an asterisks for Diagnosis section title",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681287653.0,
+      "title": "coronasafe/care_fe#5324",
+      "link": "https://github.com/coronasafe/care_fe/pull/5324#pullrequestreview-1380779147",
+      "text": "Migrated ShiftingBoard.tsx from MaterialUI to Custom Components"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681287610.0,
+      "title": "coronasafe/care_fe#5324",
+      "link": "https://github.com/coronasafe/care_fe/pull/5324#pullrequestreview-1380779147",
+      "text": "Migrated ShiftingBoard.tsx from MaterialUI to Custom Components"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681287610.0,
+      "title": "coronasafe/care_fe#5324",
+      "link": "https://github.com/coronasafe/care_fe/pull/5324#pullrequestreview-1380779147",
+      "text": "Migrated ShiftingBoard.tsx from MaterialUI to Custom Components"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5204",
+      "time": 1681278415.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5204",
+      "text": "fix syntax error in `Auto Label WIP` workflow"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5305",
+      "time": 1681278350.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5305",
+      "text": "Change all absolute URLs attempting to access public/static contents to use relative URLs"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5321",
+      "time": 1681278197.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5321",
+      "text": "Deletes unused legacy component: `HelpToolTip`"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5314",
@@ -13020,80 +13149,60 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5313",
-      "title": "Critical Care: Adds Catheter Care in Nursing Care",
+      "link": "https://github.com/coronasafe/care_fe/pull/5329",
+      "title": "Cleanup: Deletes unused `PatientFilterV2.tsx`",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "P1",
+        "need Review",
         "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5305",
-      "title": "Change all absolute URLs attempting to access public/static contents to use relative URLs",
-      "stale_for": 0,
-      "labels": [
-        "need Review"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5298",
       "title": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\"",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5294",
-      "title": "Consultation Form: Moved Diagnosis Field to a separate section",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5292",
-      "title": "Consultation Form: Moves Review after and Action before Tele-medicine ",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5286",
-      "title": "fix ventilator type label unknown to none",
       "stale_for": 1,
       "labels": [
         "needs testing",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5204",
-      "title": "fix syntax error in `Auto Label WIP` workflow",
-      "stale_for": 5,
-      "labels": [
-        "need Review",
-        "github_actions"
+        "hold",
+        "P1",
+        "cypress failed",
+        "shifting"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1234",
       "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
-      "stale_for": 4,
+      "stale_for": 1,
       "labels": [
         "changes required"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5327",
+      "pr_link": "https://github.com/coronasafe/care/pull/1245"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5319",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5320"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5318",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5305"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5303",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5305"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5279",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5286"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5278",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5294"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5245",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5229"

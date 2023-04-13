@@ -1,6 +1,48 @@
 {
-  "last_updated": 1681164040.0,
+  "last_updated": 1681325672.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5330",
+      "time": 1681325672.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5330",
+      "text": "Improve support for toll free numbers"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5300",
+      "time": 1681309865.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5300#issuecomment-1505383171",
+      "text": "> @Ashesh3 Todo No. 2.\r\n\r\nTodo 1-5 are completed in the linked PR."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1246",
+      "time": 1681309520.0,
+      "link": "https://github.com/coronasafe/care/pull/1246",
+      "text": "Support free flow text for assigned_facility in Shifting form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5323",
+      "time": 1681283690.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5323",
+      "text": "UI changes to shifting form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5322",
+      "time": 1681281593.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5322",
+      "text": "Changes to shifting form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5322",
+      "time": 1681281480.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5322",
+      "text": "\"Contact person at the facility\" to be edited to \"Contact person at the current facility \""
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5316",
@@ -7646,8 +7688,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5316",
-      "title": "Add state logo to login page on mobile view",
+      "link": "https://github.com/coronasafe/care_fe/pull/5330",
+      "title": "Improve support for toll free numbers",
       "stale_for": 0,
       "labels": [
         "needs testing",
@@ -7655,54 +7697,25 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5311",
-      "title": "Show software update button on UserProfile",
+      "link": "https://github.com/coronasafe/care/pull/1246",
+      "title": "Support free flow text for assigned_facility in Shifting form",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "P1"
+        "waiting-for-review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5308",
-      "title": "Change \"Policy ID\" to \"Policy ID / Policy Name\"",
+      "link": "https://github.com/coronasafe/care_fe/pull/5323",
+      "title": "UI changes to shifting form",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "P2"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5301",
-      "title": "Show current consultation details on Patient Dashboard",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5299",
-      "title": "Add \"Shift Patient\" button to patient dashboard",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5283",
-      "title": "Fix search input on various pages",
-      "stale_for": 3,
-      "labels": [
-        "needs testing",
-        "P1"
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5176",
       "title": "Show errors on AddLocationForm",
-      "stale_for": 14,
+      "stale_for": 16,
       "labels": [
         "waiting for back end"
       ]
@@ -7710,7 +7723,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1231",
       "title": "Add unique constraint for AssetLocation name and facility",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -7718,7 +7731,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 6,
+      "stale_for": 8,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -7727,13 +7740,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 19,
+      "stale_for": 21,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 20,
+      "stale_for": 22,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -7742,7 +7755,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 21,
+      "stale_for": 23,
       "labels": [
         "waiting-for-review"
       ]
@@ -7750,7 +7763,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 23,
+      "stale_for": 25,
       "labels": [
         "waiting for back end"
       ]
@@ -7758,13 +7771,17 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 23,
+      "stale_for": 25,
       "labels": [
         "waiting-for-review"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5276",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5283"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5244",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5247"
@@ -7848,14 +7865,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3239",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3244"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3219",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3220"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3182",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3183"
     }
   ]
 }

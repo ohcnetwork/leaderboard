@@ -1,6 +1,81 @@
 {
-  "last_updated": 1681365885.0,
+  "last_updated": 1681495829.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5343",
+      "time": 1681495829.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5343",
+      "text": "Production Release; Apr Week 3",
+      "collaborated_with": [
+        "bodhish",
+        "AbhishekPSingh07",
+        "cp-Coder",
+        "yogeshbhutkar",
+        "CouldBeFree",
+        "pranit-yawalkar",
+        "patelaryan7751",
+        "rithviknishad",
+        "mathew-alex",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5335",
+      "time": 1681489613.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5335",
+      "text": "Action is a required field in the patient consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681489495.0,
+      "title": "coronasafe/care_fe#5340",
+      "link": "https://github.com/coronasafe/care_fe/pull/5340#pullrequestreview-1385778605",
+      "text": "Consultation Form: Minor fixes for action field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681489005.0,
+      "title": "coronasafe/care#1253",
+      "link": "https://github.com/coronasafe/care/pull/1253#pullrequestreview-1385766898",
+      "text": "Allow null in `patient.action` and update action on edit consultation if not in `validated_data`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5315",
+      "time": 1681480301.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5315",
+      "text": "Discharged date in patient dashboard"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681480293.0,
+      "title": "coronasafe/care_fe#5333",
+      "link": "https://github.com/coronasafe/care_fe/pull/5333#pullrequestreview-1385502974",
+      "text": "Refactor discharge badge on Patient Dashboard"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5338",
+      "time": 1681480258.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5338",
+      "text": "Something went wrong error in asset page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681480245.0,
+      "title": "coronasafe/care_fe#5341",
+      "link": "https://github.com/coronasafe/care_fe/pull/5341#pullrequestreview-1385501575",
+      "text": "Fix facility filter in asset page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5334",
+      "time": 1681461766.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5334",
+      "text": "Abdm integration"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4236",
@@ -16585,6 +16660,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5334",
+      "title": "Abdm integration",
+      "stale_for": 0,
+      "labels": [
+        "merge conflict"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
       "stale_for": 0,
@@ -16593,19 +16676,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 54,
+      "stale_for": 55,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 24,
+      "stale_for": 25,
       "labels": [
         "work-in-progress"
       ]
@@ -16613,13 +16696,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 125,
+      "stale_for": 126,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "changes required"
       ]
@@ -16627,7 +16710,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 154,
+      "stale_for": 155,
       "labels": [
         "waiting-for-review"
       ]
@@ -16635,25 +16718,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 482,
+      "stale_for": 483,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 488,
+      "stale_for": 489,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 489,
+      "stale_for": 490,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 684,
+      "stale_for": 685,
       "labels": []
     }
   ],

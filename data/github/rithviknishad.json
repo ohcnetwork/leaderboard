@@ -1,6 +1,101 @@
 {
-  "last_updated": 1681411056.0,
+  "last_updated": 1681495829.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5343",
+      "time": 1681495829.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5343",
+      "text": "Production Release; Apr Week 3",
+      "collaborated_with": [
+        "bodhish",
+        "khavinshankar",
+        "AbhishekPSingh07",
+        "cp-Coder",
+        "yogeshbhutkar",
+        "CouldBeFree",
+        "pranit-yawalkar",
+        "patelaryan7751",
+        "mathew-alex",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1254",
+      "time": 1681495812.0,
+      "link": "https://github.com/coronasafe/care/pull/1254",
+      "text": "Production Release; Apr Week 3",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1253",
+      "time": 1681489942.0,
+      "link": "https://github.com/coronasafe/care/pull/1253",
+      "text": "Allow null in `patient.action` and update action on edit consultation if not in `validated_data`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5340",
+      "time": 1681489612.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5340",
+      "text": "Consultation Form: Minor fixes for action field"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5340",
+      "time": 1681489612.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5340",
+      "text": "Consultation Form: Minor fixes for action field",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1253",
+      "time": 1681488823.0,
+      "link": "https://github.com/coronasafe/care/pull/1253",
+      "text": "Allow null in patient.action and update action on edit consultation if not in validated_data"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5342",
+      "time": 1681488494.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5342",
+      "text": "Action in log update is malfunctioning"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5340",
+      "time": 1681476393.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5340",
+      "text": "Consultation Form: Minor fixes for action field"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1251",
+      "time": 1681476369.0,
+      "link": "https://github.com/coronasafe/care/pull/1251",
+      "text": "Filter skills by `userskill__deleted=False` in `UserAssignedSerializer`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1251",
+      "time": 1681469690.0,
+      "link": "https://github.com/coronasafe/care/pull/1251",
+      "text": "fixes coronasafe/care_fe#5336"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5332",
+      "time": 1681446632.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5332",
+      "text": "Duplicate patient records present in CSV export if patient has multiple policies associated with them"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1249",
@@ -13175,96 +13270,6 @@
       "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5298",
-      "title": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\"",
-      "stale_for": 2,
-      "labels": [
-        "needs testing",
-        "hold",
-        "P1",
-        "cypress failed",
-        "shifting"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1234",
-      "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
-      "stale_for": 2,
-      "labels": [
-        "changes required"
-      ]
-    }
-  ],
-  "authored_issue_and_pr": [
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5327",
-      "pr_link": "https://github.com/coronasafe/care/pull/1245"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5319",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5320"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5318",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5305"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5303",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5305"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5279",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5286"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5278",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5294"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5245",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5229"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5228",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5229"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5228",
-      "pr_link": "https://github.com/coronasafe/care_deploy_configs/pull/14"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5226",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5227"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5208",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5209"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5188",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5190"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5187",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5189"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5137",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5138"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5057",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5059"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5030",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5031"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5024",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5021"
-    }
-  ]
+  "open_prs": [],
+  "authored_issue_and_pr": []
 }

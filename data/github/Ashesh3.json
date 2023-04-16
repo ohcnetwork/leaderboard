@@ -1,6 +1,62 @@
 {
-  "last_updated": 1681495829.0,
+  "last_updated": 1681561310.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1231",
+      "time": 1681561310.0,
+      "link": "https://github.com/coronasafe/care/pull/1231#issuecomment-1509759892",
+      "text": "Requested changes are made. Only validation is done to check for duplicate locations within the same facility. No constraints. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681561253.0,
+      "title": "coronasafe/care#1231",
+      "link": "https://github.com/coronasafe/care/pull/1231#pullrequestreview-1386445695",
+      "text": "Add unique constraint for AssetLocation name and facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681561246.0,
+      "title": "coronasafe/care#1231",
+      "link": "https://github.com/coronasafe/care/pull/1231#pullrequestreview-1386445682",
+      "text": "Add unique constraint for AssetLocation name and facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681557520.0,
+      "title": "coronasafe/care#1246",
+      "link": "https://github.com/coronasafe/care/pull/1246#pullrequestreview-1386435689",
+      "text": "Support free flow text for assigned_facility in Shifting form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681557110.0,
+      "title": "coronasafe/care#1246",
+      "link": "https://github.com/coronasafe/care/pull/1246#pullrequestreview-1386435031",
+      "text": "Support free flow text for assigned_facility in Shifting form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681555948.0,
+      "title": "coronasafe/care#1246",
+      "link": "https://github.com/coronasafe/care/pull/1246#pullrequestreview-1386433303",
+      "text": "Support free flow text for assigned_facility in Shifting form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681555712.0,
+      "title": "coronasafe/care#1246",
+      "link": "https://github.com/coronasafe/care/pull/1246#pullrequestreview-1386432893",
+      "text": "Support free flow text for assigned_facility in Shifting form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681530204.0,
+      "title": "coronasafe/ayushma#38",
+      "link": "https://github.com/coronasafe/ayushma/pull/38#pullrequestreview-1386301130",
+      "text": "namespace added to chat model"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5343",
@@ -7771,6 +7827,185 @@
       "text": "Make Daily Round clone error more user friendly"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5330",
+      "title": "Improve support for toll free numbers",
+      "stale_for": 1,
+      "labels": [
+        "P1",
+        "work-in-progress"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1246",
+      "title": "Support free flow text for assigned_facility in Shifting form",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5323",
+      "title": "UI changes to shifting form",
+      "stale_for": 3,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5176",
+      "title": "Show errors on AddLocationForm",
+      "stale_for": 19,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1231",
+      "title": "Add unique constraint for AssetLocation name and facility",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5147",
+      "title": "[WIP] Integrate LiveKit for doctor connect",
+      "stale_for": 11,
+      "labels": [
+        "work-in-progress",
+        "merge conflict"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1227",
+      "title": "[WIP] Integrate LiveKit for doctor connect",
+      "stale_for": 24,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5131",
+      "title": "Add bed occupancy to facility card",
+      "stale_for": 25,
+      "labels": [
+        "waiting for back end",
+        "merge conflict"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1223",
+      "title": "feat: Add patient and bed count to Facility serializers",
+      "stale_for": 1,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5126",
+      "title": "Add edit functionality to patient notes",
+      "stale_for": 28,
+      "labels": [
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1221",
+      "title": "feat(patient notes): add edit window validation and update endpoint",
+      "stale_for": 1,
+      "labels": [
+        "waiting-for-review"
+      ]
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5276",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5283"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5244",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5247"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5075",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5076"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4855",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4856"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4613",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4614"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4147",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4148"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4097",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4101"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4078",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4079"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4022",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4198"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3866",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3867"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3794",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3813"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3641",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3667"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3640",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3654"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3614",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3639"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3573",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3593"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3543",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3544"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3445",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3450"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3444",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3457"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3416",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3417"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3355",
+      "pr_link": "https://github.com/coronasafe/care/pull/969"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3240",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3247"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3239",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3244"
+    }
+  ]
 }

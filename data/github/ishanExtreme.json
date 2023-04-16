@@ -1,6 +1,27 @@
 {
-  "last_updated": 1681489755.0,
+  "last_updated": 1681589785.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1681589785.0,
+      "title": "coronasafe/ayushma#32",
+      "link": "https://github.com/coronasafe/ayushma/pull/32#pullrequestreview-1386611123",
+      "text": "store text at /converse endpoint"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#41",
+      "time": 1681541312.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/41#issuecomment-1509589105",
+      "text": "@skks1212 @rithviknishad \r\nif we are allowing user giving the api request to set \"allow\" variable on their own in the request body, then our api will not safe to be made public. Instead if we can create a new field in user model specifying if \"special/nurse\" or not and use our api key in that case. So normal user have to send the api_key everytime \ud83e\udd14"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#38",
+      "time": 1681530258.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/38",
+      "text": "namespace added to chat model"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/ayushma#38",
@@ -749,5 +770,70 @@
     }
   ],
   "open_prs": [],
-  "authored_issue_and_pr": []
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3923",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3926"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/872",
+      "pr_link": "https://github.com/coronasafe/care/pull/873"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/869",
+      "pr_link": "https://github.com/coronasafe/care/pull/871"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2719",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2722"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/818",
+      "pr_link": "https://github.com/coronasafe/care/pull/830"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/813",
+      "pr_link": "https://github.com/coronasafe/care/pull/814"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2636",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2637"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2636",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3485"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2605",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2607"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2509",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2571"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2509",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2718"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2504",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2506"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2410",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2413"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2408",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2453"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2353",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2377"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2338",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2341"
+    }
+  ]
 }

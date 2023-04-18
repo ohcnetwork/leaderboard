@@ -1,6 +1,118 @@
 {
-  "last_updated": 1681553905.0,
+  "last_updated": 1681750367.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1234",
+      "time": 1681750367.0,
+      "link": "https://github.com/coronasafe/care/pull/1234#issuecomment-1511737941",
+      "text": "Make sure this is not used in any relations to any existing models, @rithviknishad a warning like so in the models would be helpful. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681750336.0,
+      "title": "coronasafe/care#1234",
+      "link": "https://github.com/coronasafe/care/pull/1234#pullrequestreview-1388569218",
+      "text": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681750210.0,
+      "title": "coronasafe/care#1257",
+      "link": "https://github.com/coronasafe/care/pull/1257#pullrequestreview-1388564559",
+      "text": "Removed whatsapp refs introduced with hcx pr"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681749983.0,
+      "title": "coronasafe/care#1252",
+      "link": "https://github.com/coronasafe/care/pull/1252#pullrequestreview-1388544203",
+      "text": "refactor discharge summary endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681749983.0,
+      "title": "coronasafe/care#1252",
+      "link": "https://github.com/coronasafe/care/pull/1252#pullrequestreview-1388544203",
+      "text": "refactor discharge summary endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681748882.0,
+      "title": "coronasafe/care#1252",
+      "link": "https://github.com/coronasafe/care/pull/1252#pullrequestreview-1388523678",
+      "text": "refactor discharge summary endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681748601.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1388505455",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681748601.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1388505455",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681748004.0,
+      "title": "coronasafe/care#1223",
+      "link": "https://github.com/coronasafe/care/pull/1223#pullrequestreview-1388499388",
+      "text": "feat: Add patient and bed count to Facility serializers"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681748005.0,
+      "title": "coronasafe/care#1223",
+      "link": "https://github.com/coronasafe/care/pull/1223#pullrequestreview-1388499388",
+      "text": "feat: Add patient and bed count to Facility serializers"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1223",
+      "time": 1681747853.0,
+      "link": "https://github.com/coronasafe/care/pull/1223#issuecomment-1511677337",
+      "text": "This might add a bit more stress on the database, create a ticket to summarise both counts at the facility level with signals. I will merge this in to keep you folks unblocked. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681747665.0,
+      "title": "coronasafe/care#1231",
+      "link": "https://github.com/coronasafe/care/pull/1231#pullrequestreview-1388489001",
+      "text": "Add unique constraint for AssetLocation name and facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1231",
+      "time": 1681747655.0,
+      "link": "https://github.com/coronasafe/care/pull/1231#issuecomment-1511669318",
+      "text": "Changes look good, Just confirm if the filter is case sensitive, We want it case insensitive."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681747375.0,
+      "title": "coronasafe/care#1246",
+      "link": "https://github.com/coronasafe/care/pull/1246#pullrequestreview-1388480538",
+      "text": "Support free flow text for assigned_facility in Shifting form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681747374.0,
+      "title": "coronasafe/care#1246",
+      "link": "https://github.com/coronasafe/care/pull/1246#pullrequestreview-1388480538",
+      "text": "Support free flow text for assigned_facility in Shifting form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1258",
+      "time": 1681747112.0,
+      "link": "https://github.com/coronasafe/care/pull/1258#issuecomment-1511648609",
+      "text": "The pipelines are still failing @rithviknishad "
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care#1255",

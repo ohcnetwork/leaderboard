@@ -1,6 +1,41 @@
 {
-  "last_updated": 1681649946.0,
+  "last_updated": 1681750380.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1234",
+      "time": 1681750380.0,
+      "link": "https://github.com/coronasafe/care/pull/1234",
+      "text": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1258",
+      "time": 1681748586.0,
+      "link": "https://github.com/coronasafe/care/pull/1258#issuecomment-1511697155",
+      "text": "@vigneshhari those are flake8 lints. it'll require manually modifying the code. There's like 150 such modifications required :) \r\n\r\n![image](https://user-images.githubusercontent.com/25143503/232549241-bd3b0d25-c03d-4707-ac34-4e1ffdf39ee6.png)\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681741650.0,
+      "title": "coronasafe/care_fe#5344",
+      "link": "https://github.com/coronasafe/care_fe/pull/5344#pullrequestreview-1388226675",
+      "text": "Made UI Responsive for Issue #5331"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1258",
+      "time": 1681724165.0,
+      "link": "https://github.com/coronasafe/care/pull/1258",
+      "text": "Centralise linting across project"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5342",
+      "time": 1681714177.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5342#issuecomment-1510795593",
+      "text": "Unassigning myself since I'll mostly not be available this week."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5280",
@@ -13331,23 +13366,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1258",
+      "title": "Centralise linting across project",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5298",
       "title": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\"",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "needs testing",
         "hold",
         "P1",
         "cypress failed",
         "shifting"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1234",
-      "title": "Adds management command `load_meta_icd11_diagnosis` to load ICD11 to database (postgres)",
-      "stale_for": 5,
-      "labels": [
-        "changes required"
       ]
     }
   ],

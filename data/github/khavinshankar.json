@@ -1,6 +1,41 @@
 {
-  "last_updated": 1681750217.0,
+  "last_updated": 1681818307.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5152",
+      "time": 1681818307.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5152",
+      "text": "Location name to be unique per facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681818299.0,
+      "title": "coronasafe/care_fe#5176",
+      "link": "https://github.com/coronasafe/care_fe/pull/5176#pullrequestreview-1389919701",
+      "text": "Show errors on AddLocationForm"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5000",
+      "time": 1681817499.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5000",
+      "text": "Replace Material UI components in `src/Components/Shifting/ShiftingBoard.tsx`:"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681817431.0,
+      "title": "coronasafe/care_fe#5324",
+      "link": "https://github.com/coronasafe/care_fe/pull/5324#pullrequestreview-1389895553",
+      "text": "Migrated ShiftingBoard.tsx from MaterialUI to Custom Components"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5349",
+      "time": 1681797040.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5349",
+      "text": "Fix 2260"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1257",
@@ -16674,9 +16709,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5349",
+      "title": "Fix 2260",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "work-in-progress",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5334",
       "title": "Abdm integration",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "merge conflict"
       ]
@@ -16684,25 +16729,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 24,
+      "stale_for": 25,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 58,
+      "stale_for": 59,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 28,
+      "stale_for": 29,
       "labels": [
         "work-in-progress"
       ]
@@ -16710,13 +16755,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 129,
+      "stale_for": 130,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "changes required"
       ]
@@ -16724,7 +16769,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 158,
+      "stale_for": 159,
       "labels": [
         "waiting-for-review"
       ]
@@ -16732,25 +16777,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 486,
+      "stale_for": 487,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 492,
+      "stale_for": 493,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 493,
+      "stale_for": 494,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 688,
+      "stale_for": 689,
       "labels": []
     }
   ],

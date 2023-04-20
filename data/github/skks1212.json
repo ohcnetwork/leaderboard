@@ -1,6 +1,13 @@
 {
-  "last_updated": 1681642272.0,
+  "last_updated": 1681933502.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#51",
+      "time": 1681933502.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/51",
+      "text": "Upsertion endpoint"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/ayushma#25",
@@ -4356,15 +4363,17 @@
       "title": "Converted prescription field to their own models, views and serializers",
       "stale_for": 0,
       "labels": [
-        "In progress"
+        "waiting-for-review",
+        "P2"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5317",
       "title": "Added Medicine Administration Record",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
-        "work-in-progress",
+        "needs testing",
+        "waiting for back end",
         "cypress failed"
       ]
     }

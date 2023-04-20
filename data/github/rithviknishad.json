@@ -1,6 +1,56 @@
 {
-  "last_updated": 1681841452.0,
+  "last_updated": 1681921582.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5328",
+      "time": 1681921582.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5328#issuecomment-1515031341",
+      "text": "@patelaryan7751 \r\n\r\nI'm not sure if you understood it, let me rephrase.\r\n\r\nThe current filter state is stored in the URL's query params right? Which is a `Record<key, value>` where value is a string or a ref. ID as string, right?\r\n\r\nThe parent component (eg. `AssetsList`) is getting the query params `useFilters` and all ref. ID-based filters are being resolved to appropriate objects by the parent component itself right?\r\n\r\nSo before even you reach the AssetsFilter (Slideover) component, you already have a Record<key: FilterName, value: string | ResolvedObject> right? \r\n\r\nPassing this to the slide-over should simply work right?\r\n\r\nNow for the clearFilter, the behaviour is pretty simple and straightforward across all filters. It just needs to navigate to the URL without query params. Updating the state need not be done since the qParams automatically will be updated since URL has changed, hence relevant parts will be re-rendered and states get updated.\r\n\r\n(I'm not sure if I'm missing something you are trying to convey, correct me if I'm wrong)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681921116.0,
+      "title": "coronasafe/care_fe#5328",
+      "link": "https://github.com/coronasafe/care_fe/pull/5328#pullrequestreview-1392441909",
+      "text": "Fixed malfunction of patient filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681918051.0,
+      "title": "coronasafe/care_fe#5328",
+      "link": "https://github.com/coronasafe/care_fe/pull/5328#pullrequestreview-1392258145",
+      "text": "Fixed malfunction of patient filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1681918051.0,
+      "title": "coronasafe/care_fe#5328",
+      "link": "https://github.com/coronasafe/care_fe/pull/5328#pullrequestreview-1392258145",
+      "text": "Fixed malfunction of patient filter"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5344",
+      "time": 1681914754.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5344",
+      "text": "Made UI Responsive for Issue #5331",
+      "collaborated_with": [
+        "nihal467",
+        "AbhishekPSingh07"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5352",
+      "time": 1681914699.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5352",
+      "text": "Fixed Issue 5350",
+      "collaborated_with": [
+        "suprabathk",
+        "nihal467"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1681841452.0,
@@ -13400,13 +13450,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1258",
       "title": "Centralise linting across project",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5298",
       "title": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\"",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "needs testing",
         "hold",

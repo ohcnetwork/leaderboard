@@ -1,6 +1,20 @@
 {
-  "last_updated": 1681651473.0,
+  "last_updated": 1681993824.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5300",
+      "time": 1681993824.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5300#issuecomment-1516244689",
+      "text": "@aparnacoronasafe @Ashesh3 I moved the last point from #5302 to this issue as it requires frontend changes as well"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1263",
+      "time": 1681981588.0,
+      "link": "https://github.com/coronasafe/care/pull/1263",
+      "text": "shifting changes for peacetime mode"
+    },
     {
       "type": "pr_reviewed",
       "time": 1681651473.0,
@@ -1928,9 +1942,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1263",
+      "title": "shifting changes for peacetime mode",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5339",
       "title": "add download button in discharge summary modal",
-      "stale_for": 0,
+      "stale_for": 4,
       "labels": [
         "P1",
         "waiting for back end"
@@ -1939,7 +1959,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1252",
       "title": "refactor discharge summary endpoints",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review",
         "P1"
@@ -1948,7 +1968,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 263,
+      "stale_for": 267,
       "labels": []
     }
   ],

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1681903008.0,
+  "last_updated": 1682090720.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5323",
+      "time": 1682090720.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5323#issuecomment-1517997703",
+      "text": "> @Ashesh3 why are the lines commented out, assuming that they can be uncommented at wartime, if that is the case can you use `wartime_shifting` env from useConfig\r\n\r\nHey, those features were to be removed from shifting, hence i commented them once to test the UI. I will remove the comments and make a push. There's no mention of those commented features to be needed at warmode so they can be removed. "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1246",
+      "time": 1682086823.0,
+      "link": "https://github.com/coronasafe/care/pull/1246",
+      "text": "Support free flow text for assigned_facility in Shifting form"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1261",
@@ -7939,7 +7953,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5355",
       "title": "Add \"None\" to patient action",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "waiting for back end"
       ]
@@ -7956,32 +7970,25 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5330",
       "title": "Improve support for toll free numbers",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "P1",
         "work-in-progress"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1246",
-      "title": "Support free flow text for assigned_facility in Shifting form",
-      "stale_for": 2,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5323",
       "title": "UI changes to shifting form",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "tested",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 15,
+      "stale_for": 17,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -7990,13 +7997,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 28,
+      "stale_for": 30,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 29,
+      "stale_for": 31,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -8005,7 +8012,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1223",
       "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -8013,7 +8020,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "waiting for back end"
       ]
@@ -8021,7 +8028,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]

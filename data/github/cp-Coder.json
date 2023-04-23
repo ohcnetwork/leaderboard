@@ -1,6 +1,20 @@
 {
-  "last_updated": 1682047639.0,
+  "last_updated": 1682148246.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1264",
+      "time": 1682148246.0,
+      "link": "https://github.com/coronasafe/care/pull/1264",
+      "text": "fix: adds doctor and staff fields in location model"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5370",
+      "time": 1682147770.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5370",
+      "text": "fix: Duty doctors and Staff for each Location in a Facility"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care#1208",
@@ -7134,15 +7148,32 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1264",
+      "title": "fix: adds doctor and staff fields in location model",
+      "stale_for": 0,
+      "labels": [
+        "P2"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5370",
+      "title": "fix: Duty doctors and Staff for each Location in a Facility",
+      "stale_for": 0,
+      "labels": [
+        "P2",
+        "waiting for back end"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1260",
       "title": "fix: added recommend_discharge as action",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5348",
       "title": "fix: action and review after fields to copy from consultation page to log update",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "hold",
@@ -7152,7 +7183,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5347",
       "title": "fix: add action and recommend discharge data on patient consultation page",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting for back end"
       ]
@@ -7160,7 +7191,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 82,
+      "stale_for": 83,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7169,7 +7200,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 85,
+      "stale_for": 86,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7178,7 +7209,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "waiting for back end",
@@ -7188,7 +7219,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]
@@ -7196,7 +7227,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 76,
+      "stale_for": 77,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7205,7 +7236,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 67,
+      "stale_for": 68,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7214,7 +7245,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 67,
+      "stale_for": 68,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7223,7 +7254,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "waiting-for-review"
       ]

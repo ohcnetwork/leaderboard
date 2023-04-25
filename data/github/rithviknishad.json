@@ -1,6 +1,34 @@
 {
-  "last_updated": 1682276238.0,
+  "last_updated": 1682362908.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5384",
+      "time": 1682362908.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5384#issuecomment-1520675170",
+      "text": "@aparnacoronasafe I've updated the PR to include the field only when wartime is set"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1269",
+      "time": 1682347024.0,
+      "link": "https://github.com/coronasafe/care/pull/1269",
+      "text": "Default allow transfer for patients"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5386",
+      "time": 1682346427.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5386",
+      "text": "Removes KASP from Shift Request Update form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1682316828.0,
+      "title": "coronasafe/care_fe#5378",
+      "link": "https://github.com/coronasafe/care_fe/pull/5378#pullrequestreview-1397255469",
+      "text": "Show all locations in CNS page by default and added a cancel button to setLoaction Modal"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5376",
@@ -13503,6 +13531,114 @@
       "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1269",
+      "title": "Default allow transfer for patients",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5386",
+      "title": "Shift Request Update form: KASP only when wartime enabled",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1258",
+      "title": "Centralise linting across project",
+      "stale_for": 1,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5298",
+      "title": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\"",
+      "stale_for": 13,
+      "labels": [
+        "needs testing",
+        "hold",
+        "P1",
+        "cypress failed",
+        "shifting"
+      ]
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5327",
+      "pr_link": "https://github.com/coronasafe/care/pull/1245"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5319",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5320"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5318",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5305"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5303",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5305"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5279",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5286"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5278",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5294"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5245",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5229"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5228",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5229"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5228",
+      "pr_link": "https://github.com/coronasafe/care_deploy_configs/pull/14"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5226",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5227"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5208",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5209"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5188",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5190"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5187",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5189"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5137",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5138"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5057",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5059"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5030",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5031"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5024",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5021"
+    }
+  ]
 }

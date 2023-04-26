@@ -1,6 +1,76 @@
 {
-  "last_updated": 1682276243.0,
+  "last_updated": 1682441260.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1682441260.0,
+      "title": "coronasafe/care_fe#5392",
+      "link": "https://github.com/coronasafe/care_fe/pull/5392#pullrequestreview-1400338621",
+      "text": "fix: patient category shifting form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5394",
+      "time": 1682440868.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5394#issuecomment-1522102052",
+      "text": "Cancelled is a new Stage for Shifting, creating the new stage can be handled as a separate feature/issue\r\n\r\ncc: @aparnacoronasafe "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5405",
+      "time": 1682438472.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5405#issuecomment-1522049044",
+      "text": "@khavinshankar This is completely out of line with the current working of Shifting."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5399",
+      "time": 1682438384.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5399#issuecomment-1522046811",
+      "text": "@aparnacoronasafe This is a major change in the shifting flow, this can be taken up as a separate feature if required"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5401",
+      "time": 1682438004.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5401#issuecomment-1522037780",
+      "text": "@aparnacoronasafe This is a major feature request that involves creating automated movement of Shifting Requests.\r\n\r\nIf required, Please make a separate issue to block moving patients outside of the shifting request, if a shifting request is open."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1682404620.0,
+      "title": "coronasafe/care#1269",
+      "link": "https://github.com/coronasafe/care/pull/1269#pullrequestreview-1399219880",
+      "text": "Default allow transfer for patients"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1682398888.0,
+      "title": "coronasafe/care_fe#5383",
+      "link": "https://github.com/coronasafe/care_fe/pull/5383#pullrequestreview-1399131984",
+      "text": "Made ambulance no. not mandatory in shift request create"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5384",
+      "time": 1682398845.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5384#issuecomment-1521154979",
+      "text": "@aparnacoronasafe \r\n1. KASP will be disabled in our production deployments. @mathew-alex @rithviknishad Can you confirm that it is already this way\r\n2. When KASP (Or any other form of State Support Programme) is enabled by a state, shouldn't it be applicable in Peacetime as well?\r\n\r\ncc: @rithviknishad "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5403",
+      "time": 1682398355.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5403",
+      "text": "Enable HCX in Staging"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5402",
+      "time": 1682394644.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5402",
+      "text": "Bulk Create Beds"
+    },
     {
       "type": "pr_reviewed",
       "time": 1682276243.0,
@@ -5478,6 +5548,24 @@
       "text": "In the Asset Configure Page for Camera Assets, the Patient Presets (AssetBed Records) Are not Paginated\r\n\r\nhttps://care.coronasafe.in/assets/3aa2ebc2-36ea-4e33-b600-de4e13aee37b/configure"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1117",
+      "title": "ABDM M1",
+      "stale_for": 113,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1001",
+      "title": "Create Patient Tele Interaction",
+      "stale_for": 103,
+      "labels": []
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4025",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4026"
+    }
+  ]
 }

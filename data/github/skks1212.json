@@ -1,6 +1,139 @@
 {
-  "last_updated": 1682431997.0,
+  "last_updated": 1682519202.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#62",
+      "time": 1682519202.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/62#issuecomment-1523517180",
+      "text": "Direct text is a different thing, where we can just enter text directly to a textarea and upsert"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#62",
+      "time": 1682519162.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/62#issuecomment-1523516203",
+      "text": "@ishanExtreme Yes, you will have to scrape from the URL.\n\nFor ex. If we want to scrape data from React docs, we can do that by entering the URL of the page, one page at a time (maybe we can automate that at a later stage)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/ayushma#56",
+      "time": 1682496860.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/56",
+      "text": "Create endpoint for /signup"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#56",
+      "time": 1682496860.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/56#issuecomment-1522978280",
+      "text": " @cp-Coder this issue has been broadened in https://github.com/coronasafe/ayushma/issues/71. Assigning you to that!"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma_fe#5",
+      "time": 1682489742.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/5",
+      "text": "Create register and forgot password pages"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#71",
+      "time": 1682489075.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/71",
+      "text": "Add APIs for /register, /forgot-password, /reset-password, /verify-forgot-token"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma_fe#4",
+      "time": 1682488228.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/4",
+      "text": "Create a profile page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#68",
+      "time": 1682487777.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/68",
+      "text": "Add CRUD operations for User"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma_fe#3",
+      "time": 1682487670.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/3",
+      "text": "Show admin panel button in sidebar if user is superuser"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma_fe#2",
+      "time": 1682487405.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/2",
+      "text": "Setup a new admin layout"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#67",
+      "time": 1682486273.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/67",
+      "text": "Allow admins to access all chats"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#66",
+      "time": 1682485550.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/66",
+      "text": "Unset any other Project as default if another project is set as default"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#65",
+      "time": 1682485145.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/65",
+      "text": "Include citations in all Ayushma responses."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#64",
+      "time": 1682484869.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/64",
+      "text": "Add metadata to all vectors upserted containing the external_id of the relative `Document`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#63",
+      "time": 1682484756.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/63",
+      "text": "Delete vectors from Pinecone if document gets deleted by Admin"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#62",
+      "time": 1682484414.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/62",
+      "text": "Allow users to upsert web links and direct text (through endpoint)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#61",
+      "time": 1682484099.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/61",
+      "text": "Integrate Amazon S3 to store documents"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#60",
+      "time": 1682483962.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/60",
+      "text": "List all projects if requesting user is admin"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#59",
+      "time": 1682483638.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/59",
+      "text": "Add superuser field in User serializer"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/ayushma#51",
@@ -4440,7 +4573,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1247",
       "title": "Converted prescription field to their own models, views and serializers",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review",
         "P2"
@@ -4449,7 +4582,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5317",
       "title": "Added Medicine Administration Record",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "needs testing",
         "waiting for back end",

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1682494245.0,
+  "last_updated": 1682604213.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5415",
+      "time": 1682604213.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5415",
+      "text": "tailwind shift update request form"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5386",
@@ -13564,9 +13571,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5415",
+      "title": "tailwind shift update request form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P2",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1269",
       "title": "Default allow transfer for patients",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "P1"
       ]
@@ -13574,13 +13591,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1258",
       "title": "Centralise linting across project",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5298",
       "title": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\"",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": [
         "needs testing",
         "hold",

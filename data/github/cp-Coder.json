@@ -1,6 +1,27 @@
 {
-  "last_updated": 1682516823.0,
+  "last_updated": 1682593276.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5385",
+      "time": 1682593276.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5385#issuecomment-1525484690",
+      "text": "Closing it as this issue has been fixed. Now, district admin and above is able to update the shifting status to complete"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5385",
+      "time": 1682593276.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5385",
+      "text": "Admins to have super powers in shifting"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1268",
+      "time": 1682592102.0,
+      "link": "https://github.com/coronasafe/care/pull/1268",
+      "text": "fix: districtadmin can't set shifting patient status as completed"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5391",
@@ -7192,7 +7213,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5392",
       "title": "fix: patient category shifting form",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "urgent",
         "test failed",
@@ -7200,18 +7221,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1268",
-      "title": "fix: districtadmin can't set shifting patient status as completed",
-      "stale_for": 2,
-      "labels": [
-        "waiting-for-review",
-        "P1"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1264",
       "title": "fix: adds doctor and staff fields in location model",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review",
         "P2"
@@ -7220,7 +7232,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5370",
       "title": "fix: Duty doctors and Staff for each Location in a Facility",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "P2",
         "waiting for back end"
@@ -7229,13 +7241,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1260",
       "title": "fix: added recommend_discharge as action",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5348",
       "title": "fix: action and review after fields to copy from consultation page to log update",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "needs testing",
         "hold",
@@ -7245,7 +7257,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5347",
       "title": "fix: add action and recommend discharge data on patient consultation page",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting for back end"
       ]
@@ -7253,7 +7265,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 87,
+      "stale_for": 88,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7262,7 +7274,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1081",
       "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 90,
+      "stale_for": 91,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7271,7 +7283,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "needs testing",
         "waiting for back end",
@@ -7281,7 +7293,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "waiting-for-review"
       ]
@@ -7289,7 +7301,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 81,
+      "stale_for": 82,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7298,7 +7310,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 72,
+      "stale_for": 73,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7307,7 +7319,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 72,
+      "stale_for": 73,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7316,7 +7328,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/853",
       "title": "Adding field validator for non-empty field",
-      "stale_for": 23,
+      "stale_for": 24,
       "labels": [
         "waiting-for-review"
       ]

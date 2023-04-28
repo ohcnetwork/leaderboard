@@ -1,6 +1,69 @@
 {
-  "last_updated": 1682417646.0,
+  "last_updated": 1682629639.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1279",
+      "time": 1682629639.0,
+      "link": "https://github.com/coronasafe/care/issues/1279",
+      "text": "Rename all instances of orgin_facility to origin_facility"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1278",
+      "time": 1682629483.0,
+      "link": "https://github.com/coronasafe/care/pull/1278",
+      "text": "Discharge patient on shifting complete"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5416",
+      "time": 1682629001.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5416#issuecomment-1526445701",
+      "text": "- [x] Origin Facility staff is unable to update the following status in the shifting form: Destination Approved, Cancelled - Should be fixed by https://github.com/coronasafe/care/pull/1276\r\n- [x] Destination Facility staff is unable to update the following status in the shifting form: Destination Approved, Complete - Should be fixed by https://github.com/coronasafe/care/pull/1276"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1262",
+      "time": 1682618565.0,
+      "link": "https://github.com/coronasafe/care/pull/1262",
+      "text": "Add NONE to patient action"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1276",
+      "time": 1682617680.0,
+      "link": "https://github.com/coronasafe/care/pull/1276",
+      "text": "Fix issues with Shifting"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5417",
+      "time": 1682612249.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5417",
+      "text": "Add service request history to asset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1277",
+      "time": 1682612018.0,
+      "link": "https://github.com/coronasafe/care/pull/1277",
+      "text": "feat: Add service request history for asset"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1223",
+      "time": 1682606865.0,
+      "link": "https://github.com/coronasafe/care/pull/1223",
+      "text": "feat: Add patient and bed count to Facility serializers"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1276",
+      "time": 1682602076.0,
+      "link": "https://github.com/coronasafe/care/pull/1276",
+      "text": "Fix issues with Shifting"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/ayushma_fe#1",
@@ -8046,26 +8109,41 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5355",
-      "title": "Add \"None\" to patient action",
-      "stale_for": 1,
+      "link": "https://github.com/coronasafe/care/pull/1278",
+      "title": "Discharge patient on shifting complete",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5417",
+      "title": "Add service request history to asset",
+      "stale_for": 0,
       "labels": [
         "waiting for back end"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1262",
-      "title": "Add NONE to patient action",
-      "stale_for": 1,
+      "link": "https://github.com/coronasafe/care/pull/1277",
+      "title": "feat: Add service request history for asset",
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review",
-        "P1"
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5355",
+      "title": "Add \"None\" to patient action",
+      "stale_for": 3,
+      "labels": [
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5330",
       "title": "Improve support for toll free numbers",
-      "stale_for": 6,
+      "stale_for": 8,
       "labels": [
         "P1",
         "work-in-progress"
@@ -8074,7 +8152,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 21,
+      "stale_for": 23,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -8083,30 +8161,22 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 34,
+      "stale_for": 36,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 35,
+      "stale_for": 37,
       "labels": [
         "waiting for back end",
         "merge conflict"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1223",
-      "title": "feat: Add patient and bed count to Facility serializers",
-      "stale_for": 8,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "waiting for back end"
       ]
@@ -8114,7 +8184,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]

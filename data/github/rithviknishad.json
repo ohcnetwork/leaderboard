@@ -1,6 +1,13 @@
 {
-  "last_updated": 1682710220.0,
+  "last_updated": 1682778756.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5421",
+      "time": 1682778756.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5421",
+      "text": "Renames \"Pending\" to \"Shifting Approval Pending\""
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5420",
@@ -13613,20 +13620,29 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5421",
+      "title": "Renames \"Pending\" to \"Shifting Approval Pending\"",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1258",
       "title": "Centralise linting across project",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5298",
       "title": "Consultation Form: Navigate to Create Shift on submit if \"Decision after consultation\" is \"Refer to another Hospital\"",
-      "stale_for": 17,
+      "stale_for": 0,
       "labels": [
+        "urgent",
         "needs testing",
-        "hold",
         "P1",
-        "cypress failed",
         "shifting"
       ]
     }

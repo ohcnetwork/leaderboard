@@ -1,6 +1,34 @@
 {
-  "last_updated": 1682588307.0,
+  "last_updated": 1682937550.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1682937550.0,
+      "title": "coronasafe/care#1157",
+      "link": "https://github.com/coronasafe/care/pull/1157#pullrequestreview-1407507469",
+      "text": "Restrict Admin from unlinking users from other district"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1682937449.0,
+      "title": "coronasafe/care#1260",
+      "link": "https://github.com/coronasafe/care/pull/1260#pullrequestreview-1407506394",
+      "text": "fix: added recommend_discharge as action"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1273",
+      "time": 1682937075.0,
+      "link": "https://github.com/coronasafe/care/issues/1273",
+      "text": "Add a field referredTo_facility in dischargePatient api "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1273",
+      "time": 1682937074.0,
+      "link": "https://github.com/coronasafe/care/issues/1273#issuecomment-1529560877",
+      "text": "The field is already there. It is there by the name `referred_to_external`. "
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1275",
@@ -942,12 +970,14 @@
       "link": "https://github.com/coronasafe/care/pull/1275",
       "title": "Modified bedCreate API View to support bulk creating beds",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5413",
       "title": "Add support for creating multiple beds",
-      "stale_for": 1,
+      "stale_for": 5,
       "labels": []
     }
   ],

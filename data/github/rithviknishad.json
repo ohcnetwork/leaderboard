@@ -1,6 +1,41 @@
 {
-  "last_updated": 1683029624.0,
+  "last_updated": 1683123734.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5428",
+      "time": 1683123734.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5428",
+      "text": "integrate new prescription APIs"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5427",
+      "time": 1683122409.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5427",
+      "text": "fixes patient detail page crashing due to missing imports"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1284",
+      "time": 1683119670.0,
+      "link": "https://github.com/coronasafe/care/issues/1284",
+      "text": "Makefile: use `docker compose` instead of `docker-compose` since `compose` command is now part of `docker` cli itself"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5427",
+      "time": 1683108136.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5427",
+      "text": "fixes patient detail page crashing due to missing imports"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5426",
+      "time": 1683107971.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5426",
+      "text": "Patient Details page is crashing due to missing import of `useTranslation`"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5425",
@@ -13684,11 +13719,15 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1258",
       "title": "Centralise linting across project",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5426",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5427"
+    },
     {
       "issue_link": "https://github.com/coronasafe/ayushma/issues/42",
       "pr_link": "https://github.com/coronasafe/ayushma/pull/79"

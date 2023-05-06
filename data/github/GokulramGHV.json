@@ -1,6 +1,13 @@
 {
-  "last_updated": 1682710220.0,
+  "last_updated": 1683289891.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5450",
+      "time": 1683289891.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5450",
+      "text": "Fixed misalignment of pain scale slider in critical care"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5420",
@@ -1989,9 +1996,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5450",
+      "title": "Fixed misalignment of pain scale slider in critical care",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 15,
+      "stale_for": 22,
       "labels": [
         "work-in-progress",
         "merge conflict",

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1682937550.0,
+  "last_updated": 1683451270.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#98",
+      "time": 1683451270.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/98",
+      "text": "Add support for deleting vectors from pinecone on deletion of document"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#97",
+      "time": 1683447978.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/97",
+      "text": "Modified User Model actions"
+    },
     {
       "type": "pr_reviewed",
       "time": 1682937550.0,
@@ -967,9 +981,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma/pull/98",
+      "title": "Add support for deleting vectors from pinecone on deletion of document",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma/pull/97",
+      "title": "Modified User Model actions",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1275",
       "title": "Modified bedCreate API View to support bulk creating beds",
-      "stale_for": 0,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -977,8 +1003,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5413",
       "title": "Add support for creating multiple beds",
-      "stale_for": 5,
-      "labels": []
+      "stale_for": 3,
+      "labels": [
+        "stale"
+      ]
     }
   ],
   "authored_issue_and_pr": [

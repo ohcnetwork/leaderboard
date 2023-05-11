@@ -1,6 +1,27 @@
 {
-  "last_updated": 1683650820.0,
+  "last_updated": 1683730618.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1252",
+      "time": 1683730618.0,
+      "link": "https://github.com/coronasafe/care/pull/1252#issuecomment-1542355896",
+      "text": "@vigneshhari @sainak just a cautionary reminder/note:\r\n\r\nUpon merging #1247 the `dischare_prescriptions` and `discharge_prn_prescriptions` are no longer JSON fields but a separate Model."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5458",
+      "time": 1683717518.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5458",
+      "text": "Prescriptions v2"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5457",
+      "time": 1683695269.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5457",
+      "text": "enable hcx in staging"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1293",
@@ -13843,9 +13864,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5458",
+      "title": "Medicine Administration Record and upgraded Prescriptions",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "Major Code Change",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5457",
+      "title": "enable hcx in staging",
+      "stale_for": 0,
+      "labels": [
+        "need Review",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1293",
       "title": "Makefile: use `docker compose` instead of `docker-compose`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     }
   ],

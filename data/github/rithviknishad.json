@@ -1,6 +1,27 @@
 {
-  "last_updated": 1683730618.0,
+  "last_updated": 1683821580.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5458",
+      "time": 1683821580.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5458#issuecomment-1544282462",
+      "text": "### Post migrations (after resolving all migration issues)\r\n\r\n#### Patient that's not discharged\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/25143503/631db405-91b4-43ec-9ff7-296d3482cf2c)\r\n\r\n\r\n#### Patient that's discharged\r\n![image](https://github.com/coronasafe/care_fe/assets/25143503/4465c552-fd6c-4c17-8fc1-fcc66ab48cb2)\r\n\r\n### Observations\r\n\r\n- We loose the original last updated/created time data and the values would be the time at which migration was performed since `Prescription` records are created during the migration.\r\n- "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5458",
+      "time": 1683806595.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5458#issuecomment-1543872676",
+      "text": "(draft)\r\n\r\n## Before Migrations (with `master` BE, `develop` FE; Added prescription, prn prescription, critical care medicine)\r\n\r\n### Patient that's not discharged\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/25143503/7ebae26e-8181-4f89-a974-e84e9dbfc15a)\r\n\r\n### To be discharged patient\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/25143503/cb6760e7-a259-40a8-a9f3-0304288e7b10)\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/25143503/a09572c6-5a7c-4c9b-b802-5b78323eed16)\r\n\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1683798889.0,
+      "title": "coronasafe/care_fe#5459",
+      "link": "https://github.com/coronasafe/care_fe/pull/5459#pullrequestreview-1422208921",
+      "text": "Updated Discharge Warning"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1252",
@@ -13868,7 +13889,7 @@
       "title": "Medicine Administration Record and upgraded Prescriptions",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "work-in-progress",
         "Major Code Change",
         "cypress failed"
       ]
@@ -13876,7 +13897,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "need Review",
         "cypress failed"
@@ -13885,7 +13906,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1293",
       "title": "Makefile: use `docker compose` instead of `docker-compose`",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     }
   ],

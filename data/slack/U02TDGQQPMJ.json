@@ -9131,5 +9131,182 @@
                 }
             ]
         }
+    ],
+    "2023-05-13 00:00:00": [
+        {
+            "client_msg_id": "bc65cb42-10bf-4eb5-9bef-8402fbb33b24",
+            "type": "message",
+            "text": "EOD 12/05/2023 - 13/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day(s) go?\n\n\u2022 fixed a couple more migration issues for the prescriptions module and tested them with <@U022THM4U2U> (testing migrations is a pain although simple :smiling_face_with_tear:)\n\u2022 removed medicines from critical care and consultation updates table from medicines tab\n\u2022 tested: refactor discharge summary PR\n\u2022 reviewed 5 react-for-all submissions\n\u2022 huddles with <@U051NJK18KU> to clear some doubts\nWhat's next?\n\n\u2022 review course submissions (if any)\n\u2022 follow up on prescriptions/discharge summary (if any)\n\u2022 work on vitals monitor\n\u2022 integrate medibase APIs for `MedicineFormField` ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1683985207.132189",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "J796l",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/05/2023 - 13/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day(s) go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fixed a couple more migration issues for the prescriptions module and tested them with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (testing migrations is a pain although simple "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "smiling_face_with_tear",
+                                            "unicode": "1f972"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "removed medicines from critical care and consultation updates table from medicines tab"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested: refactor discharge summary PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "reviewed 5 react-for-all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "huddles with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U051NJK18KU"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to clear some doubts"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "review course submissions (if any)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "follow up on prescriptions/discharge summary (if any)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "work on vitals monitor"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "integrate medibase APIs for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "MedicineFormField",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

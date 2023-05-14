@@ -44369,6 +44369,380 @@
     "2023-05-09 00:00:00": [],
     "2023-05-10 00:00:00": [],
     "2023-05-11 00:00:00": [],
-    "2023-05-12 00:00:00": [],
-    "2023-05-13 00:00:00": []
+    "2023-05-12 00:00:00": [
+        {
+            "client_msg_id": "7b0c2076-ba27-4d40-a74f-3d3f412ef817",
+            "type": "message",
+            "text": "EOD 11/05/2023\n\nHow did the day go?\n\u2022 Submitted L7\n\u2022 Studied for exam\nWhat's next?\n\u2022 Attend last exam\n\u2022 Work on L8 milestone",
+            "user": "U051PNZ0W9Z",
+            "ts": "1683862200.683049",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "R9Fro",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 11/05/2023\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Submitted L7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Studied for exam"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Attend last exam"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on L8 milestone"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-05-13 00:00:00": [
+        {
+            "type": "message",
+            "subtype": "channel_join",
+            "ts": "1683989898.714779",
+            "user": "U03GD2L9E77",
+            "text": "<@U03GD2L9E77> has joined the channel",
+            "inviter": "UV5PPBE2D"
+        },
+        {
+            "client_msg_id": "bc65cb42-10bf-4eb5-9bef-8402fbb33b24",
+            "type": "message",
+            "text": "EOD 12/05/2023 - 13/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day(s) go?\n\n\u2022 fixed a couple more migration issues for the prescriptions module and tested them with <@U022THM4U2U> (testing migrations is a pain although simple :smiling_face_with_tear:)\n\u2022 removed medicines from critical care and consultation updates table from medicines tab\n\u2022 tested: refactor discharge summary PR\n\u2022 reviewed 5 react-for-all submissions\n\u2022 huddles with <@U051NJK18KU> to clear some doubts\nWhat's next?\n\n\u2022 review course submissions (if any)\n\u2022 follow up on prescriptions/discharge summary (if any)\n\u2022 work on vitals monitor\n\u2022 integrate medibase APIs for `MedicineFormField` ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1683985207.132189",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "J796l",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/05/2023 - 13/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day(s) go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fixed a couple more migration issues for the prescriptions module and tested them with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (testing migrations is a pain although simple "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "smiling_face_with_tear",
+                                            "unicode": "1f972"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "removed medicines from critical care and consultation updates table from medicines tab"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested: refactor discharge summary PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "reviewed 5 react-for-all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "huddles with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U051NJK18KU"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to clear some doubts"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "review course submissions (if any)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "follow up on prescriptions/discharge summary (if any)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "work on vitals monitor"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "integrate medibase APIs for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "MedicineFormField",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "5f1b4d1e-4815-45bd-989f-82bc3891b192",
+            "type": "message",
+            "text": "EOD 12/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go ?\n\n\u2022 tested out medicine prescription module with <@U02TDGQQPMJ>\n\u2022 completed testing of care for production release\nto do\n\n\u2022 follow-up on priority issues\n\u2022 work on cypress test modification\n",
+            "user": "U022THM4U2U",
+            "ts": "1683971142.834629",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "pGz",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested out medicine prescription module with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TDGQQPMJ"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "completed testing of care for production release"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nto do\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "follow-up on priority issues"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "work on cypress test modification"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-05-14 00:00:00": []
 }

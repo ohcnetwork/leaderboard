@@ -44809,12 +44809,386 @@
                 {
                     "name": "rocket",
                     "users": [
-                        "U02TDGQQPMJ"
+                        "U02TDGQQPMJ",
+                        "U01JB8L8P7Y"
                     ],
-                    "count": 1
+                    "count": 2
                 }
             ]
         }
     ],
-    "2023-05-15 00:00:00": []
+    "2023-05-15 00:00:00": [
+        {
+            "client_msg_id": "c0cbb374-d363-4f59-9d16-4192eb7b537a",
+            "type": "message",
+            "text": "EOD 15/05/2023\nHow did the day go?\n\u2022 Working on L7 milestone\n\u2022 Attended farewell ceremony\nWhat's next?\n\u2022 Complete L7",
+            "user": "U051GUAHWUW",
+            "ts": "1684170062.191099",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1FjeX",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 15/05/2023\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on L7 milestone"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Attended farewell ceremony"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Complete L7"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "2934fa5f-7a28-461f-959c-1b06dd4a8b72",
+            "type": "message",
+            "text": "EOD 12/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go ?\n\n\u2022 tested PR for this week\n\u2022 started working on testing documentation in gitbook\n\u2022 spend time with cypress\n\u2022 had weekly engineering call\n\u2022 had weekly hub admin call",
+            "user": "U022THM4U2U",
+            "ts": "1684168304.775159",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "epn",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested PR for this week"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "started working on testing documentation in gitbook"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "spend time with cypress"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "had weekly engineering call"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "had weekly hub admin call"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "e8cf5d91-5d6d-4af3-aceb-7ac4d9e720d4",
+            "type": "message",
+            "text": "EOD 15/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Had weekly <!subteam^S035L5S02RF|@care_engineering> sync call.\n\u2022 Mostly worked on displaying non-waveform contents on the vitals monitor and making it responsive.\n\u2022 <https://github.com/coronasafe/care/pull/1295|care#1295>: Added a facility filter for AssetBeds viewset to reduce the number of API calls dispatched by CNS.\nWhat's next?\n\n\u2022 Vitals Monitor: Complete the integration to care (priority)\n\u2022 Discharge Summary &amp; Prescriptions: Merge discharge summary to prescriptions, setup S3 locally and make related changes (priority)\n\u2022 Vitals Monitor: Programmatically modify mock vitals `data.json` to have more `blood-pressure` entries (currently there's only 1 out of 2016 entries, so BP data coming is rare)\n\u2022 Vitals Monitor: clear buffer on overflow and setup auto-reconnect if disconnected",
+            "user": "U02TDGQQPMJ",
+            "ts": "1684167346.593329",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "H/iM",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 15/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had weekly "
+                                        },
+                                        {
+                                            "type": "usergroup",
+                                            "usergroup_id": "S035L5S02RF"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " sync call."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Mostly worked on displaying non-waveform contents on the vitals monitor and making it responsive."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1295",
+                                            "text": "care#1295"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Added a facility filter for AssetBeds viewset to reduce the number of API calls dispatched by CNS."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor: Complete the integration to care (priority)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Discharge Summary & Prescriptions: Merge discharge summary to prescriptions, setup S3 locally and make related changes (priority)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor: Programmatically modify mock vitals "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "data.json",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to have more "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "blood-pressure",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " entries (currently there's only 1 out of 2016 entries, so BP data coming is rare)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor: clear buffer on overflow and setup auto-reconnect if disconnected"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "79ab64f4-9cc4-4aa8-9dc5-f5e05599a582",
+            "type": "message",
+            "text": "EOD 15/05/2023\n\n\u2022 Completed working on L6 milestone\n\u2022 Majorly spent time in traveling back home",
+            "user": "U051Q1RP1MG",
+            "ts": "1684159779.398909",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "O/x",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 15/05/2023\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Completed working on L6 milestone"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Majorly spent time in traveling back home"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-05-16 00:00:00": []
 }

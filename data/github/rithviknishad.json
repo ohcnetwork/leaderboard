@@ -1,6 +1,71 @@
 {
-  "last_updated": 1684168472.0,
+  "last_updated": 1684223975.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5339",
+      "time": 1684223975.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5339",
+      "text": "add download button in discharge summary modal",
+      "collaborated_with": [
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1252",
+      "time": 1684222571.0,
+      "link": "https://github.com/coronasafe/care/pull/1252",
+      "text": "refactor discharge summary endpoints",
+      "collaborated_with": [
+        "sainak",
+        "mathew-alex",
+        "Ashesh3",
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5466",
+      "time": 1684219218.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5466",
+      "text": "Vitals Monitor 2.0 (Canvas Render)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1296",
+      "time": 1684203940.0,
+      "link": "https://github.com/coronasafe/care/pull/1296",
+      "text": "Support for filtering AssetBeds by location"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684202304.0,
+      "title": "coronasafe/care_fe#5464",
+      "link": "https://github.com/coronasafe/care_fe/pull/5464#pullrequestreview-1427585710",
+      "text": "Added procedure card to the patient dashboard"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684202184.0,
+      "title": "coronasafe/care_fe#5464",
+      "link": "https://github.com/coronasafe/care_fe/pull/5464#pullrequestreview-1427582777",
+      "text": "Added procedure card to the patient dashboard"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684202079.0,
+      "title": "coronasafe/care_fe#5464",
+      "link": "https://github.com/coronasafe/care_fe/pull/5464#pullrequestreview-1427581629",
+      "text": "Added procedure card to the patient dashboard"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684202079.0,
+      "title": "coronasafe/care_fe#5464",
+      "link": "https://github.com/coronasafe/care_fe/pull/5464#pullrequestreview-1427581629",
+      "text": "Added procedure card to the patient dashboard"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1295",
@@ -13979,19 +14044,34 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5458",
-      "title": "Medicine Administration Record and upgraded Prescriptions",
-      "stale_for": 2,
+      "link": "https://github.com/coronasafe/care_fe/pull/5466",
+      "title": "Vitals Monitor 2.0 (Canvas Render)",
+      "stale_for": 0,
       "labels": [
-        "work-in-progress",
         "Major Code Change",
         "cypress failed"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care/pull/1296",
+      "title": "Support for filtering AssetBeds by location",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5458",
+      "title": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "merge conflict",
+        "Major Code Change"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "need Review",
         "cypress failed"

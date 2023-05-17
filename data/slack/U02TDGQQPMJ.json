@@ -9466,5 +9466,141 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-05-16 00:00:00": [
+        {
+            "client_msg_id": "9188190c-7daf-4036-ba9a-e9d05ce24c9b",
+            "type": "message",
+            "text": "EOD 16/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Vitals Monitor: Completed integrating it into CNS and Asset Configure. (Works now, however some API optimizations could be made)\n\u2022 Discharge Summary &amp; Prescriptions: Merged discharge summary to prescriptions and completed making related changes, works fine.\n\u2022 Reviewed 2 react for all submissions.\nWhat's next?\n\n\u2022 Vitals Monitor (P2): Make necessary back-end changes to have an endpoint dedicated to retrieve patient and asset beds together.\n\u2022 Vitals Monitor (P2): clear buffer on overflow and setup auto-reconnect if disconnected\n\u2022 Vitals Monitor (P3): Programmatically modify mock vitals `data.json` to have more `blood-pressure` entries",
+            "user": "U02TDGQQPMJ",
+            "ts": "1684242608.527389",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "c1Mr",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 16/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor: Completed integrating it into CNS and Asset Configure. (Works now, however some API optimizations could be made)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Discharge Summary & Prescriptions: Merged discharge summary to prescriptions and completed making related changes, works fine."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 2 react for all submissions."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor (P2): Make necessary back-end changes to have an endpoint dedicated to retrieve patient and asset beds together."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor (P2): clear buffer on overflow and setup auto-reconnect if disconnected"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor (P3): Programmatically modify mock vitals "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "data.json",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to have more "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "blood-pressure",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " entries"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -9602,5 +9602,195 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-05-17 00:00:00": [
+        {
+            "client_msg_id": "487cdb5e-595d-4d05-ba55-75fbf2cd9580",
+            "type": "message",
+            "text": "EOD 17/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Discharge Summary &amp; Prescriptions: Fixed some issues in discharge summary during testing and *finally it's tested* :smiley: \n\u2022 Huddles with <@U022THM4U2U> on the same. \n\u2022 Vitals Monitor: Worked on making necessary back-end changes to have an endpoint dedicated to retrieve patient and asset beds together.\n\u2022 Huddled with <@U051NJK18KU> to clear minor doubts.\nWhat's next?\n\n\u2022 Vitals Monitor (P1): Complete creating API and mark Vitals Monitor for testing.\n\u2022 Vitals Monitor (P2): clear buffer on overflow and setup auto-reconnect if disconnected\n\u2022 Vitals Monitor (P3): Programmatically modify mock vitals `data.json` to have more `blood-pressure` entries\n\u2022 Look into issues suitable for Code4GovTech",
+            "user": "U02TDGQQPMJ",
+            "ts": "1684334630.556889",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/Ec",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 17/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Discharge Summary & Prescriptions: Fixed some issues in discharge summary during testing and "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "finally it's tested",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "smiley",
+                                            "unicode": "1f603"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Huddles with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " on the same. "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor: Worked on making necessary back-end changes to have an endpoint dedicated to retrieve patient and asset beds together."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Huddled with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U051NJK18KU"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to clear minor doubts."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor (P1): Complete creating API and mark Vitals Monitor for testing."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor (P2): clear buffer on overflow and setup auto-reconnect if disconnected"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor (P3): Programmatically modify mock vitals "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "data.json",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to have more "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "blood-pressure",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " entries"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into issues suitable for Code4GovTech"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

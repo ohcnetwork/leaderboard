@@ -1,6 +1,13 @@
 {
-  "last_updated": 1684223975.0,
+  "last_updated": 1684408726.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1301",
+      "time": 1684408726.0,
+      "link": "https://github.com/coronasafe/care/pull/1301",
+      "text": "don't update last daily round if round is automated"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5339",
@@ -2050,9 +2057,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1301",
+      "title": "don't update last daily round if round is automated",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 293,
+      "stale_for": 295,
       "labels": []
     }
   ],

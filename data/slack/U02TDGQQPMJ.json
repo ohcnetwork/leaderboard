@@ -9792,5 +9792,186 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-05-18 00:00:00": [
+        {
+            "client_msg_id": "6e539069-a659-4bd2-82ac-f3895f680eb2",
+            "type": "message",
+            "text": "EOD 18/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Vitals Monitor: Completed creating dedicated API to list patient asset beds for CNS &amp; Monitoring Hub and integrated it in FE too. (FE: <https://github.com/coronasafe/care_fe/pull/5466|#5466>, BE: <https://github.com/coronasafe/care/pull/1302|#1302>)\n\u2022 Had a huddle with <@U022THM4U2U> and <@U01JB8L8P7Y> to discuss about react-csv issue and discusses about issues for C4GT\n\u2022 Downgraded react-csv for compatibility reasons.\n\u2022 Filed some issues for C4GT\nWhat's next?\n\n\u2022 Programmatically modify mock vitals `data.json` to have more `blood-pressure` entries\n\u2022 Integrate Medibase\n\u2022 Look into zoom download script",
+            "user": "U02TDGQQPMJ",
+            "ts": "1684431264.532849",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "S760",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 18/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Vitals Monitor: Completed creating dedicated API to list patient asset beds for CNS & Monitoring Hub and integrated it in FE too. (FE: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5466",
+                                            "text": "#5466",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", BE: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1302",
+                                            "text": "#1302",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had a huddle with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U01JB8L8P7Y"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to discuss about react-csv issue and discusses about issues for C4GT"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Downgraded react-csv for compatibility reasons."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Filed some issues for C4GT"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Programmatically modify mock vitals "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "data.json",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to have more "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "blood-pressure",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " entries"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Integrate Medibase"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into zoom download script"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

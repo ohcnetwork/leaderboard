@@ -1,6 +1,111 @@
 {
-  "last_updated": 1684348001.0,
+  "last_updated": 1684428782.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1684428782.0,
+      "title": "coronasafe/care_fe#5484",
+      "link": "https://github.com/coronasafe/care_fe/pull/5484#pullrequestreview-1433079424",
+      "text": "Fix : Asset cards in Asset list page is not a link. Unable to open in new tab"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684428782.0,
+      "title": "coronasafe/care_fe#5484",
+      "link": "https://github.com/coronasafe/care_fe/pull/5484#pullrequestreview-1433079424",
+      "text": "Fix : Asset cards in Asset list page is not a link. Unable to open in new tab"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5486",
+      "time": 1684428589.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5486",
+      "text": "Enhancements to Vitals Monitor"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5485",
+      "time": 1684427652.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5485",
+      "text": "Consultation Form: Show bed type in the bed select drop-down"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5477",
+      "time": 1684423735.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5477",
+      "text": "Revert \"Update package.json to fix care_fe local (#5455)\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5471",
+      "time": 1684422743.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5471#issuecomment-1553212816",
+      "text": "@souravghosh01 are you facing blockers creating a PR?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1302",
+      "time": 1684417735.0,
+      "link": "https://github.com/coronasafe/care/pull/1302",
+      "text": "Adds API for `PatientAssetBed`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5481",
+      "time": 1684401754.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5481",
+      "text": "Remove usage `react-csv` package"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684395509.0,
+      "title": "coronasafe/care_fe#5475",
+      "link": "https://github.com/coronasafe/care_fe/pull/5475#pullrequestreview-1432208848",
+      "text": "fix / readme typo"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5477",
+      "time": 1684393253.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5477",
+      "text": "Revert \"Update package.json to fix care_fe local (#5455)\""
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5472",
+      "time": 1684388394.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5472",
+      "text": "Asset working status is a required attribute. However, it is not being validated and defaults to Not Working if not filled."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5472",
+      "time": 1684388393.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5472#issuecomment-1552437045",
+      "text": "Closing as not reproducible. It was reproducible a while back. Strange."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5472",
+      "time": 1684388168.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5472",
+      "text": "Asset working status is a required attribute. However, it is not being validated and defaults to Not Working if not filled."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5471",
+      "time": 1684387225.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5471",
+      "text": "Asset cards in Asset list page is not a link. Unable to open in new tab."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5470",
+      "time": 1684386587.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5470",
+      "text": "Selected facility in asset filters not showing if navigated from Manage Facility -> View Assets"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1299",
@@ -14065,10 +14170,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1302",
+      "title": "Adds API for `PatientAssetBed`",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5466",
       "title": "Vitals Monitor 2.0 (Canvas Render)",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
+        "needs testing",
         "Major Code Change",
         "cypress failed"
       ]
@@ -14076,13 +14190,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1296",
       "title": "Support for filtering AssetBeds by location",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5458",
       "title": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "waiting for back end",
@@ -14093,7 +14207,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "need Review",
         "cypress failed"

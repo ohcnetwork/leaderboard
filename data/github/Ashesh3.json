@@ -1,6 +1,48 @@
 {
-  "last_updated": 1684240393.0,
+  "last_updated": 1684445627.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#12",
+      "time": 1684445627.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/12",
+      "text": "Add typewriter animation to responses"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#127",
+      "time": 1684431013.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/127",
+      "text": "Revert back to streaming characters"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#127",
+      "time": 1684430753.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/127",
+      "text": "Revert back to streaming characters"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#125",
+      "time": 1684419598.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/125",
+      "text": "Increase gunicorn timeout and fixes to llm err handling"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#125",
+      "time": 1684419188.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/125",
+      "text": "Increase gunicorn timeout and fixes to llm err handling"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#124",
+      "time": 1684410904.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/124",
+      "text": "Upload document files to S3"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/ayushma_fe#3",
@@ -8418,9 +8460,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/12",
+      "title": "Add typewriter animation to responses",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma/pull/124",
+      "title": "Upload document files to S3",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 19,
+      "stale_for": 21,
       "labels": [
         "waiting for back end"
       ]
@@ -8428,7 +8482,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 19,
+      "stale_for": 21,
       "labels": [
         "waiting-for-review"
       ]
@@ -8436,7 +8490,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 42,
+      "stale_for": 44,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -8445,13 +8499,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 55,
+      "stale_for": 57,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5131",
       "title": "Add bed occupancy to facility card",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "work-in-progress",
         "discussion"
@@ -8460,7 +8514,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 28,
+      "stale_for": 30,
       "labels": [
         "waiting for back end"
       ]
@@ -8468,7 +8522,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 10,
+      "stale_for": 12,
       "labels": [
         "waiting-for-review"
       ]

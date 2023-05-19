@@ -1,6 +1,48 @@
 {
-  "last_updated": 1684247537.0,
+  "last_updated": 1684423736.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5476",
+      "time": 1684423736.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5476",
+      "text": "CSV generated files are malfunctioning"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684419265.0,
+      "title": "coronasafe/care_fe#5469",
+      "link": "https://github.com/coronasafe/care_fe/pull/5469#pullrequestreview-1432796064",
+      "text": "fix: github workflow for cypress test"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5469",
+      "time": 1684418867.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5469#issuecomment-1553115881",
+      "text": "@cp-Coder still the cypress workflow is failing, isn't this pr addressing that?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684395859.0,
+      "title": "coronasafe/care_fe#5475",
+      "link": "https://github.com/coronasafe/care_fe/pull/5475#pullrequestreview-1432216244",
+      "text": "fix / readme typo"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684394473.0,
+      "title": "coronasafe/care_fe#5477",
+      "link": "https://github.com/coronasafe/care_fe/pull/5477#pullrequestreview-1432187508",
+      "text": "Revert \"Update package.json to fix care_fe local (#5455)\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5473",
+      "time": 1684389944.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5473",
+      "text": "Added support for hcx communication"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4871",
@@ -17443,9 +17485,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5473",
+      "title": "Added support for hcx communication",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5334",
       "title": "Abdm integration",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "merge conflict"
       ]
@@ -17453,25 +17503,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 19,
+      "stale_for": 21,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 25,
+      "stale_for": 27,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 87,
+      "stale_for": 89,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 57,
+      "stale_for": 59,
       "labels": [
         "work-in-progress"
       ]
@@ -17479,13 +17529,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 158,
+      "stale_for": 160,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 40,
+      "stale_for": 42,
       "labels": [
         "changes required"
       ]
@@ -17493,7 +17543,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 187,
+      "stale_for": 189,
       "labels": [
         "waiting-for-review"
       ]
@@ -17501,25 +17551,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 515,
+      "stale_for": 517,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 521,
+      "stale_for": 523,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 522,
+      "stale_for": 524,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 717,
+      "stale_for": 719,
       "labels": []
     }
   ],

@@ -1,6 +1,62 @@
 {
-  "last_updated": 1684346615.0,
+  "last_updated": 1684531513.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#131",
+      "time": 1684531513.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/131",
+      "text": "fix: set language to the chat message"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#13",
+      "time": 1684531343.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/13",
+      "text": "fix: attach language to chatmessage"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#130",
+      "time": 1684486423.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/130",
+      "text": "fix: allow admin to access all chats"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#878",
+      "time": 1684481239.0,
+      "link": "https://github.com/coronasafe/care/issues/878",
+      "text": "Asset transfer among different facilities"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#878",
+      "time": 1684481239.0,
+      "link": "https://github.com/coronasafe/care/issues/878#issuecomment-1554159919",
+      "text": "Not required right now"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1061",
+      "time": 1684481111.0,
+      "link": "https://github.com/coronasafe/care/issues/1061",
+      "text": "Do Not Update last_daily_round When Creating Automated Daily Rounds"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1081",
+      "time": 1684481105.0,
+      "link": "https://github.com/coronasafe/care/pull/1081#issuecomment-1554155716",
+      "text": "Not required any more"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5469",
+      "time": 1684477859.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5469",
+      "text": "fix: github workflow for cypress test"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5469",
@@ -7425,15 +7481,27 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5469",
-      "title": "fix: github workflow for cypress test",
+      "link": "https://github.com/coronasafe/ayushma/pull/131",
+      "title": "fix: set language to the chat message",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/13",
+      "title": "fix: attach language to chatmessage",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma/pull/130",
+      "title": "fix: allow admin to access all chats",
       "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1288",
       "title": "fix: centralise linting across the project",
-      "stale_for": 10,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -7441,7 +7509,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5429",
       "title": "fix: made notes consultation specific",
-      "stale_for": 6,
+      "stale_for": 8,
       "labels": [
         "waiting for back end"
       ]
@@ -7449,13 +7517,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1285",
       "title": "fix: consultation specific doctor notes",
-      "stale_for": 6,
+      "stale_for": 8,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1264",
       "title": "fix: adds doctor and staff fields in location model",
-      "stale_for": 23,
+      "stale_for": 25,
       "labels": [
         "waiting-for-review",
         "P2"
@@ -7464,7 +7532,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5370",
       "title": "fix: Duty doctors and Staff for each Location in a Facility",
-      "stale_for": 25,
+      "stale_for": 27,
       "labels": [
         "P2",
         "waiting for back end"
@@ -7473,13 +7541,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1260",
       "title": "fix: added recommend_discharge as action",
-      "stale_for": 16,
+      "stale_for": 18,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5347",
       "title": "fix: add action and recommend discharge data on patient consultation page",
-      "stale_for": 13,
+      "stale_for": 15,
       "labels": [
         "waiting for back end"
       ]
@@ -7487,16 +7555,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1167",
       "title": "fix: Predated Log Updates",
-      "stale_for": 108,
-      "labels": [
-        "waiting-for-review",
-        "done"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1081",
-      "title": "fix: update of last_daily_round on auto log update",
-      "stale_for": 111,
+      "stale_for": 110,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7505,7 +7564,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 13,
+      "stale_for": 15,
       "labels": [
         "needs testing",
         "waiting for back end",
@@ -7515,7 +7574,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 33,
+      "stale_for": 35,
       "labels": [
         "waiting-for-review"
       ]
@@ -7523,7 +7582,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 13,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7532,7 +7591,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1059",
       "title": "Fixes: Permission Error during Facility Delete",
-      "stale_for": 93,
+      "stale_for": 95,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7541,7 +7600,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1058",
       "title": "Fixed: Added occupation field for text support",
-      "stale_for": 93,
+      "stale_for": 95,
       "labels": [
         "waiting-for-review",
         "done"

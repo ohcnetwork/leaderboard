@@ -1,6 +1,38 @@
 {
-  "last_updated": 1684408726.0,
+  "last_updated": 1684488193.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1304",
+      "time": 1684488193.0,
+      "link": "https://github.com/coronasafe/care/pull/1304",
+      "text": "add direnv support"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1303",
+      "time": 1684487267.0,
+      "link": "https://github.com/coronasafe/care/pull/1303",
+      "text": "Rename all instances of orgin_facility to origin_facility"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1247",
+      "time": 1684477407.0,
+      "link": "https://github.com/coronasafe/care/pull/1247",
+      "text": "Refactor discharge summary endpoints and Converted prescription field to their own models, views and serializers",
+      "collaborated_with": [
+        "vigneshhari",
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1301",
+      "time": 1684474965.0,
+      "link": "https://github.com/coronasafe/care/pull/1301",
+      "text": "don't update last daily round if round is automated"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1301",
@@ -2057,15 +2089,21 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1301",
-      "title": "don't update last daily round if round is automated",
+      "link": "https://github.com/coronasafe/care/pull/1304",
+      "title": "add direnv support",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1303",
+      "title": "Rename all instances of orgin_facility to origin_facility",
       "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 295,
+      "stale_for": 296,
       "labels": []
     }
   ],

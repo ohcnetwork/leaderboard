@@ -1,6 +1,55 @@
 {
-  "last_updated": 1684428782.0,
+  "last_updated": 1684498568.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5492",
+      "time": 1684498568.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5492",
+      "text": "[C4GT] Create different serializers for list and detail views"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1305",
+      "time": 1684494729.0,
+      "link": "https://github.com/coronasafe/care/pull/1305",
+      "text": "fix prescriptions migration"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684487316.0,
+      "title": "coronasafe/care_fe#5487",
+      "link": "https://github.com/coronasafe/care_fe/pull/5487#pullrequestreview-1434062721",
+      "text": "Replaced Material UI components with Form component in DeathReport.tsx #4939"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684487279.0,
+      "title": "coronasafe/care_fe#5487",
+      "link": "https://github.com/coronasafe/care_fe/pull/5487#pullrequestreview-1434062721",
+      "text": "Replaced Material UI components with Form component in DeathReport.tsx #4939"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5246",
+      "time": 1684477408.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5246",
+      "text": "Discharge summary is missing multiple information"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684472403.0,
+      "title": "coronasafe/care_fe#5484",
+      "link": "https://github.com/coronasafe/care_fe/pull/5484#pullrequestreview-1433776897",
+      "text": "Fix : Asset cards in Asset list page is not a link. Unable to open in new tab"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684472343.0,
+      "title": "coronasafe/care_fe#5484",
+      "link": "https://github.com/coronasafe/care_fe/pull/5484#pullrequestreview-1433776228",
+      "text": "Fix : Asset cards in Asset list page is not a link. Unable to open in new tab"
+    },
     {
       "type": "pr_reviewed",
       "time": 1684428782.0,
@@ -14170,9 +14219,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1305",
+      "title": "fix prescriptions migration",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1302",
       "title": "Adds API for `PatientAssetBed`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -14180,7 +14235,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5466",
       "title": "Vitals Monitor 2.0 (Canvas Render)",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "Major Code Change",
@@ -14190,24 +14245,22 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1296",
       "title": "Support for filtering AssetBeds by location",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5458",
       "title": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "tested",
-        "waiting for back end",
-        "Major Code Change",
-        "cypress failed"
+        "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "need Review",
         "cypress failed"

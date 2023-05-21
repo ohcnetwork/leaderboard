@@ -1,6 +1,20 @@
 {
-  "last_updated": 1684498568.0,
+  "last_updated": 1684571253.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5332",
+      "time": 1684571253.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5332#issuecomment-1555861973",
+      "text": "@patelaryan7751 any updates on this?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5317",
+      "time": 1684570866.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5317#issuecomment-1555860896",
+      "text": "Re-worked in #5458"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#5492",
@@ -14222,12 +14236,14 @@
       "link": "https://github.com/coronasafe/care/pull/1305",
       "title": "fix prescriptions migration",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1302",
       "title": "Adds API for `PatientAssetBed`",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -14235,7 +14251,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5466",
       "title": "Vitals Monitor 2.0 (Canvas Render)",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "Major Code Change",
@@ -14245,13 +14261,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1296",
       "title": "Support for filtering AssetBeds by location",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5458",
       "title": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "Major Code Change"
@@ -14260,7 +14276,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "need Review",
         "cypress failed"

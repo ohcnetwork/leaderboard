@@ -10182,5 +10182,158 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-05-20 00:00:00": [
+        {
+            "client_msg_id": "479e183d-863b-4369-b0f6-47b41e4bdfbe",
+            "type": "message",
+            "text": "EOD 20/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Tested and updated migrations with staging clone db with help of <@UPW6XDGDD>. Finally works.\n\u2022 Reviewed all pending (6) react for all submissions.\n\u2022 Went through the centralise linting PR's diffs.\nWhat's next?\n\u2022 Complete reviewing centralise linting PR\n\u2022 Integrate Medibase\n\u2022 Programmatically modify mock vitals `data.json` to have more `blood-pressure` entries\n\u2022 Look into zoom download script",
+            "user": "U02TDGQQPMJ",
+            "ts": "1684591932.341899",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "X3Jqh",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 20/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tested and updated migrations with staging clone db with help of "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "UPW6XDGDD"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ". Finally works."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed all pending (6) react for all submissions."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Went through the centralise linting PR's diffs."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Complete reviewing centralise linting PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Integrate Medibase"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Programmatically modify mock vitals "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "data.json",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to have more "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "blood-pressure",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " entries"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into zoom download script"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

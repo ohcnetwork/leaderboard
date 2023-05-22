@@ -1,6 +1,48 @@
 {
-  "last_updated": 1684571253.0,
+  "last_updated": 1684670481.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1032",
+      "time": 1684670481.0,
+      "link": "https://github.com/coronasafe/care/issues/1032#issuecomment-1556161766",
+      "text": "@skks1212 is this relevant anymore? Since we are no longer doing medicines in daily rounds.\r\nCan we close this?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5448",
+      "time": 1684644368.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5448#issuecomment-1556081920",
+      "text": "@dependabot rebase"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5492",
+      "time": 1684644143.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5492#issuecomment-1556081450",
+      "text": "Hey @devanshkaushik \r\n\r\nSo if you take a look at our backend, you can see that all the serializers are present at: `care/<module_name>/api/serializers/<model_name>.py` (for example, see `facility` module: https://github.com/coronasafe/care/tree/master/care/facility/api/serializers).\r\n\r\nI've updated the original issue comment to track all the sub-tasks. Each file specified in the task contains one or more serializers that inherit `ModelSerializer`, which has to be split to separate `<ModelName>ListSerializer` and `<ModelName>DetailSerializer` so as to minimize joins. Each of these specific serializers should serialize information that is required by/used in the front end.\r\n\r\nYou may have a look at our front end and understand which all fields are required, and keep only those information in the List Serializer. DetailSerializer can inherit the list serializer and include all other information.\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5280",
+      "time": 1684641463.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5280#issuecomment-1556076082",
+      "text": "If you are facing any difficulties figuring out, drop a comment"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5280",
+      "time": 1684641380.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5280#issuecomment-1556075932",
+      "text": "@naksh2004 feel free to make a PR and link this issue to it. \ud83d\ude80 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684641232.0,
+      "title": "coronasafe/care_fe#5497",
+      "link": "https://github.com/coronasafe/care_fe/pull/5497#pullrequestreview-1435469228",
+      "text": "Added response view to Update log"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5332",
@@ -14235,7 +14277,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1305",
       "title": "fix prescriptions migration",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -14243,7 +14285,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1302",
       "title": "Adds API for `PatientAssetBed`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -14251,7 +14293,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5466",
       "title": "Vitals Monitor 2.0 (Canvas Render)",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "Major Code Change",
@@ -14261,13 +14303,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1296",
       "title": "Support for filtering AssetBeds by location",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5458",
       "title": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "tested",
         "Major Code Change"
@@ -14276,7 +14318,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "need Review",
         "cypress failed"

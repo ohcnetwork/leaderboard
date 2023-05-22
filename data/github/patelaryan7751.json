@@ -1,6 +1,13 @@
 {
-  "last_updated": 1684583848.0,
+  "last_updated": 1684660068.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5500",
+      "time": 1684660068.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5500",
+      "text": "Removed Duplicate patient records present in CSV export if patient has multiple policies associated with them"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5332",
@@ -5822,9 +5829,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5500",
+      "title": "Removed Duplicate patient records present in CSV export if patient has multiple policies associated with them",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P2"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 173,
+      "stale_for": 174,
       "labels": []
     }
   ],

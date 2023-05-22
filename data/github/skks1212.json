@@ -1,6 +1,97 @@
 {
-  "last_updated": 1684477407.0,
+  "last_updated": 1684682550.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1684682550.0,
+      "title": "coronasafe/ayushma#120",
+      "link": "https://github.com/coronasafe/ayushma/pull/120#pullrequestreview-1435556177",
+      "text": "Added citations to all Ayushma responses"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/ayushma#61",
+      "time": 1684682527.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/61",
+      "text": "Integrate Amazon S3 to store documents"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684682520.0,
+      "title": "coronasafe/ayushma#124",
+      "link": "https://github.com/coronasafe/ayushma/pull/124#pullrequestreview-1435556079",
+      "text": "Upload document files to S3"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma_fe#15",
+      "time": 1684681958.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/15",
+      "text": "Make text highlighting work when a message is created"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/ayushma_fe#11",
+      "time": 1684681729.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/11",
+      "text": "Add a basic audio player to the chat message"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684681722.0,
+      "title": "coronasafe/ayushma_fe#14",
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/14#pullrequestreview-1435554305",
+      "text": "Add audio player for Ayushma's responses"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684681684.0,
+      "title": "coronasafe/ayushma#132",
+      "link": "https://github.com/coronasafe/ayushma/pull/132#pullrequestreview-1435554219",
+      "text": "Send ayushma_audio_url to client"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684664069.0,
+      "title": "coronasafe/ayushma_fe#12",
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/12#pullrequestreview-1435510112",
+      "text": "Add typewriter animation to responses"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/ayushma#67",
+      "time": 1684663794.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/67",
+      "text": "Allow admins to access all chats"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684663785.0,
+      "title": "coronasafe/ayushma#130",
+      "link": "https://github.com/coronasafe/ayushma/pull/130#pullrequestreview-1435509530",
+      "text": "fix: allow admin to access all chats"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#131",
+      "time": 1684663650.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/131#issuecomment-1556138064",
+      "text": "@cp-Coder no need to call the translate APIs in the migration. We can just leave blanks, we don't have to have any backwards compatibility for now. Also can you rather than having `message` for the original message and `translated_message` for the translated message have `message` for the translated message and `original_message` for the english version?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/ayushma#128",
+      "time": 1684662790.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/128",
+      "text": "Deleting of document also deletes in vectorDB"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#128",
+      "time": 1684662790.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/128#issuecomment-1556135063",
+      "text": "closing as duplicate of #63 "
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1247",
@@ -5026,19 +5117,7 @@
       "text": "Updated Rhythm View to table for easy access and efficiency"
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5317",
-      "title": "Added Medicine Administration Record",
-      "stale_for": 28,
-      "labels": [
-        "needs testing",
-        "waiting for back end",
-        "merge conflict",
-        "cypress failed"
-      ]
-    }
-  ],
+  "open_prs": [],
   "authored_issue_and_pr": [
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4821",
@@ -5055,10 +5134,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4113",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4159"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4006",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4112"
     }
   ]
 }

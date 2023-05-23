@@ -1,6 +1,13 @@
 {
-  "last_updated": 1684660068.0,
+  "last_updated": 1684771289.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5502",
+      "time": 1684771289.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5502",
+      "text": "Removed all dependency of react-csv"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5500",
@@ -5829,18 +5836,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5502",
+      "title": "Removed all dependency of react-csv",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5500",
       "title": "Removed Duplicate patient records present in CSV export if patient has multiple policies associated with them",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "P2"
       ]
     },
     {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 174,
+      "stale_for": 175,
       "labels": []
     }
   ],

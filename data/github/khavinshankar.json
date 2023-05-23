@@ -1,6 +1,20 @@
 {
-  "last_updated": 1684508952.0,
+  "last_updated": 1684765793.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5474",
+      "time": 1684765793.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5474#issuecomment-1557325529",
+      "text": "Hey @gayan-au, is the filter only for getting the count of patients or does it have any other uses? If it is only for the count, we could add a block or card in metabase (dashboard)\r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5501",
+      "time": 1684736371.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5501",
+      "text": "Fix cypress workflow"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#5495",
@@ -17506,9 +17520,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5501",
+      "title": "Fix cypress workflow",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5473",
       "title": "Added support for hcx communication",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": [
         "cypress failed"
       ]
@@ -17516,7 +17538,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5334",
       "title": "Abdm integration",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "merge conflict",
         "stale"
@@ -17525,25 +17547,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 22,
+      "stale_for": 25,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 28,
+      "stale_for": 31,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 90,
+      "stale_for": 93,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 60,
+      "stale_for": 63,
       "labels": [
         "work-in-progress"
       ]
@@ -17551,13 +17573,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 161,
+      "stale_for": 164,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 43,
+      "stale_for": 46,
       "labels": [
         "changes required"
       ]
@@ -17565,7 +17587,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 190,
+      "stale_for": 193,
       "labels": [
         "waiting-for-review"
       ]
@@ -17573,25 +17595,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 518,
+      "stale_for": 521,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 524,
+      "stale_for": 527,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 525,
+      "stale_for": 528,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 720,
+      "stale_for": 723,
       "labels": []
     }
   ],

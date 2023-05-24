@@ -1,6 +1,69 @@
 {
-  "last_updated": 1684772518.0,
+  "last_updated": 1684846358.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1684846358.0,
+      "title": "coronasafe/care_fe#5499",
+      "link": "https://github.com/coronasafe/care_fe/pull/5499#pullrequestreview-1439631799",
+      "text": "Added Bed Type Chip in Bed Select Dropdown"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684846230.0,
+      "title": "coronasafe/care_fe#5499",
+      "link": "https://github.com/coronasafe/care_fe/pull/5499#pullrequestreview-1439627562",
+      "text": "Added Bed Type Chip in Bed Select Dropdown"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1307",
+      "time": 1684840112.0,
+      "link": "https://github.com/coronasafe/care/pull/1307",
+      "text": "Adds support for Ventilator Asset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1307",
+      "time": 1684828356.0,
+      "link": "https://github.com/coronasafe/care/pull/1307",
+      "text": "Adds support for Ventilator Asset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5503",
+      "time": 1684826082.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5503",
+      "text": "SmartICU: Ventilator Integration (PoC)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5499",
+      "time": 1684819913.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5499#issuecomment-1558552300",
+      "text": "@Bhavik-ag have a look at the JSON files inside `src/Locale/en` directory"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684819801.0,
+      "title": "coronasafe/care_fe#5499",
+      "link": "https://github.com/coronasafe/care_fe/pull/5499#pullrequestreview-1438538808",
+      "text": "Added Bed Type Chip in Bed Select Dropdown"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684819801.0,
+      "title": "coronasafe/care_fe#5499",
+      "link": "https://github.com/coronasafe/care_fe/pull/5499#pullrequestreview-1438538808",
+      "text": "Added Bed Type Chip in Bed Select Dropdown"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5485",
+      "time": 1684810191.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5485#issuecomment-1558423357",
+      "text": "@knight-95 this issue already has a PR linked to it. Kindly look into if it's already solved or not when picking up issues. Feel free to pick up other good first issues."
+    },
     {
       "type": "pr_reviewed",
       "time": 1684772518.0,
@@ -14310,9 +14373,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5503",
+      "title": "SmartICU: Ventilator Integration (PoC)",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1305",
       "title": "fix prescriptions migration",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -14320,7 +14391,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1302",
       "title": "Adds API for `PatientAssetBed`",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "waiting-for-review"
       ]
@@ -14328,7 +14399,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5466",
       "title": "Vitals Monitor 2.0 (Canvas Render)",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "Major Code Change",
@@ -14338,22 +14409,22 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1296",
       "title": "Support for filtering AssetBeds by location",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5458",
       "title": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "tested",
+        "work-in-progress",
         "Major Code Change"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "need Review",
         "cypress failed"

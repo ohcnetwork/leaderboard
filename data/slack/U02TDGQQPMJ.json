@@ -10634,5 +10634,215 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-05-24 00:00:00": [
+        {
+            "client_msg_id": "e6e9042a-a064-427e-8e31-3afc3af07702",
+            "type": "message",
+            "text": "EOD 24/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Looked into 10bedICU repo to figure out issue with maps for puducherry\n\u2022 Huddles with <@U022THM4U2U> and <@UPW6XDGDD> to help figure out issue reported from prod: \"When we search Bed 7, Bed 7 is missing, Bed 17 shows\". \n\u2022 Learnt how to use Metabase to translate that bug into whats actually happening and brushed up SQL query skills with help of <@UPW6XDGDD> \n\u2022 <https://github.com/coronasafe/care/pull/1314|care#1314> fixes it as the above happens due to a weird workflow where if you select a bed first and selects a non-admission decision where patient is discharged when saving consultation itself. But bed data is still sent (although it shouldn't be), and back-end accepts it (although it shouldn't be).\n\u2022 <https://github.com/coronasafe/care/pull/1312|care#1312> prevents occupied beds from being deleted.\n\u2022 Re-ordered prescriptions migration fixes and merged it. \n\u2022 Reviewed 2 react for all submissions\nWhat's next?\n\n\u2022 Apply feedbacks for the Ventilator visualisation and setting of hide monitors without patients as default.\n\u2022 Integrate Medibase\n\u2022 Programmatically modify mock vitals `data.json` to have more `blood-pressure` entries.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1684944665.636779",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xJrV",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 24/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Looked into 10bedICU repo to figure out issue with maps for puducherry"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Huddles with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "UPW6XDGDD"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to help figure out issue reported from prod: \"When we search Bed 7, Bed 7 is missing, Bed 17 shows\". "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Learnt how to use Metabase to translate that bug into whats actually happening and brushed up SQL query skills with help of "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "UPW6XDGDD"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1314",
+                                            "text": "care#1314"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " fixes it as the above happens due to a weird workflow where if you select a bed first and selects a non-admission decision where patient is discharged when saving consultation itself. But bed data is still sent (although it shouldn't be), and back-end accepts it (although it shouldn't be)."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1312",
+                                            "text": "care#1312"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " prevents occupied beds from being deleted."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Re-ordered prescriptions migration fixes and merged it. "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 2 react for all submissions"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Apply feedbacks for the Ventilator visualisation and setting of hide monitors without patients as default."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Integrate Medibase"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Programmatically modify mock vitals "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "data.json",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to have more "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "blood-pressure",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " entries."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1684944728.000000"
+            }
+        }
     ]
 }

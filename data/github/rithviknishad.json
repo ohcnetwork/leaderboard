@@ -1,6 +1,159 @@
 {
-  "last_updated": 1684846358.0,
+  "last_updated": 1684947556.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1684947556.0,
+      "title": "coronasafe/care_fe#5510",
+      "link": "https://github.com/coronasafe/care_fe/pull/5510#pullrequestreview-1442379665",
+      "text": "Update loader across the platform to CARE logo"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684945146.0,
+      "title": "coronasafe/care_fe#5499",
+      "link": "https://github.com/coronasafe/care_fe/pull/5499#pullrequestreview-1442310303",
+      "text": "Added Bed Type Chip in Bed Select Dropdown"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5513",
+      "time": 1684943747.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5513",
+      "text": "Disable delete bed button if bed is occupied"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1314",
+      "time": 1684942051.0,
+      "link": "https://github.com/coronasafe/care/pull/1314",
+      "text": "Create `ConsultationBed` only on if Admission and migrates existing non-admission `ConsultationBed`s."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5458",
+      "time": 1684941732.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5458",
+      "text": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5458",
+      "time": 1684941732.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5458",
+      "text": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions",
+      "collaborated_with": [
+        "skks1212"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5509",
+      "time": 1684940503.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5509#issuecomment-1561326946",
+      "text": "Not all forms, only for `AutocompleteFormField` and it's multi select equivalent. Have a look at `FormField` components.\r\n\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1305",
+      "time": 1684933842.0,
+      "link": "https://github.com/coronasafe/care/pull/1305",
+      "text": "fix prescriptions migration"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1313",
+      "time": 1684931033.0,
+      "link": "https://github.com/coronasafe/care/pull/1313",
+      "text": "Skip creating `ConsultationBed` if Decision after consultation is OP"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1312",
+      "time": 1684930386.0,
+      "link": "https://github.com/coronasafe/care/pull/1312",
+      "text": "Adds a check on `is_occupied` for bed delete action"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5463",
+      "time": 1684928895.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5463#issuecomment-1560971899",
+      "text": "Okay, I was thinking of having this as a starting point of something like Device Preferences, where we could store not just Temperature Unit, but things like applied filters of Central Nursing Station, and so on."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684928769.0,
+      "title": "coronasafe/care_fe#5509",
+      "link": "https://github.com/coronasafe/care_fe/pull/5509#pullrequestreview-1441626998",
+      "text": "Unblocked input field from browser autofill"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5506",
+      "time": 1684928672.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5506#issuecomment-1560967014",
+      "text": "Hey, it would be nice if you could link the issues in your PR using the closing keywords \ud83d\ude03 \r\n\r\nhttps://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#489",
+      "time": 1684928270.0,
+      "link": "https://github.com/coronasafe/care/issues/489#issuecomment-1560958535",
+      "text": "An EPIC issue has been filed: https://github.com/coronasafe/care_fe/issues/5492"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5463",
+      "time": 1684916762.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5463#issuecomment-1560672521",
+      "text": "Can you explain how you are going to achieve it?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5506",
+      "time": 1684916073.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5506",
+      "text": "Browser autocomplete is blocking the view of AutocompleteFormField's dropdown."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1311",
+      "time": 1684914920.0,
+      "link": "https://github.com/coronasafe/care/issues/1311",
+      "text": "Disallow deletion of bed if occupied"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5505",
+      "time": 1684914806.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5505",
+      "text": "Disallow deletion of bed if occupied"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5478",
+      "time": 1684911241.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5478#issuecomment-1560550651",
+      "text": "Awesome!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1684910827.0,
+      "title": "coronasafe/care_fe#5499",
+      "link": "https://github.com/coronasafe/care_fe/pull/5499#pullrequestreview-1441048406",
+      "text": "Added Bed Type Chip in Bed Select Dropdown"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5484",
+      "time": 1684907412.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5484",
+      "text": "Fix : Asset cards in Asset list page is not a link. Unable to open in new tab",
+      "collaborated_with": [
+        "souravghosh01"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1684846358.0,
@@ -14373,6 +14526,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1314",
+      "title": "Create `ConsultationBed` only on if Admission and migrates existing non-admission `ConsultationBed`s.",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1312",
+      "title": "Adds a check on `is_occupied` for bed delete action",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5503",
       "title": "SmartICU: Ventilator Integration (PoC)",
       "stale_for": 0,
@@ -14381,17 +14552,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1305",
-      "title": "fix prescriptions migration",
-      "stale_for": 3,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1302",
       "title": "Adds API for `PatientAssetBed`",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -14402,29 +14565,15 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
+        "waiting for back end",
         "Major Code Change",
         "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1296",
-      "title": "Support for filtering AssetBeds by location",
-      "stale_for": 7,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5458",
-      "title": "Download Discharge Summary, Medicine Administration Records and upgraded Prescriptions",
-      "stale_for": 0,
-      "labels": [
-        "work-in-progress",
-        "Major Code Change"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "need Review",
         "cypress failed"

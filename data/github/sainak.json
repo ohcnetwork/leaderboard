@@ -1,6 +1,34 @@
 {
-  "last_updated": 1684839749.0,
+  "last_updated": 1684905860.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1086",
+      "time": 1684905860.0,
+      "link": "https://github.com/coronasafe/care/issues/1086",
+      "text": "Remove COVID Beds & KASP Beds from Facility Summarization"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1086",
+      "time": 1684905860.0,
+      "link": "https://github.com/coronasafe/care/issues/1086#issuecomment-1560475377",
+      "text": "closed in #924 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#911",
+      "time": 1684901917.0,
+      "link": "https://github.com/coronasafe/care/issues/911",
+      "text": "`python manage.py summarize` is not working"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#911",
+      "time": 1684901917.0,
+      "link": "https://github.com/coronasafe/care/issues/911#issuecomment-1560436674",
+      "text": "resolved in https://github.com/coronasafe/care/pull/924"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1309",
@@ -2134,18 +2162,22 @@
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove HBA1C field from consultation model",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1308",
       "title": "use consistent phone number validation",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5498",
       "title": "Rename all instances of orgin_facility to origin_facility",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting for back end",
         "cypress failed"
@@ -2154,7 +2186,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1303",
       "title": "Rename all instances of orgin_facility to origin_facility",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -2162,7 +2194,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 300,
+      "stale_for": 301,
       "labels": []
     }
   ],

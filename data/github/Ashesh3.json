@@ -1,6 +1,37 @@
 {
-  "last_updated": 1684854289.0,
+  "last_updated": 1685025851.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#19",
+      "time": 1685025851.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/19",
+      "text": "Display translated messages in chat"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#145",
+      "time": 1685025844.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/145",
+      "text": "Add translated_message field to ChatMessage model"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5131",
+      "time": 1684988064.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5131",
+      "text": "Add bed occupancy to facility card"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5131",
+      "time": 1684988064.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5131",
+      "text": "Add bed occupancy to facility card",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/ayushma#142",
@@ -8586,17 +8617,30 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/19",
+      "title": "Display translated messages in chat",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma/pull/145",
+      "title": "Add translated_message field to ChatMessage model",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 26,
+      "stale_for": 1,
       "labels": [
-        "waiting for back end"
+        "waiting for back end",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 26,
+      "stale_for": 28,
       "labels": [
         "waiting-for-review"
       ]
@@ -8604,7 +8648,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 49,
+      "stale_for": 51,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -8613,21 +8657,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 62,
+      "stale_for": 64,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5131",
-      "title": "Add bed occupancy to facility card",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 35,
+      "stale_for": 37,
       "labels": [
         "waiting for back end"
       ]
@@ -8635,7 +8671,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]

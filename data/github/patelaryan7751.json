@@ -1,6 +1,30 @@
 {
-  "last_updated": 1684771289.0,
+  "last_updated": 1684990106.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5500",
+      "time": 1684990106.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5500",
+      "text": "Removed Duplicate patient records present in CSV export if patient has multiple policies associated with them"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5502",
+      "time": 1684987686.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5502",
+      "text": "Removed all dependency of react-csv"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5502",
+      "time": 1684987686.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5502",
+      "text": "Removed all dependency of react-csv",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5502",
@@ -5836,27 +5860,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5502",
-      "title": "Removed all dependency of react-csv",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5500",
-      "title": "Removed Duplicate patient records present in CSV export if patient has multiple policies associated with them",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "P2"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/qr-generator/pull/6",
       "title": "Added a visible loader between the genration and download time",
-      "stale_for": 175,
+      "stale_for": 178,
       "labels": []
     }
   ],

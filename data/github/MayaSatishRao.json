@@ -1,6 +1,97 @@
 {
-  "last_updated": 1685043380.0,
+  "last_updated": 1685127716.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5536",
+      "time": 1685127716.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5536#issuecomment-1564807471",
+      "text": "I have made pr @rithviknishad I have tested it as well. Please review it once. Thanks!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5547",
+      "time": 1685127635.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5547#issuecomment-1564806043",
+      "text": "I have made the necessary changes @rithviknishad @nihal467 \r\nNotification for non admission consultation:\r\n![not admission](https://github.com/coronasafe/care_fe/assets/67920373/556c4ffc-00ea-42f4-95a7-a873d227772a)\r\nNotification for admission consultation:\r\n![admission](https://github.com/coronasafe/care_fe/assets/67920373/dde198ad-de62-48df-b2fe-851843703d5b)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5547",
+      "time": 1685127307.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5547",
+      "text": "Notification message"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685125811.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1564774465",
+      "text": "are the changes working? @rithviknishad "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685122320.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1564708725",
+      "text": "@rithviknishad I have made the changes! I have tested it as well."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685121414.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1564693376",
+      "text": "ok, I will make the changes!!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685104164.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1564319276",
+      "text": "@rithviknishad, now I have made changes such that all options are displayed instead of making the previous query displayed in the text input. Is that fine?\r\nwhen searched for \"ba\":\r\n![infocus](https://github.com/coronasafe/care_fe/assets/67920373/69f4d3ce-41fc-4346-8b28-a8c0aaab994c)\r\nwhen out of focus and then again search with empty query:\r\n![outfocus](https://github.com/coronasafe/care_fe/assets/67920373/69281538-ee8f-45b0-b86e-483b390068f8)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685100415.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1564248411",
+      "text": "ok i will look into it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685099505.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1564231063",
+      "text": "@rithviknishad \u2b06\ufe0f"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685099449.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1564229962",
+      "text": "In the expected behavior of the issue, only 1 thing was mentioned: the search text in the input box must not be cleared. According to your last comment, I understood that the problem is all facilities are not listed even the search text is empty. Am I right?\r\nSince I do not have the backend setup, I cannot test it on my machine. Should I set the backend as well?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685097483.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1564187852",
+      "text": "@rithviknishad  I have removed the changes from old branch and made new changes. Hope this solves the problem "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5536",
+      "time": 1685096915.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5536#issuecomment-1564177045",
+      "text": "@rithviknishad Can you assign this issue? I want to work on this"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685087216.0,
+      "title": "coronasafe/care_fe#5528",
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#pullrequestreview-1445474446",
+      "text": "Keep search text"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5515",
@@ -102,15 +193,23 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5528",
-      "title": "Keep search text",
+      "link": "https://github.com/coronasafe/care_fe/pull/5547",
+      "title": "Notification message",
       "stale_for": 0,
       "labels": []
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5528",
+      "title": "Keep search text",
+      "stale_for": 0,
+      "labels": [
+        "changes required"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5525",
       "title": "changed the file name of exported file",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]

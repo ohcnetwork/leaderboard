@@ -1,6 +1,13 @@
 {
-  "last_updated": 1684913619.0,
+  "last_updated": 1685112181.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4233",
+      "time": 1685112181.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4233#issuecomment-1564500770",
+      "text": "@khavinshankar , @nihal467  While writing the test for new patient creation, I encountered the following error.\r\n\r\nEven after typing the phone number when we click on Add Patient button, we get the following error:\r\n\r\n![Screenshot from 2023-05-26 19-55-23](https://github.com/coronasafe/care_fe/assets/86483059/12b4159f-724c-4c74-a49e-9c300baa98ea)\r\n\r\nWe can clearly see that the phone number typed is a valid one.\r\n\r\nI tried debugging this and logged the input value we are getting from the form. The value we get is something like: \"919994565656\" and when we try to take out the phone number from this input we get an undefined value. One strange is if I edit anything when the test is paused and again try to submit the form, this time we get \"+91 956465656\" (notice the + sign and gap) and we are able to successfully retrieve the phone number from it using `parsePhoneNumberFromString` method. Check out the screenshot for more info:\r\n\r\n![Screenshot from 2023-05-26 20-02-09](https://github.com/coronasafe/care_fe/assets/86483059/29a07702-a061-4ef2-866b-c698d77810f1)\r\n\r\nThe first set of console values are when the phone numbers are typed using cypress, the next one is when I tried editing one of them and re submit the form.\r\n\r\nCan anyone of you please take a look at this. Thanks!"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4233",

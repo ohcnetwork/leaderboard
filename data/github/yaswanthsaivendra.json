@@ -1,6 +1,20 @@
 {
-  "last_updated": 1684924595.0,
+  "last_updated": 1685134568.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1310",
+      "time": 1685134568.0,
+      "link": "https://github.com/coronasafe/care/pull/1310#issuecomment-1564941244",
+      "text": "@sainak \r\nUserAssingedSerializer is used at 2 places.\r\n1. in FacilityUserViewSet, where I have made the changes to prefetch the skills.\r\n2. in [PatientConsulationSerializer](https://github.com/coronasafe/care/blob/7d14e41251787fe1bbb952ac22278f998b86b24a/care/facility/api/serializers/patient_consultation.py#L68)  here i am not sure how it can be done.\r\nCan u suggest , what can be done here?\r\n\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685134143.0,
+      "title": "coronasafe/care#1310",
+      "link": "https://github.com/coronasafe/care/pull/1310#pullrequestreview-1446937339",
+      "text": "optimized the query performed to fetch skills in UserAssignedSerializer"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1189",

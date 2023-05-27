@@ -10844,5 +10844,151 @@
                 "ts": "1684944728.000000"
             }
         }
+    ],
+    "2023-05-26 00:00:00": [
+        {
+            "client_msg_id": "b9c8b844-40e7-4a1d-8880-8a8a792b582e",
+            "type": "message",
+            "text": "EOD 26/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Reviewed 6 react for all submission.\n\u2022 Reviewed couple of open source PRs and assisted them.\n\u2022 Fixed a minor P1 bug in backend where discharge notes shouldn't be mandatory. <https://github.com/coronasafe/care/pull/1315|care#1315>\n\u2022 Disable browser autocomplete for custom autocomplete components. <https://github.com/coronasafe/care_fe/pull/5541|care_fe#5541>\n\u2022 Fix issue with non-admission consultation redirects <https://github.com/coronasafe/care_fe/pull/5535|care_fe#5535>\n\u2022 Huddles with <@U022THM4U2U> for all of the above\nWhat's next?\n\n\u2022 Fix edge cases with PatientAssetBed view for CNS",
+            "user": "U02TDGQQPMJ",
+            "ts": "1685111343.137779",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RYz",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 26/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 6 react for all submission."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed couple of open source PRs and assisted them."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed a minor P1 bug in backend where discharge notes shouldn't be mandatory. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1315",
+                                            "text": "care#1315"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Disable browser autocomplete for custom autocomplete components. "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5541",
+                                            "text": "care_fe#5541"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fix issue with non-admission consultation redirects "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5535",
+                                            "text": "care_fe#5535"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Huddles with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " for all of the above"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fix edge cases with PatientAssetBed view for CNS"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

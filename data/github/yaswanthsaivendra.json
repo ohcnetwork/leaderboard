@@ -1,6 +1,27 @@
 {
-  "last_updated": 1685214060.0,
+  "last_updated": 1685292565.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1103",
+      "time": 1685292565.0,
+      "link": "https://github.com/coronasafe/care/issues/1103#issuecomment-1566197659",
+      "text": "Is this issue still relevant, can I take up this one??\r\n\r\nAnd as far I understand 2nd part of it, It requires to create a seperate through table ConsultationBedAsset with the schema of something like this,\r\nConsultationBedAsset:\r\n    consultation_bed  - ForeignKey\r\n    asset  - ForeignKey\r\n    \r\nbut i didn't get the purpose of BedFlag through table . can u explain?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685290086.0,
+      "title": "coronasafe/care_fe#5550",
+      "link": "https://github.com/coronasafe/care_fe/pull/5550#pullrequestreview-1448309390",
+      "text": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685289733.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1448305452",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5550",
@@ -63,18 +84,23 @@
       "link": "https://github.com/coronasafe/care_fe/pull/5550",
       "title": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing",
+        "waiting for back end"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1318",
       "title": "Added a way to handle filtering admitted but no bed assigned ",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1310",
       "title": "optimized the query performed to fetch skills in UserAssignedSerializer",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]

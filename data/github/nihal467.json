@@ -1,6 +1,48 @@
 {
-  "last_updated": 1685189639.0,
+  "last_updated": 1685288345.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4233",
+      "time": 1685288345.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4233#issuecomment-1566177992",
+      "text": "@ShivamJhaa \r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/ec4fcef2-ff61-4606-95db-1ed4504e2f61)\r\n\r\n- keep the phone number constant as \"9999999999\" for now.\r\n- Once you enter the phone number, a pop-up will appear, similar to the screenshot above. You need to click on \"I confirm that the suspect/patient I want to create is not on the list\" and continue filling in the remaining fields.\r\n- try solving this, because you are using \" force: true \" in the code to input data to the phone number field, which disables all pop-ups and related validations.\r\n- For now, only include the mandatory fields. Once you figure it out, you can input data into the optional fields."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5545",
+      "time": 1685282383.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#issuecomment-1566150294",
+      "text": "@rithviknishad @somesh202 \r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/ab40980f-5f1d-4245-a396-0e9cd27c7953)\r\n\r\n- [ ] the triage check heading shouldn't be coming in\r\n- [ ] the triage alert shouldn't be making the page extended, currently when the alert comes in, there is a scroller coming in "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5548",
+      "time": 1685281968.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5548#issuecomment-1566148736",
+      "text": "@lord2anil \r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/54411a56-d62d-4238-89f6-f65d73d5dc14)\r\n\r\n- [ ] in the iPad mini dimension, the buttons are not properly responsive\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/9da0e8da-564d-4fd5-a82f-708440b6d10c)\r\n\r\n- [ ] Remove the extra width you added to the button \r\n- [ ] Keep the \" camera \" and \" file choose \"buttons towards the left and the \" upload \" button towards the right side in the normal view"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5547",
+      "time": 1685281581.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5547#issuecomment-1566146823",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5543",
+      "time": 1685280374.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5543#issuecomment-1566140309",
+      "text": "@GokulramGHV \r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/5d495c70-95f9-4b22-8865-d10489eaf60b)\r\n\r\n- [ ] Make the button full width on the mobile view\r\n- [ ] make it consistent in external results too"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5528",
+      "time": 1685279614.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5528#issuecomment-1566137367",
+      "text": "LGTM"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5538",
@@ -20028,5 +20070,10 @@
     }
   ],
   "open_prs": [],
-  "authored_issue_and_pr": []
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5454",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5455"
+    }
+  ]
 }

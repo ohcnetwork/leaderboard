@@ -1,6 +1,76 @@
 {
-  "last_updated": 1685206499.0,
+  "last_updated": 1685278693.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685278693.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#issuecomment-1566133073",
+      "text": "> Nice work @nikhilagastya\r\n\r\nThanks @rithviknishad !!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5544",
+      "time": 1685278431.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5544#issuecomment-1566130015",
+      "text": "duplicate to #4973 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685277175.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#issuecomment-1566122524",
+      "text": "> ```shell\r\n> git checkout <other-pr-branch-name> # \"develop\"\r\n> git merge <this-pr-branch-name> # \"NoticeBoard\"\r\n> git push\r\n> ```\r\n> \r\n> Also, make sure the files have been changed correctly and that there is no more material ui usage on the entire file. After that, you should update your main comment on that PR to link issues related to this PR too.\r\n\r\nCan I add a comment in the Illustrations issue ,that this issue is a duplicate of the current issue to link them ?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685275120.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#issuecomment-1566111609",
+      "text": "> 1. You've moved the line of import of MUI components. This might go undetected without a merge conflict when both your PRs are merged. Feel free to push changes directly to your other PR and link both issues there. This is much easier.\r\n> 2. Why are there diffs in other files? Kindly configure your git to use proper line endings (LF).\r\n> \r\n> ![image](https://user-images.githubusercontent.com/25143503/241557826-e5101a15-3966-4a48-b97f-fc443bf0de0d.png)\r\n\r\ncan you tell me how do I merge two two issues ?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685274415.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#issuecomment-1566108515",
+      "text": "Hey @rithviknishad ig now the changes  from other branches are not present. If you still find them can you just tell me what they are so that i can fix it "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685267375.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#issuecomment-1566051804",
+      "text": "@rithviknishad can you check if this is okay !\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685266140.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#issuecomment-1566034933",
+      "text": "> Why are changes from #5544 present here?\r\n> \r\n> Ensure your changes from other branches are not present.\r\n\r\nyeahh ill change that "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685262783.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#issuecomment-1565996028",
+      "text": "@rithviknishad  can you please check the PR "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685262594.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552",
+      "text": "Closed Replace Material UI components in src/Components/Notifications/NoticeBoard.tsx"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4973",
+      "time": 1685261710.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4973#issuecomment-1565986648",
+      "text": "Hey @rithviknishad I have replaced the Material UI components with custom components and here is how it looks. lmk if any changes needed \r\n![image](https://github.com/coronasafe/care_fe/assets/72994295/66267ae8-4924-4843-a975-6b790d3033e0)\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5544",
@@ -184,6 +254,15 @@
       "text": "hey @nihal467 I would like to work on this issue !"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5552",
+      "title": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

@@ -1,6 +1,48 @@
 {
-  "last_updated": 1685221793.0,
+  "last_updated": 1685295989.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1685295989.0,
+      "title": "coronasafe/care_fe#5553",
+      "link": "https://github.com/coronasafe/care_fe/pull/5553#pullrequestreview-1448345370",
+      "text": "Sachdevavaibhav/issue#4945"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5553",
+      "time": 1685289891.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5553#issuecomment-1566184979",
+      "text": "@rithviknishad I have made the changes. Kindly review it.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4945",
+      "time": 1685271213.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4945#issuecomment-1566084556",
+      "text": "@rithviknishad Please review the PR #5553 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5553",
+      "time": 1685271131.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5553",
+      "text": "Sachdevavaibhav/issue#4945"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5551",
+      "time": 1685270756.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5551#issuecomment-1566081834",
+      "text": "@rithviknishad \r\nI have reverted changes in the previous branch and force pushed it (since I merged develop into it). Closing this PR and creating new one."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5551",
+      "time": 1685262999.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5551#issuecomment-1566002388",
+      "text": "@rithviknishad \nYes, I didn't checkout to develop. I pulled develop into the previous branch and then created a new branch. Sorry for the mess.\n\nAny suggestions on how I can fix it?"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5551",
@@ -102,10 +144,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5551",
-      "title": "Sachdevavaibhav/#4945",
+      "link": "https://github.com/coronasafe/care_fe/pull/5553",
+      "title": "Sachdevavaibhav/issue#4945",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5534",

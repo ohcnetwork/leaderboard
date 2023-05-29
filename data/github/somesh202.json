@@ -1,6 +1,20 @@
 {
-  "last_updated": 1685197229.0,
+  "last_updated": 1685297647.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5545",
+      "time": 1685297647.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#issuecomment-1566217308",
+      "text": "<img width=\"959\" alt=\"Screenshot 2023-05-28 222023\" src=\"https://github.com/coronasafe/care_fe/assets/77766761/40218765-5aa9-4999-91a4-231e415be490\">\r\n\r\n@rithviknishad @nihal467  Using ConfirmDialog we get this UI, but it accepts only a void function in the required `onConfirm` prop, while we have `handleSubmit` as a parametric function, in `DialogModal` we could achieve this using external HTML but that doesn't seem possible here"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4133",
+      "time": 1685275195.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4133#issuecomment-1566112023",
+      "text": "@nihal467 Can I take up the new asset creation issue as its PR seems stale now and would follow up by adding configuration of asset?"
+    },
     {
       "type": "pr_reviewed",
       "time": 1685197229.0,
@@ -23,6 +37,15 @@
       "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5545",
+      "title": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx",
+      "stale_for": 0,
+      "labels": [
+        "changes required"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

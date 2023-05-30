@@ -1,6 +1,41 @@
 {
-  "last_updated": 1685292565.0,
+  "last_updated": 1685394649.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1326",
+      "time": 1685394649.0,
+      "link": "https://github.com/coronasafe/care/issues/1326#issuecomment-1567520778",
+      "text": "Hello team,\r\nLemme know if its a relevant issue, if so I would like to work upon it!"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1326",
+      "time": 1685394604.0,
+      "link": "https://github.com/coronasafe/care/issues/1326",
+      "text": "Peroidic tasks to remove incomplete file uploads"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1320",
+      "time": 1685389686.0,
+      "link": "https://github.com/coronasafe/care/issues/1320#issuecomment-1567462513",
+      "text": "Hey , i would like to take up this one.\r\n\r\nAs far i understand, we would need to create a periodic_task using celery that would run maybe every midnight to delete all the notifications that are older than 90 days.\r\n\r\nbut can we specify a few things for me,\r\n- Like what would be a great place to create this scheduler function(maybe inside a new file - `care/facility/tasks/notification/delete_older_notifications.py`)??\r\n- period/Time to run the task(maybe every midnight)??\r\n- I cant see a `created_at` field so do we need to decide this 90 days older on basis upon `read_at` field which exists in Notification table or add a `created_at` field to the table??\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685358436.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1449320625",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685358391.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1449319471",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1103",
@@ -83,7 +118,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5550",
       "title": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -100,7 +135,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1310",
       "title": "optimized the query performed to fetch skills in UserAssignedSerializer",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]

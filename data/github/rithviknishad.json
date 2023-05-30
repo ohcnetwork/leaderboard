@@ -1,6 +1,286 @@
 {
-  "last_updated": 1685297954.0,
+  "last_updated": 1685376957.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1685376957.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449697249",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5565",
+      "time": 1685375840.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5565",
+      "text": "disables asset class field in asset update"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5564",
+      "time": 1685375531.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5564",
+      "text": "Disable `asset_class` field in asset update form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1325",
+      "time": 1685373615.0,
+      "link": "https://github.com/coronasafe/care/pull/1325",
+      "text": "Fix patient asset bed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1324",
+      "time": 1685371449.0,
+      "link": "https://github.com/coronasafe/care/issues/1324",
+      "text": "Disallow updating `asset_type`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685371139.0,
+      "title": "coronasafe/care_fe#5545",
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#pullrequestreview-1449594541",
+      "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685371053.0,
+      "title": "coronasafe/care_fe#5558",
+      "link": "https://github.com/coronasafe/care_fe/pull/5558#pullrequestreview-1449591837",
+      "text": "Removed MUI Components from AddLocationCard"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685370984.0,
+      "title": "coronasafe/care_fe#5563",
+      "link": "https://github.com/coronasafe/care_fe/pull/5563#pullrequestreview-1449589669",
+      "text": "Replaced MaterialUI and legacy fields, used Form component in deathReport"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5552",
+      "time": 1685370874.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#issuecomment-1567218542",
+      "text": "@nikhilagastya all unicons are present in care icons. you just need to prefix `care-l-<icon_name>`. Refer the #5006 to know more about care icons"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/teleicu_middleware#67",
+      "time": 1685369987.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/issues/67",
+      "text": "Reject invalid data that are sent to `/update_observations`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1323",
+      "time": 1685367388.0,
+      "link": "https://github.com/coronasafe/care/issues/1323",
+      "text": "PatientAssetBed view `bed_is_occupied` filter is not inline with how we get patient from asset bed."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1322",
+      "time": 1685367262.0,
+      "link": "https://github.com/coronasafe/care/issues/1322",
+      "text": "Soft delete AssetBed records whose asset or bed is deleted."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1321",
+      "time": 1685365016.0,
+      "link": "https://github.com/coronasafe/care/issues/1321",
+      "text": "Profile DB queries"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1320",
+      "time": 1685364157.0,
+      "link": "https://github.com/coronasafe/care/issues/1320",
+      "text": "Periodically hard delete Notification records that are older than 90 days."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685362352.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449402199",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685362352.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449402199",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685362225.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449399861",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685362225.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449399861",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685362124.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449396349",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685362124.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449396349",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685362019.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449391667",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685362019.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449391667",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4944",
+      "time": 1685361609.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4944#issuecomment-1567045176",
+      "text": "I've changed the labels to \"changes required\""
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685361370.0,
+      "title": "coronasafe/care_fe#5545",
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#pullrequestreview-1449382612",
+      "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685361370.0,
+      "title": "coronasafe/care_fe#5545",
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#pullrequestreview-1449382612",
+      "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685361116.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449375988",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685361115.0,
+      "title": "coronasafe/care_fe#5552",
+      "link": "https://github.com/coronasafe/care_fe/pull/5552#pullrequestreview-1449375988",
+      "text": "Adds Illustration when no notices available + Replaced Material UI components in NoticeBoard page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685356111.0,
+      "title": "coronasafe/care_fe#5560",
+      "link": "https://github.com/coronasafe/care_fe/pull/5560#pullrequestreview-1449274347",
+      "text": "fixed width of patient bed select dialog box in patient dashboard"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685355924.0,
+      "title": "coronasafe/care_fe#5559",
+      "link": "https://github.com/coronasafe/care_fe/pull/5559#pullrequestreview-1449270810",
+      "text": "Display selected facility name in the filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685355755.0,
+      "title": "coronasafe/care_fe#5558",
+      "link": "https://github.com/coronasafe/care_fe/pull/5558#pullrequestreview-1449267688",
+      "text": "Removed MUI Components from AddLocationCard"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1319",
+      "time": 1685345556.0,
+      "link": "https://github.com/coronasafe/care/issues/1319#issuecomment-1566690234",
+      "text": "We can't have this validation for camera's as each bed preset creates new AssetBed record.\r\n\r\nWe might also need to restrict editing asset_type once an asset is created so that a Camera asset with multiple beds should never be updated to be a monitor as it shouldn't be linked with multiple bed.\r\n\r\ncc: @gigincg @vigneshhari \r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1319",
+      "time": 1685342288.0,
+      "link": "https://github.com/coronasafe/care/issues/1319",
+      "text": "AssetBeds should be unique together by Asset, Asset Type and Bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685340429.0,
+      "title": "coronasafe/care_fe#5555",
+      "link": "https://github.com/coronasafe/care_fe/pull/5555#pullrequestreview-1448908806",
+      "text": "fix cursor"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5557",
+      "time": 1685334813.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5557",
+      "text": "Bed select dialog width feels too small"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685331689.0,
+      "title": "coronasafe/care_fe#5555",
+      "link": "https://github.com/coronasafe/care_fe/pull/5555#pullrequestreview-1448722540",
+      "text": "fix cursor"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685331588.0,
+      "title": "coronasafe/care_fe#5555",
+      "link": "https://github.com/coronasafe/care_fe/pull/5555#pullrequestreview-1448722540",
+      "text": "fix cursor"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685331370.0,
+      "title": "coronasafe/care_fe#5556",
+      "link": "https://github.com/coronasafe/care_fe/pull/5556#pullrequestreview-1448718985",
+      "text": "Delete reactmui components"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685331290.0,
+      "title": "coronasafe/care_fe#5545",
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#pullrequestreview-1448711822",
+      "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685331290.0,
+      "title": "coronasafe/care_fe#5545",
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#pullrequestreview-1448711822",
+      "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5463",
+      "time": 1685330850.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5463#issuecomment-1566449782",
+      "text": "You could do:\r\n\r\n```js\r\n# utils.ts\r\n\r\nfunction getTemperaturePreference() : \"C\" | \"F\" {\r\n  return localStorage.getItem('temperature-preference') ?? \"C\";\r\n}\r\n```\r\n\r\nand then in the component:\r\n\r\n```jsx\r\n<SelectFormField\r\n  ...\r\n  value={getTemperaturePreference()}\r\n  onChange={({value}) => setTemperaturePreference(value)}\r\n/>\r\n```"
+    },
     {
       "type": "pr_reviewed",
       "time": 1685297954.0,
@@ -15464,9 +15744,26 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5565",
+      "title": "disables asset class field in asset update",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1325",
+      "title": "Fixes issues with and related to `PatientAssetBed`",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5503",
       "title": "SmartICU: Ventilator Integration (PoC)",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -15475,7 +15772,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5466",
       "title": "Vitals Monitor 2.0 (Canvas Render) & Central Nursing Station 2.0",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "work-in-progress",
         "Major Code Change",
@@ -15485,7 +15782,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "need Review",
         "cypress failed"

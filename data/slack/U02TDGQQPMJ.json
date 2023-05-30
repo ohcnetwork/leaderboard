@@ -11051,5 +11051,246 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-05-29 00:00:00": [
+        {
+            "client_msg_id": "20f0d332-753f-44f7-aeb5-a436e260685b",
+            "type": "message",
+            "text": "EOD 29/05/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Had weekly <!subteam^S035L5S02RF|@care_engineering> sync call.\n\u2022 Huddles with <@U022THM4U2U> to dig deep into issues related to AssetBeds affecting CNS.\n\u2022 Disallows modifying `Asset.asset_class`\n\u2022 Manually cascade delete `AssetBed` if `Asset` or `Bed` is deleted and migrations for the same.\n\u2022 Disallow linking HL7 Monitor or Ventilator with a bed that is already occupied with an asset of the same asset_class.\n\u2022 Fix `bed_is_occupied` filter of `PatientAssetBed` view. | <https://github.com/coronasafe/care/pull/1325|care#1325>\n\u2022 Had a meet with SmartICU team along with <@UPW6XDGDD> to debug issues with waveforms.\n\u2022 Reviewed couple of open source PRs.\nWhat's next?\n\n\u2022 Review react for all submissions\n\u2022 Integrate Medibase",
+            "user": "U02TDGQQPMJ",
+            "ts": "1685375250.178679",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "B8iY",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 29/05/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had weekly "
+                                        },
+                                        {
+                                            "type": "usergroup",
+                                            "usergroup_id": "S035L5S02RF"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " sync call."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Huddles with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to dig deep into issues related to AssetBeds affecting CNS."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Disallows modifying "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Asset.asset_class",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Manually cascade delete "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "AssetBed",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " if "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Asset",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " or "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "Bed",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " is deleted and migrations for the same."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Disallow linking HL7 Monitor or Ventilator with a bed that is already occupied with an asset of the same asset_class."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fix "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "bed_is_occupied",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " filter of "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "PatientAssetBed",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " view. | "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1325",
+                                            "text": "care#1325"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had a meet with SmartICU team along with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "UPW6XDGDD"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to debug issues with waveforms."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed couple of open source PRs."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Review react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Integrate Medibase"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

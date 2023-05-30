@@ -1,6 +1,20 @@
 {
-  "last_updated": 1685103523.0,
+  "last_updated": 1685347388.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5543",
+      "time": 1685347388.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5543#issuecomment-1566724234",
+      "text": "@nihal467 I've made the requested changes\r\n\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#151",
+      "time": 1685345316.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/151",
+      "text": "Added fallback for S3 Upload"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5543",
@@ -2075,17 +2089,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma/pull/151",
+      "title": "Added fallback for S3 Upload",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5543",
       "title": "Changed UI for Live/Discharged Tabs in Patients Page",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4134",
       "title": "Added Cypress Spec for asset creation",
-      "stale_for": 43,
+      "stale_for": 46,
       "labels": [
         "work-in-progress",
         "merge conflict",

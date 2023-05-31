@@ -1,6 +1,54 @@
 {
-  "last_updated": 1685338982.0,
+  "last_updated": 1685454441.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/teleicu_middleware#67",
+      "time": 1685454441.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/issues/67#issuecomment-1568467566",
+      "text": "So , I'm not that good in nodejs and I added this validation rules in the  ./observationValidator.js\r\n``` \r\nconst getObservationsValidators = (path = \"\") => [\r\n\r\n  //  other validation rules  ...\r\n\r\n  body(`wavevalue`)\r\n    .optional()\r\n    .isNumeric()\r\n    .withMessage(\"value must be number.\")\r\n    .custom((value, { req }) => {\r\n      const lowLimit = req.body[`${path}low-limit`];\r\n      const highLimit = req.body[`${path}high-limit`];\r\n      if (lowLimit && highLimit) {\r\n        if (value < lowLimit || value > highLimit) {\r\n          throw new Error(`value must be between ${lowLimit} and ${highLimit}.`);\r\n        }\r\n      }\r\n      return true;\r\n    }),\r\n];\r\n```"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/teleicu_middleware#67",
+      "time": 1685448012.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/issues/67#issuecomment-1568309649",
+      "text": "can I work on this issue\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5555",
+      "time": 1685447705.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5555",
+      "text": "fix cursor"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5555",
+      "time": 1685447705.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5555",
+      "text": "fix cursor",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5556",
+      "time": 1685445538.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5556",
+      "text": "Delete reactmui components"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5556",
+      "time": 1685445538.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5556",
+      "text": "Delete reactmui components",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5555",
@@ -58,25 +106,6 @@
       "text": "Can I take this issue\r\n"
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5556",
-      "title": "Delete reactmui components",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "good to merge"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5555",
-      "title": "fix cursor",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "good to merge"
-      ]
-    }
-  ],
+  "open_prs": [],
   "authored_issue_and_pr": []
 }

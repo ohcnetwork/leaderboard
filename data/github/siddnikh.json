@@ -1,6 +1,27 @@
 {
-  "last_updated": 1685125167.0,
+  "last_updated": 1685467173.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_deploy_configs#16",
+      "time": 1685467173.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/16#issuecomment-1568795906",
+      "text": "> @siddnikh is the PR completed? Title say's you are removing `static_coronasafe_logo` but file changes are only adding the new logos.\r\n\r\nOkay, yeah, removed coronasafe references."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685464449.0,
+      "title": "coronasafe/care_fe#5529",
+      "link": "https://github.com/coronasafe/care_fe/pull/5529#pullrequestreview-1451366599",
+      "text": "Replaced Coronasafe Network branding to OHC network branding on login page of CARE"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_deploy_configs#16",
+      "time": 1685464374.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/16",
+      "text": "Removed references of static_coronasafe_logo"
+    },
     {
       "type": "pr_reviewed",
       "time": 1685125167.0,
@@ -1023,27 +1044,24 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5529",
-      "title": "Replaced Coronasafe Network branding to OHC network branding on login page of CARE",
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/16",
+      "title": "Removed references of static_coronasafe_logo",
       "stale_for": 0,
       "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/ayushma/pull/98",
-      "title": "Add support for deleting vectors from pinecone on deletion of document",
-      "stale_for": 5,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/ayushma/pull/97",
-      "title": "Modified User Model actions",
-      "stale_for": 5,
-      "labels": []
+      "link": "https://github.com/coronasafe/care_fe/pull/5529",
+      "title": "Replaced Coronasafe Network branding to OHC network branding on login page of CARE",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "made_changes"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1275",
       "title": "Modified bedCreate API View to support bulk creating beds",
-      "stale_for": 10,
+      "stale_for": 14,
       "labels": [
         "waiting-for-review"
       ]
@@ -1051,7 +1069,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5413",
       "title": "Add support for creating multiple beds",
-      "stale_for": 5,
+      "stale_for": 9,
       "labels": [
         "waiting for back end"
       ]

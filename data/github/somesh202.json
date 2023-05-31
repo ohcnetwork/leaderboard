@@ -1,6 +1,20 @@
 {
-  "last_updated": 1685362446.0,
+  "last_updated": 1685432259.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1685432259.0,
+      "title": "coronasafe/care_fe#5545",
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#pullrequestreview-1450297604",
+      "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5545",
+      "time": 1685431425.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5545#issuecomment-1567902975",
+      "text": "@nihal467 @rithviknishad I mentioned this issue in the previous comment, it's beacuse we are not using the preventDefault anymore in the handleSubmit function to use it in the onConfirm prop which only accepts a void func"
+    },
     {
       "type": "pr_reviewed",
       "time": 1685362446.0,
@@ -58,15 +72,6 @@
       "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx"
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5545",
-      "title": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    }
-  ],
+  "open_prs": [],
   "authored_issue_and_pr": []
 }

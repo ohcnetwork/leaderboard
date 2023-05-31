@@ -1,6 +1,34 @@
 {
-  "last_updated": 1685188098.0,
+  "last_updated": 1685451505.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1685451505.0,
+      "title": "coronasafe/care_fe#5549",
+      "link": "https://github.com/coronasafe/care_fe/pull/5549#pullrequestreview-1450878128",
+      "text": "Added cypress test for new patient creation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4233",
+      "time": 1685449458.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4233#issuecomment-1568342217",
+      "text": "I was able to fix the error, by using ID as a selector for the input box (this also removed the need of `force: true`). I have pushed all the changes."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4233",
+      "time": 1685443443.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4233#issuecomment-1568208568",
+      "text": "Removing `force: true` throws this error: \r\n\r\n![Screenshot from 2023-05-30 16-13-15](https://github.com/coronasafe/care_fe/assets/86483059/747efe52-ce39-4ce9-9e77-6e4c2a4a1e8d)\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4233",
+      "time": 1685442643.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4233#issuecomment-1568192544",
+      "text": "> @ShivamJhaa\r\n> \r\n> ![image](https://user-images.githubusercontent.com/57055998/241570190-ec4fcef2-ff61-4606-95db-1ed4504e2f61.png)\r\n> \r\n> * keep the phone number constant as \"9999999999\" for now.\r\n> * Once you enter the phone number, a pop-up will appear, similar to the screenshot above. You need to click on \"I confirm that the suspect/patient I want to create is not on the list\" and continue filling in the remaining fields.\r\n> * try solving this, because you are using \" force: true \" in the code to input data to the phone number field, which disables all pop-ups and related validations. so solve without using force:true\r\n> * For now, only include the mandatory fields. Once you figure it out, you can input data into the optional fields.\r\n\r\nThis solution will work for the phone number field but we will still have an invalid emergency phone number and this will not allow us to create a new patient."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4233",
@@ -51,6 +79,13 @@
       "text": "@nihal467  All the unclaimed tasks depend on the open PRs like adding, and editing consultation can only be done after creating patients, and configuration of the assets page can be done after creating an asset. So can I take those tasks which are already assigned (creating an asset) as the PR seems stale now? "
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5549",
+      "title": "Added cypress test for new patient creation",
+      "stale_for": 0,
+      "labels": []
+    }
+  ],
   "authored_issue_and_pr": []
 }

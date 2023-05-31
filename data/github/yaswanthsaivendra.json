@@ -1,6 +1,20 @@
 {
-  "last_updated": 1685394649.0,
+  "last_updated": 1685450064.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1328",
+      "time": 1685450064.0,
+      "link": "https://github.com/coronasafe/care/pull/1328#issuecomment-1568356094",
+      "text": "@rithviknishad , @vigneshhari \r\nPlease review!!"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1328",
+      "time": 1685449892.0,
+      "link": "https://github.com/coronasafe/care/pull/1328",
+      "text": "Delete notifications older than 90 days"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1326",
@@ -116,9 +130,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1328",
+      "title": "Delete notifications older than 90 days",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5550",
       "title": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -127,7 +149,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1318",
       "title": "Added a way to handle filtering admitted but no bed assigned ",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]

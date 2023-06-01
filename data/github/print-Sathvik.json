@@ -1,6 +1,37 @@
 {
-  "last_updated": 1685366772.0,
+  "last_updated": 1685548951.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5559",
+      "time": 1685548951.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5559#issuecomment-1570511292",
+      "text": "Yes @rithviknishad , I changed the branch now. Also fixed the same issue with Location Filter and created a new PR(5574) as this cannot be reopened."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5574",
+      "time": 1685548885.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5574",
+      "text": "Displayed current facility, location in asset filter in Assets page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5563",
+      "time": 1685518004.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5563",
+      "text": "Replaced MaterialUI and legacy fields, used Form component in deathReport"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5563",
+      "time": 1685518004.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5563",
+      "text": "Replaced MaterialUI and legacy fields, used Form component in deathReport",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5542",
@@ -46,19 +77,11 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5563",
-      "title": "Replaced MaterialUI and legacy fields, used Form component in deathReport",
+      "link": "https://github.com/coronasafe/care_fe/pull/5574",
+      "title": "Displayed current facility, location in asset filter in Assets page",
       "stale_for": 0,
       "labels": [
         "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5559",
-      "title": "Display selected facility name in the filter",
-      "stale_for": 0,
-      "labels": [
-        "do not merge"
       ]
     }
   ],

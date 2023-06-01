@@ -1,6 +1,20 @@
 {
-  "last_updated": 1685450064.0,
+  "last_updated": 1685529008.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1321",
+      "time": 1685529008.0,
+      "link": "https://github.com/coronasafe/care/issues/1321#issuecomment-1569932968",
+      "text": "Hey @rithviknishad ,\r\nMay ik what kind of query profiling you wanted to achieve. Ig , we already sql query calculation with the help of `django_debug_toolbar` rgt. Isn't that sufficient??"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1326",
+      "time": 1685528864.0,
+      "link": "https://github.com/coronasafe/care/issues/1326#issuecomment-1569929154",
+      "text": "> i want to resolve this issue, can i start ?\r\n\r\nNo this one is still need to be discussed. Meanwhile , you can work on other issues."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1328",
@@ -140,7 +154,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5550",
       "title": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -149,7 +163,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1318",
       "title": "Added a way to handle filtering admitted but no bed assigned ",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -157,7 +171,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1310",
       "title": "optimized the query performed to fetch skills in UserAssignedSerializer",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]

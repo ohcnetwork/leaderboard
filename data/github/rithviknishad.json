@@ -1,6 +1,135 @@
 {
-  "last_updated": 1685467849.0,
+  "last_updated": 1685557395.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4994",
+      "time": 1685557395.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4994#issuecomment-1570706315",
+      "text": "All Legacy components should also be replaced with it's equivalent FormField components"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4994",
+      "time": 1685557373.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4994#issuecomment-1570705873",
+      "text": "You won't have exact word to word component replacement. \r\n\r\nCheckout how `RadioFormField` is used in other places.\r\n\r\nYou don't need RadioGroup when using that. Same for box and card content, just use divs."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5560",
+      "time": 1685556288.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5560#issuecomment-1570680649",
+      "text": "@satyam0601 I'd suggest you to revert the changes in the generic component and instead use classNames to adjust only for the bed select dialog"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4994",
+      "time": 1685555910.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4994#issuecomment-1570670717",
+      "text": "read the EPIC #5006 \r\nall components are already built."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4994",
+      "time": 1685553108.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4994#issuecomment-1570607524",
+      "text": "u r expected to do all that are applicable."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1243",
+      "time": 1685539985.0,
+      "link": "https://github.com/coronasafe/care/issues/1243#issuecomment-1570246773",
+      "text": "As you can see, it's already having a PR that fixes this issue."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685539903.0,
+      "title": "coronasafe/care_fe#5572",
+      "link": "https://github.com/coronasafe/care_fe/pull/5572#pullrequestreview-1453229891",
+      "text": "Replace Material UI components in src/Components/Shifting/ListFilter.tsx. Fixes  #4996"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5572",
+      "time": 1685535282.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5572#issuecomment-1570107112",
+      "text": "Open the filters in the shifting page. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1321",
+      "time": 1685529085.0,
+      "link": "https://github.com/coronasafe/care/issues/1321#issuecomment-1569934650",
+      "text": "@vigneshhari "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685527775.0,
+      "title": "coronasafe/care_fe#5572",
+      "link": "https://github.com/coronasafe/care_fe/pull/5572#pullrequestreview-1452765569",
+      "text": "Replace Material UI components in src/Components/Shifting/ListFilter.tsx. Fixes  #4996"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1321",
+      "time": 1685522271.0,
+      "link": "https://github.com/coronasafe/care/issues/1321#issuecomment-1569748437",
+      "text": "All the queries to the DB have to be profiled to better understand how much time it takes."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5569",
+      "time": 1685520776.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5569",
+      "text": "fix phone number autofocus"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5569",
+      "time": 1685520776.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5569",
+      "text": "fix phone number autofocus",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5545",
+      "time": 1685518061.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5545",
+      "text": "Replace Material UI components in ./src/components/Facility/TriageForm.tsx",
+      "collaborated_with": [
+        "somesh202",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685515193.0,
+      "title": "coronasafe/care_fe#5529",
+      "link": "https://github.com/coronasafe/care_fe/pull/5529#pullrequestreview-1452311876",
+      "text": "Replaced Coronasafe Network branding to OHC network branding on login page of CARE"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_deploy_configs#16",
+      "time": 1685506900.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/16",
+      "text": "Removed references of static_coronasafe_logo",
+      "collaborated_with": [
+        "siddnikh"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685498080.0,
+      "title": "coronasafe/care_deploy_configs#16",
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/16#pullrequestreview-1452083067",
+      "text": "Removed references of static_coronasafe_logo"
+    },
     {
       "type": "pr_reviewed",
       "time": 1685467849.0,
@@ -16017,19 +16146,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5569",
-      "title": "fix phone number autofocus",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1325",
       "title": "Fixes issues with and related to `PatientAssetBed` view",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -16037,7 +16156,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5503",
       "title": "SmartICU: Ventilator Integration (PoC)",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -16046,7 +16165,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5466",
       "title": "Vitals Monitor 2.0 (Canvas Render) & Central Nursing Station 2.0",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "work-in-progress",
         "Major Code Change",
@@ -16056,7 +16175,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "need Review",
         "cypress failed"

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1685367144.0,
+  "last_updated": 1685645333.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#159",
+      "time": 1685645333.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/159",
+      "text": "Add support for Azure OpenAI endpoint"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma#158",
+      "time": 1685630969.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/158",
+      "text": "Add support for Azure OpenAI endpoint"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1326",
+      "time": 1685629773.0,
+      "link": "https://github.com/coronasafe/care/issues/1326#issuecomment-1572165672",
+      "text": "@rithviknishad Regarding the relevancy of this issue, I noticed that we do have a pending TODO request about this behavior.\r\n\r\nhttps://github.com/coronasafe/care/blob/ed9361b61c8a676aa343d36fb8fee71f5d204379/care/facility/models/file_upload.py#L23\r\n\r\nSo, maybe we can have a periodic task to check `upload_completed` and delete incomplete FileUpload objects with a 1 day grace period. Let's still get a second opinion."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/ayushma_fe#26",
@@ -8705,9 +8726,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma/pull/159",
+      "title": "Add support for Azure OpenAI endpoint",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 5,
+      "stale_for": 8,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -8716,7 +8743,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 32,
+      "stale_for": 35,
       "labels": [
         "waiting-for-review"
       ]
@@ -8724,7 +8751,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 55,
+      "stale_for": 58,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -8733,21 +8760,22 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 68,
+      "stale_for": 71,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 41,
+      "stale_for": 2,
       "labels": [
-        "waiting for back end"
+        "waiting for back end",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 10,
+      "stale_for": 13,
       "labels": [
         "waiting-for-review"
       ]

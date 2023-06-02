@@ -1,6 +1,41 @@
 {
-  "last_updated": 1685430077.0,
+  "last_updated": 1685637335.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5580",
+      "time": 1685637335.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5580",
+      "text": "Fixed pagination bug in FileUpload Component"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5577",
+      "time": 1685594462.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5577",
+      "text": "Minor bug in UI of Facility Card"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5576",
+      "time": 1685588986.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5576#issuecomment-1571263126",
+      "text": "hey @Pranshu1902 https://github.com/coronasafe/care_fe/issues/5540 would solve the problem altogether as there is only a single file upload component on both the pages."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5575",
+      "time": 1685588934.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5575",
+      "text": "Make buttons full width in mobile view on samples page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5575",
+      "time": 1685588933.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5575#issuecomment-1571262642",
+      "text": "hey @Pranshu1902 #5540 would solve the problem altogether as there is only a single file upload component in both the pages"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5566",
@@ -5911,6 +5946,119 @@
       "text": "changed title to  Treatment Plan / Treatment Summary"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5580",
+      "title": "Fixed pagination bug in FileUpload Component",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5566",
+      "title": "Added functionality to export asset details in csv format",
+      "stale_for": 2,
+      "labels": [
+        "changes required",
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/qr-generator/pull/6",
+      "title": "Added a visible loader between the genration and download time",
+      "stale_for": 185,
+      "labels": []
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5351",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5378"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4808",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4817"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4657",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4664"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4656",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4665"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4655",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4698"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4654",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4853"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4414",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4426"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4412",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4413"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4410",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4411"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4212",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4368"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4188",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4195"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4181",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4187"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4180",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4281"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4178",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4408"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4146",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4149"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4140",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4144"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4100",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4119"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4099",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5043"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3967",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4043"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3966",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4035"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3902",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4432"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3896",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3901"
+    }
+  ]
 }

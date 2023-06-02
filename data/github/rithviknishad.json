@@ -1,6 +1,55 @@
 {
-  "last_updated": 1685557395.0,
+  "last_updated": 1685633969.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1685633969.0,
+      "title": "coronasafe/care#1325",
+      "link": "https://github.com/coronasafe/care/pull/1325#pullrequestreview-1455782414",
+      "text": "Fixes issues with and related to `PatientAssetBed` view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685633940.0,
+      "title": "coronasafe/care#1325",
+      "link": "https://github.com/coronasafe/care/pull/1325#pullrequestreview-1455781528",
+      "text": "Fixes issues with and related to `PatientAssetBed` view"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1326",
+      "time": 1685630423.0,
+      "link": "https://github.com/coronasafe/care/issues/1326#issuecomment-1572183682",
+      "text": "Just adding the stats here of our staging file uploads.\r\n\r\n![image](https://github.com/coronasafe/care/assets/25143503/b18dcfd2-8caa-4ab5-a03d-7fcfa7279d8f)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5579",
+      "time": 1685620122.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5579",
+      "text": "CareUI: Adds PhoneNumberFormField"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685615994.0,
+      "title": "coronasafe/care_fe#5578",
+      "link": "https://github.com/coronasafe/care_fe/pull/5578#pullrequestreview-1455151327",
+      "text": "fixed space between space between the KASP and View CNS button in facility card"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4370",
+      "time": 1685608743.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4370#issuecomment-1571608243",
+      "text": "@meeddhhaa some buttons are allowed only for certain user types/role. So we have `RoleButton` component that serves the purpose.\r\n\r\nHowever, its a legacy component since it was built in early days to work along with material ui and all. Nowadays we have `ButtonV2` tailwind based component which is widely used. This custom component also supports disabling based on user type, which can be specified with the `authorizedFor` prop.\r\n\r\nThis way we won't need to use seperate components to restrict access, just use the same ButtonV2 component and add authorizedFor=___.\r\n\r\nThis helps in keeping designs consistent and maintaining the codebase in long run."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5560",
+      "time": 1685607689.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5560#issuecomment-1571584945",
+      "text": "See how its implemented in popups like discharge popup"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4994",
@@ -16146,9 +16195,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5579",
+      "title": "CareUI: Adds PhoneNumberFormField",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1325",
       "title": "Fixes issues with and related to `PatientAssetBed` view",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -16156,7 +16214,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5503",
       "title": "SmartICU: Ventilator Integration (PoC)",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -16165,7 +16223,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5466",
       "title": "Vitals Monitor 2.0 (Canvas Render) & Central Nursing Station 2.0",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "work-in-progress",
         "Major Code Change",
@@ -16175,7 +16233,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "need Review",
         "cypress failed"

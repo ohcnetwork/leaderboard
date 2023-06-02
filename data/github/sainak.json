@@ -1,6 +1,76 @@
 {
-  "last_updated": 1685161922.0,
+  "last_updated": 1685637398.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1685637398.0,
+      "title": "coronasafe/care#1325",
+      "link": "https://github.com/coronasafe/care/pull/1325#pullrequestreview-1455893736",
+      "text": "Fixes issues with and related to `PatientAssetBed` view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685637380.0,
+      "title": "coronasafe/care#1325",
+      "link": "https://github.com/coronasafe/care/pull/1325#pullrequestreview-1455893196",
+      "text": "Fixes issues with and related to `PatientAssetBed` view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685636937.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1455877110",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685634660.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1455804748",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685634661.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1455804748",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1325",
+      "time": 1685634200.0,
+      "link": "https://github.com/coronasafe/care/pull/1325#issuecomment-1572297032",
+      "text": "In a through model the `on_delete` should be set to `models.CASCADE`, was there any specific reason to set it to `models.PROTECT` ? @vigneshhari"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685633865.0,
+      "title": "coronasafe/care#1325",
+      "link": "https://github.com/coronasafe/care/pull/1325#pullrequestreview-1455775330",
+      "text": "Fixes issues with and related to `PatientAssetBed` view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685633865.0,
+      "title": "coronasafe/care#1325",
+      "link": "https://github.com/coronasafe/care/pull/1325#pullrequestreview-1455775330",
+      "text": "Fixes issues with and related to `PatientAssetBed` view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685620743.0,
+      "title": "coronasafe/care#1328",
+      "link": "https://github.com/coronasafe/care/pull/1328#pullrequestreview-1455293370",
+      "text": "Delete notifications older than 90 days"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1310",
+      "time": 1685620619.0,
+      "link": "https://github.com/coronasafe/care/pull/1310#issuecomment-1571914438",
+      "text": "@yaswanthsaivendra there are no changes in this pr\r\nyou should create a new branch for every pull request"
+    },
     {
       "type": "pr_reviewed",
       "time": 1685161922.0,
@@ -2203,6 +2273,71 @@
       "text": "fix: sidebar on devices with small height"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1309",
+      "title": "remove HBA1C field from consultation model",
+      "stale_for": 7,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1308",
+      "title": "use consistent phone number validation",
+      "stale_for": 7,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5498",
+      "title": "Rename all instances of orgin_facility to origin_facility",
+      "stale_for": 11,
+      "labels": [
+        "waiting for back end",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1303",
+      "title": "Rename all instances of orgin_facility to origin_facility",
+      "stale_for": 11,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
+      "title": "fix requests not sending content-type header and minor refactor",
+      "stale_for": 309,
+      "labels": []
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/844",
+      "pr_link": "https://github.com/coronasafe/care/pull/848"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/825",
+      "pr_link": "https://github.com/coronasafe/care/pull/826"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/754",
+      "pr_link": "https://github.com/coronasafe/care/pull/768"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/744",
+      "pr_link": "https://github.com/coronasafe/care/pull/746"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2240",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2292"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/719",
+      "pr_link": "https://github.com/coronasafe/care/pull/720"
+    }
+  ]
 }

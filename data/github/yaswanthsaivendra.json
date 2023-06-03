@@ -1,6 +1,41 @@
 {
-  "last_updated": 1685640109.0,
+  "last_updated": 1685746801.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1344",
+      "time": 1685746801.0,
+      "link": "https://github.com/coronasafe/care/pull/1344#issuecomment-1574414851",
+      "text": "@rithviknishad  Review please!"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1344",
+      "time": 1685746784.0,
+      "link": "https://github.com/coronasafe/care/pull/1344",
+      "text": "implementing manual logic of on_delete option in M2M models "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685741156.0,
+      "title": "coronasafe/care#1310",
+      "link": "https://github.com/coronasafe/care/pull/1310#pullrequestreview-1458493742",
+      "text": "optimized the query performed to fetch skills in UserAssignedSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1329",
+      "time": 1685740206.0,
+      "link": "https://github.com/coronasafe/care/pull/1329#issuecomment-1574319921",
+      "text": "Updated the code - to make bulk delete from s3, thereby reducing the number of api requests."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1329",
+      "time": 1685690337.0,
+      "link": "https://github.com/coronasafe/care/pull/1329#issuecomment-1573272503",
+      "text": "@rithviknishad @vigneshhari review pls"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1329",
@@ -172,6 +207,12 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1344",
+      "title": "implementing manual logic of on_delete option in M2M models ",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1329",
       "title": "Delete incomplete file uploads",
       "stale_for": 0,
@@ -180,7 +221,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1328",
       "title": "Delete notifications older than 90 days",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -188,7 +229,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5550",
       "title": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "waiting for back end"

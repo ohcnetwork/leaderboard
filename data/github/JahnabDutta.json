@@ -1,6 +1,40 @@
 {
-  "last_updated": 1685538263.0,
+  "last_updated": 1685724555.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5588",
+      "time": 1685724555.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5588",
+      "text": "Production Release; June Week 1",
+      "collaborated_with": [
+        "Bhavik-ag",
+        "rithviknishad",
+        "sachdevavaibhav",
+        "divyanshkhetan",
+        "nikhilagastya",
+        "khavinshankar",
+        "print-Sathvik",
+        "EshaBachuwar",
+        "mathew-alex",
+        "Amanshenoy008",
+        "MayaSatishRao"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5572",
+      "time": 1685711723.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5572#issuecomment-1573718679",
+      "text": "hey, @rithviknishad @khavinshankar I think I have fixed the errors on my end. However cypress tests are failing because they have been written for the older components and hence cannot locate the new components. Should I commit my code?\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5572",
+      "time": 1685704627.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5572#issuecomment-1573569556",
+      "text": "I tried to modify some functions to match the code in development but it appears that there is some kind of problem with the original code too because of which the filters are not working properly. There are some things which are not clear to me? Some fields have the value \"--\". Is this a type of valid option or is it just supposed to mean \"Show all\". The way this has been configured is not clear to me."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5572",
@@ -103,15 +137,6 @@
       "text": "hey @rithviknishad @nihal467,\r\n\r\nI am excited about contributing to this project. I have prior experience with react and django. I have set up the frontend repository and am currently trying to understand the codebase while reading the documentation. Is there anything else you'd recommend to get started with this project?\r\n\r\nWith warm regards,\r\nJahnab Dutta"
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5572",
-      "title": "Replace Material UI components in src/Components/Shifting/ListFilter.tsx. Fixes  #4996",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    }
-  ],
+  "open_prs": [],
   "authored_issue_and_pr": []
 }

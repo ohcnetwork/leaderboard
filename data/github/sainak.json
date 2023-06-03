@@ -1,6 +1,90 @@
 {
-  "last_updated": 1685637398.0,
+  "last_updated": 1685723107.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1343",
+      "time": 1685723107.0,
+      "link": "https://github.com/coronasafe/care/pull/1343",
+      "text": "merge and update staging deployment job"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1339",
+      "time": 1685705995.0,
+      "link": "https://github.com/coronasafe/care/issues/1339",
+      "text": "Fix N+1 queries in `/api/v1/consultationbed/`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1338",
+      "time": 1685705992.0,
+      "link": "https://github.com/coronasafe/care/issues/1338",
+      "text": "Fix N+1 queries in `/api/v1/bed/`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1337",
+      "time": 1685705989.0,
+      "link": "https://github.com/coronasafe/care/issues/1337",
+      "text": "Fix N+1 queries in `/api/v1/patient/`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1336",
+      "time": 1685705985.0,
+      "link": "https://github.com/coronasafe/care/issues/1336",
+      "text": "Fix N+1 queries in `/api/v1/resource/`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1335",
+      "time": 1685705981.0,
+      "link": "https://github.com/coronasafe/care/issues/1335",
+      "text": "Fix N+1 queries in `/api/v1/getallfacilities/`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1334",
+      "time": 1685705978.0,
+      "link": "https://github.com/coronasafe/care/issues/1334",
+      "text": "Fix N+1 queries in `/api/v1/users/{username}/get_facilities/`"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1333",
+      "time": 1685705951.0,
+      "link": "https://github.com/coronasafe/care/issues/1333",
+      "text": "Replace N+1 Queries"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685703897.0,
+      "title": "coronasafe/care#1329",
+      "link": "https://github.com/coronasafe/care/pull/1329#pullrequestreview-1457133762",
+      "text": "Delete incomplete file uploads"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685703653.0,
+      "title": "coronasafe/care#1310",
+      "link": "https://github.com/coronasafe/care/pull/1310#pullrequestreview-1457111289",
+      "text": "optimized the query performed to fetch skills in UserAssignedSerializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685703653.0,
+      "title": "coronasafe/care#1310",
+      "link": "https://github.com/coronasafe/care/pull/1310#pullrequestreview-1457111289",
+      "text": "optimized the query performed to fetch skills in UserAssignedSerializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1685701702.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1457080785",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
     {
       "type": "pr_reviewed",
       "time": 1685637398.0,
@@ -2273,71 +2357,6 @@
       "text": "fix: sidebar on devices with small height"
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care/pull/1309",
-      "title": "remove HBA1C field from consultation model",
-      "stale_for": 7,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1308",
-      "title": "use consistent phone number validation",
-      "stale_for": 7,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5498",
-      "title": "Rename all instances of orgin_facility to origin_facility",
-      "stale_for": 11,
-      "labels": [
-        "waiting for back end",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1303",
-      "title": "Rename all instances of orgin_facility to origin_facility",
-      "stale_for": 11,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
-      "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 309,
-      "labels": []
-    }
-  ],
-  "authored_issue_and_pr": [
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/844",
-      "pr_link": "https://github.com/coronasafe/care/pull/848"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/825",
-      "pr_link": "https://github.com/coronasafe/care/pull/826"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/754",
-      "pr_link": "https://github.com/coronasafe/care/pull/768"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/744",
-      "pr_link": "https://github.com/coronasafe/care/pull/746"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2240",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2292"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/719",
-      "pr_link": "https://github.com/coronasafe/care/pull/720"
-    }
-  ]
+  "open_prs": [],
+  "authored_issue_and_pr": []
 }

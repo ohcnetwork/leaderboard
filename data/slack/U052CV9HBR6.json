@@ -271,5 +271,77 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-06-02 00:00:00": [
+        {
+            "client_msg_id": "56e4494d-9d55-43b8-84aa-5f84db79e375",
+            "type": "message",
+            "text": "EOD 30/05/2023\n\u2022 Fixed problem similar to issue 5470 with location field\n\u2022 Worked on a MaterialUI issue\nEOD 31/05/2023\nLocation wasn't getting updated internally on charging the facility even though it is reflected correctly in the field because of previous day's work. So fixed it and created pr\n\nEOD 01/06/2023\nCould not spend much time because of exam.\nWas looking into issue 4750 - to replace the notes field with a markdown editor. Was looking how markdown works.\n\nI was thinking of posting today after making up for yesterday's low time as I did almost nothing yesterday.",
+            "user": "U052CV9HBR6",
+            "ts": "1685693770.498889",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "+9WDq",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/05/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed problem similar to issue 5470 with location field"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on a MaterialUI issue"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 31/05/2023\nLocation wasn't getting updated internally on charging the facility even though it is reflected correctly in the field because of previous day's work. So fixed it and created pr\n\nEOD 01/06/2023\nCould not spend much time because of exam.\nWas looking into issue 4750 - to replace the notes field with a markdown editor. Was looking how markdown works.\n\nI was thinking of posting today after making up for yesterday's low time as I did almost nothing yesterday."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

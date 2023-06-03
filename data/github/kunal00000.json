@@ -1,6 +1,20 @@
 {
-  "last_updated": 1685657931.0,
+  "last_updated": 1685732514.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5463",
+      "time": 1685732514.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5463#issuecomment-1574182860",
+      "text": "Hey Rithvik, added the component for temperature preference and stored temperature preference in local storage as discussed above. Let me know if this works."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5589",
+      "time": 1685732320.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5589",
+      "text": "feat: Temperature preference stored in local storage"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5582",
@@ -25,10 +39,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5589",
+      "title": "feat: Temperature preference stored in local storage",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5582",
       "title": "replaced deprecated Material UI function",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing"
+      ]
     }
   ],
   "authored_issue_and_pr": []

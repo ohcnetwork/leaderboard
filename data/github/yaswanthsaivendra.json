@@ -1,6 +1,20 @@
 {
-  "last_updated": 1685746801.0,
+  "last_updated": 1685788233.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1344",
+      "time": 1685788233.0,
+      "link": "https://github.com/coronasafe/care/pull/1344#issuecomment-1574846047",
+      "text": "> @yaswanthsaivendra also could you prefix the issue numbers with \"Fixes\" or other linking keywords?\r\n\r\nMy bad, I did all changes in single commit \ud83d\ude2e\u200d\ud83d\udca8. Referenced the changes in each task."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1344",
+      "time": 1685788097.0,
+      "link": "https://github.com/coronasafe/care/pull/1344#issuecomment-1574845725",
+      "text": "> You are performing `<QuerySet>.delete()`. However, we've overridden the `<Instance>.delete()` to soft delete only. Would `<QuerySet>.delete()` call the overridden `delete` method and soft delete or does it hard delete?\r\n\r\n\ud83e\udd26\ud83d\ude05 hard delete, made changes to soft delete"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1344",
@@ -221,7 +235,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1328",
       "title": "Delete notifications older than 90 days",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -229,7 +243,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5550",
       "title": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "waiting for back end"

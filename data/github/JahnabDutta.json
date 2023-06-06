@@ -1,6 +1,13 @@
 {
-  "last_updated": 1685724555.0,
+  "last_updated": 1685959749.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5572",
+      "time": 1685959749.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5572#issuecomment-1576510060",
+      "text": "Hey @rithviknishad, I changed the DateRangePicker to DateRangeFormField and tried adding a meaningful cypress test. However, I don't understand how to change the 'Assigned to' part. Also could you review the latest [commit ](https://github.com/coronasafe/care_fe/pull/5572/commits/ffff958ec829415e77e1ddb297526756cf950bc3). I'm not sure why this popped up and if it changes any files."
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5588",
@@ -137,6 +144,15 @@
       "text": "hey @rithviknishad @nihal467,\r\n\r\nI am excited about contributing to this project. I have prior experience with react and django. I have set up the frontend repository and am currently trying to understand the codebase while reading the documentation. Is there anything else you'd recommend to get started with this project?\r\n\r\nWith warm regards,\r\nJahnab Dutta"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5572",
+      "title": "Replace Material UI components in src/Components/Shifting/ListFilter.tsx. Fixes  #4996",
+      "stale_for": 0,
+      "labels": [
+        "test failed"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1685956884.0,
+  "last_updated": 1686173092.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5620",
+      "time": 1686173092.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5620#issuecomment-1581532968",
+      "text": "> @SahilSingh177 is attempting to deploy a commit to the **Coronasafe** Team on [Vercel](https://vercel.com).\r\n> \r\n> A member of the Team first needs to [authorize it](https://vercel.com/git/authorize?team=Coronasafe&type=github&job=%7B%22headInfo%22%3A%7B%22sha%22%3A%22164fadbde2c0a0bbad6d144f6c101b8b37f40967%22%7D%2C%22id%22%3A%22QmWfLJxsgZfTCbSzDUM1o96qXCgUXx5v3wABC7ULTyTUm3%22%2C%22org%22%3A%22coronasafe%22%2C%22prId%22%3A5620%2C%22repo%22%3A%22care_fe%22%7D).\r\n\r\nI encountered the same issue with my previous pull request and it did not occur earlier. What could be causing this?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5620",
+      "time": 1686172407.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5620",
+      "text": "Added Cypress test for adding doctor's note."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4235",
+      "time": 1686131610.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4235#issuecomment-1580338527",
+      "text": "@nihal467, Can I work on this issue as #5602 is currently under review?"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5602",
@@ -18,10 +39,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5620",
+      "title": "Added Cypress test for adding doctor's note.",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5602",
       "title": "Cypress Tests: Added test for updating an existing patient.",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "changes required"
+      ]
     }
   ],
   "authored_issue_and_pr": []

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1685389123.0,
+  "last_updated": 1686148391.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1348",
+      "time": 1686148391.0,
+      "link": "https://github.com/coronasafe/care/issues/1348#issuecomment-1580953366",
+      "text": "It needs to be wrapped in try catch to properly handle the error... But I would it would not be as easy to just wrap the code with try catch... the validation would go in another file, right?"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5492",
@@ -9,6 +16,13 @@
       "text": "@rithviknishad Hi! Sir, I have successfully set up the working environment. To better analyse the joins I was looking forward to use the django_debug_toolbar, it seems to be already present in the settings.\r\n\r\nCould you guide me as how I would be able to get it running?"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1358",
+      "title": "Fix: Add get_object_or_404 to resolve 500 DoesNotExist Error and added tests",
+      "stale_for": 0,
+      "labels": []
+    }
+  ],
   "authored_issue_and_pr": []
 }

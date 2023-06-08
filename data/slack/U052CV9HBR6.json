@@ -343,5 +343,131 @@
                 }
             ]
         }
+    ],
+    "2023-06-08 00:00:00": [
+        {
+            "client_msg_id": "8f1f9777-abd5-4f7b-ab81-a77cde181e12",
+            "type": "message",
+            "text": "EOD 03/06/2023 and 05/06/2023\n\u2022 Created a markdown text editor component\nEOD 06/06/2023\n\u2022 Tried different ways to remove markdown part and display only preview part. The only method that worked had strange cursor behaviour and symbols while typing.\n\u2022 So changed it markup editor with bold, italics, list view and text highlight features.\nEOD 07/06/2023\n\u2022 Worked on replacing the deprecated execCommand JS method in this editor component with my own logic as no alternative was available.\n\u2022 Explored different methods for modifying dom to implement it.\n\u2022 Completed bold text functionality partially. Will apply the same logic to remaining functionalities once this is completed.",
+            "user": "U052CV9HBR6",
+            "ts": "1686190197.489689",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Bba",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/06/2023 and 05/06/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Created a markdown text editor component"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 06/06/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tried different ways to remove markdown part and display only preview part. The only method that worked had strange cursor behaviour and symbols while typing."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "So changed it markup editor with bold, italics, list view and text highlight features."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 07/06/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on replacing the deprecated execCommand JS method in this editor component with my own logic as no alternative was available."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Explored different methods for modifying dom to implement it."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Completed bold text functionality partially. Will apply the same logic to remaining functionalities once this is completed."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

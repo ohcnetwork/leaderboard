@@ -11665,5 +11665,101 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-06-06 00:00:00": [
+        {
+            "client_msg_id": "2a913e78-5c5f-4f28-a107-f1798cdbd113",
+            "type": "message",
+            "text": "EOD 06/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\u2022 Not a productive day. Just followed up on the mappings for medibase.\nWhat's next?\n\n\u2022 Medibase: Move to postgres instead of in-memory db\n\u2022 Medibase: Create a google sheet to get 1to1 mapping and update medibase to show IDs\n\u2022 Work on zoom recordings to drive automation script",
+            "user": "U02TDGQQPMJ",
+            "ts": "1686065042.340329",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "nv7p",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 06/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Not a productive day. Just followed up on the mappings for medibase."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Medibase: Move to postgres instead of in-memory db"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Medibase: Create a google sheet to get 1to1 mapping and update medibase to show IDs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on zoom recordings to drive automation script"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

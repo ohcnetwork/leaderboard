@@ -1,6 +1,20 @@
 {
-  "last_updated": 1686151109.0,
+  "last_updated": 1686347442.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1328",
+      "time": 1686347442.0,
+      "link": "https://github.com/coronasafe/care/pull/1328#issuecomment-1585163250",
+      "text": "> You could have gotten away without mocking in these tests by using the update method of the django queryset ( they do not invoke the save methods and the created timestamps can be added manually \"to my knowledge\" ), even in this case, we are not mocking the database interactions, we are just mocking the time method. In almost all cases we would not want to mock the database, the database is what we are usually testing against. mocking is useful when there is an external service involved, like an SMS API or an integration with an API, in our unit tests we mock all the responses they can give ( success, failure, exception ) and test if the function we wrote handles every case correctly.\r\n\r\nYaa ik that i haven't mocked any database interactions in the pushed code . I just asked it coz I first wrote the test by mocking database interactions, later i realised that isn't a gud idea. So i changed it. Thanks for sharing ur opinion. :smile: "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1329",
+      "time": 1686346836.0,
+      "link": "https://github.com/coronasafe/care/pull/1329#issuecomment-1585153772",
+      "text": "> @mathew-alex are S3 objects versioned in any deployment ?\r\n\r\nHey I have gone through the code base quite a few times, wherever s3 configs or s3 methods made use of. No where Versioning details are mentioned. if versioning exists, it has to dealt while creation and retrieving of objects. So, ig none of our existing deployments are using versioned s3 buckets."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1344",
@@ -244,7 +258,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1344",
       "title": "implementing manual logic of on_delete option in M2M models ",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
@@ -254,17 +268,9 @@
       "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1328",
-      "title": "Delete notifications older than 90 days",
-      "stale_for": 6,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5550",
       "title": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
-      "stale_for": 6,
+      "stale_for": 8,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -273,7 +279,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1318",
       "title": "Added a way to handle filtering admitted but no bed assigned ",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]

@@ -1,6 +1,97 @@
 {
-  "last_updated": 1686166649.0,
+  "last_updated": 1686334273.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1686334273.0,
+      "title": "coronasafe/care_fe#5642",
+      "link": "https://github.com/coronasafe/care_fe/pull/5642#pullrequestreview-1472838564",
+      "text": "Updated the FontAwesomeIcons with CareIcons, replaced PageTitle with Page component and migrated tooltip."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686319357.0,
+      "title": "coronasafe/care_fe#5641",
+      "link": "https://github.com/coronasafe/care_fe/pull/5641#pullrequestreview-1472176325",
+      "text": "Handled the Rhythm card when no data is present"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5468",
+      "time": 1686315556.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5468#issuecomment-1584537993",
+      "text": "Yes! "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5640",
+      "time": 1686315464.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5640#issuecomment-1584535816",
+      "text": "Also, update the PRs title to be something meaningful like what your PR does. And it's nice to have screenshots too!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686315393.0,
+      "title": "coronasafe/care_fe#5640",
+      "link": "https://github.com/coronasafe/care_fe/pull/5640#pullrequestreview-1471968678",
+      "text": "Feature branch 1"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686315393.0,
+      "title": "coronasafe/care_fe#5640",
+      "link": "https://github.com/coronasafe/care_fe/pull/5640#pullrequestreview-1471968678",
+      "text": "Feature branch 1"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5633",
+      "time": 1686308801.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5633#issuecomment-1584399159",
+      "text": "@kunal00000 are you working on this or free for others to take it up?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5623",
+      "time": 1686308614.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5623#issuecomment-1584395255",
+      "text": "Other than that everything LGTM, have a look at how `SelectFormField` is used in other places."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686308587.0,
+      "title": "coronasafe/care_fe#5623",
+      "link": "https://github.com/coronasafe/care_fe/pull/5623#pullrequestreview-1471732489",
+      "text": "Replace material component in Add Inventory form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686289593.0,
+      "title": "coronasafe/care_fe#5623",
+      "link": "https://github.com/coronasafe/care_fe/pull/5623#pullrequestreview-1471265752",
+      "text": "Replace material component in Add Inventory form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686289592.0,
+      "title": "coronasafe/care_fe#5623",
+      "link": "https://github.com/coronasafe/care_fe/pull/5623#pullrequestreview-1471265752",
+      "text": "Replace material component in Add Inventory form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686289567.0,
+      "title": "coronasafe/care_fe#5623",
+      "link": "https://github.com/coronasafe/care_fe/pull/5623#pullrequestreview-1471264155",
+      "text": "Replace material component in Add Inventory form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686289567.0,
+      "title": "coronasafe/care_fe#5623",
+      "link": "https://github.com/coronasafe/care_fe/pull/5623#pullrequestreview-1471264155",
+      "text": "Replace material component in Add Inventory form"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5619",
@@ -16715,12 +16806,65 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5619",
-      "title": "Tailwinds `DischargeModal.tsx`",
+      "link": "https://github.com/coronasafe/care_fe/pull/5631",
+      "title": "Tailwinds `SampleDetails.tsx`",
       "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5630",
+      "title": "Tailwinds `SampleFilters.tsx`",
+      "stale_for": 1,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5629",
+      "title": "Tailwinds `UserAdd.tsx`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5628",
+      "title": "Tailwinds `UnlinkSkillDialog.tsx`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5627",
+      "title": "Use `ReactDOM.createRoot` instead of `ReactDOM.render`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5626",
+      "title": "CareUI: Adds `UserAutocompleteFormField` and used it in \"Assigned To\" filter field of Shifting",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5619",
+      "title": "Tailwinds `DischargeModal.tsx`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
       ]
     },
     {
@@ -16728,8 +16872,7 @@
       "title": "Tailwinds `DailyRoundListDetails.tsx`",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "needs testing"
       ]
     },
     {
@@ -16737,8 +16880,7 @@
       "title": "Tailwinds `NotificationsList.tsx`",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "needs testing"
       ]
     },
     {
@@ -16755,8 +16897,7 @@
       "title": "Tailwinds `CoverImageEditModal.tsx`",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "needs testing"
       ]
     },
     {
@@ -16771,7 +16912,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5613",
       "title": "Tailwinds `InventoryList.tsx`",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -16779,41 +16920,31 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5579",
       "title": "CareUI: Adds PhoneNumberFormField",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5503",
       "title": "SmartICU: Ventilator Integration (PoC)",
-      "stale_for": 7,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5466",
-      "title": "Vitals Monitor 2.0 (Canvas Render) & Central Nursing Station 2.0",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "Major Code Change",
+        "stale",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 28,
+      "stale_for": 30,
       "labels": [
         "need Review",
         "cypress failed"
@@ -16822,8 +16953,16 @@
   ],
   "authored_issue_and_pr": [
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5621",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5622"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5609",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5610"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1353",
+      "pr_link": "https://github.com/coronasafe/care/pull/1361"
     },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1340",
@@ -16880,14 +17019,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5319",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5320"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5318",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5305"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5303",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5305"
     }
   ]
 }

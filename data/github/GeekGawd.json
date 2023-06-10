@@ -1,6 +1,13 @@
 {
-  "last_updated": 1686148391.0,
+  "last_updated": 1686351870.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1339",
+      "time": 1686351870.0,
+      "link": "https://github.com/coronasafe/care/issues/1339#issuecomment-1585224689",
+      "text": "@sainak @nikhilagastya \r\n\r\nThis is what I have gotten from my reasearch...\r\n\r\nFirst query comes from \r\nConsultationBedSerializer -> BedSerializer (bed_object) -> AssetLocationSerializer (location_object)\r\n\r\nSecond query comes from\r\nConsultationBedSerializer -> ExternalIdSerializerField(consultation) -> queryset (attr) -> PatientConsultation.objects.all()\r\n\r\nThird query is always called because of the property in Bed Model in ./facility/models/bed.py\r\n@property\r\ndef is_occupied(self) -> bool:\r\n    return ConsultationBed.objects.filter(bed=self, end_date__isnull=True).exists()\r\n    \r\n   I evaluated it by making a custom middleware and wrapping the request/response in that\r\n   \r\n   ```\r\n   class SQLLoggingMiddleware:\r\n    def __init__(self, get_response):\r\n        self.get_response = get_response\r\n\r\n    def __call__(self, request):\r\n        response = self.get_response(request)\r\n        sql_queries = connection.queries\r\n        for query in sql_queries:\r\n            logger.info(f\"SQL Query: {query['sql']} - Time: {query['time']}\")\r\n        reset_queries()\r\n        return response\r\n   ```\r\n   \r\n   Did some backtracking and logging got where they came from. I don't really see any optimisation can be done here, as they are coming from Serializer fields. Should we try passing the queryset from the view to Serializer? "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1348",
@@ -16,13 +23,6 @@
       "text": "@rithviknishad Hi! Sir, I have successfully set up the working environment. To better analyse the joins I was looking forward to use the django_debug_toolbar, it seems to be already present in the settings.\r\n\r\nCould you guide me as how I would be able to get it running?"
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care/pull/1358",
-      "title": "Fix: Add get_object_or_404 to resolve 500 DoesNotExist Error and added tests",
-      "stale_for": 0,
-      "labels": []
-    }
-  ],
+  "open_prs": [],
   "authored_issue_and_pr": []
 }

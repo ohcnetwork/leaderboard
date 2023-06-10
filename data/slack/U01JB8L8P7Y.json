@@ -402,5 +402,132 @@
                 }
             ]
         }
+    ],
+    "2023-06-08 00:00:00": [
+        {
+            "client_msg_id": "fd4cff36-5543-43db-ad24-15c6b9f5ecc5",
+            "type": "message",
+            "text": "EOD 07/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go ?\n\u2022 Added ABDM authentication class for callback APIs\n\u2022 Had a meeting with WASA testing team to walk them through the callback APIs\nWhat's next !\n\u2022 Work on <https://github.com/coronasafe/ayushma/issues/75>\n",
+            "user": "U01JB8L8P7Y",
+            "ts": "1686197961.837579",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "alKG6",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go ?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added ABDM authentication class for callback APIs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had a meeting with WASA testing team to walk them through the callback APIs"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next !\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/ayushma/issues/75"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1682587397,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/ayushma/issues/75",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#75 Add Feedback",
+                    "text": "Users should be able to provide feedback to the chat.  \nThis should be handled by a `Feedback` model, which has\n\n\u2022 chat_message : fk to `ChatMessage`\n\u2022 user : fk to `User`\n\u2022 liked : boolean\n\u2022 message : (optional) text\n\nMake relevant views and serializers. Feedback should be listed with `/feedback` url, with possible filters -\n\n\u2022 project_id\n\u2022 chat_id\n\u2022 chat_message_id\n\u2022 liked\n\nOnly admins should be able to list and retrieve all feedback. Normal users can only list their own. Feedbacks cannot be deleted.",
+                    "title": "#75 Add Feedback",
+                    "title_link": "https://github.com/coronasafe/ayushma/issues/75",
+                    "footer": "<https://github.com/coronasafe/ayushma|coronasafe/ayushma>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/khavinshankar|@khavinshankar>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "STAGE 4",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

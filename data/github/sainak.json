@@ -1,6 +1,20 @@
 {
-  "last_updated": 1686155138.0,
+  "last_updated": 1686315943.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1363",
+      "time": 1686315943.0,
+      "link": "https://github.com/coronasafe/care/pull/1363",
+      "text": "add external_id field to users and use uuid for jwt"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1363",
+      "time": 1686300772.0,
+      "link": "https://github.com/coronasafe/care/pull/1363",
+      "text": "add external_id field to users and use uuid for jwt"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1357",
@@ -2445,25 +2459,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1357",
       "title": "remove unneeded dependencies",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1356",
-      "title": "set default auth to jwt for production deployments",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove HBA1C field from consultation model",
-      "stale_for": 13,
+      "stale_for": 15,
       "labels": [
         "waiting-for-review"
       ]
@@ -2479,9 +2487,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5498",
       "title": "Rename all instances of orgin_facility to origin_facility",
-      "stale_for": 17,
+      "stale_for": 0,
       "labels": [
         "waiting for back end",
+        "merge conflict",
         "cypress failed"
       ]
     },
@@ -2496,7 +2505,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 315,
+      "stale_for": 317,
       "labels": []
     }
   ],

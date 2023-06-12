@@ -1,6 +1,55 @@
 {
-  "last_updated": 1686315912.0,
+  "last_updated": 1686485395.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1686485395.0,
+      "title": "coronasafe/care#1309",
+      "link": "https://github.com/coronasafe/care/pull/1309#pullrequestreview-1473682956",
+      "text": "remove HBA1C field from consultation model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686485395.0,
+      "title": "coronasafe/care#1309",
+      "link": "https://github.com/coronasafe/care/pull/1309#pullrequestreview-1473682956",
+      "text": "remove HBA1C field from consultation model"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1309",
+      "time": 1686485322.0,
+      "link": "https://github.com/coronasafe/care/pull/1309#issuecomment-1586138328",
+      "text": "Can i get an ops confirmation for this? This would remove all historical data for this field. \r\ncc @gigincg @aparnacoronasafe "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1367",
+      "time": 1686484253.0,
+      "link": "https://github.com/coronasafe/care/issues/1367#issuecomment-1586133299",
+      "text": "Current unit tests work as expected and run successfully in GitHub actions, but they test little to nothing, you can treat this as an EPIC and create sub-tickets for each module and add tests for them. We need to test all edge cases and all authorization edges. Lemme know if you need to discuss this over a call. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1349",
+      "time": 1686480238.0,
+      "link": "https://github.com/coronasafe/care/pull/1349#issuecomment-1586111071",
+      "text": "could you move all the syncing bits to a common utility function, in the future we would want a task running once a day to calculate drift, correct it, and report it. Think of a common framework since we would have a lot of these caches"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1339",
+      "time": 1686480060.0,
+      "link": "https://github.com/coronasafe/care/issues/1339#issuecomment-1586110496",
+      "text": "@GeekGawd if you are working on the issue, lemme know, I'll assign it to you"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1339",
+      "time": 1686480025.0,
+      "link": "https://github.com/coronasafe/care/issues/1339#issuecomment-1586110355",
+      "text": "you could prefetch some data and then use signals to cache the property data to ensure that everything works with a single query"
+    },
     {
       "type": "pr_reviewed",
       "time": 1686315912.0,

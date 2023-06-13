@@ -1,6 +1,20 @@
 {
-  "last_updated": 1686138460.0,
+  "last_updated": 1686592139.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5632",
+      "time": 1686592139.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5632#issuecomment-1587799391",
+      "text": "> @ShivamJhaa before pushing the PR, make sure that you revert the changes you are making in vite.config.ts to run your own backend\r\n\r\nSure, will keep this in mind, thanks!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686592001.0,
+      "title": "coronasafe/care_fe#5632",
+      "link": "https://github.com/coronasafe/care_fe/pull/5632#pullrequestreview-1475489168",
+      "text": "Added cypress test for asset creation"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#4134",
@@ -124,6 +138,16 @@
       "text": "@nihal467  All the unclaimed tasks depend on the open PRs like adding, and editing consultation can only be done after creating patients, and configuration of the assets page can be done after creating an asset. So can I take those tasks which are already assigned (creating an asset) as the PR seems stale now? "
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5632",
+      "title": "Added cypress test for asset creation",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "changes required"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

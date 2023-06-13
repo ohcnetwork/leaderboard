@@ -2723,5 +2723,184 @@
                 }
             ]
         }
+    ],
+    "2023-06-12 00:00:00": [
+        {
+            "client_msg_id": "764f415e-c56a-4a4e-80e7-2ca4787f2198",
+            "type": "message",
+            "text": "EOD 12/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go?\n\n\u2022 updated the gitbook content\n\u2022 tested the PR marked \"need tested\"\n\u2022 fixed cypress in : <https://github.com/coronasafe/care_fe/pull/5579|5579> \n\u2022 refreshed my selenium skill and used JavaScript (Page Object Model) Approach <https://github.com/nihal467/Selenium-JavaScript|#Personal Repo>\nwhat's next\n\n\u2022 add depth to the testing doc\n\u2022 complete PR testing for this week\n\u2022 complete the consultation edit PR of cypress",
+            "user": "U022THM4U2U",
+            "ts": "1686580308.131159",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "cmei",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "updated the gitbook content"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested the PR marked \"need tested\""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fixed cypress in : "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5579",
+                                            "text": "5579"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "refreshed my selenium skill and used JavaScript (Page Object Model) Approach "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/nihal467/Selenium-JavaScript",
+                                            "text": "#Personal Repo",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "add depth to the testing doc"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "complete PR testing for this week"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "complete the consultation edit PR of cypress"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1685620121,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/5579",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#5579 CareUI: Adds PhoneNumberFormField",
+                    "title": "#5579 CareUI: Adds PhoneNumberFormField",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/5579",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "color": "24292f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/nihal467/Selenium-JavaScript",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "nihal467/Selenium-JavaScript",
+                    "title": "nihal467/Selenium-JavaScript",
+                    "fields": [
+                        {
+                            "value": "JavaScript",
+                            "title": "Language",
+                            "short": true
+                        },
+                        {
+                            "value": "3 hours ago",
+                            "title": "Last updated",
+                            "short": true
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }

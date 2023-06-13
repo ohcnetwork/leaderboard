@@ -529,5 +529,163 @@
                 }
             ]
         }
+    ],
+    "2023-06-12 00:00:00": [
+        {
+            "client_msg_id": "02ab0228-7767-4232-9d7b-f27a119e566a",
+            "type": "message",
+            "text": "EOD 12/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\u2022 Had a weekly call with the team\n\u2022 Worked with <@UPW6XDGDD> to remove nginx from error_pages\n\u2022 Went through few proposal dms\n\u2022 Reviewed and Merged tested prs \nWhat's next?\n\u2022 Work on <https://github.com/coronasafe/ayushma/issues/75>\n\u2022 Work on mui to tailwind",
+            "user": "U01JB8L8P7Y",
+            "ts": "1686579566.550969",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1bQt",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had a weekly call with the team"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "UPW6XDGDD"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to remove nginx from error_pages"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Went through few proposal dms"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed and Merged tested prs "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/ayushma/issues/75"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on mui to tailwind"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1682587397,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/ayushma/issues/75",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#75 Add Feedback",
+                    "text": "Users should be able to provide feedback to the chat.  \nThis should be handled by a `Feedback` model, which has\n\n\u2022 chat_message : fk to `ChatMessage`\n\u2022 user : fk to `User`\n\u2022 liked : boolean\n\u2022 message : (optional) text\n\nMake relevant views and serializers. Feedback should be listed with `/feedback` url, with possible filters -\n\n\u2022 project_id\n\u2022 chat_id\n\u2022 chat_message_id\n\u2022 liked\n\nOnly admins should be able to list and retrieve all feedback. Normal users can only list their own. Feedbacks cannot be deleted.",
+                    "title": "#75 Add Feedback",
+                    "title_link": "https://github.com/coronasafe/ayushma/issues/75",
+                    "footer": "<https://github.com/coronasafe/ayushma|coronasafe/ayushma>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/khavinshankar|@khavinshankar>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "STAGE 4",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

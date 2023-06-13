@@ -12253,5 +12253,92 @@
                 "ts": "1686199425.000000"
             }
         }
+    ],
+    "2023-06-12 00:00:00": [
+        {
+            "client_msg_id": "0d441321-538b-4bbf-afd4-69c9d0f3f436",
+            "type": "message",
+            "text": "EOD 12/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\u2022 Followed up medibase and marked for testing.\n\u2022 Fix phone number form field not disabling.\nWhat's next?\n\u2022 Follow up on changes required in previous PRs",
+            "user": "U02TDGQQPMJ",
+            "ts": "1686588671.928159",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ZNAm",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up medibase and marked for testing."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fix phone number form field not disabling."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on changes required in previous PRs"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

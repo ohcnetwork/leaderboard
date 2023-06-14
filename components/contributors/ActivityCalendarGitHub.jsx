@@ -37,7 +37,7 @@ export default function ActivityCalendarGit({ calendarData }) {
     let i;
     for (i = 0; i < calendarData.length; i++)
       if (calendarData[i].count > 0) break;
-    return Number(calendarData[i].date.slice(0, 4));
+    return Number(calendarData[i]?.date.slice(0, 4));
   };
 
   const lastNYears = (n) => {

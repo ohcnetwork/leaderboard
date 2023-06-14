@@ -1,6 +1,157 @@
 {
-  "last_updated": 1686573987.0,
+  "last_updated": 1686672017.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5659",
+      "time": 1686672017.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5659",
+      "text": "Tailwind src/Components/Facility/Consultations/Feed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5623",
+      "time": 1686655758.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5623#issuecomment-1589114184",
+      "text": "@mathew-alex can you look into this, in forked repo prs the add label is failing "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4133",
+      "time": 1686650901.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4133",
+      "text": "Cypress tests for few functionalities"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5632",
+      "time": 1686650900.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5632",
+      "text": "Added cypress test for asset creation",
+      "collaborated_with": [
+        "ShivamJhaa",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5441",
+      "time": 1686650878.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5441",
+      "text": "Titles should be more highlighted "
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5543",
+      "time": 1686650877.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5543",
+      "text": "Changed UI for Live/Discharged Tabs in Patients Page",
+      "collaborated_with": [
+        "GokulramGHV",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4957",
+      "time": 1686650839.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4957",
+      "text": "Replace Material UI components in `src/Components/Facility/InventoryLog.tsx`:"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686650827.0,
+      "title": "coronasafe/care_fe#5642",
+      "link": "https://github.com/coronasafe/care_fe/pull/5642#pullrequestreview-1476778068",
+      "text": "Updated the FontAwesomeIcons with CareIcons, replaced PageTitle with Page component and migrated tooltip."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686650763.0,
+      "title": "coronasafe/care_fe#5608",
+      "link": "https://github.com/coronasafe/care_fe/pull/5608#pullrequestreview-1476775322",
+      "text": " All the buttons are not in full width during responsive view,  fixed"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4951",
+      "time": 1686650747.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4951",
+      "text": "Replace Material UI components in `src/Components/Facility/CoverImageEditModal.tsx`:"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686650736.0,
+      "title": "coronasafe/care_fe#5615",
+      "link": "https://github.com/coronasafe/care_fe/pull/5615#pullrequestreview-1476774286",
+      "text": "Tailwinds `CoverImageEditModal.tsx`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686650710.0,
+      "title": "coronasafe/care_fe#5626",
+      "link": "https://github.com/coronasafe/care_fe/pull/5626#pullrequestreview-1476773504",
+      "text": "CareUI: Adds `UserAutocompleteFormField` and used it in \"Assigned To\" filter field of Shifting"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5632",
+      "time": 1686650688.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5632#issuecomment-1588976534",
+      "text": "@nihal467 can u review and approve this pr"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686650660.0,
+      "title": "coronasafe/care_fe#5632",
+      "link": "https://github.com/coronasafe/care_fe/pull/5632#pullrequestreview-1476772038",
+      "text": "Added cypress test for asset creation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5652",
+      "time": 1686649397.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5652",
+      "text": "Added `cypress passed` label"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5652",
+      "time": 1686649397.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5652",
+      "text": "Added `cypress passed` label",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5652",
+      "time": 1686649182.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5652#issuecomment-1588932295",
+      "text": "> @khavinshankar we could squash the 4 steps of remove and add labels by using multiple labels at once to 2 steps right?\r\n> \r\n> ```\r\n>         with:\r\n>           labels: |\r\n>             label-1\r\n>             label-2\r\n> ```\r\n> \r\n> https://github.com/actions-ecosystem/action-remove-labels#remove-multiple-labels-with-a-comment\r\n\r\n@rithviknishad but the if logic is different here"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5652",
+      "time": 1686643009.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5652",
+      "text": "Added `cypress passed` label"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5651",
+      "time": 1686641580.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5651",
+      "text": "Added `cypress passed` label"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma_fe#33",
+      "time": 1686640853.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/33",
+      "text": "Add UI for setting default project"
+    },
     {
       "type": "pr_reviewed",
       "time": 1686573987.0,
@@ -18597,9 +18748,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5659",
+      "title": "Tailwind Feed and FeedButton",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1346",
       "title": "Hcx communications",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -18607,7 +18767,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5334",
       "title": "Abdm integration",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "merge conflict",
         "stale"
@@ -18616,25 +18776,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 52,
+      "stale_for": 53,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 114,
+      "stale_for": 115,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 84,
+      "stale_for": 85,
       "labels": [
         "work-in-progress"
       ]
@@ -18642,13 +18802,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 185,
+      "stale_for": 186,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 67,
+      "stale_for": 68,
       "labels": [
         "changes required"
       ]
@@ -18656,7 +18816,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 214,
+      "stale_for": 215,
       "labels": [
         "waiting-for-review"
       ]
@@ -18664,25 +18824,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 542,
+      "stale_for": 543,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 548,
+      "stale_for": 549,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 549,
+      "stale_for": 550,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 744,
+      "stale_for": 745,
       "labels": []
     }
   ],

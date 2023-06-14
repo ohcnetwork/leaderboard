@@ -207,5 +207,92 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-06-13 00:00:00": [
+        {
+            "client_msg_id": "028ddca6-e04a-4f4c-a291-3522246b560f",
+            "type": "message",
+            "text": "EOD 12/06/2023 <!subteam^S035L5S02RF|@care_engineering>\nDone:\n\u2022 Updated terraform code to correct service account issues; added NAT component.\n\u2022 worked on removing nginx server info from responses.\nTo Do:\n\u2022 Update terraform to add outputs.",
+            "user": "UPW6XDGDD",
+            "ts": "1686629516.730949",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RYd7",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nDone:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Updated terraform code to correct service account issues; added NAT component."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "worked on removing nginx server info from responses."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "To Do:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Update terraform to add outputs."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

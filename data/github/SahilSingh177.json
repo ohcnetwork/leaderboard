@@ -1,6 +1,27 @@
 {
-  "last_updated": 1686557399.0,
+  "last_updated": 1686684964.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5602",
+      "time": 1686684964.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5602#issuecomment-1589909323",
+      "text": "@nihal467, I have fixed the test and it's passing `cypress run` but \"Add cypress passed label on success\" is failing due to HttpError. I'm not sure what might be causing this."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5620",
+      "time": 1686684354.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5620#issuecomment-1589895275",
+      "text": "I'm sorry. I didn't want this PR to have too many unnecessary commits for merging. I won't be force pushing now?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5602",
+      "time": 1686652199.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5602#issuecomment-1589014162",
+      "text": "Sure. I'll update the tests"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5602",
@@ -49,14 +70,17 @@
       "link": "https://github.com/coronasafe/care_fe/pull/5620",
       "title": "Added Cypress test for adding doctor's note.",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "merge conflict"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5602",
       "title": "Cypress Tests: Added test for updating an existing patient.",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "changes required"
       ]
     }
   ],

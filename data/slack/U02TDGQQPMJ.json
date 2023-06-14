@@ -12340,5 +12340,286 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-06-13 00:00:00": [
+        {
+            "client_msg_id": "63ab3ae6-bb02-4b35-aeaa-56c789b1769e",
+            "type": "message",
+            "text": "EOD 13/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Followed up on previous PRs that required changes and cypress fixes\n\u2022 Minor follow ups on fixes for medibase (caught when testing with staging replica)\n\u2022 <https://github.com/coronasafe/care_fe/pull/5649|5649>: Deprecated `RoleButton` and replaced it with `ButtonV2` \n\u2022 <https://github.com/coronasafe/care_fe/pull/5654|5654>: Adds new AutocompleteFormField components for State, District &amp; Local Body selects.\n\u2022 13 replacements of MUI to CareUI: <https://github.com/coronasafe/care_fe/pull/5650|5650>, <https://github.com/coronasafe/care_fe/pull/5653|5653>,  <https://github.com/coronasafe/care_fe/pull/5654|5654>, <https://github.com/coronasafe/care_fe/pull/5655|5655>, <https://github.com/coronasafe/care_fe/pull/5656|5656>, <https://github.com/coronasafe/care_fe/pull/5657|5657>, <https://github.com/coronasafe/care_fe/pull/5658|5658>, <https://github.com/coronasafe/care_fe/pull/5660|5660>, <https://github.com/coronasafe/care_fe/pull/5661|5661>, <https://github.com/coronasafe/care_fe/pull/5662|5662>, <https://github.com/coronasafe/care_fe/pull/5663|5663>, <https://github.com/coronasafe/care_fe/pull/5664|5664>, <https://github.com/coronasafe/care_fe/pull/5665|5665>\nWhat's next?\n\n\u2022 Add screenshots and fix cypress if any for the above made tailwind PRs\n\u2022 Work on zoom script\n\u2022 More tailwinds to come...",
+            "user": "U02TDGQQPMJ",
+            "ts": "1686680536.911859",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RCir",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 13/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up on previous PRs that required changes and cypress fixes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Minor follow ups on fixes for medibase (caught when testing with staging replica)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5649",
+                                            "text": "5649"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Deprecated "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "RoleButton",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and replaced it with "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "ButtonV2",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5654",
+                                            "text": "5654"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Adds new AutocompleteFormField components for State, District & Local Body selects."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "13 replacements of MUI to CareUI: "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5650",
+                                            "text": "5650"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5653",
+                                            "text": "5653"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ",  "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5654",
+                                            "text": "5654"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5655",
+                                            "text": "5655"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5656",
+                                            "text": "5656"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5657",
+                                            "text": "5657"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5658",
+                                            "text": "5658"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5660",
+                                            "text": "5660"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5661",
+                                            "text": "5661"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5662",
+                                            "text": "5662"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5663",
+                                            "text": "5663"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5664",
+                                            "text": "5664"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5665",
+                                            "text": "5665"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add screenshots and fix cypress if any for the above made tailwind PRs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on zoom script"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "More tailwinds to come..."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1686680549.000000"
+            }
+        }
     ]
 }

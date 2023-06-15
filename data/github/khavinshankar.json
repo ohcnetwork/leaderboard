@@ -1,6 +1,55 @@
 {
-  "last_updated": 1686672017.0,
+  "last_updated": 1686739896.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5678",
+      "time": 1686739896.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5678",
+      "text": "Tailwind src/Components/Facility/Investigations/Table"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686738756.0,
+      "title": "coronasafe/care_fe#5676",
+      "link": "https://github.com/coronasafe/care_fe/pull/5676#pullrequestreview-1479069069",
+      "text": "Removed Force:true from Cypress Asset Test"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5677",
+      "time": 1686738423.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5677",
+      "text": "Tailwind src/Components/Facility/Investigations/InvestigationTable"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686734260.0,
+      "title": "coronasafe/care_fe#5673",
+      "link": "https://github.com/coronasafe/care_fe/pull/5673#pullrequestreview-1478924985",
+      "text": "Removed all cypress force:true in userpage"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4234",
+      "time": 1686734224.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4234",
+      "text": "Cypress: Update Existing Patient"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686734210.0,
+      "title": "coronasafe/care_fe#5602",
+      "link": "https://github.com/coronasafe/care_fe/pull/5602#pullrequestreview-1478923426",
+      "text": "Cypress Tests: Added test for updating an existing patient."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686730646.0,
+      "title": "coronasafe/care_fe#5672",
+      "link": "https://github.com/coronasafe/care_fe/pull/5672#pullrequestreview-1478798292",
+      "text": "fix user filter phone number initial and merge state"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5659",
@@ -18748,9 +18797,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5678",
+      "title": "Tailwind src/Components/Facility/Investigations/Table",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5677",
+      "title": "Tailwind src/Components/Facility/Investigations/InvestigationTable",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5659",
       "title": "Tailwind Feed and FeedButton",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -18759,7 +18826,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1346",
       "title": "Hcx communications",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -18767,7 +18834,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5334",
       "title": "Abdm integration",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "stale"
@@ -18776,25 +18843,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 53,
+      "stale_for": 54,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 115,
+      "stale_for": 116,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 85,
+      "stale_for": 86,
       "labels": [
         "work-in-progress"
       ]
@@ -18802,13 +18869,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 186,
+      "stale_for": 187,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 68,
+      "stale_for": 69,
       "labels": [
         "changes required"
       ]
@@ -18816,7 +18883,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 215,
+      "stale_for": 216,
       "labels": [
         "waiting-for-review"
       ]
@@ -18824,25 +18891,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 543,
+      "stale_for": 544,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 549,
+      "stale_for": 550,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 550,
+      "stale_for": 551,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 745,
+      "stale_for": 746,
       "labels": []
     }
   ],

@@ -1,6 +1,55 @@
 {
-  "last_updated": 1686315943.0,
+  "last_updated": 1686758986.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard#120",
+      "time": 1686758986.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/120",
+      "text": "fix contributors page for contributors with last contribution older than a year"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#120",
+      "time": 1686758952.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/120",
+      "text": "fix contributors page for contributors with last contribution older than a year"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1368",
+      "time": 1686747359.0,
+      "link": "https://github.com/coronasafe/care/pull/1368#issuecomment-1591153134",
+      "text": "are these test cases?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686746157.0,
+      "title": "coronasafe/care#1369",
+      "link": "https://github.com/coronasafe/care/pull/1369#pullrequestreview-1479309158",
+      "text": "Medibase Medicines Integration"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686746157.0,
+      "title": "coronasafe/care#1369",
+      "link": "https://github.com/coronasafe/care/pull/1369#pullrequestreview-1479309158",
+      "text": "Medibase Medicines Integration"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1371",
+      "time": 1686739629.0,
+      "link": "https://github.com/coronasafe/care/pull/1371",
+      "text": "upgrade django to 4.2"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#812",
+      "time": 1686721231.0,
+      "link": "https://github.com/coronasafe/care/issues/812#issuecomment-1590504429",
+      "text": "> > @Yash12Bansal Please link the issue to the PR you are referring to\r\n> \r\n> also please tell me where and what changes were made for Chromium support. I cannot find them in new commits @gigincg\r\n\r\nhttps://github.com/coronasafe/care/compare/912bd36511c95a640101363d45f5c009016020f4...a50188884326ed31e891bf03ecdaf41a8311f36b"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1363",
@@ -2457,21 +2506,23 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1357",
-      "title": "remove unneeded dependencies",
-      "stale_for": 2,
-      "labels": []
+      "link": "https://github.com/coronasafe/care/pull/1371",
+      "title": "upgrade django to 4.2",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 3,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove HBA1C field from consultation model",
-      "stale_for": 15,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -2479,7 +2530,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1308",
       "title": "use consistent phone number validation",
-      "stale_for": 1,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -2487,10 +2538,9 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5498",
       "title": "Rename all instances of orgin_facility to origin_facility",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting for back end",
-        "merge conflict",
         "cypress failed"
       ]
     },
@@ -2505,7 +2555,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 317,
+      "stale_for": 322,
       "labels": []
     }
   ],

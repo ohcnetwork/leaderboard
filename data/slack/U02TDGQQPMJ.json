@@ -12621,5 +12621,173 @@
                 "ts": "1686680549.000000"
             }
         }
+    ],
+    "2023-06-14 00:00:00": [
+        {
+            "client_msg_id": "b2a99cc9-5ed9-4693-ac9a-78cd215b030a",
+            "type": "message",
+            "text": "EOD 14/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Added Ventilator and Vitals waveform in patient consultation dashboard\n\u2022 Huddles with <@U022THM4U2U> on testing medibase and added custom sort logic to sort by exact match first.\n\u2022 <https://github.com/coronasafe/care_fe/pull/5672|5672>: Minor fix in the initial and merged states of user filters for phone number fields\n\u2022 <https://github.com/coronasafe/care_fe/pull/5670|5670>: Show delete user button only for superuser/stateadmin users\n\u2022 Couple of replacements of MUI to CareUI\nWhat's next?\n\n\u2022 Add backend tests and update cypress tests for medibase/prescriptions\n\u2022 Show device online or not in waveform component\n\u2022 Add screenshots and fix cypress if any for the above made tailwind PRs\n\u2022 Tailwind care...\n\u2022 Work on zoom script",
+            "user": "U02TDGQQPMJ",
+            "ts": "1686764612.517969",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "sdoF",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 14/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added Ventilator and Vitals waveform in patient consultation dashboard"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Huddles with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " on testing medibase and added custom sort logic to sort by exact match first."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5672",
+                                            "text": "5672"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Minor fix in the initial and merged states of user filters for phone number fields"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5670",
+                                            "text": "5670"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Show delete user button only for superuser/stateadmin users"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Couple of replacements of MUI to CareUI"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add backend tests and update cypress tests for medibase/prescriptions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Show device online or not in waveform component"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add screenshots and fix cypress if any for the above made tailwind PRs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tailwind care..."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on zoom script"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

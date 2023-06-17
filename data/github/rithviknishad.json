@@ -1,6 +1,114 @@
 {
-  "last_updated": 1686851331.0,
+  "last_updated": 1686937937.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5710",
+      "time": 1686937937.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5710",
+      "text": "Signup option must be present in Login page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5710",
+      "time": 1686937926.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5710#issuecomment-1595044712",
+      "text": "Sign up is not allowed. \n\nSuperusers can create accounts for state admins and/or district admins. \n\nThese users can create other type of accounts under the same state or district which that user belongs to. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5607",
+      "time": 1686934859.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5607#issuecomment-1594986843",
+      "text": "@abhishekchauhan15 closing this as of no activity. I'm taking up the issue and I will make a PR for the same to speed up removal of MUI."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#2549",
+      "time": 1686932887.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/2549#issuecomment-1594950122",
+      "text": "You can set min. qty for stocks if u go to set min. quantity page. that data should be reflected in a new column here."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5005",
+      "time": 1686932509.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5005#issuecomment-1594941718",
+      "text": "@akshatvermavi I think you can clearly see that there's a PR already for this right?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4972",
+      "time": 1686932475.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4972#issuecomment-1594941063",
+      "text": "@akshatvermavi ask for assigning if its not assigned to anyone, or if its assigned to someone but no progress in PR for more than a week"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5706",
+      "time": 1686927444.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5706",
+      "text": "CNS: Fix resolving of middleware_address"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5706",
+      "time": 1686927444.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5706",
+      "text": "CNS: Fix resolving of middleware_address",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5708",
+      "time": 1686925914.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5708",
+      "text": "Revert \"CareUI: Adds PhoneNumberFormField (#5579)\""
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5707",
+      "time": 1686924260.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5707",
+      "text": "Revert \"feat: Temperature preference stored in local storage (#5589)\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5707",
+      "time": 1686919834.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5707",
+      "text": "Revert \"feat: Temperature preference stored in local storage (#5589)\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5706",
+      "time": 1686918933.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5706",
+      "text": "patch cns middleware address resolving"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686914661.0,
+      "title": "coronasafe/care_fe#5702",
+      "link": "https://github.com/coronasafe/care_fe/pull/5702#pullrequestreview-1483253591",
+      "text": "Tailwind src/Components/Patient/SamplePreview"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5701",
+      "time": 1686892510.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5701",
+      "text": "Feature: Support for printing Discharge Prescriptions "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5695",
+      "time": 1686891274.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5695#issuecomment-1594095616",
+      "text": "Yes! Without it being functional there's no way the PR would get merged \ud83d\ude04 "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5692",
@@ -17516,7 +17624,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict"
       ]
@@ -17524,7 +17632,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5670",
       "title": "Shows delete user button only for state admins or superuser",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17533,7 +17641,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5669",
       "title": "Tailwinds Resources Filter",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "cypress failed"
       ]
@@ -17541,23 +17649,25 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5668",
       "title": "Tailwinds `ResourceDetails.tsx`",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "cypress passed"
+        "needs testing",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5667",
       "title": "Tailwinds `ResourceCreate.tsx`",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
+        "needs testing",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5666",
       "title": "Tailwinds `ResourceBoard.tsx`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -17566,7 +17676,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5665",
       "title": "Tailwinds `LinkFacilityDialog.tsx`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress passed"
       ]
@@ -17574,7 +17684,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5664",
       "title": "Tailwinds `ManageUsers.tsx`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -17582,7 +17692,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5663",
       "title": "Tailwinds Update Status Dialog",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -17590,7 +17700,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5662",
       "title": "Tailwinds Patient Home",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress passed"
       ]
@@ -17598,7 +17708,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5661",
       "title": "Tailwinds Create Shift Form",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -17606,7 +17716,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5660",
       "title": "Tailwinds `SampleViewAdmin.tsx`",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17615,7 +17725,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5658",
       "title": "Tailwinds `SampleTestCard.tsx`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress passed"
       ]
@@ -17623,7 +17733,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5657",
       "title": "Tailwinds `ManagePatients.tsx`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17632,7 +17742,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5656",
       "title": "Tailwinds `SetInventoryForm.tsx`",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17641,7 +17751,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5655",
       "title": "Tailwinds User Delete Dialog",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17650,7 +17760,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5654",
       "title": "CareUI: Adds AutocompleteFormFields for State, District & LocalBody + Tailwinds Facility Filter",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17659,7 +17769,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5653",
       "title": "Tailwinds `SampleTest.tsx`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17668,7 +17778,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5650",
       "title": "Tailwinds `FacilityHome.tsx`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17677,7 +17787,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5649",
       "title": "Tailwinds / Migrates all usages of `RoleButton` to `ButtonV2` with `authorizedFor`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17686,7 +17796,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1369",
       "title": "Medibase Medicines Integration",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -17694,7 +17804,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "cypress failed"
@@ -17703,7 +17813,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5503",
       "title": "SmartICU: Ventilator Integration (PoC)",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "cypress passed"
       ]
@@ -17711,7 +17821,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 36,
+      "stale_for": 37,
       "labels": [
         "need Review",
         "cypress failed"

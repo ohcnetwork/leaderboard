@@ -1,6 +1,76 @@
 {
-  "last_updated": 1686861046.0,
+  "last_updated": 1686927987.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5704",
+      "time": 1686927987.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5704",
+      "text": "Dropdown in critical care is missing for multiple options"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686927700.0,
+      "title": "coronasafe/care_fe#5709",
+      "link": "https://github.com/coronasafe/care_fe/pull/5709#pullrequestreview-1483717708",
+      "text": "Fix rescript dropdown not visible"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686927566.0,
+      "title": "coronasafe/care_fe#5705",
+      "link": "https://github.com/coronasafe/care_fe/pull/5705#pullrequestreview-1483713895",
+      "text": "Fix is_telemedicine checkbox"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686927437.0,
+      "title": "coronasafe/care_fe#5706",
+      "link": "https://github.com/coronasafe/care_fe/pull/5706#pullrequestreview-1483709857",
+      "text": "CNS: Fix resolving of middleware_address"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686924250.0,
+      "title": "coronasafe/care_fe#5707",
+      "link": "https://github.com/coronasafe/care_fe/pull/5707#pullrequestreview-1483585078",
+      "text": "Revert \"feat: Temperature preference stored in local storage (#5589)\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5702",
+      "time": 1686905692.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5702",
+      "text": "Tailwind src/Components/Patient/SamplePreview"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5700",
+      "time": 1686890951.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5700",
+      "text": "removed mui usage in CriticalCare__Switch"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5699",
+      "time": 1686887286.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5699",
+      "text": "Remove any usage of material UI in rescript files"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5696",
+      "time": 1686878958.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5696",
+      "text": "BUG: All the data's exported are blank "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686878944.0,
+      "title": "coronasafe/care_fe#5697",
+      "link": "https://github.com/coronasafe/care_fe/pull/5697#pullrequestreview-1482589642",
+      "text": "Fix CSV exports"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1346",
@@ -18814,9 +18884,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5702",
+      "title": "Tailwind src/Components/Patient/SamplePreview",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5700",
+      "title": "removed mui usage in CriticalCare__Switch",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5678",
       "title": "Tailwind src/Components/Facility/Investigations/Table",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -18825,7 +18913,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5677",
       "title": "Tailwind src/Components/Facility/Investigations/InvestigationTable",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -18834,7 +18922,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5659",
       "title": "Tailwind Feed and FeedButton",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -18843,7 +18931,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5334",
       "title": "Abdm integration",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "merge conflict",
         "stale"
@@ -18852,25 +18940,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 55,
+      "stale_for": 56,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 117,
+      "stale_for": 118,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 87,
+      "stale_for": 88,
       "labels": [
         "work-in-progress"
       ]
@@ -18878,13 +18966,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 188,
+      "stale_for": 189,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 70,
+      "stale_for": 71,
       "labels": [
         "changes required"
       ]
@@ -18892,7 +18980,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 217,
+      "stale_for": 218,
       "labels": [
         "waiting-for-review"
       ]
@@ -18900,25 +18988,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 545,
+      "stale_for": 546,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 551,
+      "stale_for": 552,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 552,
+      "stale_for": 553,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 747,
+      "stale_for": 748,
       "labels": []
     }
   ],

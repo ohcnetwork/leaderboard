@@ -1,6 +1,94 @@
 {
-  "last_updated": 1686937937.0,
+  "last_updated": 1687009941.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5718",
+      "time": 1687009941.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5718",
+      "text": "Tailwind `LiveFeed.tsx`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5717",
+      "time": 1687008278.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5717",
+      "text": "Tailwinds Log Lab Results page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4952",
+      "time": 1687007016.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4952#issuecomment-1595745835",
+      "text": "Do create the PR though, we can take that issue seperatley"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4952",
+      "time": 1687007004.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4952#issuecomment-1595745660",
+      "text": "Yes, if that issue is present in existing staging, yes create the issue! "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1687006479.0,
+      "title": "coronasafe/care_fe#5716",
+      "link": "https://github.com/coronasafe/care_fe/pull/5716#pullrequestreview-1484792041",
+      "text": "Tailwind src/Components/Facility/Investigations/Reports/*"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4952",
+      "time": 1686995593.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4952#issuecomment-1595696208",
+      "text": "@print-Sathvik any updates on this? Avoid taking up multiple issues. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4977",
+      "time": 1686995548.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4977#issuecomment-1595696092",
+      "text": "@print-Sathvik any updates on this?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5407",
+      "time": 1686992550.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5407#issuecomment-1595679645",
+      "text": "You won't need to make any modifications to the components. You can use `SelectFormField` instead of `SelectMenuV2`. Read the doc comments of each component or other usages to get a better understanding of how it is to be used."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1686979619.0,
+      "title": "coronasafe/care_fe#5572",
+      "link": "https://github.com/coronasafe/care_fe/pull/5572#pullrequestreview-1484687172",
+      "text": "Replace Material UI components in src/Components/Shifting/ListFilter.tsx. Fixes  #4996"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5713",
+      "time": 1686972885.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5713",
+      "text": "Production Release; June Week 3",
+      "collaborated_with": [
+        "nihal467",
+        "khavinshankar",
+        "GokulramGHV",
+        "Rohanxmalik",
+        "Ashesh3",
+        "mathew-alex",
+        "SahilSingh177",
+        "yogeshbhutkar",
+        "ShivamJhaa"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5463",
+      "time": 1686972695.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5463#issuecomment-1595600935",
+      "text": "Reopening as this commit was reverted as it was buggy."
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#5710",
@@ -17622,9 +17710,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5718",
+      "title": "Tailwind `LiveFeed.tsx`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5717",
+      "title": "Tailwinds Log Lab Results page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "merge conflict"
       ]
@@ -17632,7 +17738,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5670",
       "title": "Shows delete user button only for state admins or superuser",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17641,8 +17747,9 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5669",
       "title": "Tailwinds Resources Filter",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
+        "Cypress Test Pending",
         "cypress failed"
       ]
     },
@@ -17652,13 +17759,13 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5667",
       "title": "Tailwinds `ResourceCreate.tsx`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17667,56 +17774,61 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5666",
       "title": "Tailwinds `ResourceBoard.tsx`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "merge conflict",
-        "cypress passed"
+        "needs testing",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5665",
       "title": "Tailwinds `LinkFacilityDialog.tsx`",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
+        "needs testing",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5664",
       "title": "Tailwinds `ManageUsers.tsx`",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
+        "Cypress Test Pending",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5663",
       "title": "Tailwinds Update Status Dialog",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
+        "changes required",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5662",
-      "title": "Tailwinds Patient Home",
-      "stale_for": 3,
+      "title": "Tailwinds Patient Home (Confirm Transfer Complete Dialog)",
+      "stale_for": 0,
       "labels": [
+        "needs testing",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5661",
       "title": "Tailwinds Create Shift Form",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "cypress failed"
+        "changes required",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5660",
       "title": "Tailwinds `SampleViewAdmin.tsx`",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17725,15 +17837,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5658",
       "title": "Tailwinds `SampleTestCard.tsx`",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
+        "needs testing",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5657",
       "title": "Tailwinds `ManagePatients.tsx`",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17742,7 +17855,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5656",
       "title": "Tailwinds `SetInventoryForm.tsx`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17751,7 +17864,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5655",
       "title": "Tailwinds User Delete Dialog",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17760,7 +17873,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5654",
       "title": "CareUI: Adds AutocompleteFormFields for State, District & LocalBody + Tailwinds Facility Filter",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17769,7 +17882,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5653",
       "title": "Tailwinds `SampleTest.tsx`",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17778,7 +17891,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5650",
       "title": "Tailwinds `FacilityHome.tsx`",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17787,7 +17900,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5649",
       "title": "Tailwinds / Migrates all usages of `RoleButton` to `ButtonV2` with `authorizedFor`",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -17796,7 +17909,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1369",
       "title": "Medibase Medicines Integration",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -17804,7 +17917,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "tested",
         "cypress failed"
@@ -17813,7 +17926,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5503",
       "title": "SmartICU: Ventilator Integration (PoC)",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "cypress passed"
       ]
@@ -17821,7 +17934,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 37,
+      "stale_for": 38,
       "labels": [
         "need Review",
         "cypress failed"
@@ -17896,6 +18009,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5327",
       "pr_link": "https://github.com/coronasafe/care/pull/1245"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5319",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5320"
     }
   ]
 }

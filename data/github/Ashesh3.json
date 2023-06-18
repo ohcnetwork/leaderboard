@@ -1,6 +1,31 @@
 {
-  "last_updated": 1686945854.0,
+  "last_updated": 1686980874.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5715",
+      "time": 1686980874.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5715",
+      "text": "Make error messages consistent"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5713",
+      "time": 1686972885.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5713",
+      "text": "Production Release; June Week 3",
+      "collaborated_with": [
+        "nihal467",
+        "khavinshankar",
+        "GokulramGHV",
+        "Rohanxmalik",
+        "mathew-alex",
+        "SahilSingh177",
+        "yogeshbhutkar",
+        "rithviknishad",
+        "ShivamJhaa"
+      ]
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5712",
@@ -8908,11 +8933,20 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5715",
+      "title": "Make error messages consistent",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5712",
       "title": "Fix alignment issue in Pain selector",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "cypress passed"
       ]
     },
     {
@@ -8920,21 +8954,23 @@
       "title": "Change error format for Facility config page",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5694",
       "title": "Improve password check on reset pass page",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5684",
       "title": "Fix error message design on login page",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
@@ -8942,7 +8978,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5675",
       "title": "Create form context inside component",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -8951,19 +8987,19 @@
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/32",
       "title": "Add Testing Framework",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma/pull/180",
       "title": "Add Testing Framework",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 23,
+      "stale_for": 24,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -8972,7 +9008,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 50,
+      "stale_for": 51,
       "labels": [
         "waiting-for-review"
       ]
@@ -8980,7 +9016,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 73,
+      "stale_for": 74,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -8989,13 +9025,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 86,
+      "stale_for": 87,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 17,
+      "stale_for": 18,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9004,7 +9040,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 28,
+      "stale_for": 29,
       "labels": [
         "waiting-for-review"
       ]

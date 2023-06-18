@@ -1,6 +1,41 @@
 {
-  "last_updated": 1686927987.0,
+  "last_updated": 1686983631.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5716",
+      "time": 1686983631.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5716",
+      "text": "Tailwind src/Components/Facility/Investigations/Reports/*"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5713",
+      "time": 1686972885.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5713",
+      "text": "Production Release; June Week 3",
+      "collaborated_with": [
+        "nihal467",
+        "GokulramGHV",
+        "Rohanxmalik",
+        "Ashesh3",
+        "mathew-alex",
+        "SahilSingh177",
+        "yogeshbhutkar",
+        "rithviknishad",
+        "ShivamJhaa"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1381",
+      "time": 1686972871.0,
+      "link": "https://github.com/coronasafe/care/pull/1381",
+      "text": "Production Release; June Week 3",
+      "collaborated_with": [
+        "mathew-alex"
+      ]
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#5704",
@@ -18884,9 +18919,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5716",
+      "title": "Tailwind src/Components/Facility/Investigations/Reports/*",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5702",
       "title": "Tailwind src/Components/Patient/SamplePreview",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -18895,7 +18938,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5700",
       "title": "removed mui usage in CriticalCare__Switch",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -18904,7 +18947,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5678",
       "title": "Tailwind src/Components/Facility/Investigations/Table",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -18913,7 +18956,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5677",
       "title": "Tailwind src/Components/Facility/Investigations/InvestigationTable",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -18922,43 +18965,34 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5659",
       "title": "Tailwind Feed and FeedButton",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress passed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5334",
-      "title": "Abdm integration",
-      "stale_for": 6,
-      "labels": [
-        "merge conflict",
-        "stale"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 56,
+      "stale_for": 57,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 118,
+      "stale_for": 119,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 88,
+      "stale_for": 89,
       "labels": [
         "work-in-progress"
       ]
@@ -18966,13 +19000,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 189,
+      "stale_for": 191,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 71,
+      "stale_for": 72,
       "labels": [
         "changes required"
       ]
@@ -18980,7 +19014,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 218,
+      "stale_for": 219,
       "labels": [
         "waiting-for-review"
       ]
@@ -18988,25 +19022,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 546,
+      "stale_for": 547,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 552,
+      "stale_for": 553,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 553,
+      "stale_for": 554,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 748,
+      "stale_for": 749,
       "labels": []
     }
   ],

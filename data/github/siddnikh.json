@@ -1,6 +1,20 @@
 {
-  "last_updated": 1685520943.0,
+  "last_updated": 1687285391.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1687285391.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1488750177",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#49",
+      "time": 1687253267.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/49",
+      "text": "Added link to / on ayushma logo"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1321",
@@ -1075,9 +1089,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/49",
+      "title": "Added link to / on ayushma logo",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1275",
       "title": "Modified bedCreate API View to support bulk creating beds",
-      "stale_for": 15,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -1085,9 +1105,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5413",
       "title": "Add support for creating multiple beds",
-      "stale_for": 10,
+      "stale_for": 13,
       "labels": [
-        "waiting for back end"
+        "waiting for back end",
+        "merge conflict"
       ]
     }
   ],

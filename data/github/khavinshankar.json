@@ -1,6 +1,79 @@
 {
-  "last_updated": 1687154678.0,
+  "last_updated": 1687261764.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1390",
+      "time": 1687261764.0,
+      "link": "https://github.com/coronasafe/care/pull/1390",
+      "text": "Updated encryptionPrivateKeyURL in hcx"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1390",
+      "time": 1687261764.0,
+      "link": "https://github.com/coronasafe/care/pull/1390",
+      "text": "Updated encryptionPrivateKeyURL in hcx",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1390",
+      "time": 1687254326.0,
+      "link": "https://github.com/coronasafe/care/pull/1390#issuecomment-1598458885",
+      "text": "@vigneshhari moved sensitive data into envs, and no need to worry about the data, it's just an HCX staging server details"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1390",
+      "time": 1687248771.0,
+      "link": "https://github.com/coronasafe/care/pull/1390",
+      "text": "Updated encryptionPrivateKeyURL in hcx"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5683",
+      "time": 1687240138.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5683",
+      "text": "Make the error message consistent in forgot password section"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1687240124.0,
+      "title": "coronasafe/care_fe#5684",
+      "link": "https://github.com/coronasafe/care_fe/pull/5684#pullrequestreview-1487356872",
+      "text": "Fix error message design on login page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5685",
+      "time": 1687240111.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5685",
+      "text": "Make the password condition verification consistent in forgot password page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1687240081.0,
+      "title": "coronasafe/care_fe#5694",
+      "link": "https://github.com/coronasafe/care_fe/pull/5694#pullrequestreview-1487356231",
+      "text": "Improve password check on reset pass page"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5689",
+      "time": 1687240037.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5689",
+      "text": "make the error message consistent in facility config page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1687240023.0,
+      "title": "coronasafe/care_fe#5711",
+      "link": "https://github.com/coronasafe/care_fe/pull/5711#pullrequestreview-1487355349",
+      "text": "Change error format for Facility config page"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#4943",
@@ -18935,7 +19008,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5716",
       "title": "Tailwind src/Components/Facility/Investigations/Reports/*",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -18943,18 +19016,18 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5702",
       "title": "Tailwind src/Components/Patient/SamplePreview",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5700",
       "title": "removed mui usage in CriticalCare__Switch",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress passed"
       ]
     },
@@ -18963,14 +19036,14 @@
       "title": "Tailwind src/Components/Facility/Investigations/Table",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "tested",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5677",
       "title": "Tailwind src/Components/Facility/Investigations/InvestigationTable",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "cypress passed"
@@ -18979,34 +19052,43 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5659",
       "title": "Tailwind Feed and FeedButton",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5334",
+      "title": "Abdm integration",
+      "stale_for": 0,
+      "labels": [
+        "merge conflict",
+        "stale"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 59,
+      "stale_for": 60,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 121,
+      "stale_for": 122,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 91,
+      "stale_for": 92,
       "labels": [
         "work-in-progress"
       ]
@@ -19014,13 +19096,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 192,
+      "stale_for": 193,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 74,
+      "stale_for": 75,
       "labels": [
         "changes required"
       ]
@@ -19028,7 +19110,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 221,
+      "stale_for": 222,
       "labels": [
         "waiting-for-review"
       ]
@@ -19036,25 +19118,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 549,
+      "stale_for": 550,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 555,
+      "stale_for": 556,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 556,
+      "stale_for": 557,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 751,
+      "stale_for": 752,
       "labels": []
     }
   ],

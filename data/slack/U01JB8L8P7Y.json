@@ -687,5 +687,168 @@
                 }
             ]
         }
+    ],
+    "2023-06-20 00:00:00": [
+        {
+            "client_msg_id": "efedfd3e-4a9d-47f8-8e64-4b875c4c7a13",
+            "type": "message",
+            "text": "EOD 19/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go?\n\u2022 Had a weekly call with the team\n\u2022 Went through the tailwind prs\n\u2022 Planned out abdm folder structure for refactoring\nwhat's next\n\u2022 Complete <https://github.com/coronasafe/ayushma/issues/75>\n\u2022 Review and Merge tested prs\n\u2022 Checkout the issue in HCX\n\u2022 Work on ABDM refactor (unit tests and docs)\n",
+            "user": "U01JB8L8P7Y",
+            "ts": "1687237803.366749",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "wKQ2O",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 19/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had a weekly call with the team"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Went through the tailwind prs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Planned out abdm folder structure for refactoring"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Complete "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/ayushma/issues/75"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Review and Merge tested prs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Checkout the issue in HCX"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on ABDM refactor (unit tests and docs)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1682587397,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/ayushma/issues/75",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#75 Add Feedback",
+                    "text": "Users should be able to provide feedback to the chat.  \nThis should be handled by a `Feedback` model, which has\n\n\u2022 chat_message : fk to `ChatMessage`\n\u2022 user : fk to `User`\n\u2022 liked : boolean\n\u2022 message : (optional) text\n\nMake relevant views and serializers. Feedback should be listed with `/feedback` url, with possible filters -\n\n\u2022 project_id\n\u2022 chat_id\n\u2022 chat_message_id\n\u2022 liked\n\nOnly admins should be able to list and retrieve all feedback. Normal users can only list their own. Feedbacks cannot be deleted.",
+                    "title": "#75 Add Feedback",
+                    "title_link": "https://github.com/coronasafe/ayushma/issues/75",
+                    "footer": "<https://github.com/coronasafe/ayushma|coronasafe/ayushma>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/khavinshankar|@khavinshankar>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "STAGE 4",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

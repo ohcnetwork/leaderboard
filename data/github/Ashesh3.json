@@ -1,6 +1,79 @@
 {
-  "last_updated": 1687179776.0,
+  "last_updated": 1687270331.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#192",
+      "time": 1687270331.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/192",
+      "text": "Fix file format detection while upserting"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5731",
+      "time": 1687269469.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5731",
+      "text": "Add autosave to forms"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#192",
+      "time": 1687257780.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/192",
+      "text": "Fix file format detection while upserting"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5641",
+      "time": 1687252523.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5641#issuecomment-1598413624",
+      "text": "@nihal467 Made the changes.\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/432b187e-2b02-49f1-8604-1fb01e6787d0)\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/8f76d6a5-6a5e-4ae3-afdf-e5f16bdd716a)\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/a44f8f9c-b58e-4753-920d-e3589f1f9877)\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/3cc39873-a19e-4c54-af71-b842e6acdecb)\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/c30cf056-3f3b-4636-9df2-a793d558f519)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#47",
+      "time": 1687244927.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/47",
+      "text": "Add STT engine option to ProjectForm"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#191",
+      "time": 1687244796.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/191",
+      "text": "Add option to select STT engine per project"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5727",
+      "time": 1687240867.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5727",
+      "text": "Production Release: SmartICU Hotfixes",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5684",
+      "time": 1687240137.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5684",
+      "text": "Fix error message design on login page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5694",
+      "time": 1687240110.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5694",
+      "text": "Improve password check on reset pass page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5711",
+      "time": 1687240036.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5711",
+      "text": "Change error format for Facility config page"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/ayushma_fe#20",
@@ -8981,43 +9054,37 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5731",
+      "title": "Add autosave to forms",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/47",
+      "title": "Add STT engine option to ProjectForm",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma/pull/191",
+      "title": "Add option to select STT engine per project",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5715",
       "title": "Make error messages consistent",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5712",
       "title": "Fix alignment issue in Pain selector",
-      "stale_for": 2,
-      "labels": [
-        "needs testing",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5711",
-      "title": "Change error format for Facility config page",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5694",
-      "title": "Improve password check on reset pass page",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5684",
-      "title": "Fix error message design on login page",
       "stale_for": 0,
       "labels": [
         "tested",
@@ -9027,16 +9094,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5675",
       "title": "Create form context inside component",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 26,
+      "stale_for": 27,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9045,7 +9112,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 53,
+      "stale_for": 54,
       "labels": [
         "waiting-for-review"
       ]
@@ -9053,7 +9120,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 76,
+      "stale_for": 77,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9062,13 +9129,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 89,
+      "stale_for": 90,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9077,7 +9144,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 31,
+      "stale_for": 32,
       "labels": [
         "waiting-for-review"
       ]

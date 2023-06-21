@@ -1,6 +1,90 @@
 {
-  "last_updated": 1687172184.0,
+  "last_updated": 1687271996.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1392",
+      "time": 1687271996.0,
+      "link": "https://github.com/coronasafe/care/pull/1392",
+      "text": "drop the usage of POSTGIS_URL"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1394",
+      "time": 1687269556.0,
+      "link": "https://github.com/coronasafe/care/pull/1394",
+      "text": "fix celery invocation command"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1394",
+      "time": 1687269124.0,
+      "link": "https://github.com/coronasafe/care/pull/1394",
+      "text": "fix celery invocation command"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1393",
+      "time": 1687268847.0,
+      "link": "https://github.com/coronasafe/care/pull/1393",
+      "text": "revert ratelimit changes"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1393",
+      "time": 1687268650.0,
+      "link": "https://github.com/coronasafe/care/pull/1393",
+      "text": "revert ratelimit changes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1687264974.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1488063738",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1392",
+      "time": 1687264140.0,
+      "link": "https://github.com/coronasafe/care/pull/1392",
+      "text": "drop the usage of POSTGIS_URL"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1391",
+      "time": 1687257796.0,
+      "link": "https://github.com/coronasafe/care/pull/1391",
+      "text": "fix start scripts"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1391",
+      "time": 1687257519.0,
+      "link": "https://github.com/coronasafe/care/pull/1391",
+      "text": "fix start scripts"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1687254387.0,
+      "title": "coronasafe/care#1382",
+      "link": "https://github.com/coronasafe/care/pull/1382#pullrequestreview-1487750847",
+      "text": "Added tests for asset module"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#819",
+      "time": 1687253322.0,
+      "link": "https://github.com/coronasafe/care/issues/819",
+      "text": "Invalid UUIDs raise ValidationError in drf"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1371",
+      "time": 1687253062.0,
+      "link": "https://github.com/coronasafe/care/pull/1371",
+      "text": "upgrade django to 4.2"
+    },
     {
       "type": "pr_reviewed",
       "time": 1687172184.0,
@@ -2513,31 +2597,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1371",
-      "title": "upgrade django to 4.2",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove HBA1C field from consultation model",
-      "stale_for": 8,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1308",
-      "title": "use consistent phone number validation",
-      "stale_for": 11,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]
@@ -2545,7 +2613,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5498",
       "title": "Rename all instances of orgin_facility to origin_facility",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "waiting for back end",
         "cypress failed"
@@ -2554,7 +2622,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1303",
       "title": "Rename all instances of orgin_facility to origin_facility",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -2562,11 +2630,15 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 327,
+      "stale_for": 328,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1351",
+      "pr_link": "https://github.com/coronasafe/care/pull/1371"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/844",
       "pr_link": "https://github.com/coronasafe/care/pull/848"

@@ -55575,5 +55575,331 @@
             ]
         }
     ],
-    "2023-06-21 00:00:00": []
+    "2023-06-21 00:00:00": [
+        {
+            "client_msg_id": "45efec49-f085-4cd0-ae7a-3b6c59ba267c",
+            "type": "message",
+            "text": "EOD 21/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Fixed issues with autosave form not saving some fields (state,district)\n\u2022 Worked on two minor UI issues: #5732 #5736\n\u2022 Explored GPT functions and studied their use case for Ayushma\n\u2022 Had an onboarding call with Shahid along with Rithvik and Aakash\nWhat's next?\n\n\u2022 Get started on monitoring Asset uptime\n",
+            "user": "U02T4HFA07Q",
+            "ts": "1687362620.129049",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xkv",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed issues with autosave form not saving some fields (state,district)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on two minor UI issues: #5732 #5736"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Explored GPT functions and studied their use case for Ayushma"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had an onboarding call with Shahid along with Rithvik and Aakash"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Get started on monitoring Asset uptime"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "7af33c3e-0ec2-432a-bd58-20107410844b",
+            "type": "message",
+            "text": "EOD 21/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Fixed issues on the staging deployment of django 4.2\n\u2022 updated boto3 to the latest version along with adding static type checking for boto3 in vscode\n\u2022 Had an onboarding call with Shahid along with <@U02TDGQQPMJ> and <@U02T4HFA07Q> \nWhat's next?\n\n\u2022 Stabilize django 4.2 changes and get them ready for production\n",
+            "user": "U02TB8XHZD1",
+            "ts": "1687362224.120989",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "PO13y",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed issues on the staging deployment of django 4.2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "updated boto3 to the latest version along with adding static type checking for boto3 in vscode"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had an onboarding call with Shahid along with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TDGQQPMJ"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02T4HFA07Q"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Stabilize django 4.2 changes and get them ready for production"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "3ea9ea3f-c18e-47b5-ad13-5a5976d4e184",
+            "type": "message",
+            "text": "EOD 21/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Added summary to state page in 10bedICU\n\u2022 Spent some time analyzing the vitals monitor data of smarticu. \n\u2022 Fixed a P1 bug where current_bed was not being cleared when discharged in BE and made a custom migration.\n\u2022 Fixed improper z-index present in vitals monitor causing weird overlapping issues.\nWhat's next?\n\n\u2022 Configurable gain for vitals monitor",
+            "user": "U02TDGQQPMJ",
+            "ts": "1687361720.793459",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "=V+l4",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added summary to state page in 10bedICU"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Spent some time analyzing the vitals monitor data of smarticu. "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed a P1 bug where current_bed was not being cleared when discharged in BE and made a custom migration."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed improper z-index present in vitals monitor causing weird overlapping issues."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Configurable gain for vitals monitor"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-06-22 00:00:00": []
 }

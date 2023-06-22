@@ -13032,5 +13032,110 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-06-21 00:00:00": [
+        {
+            "client_msg_id": "3ea9ea3f-c18e-47b5-ad13-5a5976d4e184",
+            "type": "message",
+            "text": "EOD 21/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Added summary to state page in 10bedICU\n\u2022 Spent some time analyzing the vitals monitor data of smarticu. \n\u2022 Fixed a P1 bug where current_bed was not being cleared when discharged in BE and made a custom migration.\n\u2022 Fixed improper z-index present in vitals monitor causing weird overlapping issues.\nWhat's next?\n\n\u2022 Configurable gain for vitals monitor",
+            "user": "U02TDGQQPMJ",
+            "ts": "1687361720.793459",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "=V+l4",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added summary to state page in 10bedICU"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Spent some time analyzing the vitals monitor data of smarticu. "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed a P1 bug where current_bed was not being cleared when discharged in BE and made a custom migration."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed improper z-index present in vitals monitor causing weird overlapping issues."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Configurable gain for vitals monitor"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

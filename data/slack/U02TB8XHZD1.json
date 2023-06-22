@@ -877,5 +877,121 @@
             "text": "<@U02TB8XHZD1> has joined the channel",
             "inviter": "U022THM4U2U"
         }
+    ],
+    "2023-06-21 00:00:00": [
+        {
+            "client_msg_id": "7af33c3e-0ec2-432a-bd58-20107410844b",
+            "type": "message",
+            "text": "EOD 21/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Fixed issues on the staging deployment of django 4.2\n\u2022 updated boto3 to the latest version along with adding static type checking for boto3 in vscode\n\u2022 Had an onboarding call with Shahid along with <@U02TDGQQPMJ> and <@U02T4HFA07Q> \nWhat's next?\n\n\u2022 Stabilize django 4.2 changes and get them ready for production\n",
+            "user": "U02TB8XHZD1",
+            "ts": "1687362224.120989",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "PO13y",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed issues on the staging deployment of django 4.2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "updated boto3 to the latest version along with adding static type checking for boto3 in vscode"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had an onboarding call with Shahid along with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TDGQQPMJ"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02T4HFA07Q"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Stabilize django 4.2 changes and get them ready for production"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

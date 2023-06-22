@@ -1,6 +1,30 @@
 {
-  "last_updated": 1687191130.0,
+  "last_updated": 1687343016.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1399",
+      "time": 1687343016.0,
+      "link": "https://github.com/coronasafe/care/pull/1399",
+      "text": "added tests for `Bed`, `AssetBed` and `ConsultationBed`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1382",
+      "time": 1687334129.0,
+      "link": "https://github.com/coronasafe/care/pull/1382",
+      "text": "Added tests for asset module"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1382",
+      "time": 1687334129.0,
+      "link": "https://github.com/coronasafe/care/pull/1382",
+      "text": "Added tests for asset module",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care#1384",
@@ -319,33 +343,33 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1382",
-      "title": "Added tests for asset module",
+      "link": "https://github.com/coronasafe/care/pull/1399",
+      "title": "added tests for `Bed`, `AssetBed` and `ConsultationBed`",
       "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1370",
       "title": "prefetched skills for userassigned serializer in patientconsultation \u2026",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1344",
       "title": "implementing manual logic of on_delete option in M2M models ",
-      "stale_for": 11,
+      "stale_for": 13,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1329",
       "title": "Delete incomplete file uploads",
-      "stale_for": 9,
+      "stale_for": 11,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5550",
       "title": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
-      "stale_for": 18,
+      "stale_for": 20,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -354,11 +378,16 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1318",
       "title": "Added a way to handle filtering admitted but no bed assigned ",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
     }
   ],
-  "authored_issue_and_pr": []
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1383",
+      "pr_link": "https://github.com/coronasafe/care/pull/1382"
+    }
+  ]
 }

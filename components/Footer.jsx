@@ -7,13 +7,12 @@ export default function Footer() {
         <div className="max-w-5xl font-bold text-primary-500 text-center text-sm lg:leading-tight lg:mx-auto">
           <div className="flex items-center justify-center w-full">
             Powered by{" "}
-            <span className={"w-20 ml-4"}>
+            <span className="w-20 ml-4">
               <Image
                 src={process.env.NEXT_PUBLIC_ORG_LOGO}
                 alt={process.env.NEXT_PUBLIC_ORG_NAME}
                 width="80"
-                height="21.88"
-                layout="responsive"
+                height="22"
               />
             </span>
           </div>

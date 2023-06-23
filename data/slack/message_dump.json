@@ -55901,5 +55901,375 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-06-22 00:00:00": []
+    "2023-06-22 00:00:00": [
+        {
+            "client_msg_id": "4ee44c0e-695d-4c1f-a33e-f51b7c4821f3",
+            "type": "message",
+            "text": "EOD 22/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Worked on Configurable Gain adj. for Vitals Monitors <https://github.com/coronasafe/care_fe/pull/5749|#5749>\n\u2022 Restored `asset_class` disable update logic (somehow went missing) <https://github.com/coronasafe/care_fe/pull/5750|#5750>\n\u2022 Fixed initial state in Create Shift Form and user filters <https://github.com/coronasafe/care_fe/pull/5751|#5751>, <https://github.com/coronasafe/care_fe/pull/5754|#5754>\n\u2022 Minor UI enhancements (#<https://github.com/coronasafe/care_fe/pull/5753|5753>, <https://github.com/coronasafe/care_fe/pull/5752|#5752>)\n\u2022 Fixed Sample Details page crash (<https://github.com/coronasafe/care_fe/pull/5759|#5759>)\n\u2022 Removed usages of Legacy Components that were not tracked by replace MUI <https://github.com/coronasafe/care_fe/pull/5763|#5763>\nWhat's next?\n\n\u2022 Update BE to store gain adj. for hl7 and ventilator assets.\n\u2022 Draft PR for leaderboard upgrade to NextJS 13\n\u2022 Finish tailwinding DailyRounds\n\u2022 Work on zoom script",
+            "user": "U02TDGQQPMJ",
+            "ts": "1687452696.398659",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "E=fa",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 22/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on Configurable Gain adj. for Vitals Monitors "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5749",
+                                            "text": "#5749",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Restored "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "asset_class",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " disable update logic (somehow went missing) "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5750",
+                                            "text": "#5750",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed initial state in Create Shift Form and user filters "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5751",
+                                            "text": "#5751",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5754",
+                                            "text": "#5754",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Minor UI enhancements (#"
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5753",
+                                            "text": "5753"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5752",
+                                            "text": "#5752",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed Sample Details page crash ("
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5759",
+                                            "text": "#5759",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Removed usages of Legacy Components that were not tracked by replace MUI "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5763",
+                                            "text": "#5763",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Update BE to store gain adj. for hl7 and ventilator assets."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Draft PR for leaderboard upgrade to NextJS 13"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Finish tailwinding DailyRounds"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on zoom script"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "59cc2ff3-4c2b-4066-a651-ca6a8497f7a4",
+            "type": "message",
+            "text": "EOD 19/06/2023 and 20/06/2023\n\u2022 Created FilePreviewDialog component based on the feedback of my last PR for a material UI issue (just refactored existing code to get this component)",
+            "user": "U052CV9HBR6",
+            "ts": "1687446584.944689",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Wb9QM",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 19/06/2023 and 20/06/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Created FilePreviewDialog component based on the feedback of my last PR for a material UI issue (just refactored existing code to get this component)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "4bf095e8-7356-4054-84c6-78fbde6d097c",
+            "type": "message",
+            "text": "EOD 21/06/2023 &amp; 22/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go?\n\n\u2022 started refactoring all cypress to POM model\n\u2022 started E2E testing\nwhat's next\n\n\u2022 update testing doc based on suggestions received\n\u2022 complete the consultation edit PR of cypress\n\u2022 complete E2E testing",
+            "user": "U022THM4U2U",
+            "ts": "1687441933.851849",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "wdE",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/06/2023 & 22/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "started refactoring all cypress to POM model"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "started E2E testing"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "update testing doc based on suggestions received"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "complete the consultation edit PR of cypress"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "complete E2E testing"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-06-23 00:00:00": []
 }

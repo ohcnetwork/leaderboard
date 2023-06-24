@@ -1,9 +1,15 @@
+'use client';
+
 import { useState } from 'react';
 import ActivityCalendar from 'react-activity-calendar';
 import ActivityModal from './ActivityModal';
 
-export default function ActivityCalendarGit({ calendarData }) {
-  const getCalendarData = (year) => {
+export default function ActivityCalendarGit({
+  calendarData,
+}: {
+  calendarData: any;
+}) {
+  const getCalendarData = (year: number) => {
     const currentYear = year;
     let dates = [];
     let date = new Date(`01-01-${year}`);
@@ -23,7 +29,7 @@ export default function ActivityCalendarGit({ calendarData }) {
     });
 
     let calDates = calendarData.filter(
-      (d) => d.date.slice(0, 4) === String(currentYear)
+      (d: any) => d.date.slice(0, 4) === String(currentYear)
     );
 
     for (let i = 0; i < dates.length; i++)
@@ -40,7 +46,7 @@ export default function ActivityCalendarGit({ calendarData }) {
     return Number(calendarData[i]?.date.slice(0, 4));
   };
 
-  const lastNYears = (n) => {
+  const lastNYears = (n: number) => {
     const currentYear = Number(new Date().getFullYear());
     let years = [];
     for (let i = 0; i <= n; i++) years.push(currentYear - i);
@@ -65,15 +71,8 @@ export default function ActivityCalendarGit({ calendarData }) {
             showWeekdayLabels
             data={calendarData}
             theme={{
-              level0: '#374151',
-              level1: '#d3bff3',
-              level2: '#b08ee6',
-              level3: '#976ae2',
-              level4: '#6025c0',
-              level5: '#4d1e9a',
-              level6: '#380d80',
-              level7: '#35156b',
-              level8: '#1f0d40',
+              light: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
+              dark: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
             }}
             eventHandlers={{
               onClick: (event) => (data) => {
@@ -88,15 +87,8 @@ export default function ActivityCalendarGit({ calendarData }) {
             showWeekdayLabels
             data={getCalendarData(year)}
             theme={{
-              level0: '#374151',
-              level1: '#d3bff3',
-              level2: '#b08ee6',
-              level3: '#976ae2',
-              level4: '#6025c0',
-              level5: '#4d1e9a',
-              level6: '#380d80',
-              level7: '#35156b',
-              level8: '#1f0d40',
+              light: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
+              dark: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
             }}
             eventHandlers={{
               onClick: (event) => (data) => {

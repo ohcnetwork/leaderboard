@@ -1,7 +1,27 @@
 import { Dialog, Transition } from '@headlessui/react';
+import { type } from 'os';
 import { Fragment } from 'react';
 
-export default function ActivityModal({ isopen, closeFunc, activityData }) {
+type ActivityData = {
+  date?: string;
+  pr_reviewed?: number;
+  pr_opened?: number;
+  pr_merged?: number;
+  issue_opened?: number;
+  issue_closed?: number;
+  eod_update?: number;
+  comment_created?: number;
+};
+
+export default function ActivityModal({
+  isopen,
+  closeFunc,
+  activityData,
+}: {
+  isopen: boolean;
+  closeFunc: () => void;
+  activityData: ActivityData;
+}) {
   return (
     <>
       <Transition appear show={isopen} as={Fragment}>

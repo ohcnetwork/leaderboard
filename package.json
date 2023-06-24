@@ -14,7 +14,7 @@
     "gray-matter": "^4.0.3",
     "next": "^13.4.7",
     "react": "^18.2.0",
-    "react-activity-calendar": "^1.5.0",
+    "react-activity-calendar": "^2.0.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "rehype-stringify": "^9.0.3",
@@ -23,11 +23,14 @@
     "remark-rehype": "^10.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.7",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.3.1",
+    "@types/react": "^18.2.14",
+    "autoprefixer": "^10.4.14",
     "eslint": "8.16.0",
     "eslint-config-next": "^13.4.7",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.0.24"
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.1.3"
   }
 }

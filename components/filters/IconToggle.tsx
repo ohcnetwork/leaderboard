@@ -1,4 +1,15 @@
-const IconToggle = ({ state = false, handleOnClick, TrueIcon, FalseIcon }) => {
+import { IconType } from 'react-icons';
+const IconToggle = ({
+  state = false,
+  handleOnClick,
+  TrueIcon,
+  FalseIcon,
+}: {
+  state: boolean;
+  handleOnClick: () => void;
+  TrueIcon: IconType;
+  FalseIcon: IconType;
+}) => {
   return (
     <div
       onClick={handleOnClick}

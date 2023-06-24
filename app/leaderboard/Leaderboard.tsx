@@ -1,38 +1,46 @@
-import { useState, useEffect } from "react";
-import LeaderboardCard from "../components/contributors/LeaderboardCard";
-import TopContributor from "../components/contributors/TopContributor";
-import Filters from "../components/filters/Filters";
-import { getContributors } from "../lib/api";
-import { TbZoomQuestion } from "react-icons/tb";
+'use client';
+
+import { useState, useEffect } from 'react';
+import LeaderboardCard from '../../components/contributors/LeaderboardCard';
+import TopContributor from '../../components/contributors/TopContributor';
+import Filters from '../../components/filters/Filters';
+import { TbZoomQuestion } from 'react-icons/tb';
+import { Category, Contributor } from '@/lib/types';
 
 // Calculate week number
-const getWeekNumber = (date) => {
+const getWeekNumber = (date: Date) => {
   const d = new Date(date);
   const dayNum = d.getUTCDay() || 7;
   d.setUTCDate(d.getUTCDate() + 4 - dayNum);
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  return Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+  return Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
 };
 
 const categories = [
-  { slug: "eod_update", title: "EOD Updates" },
-  { slug: "pr_opened", title: "Pull Requests Opened" },
-  { slug: "pr_merged", title: "Pull Requests Merged" },
-  { slug: "pr_reviewed", title: "Pull Requests Reviewed" },
-  { slug: "issue_opened", title: "Issues Opened" },
-  { slug: "comment_created", title: "Comments Created" },
+  { slug: 'eod_update', title: 'EOD Updates' },
+  { slug: 'pr_opened', title: 'Pull Requests Opened' },
+  { slug: 'pr_merged', title: 'Pull Requests Merged' },
+  { slug: 'pr_reviewed', title: 'Pull Requests Reviewed' },
+  { slug: 'issue_opened', title: 'Issues Opened' },
+  { slug: 'comment_created', title: 'Comments Created' },
 ];
 
-export default function Home(props) {
-  const [contributors, setContributors] = useState(props.contributors);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState("points");
+export default function Leaderboard({
+  contributorsList,
+}: {
+  contributorsList: Contributor[];
+}) {
+  const [contributors, setContributors] = useState(contributorsList);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('points');
   const [sortDescending, setSortDescending] = useState(true);
   const [showCoreMembers, setShowCoreMembers] = useState(false);
-  const [categoryLeaderboard, setCategoryLeaderboard] = useState([]);
+  const [categoryLeaderboard, setCategoryLeaderboard] = useState<Category[]>(
+    []
+  );
 
   useEffect(() => {
-    let filteredContributors = props.contributors;
+    let filteredContributors = contributorsList;
 
     if (!showCoreMembers) {
       filteredContributors = filteredContributors.filter(
@@ -52,7 +60,7 @@ export default function Home(props) {
     }
 
     filteredContributors = filteredContributors.sort(
-      (a, b) => a.weekSummary[sortBy] - b.weekSummary[sortBy]
+      (a: any, b: any) => a.weekSummary[sortBy] - b.weekSummary[sortBy]
     );
 
     if (sortDescending) {
@@ -60,20 +68,21 @@ export default function Home(props) {
     }
 
     setCategoryLeaderboard(() => {
-      let temp = props.contributors;
+      let temp = contributorsList;
       if (!showCoreMembers) {
         temp = temp.filter((contributor) => !contributor.core);
       }
       return categories.map((category) => ({
         ...category,
         contributor: temp.sort(
-          (a, b) => b.weekSummary[category.slug] - a.weekSummary[category.slug]
+          (a: any, b: any) =>
+            b.weekSummary[category.slug] - a.weekSummary[category.slug]
         )[0],
       }));
     });
 
     setContributors([...filteredContributors]);
-  }, [props.contributors, searchTerm, sortBy, sortDescending, showCoreMembers]);
+  }, [contributorsList, searchTerm, sortBy, sortDescending, showCoreMembers]);
 
   return (
     <section className="bg-gray-900 border-t border-gray-600">
@@ -95,7 +104,7 @@ export default function Home(props) {
                 <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                     <span>
-                      Live Leaderboard of last 7 days | Week{" "}
+                      Live Leaderboard of last 7 days | Week{' '}
                       {getWeekNumber(new Date())} of {new Date().getFullYear()}
                     </span>
                   </div>
@@ -116,7 +125,7 @@ export default function Home(props) {
                   ) : (
                     <div className="my-4 overflow-x-auto">
                       <div className="flex flex-row justify-center">
-                        <TbZoomQuestion size={25} />{" "}
+                        <TbZoomQuestion size={25} />{' '}
                         <span className="ml-4">No results found</span>
                       </div>
                     </div>
@@ -140,7 +149,7 @@ export default function Home(props) {
                       role="list"
                       className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
                     >
-                      {categoryLeaderboard.map((category, index) => {
+                      {categoryLeaderboard.map((category: Category, index) => {
                         return (
                           <TopContributor
                             key={index}
@@ -160,27 +169,4 @@ export default function Home(props) {
       </div>
     </section>
   );
-}
-
-export async function getStaticProps() {
-  const contributors = getContributors();
-
-  const calculateStalePrs = (contributor) =>
-    contributor.activityData?.open_prs?.reduce(
-      (acc, pr) => (pr?.stale_for >= 7 ? acc + 1 : acc),
-      0
-    );
-
-  return {
-    props: {
-      title: "Leaderboard",
-      contributors: contributors.map((contributor) => ({
-        ...contributor,
-        weekSummary: {
-          ...contributor.weekSummary,
-          pr_stale: calculateStalePrs(contributor),
-        },
-      })),
-    },
-  };
 }

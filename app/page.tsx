@@ -1,9 +1,11 @@
-import InfoCard from "../components/contributors/InfoCard";
-import Link from "next/link";
-import { getContributors } from "../lib/api";
-import { getLastWeekDateRangeString } from "../lib/utils";
+import InfoCard from '../components/contributors/InfoCard';
+import Link from 'next/link';
+import { getContributors } from '../lib/api';
+import { getLastWeekDateRangeString } from '../lib/utils';
 
-export default function Home(props) {
+export default function Home() {
+  const contributors: any = getContributors();
+  const dateRange = getLastWeekDateRangeString();
   return (
     <div className="bg-gray-900 min-h-screen">
       <section className="bg-gray-900 border-t border-gray-700 ">
@@ -15,7 +17,6 @@ export default function Home(props) {
                   <div className="pt-20">
                     <div className="mx-auto max-w-7xl">
                       <div className="space-y-12">
-
                         <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                           <h2 className="text-3xl font-bold text-white tracking-tight sm:text-5xl">
                             What do we do?
@@ -27,7 +28,9 @@ export default function Home(props) {
                       </div>
                     </div>
                   </div>
-                ) : <div className="pt-0" />}
+                ) : (
+                  <div className="pt-0" />
+                )}
                 <div>
                   <div className="mx-auto">
                     <div className="space-y-12">
@@ -43,7 +46,7 @@ export default function Home(props) {
                         role="list"
                         className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8 mt-4"
                       >
-                        {props.contributors.map((contributor, index) => {
+                        {contributors.map((contributor: any, index: number) => {
                           return (
                             <InfoCard
                               key={index}
@@ -64,15 +67,13 @@ export default function Home(props) {
                   <div className=" text-white rounded-lg bg-gray-800 bg-opacity-50 shadow-lg border border-gray-800">
                     <div className="flex flex-col md:flex-row justify-between md:items-end bg-gray-800 rounded-t-lg px-6 py-4 border-b border-gray-700 ">
                       <p className="text-xl font-medium">Leaderboard</p>
-                      <span className="block text-gray-400">
-                        {props.dateRange}
-                      </span>
+                      <span className="block text-gray-400">{dateRange}</span>
                     </div>
                     <div className="space-y-2 p-4 ">
-                      {props.contributors
-                        .filter((contributor) => !contributor.core)
+                      {contributors
+                        .filter((contributor: any) => !contributor.core)
                         .slice(0, 5)
-                        .map((contributor, index) => {
+                        .map((contributor: any, index: number) => {
                           return (
                             <Link
                               key={index}
@@ -92,7 +93,7 @@ export default function Home(props) {
 
                       <div className="pt-2">
                         <Link
-                          className="block px-10 p-3 text-center bg-gradient-to-b from-primary-500 to-primary-700 text-gray-900 border border-primary-500 font-bold rounded shadow-lg hover:shadow-xl hover:from-gray-800 hover:to-gray-900 hover:text-primary-500 transition"
+                          className="block px-10 p-3 text-center bg-gradient-to-b from-primary-500 to-primary-700 text-gray-300 border border-primary-500 font-bold rounded shadow-lg hover:shadow-xl hover:from-gray-800 hover:to-gray-900 hover:text-primary-500 transition"
                           href="/leaderboard"
                         >
                           View Leaderboard
@@ -108,40 +109,4 @@ export default function Home(props) {
       </section>
     </div>
   );
-}
-
-export async function getStaticProps() {
-  const contributors = getContributors();
-  const dateRange = getLastWeekDateRangeString();
-
-  const metaTags = [
-    {
-      name: "og:image",
-      content: process.env.NEXT_PUBLIC_META_IMG
-    },
-    {
-      name: "og:title",
-      content: process.env.NEXT_PUBLIC_META_TITLE,
-    },
-    {
-      name: "description",
-      content: process.env.NEXT_PUBLIC_META_DESCRIPTION,
-    },
-    {
-      name: "og:description",
-      content: process.env.NEXT_PUBLIC_META_DESCRIPTION
-    },
-    {
-      name: "og:type",
-      content: "article",
-    },
-  ];
-
-  return {
-    props: {
-      contributors,
-      dateRange,
-      metaTags: metaTags,
-    },
-  };
 }

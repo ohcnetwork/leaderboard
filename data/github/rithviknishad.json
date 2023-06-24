@@ -1,6 +1,109 @@
 {
-  "last_updated": 1687455663.0,
+  "last_updated": 1687561510.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5774",
+      "time": 1687561510.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5774",
+      "text": "Production Release; June Week 4",
+      "collaborated_with": [
+        "mathew-alex",
+        "Mustafa-Azad025",
+        "khavinshankar",
+        "nikhilagastya",
+        "Ashesh3",
+        "JahnabDutta",
+        "patelaryan7751"
+      ]
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1404",
+      "time": 1687533572.0,
+      "link": "https://github.com/coronasafe/care/issues/1404",
+      "text": "Add proper validations for `discharge_date` `admission_date` and `death_datetime`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5773",
+      "time": 1687533445.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5773",
+      "text": "Hide CNS"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5773",
+      "time": 1687533070.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5773",
+      "text": "Hide CNS"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1687522621.0,
+      "title": "coronasafe/care_fe#5769",
+      "link": "https://github.com/coronasafe/care_fe/pull/5769#pullrequestreview-1495033298",
+      "text": "fetch assets only when bed is assigned"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1403",
+      "time": 1687520931.0,
+      "link": "https://github.com/coronasafe/care/issues/1403",
+      "text": "`discharge_date` for discharged as expired is automatically current date time instead of `death_datetime`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5767",
+      "time": 1687520582.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5767",
+      "text": "Allow discharge_date to be specified during discharge as expired"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5767",
+      "time": 1687517201.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5767",
+      "text": "Allow discharge_date to be specified during discharge as expired"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1687513396.0,
+      "title": "coronasafe/care_fe#5720",
+      "link": "https://github.com/coronasafe/care_fe/pull/5720#pullrequestreview-1494822568",
+      "text": "Replace MaterialUI in FileUpload.tsx"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#85",
+      "time": 1687496133.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/85",
+      "text": "Minor UI fix for \"Currently Working on\" tab"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#96",
+      "time": 1687496115.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/96",
+      "text": "discrepancy in top contributors data"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5757",
+      "time": 1687479259.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5757",
+      "text": "Tailwind externalResult ListFilter",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5759",
+      "time": 1687479172.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5759",
+      "text": "Fixes crash in Sample Detail Page"
+    },
     {
       "type": "pr_reviewed",
       "time": 1687455663.0,
@@ -18262,7 +18365,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5763",
       "title": "Removes usages of Legacy Components that are not covered by #5006",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "cypress failed"
       ]
@@ -18270,7 +18373,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "cypress failed"
       ]
@@ -18278,15 +18381,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
-        "merge conflict"
+        "merge conflict",
+        "stale"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5663",
       "title": "Tailwinds Update Status Dialog",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -18295,7 +18399,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1369",
       "title": "Medibase Medicines Integration",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -18303,7 +18407,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "waiting for back end",
@@ -18313,7 +18417,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "need Review",
         "cypress failed"
@@ -18396,10 +18500,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5426",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5427"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/ayushma/issues/42",
-      "pr_link": "https://github.com/coronasafe/ayushma/pull/79"
     }
   ]
 }

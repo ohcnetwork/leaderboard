@@ -13478,5 +13478,103 @@
                 "ts": "1687540890.000000"
             }
         }
+    ],
+    "2023-06-24 00:00:00": [
+        {
+            "client_msg_id": "0e1a8ccc-afbf-4867-a81a-d24e9c65ce39",
+            "type": "message",
+            "text": "EOD 24/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\n\u2022 Skipped `libphonenumberjs` 's AsYouType's formatting from Phone Number field that prevented some rare numbers from being entered.\n\u2022 Hid ventilator/hl7 if not configured for the bed and adjusted layout accordingly to make it responsive.\nWhat's next?\n\n\u2022 Look into bed utilization % with django and try to extract the sql for metabase.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1687629596.495529",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "//Dm",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 24/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Skipped "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "libphonenumberjs",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " 's AsYouType's formatting from Phone Number field that prevented some rare numbers from being entered."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Hid ventilator/hl7 if not configured for the bed and adjusted layout accordingly to make it responsive."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into bed utilization % with django and try to extract the sql for metabase."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

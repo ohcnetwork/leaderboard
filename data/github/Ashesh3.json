@@ -1,6 +1,27 @@
 {
-  "last_updated": 1687646173.0,
+  "last_updated": 1687765495.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5784",
+      "time": 1687765495.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5784",
+      "text": "Minor ui fixes in shifting and consultation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#53",
+      "time": 1687764827.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/53",
+      "text": "Add noonce to requests"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5782",
+      "time": 1687759092.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5782",
+      "text": "Add validation to inventory management page"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#5780",
@@ -9266,9 +9287,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5784",
+      "title": "Minor ui fixes in shifting and consultation",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5782",
+      "title": "Add validation to inventory management page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5765",
       "title": "Fix linting errors and add ventilator icon",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "merge conflict",
@@ -9278,7 +9317,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 31,
+      "stale_for": 33,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9287,7 +9326,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 58,
+      "stale_for": 60,
       "labels": [
         "waiting-for-review"
       ]
@@ -9295,7 +9334,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 81,
+      "stale_for": 83,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9304,13 +9343,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 94,
+      "stale_for": 96,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 25,
+      "stale_for": 27,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9319,7 +9358,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 36,
+      "stale_for": 38,
       "labels": [
         "waiting-for-review"
       ]
@@ -9409,10 +9448,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3416",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3417"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3355",
-      "pr_link": "https://github.com/coronasafe/care/pull/969"
     }
   ]
 }

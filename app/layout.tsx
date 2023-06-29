@@ -2,7 +2,7 @@ import './globals.css';
 import { Metadata } from 'next';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-
+import Provider from './provider';
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_PAGE_TITLE,
   description: process.env.NEXT_PUBLIC_META_DESCRIPTION,
@@ -21,10 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-        <Footer />
+      <body className="bg-background text-foreground">
+        <Provider>
+          <Header />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

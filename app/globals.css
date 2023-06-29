@@ -74,6 +74,23 @@ h4 {
 }
 
 .journey-map__container {
-  background-image: url("/images/map-bg.svg");
+  background-image: url('/images/map-bg.svg');
   @apply bg-no-repeat bg-cover;
+}
+
+:root {
+  --light-background: #fafaff;
+  --dark-background: #111827;
+  --light-foreground: #020202;
+  --dark-foreground: #f9fafb;
+}
+
+html.light {
+  --background: var(--light-background);
+  --foreground: var(--light-foreground);
+}
+
+html.dark {
+  --background: var(--dark-background);
+  --foreground: var(--dark-foreground);
 }

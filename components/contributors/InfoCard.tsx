@@ -26,12 +26,12 @@ export default function InfoCard({
           className=""
         >
           <div
-            className={`flex flex-shrink-0 items-center bg-gray-900 bg-opacity-50 rounded-full md:p-1 relative z-10 ${
+            className={`flex flex-shrink-0 items-center bg-opacity-50 rounded-full md:p-1 relative z-10 ${
               isClickable && `cursor-pointer`
             }`}
           >
             <img
-              className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-2 border-indigo-500"
+              className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-[3px] border-indigo-500"
               src={`https://github.com/${contributor.github}.png`}
               alt={contributor.github}
             />
@@ -45,7 +45,7 @@ export default function InfoCard({
             >
               <h3
                 className={clsx(
-                  'text-lg md:text-2xl leading-tight text-white',
+                  'text-lg md:text-2xl leading-tight ',
                   isClickable && 'cursor-pointer hover:text-primary-200'
                 )}
               >

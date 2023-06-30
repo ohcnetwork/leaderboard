@@ -56586,5 +56586,724 @@
     ],
     "2023-06-25 00:00:00": [],
     "2023-06-27 00:00:00": [],
-    "2023-06-26 00:00:00": []
+    "2023-06-26 00:00:00": [],
+    "2023-06-30 00:00:00": [],
+    "2023-06-29 00:00:00": [
+        {
+            "client_msg_id": "5a00cd6f-e3a5-4be6-97b4-e1843a8b4e85",
+            "type": "message",
+            "text": "EOD 24, 26, 27/06/2023\n\u2022 Created new component for LinearProgress. Tried to make it similar like material ui's LinearProgress. (Was occupied with packing and shifting to hostel on previous days)\nEOD 28/06/2023\n\u2022 Adjusted button width in mobile view in FileUpload page.\n\u2022 Fixed buttons overflowing for smaller width for the same page.",
+            "user": "U052CV9HBR6",
+            "ts": "1688012823.630739",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "PJEJ4",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 24, 26, 27/06/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Created new component for LinearProgress. Tried to make it similar like material ui's LinearProgress. (Was occupied with packing and shifting to hostel on previous days)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 28/06/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Adjusted button width in mobile view in FileUpload page."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed buttons overflowing for smaller width for the same page."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-06-28 00:00:00": [
+        {
+            "client_msg_id": "64eb0b23-e947-48d4-ba70-30ef213c7e87",
+            "type": "message",
+            "text": "_EOD 28/06/2023_ <!subteam^S035L5S02RF|@care_engineering>\nHow did the day go?\n\u2022 Worked on issue <https://github.com/care_fe/issues/5797|#5797 - Mark file upload as complete for sample test> (needs testing, P1)\n\u2022 Worked on updating <https://github.com/care_fe/src/Components/Patient/PatientRegister.tsx|src/Components/Patient/PatientRegister.tsx> with Tailwind (cypress passed, needs testing)\n\u2022 Resolved issues in PR <https://github.com/care_fe/issues/5765|#5765 - Fix linting errors and add ventilator icon> (blocked, cypress passed, needs testing)\nWhat's next?\n\u2022 Work on implementing celery tasks for fetching asset uptime from middleware\n\u2022 Study about optimizing celery tasks and error handling\n",
+            "user": "U02T4HFA07Q",
+            "ts": "1687963493.691579",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/NspA",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/06/2023",
+                                    "style": {
+                                        "italic": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/care_fe/issues/5797",
+                                            "text": "#5797 - Mark file upload as complete for sample test",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (needs testing, P1)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on updating "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/care_fe/src/Components/Patient/PatientRegister.tsx",
+                                            "text": "src/Components/Patient/PatientRegister.tsx",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with Tailwind (cypress passed, needs testing)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved issues in PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/care_fe/issues/5765",
+                                            "text": "#5765 - Fix linting errors and add ventilator icon",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (blocked, cypress passed, needs testing)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on implementing celery tasks for fetching asset uptime from middleware"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Study about optimizing celery tasks and error handling"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "6dbdd4f9-fe10-491e-abed-96c45c6e94e2",
+            "type": "message",
+            "text": "EOD 28/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go ?\n\n\u2022 Made a frontend pr for ayushma feedback (<https://github.com/coronasafe/ayushma_fe/pull/54>)\n\u2022 Merged latest master branch with abdm and fixed related issue (<@U02TB8XHZD1> helped out with conflicts in migration)\n\u2022 Reviewed and merged tested prs\nwhat's next ?\n\n\u2022 Merge latest develop branch with abdm in frontend\n\u2022 Look into unit tests for abdm\n",
+            "user": "U01JB8L8P7Y",
+            "ts": "1687961192.916649",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ae4q",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made a frontend pr for ayushma feedback ("
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/ayushma_fe/pull/54"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Merged latest master branch with abdm and fixed related issue ("
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TB8XHZD1"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " helped out with conflicts in migration)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed and merged tested prs"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Merge latest develop branch with abdm in frontend"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into unit tests for abdm"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/29787772/249361431-a298fea5-87cd-4f26-8e0e-e770219a72c1.png",
+                    "image_width": 1438,
+                    "image_height": 764,
+                    "image_bytes": 287568,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1687930121,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/ayushma_fe/pull/54",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1438x764px image",
+                    "text": "Resolves <https://github.com/coronasafe/ayushma/issues/75|coronasafe/ayushma#75>\n\nThe UI includes,\n\n\u2022 thumbs up and down icons for rating  \n    <https://user-images.githubusercontent.com/29787772/249361431-a298fea5-87cd-4f26-8e0e-e770219a72c1.png|image>\n\u2022 modal for giving additional feedback  \n    <https://user-images.githubusercontent.com/29787772/249361628-615722a4-c13a-4cba-91d7-d6f6c5e824d4.png|image>",
+                    "title": "#54 Added UI for feedback",
+                    "title_link": "https://github.com/coronasafe/ayushma_fe/pull/54",
+                    "footer": "<https://github.com/coronasafe/ayushma_fe|coronasafe/ayushma_fe>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "4bdc60b8-a7e0-420d-9fd3-1b4427e7ebaa",
+            "type": "message",
+            "text": "*EOD 28/06/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 Added validations to consultation date fields <https://github.com/coronasafe/care/pull/1415|#1415>\n\u2022 Followed up on medibase (removed medibase_id as it was mongodb thing, uses name as unique instead; migration to invoke load_medicines_data\n\u2022 Replaces usages of legacy `AlertDialog` with `ConfirmDialog` and deletes unused components <https://github.com/coronasafe/care_fe/pull/5792|#5792>\n\u2022 Adds as you type regex validation for PhoneNumberFormField <https://github.com/coronasafe/care_fe/pull/5789|#5789>\n\u2022 Added `RangeAutoCompleteFormField`\n\u2022 Almost completed tailwinding daily rounds form.\n*What's next?*\n\n\u2022 Add tests to consultation date field validations (almost complete, but figuring out why tests not running in my local)\n\u2022 Update BE to store gain adj. for hl7 and ventilator assets.\n\u2022 Work on zoom script\n\u2022 Follow up on next13 migration for leaderboard",
+            "user": "U02TDGQQPMJ",
+            "ts": "1687960693.285169",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "e5n",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/06/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added validations to consultation date fields "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1415",
+                                            "text": "#1415",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up on medibase (removed medibase_id as it was mongodb thing, uses name as unique instead; migration to invoke load_medicines_data"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Replaces usages of legacy "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "AlertDialog",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "ConfirmDialog",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and deletes unused components "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5792",
+                                            "text": "#5792",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Adds as you type regex validation for PhoneNumberFormField "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5789",
+                                            "text": "#5789",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "RangeAutoCompleteFormField",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Almost completed tailwinding daily rounds form."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add tests to consultation date field validations (almost complete, but figuring out why tests not running in my local)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Update BE to store gain adj. for hl7 and ventilator assets."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on zoom script"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on next13 migration for leaderboard"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "b9eb7847-1861-42a8-908b-36978b860e1d",
+            "type": "message",
+            "text": "EOD 28/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go ?\n\n\u2022 fixed random failure of the cypress in #5787 itself\n\u2022 tested all PR for this week release\n\u2022 updated the gitbook documentation\nwhat's next ?\n\n\u2022 start E2E testing of care\n\u2022 create consultation update cypress test\n",
+            "user": "U022THM4U2U",
+            "ts": "1687960310.107369",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "y+Qo",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fixed random failure of the cypress in #5787 itself"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested all PR for this week release"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "updated the gitbook documentation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "start E2E testing of care"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "create consultation update cypress test"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ]
 }

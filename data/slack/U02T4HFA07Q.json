@@ -2590,5 +2590,151 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-06-28 00:00:00": [
+        {
+            "client_msg_id": "64eb0b23-e947-48d4-ba70-30ef213c7e87",
+            "type": "message",
+            "text": "_EOD 28/06/2023_ <!subteam^S035L5S02RF|@care_engineering>\nHow did the day go?\n\u2022 Worked on issue <https://github.com/care_fe/issues/5797|#5797 - Mark file upload as complete for sample test> (needs testing, P1)\n\u2022 Worked on updating <https://github.com/care_fe/src/Components/Patient/PatientRegister.tsx|src/Components/Patient/PatientRegister.tsx> with Tailwind (cypress passed, needs testing)\n\u2022 Resolved issues in PR <https://github.com/care_fe/issues/5765|#5765 - Fix linting errors and add ventilator icon> (blocked, cypress passed, needs testing)\nWhat's next?\n\u2022 Work on implementing celery tasks for fetching asset uptime from middleware\n\u2022 Study about optimizing celery tasks and error handling\n",
+            "user": "U02T4HFA07Q",
+            "ts": "1687963493.691579",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/NspA",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/06/2023",
+                                    "style": {
+                                        "italic": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/care_fe/issues/5797",
+                                            "text": "#5797 - Mark file upload as complete for sample test",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (needs testing, P1)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on updating "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/care_fe/src/Components/Patient/PatientRegister.tsx",
+                                            "text": "src/Components/Patient/PatientRegister.tsx",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with Tailwind (cypress passed, needs testing)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved issues in PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/care_fe/issues/5765",
+                                            "text": "#5765 - Fix linting errors and add ventilator icon",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " (blocked, cypress passed, needs testing)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on implementing celery tasks for fetching asset uptime from middleware"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Study about optimizing celery tasks and error handling"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

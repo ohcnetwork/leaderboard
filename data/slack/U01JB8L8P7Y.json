@@ -850,5 +850,161 @@
                 }
             ]
         }
+    ],
+    "2023-06-28 00:00:00": [
+        {
+            "client_msg_id": "6dbdd4f9-fe10-491e-abed-96c45c6e94e2",
+            "type": "message",
+            "text": "EOD 28/06/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go ?\n\n\u2022 Made a frontend pr for ayushma feedback (<https://github.com/coronasafe/ayushma_fe/pull/54>)\n\u2022 Merged latest master branch with abdm and fixed related issue (<@U02TB8XHZD1> helped out with conflicts in migration)\n\u2022 Reviewed and merged tested prs\nwhat's next ?\n\n\u2022 Merge latest develop branch with abdm in frontend\n\u2022 Look into unit tests for abdm\n",
+            "user": "U01JB8L8P7Y",
+            "ts": "1687961192.916649",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ae4q",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/06/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made a frontend pr for ayushma feedback ("
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/ayushma_fe/pull/54"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Merged latest master branch with abdm and fixed related issue ("
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TB8XHZD1"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " helped out with conflicts in migration)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed and merged tested prs"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Merge latest develop branch with abdm in frontend"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into unit tests for abdm"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/29787772/249361431-a298fea5-87cd-4f26-8e0e-e770219a72c1.png",
+                    "image_width": 1438,
+                    "image_height": 764,
+                    "image_bytes": 287568,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1687930121,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/ayushma_fe/pull/54",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1438x764px image",
+                    "text": "Resolves <https://github.com/coronasafe/ayushma/issues/75|coronasafe/ayushma#75>\n\nThe UI includes,\n\n\u2022 thumbs up and down icons for rating  \n    <https://user-images.githubusercontent.com/29787772/249361431-a298fea5-87cd-4f26-8e0e-e770219a72c1.png|image>\n\u2022 modal for giving additional feedback  \n    <https://user-images.githubusercontent.com/29787772/249361628-615722a4-c13a-4cba-91d7-d6f6c5e824d4.png|image>",
+                    "title": "#54 Added UI for feedback",
+                    "title_link": "https://github.com/coronasafe/ayushma_fe/pull/54",
+                    "footer": "<https://github.com/coronasafe/ayushma_fe|coronasafe/ayushma_fe>",
+                    "fields": [
+                        {
+                            "value": "1",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

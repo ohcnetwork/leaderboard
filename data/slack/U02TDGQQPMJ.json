@@ -13576,5 +13576,237 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-06-28 00:00:00": [
+        {
+            "client_msg_id": "4bdc60b8-a7e0-420d-9fd3-1b4427e7ebaa",
+            "type": "message",
+            "text": "*EOD 28/06/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 Added validations to consultation date fields <https://github.com/coronasafe/care/pull/1415|#1415>\n\u2022 Followed up on medibase (removed medibase_id as it was mongodb thing, uses name as unique instead; migration to invoke load_medicines_data\n\u2022 Replaces usages of legacy `AlertDialog` with `ConfirmDialog` and deletes unused components <https://github.com/coronasafe/care_fe/pull/5792|#5792>\n\u2022 Adds as you type regex validation for PhoneNumberFormField <https://github.com/coronasafe/care_fe/pull/5789|#5789>\n\u2022 Added `RangeAutoCompleteFormField`\n\u2022 Almost completed tailwinding daily rounds form.\n*What's next?*\n\n\u2022 Add tests to consultation date field validations (almost complete, but figuring out why tests not running in my local)\n\u2022 Update BE to store gain adj. for hl7 and ventilator assets.\n\u2022 Work on zoom script\n\u2022 Follow up on next13 migration for leaderboard",
+            "user": "U02TDGQQPMJ",
+            "ts": "1687960693.285169",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "e5n",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/06/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added validations to consultation date fields "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1415",
+                                            "text": "#1415",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up on medibase (removed medibase_id as it was mongodb thing, uses name as unique instead; migration to invoke load_medicines_data"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Replaces usages of legacy "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "AlertDialog",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "ConfirmDialog",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and deletes unused components "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5792",
+                                            "text": "#5792",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Adds as you type regex validation for PhoneNumberFormField "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5789",
+                                            "text": "#5789",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "RangeAutoCompleteFormField",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Almost completed tailwinding daily rounds form."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add tests to consultation date field validations (almost complete, but figuring out why tests not running in my local)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Update BE to store gain adj. for hl7 and ventilator assets."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on zoom script"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on next13 migration for leaderboard"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1687799591.0,
+  "last_updated": 1688131648.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1688131648.0,
+      "title": "coronasafe/care#1369",
+      "link": "https://github.com/coronasafe/care/pull/1369#pullrequestreview-1507197669",
+      "text": "Medibase Medicines Integration"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5800",
+      "time": 1688103861.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5800",
+      "text": "fix pwa and theme colors"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1413",
@@ -2814,15 +2828,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5800",
+      "title": "fix pwa and theme colors",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 14,
+      "stale_for": 18,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "make HBA1C field read only ",
-      "stale_for": 2,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -2830,7 +2853,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 334,
+      "stale_for": 338,
       "labels": []
     }
   ],

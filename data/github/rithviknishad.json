@@ -1,6 +1,62 @@
 {
-  "last_updated": 1687782921.0,
+  "last_updated": 1688119394.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1688119394.0,
+      "title": "coronasafe/care_fe#5794",
+      "link": "https://github.com/coronasafe/care_fe/pull/5794#pullrequestreview-1506905266",
+      "text": "Fixed overflow and wrapping in vitals monitor"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5792",
+      "time": 1688112437.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5792",
+      "text": "Replace `AlertDialog` with `ConfirmDialog`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688108345.0,
+      "title": "coronasafe/care_fe#5720",
+      "link": "https://github.com/coronasafe/care_fe/pull/5720#pullrequestreview-1506622187",
+      "text": "Replace MaterialUI in FileUpload.tsx"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688108324.0,
+      "title": "coronasafe/care_fe#5720",
+      "link": "https://github.com/coronasafe/care_fe/pull/5720#pullrequestreview-1506621708",
+      "text": "Replace MaterialUI in FileUpload.tsx"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5720",
+      "time": 1688108266.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5720#issuecomment-1614216232",
+      "text": "@print-Sathvik maybe we can add some spacing above the field so that it looks good in all views"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5720",
+      "time": 1688108086.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5720#issuecomment-1614213335",
+      "text": "@nihal467 that space is for the error for that field. In existing staging when error comes, layout shift happens. But layout shift is not good, hence new components automatically keeps the spacing consistent to prevent layout shifts."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688102647.0,
+      "title": "coronasafe/care_fe#5730",
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#pullrequestreview-1506530191",
+      "text": "added referred to facility field in discharge form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5783",
+      "time": 1688099980.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5783#issuecomment-1614110096",
+      "text": "break the chain logo => care logo"
+    },
     {
       "type": "pr_reviewed",
       "time": 1687782921.0,
@@ -18451,49 +18507,61 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/leaderboard/pull/124",
-      "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 2,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5763",
-      "title": "Removes usages of Legacy Components that are not covered by #5006",
-      "stale_for": 4,
-      "labels": [
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5749",
-      "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 4,
-      "labels": [
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5681",
-      "title": "HCX Communication",
-      "stale_for": 3,
-      "labels": [
-        "merge conflict",
-        "stale"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5663",
-      "title": "Tailwinds Update Status Dialog",
-      "stale_for": 6,
+      "link": "https://github.com/coronasafe/care_fe/pull/5799",
+      "title": "Tailwinds Daily Rounds Form",
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress failed"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5789",
+      "title": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "discussion",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1415",
+      "title": "Adds validation to consulation date fields (`admission_date`, `discharge_date`, `death_datetime`)",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/leaderboard/pull/124",
+      "title": "Migrate to NextJS 13 App Router + Typescript support",
+      "stale_for": 1,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5749",
+      "title": "Configurable Gain control for Vitals Monitor",
+      "stale_for": 3,
+      "labels": [
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5681",
+      "title": "HCX Communication",
+      "stale_for": 7,
+      "labels": [
+        "merge conflict",
+        "stale"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1369",
       "title": "Medibase Medicines Integration",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -18501,7 +18569,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 4,
+      "stale_for": 2,
       "labels": [
         "tested",
         "waiting for back end",
@@ -18511,7 +18579,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 6,
+      "stale_for": 10,
       "labels": [
         "need Review",
         "cypress failed"
@@ -18519,6 +18587,18 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5791",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5792"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1403",
+      "pr_link": "https://github.com/coronasafe/care/pull/1414"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5762",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5763"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5758",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5759"
@@ -18582,18 +18662,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1311",
       "pr_link": "https://github.com/coronasafe/care/pull/1312"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1298",
-      "pr_link": "https://github.com/coronasafe/care/pull/1299"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1284",
-      "pr_link": "https://github.com/coronasafe/care/pull/1293"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5426",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5427"
     }
   ]
 }

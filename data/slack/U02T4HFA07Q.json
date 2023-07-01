@@ -2736,5 +2736,103 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-06-30 00:00:00": [
+        {
+            "client_msg_id": "66ed078b-cee8-4823-8c14-db42d44df416",
+            "type": "message",
+            "text": "_EOD 30/06/2023_ <!subteam^S035L5S02RF|@care_engineering>\nHow did the day go?\n\u2022 Worked on fixing design issues with the Tailwind Patient Register page in the existing PR\n\u2022 Completed the implementation of the celery task to automatically fetch asset status from middleware\nWhat's next?\n\u2022 Waiting for more issues to be assigned \n",
+            "user": "U02T4HFA07Q",
+            "ts": "1688136208.607429",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "hfgM",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/06/2023",
+                                    "style": {
+                                        "italic": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on fixing design issues with the Tailwind Patient Register page in the existing PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Completed the implementation of the celery task to automatically fetch asset status from middleware"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Waiting for more issues to be assigned "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -1006,5 +1006,145 @@
                 }
             ]
         }
+    ],
+    "2023-06-30 00:00:00": [
+        {
+            "client_msg_id": "6153e84e-8e1c-4ddb-aee3-8c661c2af5e0",
+            "type": "message",
+            "text": "EOD 30/06/2023\n\nHow did the day go?\n\n\u2022 Merged latest develop branch with abdm-integration branch in frontend\n\u2022 Helped out <@U052CV9HBR6> with a positioning issue in <https://github.com/coronasafe/care_fe/pull/5719>\n\u2022 Resolved some merge conflicts and reviewed and merged remaining tested prs \nWhat's next?\n\n\u2022 Look into unit tests for abdm\n",
+            "user": "U01JB8L8P7Y",
+            "ts": "1688134615.215939",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "cjQM",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/06/2023\n\nHow did the day go?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Merged latest develop branch with abdm-integration branch in frontend"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Helped out "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U052CV9HBR6"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with a positioning issue in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5719"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved some merge conflicts and reviewed and merged remaining tested prs "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into unit tests for abdm"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/113630200/246691628-0b1a8d52-acc8-4f40-99ba-ed4b1f679f7a.png",
+                    "image_width": 1366,
+                    "image_height": 768,
+                    "image_bytes": 101604,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1687123904,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/5719",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1366x768px image",
+                    "text": "*WHAT*\n*:robot_face: Generated by Copilot at <https://github.com/coronasafe/care_fe/commit/b549c211bb3d5ffc4ace5bf6eff2a4290ee6c0bb|b549c21>*\n\nImproved the user interface and functionality of the `GLocationPicker` component by adding a `Popover` map panel and fixing a close icon bug.\n\n*Proposed Changes*\n\n\u2022 Fixes <https://github.com/coronasafe/care_fe/issues/4952|#4952>\n\u2022 Replaced Material UI in FacilityCreate.tsx\n\u2022 Wrapped close button of GLocationPicker with Popover.Button after replacing material UI's Popover component with headlessui's Popover component as that's the only way to close the Popover according to the docs.\n\u2022 GLocationPicker component does not load the map in mobile view / at lower width and the search box and close button occupy the entire space as in the below screenshot. Fixed that issue too.\n\n<https://user-images.githubusercontent.com/113630200/246691628-0b1a8d52-acc8-4f40-99ba-ed4b1f679f7a.png|image>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*HOW*\n*:robot_face: Generated by Copilot at <https://github.com/coronasafe/care_fe/commit/b549c211bb3d5ffc4ace5bf6eff2a4290ee6c0bb|b549c21>*\n\n\u2022 Import the `Popover` component from `@headlessui/react` library to create a dismissible floating panel for the map (<https://github.com/coronasafe/care_fe/pull/5719/files?diff=unified&w=0#diff-c4bc281dcacf25e0ea09e5465988d6b4e3a2aee0b5f9b9a1d804b46e36f73999R8|link>)\n\u2022 Wrap the close icon for the map in a `Popover.Button` component to control the visibility of the `Popover` component and fix a bug where the map would not close when clicking the icon (<https://github.com/coronasafe/care_fe/pull/5719/files?diff=unified&w=0#diff-c4bc281dcacf25e0ea09e5465988d6b4e3a2aee0b5f9b9a1d804b46e36f73999L204-R214|link>)",
+                    "title": "#5719 Replaced material ui in FacilityCreate.tsx",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/5719",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "tested, made_changes",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "8",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

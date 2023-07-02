@@ -1,6 +1,104 @@
 {
-  "last_updated": 1688119394.0,
+  "last_updated": 1688239743.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1422",
+      "time": 1688239743.0,
+      "link": "https://github.com/coronasafe/care/pull/1422",
+      "text": "Production Release; July Week 1",
+      "collaborated_with": [
+        "mathew-alex",
+        "siddnikh",
+        "sainak",
+        "vigneshhari",
+        "khavinshankar",
+        "yaswanthsaivendra"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5817",
+      "time": 1688239724.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5817",
+      "text": "Production Release; July Week 1",
+      "collaborated_with": [
+        "print-Sathvik",
+        "MayaSatishRao",
+        "khavinshankar",
+        "sainak",
+        "GokulramGHV",
+        "nihal467",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5812",
+      "time": 1688231271.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5812",
+      "text": "Make investigation table responsive / scrollable"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5812",
+      "time": 1688231271.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5812",
+      "text": "Make investigation table responsive / scrollable",
+      "collaborated_with": [
+        "nihal467",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5811",
+      "time": 1688219926.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5811",
+      "text": "Refresh Consultation Beds component when bed is switched."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5812",
+      "time": 1688217331.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5812",
+      "text": "Make investigation table responsive / scrollable"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5811",
+      "time": 1688216703.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5811",
+      "text": "Refresh Consultation Beds component when bed is switched."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688215041.0,
+      "title": "coronasafe/care#1418",
+      "link": "https://github.com/coronasafe/care/pull/1418#pullrequestreview-1508606374",
+      "text": "hotfix: pin to pydantic v1 for fhir.resources"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688215014.0,
+      "title": "coronasafe/care#1420",
+      "link": "https://github.com/coronasafe/care/pull/1420#pullrequestreview-1508606316",
+      "text": "fix prescribed_medication variable in patient discharge summary"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688214967.0,
+      "title": "coronasafe/care#1416",
+      "link": "https://github.com/coronasafe/care/pull/1416#pullrequestreview-1508606252",
+      "text": "Remove PII from Patient CSV export"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688212062.0,
+      "title": "coronasafe/care_fe#5808",
+      "link": "https://github.com/coronasafe/care_fe/pull/5808#pullrequestreview-1508576294",
+      "text": "Reset HL7/Ventilator socket url when not available"
+    },
     {
       "type": "pr_reviewed",
       "time": 1688119394.0,
@@ -18518,7 +18616,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5789",
       "title": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "P1",
@@ -18538,30 +18636,21 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "cypress passed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5681",
-      "title": "HCX Communication",
-      "stale_for": 7,
-      "labels": [
-        "merge conflict",
-        "stale"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1369",
       "title": "Medibase Medicines Integration",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -18569,7 +18658,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "tested",
         "waiting for back end",
@@ -18579,7 +18668,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "need Review",
         "cypress failed"

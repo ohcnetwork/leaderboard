@@ -1146,5 +1146,135 @@
                 }
             ]
         }
+    ],
+    "2023-07-01 00:00:00": [
+        {
+            "client_msg_id": "97bfd4d0-4424-4d56-a148-ac5b48f1f76a",
+            "type": "message",
+            "text": "EOD 01/07/2023 <!subteam^S035L5S02RF|@care_engineering>\nHow did the day go?\n\u2022 Fixed a dependency issue with fihr.resources <https://github.com/coronasafe/care/pull/1418|#1418>\n\u2022 Removed unexpected text from discharge summary <https://github.com/coronasafe/care/pull/1420|#1420>\n\u2022 Traced recent 502 errors on login endpoint <https://github.com/coronasafe/care/issues/1421|#1421>\n\u2022 reviewed some backend PRs\n*What's next?*\n\u2022 Get my internet fixed",
+            "user": "U02TB8XHZD1",
+            "ts": "1688223420.961399",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/r/",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 01/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed a dependency issue with fihr.resources "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1418",
+                                            "text": "#1418",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Removed unexpected text from discharge summary "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1420",
+                                            "text": "#1420",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Traced recent 502 errors on login endpoint "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/issues/1421",
+                                            "text": "#1421",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "reviewed some backend PRs"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Get my internet fixed"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

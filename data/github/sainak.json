@@ -1,6 +1,145 @@
 {
-  "last_updated": 1688131648.0,
+  "last_updated": 1688239743.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1422",
+      "time": 1688239743.0,
+      "link": "https://github.com/coronasafe/care/pull/1422",
+      "text": "Production Release; July Week 1",
+      "collaborated_with": [
+        "mathew-alex",
+        "siddnikh",
+        "rithviknishad",
+        "vigneshhari",
+        "khavinshankar",
+        "yaswanthsaivendra"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5817",
+      "time": 1688239724.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5817",
+      "text": "Production Release; July Week 1",
+      "collaborated_with": [
+        "print-Sathvik",
+        "MayaSatishRao",
+        "khavinshankar",
+        "rithviknishad",
+        "GokulramGHV",
+        "nihal467",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688234346.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1508750190",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688234346.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1508750190",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688226300.0,
+      "title": "coronasafe/care#1415",
+      "link": "https://github.com/coronasafe/care/pull/1415#pullrequestreview-1508670647",
+      "text": "Adds validation to consulation date fields (`admission_date`, `discharge_date`, `death_datetime`)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1421",
+      "time": 1688223212.0,
+      "link": "https://github.com/coronasafe/care/issues/1421#issuecomment-1615949074",
+      "text": "@mathew-alex has increased the number of scaling replicas to 4"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1421",
+      "time": 1688223125.0,
+      "link": "https://github.com/coronasafe/care/issues/1421",
+      "text": "Random 502 on `api/v1/auth/login/`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1420",
+      "time": 1688222535.0,
+      "link": "https://github.com/coronasafe/care/pull/1420",
+      "text": "fix prescribed_medication variable in patient discharge summary"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1420",
+      "time": 1688222535.0,
+      "link": "https://github.com/coronasafe/care/pull/1420",
+      "text": "fix prescribed_medication variable in patient discharge summary",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1418",
+      "time": 1688221139.0,
+      "link": "https://github.com/coronasafe/care/pull/1418",
+      "text": "hotfix: pin to pydantic v1 for fhir.resources"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5800",
+      "time": 1688215167.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5800",
+      "text": "fix pwa and theme colors"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1420",
+      "time": 1688214837.0,
+      "link": "https://github.com/coronasafe/care/pull/1420",
+      "text": "fix prescribed_medication variable in patient discharge summary"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1419",
+      "time": 1688214805.0,
+      "link": "https://github.com/coronasafe/care/issues/1419",
+      "text": "text `prescribed_medication` is being displayed in discharge summary"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1418",
+      "time": 1688214456.0,
+      "link": "https://github.com/coronasafe/care/pull/1418#issuecomment-1615885360",
+      "text": "@khavinshankar this issue is present in the latest version of fhir.resources, this compatibility check needs to be done on the upstream itself, plese verify and file an issue on fhir.resources repo if necessary"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1418",
+      "time": 1688214305.0,
+      "link": "https://github.com/coronasafe/care/pull/1418",
+      "text": "hotfix: pin to pydantic v1 for fhir.resources"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1417",
+      "time": 1688214125.0,
+      "link": "https://github.com/coronasafe/care/issues/1417",
+      "text": "fhir.resources incompatible with pydantic v2"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688203161.0,
+      "title": "coronasafe/care#1416",
+      "link": "https://github.com/coronasafe/care/pull/1416#pullrequestreview-1508483479",
+      "text": "Remove PII from Patient CSV export"
+    },
     {
       "type": "pr_reviewed",
       "time": 1688131648.0,
@@ -2828,24 +2967,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5800",
-      "title": "fix pwa and theme colors",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "make HBA1C field read only ",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review"
       ]
@@ -2853,11 +2983,23 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 338,
+      "stale_for": 339,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1419",
+      "pr_link": "https://github.com/coronasafe/care/pull/1420"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1417",
+      "pr_link": "https://github.com/coronasafe/care/pull/1418"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5783",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5800"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1351",
       "pr_link": "https://github.com/coronasafe/care/pull/1371"

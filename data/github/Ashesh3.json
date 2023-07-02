@@ -1,6 +1,134 @@
 {
-  "last_updated": 1688117114.0,
+  "last_updated": 1688239724.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5817",
+      "time": 1688239724.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5817",
+      "text": "Production Release; July Week 1",
+      "collaborated_with": [
+        "print-Sathvik",
+        "MayaSatishRao",
+        "khavinshankar",
+        "sainak",
+        "rithviknishad",
+        "GokulramGHV",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5816",
+      "time": 1688237176.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5816",
+      "text": "add scrollbar to investigation table"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5816",
+      "time": 1688235103.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5816",
+      "text": "add scrollbar to investigation table"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5812",
+      "time": 1688231271.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5812",
+      "text": "Make investigation table responsive / scrollable",
+      "collaborated_with": [
+        "nihal467",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5814",
+      "time": 1688225681.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5814",
+      "text": "Clear location data when facility filter is removed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5814",
+      "time": 1688224434.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5814#issuecomment-1615955212",
+      "text": "> ![image](https://user-images.githubusercontent.com/57055998/250281632-7195f9a9-03c9-4934-8f28-8c4af2c83d67.png)\r\n> \r\n> @Ashesh3 the bug exists, before removing the location badge, if you direct the facility badge first, the issue this there\r\n\r\nFixed"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1416",
+      "time": 1688222502.0,
+      "link": "https://github.com/coronasafe/care/pull/1416",
+      "text": "Remove PII from Patient CSV export"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1416",
+      "time": 1688222502.0,
+      "link": "https://github.com/coronasafe/care/pull/1416",
+      "text": "Remove PII from Patient CSV export",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5814",
+      "time": 1688219415.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5814",
+      "text": "Clear location data when facility filter is removed"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5813",
+      "time": 1688218752.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5813",
+      "text": "Remove default values for Manage Inventory page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688215317.0,
+      "title": "coronasafe/care#1418",
+      "link": "https://github.com/coronasafe/care/pull/1418#pullrequestreview-1508608298",
+      "text": "hotfix: pin to pydantic v1 for fhir.resources"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688215159.0,
+      "title": "coronasafe/care#1420",
+      "link": "https://github.com/coronasafe/care/pull/1420#pullrequestreview-1508606988",
+      "text": "fix prescribed_medication variable in patient discharge summary"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5810",
+      "time": 1688214990.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5810",
+      "text": "Fix icon alignment in Sample Test History"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5808",
+      "time": 1688213697.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5808",
+      "text": "Reset HL7/Ventilator socket url when not available"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5808",
+      "time": 1688211165.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5808",
+      "text": "Reset HL7/Ventilator socket url when not available"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1416",
+      "time": 1688193602.0,
+      "link": "https://github.com/coronasafe/care/pull/1416",
+      "text": "Remove PII from Patient CSV export"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5793",
@@ -9294,9 +9422,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5813",
+      "title": "Remove default values for Manage Inventory page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5810",
+      "title": "Fix icon alignment in Sample Test History",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5797",
       "title": "Mark file upload as complete for sample test",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "P1",
@@ -9306,7 +9452,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5793",
       "title": "Tailwind `src/Components/Patient/PatientRegister.tsx`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -9315,7 +9461,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5765",
       "title": "Fix linting errors and add ventilator icon",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "blocked",
         "needs testing",
@@ -9326,7 +9472,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 37,
+      "stale_for": 38,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9335,7 +9481,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 64,
+      "stale_for": 65,
       "labels": [
         "waiting-for-review"
       ]
@@ -9343,7 +9489,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 87,
+      "stale_for": 88,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9352,13 +9498,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 100,
+      "stale_for": 101,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 31,
+      "stale_for": 32,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9367,7 +9513,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 42,
+      "stale_for": 43,
       "labels": [
         "waiting-for-review"
       ]

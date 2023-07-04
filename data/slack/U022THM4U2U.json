@@ -4116,5 +4116,167 @@
                 "ts": "1688240170.000000"
             }
         }
+    ],
+    "2023-07-03 00:00:00": [
+        {
+            "client_msg_id": "6f24b2c1-b3fe-4432-81a8-f2622fd2bcf1",
+            "type": "message",
+            "text": "EOD 03/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go ?\n\n\u2022 tested all PR for this week\n\u2022 resolved production bug <https://github.com/coronasafe/care_fe/issues/5823|#5823>\n\u2022 pushed a failure cypress fix : <https://github.com/coronasafe/care_fe/pull/5825|#5825>\nwhat's next\n\n\u2022 create consultation update cypress test\n\u2022 revamp the testing doc based on suggestion\n\u2022 updated testing documentation",
+            "user": "U022THM4U2U",
+            "ts": "1688409013.742549",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "X7n",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested all PR for this week"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "resolved production bug "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5823",
+                                            "text": "#5823",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "pushed a failure cypress fix : "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5825",
+                                            "text": "#5825",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "create consultation update cypress test"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "revamp the testing doc based on suggestion"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "updated testing documentation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1688362671,
+                    "color": "cb2431",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/5823",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#5823 Export reports are not properly generated",
+                    "title": "#5823 Export reports are not properly generated",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/5823",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1688371622,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/5825",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#5825 Fix Cypress Failure | Facility Creation |",
+                    "title": "#5825 Fix Cypress Failure | Facility Creation |",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/5825",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

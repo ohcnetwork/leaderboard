@@ -58551,5 +58551,740 @@
         }
     ],
     "2023-07-02 00:00:00": [],
-    "2023-07-03 00:00:00": []
+    "2023-07-03 00:00:00": [
+        {
+            "client_msg_id": "6f24b2c1-b3fe-4432-81a8-f2622fd2bcf1",
+            "type": "message",
+            "text": "EOD 03/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go ?\n\n\u2022 tested all PR for this week\n\u2022 resolved production bug <https://github.com/coronasafe/care_fe/issues/5823|#5823>\n\u2022 pushed a failure cypress fix : <https://github.com/coronasafe/care_fe/pull/5825|#5825>\nwhat's next\n\n\u2022 create consultation update cypress test\n\u2022 revamp the testing doc based on suggestion\n\u2022 updated testing documentation",
+            "user": "U022THM4U2U",
+            "ts": "1688409013.742549",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "X7n",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested all PR for this week"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "resolved production bug "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5823",
+                                            "text": "#5823",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "pushed a failure cypress fix : "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5825",
+                                            "text": "#5825",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "create consultation update cypress test"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "revamp the testing doc based on suggestion"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "updated testing documentation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1688362671,
+                    "color": "cb2431",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/5823",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#5823 Export reports are not properly generated",
+                    "title": "#5823 Export reports are not properly generated",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/5823",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1688371622,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/5825",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#5825 Fix Cypress Failure | Facility Creation |",
+                    "title": "#5825 Fix Cypress Failure | Facility Creation |",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/5825",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "655a7d47-eb45-4327-b446-d013becd9945",
+            "type": "message",
+            "text": "EOD 03/07/2023 <!subteam^S035L5S02RF|@care_engineering>\nHow did the day go?\n\u2022 Fixed an issue where the exports were malfunctioning and returning incomplete data  <https://github.com/coronasafe/care_fe/issues/5823|#5823>\n\u2022 After confirming with Mathew that the hba1c field inside consultation is not being used anywhere, updated my pull request to remove the field completely<https://github.com/coronasafe/care/pull/1309| #1309>\n\u2022 was having issues with my internet so I got a fiber connection today, things should be better now\n\u2022 looked for issues to work on\nWhats next?\n\u2022 start working on bed types v2\n",
+            "user": "U02TB8XHZD1",
+            "ts": "1688403899.384479",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "kFR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed an issue where the exports were malfunctioning and returning incomplete data  "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5823",
+                                            "text": "#5823",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "After confirming with Mathew that the hba1c field inside consultation is not being used anywhere, updated my pull request to remove the field completely"
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1309",
+                                            "text": " #1309",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "was having issues with my internet so I got a fiber connection today, things should be better now"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "looked for issues to work on"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Whats next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "start working on bed types v2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "019aeb62-3113-44c1-8f5c-ca276d1092a4",
+            "type": "message",
+            "text": "_EOD 03/07/2023_ <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\u2022 Worked on PR <https://github.com/coronasafe/care_fe/pull/5826|#5826> - Fix filter badges for Shifting and Resource (needs testing)\n\u2022 Merged PR <https://github.com/coronasafe/care_fe/pull/5822|#5822> - Fix incorrect type for csv export (tested)\n\u2022 Clean up some old code for asset uptime\n\u2022 Clear out some merge conflicts on older PRs\n*What's next?*\n\u2022 Explore syncing of Metabase instances\n",
+            "user": "U02T4HFA07Q",
+            "ts": "1688398879.428929",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "GPm=",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/07/2023",
+                                    "style": {
+                                        "italic": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5826",
+                                            "text": "#5826",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " - Fix filter badges for Shifting and Resource (needs testing)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Merged PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5822",
+                                            "text": "#5822",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " - Fix incorrect type for csv export (tested)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Clean up some old code for asset uptime"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Clear out some merge conflicts on older PRs"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Explore syncing of Metabase instances"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "3f70a8d8-4bc3-4f94-9e94-e2a00e18ccef",
+            "type": "message",
+            "text": "EOD 03/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 fixed cypress fails in updated phone number form field.\n\u2022 fixed issue in applied filters in shifting filters from showing undefined.\n\u2022 explored on writing custom action for zoom script\n\u2022 more debugging in backend tests for date time validation, random failures and passes happening in totally unrelated areas (asset tests and asset transactions tests) :smiling_face_with_tear:\n\u2022 unhid CNS and improved responsiveness in consultation page and CNS\n*What's next?*\n\u2022 complete zoom script\n\u2022 uninstall mui (waiting for prs to be merged)\n\u2022 update how gain is handled, instead of scaling values wrt. to baseline, override high and low limits (so that the renderer still receives original values instead of prescaled values",
+            "user": "U02TDGQQPMJ",
+            "ts": "1688396751.203609",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Fa9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fixed cypress fails in updated phone number form field."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fixed issue in applied filters in shifting filters from showing undefined."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "explored on writing custom action for zoom script"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "more debugging in backend tests for date time validation, random failures and passes happening in totally unrelated areas (asset tests and asset transactions tests) "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "smiling_face_with_tear",
+                                            "unicode": "1f972"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "unhid CNS and improved responsiveness in consultation page and CNS"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "complete zoom script"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "uninstall mui (waiting for prs to be merged)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "update how gain is handled, instead of scaling values wrt. to baseline, override high and low limits (so that the renderer still receives original values instead of prescaled values"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1688396797.000000"
+            }
+        },
+        {
+            "client_msg_id": "0e415125-0307-4ae3-8a16-626428e424d2",
+            "type": "message",
+            "text": "EOD 03/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\u2022 Meeting with Prof Ayushi on metrics in Dashboard. Meeting concluded on topics to improve and decided to have 3 subsequent meetings to improve the metrics on metabase dashboard.\n\u2022 Meeting with Deepjyothi to offload some documentation on Networking of Spokes. Explained expectations and shared existing docs.\n\u2022 Follow ups with Harish/Manish to get Azure account details corrected for Billing related issues.\n\u2022 Attended Weekly Hub Admin call; Cleared some issues for Gayan.\nWhats Next?\n\u2022 Metabase dashboard \n    \u25e6 Categorize items to hospital view, cluster view, state view; Make field filter work for Hospital Names.\n\u2022 Clear invoices for last month. ",
+            "user": "UPW6XDGDD",
+            "ts": "1688396336.097579",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "z3PR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Meeting with Prof Ayushi on metrics in Dashboard. Meeting concluded on topics to improve and decided to have 3 subsequent meetings to improve the metrics on metabase dashboard."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Meeting with Deepjyothi to offload some documentation on Networking of Spokes. Explained expectations and shared existing docs."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow ups with Harish/Manish to get Azure account details corrected for Billing related issues."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Attended Weekly Hub Admin call; Cleared some issues for Gayan."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhats Next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Metabase dashboard "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Categorize items to hospital view, cluster view, state view; Make field filter work for Hospital Names."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 1,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Clear invoices for last month. "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-07-04 00:00:00": []
 }

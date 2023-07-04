@@ -1,6 +1,20 @@
 {
-  "last_updated": 1687496132.0,
+  "last_updated": 1688398201.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5829",
+      "time": 1688398201.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5829",
+      "text": "Removed extra padding on users page in mobile view"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5828",
+      "time": 1688395078.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5828",
+      "text": "Users page has extra padding in mobile view"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/leaderboard#86",
@@ -4891,9 +4905,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5829",
+      "title": "Removed extra padding on users page in mobile view",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 53,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]
@@ -4901,13 +4924,13 @@
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 241,
+      "stale_for": 251,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 241,
+      "stale_for": 251,
       "labels": []
     }
   ],

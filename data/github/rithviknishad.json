@@ -1,6 +1,76 @@
 {
-  "last_updated": 1688239743.0,
+  "last_updated": 1688406286.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5831",
+      "time": 1688406286.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5831",
+      "text": "Cypress Test: update trigger to have write perms for fork"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5830",
+      "time": 1688404230.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5830",
+      "text": "Code Refactor: `ConsultationDetails.tsx`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688402275.0,
+      "title": "coronasafe/care_fe#5829",
+      "link": "https://github.com/coronasafe/care_fe/pull/5829#pullrequestreview-1511509833",
+      "text": "Removed extra padding on users page in mobile view"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5827",
+      "time": 1688387711.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5827",
+      "text": "Unhide CNS and fix more responsiveness issues"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688366807.0,
+      "title": "coronasafe/care#1423",
+      "link": "https://github.com/coronasafe/care/pull/1423#pullrequestreview-1510486686",
+      "text": "hotfix: revert removing patient_id to fix values collapsing"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688366341.0,
+      "title": "coronasafe/care_fe#5822",
+      "link": "https://github.com/coronasafe/care_fe/pull/5822#pullrequestreview-1510473830",
+      "text": "Fix incorrect type for csv export"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5818",
+      "time": 1688363656.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5818",
+      "text": "Remove usages of MUI components from Rescript (`*.res`) files"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688360326.0,
+      "title": "coronasafe/care_fe#5821",
+      "link": "https://github.com/coronasafe/care_fe/pull/5821#pullrequestreview-1510357404",
+      "text": "Optional backdrop in slideover component"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5819",
+      "time": 1688351491.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5819",
+      "text": "Fixes filter from being undefined in shifting filters"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5818",
+      "time": 1688350697.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5818",
+      "text": "Remove usages of MUI components from Rescript files"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1422",
@@ -18605,6 +18675,35 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5831",
+      "title": "Cypress Test: update trigger to have write perms for fork PRs",
+      "stale_for": 0,
+      "labels": [
+        "need Review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5827",
+      "title": "Unhide CNS and fix more responsiveness issues",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P1",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5819",
+      "title": "Fixes filter from being undefined in shifting filters",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "P2",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5799",
       "title": "Tailwinds Daily Rounds Form",
       "stale_for": 0,
@@ -18616,12 +18715,11 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5789",
       "title": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "P1",
-        "discussion",
-        "cypress passed"
+        "cypress failed"
       ]
     },
     {
@@ -18636,13 +18734,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "cypress passed"
       ]
@@ -18650,7 +18748,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1369",
       "title": "Medibase Medicines Integration",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -18658,7 +18756,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "tested",
         "waiting for back end",
@@ -18668,7 +18766,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 11,
+      "stale_for": 13,
       "labels": [
         "need Review",
         "cypress failed"

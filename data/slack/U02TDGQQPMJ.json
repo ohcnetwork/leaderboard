@@ -14135,5 +14135,168 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-03 00:00:00": [
+        {
+            "client_msg_id": "3f70a8d8-4bc3-4f94-9e94-e2a00e18ccef",
+            "type": "message",
+            "text": "EOD 03/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 fixed cypress fails in updated phone number form field.\n\u2022 fixed issue in applied filters in shifting filters from showing undefined.\n\u2022 explored on writing custom action for zoom script\n\u2022 more debugging in backend tests for date time validation, random failures and passes happening in totally unrelated areas (asset tests and asset transactions tests) :smiling_face_with_tear:\n\u2022 unhid CNS and improved responsiveness in consultation page and CNS\n*What's next?*\n\u2022 complete zoom script\n\u2022 uninstall mui (waiting for prs to be merged)\n\u2022 update how gain is handled, instead of scaling values wrt. to baseline, override high and low limits (so that the renderer still receives original values instead of prescaled values",
+            "user": "U02TDGQQPMJ",
+            "ts": "1688396751.203609",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Fa9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fixed cypress fails in updated phone number form field."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "fixed issue in applied filters in shifting filters from showing undefined."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "explored on writing custom action for zoom script"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "more debugging in backend tests for date time validation, random failures and passes happening in totally unrelated areas (asset tests and asset transactions tests) "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "smiling_face_with_tear",
+                                            "unicode": "1f972"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "unhid CNS and improved responsiveness in consultation page and CNS"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "complete zoom script"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "uninstall mui (waiting for prs to be merged)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "update how gain is handled, instead of scaling values wrt. to baseline, override high and low limits (so that the renderer still receives original values instead of prescaled values"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1688396797.000000"
+            }
+        }
     ]
 }

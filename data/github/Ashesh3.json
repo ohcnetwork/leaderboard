@@ -1,6 +1,34 @@
 {
-  "last_updated": 1688239724.0,
+  "last_updated": 1688377000.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5826",
+      "time": 1688377000.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5826",
+      "text": "Fix filter badges for Shifting and Resource"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5822",
+      "time": 1688368026.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5822",
+      "text": "Fix incorrect type for csv export"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688366864.0,
+      "title": "coronasafe/care#1423",
+      "link": "https://github.com/coronasafe/care/pull/1423#pullrequestreview-1510487862",
+      "text": "hotfix: revert removing patient_id to fix values collapsing"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5822",
+      "time": 1688361902.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5822",
+      "text": "Fix incorrect type for csv export"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5817",
@@ -9422,11 +9450,20 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5826",
+      "title": "Fix filter badges for Shifting and Resource",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5813",
       "title": "Remove default values for Manage Inventory page",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress passed"
       ]
     },
@@ -9435,8 +9472,8 @@
       "title": "Fix icon alignment in Sample Test History",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "tested",
+        "cypress passed"
       ]
     },
     {
@@ -9444,15 +9481,15 @@
       "title": "Mark file upload as complete for sample test",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "P1",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5793",
       "title": "Tailwind `src/Components/Patient/PatientRegister.tsx`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -9461,10 +9498,11 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5765",
       "title": "Fix linting errors and add ventilator icon",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "blocked",
         "needs testing",
+        "waiting for related PR",
         "merge conflict",
         "cypress passed"
       ]
@@ -9472,7 +9510,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 38,
+      "stale_for": 40,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9481,7 +9519,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 65,
+      "stale_for": 67,
       "labels": [
         "waiting-for-review"
       ]
@@ -9489,7 +9527,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 88,
+      "stale_for": 90,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9498,13 +9536,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 101,
+      "stale_for": 103,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 32,
+      "stale_for": 34,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9513,7 +9551,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 43,
+      "stale_for": 45,
       "labels": [
         "waiting-for-review"
       ]

@@ -1276,5 +1276,126 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-03 00:00:00": [
+        {
+            "client_msg_id": "655a7d47-eb45-4327-b446-d013becd9945",
+            "type": "message",
+            "text": "EOD 03/07/2023 <!subteam^S035L5S02RF|@care_engineering>\nHow did the day go?\n\u2022 Fixed an issue where the exports were malfunctioning and returning incomplete data  <https://github.com/coronasafe/care_fe/issues/5823|#5823>\n\u2022 After confirming with Mathew that the hba1c field inside consultation is not being used anywhere, updated my pull request to remove the field completely<https://github.com/coronasafe/care/pull/1309| #1309>\n\u2022 was having issues with my internet so I got a fiber connection today, things should be better now\n\u2022 looked for issues to work on\nWhats next?\n\u2022 start working on bed types v2\n",
+            "user": "U02TB8XHZD1",
+            "ts": "1688403899.384479",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "kFR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed an issue where the exports were malfunctioning and returning incomplete data  "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5823",
+                                            "text": "#5823",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "After confirming with Mathew that the hba1c field inside consultation is not being used anywhere, updated my pull request to remove the field completely"
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1309",
+                                            "text": " #1309",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "was having issues with my internet so I got a fiber connection today, things should be better now"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "looked for issues to work on"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Whats next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "start working on bed types v2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

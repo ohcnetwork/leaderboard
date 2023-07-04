@@ -1,6 +1,30 @@
 {
-  "last_updated": 1688239743.0,
+  "last_updated": 1688370071.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1424",
+      "time": 1688370071.0,
+      "link": "https://github.com/coronasafe/care/pull/1424",
+      "text": "Production Release; July Week 1; Hotfix",
+      "collaborated_with": [
+        "gigincg"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1423",
+      "time": 1688367611.0,
+      "link": "https://github.com/coronasafe/care/pull/1423",
+      "text": "hotfix: revert removing patient_id to fix values collapsing"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1423",
+      "time": 1688365022.0,
+      "link": "https://github.com/coronasafe/care/pull/1423",
+      "text": "hotfix: revert removing patient_id fo fix values collapsing"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1422",
@@ -2969,13 +2993,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 19,
+      "stale_for": 21,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
-      "title": "make HBA1C field read only ",
-      "stale_for": 7,
+      "title": "remove unused hba1c field from patient consultation",
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -2983,7 +3007,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 339,
+      "stale_for": 341,
       "labels": []
     }
   ],

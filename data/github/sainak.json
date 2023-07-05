@@ -1,6 +1,48 @@
 {
-  "last_updated": 1688370071.0,
+  "last_updated": 1688497628.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1688497628.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1513307619",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1430",
+      "time": 1688493406.0,
+      "link": "https://github.com/coronasafe/care/pull/1430#issuecomment-1620585772",
+      "text": "@vigneshhari this is a good time to migrate and remove `referred_to` foreign key\r\nhttps://github.com/coronasafe/care/blob/b0eefd152511a390f759b41dac0cb7e27c9ee117/care/facility/models/patient_consultation.py#L92-L98"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688493192.0,
+      "title": "coronasafe/care#1430",
+      "link": "https://github.com/coronasafe/care/pull/1430#pullrequestreview-1513256419",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1427",
+      "time": 1688489137.0,
+      "link": "https://github.com/coronasafe/care/pull/1427#issuecomment-1620528147",
+      "text": "@GeekGawd  the changes look good, can you verify and remove the AssetSerializer from other places as well\r\nNote: the AssetSerializer is also used to fetch data [here](https://github.com/coronasafe/care_dashboard/blob/master/src/pages/asset/AssetDetails.tsx#L31) using the `public/asset/` endpoint, this looks like it could be handled by the AssetDetailSerializer \r\n\r\nand for the tests you can add and validate more data."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688477126.0,
+      "title": "coronasafe/care#1428",
+      "link": "https://github.com/coronasafe/care/pull/1428#pullrequestreview-1512890643",
+      "text": "Adds migration to move `ip_no` to `op_no` for non admission consultations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688467484.0,
+      "title": "coronasafe/care#1425",
+      "link": "https://github.com/coronasafe/care/pull/1425#pullrequestreview-1512622562",
+      "text": "Add list detail serializer facility asset"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1424",
@@ -2993,13 +3035,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove unused hba1c field from patient consultation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -3007,7 +3049,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 341,
+      "stale_for": 342,
       "labels": []
     }
   ],

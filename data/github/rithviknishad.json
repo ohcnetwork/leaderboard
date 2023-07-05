@@ -1,6 +1,90 @@
 {
-  "last_updated": 1688406286.0,
+  "last_updated": 1688492200.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1688492200.0,
+      "title": "coronasafe/care#1430",
+      "link": "https://github.com/coronasafe/care/pull/1430#pullrequestreview-1513240332",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5764",
+      "time": 1688491658.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5764#issuecomment-1620561384",
+      "text": "Before uninstall: \r\n\r\n<img width=\"650\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/c5f3ac24-dd30-4264-beab-523886f44a88\">\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688487526.0,
+      "title": "coronasafe/care#1430",
+      "link": "https://github.com/coronasafe/care/pull/1430#pullrequestreview-1513168426",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688487357.0,
+      "title": "coronasafe/care_fe#5730",
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#pullrequestreview-1513163348",
+      "text": "added referred to facility field in discharge form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5730",
+      "time": 1688477298.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#issuecomment-1620254801",
+      "text": "@sachdevavaibhav yes! Go ahead!"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1428",
+      "time": 1688476521.0,
+      "link": "https://github.com/coronasafe/care/pull/1428",
+      "text": "Adds migration to move `ip_no` to op_no` for non admission consultations"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5836",
+      "time": 1688475713.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5836",
+      "text": "Add Consultation is permanently disabled in Patient Details page"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5720",
+      "time": 1688473686.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5720",
+      "text": "Replace MaterialUI in FileUpload.tsx",
+      "collaborated_with": [
+        "nihal467",
+        "print-Sathvik"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5819",
+      "time": 1688471324.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5819",
+      "text": "Fixes filter from being undefined in shifting filters"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5829",
+      "time": 1688471228.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5829",
+      "text": "Removed extra padding on users page in mobile view",
+      "collaborated_with": [
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5832",
+      "time": 1688467221.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5832",
+      "text": "Patient List item shows last updated based on `PatientRegistration.modified_date` instead of `last_consultation.modified_date`"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5831",
@@ -18675,6 +18759,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1428",
+      "title": "Adds migration to move `ip_no` to `op_no` for non admission consultations",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
       "stale_for": 0,
@@ -18688,18 +18780,8 @@
       "stale_for": 0,
       "labels": [
         "urgent",
-        "needs testing",
-        "P1",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5819",
-      "title": "Fixes filter from being undefined in shifting filters",
-      "stale_for": 0,
-      "labels": [
         "tested",
-        "P2",
+        "P1",
         "cypress passed"
       ]
     },
@@ -18709,7 +18791,7 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
@@ -18725,7 +18807,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1415",
       "title": "Adds validation to consulation date fields (`admission_date`, `discharge_date`, `death_datetime`)",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review",
         "P1"
@@ -18734,13 +18816,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "cypress passed"
       ]
@@ -18748,7 +18830,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1369",
       "title": "Medibase Medicines Integration",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -18756,7 +18838,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
         "tested",
         "waiting for back end",
@@ -18766,7 +18848,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "need Review",
         "cypress failed"

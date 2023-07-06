@@ -14519,5 +14519,192 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-05 00:00:00": [
+        {
+            "client_msg_id": "0f4b89a3-7863-43ab-b600-c16418323097",
+            "type": "message",
+            "text": "EOD 05/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 Worked on zoomdrive to download recordings with proper file names and directories.\n\u2022 Followed up on bug fixes for tailwinded daily rounds form with <@U022THM4U2U> \n\u2022 Huddle with <@UC8TSEGCQ> <@UPW6XDGDD> on debugging why medibase caused 502 and increased memory limit.\n\u2022 <https://github.com/coronasafe/care_fe/pull/5839|#5839>: Uninstalled Material UI :wave::skin-tone-2:\n\u2022 <https://github.com/coronasafe/care/pull/1432|#1432>: Loads medicines to in-memory on django start instead of loading it lazily on first medibase search on each worker.\n*What's next?*\n\n\u2022 zoomdrive gh action: Some improvements to downloading, and authenticate to gdrive and upload.\n\u2022 follow up on vitals configurable gain",
+            "user": "U02TDGQQPMJ",
+            "ts": "1688565295.892149",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/bQ96",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 05/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on zoomdrive to download recordings with proper file names and directories."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up on bug fixes for tailwinded daily rounds form with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Huddle with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "UC8TSEGCQ"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "UPW6XDGDD"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " on debugging why medibase caused 502 and increased memory limit."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5839",
+                                            "text": "#5839",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Uninstalled Material UI "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "wave",
+                                            "unicode": "1f44b-1f3fb",
+                                            "skin_tone": 2
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1432",
+                                            "text": "#1432",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Loads medicines to in-memory on django start instead of loading it lazily on first medibase search on each worker."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "zoomdrive gh action: Some improvements to downloading, and authenticate to gdrive and upload."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "follow up on vitals configurable gain"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

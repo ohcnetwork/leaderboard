@@ -1,6 +1,161 @@
 {
-  "last_updated": 1688497628.0,
+  "last_updated": 1688575742.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1437",
+      "time": 1688575742.0,
+      "link": "https://github.com/coronasafe/care/pull/1437",
+      "text": "add silk profiler"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1073",
+      "time": 1688567446.0,
+      "link": "https://github.com/coronasafe/care/pull/1073#issuecomment-1621882838",
+      "text": "@cp-Coder can you rebase this on the latest master branch"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1106",
+      "time": 1688565051.0,
+      "link": "https://github.com/coronasafe/care/pull/1106#issuecomment-1621804678",
+      "text": "can we add a basic image tool to crop and resize the image, and then just check the size at the backend\r\n@vigneshhari \r\n"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1431",
+      "time": 1688564988.0,
+      "link": "https://github.com/coronasafe/care/pull/1431",
+      "text": "fix: adds tests for auth and token endpoints",
+      "collaborated_with": [
+        "cp-Coder",
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1167",
+      "time": 1688564763.0,
+      "link": "https://github.com/coronasafe/care/pull/1167#issuecomment-1621794274",
+      "text": "@cp-Coder we already have a field `taken_at` in the Daily round model, which should be enough, we can show the taken_at time if present on the frontend \r\n\r\ncc: @gigincg "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688562836.0,
+      "title": "coronasafe/care#1430",
+      "link": "https://github.com/coronasafe/care/pull/1430#pullrequestreview-1514491302",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1430",
+      "time": 1688562829.0,
+      "link": "https://github.com/coronasafe/care/pull/1430#issuecomment-1621733943",
+      "text": "> @sainak @vigneshhari And why is reffered_to deprecated?\r\n\r\nit was changed in #715, but I couldn't find the reference of the issue that requested the change"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688562266.0,
+      "title": "coronasafe/care#1432",
+      "link": "https://github.com/coronasafe/care/pull/1432#pullrequestreview-1514471573",
+      "text": "Load medicines to in-memory on django start"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688558958.0,
+      "title": "coronasafe/care#1370",
+      "link": "https://github.com/coronasafe/care/pull/1370#pullrequestreview-1514365029",
+      "text": "prefetched skills for userassigned serializer in patientconsultation \u2026"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688557378.0,
+      "title": "coronasafe/care#1427",
+      "link": "https://github.com/coronasafe/care/pull/1427#pullrequestreview-1514323075",
+      "text": "Add list and detail serializer to facility_asset module"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1427",
+      "time": 1688557367.0,
+      "link": "https://github.com/coronasafe/care/pull/1427#issuecomment-1621591521",
+      "text": "Looks good, just add a todo [here](https://github.com/coronasafe/care/pull/1427/files#diff-e81f72006459ce5c1245abbb101a1345e909b90ec7211585c02a44a232e0a0cfR63) to remove when remove serializers are updated"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688554541.0,
+      "title": "coronasafe/care#1431",
+      "link": "https://github.com/coronasafe/care/pull/1431#pullrequestreview-1514242774",
+      "text": "fix: adds tests for auth and token endpoints"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1434",
+      "time": 1688554411.0,
+      "link": "https://github.com/coronasafe/care/issues/1434",
+      "text": "Update api schema for password reset endpoints"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1431",
+      "time": 1688550971.0,
+      "link": "https://github.com/coronasafe/care/pull/1431#issuecomment-1621430744",
+      "text": "> @sainak can you separate it out, we can merge it right away.\r\n\r\non it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1427",
+      "time": 1688550857.0,
+      "link": "https://github.com/coronasafe/care/pull/1427#issuecomment-1621427199",
+      "text": "@GeekGawd tests failing"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1369",
+      "time": 1688548046.0,
+      "link": "https://github.com/coronasafe/care/pull/1369",
+      "text": "Medibase Medicines Integration",
+      "collaborated_with": [
+        "vigneshhari",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1430",
+      "time": 1688545334.0,
+      "link": "https://github.com/coronasafe/care/pull/1430#issuecomment-1621273132",
+      "text": "@sachdevavaibhav can you add some tests to validate whether this field is accepting correct inputs"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688544434.0,
+      "title": "coronasafe/care#1415",
+      "link": "https://github.com/coronasafe/care/pull/1415#pullrequestreview-1513922171",
+      "text": "Adds validation to consulation date fields (`admission_date`, `discharge_date`, `death_datetime`)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688544311.0,
+      "title": "coronasafe/care#1427",
+      "link": "https://github.com/coronasafe/care/pull/1427#pullrequestreview-1513918685",
+      "text": "Add list and detail serializer to facility_asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688544258.0,
+      "title": "coronasafe/care#1431",
+      "link": "https://github.com/coronasafe/care/pull/1431#pullrequestreview-1513917016",
+      "text": "fix: adds tests for auth and token endpoints"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1431",
+      "time": 1688544176.0,
+      "link": "https://github.com/coronasafe/care/pull/1431#issuecomment-1621242341",
+      "text": "@cp-Coder Split up the test cases, this will help better in tracking the issue and speed up tests"
+    },
     {
       "type": "pr_reviewed",
       "time": 1688497628.0,
@@ -3033,23 +3188,29 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1437",
+      "title": "add silk profiler",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 22,
+      "stale_for": 23,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove unused hba1c field from patient consultation",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 342,
+      "stale_for": 343,
       "labels": []
     }
   ],

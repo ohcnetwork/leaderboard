@@ -1,6 +1,160 @@
 {
-  "last_updated": 1688370282.0,
+  "last_updated": 1688575456.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1688575456.0,
+      "title": "coronasafe/care#1436",
+      "link": "https://github.com/coronasafe/care/pull/1436#pullrequestreview-1514940131",
+      "text": "Revert \"Load medicines to in-memory on django start (#1432)\""
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1376",
+      "time": 1688564989.0,
+      "link": "https://github.com/coronasafe/care/issues/1376",
+      "text": "Adds test for `authentication` and `token verification/refresh` endpoints"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1431",
+      "time": 1688564988.0,
+      "link": "https://github.com/coronasafe/care/pull/1431",
+      "text": "fix: adds tests for auth and token endpoints",
+      "collaborated_with": [
+        "cp-Coder",
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688564971.0,
+      "title": "coronasafe/care#1431",
+      "link": "https://github.com/coronasafe/care/pull/1431#pullrequestreview-1514577117",
+      "text": "fix: adds tests for auth and token endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688564878.0,
+      "title": "coronasafe/care#1432",
+      "link": "https://github.com/coronasafe/care/pull/1432#pullrequestreview-1514573701",
+      "text": "Load medicines to in-memory on django start"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688553812.0,
+      "title": "coronasafe/care#1432",
+      "link": "https://github.com/coronasafe/care/pull/1432#pullrequestreview-1514223463",
+      "text": "Load medicines to in-memory on django start"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1370",
+      "time": 1688550805.0,
+      "link": "https://github.com/coronasafe/care/pull/1370#issuecomment-1621425878",
+      "text": "@sainak can you review these changes?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1430",
+      "time": 1688550768.0,
+      "link": "https://github.com/coronasafe/care/pull/1430#issuecomment-1621424832",
+      "text": "> @vigneshhari this is a good time to migrate and remove `referred_to` foreign key\r\n> \r\n> https://github.com/coronasafe/care/blob/b0eefd152511a390f759b41dac0cb7e27c9ee117/care/facility/models/patient_consultation.py#L92-L98\r\n\r\nThis is more of an ops question @gigincg "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1431",
+      "time": 1688550703.0,
+      "link": "https://github.com/coronasafe/care/pull/1431#issuecomment-1621423040",
+      "text": "@sainak can you separate it out, we can merge it right away. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688550661.0,
+      "title": "coronasafe/care#1431",
+      "link": "https://github.com/coronasafe/care/pull/1431#pullrequestreview-1514127109",
+      "text": "fix: adds tests for auth and token endpoints"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1426",
+      "time": 1688550198.0,
+      "link": "https://github.com/coronasafe/care/issues/1426",
+      "text": "Migrate older non-admitted patient IP no to OP no in consultation page"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1428",
+      "time": 1688550197.0,
+      "link": "https://github.com/coronasafe/care/pull/1428",
+      "text": "Adds migration to move `ip_no` to `op_no` for non admission consultations",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688548467.0,
+      "title": "coronasafe/care#1428",
+      "link": "https://github.com/coronasafe/care/pull/1428#pullrequestreview-1514052540",
+      "text": "Adds migration to move `ip_no` to `op_no` for non admission consultations"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1404",
+      "time": 1688548330.0,
+      "link": "https://github.com/coronasafe/care/issues/1404",
+      "text": "Add proper validations for `discharge_date` `admission_date` and `death_datetime`"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1415",
+      "time": 1688548329.0,
+      "link": "https://github.com/coronasafe/care/pull/1415",
+      "text": "Adds validation to consulation date fields (`admission_date`, `discharge_date`, `death_datetime`)",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688548169.0,
+      "title": "coronasafe/care#1415",
+      "link": "https://github.com/coronasafe/care/pull/1415#pullrequestreview-1514042931",
+      "text": "Adds validation to consulation date fields (`admission_date`, `discharge_date`, `death_datetime`)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688548170.0,
+      "title": "coronasafe/care#1415",
+      "link": "https://github.com/coronasafe/care/pull/1415#pullrequestreview-1514042931",
+      "text": "Adds validation to consulation date fields (`admission_date`, `discharge_date`, `death_datetime`)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688548091.0,
+      "title": "coronasafe/care#1415",
+      "link": "https://github.com/coronasafe/care/pull/1415#pullrequestreview-1514040812",
+      "text": "Adds validation to consulation date fields (`admission_date`, `discharge_date`, `death_datetime`)"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1369",
+      "time": 1688548046.0,
+      "link": "https://github.com/coronasafe/care/pull/1369",
+      "text": "Medibase Medicines Integration",
+      "collaborated_with": [
+        "sainak",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688548032.0,
+      "title": "coronasafe/care#1369",
+      "link": "https://github.com/coronasafe/care/pull/1369#pullrequestreview-1514039059",
+      "text": "Medibase Medicines Integration"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1415",

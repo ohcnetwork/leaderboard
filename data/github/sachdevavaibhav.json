@@ -1,6 +1,20 @@
 {
-  "last_updated": 1688492152.0,
+  "last_updated": 1688545807.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1430",
+      "time": 1688545807.0,
+      "link": "https://github.com/coronasafe/care/pull/1430#issuecomment-1621284494",
+      "text": "> @sachdevavaibhav can you add some tests to validate whether this field is accepting correct inputs\r\n\r\nya sure!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688544830.0,
+      "title": "coronasafe/care#1430",
+      "link": "https://github.com/coronasafe/care/pull/1430#pullrequestreview-1513935120",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1430",
@@ -422,12 +436,14 @@
       "link": "https://github.com/coronasafe/care/pull/1430",
       "title": "added referred_to_external field PatientConsultationDischargeSerializer",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5730",
       "title": "added referred to facility field in discharge form",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting for back end"
       ]

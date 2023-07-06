@@ -4278,5 +4278,152 @@
                 }
             ]
         }
+    ],
+    "2023-07-05 00:00:00": [
+        {
+            "client_msg_id": "a0e3e91b-562f-4ea3-8193-c1a261d64063",
+            "type": "message",
+            "text": "EOD 04/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go ?\n\n\u2022 tested PR for this week\n\u2022 pushed Cypress Shift Filter POM Approach <https://github.com/coronasafe/care_fe/pull/5833|#5833>\nwhat's next\n\n\u2022 create consultation update cypress test\n\u2022 revamp the testing doc based on suggestion\n\u2022 updated testing documentation\n",
+            "user": "U022THM4U2U",
+            "ts": "1688542137.876689",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "NXJyi",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 04/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested PR for this week"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "pushed Cypress Shift Filter POM Approach "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5833",
+                                            "text": "#5833",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "create consultation update cypress test"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "revamp the testing doc based on suggestion"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "updated testing documentation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1688470381,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/5833",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#5833 Cypress | Shift Filter | POM Approach",
+                    "text": "*WHAT*\n*:robot_face: Generated by Copilot at <https://github.com/coronasafe/care_fe/commit/6c5736903fe861db7feac7091c4f30832c882524|6c57369>*\n\nThe pull request refactors the test code for the shifting section filter using a page object class `ShiftingPage`. It also adds `id` attributes to some filter components in `FiltersSlideover.tsx` to make them easier to locate by the test code. The changes aim to improve the readability, maintainability, and robustness of the test code.\n\n*Proposed Changes*\n\n\u2022 Fixes #issue?\n\u2022 Change 1\n\u2022 Change 2\n\u2022 More?\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA\n\n*HOW*\n*:robot_face: Generated by Copilot at <https://github.com/coronasafe/care_fe/commit/6c5736903fe861db7feac7091c4f30832c882524|6c57369>*\n\n\u2022 Refactor the test code for the shifting section filter using the page object pattern (<https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-d3a579859bf06b117ab928edef6479c88a9d3468289a4a4e90d999d8bb2c4f0aL2-R6|link>, <https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-d3a579859bf06b117ab928edef6479c88a9d3468289a4a4e90d999d8bb2c4f0aL12-R55|link>, <https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-e6bca479d69646ee80d05d5bd70b494cc5748f0363ff11fd34ccf44f18b2959aR1-R173|link>)\n\u2022 Import and instantiate the `ShiftingPage` class from `cypress/pageobject/Shift/ShiftFilters.ts` in the test file `cypress/e2e/shifting_spec/filter.cy.ts` (<https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-d3a579859bf06b117ab928edef6479c88a9d3468289a4a4e90d999d8bb2c4f0aL2-R6|link>)\n\u2022 Replace the low-level commands for interacting with the filter inputs and buttons with the high-level methods from the `ShiftingPage` class (<https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-d3a579859bf06b117ab928edef6479c88a9d3468289a4a4e90d999d8bb2c4f0aL12-R55|link>)\n\u2022 Define the `ShiftingPage` class with methods for accessing and manipulating the filter elements and buttons in `cypress/pageobject/Shift/ShiftFilters.ts` (<https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-e6bca479d69646ee80d05d5bd70b494cc5748f0363ff11fd34ccf44f18b2959aR1-R173|link>)\n\u2022 Add `id` attributes to the filter buttons in the `FiltersSlideover` component (<https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-5020fbd9bdc19f8fac9938efbe0f199406977ca3b30b40c2d9065a6bd48c7ac5L32-R41|link>, <https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-5020fbd9bdc19f8fac9938efbe0f199406977ca3b30b40c2d9065a6bd48c7ac5R62|link>)\n    \u2022 Add an `id` attribute to the clear and apply filter buttons in `src/CAREUI/interactive/FiltersSlideover.tsx` (<https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-5020fbd9bdc19f8fac9938efbe0f199406977ca3b30b40c2d9065a6bd48c7ac5L32-R41|link>)\n    \u2022 Add an `id` attribute to the advanced filter button in `src/CAREUI/interactive/FiltersSlideover.tsx` (<https://github.com/coronasafe/care_fe/pull/5833/files?diff=unified&w=0#diff-5020fbd9bdc19f8fac9938efbe0f199406977ca3b30b40c2d9065a6bd48c7ac5R62|link>)",
+                    "title": "#5833 Cypress | Shift Filter | POM Approach",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/5833",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "cypress passed",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

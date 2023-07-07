@@ -1,6 +1,76 @@
 {
-  "last_updated": 1688575742.0,
+  "last_updated": 1688675210.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1434",
+      "time": 1688675210.0,
+      "link": "https://github.com/coronasafe/care/issues/1434#issuecomment-1624268357",
+      "text": "You can take a look at the API requests in the test cases for password reset and update the endpoints accordingly "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1430",
+      "time": 1688674970.0,
+      "link": "https://github.com/coronasafe/care/pull/1430#issuecomment-1624264311",
+      "text": "> @sainak I have a couple of questions:\n> - referred_to_external should accept only strings/null values right? And not integer etc.\nYes\n> - Should I create separate branch for tests or push them here only?\nYou can include them in this pr"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1439",
+      "time": 1688674136.0,
+      "link": "https://github.com/coronasafe/care/pull/1439#issuecomment-1624249076",
+      "text": "Migrations tested on latest staging snapshot"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688673511.0,
+      "title": "coronasafe/care#1439",
+      "link": "https://github.com/coronasafe/care/pull/1439#pullrequestreview-1517219352",
+      "text": "Medicines: Remove in-memory search; add GIN Index and search on postgres itself"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688671071.0,
+      "title": "coronasafe/care#1439",
+      "link": "https://github.com/coronasafe/care/pull/1439#pullrequestreview-1517163215",
+      "text": "Medicines: Remove in-memory search; add GIN Index and search on postgres itself"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688650910.0,
+      "title": "coronasafe/teleicu_middleware#75",
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/75#pullrequestreview-1516582742",
+      "text": "yarn lock removed"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/teleicu_middleware#74",
+      "time": 1688648447.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/74#issuecomment-1623640339",
+      "text": "Good work @Amanshenoy008, there is one change needed, we prefer npm for package management, the yarn.lock was accidentally added to the repo which will be removed, can you also revert the changes done to yarn.lock and update package-lock.json instead"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1440",
+      "time": 1688646920.0,
+      "link": "https://github.com/coronasafe/care/pull/1440#issuecomment-1623604678",
+      "text": "> This filter would work only when `is_active=False` right?\r\n\r\nwe have a `is_active` filter for it"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688646884.0,
+      "title": "coronasafe/care#1440",
+      "link": "https://github.com/coronasafe/care/pull/1440#pullrequestreview-1516444023",
+      "text": "Add discharge_reason filter for patient"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688646657.0,
+      "title": "coronasafe/care#1439",
+      "link": "https://github.com/coronasafe/care/pull/1439#pullrequestreview-1516437541",
+      "text": "Medicines: Remove in-memory search; add Gin Index and search on postgres itself"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1437",
@@ -3191,18 +3261,20 @@
       "link": "https://github.com/coronasafe/care/pull/1437",
       "title": "add silk profiler",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 23,
+      "stale_for": 24,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove unused hba1c field from patient consultation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "reviewed"
       ]
@@ -3210,7 +3282,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 343,
+      "stale_for": 344,
       "labels": []
     }
   ],

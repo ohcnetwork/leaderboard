@@ -1,6 +1,41 @@
 {
-  "last_updated": 1688575466.0,
+  "last_updated": 1688645540.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1688645540.0,
+      "title": "coronasafe/care#1440",
+      "link": "https://github.com/coronasafe/care/pull/1440#pullrequestreview-1516405496",
+      "text": "Add discharge_reason filter for patient"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688644017.0,
+      "title": "coronasafe/care#1437",
+      "link": "https://github.com/coronasafe/care/pull/1437#pullrequestreview-1516365034",
+      "text": "add silk profiler"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1439",
+      "time": 1688643599.0,
+      "link": "https://github.com/coronasafe/care/pull/1439#issuecomment-1623533309",
+      "text": "will update tests"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1439",
+      "time": 1688643138.0,
+      "link": "https://github.com/coronasafe/care/pull/1439",
+      "text": "Medicines: Remove in-memory search; add Gin Index and search on postgres itself"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5839",
+      "time": 1688635647.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5839",
+      "text": "Uninstalls Material UI \ud83d\udc4b\ud83c\udffb"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1436",
@@ -18947,19 +18982,19 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5839",
-      "title": "Uninstalls Material UI \ud83d\udc4b\ud83c\udffb",
+      "link": "https://github.com/coronasafe/care/pull/1439",
+      "title": "Medicines: replace in-memory search with pg full text search with GIN index",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "P2",
-        "cypress failed"
+        "waiting-for-review",
+        "P1",
+        "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "need Review"
       ]
@@ -18967,7 +19002,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5789",
       "title": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "P1",
@@ -18978,7 +19013,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
@@ -18987,7 +19022,6 @@
       "stale_for": 0,
       "labels": [
         "merge conflict",
-        "stale",
         "cypress passed"
       ]
     },
@@ -18997,13 +19031,15 @@
       "stale_for": 0,
       "labels": [
         "tested",
+        "P1",
+        "waiting for back end",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": [
         "need Review",
         "cypress failed"
@@ -19022,6 +19058,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1403",
       "pr_link": "https://github.com/coronasafe/care/pull/1414"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5764",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5839"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5762",

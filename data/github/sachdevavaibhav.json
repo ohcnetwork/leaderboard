@@ -1,6 +1,13 @@
 {
-  "last_updated": 1688545807.0,
+  "last_updated": 1688668565.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1430",
+      "time": 1688668565.0,
+      "link": "https://github.com/coronasafe/care/pull/1430#issuecomment-1624144636",
+      "text": "> > @sachdevavaibhav can you add some tests to validate whether this field is accepting correct inputs\r\n> \r\n> ya sure!\r\n\r\n@sainak I have a couple of questions:\r\n- referred_to_external should accept only strings/null values right? And not integer etc.\r\n- Should I create separate branch for tests or push them here only?"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1430",
@@ -443,7 +450,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5730",
       "title": "added referred to facility field in discharge form",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting for back end"
       ]

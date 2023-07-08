@@ -3401,5 +3401,185 @@
                 "ts": "1688582107.000000"
             }
         }
+    ],
+    "2023-07-07 00:00:00": [
+        {
+            "client_msg_id": "ff79924a-2502-4468-94a7-16caf441fa2e",
+            "type": "message",
+            "text": "*EOD 07/07/2023* <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\nWorked on the following:\n\u2022 <https://github.com/coronasafe/care_fe/pull/5850|PR #5850>: Allow 10 digit number without country code.\n\u2022 <https://github.com/coronasafe/care_fe/pull/5844|PR #5844>: Update npm dependencies to resolve dependabot alerts.\n\u2022 \n*What's next?*\nWork on the following issues:\n\u2022 <https://github.com/coronasafe/care_fe/issues/5849|Issue #5849>: Alignment issue in asset configuration page.\n\u2022 <https://github.com/coronasafe/care_fe/issues/5845|Issue #5845>: Selected Emergency status field malfunctioning in resource update page.\n\u2022 Uninstall the `screenfull` package and use the `useFullscreen` custom hook instead.\n",
+            "user": "U02T4HFA07Q",
+            "ts": "1688751604.804659",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xqB",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/07/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nWorked on the following:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5850",
+                                            "text": "PR #5850"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Allow 10 digit number without country code."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5844",
+                                            "text": "PR #5844"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Update npm dependencies to resolve dependabot alerts."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": []
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nWork on the following issues:\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5849",
+                                            "text": "Issue #5849"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Alignment issue in asset configuration page."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5845",
+                                            "text": "Issue #5845"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Selected Emergency status field malfunctioning in resource update page."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Uninstall the "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "screenfull",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " package and use the "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useFullscreen",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " custom hook instead."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -14849,5 +14849,98 @@
                 }
             ]
         }
+    ],
+    "2023-07-07 00:00:00": [
+        {
+            "client_msg_id": "402e8967-2522-43cb-9704-8b030f406094",
+            "type": "message",
+            "text": "*EOD 07/07/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 Mostly benchmarking medibase and killing many workers : ) \n\u2022 Debugging memory leak in medibase with <!subteam^S035L5S02RF|@care_engineering> ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1688751794.674669",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "gINy",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/07/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Mostly benchmarking medibase and killing many workers : ) "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Debugging memory leak in medibase with "
+                                        },
+                                        {
+                                            "type": "usergroup",
+                                            "usergroup_id": "S035L5S02RF"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -1,6 +1,111 @@
 {
-  "last_updated": 1688645540.0,
+  "last_updated": 1688756252.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1443",
+      "time": 1688756252.0,
+      "link": "https://github.com/coronasafe/care/pull/1443",
+      "text": "Medibase: Drop littletable; store in records in variable"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5851",
+      "time": 1688729189.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5851#issuecomment-1625270358",
+      "text": "staging will be slow"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5851",
+      "time": 1688729150.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5851#issuecomment-1625269623",
+      "text": "staging is being profiled currently; ETA: 100 minutes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5851",
+      "time": 1688725908.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5851#issuecomment-1625207377",
+      "text": "fixed in other branch; will fix here too"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5851",
+      "time": 1688724694.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5851",
+      "text": "Integrates Medibase Medicines (Pre-optimization version)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1442",
+      "time": 1688723603.0,
+      "link": "https://github.com/coronasafe/care/issues/1442",
+      "text": "ICD11 Diagnoses: replace in-memory search with pg full text search with GIN index #1439 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1433",
+      "time": 1688723526.0,
+      "link": "https://github.com/coronasafe/care/issues/1433#issuecomment-1625158167",
+      "text": "Closed as loading on start caused memory spike when all workers tried to load on start.\r\n\r\nNew approach #1439"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1433",
+      "time": 1688723479.0,
+      "link": "https://github.com/coronasafe/care/issues/1433",
+      "text": "Load ICD11 Diseases to in-memory table on django start instead of on first request"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1439",
+      "time": 1688721888.0,
+      "link": "https://github.com/coronasafe/care/pull/1439#issuecomment-1625123351",
+      "text": "oh my bad; got confused"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1439",
+      "time": 1688721782.0,
+      "link": "https://github.com/coronasafe/care/pull/1439#issuecomment-1625120906",
+      "text": "@sainak external_id was hidden too?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5796",
+      "time": 1688711375.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5796#issuecomment-1624819509",
+      "text": "@dependabot recreate"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5796",
+      "time": 1688711355.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5796#issuecomment-1624819211",
+      "text": "@dependabot rebase"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5789",
+      "time": 1688708835.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5789#issuecomment-1624781557",
+      "text": "@Ashesh3 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5789",
+      "time": 1688708825.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5789#issuecomment-1624781474",
+      "text": "I've resolved the crash; not the issue #5846"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5846",
+      "time": 1688706787.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5846#issuecomment-1624759310",
+      "text": "@nihal467 have you tested this: https://github.com/coronasafe/care_fe/pull/5789"
+    },
     {
       "type": "pr_reviewed",
       "time": 1688645540.0,
@@ -18982,6 +19087,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1443",
+      "title": "Medibase: Drop littletable; store records in variable",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5851",
+      "title": "Integrates Medibase Medicines (Pre-optimization version)",
+      "stale_for": 0,
+      "labels": [
+        "good to merge",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1439",
       "title": "Medicines: replace in-memory search with pg full text search with GIN index",
       "stale_for": 0,
@@ -18994,7 +19114,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "need Review"
       ]
@@ -19002,24 +19122,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5789",
       "title": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "P1",
-        "merge conflict",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -19028,7 +19147,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "P1",
@@ -19039,7 +19158,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 16,
+      "stale_for": 17,
       "labels": [
         "need Review",
         "cypress failed"
@@ -19126,10 +19245,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5506",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5541"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1311",
-      "pr_link": "https://github.com/coronasafe/care/pull/1312"
     }
   ]
 }

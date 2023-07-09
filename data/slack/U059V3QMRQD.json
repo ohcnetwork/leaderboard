@@ -210,5 +210,72 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-08 00:00:00": [
+        {
+            "client_msg_id": "8db99a34-71db-4268-9632-b0e9ab887e76",
+            "type": "message",
+            "text": "EOD 08/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 Working on import asset test and comments on the PR\n",
+            "user": "U059V3QMRQD",
+            "ts": "1688840719.002629",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "tx04",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 08/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on import asset test and comments on the PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

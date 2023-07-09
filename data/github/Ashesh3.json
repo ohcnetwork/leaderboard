@@ -1,6 +1,27 @@
 {
-  "last_updated": 1688723608.0,
+  "last_updated": 1688818741.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5857",
+      "time": 1688818741.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5857",
+      "text": "Replace screenfull package with useFullscreen hook"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5856",
+      "time": 1688813667.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5856",
+      "text": "Fix emergency checkbox for Resource"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5855",
+      "time": 1688812506.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5855",
+      "text": "Fix alignment of 'Preset Name'"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5850",
@@ -9571,9 +9592,36 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5857",
+      "title": "Replace screenfull package with useFullscreen hook",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5856",
+      "title": "Fix emergency checkbox for Resource",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5855",
+      "title": "Fix alignment of 'Preset Name'",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5850",
       "title": "Allow 10 digit number without country code",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "P2",
@@ -9583,7 +9631,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5844",
       "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -9592,7 +9640,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5765",
       "title": "Fix linting errors and add ventilator icon",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -9601,7 +9649,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 44,
+      "stale_for": 45,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9610,7 +9658,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 71,
+      "stale_for": 72,
       "labels": [
         "waiting-for-review"
       ]
@@ -9618,7 +9666,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 94,
+      "stale_for": 95,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9627,13 +9675,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 107,
+      "stale_for": 108,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 38,
+      "stale_for": 39,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9642,7 +9690,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 49,
+      "stale_for": 50,
       "labels": [
         "waiting-for-review"
       ]

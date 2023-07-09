@@ -1,6 +1,13 @@
 {
-  "last_updated": 1688747512.0,
+  "last_updated": 1688807368.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1688807368.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841#issuecomment-1626952727",
+      "text": "@ShivamJhaa \r\n\r\n- As per our call, we discussed to verify mandatory field error message, so initially click on the submit button and verify all mandatory field are having error message reflected to the existing field\r\n- you only created single asset using create asset button, missed out the functionality check of create and add more button, include that in the test and add multiple asset through it\r\n-  verify the asset is created successfully in the asset tab, by searching with it name ( Only check during single asset creation time ) "
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#5854",

@@ -14942,5 +14942,121 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-08 00:00:00": [
+        {
+            "client_msg_id": "b0888667-bd7c-4f31-9e80-161576eef6f8",
+            "type": "message",
+            "text": "EOD 08/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 Optimizing in-memory db and memory issues with medibase.\n\u2022 Bought it down to ~700mb idle and sub 900mb with 100 series requests, no leaks.\n\u2022 :point_up: docker constraints (0.25cpu; 1GB) no workers were harmed too during the benchmark\ncc: <@UC8TSEGCQ> <@U02TB8XHZD1>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1688825829.895199",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "c7DX8",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 08/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Optimizing in-memory db and memory issues with medibase."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Bought it down to ~700mb idle and sub 900mb with 100 series requests, no leaks."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "emoji",
+                                            "name": "point_up",
+                                            "unicode": "261d-fe0f"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " docker constraints (0.25cpu; 1GB) no workers were harmed too during the benchmark"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\ncc: "
+                                },
+                                {
+                                    "type": "user",
+                                    "user_id": "UC8TSEGCQ"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "user",
+                                    "user_id": "U02TB8XHZD1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "reactions": [
+                {
+                    "name": "rabbit2",
+                    "users": [
+                        "U02T4HFA07Q"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

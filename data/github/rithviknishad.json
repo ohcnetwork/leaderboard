@@ -1,6 +1,20 @@
 {
-  "last_updated": 1688756252.0,
+  "last_updated": 1688973880.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1443",
+      "time": 1688973880.0,
+      "link": "https://github.com/coronasafe/care/pull/1443#issuecomment-1628387395",
+      "text": "But this happens for me even with lazy load (not on wsgi.py, load on first search request) on my CPU.\r\nProbably because my `0.25` cpu is not same as staging instances `0.25` cpu"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1443",
+      "time": 1688973206.0,
+      "link": "https://github.com/coronasafe/care/pull/1443#issuecomment-1628373283",
+      "text": "Worker timeout occurs as loading to in-memory on wsgi.py takes too much time for (0.25cpu)\r\nNo memory issues though."
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1443",
@@ -19088,14 +19102,16 @@
   "open_prs": [
     {
       "link": "https://github.com/coronasafe/care/pull/1443",
-      "title": "Medibase: Drop littletable; store records in variable",
+      "title": "Medibase: Drop littletable; instead store as list from ORM's `values_list`",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "P1"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5851",
       "title": "Integrates Medibase Medicines (Pre-optimization version)",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "good to merge",
         "cypress failed"
@@ -19107,14 +19123,13 @@
       "stale_for": 0,
       "labels": [
         "waiting-for-review",
-        "P1",
         "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 3,
+      "stale_for": 6,
       "labels": [
         "need Review"
       ]
@@ -19122,7 +19137,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5789",
       "title": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "P1",
@@ -19132,22 +19147,31 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 8,
+      "stale_for": 11,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "cypress passed"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5681",
+      "title": "HCX Communication",
+      "stale_for": 0,
+      "labels": [
+        "stale",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5599",
       "title": "Integrates Medibase Medicines",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": [
         "tested",
         "P1",
@@ -19158,7 +19182,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 17,
+      "stale_for": 20,
       "labels": [
         "need Review",
         "cypress failed"

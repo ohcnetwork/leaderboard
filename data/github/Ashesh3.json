@@ -1,6 +1,62 @@
 {
-  "last_updated": 1688818741.0,
+  "last_updated": 1689028992.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#204",
+      "time": 1689028992.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/204",
+      "text": "Add per project model selection"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#60",
+      "time": 1689028982.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/60",
+      "text": "Add model selection to project page"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#59",
+      "time": 1689024431.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/59",
+      "text": "Add default ordering for project list"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5861",
+      "time": 1689007658.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5861",
+      "text": "Replace OnlineUsersSelect with Tailwind component"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5860",
+      "time": 1688995232.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5860",
+      "text": "Fix missing badges on Shifting filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688973409.0,
+      "title": "coronasafe/ayushma_fe#57",
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/57#pullrequestreview-1521406739",
+      "text": "Added download pdf button on test run results page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688966860.0,
+      "title": "coronasafe/ayushma_fe#57",
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/57#pullrequestreview-1521238055",
+      "text": "Added download pdf button on test run results page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688966860.0,
+      "title": "coronasafe/ayushma_fe#57",
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/57#pullrequestreview-1521238055",
+      "text": "Added download pdf button on test run results page"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5857",
@@ -9592,6 +9648,45 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma/pull/204",
+      "title": "Add per project model selection",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/60",
+      "title": "Add model selection to project page",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/59",
+      "title": "Add default ordering for project list",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5861",
+      "title": "Replace OnlineUsersSelect with Tailwind component",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5860",
+      "title": "Fix missing badges on Shifting filter",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P2",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5857",
       "title": "Replace screenfull package with useFullscreen hook",
       "stale_for": 0,
@@ -9621,7 +9716,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5850",
       "title": "Allow 10 digit number without country code",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "P2",
@@ -9631,7 +9726,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5844",
       "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -9640,7 +9735,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5765",
       "title": "Fix linting errors and add ventilator icon",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -9649,7 +9744,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 45,
+      "stale_for": 47,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9658,7 +9753,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 72,
+      "stale_for": 74,
       "labels": [
         "waiting-for-review"
       ]
@@ -9666,7 +9761,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 95,
+      "stale_for": 97,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9675,13 +9770,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 108,
+      "stale_for": 110,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 39,
+      "stale_for": 41,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9690,7 +9785,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 50,
+      "stale_for": 52,
       "labels": [
         "waiting-for-review"
       ]

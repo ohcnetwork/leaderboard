@@ -1,6 +1,20 @@
 {
-  "last_updated": 1688239743.0,
+  "last_updated": 1688975732.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1688975732.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1521486687",
+      "text": "Replace id with external_id for home_facility in UserBaseMinimumSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1445",
+      "time": 1688975695.0,
+      "link": "https://github.com/coronasafe/care/pull/1445#issuecomment-1628427960",
+      "text": "Format the code using [precommit](https://care-be-docs.coronasafe.network/local-setup/configuration.html#setting-up-pre-commit)\r\nAnd, remove the merge checklist from the PR description. Other than that, LGTM."
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1422",
@@ -1155,15 +1169,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1275",
       "title": "Modified bedCreate API View to support bulk creating beds",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
+      "stale_for": 2,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5413",
       "title": "Add support for creating multiple beds",
-      "stale_for": 24,
+      "stale_for": 33,
       "labels": [
         "waiting for back end",
         "merge conflict"

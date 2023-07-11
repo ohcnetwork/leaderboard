@@ -1,6 +1,13 @@
 {
-  "last_updated": 1688883053.0,
+  "last_updated": 1688998002.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1445",
+      "time": 1688998002.0,
+      "link": "https://github.com/coronasafe/care/pull/1445#issuecomment-1629043142",
+      "text": "@Bhavik-ag there is already a serializer field that has validations built in you should use that instead of calling it directly. `ExternalIdSerializerField`"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1441",
@@ -112,9 +119,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1447",
+      "title": "Add list and detail serializer to bed module",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1427",
       "title": "Add list and detail serializer to facility_asset module",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "reviewed"
       ]

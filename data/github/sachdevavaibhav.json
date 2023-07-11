@@ -1,6 +1,13 @@
 {
-  "last_updated": 1688730383.0,
+  "last_updated": 1688969388.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1430",
+      "time": 1688969388.0,
+      "link": "https://github.com/coronasafe/care/pull/1430#issuecomment-1628301526",
+      "text": "> > > @sainak I have a couple of questions:\r\n> > > \r\n> > > * referred_to_external should accept only strings/null values right? And not integer etc.\r\n> > \r\n> > \r\n> > Yes\r\n> > > * Should I create separate branch for tests or push them here only?\r\n> > \r\n> > \r\n> > You can include them in this pr\r\n> \r\n> @sainak I have written a few test and found that its also accepting integers (may be its converting it to string values). Kindly review the test and should I also add some validation to the input?\r\n\r\n@sainak "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1430",
@@ -457,7 +464,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5730",
       "title": "added referred to facility field in discharge form",
-      "stale_for": 3,
+      "stale_for": 6,
       "labels": [
         "waiting for back end"
       ]

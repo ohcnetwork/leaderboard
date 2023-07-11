@@ -62455,5 +62455,461 @@
         }
     ],
     "2023-07-09 00:00:00": [],
-    "2023-07-10 00:00:00": []
+    "2023-07-10 00:00:00": [
+        {
+            "client_msg_id": "1adc178a-c558-4b70-bacb-8f92e5c33fd6",
+            "type": "message",
+            "text": "EOD 10/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go ?\n\u2022 Resolved comments on the assets creation test suite PR\n\u2022 Worked on import new asset test\n",
+            "user": "U059V3QMRQD",
+            "ts": "1689022257.261639",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "32IRr",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 10/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go ?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved comments on the assets creation test suite PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on import new asset test"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "c179fe51-2f72-4e86-8c18-ca91bcbef252",
+            "type": "message",
+            "text": "EOD 10/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go ?\n\n\u2022 tested PR for this week\n\u2022 tested medibase\nwhat's next\n\n\u2022 review cypress PR\n\u2022 complete testing of medibase and release production\n\u2022 create consultation update cypress test",
+            "user": "U022THM4U2U",
+            "ts": "1689014574.834779",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "29U",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 10/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go ?\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested PR for this week"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested medibase"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nwhat's next\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "review cypress PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "complete testing of medibase and release production"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "create consultation update cypress test"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U022THM4U2U",
+                "ts": "1689014614.000000"
+            }
+        },
+        {
+            "client_msg_id": "5dc10177-87d4-4f3c-9e7d-44b2c4a8c99a",
+            "type": "message",
+            "text": "*EOD 10/07/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 <https://github.com/coronasafe/care/pull/1443|care#1443>: Optimized medibase in-memory by loading directly from ORM's `values_list`  \n    \u25e6 compared to staging: :point_down: \n    \u25e6 Search performance: Almost same fast performance as old in-memory *(P50 latency: ~55ms)*\n    \u25e6 *idle memory usage* down from _~1.1GB_ to _~380mb_ *(~63% improved)*\n    \u25e6 load test *max_mem usage*: down from sub ~_1.2GB + memory leaks_ to sub 500mb w/o. memory leaks *(~60% improved)*\n    \u25e6 *time to load to in-memory from DB table*: down from 5.1 seconds to ~525ms *(~1000% improved)*\n*What's next?*\n\u2022 Follow up on zoomdrive script\n\u2022 Follow up on configurable gain for vitals monitor",
+            "user": "U02TDGQQPMJ",
+            "ts": "1689007883.958409",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1TN",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 10/07/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1443",
+                                            "text": "care#1443"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Optimized medibase in-memory by loading directly from ORM's "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "values_list",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "  "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "compared to staging: "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "point_down",
+                                            "unicode": "1f447"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Search performance: Almost same fast performance as old in-memory "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(P50 latency: ~55ms)",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "idle memory usage",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " down from "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "~1.1GB",
+                                            "style": {
+                                                "italic": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "~380mb",
+                                            "style": {
+                                                "italic": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(~63% improved)",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "load test "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "max_mem usage",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": down from sub ~"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "1.2GB + memory leaks ",
+                                            "style": {
+                                                "italic": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "to sub 500mb w/o. memory leaks "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(~60% improved)",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "time to load to in-memory from DB table",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": down from 5.1 seconds to ~525ms "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "(~1000% improved)",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 1,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on zoomdrive script"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on configurable gain for vitals monitor"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-07-11 00:00:00": []
 }

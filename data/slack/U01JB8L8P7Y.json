@@ -1146,5 +1146,101 @@
                 }
             ]
         }
+    ],
+    "2023-07-11 00:00:00": [
+        {
+            "client_msg_id": "edc73e5e-e0c3-4cd4-bb9b-12c122bc766e",
+            "type": "message",
+            "text": "EOD 10/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go ?\n\u2022 Worked on teleicu middleware to store past 30 min requests from all devices\n\u2022 Sat with HCX team and fixed issues in HCX FHIR bundle parsing\nWhat\u2019s next\n\u2022 Review and Merge tested prs\n\u2022 Integrate the last 30min teleicu requests in care",
+            "user": "U01JB8L8P7Y",
+            "ts": "1689052484.069709",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ZRACc",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 10/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go ?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on teleicu middleware to store past 30 min requests from all devices"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Sat with HCX team and fixed issues in HCX FHIR bundle parsing"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat\u2019s next\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Review and Merge tested prs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Integrate the last 30min teleicu requests in care"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

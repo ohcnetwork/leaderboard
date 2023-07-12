@@ -1,6 +1,27 @@
 {
-  "last_updated": 1688975732.0,
+  "last_updated": 1689087558.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689087558.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1524491688",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689086265.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1524437778",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689067376.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1523840141",
+      "text": "Replace id with external_id for home_facility in UserBaseMinimumSerializer"
+    },
     {
       "type": "pr_reviewed",
       "time": 1688975732.0,
@@ -1169,16 +1190,17 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1275",
       "title": "Modified bedCreate API View to support bulk creating beds",
-      "stale_for": 2,
-      "labels": []
+      "stale_for": 0,
+      "labels": [
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5413",
       "title": "Add support for creating multiple beds",
-      "stale_for": 33,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end",
-        "merge conflict"
+        "waiting for back end"
       ]
     }
   ],

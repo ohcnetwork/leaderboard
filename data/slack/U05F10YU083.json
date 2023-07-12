@@ -33,5 +33,69 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-11 00:00:00": [
+        {
+            "client_msg_id": "97288c33-91b9-4b80-9790-28e1f990c125",
+            "type": "message",
+            "text": "EOD 11/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nhow did the day go?\n Raise one backend PR - <https://github.com/coronasafe/care/pull/1447|https://github.com/coronasafe/care/pull/1447> that fixes the bed module",
+            "user": "U05F10YU083",
+            "ts": "1689084441.198969",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "T4=",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 11/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nhow did the day go?\n Raise one backend PR - "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care/pull/1447",
+                                    "text": "https://github.com/coronasafe/care/pull/1447"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " that fixes the bed module"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1689033913,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/1447",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#1447 Add list and detail serializer to bed module",
+                    "text": "*Proposed Changes*\n\n\u2022 Add list and detail serializer to the bed module and remove the references of BedSerializer and ConsulationBedSerializer\n\u2022 Add tests for the changes\n\u2022 Add comment to remove BedSerializer and ConsultationBedSerializer when epic issue is resolved\n\n*Associated Issue*\n\n\u2022 Fixes bed.py in <https://github.com/coronasafe/care_fe/issues/5492|coronasafe/care_fe#5492>\n\n*Merge Checklist*\n\n\u2611\ufe0e Tests added/fixed\n\u2611\ufe0e Linting Complete\n\n__Only PR's with test cases included and passing lint and test pipelines will be reviewed__\n\n@coronasafe/care-backend-maintainers @coronasafe/care-backend-admins",
+                    "title": "#1447 Add list and detail serializer to bed module",
+                    "title_link": "https://github.com/coronasafe/care/pull/1447",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

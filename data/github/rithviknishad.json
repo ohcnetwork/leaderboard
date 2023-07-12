@@ -1,6 +1,44 @@
 {
-  "last_updated": 1688973880.0,
+  "last_updated": 1689083809.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1439",
+      "time": 1689083809.0,
+      "link": "https://github.com/coronasafe/care/pull/1439#issuecomment-1630883503",
+      "text": "Alternate approach used. Completed via #1443"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5851",
+      "time": 1689072241.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5851",
+      "text": "Integrates Medibase Medicines (Pre-optimization version)"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5851",
+      "time": 1689072241.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5851",
+      "text": "Integrates Medibase Medicines (Pre-optimization version)",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5599",
+      "time": 1689067744.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5599#issuecomment-1630478284",
+      "text": "Continued in #5851 "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1443",
+      "time": 1689065888.0,
+      "link": "https://github.com/coronasafe/care/pull/1443",
+      "text": "Medibase: Drop littletable; instead store as list from ORM's `values_list`"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1443",
@@ -19101,35 +19139,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1443",
-      "title": "Medibase: Drop littletable; instead store as list from ORM's `values_list`",
-      "stale_for": 0,
-      "labels": [
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5851",
-      "title": "Integrates Medibase Medicines (Pre-optimization version)",
-      "stale_for": 3,
-      "labels": [
-        "good to merge",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1439",
-      "title": "Medicines: replace in-memory search with pg full text search with GIN index",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review",
-        "reviewed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "need Review"
       ]
@@ -19137,23 +19149,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5789",
       "title": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "P1",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -19164,25 +19176,13 @@
       "title": "HCX Communication",
       "stale_for": 0,
       "labels": [
-        "stale",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5599",
-      "title": "Integrates Medibase Medicines",
-      "stale_for": 4,
-      "labels": [
-        "tested",
-        "P1",
-        "waiting for back end",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "need Review",
         "cypress failed"

@@ -15344,5 +15344,185 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-12 00:00:00": [
+        {
+            "client_msg_id": "0d1bb79c-c309-455d-863a-0c2a0dc1c9b4",
+            "type": "message",
+            "text": "*EOD 11/07/2023 - 12/07/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day(s) go?*\n\n\u2022 Some more benchmarking of medibase\n\u2022 Followed up on previous PR and cypress fixes\n\u2022 <https://github.com/coronasafe/care/pull/1448|care#1448>: Adds `chapter`, `root_block`, `root_category` columns to `meta_icd11_diagnosis` DB table\n*What's next?*\n\n\u2022 Finish zoomdrive gh action",
+            "user": "U02TDGQQPMJ",
+            "ts": "1689182546.281809",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "UCH",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 11/07/2023 - 12/07/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day(s) go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Some more benchmarking of medibase"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up on previous PR and cypress fixes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1448",
+                                            "text": "care#1448"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Adds "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "chapter",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "root_block",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "root_category",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " columns to "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "meta_icd11_diagnosis",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " DB table"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Finish zoomdrive gh action"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

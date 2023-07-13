@@ -1,6 +1,132 @@
 {
-  "last_updated": 1689101682.0,
+  "last_updated": 1689172951.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5865",
+      "time": 1689172951.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5865#issuecomment-1632658154",
+      "text": "@ShivamJhaa \r\n\r\n- admission consultation creation is already in the test, do re-verify it, \r\n\r\nAdd the below things to the file as well\r\n\r\n- [ ] You can create a test to create non-admission consultation for a patient\r\n- [ ] verify details submitted during consultation creation are reflected properly on the patient consultation dashboard\r\n- [ ] create and verify the generated investigation summary\r\n- [ ] upload file to patient dashboard\r\n- [ ] create normal and critical log-update for a patient and verify all data are reflected\r\n- [ ] along with editing prescriptions, bulk administrating, and discontinuing the medicine"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5864",
+      "time": 1689153832.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5864",
+      "text": "Command.ts modified for accepting dynamic token refresh in cypress"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5765",
+      "time": 1689150482.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5765",
+      "text": "Fix linting errors and add ventilator icon",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5789",
+      "time": 1689150064.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5789",
+      "text": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1689149966.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841",
+      "text": "Milestone 1.1: Add test to edit and delete and an already created asset.",
+      "collaborated_with": [
+        "ShivamJhaa"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5855",
+      "time": 1689149825.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5855",
+      "text": "Fix alignment of 'Preset Name'",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5856",
+      "time": 1689149793.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5856",
+      "text": "Fix emergency checkbox for Resource",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5857",
+      "time": 1689149737.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5857",
+      "text": "Replace screenfull package with useFullscreen hook",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5860",
+      "time": 1689149652.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5860",
+      "text": "Fix missing badges on Shifting filter",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689149261.0,
+      "title": "coronasafe/care_fe#5841",
+      "link": "https://github.com/coronasafe/care_fe/pull/5841#pullrequestreview-1525761792",
+      "text": "Milestone 1.1: Add test to edit and delete and an already created asset."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1689149232.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841#issuecomment-1632042414",
+      "text": "@ShivamJhaa the PR looks good to me, what is the status on the remaining import and configuration of assets related to the issue you linked?\r\n\r\n@khavinshankar merge this PR and the issue is only partially completed so don't close it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5861",
+      "time": 1689148584.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5861#issuecomment-1632028150",
+      "text": "@Ashesh3 rework on the alignment and clear button as discussed in the huddle"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5857",
+      "time": 1689148016.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5857#issuecomment-1632016004",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5860",
+      "time": 1689147566.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5860#issuecomment-1632005986",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5789",
+      "time": 1689147421.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5789#issuecomment-1632003007",
+      "text": "LGTM"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5848",
@@ -22465,6 +22591,16 @@
       "text": "@cp-Coder @gigincg can you the conflicting file "
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5864",
+      "title": "Command.ts modified for accepting dynamic token refresh in cypress",
+      "stale_for": 0,
+      "labels": [
+        "blocked",
+        "cypress failed"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

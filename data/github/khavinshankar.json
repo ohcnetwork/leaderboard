@@ -1,6 +1,111 @@
 {
-  "last_updated": 1689072227.0,
+  "last_updated": 1689150467.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689150467.0,
+      "title": "coronasafe/care_fe#5765",
+      "link": "https://github.com/coronasafe/care_fe/pull/5765#pullrequestreview-1525798651",
+      "text": "Fix linting errors and add ventilator icon"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5788",
+      "time": 1689150065.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5788",
+      "text": "add phone number as you type regex validation in `PhoneNumberFormField`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689150048.0,
+      "title": "coronasafe/care_fe#5789",
+      "link": "https://github.com/coronasafe/care_fe/pull/5789#pullrequestreview-1525785258",
+      "text": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5835",
+      "time": 1689149967.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5835",
+      "text": "Add cypress test for assets.cy.ts"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689149925.0,
+      "title": "coronasafe/care_fe#5841",
+      "link": "https://github.com/coronasafe/care_fe/pull/5841#pullrequestreview-1525781653",
+      "text": "Milestone 1.1: Add test to edit and delete and an already created asset."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5846",
+      "time": 1689149862.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5846",
+      "text": "Phone number filter in the user tab is malfunctioning"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689149851.0,
+      "title": "coronasafe/care_fe#5850",
+      "link": "https://github.com/coronasafe/care_fe/pull/5850#pullrequestreview-1525779476",
+      "text": "Allow 10 digit number without country code"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5849",
+      "time": 1689149826.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5849",
+      "text": "Alignment issue in asset configuration page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689149813.0,
+      "title": "coronasafe/care_fe#5855",
+      "link": "https://github.com/coronasafe/care_fe/pull/5855#pullrequestreview-1525778274",
+      "text": "Fix alignment of 'Preset Name'"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5845",
+      "time": 1689149794.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5845",
+      "text": "Selected Emergency status field malfunctioning in resource update page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689149779.0,
+      "title": "coronasafe/care_fe#5856",
+      "link": "https://github.com/coronasafe/care_fe/pull/5856#pullrequestreview-1525777263",
+      "text": "Fix emergency checkbox for Resource"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5840",
+      "time": 1689149738.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5840",
+      "text": "Uninstall `screenfull` package and use `useFullscreen` custom hook instead"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689149726.0,
+      "title": "coronasafe/care_fe#5857",
+      "link": "https://github.com/coronasafe/care_fe/pull/5857#pullrequestreview-1525775684",
+      "text": "Replace screenfull package with useFullscreen hook"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5854",
+      "time": 1689149652.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5854",
+      "text": "Multiple filter badges are missing in shifting"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689149607.0,
+      "title": "coronasafe/care_fe#5860",
+      "link": "https://github.com/coronasafe/care_fe/pull/5860#pullrequestreview-1525772045",
+      "text": "Fix missing badges on Shifting filter"
+    },
     {
       "type": "pr_reviewed",
       "time": 1689072227.0,
@@ -19906,34 +20011,35 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1446",
       "title": "Fix issues with HCX",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5798",
       "title": "Abdm",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
         "merge conflict",
+        "stale",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/54",
       "title": "Added UI for feedback",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma/pull/194",
       "title": "Added feedback ",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5334",
       "title": "Abdm integration",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -19942,25 +20048,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1244",
       "title": "Abdm",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 81,
+      "stale_for": 82,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 143,
+      "stale_for": 144,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 113,
+      "stale_for": 114,
       "labels": [
         "work-in-progress"
       ]
@@ -19968,13 +20074,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 215,
+      "stale_for": 216,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1106",
       "title": "Resize facility cover image before upload",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "changes required"
       ]
@@ -19982,7 +20088,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 243,
+      "stale_for": 244,
       "labels": [
         "waiting-for-review"
       ]
@@ -19990,25 +20096,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 571,
+      "stale_for": 572,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 577,
+      "stale_for": 578,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 578,
+      "stale_for": 579,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 773,
+      "stale_for": 774,
       "labels": []
     }
   ],

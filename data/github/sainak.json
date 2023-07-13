@@ -1,6 +1,20 @@
 {
-  "last_updated": 1689088752.0,
+  "last_updated": 1689155177.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689155177.0,
+      "title": "coronasafe/care#1430",
+      "link": "https://github.com/coronasafe/care/pull/1430#pullrequestreview-1525959590",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689154260.0,
+      "title": "coronasafe/care#1448",
+      "link": "https://github.com/coronasafe/care/pull/1448#pullrequestreview-1525931560",
+      "text": "Adds `root_label` (top-most category) column to `meta_icd11_diagnosis` DB Table"
+    },
     {
       "type": "pr_reviewed",
       "time": 1689088752.0,
@@ -3361,22 +3375,21 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 29,
+      "stale_for": 30,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove unused hba1c field from patient consultation",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "ops-review-pending",
         "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 349,
+      "stale_for": 350,
       "labels": []
     }
   ],

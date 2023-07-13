@@ -1,6 +1,30 @@
 {
-  "last_updated": 1688925565.0,
+  "last_updated": 1689158033.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5865",
+      "time": 1689158033.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5865",
+      "text": "Add test for patient_crud.cy.ts"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1689149966.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841",
+      "text": "Milestone 1.1: Add test to edit and delete and an already created asset."
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1689149966.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841",
+      "text": "Milestone 1.1: Add test to edit and delete and an already created asset.",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5841",
@@ -209,15 +233,6 @@
       "text": "@nihal467  All the unclaimed tasks depend on the open PRs like adding, and editing consultation can only be done after creating patients, and configuration of the assets page can be done after creating an asset. So can I take those tasks which are already assigned (creating an asset) as the PR seems stale now? "
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5841",
-      "title": "Milestone 1.1: Add test to edit and delete and an already created asset.",
-      "stale_for": 0,
-      "labels": [
-        "changes required"
-      ]
-    }
-  ],
+  "open_prs": [],
   "authored_issue_and_pr": []
 }

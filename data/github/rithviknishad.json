@@ -1,6 +1,37 @@
 {
-  "last_updated": 1689083809.0,
+  "last_updated": 1689150533.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1448",
+      "time": 1689150533.0,
+      "link": "https://github.com/coronasafe/care/pull/1448#issuecomment-1632074897",
+      "text": "Following columns to be added too:\r\n\r\n`root_category`\r\n`root_block`\r\n`root_label` -> `chapter`\r\n\r\ncc: @gigincg "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5789",
+      "time": 1689150064.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5789",
+      "text": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5789",
+      "time": 1689150064.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5789",
+      "text": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1448",
+      "time": 1689150059.0,
+      "link": "https://github.com/coronasafe/care/pull/1448",
+      "text": "Adds `root_label` (top-most category) column to `meta_icd11_diagnosis` DB Table"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1439",
@@ -19139,33 +19170,31 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1448",
+      "title": "Adds `chapter`, `root_block`, `root_category` columns to `meta_icd11_diagnosis` DB table",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "need Review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5789",
-      "title": "Adds regex validation for `PhoneNumberFormField` same as in backend and validate `onBlur` instead of `onSubmit`",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -19174,7 +19203,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "cypress failed"
       ]
@@ -19182,7 +19211,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "need Review",
         "cypress failed"
@@ -19193,6 +19222,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5791",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5792"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5788",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5789"
     },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1404",
@@ -19265,10 +19298,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1319",
       "pr_link": "https://github.com/coronasafe/care/pull/1325"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5506",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5541"
     }
   ]
 }

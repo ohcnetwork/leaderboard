@@ -1,6 +1,27 @@
 {
-  "last_updated": 1689155177.0,
+  "last_updated": 1689245395.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5868",
+      "time": 1689245395.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5868",
+      "text": "remove legacy feed components"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1450",
+      "time": 1689244041.0,
+      "link": "https://github.com/coronasafe/care/pull/1450",
+      "text": "add table to track user facility allocation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689241402.0,
+      "title": "coronasafe/care#1449",
+      "link": "https://github.com/coronasafe/care/pull/1449#pullrequestreview-1528046188",
+      "text": "Update branding from CoronaSafe Network to Open Healthcare Network"
+    },
     {
       "type": "pr_reviewed",
       "time": 1689155177.0,
@@ -3373,15 +3394,29 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5868",
+      "title": "remove legacy feed components",
+      "stale_for": 0,
+      "labels": [
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1450",
+      "title": "add table to track user facility allocation",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 30,
+      "stale_for": 31,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove unused hba1c field from patient consultation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "reviewed"
       ]
@@ -3389,7 +3424,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 350,
+      "stale_for": 351,
       "labels": []
     }
   ],

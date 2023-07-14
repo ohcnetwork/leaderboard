@@ -1,6 +1,27 @@
 {
-  "last_updated": 1689150533.0,
+  "last_updated": 1689270759.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1448",
+      "time": 1689270759.0,
+      "link": "https://github.com/coronasafe/care/pull/1448",
+      "text": "Adds `chapter`, `root_block`, `root_category` columns to `meta_icd11_diagnosis` DB table"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1285",
+      "time": 1689259293.0,
+      "link": "https://github.com/coronasafe/care/pull/1285#issuecomment-1634369751",
+      "text": "@cp-Coder lints are failing, sync with latest master and fix the lint CI"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5869",
+      "time": 1689247282.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5869",
+      "text": "Vitals Monitor view is small in asset configure page"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1448",
@@ -19170,17 +19191,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1448",
-      "title": "Adds `chapter`, `root_block`, `root_category` columns to `meta_icd11_diagnosis` DB table",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 8,
+      "stale_for": 0,
       "labels": [
         "need Review"
       ]
@@ -19188,13 +19201,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -19203,7 +19216,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "cypress failed"
       ]
@@ -19211,7 +19224,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 22,
+      "stale_for": 23,
       "labels": [
         "need Review",
         "cypress failed"

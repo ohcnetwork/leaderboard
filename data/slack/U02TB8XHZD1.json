@@ -1886,5 +1886,105 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-13 00:00:00": [
+        {
+            "client_msg_id": "087e3f09-7fbb-494f-9ca3-d79e4d5b9322",
+            "type": "message",
+            "text": "EOD 13/07/2023 <!subteam^S035L5S02RF|@care_engineering>\nhow did the day go ?\n\u2022 added tests and migration to backfill user facility allocation tracking\n\u2022 removed unused feed components from fe\n\u2022 worked on making openID auth (care-&gt;muddleware) configurable\nwhat's next\n\u2022 remove unessary token dependencies (currently 4 in middleware and 3 in care)\n",
+            "user": "U02TB8XHZD1",
+            "ts": "1689276803.437179",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Qmhh",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 13/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nhow did the day go ?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "added tests and migration to backfill user facility allocation tracking"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "removed unused feed components from fe"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "worked on making openID auth (care->muddleware) configurable"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "what's next\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "remove unessary token dependencies (currently 4 in middleware and 3 in care)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1689270993.0,
+  "last_updated": 1689340369.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1454",
+      "time": 1689340369.0,
+      "link": "https://github.com/coronasafe/care/pull/1454",
+      "text": "Asset Tracking and Monitoring Enhancements"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5872",
+      "time": 1689327378.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5872",
+      "text": "Add support for custom branding"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5363",
+      "time": 1689323620.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5363#issuecomment-1635503263",
+      "text": "> @Ashesh3 where are we with this? any ETD\r\n\r\n@aparnacoronasafe The feature is built and ready but is just pending to be merged. We recently had a major change to the backend and had paused any merges for a week. It should be ready to review and merge now.. @vigneshhari could you take a look into the linked backend PR so we can get this merged? \r\n\r\nhttps://github.com/coronasafe/care/pull/1277"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1449",
@@ -9838,9 +9859,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1454",
+      "title": "Asset Tracking and Monitoring Enhancements",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5861",
       "title": "Replace OnlineUsersSelect with Tailwind component",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -9852,13 +9881,14 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
+        "merge conflict",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 50,
+      "stale_for": 51,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9867,7 +9897,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 77,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -9875,7 +9905,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 100,
+      "stale_for": 101,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9884,13 +9914,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 113,
+      "stale_for": 114,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 44,
+      "stale_for": 45,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9899,7 +9929,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 55,
+      "stale_for": 56,
       "labels": [
         "waiting-for-review"
       ]

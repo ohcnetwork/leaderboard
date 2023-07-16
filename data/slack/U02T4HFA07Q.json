@@ -4261,5 +4261,112 @@
                 "ts": "1689193234.000000"
             }
         }
+    ],
+    "2023-07-15 00:00:00": [
+        {
+            "client_msg_id": "6f5fc15b-2c26-4e16-b98c-60ac1ea3ba08",
+            "type": "message",
+            "text": "EOD 15/07/2023 <!subteam^S035L5S02RF|@care_engineering>\nhow did the day go ?\n\u2022 Fixed rate limit issue with ayushma testing framework by implementing auto retries.\n\u2022 Made some frontend changes required for complying with the new asset uptime object\n\u2022 Worked on adding state management to metabase_manager, so next time it will remember which cards were synced to which ones exactly and carry out differential updates across instances.",
+            "user": "U02T4HFA07Q",
+            "ts": "1689429324.939419",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "iM3",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 15/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nhow did the day go ?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed rate limit issue with ayushma testing framework by implementing auto retries."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made some frontend changes required for complying with the new asset uptime object"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on adding state management to metabase_manager, so next time it will remember which cards were synced to which ones exactly and carry out differential updates across instances."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

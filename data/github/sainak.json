@@ -1,6 +1,76 @@
 {
-  "last_updated": 1689390201.0,
+  "last_updated": 1689616115.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/zoomdrive#2",
+      "time": 1689616115.0,
+      "link": "https://github.com/coronasafe/zoomdrive/issues/2",
+      "text": "Convert to typescript"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1454",
+      "time": 1689612674.0,
+      "link": "https://github.com/coronasafe/care/pull/1454#issuecomment-1638513504",
+      "text": "@Ashesh3 add tests for api endpoints"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689612605.0,
+      "title": "coronasafe/care#1454",
+      "link": "https://github.com/coronasafe/care/pull/1454#pullrequestreview-1533235497",
+      "text": "Asset Tracking and Monitoring Enhancements"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689602514.0,
+      "title": "coronasafe/care#1454",
+      "link": "https://github.com/coronasafe/care/pull/1454#pullrequestreview-1532839408",
+      "text": "Asset Tracking and Monitoring Enhancements"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689602514.0,
+      "title": "coronasafe/care#1454",
+      "link": "https://github.com/coronasafe/care/pull/1454#pullrequestreview-1532839408",
+      "text": "Asset Tracking and Monitoring Enhancements"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689600553.0,
+      "title": "coronasafe/care#1447",
+      "link": "https://github.com/coronasafe/care/pull/1447#pullrequestreview-1532788299",
+      "text": "Add list and detail serializer to bed module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689600518.0,
+      "title": "coronasafe/care#1447",
+      "link": "https://github.com/coronasafe/care/pull/1447#pullrequestreview-1532788299",
+      "text": "Add list and detail serializer to bed module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689575872.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1532080865",
+      "text": "Replace id with external_id for home_facility in UserBaseMinimumSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1445",
+      "time": 1689575832.0,
+      "link": "https://github.com/coronasafe/care/pull/1445#issuecomment-1637459842",
+      "text": "@Bhavik-ag this serializer is being used at many places and adding the home_facility field will cause nested query calls everywhere, so it would be better to add a new field in `PatientNotesSerializer` called `created_by_local_user` which could be annotated on the queryset."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689575403.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1532068307",
+      "text": "Replace id with external_id for home_facility in UserBaseMinimumSerializer"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1456",
@@ -3421,6 +3491,86 @@
       "text": "fix: sidebar on devices with small height"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5868",
+      "title": "remove legacy feed components",
+      "stale_for": 4,
+      "labels": [
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1450",
+      "title": "add table to track user facility allocation",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1349",
+      "title": "use signals to update patient and bed count of facilities",
+      "stale_for": 35,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1309",
+      "title": "remove unused hba1c field from patient consultation",
+      "stale_for": 5,
+      "labels": [
+        "reviewed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
+      "title": "fix requests not sending content-type header and minor refactor",
+      "stale_for": 355,
+      "labels": []
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1419",
+      "pr_link": "https://github.com/coronasafe/care/pull/1420"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1417",
+      "pr_link": "https://github.com/coronasafe/care/pull/1418"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5783",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5800"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1351",
+      "pr_link": "https://github.com/coronasafe/care/pull/1371"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1350",
+      "pr_link": "https://github.com/coronasafe/care/pull/1371"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/844",
+      "pr_link": "https://github.com/coronasafe/care/pull/848"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/825",
+      "pr_link": "https://github.com/coronasafe/care/pull/826"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/754",
+      "pr_link": "https://github.com/coronasafe/care/pull/768"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/744",
+      "pr_link": "https://github.com/coronasafe/care/pull/746"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/2240",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/2292"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/719",
+      "pr_link": "https://github.com/coronasafe/care/pull/720"
+    }
+  ]
 }

@@ -1,6 +1,41 @@
 {
-  "last_updated": 1689417662.0,
+  "last_updated": 1689585908.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#216",
+      "time": 1689585908.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/216",
+      "text": "Increase Langchain Retries and Update Langchain Version"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#64",
+      "time": 1689585385.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/64",
+      "text": "Add option to export test results to CSV"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#64",
+      "time": 1689575894.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/64#issuecomment-1637460867",
+      "text": "> @Ashesh3 Deploy Preview is failing\r\n> \r\n> ```\r\n> Type error: Could not find a declaration file for module 'json2csv'. '/vercel/path0/node_modules/json2csv/lib/json2csv.js' implicitly has an 'any' type.\r\n> ```\r\n\r\nShould be fixed now."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#64",
+      "time": 1689573335.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/64",
+      "text": "Add option to export test results to CSV"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5879",
+      "time": 1689569534.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5879",
+      "text": "Add asset uptime"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/ayushma#216",
@@ -9897,15 +9932,19 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/ayushma/pull/216",
-      "title": "Increase Langchain Retries and Update Langchain Version",
+      "link": "https://github.com/coronasafe/care_fe/pull/5879",
+      "title": "Add asset uptime",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "tested",
+        "good to merge",
+        "cypress failed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1454",
       "title": "Asset Tracking and Monitoring Enhancements",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -9913,7 +9952,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5861",
       "title": "Replace OnlineUsersSelect with Tailwind component",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -9922,7 +9961,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5844",
       "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "merge conflict",
@@ -9932,7 +9971,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 52,
+      "stale_for": 54,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9941,7 +9980,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -9949,7 +9988,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 102,
+      "stale_for": 104,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9958,13 +9997,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 115,
+      "stale_for": 117,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 46,
+      "stale_for": 48,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9973,13 +10012,17 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 57,
+      "stale_for": 59,
       "labels": [
         "waiting-for-review"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma/issues/212",
+      "pr_link": "https://github.com/coronasafe/ayushma/pull/216"
+    },
     {
       "issue_link": "https://github.com/coronasafe/ayushma/issues/158",
       "pr_link": "https://github.com/coronasafe/ayushma/pull/159"
@@ -10055,10 +10098,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3445",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3450"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3444",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3457"
     }
   ]
 }

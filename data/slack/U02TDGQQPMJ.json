@@ -15698,5 +15698,139 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-17 00:00:00": [
+        {
+            "client_msg_id": "7648b61a-0ba9-407c-94d9-fd0d1f011311",
+            "type": "message",
+            "text": "*EOD 17/07/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 Download Zoom recordings and upload to Google Drive: :white_check_mark: <https://github.com/coronasafe/zoomdrive/actions/runs/5578841927/jobs/10193572422|Action - Dry Run>\nWhat's next?\n\u2022 Add support for deleting uploaded recordings from zoom cloud.\n\u2022 Update the action to use shared drive instead of my personal drive and run the workflow manually for past 6 months. (30 days range limit per run)\n\u2022 Update it's README.md and publish to github marketplace",
+            "user": "U02TDGQQPMJ",
+            "ts": "1689616784.228639",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "FJ7MR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 17/07/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Download Zoom recordings and upload to Google Drive: "
+                                        },
+                                        {
+                                            "type": "emoji",
+                                            "name": "white_check_mark",
+                                            "unicode": "2705"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/zoomdrive/actions/runs/5578841927/jobs/10193572422",
+                                            "text": "Action - Dry Run"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add support for deleting uploaded recordings from zoom cloud."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Update the action to use shared drive instead of my personal drive and run the workflow manually for past 6 months. (30 days range limit per run)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Update it's README.md and publish to github marketplace"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

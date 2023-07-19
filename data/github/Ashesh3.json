@@ -1,6 +1,103 @@
 {
-  "last_updated": 1689585908.0,
+  "last_updated": 1689701469.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_deploy_configs#17",
+      "time": 1689701469.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/17",
+      "text": "Change logo keys for readibility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5886",
+      "time": 1689700978.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5886#issuecomment-1640652806",
+      "text": "Note to tester: Please test the following pages for logo placement and sizes:\r\n\r\n- Login page\r\n- Patient/SamplePreview.tsx\r\n- Shifting/ShiftDetails.tsx\r\n- Sidebar collapsed"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5887",
+      "time": 1689700459.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5887",
+      "text": "Fix asset uptime status keys"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1454",
+      "time": 1689692859.0,
+      "link": "https://github.com/coronasafe/care/pull/1454#issuecomment-1640408328",
+      "text": "> ## Suspect Issues\r\n> This pull request has been deployed and Sentry has observed the following issues:\r\n> \r\n> * \u203c\ufe0f **APIException: ** `care.facility.tasks.asset_monitor.check_asset_s...` [View Issue](https://coronasafe-network.sentry.io/issues/4323661838/?referrer=github-pr-bot)\r\n> \r\n> Did you find this useful? React with a \ud83d\udc4d or \ud83d\udc4e\r\n\r\nThis is expected. Some middleware endpoints are non functional."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5879",
+      "time": 1689689846.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5879",
+      "text": "Add asset uptime"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1454",
+      "time": 1689689277.0,
+      "link": "https://github.com/coronasafe/care/pull/1454",
+      "text": "Asset Tracking and Monitoring Enhancements"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1454",
+      "time": 1689689277.0,
+      "link": "https://github.com/coronasafe/care/pull/1454",
+      "text": "Asset Tracking and Monitoring Enhancements",
+      "collaborated_with": [
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5886",
+      "time": 1689678232.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5886",
+      "text": "Replace care logo with 10bedicu logo"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5884",
+      "time": 1689667931.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5884",
+      "text": "Production Release; July Week 3 Hotfix; Added Brand Logos & Site URL",
+      "collaborated_with": [
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5883",
+      "time": 1689666259.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5883",
+      "text": "Add 10bedicu logo to homepage"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5883",
+      "time": 1689666107.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5883",
+      "text": "Add 10bedicu logo to homepage"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1454",
+      "time": 1689662276.0,
+      "link": "https://github.com/coronasafe/care/pull/1454#issuecomment-1639591258",
+      "text": "> @Ashesh3 add tests for api endpoints\r\n\r\nTests added."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689662263.0,
+      "title": "coronasafe/care#1454",
+      "link": "https://github.com/coronasafe/care/pull/1454#pullrequestreview-1534295761",
+      "text": "Asset Tracking and Monitoring Enhancements"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/ayushma#216",
@@ -9932,36 +10029,33 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5879",
-      "title": "Add asset uptime",
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/17",
+      "title": "Change logo keys for readibility",
       "stale_for": 0,
-      "labels": [
-        "tested",
-        "good to merge",
-        "cypress failed"
-      ]
+      "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1454",
-      "title": "Asset Tracking and Monitoring Enhancements",
+      "link": "https://github.com/coronasafe/care_fe/pull/5887",
+      "title": "Fix asset uptime status keys",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "needs testing",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5861",
       "title": "Replace OnlineUsersSelect with Tailwind component",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5844",
       "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "merge conflict",
@@ -9971,7 +10065,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 54,
+      "stale_for": 55,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -9980,7 +10074,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -9988,7 +10082,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 104,
+      "stale_for": 105,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -9997,13 +10091,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 117,
+      "stale_for": 118,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 48,
+      "stale_for": 49,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10012,7 +10106,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 59,
+      "stale_for": 60,
       "labels": [
         "waiting-for-review"
       ]

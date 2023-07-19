@@ -1,6 +1,20 @@
 {
-  "last_updated": 1689616088.0,
+  "last_updated": 1689689263.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1454",
+      "time": 1689689263.0,
+      "link": "https://github.com/coronasafe/care/pull/1454#issuecomment-1640300060",
+      "text": "Looks good to me, two things to note, maybe these can be made as issues,\r\n- Make sure that the request to any external API's have a timeout and its reasonable\r\n- Instead of one long celery job to monitor each asset, the master job could spin off multiple jobs per asset that are performed asynchronously, the checks themselves need not be serial. "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689689065.0,
+      "title": "coronasafe/care#1454",
+      "link": "https://github.com/coronasafe/care/pull/1454#pullrequestreview-1535123142",
+      "text": "Asset Tracking and Monitoring Enhancements"
+    },
     {
       "type": "pr_reviewed",
       "time": 1689616088.0,

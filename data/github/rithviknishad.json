@@ -1,6 +1,97 @@
 {
-  "last_updated": 1689695158.0,
+  "last_updated": 1689785928.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689785928.0,
+      "title": "coronasafe/care#1466",
+      "link": "https://github.com/coronasafe/care/pull/1466#pullrequestreview-1537557422",
+      "text": "Mark asset as down when middleware is down"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689779612.0,
+      "title": "coronasafe/care#1459",
+      "link": "https://github.com/coronasafe/care/pull/1459#pullrequestreview-1537339895",
+      "text": "don't summarize deleted facilities"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689778949.0,
+      "title": "coronasafe/care#1461",
+      "link": "https://github.com/coronasafe/care/pull/1461#pullrequestreview-1537315439",
+      "text": "return proper data type from symptomatic_international_traveller"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689778881.0,
+      "title": "coronasafe/care#1464",
+      "link": "https://github.com/coronasafe/care/pull/1464#pullrequestreview-1537312771",
+      "text": "add patient_category ShiftingSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#3618",
+      "time": 1689773831.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/3618#issuecomment-1642100607",
+      "text": "@aparnacoronasafe is this still required?"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#4069",
+      "time": 1689773783.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4069",
+      "text": "Vercel comments for improved issue tracking and UI suggestions"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5890",
+      "time": 1689773742.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5890",
+      "text": "Patients List: show `last_consultation?.modified_date` instead of `patient.modified_date`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5889",
+      "time": 1689772359.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5889",
+      "text": "External Results List: Apply `mobile_number` filter only if valid"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689770355.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1536998672",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689770236.0,
+      "title": "coronasafe/care_fe#5413",
+      "link": "https://github.com/coronasafe/care_fe/pull/5413#pullrequestreview-1536995190",
+      "text": "Add support for creating multiple beds"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_deploy_configs#17",
+      "time": 1689743294.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/17#issuecomment-1641417402",
+      "text": "@mathew-alex "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689743233.0,
+      "title": "coronasafe/care_deploy_configs#17",
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/17#pullrequestreview-1536257375",
+      "text": "Change logo keys for readibility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689737690.0,
+      "title": "coronasafe/care_deploy_configs#17",
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/17#pullrequestreview-1536201786",
+      "text": "Change logo keys for readibility"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/zoomdrive#2",
@@ -19313,9 +19404,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5890",
+      "title": "Patients List: show `last_consultation?.modified_date` instead of `patient.modified_date`",
+      "stale_for": 0,
+      "labels": [
+        "changes required"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5889",
+      "title": "External Results List: Apply `mobile_number` filter only if valid",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P2",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "need Review"
       ]
@@ -19323,13 +19432,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 19,
+      "stale_for": 20,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "merge conflict",
         "stale",
@@ -19339,15 +19448,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
+        "stale",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 28,
+      "stale_for": 29,
       "labels": [
         "need Review",
         "cypress failed"

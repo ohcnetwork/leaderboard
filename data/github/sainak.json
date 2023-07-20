@@ -1,6 +1,104 @@
 {
-  "last_updated": 1689695157.0,
+  "last_updated": 1689782286.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689782286.0,
+      "title": "coronasafe/care#1466",
+      "link": "https://github.com/coronasafe/care/pull/1466#pullrequestreview-1537436981",
+      "text": "Mark asset as down when middleware is down"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689782001.0,
+      "title": "coronasafe/care#1466",
+      "link": "https://github.com/coronasafe/care/pull/1466#pullrequestreview-1537428350",
+      "text": "Mark asset as down when middleware is down"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689780806.0,
+      "title": "coronasafe/care#1466",
+      "link": "https://github.com/coronasafe/care/pull/1466#pullrequestreview-1537380957",
+      "text": "Mark asset as down when middleware is down"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689780789.0,
+      "title": "coronasafe/care#1466",
+      "link": "https://github.com/coronasafe/care/pull/1466#pullrequestreview-1537378872",
+      "text": "Mark asset as down when middleware is down"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689778203.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1537287268",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1464",
+      "time": 1689775369.0,
+      "link": "https://github.com/coronasafe/care/pull/1464",
+      "text": "add patient_category ShiftingSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1462",
+      "time": 1689773726.0,
+      "link": "https://github.com/coronasafe/care/issues/1462#issuecomment-1642097769",
+      "text": "@vigneshhari the current default soft limit is 30 minutes\r\nthis is because a there are a lot of records in staging\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1461",
+      "time": 1689772159.0,
+      "link": "https://github.com/coronasafe/care/pull/1461",
+      "text": "return proper data type from symptomatic_international_traveller"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689772082.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1537052879",
+      "text": "Replace id with external_id for home_facility in UserBaseMinimumSerializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689771027.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1537019125",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1459",
+      "time": 1689769347.0,
+      "link": "https://github.com/coronasafe/care/pull/1459",
+      "text": "don't summarize deleted facilities"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1399",
+      "time": 1689750177.0,
+      "link": "https://github.com/coronasafe/care/pull/1399#issuecomment-1641529098",
+      "text": "Closing in favor of #1447 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1221",
+      "time": 1689750056.0,
+      "link": "https://github.com/coronasafe/care/pull/1221#issuecomment-1641526697",
+      "text": "@Ashesh3 resolve the conflicts"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689748633.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1536352297",
+      "text": "Replace id with external_id for home_facility in UserBaseMinimumSerializer"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/zoomdrive#4",
@@ -3524,9 +3622,33 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1464",
+      "title": "add patient_category ShiftingSerializer",
+      "stale_for": 0,
+      "labels": [
+        "reviewed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1461",
+      "title": "return proper data type from symptomatic_international_traveller",
+      "stale_for": 0,
+      "labels": [
+        "reviewed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1459",
+      "title": "don't summarize deleted facilities",
+      "stale_for": 0,
+      "labels": [
+        "reviewed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5868",
       "title": "remove legacy feed components",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "cypress passed"
       ]
@@ -3534,19 +3656,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 36,
+      "stale_for": 37,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1309",
       "title": "remove unused hba1c field from patient consultation",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "reviewed"
       ]
@@ -3554,7 +3676,7 @@
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 356,
+      "stale_for": 357,
       "labels": []
     }
   ],

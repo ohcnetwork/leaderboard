@@ -15832,5 +15832,217 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-07-19 00:00:00": [
+        {
+            "client_msg_id": "f9180197-aa5d-4332-89ad-fe23f8329b0d",
+            "type": "message",
+            "text": "EOD 19/07/2023 <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 zoomdrive: Setup husky pre-commit to automatically run `pnpm package (ncc build)` \n\u2022 zoomdrive: Streamline local development by using `main.ts` directly instead of having a parallel `local.js` file to run the action.\n\u2022 zoomdrive: Added support for optionally deleting recodings post upload to drive success.\n\u2022 care_fe: Fixed failed deploy preview / incorrectly resolved merge conflicts for Create Multiple Beds PR of <@U02TB823H8A> \n\u2022 care_fe: External Results: Apply mobile_number filter only if number is valid instead of on input change.\n\n*What's next?*\n\u2022 care_fe: Patient List Page: Fix last updated to show `max(last_consultation.modified_date, patient_registration.modified_date, last_dailyround.modified_date)` instead of `patient_registration.modified_date` \n\u2022 zoomdrive: add readme and contributing.md &amp; publish to market place ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1689786255.891799",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "jAPz",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 19/07/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "zoomdrive: Setup husky pre-commit to automatically run "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "pnpm package (ncc build)",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "zoomdrive: Streamline local development by using "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "main.ts",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " directly instead of having a parallel "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "local.js",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " file to run the action."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "zoomdrive: Added support for optionally deleting recodings post upload to drive success."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "care_fe: Fixed failed deploy preview / incorrectly resolved merge conflicts for Create Multiple Beds PR of "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TB823H8A"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "care_fe: External Results: Apply mobile_number filter only if number is valid instead of on input change."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "care_fe: Patient List Page: Fix last updated to show "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "max(last_consultation.modified_date, patient_registration.modified_date, last_dailyround.modified_date)",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " instead of "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "patient_registration.modified_date",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "zoomdrive: add readme and contributing.md & publish to market place "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1689786306.000000"
+            }
+        }
     ]
 }

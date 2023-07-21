@@ -1,6 +1,146 @@
 {
-  "last_updated": 1689689263.0,
+  "last_updated": 1689881619.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689881619.0,
+      "title": "coronasafe/care#1457",
+      "link": "https://github.com/coronasafe/care/pull/1457#pullrequestreview-1539909419",
+      "text": "Abdm"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689881618.0,
+      "title": "coronasafe/care#1457",
+      "link": "https://github.com/coronasafe/care/pull/1457#pullrequestreview-1539909419",
+      "text": "Abdm"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1457",
+      "time": 1689881569.0,
+      "link": "https://github.com/coronasafe/care/pull/1457#issuecomment-1644484498",
+      "text": "All endpoints with \r\n```\r\n    permission_classes = (AllowAny,)\r\n    authentication_classes = [ABDMAuthentication]\r\n```\r\nneeds to be changed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689869302.0,
+      "title": "coronasafe/care#1450",
+      "link": "https://github.com/coronasafe/care/pull/1450#pullrequestreview-1539630242",
+      "text": "add table to track user facility allocation"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1370",
+      "time": 1689869206.0,
+      "link": "https://github.com/coronasafe/care/pull/1370",
+      "text": "prefetched skills for userassigned serializer in patientconsultation \u2026",
+      "collaborated_with": [
+        "sainak",
+        "yaswanthsaivendra"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1370",
+      "time": 1689868942.0,
+      "link": "https://github.com/coronasafe/care/pull/1370#issuecomment-1644193204",
+      "text": "@yaswanthsaivendra Good Job! Sorry for the late review! "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689868858.0,
+      "title": "coronasafe/care#1370",
+      "link": "https://github.com/coronasafe/care/pull/1370#pullrequestreview-1539617325",
+      "text": "prefetched skills for userassigned serializer in patientconsultation \u2026"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1200",
+      "time": 1689868786.0,
+      "link": "https://github.com/coronasafe/care/issues/1200",
+      "text": "Archive HBA1C field in consultation table"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1309",
+      "time": 1689868785.0,
+      "link": "https://github.com/coronasafe/care/pull/1309",
+      "text": "remove unused hba1c field from patient consultation",
+      "collaborated_with": [
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689868406.0,
+      "title": "coronasafe/care#1309",
+      "link": "https://github.com/coronasafe/care/pull/1309#pullrequestreview-1539603870",
+      "text": "remove unused hba1c field from patient consultation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689868049.0,
+      "title": "coronasafe/care#1430",
+      "link": "https://github.com/coronasafe/care/pull/1430#pullrequestreview-1539592098",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689867844.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1539574990",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689867845.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1539574990",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1458",
+      "time": 1689866557.0,
+      "link": "https://github.com/coronasafe/care/issues/1458",
+      "text": "TypeError: Object of type set is not JSON serializable"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689866543.0,
+      "title": "coronasafe/care#1459",
+      "link": "https://github.com/coronasafe/care/pull/1459#pullrequestreview-1539540567",
+      "text": "don't summarize deleted facilities"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1460",
+      "time": 1689866484.0,
+      "link": "https://github.com/coronasafe/care/issues/1460",
+      "text": "TypeError: unhashable type: 'list'"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689866477.0,
+      "title": "coronasafe/care#1461",
+      "link": "https://github.com/coronasafe/care/pull/1461#pullrequestreview-1539538280",
+      "text": "return proper data type from symptomatic_international_traveller"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1463",
+      "time": 1689866446.0,
+      "link": "https://github.com/coronasafe/care/issues/1463",
+      "text": "KeyError: 'patient_category'"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689866439.0,
+      "title": "coronasafe/care#1464",
+      "link": "https://github.com/coronasafe/care/pull/1464#pullrequestreview-1539537060",
+      "text": "add patient_category ShiftingSerializer"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1454",

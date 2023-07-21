@@ -1,6 +1,23 @@
 {
-  "last_updated": 1689782109.0,
+  "last_updated": 1689838464.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1466",
+      "time": 1689838464.0,
+      "link": "https://github.com/coronasafe/care/pull/1466",
+      "text": "Mark asset as down when middleware is down"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1466",
+      "time": 1689838464.0,
+      "link": "https://github.com/coronasafe/care/pull/1466",
+      "text": "Mark asset as down when middleware is down",
+      "collaborated_with": [
+        "sainak"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1689782109.0,
@@ -10085,26 +10102,19 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1466",
-      "title": "Mark asset as down when middleware is down",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5887",
       "title": "Fix asset uptime status keys",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
+        "P1",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5861",
       "title": "Replace OnlineUsersSelect with Tailwind component",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "tested",
         "cypress passed"
@@ -10113,7 +10123,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5844",
       "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "needs testing",
         "merge conflict",
@@ -10123,7 +10133,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 56,
+      "stale_for": 57,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10132,7 +10142,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -10140,7 +10150,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 106,
+      "stale_for": 107,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10149,13 +10159,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 119,
+      "stale_for": 120,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 50,
+      "stale_for": 51,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10164,7 +10174,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]

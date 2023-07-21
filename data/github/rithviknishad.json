@@ -1,6 +1,83 @@
 {
-  "last_updated": 1689785928.0,
+  "last_updated": 1689876246.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689876246.0,
+      "title": "coronasafe/care#1457",
+      "link": "https://github.com/coronasafe/care/pull/1457#pullrequestreview-1539814233",
+      "text": "Abdm"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689875754.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1539798926",
+      "text": "add  created_by_local_user_content field for patients notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689873280.0,
+      "title": "coronasafe/care#1457",
+      "link": "https://github.com/coronasafe/care/pull/1457#pullrequestreview-1539736425",
+      "text": "Abdm"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689872678.0,
+      "title": "coronasafe/care#1457",
+      "link": "https://github.com/coronasafe/care/pull/1457#pullrequestreview-1539720788",
+      "text": "Abdm"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689872098.0,
+      "title": "coronasafe/care#1457",
+      "link": "https://github.com/coronasafe/care/pull/1457#pullrequestreview-1539704317",
+      "text": "Abdm"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689870402.0,
+      "title": "coronasafe/care#1457",
+      "link": "https://github.com/coronasafe/care/pull/1457#pullrequestreview-1539660761",
+      "text": "Abdm"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5832",
+      "time": 1689860576.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5832#issuecomment-1643952529",
+      "text": "As discussed in EOD, we should be showing whichever is the latest from the following:\r\n\r\n- `PatientRegistration.modified_date`\r\n- `PatientConsultation.modified_date`\r\n- `LastDailyRound.modieid_date`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689859587.0,
+      "title": "coronasafe/care_fe#5881",
+      "link": "https://github.com/coronasafe/care_fe/pull/5881#pullrequestreview-1539265237",
+      "text": "Fixed vitals monitor data overlapping waveforms"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5881",
+      "time": 1689859562.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5881#issuecomment-1643924360",
+      "text": "@print-Sathvik do the same for ventilator in another PR"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689859229.0,
+      "title": "coronasafe/care_fe#5881",
+      "link": "https://github.com/coronasafe/care_fe/pull/5881#pullrequestreview-1539252928",
+      "text": "Fixed vitals monitor data overlapping waveforms"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689858344.0,
+      "title": "coronasafe/care#1309",
+      "link": "https://github.com/coronasafe/care/pull/1309#pullrequestreview-1539223128",
+      "text": "remove unused hba1c field from patient consultation"
+    },
     {
       "type": "pr_reviewed",
       "time": 1689785928.0,
@@ -19405,10 +19482,11 @@
   "open_prs": [
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5890",
-      "title": "Patients List: show `last_consultation?.modified_date` instead of `patient.modified_date`",
+      "title": "Patients List: show latest of last consultation modified date / last daily round modified date / patient registration date instead of `patient.modified_date`",
       "stale_for": 0,
       "labels": [
-        "changes required"
+        "needs testing",
+        "cypress failed"
       ]
     },
     {
@@ -19416,15 +19494,15 @@
       "title": "External Results List: Apply `mobile_number` filter only if valid",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "P2",
-        "cypress passed"
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "need Review"
       ]
@@ -19432,13 +19510,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "merge conflict",
         "stale",
@@ -19448,7 +19526,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "stale",
         "cypress failed"
@@ -19457,7 +19535,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 29,
+      "stale_for": 30,
       "labels": [
         "need Review",
         "cypress failed"

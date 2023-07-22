@@ -1,6 +1,31 @@
 {
-  "last_updated": 1688969388.0,
+  "last_updated": 1689921970.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5730",
+      "time": 1689921970.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#issuecomment-1645064549",
+      "text": "@rithviknishad Changes are merged in the backend. You may merge this as well."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1430",
+      "time": 1689912540.0,
+      "link": "https://github.com/coronasafe/care/pull/1430",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1430",
+      "time": 1689912540.0,
+      "link": "https://github.com/coronasafe/care/pull/1430",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer",
+      "collaborated_with": [
+        "vigneshhari",
+        "sainak"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1430",
@@ -454,21 +479,18 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1430",
-      "title": "added referred_to_external field PatientConsultationDischargeSerializer",
-      "stale_for": 0,
-      "labels": [
-        "reviewed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5730",
       "title": "added referred to facility field in discharge form",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "needs testing"
       ]
     }
   ],
-  "authored_issue_and_pr": []
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1429",
+      "pr_link": "https://github.com/coronasafe/care/pull/1430"
+    }
+  ]
 }

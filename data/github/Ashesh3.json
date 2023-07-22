@@ -1,6 +1,104 @@
 {
-  "last_updated": 1689838464.0,
+  "last_updated": 1689954966.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689954966.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1541420657",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5896",
+      "time": 1689947707.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5896#issuecomment-1645631098",
+      "text": "Testing it once manually too with generated records."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5896",
+      "time": 1689947354.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5896",
+      "text": "Fix asset uptime carryover"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5894",
+      "time": 1689946343.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5894",
+      "text": "Fix asset uptime for phases of day"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689945295.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1541137335",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689945295.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1541137335",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5894",
+      "time": 1689944221.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5894",
+      "text": "Fix asset uptime for phases of day"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689942074.0,
+      "title": "coronasafe/care#1468",
+      "link": "https://github.com/coronasafe/care/pull/1468#pullrequestreview-1541058040",
+      "text": "Adds `REDIS_URL` to `.local.env`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689931756.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1540820299",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689931706.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1540819045",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689931568.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1540815209",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689931533.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1540812585",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5861",
+      "time": 1689912362.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5861",
+      "text": "Replace OnlineUsersSelect with Tailwind component"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5887",
+      "time": 1689912260.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5887",
+      "text": "Fix asset uptime status keys"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1466",
@@ -10102,28 +10200,18 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5887",
-      "title": "Fix asset uptime status keys",
+      "link": "https://github.com/coronasafe/care_fe/pull/5896",
+      "title": "Fix asset uptime carryover",
       "stale_for": 0,
       "labels": [
         "tested",
-        "P1",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5861",
-      "title": "Replace OnlineUsersSelect with Tailwind component",
-      "stale_for": 2,
-      "labels": [
-        "tested",
-        "cypress passed"
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5844",
       "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "needs testing",
         "merge conflict",
@@ -10133,7 +10221,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 57,
+      "stale_for": 58,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10142,7 +10230,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -10150,7 +10238,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 107,
+      "stale_for": 108,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10159,13 +10247,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 120,
+      "stale_for": 121,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 51,
+      "stale_for": 0,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10174,7 +10262,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]

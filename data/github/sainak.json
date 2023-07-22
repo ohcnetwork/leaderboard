@@ -1,6 +1,255 @@
 {
-  "last_updated": 1689879007.0,
+  "last_updated": 1689958402.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#658",
+      "time": 1689958402.0,
+      "link": "https://github.com/coronasafe/care/issues/658",
+      "text": "Integrate with Middleware for Periodic Sync of Asset Information"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#755",
+      "time": 1689958096.0,
+      "link": "https://github.com/coronasafe/care/issues/755",
+      "text": "Setup Snyk"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1015",
+      "time": 1689958086.0,
+      "link": "https://github.com/coronasafe/care/issues/1015#issuecomment-1645981085",
+      "text": "fixed with django 4.2"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1015",
+      "time": 1689958086.0,
+      "link": "https://github.com/coronasafe/care/issues/1015",
+      "text": "TypeError: Object of type set is not JSON serializable"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1108",
+      "time": 1689958044.0,
+      "link": "https://github.com/coronasafe/care/issues/1108",
+      "text": "Facility Status Monitoring"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1108",
+      "time": 1689958044.0,
+      "link": "https://github.com/coronasafe/care/issues/1108#issuecomment-1645980241",
+      "text": "completed in #1454"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1321",
+      "time": 1689957973.0,
+      "link": "https://github.com/coronasafe/care/issues/1321",
+      "text": "Profile DB queries"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1321",
+      "time": 1689957972.0,
+      "link": "https://github.com/coronasafe/care/issues/1321#issuecomment-1645978677",
+      "text": "We can use `runserver_plus --print-sql` or `ddt` or `silk_profiler` locally and for deployments we can check sentry"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1186",
+      "time": 1689957838.0,
+      "link": "https://github.com/coronasafe/care/issues/1186",
+      "text": "Fix medium and high level vulnerabilities"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#920",
+      "time": 1689957754.0,
+      "link": "https://github.com/coronasafe/care/issues/920",
+      "text": "Create a dummy data generator for database"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#920",
+      "time": 1689957754.0,
+      "link": "https://github.com/coronasafe/care/issues/920#issuecomment-1645973538",
+      "text": "we have load_dummy_data command to bootstrap database for testing"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#486",
+      "time": 1689957473.0,
+      "link": "https://github.com/coronasafe/care/issues/486",
+      "text": "Better Permission Management"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#486",
+      "time": 1689957473.0,
+      "link": "https://github.com/coronasafe/care/issues/486#issuecomment-1645966331",
+      "text": "to be implemented by #968"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#795",
+      "time": 1689957294.0,
+      "link": "https://github.com/coronasafe/care/issues/795",
+      "text": "Remove deprecated template views"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#700",
+      "time": 1689957167.0,
+      "link": "https://github.com/coronasafe/care/issues/700",
+      "text": "ABDM POC"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#893",
+      "time": 1689957160.0,
+      "link": "https://github.com/coronasafe/care/issues/893",
+      "text": "Create FHIR Data Adapters for Care Patient Data"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1118",
+      "time": 1689957146.0,
+      "link": "https://github.com/coronasafe/care/issues/1118",
+      "text": "ABDM Milestone 2: HIP Integration"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1100",
+      "time": 1689957139.0,
+      "link": "https://github.com/coronasafe/care/issues/1100",
+      "text": "ABDM Milestone 1: ABHA Number Creation & Verification"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689955748.0,
+      "title": "coronasafe/care_fe#5897",
+      "link": "https://github.com/coronasafe/care_fe/pull/5897#pullrequestreview-1541442045",
+      "text": "Use `package-lock.json` instead of `yarn.lock` in Docker build cache of Deploy CI"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689942270.0,
+      "title": "coronasafe/care#1277",
+      "link": "https://github.com/coronasafe/care/pull/1277#pullrequestreview-1541062408",
+      "text": "feat: Add service request history for asset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689941939.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1541054558",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689941920.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1541054180",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689941869.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1541053057",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689941804.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1541051620",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689941725.0,
+      "title": "coronasafe/care#1468",
+      "link": "https://github.com/coronasafe/care/pull/1468#pullrequestreview-1541049928",
+      "text": "Adds `REDIS_URL` to `.local.env`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689930363.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1540763826",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689930362.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1540763826",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/zoomdrive#5",
+      "time": 1689919107.0,
+      "link": "https://github.com/coronasafe/zoomdrive/pull/5",
+      "text": "Chores",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689919027.0,
+      "title": "coronasafe/zoomdrive#5",
+      "link": "https://github.com/coronasafe/zoomdrive/pull/5#pullrequestreview-1540500977",
+      "text": "Chores"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689918628.0,
+      "title": "coronasafe/zoomdrive#5",
+      "link": "https://github.com/coronasafe/zoomdrive/pull/5#pullrequestreview-1540495414",
+      "text": "Chores"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689916434.0,
+      "title": "coronasafe/zoomdrive#5",
+      "link": "https://github.com/coronasafe/zoomdrive/pull/5#pullrequestreview-1540465799",
+      "text": "Chores"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689916433.0,
+      "title": "coronasafe/zoomdrive#5",
+      "link": "https://github.com/coronasafe/zoomdrive/pull/5#pullrequestreview-1540465799",
+      "text": "Chores"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1430",
+      "time": 1689912540.0,
+      "link": "https://github.com/coronasafe/care/pull/1430",
+      "text": "added referred_to_external field PatientConsultationDischargeSerializer",
+      "collaborated_with": [
+        "sachdevavaibhav",
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1445",
+      "time": 1689912506.0,
+      "link": "https://github.com/coronasafe/care/pull/1445",
+      "text": "add  created_by_local_user_content field for patients notes",
+      "collaborated_with": [
+        "vigneshhari",
+        "Bhavik-ag"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1689879007.0,
@@ -3900,33 +4149,34 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5868",
       "title": "remove legacy feed components",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
+        "stale",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 38,
+      "stale_for": 39,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 358,
+      "stale_for": 359,
       "labels": []
     }
   ],

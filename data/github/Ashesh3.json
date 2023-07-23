@@ -1,6 +1,47 @@
 {
-  "last_updated": 1689954966.0,
+  "last_updated": 1690061538.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5904",
+      "time": 1690061538.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5904",
+      "text": "Production Release; July Week 4",
+      "collaborated_with": [
+        "khavinshankar",
+        "kshitijv256",
+        "rithviknishad",
+        "print-Sathvik"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690024939.0,
+      "title": "coronasafe/care_fe#5902",
+      "link": "https://github.com/coronasafe/care_fe/pull/5902#pullrequestreview-1542083445",
+      "text": "fix storybook vercel deployments"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690023624.0,
+      "title": "coronasafe/care_fe#5901",
+      "link": "https://github.com/coronasafe/care_fe/pull/5901#pullrequestreview-1542081622",
+      "text": "`AutocompleteFormField`: Fixes overlap of clear button and `optionIcon`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690012339.0,
+      "title": "coronasafe/care#1471",
+      "link": "https://github.com/coronasafe/care/pull/1471#pullrequestreview-1542065414",
+      "text": "Pop \"patient_category\" in local `validated_data` instead of `self.validated_data`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5896",
+      "time": 1690001119.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5896",
+      "text": "Fix asset uptime carryover"
+    },
     {
       "type": "pr_reviewed",
       "time": 1689954966.0,
@@ -10200,18 +10241,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5896",
-      "title": "Fix asset uptime carryover",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5844",
       "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "needs testing",
         "merge conflict",
@@ -10221,7 +10253,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 58,
+      "stale_for": 59,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10230,7 +10262,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -10238,7 +10270,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 108,
+      "stale_for": 109,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10247,13 +10279,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 121,
+      "stale_for": 122,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10262,7 +10294,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]

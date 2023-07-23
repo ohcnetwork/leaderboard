@@ -1,6 +1,89 @@
 {
-  "last_updated": 1689956905.0,
+  "last_updated": 1690063050.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1468",
+      "time": 1690063050.0,
+      "link": "https://github.com/coronasafe/care/pull/1468",
+      "text": "Adds `REDIS_URL` to `.local.env`"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5904",
+      "time": 1690061538.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5904",
+      "text": "Production Release; July Week 4",
+      "collaborated_with": [
+        "Ashesh3",
+        "khavinshankar",
+        "kshitijv256",
+        "print-Sathvik"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5903",
+      "time": 1690033929.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5903",
+      "text": "Moves prescriptions caution text to left (start)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5903",
+      "time": 1690033695.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5903",
+      "text": "Moves prescriptions caution text to left (start)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5902",
+      "time": 1690025151.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5902",
+      "text": "fix storybook vercel deployments"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5902",
+      "time": 1690024684.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5902",
+      "text": "fix storybook vercel deployments"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5901",
+      "time": 1690024425.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5901",
+      "text": "`AutocompleteFormField`: Fixes overlap of clear button and `optionIcon`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5901",
+      "time": 1690023115.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5901",
+      "text": "`AutocompleteFormField`: Fixes overlap of clear button and `optionIcon`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5900",
+      "time": 1690022061.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5900#issuecomment-1646553293",
+      "text": "ack"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1471",
+      "time": 1690012491.0,
+      "link": "https://github.com/coronasafe/care/pull/1471",
+      "text": "Pop \"patient_category\" in local `validated_data` instead of `self.validated_data`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1471",
+      "time": 1690012017.0,
+      "link": "https://github.com/coronasafe/care/pull/1471",
+      "text": "Pop \"patient_category\" in local `validated_data` instead of `self.validated_data`"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5798",
@@ -19644,24 +19727,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5897",
       "title": "Use `package-lock.json` instead of `yarn.lock` in Docker build cache of Deploy CI",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "need Review",
         "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1468",
-      "title": "Adds `REDIS_URL` to `.local.env`",
-      "stale_for": 0,
-      "labels": [
-        "reviewed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5890",
       "title": "Patients List: show latest of last consultation modified date / last daily round modified date / patient registration date instead of `patient.modified_date`",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -19670,7 +19745,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "need Review"
       ]
@@ -19678,18 +19753,8 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 22,
+      "stale_for": 23,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5749",
-      "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 7,
-      "labels": [
-        "merge conflict",
-        "stale",
-        "cypress passed"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
@@ -19697,14 +19762,13 @@
       "stale_for": 0,
       "labels": [
         "merge conflict",
-        "stale",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "need Review",
         "merge conflict",

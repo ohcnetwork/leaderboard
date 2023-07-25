@@ -1,6 +1,88 @@
 {
-  "last_updated": 1686972885.0,
+  "last_updated": 1689390211.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5876",
+      "time": 1689390211.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5876",
+      "text": "Production Release; July Week 2",
+      "collaborated_with": [
+        "rithviknishad",
+        "print-Sathvik",
+        "Bhavik-ag",
+        "khavinshankar",
+        "Pranshu1902",
+        "Ashesh3",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5870",
+      "time": 1689279115.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5870",
+      "text": "Added test for importing and configuring an asset"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5865",
+      "time": 1689158033.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5865",
+      "text": "Add test for patient_crud.cy.ts"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1689149966.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841",
+      "text": "Milestone 1.1: Add test to edit and delete and an already created asset."
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1689149966.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841",
+      "text": "Milestone 1.1: Add test to edit and delete and an already created asset.",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1688925565.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841#issuecomment-1627784895",
+      "text": "> @ShivamJhaa\r\n> \r\n> * As per our call, we discussed to verify mandatory field error message, so initially click on the submit button and verify all mandatory field are having error message reflected to the existing field\r\n> * you only created single asset using create asset button, missed out the functionality check of create and add more button, include that in the test and add multiple asset through it\r\n> * verify the asset is created successfully in the asset tab, by searching with it name ( Only check during single asset creation time )\r\n\r\n* Added error message verification test\r\n* Added test for the functionality of create and add more and also added check to verify whether the asset is present or not\r\n\r\nPlease take a look"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1688588359.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841#issuecomment-1622438102",
+      "text": "@nihal467 Please review the PR, thanks!"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5841",
+      "time": 1688588282.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5841",
+      "text": "Milestone 1.1: Add test to edit and delete and an already created asset."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5835",
+      "time": 1688471855.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5835",
+      "text": "Add test for assets.cy.ts"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5834",
+      "time": 1688471764.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5834",
+      "text": "Cypress Test for All Major Functionalities of CARE"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5713",

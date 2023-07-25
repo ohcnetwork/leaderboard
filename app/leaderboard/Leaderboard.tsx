@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import LeaderboardCard from '../../components/contributors/LeaderboardCard';
-import TopContributor from '../../components/contributors/TopContributor';
-import Filters from '../../components/filters/Filters';
-import { TbZoomQuestion } from 'react-icons/tb';
-import { Category, Contributor } from '@/lib/types';
+import { useState, useEffect } from "react";
+import LeaderboardCard from "../../components/contributors/LeaderboardCard";
+import TopContributor from "../../components/contributors/TopContributor";
+import Filters from "../../components/filters/Filters";
+import { TbZoomQuestion } from "react-icons/tb";
+import { Category, Contributor } from "@/lib/types";
 
 // Calculate week number
 const getWeekNumber = (date: Date) => {
@@ -17,12 +17,12 @@ const getWeekNumber = (date: Date) => {
 };
 
 const categories = [
-  { slug: 'eod_update', title: 'EOD Updates' },
-  { slug: 'pr_opened', title: 'Pull Requests Opened' },
-  { slug: 'pr_merged', title: 'Pull Requests Merged' },
-  { slug: 'pr_reviewed', title: 'Pull Requests Reviewed' },
-  { slug: 'issue_opened', title: 'Issues Opened' },
-  { slug: 'comment_created', title: 'Comments Created' },
+  { slug: "eod_update", title: "EOD Updates" },
+  { slug: "pr_opened", title: "Pull Requests Opened" },
+  { slug: "pr_merged", title: "Pull Requests Merged" },
+  { slug: "pr_reviewed", title: "Pull Requests Reviewed" },
+  { slug: "issue_opened", title: "Issues Opened" },
+  { slug: "comment_created", title: "Comments Created" },
 ];
 
 export default function Leaderboard({
@@ -31,8 +31,8 @@ export default function Leaderboard({
   contributorsList: Contributor[];
 }) {
   const [contributors, setContributors] = useState(contributorsList);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState('points');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState("points");
   const [sortDescending, setSortDescending] = useState(true);
   const [showCoreMembers, setShowCoreMembers] = useState(false);
   const [categoryLeaderboard, setCategoryLeaderboard] = useState<Category[]>(
@@ -59,8 +59,10 @@ export default function Leaderboard({
       );
     }
 
-    filteredContributors = filteredContributors.sort(
-      (a: any, b: any) => a.weekSummary[sortBy] - b.weekSummary[sortBy]
+    filteredContributors = filteredContributors.sort((a: any, b: any) =>
+      a.weekSummary[sortBy] !== b.weekSummary[sortBy]
+        ? a.weekSummary[sortBy] - b.weekSummary[sortBy]
+        : a.weekSummary.points - b.weekSummary.points
     );
 
     if (sortDescending) {
@@ -74,10 +76,13 @@ export default function Leaderboard({
       }
       return categories.map((category) => ({
         ...category,
-        contributor: temp.sort(
-          (a: any, b: any) =>
-            b.weekSummary[category.slug] - a.weekSummary[category.slug]
-        )[0],
+        contributor: temp
+          .sort((a: any, b: any) =>
+            a.weekSummary[category.slug] !== b.weekSummary[category.slug]
+              ? a.weekSummary[category.slug] - b.weekSummary[category.slug]
+              : a.weekSummary.points - b.weekSummary.points
+          )
+          .reverse()[0],
       }));
     });
 
@@ -104,7 +109,7 @@ export default function Leaderboard({
                 <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                     <span>
-                      Live Leaderboard of last 7 days | Week{' '}
+                      Live Leaderboard of last 7 days | Week{" "}
                       {getWeekNumber(new Date())} of {new Date().getFullYear()}
                     </span>
                   </div>
@@ -125,7 +130,7 @@ export default function Leaderboard({
                   ) : (
                     <div className="my-4 overflow-x-auto">
                       <div className="flex flex-row justify-center">
-                        <TbZoomQuestion size={25} />{' '}
+                        <TbZoomQuestion size={25} />{" "}
                         <span className="ml-4">No results found</span>
                       </div>
                     </div>

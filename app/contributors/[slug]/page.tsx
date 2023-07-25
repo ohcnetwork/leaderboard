@@ -4,19 +4,19 @@ import {
   professionalSelfSkills,
   professionalTeamSkills,
   resolveGraduateAttributes,
-} from '../../../config/GraduateAttributes';
-import { getContributorBySlug, getContributors } from '../../../lib/api';
+} from "../../../config/GraduateAttributes";
+import { getContributorBySlug, getContributors } from "../../../lib/api";
 
-import ActivityCalendarGit from '../../../components/contributors/ActivityCalendarGitHub';
-import BadgeIcons from '../../../components/contributors/BadgeIcons';
-import GithubActivity from '../../../components/contributors/GithubActivity';
-import GraduateAttributeBadge from '../../../components/contributors/GraduateAttributeBadge';
-import InfoCard from '../../../components/contributors/InfoCard';
-import React from 'react';
-import markdownToHtml from '../../../lib/markdownToHtml';
-import clsx from 'clsx';
-import Tooltip from '../../../components/filters/Tooltip';
-import { Contributor } from '@/lib/types';
+import ActivityCalendarGit from "../../../components/contributors/ActivityCalendarGitHub";
+import BadgeIcons from "../../../components/contributors/BadgeIcons";
+import GithubActivity from "../../../components/contributors/GithubActivity";
+import GraduateAttributeBadge from "../../../components/contributors/GraduateAttributeBadge";
+import InfoCard from "../../../components/contributors/InfoCard";
+import React from "react";
+import markdownToHtml from "../../../lib/markdownToHtml";
+import clsx from "clsx";
+import Tooltip from "../../../components/filters/Tooltip";
+import { Contributor } from "@/lib/types";
 
 // export function defaultCalendarData() {
 //   return [...Array(365)].map((_, i) => {
@@ -40,8 +40,8 @@ type Params = {
 };
 
 export default async function Contributor({ params: { slug } }: Params) {
-  const contributor: Contributor = getContributorBySlug(slug, true);
-  const content = await markdownToHtml(contributor.content || '');
+  const contributor = getContributorBySlug(slug, true) as Contributor;
+  const content = await markdownToHtml(contributor.content || "");
   return (
     <div className="bg-gray-900 min-h-screen">
       {/* <Header /> */}
@@ -115,8 +115,8 @@ export default async function Contributor({ params: { slug } }: Params) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-green-600'}
-                      colorDark={'bg-green-700'}
+                      color={"bg-green-600"}
+                      colorDark={"bg-green-700"}
                     />
                   ))}
                 </div>
@@ -132,8 +132,8 @@ export default async function Contributor({ params: { slug } }: Params) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-indigo-500'}
-                      colorDark={'bg-indigo-700'}
+                      color={"bg-indigo-500"}
+                      colorDark={"bg-indigo-700"}
                     />
                   ))}
                 </div>
@@ -144,8 +144,8 @@ export default async function Contributor({ params: { slug } }: Params) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-orange-500'}
-                      colorDark={'bg-orange-700'}
+                      color={"bg-orange-500"}
+                      colorDark={"bg-orange-700"}
                     />
                   ))}
                 </div>
@@ -161,8 +161,8 @@ export default async function Contributor({ params: { slug } }: Params) {
                     <GraduateAttributeBadge
                       skill={resolveGraduateAttributes(skill, contributor)}
                       key={skill.key}
-                      color={'bg-rose-500'}
-                      colorDark={'bg-rose-700'}
+                      color={"bg-rose-500"}
+                      colorDark={"bg-rose-700"}
                     />
                   ))}
                 </div>
@@ -290,22 +290,22 @@ export default async function Contributor({ params: { slug } }: Params) {
           </dl>
         </div>
 
-        {contributor['activityData'] &&
-          contributor['activityData']['open_prs'] &&
-          contributor['activityData']['open_prs'].length > 0 && (
+        {contributor["activityData"] &&
+          contributor["activityData"]["open_prs"] &&
+          contributor["activityData"]["open_prs"].length > 0 && (
             <div className="px-4 md:p-0">
               <h3 className="font-bold text-gray-100 mt-6">
                 Currently Working on
               </h3>
               <div className="mt-4">
-                {contributor['activityData']['open_prs'].map((pr, index) => (
-                  <a href={pr.link} key={index}>
+                {contributor["activityData"]["open_prs"].map((pr, index) => (
+                  <a href={pr.link} key={index} className="flex gap-2">
                     <p
                       className={clsx(
-                        'text-sm mb-2 transition-colors duration-75 ease-in-out',
+                        "text-sm mb-2 transition-colors duration-75 ease-in-out flex gap-2",
                         pr?.stale_for >= 7
-                          ? 'text-gray-600 hover:text-primary-200'
-                          : 'text-gray-300 hover:text-primary-300'
+                          ? "text-gray-600 hover:text-primary-200"
+                          : "text-gray-300 hover:text-primary-300"
                       )}
                       key={index}
                     >
@@ -314,24 +314,28 @@ export default async function Contributor({ params: { slug } }: Params) {
                           ((pr?.stale_for >= 7) as Boolean) &&
                           `Stale for ${pr?.stale_for} days`
                         }
-                        tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm"
+                        tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm flex flex-row gap-4"
                       >
-                        <span className="text-primary-500 text-sm pr-2">➞</span>
-                        <code
-                          className={clsx(
-                            'text-xs tracking-wide px-1.5 py-1 rounded mr-2',
-                            pr.stale_for >= 7
-                              ? 'bg-gray-800 text-gray-600'
-                              : 'bg-gray-600 text-white'
-                          )}
-                        >
-                          {pr.link
-                            .split('/')
-                            .slice(-3)
-                            .join('/')
-                            .replace('/pull', '')}
-                        </code>
-                        {pr.title}
+                        <div className="flex items-center">
+                          <span className="text-primary-500 text-sm pr-2">
+                            ➞
+                          </span>
+                          <code
+                            className={clsx(
+                              "text-xs tracking-wide px-1.5 py-1 rounded mr-2",
+                              pr.stale_for >= 7
+                                ? "bg-gray-800 text-gray-600"
+                                : "bg-gray-600 text-white"
+                            )}
+                          >
+                            {pr.link
+                              .split("/")
+                              .slice(-3)
+                              .join("/")
+                              .replace("/pull", "")}
+                          </code>
+                          {pr.title}
+                        </div>
                       </Tooltip>
                     </p>
                   </a>
@@ -340,11 +344,11 @@ export default async function Contributor({ params: { slug } }: Params) {
             </div>
           )}
 
-        {contributor['activityData'] &&
-          contributor['activityData']['activity'] && (
+        {contributor["activityData"] &&
+          contributor["activityData"]["activity"] && (
             <div className="mt-6 overflow-x-hidden px-4 md:p-0">
               <h3 className="font-bold text-gray-100">Contributions</h3>
-              <GithubActivity activityData={contributor['activityData']} />
+              <GithubActivity activityData={contributor["activityData"]} />
             </div>
           )}
       </div>

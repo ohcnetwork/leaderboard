@@ -1,6 +1,98 @@
 {
-  "last_updated": 1687343644.0,
+  "last_updated": 1689087558.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1689087558.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1524491688",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689086265.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1524437778",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1689067376.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1523840141",
+      "text": "Replace id with external_id for home_facility in UserBaseMinimumSerializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1688975732.0,
+      "title": "coronasafe/care#1445",
+      "link": "https://github.com/coronasafe/care/pull/1445#pullrequestreview-1521486687",
+      "text": "Replace id with external_id for home_facility in UserBaseMinimumSerializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1445",
+      "time": 1688975695.0,
+      "link": "https://github.com/coronasafe/care/pull/1445#issuecomment-1628427960",
+      "text": "Format the code using [precommit](https://care-be-docs.coronasafe.network/local-setup/configuration.html#setting-up-pre-commit)\r\nAnd, remove the merge checklist from the PR description. Other than that, LGTM."
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1422",
+      "time": 1688239743.0,
+      "link": "https://github.com/coronasafe/care/pull/1422",
+      "text": "Production Release; July Week 1",
+      "collaborated_with": [
+        "mathew-alex",
+        "rithviknishad",
+        "sainak",
+        "vigneshhari",
+        "khavinshankar",
+        "yaswanthsaivendra"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1406",
+      "time": 1687621787.0,
+      "link": "https://github.com/coronasafe/care/pull/1406",
+      "text": "Changed Regex Validator for Phone Number Field for Patient Registration Form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5776",
+      "time": 1687621697.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5776#issuecomment-1605598045",
+      "text": "Seems like we're getting a validation error from the backend. I've made a [backend](https://github.com/coronasafe/care/issues/1405) issue for this."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1405",
+      "time": 1687620163.0,
+      "link": "https://github.com/coronasafe/care/issues/1405",
+      "text": "Add Validation for landline numbers in Phone Number field in Patient Registration"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5776",
+      "time": 1687618372.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5776#issuecomment-1605565555",
+      "text": "Do you think adding another field for Landline number should be done? I think phone number is available with people there nowadays. We can make the landline field non-mandatory, too."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/ayushma_fe#40",
+      "time": 1687435958.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/40",
+      "text": "Add labels to details form in project page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#40",
+      "time": 1687435958.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/40#issuecomment-1602530564",
+      "text": "As discussed with @skks1212 labels seem unnecessary. Placeholders are fine for the time being."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/ayushma_fe#49",
@@ -1098,22 +1190,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1275",
       "title": "Modified bedCreate API View to support bulk creating beds",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5413",
       "title": "Add support for creating multiple beds",
-      "stale_for": 14,
+      "stale_for": 0,
       "labels": [
-        "waiting for back end",
-        "merge conflict"
+        "waiting for back end"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1405",
+      "pr_link": "https://github.com/coronasafe/care/pull/1406"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4225",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4226"

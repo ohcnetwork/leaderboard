@@ -1,6 +1,41 @@
 {
-  "last_updated": 1690063050.0,
+  "last_updated": 1690205378.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1690205378.0,
+      "title": "coronasafe/care_fe#5905",
+      "link": "https://github.com/coronasafe/care_fe/pull/5905#pullrequestreview-1543495284",
+      "text": "Fixed ventilator vitals monitor data overlapping waveforms"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5910",
+      "time": 1690197379.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5910",
+      "text": "update package lock"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5910",
+      "time": 1690195214.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5910",
+      "text": "update package lock"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1421",
+      "time": 1690192915.0,
+      "link": "https://github.com/coronasafe/care/issues/1421#issuecomment-1647601914",
+      "text": "Not facing this issue for past one week, right?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5909",
+      "time": 1690192589.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5909#issuecomment-1647593347",
+      "text": "https://vercel.com/design/calendar\r\n\r\nHow about this design? We add an editable date textbox inside the dropdown component."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1468",
@@ -19727,7 +19762,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5897",
       "title": "Use `package-lock.json` instead of `yarn.lock` in Docker build cache of Deploy CI",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "need Review",
         "cypress failed"
@@ -19736,7 +19771,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5890",
       "title": "Patients List: show latest of last consultation modified date / last daily round modified date / patient registration date instead of `patient.modified_date`",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -19745,7 +19780,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 9,
+      "stale_for": 11,
       "labels": [
         "need Review"
       ]
@@ -19753,13 +19788,23 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 23,
+      "stale_for": 25,
       "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5749",
+      "title": "Configurable Gain control for Vitals Monitor",
+      "stale_for": 0,
+      "labels": [
+        "merge conflict",
+        "stale",
+        "cypress passed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -19768,7 +19813,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "need Review",
         "merge conflict",

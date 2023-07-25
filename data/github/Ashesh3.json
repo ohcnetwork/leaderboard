@@ -1,6 +1,27 @@
 {
-  "last_updated": 1690061538.0,
+  "last_updated": 1690212785.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1690212785.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1543753016",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5908",
+      "time": 1690186995.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5908",
+      "text": "Fix patient import from external result"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1277",
+      "time": 1690175792.0,
+      "link": "https://github.com/coronasafe/care/pull/1277#issuecomment-1647223489",
+      "text": "Lint won't run on the auto generated squashed migration file."
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5904",
@@ -10241,9 +10262,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5908",
+      "title": "Fix patient import from external result",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5844",
       "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 8,
+      "stale_for": 10,
       "labels": [
         "needs testing",
         "merge conflict",
@@ -10253,7 +10283,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 59,
+      "stale_for": 61,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10262,7 +10292,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -10270,7 +10300,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 109,
+      "stale_for": 111,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10279,13 +10309,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 122,
+      "stale_for": 124,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10294,7 +10324,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]

@@ -1,6 +1,73 @@
 {
-  "last_updated": 1690205378.0,
+  "last_updated": 1690303968.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/zoomdrive#8",
+      "time": 1690303968.0,
+      "link": "https://github.com/coronasafe/zoomdrive/issues/8#issuecomment-1650195144",
+      "text": "Or document to chain with an action using either:\r\n\r\nhttps://github.com/wei/rclone\r\nhttps://github.com/marketplace/actions/rclone-action"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/zoomdrive#8",
+      "time": 1690303925.0,
+      "link": "https://github.com/coronasafe/zoomdrive/issues/8",
+      "text": "Use `rclone` for upload process"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690295657.0,
+      "title": "coronasafe/care_fe#5917",
+      "link": "https://github.com/coronasafe/care_fe/pull/5917#pullrequestreview-1545647177",
+      "text": "Asset filter not displaying Ventilator"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5919",
+      "time": 1690292919.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5919",
+      "text": "update package-lock"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690287001.0,
+      "title": "coronasafe/care_fe#5844",
+      "link": "https://github.com/coronasafe/care_fe/pull/5844#pullrequestreview-1545306195",
+      "text": "Update npm dependencies to resolve dependabot alerts"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5844",
+      "time": 1690286735.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5844#issuecomment-1649707251",
+      "text": "Marking as P1 as this can catch conflicts super quickly!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690281375.0,
+      "title": "coronasafe/care#1475",
+      "link": "https://github.com/coronasafe/care/pull/1475#pullrequestreview-1545162037",
+      "text": "Ignore admission date during discharge process if not provided"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1474",
+      "time": 1690266789.0,
+      "link": "https://github.com/coronasafe/care/pull/1474",
+      "text": "Production Release; July Week 4; Hotfix",
+      "collaborated_with": [
+        "sainak",
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5897",
+      "time": 1690263375.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5897",
+      "text": "Use `package-lock.json` instead of `yarn.lock` in Docker build cache of Deploy CI"
+    },
     {
       "type": "pr_reviewed",
       "time": 1690205378.0,
@@ -19760,27 +19827,28 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5897",
-      "title": "Use `package-lock.json` instead of `yarn.lock` in Docker build cache of Deploy CI",
-      "stale_for": 3,
+      "link": "https://github.com/coronasafe/care_fe/pull/5919",
+      "title": "update package-lock",
+      "stale_for": 0,
       "labels": [
-        "need Review",
-        "cypress failed"
+        "Deploy-Failed",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5890",
       "title": "Patients List: show latest of last consultation modified date / last daily round modified date / patient registration date instead of `patient.modified_date`",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "needs testing",
-        "cypress failed"
+        "hold",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "need Review"
       ]
@@ -19788,7 +19856,7 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 25,
+      "stale_for": 0,
       "labels": []
     },
     {
@@ -19797,14 +19865,13 @@
       "stale_for": 0,
       "labels": [
         "merge conflict",
-        "stale",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -19813,7 +19880,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "need Review",
         "merge conflict",

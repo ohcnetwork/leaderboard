@@ -1,6 +1,20 @@
 {
-  "last_updated": 1690147146.0,
+  "last_updated": 1690285758.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5917",
+      "time": 1690285758.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5917",
+      "text": "Asset filter not displaying Ventilator"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5915",
+      "time": 1690280037.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5915",
+      "text": "Ventilator option is missing in asset class of asset filter"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5905",
@@ -330,11 +344,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5917",
+      "title": "Asset filter not displaying Ventilator",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5905",
       "title": "Fixed ventilator vitals monitor data overlapping waveforms",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "Deploy-Failed"
       ]
     }
   ],

@@ -1,6 +1,55 @@
 {
-  "last_updated": 1690212785.0,
+  "last_updated": 1690311145.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#224",
+      "time": 1690311145.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/224",
+      "text": "Add status for TestRuns"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#73",
+      "time": 1690310991.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/73",
+      "text": "Add status for TestRuns"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#72",
+      "time": 1690297092.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/72",
+      "text": "Show average scores in csv export"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5844",
+      "time": 1690290034.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5844",
+      "text": "Update npm dependencies to resolve dependabot alerts"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1475",
+      "time": 1690280105.0,
+      "link": "https://github.com/coronasafe/care/pull/1475",
+      "text": "Ignore admission date during discharge process if not provided"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5844",
+      "time": 1690275975.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5844#issuecomment-1649427249",
+      "text": "> @Ashesh3 resolve the merge conflict\r\n\r\nResolved."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690266614.0,
+      "title": "coronasafe/care#1473",
+      "link": "https://github.com/coronasafe/care/pull/1473#pullrequestreview-1544724071",
+      "text": "handle exception in template date parsing"
+    },
     {
       "type": "pr_reviewed",
       "time": 1690212785.0,
@@ -10262,6 +10311,36 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma/pull/224",
+      "title": "Add status for TestRuns",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/73",
+      "title": "Add status for TestRuns",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/72",
+      "title": "Show average scores in csv export",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1475",
+      "title": "Ignore admission date during discharge process if not provided",
+      "stale_for": 0,
+      "labels": [
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5908",
       "title": "Fix patient import from external result",
       "stale_for": 0,
@@ -10271,19 +10350,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5844",
-      "title": "Update npm dependencies to resolve dependabot alerts",
-      "stale_for": 10,
-      "labels": [
-        "needs testing",
-        "merge conflict",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 61,
+      "stale_for": 62,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10300,7 +10369,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 111,
+      "stale_for": 112,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10309,13 +10378,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 124,
+      "stale_for": 125,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10324,7 +10393,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]

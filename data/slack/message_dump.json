@@ -68247,5 +68247,522 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-07-26 00:00:00": []
+    "2023-07-26 00:00:00": [
+        {
+            "client_msg_id": "0f2a9526-baf1-4668-872c-5d6e862d6d1c",
+            "type": "message",
+            "text": "*EOD 26/07/2023  <!subteam^S035L5S02RF|@care_engineering>*\n\n*How did the day go?*\n\n\u2022 had a huddle with <@U01JB8L8P7Y> to create script for  a video on our 100th release \n\u2022 followed-up with multiple priority issues\n\u2022 tested PR for this week\n*How did the day go?*\n\n\u2022 start e2e testing\n\u2022 follow-up on priority issues\n\u2022 follow-up on camera asset-uptime &amp; Discharge summary",
+            "user": "U022THM4U2U",
+            "ts": "1690392979.816989",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "MUV0b",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 26/07/2023  ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "had a huddle with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U01JB8L8P7Y"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to create script for  a video on our 100th release "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "followed-up with multiple priority issues"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested PR for this week"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "start e2e testing"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "follow-up on priority issues"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "follow-up on camera asset-uptime & Discharge summary"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U022THM4U2U",
+                "ts": "1690393106.000000"
+            }
+        },
+        {
+            "client_msg_id": "d8eb1f4b-c120-4e2e-8f3c-50a6963985e4",
+            "type": "message",
+            "text": "*EOD 26/07/2023* <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5942|care_fe#5942>: Asset Detail: Fix Uptime popover clipping out of window and fix missing Icons\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5939|care_fe#5939>: Mark 'Current Address' Field in Patient Registration as Mandatory and fix default checked state of copy address in edit form\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5933|care_fe#5933>: Align fields in update shift request form\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5930|care_fe#5930>: Minor UI fix: Justify end discharge buttons in consultation dashboard\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5928|care_fe#5928>: Preserve investigations when consultation form is updated\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5927|care_fe#5927>: Fixes date time initial value formatting for Log update measured at, Discharge (death date time) and Bed start date time\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5921|care_fe#5921>: update lock (from ubuntu)\n\u2022 Attended GDC interviews\n*What's next?*\n\n\u2022 Work on issue <https://github.com/coronasafe/care_fe/issues/5940|care_fe#5940>: Decision After Consultations: Deprecate \"Home Isolation\" and show Admission Date field for \"Home Care\" / \"Domiciliary Care\"\n_EOD generated using <https://git-eod.vercel.app/>_",
+            "user": "U02TDGQQPMJ",
+            "ts": "1690392825.664289",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "+Rsx",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 26/07/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5942",
+                                            "text": "care_fe#5942"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Asset Detail: Fix Uptime popover clipping out of window and fix missing Icons"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5939",
+                                            "text": "care_fe#5939"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Mark 'Current Address' Field in Patient Registration as Mandatory and fix default checked state of copy address in edit form"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5933",
+                                            "text": "care_fe#5933"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Align fields in update shift request form"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5930",
+                                            "text": "care_fe#5930"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Minor UI fix: Justify end discharge buttons in consultation dashboard"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5928",
+                                            "text": "care_fe#5928"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Preserve investigations when consultation form is updated"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5927",
+                                            "text": "care_fe#5927"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixes date time initial value formatting for Log update measured at, Discharge (death date time) and Bed start date time"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5921",
+                                            "text": "care_fe#5921"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": update lock (from ubuntu)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Attended GDC interviews"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5940",
+                                            "text": "care_fe#5940"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Decision After Consultations: Deprecate \"Home Isolation\" and show Admission Date field for \"Home Care\" / \"Domiciliary Care\""
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "EOD generated using ",
+                                    "style": {
+                                        "italic": true
+                                    }
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://git-eod.vercel.app/",
+                                    "style": {
+                                        "italic": true
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1690392919.000000"
+            }
+        },
+        {
+            "client_msg_id": "0abb8e35-4fad-4289-9a56-10d2d88d2e5e",
+            "type": "message",
+            "text": "EOD 26/07/2023\n\n*How did the day go?*\n\u2022 Added close button in Patient notes UI PR\n\u2022 Made minor changes requested in <https://github.com/coronasafe/care/pull/1469>. \nWhat's next?\n\u2022 To raise frontend PR for making Doctor Notes Consultation Specific completing milestone 2 for my C4GT project",
+            "user": "U05998LB73N",
+            "ts": "1690391704.731449",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Z58Wa",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 26/07/2023\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added close button in Patient notes UI PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made minor changes requested in "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1469"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ". "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nWhat's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "To raise frontend PR for making Doctor Notes Consultation Specific completing milestone 2 for my C4GT project"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-07-27 00:00:00": []
 }

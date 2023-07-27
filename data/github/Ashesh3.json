@@ -1,6 +1,41 @@
 {
-  "last_updated": 1690311145.0,
+  "last_updated": 1690372406.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1690372406.0,
+      "title": "coronasafe/teleicu_middleware#79",
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/79#pullrequestreview-1547553610",
+      "text": "added a route a get all camera statuses"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690364403.0,
+      "title": "coronasafe/care_fe#5730",
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#pullrequestreview-1547287471",
+      "text": "added referred to facility field in discharge form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690364404.0,
+      "title": "coronasafe/care_fe#5730",
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#pullrequestreview-1547287471",
+      "text": "added referred to facility field in discharge form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690358882.0,
+      "title": "coronasafe/teleicu_middleware#78",
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/78#pullrequestreview-1547074526",
+      "text": "group device status by minutes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690357156.0,
+      "title": "coronasafe/care#1476",
+      "link": "https://github.com/coronasafe/care/pull/1476#pullrequestreview-1547024964",
+      "text": "Set Minimum Value to 0 for Respiratory Rate Field in DailyRound Model"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/ayushma#224",
@@ -10311,15 +10346,35 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1476",
+      "title": "Set Minimum Value to 1 for Respiratory Rate Field in DailyRound Model",
+      "stale_for": 0,
+      "labels": [
+        "blocked",
+        "P1",
+        "reviewed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5931",
+      "title": "Set Min. Respiratory Rate to 1",
+      "stale_for": 0,
+      "labels": [
+        "blocked",
+        "waiting for back end",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/ayushma/pull/224",
       "title": "Add status for TestRuns",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/73",
       "title": "Add status for TestRuns",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -10327,7 +10382,7 @@
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/72",
       "title": "Show average scores in csv export",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -10346,13 +10401,13 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 62,
+      "stale_for": 63,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10361,7 +10416,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -10369,7 +10424,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 112,
+      "stale_for": 113,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10378,13 +10433,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 125,
+      "stale_for": 126,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10393,7 +10448,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]

@@ -1,6 +1,97 @@
 {
-  "last_updated": 1690303968.0,
+  "last_updated": 1690387714.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5940",
+      "time": 1690387714.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5940#issuecomment-1652115692",
+      "text": "Ack"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690379335.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1547783606",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5942",
+      "time": 1690379063.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5942",
+      "text": "Asset Detail: Fix Updtime popover clipping out of window and fix missing Icons"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5890",
+      "time": 1690377563.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5890#issuecomment-1651791767",
+      "text": "Not reproducible. The patient registration's modified date seems to be getting updated when related models are being updated."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5832",
+      "time": 1690377553.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5832",
+      "text": "Patient List item shows last updated based on `PatientRegistration.modified_date` instead of `last_consultation.modified_date`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5832",
+      "time": 1690377553.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5832#issuecomment-1651791502",
+      "text": "Not reproducible. The patient registration's modified date seems to be getting updated when related models are being updated."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5941",
+      "time": 1690373219.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5941",
+      "text": "Same as Current Address Checbox is not ticked automatically in edit patient details form"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5940",
+      "time": 1690366568.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5940",
+      "text": "Decision After Consultations: Deprecate \"Home Isolation\" and show Admission Date field for \"Home Care\" / \"Domiciliary Care\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5939",
+      "time": 1690365749.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5939",
+      "text": "Mark 'Current Address' Field in Patient Registration as Mandatory"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5885",
+      "time": 1690364055.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5885#issuecomment-1651364521",
+      "text": "@nazrul7711 fix the build\r\n\r\n<img width=\"1431\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/4ba49e24-4c16-4b5a-a887-e9ff9c8f5a2c\">\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#812",
+      "time": 1690358861.0,
+      "link": "https://github.com/coronasafe/care/issues/812#issuecomment-1651189638",
+      "text": "about using a package instead of a browser"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#812",
+      "time": 1690358845.0,
+      "link": "https://github.com/coronasafe/care/issues/812#issuecomment-1651189242",
+      "text": "@sainak you might want to update this issue"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5934",
+      "time": 1690358580.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5934",
+      "text": "Patient Registration: Mark Current Address as Mandatory"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/zoomdrive#8",
@@ -19827,28 +19918,69 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5919",
-      "title": "update package-lock",
+      "link": "https://github.com/coronasafe/care_fe/pull/5942",
+      "title": "Asset Detail: Fix Updtime popover clipping out of window and fix missing Icons",
       "stale_for": 0,
       "labels": [
-        "Deploy-Failed",
+        "urgent",
+        "tested",
+        "P1",
         "cypress passed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5890",
-      "title": "Patients List: show latest of last consultation modified date / last daily round modified date / patient registration date instead of `patient.modified_date`",
+      "link": "https://github.com/coronasafe/care_fe/pull/5939",
+      "title": "Mark 'Current Address' Field in Patient Registration as Mandatory and fix default checked state of copy address in edit form",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "hold",
+        "tested",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5933",
+      "title": "Align fields in update shift request form",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5930",
+      "title": "Minor UI fix: Justify end discharge buttons in consultation dashboard",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5928",
+      "title": "Preserve investigations when consultation form is updated",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "tested",
+        "P1",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5927",
+      "title": "Fixes date time initial value formatting for Log update measured at, Discharge (death date time) and Bed start date time",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "tested",
+        "P1",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "need Review"
       ]
@@ -19856,13 +19988,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -19871,7 +20003,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -19880,7 +20012,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "need Review",
         "merge conflict",
@@ -19959,10 +20091,6 @@
     },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1323",
-      "pr_link": "https://github.com/coronasafe/care/pull/1325"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1322",
       "pr_link": "https://github.com/coronasafe/care/pull/1325"
     }
   ]

@@ -16934,5 +16934,240 @@
                 "ts": "1690392919.000000"
             }
         }
+    ],
+    "2023-07-27 00:00:00": [
+        {
+            "client_msg_id": "1c31ff0d-565b-4043-8ab6-73c35af28697",
+            "type": "message",
+            "text": "*EOD 27/07/2023* <!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5953|care_fe#5953>: Adds support to type date (Draft, trying to fix a focusing issue)\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5952|care_fe#5952>: Shifting Form (create + update): default to consultation category only for Patient Category\n\u2022 Made PR <https://github.com/coronasafe/care/pull/1481|care#1481>: Shifting: Skip changing `last_consultation.category` if `patient_category` is not present in `validated_data`\n\u2022 Made PR <https://github.com/coronasafe/care_fe/pull/5945|care_fe#5945>: Consultation Suggestions: Add field \"Domiciliary Care Start Date\" and deprecate \"home isolation\"\n\u2022 Created issue <https://github.com/coronasafe/care_fe/issues/5944|care_fe#5944>: Auto-close Symptoms dropdown when \"ASYMPTOMATIC\" selected\n\u2022 Couple of gdc interviews\n*What's next?*\n\u2022 More gdc interviews\n\u2022 Fix focusing issues in type date pr.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1690477349.553599",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "lMB9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 27/07/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5953",
+                                            "text": "care_fe#5953"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Adds support to type date (Draft, trying to fix a focusing issue)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5952",
+                                            "text": "care_fe#5952"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Shifting Form (create + update): default to consultation category only for Patient Category"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1481",
+                                            "text": "care#1481"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Shifting: Skip changing "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "last_consultation.category",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " if "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "patient_category",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " is not present in "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "validated_data",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5945",
+                                            "text": "care_fe#5945"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Consultation Suggestions: Add field \"Domiciliary Care Start Date\" and deprecate \"home isolation\""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Created issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5944",
+                                            "text": "care_fe#5944"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Auto-close Symptoms dropdown when \"ASYMPTOMATIC\" selected"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Couple of gdc interviews"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "More gdc interviews"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fix focusing issues in type date pr."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

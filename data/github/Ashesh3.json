@@ -1,6 +1,69 @@
 {
-  "last_updated": 1690372406.0,
+  "last_updated": 1690472486.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1690472486.0,
+      "title": "coronasafe/care_fe#5847",
+      "link": "https://github.com/coronasafe/care_fe/pull/5847#pullrequestreview-1550169414",
+      "text": "Add patient notes pop-up on consultation page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5950",
+      "time": 1690457223.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5950",
+      "text": "Hide asset uptime for assets without class"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5950",
+      "time": 1690451653.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5950",
+      "text": "Hide asset uptime for assets without class"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690451565.0,
+      "title": "coronasafe/care#1481",
+      "link": "https://github.com/coronasafe/care/pull/1481#pullrequestreview-1549461642",
+      "text": "Shifting: Skip changing `last_consultation.category` if `patient_category` is not present in `validated_data`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1475",
+      "time": 1690449348.0,
+      "link": "https://github.com/coronasafe/care/pull/1475",
+      "text": "Ignore admission date during discharge process if not provided"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1475",
+      "time": 1690444946.0,
+      "link": "https://github.com/coronasafe/care/pull/1475#issuecomment-1653099699",
+      "text": "> See #1480\r\n\r\nFixed."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5947",
+      "time": 1690439370.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5947",
+      "text": "Make patient category required in shifting"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5946",
+      "time": 1690439200.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5946",
+      "text": "Make patient category required in Shifting form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1479",
+      "time": 1690438716.0,
+      "link": "https://github.com/coronasafe/care/issues/1479",
+      "text": "KeyError: 'patient_category'"
+    },
     {
       "type": "pr_reviewed",
       "time": 1690372406.0,
@@ -10346,21 +10409,28 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1476",
-      "title": "Set Minimum Value to 1 for Respiratory Rate Field in DailyRound Model",
+      "link": "https://github.com/coronasafe/care_fe/pull/5947",
+      "title": "Make patient category required in shifting",
       "stale_for": 0,
       "labels": [
-        "blocked",
+        "waiting for back end",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1476",
+      "title": "Set Minimum Value to 0 for Respiratory Rate Field in DailyRound Model",
+      "stale_for": 0,
+      "labels": [
         "P1",
         "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5931",
-      "title": "Set Min. Respiratory Rate to 1",
+      "title": "Set Min. Respiratory Rate to 0",
       "stale_for": 0,
       "labels": [
-        "blocked",
         "waiting for back end",
         "cypress failed"
       ]
@@ -10368,13 +10438,13 @@
     {
       "link": "https://github.com/coronasafe/ayushma/pull/224",
       "title": "Add status for TestRuns",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/73",
       "title": "Add status for TestRuns",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -10382,17 +10452,9 @@
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/72",
       "title": "Show average scores in csv export",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1475",
-      "title": "Ignore admission date during discharge process if not provided",
-      "stale_for": 0,
-      "labels": [
-        "P1"
       ]
     },
     {
@@ -10401,13 +10463,14 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
+        "merge conflict",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 63,
+      "stale_for": 64,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10416,7 +10479,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -10424,7 +10487,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 113,
+      "stale_for": 114,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10433,13 +10496,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 126,
+      "stale_for": 127,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10448,7 +10511,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]

@@ -1,6 +1,48 @@
 {
-  "last_updated": 1690061535.0,
+  "last_updated": 1690471557.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1478",
+      "time": 1690471557.0,
+      "link": "https://github.com/coronasafe/care/issues/1478",
+      "text": "KeyError: 'patient_category'"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690471548.0,
+      "title": "coronasafe/care#1481",
+      "link": "https://github.com/coronasafe/care/pull/1481#pullrequestreview-1550133390",
+      "text": "Shifting: Skip changing `last_consultation.category` if `patient_category` is not present in `validated_data`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5772",
+      "time": 1690471515.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5772",
+      "text": "Breadcrumbs showing Admitted on Invalid Date for Home Isolation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690471503.0,
+      "title": "coronasafe/care_fe#5882",
+      "link": "https://github.com/coronasafe/care_fe/pull/5882#pullrequestreview-1550131932",
+      "text": "Fixed admitted on Invalid date issue in breadcrum on patient dashboard"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1480",
+      "time": 1690449349.0,
+      "link": "https://github.com/coronasafe/care/issues/1480",
+      "text": "TypeError: '<' not supported between instances of 'datetime.datetime' and 'NoneType'"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5916",
+      "time": 1690449349.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5916",
+      "text": "Unable to discharge homeisolated patient"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1472",
@@ -6034,7 +6076,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1001",
       "title": "Create Patient Tele Interaction",
-      "stale_for": 191,
+      "stale_for": 196,
       "labels": []
     }
   ],

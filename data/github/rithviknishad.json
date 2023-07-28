@@ -1,6 +1,202 @@
 {
-  "last_updated": 1690387714.0,
+  "last_updated": 1690481491.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1690481491.0,
+      "title": "coronasafe/care#1469",
+      "link": "https://github.com/coronasafe/care/pull/1469#pullrequestreview-1550478652",
+      "text": "made patient notes consultation specific"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690481491.0,
+      "title": "coronasafe/care#1469",
+      "link": "https://github.com/coronasafe/care/pull/1469#pullrequestreview-1550478652",
+      "text": "made patient notes consultation specific"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1483",
+      "time": 1690479130.0,
+      "link": "https://github.com/coronasafe/care/issues/1483",
+      "text": "Add validations for Domiciliary Care start date and Custom Migration for previous entries"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1481",
+      "time": 1690471556.0,
+      "link": "https://github.com/coronasafe/care/pull/1481",
+      "text": "Shifting: Skip changing `last_consultation.category` if `patient_category` is not present in `validated_data`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5953",
+      "time": 1690461617.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5953",
+      "text": "Adds support to type date"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690456722.0,
+      "title": "coronasafe/care_fe#5950",
+      "link": "https://github.com/coronasafe/care_fe/pull/5950#pullrequestreview-1549615491",
+      "text": "Hide asset uptime for assets without class"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5945",
+      "time": 1690456386.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5945",
+      "text": "Consultation Suggestions: Add field \"Domiciliary Care Start Date\" and deprecate \"home isolation\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5952",
+      "time": 1690453287.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5952",
+      "text": "Shifting Form (create + update): default to consultation category only for Patient Category"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5951",
+      "time": 1690452838.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5951",
+      "text": "Shifting Form: Initial value from last daily round's category otherwise last consultation's category has no effect"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5947",
+      "time": 1690451665.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5947#issuecomment-1653286611",
+      "text": "backend change: https://github.com/coronasafe/care/pull/1481"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1481",
+      "time": 1690451450.0,
+      "link": "https://github.com/coronasafe/care/pull/1481",
+      "text": "Shifting: Skip changing `last_consultation.category` if `patient_category` is not present in `validated_data`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1478",
+      "time": 1690451247.0,
+      "link": "https://github.com/coronasafe/care/issues/1478#issuecomment-1653274634",
+      "text": "Correction: `last_consultation.category` shouldn't be changed if null was passed. Hence, fallback to `None` is only required."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690445287.0,
+      "title": "coronasafe/care#1475",
+      "link": "https://github.com/coronasafe/care/pull/1475#pullrequestreview-1549246109",
+      "text": "Ignore admission date during discharge process if not provided"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690444414.0,
+      "title": "coronasafe/care#1475",
+      "link": "https://github.com/coronasafe/care/pull/1475#pullrequestreview-1549219538",
+      "text": "Ignore admission date during discharge process if not provided"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1478",
+      "time": 1690439177.0,
+      "link": "https://github.com/coronasafe/care/issues/1478#issuecomment-1652985094",
+      "text": "To raise `ValidationError` if not present instead"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5945",
+      "time": 1690437764.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5945",
+      "text": "Consultation Suggestions: Add field \"Domiciliary Care Start Date\" and deprecate \"home isolation\""
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5944",
+      "time": 1690435683.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5944",
+      "text": "Auto-close Symptoms dropdown when \"ASYMPTOMATIC\" selected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690433256.0,
+      "title": "coronasafe/care#1469",
+      "link": "https://github.com/coronasafe/care/pull/1469#pullrequestreview-1548993473",
+      "text": "made patient notes consultation specific"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690433010.0,
+      "title": "coronasafe/care_fe#5847",
+      "link": "https://github.com/coronasafe/care_fe/pull/5847#pullrequestreview-1548989050",
+      "text": "Add patient notes pop-up on consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690433010.0,
+      "title": "coronasafe/care_fe#5847",
+      "link": "https://github.com/coronasafe/care_fe/pull/5847#pullrequestreview-1548989050",
+      "text": "Add patient notes pop-up on consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690432805.0,
+      "title": "coronasafe/care_fe#5847",
+      "link": "https://github.com/coronasafe/care_fe/pull/5847#pullrequestreview-1548988017",
+      "text": "Add patient notes pop-up on consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690432586.0,
+      "title": "coronasafe/care_fe#5882",
+      "link": "https://github.com/coronasafe/care_fe/pull/5882#pullrequestreview-1548985589",
+      "text": "Fixed admitted on Invalid date issue in breadcrum on patient dashboard"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5927",
+      "time": 1690432348.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5927",
+      "text": "Fixes date time initial value formatting for Log update measured at, Discharge (death date time) and Bed start date time"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5928",
+      "time": 1690432294.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5928",
+      "text": "Preserve investigations when consultation form is updated"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5930",
+      "time": 1690432262.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5930",
+      "text": "Minor UI fix: Justify end discharge buttons in consultation dashboard"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5933",
+      "time": 1690432224.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5933",
+      "text": "Align fields in update shift request form"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5939",
+      "time": 1690432199.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5939",
+      "text": "Mark 'Current Address' Field in Patient Registration as Mandatory and fix default checked state of copy address in edit form"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5942",
+      "time": 1690432123.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5942",
+      "text": "Asset Detail: Fix Updtime popover clipping out of window and fix missing Icons"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5940",
@@ -19918,69 +20114,26 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5942",
-      "title": "Asset Detail: Fix Updtime popover clipping out of window and fix missing Icons",
+      "link": "https://github.com/coronasafe/care_fe/pull/5953",
+      "title": "Adds support to type date",
       "stale_for": 0,
       "labels": [
-        "urgent",
-        "tested",
-        "P1",
-        "cypress passed"
+        "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5939",
-      "title": "Mark 'Current Address' Field in Patient Registration as Mandatory and fix default checked state of copy address in edit form",
+      "link": "https://github.com/coronasafe/care_fe/pull/5952",
+      "title": "Shifting Form (create + update): default to consultation category only for Patient Category",
       "stale_for": 0,
       "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5933",
-      "title": "Align fields in update shift request form",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5930",
-      "title": "Minor UI fix: Justify end discharge buttons in consultation dashboard",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5928",
-      "title": "Preserve investigations when consultation form is updated",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "tested",
-        "P1",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5927",
-      "title": "Fixes date time initial value formatting for Log update measured at, Discharge (death date time) and Bed start date time",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "tested",
-        "P1",
+        "needs testing",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "need Review"
       ]
@@ -19988,13 +20141,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -20003,7 +20156,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -20012,7 +20165,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "need Review",
         "merge conflict",
@@ -20021,6 +20174,30 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5941",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5940",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5945"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5934",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5932",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5933"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5929",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5930"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5923",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5928"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5791",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5792"
@@ -20072,26 +20249,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5609",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5610"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1353",
-      "pr_link": "https://github.com/coronasafe/care/pull/1361"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1340",
-      "pr_link": "https://github.com/coronasafe/care/pull/1341"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5564",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5565"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1324",
-      "pr_link": "https://github.com/coronasafe/care/pull/1325"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1323",
-      "pr_link": "https://github.com/coronasafe/care/pull/1325"
     }
   ]
 }

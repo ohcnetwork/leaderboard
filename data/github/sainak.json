@@ -1,6 +1,27 @@
 {
-  "last_updated": 1690386670.0,
+  "last_updated": 1690462862.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1690462862.0,
+      "title": "coronasafe/care#1481",
+      "link": "https://github.com/coronasafe/care/pull/1481#pullrequestreview-1549796994",
+      "text": "Shifting: Skip changing `last_consultation.category` if `patient_category` is not present in `validated_data`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5954",
+      "time": 1690462032.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5954",
+      "text": "improve discharge summary notifications"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1482",
+      "time": 1690461826.0,
+      "link": "https://github.com/coronasafe/care/pull/1482",
+      "text": "refactor discharge summary"
+    },
     {
       "type": "pr_reviewed",
       "time": 1690386670.0,
@@ -4200,15 +4221,30 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5954",
+      "title": "improve discharge summary notifications",
+      "stale_for": 0,
+      "labels": [
+        "waiting for back end",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1482",
+      "title": "refactor discharge summary",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5868",
       "title": "remove legacy feed components",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -4217,19 +4253,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 44,
+      "stale_for": 45,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 364,
+      "stale_for": 365,
       "labels": []
     }
   ],

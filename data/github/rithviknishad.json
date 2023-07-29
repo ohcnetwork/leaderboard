@@ -1,6 +1,40 @@
 {
-  "last_updated": 1690481491.0,
+  "last_updated": 1690584028.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5966",
+      "time": 1690584028.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5966",
+      "text": "Production Release; Aug Week 1",
+      "collaborated_with": [
+        "sainak",
+        "cp-Coder",
+        "print-Sathvik",
+        "mathew-alex",
+        "GokulramGHV",
+        "Ashesh3",
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1488",
+      "time": 1690584017.0,
+      "link": "https://github.com/coronasafe/care/pull/1488",
+      "text": "Production Release; Aug Week 1",
+      "collaborated_with": [
+        "Ashesh3",
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690523901.0,
+      "title": "coronasafe/care#1484",
+      "link": "https://github.com/coronasafe/care/pull/1484#pullrequestreview-1551384848",
+      "text": "Added `op_no` and `ip_OR_op` Filters for Patients"
+    },
     {
       "type": "pr_reviewed",
       "time": 1690481491.0,
@@ -20118,13 +20152,15 @@
       "title": "Adds support to type date",
       "stale_for": 0,
       "labels": [
-        "cypress failed"
+        "needs testing",
+        "P1",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5952",
       "title": "Shifting Form (create + update): default to consultation category only for Patient Category",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -20133,7 +20169,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": [
         "need Review"
       ]
@@ -20141,13 +20177,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -20156,7 +20192,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "merge conflict",
         "cypress failed"
@@ -20165,7 +20201,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "need Review",
         "merge conflict",

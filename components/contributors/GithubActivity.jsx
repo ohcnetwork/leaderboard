@@ -34,16 +34,16 @@ let renderText = (activity) => {
         <div className="min-w-0 flex-1">
           <div>
             <div className="">
-              <div className="font-medium text-primary-300 ">
+              <div className="font-medium dark:text-primary-300 text-primary-500">
                 {activity_time.split("at")[0]}
-                <span className=" text-sm font-medium text-gray-200">
+                <span className=" text-sm font-medium dark:text-gray-200 text-gray-700">
                   {" "}
                   - End of the day update from slack
                 </span>
               </div>
             </div>
           </div>
-          <div className="mt-2 text-gray-100">
+          <div className="mt-2 text-foreground">
             <p className="break-words">{activity["text"]}</p>
           </div>
         </div>
@@ -57,18 +57,18 @@ let renderText = (activity) => {
                 {"Shared a comment on "}
                 {commentTypes(activity["link"].split("/").slice(5, 6))}
                 {" in  "}
-                <span className="text-primary-300 font-medium">
+                <span className="dark:text-primary-300 text-primary-400 font-medium">
                   {activity["link"].split("/").slice(3, 5).join("/")}
                 </span>
 
-                <span className="font-normal text-gray-100">
+                <span className="font-normal text-foreground">
                   {" "}
                   on {activity_time}
                 </span>
               </p>
             </div>
           </div>
-          <div className="mt-2 text-gray-100">
+          <div className="mt-2 text-foreground">
             <p className="break-words">{activity["text"]}</p>
             <p className="break-words">{activity["link"]}</p>
           </div>
@@ -79,13 +79,13 @@ let renderText = (activity) => {
     case "pr_reviewed":
       return (
         <div className="min-w-0 flex-1 py-1.5">
-          <div className="text-gray-100">
+          <div className="text-foreground">
             <div className="font-medium">
               <span className="capitalize">
                 {activity["type"].split("_")[1]}
               </span>
               <span>{" a pull request on "}</span>
-              <span className="text-primary-300 font-medium">
+              <span className="dark:text-primary-300 text-primary-400 font-medium">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
@@ -108,7 +108,7 @@ let renderText = (activity) => {
             {activity["type"] != "pr_merged" && (
               <div>
                 <a href={activity["link"]}>
-                  <span className="font-medium text-gray-200">
+                  <span className="font-medium dark:text-gray-200 text-gray-500">
                     {activity["text"]}
                   </span>
                 </a>
@@ -123,7 +123,7 @@ let renderText = (activity) => {
     case "issue_closed":
       return (
         <div className="min-w-0 flex-1 py-1.5">
-          <div className="text-sm text-gray-100">
+          <div className="text-sm text-foreground">
             <div className="font-medium">
               <span className="capitalize">
                 {activity["type"].split("_")[1]}
@@ -135,7 +135,7 @@ let renderText = (activity) => {
             </div>
 
             <a href={activity["link"]} className="pt-1">
-              <span className="font-medium text-white hover:text-primary-500">
+              <span className="font-medium text-foreground hover:text-primary-500">
                 {activity["text"]}
               </span>
             </a>
@@ -146,12 +146,12 @@ let renderText = (activity) => {
     default:
       return (
         <div className="min-w-0 flex-1 py-1.5">
-          <div className="text-sm text-gray-100">
+          <div className="text-sm text-foreground">
             <span className="font-medium text-primary-300 ">
               {activity["type"]}
             </span>
 
-            <div className="font-medium text-gray-200 ml-2">
+            <div className="font-medium dark:text-gray-200 text-gray-700 ml-2">
               {activity["text"]}
             </div>
             <span className="whitespace-nowrap ml-2">{activity_time}</span>
@@ -235,13 +235,13 @@ let showContribution = (activity) => {
   return (
     <div className="relative pb-8">
       <span
-        className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+        className="absolute top-5 left-5 -ml-px h-full w-0.5 dark:bg-gray-200 bg-gray-700"
         aria-hidden="true"
       ></span>
       <div className="relative flex items-start space-x-3">
         <div>
           <div className="relative px-1">
-            <div className="h-8 w-8 bg-gray-300 rounded-full ring-8 ring-gray-700 flex items-center justify-center">
+            <div className="h-8 w-8 dark:bg-gray-300 bg-gray-100 rounded-full ring-8 dark:ring-gray-700 ring-gray-200 flex items-center justify-center">
               {icon(type)}
             </div>
           </div>
@@ -254,7 +254,7 @@ let showContribution = (activity) => {
 
 export default function GithubActivity({ activityData }) {
   return (
-    <div className="mx-2 flow-root text-gray-100 mt-4">
+    <div className="mx-2 flow-root text-foreground mt-4">
       <ul role="list" className="-mb-8">
         {activityData["activity"].map((activity, i) => {
           return <li key={i}>{showContribution(activity)}</li>;

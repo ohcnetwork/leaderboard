@@ -90,7 +90,7 @@ export default function Leaderboard({
   }, [contributorsList, searchTerm, sortBy, sortDescending, showCoreMembers]);
 
   return (
-    <section className="bg-gray-900 border-t border-gray-600">
+    <section className="bg-background text-foreground border-t dark:border-gray-700 border-gray-300">
       <div className="max-w-6xl mx-auto">
         <Filters
           searchTerm={searchTerm}
@@ -106,7 +106,7 @@ export default function Leaderboard({
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
             <div className="lg:col-span-7 2xl:col-span-8">
               <div className="sticky top-0 pt-6">
-                <div className="terminal-container-bg border text-white rounded-lg border-primary-500">
+                <div className="terminal-container-bg border rounded-lg border-primary-500">
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                     <span>
                       Live Leaderboard of last 7 days | Week{" "}
@@ -143,10 +143,10 @@ export default function Leaderboard({
                 <div className="mx-auto py-12 px-4 max-w-6xl sm:px-6 lg:px-8 lg:py-24 ">
                   <div className="space-y-12 p-4 border border-primary-500 rounded-lg">
                     <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                      <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+                      <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                         Top Contributors of the week
                       </h2>
-                      <p className="text-xl text-gray-300">
+                      <p className="text-xl text-gray-500 dark:text-gray-300">
                         Our top contributers across different metrics
                       </p>
                     </div>

@@ -12,10 +12,10 @@ export default function InfoCard({
 }) {
   return (
     <div
-      className="py-6 px-2 bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left"
+      className="py-6 px-2 bg-gray-100 dark:bg-gray-800 text-center rounded-lg xl:px-10 xl:text-left"
       role="listitem"
     >
-      <span className="text-white text-sm font-sans">
+      <span className="text-foreground text-sm font-sans">
         Most number of {category.title}
       </span>
       <div className="flex">

@@ -13,12 +13,12 @@ const IconToggle = ({
   return (
     <div
       onClick={handleOnClick}
-      className="p-2 rounded border shadow-sm cursor-pointer"
+      className="p-2 rounded border border-gray-600 dark:border-gray-300 shadow-sm cursor-pointer"
     >
       {state ? (
-        <TrueIcon className="text-white" size={20} />
+        <TrueIcon className="text-foreground" size={20} />
       ) : (
-        <FalseIcon className="text-white" size={20} />
+        <FalseIcon className="text-foreground" size={20} />
       )}
     </div>
   );

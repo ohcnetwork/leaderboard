@@ -8,7 +8,7 @@ export default function Home() {
   const dateRange = getLastWeekDateRangeString();
   return (
     <div className="bg-background text-foreground min-h-screen">
-      <section className="bg-background border-t border-gray-700 ">
+      <section className="bg-background border-t dark:border-gray-700 border-gray-300 ">
         <div className="max-w-6xl mx-auto">
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">

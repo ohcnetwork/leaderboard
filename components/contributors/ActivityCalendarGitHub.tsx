@@ -3,12 +3,15 @@
 import { useState } from 'react';
 import ActivityCalendar from 'react-activity-calendar';
 import ActivityModal from './ActivityModal';
+import { useTheme } from 'next-themes';
 
 export default function ActivityCalendarGit({
   calendarData,
 }: {
   calendarData: any;
 }) {
+  const { theme } = useTheme();
+
   const getCalendarData = (year: number) => {
     const currentYear = year;
     let dates = [];
@@ -63,15 +66,16 @@ export default function ActivityCalendarGit({
   return (
     <div className="sm:flex gap-3">
       <div
-        className="py-8 bg-gray-800 text-gray-100 text-center rounded-lg px-6 sm:px-10 xl:text-left hover:cursor-pointer"
+        className="py-8 dark:bg-gray-800 bg-gray-100 text-foreground text-center rounded-lg px-6 sm:px-10 xl:text-left hover:cursor-pointer"
         suppressHydrationWarning
       >
         {year === 0 ? (
           <ActivityCalendar
+            colorScheme={theme === 'dark' ? 'dark' : 'light'}
             showWeekdayLabels
             data={calendarData}
             theme={{
-              light: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
+              light: ['#e5e7eb', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
               dark: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
             }}
             eventHandlers={{
@@ -84,10 +88,11 @@ export default function ActivityCalendarGit({
           />
         ) : (
           <ActivityCalendar
+            colorScheme={theme === 'dark' ? 'dark' : 'light'}
             showWeekdayLabels
             data={getCalendarData(year)}
             theme={{
-              light: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
+              light: ['#e5e7eb', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
               dark: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
             }}
             eventHandlers={{
@@ -112,7 +117,7 @@ export default function ActivityCalendarGit({
               key={i}
               className={
                 y !== year
-                  ? 'h-10 w-24 rounded-lg bg-gray-800 text-gray-100 text-sm flex justify-center items-center hover:bg-gray-700'
+                  ? 'h-10 w-24 rounded-lg dark:bg-gray-800 bg-gray-100 text-foreground text-sm flex justify-center items-center hover:bg-gray-700'
                   : 'h-10 w-24 rounded-lg bg-primary-500 text-white text-sm flex justify-center items-center'
               }
               onClick={(_) => setYear(y)}

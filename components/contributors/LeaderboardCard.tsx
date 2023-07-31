@@ -12,7 +12,7 @@ export default function LeaderBoardCard({
 }) {
   const userPosition = position + 1;
   const hideBadges = position === -1;
-  let badgeColors = 'bg-gray-800 border-black/20';
+  let badgeColors = 'bg-gray-400 dark:bg-gray-800 border-black/20';
 
   switch (userPosition) {
     case 1:
@@ -32,19 +32,16 @@ export default function LeaderBoardCard({
   }
 
   return (
-    <Link
-      href={'/contributors/' + contributor.github}
-      className="block hover:bg-gray-50"
-    >
+    <Link href={'/contributors/' + contributor.github} className="block">
       <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer">
         {!hideBadges && (
           <div
-            className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr ${badgeColors} border-4 mr-4 shrink-0`}
+            className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr text-white ${badgeColors} border-4 mr-4 shrink-0`}
           >
             {position + 1}
           </div>
         )}
-        <div className="flex md:flex-row flex-col md:items-center justify-between w-full space-y-4">
+        <div className="flex md:flex-row flex-col md:items-center justify-between w-full py-4">
           <div className="flex w-full">
             <div className="min-w-0 flex-1 flex items-center">
               <div className="flex-shrink-0">
@@ -58,7 +55,7 @@ export default function LeaderBoardCard({
                 <div className="text-sm font-medium text-green-500 truncate">
                   {contributor.name}
                 </div>
-                <p className="mt-2 flex items-center text-sm text-gray-300">
+                <p className="mt-2 flex items-center text-sm text-foreground">
                   <span className="truncate">{contributor.title}</span>
                 </p>
               </div>
@@ -68,13 +65,13 @@ export default function LeaderBoardCard({
           <div className="px-4 flex items-center justify-between">
             <div className="md:block">
               <dl>
-                <dt className="text-sm leading-5 font-medium text-gray-300 truncate">
+                <dt className="text-sm leading-5 font-medium text-foreground truncate">
                   PRs
                 </dt>
                 <dd className="flex">
                   <div className="flex items-center">
                     <svg
-                      className="flex-shrink-0 h-5 w-5 text-green-400"
+                      className="flex-shrink-0 h-5 w-5 text-green-500"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -84,25 +81,25 @@ export default function LeaderBoardCard({
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="ml-2 text-sm leading-5 text-gray-100">
+                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
                       {contributor.weekSummary.pr_opened}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-300">
+                    <span className="ml-2 text-sm leading-5 text-foreground">
                       opened
                     </span>
-                    <span className="ml-2 text-sm leading-5 text-gray-100">
+                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
                       {contributor.weekSummary.pr_reviewed}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-300">
+                    <span className="ml-2 text-sm leading-5 text-foreground">
                       reviewed
                     </span>
-                    <span className="ml-2 text-sm leading-5 text-gray-100">
+                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
                       {contributor.weekSummary.pr_merged}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-300">
+                    <span className="ml-2 text-sm leading-5 text-foreground">
                       merged
                     </span>
                   </div>
@@ -110,7 +107,7 @@ export default function LeaderBoardCard({
                 {contributor.weekSummary?.pr_stale ? (
                   <dd className="flex mt-2">
                     <div className="flex items-center">
-                      <span className="flex text-sm leading-5 text-yellow-200">
+                      <span className="flex text-sm leading-5 text-yellow-500 dark:text-yellow-200">
                         <FiAlertTriangle size={18} className="mr-2" />{' '}
                         {contributor.weekSummary?.pr_stale} stale
                       </span>
@@ -119,13 +116,13 @@ export default function LeaderBoardCard({
                 ) : null}
               </dl>
               <dl className="">
-                <dt className="text-sm leading-5 font-medium text-gray-300 truncate mt-4">
+                <dt className="text-sm leading-5 font-medium text-foreground truncate mt-4">
                   Activity
                 </dt>
                 <dd className="flex">
                   <div className="flex items-center">
                     <svg
-                      className="flex-shrink-0 h-5 w-5 text-green-400"
+                      className="flex-shrink-0 h-5 w-5 text-green-500"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -135,18 +132,18 @@ export default function LeaderBoardCard({
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="ml-2 text-sm leading-5 text-gray-100">
+                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
                       {contributor.weekSummary.eod_update}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-300">
+                    <span className="ml-2 text-sm leading-5 text-foreground">
                       EOD updates
                     </span>
-                    <span className="ml-2 text-sm leading-5 text-gray-100">
+                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
                       {contributor.weekSummary.comment_created}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 text-gray-300">
+                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
                       Comments
                     </span>
                   </div>

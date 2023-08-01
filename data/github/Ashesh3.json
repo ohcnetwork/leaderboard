@@ -1,6 +1,69 @@
 {
-  "last_updated": 1690584028.0,
+  "last_updated": 1690831159.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#73",
+      "time": 1690831159.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/73",
+      "text": "Add status for TestRuns"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#239",
+      "time": 1690821845.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/239",
+      "text": "Fix celery task"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#239",
+      "time": 1690819834.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/239",
+      "text": "Fix celery task"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#238",
+      "time": 1690813321.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/238",
+      "text": "Migrations for running testruns"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#238",
+      "time": 1690813242.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/238",
+      "text": "Migrations for running testruns"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#72",
+      "time": 1690810754.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/72",
+      "text": "Show average scores in csv export"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#224",
+      "time": 1690810653.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/224",
+      "text": "Add status for TestRuns"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690805170.0,
+      "title": "coronasafe/ayushma#224",
+      "link": "https://github.com/coronasafe/ayushma/pull/224#pullrequestreview-1554614009",
+      "text": "Add status for TestRuns"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5972",
+      "time": 1690800604.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5972",
+      "text": "Fix month list in DateInput"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5966",
@@ -10537,9 +10600,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5972",
+      "title": "Fix month list in DateInput",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5960",
       "title": "Add op_no and ip_OR_op filter for patients",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "waiting for back end",
         "cypress passed"
@@ -10548,31 +10621,9 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1484",
       "title": "Added `op_no` and `ip_OR_op` Filters for Patients",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/ayushma/pull/224",
-      "title": "Add status for TestRuns",
-      "stale_for": 3,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/73",
-      "title": "Add status for TestRuns",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/72",
-      "title": "Show average scores in csv export",
-      "stale_for": 3,
-      "labels": [
-        "needs testing"
       ]
     },
     {
@@ -10581,13 +10632,13 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "cypress passed"
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 65,
+      "stale_for": 68,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10596,7 +10647,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 3,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -10604,7 +10655,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 115,
+      "stale_for": 118,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10613,13 +10664,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 128,
+      "stale_for": 131,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 7,
+      "stale_for": 10,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10628,7 +10679,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 4,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review"
       ]

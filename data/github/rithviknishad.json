@@ -1,6 +1,13 @@
 {
-  "last_updated": 1690584028.0,
+  "last_updated": 1690814070.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5943",
+      "time": 1690814070.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5943#issuecomment-1658492527",
+      "text": "@GokulramGHV \r\n\r\nAfter discussions for the phone number field, the following conclusions have been made.\r\n\r\n- [ ] Enforce mandatory country code in the Phone Number Field (across the platform, no places this rule becomes inapplicable). \r\n- [ ] This way the auto-formatter by the library always works (spaces and dashes) are taken care automatically for display purposes.\r\n- [ ] Ensure the state's value is always unformatted (does not contain spaces or dashes)"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5966",
@@ -20150,7 +20157,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5953",
       "title": "Adds support to type date",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "P1",
@@ -20160,7 +20167,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5952",
       "title": "Shifting Form (create + update): default to consultation category only for Patient Category",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -20169,7 +20176,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 15,
+      "stale_for": 18,
       "labels": [
         "need Review"
       ]
@@ -20177,13 +20184,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5749",
       "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 3,
+      "stale_for": 6,
       "labels": [
         "merge conflict",
         "cypress passed"
@@ -20192,16 +20199,17 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 6,
+      "stale_for": 1,
       "labels": [
         "merge conflict",
+        "stale",
         "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 7,
+      "stale_for": 10,
       "labels": [
         "need Review",
         "merge conflict",

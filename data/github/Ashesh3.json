@@ -1,6 +1,20 @@
 {
-  "last_updated": 1690831159.0,
+  "last_updated": 1690862513.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5973",
+      "time": 1690862513.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5973",
+      "text": "Change non-binary to transgender"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5956",
+      "time": 1690860397.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5956#issuecomment-1659507650",
+      "text": "@aparnacoronasafe the issue needs to be re approached to make it useful for the platform. A team discussion is required before proceeding to implement the feature."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/ayushma_fe#73",
@@ -10600,19 +10614,29 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/5973",
+      "title": "Change non-binary to transgender",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "P2",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5972",
       "title": "Fix month list in DateInput",
       "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "P1",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5960",
       "title": "Add op_no and ip_OR_op filter for patients",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting for back end",
         "cypress passed"
@@ -10621,7 +10645,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1484",
       "title": "Added `op_no` and `ip_OR_op` Filters for Patients",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -10631,14 +10655,14 @@
       "title": "Fix patient import from external result",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress failed"
+        "tested",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 68,
+      "stale_for": 69,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10647,7 +10671,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review"
       ]
@@ -10655,7 +10679,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 118,
+      "stale_for": 119,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10664,13 +10688,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 131,
+      "stale_for": 132,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5126",
       "title": "Add edit functionality to patient notes",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10679,7 +10703,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]

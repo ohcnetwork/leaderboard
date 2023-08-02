@@ -1,6 +1,38 @@
 {
-  "last_updated": 1690814070.0,
+  "last_updated": 1690899554.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5980",
+      "time": 1690899554.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5980",
+      "text": "Phase out `moment` package"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5905",
+      "time": 1690894312.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5905",
+      "text": "Fixed ventilator vitals monitor data overlapping waveforms",
+      "collaborated_with": [
+        "nihal467",
+        "print-Sathvik"
+      ]
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5977",
+      "time": 1690891447.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5977",
+      "text": "Phase out `moment` package"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5976",
+      "time": 1690891282.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5976",
+      "text": "Dynamic aspect ratio for HL7 and Ventilator Vitals Monitors"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5943",
@@ -20155,11 +20187,31 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5953",
-      "title": "Adds support to type date",
-      "stale_for": 3,
+      "link": "https://github.com/coronasafe/care_fe/pull/5980",
+      "title": "Replaced `moment` with `dayjs`",
+      "stale_for": 0,
       "labels": [
         "needs testing",
+        "need Review",
+        "Major Code Change",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5976",
+      "title": "Dynamic aspect ratio for HL7 and Ventilator Vitals Monitors",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5953",
+      "title": "Adds support to type date",
+      "stale_for": 0,
+      "labels": [
+        "test failed",
         "P1",
         "cypress passed"
       ]
@@ -20167,16 +20219,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5952",
       "title": "Shifting Form (create + update): default to consultation category only for Patient Category",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "test failed",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "need Review"
       ]
@@ -20184,22 +20236,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5749",
-      "title": "Configurable Gain control for Vitals Monitor",
-      "stale_for": 6,
-      "labels": [
-        "merge conflict",
-        "cypress passed"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "merge conflict",
         "stale",
@@ -20209,7 +20252,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "need Review",
         "merge conflict",
@@ -20289,10 +20332,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5621",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5622"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5609",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5610"
     }
   ]
 }

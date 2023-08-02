@@ -17169,5 +17169,124 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-08-01 00:00:00": [
+        {
+            "client_msg_id": "d00b377b-f921-4db7-9a26-6e0395a226f6",
+            "type": "message",
+            "text": "*EOD 01/07/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 <https://github.com/coronasafe/care_fe/pull/5976|#5976> Added support for dynamic aspect ratio for HL7 and Ventilator Vitals Monitor\n\u2022 <https://github.com/coronasafe/care_fe/pull/5980|#5980> Replaced `moment` library with `dayjs` library.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1690909162.739299",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "9fDL",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 01/07/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5976",
+                                            "text": "#5976",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Added support for dynamic aspect ratio for HL7 and Ventilator Vitals Monitor"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5980",
+                                            "text": "#5980",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Replaced "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "moment",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " library with "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "dayjs",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " library."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

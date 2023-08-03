@@ -1,6 +1,146 @@
 {
-  "last_updated": 1690899554.0,
+  "last_updated": 1691001452.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1503",
+      "time": 1691001452.0,
+      "link": "https://github.com/coronasafe/care/pull/1503",
+      "text": "Optimisation: set `update_fields` for instance delete"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1499",
+      "time": 1690999996.0,
+      "link": "https://github.com/coronasafe/care/issues/1499#issuecomment-1662719482",
+      "text": "I think he meant that \"there is a pre-commit hook that can be configured\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1502",
+      "time": 1690999864.0,
+      "link": "https://github.com/coronasafe/care/pull/1502",
+      "text": "Skip validation if asset warranty date is not changed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690999676.0,
+      "title": "coronasafe/care#1501",
+      "link": "https://github.com/coronasafe/care/pull/1501#pullrequestreview-1559581538",
+      "text": "Add missing migration for dailyround"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690998205.0,
+      "title": "coronasafe/care#1495",
+      "link": "https://github.com/coronasafe/care/pull/1495#pullrequestreview-1559540171",
+      "text": "Add weekly working hours field for users"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1499",
+      "time": 1690998166.0,
+      "link": "https://github.com/coronasafe/care/issues/1499#issuecomment-1662682649",
+      "text": "cc: @vigneshhari "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1499",
+      "time": 1690998149.0,
+      "link": "https://github.com/coronasafe/care/issues/1499#issuecomment-1662682306",
+      "text": "@sainak should we add a CI to test if any migrations are missing in the future?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5993",
+      "time": 1690997877.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5993",
+      "text": "Disable editing category from consultation form if a daily round exists"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5951",
+      "time": 1690989501.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5951",
+      "text": "Shifting Form: Initial value from last daily round's category otherwise last consultation's category has no effect"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5951",
+      "time": 1690989501.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5951#issuecomment-1662403592",
+      "text": "Closing in favour of #5990"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1497",
+      "time": 1690989407.0,
+      "link": "https://github.com/coronasafe/care/issues/1497",
+      "text": "Generalize Phone Number Field Regex Validators"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5991",
+      "time": 1690989223.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5991",
+      "text": "Have a static loading screen in `index.html`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5987",
+      "time": 1690989121.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5987#issuecomment-1662392748",
+      "text": "We should skip validating the `warranty_amc_end_of_validity` field if the field is not changed."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5990",
+      "time": 1690988653.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5990",
+      "text": "Disable `patient_category` in Consultation Form if there is a `last_daily_round` present."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690985666.0,
+      "title": "coronasafe/care_fe#5985",
+      "link": "https://github.com/coronasafe/care_fe/pull/5985#pullrequestreview-1559114037",
+      "text": "Made a Search UI"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5953",
+      "time": 1690974090.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5953",
+      "text": "Adds support to type date"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690968798.0,
+      "title": "coronasafe/care_fe#5601",
+      "link": "https://github.com/coronasafe/care_fe/pull/5601#pullrequestreview-1558604481",
+      "text": "index field added as key to remove warnings"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690962268.0,
+      "title": "coronasafe/care#1275",
+      "link": "https://github.com/coronasafe/care/pull/1275#pullrequestreview-1558400801",
+      "text": "Modified bedCreate API View to support bulk creating beds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1690950636.0,
+      "title": "coronasafe/care#1495",
+      "link": "https://github.com/coronasafe/care/pull/1495#pullrequestreview-1558169861",
+      "text": "Add weekly working hours field for users"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5976",
+      "time": 1690945407.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5976",
+      "text": "Dynamic aspect ratio for HL7 and Ventilator Vitals Monitors"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5980",
@@ -20187,48 +20327,47 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1503",
+      "title": "Optimisation: set `update_fields` for instance delete",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1502",
+      "title": "Skip validation if asset warranty date is not changed",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5993",
+      "title": "Disable editing category from consultation form if a daily round exists",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5980",
       "title": "Replaced `moment` with `dayjs`",
       "stale_for": 0,
       "labels": [
         "needs testing",
         "need Review",
+        "merge conflict",
         "Major Code Change",
         "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5976",
-      "title": "Dynamic aspect ratio for HL7 and Ventilator Vitals Monitors",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5953",
-      "title": "Adds support to type date",
-      "stale_for": 0,
-      "labels": [
-        "test failed",
-        "P1",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5952",
-      "title": "Shifting Form (create + update): default to consultation category only for Patient Category",
-      "stale_for": 0,
-      "labels": [
-        "test failed",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 19,
+      "stale_for": 20,
       "labels": [
         "need Review"
       ]
@@ -20236,13 +20375,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "merge conflict",
         "stale",
@@ -20252,10 +20391,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 11,
+      "stale_for": 0,
       "labels": [
+        "needs testing",
         "need Review",
-        "merge conflict",
         "cypress failed"
       ]
     }
@@ -20326,12 +20465,8 @@
       "pr_link": "https://github.com/coronasafe/care/pull/1401"
     },
     {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5625",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5627"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5621",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5622"
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5726",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5976"
     }
   ]
 }

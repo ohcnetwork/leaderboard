@@ -1,6 +1,20 @@
 {
-  "last_updated": 1690455296.0,
+  "last_updated": 1690998033.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1499",
+      "time": 1690998033.0,
+      "link": "https://github.com/coronasafe/care/issues/1499",
+      "text": "Missing migration for the daily round model update"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1498",
+      "time": 1690994169.0,
+      "link": "https://github.com/coronasafe/care/issues/1498",
+      "text": "Store doctor role as static attribute in patient notes "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5847",
@@ -340,7 +354,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1469",
       "title": "made patient notes consultation specific",
-      "stale_for": 0,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -351,6 +365,7 @@
       "stale_for": 0,
       "labels": [
         "changes required",
+        "merge conflict",
         "cypress passed"
       ]
     }

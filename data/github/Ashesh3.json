@@ -1,6 +1,76 @@
 {
-  "last_updated": 1690862513.0,
+  "last_updated": 1690999699.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1499",
+      "time": 1690999699.0,
+      "link": "https://github.com/coronasafe/care/issues/1499#issuecomment-1662713463",
+      "text": "> There is a precommit hook for it\r\n> We can add that as well\r\n\r\nDo we already have that? I already have precommit hooks installed and I don't remember seeing any such error which missing the migration.."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1501",
+      "time": 1690999599.0,
+      "link": "https://github.com/coronasafe/care/pull/1501",
+      "text": "Add missing migration for dailyround"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5960",
+      "time": 1690974058.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5960",
+      "text": "Add op_no and ip_OR_op filter for patients"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5982",
+      "time": 1690973930.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5982",
+      "text": "Add html support for login page's goal"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5988",
+      "time": 1690972013.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5988",
+      "text": "Hide discharge file tab on patient page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1484",
+      "time": 1690964185.0,
+      "link": "https://github.com/coronasafe/care/pull/1484",
+      "text": "Added `op_no` and `ip_OR_op` Filters for Patients"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5126",
+      "time": 1690957620.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5126#issuecomment-1661574509",
+      "text": "Will be fixed in a newer PR which aims at redesigning the doctor notes."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5982",
+      "time": 1690952783.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5982",
+      "text": "Add html support for login page's goal"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1495",
+      "time": 1690949533.0,
+      "link": "https://github.com/coronasafe/care/pull/1495",
+      "text": "Add weekly working hours field for users"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5981",
+      "time": 1690949423.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5981",
+      "text": "Add weekly working hours field for users"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#5973",
@@ -10614,8 +10684,16 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5973",
-      "title": "Change non-binary to transgender",
+      "link": "https://github.com/coronasafe/care/pull/1501",
+      "title": "Add missing migration for dailyround",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5988",
+      "title": "Hide discharge file tab on patient page",
       "stale_for": 0,
       "labels": [
         "tested",
@@ -10624,45 +10702,27 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5972",
-      "title": "Fix month list in DateInput",
+      "link": "https://github.com/coronasafe/care/pull/1495",
+      "title": "Add weekly working hours field for users",
       "stale_for": 0,
-      "labels": [
-        "tested",
-        "P1",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5960",
-      "title": "Add op_no and ip_OR_op filter for patients",
-      "stale_for": 4,
-      "labels": [
-        "waiting for back end",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1484",
-      "title": "Added `op_no` and `ip_OR_op` Filters for Patients",
-      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5908",
-      "title": "Fix patient import from external result",
+      "link": "https://github.com/coronasafe/care_fe/pull/5981",
+      "title": "Add weekly working hours field for users",
       "stale_for": 0,
       "labels": [
         "tested",
+        "waiting for back end",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 69,
+      "stale_for": 70,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10671,7 +10731,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]
@@ -10679,7 +10739,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 119,
+      "stale_for": 120,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10688,22 +10748,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 132,
+      "stale_for": 133,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5126",
-      "title": "Add edit functionality to patient notes",
-      "stale_for": 11,
-      "labels": [
-        "waiting for back end",
-        "merge conflict"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]

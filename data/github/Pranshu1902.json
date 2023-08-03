@@ -1,6 +1,55 @@
 {
-  "last_updated": 1689485247.0,
+  "last_updated": 1691012820.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1505",
+      "time": 1691012820.0,
+      "link": "https://github.com/coronasafe/care/pull/1505",
+      "text": "Don't allow negative values for Doctor Count for facility"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1504",
+      "time": 1691012705.0,
+      "link": "https://github.com/coronasafe/care/issues/1504#issuecomment-1663008275",
+      "text": "Related to [#5996](https://github.com/coronasafe/care_fe/issues/5996)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1504",
+      "time": 1691012682.0,
+      "link": "https://github.com/coronasafe/care/issues/1504",
+      "text": " Negative values are allowed in Doctors list count for a facility"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5997",
+      "time": 1691012012.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5997",
+      "text": "added negative check"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5996",
+      "time": 1691011744.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5996",
+      "text": "Negative values are allowed in Doctors list count for a facility"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5995",
+      "time": 1691011532.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5995",
+      "text": "Don't allow negative values for Bed capacity in facility"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5994",
+      "time": 1691011386.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5994",
+      "text": "Negative value for bed capacity"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5877",
@@ -4952,21 +5001,43 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1505",
+      "title": "Don't allow negative values for Doctor Count for facility",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5997",
+      "title": "added negative check",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5995",
+      "title": "Don't allow negative values for Bed capacity in facility",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 11,
+      "stale_for": 28,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 264,
+      "stale_for": 281,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 264,
+      "stale_for": 281,
       "labels": []
     }
   ],
@@ -5026,10 +5097,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4815",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4816"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/4793",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/4794"
     }
   ]
 }

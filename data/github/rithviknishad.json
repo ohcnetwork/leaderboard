@@ -1,6 +1,76 @@
 {
-  "last_updated": 1691001452.0,
+  "last_updated": 1691084324.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1509",
+      "time": 1691084324.0,
+      "link": "https://github.com/coronasafe/care/pull/1509",
+      "text": "Adds pre-commit hook to ensure no migrations are missing"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5999",
+      "time": 1691071054.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5999",
+      "text": "Adds generalized validator `PhoneNumberValidator`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1508",
+      "time": 1691070830.0,
+      "link": "https://github.com/coronasafe/care/pull/1508",
+      "text": "Adds utility class validator: `PhoneNumberValidator`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1497",
+      "time": 1691070485.0,
+      "link": "https://github.com/coronasafe/care/issues/1497#issuecomment-1664017605",
+      "text": "| Field Name                              | Mobile | Landline | Support |\r\n| --------------------------------------- | ------ | -------- | ------- |\r\n| Death Report Form: Phone Number         | \u2705      | \u2705        | \u274c       |\r\n| External Result List: Search by Phone   | \u2705      | \u2705        | \u274c       |\r\n| Asset Form: Support Number              | \u2705      | \u2705        | \u2705       |\r\n| Facility Form: Emergency Contact        | \u2705      | \u2705        | \u274c       |\r\n| Patient Registration: Phone No.         | \u2705      | \u2705        | \u274c       |\r\n| Patient Registration: Emergency No.     | \u2705      | \u2705        | \u274c       |\r\n| Shifting Form: Referring Facility Phone | \u2705      | \u2705        | \u274c       |\r\n| Resource Form: Referring Facility Phone | \u2705      | \u2705        | \u274c       |\r\n| Shifting List Filter: Patient Phone     | \u2705      | \u2705        | \u274c       |\r\n| Shift Form: Ambulance Phone             | \u2705      | \u2705        | \u274c       |\r\n| User Form: Phone No.                    | \u2705      | \u2705        | \u274c       |\r\n| User Form: Whatsapp No.                 | \u2705      | \u274c        | \u274c       |\r\n| User Filter: Phone No.                  | \u2705      | \u2705        | \u274c       |\r\n| User Filter: Whatsapp No.               | \u2705      | \u274c        | \u274c       |\r\n| User Profile: Phone No.                 | \u2705      | \u2705        | \u274c       |\r\n| User Profile: Whatsapp No.              | \u2705      | \u274c        | \u274c       |"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1502",
+      "time": 1691067196.0,
+      "link": "https://github.com/coronasafe/care/pull/1502#issuecomment-1663931250",
+      "text": "@rithviknishad to add test cases"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5993",
+      "time": 1691044373.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5993",
+      "text": "Disable editing category from consultation form if a daily round exists"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1499",
+      "time": 1691041764.0,
+      "link": "https://github.com/coronasafe/care/issues/1499#issuecomment-1663328908",
+      "text": "it has got something to do with this actually\r\n\r\n<img width=\"553\" alt=\"image\" src=\"https://github.com/coronasafe/care/assets/25143503/ba30e53f-d229-412f-886c-ad4b0bab476b\">\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1496",
+      "time": 1691040418.0,
+      "link": "https://github.com/coronasafe/care/issues/1496#issuecomment-1663312721",
+      "text": "@Ashesh3 any idea on why this is happening?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1499",
+      "time": 1691037907.0,
+      "link": "https://github.com/coronasafe/care/issues/1499#issuecomment-1663282632",
+      "text": "@sainak I tried running a local pre-commit to run `./manage.py makemigrations --check --dry-run`\r\n\r\nThis works fine when running via CLI (`git commit -m ...`), but fails to run when commiting from vscode git extension. Failed to import Django."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691037666.0,
+      "title": "coronasafe/care_fe#5997",
+      "link": "https://github.com/coronasafe/care_fe/pull/5997#pullrequestreview-1560221271",
+      "text": "added negative check"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1503",
@@ -20327,6 +20397,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1509",
+      "title": "Adds pre-commit hook to ensure no migrations are missing",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5999",
+      "title": "Adds generalized validator `PhoneNumberValidator`",
+      "stale_for": 0,
+      "labels": [
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1508",
+      "title": "Adds utility class validator: `PhoneNumberValidator`",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1503",
       "title": "Optimisation: set `update_fields` for instance delete",
       "stale_for": 0,
@@ -20339,23 +20431,14 @@
       "title": "Skip validation if asset warranty date is not changed",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5993",
-      "title": "Disable editing category from consultation form if a daily round exists",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress passed"
+        "waiting-for-review",
+        "changes required"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5980",
       "title": "Replaced `moment` with `dayjs`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review",
@@ -20367,7 +20450,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "need Review"
       ]
@@ -20375,13 +20458,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "stale",
@@ -20393,13 +20476,16 @@
       "title": "enable hcx in staging",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "need Review",
-        "cypress failed"
+        "cypress failed",
+        "HCX"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5990",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5993"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5941",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
@@ -20463,10 +20549,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1400",
       "pr_link": "https://github.com/coronasafe/care/pull/1401"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5726",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5976"
     }
   ]
 }

@@ -1,6 +1,107 @@
 {
-  "last_updated": 1690998232.0,
+  "last_updated": 1691070409.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1691070409.0,
+      "title": "coronasafe/care#1506",
+      "link": "https://github.com/coronasafe/care/pull/1506#pullrequestreview-1561143048",
+      "text": "Add referred facility to discharge serializer"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1483",
+      "time": 1691069765.0,
+      "link": "https://github.com/coronasafe/care/issues/1483#issuecomment-1663998552",
+      "text": "#1475"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691068649.0,
+      "title": "coronasafe/care#1501",
+      "link": "https://github.com/coronasafe/care/pull/1501#pullrequestreview-1561081176",
+      "text": "Add missing migration for dailyround"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691068626.0,
+      "title": "coronasafe/care#1503",
+      "link": "https://github.com/coronasafe/care/pull/1503#pullrequestreview-1561080355",
+      "text": "Optimisation: set `update_fields` for instance delete"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691068597.0,
+      "title": "coronasafe/care#1505",
+      "link": "https://github.com/coronasafe/care/pull/1505#pullrequestreview-1561079369",
+      "text": "Don't allow negative values for Doctor Count for facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691068443.0,
+      "title": "coronasafe/care#1229",
+      "link": "https://github.com/coronasafe/care/pull/1229#pullrequestreview-1561041751",
+      "text": "Hcx Refactors"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691068443.0,
+      "title": "coronasafe/care#1229",
+      "link": "https://github.com/coronasafe/care/pull/1229#pullrequestreview-1561041751",
+      "text": "Hcx Refactors"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691066669.0,
+      "title": "coronasafe/care#1506",
+      "link": "https://github.com/coronasafe/care/pull/1506#pullrequestreview-1561015925",
+      "text": "Add referred facility to discharge serializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691066313.0,
+      "title": "coronasafe/care#1507",
+      "link": "https://github.com/coronasafe/care/pull/1507#pullrequestreview-1561005035",
+      "text": "Made doctor role as static attribute"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691066313.0,
+      "title": "coronasafe/care#1507",
+      "link": "https://github.com/coronasafe/care/pull/1507#pullrequestreview-1561005035",
+      "text": "Made doctor role as static attribute"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1499",
+      "time": 1691047091.0,
+      "link": "https://github.com/coronasafe/care/issues/1499#issuecomment-1663422448",
+      "text": "> > @sainak I tried running a local pre-commit to run `./manage.py makemigrations --check --dry-run`\n> > \n> > This works fine when running via CLI (`git commit -m ...`), but fails to run when commiting from vscode git extension. Failed to import Django.\n> \n> Does the vscode git command run outside the context of the current virtual environment, hence the failing import?\n\nYes precommit creates virtual env for each hook and uses that by default\nIf you want to run checks with local packages use the system type for hooks"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5868",
+      "time": 1691046904.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5868",
+      "text": "remove legacy feed components"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5868",
+      "time": 1691046904.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5868",
+      "text": "remove legacy feed components",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5989",
+      "time": 1691044418.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5989",
+      "text": "add option to manually specify regenerate summary request"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1499",
@@ -4332,45 +4433,27 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5989",
-      "title": "add option to manually specify regenerate summary request",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5868",
-      "title": "remove legacy feed components",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress passed"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 51,
+      "stale_for": 52,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 371,
+      "stale_for": 372,
       "labels": []
     }
   ],

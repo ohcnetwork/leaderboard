@@ -1,6 +1,104 @@
 {
-  "last_updated": 1690999699.0,
+  "last_updated": 1691070019.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1506",
+      "time": 1691070019.0,
+      "link": "https://github.com/coronasafe/care/pull/1506#issuecomment-1664005037",
+      "text": "> @Ashesh3 a test is failing, also add a test for when `referred_to` is given and when both `referred_to` and `referred_to_external` are given\r\n\r\nFixed and added more tests to cover `referred_to` specifically."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691069210.0,
+      "title": "coronasafe/care#1502",
+      "link": "https://github.com/coronasafe/care/pull/1502#pullrequestreview-1561100751",
+      "text": "Skip validation if asset warranty date is not changed"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5981",
+      "time": 1691049590.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5981",
+      "text": "Add weekly working hours field for users"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1495",
+      "time": 1691049361.0,
+      "link": "https://github.com/coronasafe/care/pull/1495",
+      "text": "Add weekly working hours field for users"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1496",
+      "time": 1691048089.0,
+      "link": "https://github.com/coronasafe/care/issues/1496",
+      "text": "AttributeError: 'str' object has no attribute 'get'"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1496",
+      "time": 1691048089.0,
+      "link": "https://github.com/coronasafe/care/issues/1496#issuecomment-1663443059",
+      "text": "@rithviknishad Expected error, the middleware was down, so when iterating through the status records, it was not an array of statuses, instead array of characters of the error page's html. We can ignore it for now. \r\n\r\nURL in above error: https://dev_middleware.coronasafe.live/devices/status\r\nSample working hostname: https://dev-server-2.coronasafe.live/devices/status"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5730",
+      "time": 1691046122.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#issuecomment-1663402369",
+      "text": "Waiting for backend PR: https://github.com/coronasafe/care/pull/1506"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1506",
+      "time": 1691046106.0,
+      "link": "https://github.com/coronasafe/care/pull/1506",
+      "text": "Add referred facility to discharge serializer"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691045925.0,
+      "title": "coronasafe/care_fe#5730",
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#pullrequestreview-1560364140",
+      "text": "added referred to facility field in discharge form"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5988",
+      "time": 1691044458.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5988",
+      "text": "Hide discharge file tab on patient page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1499",
+      "time": 1691041634.0,
+      "link": "https://github.com/coronasafe/care/issues/1499#issuecomment-1663327400",
+      "text": "> @sainak I tried running a local pre-commit to run `./manage.py makemigrations --check --dry-run`\r\n> \r\n> This works fine when running via CLI (`git commit -m ...`), but fails to run when commiting from vscode git extension. Failed to import Django.\r\n\r\nDoes the vscode git command run outside the context of the current virtual environment, hence the failing import?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1496",
+      "time": 1691040815.0,
+      "link": "https://github.com/coronasafe/care/issues/1496#issuecomment-1663317346",
+      "text": "Taking a look"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691036708.0,
+      "title": "coronasafe/care_fe#5730",
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#pullrequestreview-1560208910",
+      "text": "added referred to facility field in discharge form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691036706.0,
+      "title": "coronasafe/care_fe#5730",
+      "link": "https://github.com/coronasafe/care_fe/pull/5730#pullrequestreview-1560208910",
+      "text": "added referred to facility field in discharge form"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1499",
@@ -10684,6 +10782,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1506",
+      "title": "Add referred facility to discharge serializer",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1501",
       "title": "Add missing migration for dailyround",
       "stale_for": 0,
@@ -10692,37 +10798,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5988",
-      "title": "Hide discharge file tab on patient page",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "P2",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1495",
-      "title": "Add weekly working hours field for users",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5981",
-      "title": "Add weekly working hours field for users",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "waiting for back end",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 70,
+      "stale_for": 71,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10731,7 +10809,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]
@@ -10739,7 +10817,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 120,
+      "stale_for": 121,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10748,13 +10826,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 133,
+      "stale_for": 134,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "waiting-for-review"
       ]

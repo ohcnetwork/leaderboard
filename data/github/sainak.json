@@ -1,6 +1,110 @@
 {
-  "last_updated": 1691070409.0,
+  "last_updated": 1691171885.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6007",
+      "time": 1691171885.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6007",
+      "text": "Production Release; Aug Week 2",
+      "collaborated_with": [
+        "nihal467",
+        "GokulramGHV",
+        "siddnikh",
+        "khavinshankar",
+        "GeekGawd",
+        "rithviknishad",
+        "print-Sathvik",
+        "mecskyverse",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1512",
+      "time": 1691171877.0,
+      "link": "https://github.com/coronasafe/care/pull/1512",
+      "text": "Production Release; Aug Week 2",
+      "collaborated_with": [
+        "rithviknishad",
+        "siddnikh",
+        "Ashesh3",
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6006",
+      "time": 1691169083.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6006",
+      "text": "remove lodash saves 540Kb"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6004",
+      "time": 1691168817.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6004",
+      "text": "Reduce bundle size"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6003",
+      "time": 1691166094.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6003",
+      "text": "cleanup fireRequests and remove axios"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1510",
+      "time": 1691157319.0,
+      "link": "https://github.com/coronasafe/care/pull/1510",
+      "text": "fix discharge summary progress check"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691149100.0,
+      "title": "coronasafe/care#1505",
+      "link": "https://github.com/coronasafe/care/pull/1505#pullrequestreview-1562704674",
+      "text": "Don't allow negative values for Doctor Count for facility"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1510",
+      "time": 1691146724.0,
+      "link": "https://github.com/coronasafe/care/pull/1510",
+      "text": "update pre-commit to check pending migrations"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1501",
+      "time": 1691133937.0,
+      "link": "https://github.com/coronasafe/care/pull/1501",
+      "text": "Add missing migration for dailyround",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1509",
+      "time": 1691127323.0,
+      "link": "https://github.com/coronasafe/care/pull/1509#issuecomment-1665038008",
+      "text": "Tests failing as expected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691127274.0,
+      "title": "coronasafe/care#1509",
+      "link": "https://github.com/coronasafe/care/pull/1509#pullrequestreview-1562199439",
+      "text": "Adds pre-commit hook and CI step in test to ensure no migrations are missing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1505",
+      "time": 1691126897.0,
+      "link": "https://github.com/coronasafe/care/pull/1505#issuecomment-1665033147",
+      "text": "> No migrations????\r\n\r\nyes migrations will be required"
+    },
     {
       "type": "pr_reviewed",
       "time": 1691070409.0,
@@ -4433,27 +4537,35 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6003",
+      "title": "cleanup fireRequests and remove axios",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 52,
+      "stale_for": 53,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 372,
+      "stale_for": 373,
       "labels": []
     }
   ],

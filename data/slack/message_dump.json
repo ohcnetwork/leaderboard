@@ -70424,5 +70424,329 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-08-04 00:00:00": []
+    "2023-08-04 00:00:00": [
+        {
+            "client_msg_id": "11609410-3d35-4a64-af71-a61ab8c94978",
+            "type": "message",
+            "text": "*EOD 04/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 Renamed `created_by_local_user` field\n\u2022 Added tests for the same",
+            "user": "U05998LB73N",
+            "ts": "1691163715.137339",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "d/ra",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 04/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Renamed "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "created_by_local_user",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " field"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added tests for the same"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "88308f84-41bf-4254-a127-e55534d2181b",
+            "type": "message",
+            "text": "*EOD 04/08/2023 <!subteam^S035L5S02RF|@care_engineering>*\n\n*How did the day go?*\n\n\u2022 <https://github.com/coronasafe/care_fe/pull/6000|#6000> Fix Price Type Error\n\u2022 <https://github.com/coronasafe/care/pull/1477|#1477> Fix test cases for facility module \n\u2022 Work on HCX Claim module",
+            "user": "U05F10YU083",
+            "ts": "1691158303.569509",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Ngxk",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 04/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6000",
+                                            "text": "#6000",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Fix Price Type Error"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1477",
+                                            "text": "#1477",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Fix test cases for facility module "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on HCX Claim module"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1691141141,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6000",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6000 Fix Price Type Error",
+                    "title": "#6000 Fix Price Type Error",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6000",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1690437586,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care/pull/1477",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#1477 Add List and Detail Serializer to Facility module",
+                    "title": "#1477 Add List and Detail Serializer to Facility module",
+                    "title_link": "https://github.com/coronasafe/care/pull/1477",
+                    "footer": "<https://github.com/coronasafe/care|coronasafe/care>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "fdf8b557-56f1-4c95-86db-a97c354251cc",
+            "type": "message",
+            "text": "*EOD 04/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 <https://github.com/coronasafe/care/pull/1509|#1509> Added check missing migration in Test CI too\n\u2022 <https://github.com/coronasafe/care_fe/pull/6002|#6002> Minor fix from a potential mishandled conflict in fixing overflow of non waveform data in patient vitals.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1691153018.584589",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "sTY",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 04/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1509",
+                                            "text": "#1509",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Added check missing migration in Test CI too"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6002",
+                                            "text": "#6002",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Minor fix from a potential mishandled conflict in fixing overflow of non waveform data in patient vitals."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-05 00:00:00": []
 }

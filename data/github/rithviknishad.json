@@ -1,6 +1,96 @@
 {
-  "last_updated": 1691084324.0,
+  "last_updated": 1691171885.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6007",
+      "time": 1691171885.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6007",
+      "text": "Production Release; Aug Week 2",
+      "collaborated_with": [
+        "nihal467",
+        "GokulramGHV",
+        "siddnikh",
+        "sainak",
+        "khavinshankar",
+        "GeekGawd",
+        "print-Sathvik",
+        "mecskyverse",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1512",
+      "time": 1691171877.0,
+      "link": "https://github.com/coronasafe/care/pull/1512",
+      "text": "Production Release; Aug Week 2",
+      "collaborated_with": [
+        "siddnikh",
+        "sainak",
+        "Ashesh3",
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6002",
+      "time": 1691158488.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6002",
+      "text": "Fix vitals non-waveform content overflow"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6002",
+      "time": 1691151864.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6002",
+      "text": "Fix vitals non-waveform content overflow"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691147933.0,
+      "title": "coronasafe/care#1510",
+      "link": "https://github.com/coronasafe/care/pull/1510#pullrequestreview-1562677813",
+      "text": "fix discharge summary progress check"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1505",
+      "time": 1691136017.0,
+      "link": "https://github.com/coronasafe/care/pull/1505#issuecomment-1665182739",
+      "text": "@Pranshu1902 rebase and then make migrations"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1509",
+      "time": 1691135293.0,
+      "link": "https://github.com/coronasafe/care/pull/1509",
+      "text": "Adds pre-commit hook and CI step in test to ensure no migrations are missing"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1509",
+      "time": 1691135293.0,
+      "link": "https://github.com/coronasafe/care/pull/1509",
+      "text": "Adds pre-commit hook and CI step in test to ensure no migrations are missing",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1509",
+      "time": 1691125978.0,
+      "link": "https://github.com/coronasafe/care/pull/1509#issuecomment-1665002649",
+      "text": "Tests CI should pass once #1501 is merged."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691121999.0,
+      "title": "coronasafe/care#1505",
+      "link": "https://github.com/coronasafe/care/pull/1505#pullrequestreview-1562142717",
+      "text": "Don't allow negative values for Doctor Count for facility"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1509",
@@ -20397,17 +20487,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1509",
-      "title": "Adds pre-commit hook to ensure no migrations are missing",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5999",
       "title": "Adds generalized validator `PhoneNumberValidator`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "cypress passed"
       ]
@@ -20415,13 +20497,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1508",
       "title": "Adds utility class validator: `PhoneNumberValidator`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1503",
       "title": "Optimisation: set `update_fields` for instance delete",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -20429,7 +20511,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1502",
       "title": "Skip validation if asset warranty date is not changed",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review",
         "changes required"
@@ -20438,7 +20520,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5980",
       "title": "Replaced `moment` with `dayjs`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "need Review",
@@ -20450,7 +20532,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "need Review"
       ]
@@ -20458,13 +20540,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5681",
       "title": "HCX Communication",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "merge conflict",
         "stale",
@@ -20474,7 +20556,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "cypress failed",
         "HCX"

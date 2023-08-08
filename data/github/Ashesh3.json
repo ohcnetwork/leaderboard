@@ -1,6 +1,121 @@
 {
-  "last_updated": 1691232032.0,
+  "last_updated": 1691429683.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1691429683.0,
+      "title": "coronasafe/care#1508",
+      "link": "https://github.com/coronasafe/care/pull/1508#pullrequestreview-1565853894",
+      "text": "Adds utility class validator: `PhoneNumberValidator`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691428938.0,
+      "title": "coronasafe/care#1502",
+      "link": "https://github.com/coronasafe/care/pull/1502#pullrequestreview-1565836808",
+      "text": "Skip validation if asset warranty date is not changed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691428323.0,
+      "title": "coronasafe/care#1519",
+      "link": "https://github.com/coronasafe/care/pull/1519#pullrequestreview-1565819401",
+      "text": "Pop `death_datetime` and `death_confirmed_doctor` if discharge reason other than EXPIRED"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691428275.0,
+      "title": "coronasafe/care#1508",
+      "link": "https://github.com/coronasafe/care/pull/1508#pullrequestreview-1565818203",
+      "text": "Adds utility class validator: `PhoneNumberValidator`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691428275.0,
+      "title": "coronasafe/care#1508",
+      "link": "https://github.com/coronasafe/care/pull/1508#pullrequestreview-1565818203",
+      "text": "Adds utility class validator: `PhoneNumberValidator`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691428093.0,
+      "title": "coronasafe/care#1517",
+      "link": "https://github.com/coronasafe/care/pull/1517#pullrequestreview-1565814479",
+      "text": "Removes pre-commit missing migrations check"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6009",
+      "time": 1691419711.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6009#issuecomment-1668011972",
+      "text": "The decision to implement the SlideOver component was made in order to maintain consistency with the user interface of the other buttons on the User Info card. The Skills and Linked Facilities buttons both utilize the SlideOver component, and it was considered to provide a similar user experience for all buttons. While this may be a low priority issue, it is open for discussion!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691417036.0,
+      "title": "coronasafe/care#1515",
+      "link": "https://github.com/coronasafe/care/pull/1515#pullrequestreview-1565404516",
+      "text": "track abha numbers created by care"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6019",
+      "time": 1691409741.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6019",
+      "text": "Production Release; Plausible Events",
+      "collaborated_with": [
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6017",
+      "time": 1691407584.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6017",
+      "text": "Change goal names for plausible tracking"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6017",
+      "time": 1691405697.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6017",
+      "text": "Change goal names for plausible tracking"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691397161.0,
+      "title": "coronasafe/care_fe#6012",
+      "link": "https://github.com/coronasafe/care_fe/pull/6012#pullrequestreview-1564826578",
+      "text": "Adds loading animation before loading js and css"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6013",
+      "time": 1691396844.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6013",
+      "text": "Add plausible goals to track user actions"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6013",
+      "time": 1691396617.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6013",
+      "text": "Add plausible goals to track user actions"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691387394.0,
+      "title": "coronasafe/care#1503",
+      "link": "https://github.com/coronasafe/care/pull/1503#pullrequestreview-1564590943",
+      "text": "Optimisation: set `update_fields` for instance delete"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5956",
+      "time": 1691384045.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5956#issuecomment-1667184524",
+      "text": "> Discussed with Gigin. Needed clarity on what are the requirements for the dashboard out of this.\r\n> \r\n> CARE must be able to send information on\r\n> \r\n> 1. How many individual doctors\r\n> 2. whats the actual resource available taking into account % availability?\r\n> \r\n> Eg: If a hospital has the following doctors: Doc 1: 100% Doc 2: 50% Doc 3: 50%\r\n> \r\n> Metabase must be able to gain data on\r\n> \r\n> 1. No. of individual doctors- 3\r\n> 2. No. of resource (doctor) available: 2 (1+0.5+0.5)\r\n> \r\n> @Ashesh3 please deploy in a manner that allows metabase to get this info\r\n\r\nRequirements changed after discussion with Gigin,\r\n\r\n- We are adding a weekly working hours field for all the users on the platform.\r\n- This information is to be processed through Metabase to show the data in the format mentioned originally in the issue."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/metabase_manager#2",
@@ -10853,7 +10968,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1506",
       "title": "Add referred facility to discharge serializer",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -10861,7 +10976,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 73,
+      "stale_for": 75,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -10870,7 +10985,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 11,
+      "stale_for": 13,
       "labels": [
         "waiting-for-review"
       ]
@@ -10878,7 +10993,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 123,
+      "stale_for": 125,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -10887,13 +11002,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 136,
+      "stale_for": 138,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 12,
+      "stale_for": 14,
       "labels": [
         "waiting-for-review"
       ]

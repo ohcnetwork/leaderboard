@@ -1,6 +1,83 @@
 {
-  "last_updated": 1691171885.0,
+  "last_updated": 1691431561.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6023",
+      "time": 1691431561.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6023",
+      "text": "use proper tailwind classes and remove safelist for tailwind classes saves 7.6Mb"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691429595.0,
+      "title": "coronasafe/care#1508",
+      "link": "https://github.com/coronasafe/care/pull/1508#pullrequestreview-1565852100",
+      "text": "Adds utility class validator: `PhoneNumberValidator`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1519",
+      "time": 1691426419.0,
+      "link": "https://github.com/coronasafe/care/pull/1519",
+      "text": "Pop `death_datetime` and `death_confirmed_doctor` if discharge reason other than EXPIRED"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691417028.0,
+      "title": "coronasafe/care#1515",
+      "link": "https://github.com/coronasafe/care/pull/1515#pullrequestreview-1565404215",
+      "text": "track abha numbers created by care"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1517",
+      "time": 1691412592.0,
+      "link": "https://github.com/coronasafe/care/pull/1517",
+      "text": "Removes pre-commit missing migrations check"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1516",
+      "time": 1691412470.0,
+      "link": "https://github.com/coronasafe/care/issues/1516",
+      "text": "Pre-commit migrations check doesn't work with docker based setups"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1514",
+      "time": 1691399515.0,
+      "link": "https://github.com/coronasafe/care/issues/1514",
+      "text": "`death_datetime` is being accepted even if patient is not expired."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1513",
+      "time": 1691399434.0,
+      "link": "https://github.com/coronasafe/care/issues/1513",
+      "text": "Tes"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6012",
+      "time": 1691395809.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6012",
+      "text": "Adds loading animation before loading js and css"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691394358.0,
+      "title": "coronasafe/care_fe#6010",
+      "link": "https://github.com/coronasafe/care_fe/pull/6010#pullrequestreview-1564746897",
+      "text": "#6008: Made the \"Update\" buttons full width"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6004",
+      "time": 1691384991.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6004#issuecomment-1667194890",
+      "text": "Just putting this here (before these are replaced/uninstalled)\r\n\r\n<img width=\"1822\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/3087ab7c-25b7-4e3d-a27d-3fa67d2c0c03\">\r\n"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6007",
@@ -20487,34 +20564,63 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1519",
+      "title": "Pop `death_datetime` and `death_confirmed_doctor` if discharge reason other than EXPIRED",
+      "stale_for": 0,
+      "labels": [
+        "P1",
+        "reviewed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1517",
+      "title": "Removes pre-commit missing migrations check",
+      "stale_for": 0,
+      "labels": [
+        "reviewed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6012",
+      "title": "Adds loading animation before loading js and css",
+      "stale_for": 0,
+      "labels": [
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5999",
       "title": "Adds generalized validator `PhoneNumberValidator`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
+        "needs testing",
+        "Backend",
+        "FrontEnd",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1508",
       "title": "Adds utility class validator: `PhoneNumberValidator`",
-      "stale_for": 1,
-      "labels": []
+      "stale_for": 0,
+      "labels": [
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1503",
       "title": "Optimisation: set `update_fields` for instance delete",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1502",
       "title": "Skip validation if asset warranty date is not changed",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review",
-        "changes required"
+        "reviewed"
       ]
     },
     {
@@ -20524,7 +20630,6 @@
       "labels": [
         "needs testing",
         "need Review",
-        "merge conflict",
         "Major Code Change",
         "cypress failed"
       ]
@@ -20532,7 +20637,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 22,
+      "stale_for": 25,
       "labels": [
         "need Review"
       ]
@@ -20540,23 +20645,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 4,
+      "stale_for": 7,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5681",
-      "title": "HCX Communication",
-      "stale_for": 5,
-      "labels": [
-        "merge conflict",
-        "stale",
-        "cypress failed"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": [
         "cypress failed",
         "HCX"

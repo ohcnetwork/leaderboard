@@ -1,6 +1,55 @@
 {
-  "last_updated": 1691171885.0,
+  "last_updated": 1691430873.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1691430873.0,
+      "title": "coronasafe/care#1502",
+      "link": "https://github.com/coronasafe/care/pull/1502#pullrequestreview-1565888197",
+      "text": "Skip validation if asset warranty date is not changed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691427479.0,
+      "title": "coronasafe/care#1507",
+      "link": "https://github.com/coronasafe/care/pull/1507#pullrequestreview-1565798987",
+      "text": "Made doctor role as static attribute"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691427344.0,
+      "title": "coronasafe/care#1517",
+      "link": "https://github.com/coronasafe/care/pull/1517#pullrequestreview-1565795328",
+      "text": "Removes pre-commit missing migrations check"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691427323.0,
+      "title": "coronasafe/care#1508",
+      "link": "https://github.com/coronasafe/care/pull/1508#pullrequestreview-1565794904",
+      "text": "Adds utility class validator: `PhoneNumberValidator`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691427272.0,
+      "title": "coronasafe/care#1519",
+      "link": "https://github.com/coronasafe/care/pull/1519#pullrequestreview-1565793771",
+      "text": "Pop `death_datetime` and `death_confirmed_doctor` if discharge reason other than EXPIRED"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691425561.0,
+      "title": "coronasafe/care#1515",
+      "link": "https://github.com/coronasafe/care/pull/1515#pullrequestreview-1565745307",
+      "text": "track abha numbers created by care"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#79",
+      "time": 1691390258.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/79",
+      "text": "Create LICENSE"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6007",
@@ -4537,9 +4586,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/79",
+      "title": "Create LICENSE",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "cypress failed"
       ]
@@ -4547,25 +4602,25 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 15,
+      "stale_for": 18,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 15,
+      "stale_for": 18,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 53,
+      "stale_for": 56,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 373,
+      "stale_for": 376,
       "labels": []
     }
   ],

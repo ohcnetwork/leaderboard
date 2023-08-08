@@ -17801,5 +17801,240 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-08-07 00:00:00": [
+        {
+            "client_msg_id": "77a40710-a45c-4608-8bac-1fca68f00105",
+            "type": "message",
+            "text": "*EOD 07/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 <https://github.com/coronasafe/care/pull/1517|#1517>: Removed pre-commit to check missing migrations, preserve CI only to check for missing migrations\n\u2022 <https://github.com/coronasafe/care/pull/1519|#1519>: Pop `death_datetime` and `death_confirmed_doctor` if discharge reason other than EXPIRED\n\u2022 <https://github.com/coronasafe/care/pull/1508|#1508>: Followed up on having stricter phone number validations based on review\n\u2022 <https://github.com/coronasafe/care/pull/1502|#1502>: Refactored code to make it readable and added tests for Skipping validation if asset warranty date is not changed\n\u2022 <https://github.com/coronasafe/care_fe/pull/5980|#5980>: Fixed merge conflicts and an issue where some pages crashed where momentjs was replaced with dayjs\n\u2022 <https://github.com/coronasafe/care_fe/pull/6012|#6012>: Tried showing care loader to show while index.js is being fetched. But it still seems to be showing up after index.js is loaded only.\n\u2022 <https://github.com/coronasafe/ayushma_fe/pull/78|ayushma_fe#78>: Debugged issue with chatbot having issues with tailwind class names not being transpiled.\n*What's next?*\n\n\u2022 work on: \"use proper tailwind classes and remove safelist for tailwind classes saves 7.6Mb\" part of EPIC <https://github.com/coronasafe/care_fe/issues/6004|care_fe#6004>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1691430619.763159",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "UJm",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1517",
+                                            "text": "#1517",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Removed pre-commit to check missing migrations, preserve CI only to check for missing migrations"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1519",
+                                            "text": "#1519",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Pop "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "death_datetime",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "death_confirmed_doctor",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " if discharge reason other than EXPIRED"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1508",
+                                            "text": "#1508",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Followed up on having stricter phone number validations based on review"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1502",
+                                            "text": "#1502",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Refactored code to make it readable and added tests for Skipping validation if asset warranty date is not changed"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5980",
+                                            "text": "#5980",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixed merge conflicts and an issue where some pages crashed where momentjs was replaced with dayjs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6012",
+                                            "text": "#6012",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Tried showing care loader to show while index.js is being fetched. But it still seems to be showing up after index.js is loaded only."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/ayushma_fe/pull/78",
+                                            "text": "ayushma_fe#78"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Debugged issue with chatbot having issues with tailwind class names not being transpiled."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "work on: \"use proper tailwind classes and remove safelist for tailwind classes saves 7.6Mb\" part of EPIC "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6004",
+                                            "text": "care_fe#6004"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

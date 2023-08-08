@@ -70750,5 +70750,458 @@
     ],
     "2023-08-05 00:00:00": [],
     "2023-08-06 00:00:00": [],
-    "2023-08-07 00:00:00": []
+    "2023-08-07 00:00:00": [
+        {
+            "client_msg_id": "77a40710-a45c-4608-8bac-1fca68f00105",
+            "type": "message",
+            "text": "*EOD 07/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 <https://github.com/coronasafe/care/pull/1517|#1517>: Removed pre-commit to check missing migrations, preserve CI only to check for missing migrations\n\u2022 <https://github.com/coronasafe/care/pull/1519|#1519>: Pop `death_datetime` and `death_confirmed_doctor` if discharge reason other than EXPIRED\n\u2022 <https://github.com/coronasafe/care/pull/1508|#1508>: Followed up on having stricter phone number validations based on review\n\u2022 <https://github.com/coronasafe/care/pull/1502|#1502>: Refactored code to make it readable and added tests for Skipping validation if asset warranty date is not changed\n\u2022 <https://github.com/coronasafe/care_fe/pull/5980|#5980>: Fixed merge conflicts and an issue where some pages crashed where momentjs was replaced with dayjs\n\u2022 <https://github.com/coronasafe/care_fe/pull/6012|#6012>: Tried showing care loader to show while index.js is being fetched. But it still seems to be showing up after index.js is loaded only.\n\u2022 <https://github.com/coronasafe/ayushma_fe/pull/78|ayushma_fe#78>: Debugged issue with chatbot having issues with tailwind class names not being transpiled.\n*What's next?*\n\n\u2022 work on: \"use proper tailwind classes and remove safelist for tailwind classes saves 7.6Mb\" part of EPIC <https://github.com/coronasafe/care_fe/issues/6004|care_fe#6004>",
+            "user": "U02TDGQQPMJ",
+            "ts": "1691430619.763159",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "UJm",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1517",
+                                            "text": "#1517",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Removed pre-commit to check missing migrations, preserve CI only to check for missing migrations"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1519",
+                                            "text": "#1519",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Pop "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "death_datetime",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "death_confirmed_doctor",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " if discharge reason other than EXPIRED"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1508",
+                                            "text": "#1508",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Followed up on having stricter phone number validations based on review"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1502",
+                                            "text": "#1502",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Refactored code to make it readable and added tests for Skipping validation if asset warranty date is not changed"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/5980",
+                                            "text": "#5980",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixed merge conflicts and an issue where some pages crashed where momentjs was replaced with dayjs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6012",
+                                            "text": "#6012",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Tried showing care loader to show while index.js is being fetched. But it still seems to be showing up after index.js is loaded only."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/ayushma_fe/pull/78",
+                                            "text": "ayushma_fe#78"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Debugged issue with chatbot having issues with tailwind class names not being transpiled."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "work on: \"use proper tailwind classes and remove safelist for tailwind classes saves 7.6Mb\" part of EPIC "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6004",
+                                            "text": "care_fe#6004"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "e0e3e0e2-28bf-45af-9cbf-0801ac9e5ba7",
+            "type": "message",
+            "text": "EOD 07/08/23\n\nWorking on changes suggested to my earlier PR on Ayushma.\n\nWorked on pupilfirst's course.\n\nWorked on a college project.",
+            "user": "U0526V7EL2G",
+            "ts": "1691427098.667609",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "7i4Jl",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/08/23\n\nWorking on changes suggested to my earlier PR on Ayushma.\n\nWorked on pupilfirst's course.\n\nWorked on a college project."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "cdddcc23-0192-4f63-8ac0-3ee28da565e2",
+            "type": "message",
+            "text": "EOD 07/08/2023\n\nHow did the day go?\n\u2022 Started working on issue 71 on ayushma_fe",
+            "user": "U051Q1RP1MG",
+            "ts": "1691411194.702949",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "kHu6",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/08/2023\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Started working on issue 71 on ayushma_fe"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "7ec36cef-4ee1-4f52-a84f-bd0b223ee04a",
+            "type": "message",
+            "text": "<!subteam^S035L5S02RF|@care_engineering> \nEOD 04/08/2023\n\n\u2022   Worked on issue #2091 (hub monitoring screen)\n\u2022   Made a PR #6005\n\nEOD 07/08/2023\n\n\u2022   Made a PR #6011 for issue #5891\n\u2022   Made a PR #6018 for issue #2549",
+            "user": "U051V5ERZUJ",
+            "ts": "1691410233.006919",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Gcp",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " \nEOD 04/08/2023\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "  Worked on issue #2091 (hub monitoring screen)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "  Made a PR #6005"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n\nEOD 07/08/2023\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "  Made a PR #6011 for issue #5891"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "  Made a PR #6018 for issue #2549"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U051V5ERZUJ",
+                "ts": "1691410261.000000"
+            }
+        },
+        {
+            "client_msg_id": "d7e9e9ce-5593-41a1-85a1-2a6df01fa768",
+            "type": "message",
+            "text": "EOD 05-08-2023\nWorked on issue 5948",
+            "user": "U052CV9HBR6",
+            "ts": "1691387918.331249",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "fwL1h",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 05-08-2023\nWorked on issue 5948"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "b1edb002-62be-4d1f-978d-ff6b77b4dc05",
+            "type": "message",
+            "text": "<!subteam^S054S77KR6E|@gdc_students> Missing your EOD Updates",
+            "user": "UV5PPBE2D",
+            "ts": "1691386605.853919",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "DIK",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S054S77KR6E"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " Missing your EOD Updates"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-08 00:00:00": []
 }

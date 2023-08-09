@@ -1,6 +1,187 @@
 {
-  "last_updated": 1691431561.0,
+  "last_updated": 1691521635.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1691521635.0,
+      "title": "coronasafe/care#1093",
+      "link": "https://github.com/coronasafe/care/pull/1093#pullrequestreview-1567959116",
+      "text": "Added is_occupied field in Bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691521410.0,
+      "title": "coronasafe/care#1093",
+      "link": "https://github.com/coronasafe/care/pull/1093#pullrequestreview-1567947204",
+      "text": "Added is_occupied field in Bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691521410.0,
+      "title": "coronasafe/care#1093",
+      "link": "https://github.com/coronasafe/care/pull/1093#pullrequestreview-1567947204",
+      "text": "Added is_occupied field in Bed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691520355.0,
+      "title": "coronasafe/care#1260",
+      "link": "https://github.com/coronasafe/care/pull/1260#pullrequestreview-1567928175",
+      "text": "fix: added recommend_discharge as action"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1521",
+      "time": 1691520222.0,
+      "link": "https://github.com/coronasafe/care/pull/1521",
+      "text": "adds missing merge migrations"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1521",
+      "time": 1691520122.0,
+      "link": "https://github.com/coronasafe/care/pull/1521",
+      "text": "adds missing merge migrations"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1508",
+      "time": 1691519361.0,
+      "link": "https://github.com/coronasafe/care/pull/1508",
+      "text": "Adds utility class validator: `PhoneNumberValidator`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1502",
+      "time": 1691519204.0,
+      "link": "https://github.com/coronasafe/care/pull/1502",
+      "text": "Skip validation if asset warranty date is not changed"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1503",
+      "time": 1691518978.0,
+      "link": "https://github.com/coronasafe/care/pull/1503",
+      "text": "Optimisation: set `update_fields` for instance delete"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1503",
+      "time": 1691518978.0,
+      "link": "https://github.com/coronasafe/care/pull/1503",
+      "text": "Optimisation: set `update_fields` for instance delete",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1517",
+      "time": 1691518711.0,
+      "link": "https://github.com/coronasafe/care/pull/1517",
+      "text": "Removes pre-commit missing migrations check"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1519",
+      "time": 1691518672.0,
+      "link": "https://github.com/coronasafe/care/pull/1519",
+      "text": "Pop `death_datetime` and `death_confirmed_doctor` if discharge reason other than EXPIRED"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6028",
+      "time": 1691516564.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6028",
+      "text": "README: Update staging creds"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5999",
+      "time": 1691508466.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5999",
+      "text": "Adds generalized validator `PhoneNumberValidator`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5353",
+      "time": 1691505671.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5353#issuecomment-1669756426",
+      "text": "As per discussions, \r\n\r\nWe could add a DateTime Field to specify when it is to be re-continued.\r\n\r\nHowever, moved to the wishlist until we build more depth on this.\r\n\r\ncc: @aparnacoronasafe "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6012",
+      "time": 1691498365.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6012#issuecomment-1669534922",
+      "text": "@sainak Now the problem is, since the index.css comes later the following screens are in the following sequence:\r\n\r\nFirst: shows loader\r\nSecond: shows care app (unstyled)\r\nThird: shows expected care app\r\n\r\nHere's the screenshot of second:\r\n<img width=\"1822\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/0116d0d6-129c-4658-9c2b-f064067a450b\">\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6018",
+      "time": 1691494721.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6018#issuecomment-1669450375",
+      "text": "because the inventory summary viewset does not seem to show the configured min. quantity and instead just shows whether stock is low or not."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691494638.0,
+      "title": "coronasafe/care_fe#6018",
+      "link": "https://github.com/coronasafe/care_fe/pull/6018#pullrequestreview-1567099107",
+      "text": "Added min quantity column in inventoryList component"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691493598.0,
+      "title": "coronasafe/care_fe#6026",
+      "link": "https://github.com/coronasafe/care_fe/pull/6026#pullrequestreview-1567072936",
+      "text": "Autoformat typed dates in DateInput"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6027",
+      "time": 1691492335.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6027",
+      "text": "Phone validation errors are not being shown in filters"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5980",
+      "time": 1691487558.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5980",
+      "text": "Replaced `moment` with `dayjs`"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5980",
+      "time": 1691487558.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5980",
+      "text": "Replaced `moment` with `dayjs`",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691475261.0,
+      "title": "coronasafe/care_fe#6025",
+      "link": "https://github.com/coronasafe/care_fe/pull/6025#pullrequestreview-1566542154",
+      "text": "fix no data issue in notice borad on hard reload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691471290.0,
+      "title": "coronasafe/care_fe#6025",
+      "link": "https://github.com/coronasafe/care_fe/pull/6025#pullrequestreview-1566475286",
+      "text": "fix no data issue in notice borad on hard reload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691471290.0,
+      "title": "coronasafe/care_fe#6025",
+      "link": "https://github.com/coronasafe/care_fe/pull/6025#pullrequestreview-1566475286",
+      "text": "fix no data issue in notice borad on hard reload"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6023",
@@ -20564,20 +20745,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1519",
-      "title": "Pop `death_datetime` and `death_confirmed_doctor` if discharge reason other than EXPIRED",
+      "link": "https://github.com/coronasafe/care_fe/pull/6028",
+      "title": "README: Update staging creds",
       "stale_for": 0,
       "labels": [
-        "P1",
-        "reviewed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1517",
-      "title": "Removes pre-commit missing migrations check",
-      "stale_for": 0,
-      "labels": [
-        "reviewed"
+        "need Review",
+        "cypress failed"
       ]
     },
     {
@@ -20589,55 +20762,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/5999",
-      "title": "Adds generalized validator `PhoneNumberValidator`",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "Backend",
-        "FrontEnd",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1508",
-      "title": "Adds utility class validator: `PhoneNumberValidator`",
-      "stale_for": 0,
-      "labels": [
-        "reviewed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1503",
-      "title": "Optimisation: set `update_fields` for instance delete",
-      "stale_for": 0,
-      "labels": [
-        "reviewed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1502",
-      "title": "Skip validation if asset warranty date is not changed",
-      "stale_for": 0,
-      "labels": [
-        "reviewed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5980",
-      "title": "Replaced `moment` with `dayjs`",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "need Review",
-        "Major Code Change",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 25,
+      "stale_for": 26,
       "labels": [
         "need Review"
       ]
@@ -20645,13 +20772,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "cypress failed",
         "HCX"
@@ -20660,8 +20787,28 @@
   ],
   "authored_issue_and_pr": [
     {
+      "issue_link": "https://github.com/coronasafe/care/issues/1516",
+      "pr_link": "https://github.com/coronasafe/care/pull/1517"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1514",
+      "pr_link": "https://github.com/coronasafe/care/pull/1519"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1497",
+      "pr_link": "https://github.com/coronasafe/care/pull/1508"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1497",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5999"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5990",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5993"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5977",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5980"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5941",
@@ -20710,22 +20857,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5762",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5763"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5758",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5759"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5748",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5750"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5739",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5740"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1400",
-      "pr_link": "https://github.com/coronasafe/care/pull/1401"
     }
   ]
 }

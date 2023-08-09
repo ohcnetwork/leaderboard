@@ -1,6 +1,118 @@
 {
-  "last_updated": 1691411009.0,
+  "last_updated": 1691518781.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1515",
+      "time": 1691518781.0,
+      "link": "https://github.com/coronasafe/care/pull/1515",
+      "text": "track abha numbers created by care"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6008",
+      "time": 1691508541.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6008",
+      "text": "Save/Update Doctor Type Button not full width in mobile view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691508525.0,
+      "title": "coronasafe/care_fe#6010",
+      "link": "https://github.com/coronasafe/care_fe/pull/6010#pullrequestreview-1567578440",
+      "text": "#6008: Made the \"Update\" buttons full width"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691508458.0,
+      "title": "coronasafe/care_fe#5999",
+      "link": "https://github.com/coronasafe/care_fe/pull/5999#pullrequestreview-1567576252",
+      "text": "Adds generalized validator `PhoneNumberValidator`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6016",
+      "time": 1691508374.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6016",
+      "text": "Improve format in date field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691508366.0,
+      "title": "coronasafe/care_fe#6026",
+      "link": "https://github.com/coronasafe/care_fe/pull/6026#pullrequestreview-1567573141",
+      "text": "Autoformat typed dates in DateInput"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5977",
+      "time": 1691487559.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5977",
+      "text": "Phase out `moment` package"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691487540.0,
+      "title": "coronasafe/care_fe#5980",
+      "link": "https://github.com/coronasafe/care_fe/pull/5980#pullrequestreview-1566908448",
+      "text": "Replaced `moment` with `dayjs`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5891",
+      "time": 1691476713.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5891",
+      "text": "In the medicines tab time tooltip is not visible in mobile devices"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691475488.0,
+      "title": "coronasafe/care_fe#6011",
+      "link": "https://github.com/coronasafe/care_fe/pull/6011#pullrequestreview-1566546337",
+      "text": "fixed tooltip visibility in mobile view"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691472107.0,
+      "title": "coronasafe/care_fe#6025",
+      "link": "https://github.com/coronasafe/care_fe/pull/6025#pullrequestreview-1566490397",
+      "text": "fix no data issue in notice borad on hard reload"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5994",
+      "time": 1691470945.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5994",
+      "text": "Negative value for bed capacity"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691470931.0,
+      "title": "coronasafe/care_fe#5995",
+      "link": "https://github.com/coronasafe/care_fe/pull/5995#pullrequestreview-1566474947",
+      "text": "Don't allow negative values for Bed capacity in facility"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5996",
+      "time": 1691470914.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5996",
+      "text": "Negative values are allowed in Doctors list count for a facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691470868.0,
+      "title": "coronasafe/care_fe#5997",
+      "link": "https://github.com/coronasafe/care_fe/pull/5997#pullrequestreview-1566474107",
+      "text": "added negative doctor count check for facility "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6025",
+      "time": 1691469479.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6025",
+      "text": "fix no data issue in notice borad on hard reload"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1515",
@@ -20978,24 +21090,24 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1515",
-      "title": "track abha numbers created by care",
+      "link": "https://github.com/coronasafe/care_fe/pull/6025",
+      "title": "fix no data issue in notice borad on hard reload",
       "stale_for": 0,
       "labels": [
-        "P1",
-        "reviewed"
+        "tested",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1446",
       "title": "Fix issues with HCX",
-      "stale_for": 28,
+      "stale_for": 29,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/54",
       "title": "Added UI for feedback",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "needs testing"
       ]
@@ -21003,25 +21115,25 @@
     {
       "link": "https://github.com/coronasafe/ayushma/pull/194",
       "title": "Added feedback ",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 170,
+      "stale_for": 171,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -21031,21 +21143,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 241,
+      "stale_for": 242,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1106",
-      "title": "Resize facility cover image before upload",
-      "stale_for": 33,
-      "labels": [
-        "changes required"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 270,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -21053,25 +21157,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 598,
+      "stale_for": 599,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 604,
+      "stale_for": 605,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 605,
+      "stale_for": 606,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 800,
+      "stale_for": 801,
       "labels": []
     }
   ],

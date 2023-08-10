@@ -71335,5 +71335,520 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-08-09 00:00:00": []
+    "2023-08-09 00:00:00": [
+        {
+            "client_msg_id": "786cdfb5-4479-4d22-a918-3be598332299",
+            "type": "message",
+            "text": "*EOD 09/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 <https://github.com/coronasafe/care_fe/pull/6036|#6036>: Added dynamic aspect ratio for CNS vitals monitor too\n\u2022 <https://github.com/coronasafe/care_fe/pull/6034|#6034>: Added type safety for `CareIcon` icon names\n    \u25e6 Also refactored codebase to remove string interpolated tailwind classnames\n    \u25e6 Removed tailwind safelist, thus reducing index.css file size by 95%\n\u2022 <https://github.com/coronasafe/care_fe/pull/6037|#6037>: Removed 2 unused packages.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6031|#6031> &amp; <https://github.com/coronasafe/care_fe/pull/6032|#6032>: Reverted a commit that had unnecessary API response JSON dumps for cypress tests to solve something simple.\n\u2022 Reviewed couple of backend PRs\n*What's next?*\n\n\u2022 Look into ayushma chatbot component as package having issues with rollup.\n\u2022 Start working on replacing `react-redux` ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1691598706.574469",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "SJuxz",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 09/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6036",
+                                            "text": "#6036",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Added dynamic aspect ratio for CNS vitals monitor too"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6034",
+                                            "text": "#6034",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Added type safety for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "CareIcon",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " icon names"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Also refactored codebase to remove string interpolated tailwind classnames"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Removed tailwind safelist, thus reducing index.css file size by 95%"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 1,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6037",
+                                            "text": "#6037",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Removed 2 unused packages."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6031",
+                                            "text": "#6031",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " & "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6032",
+                                            "text": "#6032",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Reverted a commit that had unnecessary API response JSON dumps for cypress tests to solve something simple."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed couple of backend PRs"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into ayushma chatbot component as package having issues with rollup."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Start working on replacing "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "react-redux",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1691598725.000000"
+            }
+        },
+        {
+            "client_msg_id": "276157ce-7d51-4d79-8a2e-c37fdd507c25",
+            "type": "message",
+            "text": "EOD 08/08/2023 and EOD 09/08/2023\n\nHow did the day go?\n\u2022 Worked on issue 71 on ayushma_fe\n\u2022 Went through some redux tutorials",
+            "user": "U051Q1RP1MG",
+            "ts": "1691588842.598139",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "uD+=",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 08/08/2023 and EOD 09/08/2023\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on issue 71 on ayushma_fe"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Went through some redux tutorials"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "c87c1916-d667-4303-8c91-b54b32e74b95",
+            "type": "message",
+            "text": "EOD 08/08/2023 and EOD 09/08/2023\n<!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 Resolved couple of conflicts in frontend PR\n\u2022 Started working on making UI for update patient notes.",
+            "user": "U05998LB73N",
+            "ts": "1691586419.096219",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Z/0",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 08/08/2023 and EOD 09/08/2023\n"
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved couple of conflicts in frontend PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Started working on making UI for update patient notes."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U05998LB73N",
+                "ts": "1691586459.000000"
+            }
+        },
+        {
+            "client_msg_id": "90ba2f69-a5e7-48c7-a9c8-688547f74102",
+            "type": "message",
+            "text": "EOD 07/08/2023 and 08/08/2023\n\u2022 Gone through docs for headlessui listbox and render props and tried to fix a UI bug resulting due to my previous week's work on issue 5944(closing drop-down conditionally)",
+            "user": "U052CV9HBR6",
+            "ts": "1691582965.741059",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "iU5aG",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/08/2023 and 08/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Gone through docs for headlessui listbox and render props and tried to fix a UI bug resulting due to my previous week's work on issue 5944(closing drop-down conditionally)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "815fbadc-05ee-4ba0-b4ee-0ad7b561f2d0",
+            "type": "message",
+            "text": "*EOD 07/08/2023 &amp; 08/08/2023 <!subteam^S035L5S02RF|@care_engineering>*\n\n*How did the day go?*\n\n\u2022 tested PR for this week\n\u2022 partially cleaned the care project board\n\u2022 huddle with rithvik to multiple Priority PR\n\u2022 had weekly engineering call",
+            "user": "U022THM4U2U",
+            "ts": "1691559555.983919",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "CDUD7",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/08/2023 & 08/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested PR for this week"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "partially cleaned the care project board"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "huddle with rithvik to multiple Priority PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "had weekly engineering call"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-10 00:00:00": []
 }

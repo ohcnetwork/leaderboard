@@ -18168,5 +18168,257 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-08-09 00:00:00": [
+        {
+            "client_msg_id": "786cdfb5-4479-4d22-a918-3be598332299",
+            "type": "message",
+            "text": "*EOD 09/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 <https://github.com/coronasafe/care_fe/pull/6036|#6036>: Added dynamic aspect ratio for CNS vitals monitor too\n\u2022 <https://github.com/coronasafe/care_fe/pull/6034|#6034>: Added type safety for `CareIcon` icon names\n    \u25e6 Also refactored codebase to remove string interpolated tailwind classnames\n    \u25e6 Removed tailwind safelist, thus reducing index.css file size by 95%\n\u2022 <https://github.com/coronasafe/care_fe/pull/6037|#6037>: Removed 2 unused packages.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6031|#6031> &amp; <https://github.com/coronasafe/care_fe/pull/6032|#6032>: Reverted a commit that had unnecessary API response JSON dumps for cypress tests to solve something simple.\n\u2022 Reviewed couple of backend PRs\n*What's next?*\n\n\u2022 Look into ayushma chatbot component as package having issues with rollup.\n\u2022 Start working on replacing `react-redux` ",
+            "user": "U02TDGQQPMJ",
+            "ts": "1691598706.574469",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "SJuxz",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 09/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6036",
+                                            "text": "#6036",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Added dynamic aspect ratio for CNS vitals monitor too"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6034",
+                                            "text": "#6034",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Added type safety for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "CareIcon",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " icon names"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Also refactored codebase to remove string interpolated tailwind classnames"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Removed tailwind safelist, thus reducing index.css file size by 95%"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 1,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6037",
+                                            "text": "#6037",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Removed 2 unused packages."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6031",
+                                            "text": "#6031",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " & "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6032",
+                                            "text": "#6032",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Reverted a commit that had unnecessary API response JSON dumps for cypress tests to solve something simple."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed couple of backend PRs"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Look into ayushma chatbot component as package having issues with rollup."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Start working on replacing "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "react-redux",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1691598725.000000"
+            }
+        }
     ]
 }

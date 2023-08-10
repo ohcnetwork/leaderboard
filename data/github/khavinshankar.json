@@ -1,6 +1,76 @@
 {
-  "last_updated": 1691518781.0,
+  "last_updated": 1691593602.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1691593602.0,
+      "title": "coronasafe/care_fe#6037",
+      "link": "https://github.com/coronasafe/care_fe/pull/6037#pullrequestreview-1569862264",
+      "text": "remove unused packages screenfull, html2canvas"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6003",
+      "time": 1691581101.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6003#issuecomment-1671164702",
+      "text": "@rithviknishad @Ashesh3 can you please review this pr once"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6033",
+      "time": 1691581030.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6033",
+      "text": "Care Icons: Add type safety for icon names "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6023",
+      "time": 1691581029.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6023",
+      "text": "use proper tailwind classes and remove safelist for tailwind classes saves 7.6Mb"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691581019.0,
+      "title": "coronasafe/care_fe#6034",
+      "link": "https://github.com/coronasafe/care_fe/pull/6034#pullrequestreview-1569351796",
+      "text": "\ud83e\ude84 Adds type safety for `CareIcon` names + \u2728 reduced index.css size by 95% + Refactor string interpolated tw classes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691580441.0,
+      "title": "coronasafe/care_fe#6036",
+      "link": "https://github.com/coronasafe/care_fe/pull/6036#pullrequestreview-1569336680",
+      "text": "Central Nursing Station: Dynamic aspect ratio for Vitals (variable timespan based on screen size \ud83d\udcf1\ud83d\udda5\ufe0f)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6025",
+      "time": 1691567581.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6025",
+      "text": "fix no data issue in notice borad on hard reload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691567309.0,
+      "title": "coronasafe/care_fe#6028",
+      "link": "https://github.com/coronasafe/care_fe/pull/6028#pullrequestreview-1568953502",
+      "text": "README: Update staging creds"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691562144.0,
+      "title": "coronasafe/care_fe#6032",
+      "link": "https://github.com/coronasafe/care_fe/pull/6032#pullrequestreview-1568826014",
+      "text": "fixes #6008; makes button full width"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691561570.0,
+      "title": "coronasafe/care_fe#6031",
+      "link": "https://github.com/coronasafe/care_fe/pull/6031#pullrequestreview-1568815004",
+      "text": "Revert \"#6008: Made the \"Update\" buttons full width (#6010)\""
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1515",
@@ -21090,24 +21160,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6025",
-      "title": "fix no data issue in notice borad on hard reload",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1446",
       "title": "Fix issues with HCX",
-      "stale_for": 29,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/54",
       "title": "Added UI for feedback",
-      "stale_for": 22,
+      "stale_for": 23,
       "labels": [
         "needs testing"
       ]
@@ -21115,25 +21176,25 @@
     {
       "link": "https://github.com/coronasafe/ayushma/pull/194",
       "title": "Added feedback ",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 171,
+      "stale_for": 172,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -21143,7 +21204,7 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 242,
+      "stale_for": 243,
       "labels": []
     },
     {
@@ -21151,31 +21212,31 @@
       "title": "Added is_occupied field in Bed",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "changes required"
       ]
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 599,
+      "stale_for": 600,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 605,
+      "stale_for": 606,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 606,
+      "stale_for": 607,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 801,
+      "stale_for": 802,
       "labels": []
     }
   ],

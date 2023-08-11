@@ -1,6 +1,52 @@
 {
-  "last_updated": 1691600691.0,
+  "last_updated": 1691686181.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6048",
+      "time": 1691686181.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6048",
+      "text": "Fix display of localized dates"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5730",
+      "time": 1691680668.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5730",
+      "text": "added referred to facility field in discharge form",
+      "collaborated_with": [
+        "nihal467",
+        "sachdevavaibhav"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691677441.0,
+      "title": "coronasafe/care#1229",
+      "link": "https://github.com/coronasafe/care/pull/1229#pullrequestreview-1572032976",
+      "text": "Hcx Refactors"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6043",
+      "time": 1691657426.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6043",
+      "text": "Add front-end validation for location creation form"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6042",
+      "time": 1691657123.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6042",
+      "text": "Fix Triage table width when no data is available"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691643107.0,
+      "title": "coronasafe/care#1446",
+      "link": "https://github.com/coronasafe/care/pull/1446#pullrequestreview-1571013202",
+      "text": "Fix issues with HCX"
+    },
     {
       "type": "pr_reviewed",
       "time": 1691600691.0,
@@ -11102,9 +11148,37 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6048",
+      "title": "Fix display of localized dates",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6043",
+      "title": "Add front-end validation for location creation form",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6042",
+      "title": "Fix Triage table width when no data is available",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6029",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting for back end",
         "cypress passed"
@@ -11113,13 +11187,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1522",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 77,
+      "stale_for": 78,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -11136,7 +11210,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 127,
+      "stale_for": 128,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -11145,13 +11219,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 140,
+      "stale_for": 141,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]

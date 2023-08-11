@@ -1,6 +1,44 @@
 {
-  "last_updated": 1691604045.0,
+  "last_updated": 1691691714.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1691691714.0,
+      "title": "coronasafe/care_fe#6048",
+      "link": "https://github.com/coronasafe/care_fe/pull/6048#pullrequestreview-1572489247",
+      "text": "Fix display of localized dates"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691676295.0,
+      "title": "coronasafe/care#1446",
+      "link": "https://github.com/coronasafe/care/pull/1446#pullrequestreview-1571989572",
+      "text": "Fix issues with HCX"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691672423.0,
+      "title": "coronasafe/care_fe#6046",
+      "link": "https://github.com/coronasafe/care_fe/pull/6046#pullrequestreview-1571838396",
+      "text": "Adds utility CSS class `cui-form-button-group`; Fix button responsiveness in Doctor and Bed capacity forms"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/ayushma_fe#78",
+      "time": 1691671454.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/78",
+      "text": "Chatbot",
+      "collaborated_with": [
+        "skks1212"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6046",
+      "time": 1691667476.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6046",
+      "text": "Adds utility CSS class `cui-form-button-group`; Fix button responsiveness in Doctor and Bed capacity forms"
+    },
     {
       "type": "pr_reviewed",
       "time": 1691604045.0,
@@ -20930,9 +20968,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6046",
+      "title": "Adds utility CSS class `cui-form-button-group`; Fix button responsiveness in Doctor and Bed capacity forms",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6012",
       "title": "Adds loading animation before loading js and css",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "merge conflict",
@@ -20942,7 +20989,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 27,
+      "stale_for": 28,
       "labels": [
         "need Review"
       ]
@@ -20950,13 +20997,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "cypress failed",
         "HCX"

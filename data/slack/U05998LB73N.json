@@ -781,5 +781,78 @@
                 "ts": "1691586459.000000"
             }
         }
+    ],
+    "2023-08-10 00:00:00": [
+        {
+            "client_msg_id": "d2f5064c-693c-4f59-af84-81e837558cbf",
+            "type": "message",
+            "text": "EOD 10/08/2023\n<!subteam^S035L5S02RF|@care_engineering>\n\n*How did the day go?*\n\n\u2022 Made a draft UI of patient notes update modal\n\u2022 Working on making it responsive",
+            "user": "U05998LB73N",
+            "ts": "1691680419.038489",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "pOSg",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 10/08/2023\n"
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made a draft UI of patient notes update modal"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on making it responsive"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -1,6 +1,55 @@
 {
-  "last_updated": 1691686181.0,
+  "last_updated": 1691758373.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6065",
+      "time": 1691758373.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6065",
+      "text": "Increase default limit for doctor connect list"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6065",
+      "time": 1691757686.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6065",
+      "text": "Increase default limit for doctor connect list"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691757143.0,
+      "title": "coronasafe/care_fe#6064",
+      "link": "https://github.com/coronasafe/care_fe/pull/6064#pullrequestreview-1573573544",
+      "text": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6057",
+      "time": 1691754535.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6057",
+      "text": "Fix camera controls overlap with notifications"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6057",
+      "time": 1691746757.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6057",
+      "text": "Fix camera controls overlap with notifications"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691740203.0,
+      "title": "coronasafe/care_fe#6052",
+      "link": "https://github.com/coronasafe/care_fe/pull/6052#pullrequestreview-1573172848",
+      "text": "\ud83e\uddf9 Replace `loadable` package with react's built-in lazy and add top-level Suspense boundary "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6048",
+      "time": 1691734943.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6048",
+      "text": "Fix display of localized dates"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6048",
@@ -11148,19 +11197,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6048",
-      "title": "Fix display of localized dates",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6043",
       "title": "Add front-end validation for location creation form",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -11169,7 +11208,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6042",
       "title": "Fix Triage table width when no data is available",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress failed"
@@ -11178,7 +11217,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6029",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting for back end",
         "cypress passed"
@@ -11187,13 +11226,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1522",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 78,
+      "stale_for": 79,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -11202,7 +11241,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -11210,7 +11249,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 128,
+      "stale_for": 129,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -11219,13 +11258,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 141,
+      "stale_for": 142,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]

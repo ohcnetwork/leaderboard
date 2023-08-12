@@ -1,22 +1,36 @@
 {
-    "2023-08-10 00:00:00": [
+    "2023-08-11 00:00:00": [
         {
-            "client_msg_id": "bcad8b84-5efe-4c6a-bc24-9a38bc401e6d",
+            "client_msg_id": "310de151-a607-47c0-8d65-64fc74ca9401",
             "type": "message",
-            "text": "EOD 10/08/2023\n\nHow did the day go?\n\u2022 Started learning the ReactForAll course.\n\u2022 Learnt the basics of React and TypeScript.",
-            "user": "U05LU8CNP19",
-            "ts": "1691696553.122389",
+            "text": "*EOD 10/08/2023*\n\n*How did the day go?*\n\u2022 Started learning the ReactForAll course.\n\u2022 Submitted milestone review for Level 1\n*What's next?*\n\u2022 Start learning Level 2.",
+            "user": "U05M70JL5JM",
+            "ts": "1691720596.067769",
             "blocks": [
                 {
                     "type": "rich_text",
-                    "block_id": "f5o",
+                    "block_id": "heN0q",
                     "elements": [
                         {
                             "type": "rich_text_section",
                             "elements": [
                                 {
                                     "type": "text",
-                                    "text": "EOD 10/08/2023\n\nHow did the day go?\n"
+                                    "text": "EOD 10/08/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?\n",
+                                    "style": {
+                                        "bold": true
+                                    }
                                 }
                             ]
                         },
@@ -37,39 +51,29 @@
                                     "elements": [
                                         {
                                             "type": "text",
-                                            "text": "Learnt the basics of React and TypeScript."
+                                            "text": "Submitted milestone review for Level 1"
                                         }
                                     ]
                                 }
                             ],
                             "style": "bullet",
                             "indent": 0,
+                            "offset": 0,
                             "border": 0
-                        }
-                    ]
-                }
-            ],
-            "team": "TC99SV7B6"
-        }
-    ],
-    "2023-08-11 00:00:00": [
-        {
-            "client_msg_id": "c2e0871f-b8ef-4679-a0ec-dbd0573e6f80",
-            "type": "message",
-            "text": "EOD 11/08/2023\n\nHow did the day go?\n\u2022 Submitted level 1 milestone for review.",
-            "user": "U05LU8CNP19",
-            "ts": "1691769085.831279",
-            "blocks": [
-                {
-                    "type": "rich_text",
-                    "block_id": "PD=",
-                    "elements": [
+                        },
                         {
                             "type": "rich_text_section",
                             "elements": [
                                 {
                                     "type": "text",
-                                    "text": "EOD 11/08/2023\n\nHow did the day go?\n"
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n",
+                                    "style": {
+                                        "bold": true
+                                    }
                                 }
                             ]
                         },
@@ -81,13 +85,14 @@
                                     "elements": [
                                         {
                                             "type": "text",
-                                            "text": "Submitted level 1 milestone for review."
+                                            "text": "Start learning Level 2."
                                         }
                                     ]
                                 }
                             ],
                             "style": "bullet",
                             "indent": 0,
+                            "offset": 0,
                             "border": 0
                         }
                     ]

@@ -1,6 +1,114 @@
 {
-  "last_updated": 1691691714.0,
+  "last_updated": 1691760829.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1691760829.0,
+      "title": "coronasafe/care_fe#6003",
+      "link": "https://github.com/coronasafe/care_fe/pull/6003#pullrequestreview-1573678300",
+      "text": "cleanup fireRequests and remove axios"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691760829.0,
+      "title": "coronasafe/care_fe#6003",
+      "link": "https://github.com/coronasafe/care_fe/pull/6003#pullrequestreview-1573678300",
+      "text": "cleanup fireRequests and remove axios"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6063",
+      "time": 1691758404.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6063",
+      "text": "Center align tooltip of `RecordMeta` relative time"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6063",
+      "time": 1691758404.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6063",
+      "text": "Center align tooltip of `RecordMeta` relative time",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6064",
+      "time": 1691755932.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6064",
+      "text": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6063",
+      "time": 1691750686.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6063",
+      "text": "Center align tooltip of `RecordMeta` relative time"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6060",
+      "time": 1691747899.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6060",
+      "text": "Implements `useQuery` and `useMutation` hooks"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6059",
+      "time": 1691747719.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6059",
+      "text": "Group Medicine Administrations by Medicine Name and Time Range"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6058",
+      "time": 1691746924.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6058",
+      "text": "Implement `useQuery` and `useMutation` to replace `react-redux`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6052",
+      "time": 1691738281.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6052",
+      "text": "Replace `loadable` package with react's built-in lazy"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6051",
+      "time": 1691738255.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6051",
+      "text": "remove `loadable` package and use the the built-in `React.lazy` instead"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691735563.0,
+      "title": "coronasafe/care#1260",
+      "link": "https://github.com/coronasafe/care/pull/1260#pullrequestreview-1573067754",
+      "text": "fix: added recommend_discharge as action"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1691735545.0,
+      "title": "coronasafe/care#1260",
+      "link": "https://github.com/coronasafe/care/pull/1260#pullrequestreview-1573067491",
+      "text": "fix: added recommend_discharge as action"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6046",
+      "time": 1691734787.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6046",
+      "text": "Adds utility CSS class `cui-form-button-group`; Fix button responsiveness in Doctor and Bed capacity forms"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6049",
+      "time": 1691733647.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6049#issuecomment-1674246970",
+      "text": "Should we consider adding https://github.com/tailwindlabs/tailwindcss-container-queries now that we are having more issues with different scaling coming up."
+    },
     {
       "type": "pr_reviewed",
       "time": 1691691714.0,
@@ -20968,18 +21076,37 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6046",
-      "title": "Adds utility CSS class `cui-form-button-group`; Fix button responsiveness in Doctor and Bed capacity forms",
+      "link": "https://github.com/coronasafe/care_fe/pull/6064",
+      "title": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead.",
       "stale_for": 0,
       "labels": [
         "needs testing",
+        "need Review",
         "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6060",
+      "title": "Implements `useQuery` and `useMutation` hooks",
+      "stale_for": 0,
+      "labels": [
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6052",
+      "title": "\ud83e\uddf9 Replace `loadable` package with react's built-in lazy and add top-level Suspense boundary ",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6012",
       "title": "Adds loading animation before loading js and css",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "test failed",
         "merge conflict",
@@ -20989,7 +21116,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 28,
+      "stale_for": 29,
       "labels": [
         "need Review"
       ]
@@ -20997,13 +21124,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "cypress failed",
         "HCX"

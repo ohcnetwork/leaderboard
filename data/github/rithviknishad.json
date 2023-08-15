@@ -1,6 +1,41 @@
 {
-  "last_updated": 1691846639.0,
+  "last_updated": 1692013498.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1692013498.0,
+      "title": "coronasafe/care_fe#6076",
+      "link": "https://github.com/coronasafe/care_fe/pull/6076#pullrequestreview-1576688829",
+      "text": "Plausible: Redact IDs in goal urls and removed patient id from goal trigger props"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692013472.0,
+      "title": "coronasafe/care_fe#6076",
+      "link": "https://github.com/coronasafe/care_fe/pull/6076#pullrequestreview-1576688213",
+      "text": "Plausible: Redact IDs in goal urls and removed patient id from goal trigger props"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6077",
+      "time": 1692009888.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6077",
+      "text": "Prevent Write/Create patient access to non-home facility users"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6076",
+      "time": 1692004609.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6076",
+      "text": "Plausible/redact goal url"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6073",
+      "time": 1692001936.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6073",
+      "text": "IDs in URL are not redacted in `triggerGoal`"
+    },
     {
       "type": "pr_reviewed",
       "time": 1691846639.0,
@@ -21110,37 +21145,47 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6076",
+      "title": "Plausible: Redact IDs in goal urls and removed patient id from goal trigger props",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "good to merge",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6064",
       "title": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead.",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
         "need Review",
+        "tested",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6060",
       "title": "Implements `useQuery` and `useMutation` hooks",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "cypress passed"
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6052",
       "title": "\ud83e\uddf9 Replace `loadable` package with react's built-in lazy and add top-level Suspense boundary ",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
         "need Review",
-        "cypress failed"
+        "tested",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6012",
       "title": "Adds loading animation before loading js and css",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "test failed",
         "merge conflict",
@@ -21150,7 +21195,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 30,
+      "stale_for": 32,
       "labels": [
         "need Review"
       ]
@@ -21158,14 +21203,15 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 12,
+      "stale_for": 14,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 9,
+      "stale_for": 0,
       "labels": [
+        "stale",
         "cypress failed",
         "HCX"
       ]

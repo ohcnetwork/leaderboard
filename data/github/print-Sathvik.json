@@ -1,6 +1,13 @@
 {
-  "last_updated": 1691827842.0,
+  "last_updated": 1692048679.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6082",
+      "time": 1692048679.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6082",
+      "text": "remove libphonenumber-js"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6066",
@@ -431,7 +438,9 @@
       "title": "Placed Non-waveform data above waveforms in mobile view",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested",
+        "good to merge",
+        "cypress passed"
       ]
     }
   ],

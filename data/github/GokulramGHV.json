@@ -1,6 +1,13 @@
 {
-  "last_updated": 1691829142.0,
+  "last_updated": 1692095352.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1692095352.0,
+      "title": "coronasafe/care_fe#6067",
+      "link": "https://github.com/coronasafe/care_fe/pull/6067#pullrequestreview-1578316102",
+      "text": "Fixed responsive issue in resource page and user page"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6067",
@@ -2433,13 +2440,15 @@
       "title": "Fixed responsive issue in resource page and user page",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "question",
+        "tested",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/ayushma/pull/245",
       "title": "Added search filter for ChatViewSet and ProjectViewSet",
-      "stale_for": 9,
+      "stale_for": 12,
       "labels": []
     }
   ],

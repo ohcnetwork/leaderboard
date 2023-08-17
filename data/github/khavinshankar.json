@@ -1,6 +1,117 @@
 {
-  "last_updated": 1692014471.0,
+  "last_updated": 1692187225.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/teleicu_middleware#73",
+      "time": 1692187225.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/73",
+      "text": "Dump observations into S3 bucket",
+      "collaborated_with": [
+        "ishanExtreme"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692187206.0,
+      "title": "coronasafe/teleicu_middleware#73",
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/73#pullrequestreview-1580434085",
+      "text": "Dump observations into S3 bucket"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6053",
+      "time": 1692177383.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6053",
+      "text": "Biochemistry test, Ideal column is overflowing in investigation "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6039",
+      "time": 1692177370.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6039",
+      "text": "Bed Capacity in facility detail page malfunctioning"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692177361.0,
+      "title": "coronasafe/care_fe#6080",
+      "link": "https://github.com/coronasafe/care_fe/pull/6080#pullrequestreview-1580163847",
+      "text": "Improve BedTypeCard responsiveness"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692177346.0,
+      "title": "coronasafe/care_fe#6081",
+      "link": "https://github.com/coronasafe/care_fe/pull/6081#pullrequestreview-1580163406",
+      "text": "Fix table overflow in Log lab results"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6064",
+      "time": 1692177322.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6064",
+      "text": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead.",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692177299.0,
+      "title": "coronasafe/care_fe#6064",
+      "link": "https://github.com/coronasafe/care_fe/pull/6064#pullrequestreview-1580161991",
+      "text": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6051",
+      "time": 1692176606.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6051",
+      "text": "remove `loadable` package and use the the built-in `React.lazy` instead"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692176591.0,
+      "title": "coronasafe/care_fe#6052",
+      "link": "https://github.com/coronasafe/care_fe/pull/6052#pullrequestreview-1580140190",
+      "text": "\ud83e\uddf9 Replace `loadable` package with react's built-in lazy and add top-level Suspense boundary "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6040",
+      "time": 1692173064.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6040",
+      "text": "increase the width of no data found in facility triage section"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6041",
+      "time": 1692173045.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6041",
+      "text": "Add front-end validation for location creation form"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5984",
+      "time": 1692173026.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5984",
+      "text": "In mobile view, the non-waveform data should be placed above the waveforms. Currently, it's placed below as shown. This is because waveforms have less importance than non-waveform data."
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6047",
+      "time": 1692172998.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6047",
+      "text": "add extra pading for the patient total count card"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6073",
+      "time": 1692172963.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6073",
+      "text": "Plausible: IDs in URL are not redacted in `triggerGoal`"
+    },
     {
       "type": "pr_reviewed",
       "time": 1692014471.0,
@@ -21336,7 +21447,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1446",
       "title": "Fix issues with HCX",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -21344,7 +21455,7 @@
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/54",
       "title": "Added UI for feedback",
-      "stale_for": 28,
+      "stale_for": 30,
       "labels": [
         "needs testing"
       ]
@@ -21352,13 +21463,13 @@
     {
       "link": "https://github.com/coronasafe/ayushma/pull/194",
       "title": "Added feedback ",
-      "stale_for": 27,
+      "stale_for": 29,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "waiting-for-review"
       ]
@@ -21366,13 +21477,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 177,
+      "stale_for": 179,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 12,
+      "stale_for": 14,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -21382,13 +21493,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 248,
+      "stale_for": 250,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "changes required"
       ]
@@ -21396,25 +21507,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 605,
+      "stale_for": 607,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 611,
+      "stale_for": 613,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 612,
+      "stale_for": 614,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 807,
+      "stale_for": 809,
       "labels": []
     }
   ],

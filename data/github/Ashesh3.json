@@ -1,6 +1,44 @@
 {
-  "last_updated": 1692020703.0,
+  "last_updated": 1692177382.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6081",
+      "time": 1692177382.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6081",
+      "text": "Fix table overflow in Log lab results"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6080",
+      "time": 1692177370.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6080",
+      "text": "Improve BedTypeCard responsiveness"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6042",
+      "time": 1692173063.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6042",
+      "text": "Fix Triage table width when no data is available"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6042",
+      "time": 1692173063.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6042",
+      "text": "Fix Triage table width when no data is available",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6043",
+      "time": 1692173044.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6043",
+      "text": "Add front-end validation for location creation form"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6081",
@@ -11259,47 +11297,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6081",
-      "title": "Fix table overflow in Log lab results",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6080",
-      "title": "Improve BedTypeCard responsiveness",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6043",
-      "title": "Add front-end validation for location creation form",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "good to merge",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6042",
-      "title": "Fix Triage table width when no data is available",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "good to merge",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6029",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "waiting for back end",
         "cypress passed"
@@ -11308,13 +11308,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1522",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 82,
+      "stale_for": 84,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -11323,15 +11323,16 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "blocked",
+        "waiting for confirmation"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 132,
+      "stale_for": 134,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -11340,13 +11341,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 145,
+      "stale_for": 147,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 6,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]

@@ -1,6 +1,61 @@
 {
-  "last_updated": 1692114643.0,
+  "last_updated": 1692195777.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6085",
+      "time": 1692195777.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6085#issuecomment-1680714776",
+      "text": "@aparnacoronasafe Thoughts on this?\n\nDo we have requirements like one prescription of a medicine has frequency \"twice daily\" and another prescription of same medicine with different frequency say \"once weekly\" for example to exist at the same time?"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6085",
+      "time": 1692186274.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6085",
+      "text": "Disallow multiple prescriptions of same medicine that are active"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6064",
+      "time": 1692177322.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6064",
+      "text": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead."
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6064",
+      "time": 1692177322.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6064",
+      "text": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead.",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6052",
+      "time": 1692176605.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6052",
+      "text": "\ud83e\uddf9 Replace `loadable` package with react's built-in lazy and add top-level Suspense boundary "
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6052",
+      "time": 1692176605.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6052",
+      "text": "\ud83e\uddf9 Replace `loadable` package with react's built-in lazy and add top-level Suspense boundary ",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6076",
+      "time": 1692172963.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6076",
+      "text": "Plausible: Redact IDs in goal urls and removed patient id from goal trigger props"
+    },
     {
       "type": "pr_reviewed",
       "time": 1692114643.0,
@@ -21152,47 +21207,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6076",
-      "title": "Plausible: Redact IDs in goal urls and removed patient id from goal trigger props",
-      "stale_for": 1,
-      "labels": [
-        "tested",
-        "good to merge",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6064",
-      "title": "Removes usages of `useSelector` and replace it with `useConfig` and `useAuthUser` instead.",
-      "stale_for": 1,
-      "labels": [
-        "need Review",
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6060",
       "title": "Implements `useQuery` and `useMutation` hooks",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "cypress failed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6052",
-      "title": "\ud83e\uddf9 Replace `loadable` package with react's built-in lazy and add top-level Suspense boundary ",
-      "stale_for": 1,
-      "labels": [
-        "need Review",
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6012",
       "title": "Adds loading animation before loading js and css",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "test failed",
         "merge conflict",
@@ -21202,7 +21227,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 33,
+      "stale_for": 34,
       "labels": [
         "need Review"
       ]
@@ -21210,13 +21235,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "stale",
         "cypress failed",
@@ -21225,6 +21250,14 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6073",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6076"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6051",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6052"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6033",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6034"
@@ -21292,10 +21325,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1404",
       "pr_link": "https://github.com/coronasafe/care/pull/1415"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1403",
-      "pr_link": "https://github.com/coronasafe/care/pull/1414"
     }
   ]
 }

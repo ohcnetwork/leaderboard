@@ -1,6 +1,41 @@
 {
-  "last_updated": 1692177382.0,
+  "last_updated": 1692297168.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6097",
+      "time": 1692297168.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6097",
+      "text": "Fix End Date selector"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1525",
+      "time": 1692285287.0,
+      "link": "https://github.com/coronasafe/care/pull/1525#issuecomment-1682464290",
+      "text": "> @Ashesh3 The migrations file that you've referred to seems to be part of old migrations and not present in the squashed/new migrations.\r\n> \r\n> 0 Skills present on a fresh instance :/\r\n\r\nI am sure this isn't the expected behavior. We need the same set of skills on every instance. How about we ship this migration (since this is a P1 issue) to fix the typo in existing instances then integrate loading skills into the `load_data` management command? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1525",
+      "time": 1692283589.0,
+      "link": "https://github.com/coronasafe/care/pull/1525#issuecomment-1682417885",
+      "text": "> How did we populate skills in the first place?\r\n> \r\n> This could end up creating this skill on a fresh DB right during migrations right?\r\n> \r\n> And later when we populate all skills on a new instance we would end up having a duplicate right? (Since skill with the typo one is added during population after the corrected one was added during migration)\r\n\r\nThe skills for existing deployments were loaded in a migration: https://github.com/coronasafe/care/pull/1176/files#diff-abf84bc2d0fa38116d391f2eb563939f4bb958dbc2c19d72d774e1bff6390070R58-R59\r\n\r\nMaybe we should separately load the Skills to the database from a JSON files like we do for the states for new deployments. This PR will correct the typo in existing deployments."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1525",
+      "time": 1692282156.0,
+      "link": "https://github.com/coronasafe/care/pull/1525",
+      "text": "Migration to Rename Skill and Add New Skill"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6061",
+      "time": 1692244489.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6061#issuecomment-1681571962",
+      "text": "> hi, is this open? if it is I'd like to contribute. thank you in advance.\r\n\r\nYep, you can work on it."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6081",
@@ -11297,9 +11332,28 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6097",
+      "title": "Fix End Date selector",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1525",
+      "title": "Migration to Rename Skill and Add New Skill",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6029",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting for back end",
         "cypress passed"
@@ -11308,13 +11362,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1522",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 84,
+      "stale_for": 85,
       "labels": [
         "waiting for back end",
         "merge conflict"
@@ -11323,7 +11377,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1277",
       "title": "feat: Add service request history for asset",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "blocked",
         "waiting for confirmation"
@@ -11332,7 +11386,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 134,
+      "stale_for": 135,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -11341,14 +11395,15 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 147,
+      "stale_for": 148,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 8,
+      "stale_for": 0,
       "labels": [
+        "blocked",
         "waiting-for-review"
       ]
     }

@@ -1,6 +1,62 @@
 {
-  "last_updated": 1692197078.0,
+  "last_updated": 1692370264.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1526",
+      "time": 1692370264.0,
+      "link": "https://github.com/coronasafe/care/pull/1526",
+      "text": "fix bed allocation overlap"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1103",
+      "time": 1692365734.0,
+      "link": "https://github.com/coronasafe/care/issues/1103",
+      "text": "Reimagining Bedtypes V2"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6087",
+      "time": 1692365650.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6087",
+      "text": "add consultation bed specific asset relations"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1524",
+      "time": 1692365588.0,
+      "link": "https://github.com/coronasafe/care/pull/1524",
+      "text": "add consultation specific assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692342647.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1583976898",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692342647.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1583976898",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692342064.0,
+      "title": "coronasafe/care#1277",
+      "link": "https://github.com/coronasafe/care/pull/1277#pullrequestreview-1583966350",
+      "text": "feat: Add service request history for asset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692341947.0,
+      "title": "coronasafe/care#1505",
+      "link": "https://github.com/coronasafe/care/pull/1505#pullrequestreview-1583963829",
+      "text": "Don't allow negative values for Doctor Count for facility"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6087",
@@ -4684,25 +4740,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6087",
-      "title": "add consultation bed specific asset relations",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "waiting for back end",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1524",
-      "title": "add consultation specific assets",
+      "link": "https://github.com/coronasafe/care/pull/1526",
+      "title": "fix bed allocation overlap",
       "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "changes required",
         "merge conflict",
@@ -4712,29 +4758,33 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 27,
+      "stale_for": 29,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 27,
+      "stale_for": 29,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 65,
+      "stale_for": 67,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 385,
+      "stale_for": 387,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6086",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6087"
+    },
     {
       "issue_link": "https://github.com/coronasafe/zoomdrive/issues/2",
       "pr_link": "https://github.com/coronasafe/zoomdrive/pull/4"

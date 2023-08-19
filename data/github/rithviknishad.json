@@ -1,6 +1,34 @@
 {
-  "last_updated": 1692284856.0,
+  "last_updated": 1692379624.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6104",
+      "time": 1692379624.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6104",
+      "text": "Upgrade tailwindcss to v3.3.3"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6101",
+      "time": 1692360496.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6101",
+      "text": "Patients List: Empty emergency phone number filter applied by default on mount"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692344723.0,
+      "title": "coronasafe/care_fe#6087",
+      "link": "https://github.com/coronasafe/care_fe/pull/6087#pullrequestreview-1584035835",
+      "text": "add consultation bed specific asset relations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692344549.0,
+      "title": "coronasafe/care#1524",
+      "link": "https://github.com/coronasafe/care/pull/1524#pullrequestreview-1584031555",
+      "text": "add consultation specific assets"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1525",
@@ -21242,9 +21270,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6104",
+      "title": "Upgrade tailwindcss to v3.3.3",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6060",
       "title": "Implements `useQuery` and `useMutation` hooks",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "cypress failed"
       ]
@@ -21252,7 +21290,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6012",
       "title": "Adds loading animation before loading js and css",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "merge conflict",
@@ -21263,7 +21301,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 35,
+      "stale_for": 36,
       "labels": [
         "need Review"
       ]
@@ -21271,13 +21309,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 17,
+      "stale_for": 18,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "stale",
         "cypress failed",

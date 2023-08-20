@@ -1,6 +1,41 @@
 {
-  "last_updated": 1692365166.0,
+  "last_updated": 1692441933.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1530",
+      "time": 1692441933.0,
+      "link": "https://github.com/coronasafe/care/pull/1530",
+      "text": "Check bed name before making new multiple beds with same name"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1529",
+      "time": 1692441718.0,
+      "link": "https://github.com/coronasafe/care/issues/1529",
+      "text": "Multiple beds can be created with the same name"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6112",
+      "time": 1692441687.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6112",
+      "text": "Multiple beds can be created with the same name"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6111",
+      "time": 1692433044.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6111",
+      "text": "Fix Add Multiple Bed checkbox bug"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6110",
+      "time": 1692432866.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6110",
+      "text": "Multiple bed button in location of facility malfunctioning"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6103",
@@ -5138,9 +5173,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1530",
+      "title": "Check bed name before making new multiple beds with same name",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6111",
+      "title": "Fix Add Multiple Bed checkbox bug",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6103",
       "title": "Show only Inventory items with no min value set",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5148,7 +5197,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6100",
       "title": "Fix Set Min quantity for inventory Notification malfunction",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5156,7 +5205,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6096",
       "title": "Added Responsiveness to File upload",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5164,7 +5213,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6094",
       "title": "Remove overlap of bed section with dashboard on Assets Configure page",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -5172,25 +5221,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1505",
       "title": "Don't allow negative values for Doctor Count for facility",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 44,
+      "stale_for": 45,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 297,
+      "stale_for": 298,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 297,
+      "stale_for": 298,
       "labels": []
     }
   ],

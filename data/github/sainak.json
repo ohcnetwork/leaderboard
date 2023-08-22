@@ -1,6 +1,82 @@
 {
-  "last_updated": 1692433872.0,
+  "last_updated": 1692642566.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1538",
+      "time": 1692642566.0,
+      "link": "https://github.com/coronasafe/care/pull/1538",
+      "text": "Production Release; Hotfix",
+      "collaborated_with": [
+        "gigincg",
+        "khavinshankar",
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1536",
+      "time": 1692625144.0,
+      "link": "https://github.com/coronasafe/care/pull/1536",
+      "text": "add devcontainer config"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1536",
+      "time": 1692619632.0,
+      "link": "https://github.com/coronasafe/care/pull/1536",
+      "text": "add devcontainer config"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1535",
+      "time": 1692614842.0,
+      "link": "https://github.com/coronasafe/care/pull/1535",
+      "text": "hotfix: duplicate results in m2m field filters"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6126",
+      "time": 1692612743.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6126",
+      "text": "add devcontainer config"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6125",
+      "time": 1692612226.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6125",
+      "text": "add devcontainer config"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1535",
+      "time": 1692610939.0,
+      "link": "https://github.com/coronasafe/care/pull/1535",
+      "text": "fix: duplicate results in m2m field filters"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6116",
+      "time": 1692598509.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6116",
+      "text": "Production Release; Aug Week 4",
+      "collaborated_with": [
+        "print-Sathvik",
+        "GokulramGHV",
+        "khavinshankar",
+        "kshitijv256",
+        "rithviknishad",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692594161.0,
+      "title": "coronasafe/care#1533",
+      "link": "https://github.com/coronasafe/care/pull/1533#pullrequestreview-1586191391",
+      "text": "added bed_id to reponse of patient_from_asset"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1526",
@@ -4768,15 +4844,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6126",
+      "title": "add devcontainer config",
+      "stale_for": 0,
+      "labels": [
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1528",
       "title": "remove redundant docs workflow",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "changes required",
         "merge conflict",
@@ -4786,25 +4870,25 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 30,
+      "stale_for": 32,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 30,
+      "stale_for": 32,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 68,
+      "stale_for": 70,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 388,
+      "stale_for": 390,
       "labels": []
     }
   ],

@@ -10,7 +10,7 @@ export default function InfoCard({ contributor, minimal = false, category }) {
         <div className="mx-auto mt-2 flex items-center gap-2">
           <img
             className="h-12 w-12 rounded-full"
-            src={`https://github.com/${contributor.github}.png`}
+            src={`https://avatars.githubusercontent.com/${contributor.github}`}
             alt={contributor.github}
           />
           <div className={minimal ? "text-center" : "space-y-2"}>

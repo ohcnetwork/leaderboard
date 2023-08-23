@@ -43,7 +43,7 @@ export default function LeaderBoardCard({ contributor, position }) {
               <div className="flex-shrink-0">
                 <img
                   className="h-12 w-12 rounded-full"
-                  src={`https://github.com/${contributor.github}.png`}
+                  src={`https://avatars.githubusercontent.com/${contributor.github}`}
                   alt={contributor.github}
                 />
               </div>

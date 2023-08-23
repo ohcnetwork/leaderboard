@@ -27,7 +27,7 @@ export default function InfoCard({
           >
             <img
               className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-2 border-indigo-500"
-              src={`https://github.com/${contributor.github}.png`}
+              src={`https://avatars.githubusercontent.com/${contributor.github}`}
               alt={contributor.github}
             />
           </div>

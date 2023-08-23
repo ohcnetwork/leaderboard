@@ -203,7 +203,7 @@ export default function Contributor({ contributor, slug }) {
                       ></img>
                       <img
                         className="absolute top-1.5 mx-auto h-7 md:h-8 w-7 md:w-8 rounded-full border border-primary-200"
-                        src={`https://github.com/${contributor.github}.png`}
+                        src={`https://avatars.githubusercontent.com/${contributor.github}?size=200`}
                         alt={contributor.github}
                       />
                     </div>
@@ -353,7 +353,7 @@ export async function getStaticProps({ params }) {
   const metaTags = [
     {
       name: "og:image",
-      content: `https://github.com/${params.slug}.png`,
+      content: `https://avatars.githubusercontent.com/${params.slug}`,
     },
     {
       name: "og:title",

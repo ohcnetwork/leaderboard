@@ -854,5 +854,128 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-08-22 00:00:00": [
+        {
+            "client_msg_id": "21d0c266-b8c5-45fb-90bd-27097e20d4ac",
+            "type": "message",
+            "text": "EOD 21/08/2023 - 22/08/2023 <!subteam^S035L5S02RF|@care_engineering> \n\u2022 Resolved problems in my local setup\n\u2022 Added comments in backend PR as requested \n\u2022 Removed conflicts from frontend PR\n\u2022 Made some minor UI changes in patient notes pop up\n*What's next?*\n\u2022 To add and stash the update feature frontend changes\n\u2022 Start work on web push - Add new notification type for Doctor Notes",
+            "user": "U05998LB73N",
+            "ts": "1692712129.224699",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1zUA",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/08/2023 - 22/08/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " \n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved problems in my local setup"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added comments in backend PR as requested "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Removed conflicts from frontend PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made some minor UI changes in patient notes pop up"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "To add and stash the update feature frontend changes"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Start work on web push - Add new notification type for Doctor Notes"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

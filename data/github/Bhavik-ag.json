@@ -1,6 +1,13 @@
 {
-  "last_updated": 1691061695.0,
+  "last_updated": 1692715403.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1547",
+      "time": 1692715403.0,
+      "link": "https://github.com/coronasafe/care/issues/1547",
+      "text": "Migration for consultation field in Patient Notes"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1507",
@@ -362,23 +369,24 @@
       "link": "https://github.com/coronasafe/care/pull/1507",
       "title": "Made doctor role as static attribute",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1469",
       "title": "made patient notes consultation specific",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5847",
       "title": "Add patient notes pop-up on consultation page",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "changes required",
-        "merge conflict",
         "cypress passed"
       ]
     }

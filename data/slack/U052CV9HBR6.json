@@ -1036,5 +1036,81 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-08-22 00:00:00": [
+        {
+            "client_msg_id": "77b3754c-7831-4847-915e-735e3e53af08",
+            "type": "message",
+            "text": "EOD 19/08/2023\n\u2022 Resolved a bug in selecting countries which have same country code(like US, Canada and few others) which resulted as part of my previous day's work on replacing libphonenumber-js.(will test all 16 pages again and create PR by Tuesday)\nEOD 21/08/2023\n\u2022 Worked on replacing date-fns library",
+            "user": "U052CV9HBR6",
+            "ts": "1692679416.026969",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "qLaP",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 19/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved a bug in selecting countries which have same country code(like US, Canada and few others) which resulted as part of my previous day's work on replacing libphonenumber-js.(will test all 16 pages again and create PR by Tuesday)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 21/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on replacing date-fns library"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U052CV9HBR6",
+                "ts": "1692679481.000000"
+            }
+        }
     ]
 }

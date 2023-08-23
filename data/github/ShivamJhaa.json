@@ -1,6 +1,13 @@
 {
-  "last_updated": 1692423738.0,
+  "last_updated": 1692725316.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6135",
+      "time": 1692725316.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6135",
+      "text": "Added test of patient_crud.cy.ts"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6109",
@@ -286,15 +293,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6135",
+      "title": "Added test of patient_crud.cy.ts",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6107",
       "title": "Added test for facility.cy.ts",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6106",
       "title": "Added test for resource and migrated it to POM",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": []
     },
     {
@@ -302,8 +315,7 @@
       "title": "Added test for importing and configuring an asset and migrated patient_crud.ts to POM approach",
       "stale_for": 0,
       "labels": [
-        "work-in-progress",
-        "merge conflict"
+        "work-in-progress"
       ]
     }
   ],

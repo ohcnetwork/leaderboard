@@ -1,6 +1,83 @@
 {
-  "last_updated": 1692642566.0,
+  "last_updated": 1692713816.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6126",
+      "time": 1692713816.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6126",
+      "text": "add devcontainer config"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6132",
+      "time": 1692712768.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6132",
+      "text": "Sainak/fix/merge op ip"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6131",
+      "time": 1692712614.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6131",
+      "text": "Merge op_no and ip_no into one field"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1546",
+      "time": 1692712432.0,
+      "link": "https://github.com/coronasafe/care/pull/1546",
+      "text": "fix: merge ip op numbers"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#934",
+      "time": 1692704547.0,
+      "link": "https://github.com/coronasafe/care/issues/934",
+      "text": "Constraint: AssetBed Relations"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#934",
+      "time": 1692704546.0,
+      "link": "https://github.com/coronasafe/care/issues/934#issuecomment-1688024542",
+      "text": "fixed in #1524 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1034",
+      "time": 1692704209.0,
+      "link": "https://github.com/coronasafe/care/issues/1034",
+      "text": "Migration for Integration Assets"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1545",
+      "time": 1692704126.0,
+      "link": "https://github.com/coronasafe/care/pull/1545",
+      "text": "feat: add dev only endpoint to preview discharge summary"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1544",
+      "time": 1692703733.0,
+      "link": "https://github.com/coronasafe/care/pull/1544",
+      "text": "feat: add list of uploaded files to discharge summary"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1542",
+      "time": 1692697380.0,
+      "link": "https://github.com/coronasafe/care/issues/1542",
+      "text": "Merge ip_no and op_no"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692693455.0,
+      "title": "coronasafe/care#1530",
+      "link": "https://github.com/coronasafe/care/pull/1530#pullrequestreview-1588825598",
+      "text": "Check bed name before making new multiple beds with same name"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1538",
@@ -4844,23 +4921,42 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6126",
-      "title": "add devcontainer config",
+      "link": "https://github.com/coronasafe/care_fe/pull/6132",
+      "title": "fix: merge ip and op number",
       "stale_for": 0,
       "labels": [
+        "waiting for back end",
         "cypress failed"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care/pull/1546",
+      "title": "fix: merge ip op numbers",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1545",
+      "title": "feat: add dev only endpoint to preview discharge summary",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1544",
+      "title": "feat: add list of uploaded files to discharge summary",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1528",
       "title": "remove redundant docs workflow",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "changes required",
         "merge conflict",
@@ -4870,25 +4966,25 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 32,
+      "stale_for": 33,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 32,
+      "stale_for": 33,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 70,
+      "stale_for": 71,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 390,
+      "stale_for": 391,
       "labels": []
     }
   ],

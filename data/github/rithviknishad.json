@@ -1,6 +1,27 @@
 {
-  "last_updated": 1692598509.0,
+  "last_updated": 1692787608.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6141",
+      "time": 1692787608.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6141#issuecomment-1689734666",
+      "text": "The admission_date field seems to be marked as deprecated in the backend but is still being used in the front-end and is doing a required field validation in the serializer.\r\n\r\ncc: @gigincg \r\n\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692777747.0,
+      "title": "coronasafe/leaderboard#126",
+      "link": "https://github.com/coronasafe/leaderboard/pull/126#pullrequestreview-1590992782",
+      "text": "fix: github avatars not rendering on firefox"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692769149.0,
+      "title": "coronasafe/care_fe#6115",
+      "link": "https://github.com/coronasafe/care_fe/pull/6115#pullrequestreview-1590787809",
+      "text": "Allow user to use a stock in inventory"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6116",
@@ -21308,7 +21329,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6104",
       "title": "Upgrade tailwindcss to v3.3.3",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "needs testing",
         "need Review",
@@ -21318,7 +21339,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6060",
       "title": "Implements `useQuery` and `useMutation` hooks",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "cypress failed"
       ]
@@ -21326,7 +21347,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6012",
       "title": "Adds loading animation before loading js and css",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "test failed",
         "merge conflict",
@@ -21337,7 +21358,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 39,
+      "stale_for": 41,
       "labels": [
         "need Review"
       ]
@@ -21345,13 +21366,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 21,
+      "stale_for": 23,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": [
         "stale",
         "cypress failed",
@@ -21431,10 +21452,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5788",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5789"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1404",
-      "pr_link": "https://github.com/coronasafe/care/pull/1415"
     }
   ]
 }

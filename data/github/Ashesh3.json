@@ -1,6 +1,135 @@
 {
-  "last_updated": 1692814598.0,
+  "last_updated": 1692890420.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1525",
+      "time": 1692890420.0,
+      "link": "https://github.com/coronasafe/care/pull/1525",
+      "text": "Migration to Rename Skill and Add New Skill"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1522",
+      "time": 1692888826.0,
+      "link": "https://github.com/coronasafe/care/pull/1522",
+      "text": "Rename prescribed_medication to treatment_plan"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1522",
+      "time": 1692888826.0,
+      "link": "https://github.com/coronasafe/care/pull/1522",
+      "text": "Rename prescribed_medication to treatment_plan",
+      "collaborated_with": [
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692882998.0,
+      "title": "coronasafe/care#1545",
+      "link": "https://github.com/coronasafe/care/pull/1545#pullrequestreview-1593567146",
+      "text": "feat: add dev only endpoint to preview discharge summary"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692882938.0,
+      "title": "coronasafe/care#1528",
+      "link": "https://github.com/coronasafe/care/pull/1528#pullrequestreview-1593564583",
+      "text": "remove redundant docs workflow"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692882926.0,
+      "title": "coronasafe/care#1544",
+      "link": "https://github.com/coronasafe/care/pull/1544#pullrequestreview-1593564162",
+      "text": "feat: add list of uploaded files to discharge summary"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692882878.0,
+      "title": "coronasafe/care#1545",
+      "link": "https://github.com/coronasafe/care/pull/1545#pullrequestreview-1593562236",
+      "text": "feat: add dev only endpoint to preview discharge summary"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692882879.0,
+      "title": "coronasafe/care#1545",
+      "link": "https://github.com/coronasafe/care/pull/1545#pullrequestreview-1593562236",
+      "text": "feat: add dev only endpoint to preview discharge summary"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692882537.0,
+      "title": "coronasafe/care#1546",
+      "link": "https://github.com/coronasafe/care/pull/1546#pullrequestreview-1593550665",
+      "text": "fix: merge ip op numbers"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692882119.0,
+      "title": "coronasafe/care#1554",
+      "link": "https://github.com/coronasafe/care/pull/1554#pullrequestreview-1593536681",
+      "text": "fix: assets in use bu consultation filter"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#92",
+      "time": 1692872645.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/92",
+      "text": "Add docker support"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#92",
+      "time": 1692871631.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/92",
+      "text": "Add docker support"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6148",
+      "time": 1692866333.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6148",
+      "text": "Fix C-PAP / PSV selector in critical care"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6146",
+      "time": 1692865164.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6146",
+      "text": "Show only ventilator in link assets to bed"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#270",
+      "time": 1692863215.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/270",
+      "text": "Add captcha validation for user registration"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#91",
+      "time": 1692863060.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/91",
+      "text": "Add captcha for registration page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692859137.0,
+      "title": "coronasafe/care#1550",
+      "link": "https://github.com/coronasafe/care/pull/1550#pullrequestreview-1592876700",
+      "text": "Added support to map care facilities with abdm health facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692857907.0,
+      "title": "coronasafe/care#1277",
+      "link": "https://github.com/coronasafe/care/pull/1277#pullrequestreview-1592851751",
+      "text": "feat: Add service request history for asset"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/ayushma#194",
@@ -11459,35 +11588,50 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1525",
-      "title": "Migration to Rename Skill and Add New Skill",
+      "link": "https://github.com/coronasafe/care_fe/pull/6148",
+      "title": "Fix C-PAP / PSV selector in critical care",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review",
-        "P1"
+        "tested",
+        "P1",
+        "cypress failed"
       ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6146",
+      "title": "Show only ventilator in link assets to bed",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma/pull/270",
+      "title": "Add captcha validation for user registration",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/91",
+      "title": "Add captcha for registration page",
+      "stale_for": 0,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6029",
       "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": [
         "waiting for back end",
         "cypress passed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1522",
-      "title": "Rename prescribed_medication to treatment_plan",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5417",
       "title": "Add service request history to asset",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting for back end"
       ]
@@ -11497,13 +11641,13 @@
       "title": "feat: Add service request history for asset",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 141,
+      "stale_for": 142,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -11512,13 +11656,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 154,
+      "stale_for": 155,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "blocked",
         "waiting-for-review"

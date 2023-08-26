@@ -1,6 +1,114 @@
 {
-  "last_updated": 1692885756.0,
+  "last_updated": 1692975405.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/teleicu_middleware#84",
+      "time": 1692975405.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/84",
+      "text": "resolve conflicts in prisma schema migrations"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/teleicu_middleware#84",
+      "time": 1692974515.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/84",
+      "text": "resolve conflicts in prisma schema migrations"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/teleicu_middleware#83",
+      "time": 1692972711.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/83",
+      "text": "Ocr"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/teleicu_middleware#83",
+      "time": 1692972650.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/83",
+      "text": "Ocr"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/teleicu_middleware#82",
+      "time": 1692968506.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/82",
+      "text": "Get OCR working"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5363",
+      "time": 1692963890.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5363",
+      "text": "Service Request: Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692963868.0,
+      "title": "coronasafe/care_fe#5417",
+      "link": "https://github.com/coronasafe/care_fe/pull/5417#pullrequestreview-1595522342",
+      "text": "Add service request history to asset"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6131",
+      "time": 1692963718.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6131",
+      "text": "Merge op_no and ip_no into one field"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692963709.0,
+      "title": "coronasafe/care_fe#6132",
+      "link": "https://github.com/coronasafe/care_fe/pull/6132#pullrequestreview-1595516352",
+      "text": "fix: merge ip and op number"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692963671.0,
+      "title": "coronasafe/care_fe#6146",
+      "link": "https://github.com/coronasafe/care_fe/pull/6146#pullrequestreview-1595515293",
+      "text": "Show only ventilator in link assets to bed"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1550",
+      "time": 1692958321.0,
+      "link": "https://github.com/coronasafe/care/pull/1550",
+      "text": "Added support to map care facilities with abdm health facility"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1550",
+      "time": 1692958321.0,
+      "link": "https://github.com/coronasafe/care/pull/1550",
+      "text": "Added support to map care facilities with abdm health facility",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692956361.0,
+      "title": "coronasafe/care#1550",
+      "link": "https://github.com/coronasafe/care/pull/1550#pullrequestreview-1595335720",
+      "text": "Added support to map care facilities with abdm health facility"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6142",
+      "time": 1692929795.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6142",
+      "text": "BUG: Respiratory support (critical care log update)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692929786.0,
+      "title": "coronasafe/care_fe#6148",
+      "link": "https://github.com/coronasafe/care_fe/pull/6148#pullrequestreview-1594716345",
+      "text": "Fix C-PAP / PSV selector in critical care"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6128",
@@ -21752,39 +21860,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6136",
-      "title": "added ui to add and update health facility id",
-      "stale_for": 1,
-      "labels": [
-        "needs testing",
-        "Backend",
-        "P1",
-        "cypress failed",
-        "ABDM"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1550",
-      "title": "Added support to map care facilities with abdm health facility",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1533",
       "title": "added bed_id to reponse of patient_from_asset",
-      "stale_for": 3,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/teleicu_middleware/pull/82",
-      "title": "Get OCR working",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/54",
       "title": "Added UI for feedback",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -21792,13 +21876,13 @@
     {
       "link": "https://github.com/coronasafe/ayushma/pull/194",
       "title": "Added feedback ",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -21806,13 +21890,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 187,
+      "stale_for": 188,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 22,
+      "stale_for": 23,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -21822,13 +21906,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 258,
+      "stale_for": 259,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": [
         "changes required"
       ]
@@ -21836,29 +21920,37 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 615,
+      "stale_for": 616,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 621,
+      "stale_for": 622,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 622,
+      "stale_for": 623,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 817,
+      "stale_for": 818,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6117",
+      "pr_link": "https://github.com/coronasafe/care/pull/1550"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6117",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6136"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1407",
       "pr_link": "https://github.com/coronasafe/care/pull/1408"

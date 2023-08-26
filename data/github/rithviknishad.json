@@ -1,6 +1,115 @@
 {
-  "last_updated": 1692889874.0,
+  "last_updated": 1692979196.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6160",
+      "time": 1692979196.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6160",
+      "text": "fixes #6159; fix misalignment in option chips of async autocomplete."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6159",
+      "time": 1692978842.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6159",
+      "text": "Close Icon of selected options of multi selects is bigger than intended, hence looks misaligned."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6158",
+      "time": 1692978368.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6158",
+      "text": "Merge \"Configure Facility\" and \"Configure Health Facility\" to one page: \"Configure Facility\""
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692958842.0,
+      "title": "coronasafe/care#1561",
+      "link": "https://github.com/coronasafe/care/pull/1561#pullrequestreview-1595409004",
+      "text": "Set edits as read_only, exclude asset from Service"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692957594.0,
+      "title": "coronasafe/care#1560",
+      "link": "https://github.com/coronasafe/care/pull/1560#pullrequestreview-1595376804",
+      "text": "Add Hard Limit to Medicines Search"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692956178.0,
+      "title": "coronasafe/care#1560",
+      "link": "https://github.com/coronasafe/care/pull/1560#pullrequestreview-1595330582",
+      "text": "Add Hard Limit to Medicines Search"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1560",
+      "time": 1692955402.0,
+      "link": "https://github.com/coronasafe/care/pull/1560",
+      "text": "Add Hard Limit to Medicines Search"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1557",
+      "time": 1692954642.0,
+      "link": "https://github.com/coronasafe/care/pull/1557",
+      "text": "Sorts medicine name exact matches first"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1277",
+      "time": 1692954452.0,
+      "link": "https://github.com/coronasafe/care/pull/1277",
+      "text": "feat: Add service request history for asset",
+      "collaborated_with": [
+        "vigneshhari",
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6154",
+      "time": 1692949044.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6154",
+      "text": "Prescriptions: Add toggle button to filter medicines by type: \"generic\" only"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1557",
+      "time": 1692947508.0,
+      "link": "https://github.com/coronasafe/care/pull/1557",
+      "text": "Sorts medicine name exact matches first"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1556",
+      "time": 1692946033.0,
+      "link": "https://github.com/coronasafe/care/issues/1556",
+      "text": "Generic Medicine: Paracetamol is not sorted first upon search"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6153",
+      "time": 1692944761.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6153",
+      "text": "Generic Medicine: Paracetamol is not sorted first upon search"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692938388.0,
+      "title": "coronasafe/care#1550",
+      "link": "https://github.com/coronasafe/care/pull/1550#pullrequestreview-1594834172",
+      "text": "Added support to map care facilities with abdm health facility"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692936287.0,
+      "title": "coronasafe/care#1277",
+      "link": "https://github.com/coronasafe/care/pull/1277#pullrequestreview-1594801611",
+      "text": "feat: Add service request history for asset"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6152",
@@ -21418,19 +21527,36 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6160",
+      "title": "fixes #6159; fix misalignment in option chips of async autocomplete.",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1560",
+      "title": "Add Hard Limit to Medicines Search",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6104",
       "title": "Upgrade tailwindcss to v3.3.3",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "need Review",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6060",
       "title": "Implements `useQuery` and `useMutation` hooks",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "stale",
         "cypress failed"
@@ -21439,7 +21565,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 42,
+      "stale_for": 43,
       "labels": [
         "need Review"
       ]
@@ -21447,13 +21573,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 24,
+      "stale_for": 25,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "stale",
         "cypress failed",
@@ -21462,6 +21588,10 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1556",
+      "pr_link": "https://github.com/coronasafe/care/pull/1557"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6073",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6076"

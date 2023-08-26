@@ -1,6 +1,13 @@
 {
-  "last_updated": 1692725316.0,
+  "last_updated": 1692946727.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5870",
+      "time": 1692946727.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5870#issuecomment-1692865828",
+      "text": "@nihal467 I have fixed the merge conflicts, please take a look\r\nThanks!"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6135",
@@ -295,19 +302,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6135",
       "title": "Added test of patient_crud.cy.ts",
-      "stale_for": 0,
-      "labels": []
+      "stale_for": 1,
+      "labels": [
+        "merge conflict"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6107",
       "title": "Added test for facility.cy.ts",
-      "stale_for": 3,
-      "labels": []
+      "stale_for": 1,
+      "labels": [
+        "merge conflict"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6106",
       "title": "Added test for resource and migrated it to POM",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": []
     },
     {
@@ -315,7 +326,8 @@
       "title": "Added test for importing and configuring an asset and migrated patient_crud.ts to POM approach",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "work-in-progress",
+        "merge conflict"
       ]
     }
   ],

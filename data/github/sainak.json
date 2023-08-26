@@ -1,6 +1,62 @@
 {
-  "last_updated": 1692896041.0,
+  "last_updated": 1692987630.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1692987630.0,
+      "title": "coronasafe/care#1560",
+      "link": "https://github.com/coronasafe/care/pull/1560#pullrequestreview-1596284351",
+      "text": "Add Hard Limit to Medicines Search"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6132",
+      "time": 1692963718.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6132",
+      "text": "fix: merge ip and op number"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692956121.0,
+      "title": "coronasafe/care#1560",
+      "link": "https://github.com/coronasafe/care/pull/1560#pullrequestreview-1595329186",
+      "text": "Add Hard Limit to Medicines Search"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1560",
+      "time": 1692955806.0,
+      "link": "https://github.com/coronasafe/care/pull/1560#issuecomment-1693065981",
+      "text": "@rithviknishad can we switch to https://django-filter.readthedocs.io/en/stable/ref/filters.html#numberfilter"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1559",
+      "time": 1692954654.0,
+      "link": "https://github.com/coronasafe/care/pull/1559",
+      "text": "feat: use ruff"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1558",
+      "time": 1692954518.0,
+      "link": "https://github.com/coronasafe/care/issues/1558",
+      "text": "Switch to ruff for formatting and linting"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1554",
+      "time": 1692954518.0,
+      "link": "https://github.com/coronasafe/care/pull/1554",
+      "text": "fix: assets in use by consultation filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1692951899.0,
+      "title": "coronasafe/care#1557",
+      "link": "https://github.com/coronasafe/care/pull/1557#pullrequestreview-1595199018",
+      "text": "Sorts medicine name exact matches first"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1546",
@@ -5120,26 +5176,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1554",
-      "title": "fix: assets in use by consultation filter",
+      "link": "https://github.com/coronasafe/care/pull/1559",
+      "title": "feat: use ruff",
       "stale_for": 0,
-      "labels": [
-        "reviewed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6132",
-      "title": "fix: merge ip and op number",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress passed"
-      ]
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "changes required",
         "merge conflict",
@@ -5150,32 +5195,40 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 35,
+      "stale_for": 36,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 35,
+      "stale_for": 36,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 73,
+      "stale_for": 74,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
       "title": "fix requests not sending content-type header and minor refactor",
-      "stale_for": 393,
+      "stale_for": 394,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6131",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6132"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care/issues/1542",
       "pr_link": "https://github.com/coronasafe/care/pull/1546"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1542",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6132"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6086",
@@ -5220,10 +5273,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/744",
       "pr_link": "https://github.com/coronasafe/care/pull/746"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/2240",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/2292"
     }
   ]
 }

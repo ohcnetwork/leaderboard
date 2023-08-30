@@ -56,6 +56,7 @@ export interface Activity {
   type:
     | "comment_created"
     | "issue_assigned"
+    | "issue_closed"
     | "pr_reviewed"
     | "issue_opened"
     | "eod_update"

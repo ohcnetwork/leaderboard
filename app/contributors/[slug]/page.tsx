@@ -5,7 +5,7 @@ import {
   professionalTeamSkills,
   resolveGraduateAttributes,
 } from "../../../config/GraduateAttributes";
-import { getContributorBySlug, getContributors } from "../../../lib/api";
+import { getContributorBySlug } from "../../../lib/api";
 
 import ActivityCalendarGit from "../../../components/contributors/ActivityCalendarGitHub";
 import BadgeIcons from "../../../components/contributors/BadgeIcons";
@@ -316,7 +316,7 @@ export default async function Contributor({ params: { slug } }: Params) {
                         }
                         tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm flex flex-row gap-4"
                       >
-                        <div className="flex items-center">
+                        <span className="flex items-center">
                           <span className="text-primary-500 text-sm pr-2">
                             ➞
                           </span>
@@ -335,7 +335,7 @@ export default async function Contributor({ params: { slug } }: Params) {
                               .replace("/pull", "")}
                           </code>
                           {pr.title}
-                        </div>
+                        </span>
                       </Tooltip>
                     </p>
                   </a>

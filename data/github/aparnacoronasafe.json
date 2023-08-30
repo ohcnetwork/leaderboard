@@ -1,6 +1,160 @@
 {
-  "last_updated": 1690191342.0,
+  "last_updated": 1692857216.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6144",
+      "time": 1692857216.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6144",
+      "text": "Principle Diagnosis"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6143",
+      "time": 1692799180.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6143",
+      "text": "tracking re-admission"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6142",
+      "time": 1692790311.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6142",
+      "text": "BUG: Respiratory support (critical care log update)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6141",
+      "time": 1692786348.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6141",
+      "text": "Capture time of admission"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6140",
+      "time": 1692786055.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6140",
+      "text": "Consultation- verified by doctor- change to dropdown"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6139",
+      "time": 1692785898.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6139",
+      "text": "Add \"Bed Status\" tab in Update consultation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6134",
+      "time": 1692718082.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6134#issuecomment-1688436788",
+      "text": "adding to wishlist since shifting module is not actively in use currently. "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6134",
+      "time": 1692718041.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6134",
+      "text": "Shifting request"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6091",
+      "time": 1692281275.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6091",
+      "text": "User skill addition"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1972",
+      "time": 1691503011.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1972#issuecomment-1669672220",
+      "text": "Requirement:\n\n- [ ] The Respiratory support Tab on patient dashboard (https://care.coronasafe.in/facility/657c32be-d584-476c-9ce2-0412f0e7692e/patient/dbc8c312-3700-4fd5-915e-f53cc28e092a/consultation/8ecb4c49-49d6-4216-87c0-7dc6408d9788/ventilator)\n\nto show a timeline of respiratory support provided to the patient. It could be a table showing:\n\nType of respiratory support.        |           Date and time of start        |        Date and time of end\nO2                                                       DD/MM/YYYY, HH:MM AM/PM.    DD/MM/YYYY, HH:MM AM/PM\n\n\nAt 1 time there can only be 1 type of respiratory support given to the patient. \n\n\n- [ ] Going ahead we will also require the start date and time and type of respiratory support to be plotted on the graphs in the respiratory support tab as vertical lines (start and end).\n\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6022",
+      "time": 1691417899.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6022",
+      "text": "Marking Death on patient profile"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6016",
+      "time": 1691405589.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6016",
+      "text": "Improve format in date field"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5990",
+      "time": 1690992468.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5990#issuecomment-1662495741",
+      "text": "No. Please go ahead. \n\nWe have instances where the nurses edit category on consultation and expect it to change over the patient profile. (While there is a log update) \n\nThis change is to avoide them from updating it in consultation rather than the latest log update "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5956",
+      "time": 1690872266.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5956#issuecomment-1659667819",
+      "text": "Discussed with Gigin. Needed clarity on what are the requirements for the dashboard out of this. \r\n\r\nCARE must be able to send information on \r\n1) How many individual doctors\r\n2) whats the actual resource available taking into account % availability?\r\n\r\nEg: If a hospital has the following doctors:\r\nDoc 1: 100%\r\nDoc 2: 50%\r\nDoc 3: 50%\r\n\r\nMetabase must be able to gain data on \r\n1) No. of individual doctors- 3\r\n2) No. of resource (doctor) available: 2 (1+0.5+0.5)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5956",
+      "time": 1690860019.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5956#issuecomment-1659503556",
+      "text": "@Ashesh3 we need this in the next release. It is a priority. \n\nWhy is it blocked? "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5912",
+      "time": 1690797575.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5912#issuecomment-1658057459",
+      "text": "@Ashesh3 @nihal467 What does the PR https://github.com/coronasafe/care_fe/pull/5963 do? I dont see the discharge summary automatically getting added to File Upload. How is it supposed to work?\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5957",
+      "time": 1690466563.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5957",
+      "text": "User activity tracking"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5956",
+      "time": 1690465704.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5956",
+      "text": "Understanding time contributed by doctors"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5955",
+      "time": 1690462343.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5955",
+      "text": "Making CARE more inclusive for Transgenders"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5943",
+      "time": 1690435424.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5943",
+      "text": "Shifting form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5940",
+      "time": 1690381686.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5940#issuecomment-1651920060",
+      "text": "Looks good @rithviknishad "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#5918",
+      "time": 1690287509.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5918",
+      "text": "Patient search field- Search by OP No."
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#5909",

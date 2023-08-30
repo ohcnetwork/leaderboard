@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { Contributor } from '@/lib/types';
-import clsx from 'clsx';
-import Link from 'next/link';
+import { Contributor } from "@/lib/types";
+import clsx from "clsx";
+import Link from "next/link";
 export default function InfoCard({
   contributor,
   minimal = true,
@@ -14,9 +14,9 @@ export default function InfoCard({
   return (
     <div
       className={clsx(
-        'xl:text-left',
+        "xl:text-left",
         isClickable &&
-          'border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4'
+          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4"
       )}
       role="listitem"
     >
@@ -31,13 +31,13 @@ export default function InfoCard({
             }`}
           >
             <img
-              className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-[3px] border-indigo-500"
-              src={`https://github.com/${contributor.github}.png`}
+              className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-2 border-indigo-500"
+              src={`https://avatars.githubusercontent.com/${contributor.github}`}
               alt={contributor.github}
             />
           </div>
         </Link>
-        <div className={minimal ? '' : 'flex flex-col items-center space-y-2'}>
+        <div className={minimal ? "" : "flex flex-col items-center space-y-2"}>
           <div className="font-medium text-lg space-y-1">
             <Link
               href={isClickable ? `/contributors/${contributor.github}` : `#`}
@@ -45,8 +45,8 @@ export default function InfoCard({
             >
               <h3
                 className={clsx(
-                  'text-lg md:text-2xl leading-tight ',
-                  isClickable && 'cursor-pointer hover:text-primary-200'
+                  "text-lg md:text-2xl leading-tight ",
+                  isClickable && "cursor-pointer hover:text-primary-200"
                 )}
               >
                 {contributor.name}
@@ -60,7 +60,7 @@ export default function InfoCard({
           <ul
             role="list"
             className={
-              minimal ? 'flex items-center space-x-4 mt-4' : 'space-y-2'
+              minimal ? "flex items-center space-x-4 mt-4" : "space-y-2"
             }
           >
             {contributor.github && (

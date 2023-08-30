@@ -1,6 +1,27 @@
 {
-  "last_updated": 1689668173.0,
+  "last_updated": 1691062589.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5985",
+      "time": 1691062589.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5985#issuecomment-1663824258",
+      "text": "> * [ ]  Use `ButtonV2` Care UI component instead of `button`.\r\n> * [ ]  Use `CareIcon` icons instead of font-awesome icons\r\n> * [ ]  Fix the deploy failure\r\n\r\nHi, \r\nI have done the changes as proposed but the deploy in failing can you suggest me how can I fix this ??"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5695",
+      "time": 1690957895.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5695#issuecomment-1661579259",
+      "text": "Hi @nihal467 ,\r\nI am just able to make a UI, I tried to add the functionality but I don't know why is it not working.\r\nIf anyone guides me for this, I will make PR today."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#5985",
+      "time": 1690957633.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5985",
+      "text": "Made a Search UI"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#5695",
@@ -9,6 +30,15 @@
       "text": "Yes, I have build full frontend but not able to make the functionality.\nCan I raised the PR for frontend !?"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5985",
+      "title": "Made a Search UI",
+      "stale_for": 0,
+      "labels": [
+        "Deploy-Failed"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

@@ -766,5 +766,351 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-08-07 00:00:00": [
+        {
+            "client_msg_id": "d7e9e9ce-5593-41a1-85a1-2a6df01fa768",
+            "type": "message",
+            "text": "EOD 05-08-2023\nWorked on issue 5948",
+            "user": "U052CV9HBR6",
+            "ts": "1691387918.331249",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "fwL1h",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 05-08-2023\nWorked on issue 5948"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-09 00:00:00": [
+        {
+            "client_msg_id": "90ba2f69-a5e7-48c7-a9c8-688547f74102",
+            "type": "message",
+            "text": "EOD 07/08/2023 and 08/08/2023\n\u2022 Gone through docs for headlessui listbox and render props and tried to fix a UI bug resulting due to my previous week's work on issue 5944(closing drop-down conditionally)",
+            "user": "U052CV9HBR6",
+            "ts": "1691582965.741059",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "iU5aG",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/08/2023 and 08/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Gone through docs for headlessui listbox and render props and tried to fix a UI bug resulting due to my previous week's work on issue 5944(closing drop-down conditionally)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-12 00:00:00": [
+        {
+            "client_msg_id": "50059a98-22f3-49a1-8d2f-477c6d2d92df",
+            "type": "message",
+            "text": "EOD 10 and 11/08/2023\n\u2022 Worked on bugs arising out of my current issues(couldn't work much because of exam)",
+            "user": "U052CV9HBR6",
+            "ts": "1691871059.196819",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "4Opn",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 10 and 11/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on bugs arising out of my current issues(couldn't work much because of exam)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-16 00:00:00": [
+        {
+            "client_msg_id": "9c94cb15-cc76-4e39-b27e-cf0f7bea9d9a",
+            "type": "message",
+            "text": "EOD 12/08/2023 and 14/082023\n\u2022 Replaced libphonenumber-js's functions with new functions in most of the files. Two more files are remaining.",
+            "user": "U052CV9HBR6",
+            "ts": "1692164186.753269",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "rFY4u",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/08/2023 and 14/082023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Replaced libphonenumber-js's functions with new functions in most of the files. Two more files are remaining."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-19 00:00:00": [
+        {
+            "client_msg_id": "4c033ed8-1206-4502-9199-696c7aae060f",
+            "type": "message",
+            "text": "EOD 16/08/2023\n\u2022 Implemented alternative methods for AsYouType and isValid of libphonenumber-js\nEOD 17/08/2023\n\u2022 Made some changes to previous methods by checking some rules for phone number display formats and validity. Currently implemented the methods only for Indian numbers as the rules for all countries' numbers vary widely.(couldn't work much due to college work)\nEOD 18/08/2023\n\u2022 Tested all most of the pages except 1 before creating PR.\n\u2022 Explored date-fns documentation to take it up next",
+            "user": "U052CV9HBR6",
+            "ts": "1692424100.685169",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "OM2Cy",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 16/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Implemented alternative methods for AsYouType and isValid of libphonenumber-js"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 17/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made some changes to previous methods by checking some rules for phone number display formats and validity. Currently implemented the methods only for Indian numbers as the rules for all countries' numbers vary widely.(couldn't work much due to college work)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 18/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tested all most of the pages except 1 before creating PR."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Explored date-fns documentation to take it up next"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-22 00:00:00": [
+        {
+            "client_msg_id": "77b3754c-7831-4847-915e-735e3e53af08",
+            "type": "message",
+            "text": "EOD 19/08/2023\n\u2022 Resolved a bug in selecting countries which have same country code(like US, Canada and few others) which resulted as part of my previous day's work on replacing libphonenumber-js.(will test all 16 pages again and create PR by Tuesday)\nEOD 21/08/2023\n\u2022 Worked on replacing date-fns library",
+            "user": "U052CV9HBR6",
+            "ts": "1692679416.026969",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "qLaP",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 19/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolved a bug in selecting countries which have same country code(like US, Canada and few others) which resulted as part of my previous day's work on replacing libphonenumber-js.(will test all 16 pages again and create PR by Tuesday)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 21/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on replacing date-fns library"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U052CV9HBR6",
+                "ts": "1692679481.000000"
+            }
+        }
     ]
 }

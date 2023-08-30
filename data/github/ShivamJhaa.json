@@ -1,6 +1,48 @@
 {
-  "last_updated": 1689390211.0,
+  "last_updated": 1692946727.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5870",
+      "time": 1692946727.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5870#issuecomment-1692865828",
+      "text": "@nihal467 I have fixed the merge conflicts, please take a look\r\nThanks!"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6135",
+      "time": 1692725316.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6135",
+      "text": "Added test of patient_crud.cy.ts"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6109",
+      "time": 1692423738.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6109",
+      "text": "Add test for resources.cy.ts"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6108",
+      "time": 1692423539.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6108",
+      "text": "Add test for facility.cy.ts"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6107",
+      "time": 1692420013.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6107",
+      "text": "Added test for resource.cy.ts"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6106",
+      "time": 1692419858.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6106",
+      "text": "Added test for resource and migrated it to POM"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5876",
@@ -256,6 +298,38 @@
       "text": "@nihal467  All the unclaimed tasks depend on the open PRs like adding, and editing consultation can only be done after creating patients, and configuration of the assets page can be done after creating an asset. So can I take those tasks which are already assigned (creating an asset) as the PR seems stale now? "
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6135",
+      "title": "Added test of patient_crud.cy.ts",
+      "stale_for": 1,
+      "labels": [
+        "merge conflict"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6107",
+      "title": "Added test for facility.cy.ts",
+      "stale_for": 1,
+      "labels": [
+        "merge conflict"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6106",
+      "title": "Added test for resource and migrated it to POM",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5870",
+      "title": "Added test for importing and configuring an asset and migrated patient_crud.ts to POM approach",
+      "stale_for": 0,
+      "labels": [
+        "work-in-progress",
+        "merge conflict"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

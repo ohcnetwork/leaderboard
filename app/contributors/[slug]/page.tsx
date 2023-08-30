@@ -212,7 +212,7 @@ export default async function Contributor({ params: { slug } }: Params) {
                       ></img>
                       <img
                         className="absolute top-1.5 mx-auto h-7 md:h-8 w-7 md:w-8 rounded-full border border-primary-200"
-                        src={`https://github.com/${contributor.github}.png`}
+                        src={`https://avatars.githubusercontent.com/${contributor.github}?size=200`}
                         alt={contributor.github}
                       />
                     </div>

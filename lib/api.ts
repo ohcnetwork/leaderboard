@@ -1,6 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import { Activity, ActivityData, Highlights } from "./types";
 
 const root = join(process.cwd(), "contributors");
 const slackRoot = join(process.cwd(), "data/slack");
@@ -23,16 +24,16 @@ const points = {
 // Opening a PR would give a single point and merging it would give you the other 7 points, making 8 per PR
 // Updating the EOD would get 2 points per day and additional 20 for regular daily updates plus 10 for just missing one
 
-export function formatSlug(slug) {
+export function formatSlug(slug: string) {
   return slug.replace(/\.md$/, "");
 }
 
-export function formatSlugJSON(slug) {
+export function formatSlugJSON(slug: string) {
   return slug.replace(/\.json$/, "");
 }
 
 export function getSlackSlugs() {
-  const slackSlugs = {};
+  const slackSlugs: Record<string, string> = {};
   fs.readdirSync(`${slackRoot}`).forEach((file) => {
     slackSlugs[formatSlugJSON(file)] = file;
   });
@@ -42,7 +43,7 @@ export function getSlackSlugs() {
 
 let validSlackSlugs = getSlackSlugs();
 
-export function getSlackMessages(slackId) {
+export function getSlackMessages(slackId: string) {
   const filePath = join(slackRoot, `${slackId}.json`);
   let fileContents = [];
   if (validSlackSlugs[slackId]) {
@@ -51,23 +52,26 @@ export function getSlackMessages(slackId) {
     } catch (e) {
       console.log(e);
     }
-    return Object.values(fileContents).reduce((acc, messages) => {
-      return acc.concat(
-        messages.map((message) => ({
-          type: "eod_update",
-          time: new Date(message.ts * 1000).toISOString(),
-          link: "",
-          text: message.text,
-        }))
-      );
-    }, []);
+    return Object.values(fileContents).reduce(
+      (acc: Activity[], messages: any) => {
+        return acc.concat(
+          messages.map((message: any) => ({
+            type: "eod_update",
+            time: new Date(message.ts * 1000).toISOString(),
+            link: "",
+            text: message.text,
+          }))
+        );
+      },
+      []
+    );
   } else {
-    return [];
+    return [] as Activity[];
   }
 }
 
 export function getContributorsSlugs() {
-  const contributorSlugs = [];
+  const contributorSlugs: { file: string }[] = [];
   fs.readdirSync(`${root}`).forEach((file) => {
     contributorSlugs.push({ file: file });
   });
@@ -75,13 +79,13 @@ export function getContributorsSlugs() {
   return contributorSlugs;
 }
 
-export function getContributorBySlug(file, detail = false) {
+export function getContributorBySlug(file: string, detail = false) {
   const fullPath = join(root, `${formatSlug(file)}.md`);
   const { data, content } = matter(fs.readFileSync(fullPath, "utf8"));
 
   const githubHandle = file.replace(/\.md$/, "");
 
-  let activityData = { activity: [] };
+  let activityData = { activity: [] as Activity[] };
 
   try {
     activityData = JSON.parse(
@@ -109,7 +113,8 @@ export function getContributorBySlug(file, detail = false) {
         eod_update: acc.eod_update + (activity.type === "eod_update" ? 1 : 0),
         pr_opened: acc.pr_opened + (activity.type === "pr_opened" ? 1 : 0),
         pr_merged: acc.pr_merged + (activity.type === "pr_merged" ? 1 : 0),
-        pr_collaborated: acc.pr_collaborated + (activity.type === "pr_collaborated" ? 1 : 0),
+        pr_collaborated:
+          acc.pr_collaborated + (activity.type === "pr_collaborated" ? 1 : 0),
         pr_reviewed:
           acc.pr_reviewed + (activity.type === "pr_reviewed" ? 1 : 0),
         issue_assigned:
@@ -129,7 +134,7 @@ export function getContributorBySlug(file, detail = false) {
       pr_reviewed: 0,
       issue_assigned: 0,
       issue_opened: 0,
-    }
+    } as Highlights & { activity: Activity[] }
   );
 
   const calendarData = getCalendarData(weightedActivity.activity);
@@ -167,13 +172,13 @@ export function getContributors(detail = false) {
   return contributors;
 }
 
-export function getCalendarData(activity) {
+export function getCalendarData(activity: Activity[]) {
   const calendarData = activity.reduce((acc, activity) => {
     // Github activity.time ignores milliseconds (*1000)
     const date = (
       new String(activity.time).length === 10
         ? new Date(activity.time * 1000)
-        : new Date(activity.time.slice(0, 10))
+        : new Date(activity.time.toString().slice(0, 10))
     )
       .toISOString()
       .split("T")[0];
@@ -194,7 +199,7 @@ export function getCalendarData(activity) {
       // console.log(activity.type);
     }
     return acc;
-  }, {});
+  }, {} as Record<string, any>);
   return [...Array(365)].map((_, i) => {
     // Current Date - i
     const iReverse = 365 - i;
@@ -217,7 +222,10 @@ export function getCalendarData(activity) {
   });
 }
 
-const computePoints = (calendarDataEntry, initialPoints) => {
+const computePoints = (
+  calendarDataEntry: Highlights,
+  initialPoints: number
+) => {
   let pointsToAdd = initialPoints ?? 0;
   pointsToAdd += points.eod_update * (calendarDataEntry.eod_update ?? 0);
   pointsToAdd +=
@@ -225,7 +233,8 @@ const computePoints = (calendarDataEntry, initialPoints) => {
   pointsToAdd += points.pr_opened * (calendarDataEntry.pr_opened ?? 0);
   pointsToAdd += points.pr_reviewed * (calendarDataEntry.pr_reviewed ?? 0);
   pointsToAdd += points.pr_merged * (calendarDataEntry.pr_merged ?? 0);
-  pointsToAdd += points.pr_collaborated + (calendarDataEntry.pr_collaborated ?? 0);
+  pointsToAdd +=
+    points.pr_collaborated + (calendarDataEntry.pr_collaborated ?? 0);
   pointsToAdd +=
     points.issue_assigned * (calendarDataEntry.issue_assigned ?? 0);
   pointsToAdd += points.issue_opened * (calendarDataEntry.issue_opened ?? 0);
@@ -233,7 +242,7 @@ const computePoints = (calendarDataEntry, initialPoints) => {
   return pointsToAdd;
 };
 
-const getLastWeekHighlights = (calendarData) => {
+const getLastWeekHighlights = (calendarData: Highlights[]) => {
   const lastWeek = calendarData.slice(-7);
 
   const highlights = lastWeek.reduce(
@@ -273,4 +282,4 @@ const getLastWeekHighlights = (calendarData) => {
   return highlights;
 };
 
-const padZero = (num) => (num < 10 ? `0${num}` : num);
+const padZero = (num: number) => (num < 10 ? `0${num}` : num);

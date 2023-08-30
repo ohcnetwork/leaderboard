@@ -53,7 +53,15 @@ export interface WeekSummary {
 }
 
 export interface Activity {
-  type: string;
+  type:
+    | "comment_created"
+    | "issue_assigned"
+    | "pr_reviewed"
+    | "issue_opened"
+    | "eod_update"
+    | "pr_opened"
+    | "pr_merged"
+    | "pr_collaborated";
   title: string;
   time: number;
   link: string;

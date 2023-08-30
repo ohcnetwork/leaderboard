@@ -1,7 +1,7 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Leaderboard',
+  title: `Leaderboard | ${process.env.NEXT_PUBLIC_PAGE_TITLE}`,
 };
 
 export default function LeaderboardLayout({

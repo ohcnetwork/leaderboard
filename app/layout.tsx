@@ -1,8 +1,9 @@
-import './globals.css';
-import { Metadata } from 'next';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Provider from './provider';
+import "./globals.css";
+import { Metadata } from "next";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Provider from "./provider";
+
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_PAGE_TITLE,
   description: process.env.NEXT_PUBLIC_META_DESCRIPTION,
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     title: process.env.NEXT_PUBLIC_META_TITLE,
     description: process.env.NEXT_PUBLIC_META_DESCRIPTION,
     images: process.env.NEXT_PUBLIC_META_IMG,
-    type: 'article',
+    type: "article",
   },
 };
 

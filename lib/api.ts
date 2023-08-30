@@ -16,6 +16,7 @@ const points = {
   pr_opened: 1,
   pr_merged: 7,
   pr_collaborated: 2,
+  issue_closed: 0,
 };
 // Comments will get a single point
 // Picking up an issue would get a point

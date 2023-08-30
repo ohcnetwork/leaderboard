@@ -1,6 +1,55 @@
 {
-  "last_updated": 1693121546.0,
+  "last_updated": 1693312746.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1563",
+      "time": 1693312746.0,
+      "link": "https://github.com/coronasafe/care/pull/1563",
+      "text": "Fix asset dummy data"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693308669.0,
+      "title": "coronasafe/care#1565",
+      "link": "https://github.com/coronasafe/care/pull/1565#pullrequestreview-1600190438",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693308504.0,
+      "title": "coronasafe/care#1565",
+      "link": "https://github.com/coronasafe/care/pull/1565#pullrequestreview-1600185918",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693308118.0,
+      "title": "coronasafe/care#1564",
+      "link": "https://github.com/coronasafe/care/pull/1564#pullrequestreview-1600175689",
+      "text": "Adds filter `administered_date` in Medicine Administrations Viewset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1563",
+      "time": 1693300085.0,
+      "link": "https://github.com/coronasafe/care/pull/1563",
+      "text": "Fix asset dummy data"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6029",
+      "time": 1693298480.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6029#issuecomment-1697015933",
+      "text": "This should have been merged along with the backend change.  @nihal467 could you test and get this merged?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1221",
+      "time": 1693297843.0,
+      "link": "https://github.com/coronasafe/care/pull/1221#issuecomment-1697000841",
+      "text": "Sample Request:\r\n```\r\nGET http://127.0.0.1:8000/api/v1/patient/.../notes/\r\n\r\nHTTP 200\r\n\r\n{\r\n  \"count\": 1,\r\n  \"next\": null,\r\n  \"previous\": null,\r\n  \"results\": [\r\n    {\r\n      \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n      \"note\": \"Hello World 1111\",\r\n      \"facility\": {\r\n       ...\r\n        },\r\n        \"local_body_object\": {\r\n        ...\r\n        },\r\n        \"district_object\": {\r\n         ...\r\n        },\r\n        \"state_object\": {\r\n      ...\r\n        },\r\n        \"facility_type\": {\r\n        ...\r\n        },\r\n        \"read_cover_image_url\": null,\r\n        \"features\": [\r\n       ...\r\n        ],\r\n        \"patient_count\": 10,\r\n        \"bed_count\": 10\r\n      },\r\n      \"created_by_object\": {\r\n      ...\r\n      },\r\n      \"user_type\": \"DistrictAdmin\",\r\n      \"created_date\": \"2023-08-28T19:56:35.529567+05:30\",\r\n      \"modified_date\": \"2023-08-28T20:00:57.936003+05:30\",\r\n      \"edits\": [\r\n        {\r\n          \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n          \"edited_by\": {\r\n            \"id\": 202,\r\n            \"first_name\": \"Bodhish\",\r\n            \"username\": \"devdistrictadmin\",\r\n            \"email\": \"\",\r\n            \"last_name\": \"Thomas\",\r\n            \"user_type\": \"DistrictAdmin\",\r\n            \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n          },\r\n          \"edited_on\": \"2023-08-28T20:00:57.933797+05:30\",\r\n          \"note\": \"Hello World 1111\"\r\n        },\r\n        {\r\n          \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n          \"edited_by\": {\r\n            \"id\": 202,\r\n            \"first_name\": \"Bodhish\",\r\n            \"username\": \"devdistrictadmin\",\r\n            \"email\": \"\",\r\n            \"last_name\": \"Thomas\",\r\n            \"user_type\": \"DistrictAdmin\",\r\n            \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n          },\r\n          \"edited_on\": \"2023-08-28T19:58:06.112164+05:30\",\r\n          \"note\": \"Hello World 5\"\r\n        },\r\n        {\r\n          \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n          \"edited_by\": {\r\n            \"id\": 202,\r\n            \"first_name\": \"Bodhish\",\r\n            \"username\": \"devdistrictadmin\",\r\n            \"email\": \"\",\r\n            \"last_name\": \"Thomas\",\r\n            \"user_type\": \"DistrictAdmin\",\r\n            \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n          },\r\n          \"edited_on\": \"2023-08-28T19:57:17.134287+05:30\",\r\n          \"note\": \"Hello World 4\"\r\n        },\r\n        {\r\n          \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n          \"edited_by\": {\r\n            \"id\": 202,\r\n            \"first_name\": \"Bodhish\",\r\n            \"username\": \"devdistrictadmin\",\r\n            \"email\": \"\",\r\n            \"last_name\": \"Thomas\",\r\n            \"user_type\": \"DistrictAdmin\",\r\n            \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n          },\r\n          \"edited_on\": \"2023-08-28T19:56:35.532226+05:30\",\r\n          \"note\": \"hey\"\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n```\r\n\r\n```\r\nPUT http://localhost:4000/api/v1/patient/.../notes/848d9961-5c4b-450f-b4b6-e850e94ea393\r\n{\"note\":\"Hello World 123123123\"}\r\n\r\n\r\n200 OK\r\n\r\n{\r\n  \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n  \"note\": \"Hello World 1111\",\r\n  \"facility\": {\r\n    ...\r\n    },\r\n    \"local_body_object\": {\r\n    ...\r\n    },\r\n    \"district_object\": {\r\n     ...\r\n    },\r\n    \"state_object\": {\r\n   ...\r\n    },\r\n    \"facility_type\": {\r\n  ...\r\n    },\r\n    \"read_cover_image_url\": null,\r\n    \"features\": [\r\n  ...\r\n    ],\r\n    \"patient_count\": 10,\r\n    \"bed_count\": 10\r\n  },\r\n  \"created_by_object\": {\r\n ...\r\n  },\r\n  \"user_type\": \"DistrictAdmin\",\r\n  \"created_date\": \"2023-08-28T19:56:35.529567+05:30\",\r\n  \"modified_date\": \"2023-08-28T20:00:57.936003+05:30\",\r\n  \"edits\": [\r\n{\r\n      \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n      \"edited_by\": {\r\n        \"id\": 202,\r\n        \"first_name\": \"Bodhish\",\r\n        \"username\": \"devdistrictadmin\",\r\n        \"email\": \"\",\r\n        \"last_name\": \"Thomas\",\r\n        \"user_type\": \"DistrictAdmin\",\r\n        \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n      },\r\n      \"edited_on\": \"2023-08-29T14:00:09.195141+05:30\",\r\n      \"note\": \"Hello World 123123123\"\r\n    },\r\n    {\r\n      \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n      \"edited_by\": {\r\n        \"id\": 202,\r\n        \"first_name\": \"Bodhish\",\r\n        \"username\": \"devdistrictadmin\",\r\n        \"email\": \"\",\r\n        \"last_name\": \"Thomas\",\r\n        \"user_type\": \"DistrictAdmin\",\r\n        \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n      },\r\n      \"edited_on\": \"2023-08-28T20:00:57.933797+05:30\",\r\n      \"note\": \"Hello World 1111\"\r\n    },\r\n    {\r\n      \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n      \"edited_by\": {\r\n        \"id\": 202,\r\n        \"first_name\": \"Bodhish\",\r\n        \"username\": \"devdistrictadmin\",\r\n        \"email\": \"\",\r\n        \"last_name\": \"Thomas\",\r\n        \"user_type\": \"DistrictAdmin\",\r\n        \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n      },\r\n      \"edited_on\": \"2023-08-28T19:58:06.112164+05:30\",\r\n      \"note\": \"Hello World 5\"\r\n    },\r\n    {\r\n      \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n      \"edited_by\": {\r\n        \"id\": 202,\r\n        \"first_name\": \"Bodhish\",\r\n        \"username\": \"devdistrictadmin\",\r\n        \"email\": \"\",\r\n        \"last_name\": \"Thomas\",\r\n        \"user_type\": \"DistrictAdmin\",\r\n        \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n      },\r\n      \"edited_on\": \"2023-08-28T19:57:17.134287+05:30\",\r\n      \"note\": \"Hello World 4\"\r\n    },\r\n    {\r\n      \"id\": \"848d9961-5c4b-450f-b4b6-e850e94ea393\",\r\n      \"edited_by\": {\r\n        \"id\": 202,\r\n        \"first_name\": \"Bodhish\",\r\n        \"username\": \"devdistrictadmin\",\r\n        \"email\": \"\",\r\n        \"last_name\": \"Thomas\",\r\n        \"user_type\": \"DistrictAdmin\",\r\n        \"last_login\": \"2023-08-29T13:56:07.336463+05:30\"\r\n      },\r\n      \"edited_on\": \"2023-08-28T19:56:35.532226+05:30\",\r\n      \"note\": \"hey\"\r\n    }\r\n  ]\r\n}\r\n```"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1562",
@@ -11738,6 +11787,122 @@
       "text": "Make Daily Round clone error more user friendly"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6029",
+      "title": "Rename prescribed_medication to treatment_plan",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "tested",
+        "P1",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5147",
+      "title": "[WIP] Integrate LiveKit for doctor connect",
+      "stale_for": 147,
+      "labels": [
+        "work-in-progress",
+        "merge conflict"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1227",
+      "title": "[WIP] Integrate LiveKit for doctor connect",
+      "stale_for": 160,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1221",
+      "title": "feat(patient notes): add edit window validation and update endpoint",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5946",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5947"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma/issues/212",
+      "pr_link": "https://github.com/coronasafe/ayushma/pull/216"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma/issues/158",
+      "pr_link": "https://github.com/coronasafe/ayushma/pull/159"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1283",
+      "pr_link": "https://github.com/coronasafe/care/pull/1286"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5276",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5283"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5244",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5247"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5075",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5076"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4855",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4856"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4613",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4614"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4147",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4148"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4097",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4101"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4078",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4079"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4022",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4198"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3866",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3867"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3794",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3813"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3641",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3667"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3640",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3654"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3614",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3639"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3573",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3593"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3543",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3544"
+    }
+  ]
 }

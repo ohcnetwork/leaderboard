@@ -1,6 +1,104 @@
 {
-  "last_updated": 1693121546.0,
+  "last_updated": 1693331682.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1693331682.0,
+      "title": "coronasafe/care_fe#5550",
+      "link": "https://github.com/coronasafe/care_fe/pull/5550#pullrequestreview-1600991029",
+      "text": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693331345.0,
+      "title": "coronasafe/care#1318",
+      "link": "https://github.com/coronasafe/care/pull/1318#pullrequestreview-1600982572",
+      "text": "Added a way to handle filtering admitted but no bed assigned "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693316136.0,
+      "title": "coronasafe/care#1450",
+      "link": "https://github.com/coronasafe/care/pull/1450#pullrequestreview-1600440463",
+      "text": "add table to track user facility allocation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693309418.0,
+      "title": "coronasafe/care#1531",
+      "link": "https://github.com/coronasafe/care/pull/1531#pullrequestreview-1600212056",
+      "text": "List detail serializer notification"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1565",
+      "time": 1693309233.0,
+      "link": "https://github.com/coronasafe/care/pull/1565#issuecomment-1697278876",
+      "text": "needs test"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693309127.0,
+      "title": "coronasafe/care#1565",
+      "link": "https://github.com/coronasafe/care/pull/1565#pullrequestreview-1600204011",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693309127.0,
+      "title": "coronasafe/care#1565",
+      "link": "https://github.com/coronasafe/care/pull/1565#pullrequestreview-1600204011",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693308786.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1600193961",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693308312.0,
+      "title": "coronasafe/care#1531",
+      "link": "https://github.com/coronasafe/care/pull/1531#pullrequestreview-1600180540",
+      "text": "List detail serializer notification"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693308312.0,
+      "title": "coronasafe/care#1531",
+      "link": "https://github.com/coronasafe/care/pull/1531#pullrequestreview-1600180540",
+      "text": "List detail serializer notification"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693308087.0,
+      "title": "coronasafe/care#1531",
+      "link": "https://github.com/coronasafe/care/pull/1531#pullrequestreview-1600174882",
+      "text": "List detail serializer notification"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693307664.0,
+      "title": "coronasafe/care#1564",
+      "link": "https://github.com/coronasafe/care/pull/1564#pullrequestreview-1600163116",
+      "text": "Adds filter `administered_date` in Medicine Administrations Viewset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693307624.0,
+      "title": "coronasafe/care#1221",
+      "link": "https://github.com/coronasafe/care/pull/1221#pullrequestreview-1600162094",
+      "text": "feat(patient notes): add edit window validation and update endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693300191.0,
+      "title": "coronasafe/care#1563",
+      "link": "https://github.com/coronasafe/care/pull/1563#pullrequestreview-1599884461",
+      "text": "Fix asset dummy data"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1562",
@@ -5204,6 +5302,105 @@
       "text": "fix: sidebar on devices with small height"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1559",
+      "title": "feat: use ruff",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6003",
+      "title": "cleanup fireRequests and remove axios",
+      "stale_for": 5,
+      "labels": [
+        "changes required",
+        "merge conflict",
+        "stale",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/medibase/pull/7",
+      "title": "Update dependencies",
+      "stale_for": 40,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1450",
+      "title": "add table to track user facility allocation",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1349",
+      "title": "use signals to update patient and bed count of facilities",
+      "stale_for": 78,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/mock-cns-req/pull/1",
+      "title": "fix requests not sending content-type header and minor refactor",
+      "stale_for": 398,
+      "labels": []
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6131",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6132"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1542",
+      "pr_link": "https://github.com/coronasafe/care/pull/1546"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1542",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6132"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6086",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6087"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/zoomdrive/issues/2",
+      "pr_link": "https://github.com/coronasafe/zoomdrive/pull/4"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1419",
+      "pr_link": "https://github.com/coronasafe/care/pull/1420"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1417",
+      "pr_link": "https://github.com/coronasafe/care/pull/1418"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5783",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5800"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1351",
+      "pr_link": "https://github.com/coronasafe/care/pull/1371"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1350",
+      "pr_link": "https://github.com/coronasafe/care/pull/1371"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/844",
+      "pr_link": "https://github.com/coronasafe/care/pull/848"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/825",
+      "pr_link": "https://github.com/coronasafe/care/pull/826"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/754",
+      "pr_link": "https://github.com/coronasafe/care/pull/768"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/744",
+      "pr_link": "https://github.com/coronasafe/care/pull/746"
+    }
+  ]
 }

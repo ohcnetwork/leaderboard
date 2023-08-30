@@ -1,6 +1,62 @@
 {
-  "last_updated": 1693121546.0,
+  "last_updated": 1693316615.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1560",
+      "time": 1693316615.0,
+      "link": "https://github.com/coronasafe/care/pull/1560",
+      "text": "Add Hard Limit to Medicines Search"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1564",
+      "time": 1693316479.0,
+      "link": "https://github.com/coronasafe/care/pull/1564",
+      "text": "Adds filter `administered_date` in Medicine Administrations Viewset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693309204.0,
+      "title": "coronasafe/care#1565",
+      "link": "https://github.com/coronasafe/care/pull/1565#pullrequestreview-1600206439",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693308614.0,
+      "title": "coronasafe/care#1565",
+      "link": "https://github.com/coronasafe/care/pull/1565#pullrequestreview-1600188918",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1565",
+      "time": 1693308310.0,
+      "link": "https://github.com/coronasafe/care/pull/1565",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693307117.0,
+      "title": "coronasafe/care#1563",
+      "link": "https://github.com/coronasafe/care/pull/1563#pullrequestreview-1600147650",
+      "text": "Fix asset dummy data"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1564",
+      "time": 1693306901.0,
+      "link": "https://github.com/coronasafe/care/pull/1564",
+      "text": "Adds filter `administered_date` in Medicine Administrations Viewset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6176",
+      "time": 1693306667.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6176",
+      "text": "Grouped Medicine Administrations in Prescriptions Table"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1562",
@@ -21539,6 +21595,153 @@
       "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1565",
+      "title": "Reject Prescription Creation if Medicine already Prescribed and is active",
+      "stale_for": 0,
+      "labels": [
+        "changes required"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6176",
+      "title": "Grouped Medicine Administrations in Prescriptions Table",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6160",
+      "title": "fixes #6159; fix misalignment in option chips of async autocomplete.",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6104",
+      "title": "Upgrade tailwindcss to v3.3.3",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "good to merge",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6060",
+      "title": "Implements `useQuery` and `useMutation` hooks",
+      "stale_for": 5,
+      "labels": [
+        "stale",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5831",
+      "title": "Cypress Test: update trigger to have write perms for fork PRs",
+      "stale_for": 47,
+      "labels": [
+        "need Review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/leaderboard/pull/124",
+      "title": "Migrate to NextJS 13 App Router + Typescript support",
+      "stale_for": 29,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5457",
+      "title": "enable hcx in staging",
+      "stale_for": 15,
+      "labels": [
+        "stale",
+        "cypress failed",
+        "HCX"
+      ]
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1556",
+      "pr_link": "https://github.com/coronasafe/care/pull/1557"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6073",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6076"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6051",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6052"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6033",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6034"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6023",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6034"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1516",
+      "pr_link": "https://github.com/coronasafe/care/pull/1517"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1514",
+      "pr_link": "https://github.com/coronasafe/care/pull/1519"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1497",
+      "pr_link": "https://github.com/coronasafe/care/pull/1508"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1497",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5999"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5990",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5993"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5977",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5980"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5941",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5940",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5945"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5934",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5932",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5933"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5929",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5930"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5923",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5928"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5791",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5792"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5788",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5789"
+    }
+  ]
 }

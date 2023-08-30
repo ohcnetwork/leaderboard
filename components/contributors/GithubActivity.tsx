@@ -1,8 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
+import { Activity, ActivityData } from "@/lib/types";
 
-import Link from "next/link";
-
-let commentTypes = (activityEvent) => {
+let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
     case "pull":
       return "a pull request";
@@ -19,7 +17,7 @@ function generateId() {
   return Math.random().toString(36).slice(2, 7);
 }
 
-let renderText = (activity) => {
+let renderText = (activity: Activity) => {
   const activity_time = (
     new String(activity.time).length === 10
       ? new Date(activity.time * 1000)
@@ -161,7 +159,7 @@ let renderText = (activity) => {
   }
 };
 
-let icon = (type) => {
+let icon = (type: string) => {
   switch (type) {
     case "comment_created":
     case "eod_update":
@@ -230,7 +228,7 @@ let icon = (type) => {
   }
 };
 
-let showContribution = (activity) => {
+let showContribution = (activity: Activity) => {
   let type = activity["type"];
   return (
     <div className="relative pb-8">
@@ -252,7 +250,11 @@ let showContribution = (activity) => {
   );
 };
 
-export default function GithubActivity({ activityData }) {
+interface Props {
+  activityData: ActivityData;
+}
+
+export default function GithubActivity({ activityData }: Props) {
   return (
     <div className="mx-2 flow-root text-foreground mt-4">
       <ul role="list" className="-mb-8">

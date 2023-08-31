@@ -77811,5 +77811,465 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-08-30 00:00:00": []
+    "2023-08-30 00:00:00": [
+        {
+            "client_msg_id": "b0ce38fb-428c-4676-bbe6-b42a62d9d820",
+            "type": "message",
+            "text": "EOD 30/08/2023\n\nHow did the day go?\n\u2022 Hopped on a huddle with Shivank and Ashesh to work on error handling on ayushma's backend",
+            "user": "U051Q1RP1MG",
+            "ts": "1693434896.507819",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "PWJ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/08/2023\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Hopped on a huddle with Shivank and Ashesh to work on error handling on ayushma's backend"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "4831057f-4e46-4169-98f2-f63adc3e84a0",
+            "type": "message",
+            "text": "EOD 28/08/2023\n\u2022 Tested some pages(out of 14 pages) to check removing libphonenumber-js library and found some bugs and additional requirements like having +91 by default is not working for some pages, some pages were not rendered where the initial value of phone number was set to undefined or null, sending empty phone number in post request when a form is submitted instead of \"+91\" which appears by default.\n\u2022 Kept testing all those pages again and again as soon as I fixed anything I mentioned above.\nEOD 29/08/2023\n\u2022 Tested remaining pages\n\u2022 Got 440 linting errors when I tried to commit it.Tried to find the reason as its difficult to solve all 440 errors but couldn't find any. I will check later\n\u2022 Got started with issue #6101 - removing default empty filters phone number filters. Went through the PatientManager component code to find the reason for the bug.\nEOD 30/08/2023\n\u2022 Learnt about custom hooks in React.\n\u2022 Got the bug and fixed issue #6101",
+            "user": "U052CV9HBR6",
+            "ts": "1693428941.409119",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "KtzW",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tested some pages(out of 14 pages) to check removing libphonenumber-js library and found some bugs and additional requirements like having +91 by default is not working for some pages, some pages were not rendered where the initial value of phone number was set to undefined or null, sending empty phone number in post request when a form is submitted instead of \"+91\" which appears by default."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Kept testing all those pages again and again as soon as I fixed anything I mentioned above."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 29/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tested remaining pages"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Got 440 linting errors when I tried to commit it.Tried to find the reason as its difficult to solve all 440 errors but couldn't find any. I will check later"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Got started with issue #6101 - removing default empty filters phone number filters. Went through the PatientManager component code to find the reason for the bug."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 30/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Learnt about custom hooks in React."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Got the bug and fixed issue #6101"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "3f2a312a-61d9-4f2f-a907-a0392359c7b9",
+            "type": "message",
+            "text": "*EOD 30/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 Fixed a minor pagination and refreshing issue in Grouped Medicine Administration caught in QA.\n\u2022 Debugged an issue from prod as to why vitals monitor component was not showing the data even though data was being received in care fe.\n\u2022 Reviewed 8 react for all submissions\n\u2022 Followed up on nextjs13 and typescript migration of leaderboard\n\u2022 Write BE tests for Prescriptions API\n\u2022 <https://github.com/coronasafe/care_fe/pull/6186|#6186>, <https://github.com/coronasafe/care/pull/1566|#1566> Added `type` filter/button switch for Medibase Medicines Search\n*What's next?*\n\n\u2022 Add prettier to leaderboard and follow up on code reviews\n\u2022 Work on tracking consultation re-admission\n\u2022 Work on converting consultation verified by from text to User Select.\n\u2022 Rename fields admission_date and discharge_date to encounter_start/end (DateTime)\n\u2022 Follow up on prescription enhancements",
+            "user": "U02TDGQQPMJ",
+            "ts": "1693414911.349239",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RSL0t",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed a minor pagination and refreshing issue in Grouped Medicine Administration caught in QA."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Debugged an issue from prod as to why vitals monitor component was not showing the data even though data was being received in care fe."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 8 react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up on nextjs13 and typescript migration of leaderboard"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Write BE tests for Prescriptions API"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6186",
+                                            "text": "#6186",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1566",
+                                            "text": "#1566",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Added "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "type",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " filter/button switch for Medibase Medicines Search"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add prettier to leaderboard and follow up on code reviews"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on tracking consultation re-admission"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on converting consultation verified by from text to User Select."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Rename fields admission_date and discharge_date to encounter_start/end (DateTime)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on prescription enhancements"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "5a5e7198-bced-4156-a759-d4dae86f1e06",
+            "type": "message",
+            "text": "*EOD 30/08/2023*\n\n*How did the day go?*\n\u2022 Reworking on level 4 and level 5 milestones based on the review.\n",
+            "user": "U05LRJ1HDNH",
+            "ts": "1693404563.062079",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xhJEv",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/08/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reworking on level 4 and level 5 milestones based on the review."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-08-31 00:00:00": []
 }

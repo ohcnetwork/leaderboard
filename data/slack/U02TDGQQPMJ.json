@@ -19573,5 +19573,226 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-08-30 00:00:00": [
+        {
+            "client_msg_id": "3f2a312a-61d9-4f2f-a907-a0392359c7b9",
+            "type": "message",
+            "text": "*EOD 30/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 Fixed a minor pagination and refreshing issue in Grouped Medicine Administration caught in QA.\n\u2022 Debugged an issue from prod as to why vitals monitor component was not showing the data even though data was being received in care fe.\n\u2022 Reviewed 8 react for all submissions\n\u2022 Followed up on nextjs13 and typescript migration of leaderboard\n\u2022 Write BE tests for Prescriptions API\n\u2022 <https://github.com/coronasafe/care_fe/pull/6186|#6186>, <https://github.com/coronasafe/care/pull/1566|#1566> Added `type` filter/button switch for Medibase Medicines Search\n*What's next?*\n\n\u2022 Add prettier to leaderboard and follow up on code reviews\n\u2022 Work on tracking consultation re-admission\n\u2022 Work on converting consultation verified by from text to User Select.\n\u2022 Rename fields admission_date and discharge_date to encounter_start/end (DateTime)\n\u2022 Follow up on prescription enhancements",
+            "user": "U02TDGQQPMJ",
+            "ts": "1693414911.349239",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "RSL0t",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed a minor pagination and refreshing issue in Grouped Medicine Administration caught in QA."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Debugged an issue from prod as to why vitals monitor component was not showing the data even though data was being received in care fe."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 8 react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Followed up on nextjs13 and typescript migration of leaderboard"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Write BE tests for Prescriptions API"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6186",
+                                            "text": "#6186",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1566",
+                                            "text": "#1566",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Added "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "type",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " filter/button switch for Medibase Medicines Search"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add prettier to leaderboard and follow up on code reviews"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on tracking consultation re-admission"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on converting consultation verified by from text to User Select."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Rename fields admission_date and discharge_date to encounter_start/end (DateTime)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on prescription enhancements"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

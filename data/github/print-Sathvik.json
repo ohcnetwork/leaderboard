@@ -1,6 +1,20 @@
 {
-  "last_updated": 1692598509.0,
+  "last_updated": 1693433845.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6101",
+      "time": 1693433845.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6101#issuecomment-1699925957",
+      "text": "Hey @mustafaazad03, sorry for creating PR on the same issue. The last time I checked this at night, there was no one assigned to this. So I started working and forgot to assign it to myself. Guess we started almost at the same time.\r\n\r\nI checked your latest PR, setting the limit to null removes it from the URL but that breaks the purpose of limit. There are 14 patients displayed per page instead of 12. Also the pagination component which is used to navigate to different set of patients is replaced by red colored text saying \"Do not render Pagination component, when limit is <= 0\"\r\n\r\nI changed my PR to a draft PR. So let me know if you can resolve this, I will close my PR."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6188",
+      "time": 1693430911.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6188",
+      "text": "Removed default empty phone filter"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6116",
@@ -464,7 +478,14 @@
       "text": "Replaced Material UI components with Form component in DeathReport.tsx #4939"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6188",
+      "title": "Removed default empty phone filter",
+      "stale_for": 0,
+      "labels": []
+    }
+  ],
   "authored_issue_and_pr": [
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5915",

@@ -1,6 +1,65 @@
 {
-  "last_updated": 1693312746.0,
+  "last_updated": 1693435100.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#96",
+      "time": 1693435100.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/96",
+      "text": "Display error message for streaming response"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#282",
+      "time": 1693434504.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/282",
+      "text": "Catch and return errors while streaming"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6101",
+      "time": 1693410412.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6101#issuecomment-1699428353",
+      "text": "> Hi @rithviknishad , I solved this bug, will I make a PR? ![image](https://user-images.githubusercontent.com/97380192/264398920-dd610c0d-dece-402f-a971-2c310c590d4d.png)\r\n\r\nYep, feel free to make a PR and link to this issue."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693402999.0,
+      "title": "coronasafe/care_fe#6183",
+      "link": "https://github.com/coronasafe/care_fe/pull/6183#pullrequestreview-1602746826",
+      "text": "Plausible Goals: Remove accidentally tracked Patient ID"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6182",
+      "time": 1693398287.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6182",
+      "text": "Fix asset import from excel files"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6182",
+      "time": 1693395966.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6182",
+      "text": "Fix asset import from excel files"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6029",
+      "time": 1693368518.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6029",
+      "text": "Rename prescribed_medication to treatment_plan"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6029",
+      "time": 1693368518.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6029",
+      "text": "Rename prescribed_medication to treatment_plan",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1563",
@@ -11789,20 +11848,21 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6029",
-      "title": "Rename prescribed_medication to treatment_plan",
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/96",
+      "title": "Display error message for streaming response",
       "stale_for": 0,
-      "labels": [
-        "urgent",
-        "tested",
-        "P1",
-        "cypress failed"
-      ]
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma/pull/282",
+      "title": "Catch and return errors while streaming",
+      "stale_for": 0,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 147,
+      "stale_for": 148,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -11811,13 +11871,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 160,
+      "stale_for": 161,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]

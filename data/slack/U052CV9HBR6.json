@@ -1112,5 +1112,140 @@
                 "ts": "1692679481.000000"
             }
         }
+    ],
+    "2023-08-30 00:00:00": [
+        {
+            "client_msg_id": "4831057f-4e46-4169-98f2-f63adc3e84a0",
+            "type": "message",
+            "text": "EOD 28/08/2023\n\u2022 Tested some pages(out of 14 pages) to check removing libphonenumber-js library and found some bugs and additional requirements like having +91 by default is not working for some pages, some pages were not rendered where the initial value of phone number was set to undefined or null, sending empty phone number in post request when a form is submitted instead of \"+91\" which appears by default.\n\u2022 Kept testing all those pages again and again as soon as I fixed anything I mentioned above.\nEOD 29/08/2023\n\u2022 Tested remaining pages\n\u2022 Got 440 linting errors when I tried to commit it.Tried to find the reason as its difficult to solve all 440 errors but couldn't find any. I will check later\n\u2022 Got started with issue #6101 - removing default empty filters phone number filters. Went through the PatientManager component code to find the reason for the bug.\nEOD 30/08/2023\n\u2022 Learnt about custom hooks in React.\n\u2022 Got the bug and fixed issue #6101",
+            "user": "U052CV9HBR6",
+            "ts": "1693428941.409119",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "KtzW",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 28/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tested some pages(out of 14 pages) to check removing libphonenumber-js library and found some bugs and additional requirements like having +91 by default is not working for some pages, some pages were not rendered where the initial value of phone number was set to undefined or null, sending empty phone number in post request when a form is submitted instead of \"+91\" which appears by default."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Kept testing all those pages again and again as soon as I fixed anything I mentioned above."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 29/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tested remaining pages"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Got 440 linting errors when I tried to commit it.Tried to find the reason as its difficult to solve all 440 errors but couldn't find any. I will check later"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Got started with issue #6101 - removing default empty filters phone number filters. Went through the PatientManager component code to find the reason for the bug."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 30/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Learnt about custom hooks in React."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Got the bug and fixed issue #6101"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

@@ -1,6 +1,145 @@
 {
-  "last_updated": 1693316615.0,
+  "last_updated": 1693416129.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6187",
+      "time": 1693416129.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6187#issuecomment-1699568296",
+      "text": "Also, it would be nice if the PR title would be something meaningful to what you are trying to achieve / do."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693416098.0,
+      "title": "coronasafe/care_fe#6187",
+      "link": "https://github.com/coronasafe/care_fe/pull/6187#pullrequestreview-1603174765",
+      "text": "Bug#1/filter complete"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6141",
+      "time": 1693415338.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6141#issuecomment-1699552016",
+      "text": "We should be renaming \r\n\r\n- [ ] `admission_date` field to `encounter_start_date` (DateTimeField)\r\n- [ ] `discharge_date` to `encounter_end_date` (DateTimeField)\r\n\r\nAnd following changes are to be made in front end:\r\n- [ ] Allow Admission Date / Home Isolation start to be a DateTime input."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6154",
+      "time": 1693414661.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6154#issuecomment-1699536894",
+      "text": "Hopefully, 2 weeks from now."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1566",
+      "time": 1693414422.0,
+      "link": "https://github.com/coronasafe/care/pull/1566",
+      "text": "Adds `type` fitler to Medibase search"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6186",
+      "time": 1693414297.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6186",
+      "text": "Medicine: Adds `type` filter for medibase search"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693413503.0,
+      "title": "coronasafe/care_fe#6185",
+      "link": "https://github.com/coronasafe/care_fe/pull/6185#pullrequestreview-1603107480",
+      "text": "Filter Bug fixed in patients section"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6184",
+      "time": 1693409233.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6184",
+      "text": "Support for archiving Medicine Administration Record"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6178",
+      "time": 1693409071.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6178#issuecomment-1699390309",
+      "text": "This issue will cover:\r\n\r\n- [ ] Allowing the user to input `administered_date` to optionally override from using current DateTime by default.\r\n\r\nA separate issue will cover the workaround for editing administrations. Users can archive a MAR and create a new MAR instead."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6151",
+      "time": 1693406290.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6151#issuecomment-1699311420",
+      "text": "@aparnacoronasafe it's already pushed to last in staging."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6183",
+      "time": 1693404270.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6183",
+      "text": "Plausible Goals: Remove accidentally tracked Patient ID"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6152",
+      "time": 1693404068.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6152#issuecomment-1699248234",
+      "text": "Followed in #6177"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6152",
+      "time": 1693404069.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6152",
+      "text": "Prescriptions: Improve Table Layout in Mobile View"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6183",
+      "time": 1693402290.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6183",
+      "text": "Plausible Goals: Remove accidentally tracked Patient ID"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6176",
+      "time": 1693376103.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6176",
+      "text": "Grouped Medicine Administrations in Prescriptions Table"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6176",
+      "time": 1693376103.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6176",
+      "text": "Grouped Medicine Administrations in Prescriptions Table",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6104",
+      "time": 1693368435.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6104",
+      "text": "Upgrade tailwindcss to v3.3.3"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6104",
+      "time": 1693368435.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6104",
+      "text": "Upgrade tailwindcss to v3.3.3",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6160",
+      "time": 1693368315.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6160",
+      "text": "fixes #6159; fix misalignment in option chips of async autocomplete."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1560",
@@ -21597,45 +21736,35 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1566",
+      "title": "Adds `type` filter to Medibase search",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6186",
+      "title": "Medicine: Adds `type` filter for medibase search",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "waiting for back end",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1565",
       "title": "Reject Prescription Creation if Medicine already Prescribed and is active",
       "stale_for": 0,
       "labels": [
-        "changes required"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6176",
-      "title": "Grouped Medicine Administrations in Prescriptions Table",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6160",
-      "title": "fixes #6159; fix misalignment in option chips of async autocomplete.",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6104",
-      "title": "Upgrade tailwindcss to v3.3.3",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "good to merge",
-        "cypress passed"
+        "waiting-for-review"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6060",
       "title": "Implements `useQuery` and `useMutation` hooks",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "stale",
         "cypress failed"
@@ -21644,7 +21773,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 47,
+      "stale_for": 48,
       "labels": [
         "need Review"
       ]
@@ -21652,13 +21781,13 @@
     {
       "link": "https://github.com/coronasafe/leaderboard/pull/124",
       "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 29,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": [
         "stale",
         "cypress failed",
@@ -21668,12 +21797,20 @@
   ],
   "authored_issue_and_pr": [
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6159",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6160"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care/issues/1556",
       "pr_link": "https://github.com/coronasafe/care/pull/1557"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6073",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6076"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6059",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6176"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6051",
@@ -21734,14 +21871,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5923",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5928"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5791",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5792"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5788",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5789"
     }
   ]
 }

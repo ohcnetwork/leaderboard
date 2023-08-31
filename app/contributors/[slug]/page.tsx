@@ -18,21 +18,6 @@ import clsx from "clsx";
 import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
 
-// export function defaultCalendarData() {
-//   return [...Array(365)].map((_, i) => {
-//     // Current Date - i
-//     const iReverse = 365 - i;
-//     const date = new Date(
-//       new Date().getTime() - iReverse * 24 * 60 * 60 * 1000
-//     );
-//     return {
-//       date: date.toISOString(),
-//       count: 0,
-//       level: 0,
-//     };
-//   });
-// }
-
 type Params = {
   params: {
     slug: string;
@@ -356,55 +341,3 @@ export default async function Contributor({ params: { slug } }: Params) {
   );
 }
 
-// export async function getStaticProps({ params }) {
-//   const contributor = getContributorBySlug(params.slug, true);
-//   const content = await markdownToHtml(contributor.content || '');
-//   const metaTags = [
-//     {
-//       name: 'og:image',
-//       content: `https://github.com/${params.slug}.png`,
-//     },
-//     {
-//       name: 'og:title',
-//       content: contributor.name + ' | ' + process.env.NEXT_PUBLIC_META_TITLE,
-//     },
-//     {
-//       name: 'description',
-//       content: process.env.NEXT_PUBLIC_META_DESCRIPTION,
-//     },
-//     {
-//       name: 'og:description',
-//       content: process.env.NEXT_PUBLIC_META_DESCRIPTION,
-//     },
-//     {
-//       name: 'og:type',
-//       content: 'article',
-//     },
-//   ];
-//   return {
-//     props: {
-//       title: contributor.name,
-//       metaTags: metaTags,
-//       contributor: {
-//         ...contributor,
-//         content,
-//       },
-//     },
-//   };
-// }
-// export async function getStaticPaths() {
-//   const paths = [];
-
-//   getContributors(true).map((contributor) => {
-//     paths.push({
-//       params: {
-//         slug: contributor.slug,
-//       },
-//     });
-//   });
-
-//   return {
-//     paths: paths,
-//     fallback: false,
-//   };
-// }

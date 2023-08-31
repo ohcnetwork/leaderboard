@@ -290,7 +290,7 @@ export default async function Contributor({ params: { slug } }: Params) {
                         "text-sm mb-2 transition-colors duration-75 ease-in-out flex gap-2",
                         pr?.stale_for >= 7
                           ? "dark:text-gray-600 text-gray-700 dark:hover:text-primary-200 hover:text-primary-400"
-                          : "dark:text-gray-300 text-gray-400 dark:hover:text-primary-300 hover:text-primary-500"
+                          : "dark:text-gray-300 text-gray-400 dark:hover:text-primary-300 hover:text-primary-500",
                       )}
                       key={index}
                     >
@@ -310,7 +310,7 @@ export default async function Contributor({ params: { slug } }: Params) {
                               "text-xs tracking-wide px-1.5 py-1 rounded mr-2",
                               pr.stale_for >= 7
                                 ? "dark:bg-gray-800 bg-gray-200 dark:text-gray-600 text-gray-700"
-                                : "dark:bg-gray-600 bg-gray-100 dark:text-white text-gray-400"
+                                : "dark:bg-gray-600 bg-gray-100 dark:text-white text-gray-400",
                             )}
                           >
                             {pr.link
@@ -340,4 +340,3 @@ export default async function Contributor({ params: { slug } }: Params) {
     </div>
   );
 }
-

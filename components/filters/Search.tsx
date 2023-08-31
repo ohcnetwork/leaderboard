@@ -1,16 +1,16 @@
-import { BsSearch } from 'react-icons/bs';
+import { BsSearch } from "react-icons/bs";
 
 const Search = ({
-  value = '',
+  value = "",
   handleOnChange,
-  className = '',
+  className = "",
 }: {
   value?: string;
   handleOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
 }) => {
   return (
-    <div className={'relative rounded-md shadow-sm ' + className}>
+    <div className={"relative rounded-md shadow-sm " + className}>
       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
         <BsSearch className="text-foreground" />
       </div>

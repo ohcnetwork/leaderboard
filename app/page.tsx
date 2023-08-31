@@ -1,7 +1,7 @@
-import InfoCard from '../components/contributors/InfoCard';
-import Link from 'next/link';
-import { getContributors } from '../lib/api';
-import { getLastWeekDateRangeString } from '../lib/utils';
+import InfoCard from "../components/contributors/InfoCard";
+import Link from "next/link";
+import { getContributors } from "../lib/api";
+import { getLastWeekDateRangeString } from "../lib/utils";
 
 export default function Home() {
   const contributors: any = getContributors();

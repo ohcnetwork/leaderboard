@@ -1,10 +1,10 @@
-import { getContributors } from '@/lib/api';
-import Leaderboard from './Leaderboard';
+import { getContributors } from "@/lib/api";
+import Leaderboard from "./Leaderboard";
 
 const calculateStalePrs = (contributor: any) =>
   contributor.activityData?.open_prs?.reduce(
     (acc: any, pr: any) => (pr?.stale_for >= 7 ? acc + 1 : acc),
-    0
+    0,
   );
 
 function getContributorsData() {

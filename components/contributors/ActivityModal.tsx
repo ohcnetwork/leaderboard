@@ -1,6 +1,6 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { type } from 'os';
-import { Fragment } from 'react';
+import { Dialog, Transition } from "@headlessui/react";
+import { type } from "os";
+import { Fragment } from "react";
 
 type ActivityData = {
   date?: string;
@@ -71,43 +71,43 @@ export default function ActivityModal({
                   <div className="mt-2">
                     {activityData?.pr_opened && (
                       <p className="text-base text-gray-200">
-                        <span className="font-semibold">PRs Opened:</span>{' '}
+                        <span className="font-semibold">PRs Opened:</span>{" "}
                         {activityData.pr_opened}
                       </p>
                     )}
                     {activityData?.pr_merged && (
                       <p className="text-base text-gray-200">
-                        <span className="font-semibold">PRs Merged:</span>{' '}
+                        <span className="font-semibold">PRs Merged:</span>{" "}
                         {activityData.pr_merged}
                       </p>
                     )}
                     {activityData?.pr_reviewed && (
                       <p className="text-base text-gray-200">
-                        <span className="font-semibold">PRs Reviewed:</span>{' '}
+                        <span className="font-semibold">PRs Reviewed:</span>{" "}
                         {activityData.pr_reviewed}
                       </p>
                     )}
                     {activityData?.eod_update && (
                       <p className="text-base text-gray-200">
-                        <span className="font-semibold">EOD Updates:</span>{' '}
+                        <span className="font-semibold">EOD Updates:</span>{" "}
                         {activityData.eod_update}
                       </p>
                     )}
                     {activityData?.issue_opened && (
                       <p className="text-base text-gray-200">
-                        <span className="font-semibold">Issues Opened:</span>{' '}
+                        <span className="font-semibold">Issues Opened:</span>{" "}
                         {activityData.issue_opened}
                       </p>
                     )}
                     {activityData?.issue_closed && (
                       <p className="text-base text-gray-200">
-                        <span className="font-semibold">Issues Closed:</span>{' '}
+                        <span className="font-semibold">Issues Closed:</span>{" "}
                         {activityData.issue_closed}
                       </p>
                     )}
                     {activityData?.comment_created && (
                       <p className="text-base text-gray-200">
-                        <span className="font-semibold">Comments Created:</span>{' '}
+                        <span className="font-semibold">Comments Created:</span>{" "}
                         {activityData.comment_created}
                       </p>
                     )}
@@ -120,8 +120,8 @@ export default function ActivityModal({
                       !activityData?.issue_closed &&
                       !activityData?.issue_opened &&
                       !activityData?.eod_update
-                        ? 'No activity found!'
-                        : ''}
+                        ? "No activity found!"
+                        : ""}
                     </div>
                   </div>
                 </Dialog.Panel>

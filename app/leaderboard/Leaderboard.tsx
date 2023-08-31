@@ -36,7 +36,7 @@ export default function Leaderboard({
   const [sortDescending, setSortDescending] = useState(true);
   const [showCoreMembers, setShowCoreMembers] = useState(false);
   const [categoryLeaderboard, setCategoryLeaderboard] = useState<Category[]>(
-    []
+    [],
   );
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Leaderboard({
 
     if (!showCoreMembers) {
       filteredContributors = filteredContributors.filter(
-        (contributor) => !contributor.core
+        (contributor) => !contributor.core,
       );
     }
 
@@ -55,14 +55,14 @@ export default function Leaderboard({
           contributor.name.toLowerCase().includes(searchTermLC) ||
           contributor.github.toLowerCase().includes(searchTermLC) ||
           contributor.linkedin.toLowerCase().includes(searchTermLC) ||
-          contributor.twitter.toLowerCase().includes(searchTermLC)
+          contributor.twitter.toLowerCase().includes(searchTermLC),
       );
     }
 
     filteredContributors = filteredContributors.sort((a: any, b: any) =>
       a.weekSummary[sortBy] !== b.weekSummary[sortBy]
         ? a.weekSummary[sortBy] - b.weekSummary[sortBy]
-        : a.weekSummary.points - b.weekSummary.points
+        : a.weekSummary.points - b.weekSummary.points,
     );
 
     if (sortDescending) {
@@ -80,7 +80,7 @@ export default function Leaderboard({
           .sort((a: any, b: any) =>
             a.weekSummary[category.slug] !== b.weekSummary[category.slug]
               ? a.weekSummary[category.slug] - b.weekSummary[category.slug]
-              : a.weekSummary.points - b.weekSummary.points
+              : a.weekSummary.points - b.weekSummary.points,
           )
           .reverse()[0],
       }));

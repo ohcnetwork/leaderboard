@@ -48,6 +48,6 @@ Object.entries(interns).forEach(([key, value]) => {
         return console.log(err);
       }
       console.log("The file was saved!");
-    }
+    },
   );
 });

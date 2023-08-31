@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import ActivityCalendar from 'react-activity-calendar';
-import ActivityModal from './ActivityModal';
-import { useTheme } from 'next-themes';
+import { useState } from "react";
+import ActivityCalendar from "react-activity-calendar";
+import ActivityModal from "./ActivityModal";
+import { useTheme } from "next-themes";
 
 export default function ActivityCalendarGit({
   calendarData,
@@ -19,20 +19,20 @@ export default function ActivityCalendarGit({
     date.setDate(date.getDate() + 1);
     while (date.getFullYear() === currentYear) {
       dates.push({
-        date: new Date(date).toISOString().split('T')[0],
+        date: new Date(date).toISOString().split("T")[0],
         count: 0,
         level: 0,
       });
       date.setDate(date.getDate() + 1);
     }
     dates.push({
-      date: new Date(date).toISOString().split('T')[0],
+      date: new Date(date).toISOString().split("T")[0],
       count: 0,
       level: 0,
     });
 
     let calDates = calendarData.filter(
-      (d: any) => d.date.slice(0, 4) === String(currentYear)
+      (d: any) => d.date.slice(0, 4) === String(currentYear),
     );
 
     for (let i = 0; i < dates.length; i++)
@@ -71,12 +71,12 @@ export default function ActivityCalendarGit({
       >
         {year === 0 ? (
           <ActivityCalendar
-            colorScheme={theme === 'dark' ? 'dark' : 'light'}
+            colorScheme={theme === "dark" ? "dark" : "light"}
             showWeekdayLabels
             data={calendarData}
             theme={{
-              light: ['#e5e7eb', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
-              dark: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
+              light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+              dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
             }}
             eventHandlers={{
               onClick: (event) => (data) => {
@@ -84,16 +84,16 @@ export default function ActivityCalendarGit({
                 setActivityData(data);
               },
             }}
-            labels={{ totalCount: '{{count}} contributions in the last year' }}
+            labels={{ totalCount: "{{count}} contributions in the last year" }}
           />
         ) : (
           <ActivityCalendar
-            colorScheme={theme === 'dark' ? 'dark' : 'light'}
+            colorScheme={theme === "dark" ? "dark" : "light"}
             showWeekdayLabels
             data={getCalendarData(year)}
             theme={{
-              light: ['#e5e7eb', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
-              dark: ['#374151', '#d3bff3', '#b08ee6', '#976ae2', '#6025c0'],
+              light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+              dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
             }}
             eventHandlers={{
               onClick: (event) => (data) => {
@@ -117,8 +117,8 @@ export default function ActivityCalendarGit({
               key={i}
               className={
                 y !== year
-                  ? 'h-10 w-24 rounded-lg dark:bg-gray-800 bg-gray-100 text-foreground text-sm flex justify-center items-center hover:bg-gray-700'
-                  : 'h-10 w-24 rounded-lg bg-primary-500 text-white text-sm flex justify-center items-center'
+                  ? "h-10 w-24 rounded-lg dark:bg-gray-800 bg-gray-100 text-foreground text-sm flex justify-center items-center hover:bg-gray-700"
+                  : "h-10 w-24 rounded-lg bg-primary-500 text-white text-sm flex justify-center items-center"
               }
               onClick={(_) => setYear(y)}
             >

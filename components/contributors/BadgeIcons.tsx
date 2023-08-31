@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
 /* eslint-disable @next/next/no-img-element */
-import { useState, useRef, useEffect, RefObject } from 'react';
-import Sparkle from '../Sparkles';
+import { useState, useRef, useEffect, RefObject } from "react";
+import Sparkle from "../Sparkles";
 
 function useOnClickOutside(
   ref: RefObject<HTMLInputElement>,
-  handler: () => void
+  handler: () => void,
 ) {
   useEffect(() => {
     const listener = (event: any) => {
@@ -16,11 +16,11 @@ function useOnClickOutside(
       }
       handler();
     };
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
     return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
     };
   }, [ref, handler]);
 }
@@ -34,13 +34,13 @@ export default function BadgeIcons({ skill }: { skill: any }) {
 
     switch (skill.levels.length - currentLevel) {
       case 0:
-        return 'glow-gold';
+        return "glow-gold";
 
       case 1:
-        return 'glow-silver';
+        return "glow-silver";
 
       default:
-        return '';
+        return "";
     }
   };
 
@@ -50,7 +50,7 @@ export default function BadgeIcons({ skill }: { skill: any }) {
         <img
           onClick={() => setShowModel(!showModel)}
           className={
-            skill.currentLevel ? `badge-glow ${glow()}` : 'grayscale opacity-30'
+            skill.currentLevel ? `badge-glow ${glow()}` : "grayscale opacity-30"
           }
           src={skill.icon}
           alt="Graduate attribute"
@@ -68,8 +68,8 @@ export default function BadgeIcons({ skill }: { skill: any }) {
         <div
           className={`inset-x-0 md:top-[calc(100%+10px)] md:inset-auto md:-left-[calc(125px-50%)] absolute z-20 bg-gray-800 rounded-lg shadow-2xl md:w-[250px] translate-y-5 transition-all mt-1 mx-4 md:mx-0 text-white ${
             showModel
-              ? 'opacity-100 translate-y-0 visible'
-              : 'invisible opacity-0'
+              ? "opacity-100 translate-y-0 visible"
+              : "invisible opacity-0"
           }`}
         >
           <div className="bg-gray-900 rounded-t-lg px-4 py-3 border-b border-gray-700 flex justify-center items-center">
@@ -79,29 +79,29 @@ export default function BadgeIcons({ skill }: { skill: any }) {
                   {/* Yayy sparkles!! */}
                   <Sparkle
                     style={{
-                      top: '20px',
-                      left: '0px',
-                      '--size': '10px',
-                      '--rotate': '20deg',
-                      '--delay': '1s',
+                      top: "20px",
+                      left: "0px",
+                      "--size": "10px",
+                      "--rotate": "20deg",
+                      "--delay": "1s",
                     }}
                   />
                   <Sparkle
                     style={{
-                      bottom: '20px',
-                      right: '0px',
-                      '--size': '15px',
-                      '--rotate': '50deg',
-                      '--delay': '2s',
+                      bottom: "20px",
+                      right: "0px",
+                      "--size": "15px",
+                      "--rotate": "50deg",
+                      "--delay": "2s",
                     }}
                   />
                   <Sparkle
                     style={{
-                      bottom: '10px',
-                      left: '20px',
-                      '--size': '25px',
-                      '--rotate': '-20deg',
-                      '--delay': '3s',
+                      bottom: "10px",
+                      left: "20px",
+                      "--size": "25px",
+                      "--rotate": "-20deg",
+                      "--delay": "3s",
                     }}
                   />
                 </>
@@ -111,7 +111,7 @@ export default function BadgeIcons({ skill }: { skill: any }) {
                 className={`mx-auto ${
                   skill.currentLevel
                     ? `badge-glow ${glow()}`
-                    : 'grayscale opacity-30'
+                    : "grayscale opacity-30"
                 }`}
                 src={skill.icon}
                 alt="Graduate attribute"
@@ -131,8 +131,8 @@ export default function BadgeIcons({ skill }: { skill: any }) {
                   <p
                     className={`flex-shrink-0 bg-gray-700 px-1 py-0.5 rounded ${
                       skill.currentLevel?.value >= level.value
-                        ? 'bg-green-400 text-white'
-                        : ''
+                        ? "bg-green-400 text-white"
+                        : ""
                     }`}
                   >
                     {level.label}
@@ -141,8 +141,8 @@ export default function BadgeIcons({ skill }: { skill: any }) {
                     <p
                       className={`flex items-center ${
                         skill.currentLevel?.value >= level.value
-                          ? 'text-green-500'
-                          : ''
+                          ? "text-green-500"
+                          : ""
                       }`}
                     >
                       {level.description}

@@ -51,6 +51,7 @@ You will be able to see the users profile page at `http://localhost:3000/contrib
 3. To change the colors, fonts, or plugins edit the `tailwind.config.js` file.
 
 ### Environment Variables
+
 #### **Organization Details**
 
 - **NEXT_PUBLIC_ORG_NAME**
@@ -73,4 +74,3 @@ You will be able to see the users profile page at `http://localhost:3000/contrib
   - Will be displayed in page title.
 - **NEXT_PUBLIC_CONTRIBUTORS_INFO**
   - (Optional) Will be displayed next to "Our Contributors" section. You can use it to display a note about your contributors.
-

@@ -1,12 +1,12 @@
-import { HiSortAscending, HiSortDescending } from 'react-icons/hi';
+import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 
 const Sort = ({
   sortByOptions = [],
-  sortBy = '',
+  sortBy = "",
   sortDescending = true,
   handleSortOrderChange,
   handleSortByChange,
-  className = '',
+  className = "",
 }: {
   sortByOptions?: { value: string; text: string }[];
   sortBy?: string;

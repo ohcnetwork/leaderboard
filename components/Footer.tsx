@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="bg-gray-800 p-4 lg:p-10 border-t dark:border-gray-700 border-gray-300 h-full">
         <div className="max-w-5xl font-bold text-primary-500 text-center text-sm lg:leading-tight lg:mx-auto">
           <div className="flex items-center justify-center w-full">
-            Powered by{' '}
+            Powered by{" "}
             <span className="w-20 ml-4">
               <Image
                 src={process.env.NEXT_PUBLIC_ORG_LOGO as string}

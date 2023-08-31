@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { Category, Contributor } from '@/lib/types';
-import Link from 'next/link';
+import { Category, Contributor } from "@/lib/types";
+import Link from "next/link";
 export default function InfoCard({
   contributor,
   minimal = false,
@@ -25,7 +25,7 @@ export default function InfoCard({
             src={`https://avatars.githubusercontent.com/${contributor.github}`}
             alt={contributor.github}
           />
-          <div className={minimal ? 'text-center' : 'space-y-2'}>
+          <div className={minimal ? "text-center" : "space-y-2"}>
             <div className="font-medium text-lg leading-6 space-y-1">
               <Link href={`/contributors/${contributor.github}`} className="">
                 <h3 className="text-white hover:text-gray-900 hover:bg-primary-300 cursor-pointer">
@@ -39,8 +39,8 @@ export default function InfoCard({
               role="list"
               className={
                 minimal
-                  ? 'flex items-center space-x-2 justify-center mt-2'
-                  : 'space-y-2'
+                  ? "flex items-center space-x-2 justify-center mt-2"
+                  : "space-y-2"
               }
             ></ul>
           </div>

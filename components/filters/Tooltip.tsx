@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 const Tooltip = ({
   children,
-  tip = '',
-  className = '',
-  tipStyle = '',
+  tip = "",
+  className = "",
+  tipStyle = "",
 }: {
   children: React.ReactNode;
   tip?: string;
@@ -16,11 +16,11 @@ const Tooltip = ({
   const [showTip, setShowTip] = useState(false);
 
   return (
-    <div className={'relative ' + className}>
+    <div className={"relative " + className}>
       {tip && showTip && (
         <div
           className={
-            'absolute bg-gray-500 p-1 rounded text-center w-fit mb-2 z-10 ' +
+            "absolute bg-gray-500 p-1 rounded text-center w-fit mb-2 z-10 " +
             tipStyle
           }
         >

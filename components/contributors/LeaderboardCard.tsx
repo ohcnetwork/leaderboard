@@ -1,6 +1,6 @@
-import { Contributor } from '@/lib/types';
-import Link from 'next/link';
-import { FiAlertTriangle } from 'react-icons/fi';
+import { Contributor } from "@/lib/types";
+import Link from "next/link";
+import { FiAlertTriangle } from "react-icons/fi";
 
 /* eslint-disable @next/next/no-img-element */
 export default function LeaderBoardCard({
@@ -12,19 +12,19 @@ export default function LeaderBoardCard({
 }) {
   const userPosition = position + 1;
   const hideBadges = position === -1;
-  let badgeColors = 'bg-gray-400 dark:bg-gray-800 border-black/20';
+  let badgeColors = "bg-gray-400 dark:bg-gray-800 border-black/20";
 
   switch (userPosition) {
     case 1:
-      badgeColors = 'from-yellow-600 to-yellow-200 border-yellow-700';
+      badgeColors = "from-yellow-600 to-yellow-200 border-yellow-700";
       break;
 
     case 2:
-      badgeColors = 'from-stone-600 to-stone-300 border-stone-700';
+      badgeColors = "from-stone-600 to-stone-300 border-stone-700";
       break;
 
     case 3:
-      badgeColors = 'from-[#804A00] to-[#A97142] border-amber-900';
+      badgeColors = "from-[#804A00] to-[#A97142] border-amber-900";
       break;
 
     default:
@@ -32,7 +32,7 @@ export default function LeaderBoardCard({
   }
 
   return (
-    <Link href={'/contributors/' + contributor.github} className="block">
+    <Link href={"/contributors/" + contributor.github} className="block">
       <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer">
         {!hideBadges && (
           <div
@@ -108,7 +108,7 @@ export default function LeaderBoardCard({
                   <dd className="flex mt-2">
                     <div className="flex items-center">
                       <span className="flex text-sm leading-5 text-yellow-500 dark:text-yellow-200">
-                        <FiAlertTriangle size={18} className="mr-2" />{' '}
+                        <FiAlertTriangle size={18} className="mr-2" />{" "}
                         {contributor.weekSummary?.pr_stale} stale
                       </span>
                     </div>

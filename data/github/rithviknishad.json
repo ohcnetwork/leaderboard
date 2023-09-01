@@ -1,6 +1,107 @@
 {
-  "last_updated": 1693416129.0,
+  "last_updated": 1693503253.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1566",
+      "time": 1693503253.0,
+      "link": "https://github.com/coronasafe/care/pull/1566",
+      "text": "Adds `type` filter to Medibase search"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1566",
+      "time": 1693503253.0,
+      "link": "https://github.com/coronasafe/care/pull/1566",
+      "text": "Adds `type` filter to Medibase search",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693489778.0,
+      "title": "coronasafe/leaderboard#124",
+      "link": "https://github.com/coronasafe/leaderboard/pull/124#pullrequestreview-1604809456",
+      "text": "Migrate to NextJS 13 App Router + Typescript support"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693489735.0,
+      "title": "coronasafe/leaderboard#124",
+      "link": "https://github.com/coronasafe/leaderboard/pull/124#pullrequestreview-1604807901",
+      "text": "Migrate to NextJS 13 App Router + Typescript support"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#124",
+      "time": 1693486443.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/124#issuecomment-1700986091",
+      "text": "We are currently having package-lock and yarn lock.\r\n\r\nShifting to `pnpm` to save mac user's SSDs :) \r\nAlso: https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1567",
+      "time": 1693481797.0,
+      "link": "https://github.com/coronasafe/care/pull/1567",
+      "text": "Foreign Key to User for Consultation Verified By"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6194",
+      "time": 1693481778.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6194",
+      "text": "User (Doctor) Autocomplete for Consultation Verified By"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6188",
+      "time": 1693455502.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6188#issuecomment-1700343859",
+      "text": "Closing as duplicate of #6189"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693455417.0,
+      "title": "coronasafe/care_fe#6189",
+      "link": "https://github.com/coronasafe/care_fe/pull/6189#pullrequestreview-1603919225",
+      "text": "Bug Fixed : Default filters on patients page loads"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693454683.0,
+      "title": "coronasafe/care_fe#6189",
+      "link": "https://github.com/coronasafe/care_fe/pull/6189#pullrequestreview-1603906313",
+      "text": "Bug Fixed : Default filters on patients page loads"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693454683.0,
+      "title": "coronasafe/care_fe#6189",
+      "link": "https://github.com/coronasafe/care_fe/pull/6189#pullrequestreview-1603906313",
+      "text": "Bug Fixed : Default filters on patients page loads"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693454486.0,
+      "title": "coronasafe/care_fe#6188",
+      "link": "https://github.com/coronasafe/care_fe/pull/6188#pullrequestreview-1603902560",
+      "text": "Removed default empty phone filter"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6189",
+      "time": 1693454316.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6189#issuecomment-1700332845",
+      "text": "Btw, you can keep pushing to this current branch instead of always re-opening a new PR! The commits will be squashed and merged anyways once tested!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693454280.0,
+      "title": "coronasafe/care_fe#6189",
+      "link": "https://github.com/coronasafe/care_fe/pull/6189#pullrequestreview-1603896980",
+      "text": "Bug Fixed : Default filters on patients page loads"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6187",
@@ -21736,11 +21837,19 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1566",
-      "title": "Adds `type` filter to Medibase search",
+      "link": "https://github.com/coronasafe/care/pull/1567",
+      "title": "Foreign Key to User for Consultation Verified By",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6194",
+      "title": "User (Doctor) Autocomplete for Consultation Verified By",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "needs testing",
+        "Backend",
+        "cypress failed"
       ]
     },
     {
@@ -21762,18 +21871,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6060",
-      "title": "Implements `useQuery` and `useMutation` hooks",
-      "stale_for": 6,
-      "labels": [
-        "stale",
-        "cypress failed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 48,
+      "stale_for": 49,
       "labels": [
         "need Review"
       ]
@@ -21787,7 +21887,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 16,
+      "stale_for": 17,
       "labels": [
         "stale",
         "cypress failed",

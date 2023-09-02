@@ -1,6 +1,129 @@
 {
-  "last_updated": 1693503253.0,
+  "last_updated": 1693591834.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1571",
+      "time": 1693591834.0,
+      "link": "https://github.com/coronasafe/care/pull/1571",
+      "text": "Production Release; Sep Week 1",
+      "collaborated_with": [
+        "sainak",
+        "Ashesh3",
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6208",
+      "time": 1693591830.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6208",
+      "text": "Production Release; Sep Week 1",
+      "collaborated_with": [
+        "nihal467",
+        "Pranshu1902",
+        "Ashesh3",
+        "kshitijv256"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693575103.0,
+      "title": "coronasafe/leaderboard#124",
+      "link": "https://github.com/coronasafe/leaderboard/pull/124#pullrequestreview-1606962345",
+      "text": "Migrate to NextJS 13 App Router + Typescript support"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693566937.0,
+      "title": "coronasafe/care_fe#6205",
+      "link": "https://github.com/coronasafe/care_fe/pull/6205#pullrequestreview-1606753248",
+      "text": "Replaced libphonenumber-js with custom functions"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693566833.0,
+      "title": "coronasafe/care_fe#6205",
+      "link": "https://github.com/coronasafe/care_fe/pull/6205#pullrequestreview-1606750947",
+      "text": "Replaced libphonenumber-js with custom functions"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693566833.0,
+      "title": "coronasafe/care_fe#6205",
+      "link": "https://github.com/coronasafe/care_fe/pull/6205#pullrequestreview-1606750947",
+      "text": "Replaced libphonenumber-js with custom functions"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693566592.0,
+      "title": "coronasafe/care_fe#6205",
+      "link": "https://github.com/coronasafe/care_fe/pull/6205#pullrequestreview-1606745988",
+      "text": "Replaced libphonenumber-js with custom functions"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6206",
+      "time": 1693566300.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6206",
+      "text": "Medicine Administrations: Adds `administered_date` input"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1570",
+      "time": 1693565958.0,
+      "link": "https://github.com/coronasafe/care/pull/1570",
+      "text": "Medicine Administrations: Add validations to `administered_date`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693556002.0,
+      "title": "coronasafe/care#1567",
+      "link": "https://github.com/coronasafe/care/pull/1567#pullrequestreview-1606477138",
+      "text": "Foreign Key to User for Consultation Verified By"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693555779.0,
+      "title": "coronasafe/care#1567",
+      "link": "https://github.com/coronasafe/care/pull/1567#pullrequestreview-1606471600",
+      "text": "Foreign Key to User for Consultation Verified By"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693550895.0,
+      "title": "coronasafe/care_fe#6201",
+      "link": "https://github.com/coronasafe/care_fe/pull/6201#pullrequestreview-1606356501",
+      "text": "Vite Config: Use `CARE_API` from env"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6200",
+      "time": 1693550683.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6200",
+      "text": "Improve Prescriptions table when No Medicines prescribed"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6201",
+      "time": 1693549802.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6201",
+      "text": "Vite Config: Use `CARE_API` from env"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6200",
+      "time": 1693547905.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6200",
+      "text": "Improve Prescriptions table when No Medicines prescribed"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6199",
+      "time": 1693546346.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6199",
+      "text": "Prescriptions: Loading state is shown forever when there are no medicines"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1566",
@@ -21837,15 +21960,44 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6206",
+      "title": "Medicine Administrations: Adds `administered_date` input",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "waiting for back end",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1570",
+      "title": "Medicine Administrations: Add validations to `administered_date`",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6201",
+      "title": "Support for direnv and use `CARE_API` from env in vite config",
+      "stale_for": 0,
+      "labels": [
+        "need Review",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1567",
       "title": "Foreign Key to User for Consultation Verified By",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6194",
       "title": "User (Doctor) Autocomplete for Consultation Verified By",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "Backend",
@@ -21855,7 +22007,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6186",
       "title": "Medicine: Adds `type` filter for medibase search",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "waiting for back end",
@@ -21867,13 +22019,13 @@
       "title": "Reject Prescription Creation if Medicine already Prescribed and is active",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "reviewed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 49,
+      "stale_for": 50,
       "labels": [
         "need Review"
       ]
@@ -21887,7 +22039,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 17,
+      "stale_for": 18,
       "labels": [
         "stale",
         "cypress failed",
@@ -21896,6 +22048,10 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6199",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6200"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6159",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6160"

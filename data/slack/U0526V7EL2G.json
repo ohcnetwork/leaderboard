@@ -319,5 +319,98 @@
                 }
             ]
         }
+    ],
+    "2023-09-03 00:00:00": [
+        {
+            "client_msg_id": "74d343e8-5d87-486c-9e43-74e129dfd658",
+            "type": "message",
+            "text": "EOD 1/09/23, 2/09/23, 3/09/23\n\nHow did the day go?\n\u2022 Worked on this <https://github.com/coronasafe/care_fe/issues/4246|issue>.\n\u2022 Made some patches for my previous PR's.",
+            "user": "U0526V7EL2G",
+            "ts": "1693750905.935829",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "n9Ha9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 1/09/23, 2/09/23, 3/09/23\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on this "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/4246",
+                                            "text": "issue"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made some patches for my previous PR's."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/13028584/206199688-a17a20aa-5910-4edf-970e-89b046e61181.png",
+                    "image_width": 1441,
+                    "image_height": 875,
+                    "image_bytes": 721252,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1670421934,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/4246",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1441x875px image",
+                    "text": "I see a lot of scope for improvement in the below screenshot\n\n<https://user-images.githubusercontent.com/13028584/206199688-a17a20aa-5910-4edf-970e-89b046e61181.png|image>",
+                    "title": "#4246 Improve File Preview UI",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/4246",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "2",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

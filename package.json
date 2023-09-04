@@ -6,28 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
     "clsx": "^1.2.1",
     "gray-matter": "^4.0.3",
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-activity-calendar": "^1.5.0",
-    "react-dom": "18.1.0",
+    "next": "^13.4.7",
+    "next-themes": "^0.2.1",
+    "react": "^18.2.0",
+    "react-activity-calendar": "^2.0.2",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "rehype-stringify": "^9.0.3",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
-    "remark-rehype": "^10.1.0"
+    "remark-parse": "^10.0.2",
+    "remark-rehype": "^10.1.0",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.7",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.3.1",
+    "@types/react": "^18.2.14",
+    "autoprefixer": "^10.4.14",
     "eslint": "8.16.0",
-    "eslint-config-next": "12.1.6",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.0.24"
+    "eslint-config-next": "^13.4.7",
+    "postcss": "^8.4.24",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.1.3"
   }
 }

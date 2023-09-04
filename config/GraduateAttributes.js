@@ -266,7 +266,7 @@ export let resolveGraduateAttributes = (attribute, contributor) => {
       return resolveLevel(
         attribute,
         contributor.highlights.comment_created +
-        contributor.highlights.eod_update
+          contributor.highlights.eod_update,
       );
     case "community_engagement":
       return resolveLevel(attribute, contributor.highlights.points);
@@ -277,7 +277,10 @@ export let resolveGraduateAttributes = (attribute, contributor) => {
     case "skills_to_apply_dt_solutions":
       return resolveLevel(attribute, contributor.courses_completed?.length);
     case "autonomy_and_responsibility":
-      return resolveLevel(attribute, contributor.activityData?.authored_issue_and_pr?.length);
+      return resolveLevel(
+        attribute,
+        contributor.activityData?.authored_issue_and_pr?.length,
+      );
     default:
       return { ...attribute };
   }

@@ -1,5 +1,5 @@
 ---
-name: JOEL SAJI CHACKO 
+name: JOEL SAJI CHACKO
 title: Contributor
 github: joelsajichacko
 twitter: ""

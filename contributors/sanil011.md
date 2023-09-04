@@ -1,5 +1,5 @@
 ---
-name: Sanil 
+name: Sanil
 title: Contributor
 github: sanil011
 twitter: ""

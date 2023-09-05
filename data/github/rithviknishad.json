@@ -1,6 +1,93 @@
 {
-  "last_updated": 1693591834.0,
+  "last_updated": 1693845404.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1570",
+      "time": 1693845404.0,
+      "link": "https://github.com/coronasafe/care/pull/1570",
+      "text": "Medicine Administrations: Add validations to `administered_date`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6221",
+      "time": 1693844211.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6221#issuecomment-1705503423",
+      "text": "@yogeshbhutkar consider using the `Slideover` component itself and pass `slideFrom` prop with \"bottom\" to re-use existing components!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693844113.0,
+      "title": "coronasafe/care_fe#6221",
+      "link": "https://github.com/coronasafe/care_fe/pull/6221#pullrequestreview-1609790260",
+      "text": "Added UI enhancements to the preview page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1573",
+      "time": 1693836657.0,
+      "link": "https://github.com/coronasafe/care/pull/1573#issuecomment-1705339780",
+      "text": "@rithviknishad to add validations"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1574",
+      "time": 1693827199.0,
+      "link": "https://github.com/coronasafe/care/issues/1574",
+      "text": "Refactor ICD11 Diagnosis"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6218",
+      "time": 1693826294.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6218",
+      "text": "Diagnosis: Adds field Principle Diagnosis"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1573",
+      "time": 1693821166.0,
+      "link": "https://github.com/coronasafe/care/pull/1573",
+      "text": "Adds field for Principal Diagnosis"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6213",
+      "time": 1693814561.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6213#issuecomment-1704798577",
+      "text": "https://github.com/coronasafe/care_fe/pull/6194"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6144",
+      "time": 1693814513.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6144#issuecomment-1704797460",
+      "text": "As a quick solution, we'll be simply adding a field \"Principle Diagnosis\".\r\n\r\nAs a larger refactor of the icd11 diagnosis, a seperate issue in backend will be created."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard#124",
+      "time": 1693814172.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/124",
+      "text": "Migrate to NextJS 13 App Router + Typescript support"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/leaderboard#124",
+      "time": 1693814172.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/124",
+      "text": "Migrate to NextJS 13 App Router + Typescript support",
+      "collaborated_with": [
+        "GokulramGHV"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1572",
+      "time": 1693800468.0,
+      "link": "https://github.com/coronasafe/care/pull/1572",
+      "text": "add field readmission + custom migration"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1571",
@@ -21960,8 +22047,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6206",
-      "title": "Medicine Administrations: Adds `administered_date` input",
+      "link": "https://github.com/coronasafe/care_fe/pull/6218",
+      "title": "Diagnosis: Adds field Principal Diagnosis",
       "stale_for": 0,
       "labels": [
         "needs testing",
@@ -21970,11 +22057,26 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1570",
-      "title": "Medicine Administrations: Add validations to `administered_date`",
+      "link": "https://github.com/coronasafe/care/pull/1573",
+      "title": "Adds field for Principal Diagnosis",
       "stale_for": 0,
       "labels": [
         "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1572",
+      "title": "add field readmission + custom migration",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6206",
+      "title": "Medicine Administrations: Adds `administered_date` input",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
       ]
     },
     {
@@ -21982,8 +22084,8 @@
       "title": "Support for direnv and use `CARE_API` from env in vite config",
       "stale_for": 0,
       "labels": [
-        "need Review",
-        "cypress failed"
+        "good to merge",
+        "cypress passed"
       ]
     },
     {
@@ -21997,7 +22099,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6194",
       "title": "User (Doctor) Autocomplete for Consultation Verified By",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "Backend",
@@ -22007,11 +22109,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6186",
       "title": "Medicine: Adds `type` filter for medibase search",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing",
-        "waiting for back end",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
@@ -22025,21 +22126,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 50,
+      "stale_for": 53,
       "labels": [
         "need Review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/leaderboard/pull/124",
-      "title": "Migrate to NextJS 13 App Router + Typescript support",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 18,
+      "stale_for": 21,
       "labels": [
         "stale",
         "cypress failed",

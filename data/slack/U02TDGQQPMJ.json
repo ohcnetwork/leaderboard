@@ -20263,5 +20263,223 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-09-04 00:00:00": [
+        {
+            "client_msg_id": "c180550e-b7dc-494a-8ec1-d95fc96ecbc9",
+            "type": "message",
+            "text": "*EOD 02/08/2023 - 04/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 <https://github.com/coronasafe/care_fe/pull/6218|#6218> <https://github.com/coronasafe/care/pull/1573|#1573>: Adds Principal Diagnosis field to consultation form\n\u2022 Fixed brought dead being pre-filled in verified by\n\u2022 Worked on tracking consultation re-admission and create custom migration <https://github.com/coronasafe/care/pull/1572|#1572>\n\u2022 Reviewed 1 react for all submissions\n*What's next?*\n\u2022 Review react for all submissions\n\u2022 Test consultation re-admission migration on staging copy db and make required changes in FE\n\u2022 Allow MAR to be archived.\n\u2022 Follow up on prescription enhancements.\n\u2022 Follow up on `useQuery` implementation\n\u2022 Rename fields admission_date and discharge_date to encounter_start/end (DateTime)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1693843876.214859",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "OBY",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 02/08/2023 - 04/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6218",
+                                            "text": "#6218",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1573",
+                                            "text": "#1573",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Adds Principal Diagnosis field to consultation form"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed brought dead being pre-filled in verified by"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on tracking consultation re-admission and create custom migration "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1572",
+                                            "text": "#1572",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 1 react for all submissions"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Review react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Test consultation re-admission migration on staging copy db and make required changes in FE"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Allow MAR to be archived."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on prescription enhancements."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " implementation"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Rename fields admission_date and discharge_date to encounter_start/end (DateTime)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

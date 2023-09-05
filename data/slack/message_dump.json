@@ -79539,5 +79539,480 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-09-04 00:00:00": []
+    "2023-09-04 00:00:00": [
+        {
+            "client_msg_id": "83abfecc-c9c7-48b9-a676-eca431b13435",
+            "type": "message",
+            "text": "\u2022 It got fixed after restarting the server and I created a PR for the same",
+            "user": "U052CV9HBR6",
+            "ts": "1693857851.144759",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "LJR",
+                    "elements": [
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "It got fixed after restarting the server and I created a PR for the same"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "dc851ad7-ad45-4663-8fe8-849caf7d2f59",
+            "type": "message",
+            "text": "EOD 02/08/2023\n\u2022 After replacing my method with already available PhoneNumberValidator, landline numbers were not getting fit in the input field, fixed that\n\u2022 Tried to resolve merge conflict of the same issue\nEOD 04/08/2023\n\u2022 Merge commit was showing diff of 3k+ lines, so I tried different ways to resolve the merge conflict and create a commit without showing others' work as diff of my PR\n\u2022 Finally got the conflict resolved with rebase and VS code's GUI for git as the command line was giving strange error complaining about atom ide. Now I am getting an error regarding @tailwindcss/container-queries module.",
+            "user": "U052CV9HBR6",
+            "ts": "1693853893.400269",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "OKzJ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 02/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "After replacing my method with already available PhoneNumberValidator, landline numbers were not getting fit in the input field, fixed that"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tried to resolve merge conflict of the same issue"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nEOD 04/08/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Merge commit was showing diff of 3k+ lines, so I tried different ways to resolve the merge conflict and create a commit without showing others' work as diff of my PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Finally got the conflict resolved with rebase and VS code's GUI for git as the command line was giving strange error complaining about atom ide. Now I am getting an error regarding @tailwindcss/container-queries module."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "7f11a890-7ab7-49fe-b349-0af7a9bc7f49",
+            "type": "message",
+            "text": "resubmit L4 milestone. submit L5 milestone.",
+            "user": "U05MBE2RASD",
+            "ts": "1693853653.983449",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Yhk",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "resubmit L4 milestone. submit L5 milestone."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "c180550e-b7dc-494a-8ec1-d95fc96ecbc9",
+            "type": "message",
+            "text": "*EOD 02/08/2023 - 04/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 <https://github.com/coronasafe/care_fe/pull/6218|#6218> <https://github.com/coronasafe/care/pull/1573|#1573>: Adds Principal Diagnosis field to consultation form\n\u2022 Fixed brought dead being pre-filled in verified by\n\u2022 Worked on tracking consultation re-admission and create custom migration <https://github.com/coronasafe/care/pull/1572|#1572>\n\u2022 Reviewed 1 react for all submissions\n*What's next?*\n\u2022 Review react for all submissions\n\u2022 Test consultation re-admission migration on staging copy db and make required changes in FE\n\u2022 Allow MAR to be archived.\n\u2022 Follow up on prescription enhancements.\n\u2022 Follow up on `useQuery` implementation\n\u2022 Rename fields admission_date and discharge_date to encounter_start/end (DateTime)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1693843876.214859",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "OBY",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 02/08/2023 - 04/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6218",
+                                            "text": "#6218",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1573",
+                                            "text": "#1573",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Adds Principal Diagnosis field to consultation form"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed brought dead being pre-filled in verified by"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on tracking consultation re-admission and create custom migration "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1572",
+                                            "text": "#1572",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 1 react for all submissions"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Review react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Test consultation re-admission migration on staging copy db and make required changes in FE"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Allow MAR to be archived."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on prescription enhancements."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " implementation"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Rename fields admission_date and discharge_date to encounter_start/end (DateTime)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "0d5ab41e-3fc6-45ef-a7f4-ccce81a1f0bb",
+            "type": "message",
+            "text": "EOD 04/09/23\n\nHow did the day go?\n\u2022 Discussed some workaround on CORS error with <@U02T4HFA07Q> \n\u2022 Worked on <https://github.com/coronasafe/care_fe/issues/4246|this> issue and made this <https://github.com/coronasafe/care_fe/pull/6221|PR>.",
+            "user": "U0526V7EL2G",
+            "ts": "1693843852.031959",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "+r9X9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 04/09/23\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Discussed some workaround on CORS error with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02T4HFA07Q"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/4246",
+                                            "text": "this"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " issue and made this "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6221",
+                                            "text": "PR"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1670421934,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/4246",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4246 Improve File Preview UI",
+                    "title": "#4246 Improve File Preview UI",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/4246",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1693843480,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6221",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6221 Added UI enhancements to the preview page",
+                    "title": "#6221 Added UI enhancements to the preview page",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6221",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2023-09-05 00:00:00": []
 }

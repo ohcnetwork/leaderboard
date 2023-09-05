@@ -412,5 +412,120 @@
                 }
             ]
         }
+    ],
+    "2023-09-04 00:00:00": [
+        {
+            "client_msg_id": "0d5ab41e-3fc6-45ef-a7f4-ccce81a1f0bb",
+            "type": "message",
+            "text": "EOD 04/09/23\n\nHow did the day go?\n\u2022 Discussed some workaround on CORS error with <@U02T4HFA07Q> \n\u2022 Worked on <https://github.com/coronasafe/care_fe/issues/4246|this> issue and made this <https://github.com/coronasafe/care_fe/pull/6221|PR>.",
+            "user": "U0526V7EL2G",
+            "ts": "1693843852.031959",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "+r9X9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 04/09/23\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Discussed some workaround on CORS error with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02T4HFA07Q"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/4246",
+                                            "text": "this"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " issue and made this "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6221",
+                                            "text": "PR"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1670421934,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/4246",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#4246 Improve File Preview UI",
+                    "title": "#4246 Improve File Preview UI",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/4246",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1693843480,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6221",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6221 Added UI enhancements to the preview page",
+                    "title": "#6221 Added UI enhancements to the preview page",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6221",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

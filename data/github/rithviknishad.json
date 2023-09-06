@@ -1,6 +1,107 @@
 {
-  "last_updated": 1693845404.0,
+  "last_updated": 1693934847.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1693934847.0,
+      "title": "coronasafe/care_fe#6224",
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#pullrequestreview-1611593260",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693928936.0,
+      "title": "coronasafe/care_fe#6227",
+      "link": "https://github.com/coronasafe/care_fe/pull/6227#pullrequestreview-1611370766",
+      "text": "Using DateFormField instead of DateInputV2"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6201",
+      "time": 1693926768.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6201",
+      "text": "Support for direnv and use `CARE_API` from env in vite config"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6201",
+      "time": 1693926768.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6201",
+      "text": "Support for direnv and use `CARE_API` from env in vite config",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6189",
+      "time": 1693925262.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6189",
+      "text": "Bug Fixed : Default filters on patients page loads",
+      "collaborated_with": [
+        "mustafaazad03",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6217",
+      "time": 1693924530.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6217#issuecomment-1706745278",
+      "text": "\r\n\r\n<img width=\"668\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/6ef4ae80-39cb-40d3-92e7-2c49650b33aa\">\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6186",
+      "time": 1693924323.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6186",
+      "text": "Medicine: Adds `type` filter for medibase search"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6186",
+      "time": 1693924323.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6186",
+      "text": "Medicine: Adds `type` filter for medibase search",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693924157.0,
+      "title": "coronasafe/care#1569",
+      "link": "https://github.com/coronasafe/care/pull/1569#pullrequestreview-1611201187",
+      "text": "temporarily expose abdm health facility apis directly"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693917361.0,
+      "title": "coronasafe/care_fe#6210",
+      "link": "https://github.com/coronasafe/care_fe/pull/6210#pullrequestreview-1610952757",
+      "text": "Remove extra loader and add success notification on link skills page"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6181",
+      "time": 1693900549.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6181#issuecomment-1706122164",
+      "text": "I don't have an iPhone :/"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693900487.0,
+      "title": "coronasafe/care_fe#6224",
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#pullrequestreview-1610435055",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693900487.0,
+      "title": "coronasafe/care_fe#6224",
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#pullrequestreview-1610435055",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1570",
@@ -22059,7 +22160,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1573",
       "title": "Adds field for Principal Diagnosis",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -22067,7 +22168,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1572",
       "title": "add field readmission + custom migration",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
@@ -22075,23 +22176,14 @@
       "title": "Medicine Administrations: Adds `administered_date` input",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6201",
-      "title": "Support for direnv and use `CARE_API` from env in vite config",
-      "stale_for": 0,
-      "labels": [
-        "good to merge",
+        "tested",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1567",
       "title": "Foreign Key to User for Consultation Verified By",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -22102,23 +22194,14 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "Backend",
+        "waiting for back end",
         "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6186",
-      "title": "Medicine: Adds `type` filter for medibase search",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1565",
       "title": "Reject Prescription Creation if Medicine already Prescribed and is active",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "reviewed"
       ]
@@ -22126,7 +22209,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 53,
+      "stale_for": 54,
       "labels": [
         "need Review"
       ]
@@ -22134,7 +22217,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "stale",
         "cypress failed",
@@ -22150,6 +22233,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6159",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6160"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6154",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6186"
     },
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1556",

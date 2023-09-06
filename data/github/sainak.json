@@ -1,6 +1,27 @@
 {
-  "last_updated": 1693816049.0,
+  "last_updated": 1693923987.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1579",
+      "time": 1693923987.0,
+      "link": "https://github.com/coronasafe/care/pull/1579",
+      "text": "refactor all files as per ruff rules"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693923327.0,
+      "title": "coronasafe/care#1569",
+      "link": "https://github.com/coronasafe/care/pull/1569#pullrequestreview-1611170037",
+      "text": "temporarily expose abdm health facility apis directly"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1577",
+      "time": 1693922252.0,
+      "link": "https://github.com/coronasafe/care/pull/1577",
+      "text": "refactor consultation bed create and shift logic"
+    },
     {
       "type": "pr_reviewed",
       "time": 1693816049.0,
@@ -5449,27 +5470,41 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1579",
+      "title": "refactor all files as per ruff rules",
+      "stale_for": 0,
+      "labels": [
+        "In progress"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1577",
+      "title": "refactor consultation bed create and shift logic",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 46,
+      "stale_for": 47,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 84,
+      "stale_for": 85,
       "labels": []
     }
   ],

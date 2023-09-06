@@ -1,6 +1,54 @@
 {
-  "last_updated": 1693818591.0,
+  "last_updated": 1693924635.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6210",
+      "time": 1693924635.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6210",
+      "text": "Remove extra loader and add success notification on link skills page"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6215",
+      "time": 1693924578.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6215",
+      "text": "Remove extra space on Add Triage form"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6215",
+      "time": 1693924578.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6215",
+      "text": "Remove extra space on Add Triage form",
+      "collaborated_with": [
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6163",
+      "time": 1693923085.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6163",
+      "text": "Enhance UI of Import External Results page"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6163",
+      "time": 1693923085.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6163",
+      "text": "Enhance UI of Import External Results page",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6163",
+      "time": 1693901311.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6163#issuecomment-1706143004",
+      "text": "@nihal467 \r\nUpdated view:\r\n![image](https://github.com/coronasafe/care_fe/assets/70687348/c923ee2e-1cb3-4270-8f6a-7e384052ddee)\r\n"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6215",
@@ -5443,27 +5491,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6215",
-      "title": "Remove extra space on Add Triage form",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6210",
-      "title": "Remove extra loader and add success notification on link skills page",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6204",
       "title": "Fix the loader display on Patient Notes page",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "needs testing",
+        "hold"
       ]
     },
     {
@@ -5471,21 +5504,14 @@
       "title": "Show only those facilties that aren't linked to user",
       "stale_for": 0,
       "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6163",
-      "title": "Enhance UI of Import External Results page",
-      "stale_for": 4,
-      "labels": [
-        "needs testing"
+        "changes required",
+        "cypress failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1530",
       "title": "Check bed name before making new multiple beds with same name",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "changes required"
       ]
@@ -5493,36 +5519,52 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1505",
       "title": "Don't allow negative values for Doctor Count for facility",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 61,
+      "stale_for": 62,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 314,
+      "stale_for": 315,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 314,
+      "stale_for": 315,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6214",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6215"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6209",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6210"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6165",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6166"
     },
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6162",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6163"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6156",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6157"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6156",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6163"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6145",
@@ -5575,14 +5617,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5408",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5409"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5214",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5215"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5201",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5202"
     }
   ]
 }

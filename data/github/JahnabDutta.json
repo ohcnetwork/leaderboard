@@ -1,6 +1,48 @@
 {
-  "last_updated": 1693834966.0,
+  "last_updated": 1693919442.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6223",
+      "time": 1693919442.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6223#issuecomment-1706592788",
+      "text": "Hey, @nihal467 The patient_pricacy test is running fine in my local. I am using the same data present in the dummy-data backend. I am unsure as to why it is failing here.\r\n![image](https://github.com/coronasafe/care_fe/assets/76475829/a9e822f4-1ba7-4b46-966f-41a6e18e842b)\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6223",
+      "time": 1693916877.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6223#issuecomment-1706527391",
+      "text": "> @JahnabDutta the cypress is failed, fix it\r\n\r\nHey, I fixed the cypress test related to patient privacy. But for the camera boundary test, we will require a functional camera for the test to succeed. Can we skip this for the time being?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1576",
+      "time": 1693896426.0,
+      "link": "https://github.com/coronasafe/care/pull/1576#issuecomment-1706037891",
+      "text": "@nihal467 Hey, I have raised this PR for backend. There is one extra migration because I was getting a migration merge error in my local. Hopefully this will fix it for testing purposes."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6223",
+      "time": 1693895219.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6223#issuecomment-1706016181",
+      "text": "@nihal467 Hey, I have raised this PR for testing and review."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6223",
+      "time": 1693895181.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6223",
+      "text": "Live Camera Feed Enhancement(Review, QA and testing)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1576",
+      "time": 1693894326.0,
+      "link": "https://github.com/coronasafe/care/pull/1576",
+      "text": "Live Camera Feed Ehnahcement(Review, QA and testing)"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6220",
@@ -330,15 +372,30 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6223",
+      "title": "Live Camera Feed Enhancement(Review, QA and testing)",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1576",
+      "title": "Live Camera Feed Ehnahcement(Review, QA and testing)",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1518",
       "title": "Patient privacy feature",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6021",
       "title": "Patient privacy feature",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -346,7 +403,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5967",
       "title": "Lock asset feature",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -354,13 +411,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1467",
       "title": "Lock asset feature",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5874",
       "title": "Add boundary preset",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -368,7 +425,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1453",
       "title": "Add boundary based validation",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     }
   ],

@@ -1,6 +1,180 @@
 {
-  "last_updated": 1693814239.0,
+  "last_updated": 1693948041.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6206",
+      "time": 1693948041.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6206#issuecomment-1707311560",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6224",
+      "time": 1693945049.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#issuecomment-1707254521",
+      "text": "**pointer by QA, can be an enhancement on later version**\r\n\r\n- feature works well but few pointers to highlight\r\n\r\n1. unless we reload the page manually, newly send messages won't arrive in the doctor notes\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/b9362f06-6ed9-486f-a1c5-15a8a8ab88ea)\r\n\r\n2. in the notification no details are been shown such as : Who send it, for which patient, and what is the content of the message \r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/43d5c2d1-ac55-49c7-86c7-637355d0bdd4)\r\n\r\n3. We can't write notes in two rows and to send a notice message, we need to explicitly click the send button ( most of the users prefer enter button to send it ) \r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/dcaf22cc-2747-4d57-911f-7d46652f8334)\r\n\r\n4. the system notification are not properly redirected to the respective doctor note"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6223",
+      "time": 1693932668.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6223#issuecomment-1706970825",
+      "text": "**Initial Review of QA pointers**\r\n\r\n**Works Good**\r\n\r\n- Camera Feed privacy is working properly\r\n- Multiple user camera access control working good\r\n\r\n**Need to work on before tomorrow's EOD**\r\n\r\n- Camera Boundary preview is not working, even though in the network tab, the requests are coming in, and the camera is not moving to show the boundary of the camera view.\r\n- Camera boundary preset is hard to set, as it keeps on rotating to a default preset\r\n- When I am moving the camera, to set a boundary, on each click I get a notification, so change it to show notification only when we set a preset of left, right, or any one side and move to the next one.\r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/ee33f4ad-74d1-4102-9437-8973301a085b)\r\n\r\n- The UI shows multiple users and the way the subscribe button is shown not give a good user experience.\r\n- when the second user is trying to move the camera, even though the camera is not moving as expected but, there is no notification showing camera is already in use, request the access to gain control, something like that\r\n"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6201",
+      "time": 1693926768.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6201",
+      "text": "Support for direnv and use `CARE_API` from env in vite config",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6189",
+      "time": 1693925262.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6189",
+      "text": "Bug Fixed : Default filters on patients page loads",
+      "collaborated_with": [
+        "rithviknishad",
+        "mustafaazad03"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6186",
+      "time": 1693924323.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6186",
+      "text": "Medicine: Adds `type` filter for medibase search",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6217",
+      "time": 1693924169.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6217#issuecomment-1706734512",
+      "text": "@aparnaegov can you recheck the bug, I can't replicate it, @rithviknishad can you also give the bug a look"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6163",
+      "time": 1693923085.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6163",
+      "text": "Enhance UI of Import External Results page",
+      "collaborated_with": [
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6223",
+      "time": 1693920239.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6223#issuecomment-1706616537",
+      "text": "@JahnabDutta \r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/44b4b0bb-1bc1-42ab-9e34-56396dc4f32e)\r\n\r\n- the dev camera is not part of dummy data, use any camera named \"Dummy camera\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6223",
+      "time": 1693915425.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6223#issuecomment-1706493507",
+      "text": "@JahnabDutta the cypress is failed, fix it"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6215",
+      "time": 1693915243.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6215#issuecomment-1706489191",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6210",
+      "time": 1693915005.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6210#issuecomment-1706483282",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6163",
+      "time": 1693913869.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6163#issuecomment-1706453422",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6206",
+      "time": 1693913695.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6206#issuecomment-1706449626",
+      "text": "@rithviknishad add the same for the bulk administration as well"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6191",
+      "time": 1693904808.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6191#issuecomment-1706231531",
+      "text": "@Pranshu1902 check the cypress, it's a huge failure, fix that too"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6189",
+      "time": 1693904619.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6189#issuecomment-1706226465",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6186",
+      "time": 1693904057.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6186#issuecomment-1706211669",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6194",
+      "time": 1693903623.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6194#issuecomment-1706200111",
+      "text": "@rithviknishad modify the cypress test"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6170",
+      "time": 1693902650.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6170#issuecomment-1706175318",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6169",
+      "time": 1693900003.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6169#issuecomment-1706110604",
+      "text": "@sghosh28 \r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/6d1edb66-5e5b-467f-a463-14f92466ae02)\r\n\r\n- now the dropdowns are not closing post selecting an option"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6218",
+      "time": 1693899731.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6218#issuecomment-1706104957",
+      "text": "@rithviknishad add cypress test to the PR"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6163",
+      "time": 1693898969.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6163#issuecomment-1706088024",
+      "text": "@Pranshu1902 \r\n![image](https://github.com/coronasafe/care_fe/assets/57055998/95f015b5-2cd9-4bb3-99d2-01f1002695e6)\r\n\r\n- Check the width of the chosen file button, it's bigger than in staging, so keep it in the same width as staging"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5550",
+      "time": 1693898272.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5550#issuecomment-1706072445",
+      "text": "LGTM"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6213",

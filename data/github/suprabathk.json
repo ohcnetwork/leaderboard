@@ -1,6 +1,76 @@
 {
-  "last_updated": 1693819587.0,
+  "last_updated": 1693935058.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#266",
+      "time": 1693935058.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/266#issuecomment-1707025546",
+      "text": "I would like to work on this"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#104",
+      "time": 1693934514.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/104",
+      "text": "Moved feedback icons to top right of chat"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#101",
+      "time": 1693933686.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/101#issuecomment-1706994670",
+      "text": "I would like to work on this"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#103",
+      "time": 1693933559.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/103",
+      "text": "Fixed logo url typo in admin side bar"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6227",
+      "time": 1693928443.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6227",
+      "text": "Using DateFormField instead of DateInputV2"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#99",
+      "time": 1693927035.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/99",
+      "text": "Added env var for optional logo"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#99",
+      "time": 1693926159.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/99#issuecomment-1706792227",
+      "text": "@bodhish \r\nDone, Removed logo.png as well"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6217",
+      "time": 1693888511.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6217#issuecomment-1705928705",
+      "text": "I would like to work on this"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#99",
+      "time": 1693888224.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/99#issuecomment-1705926584",
+      "text": "We have [logo.png](https://github.com/coronasafe/ayushma_fe/blob/master/public/logo.png) in assets it's being used only in README.md\r\nWe already have it's svg version. ([logo.svg](https://github.com/coronasafe/ayushma_fe/blob/master/public/logo.svg))\r\n\r\nShould we remove it?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#99",
+      "time": 1693887908.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/99#issuecomment-1705924429",
+      "text": "Removed Admin Logo and using same logo as User"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/ayushma_fe#99",
@@ -415,8 +485,20 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/99",
-      "title": "Added env var for optional logo",
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/104",
+      "title": "Moved feedback icons to top right of chat",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/103",
+      "title": "Fixed logo url typo in admin side bar",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6227",
+      "title": "Using DateFormField instead of DateInputV2",
       "stale_for": 0,
       "labels": []
     },
@@ -425,7 +507,8 @@
       "title": "Added nav link for bed status in consultation form",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "tested",
+        "cypress passed"
       ]
     }
   ],

@@ -1,6 +1,108 @@
 {
-  "last_updated": 1693832604.0,
+  "last_updated": 1693932752.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#102",
+      "time": 1693932752.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/102",
+      "text": "Refactor chat feedback to use external_id and chat start error"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#301",
+      "time": 1693932714.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/301",
+      "text": "Refactor chat feedback to use external_id"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#102",
+      "time": 1693929084.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/102",
+      "text": "Refactor chat feedback to use external_id and chat start error"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#301",
+      "time": 1693929078.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/301",
+      "text": "Refactor chat feedback to use external_id"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/ayushma#194",
+      "time": 1693927860.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/194",
+      "text": "Added feedback ",
+      "collaborated_with": [
+        "skks1212",
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#100",
+      "time": 1693926930.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/100",
+      "text": "Load random preset questions from backend"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#299",
+      "time": 1693924447.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/299",
+      "text": "Send random preset questions to users"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693924103.0,
+      "title": "coronasafe/care#1569",
+      "link": "https://github.com/coronasafe/care/pull/1569#pullrequestreview-1611199125",
+      "text": "temporarily expose abdm health facility apis directly"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6226",
+      "time": 1693920192.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6226",
+      "text": "Open pdf file preview in new tab"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#264",
+      "time": 1693919352.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/264#issuecomment-1706590427",
+      "text": "Fixed by https://github.com/coronasafe/ayushma/pull/289"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/ayushma#264",
+      "time": 1693919352.0,
+      "link": "https://github.com/coronasafe/ayushma/issues/264",
+      "text": "Allow projects to have their own assigned OpenAI key"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6225",
+      "time": 1693914174.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6225",
+      "text": "Fix fullscreen button for IOS"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693911874.0,
+      "title": "coronasafe/care_fe#6197",
+      "link": "https://github.com/coronasafe/care_fe/pull/6197#pullrequestreview-1610793228",
+      "text": "Temporarily expose abdm health facility config directly"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6181",
+      "time": 1693904702.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6181#issuecomment-1706228618",
+      "text": "> I don't have an iPhone :/\r\n\r\nNo worries, he was assigning it to me and selected your name by mistake \ud83d\ude05 "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/ayushma#299",
@@ -12089,21 +12191,27 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/ayushma/pull/299",
-      "title": "Send random preset questions to users",
+      "link": "https://github.com/coronasafe/care_fe/pull/6226",
+      "title": "Open pdf file preview in new tab",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
     },
     {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/100",
-      "title": "Load random preset questions from backend",
+      "link": "https://github.com/coronasafe/care_fe/pull/6225",
+      "title": "Fix fullscreen button for IOS",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 153,
+      "stale_for": 154,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -12112,13 +12220,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 166,
+      "stale_for": 167,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review"
       ]

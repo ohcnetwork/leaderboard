@@ -1,6 +1,121 @@
 {
-  "last_updated": 1693934847.0,
+  "last_updated": 1694014716.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1583",
+      "time": 1694014716.0,
+      "link": "https://github.com/coronasafe/care/pull/1583",
+      "text": "Adds `deleted` and `chapter_short` fields to Meta ICD11 Table"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6218",
+      "time": 1694008640.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6218",
+      "text": "Diagnosis: Adds field Principal Diagnosis"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6218",
+      "time": 1694008640.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6218",
+      "text": "Diagnosis: Adds field Principal Diagnosis",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694006032.0,
+      "title": "coronasafe/care#1582",
+      "link": "https://github.com/coronasafe/care/pull/1582#pullrequestreview-1613309568",
+      "text": "Fix Swagger "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1567",
+      "time": 1693999595.0,
+      "link": "https://github.com/coronasafe/care/pull/1567#issuecomment-1708161020",
+      "text": "weird that that tests are failing. but fine on my local\r\n\r\n<img width=\"1822\" alt=\"image\" src=\"https://github.com/coronasafe/care/assets/25143503/4525d3cb-d045-46e2-a684-cb866e9ebdc9\">\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1573",
+      "time": 1693998257.0,
+      "link": "https://github.com/coronasafe/care/pull/1573",
+      "text": "Adds field for Principal Diagnosis"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1565",
+      "time": 1693997622.0,
+      "link": "https://github.com/coronasafe/care/pull/1565",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1565",
+      "time": 1693997622.0,
+      "link": "https://github.com/coronasafe/care/pull/1565",
+      "text": "Reject Prescription Creation if Medicine already Prescribed and is active",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693985054.0,
+      "title": "coronasafe/care_fe#6224",
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#pullrequestreview-1612589695",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693982449.0,
+      "title": "coronasafe/care_fe#6224",
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#pullrequestreview-1612589695",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693982415.0,
+      "title": "coronasafe/care_fe#6224",
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#pullrequestreview-1612589695",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1693982402.0,
+      "title": "coronasafe/care_fe#6224",
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#pullrequestreview-1612589695",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6194",
+      "time": 1693973539.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6194#issuecomment-1707627626",
+      "text": "@nihal467 cypress will keep failing here until backend is merged"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6206",
+      "time": 1693969804.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6206",
+      "text": "Medicine Administrations: Adds `administered_date` input"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6206",
+      "time": 1693969804.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6206",
+      "text": "Medicine Administrations: Adds `administered_date` input",
+      "collaborated_with": [
+        "nihal467",
+        "khavinshankar"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1693934847.0,
@@ -22148,19 +22263,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6218",
-      "title": "Diagnosis: Adds field Principal Diagnosis",
+      "link": "https://github.com/coronasafe/care/pull/1583",
+      "title": "Adds `deleted` and `chapter_short` fields to Meta ICD11 Table",
       "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "waiting for back end",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1573",
-      "title": "Adds field for Principal Diagnosis",
-      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -22168,22 +22273,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1572",
       "title": "add field readmission + custom migration",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6206",
-      "title": "Medicine Administrations: Adds `administered_date` input",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1567",
       "title": "Foreign Key to User for Consultation Verified By",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -22195,21 +22291,14 @@
       "labels": [
         "needs testing",
         "waiting for back end",
-        "cypress failed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1565",
-      "title": "Reject Prescription Creation if Medicine already Prescribed and is active",
-      "stale_for": 1,
-      "labels": [
-        "reviewed"
+        "merge conflict",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 54,
+      "stale_for": 55,
       "labels": [
         "need Review"
       ]
@@ -22217,7 +22306,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5457",
       "title": "enable hcx in staging",
-      "stale_for": 22,
+      "stale_for": 23,
       "labels": [
         "stale",
         "cypress failed",
@@ -22241,6 +22330,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1556",
       "pr_link": "https://github.com/coronasafe/care/pull/1557"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6085",
+      "pr_link": "https://github.com/coronasafe/care/pull/1565"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6073",

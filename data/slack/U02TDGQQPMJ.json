@@ -20584,5 +20584,123 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-09-06 00:00:00": [
+        {
+            "client_msg_id": "9e1bbd70-37a4-45e0-9987-55d7a0be546f",
+            "type": "message",
+            "text": "*EOD 06/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\n\u2022 Reviewed 4 react for all submissions\n\u2022 Reviewed 1 C4GT PR\n\u2022 Fixed cypress tests on Principal Diagnosis PR\n\u2022 Tried debugging why tests were unrelated tests were failing (prescriptions) in consultation verified by field PR in backend. Seems like random tests are failing on existing PRs. Rebased migrations on the way while debugging it.\n\u2022 <https://github.com/coronasafe/care/pull/1583|#1583>: Updated ICD11 Meta Table to include a shorter chapter name and deleted field",
+            "user": "U02TDGQQPMJ",
+            "ts": "1694015058.893709",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "A0wHR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 06/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 4 react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 1 C4GT PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed cypress tests on Principal Diagnosis PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tried debugging why tests were unrelated tests were failing (prescriptions) in consultation verified by field PR in backend. Seems like random tests are failing on existing PRs. Rebased migrations on the way while debugging it."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1583",
+                                            "text": "#1583",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Updated ICD11 Meta Table to include a shorter chapter name and deleted field"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

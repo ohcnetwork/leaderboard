@@ -80842,5 +80842,536 @@
             }
         }
     ],
-    "2023-09-07 00:00:00": []
+    "2023-09-07 00:00:00": [
+        {
+            "client_msg_id": "863baf1a-2870-475e-bc05-40c95ddeea8e",
+            "type": "message",
+            "text": "*EOD 07/09/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 <https://github.com/coronasafe/care_fe/pull/6239|#6239> Tested consultation re-admission migration on staging copy db and made required changes in FE\n\u2022 Fixed conflicts and more cypress issues.\n*What's next?*\n\u2022 Follow up on `useQuery` implementation\n\u2022 Review react for all submissions\n\u2022 Allow MAR to be archived.\n\u2022 Follow up on prescription enhancements.\n\u2022 Rename fields admission_date and discharge_date to encounter_start/end (DateTime)\n",
+            "user": "U02TDGQQPMJ",
+            "ts": "1694102926.766809",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "16H",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/09/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6239",
+                                            "text": "#6239",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " Tested consultation re-admission migration on staging copy db and made required changes in FE"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed conflicts and more cypress issues."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " implementation"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Review react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Allow MAR to be archived."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on prescription enhancements."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Rename fields admission_date and discharge_date to encounter_start/end (DateTime)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "a08fc764-760c-4812-8dd2-00e751b295cf",
+            "type": "message",
+            "text": "*EOD 07/09/2023*\n*How did the day go?*\n\u2022 Worked on <https://github.com/coronasafe/care_fe/issues/5830|#5830>. Created PR <https://github.com/coronasafe/care_fe/pull/6232|#6232>.\n*What's next?*\n\u2022 Start working on new issue. \n",
+            "user": "U051PNZ0W9Z",
+            "ts": "1694101020.077029",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "YnhEY",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/09/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/5830",
+                                            "text": "#5830",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ". Created PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6232",
+                                            "text": "#6232",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Start working on new issue. "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "4cfe15b2-c743-47c6-b262-67320a0c73f4",
+            "type": "message",
+            "text": "*EOD 06/09/2023 <!subteam^S035L5S02RF|@care_engineering>*\n\n*how did the day go ?*\n\n\u2022 tested all PR for this week\n\u2022 reviewed PR and submitted evaluation for C4GT contributors\n\u2022 followed-up with navaneeth regarding C4GT project evaluation process\n\u2022 huddle with <@U02T4HFA07Q> to set up tunnel for testing projects\n\u2022 had a meeting with <!subteam^S035L5S02RF|@care_engineering> to plan evaluation\n\u2022 attended an virtual official event on cypress 13 \n\u2022 had a meeting with <http://cypress.io|cypress.io> team to discuss open source project support\n\u2022 huddle with <@U01JB8L8P7Y> to clean-up existing cypress cloud and submitted application for open source plan\n*what's next*\n\n\u2022 follow-up on open source cypress plan application\n\u2022 integrate cypress cloud to care_fe\n\u2022 plan-out issues for cypress expansion\n\u2022 update testing documentation",
+            "user": "U022THM4U2U",
+            "ts": "1694074538.419759",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "91K",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 06/09/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "how did the day go ?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested all PR for this week"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "reviewed PR and submitted evaluation for C4GT contributors"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "followed-up with navaneeth regarding C4GT project evaluation process"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "huddle with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02T4HFA07Q"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to set up tunnel for testing projects"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "had a meeting with "
+                                        },
+                                        {
+                                            "type": "usergroup",
+                                            "usergroup_id": "S035L5S02RF"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to plan evaluation"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "attended an virtual official event on cypress 13 "
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "had a meeting with "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "http://cypress.io",
+                                            "text": "cypress.io"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " team to discuss open source project support"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "huddle with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U01JB8L8P7Y"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to clean-up existing cypress cloud and submitted application for open source plan"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "what's next",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "follow-up on open source cypress plan application"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "integrate cypress cloud to care_fe"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "plan-out issues for cypress expansion"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "update testing documentation"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U022THM4U2U",
+                "ts": "1694074804.000000"
+            }
+        }
+    ],
+    "2023-09-08 00:00:00": []
 }

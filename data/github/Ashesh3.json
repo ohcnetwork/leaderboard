@@ -1,6 +1,40 @@
 {
-  "last_updated": 1694012438.0,
+  "last_updated": 1694126327.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6243",
+      "time": 1694126327.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6243",
+      "text": "Add validation for average working hours"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694092860.0,
+      "title": "coronasafe/care#1572",
+      "link": "https://github.com/coronasafe/care/pull/1572#pullrequestreview-1615416637",
+      "text": "add field readmission + custom migration"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6106",
+      "time": 1694088927.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6106",
+      "text": "Added test for resource, facility and migrated them to POM approach",
+      "collaborated_with": [
+        "ShivamJhaa",
+        "kshitijv256",
+        "rithviknishad",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6225",
+      "time": 1694080110.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6225",
+      "text": "Fix fullscreen button for IOS"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#3480",
@@ -12268,24 +12302,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6243",
+      "title": "Add validation for average working hours",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1580",
       "title": "Implement Tracking and Storing of Plausible Statistics",
       "stale_for": 0,
       "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6225",
-      "title": "Fix fullscreen button for IOS",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 155,
+      "stale_for": 156,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -12294,13 +12328,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 168,
+      "stale_for": 169,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]

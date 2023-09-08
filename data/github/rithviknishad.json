@@ -1,6 +1,109 @@
 {
-  "last_updated": 1694014716.0,
+  "last_updated": 1694107109.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6194",
+      "time": 1694107109.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6194",
+      "text": "User (Doctor) Autocomplete for Consultation Verified By"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6194",
+      "time": 1694107109.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6194",
+      "text": "User (Doctor) Autocomplete for Consultation Verified By",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5365",
+      "time": 1694099955.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5365",
+      "text": "Additional Role required; \"Nurse\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5365",
+      "time": 1694099955.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5365#issuecomment-1710342239",
+      "text": "Continued in: https://github.com/coronasafe/care_fe/issues/6240"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694092458.0,
+      "title": "coronasafe/care#1580",
+      "link": "https://github.com/coronasafe/care/pull/1580#pullrequestreview-1615402613",
+      "text": "Implement Tracking and Storing of Plausible Statistics"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6239",
+      "time": 1694092124.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6239",
+      "text": "Support for tracking consultation readmissions"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6106",
+      "time": 1694088927.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6106",
+      "text": "Added test for resource, facility and migrated them to POM approach",
+      "collaborated_with": [
+        "ShivamJhaa",
+        "kshitijv256",
+        "Ashesh3",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1567",
+      "time": 1694085565.0,
+      "link": "https://github.com/coronasafe/care/pull/1567",
+      "text": "Foreign Key to User for Consultation Verified By"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1567",
+      "time": 1694085565.0,
+      "link": "https://github.com/coronasafe/care/pull/1567",
+      "text": "Foreign Key to User for Consultation Verified By",
+      "collaborated_with": [
+        "vigneshhari"
+      ]
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5403",
+      "time": 1694084331.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5403",
+      "text": "Enable HCX in Staging"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694081735.0,
+      "title": "coronasafe/care_fe#6238",
+      "link": "https://github.com/coronasafe/care_fe/pull/6238#pullrequestreview-1615095603",
+      "text": "Make the form consistent"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694081734.0,
+      "title": "coronasafe/care_fe#6238",
+      "link": "https://github.com/coronasafe/care_fe/pull/6238#pullrequestreview-1615095603",
+      "text": "Make the form consistent"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694068135.0,
+      "title": "coronasafe/care_fe#6232",
+      "link": "https://github.com/coronasafe/care_fe/pull/6232#pullrequestreview-1614666311",
+      "text": "ConsultationDetails.tsx split into seperate components."
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1583",
@@ -22263,6 +22366,16 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6239",
+      "title": "Support for tracking consultation readmissions",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "waiting for back end",
+        "cypress failed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1583",
       "title": "Adds `deleted` and `chapter_short` fields to Meta ICD11 Table",
       "stale_for": 0,
@@ -22273,44 +22386,17 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1572",
       "title": "add field readmission + custom migration",
-      "stale_for": 2,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1567",
-      "title": "Foreign Key to User for Consultation Verified By",
       "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6194",
-      "title": "User (Doctor) Autocomplete for Consultation Verified By",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "waiting for back end",
-        "merge conflict",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 55,
+      "stale_for": 56,
       "labels": [
         "need Review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5457",
-      "title": "enable hcx in staging",
-      "stale_for": 23,
-      "labels": [
-        "stale",
-        "cypress failed",
-        "HCX"
       ]
     }
   ],

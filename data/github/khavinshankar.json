@@ -1,6 +1,69 @@
 {
-  "last_updated": 1694008723.0,
+  "last_updated": 1694107110.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6213",
+      "time": 1694107110.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6213",
+      "text": "Consultation form is malfunctioning"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6140",
+      "time": 1694107110.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6140",
+      "text": "Consultation- verified by doctor- change to dropdown"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694107066.0,
+      "title": "coronasafe/care_fe#6194",
+      "link": "https://github.com/coronasafe/care_fe/pull/6194#pullrequestreview-1615921109",
+      "text": "User (Doctor) Autocomplete for Consultation Verified By"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6109",
+      "time": 1694088928.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6109",
+      "text": "Add test for resources.cy.ts"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694088899.0,
+      "title": "coronasafe/care_fe#6106",
+      "link": "https://github.com/coronasafe/care_fe/pull/6106#pullrequestreview-1615291833",
+      "text": "Added test for resource, facility and migrated them to POM approach"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5835",
+      "time": 1694088828.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5835",
+      "text": "Add cypress test for assets.cy.ts"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694088776.0,
+      "title": "coronasafe/care_fe#5870",
+      "link": "https://github.com/coronasafe/care_fe/pull/5870#pullrequestreview-1615287897",
+      "text": "Added test for importing and configuring an asset and migrated patient_crud.ts to POM approach"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6181",
+      "time": 1694080111.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6181",
+      "text": "Camera Feed Buttons are not working properly in iphone"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694080101.0,
+      "title": "coronasafe/care_fe#6225",
+      "link": "https://github.com/coronasafe/care_fe/pull/6225#pullrequestreview-1615046039",
+      "text": "Fix fullscreen button for IOS"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#6216",
@@ -22421,11 +22484,11 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6197",
       "title": "Temporarily expose abdm health facility config directly",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "urgent",
+        "tested",
         "P1",
-        "waiting for back end",
         "cypress passed",
         "ABDM"
       ]
@@ -22433,7 +22496,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6195",
       "title": "Run cypress tests parallely",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "need Review",
@@ -22443,7 +22506,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 16,
+      "stale_for": 17,
       "labels": [
         "waiting-for-review"
       ]
@@ -22451,13 +22514,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 200,
+      "stale_for": 201,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 35,
+      "stale_for": 36,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -22467,13 +22530,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 271,
+      "stale_for": 272,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 28,
+      "stale_for": 29,
       "labels": [
         "changes required"
       ]
@@ -22481,25 +22544,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 628,
+      "stale_for": 629,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 634,
+      "stale_for": 635,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 635,
+      "stale_for": 636,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 830,
+      "stale_for": 831,
       "labels": []
     }
   ],

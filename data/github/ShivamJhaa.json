@@ -1,6 +1,52 @@
 {
-  "last_updated": 1694021999.0,
+  "last_updated": 1694093074.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6108",
+      "time": 1694093074.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6108",
+      "text": "Add test for facility.cy.ts"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6106",
+      "time": 1694088927.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6106",
+      "text": "Added test for resource, facility and migrated them to POM approach"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6106",
+      "time": 1694088927.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6106",
+      "text": "Added test for resource, facility and migrated them to POM approach",
+      "collaborated_with": [
+        "kshitijv256",
+        "rithviknishad",
+        "Ashesh3",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#5870",
+      "time": 1694088827.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5870",
+      "text": "Added test for importing and configuring an asset and migrated patient_crud.ts to POM approach"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5870",
+      "time": 1694088827.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5870",
+      "text": "Added test for importing and configuring an asset and migrated patient_crud.ts to POM approach",
+      "collaborated_with": [
+        "Pranshu1902",
+        "kshitijv256",
+        "GokulramGHV"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1694021999.0,
@@ -444,28 +490,24 @@
       "title": "Added test of patient_crud.cy.ts",
       "stale_for": 0,
       "labels": [
-        "merge conflict",
-        "stale"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6106",
-      "title": "Added test for resource, facility and migrated them to POM approach",
-      "stale_for": 0,
-      "labels": [
+        "need Review",
         "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/5870",
-      "title": "Added test for importing and configuring an asset and migrated patient_crud.ts to POM approach",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
+        "C4GT"
       ]
     }
   ],
-  "authored_issue_and_pr": []
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6109",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6106"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5835",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5841"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5835",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5870"
+    }
+  ]
 }

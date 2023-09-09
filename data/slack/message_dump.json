@@ -81139,7 +81139,16 @@
                     ]
                 }
             ],
-            "team": "TC99SV7B6"
+            "team": "TC99SV7B6",
+            "reactions": [
+                {
+                    "name": "eyes",
+                    "users": [
+                        "UV5PPBE2D"
+                    ],
+                    "count": 1
+                }
+            ]
         },
         {
             "client_msg_id": "4cfe15b2-c743-47c6-b262-67320a0c73f4",
@@ -81373,5 +81382,374 @@
             }
         }
     ],
-    "2023-09-08 00:00:00": []
+    "2023-09-08 00:00:00": [
+        {
+            "client_msg_id": "5bb86898-5e27-4628-87d2-0cddf2d001cb",
+            "type": "message",
+            "text": "*EOD 07/09/2023 and EOD 08/09/2023*\n\n*How did the day go?*\n\u2022 Working on level 7 capstone\n",
+            "user": "U05LRJ1HDNH",
+            "ts": "1694196446.762369",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Y2Af",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/09/2023 and EOD 08/09/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on level 7 capstone"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "dd234516-653f-49a5-a8f9-f3b261f86727",
+            "type": "message",
+            "text": "*EOD 08/09/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 Had a sync with <@UPW6XDGDD> &amp; <@U022THM4U2U> to debug duplicate assetbed records issue and created a custom migration to resolve it.\n\u2022 Reviewed 5 react for all submissions\n\u2022 <https://github.com/coronasafe/care/pull/1586|#1586>: updated backend validation for verified_by to ignore if suggestion is declare death\n\u2022 <https://github.com/coronasafe/care_fe/pull/6248|#6248>: fixes the above same and declare death on consultation creation causes 404 during auto-discharge\n*What's next?*\n\u2022 Follow up on `useQuery` implementation\n\u2022 Review react for all submissions\n\u2022 Allow MAR to be archived.\n\u2022 Follow up on prescription enhancements.\n\u2022 Rename fields admission_date and discharge_date to encounter_start/end (DateTime)",
+            "user": "U02TDGQQPMJ",
+            "ts": "1694187460.838819",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "4nV",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 08/09/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Had a sync with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "UPW6XDGDD"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " & "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U022THM4U2U"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to debug duplicate assetbed records issue and created a custom migration to resolve it."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 5 react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1586",
+                                            "text": "#1586",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": updated backend validation for verified_by to ignore if suggestion is declare death"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6248",
+                                            "text": "#6248",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": fixes the above same and declare death on consultation creation causes 404 during auto-discharge"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " implementation"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Review react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Allow MAR to be archived."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on prescription enhancements."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Rename fields admission_date and discharge_date to encounter_start/end (DateTime)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "686cb7b4-7378-479e-ad6a-556d57d4effb",
+            "type": "message",
+            "text": "*EOD 07/09/2023 <!subteam^S035L5S02RF|@care_engineering>*\n\n*how did the day go ?*\n\n\u2022 <http://cypress.io|cypress.io> approved our application to upgrade our plan to OSS\n\u2022 tested all PR related to C4GT and attended the end-point event\n\u2022 started testing of CARE",
+            "user": "U022THM4U2U",
+            "ts": "1694147440.072639",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "In+nw",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 07/09/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "how did the day go ?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "http://cypress.io",
+                                            "text": "cypress.io"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " approved our application to upgrade our plan to OSS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested all PR related to C4GT and attended the end-point event"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "started testing of CARE"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-09-09 00:00:00": []
 }

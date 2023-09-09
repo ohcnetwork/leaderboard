@@ -1,6 +1,124 @@
 {
-  "last_updated": 1694107109.0,
+  "last_updated": 1694189504.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1586",
+      "time": 1694189504.0,
+      "link": "https://github.com/coronasafe/care/pull/1586",
+      "text": "PatientConsultation: Skip `verified_by` required validation if `suggestion` is DD"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6248",
+      "time": 1694186928.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6248",
+      "text": "Consultation Form: skip validation for `verified_by` if `suggestion` is Declare Death and fix discharge not working on create consultation"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1586",
+      "time": 1694185445.0,
+      "link": "https://github.com/coronasafe/care/pull/1586",
+      "text": "PatientConsultation: Skip `verified_by` required validation if `suggestion` is DD"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6248",
+      "time": 1694183734.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6248",
+      "text": "Consultation Form: skip validation for `verified_by` if `suggestion` is Declare Death"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694183398.0,
+      "title": "coronasafe/care#1572",
+      "link": "https://github.com/coronasafe/care/pull/1572#pullrequestreview-1617620425",
+      "text": "add field readmission + custom migration"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694183234.0,
+      "title": "coronasafe/care#1572",
+      "link": "https://github.com/coronasafe/care/pull/1572#pullrequestreview-1617613206",
+      "text": "add field readmission + custom migration"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6247",
+      "time": 1694181264.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6247",
+      "text": "Fix verified_by and Principal Diagnosis validation",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6232",
+      "time": 1694176796.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6232#issuecomment-1711606941",
+      "text": "@khavinshankar @nihal467 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6232",
+      "time": 1694176787.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6232#issuecomment-1711606784",
+      "text": "Let's try to get this merged first on Monday once the necessary changes are made.\r\nThis will always keep catching conflicts every day."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694176709.0,
+      "title": "coronasafe/care_fe#6232",
+      "link": "https://github.com/coronasafe/care_fe/pull/6232#pullrequestreview-1617395575",
+      "text": "ConsultationDetails.tsx split into seperate components."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694168328.0,
+      "title": "coronasafe/care_fe#6247",
+      "link": "https://github.com/coronasafe/care_fe/pull/6247#pullrequestreview-1617153018",
+      "text": "Fix verified_by and Principal Diagnosis validation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694168306.0,
+      "title": "coronasafe/care_fe#6247",
+      "link": "https://github.com/coronasafe/care_fe/pull/6247#pullrequestreview-1617152473",
+      "text": "Fix verified_by and Principal Diagnosis validation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6245",
+      "time": 1694154135.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6245",
+      "text": "cypress: fix inventory management"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6245",
+      "time": 1694154135.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6245",
+      "text": "cypress: fix inventory management",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694149805.0,
+      "title": "coronasafe/care_fe#6245",
+      "link": "https://github.com/coronasafe/care_fe/pull/6245#pullrequestreview-1616683238",
+      "text": "cypress: fix inventory management"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6245",
+      "time": 1694149737.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6245",
+      "text": "cypress: fix inventory management"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6194",
@@ -22372,13 +22490,13 @@
       "labels": [
         "needs testing",
         "waiting for back end",
-        "cypress failed"
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1583",
       "title": "Adds `deleted` and `chapter_short` fields to Meta ICD11 Table",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -22394,7 +22512,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 56,
+      "stale_for": 57,
       "labels": [
         "need Review"
       ]

@@ -1,6 +1,48 @@
 {
-  "last_updated": 1694080855.0,
+  "last_updated": 1694186835.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1694186835.0,
+      "title": "coronasafe/care#1586",
+      "link": "https://github.com/coronasafe/care/pull/1586#pullrequestreview-1617735084",
+      "text": "PatientConsultation: Skip `verified_by` required validation if `suggestion` is DD"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1586",
+      "time": 1694186535.0,
+      "link": "https://github.com/coronasafe/care/pull/1586#issuecomment-1711841357",
+      "text": "@rithviknishad set blank=True here https://github.com/coronasafe/care/pull/1567/files#diff-5f86d36c9415c5c40e8820c1e4f86aa28dd713d6a74a1adc1f387598b8b542b9R147 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694186429.0,
+      "title": "coronasafe/care#1586",
+      "link": "https://github.com/coronasafe/care/pull/1586#pullrequestreview-1617722075",
+      "text": "PatientConsultation: Skip `verified_by` required validation if `suggestion` is DD"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694165887.0,
+      "title": "coronasafe/care#1572",
+      "link": "https://github.com/coronasafe/care/pull/1572#pullrequestreview-1617074388",
+      "text": "add field readmission + custom migration"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694165887.0,
+      "title": "coronasafe/care#1572",
+      "link": "https://github.com/coronasafe/care/pull/1572#pullrequestreview-1617074388",
+      "text": "add field readmission + custom migration"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1584",
+      "time": 1694153656.0,
+      "link": "https://github.com/coronasafe/care/pull/1584",
+      "text": "refactor tests"
+    },
     {
       "type": "pr_reviewed",
       "time": 1694080855.0,
@@ -5540,9 +5582,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1584",
+      "title": "fix: cleanup and refactor tests",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "In progress"
       ]
@@ -5550,31 +5598,31 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1577",
       "title": "refactor consultation bed create and shift logic",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 49,
+      "stale_for": 50,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1450",
       "title": "add table to track user facility allocation",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 87,
+      "stale_for": 88,
       "labels": []
     }
   ],

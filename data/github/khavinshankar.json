@@ -1,6 +1,48 @@
 {
-  "last_updated": 1694107110.0,
+  "last_updated": 1694186913.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1694186913.0,
+      "title": "coronasafe/care_fe#6248",
+      "link": "https://github.com/coronasafe/care_fe/pull/6248#pullrequestreview-1617737166",
+      "text": "Consultation Form: skip validation for `verified_by` if `suggestion` is Declare Death and fix discharge not working on create consultation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694182808.0,
+      "title": "coronasafe/care_fe#6243",
+      "link": "https://github.com/coronasafe/care_fe/pull/6243#pullrequestreview-1617597914",
+      "text": "Add validation for average working hours"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694181246.0,
+      "title": "coronasafe/care_fe#6247",
+      "link": "https://github.com/coronasafe/care_fe/pull/6247#pullrequestreview-1617546044",
+      "text": "Fix verified_by and Principal Diagnosis validation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694154125.0,
+      "title": "coronasafe/care_fe#6245",
+      "link": "https://github.com/coronasafe/care_fe/pull/6245#pullrequestreview-1616758376",
+      "text": "cypress: fix inventory management"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6135",
+      "time": 1694147591.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6135#issuecomment-1711059994",
+      "text": "@nihal467 the cypress is failing, can you give it a another look"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6197",
+      "time": 1694138331.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6197",
+      "text": "Temporarily expose abdm health facility config directly"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#6213",
@@ -22482,21 +22524,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6197",
-      "title": "Temporarily expose abdm health facility config directly",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "tested",
-        "P1",
-        "cypress passed",
-        "ABDM"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6195",
       "title": "Run cypress tests parallely",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "need Review",
@@ -22506,7 +22536,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 17,
+      "stale_for": 18,
       "labels": [
         "waiting-for-review"
       ]
@@ -22514,13 +22544,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 201,
+      "stale_for": 202,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 36,
+      "stale_for": 37,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -22530,13 +22560,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 272,
+      "stale_for": 273,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 29,
+      "stale_for": 30,
       "labels": [
         "changes required"
       ]
@@ -22544,25 +22574,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 629,
+      "stale_for": 630,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 635,
+      "stale_for": 636,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 636,
+      "stale_for": 637,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 831,
+      "stale_for": 832,
       "labels": []
     }
   ],

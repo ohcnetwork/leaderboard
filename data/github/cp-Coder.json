@@ -1,6 +1,13 @@
 {
-  "last_updated": 1693905175.0,
+  "last_updated": 1694324332.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1694324332.0,
+      "title": "coronasafe/care#1589",
+      "link": "https://github.com/coronasafe/care/pull/1589#pullrequestreview-1618736850",
+      "text": "fix: adds new user type \"Nurse\""
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/ayushma#176",
@@ -7820,15 +7827,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1589",
+      "title": "fix: adds new user type \"Nurse\"",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "done"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1575",
       "title": "fix: tests for ambulance APIs",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1264",
       "title": "fix: adds doctor and staff fields in location model",
-      "stale_for": 134,
+      "stale_for": 139,
       "labels": [
         "waiting-for-review",
         "P2"
@@ -7837,7 +7853,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5370",
       "title": "fix: Duty doctors and Staff for each Location in a Facility",
-      "stale_for": 20,
+      "stale_for": 25,
       "labels": [
         "P2",
         "waiting for back end",
@@ -7847,15 +7863,16 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1260",
       "title": "fix: added recommend_discharge as action",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
-        "waiting-for-review"
+        "waiting-for-review",
+        "done"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5347",
       "title": "fix: add action and recommend discharge data on patient consultation page",
-      "stale_for": 1,
+      "stale_for": 6,
       "labels": [
         "waiting for back end"
       ]
@@ -7863,7 +7880,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/3799",
       "title": "feat: added health details and medical history fields to consultation form",
-      "stale_for": 84,
+      "stale_for": 89,
       "labels": [
         "needs testing",
         "waiting for back end",
@@ -7874,13 +7891,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1073",
       "title": "feat: Added more field in consultation form",
-      "stale_for": 59,
+      "stale_for": 64,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 62,
+      "stale_for": 67,
       "labels": [
         "waiting-for-review"
       ]

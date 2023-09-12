@@ -1,6 +1,100 @@
 {
-  "last_updated": 1694365407.0,
+  "last_updated": 1694462339.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1694462339.0,
+      "title": "coronasafe/care#1591",
+      "link": "https://github.com/coronasafe/care/pull/1591#pullrequestreview-1620737217",
+      "text": "feat: switch to pipenv"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694452735.0,
+      "title": "coronasafe/care#1584",
+      "link": "https://github.com/coronasafe/care/pull/1584#pullrequestreview-1620476921",
+      "text": "fix: cleanup and refactor tests"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694449704.0,
+      "title": "coronasafe/care#1595",
+      "link": "https://github.com/coronasafe/care/pull/1595#pullrequestreview-1620395816",
+      "text": "Delete duplicate `AssetBed` records of \"HL7MONITOR\" `asset_class`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694449422.0,
+      "title": "coronasafe/care#1590",
+      "link": "https://github.com/coronasafe/care/pull/1590#pullrequestreview-1620385182",
+      "text": "feat: add release tracking on sentry"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1592",
+      "time": 1694444215.0,
+      "link": "https://github.com/coronasafe/care/pull/1592",
+      "text": "CSV export for Assets"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6243",
+      "time": 1694440185.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6243",
+      "text": "Add validation for average working hours"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6243",
+      "time": 1694440185.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6243",
+      "text": "Add validation for average working hours",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6243",
+      "time": 1694431954.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6243#issuecomment-1713697946",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/266973050-24921106-8753-4453-ba31-791393a6474d.png)\r\n> \r\n> when we click on the set working hour button and the slide over comes in, the validation is throwing error without any user interaction.\r\n> \r\n> * It should run validation only when user click the update button\r\n> * increase the slide over length to show the error in single line\r\n\r\nFixed"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694428803.0,
+      "title": "coronasafe/care_fe#6263",
+      "link": "https://github.com/coronasafe/care_fe/pull/6263#pullrequestreview-1619677050",
+      "text": "remove quotes from envs in `.env` and gitignore bun lock file"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1592",
+      "time": 1694428079.0,
+      "link": "https://github.com/coronasafe/care/pull/1592#issuecomment-1713607977",
+      "text": "Tests passing locally:\r\n```\r\n----------------------------------------------------------------------\r\nRan 116 tests in 7.164s\r\n\r\nOK\r\n```"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6262",
+      "time": 1694427779.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6262",
+      "text": "Asset CSV export"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1592",
+      "time": 1694427612.0,
+      "link": "https://github.com/coronasafe/care/pull/1592",
+      "text": "CSV export for Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694408591.0,
+      "title": "coronasafe/care#1583",
+      "link": "https://github.com/coronasafe/care/pull/1583#pullrequestreview-1619127440",
+      "text": "Adds `deleted` and `chapter_short` fields to Meta ICD11 Table"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1580",
@@ -12333,25 +12427,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6243",
-      "title": "Add validation for average working hours",
-      "stale_for": 2,
+      "link": "https://github.com/coronasafe/care_fe/pull/6262",
+      "title": "Asset CSV export",
+      "stale_for": 0,
       "labels": [
         "needs testing",
-        "cypress passed",
-        "reviewed"
+        "P1",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1580",
       "title": "Implement Tracking and Storing of Plausible Statistics",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 159,
+      "stale_for": 160,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -12360,13 +12454,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 172,
+      "stale_for": 173,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "waiting-for-review"
       ]

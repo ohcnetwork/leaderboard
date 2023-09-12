@@ -1,6 +1,140 @@
 {
-  "last_updated": 1694320079.0,
+  "last_updated": 1694452539.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1694452539.0,
+      "title": "coronasafe/care#1559",
+      "link": "https://github.com/coronasafe/care/pull/1559#pullrequestreview-1620472057",
+      "text": "feat: use ruff"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1595",
+      "time": 1694451979.0,
+      "link": "https://github.com/coronasafe/care/pull/1595",
+      "text": "Delete duplicate `AssetBed` records of \"HL7MONITOR\" `asset_class`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694449911.0,
+      "title": "coronasafe/care#1584",
+      "link": "https://github.com/coronasafe/care/pull/1584#pullrequestreview-1620401603",
+      "text": "fix: cleanup and refactor tests"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694449371.0,
+      "title": "coronasafe/care#1590",
+      "link": "https://github.com/coronasafe/care/pull/1590#pullrequestreview-1620383646",
+      "text": "feat: add release tracking on sentry"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694449090.0,
+      "title": "coronasafe/care#1553",
+      "link": "https://github.com/coronasafe/care/pull/1553#pullrequestreview-1620375673",
+      "text": "added webpush on notes creation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694449027.0,
+      "title": "coronasafe/care#1450",
+      "link": "https://github.com/coronasafe/care/pull/1450#pullrequestreview-1620373919",
+      "text": "add table to track user facility allocation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1583",
+      "time": 1694444460.0,
+      "link": "https://github.com/coronasafe/care/pull/1583",
+      "text": "Adds `deleted` and `chapter_short` fields to Meta ICD11 Table"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1572",
+      "time": 1694444410.0,
+      "link": "https://github.com/coronasafe/care/pull/1572",
+      "text": "add field readmission + custom migration"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1318",
+      "time": 1694444096.0,
+      "link": "https://github.com/coronasafe/care/pull/1318",
+      "text": "Added a way to handle filtering admitted but no bed assigned ",
+      "collaborated_with": [
+        "vigneshhari",
+        "sainak",
+        "yaswanthsaivendra"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6198",
+      "time": 1694441793.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6198#issuecomment-1713981329",
+      "text": "Solution we'll be doing is, we'll do an includes search for all roman leters from 1 to 4"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6238",
+      "time": 1694440406.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6238",
+      "text": "Make the form consistent",
+      "collaborated_with": [
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694440371.0,
+      "title": "coronasafe/care_fe#6238",
+      "link": "https://github.com/coronasafe/care_fe/pull/6238#pullrequestreview-1620072465",
+      "text": "Make the form consistent"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1595",
+      "time": 1694436874.0,
+      "link": "https://github.com/coronasafe/care/pull/1595",
+      "text": "Delete duplicate `AssetBed` records of \"HL7MONITOR\" `asset_class`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694432721.0,
+      "title": "coronasafe/care#1592",
+      "link": "https://github.com/coronasafe/care/pull/1592#pullrequestreview-1619798315",
+      "text": "CSV export for Assets"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6263",
+      "time": 1694428103.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6263",
+      "text": "remove quotes from envs in `.env` and gitignore bun lock file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694426276.0,
+      "title": "coronasafe/care_fe#6227",
+      "link": "https://github.com/coronasafe/care_fe/pull/6227#pullrequestreview-1619605327",
+      "text": "Using DateFormField instead of DateInputV2"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5836",
+      "time": 1694415057.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5836#issuecomment-1713272237",
+      "text": "Yes!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694407817.0,
+      "title": "coronasafe/care_fe#6258",
+      "link": "https://github.com/coronasafe/care_fe/pull/6258#pullrequestreview-1619118699",
+      "text": "Refactor ConsultationDetails.tsx"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6255",
@@ -22519,35 +22653,27 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6239",
-      "title": "Support for tracking consultation readmissions",
-      "stale_for": 2,
+      "link": "https://github.com/coronasafe/care_fe/pull/6263",
+      "title": "remove quotes from envs in `.env` and gitignore bun lock file",
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "waiting for back end",
+        "need Review",
         "cypress passed"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1583",
-      "title": "Adds `deleted` and `chapter_short` fields to Meta ICD11 Table",
-      "stale_for": 3,
+      "link": "https://github.com/coronasafe/care_fe/pull/6239",
+      "title": "Support for tracking consultation readmissions",
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1572",
-      "title": "add field readmission + custom migration",
-      "stale_for": 1,
-      "labels": [
-        "waiting-for-review"
+        "needs testing",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 59,
+      "stale_for": 60,
       "labels": [
         "need Review"
       ]

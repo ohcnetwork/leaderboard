@@ -1,6 +1,95 @@
 {
-  "last_updated": 1694186835.0,
+  "last_updated": 1694452914.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1584",
+      "time": 1694452914.0,
+      "link": "https://github.com/coronasafe/care/pull/1584",
+      "text": "fix: cleanup and refactor tests"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1450",
+      "time": 1694452316.0,
+      "link": "https://github.com/coronasafe/care/pull/1450",
+      "text": "add table to track user facility allocation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1590",
+      "time": 1694451685.0,
+      "link": "https://github.com/coronasafe/care/pull/1590",
+      "text": "feat: add release tracking on sentry"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1590",
+      "time": 1694449561.0,
+      "link": "https://github.com/coronasafe/care/pull/1590#issuecomment-1714212584",
+      "text": "> @sainak just a thought, since we are repeating the sentry step multiple times, we could consider using YAML reusable blocks with overrides right (for `environment`)?\r\n> \r\n> eg: [linode.com/docs/guides/yaml-anchors-aliases-overrides-extensions/#yaml-overrides](https://www.linode.com/docs/guides/yaml-anchors-aliases-overrides-extensions/#yaml-overrides)\r\n\r\nI'm planning to switch the deployment definitions with reusable workflow calls"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1318",
+      "time": 1694444096.0,
+      "link": "https://github.com/coronasafe/care/pull/1318",
+      "text": "Added a way to handle filtering admitted but no bed assigned ",
+      "collaborated_with": [
+        "vigneshhari",
+        "yaswanthsaivendra",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694438454.0,
+      "title": "coronasafe/care#1595",
+      "link": "https://github.com/coronasafe/care/pull/1595#pullrequestreview-1619981416",
+      "text": "Delete duplicate `AssetBed` records of \"HL7MONITOR\" `asset_class`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694432090.0,
+      "title": "coronasafe/care#1592",
+      "link": "https://github.com/coronasafe/care/pull/1592#pullrequestreview-1619769683",
+      "text": "CSV export for Assets"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1594",
+      "time": 1694430517.0,
+      "link": "https://github.com/coronasafe/care/issues/1594",
+      "text": "Use docker for CI testing"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1593",
+      "time": 1694430443.0,
+      "link": "https://github.com/coronasafe/care/issues/1593",
+      "text": "Switch to Pipenv"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694430339.0,
+      "title": "coronasafe/care_fe#6263",
+      "link": "https://github.com/coronasafe/care_fe/pull/6263#pullrequestreview-1619723213",
+      "text": "remove quotes from envs in `.env` and gitignore bun lock file"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1591",
+      "time": 1694409212.0,
+      "link": "https://github.com/coronasafe/care/pull/1591",
+      "text": "feat: switch to pipenv"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1590",
+      "time": 1694407623.0,
+      "link": "https://github.com/coronasafe/care/pull/1590",
+      "text": "feat: add release tracking on sentry"
+    },
     {
       "type": "pr_reviewed",
       "time": 1694186835.0,
@@ -5582,15 +5671,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1584",
-      "title": "fix: cleanup and refactor tests",
+      "link": "https://github.com/coronasafe/care/pull/1591",
+      "title": "feat: switch to pipenv",
       "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 3,
+      "stale_for": 6,
       "labels": [
         "In progress"
       ]
@@ -5598,31 +5687,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1577",
       "title": "refactor consultation bed create and shift logic",
-      "stale_for": 2,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 50,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1450",
-      "title": "add table to track user facility allocation",
-      "stale_for": 10,
+      "stale_for": 53,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 88,
+      "stale_for": 91,
       "labels": []
     }
   ],

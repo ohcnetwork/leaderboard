@@ -1,6 +1,55 @@
 {
-  "last_updated": 1694176548.0,
+  "last_updated": 1694440501.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6259",
+      "time": 1694440501.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6259",
+      "text": "Disabled asset config button for users other than state and district admin"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6258",
+      "time": 1694420852.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6258",
+      "text": "Refactor ConsultationDetails.tsx"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6260",
+      "time": 1694416283.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6260",
+      "text": "Add Consultation button is now conditionally active"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5836",
+      "time": 1694414402.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5836#issuecomment-1713258836",
+      "text": "Hello,\r\nI'd like to work on this.\r\n\r\nAlso, disabling the button if the patient has an active consultation should be enough I think? "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6259",
+      "time": 1694411438.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6259",
+      "text": "Disabled asset config button for users other than state and district admin"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6232",
+      "time": 1694407609.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6232#issuecomment-1713157576",
+      "text": "Hello,\r\nI've created a new PR #6258 as this PR is a bit messy and I was having some issues rebasing it. \r\nI hope it doesn't create much of a problem. \r\n\r\nThank you for understanding.\r\n\r\nShould I close this PR?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6258",
+      "time": 1694407434.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6258",
+      "text": "Refactor ConsultationDetails.tsx"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6232",
@@ -39,12 +88,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6232",
-      "title": "ConsultationDetails.tsx split into seperate components.",
+      "link": "https://github.com/coronasafe/care_fe/pull/6260",
+      "title": "Add Consultation button is now conditionally active",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "changes required"
+        "test failed",
+        "cypress passed"
       ]
     }
   ],

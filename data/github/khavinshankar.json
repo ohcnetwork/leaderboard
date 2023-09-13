@@ -1,6 +1,110 @@
 {
-  "last_updated": 1694440502.0,
+  "last_updated": 1694526975.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5550",
+      "time": 1694526975.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5550",
+      "text": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
+      "collaborated_with": [
+        "yaswanthsaivendra",
+        "nihal467",
+        "sainak",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694526938.0,
+      "title": "coronasafe/care_fe#5550",
+      "link": "https://github.com/coronasafe/care_fe/pull/5550#pullrequestreview-1622321794",
+      "text": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5836",
+      "time": 1694526922.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5836",
+      "text": "Add Consultation is permanently disabled in Patient Details page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694526903.0,
+      "title": "coronasafe/care_fe#6260",
+      "link": "https://github.com/coronasafe/care_fe/pull/6260#pullrequestreview-1622320444",
+      "text": "Add Consultation button is now conditionally active"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6143",
+      "time": 1694526855.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6143",
+      "text": "tracking re-admission"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694526844.0,
+      "title": "coronasafe/care_fe#6239",
+      "link": "https://github.com/coronasafe/care_fe/pull/6239#pullrequestreview-1622318161",
+      "text": "Support for tracking consultation readmissions"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6079",
+      "time": 1694526667.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6079",
+      "text": "Asset Export: Allow xlsx, csv"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694526633.0,
+      "title": "coronasafe/care_fe#6262",
+      "link": "https://github.com/coronasafe/care_fe/pull/6262#pullrequestreview-1622309914",
+      "text": "Asset CSV export"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694520653.0,
+      "title": "coronasafe/care_fe#6272",
+      "link": "https://github.com/coronasafe/care_fe/pull/6272#pullrequestreview-1622095138",
+      "text": "Refactor workflow to properly wait for migrations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694511991.0,
+      "title": "coronasafe/care_fe#6270",
+      "link": "https://github.com/coronasafe/care_fe/pull/6270#pullrequestreview-1621809995",
+      "text": "fix load dummy data command"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694495341.0,
+      "title": "coronasafe/care_fe#6268",
+      "link": "https://github.com/coronasafe/care_fe/pull/6268#pullrequestreview-1621256405",
+      "text": "remove `REACT_APP_CONFIG` from `.env`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694494616.0,
+      "title": "coronasafe/care_fe#6263",
+      "link": "https://github.com/coronasafe/care_fe/pull/6263#pullrequestreview-1621246840",
+      "text": "remove quotes from envs in `.env` and gitignore bun lock file"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6265",
+      "time": 1694491601.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6265",
+      "text": "Add Test to Search Asset by name/QR/serial number"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694491592.0,
+      "title": "coronasafe/care_fe#6266",
+      "link": "https://github.com/coronasafe/care_fe/pull/6266#pullrequestreview-1621193657",
+      "text": "add test to search asset by qr and serial number"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#6234",
@@ -22629,19 +22733,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6195",
-      "title": "Run cypress tests parallely",
-      "stale_for": 5,
-      "labels": [
-        "needs testing",
-        "need Review",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "waiting-for-review"
       ]
@@ -22649,13 +22743,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 205,
+      "stale_for": 206,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 40,
+      "stale_for": 41,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -22665,13 +22759,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 276,
+      "stale_for": 277,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 33,
+      "stale_for": 34,
       "labels": [
         "changes required"
       ]
@@ -22679,25 +22773,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 633,
+      "stale_for": 634,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 639,
+      "stale_for": 640,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 640,
+      "stale_for": 641,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 835,
+      "stale_for": 836,
       "labels": []
     }
   ],

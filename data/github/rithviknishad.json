@@ -1,6 +1,120 @@
 {
-  "last_updated": 1694452539.0,
+  "last_updated": 1694526975.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5550",
+      "time": 1694526975.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5550",
+      "text": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
+      "collaborated_with": [
+        "yaswanthsaivendra",
+        "nihal467",
+        "sainak",
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6239",
+      "time": 1694526854.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6239",
+      "text": "Support for tracking consultation readmissions"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6239",
+      "time": 1694526854.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6239",
+      "text": "Support for tracking consultation readmissions",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6274",
+      "time": 1694521511.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6274",
+      "text": "Vitals Monitor (HL7): Add support to detect multiple ecg wavenames"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694520331.0,
+      "title": "coronasafe/care_fe#6272",
+      "link": "https://github.com/coronasafe/care_fe/pull/6272#pullrequestreview-1622085855",
+      "text": "Refactor workflow to properly wait for migrations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694511314.0,
+      "title": "coronasafe/care_fe#6270",
+      "link": "https://github.com/coronasafe/care_fe/pull/6270#pullrequestreview-1621788609",
+      "text": "fix load dummy data command"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694510669.0,
+      "title": "coronasafe/care_fe#6269",
+      "link": "https://github.com/coronasafe/care_fe/pull/6269#pullrequestreview-1621766713",
+      "text": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694509028.0,
+      "title": "coronasafe/care_fe#6269",
+      "link": "https://github.com/coronasafe/care_fe/pull/6269#pullrequestreview-1621710505",
+      "text": "Implements `useQuery` data fetching hook and `request` utility (used in Location Management page)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694509018.0,
+      "title": "coronasafe/care_fe#6269",
+      "link": "https://github.com/coronasafe/care_fe/pull/6269#pullrequestreview-1621710154",
+      "text": "Implements `useQuery` data fetching hook and `request` utility (used in Location Management page)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6269",
+      "time": 1694505243.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6269",
+      "text": "Implements `useQuery` data fetching hook and `request` utility (used in Location Management page)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6268",
+      "time": 1694495352.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6268",
+      "text": "remove `REACT_APP_CONFIG` from `.env`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6268",
+      "time": 1694495309.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6268",
+      "text": "remove `REACT_APP_CONFIG` from `.env`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6263",
+      "time": 1694494653.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6263",
+      "text": "remove quotes from envs in `.env` and gitignore bun lock file"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1596",
+      "time": 1694494329.0,
+      "link": "https://github.com/coronasafe/care/pull/1596",
+      "text": "Refactor tests of newly merged PRs"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694492892.0,
+      "title": "coronasafe/care#1591",
+      "link": "https://github.com/coronasafe/care/pull/1591#pullrequestreview-1621213780",
+      "text": "feat: switch to pipenv"
+    },
     {
       "type": "pr_reviewed",
       "time": 1694452539.0,
@@ -22653,17 +22767,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6263",
-      "title": "remove quotes from envs in `.env` and gitignore bun lock file",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6239",
-      "title": "Support for tracking consultation readmissions",
+      "link": "https://github.com/coronasafe/care_fe/pull/6274",
+      "title": "Vitals Monitor (HL7): Add support to detect multiple ecg wavenames",
       "stale_for": 0,
       "labels": [
         "needs testing",
@@ -22671,9 +22776,19 @@
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6269",
+      "title": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 60,
+      "stale_for": 61,
       "labels": [
         "need Review"
       ]

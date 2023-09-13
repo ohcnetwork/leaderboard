@@ -1,6 +1,13 @@
 {
-  "last_updated": 1694440288.0,
+  "last_updated": 1694519404.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6222",
+      "time": 1694519404.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6222#issuecomment-1715575901",
+      "text": "@rithviknishad New changes:\r\n- Phone number in excel file for importing asset does not have country code. So I adjusted that part by adding country code before validating.\r\n- After uploading the excel file location with value \"Camera Locations\" was being selected but there is no such location, so I changed it to \"Camera Loc\" as this is used in other tests.\r\n"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6255",
@@ -519,7 +526,7 @@
       "title": "Remove libphonenumber js",
       "stale_for": 0,
       "labels": [
-        "changes required"
+        "needs testing"
       ]
     }
   ],

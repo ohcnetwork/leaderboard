@@ -1,6 +1,82 @@
 {
-  "last_updated": 1694452914.0,
+  "last_updated": 1694526975.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5550",
+      "time": 1694526975.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5550",
+      "text": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
+      "collaborated_with": [
+        "yaswanthsaivendra",
+        "nihal467",
+        "khavinshankar",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694520168.0,
+      "title": "coronasafe/care_fe#6272",
+      "link": "https://github.com/coronasafe/care_fe/pull/6272#pullrequestreview-1622081189",
+      "text": "Refactor workflow to properly wait for migrations"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1607",
+      "time": 1694512532.0,
+      "link": "https://github.com/coronasafe/care/pull/1607",
+      "text": "Update LICENSE"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694512275.0,
+      "title": "coronasafe/care_fe#6270",
+      "link": "https://github.com/coronasafe/care_fe/pull/6270#pullrequestreview-1621818786",
+      "text": "fix load dummy data command"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694512234.0,
+      "title": "coronasafe/care_fe#6270",
+      "link": "https://github.com/coronasafe/care_fe/pull/6270#pullrequestreview-1621817518",
+      "text": "fix load dummy data command"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6270",
+      "time": 1694512010.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6270",
+      "text": "fix load dummy data command"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6270",
+      "time": 1694511059.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6270",
+      "text": "fix load dummy data command"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694510124.0,
+      "title": "coronasafe/care_fe#6269",
+      "link": "https://github.com/coronasafe/care_fe/pull/6269#pullrequestreview-1621748075",
+      "text": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1604",
+      "time": 1694503527.0,
+      "link": "https://github.com/coronasafe/care/pull/1604#issuecomment-1715148460",
+      "text": "@dependabot ignore this major version"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1591",
+      "time": 1694499524.0,
+      "link": "https://github.com/coronasafe/care/pull/1591",
+      "text": "feat: switch to pipenv"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1584",
@@ -5671,15 +5747,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1591",
-      "title": "feat: switch to pipenv",
+      "link": "https://github.com/coronasafe/care/pull/1607",
+      "title": "Update LICENSE",
       "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "In progress"
       ]
@@ -5687,7 +5763,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1577",
       "title": "refactor consultation bed create and shift logic",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": []
     },
     {
@@ -5699,17 +5775,25 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 53,
+      "stale_for": 54,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 91,
+      "stale_for": 92,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1594",
+      "pr_link": "https://github.com/coronasafe/care/pull/1591"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1593",
+      "pr_link": "https://github.com/coronasafe/care/pull/1591"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6131",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6132"
@@ -5761,10 +5845,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/754",
       "pr_link": "https://github.com/coronasafe/care/pull/768"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/744",
-      "pr_link": "https://github.com/coronasafe/care/pull/746"
     }
   ]
 }

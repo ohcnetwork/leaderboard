@@ -1,6 +1,74 @@
 {
-  "last_updated": 1694470521.0,
+  "last_updated": 1694543982.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6275",
+      "time": 1694543982.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6275",
+      "text": "Added Cypress Test to verify Asset Filter Functionality"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#5550",
+      "time": 1694526975.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/5550",
+      "text": "Added None option in admitted_to bed filters so that we can filter for patient who are admitted but no bed assigned",
+      "collaborated_with": [
+        "yaswanthsaivendra",
+        "sainak",
+        "khavinshankar",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6239",
+      "time": 1694526854.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6239",
+      "text": "Support for tracking consultation readmissions",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6262",
+      "time": 1694526666.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6262",
+      "text": "Asset CSV export",
+      "collaborated_with": [
+        "Ashesh3"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6222",
+      "time": 1694525590.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6222#issuecomment-1715735872",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6260",
+      "time": 1694522250.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6260#issuecomment-1715644340",
+      "text": "LGTM"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6239",
+      "time": 1694519694.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6239#issuecomment-1715582733",
+      "text": "LGTM"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6266",
+      "time": 1694491600.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6266",
+      "text": "add test to search asset by qr and serial number"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6267",
@@ -25296,13 +25364,19 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6266",
-      "title": "add test to search asset by qr and serial number",
+      "link": "https://github.com/coronasafe/care_fe/pull/6275",
+      "title": "Added Cypress Test to verify Asset Filter Functionality",
       "stale_for": 0,
       "labels": [
+        "need Review",
         "cypress passed"
       ]
     }
   ],
-  "authored_issue_and_pr": []
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6265",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6266"
+    }
+  ]
 }

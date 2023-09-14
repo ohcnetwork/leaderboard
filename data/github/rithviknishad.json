@@ -1,6 +1,118 @@
 {
-  "last_updated": 1694526975.0,
+  "last_updated": 1694625524.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1694625524.0,
+      "title": "coronasafe/care_fe#6269",
+      "link": "https://github.com/coronasafe/care_fe/pull/6269#pullrequestreview-1625054943",
+      "text": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6251",
+      "time": 1694625188.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6251#issuecomment-1718014565",
+      "text": "@kshitijv256 changing the precedence has caused issues in other pages. Hence #6285 fixes it by preventing the app from reloading in the first place, so that history stack is not lost."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6281",
+      "time": 1694625122.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6281#issuecomment-1718013190",
+      "text": "@Pranshu1902 closing this PR as it is properly solved in #6285 "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6285",
+      "time": 1694623757.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6285",
+      "text": "fix `goBack` precedence"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6222",
+      "time": 1694621132.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6222#issuecomment-1717919867",
+      "text": "Just a minor suggestion, you could've moved the phone number related utility methods to a seperate file under say: `src/Utils/PhoneNumberUtils.ts`\r\n\r\nCurrently, the `utils.ts` file feels too big and we should consider splitting it based on relevance."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694620940.0,
+      "title": "coronasafe/care_fe#6222",
+      "link": "https://github.com/coronasafe/care_fe/pull/6222#pullrequestreview-1624926028",
+      "text": "Remove libphonenumber js"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6221",
+      "time": 1694620859.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6221#issuecomment-1717912830",
+      "text": "Also, you'll have to untrack ur package-lock.json changes as you are not changing any dependencies voluntarily"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6221",
+      "time": 1694620535.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6221#issuecomment-1717903839",
+      "text": "@yogeshbhutkar is this ready for review?\r\n\r\nJust curious to know, was there a reason why you haven't reused the existing slideover component?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6284",
+      "time": 1694620055.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6284",
+      "text": "Skip showing selected option search results when query is present"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6283",
+      "time": 1694619068.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6283",
+      "text": "Skip showing selected option in async autocomplete form fields (Medibase Medicine Search)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6282",
+      "time": 1694602233.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6282",
+      "text": "Prescriptions: Shrink discontinued prescriptions + Flip MAR timeline + Freeze primary columns in horizontal scroll"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6274",
+      "time": 1694596829.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6274",
+      "text": "Vitals Monitor (HL7): Add support to detect multiple ecg wavenames"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6280",
+      "time": 1694595818.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6280#issuecomment-1717235123",
+      "text": "@aparnacoronasafe to suggest the order of these options based on relevance"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6280",
+      "time": 1694595804.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6280",
+      "text": "Consultation Form: Sort options of \"status during consultation\" based on relevance"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1608",
+      "time": 1694574072.0,
+      "link": "https://github.com/coronasafe/care/pull/1608",
+      "text": "Adds `discontinued` filter for prescriptions viewset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694571178.0,
+      "title": "coronasafe/care#1577",
+      "link": "https://github.com/coronasafe/care/pull/1577#pullrequestreview-1623522279",
+      "text": "refactor consultation bed create and shift logic"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#5550",
@@ -22767,12 +22879,40 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6274",
-      "title": "Vitals Monitor (HL7): Add support to detect multiple ecg wavenames",
+      "link": "https://github.com/coronasafe/care_fe/pull/6285",
+      "title": "fix `goBack` precedence",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "P1",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6284",
+      "title": "Skip showing selected option search results when query is present",
       "stale_for": 0,
       "labels": [
         "needs testing",
         "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6282",
+      "title": "Prescriptions: Shrink discontinued prescriptions + Flip MAR timeline + Freeze primary columns in horizontal scroll",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "waiting for back end",
+        "cypress passed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1608",
+      "title": "Adds `discontinued` filter for prescriptions viewset",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
       ]
     },
     {
@@ -22780,15 +22920,15 @@
       "title": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)",
       "stale_for": 0,
       "labels": [
-        "needs testing",
         "need Review",
+        "tested",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 61,
+      "stale_for": 62,
       "labels": [
         "need Review"
       ]
@@ -22798,6 +22938,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6199",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6200"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6198",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6274"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6159",

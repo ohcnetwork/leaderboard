@@ -21096,5 +21096,261 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-09-13 00:00:00": [
+        {
+            "client_msg_id": "d82df299-fe21-497d-8651-95bd54310be7",
+            "type": "message",
+            "text": "*EOD 11/08/2023 ... 13/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day(s) go?*\n\u2022 <https://github.com/coronasafe/care/pull/1595|#1595>: Delete duplicate `AssetBed` records of \"HL7MONITOR\" `asset_class`\n\u2022 <https://github.com/coronasafe/care_fe/pull/6274|#6274>: Vitals Monitor (HL7): Added support to detect multiple ecg wavenames\n\u2022 git ignored bun lock file and fixed environments not working with bun.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6269/|#6269>: Raised PR for `useQuery` and `request` data fetching utilities to phase out redux.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6282|#6282>, <https://github.com/coronasafe/care/pull/1608|#1608>: Medicine Administrations: Shrink discontinued prescriptions to single row + other enhancements\n\u2022 Reviewed (&gt;10) react for all submissions\n*What's next?*\n\u2022 Support for archiving medicine administrations\n\u2022 Follow up on next steps for `useQuery` post QA and merge",
+            "user": "U02TDGQQPMJ",
+            "ts": "1694611981.054559",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "B8KwR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 11/08/2023 ... 13/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day(s) go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1595",
+                                            "text": "#1595",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Delete duplicate "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "AssetBed",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " records of \"HL7MONITOR\" "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "asset_class",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6274",
+                                            "text": "#6274",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Vitals Monitor (HL7): Added support to detect multiple ecg wavenames"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "git ignored bun lock file and fixed environments not working with bun."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6269/",
+                                            "text": "#6269",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Raised PR for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "request",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " data fetching utilities to phase out redux."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6282",
+                                            "text": "#6282",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1608",
+                                            "text": "#1608",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Medicine Administrations: Shrink discontinued prescriptions to single row + other enhancements"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed (>10) react for all submissions"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Support for archiving medicine administrations"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on next steps for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " post QA and merge"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1694612025.000000"
+            }
+        }
     ]
 }

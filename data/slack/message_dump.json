@@ -82971,5 +82971,549 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-09-13 00:00:00": []
+    "2023-09-13 00:00:00": [
+        {
+            "client_msg_id": "d7501771-e0cf-45b9-9034-6bd3c6d7f2c5",
+            "type": "message",
+            "text": "EOD  13/09/2023\n\nHow did the day go?\n\u2022 Working on level 7 Milestone",
+            "user": "U05LU8CNP19",
+            "ts": "1694633154.266299",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "aRENb",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD  13/09/2023\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on level 7 Milestone"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "d82df299-fe21-497d-8651-95bd54310be7",
+            "type": "message",
+            "text": "*EOD 11/08/2023 ... 13/08/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day(s) go?*\n\u2022 <https://github.com/coronasafe/care/pull/1595|#1595>: Delete duplicate `AssetBed` records of \"HL7MONITOR\" `asset_class`\n\u2022 <https://github.com/coronasafe/care_fe/pull/6274|#6274>: Vitals Monitor (HL7): Added support to detect multiple ecg wavenames\n\u2022 git ignored bun lock file and fixed environments not working with bun.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6269/|#6269>: Raised PR for `useQuery` and `request` data fetching utilities to phase out redux.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6282|#6282>, <https://github.com/coronasafe/care/pull/1608|#1608>: Medicine Administrations: Shrink discontinued prescriptions to single row + other enhancements\n\u2022 Reviewed (&gt;10) react for all submissions\n*What's next?*\n\u2022 Support for archiving medicine administrations\n\u2022 Follow up on next steps for `useQuery` post QA and merge",
+            "user": "U02TDGQQPMJ",
+            "ts": "1694611981.054559",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "B8KwR",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 11/08/2023 ... 13/08/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day(s) go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1595",
+                                            "text": "#1595",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Delete duplicate "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "AssetBed",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " records of \"HL7MONITOR\" "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "asset_class",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6274",
+                                            "text": "#6274",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Vitals Monitor (HL7): Added support to detect multiple ecg wavenames"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "git ignored bun lock file and fixed environments not working with bun."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6269/",
+                                            "text": "#6269",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Raised PR for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "request",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " data fetching utilities to phase out redux."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6282",
+                                            "text": "#6282",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ", "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1608",
+                                            "text": "#1608",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Medicine Administrations: Shrink discontinued prescriptions to single row + other enhancements"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed (>10) react for all submissions"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Support for archiving medicine administrations"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on next steps for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " post QA and merge"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1694612025.000000"
+            }
+        },
+        {
+            "client_msg_id": "2e206e30-a923-4ca2-b36c-42c0ad134e39",
+            "type": "message",
+            "text": "*EOD 12/09/2023*\n\n*How did the day* *go?*\n\n\u2022 *Submitted milestone 8.*",
+            "user": "U05M70JL5JM",
+            "ts": "1694591846.835369",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "N2Q8",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/09/2023\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "go?\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Submitted milestone 8.",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "f17edfa5-216f-4442-9c8e-2680762c95f2",
+            "type": "message",
+            "text": "EOD 12/09/2023\nHow did the day go?\n\u2022 finished working on pagination for Ayushma project page\nWhat's next?\n\u2022 Make a PR for the same\nMissed weekly update\n\u2022 Made a PR for filtering projects based on archived status on ayushma <https://github.com/coronasafe/ayushma/pull/311|#311>\n\u2022 Worked on projects page's pagination on ayushma_fe",
+            "user": "U051Q1RP1MG",
+            "ts": "1694573538.514419",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "znAt",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 12/09/2023\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "finished working on pagination for Ayushma project page"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Make a PR for the same"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\nMissed weekly update\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made a PR for filtering projects based on archived status on ayushma "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/ayushma/pull/311",
+                                            "text": "#311",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on projects page's pagination on ayushma_fe"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-09-14 00:00:00": [
+        {
+            "client_msg_id": "e9b3f163-5dff-486b-89a7-d85295eb348b",
+            "type": "message",
+            "text": "*EOD 13/09/2023*\n\n*How did the day go?*\n\n\u2022 Resubmitted level 7.",
+            "user": "U05M70JL5JM",
+            "ts": "1694655200.724619",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "erad6",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 13/09/2023\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resubmitted level 7."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ]
 }

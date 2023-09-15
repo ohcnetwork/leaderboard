@@ -1,6 +1,73 @@
 {
-  "last_updated": 1694625524.0,
+  "last_updated": 1694686197.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard#110",
+      "time": 1694686197.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/110#issuecomment-1719162909",
+      "text": "@dependabot rebase"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#128",
+      "time": 1694686158.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/128",
+      "text": "The lable of the skill is not visible in dark mode"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694686129.0,
+      "title": "coronasafe/leaderboard#129",
+      "link": "https://github.com/coronasafe/leaderboard/pull/129#pullrequestreview-1626530503",
+      "text": "Show Badge label in dark mode"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6288",
+      "time": 1694677248.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6288",
+      "text": "(Draft) Split AppRouter routes to multiple sub-routers based on top-level routes"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6287",
+      "time": 1694675104.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6287",
+      "text": "Refactor `App.tsx`, Providers, Integrations & Remove usage on redux's states"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694669635.0,
+      "title": "coronasafe/care_fe#6286",
+      "link": "https://github.com/coronasafe/care_fe/pull/6286#pullrequestreview-1625860485",
+      "text": "Cam reset"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6269",
+      "time": 1694661256.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6269",
+      "text": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6269",
+      "time": 1694661256.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6269",
+      "text": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)",
+      "collaborated_with": [
+        "nihal467",
+        "khavinshankar"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6285",
+      "time": 1694661151.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6285",
+      "text": "fix `goBack` precedence"
+    },
     {
       "type": "pr_reviewed",
       "time": 1694625524.0,
@@ -22879,18 +22946,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6285",
-      "title": "fix `goBack` precedence",
+      "link": "https://github.com/coronasafe/care_fe/pull/6287",
+      "title": "Refactor `App.tsx`, Providers, Integrations & Remove usage on redux's states",
       "stale_for": 0,
       "labels": [
-        "tested",
-        "P1",
-        "cypress passed"
+        "needs testing",
+        "need Review"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6284",
-      "title": "Skip showing selected option search results when query is present",
+      "title": "Medibase Search: Skip showing selected option search results when query is present",
       "stale_for": 0,
       "labels": [
         "needs testing",
@@ -22900,7 +22966,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6282",
       "title": "Prescriptions: Shrink discontinued prescriptions + Flip MAR timeline + Freeze primary columns in horizontal scroll",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "waiting for back end",
@@ -22910,25 +22976,15 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1608",
       "title": "Adds `discontinued` filter for prescriptions viewset",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6269",
-      "title": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 62,
+      "stale_for": 63,
       "labels": [
         "need Review"
       ]

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1694575096.0,
+  "last_updated": 1694684834.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6280",
+      "time": 1694684834.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6280#issuecomment-1719122752",
+      "text": "- [ ] Rename the field from \"Status during consultation\" to \"Route to Facility\"\r\n\r\n- [ ] Rename \"Outpatient (walk-in)\" to \"Outpatient/Emergency Room\"\r\n\r\n- [ ] Change options to below: from top to bottom, show:\r\n- Outpatient/Emergency Room\r\n- Referred from another facility\r\n- Internal Transfer within facility\r\n\r\n\r\n- [ ] Migrate and map existing Data:\r\n- All brought dead is merged with \"Outpatient/Emergency Room\" (since any new patient, alive or dead is brought to hospital through ER)\r\n- Transfer from ward and transfer from ICU to be merged into \"Internal Transfer within facility\" \r\n- Referred from other hospital changes to \"Referred from another facility\"\r\n\r\n- [ ] If \"Referred from another facility\" is selected, Field for \r\n- \"Name of referring doctor\" <Short text field> - non mandatory\r\n- \"Name of referring facility\" <Short text field> - Mandatory\r\n- \"Date and Time of admission to ICU\"- <Date, time picker>- date to me mandatory, time, non-mandatory\r\n\r\n- [ ] If \"Internal Transfer within the facility\" is selected, \r\n- Date of admission to this facility <Date picker> - Mandatory\r\n- \"Date and Time of admission to ICU\"- <Date, time picker>- date to me mandatory, time, non-mandatory\r\n- Name of Ward/ICU the patient is shifted from: <Dropdown with all locations in the facility> - Mandatory\r\n"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6278",

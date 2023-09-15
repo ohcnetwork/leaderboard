@@ -1,6 +1,62 @@
 {
-  "last_updated": 1694596830.0,
+  "last_updated": 1694669657.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6273",
+      "time": 1694669657.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6273",
+      "text": "Cypress parallel",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694669625.0,
+      "title": "coronasafe/care_fe#6273",
+      "link": "https://github.com/coronasafe/care_fe/pull/6273#pullrequestreview-1625860338",
+      "text": "Cypress parallel"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6286",
+      "time": 1694669434.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6286",
+      "text": "Cam reset"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6269",
+      "time": 1694661256.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6269",
+      "text": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)",
+      "collaborated_with": [
+        "rithviknishad",
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694661240.0,
+      "title": "coronasafe/care_fe#6269",
+      "link": "https://github.com/coronasafe/care_fe/pull/6269#pullrequestreview-1625759650",
+      "text": "Implements `useQuery` & `request` data fetching utilities (used in Location Management page)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6279",
+      "time": 1694661151.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6279",
+      "text": "Clicking on back button from Patient Details page (of patient who doesn't have consultation) lands on 404 page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694661140.0,
+      "title": "coronasafe/care_fe#6285",
+      "link": "https://github.com/coronasafe/care_fe/pull/6285#pullrequestreview-1625758714",
+      "text": "fix `goBack` precedence"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#6198",
@@ -22768,9 +22824,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6286",
+      "title": "Cam reset",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 23,
+      "stale_for": 24,
       "labels": [
         "waiting-for-review"
       ]
@@ -22778,13 +22844,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 207,
+      "stale_for": 208,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 42,
+      "stale_for": 43,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -22794,13 +22860,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 278,
+      "stale_for": 279,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 35,
+      "stale_for": 36,
       "labels": [
         "changes required"
       ]
@@ -22808,25 +22874,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 635,
+      "stale_for": 636,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 641,
+      "stale_for": 642,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 642,
+      "stale_for": 643,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 837,
+      "stale_for": 838,
       "labels": []
     }
   ],

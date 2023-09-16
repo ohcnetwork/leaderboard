@@ -1,6 +1,111 @@
 {
-  "last_updated": 1694616779.0,
+  "last_updated": 1694813251.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1616",
+      "time": 1694813251.0,
+      "link": "https://github.com/coronasafe/care/pull/1616",
+      "text": "Production Release; Hotfix",
+      "collaborated_with": [
+        "mathew-alex"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1614",
+      "time": 1694813202.0,
+      "link": "https://github.com/coronasafe/care/pull/1614",
+      "text": "fix sentry release tagging on checked out to a path other than Workspace"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1614",
+      "time": 1694809492.0,
+      "link": "https://github.com/coronasafe/care/pull/1614",
+      "text": "fix sentry release tagging on checked out to a path other than Workspace"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/teleicu_middleware#100",
+      "time": 1694807753.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/100",
+      "text": "use lower sample rate by default for sentry"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6295",
+      "time": 1694801447.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6295",
+      "text": "Production Release; Spetember Week 3",
+      "collaborated_with": [
+        "thtauhid",
+        "Pranshu1902",
+        "Ashesh3",
+        "mathew-alex",
+        "nihal467",
+        "khavinshankar",
+        "print-Sathvik",
+        "yaswanthsaivendra",
+        "kshitijv256",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1613",
+      "time": 1694801421.0,
+      "link": "https://github.com/coronasafe/care/pull/1613",
+      "text": "Production Release; Spetember Week 3",
+      "collaborated_with": [
+        "vigneshhari",
+        "Ashesh3",
+        "yaswanthsaivendra",
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1612",
+      "time": 1694797817.0,
+      "link": "https://github.com/coronasafe/care/pull/1612",
+      "text": "fix not able to allocate beds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1612",
+      "time": 1694797607.0,
+      "link": "https://github.com/coronasafe/care/pull/1612",
+      "text": "fix not able to allocate beds"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/teleicu_middleware#100",
+      "time": 1694779343.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/100",
+      "text": "use lower sample rate by default for sentry"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1611",
+      "time": 1694775614.0,
+      "link": "https://github.com/coronasafe/care/pull/1611",
+      "text": "update sentry integration"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1610",
+      "time": 1694775296.0,
+      "link": "https://github.com/coronasafe/care/issues/1610",
+      "text": "Add sentry profiling"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1694761724.0,
+      "title": "coronasafe/care#1609",
+      "link": "https://github.com/coronasafe/care/pull/1609#pullrequestreview-1628335254",
+      "text": "Add request approving & fulfilment facilities"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1577",
@@ -5768,15 +5873,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1611",
+      "title": "update sentry integration",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1607",
       "title": "Update LICENSE",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "In progress"
       ]
@@ -5784,19 +5895,29 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6003",
+      "title": "cleanup fireRequests and remove axios",
+      "stale_for": 0,
+      "labels": [
+        "changes required",
+        "merge conflict",
+        "cypress failed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 55,
+      "stale_for": 57,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 93,
+      "stale_for": 95,
       "labels": []
     }
   ],

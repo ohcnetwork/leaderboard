@@ -1,6 +1,20 @@
 {
-  "last_updated": 1694801447.0,
+  "last_updated": 1694936353.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#111",
+      "time": 1694936353.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/111",
+      "text": "Fix sidebar toggle button in mobile view"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/ayushma_fe#110",
+      "time": 1694936195.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/110",
+      "text": "Sidebar toggle switch not working in chat in mobile view"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6295",
@@ -5637,17 +5651,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/111",
+      "title": "Fix sidebar toggle button in mobile view",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6264",
       "title": " Enhanced UI for Principle diagnosis",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6253",
       "title": " Show only those facilties that aren't linked to user",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "waiting for back end"
       ]
@@ -5655,13 +5675,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1588",
       "title": "Filter out those facilities that are already linked to user",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6204",
       "title": "Fix the loader display on Patient Notes page",
-      "stale_for": 10,
+      "stale_for": 12,
       "labels": [
         "needs testing",
         "hold"
@@ -5670,7 +5690,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1530",
       "title": "Check bed name before making new multiple beds with same name",
-      "stale_for": 22,
+      "stale_for": 24,
       "labels": [
         "changes required"
       ]
@@ -5678,25 +5698,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1505",
       "title": "Don't allow negative values for Doctor Count for facility",
-      "stale_for": 22,
+      "stale_for": 24,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 72,
+      "stale_for": 74,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 325,
+      "stale_for": 327,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 325,
+      "stale_for": 327,
       "labels": []
     }
   ],

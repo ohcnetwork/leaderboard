@@ -1,6 +1,62 @@
 {
-  "last_updated": 1693197038.0,
+  "last_updated": 1694978291.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#327",
+      "time": 1694978291.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/327#issuecomment-1722546612",
+      "text": "> > > Is the endpoint supposed to be open? No authentication needed?\r\n> > \r\n> > \r\n> > for now, care-whisper endpoint is open we can deploy it in Private Network so that only care microservices can use it, or if required we can add auth. Currently its not for public usage so we don't necessary required auth we can just deploy it in a Private Network.\r\n> \r\n> The URL you added, `whisper.ohc.network` is not within a private network and is accessible and usable publicly. I am able to post URL of an audio and get it to transcribe. Just wanted to make sure if this was intentional and that by pushing that URL in this commit, the endpoint now being publicly known is okay.\r\n\r\nOh okay gotchya, fixing the issue..."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#327",
+      "time": 1694969838.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/327#issuecomment-1722518982",
+      "text": "> Is the endpoint supposed to be open? No authentication needed?\r\n\r\nfor now, care-whisper endpoint is open we can deploy it in Private Network so that only care microservices can use it, or if required we can add auth. Currently its not for public usage so we don't necessary required auth we can just deploy it in a Private Network."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care-whisper#4",
+      "time": 1694963088.0,
+      "link": "https://github.com/coronasafe/care-whisper/pull/4",
+      "text": "req updated"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#112",
+      "time": 1694963015.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/112",
+      "text": "new stt added"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care-whisper#4",
+      "time": 1694962894.0,
+      "link": "https://github.com/coronasafe/care-whisper/pull/4",
+      "text": "req updated"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care-whisper#3",
+      "time": 1694962386.0,
+      "link": "https://github.com/coronasafe/care-whisper/pull/3",
+      "text": "api improved"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care-whisper#3",
+      "time": 1694962346.0,
+      "link": "https://github.com/coronasafe/care-whisper/pull/3",
+      "text": "api improved"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#327",
+      "time": 1694962052.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/327",
+      "text": "self hosted model added"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/teleicu_middleware#85",
@@ -1167,7 +1223,20 @@
       "text": "Added spinner feedback after pressing login button"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/112",
+      "title": "new stt added",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/ayushma/pull/327",
+      "title": "self hosted model added",
+      "stale_for": 0,
+      "labels": []
+    }
+  ],
   "authored_issue_and_pr": [
     {
       "issue_link": "https://github.com/coronasafe/ayushma/issues/87",

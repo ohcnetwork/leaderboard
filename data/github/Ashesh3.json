@@ -1,6 +1,20 @@
 {
-  "last_updated": 1694801447.0,
+  "last_updated": 1694971810.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#327",
+      "time": 1694971810.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/327#issuecomment-1722525591",
+      "text": "> > Is the endpoint supposed to be open? No authentication needed?\r\n> \r\n> for now, care-whisper endpoint is open we can deploy it in Private Network so that only care microservices can use it, or if required we can add auth. Currently its not for public usage so we don't necessary required auth we can just deploy it in a Private Network.\r\n\r\nThe URL you added, `whisper.ohc.network` is not within a private network and is accessible and usable publicly. I am able to post URL of an audio and get it to transcribe. Just wanted to make sure if this was intentional and that by pushing that URL in this commit, the endpoint now being publicly known is okay."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#327",
+      "time": 1694962263.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/327#issuecomment-1722494184",
+      "text": "Is the endpoint supposed to be open? No authentication needed?"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6295",
@@ -12639,13 +12653,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1580",
       "title": "Implement Tracking and Storing of Plausible Statistics",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 164,
+      "stale_for": 166,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -12654,13 +12668,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 177,
+      "stale_for": 179,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 17,
+      "stale_for": 19,
       "labels": [
         "waiting-for-review"
       ]

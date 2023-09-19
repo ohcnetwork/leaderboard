@@ -1,6 +1,13 @@
 {
-  "last_updated": 1694801447.0,
+  "last_updated": 1695024143.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6222",
+      "time": 1695024143.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6222#issuecomment-1722923046",
+      "text": "> Just a minor suggestion, you could've moved the phone number related utility methods to a seperate file under say: `src/Utils/PhoneNumberUtils.ts`\r\n> \r\n> Currently, the `utils.ts` file feels too big and we should consider splitting it based on relevance.\r\n\r\nI pulled, rebased and separated phone number utils in my local but that requires me to force push to current branch. Doing that will close this PR. So I will create a new PR for seperating phone number utils once this PR is merged."
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6295",
@@ -539,7 +546,16 @@
       "text": "Replaced Material UI components with Form component in DeathReport.tsx #4939"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6222",
+      "title": "Remove libphonenumber js",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    }
+  ],
   "authored_issue_and_pr": [
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6254",

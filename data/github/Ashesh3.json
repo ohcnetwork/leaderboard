@@ -1,6 +1,62 @@
 {
-  "last_updated": 1694971810.0,
+  "last_updated": 1695145792.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1625",
+      "time": 1695145792.0,
+      "link": "https://github.com/coronasafe/care/pull/1625#issuecomment-1726222564",
+      "text": "> You also need to create a signal to delete the cache when an asset updates, need tests for that edge as well.\r\n\r\n@vigneshhari added, could you review?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695141926.0,
+      "title": "coronasafe/care#1625",
+      "link": "https://github.com/coronasafe/care/pull/1625#pullrequestreview-1633759274",
+      "text": "Added `AssetPublicQRViewSet` to handle QR code based asset retrieval"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1625",
+      "time": 1695140722.0,
+      "link": "https://github.com/coronasafe/care/pull/1625#issuecomment-1726034900",
+      "text": "> needs test\r\n\r\nAdded"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1260",
+      "time": 1695138268.0,
+      "link": "https://github.com/coronasafe/care/pull/1260#issuecomment-1725921019",
+      "text": "@cp-Coder Can you resolve the merge conflicts?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1625",
+      "time": 1695138097.0,
+      "link": "https://github.com/coronasafe/care/pull/1625",
+      "text": "Added `AssetPublicQRViewSet` to handle QR code based asset retrieval"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695129758.0,
+      "title": "coronasafe/care#1624",
+      "link": "https://github.com/coronasafe/care/pull/1624#pullrequestreview-1633243721",
+      "text": "fix: failing deploy due to outdated lock file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695115786.0,
+      "title": "coronasafe/care#1608",
+      "link": "https://github.com/coronasafe/care/pull/1608#pullrequestreview-1632827524",
+      "text": "Adds `discontinued` filter for prescriptions viewset"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695115776.0,
+      "title": "coronasafe/care#1623",
+      "link": "https://github.com/coronasafe/care/pull/1623#pullrequestreview-1632827207",
+      "text": "rename verified by to treating physician in discharge summary"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/ayushma#327",
@@ -12651,15 +12707,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1625",
+      "title": "Added `AssetPublicQRViewSet` to handle QR code based asset retrieval",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1580",
       "title": "Implement Tracking and Storing of Plausible Statistics",
-      "stale_for": 7,
+      "stale_for": 9,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 166,
+      "stale_for": 168,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -12668,13 +12730,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 179,
+      "stale_for": 181,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 19,
+      "stale_for": 21,
       "labels": [
         "waiting-for-review"
       ]

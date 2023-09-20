@@ -1,6 +1,83 @@
 {
-  "last_updated": 1695033945.0,
+  "last_updated": 1695162039.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6222",
+      "time": 1695162039.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6222",
+      "text": "Remove libphonenumber js",
+      "collaborated_with": [
+        "nihal467",
+        "print-Sathvik"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6284",
+      "time": 1695161869.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6284",
+      "text": "Medibase Search: Skip showing selected option search results when query is present"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695130001.0,
+      "title": "coronasafe/care#1624",
+      "link": "https://github.com/coronasafe/care/pull/1624#pullrequestreview-1633271254",
+      "text": "fix: failing deploy due to outdated lock file"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695128036.0,
+      "title": "coronasafe/care_fe#6300",
+      "link": "https://github.com/coronasafe/care_fe/pull/6300#pullrequestreview-1633199126",
+      "text": "Renamed \"Verified By\" to \"Treating Physician\""
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1608",
+      "time": 1695120550.0,
+      "link": "https://github.com/coronasafe/care/pull/1608",
+      "text": "Adds `discontinued` filter for prescriptions viewset"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1608",
+      "time": 1695120550.0,
+      "link": "https://github.com/coronasafe/care/pull/1608",
+      "text": "Adds `discontinued` filter for prescriptions viewset",
+      "collaborated_with": [
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1623",
+      "time": 1695120528.0,
+      "link": "https://github.com/coronasafe/care/pull/1623",
+      "text": "rename verified by to treating physician in discharge summary"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1623",
+      "time": 1695115367.0,
+      "link": "https://github.com/coronasafe/care/pull/1623",
+      "text": "rename verified by to treating physician in discharge summary"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6288",
+      "time": 1695101967.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6288#issuecomment-1724860457",
+      "text": "To skip the caching and provider concept and just to split the app router"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6299",
+      "time": 1695101904.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6299#issuecomment-1724859780",
+      "text": "To attempt running a script to see if the label start can be used as the ID or not"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6278",
@@ -23007,50 +23084,34 @@
   "open_prs": [
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6287",
-      "title": "Refactor `App.tsx`, Providers, Integrations & Remove usage on redux's states",
-      "stale_for": 4,
+      "title": "Refactor `App.tsx`, Providers, Integrations; Remove usage on redux's states; Adds support for notifications to `useQuery` and `request`",
+      "stale_for": 0,
       "labels": [
         "needs testing",
         "need Review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6284",
-      "title": "Medibase Search: Skip showing selected option search results when query is present",
-      "stale_for": 4,
-      "labels": [
-        "needs testing",
-        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6282",
       "title": "Prescriptions: Shrink discontinued prescriptions + Flip MAR timeline + Freeze primary columns in horizontal scroll",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
         "needs testing",
-        "waiting for back end",
         "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1608",
-      "title": "Adds `discontinued` filter for prescriptions viewset",
-      "stale_for": 5,
-      "labels": [
-        "waiting-for-review"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 67,
-      "labels": [
-        "need Review"
-      ]
+      "stale_for": 0,
+      "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6283",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6284"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6199",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6200"

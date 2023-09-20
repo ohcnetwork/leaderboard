@@ -84493,5 +84493,522 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-09-19 00:00:00": []
+    "2023-09-19 00:00:00": [
+        {
+            "client_msg_id": "c62e5b21-2830-42ee-8390-cfb133aba454",
+            "type": "message",
+            "text": "*EOD 19/09/2023 <!subteam^S035L5S02RF|@care_engineering>*\n\n*How did the day go?*\n\n\u2022 tested PR for this week release\n\u2022 had weekly engineering call and tuesday call\n\u2022 added test to verify facility detail to asset page re-direction <https://github.com/coronasafe/care_fe/pull/6308|#6308>",
+            "user": "U022THM4U2U",
+            "ts": "1695165501.371679",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/GKY1",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 19/09/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "tested PR for this week release"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "had weekly engineering call and tuesday call"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "added test to verify facility detail to asset page re-direction "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6308",
+                                            "text": "#6308",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1695157540,
+                    "color": "6f42c1",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6308",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6308 Added test to verify page redirection from facility details page to asset page",
+                    "text": "*WHAT*\n*:robot_face: Generated by Copilot at <https://github.com/coronasafe/care_fe/commit/89d91ec0925981ca9c535001f49133ed3f7ee5a2|89d91ec>*\n\nAdded a new test case and methods for facility asset management. The test case verifies the navigation and filtering of assets in a facility. The methods help create and view asset facilities in the UI. Also added `id` attributes to some UI elements for testing.\n\n*Proposed Changes*\n\n\u2022 Fixes <https://github.com/coronasafe/care_fe/issues/6307|#6307>\n\u2022 Change 1\n\u2022 Change 2\n\u2022 More?\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA\n\n*HOW*\n*:robot_face: Generated by Copilot at <https://github.com/coronasafe/care_fe/commit/89d91ec0925981ca9c535001f49133ed3f7ee5a2|89d91ec>*\n\n\u2022 Add methods to click on create asset and view asset options in the facility page (<https://github.com/coronasafe/care_fe/pull/6308/files?diff=unified&w=0#diff-a4a17d53a337d155d03bd531b8473e60d3cabdd6dcb1514840799f46a5a2dd0bR123-R130|link>)\n\u2022 Add methods to verify the text, URL and status code for the facility and asset pages, and the back navigation functionality (<https://github.com/coronasafe/care_fe/pull/6308/files?diff=unified&w=0#diff-a4a17d53a337d155d03bd531b8473e60d3cabdd6dcb1514840799f46a5a2dd0bR186-R212|link>)\n\u2022 Add `id` attributes to the `MenuItem` components for the create asset, view asset and view users options in the `FacilityHome` component (<https://github.com/coronasafe/care_fe/pull/6308/files?diff=unified&w=0#diff-ad6af8429c47f2623c154aeb1256b603ed30a7b233d485bef095d3ddf7c4b97cR578|link>, <https://github.com/coronasafe/care_fe/pull/6308/files?diff=unified&w=0#diff-ad6af8429c47f2623c154aeb1256b603ed30a7b233d485bef095d3ddf7c4b97cR586|link>, <https://github.com/coronasafe/care_fe/pull/6308/files?diff=unified&w=0#diff-ad6af8429c47f2623c154aeb1256b603ed30a7b233d485bef095d3ddf7c4b97cR593|link>)\n\u2022 Add imports of `AssetSearchPage`, `FacilityPage`, `AssetFilters` and `fillFacilityName` to the test file `assets_manage.cy.ts` (<https://github.com/coronasafe/care_fe/pull/6308/files?diff=unified&w=0#diff-db4292fd03626d0a4e5a0e899dbceffb54fab4da3fd02e455598e6627248e746L4-R14|link>)\n\u2022 Add a test case to verify the facility asset page redirection using the manage facility dropdown options and the asset view page filter (<https://github.com/coronasafe/care_fe/pull/6308/files?diff=unified&w=0#diff-db4292fd03626d0a4e5a0e899dbceffb54fab4da3fd02e455598e6627248e746R33-R49|link>)",
+                    "title": "#6308 Added test to verify page redirection from facility details page to asset page",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6308",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "need Review, tested",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "4",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "fd4843b1-6697-463a-ab70-3cad8f605146",
+            "type": "message",
+            "text": "EOD 19/09/2023\n\u2022 Got stuck while working on Assigning patient to doctor and nurse issue, resolved in the call\n\u2022 Fixing cypress tests",
+            "user": "U052CV9HBR6",
+            "ts": "1695162059.533219",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1ZI",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 19/09/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Got stuck while working on Assigning patient to doctor and nurse issue, resolved in the call"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixing cypress tests"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "a953ef09-b568-4a77-b291-76ca002b90e2",
+            "type": "message",
+            "text": "*EOD 19/09/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 Reviewed 9-10 react for all submissions\n\u2022 Completed handling notifications in new `request` data fetching utility\n\u2022 Changed \"verified by\" to \"treating physician\" in discharge summary\n\u2022 Wrote a script to check whether disease id can be used as PK for icd11\n\u2022 Fixed issue with suspense boundary fallback\n*What's next?*\n\u2022 Create EPIC issue for `useDispatch` to `useQuery/request` migration with documentation on how to use those and migrate.\n\u2022 Follow up on icd11 enhancement\n\u2022 Support for archiving medicine administrations\n\u2022 Split routes of AppRouter into multiple nested routers\n\u2022 Follow up on uninstall axios PR",
+            "user": "U02TDGQQPMJ",
+            "ts": "1695140218.718879",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "jZDf",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 19/09/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Reviewed 9-10 react for all submissions"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Completed handling notifications in new "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "request",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " data fetching utility"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Changed \"verified by\" to \"treating physician\" in discharge summary"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Wrote a script to check whether disease id can be used as PK for icd11"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed issue with suspense boundary fallback"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Create EPIC issue for "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useDispatch",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useQuery/request",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " migration with documentation on how to use those and migrate."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on icd11 enhancement"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Support for archiving medicine administrations"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Split routes of AppRouter into multiple nested routers"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on uninstall axios PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "3acc5a20-5d9b-4c31-b997-f521f07ad5a4",
+            "type": "message",
+            "text": "EOD  19/09/23\n\u2022 Submit L9\n\u2022 Start working on capstone.",
+            "user": "U05MBE2RASD",
+            "ts": "1695127804.993849",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "WIMfB",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD  19/09/23\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Submit L9"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Start working on capstone."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "cd285241-f5c7-443e-8c3e-65a80200d9dd",
+            "type": "message",
+            "text": "*EOD 14/09/2023 - 18/09/2023*\n\n*How did the day go?*\n\n\u2022 Submitted level 9.\n\u2022 Working on capstone project.",
+            "user": "U05M70JL5JM",
+            "ts": "1695089458.335839",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "HXs",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 14/09/2023 - 18/09/2023\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Submitted level 9."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on capstone project."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U05M70JL5JM",
+                "ts": "1695089482.000000"
+            }
+        }
+    ],
+    "2023-09-20 00:00:00": []
 }

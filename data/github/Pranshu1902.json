@@ -1,6 +1,37 @@
 {
-  "last_updated": 1695148810.0,
+  "last_updated": 1695215982.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6264",
+      "time": 1695215982.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6264",
+      "text": " Enhanced UI for Principle diagnosis"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6264",
+      "time": 1695215982.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6264",
+      "text": " Enhanced UI for Principle diagnosis",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6264",
+      "time": 1695209422.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6264#issuecomment-1727541155",
+      "text": "@nihal467 The cypress failed for 1 test on the Assets page, however, I modified only the Patients page. It is probably a timed-out failure.\r\n![image](https://github.com/coronasafe/care_fe/assets/70687348/a135af17-2a74-4b58-9834-34083eb8458b)\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1631",
+      "time": 1695199708.0,
+      "link": "https://github.com/coronasafe/care/pull/1631",
+      "text": "Put Principal Diagnosis before Provisional Diagnosis in Discharge Summary"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care#1629",
@@ -5693,41 +5724,39 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1631",
+      "title": "Put Principal Diagnosis before Provisional Diagnosis in Discharge Summary",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/116",
       "title": "Use modal for delete chat confirmation",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/114",
       "title": "Fix page title",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/113",
       "title": "Add gap between logo and beta",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/111",
       "title": "Fix sidebar toggle button in mobile view",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6264",
-      "title": " Enhanced UI for Principle diagnosis",
-      "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6253",
       "title": " Show only those facilties that aren't linked to user",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "waiting for back end"
       ]
@@ -5735,13 +5764,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1588",
       "title": "Filter out those facilities that are already linked to user",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6204",
       "title": "Fix the loader display on Patient Notes page",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": [
         "needs testing",
         "hold"
@@ -5750,7 +5779,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1530",
       "title": "Check bed name before making new multiple beds with same name",
-      "stale_for": 26,
+      "stale_for": 27,
       "labels": [
         "changes required"
       ]
@@ -5758,25 +5787,25 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1505",
       "title": "Don't allow negative values for Doctor Count for facility",
-      "stale_for": 26,
+      "stale_for": 27,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 76,
+      "stale_for": 77,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 329,
+      "stale_for": 330,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 329,
+      "stale_for": 330,
       "labels": []
     }
   ],

@@ -1,6 +1,48 @@
 {
-  "last_updated": 1695162039.0,
+  "last_updated": 1695213687.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6282",
+      "time": 1695213687.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6282#issuecomment-1727647645",
+      "text": "@nihal467 the snap to 24 hours to future bug has been fixed\r\n\r\n<img width=\"1478\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/1bd4bec0-2365-45c0-94ec-3404ca7a3969\">\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695212884.0,
+      "title": "coronasafe/care_fe#6312",
+      "link": "https://github.com/coronasafe/care_fe/pull/6312#pullrequestreview-1635517706",
+      "text": "removed SwipeableViews from ManagePatients.tsx"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695211951.0,
+      "title": "coronasafe/care_fe#6312",
+      "link": "https://github.com/coronasafe/care_fe/pull/6312#pullrequestreview-1635489035",
+      "text": "removed SwipeableViews from ManagePatients.tsx"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695199969.0,
+      "title": "coronasafe/care#1631",
+      "link": "https://github.com/coronasafe/care/pull/1631#pullrequestreview-1635086749",
+      "text": "Put Principal Diagnosis before Provisional Diagnosis in Discharge Summary"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1630",
+      "time": 1695199667.0,
+      "link": "https://github.com/coronasafe/care/pull/1630",
+      "text": "Support for archiving medicine administrations"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6311",
+      "time": 1695199502.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6311",
+      "text": "Adds support for archiving medicine administrations"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6222",
@@ -23083,12 +23125,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1630",
+      "title": "Support for archiving medicine administrations",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6311",
+      "title": "Adds support for archiving medicine administrations",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6287",
       "title": "Refactor `App.tsx`, Providers, Integrations; Remove usage on redux's states; Adds support for notifications to `useQuery` and `request`",
       "stale_for": 0,
       "labels": [
-        "needs testing",
-        "need Review"
+        "need Review",
+        "tested",
+        "cypress passed"
       ]
     },
     {
@@ -23103,7 +23158,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     }
   ],

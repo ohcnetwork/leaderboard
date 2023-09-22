@@ -1,6 +1,96 @@
 {
-  "last_updated": 1695213687.0,
+  "last_updated": 1695284932.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6058",
+      "time": 1695284932.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6058",
+      "text": "Implement `useQuery` and `request` to replace `react-redux`"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6058",
+      "time": 1695284927.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6058#issuecomment-1729099694",
+      "text": "Remaining migrations tracked in #6316 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6150",
+      "time": 1695284828.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6150",
+      "text": "Prefetch and cache medicine administrations of other pages"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6150",
+      "time": 1695284828.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6150#issuecomment-1729097170",
+      "text": "Will be covered via #6316 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695278771.0,
+      "title": "coronasafe/care#1625",
+      "link": "https://github.com/coronasafe/care/pull/1625#pullrequestreview-1637034288",
+      "text": "Added `AssetPublicQRViewSet` to handle QR code based asset retrieval"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6316",
+      "time": 1695277624.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6316",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` with `useQuery`/`request`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6282",
+      "time": 1695275663.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6282",
+      "text": "Prescriptions: Shrink discontinued prescriptions + Flip MAR timeline + Freeze primary columns in horizontal scroll"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6282",
+      "time": 1695275663.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6282",
+      "text": "Prescriptions: Shrink discontinued prescriptions + Flip MAR timeline + Freeze primary columns in horizontal scroll",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6315",
+      "time": 1695273611.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6315",
+      "text": "Add docs for `request` and `useQuery`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6315",
+      "time": 1695272745.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6315",
+      "text": "Add docs for `request` and `useQuery`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6287",
+      "time": 1695271081.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6287",
+      "text": "Refactor `App.tsx`, Providers, Integrations; Remove usage on redux's states; Adds support for notifications to `useQuery` and `request`"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6287",
+      "time": 1695271081.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6287",
+      "text": "Refactor `App.tsx`, Providers, Integrations; Remove usage on redux's states; Adds support for notifications to `useQuery` and `request`",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6282",
@@ -23127,38 +23217,21 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
       "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6287",
-      "title": "Refactor `App.tsx`, Providers, Integrations; Remove usage on redux's states; Adds support for notifications to `useQuery` and `request`",
-      "stale_for": 0,
       "labels": [
-        "need Review",
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6282",
-      "title": "Prescriptions: Shrink discontinued prescriptions + Flip MAR timeline + Freeze primary columns in horizontal scroll",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "cypress passed"
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     }
   ],
@@ -23188,6 +23261,14 @@
       "pr_link": "https://github.com/coronasafe/care/pull/1557"
     },
     {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
+      "pr_link": "https://github.com/coronasafe/care/pull/1608"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6282"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6085",
       "pr_link": "https://github.com/coronasafe/care/pull/1565"
     },
@@ -23198,6 +23279,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6059",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6176"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6058",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6287"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6051",
@@ -23254,10 +23339,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5929",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5930"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5923",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5928"
     }
   ]
 }

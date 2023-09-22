@@ -1,6 +1,20 @@
 {
-  "last_updated": 1695223532.0,
+  "last_updated": 1695327657.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6318",
+      "time": 1695327657.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6318#issuecomment-1730244364",
+      "text": "Hi @nihal467 \r\nI have run the Cypress tests locally. \r\n\r\nThe \"Create a New consultation to existing patient\" test is failing. \r\n\r\nIt expects \"Doctor Dev\" in the \"Treating Physician\" field. But only \"rocky sharma\" exists in the dropdown. \r\n\r\nI am also attaching the screenshots. \r\n![Patient Creation with consultation -- Create a New consultation to existing patient (failed) (attempt 3)](https://github.com/coronasafe/care_fe/assets/13254850/5bc474d2-d2e8-43af-be53-31166efce539)\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/13254850/08b4523c-3017-4da4-b1e8-39d73c01079a)\r\n\r\n"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6318",
+      "time": 1695294065.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6318",
+      "text": "Added logic for showing \"Track Shifting\" button when patient has active shifting"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6312",
@@ -237,6 +251,13 @@
       "text": "Hi,\r\nIf anyone ain't working on this issue now, I'd like to work on it. "
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6318",
+      "title": "Added logic for showing \"Track Shifting\" button when patient has active shifting",
+      "stale_for": 0,
+      "labels": []
+    }
+  ],
   "authored_issue_and_pr": []
 }

@@ -1,6 +1,111 @@
 {
-  "last_updated": 1695284932.0,
+  "last_updated": 1695405551.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6334",
+      "time": 1695405551.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6334",
+      "text": "Production Release; Spetember Week 4",
+      "collaborated_with": [
+        "kshitijv256",
+        "Ashesh3",
+        "print-Sathvik",
+        "nihal467",
+        "GokulramGHV",
+        "thtauhid",
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1633",
+      "time": 1695405547.0,
+      "link": "https://github.com/coronasafe/care/pull/1633",
+      "text": "Production Release; Spetember Week 4",
+      "collaborated_with": [
+        "sainak",
+        "vigneshhari",
+        "dependabot[bot]"
+      ]
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6331",
+      "time": 1695397044.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6331",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: Auth (`src/Components/Auth/**`)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6330",
+      "time": 1695396931.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6330",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: ABDM (`src/Components/ABDM/**`)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695396847.0,
+      "title": "coronasafe/care_fe#6329",
+      "link": "https://github.com/coronasafe/care_fe/pull/6329#pullrequestreview-1640208078",
+      "text": "replaced useDispatch with useQuery"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6327",
+      "time": 1695391000.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6327",
+      "text": "Asset Configure: Migrate `useDispatch` to use `useQuery` (inherently fixes camera not reloading on configure saved)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6318",
+      "time": 1695390817.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6318#issuecomment-1731462727",
+      "text": "Ideally, you'll need to run cypress tests against ur local backend with the default dummy data"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6328",
+      "time": 1695385384.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6328",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: DeathReport (`src/Components/DeathReport/**`)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6327",
+      "time": 1695384700.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6327",
+      "text": "ONVIF Configure: Migrate `useDispatch` to use `useQuery` (inherently fixes camera not reloading on configure saved)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6326",
+      "time": 1695384601.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6326",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: Assets (`src/Components/Assets/**`)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6325",
+      "time": 1695384467.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6325",
+      "text": "Camera View does not reload on new configuration saved"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6324",
+      "time": 1695383530.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6324",
+      "text": "Improve type-safety of generic `TData` in `reqeust` module"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6323",
+      "time": 1695380520.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6323",
+      "text": "Bug: Medicine Administrations table starts with an additional hour offset to the future"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#6058",
@@ -23215,15 +23320,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6324",
+      "title": "Improve type-safety of generic `TData` in `reqeust` module",
+      "stale_for": 0,
+      "labels": [
+        "need Review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "merge conflict"
       ]
@@ -23231,11 +23344,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6325",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6327"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6283",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6284"
@@ -23335,10 +23452,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5932",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5933"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5929",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5930"
     }
   ]
 }

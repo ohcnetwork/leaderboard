@@ -1,6 +1,76 @@
 {
-  "last_updated": 1695306285.0,
+  "last_updated": 1695400591.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1695400591.0,
+      "title": "coronasafe/care_fe#6332",
+      "link": "https://github.com/coronasafe/care_fe/pull/6332#pullrequestreview-1640313553",
+      "text": "Fix Ambulance Phone Number validation in Shifting"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6325",
+      "time": 1695391000.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6325",
+      "text": "Camera View does not reload on new configuration saved"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695390985.0,
+      "title": "coronasafe/care_fe#6327",
+      "link": "https://github.com/coronasafe/care_fe/pull/6327#pullrequestreview-1640018066",
+      "text": "Asset Configure: Migrate `useDispatch` to use `useQuery` (inherently fixes camera not reloading on configure saved)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6322",
+      "time": 1695373292.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6322#issuecomment-1731069613",
+      "text": "@thtauhid check this pr (https://github.com/coronasafe/care_fe/pull/6286) in which the auto-reset feature is implemented for the patient consultation feed page, same functionality is required in the feed of the asset config page.\r\n\r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6294",
+      "time": 1695363802.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6294",
+      "text": "Enhance Camera Feed "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6294",
+      "time": 1695363802.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6294#issuecomment-1730868153",
+      "text": "above mentioned issues will be tracked as separate issues"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6322",
+      "time": 1695363537.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6322",
+      "text": "add auto reset in asset config page"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6321",
+      "time": 1695363534.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6321",
+      "text": "reset button not working in IOS devices"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6320",
+      "time": 1695363527.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6320",
+      "text": "preset is highlighted even when the camera is manually moved"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6319",
+      "time": 1695363094.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6319",
+      "text": "Support camera resolution change via care"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#6203",
@@ -23122,7 +23192,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 31,
+      "stale_for": 32,
       "labels": [
         "waiting-for-review"
       ]
@@ -23130,13 +23200,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 215,
+      "stale_for": 216,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 50,
+      "stale_for": 51,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -23146,13 +23216,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 286,
+      "stale_for": 287,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 43,
+      "stale_for": 44,
       "labels": [
         "changes required"
       ]
@@ -23160,25 +23230,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 643,
+      "stale_for": 644,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 649,
+      "stale_for": 650,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 650,
+      "stale_for": 651,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 845,
+      "stale_for": 846,
       "labels": []
     }
   ],

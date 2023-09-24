@@ -1,6 +1,55 @@
 {
-  "last_updated": 1695405551.0,
+  "last_updated": 1695477353.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1695477353.0,
+      "title": "coronasafe/care_fe#6333",
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#pullrequestreview-1640906234",
+      "text": "Refactor: replaced Dispatch to useQuery/Request of src/Components/Auth/log\u2026"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695477326.0,
+      "title": "coronasafe/care_fe#6333",
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#pullrequestreview-1640906234",
+      "text": "Refactor: replaced Dispatch to useQuery/Request of src/Components/Auth/log\u2026"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695477326.0,
+      "title": "coronasafe/care_fe#6333",
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#pullrequestreview-1640906234",
+      "text": "Refactor: replaced Dispatch to useQuery/Request of src/Components/Auth/log\u2026"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6329",
+      "time": 1695465327.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6329#issuecomment-1732277792",
+      "text": "You can add the response types to the API route def. itself in the `api.tsx` file itself as mentioned in the EPIC issue linked to the issue.\r\n\r\nYou can add another key value pair, example:\r\n\r\n```\r\ngetPatient: {\r\n  path: \"/api/v1/....\",\r\n  method: \"GET\",\r\n  TRes: Res<PatientModel>(),\r\n}\r\n```\r\n\r\nIf PatientModel or (any other similar name) doesn't exist that defines the type for that API response, you'll have to create one. Check the README of this repo. and you'll get to see the swagger documentation. \r\n\r\nYou could use tools like https://transform.tools/json-to-typescript to convert the example response to JSON.\r\n\r\n(Related models needs to be properly referenced to other interfaces however)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695464894.0,
+      "title": "coronasafe/care_fe#6333",
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#pullrequestreview-1640865194",
+      "text": "Refactor: replaced useDispatch to useQuery of src/Components/Auth/log\u2026"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695464894.0,
+      "title": "coronasafe/care_fe#6333",
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#pullrequestreview-1640865194",
+      "text": "Refactor: replaced useDispatch to useQuery of src/Components/Auth/log\u2026"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6323",
+      "time": 1695438436.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6323#issuecomment-1732193065",
+      "text": "The latest date should always be the latest of  all last administered date.\n\ni.e. Medicine A is last administered 23rd 10:02 AM, Medicine B is last administered 23rd 11:04 AM, then it should show the column upto 23rd 11:00 AM (because that column contains all administrations between 11 AM and 11:59 AM)"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6334",
@@ -23322,7 +23371,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6324",
       "title": "Improve type-safety of generic `TData` in `reqeust` module",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "need Review"
       ]
@@ -23330,13 +23379,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "merge conflict"
       ]
@@ -23344,7 +23393,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     }
   ],

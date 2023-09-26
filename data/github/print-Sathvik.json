@@ -1,6 +1,20 @@
 {
-  "last_updated": 1695438222.0,
+  "last_updated": 1695664768.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6323",
+      "time": 1695664768.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6323#issuecomment-1734220722",
+      "text": "> End date: 23/09/2023\r\n\r\nSorry for taking an extra day. Before assigning this issue to myself I got the solution and thought that I will be completing it in few minutes but I misunderstood the issue earlier before your explanation. After trying out a different approach I noticed that the 1st administration is not being displayed in the table when the 1st administration was sent into second page of paginated table. I thought it was because of my work and I was making changes to my work but that bug is already existing at care.ohc.network. I fixed that too."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6345",
+      "time": 1695664133.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6345",
+      "text": "PRN prescriptions table set upto latest administration"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6323",
@@ -587,7 +601,16 @@
       "text": "Replaced Material UI components with Form component in DeathReport.tsx #4939"
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6345",
+      "title": "PRN prescriptions table set upto latest administration",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    }
+  ],
   "authored_issue_and_pr": [
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6254",

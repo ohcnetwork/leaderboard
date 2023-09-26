@@ -1,6 +1,27 @@
 {
-  "last_updated": 1695400591.0,
+  "last_updated": 1695652023.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1695652023.0,
+      "title": "coronasafe/care_fe#6343",
+      "link": "https://github.com/coronasafe/care_fe/pull/6343#pullrequestreview-1642297397",
+      "text": "Update type defintions of ICD11"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695616299.0,
+      "title": "coronasafe/care_fe#6324",
+      "link": "https://github.com/coronasafe/care_fe/pull/6324#pullrequestreview-1641296128",
+      "text": "Improve type-safety of generic `TData` in `reqeust` module"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4575",
+      "time": 1695615736.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/4575#issuecomment-1732883986",
+      "text": "@nihal467 About the Offline status, we won't be able to see that status because the feed will always try to reconnect, this is an intentional behavior."
+    },
     {
       "type": "pr_reviewed",
       "time": 1695400591.0,
@@ -23192,7 +23213,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 32,
+      "stale_for": 35,
       "labels": [
         "waiting-for-review"
       ]
@@ -23200,29 +23221,28 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 216,
+      "stale_for": 219,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 51,
+      "stale_for": 0,
       "labels": [
-        "changes required",
-        "work-in-progress",
+        "needs testing",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 287,
+      "stale_for": 290,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 44,
+      "stale_for": 47,
       "labels": [
         "changes required"
       ]
@@ -23230,25 +23250,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 644,
+      "stale_for": 647,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 650,
+      "stale_for": 653,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 651,
+      "stale_for": 654,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 846,
+      "stale_for": 849,
       "labels": []
     }
   ],

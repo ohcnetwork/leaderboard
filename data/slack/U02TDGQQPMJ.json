@@ -22022,5 +22022,154 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-09-25 00:00:00": [
+        {
+            "client_msg_id": "bcfaec8c-3f7d-4b02-8449-5d234df6d7d3",
+            "type": "message",
+            "text": "*EOD 25/09/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 <https://github.com/coronasafe/care/pull/1636|#1636>: Completed refactoring ICD11 Table + huddled with <@U02TB8XHZD1> on the same\n*What's next?*\n\u2022 Resolve conflicts on archive medicine administrations PR and add tests in backend\n\u2022 Follow up on uninstall axios PR\n\u2022 Split routes of AppRouter into multiple nested routers\n",
+            "user": "U02TDGQQPMJ",
+            "ts": "1695658676.040649",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "P/Qjn",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 25/09/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1636",
+                                            "text": "#1636",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Completed refactoring ICD11 Table + huddled with "
+                                        },
+                                        {
+                                            "type": "user",
+                                            "user_id": "U02TB8XHZD1"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " on the same"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Resolve conflicts on archive medicine administrations PR and add tests in backend"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Follow up on uninstall axios PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Split routes of AppRouter into multiple nested routers"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

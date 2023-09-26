@@ -1583,5 +1583,79 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-09-25 00:00:00": [
+        {
+            "client_msg_id": "5ed91d86-334a-45c1-9d8b-377b69df1c9b",
+            "type": "message",
+            "text": "EOD 23/09/2023 and 25/09/2023\n\u2022 Completed issue <https://github.com/coronasafe/care_fe/issues/6323|#6323> - To limit the medicine administration table time slots to latest administered date of any medicine\n\u2022 Found a bug and fixed it - 1st administration is not being displayed in the table when the 1st administration was sent into &gt;=2nd page of the paginated table as clearly described in PR <https://github.com/coronasafe/care_fe/pull/6345|#6345> ",
+            "user": "U052CV9HBR6",
+            "ts": "1695666063.162819",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "xXJfw",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 23/09/2023 and 25/09/2023\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Completed issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6323",
+                                            "text": "#6323",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " - To limit the medicine administration table time slots to latest administered date of any medicine"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Found a bug and fixed it - 1st administration is not being displayed in the table when the 1st administration was sent into >=2nd page of the paginated table as clearly described in PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6345",
+                                            "text": "#6345",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

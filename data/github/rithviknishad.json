@@ -1,6 +1,97 @@
 {
-  "last_updated": 1695477353.0,
+  "last_updated": 1695655837.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6340",
+      "time": 1695655837.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6340#issuecomment-1733959332",
+      "text": "@SeyiesilieChadi @aparnacoronasafe just to clarify, this is to support editing of \"prescription\" or \"administrations\"?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6343",
+      "time": 1695652032.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6343",
+      "text": "Update type defintions of ICD11"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6324",
+      "time": 1695651996.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6324",
+      "text": "Improve type-safety of generic `TData` in `reqeust` module"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6343",
+      "time": 1695648859.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6343",
+      "text": "Update type defintions of ICD11"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1636",
+      "time": 1695648777.0,
+      "link": "https://github.com/coronasafe/care/pull/1636",
+      "text": "Refactor ICD11 Table; Cleanup in-memory search"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6341",
+      "time": 1695647506.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6341",
+      "text": "Medicine Administrations to be grouped based on common frequency/interval instead of every hour"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6340",
+      "time": 1695641052.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6340#issuecomment-1733473312",
+      "text": "Yes. This was intentionally designed to not support edits. \r\n\r\nTo change the dosage/frequency or any other attributes, the user will have to discontinue the ongoing prescription, provide a reason for discontinuation (whether it was an accidental error in the entry or an intentional change), and then create a new one."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695627877.0,
+      "title": "coronasafe/care_fe#6338",
+      "link": "https://github.com/coronasafe/care_fe/pull/6338#pullrequestreview-1641520485",
+      "text": "Assets date picker"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695627876.0,
+      "title": "coronasafe/care_fe#6338",
+      "link": "https://github.com/coronasafe/care_fe/pull/6338#pullrequestreview-1641520485",
+      "text": "Assets date picker"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1618",
+      "time": 1695622026.0,
+      "link": "https://github.com/coronasafe/care/issues/1618#issuecomment-1732978855",
+      "text": "the field name can be taken for renaming along with the migrations of events module"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6335",
+      "time": 1695615983.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6335",
+      "text": "`useQuery`/`request`: add type inference support for `body` similar to response (`TRes`)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6221",
+      "time": 1695615637.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6221#issuecomment-1732882829",
+      "text": "Closed in favour of #6296 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695611146.0,
+      "title": "coronasafe/care_fe#6333",
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#pullrequestreview-1641248965",
+      "text": "Refactor: replaced Dispatch to useQuery/Request of src/Components/Auth/log\u2026"
+    },
     {
       "type": "pr_reviewed",
       "time": 1695477353.0,
@@ -23369,23 +23460,23 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6324",
-      "title": "Improve type-safety of generic `TData` in `reqeust` module",
-      "stale_for": 1,
+      "link": "https://github.com/coronasafe/care/pull/1636",
+      "title": "Refactor ICD11 Table; Cleanup in-memory search",
+      "stale_for": 0,
       "labels": [
-        "need Review"
+        "waiting-for-review"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "merge conflict"
       ]
@@ -23393,7 +23484,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": []
     }
   ],

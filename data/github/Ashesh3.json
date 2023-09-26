@@ -1,6 +1,55 @@
 {
-  "last_updated": 1695405551.0,
+  "last_updated": 1695648199.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6342",
+      "time": 1695648199.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6342",
+      "text": "Display patient age in mm dd when younger than 1y"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6340",
+      "time": 1695640316.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6340#issuecomment-1733454765",
+      "text": "@rithviknishad I think we discussed this being the expected behavior, could you comment on it?\r\n\r\ncc: @gigincg "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6339",
+      "time": 1695639227.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6339#issuecomment-1733428862",
+      "text": "@Deepjyoti14 EDD: 2nd October (next release)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695631049.0,
+      "title": "coronasafe/care#1635",
+      "link": "https://github.com/coronasafe/care/pull/1635#pullrequestreview-1641623783",
+      "text": "Added warranty filter to Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695631039.0,
+      "title": "coronasafe/care#1635",
+      "link": "https://github.com/coronasafe/care/pull/1635#pullrequestreview-1641623783",
+      "text": "Added warranty filter to Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695631039.0,
+      "title": "coronasafe/care#1635",
+      "link": "https://github.com/coronasafe/care/pull/1635#pullrequestreview-1641623783",
+      "text": "Added warranty filter to Assets"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6337",
+      "time": 1695623632.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6337",
+      "text": "Enable clearing 'referred to' in discharge modal"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6334",
@@ -12786,21 +12835,38 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6342",
+      "title": "Display patient age in mm dd when younger than 1y",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6337",
+      "title": "Enable clearing 'referred to' in discharge modal",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1625",
       "title": "Added `AssetPublicQRViewSet` to handle QR code based asset retrieval",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1580",
       "title": "Implement Tracking and Storing of Plausible Statistics",
-      "stale_for": 12,
+      "stale_for": 15,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 171,
+      "stale_for": 174,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -12809,13 +12875,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 184,
+      "stale_for": 187,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 24,
+      "stale_for": 27,
       "labels": [
         "waiting-for-review"
       ]

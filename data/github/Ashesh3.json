@@ -1,6 +1,111 @@
 {
-  "last_updated": 1695648199.0,
+  "last_updated": 1695758795.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6354",
+      "time": 1695758795.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6354",
+      "text": "Remove default selection of patient category"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1580",
+      "time": 1695758317.0,
+      "link": "https://github.com/coronasafe/care/pull/1580",
+      "text": "Implement Tracking and Storing of Plausible Statistics"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1580",
+      "time": 1695758317.0,
+      "link": "https://github.com/coronasafe/care/pull/1580",
+      "text": "Implement Tracking and Storing of Plausible Statistics",
+      "collaborated_with": [
+        "vigneshhari",
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1625",
+      "time": 1695758209.0,
+      "link": "https://github.com/coronasafe/care/pull/1625",
+      "text": "Added `AssetPublicQRViewSet` to handle QR code based asset retrieval"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1625",
+      "time": 1695758209.0,
+      "link": "https://github.com/coronasafe/care/pull/1625",
+      "text": "Added `AssetPublicQRViewSet` to handle QR code based asset retrieval",
+      "collaborated_with": [
+        "sainak"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695733695.0,
+      "title": "coronasafe/care#1643",
+      "link": "https://github.com/coronasafe/care/pull/1643#pullrequestreview-1644224409",
+      "text": "Prescription: fixes `last_administered_on`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695733208.0,
+      "title": "coronasafe/care#1635",
+      "link": "https://github.com/coronasafe/care/pull/1635#pullrequestreview-1644206964",
+      "text": "Added warranty filter to Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695732518.0,
+      "title": "coronasafe/care#1635",
+      "link": "https://github.com/coronasafe/care/pull/1635#pullrequestreview-1644182755",
+      "text": "Added warranty filter to Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695729539.0,
+      "title": "coronasafe/care#1642",
+      "link": "https://github.com/coronasafe/care/pull/1642#pullrequestreview-1644088208",
+      "text": "Implement Middleware Override in AssetLocation"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6337",
+      "time": 1695722070.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6337",
+      "text": "Enable clearing 'referred to' in discharge modal"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6342",
+      "time": 1695721788.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6342",
+      "text": "Display patient age in mm dd when younger than 1y"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1642",
+      "time": 1695715032.0,
+      "link": "https://github.com/coronasafe/care/pull/1642",
+      "text": "Implement Middleware Override in AssetLocation"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6346",
+      "time": 1695707816.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6346#issuecomment-1734876399",
+      "text": "EDD: 2nd October, 2023"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695703784.0,
+      "title": "coronasafe/care#1636",
+      "link": "https://github.com/coronasafe/care/pull/1636#pullrequestreview-1643336305",
+      "text": "Refactor ICD11 Table; Cleanup in-memory search"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6342",
@@ -12835,8 +12940,8 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6342",
-      "title": "Display patient age in mm dd when younger than 1y",
+      "link": "https://github.com/coronasafe/care_fe/pull/6354",
+      "title": "Remove default selection of patient category",
       "stale_for": 0,
       "labels": [
         "needs testing",
@@ -12844,29 +12949,15 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6337",
-      "title": "Enable clearing 'referred to' in discharge modal",
+      "link": "https://github.com/coronasafe/care/pull/1642",
+      "title": "Implement Middleware Override in AssetLocation",
       "stale_for": 0,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1625",
-      "title": "Added `AssetPublicQRViewSet` to handle QR code based asset retrieval",
-      "stale_for": 4,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1580",
-      "title": "Implement Tracking and Storing of Plausible Statistics",
-      "stale_for": 15,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 174,
+      "stale_for": 175,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -12875,13 +12966,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 187,
+      "stale_for": 188,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 27,
+      "stale_for": 28,
       "labels": [
         "waiting-for-review"
       ]

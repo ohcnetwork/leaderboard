@@ -1,6 +1,13 @@
 {
-  "last_updated": 1695535865.0,
+  "last_updated": 1695738118.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6333",
+      "time": 1695738118.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#issuecomment-1735647526",
+      "text": "Hey @nihal467,\r\nI fixed the issues and ran the cypress tests locally it has passed can you test again and check once.\r\nThank you\r\n\r\nCC: @rithviknishad "
+    },
     {
       "type": "pr_reviewed",
       "time": 1695535865.0,
@@ -49,7 +56,9 @@
       "link": "https://github.com/coronasafe/care_fe/pull/6333",
       "title": "Refactor: replaced Dispatch to useQuery/Request of src/Components/Auth/log\u2026",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing"
+      ]
     }
   ],
   "authored_issue_and_pr": []

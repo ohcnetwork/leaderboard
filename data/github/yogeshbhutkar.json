@@ -1,6 +1,13 @@
 {
-  "last_updated": 1695040591.0,
+  "last_updated": 1695731212.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6296",
+      "time": 1695731212.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6296#issuecomment-1735444065",
+      "text": "Updated the preview component, TBD in EOD call 26/09/23\r\n\r\nMoved the buttons on top of the image, the buttons are rather fixed at a particular position now.\r\n![image](https://github.com/coronasafe/care_fe/assets/73941119/1b9ab87e-644e-450f-a637-b5ede1e52e1d)\r\n\r\nAnother proposed update with the stock backdrop effect, and title. Migrated all the icons to use the CareUI's Icons.\r\n![image](https://github.com/coronasafe/care_fe/assets/73941119/1fd46fb1-0d57-44a3-b461-7a651a795dd2)\r\n\r\nProbably with a bg to the title's div...\r\n![image](https://github.com/coronasafe/care_fe/assets/73941119/354844c4-328f-4dab-85c9-91afa574e596)\r\n\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6298",
@@ -343,15 +350,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6296",
       "title": "Added Preview Page UI, migrated to SlideOver Component & icons updated.",
-      "stale_for": 1,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6221",
-      "title": "Added UI enhancements to the preview page",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "changes required"
+        "changes required",
+        "cypress passed"
       ]
     }
   ],

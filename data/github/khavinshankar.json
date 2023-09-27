@@ -1,6 +1,97 @@
 {
-  "last_updated": 1695652023.0,
+  "last_updated": 1695734561.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6134",
+      "time": 1695734561.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6134",
+      "text": "Shifting request- enhancement"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695734550.0,
+      "title": "coronasafe/care_fe#6318",
+      "link": "https://github.com/coronasafe/care_fe/pull/6318#pullrequestreview-1644258470",
+      "text": "Added logic for showing \"Track Shifting\" button when patient has active shifting"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6141",
+      "time": 1695722792.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6141",
+      "text": "Capture time of admission"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6141",
+      "time": 1695722791.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6141#issuecomment-1735231168",
+      "text": "This issue is tracked in different pr https://github.com/coronasafe/care_fe/issues/6280\r\n\r\ncc: @nihal467 @rithviknishad "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695722402.0,
+      "title": "coronasafe/care_fe#6344",
+      "link": "https://github.com/coronasafe/care_fe/pull/6344#pullrequestreview-1643874931",
+      "text": "Replaced useDispatch with useQuery and request."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6338",
+      "time": 1695722231.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6338#issuecomment-1735216624",
+      "text": "@rithviknishad can u re-review this once"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6301",
+      "time": 1695722071.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6301",
+      "text": "Bug: Unable to erase \"referred to\" hospital"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695722037.0,
+      "title": "coronasafe/care_fe#6337",
+      "link": "https://github.com/coronasafe/care_fe/pull/6337#pullrequestreview-1643863282",
+      "text": "Enable clearing 'referred to' in discharge modal"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6339",
+      "time": 1695721789.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6339",
+      "text": "Display age of patients below 1 year"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695721778.0,
+      "title": "coronasafe/care_fe#6342",
+      "link": "https://github.com/coronasafe/care_fe/pull/6342#pullrequestreview-1643855099",
+      "text": "Display patient age in mm dd when younger than 1y"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6348",
+      "time": 1695721642.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6348",
+      "text": "add a new test to create the asset transaction history & Service History | Verify its reflection |"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6257",
+      "time": 1695721641.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6257",
+      "text": "Asset Module : Remaining Cypress Test"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695721629.0,
+      "title": "coronasafe/care_fe#6349",
+      "link": "https://github.com/coronasafe/care_fe/pull/6349#pullrequestreview-1643848127",
+      "text": "Create cypress test for asset transaction and service history's"
+    },
     {
       "type": "pr_reviewed",
       "time": 1695652023.0,
@@ -23213,7 +23304,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 35,
+      "stale_for": 36,
       "labels": [
         "waiting-for-review"
       ]
@@ -23221,13 +23312,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 219,
+      "stale_for": 220,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -23236,13 +23327,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 290,
+      "stale_for": 291,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 47,
+      "stale_for": 48,
       "labels": [
         "changes required"
       ]
@@ -23250,25 +23341,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 647,
+      "stale_for": 648,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 653,
+      "stale_for": 654,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 654,
+      "stale_for": 655,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 849,
+      "stale_for": 850,
       "labels": []
     }
   ],

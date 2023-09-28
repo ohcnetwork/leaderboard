@@ -1,6 +1,55 @@
 {
-  "last_updated": 1695758104.0,
+  "last_updated": 1695834621.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6360",
+      "time": 1695834621.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6360",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: ExternalResult (`src/Components/ExternalResult/**`)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695829619.0,
+      "title": "coronasafe/care_fe#6003",
+      "link": "https://github.com/coronasafe/care_fe/pull/6003#pullrequestreview-1647044214",
+      "text": "cleanup fireRequests and remove axios"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695811293.0,
+      "title": "coronasafe/care_fe#6344",
+      "link": "https://github.com/coronasafe/care_fe/pull/6344#pullrequestreview-1646162305",
+      "text": "Replaced useDispatch with useQuery and request."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695811285.0,
+      "title": "coronasafe/care_fe#6333",
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#pullrequestreview-1646159349",
+      "text": "Refactor: replaced Dispatch to useQuery/Request of src/Components/Auth/log\u2026"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695811186.0,
+      "title": "coronasafe/care_fe#6333",
+      "link": "https://github.com/coronasafe/care_fe/pull/6333#pullrequestreview-1646159349",
+      "text": "Refactor: replaced Dispatch to useQuery/Request of src/Components/Auth/log\u2026"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6358",
+      "time": 1695810545.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6358",
+      "text": "`request`: adds type check for `TBody`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6358",
+      "time": 1695809602.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6358",
+      "text": "`request`: adds type check for `TBody`"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1643",
@@ -23571,7 +23620,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1636",
       "title": "Refactor ICD11 Table; Cleanup in-memory search",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -23579,25 +23628,34 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 6,
-      "labels": []
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
-        "merge conflict"
+        "needs testing",
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 7,
-      "labels": []
+      "stale_for": 0,
+      "labels": [
+        "stale"
+      ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6335",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6358"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6325",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6327"
@@ -23697,10 +23755,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5934",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5932",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5933"
     }
   ]
 }

@@ -1,6 +1,48 @@
 {
-  "last_updated": 1695834621.0,
+  "last_updated": 1695908310.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6365",
+      "time": 1695908310.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6365",
+      "text": "Prescription: show prescribed on, by, and discontinued date in detail card"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6363",
+      "time": 1695901499.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6363",
+      "text": "Split routes of App Router"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695893541.0,
+      "title": "coronasafe/care_fe#6345",
+      "link": "https://github.com/coronasafe/care_fe/pull/6345#pullrequestreview-1648320620",
+      "text": "PRN prescriptions table set upto latest administration"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6345",
+      "time": 1695892521.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6345#issuecomment-1738772821",
+      "text": "That can be a separate issue"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1644",
+      "time": 1695890151.0,
+      "link": "https://github.com/coronasafe/care/pull/1644",
+      "text": "Adds meta table for hub and spokes of a state"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6361",
+      "time": 1695868589.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6361",
+      "text": "Whitelabel `jwt_token_refresh_interval`"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6360",
@@ -23618,9 +23660,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6365",
+      "title": "Prescription: show prescribed on, by, and discontinued date in detail card",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6363",
+      "title": "Split routes of App Router",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1636",
       "title": "Refactor ICD11 Table; Cleanup in-memory search",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -23636,7 +23693,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -23645,7 +23702,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "stale"
       ]

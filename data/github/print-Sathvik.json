@@ -1,6 +1,13 @@
 {
-  "last_updated": 1695736770.0,
+  "last_updated": 1695892422.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6345",
+      "time": 1695892422.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6345#issuecomment-1738769865",
+      "text": "> At 8:50 AM if I administer a medicine and set the administration time as 4:30 AM then currently we can see columns upto 9-10 slot as latest_administered_on is 8:50 AM.\r\n\r\n@rithviknishad I fixed it as you suggested by modifying in useRangePagination hook but \"last modified\" part on the top of the table is shown as 4:30 AM as per the above example. But it should be shown as 8:50AM. There is another attribute `modified_date` in the response of the endpoint `/api/v1/consultation/{consultation_external_id}/prescriptions/` which I think should actually  contain the last time the prescription is updated which is 8:50 AM as per above example but the `modified_date` contains the same value as `created_date`. I think this should also be fixed on the backend only.\r\n\r\nPreviously before the above fix on backend we used `last_administered_on` for this part."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6345",
@@ -628,7 +635,8 @@
       "title": "PRN prescriptions table set upto latest administration",
       "stale_for": 0,
       "labels": [
-        "changes required"
+        "needs testing",
+        "made_changes"
       ]
     }
   ],

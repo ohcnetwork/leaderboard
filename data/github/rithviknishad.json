@@ -1,6 +1,69 @@
 {
-  "last_updated": 1695908310.0,
+  "last_updated": 1696004806.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6373",
+      "time": 1696004806.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6373",
+      "text": "remove or replace echarts currently using 2.8Mb"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6372",
+      "time": 1696004240.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6372",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: Consultations (`src/Components/Facility/Consultations/**`)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6370",
+      "time": 1695987574.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6370#issuecomment-1740751784",
+      "text": "@kshitijv256 when making changes, feel free to split the entire refactor into smaller PRs if that would help.\r\n\r\nIt would be easier to make the changes, QA testing, and review."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695987401.0,
+      "title": "coronasafe/care_fe#6370",
+      "link": "https://github.com/coronasafe/care_fe/pull/6370#pullrequestreview-1650605375",
+      "text": "changed all dispatch requests with useQuery and request in asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695987401.0,
+      "title": "coronasafe/care_fe#6370",
+      "link": "https://github.com/coronasafe/care_fe/pull/6370#pullrequestreview-1650605375",
+      "text": "changed all dispatch requests with useQuery and request in asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695987262.0,
+      "title": "coronasafe/care_fe#6370",
+      "link": "https://github.com/coronasafe/care_fe/pull/6370#pullrequestreview-1650582171",
+      "text": "changed all dispatch requests with useQuery and request in asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1695987261.0,
+      "title": "coronasafe/care_fe#6370",
+      "link": "https://github.com/coronasafe/care_fe/pull/6370#pullrequestreview-1650582171",
+      "text": "changed all dispatch requests with useQuery and request in asset module"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6369",
+      "time": 1695976107.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6369",
+      "text": "\ud83d\udc8a Adds support for editing prescriptions +  Adds `useSlug` hook"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6340",
+      "time": 1695973546.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6340#issuecomment-1740457221",
+      "text": "@aparnacoronasafe @SeyiesilieChadi we have decided to add an edit button, that behind the scenes will discontinue and create a new prescription with the edited attributes.\r\n\r\n@aparnacoronasafe just wanted to confirm, whether should we restrict the editing of certain fields (in both normal and PRN cases)\r\n\r\n- Medicine will not be editable\r\n- Normal prescription CANNOT be converted to PRN prescription and vice versa via this method.\r\n\r\nShould any other fields be restricted from edit?\r\n\r\n<img width=\"1822\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/b3a4b9be-ba5e-4961-866c-e2fa69017add\">\r\n\r\n<img width=\"1822\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/cb1cb73d-aff6-4f29-88fb-6f565ff28b6f\">\r\n\r\n\r\n"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6365",
@@ -23660,15 +23723,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6369",
+      "title": "\ud83d\udc8a Adds support for editing prescriptions +  Adds `useSlug` hook",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6365",
       "title": "Prescription: show prescribed on, by, and discontinued date in detail card",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6363",
       "title": "Split routes of App Router",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -23677,7 +23748,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1636",
       "title": "Refactor ICD11 Table; Cleanup in-memory search",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "waiting-for-review"
       ]
@@ -23685,7 +23756,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -23693,7 +23764,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -23702,7 +23773,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "stale"
       ]

@@ -87115,5 +87115,420 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-09-30 00:00:00": []
+    "2023-09-30 00:00:00": [
+        {
+            "client_msg_id": "5fdd98c7-e5cb-4fc5-9961-8e70bf4f5a88",
+            "type": "message",
+            "text": "EOD 30/09/2023\n\nHow did the day go?\n\u2022 Replaced all `date-fns` functions from `DateInputV2` with `dayjs` utils for <https://github.com/coronasafe/care_fe/issues/6305|#6305>\n\u2022 Started understanding rescript\nWhat's next?\n\u2022 Replace the functions in `DateFns.res` with `dayjs` utility functions",
+            "user": "U051Q1RP1MG",
+            "ts": "1696093933.166579",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1yGfe",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/09/2023\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Replaced all "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "date-fns",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " functions from "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "DateInputV2",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "dayjs ",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "utils for "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6305",
+                                            "text": "#6305",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Started understanding rescript"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Replace the functions in "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "DateFns.res",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "dayjs ",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "utility functions"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1695135829,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6305",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6305 Remove date-fns to reduce bundle size",
+                    "text": "*Is your feature request related to a problem? Please describe.*\n\n\u2022 This issue is related to <https://github.com/coronasafe/care_fe/issues/6004|#6004>\n\u2022 removing date-fns package saves 100kb\n\n*Describe the solution you'd like*  \nRemove date-fns and replace it with custom utility functions",
+                    "title": "#6305 Remove date-fns to reduce bundle size",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6305",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/thedevildude|@thedevildude>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        },
+        {
+            "client_msg_id": "7a49ad6d-d3a4-484a-9859-533433662566",
+            "type": "message",
+            "text": "*EOD 30/09/2023*\n\n*How did it go?*\n\u2022 Worked on <https://github.com/coronasafe/care_fe/issues/6376|#6376> \n*What's next?*\n\u2022 Work on <https://github.com/coronasafe/care_fe/issues/6376|#6376> and create PR\n",
+            "user": "U051PNZ0W9Z",
+            "ts": "1696090372.567479",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "8dwhJ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/09/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did it go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6376",
+                                            "text": "#6376",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6376",
+                                            "text": "#6376",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and create PR"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "76f0f3cf-1fcf-49f7-85a2-b6bdfb72b1a5",
+            "type": "message",
+            "text": "*EOD 29/09/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 <https://github.com/coronasafe/care_fe/pull/6369|#6369>: Adds support for editing prescriptions +  Adds `useSlug` hook",
+            "user": "U02TDGQQPMJ",
+            "ts": "1696054457.465209",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ccuKw",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 29/09/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6369",
+                                            "text": "#6369",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Adds support for editing prescriptions +  Adds "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "useSlug",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " hook"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/25143503/271515071-d36c2e33-3406-44d0-b5fc-a6c4ef07ef69.png",
+                    "image_width": 3188,
+                    "image_height": 1846,
+                    "image_bytes": 1236045,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1695976106,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6369",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "3188x1846px image",
+                    "text": "*WHAT*\n*:robot_face: Generated by Copilot at <https://github.com/coronasafe/care_fe/commit/3208faceb1e2323edd8f4779e10f87c1bd883fb3|3208fac>*\n\nThis pull request adds and modifies several files to implement the feature of editing prescriptions from the `PrescriptionAdministrationsTable` component. It adds toast notifications for global form errors, refactors the validation logic for the prescription form, adds type definitions for the prescription API routes, and adds custom hooks for extracting slugs from the URL. It also fixes a formatting issue in the localization file and adds a `value` prop to the `NumericWithUnitsFormField` component.\n\n*Proposed Changes*\n\n\u2022 Fixes <https://github.com/coronasafe/care_fe/issues/6340|#6340>\n\u2022 Adds hook `useSlug` to retrieve path params from the route to remove the pain of passing it to deeply nested components.\n\u2022 Fixed bug: `NumericWithUnitsFormField` not showing initial value\n\n<https://user-images.githubusercontent.com/25143503/271515071-d36c2e33-3406-44d0-b5fc-a6c4ef07ef69.png|image> <https://user-images.githubusercontent.com/25143503/271515133-39d63e06-ee52-48e1-a5a0-4fb2cc21c806.png|image> <https://user-images.githubusercontent.com/25143503/271515184-19bc733c-96ea-45cd-a4d4-fc51e293bf0e.png|image> <https://user-images.githubusercontent.com/25143503/271515256-ed8ca4fb-1f7f-4600-a826-98d599e578ea.png|image>\n\n@coronasafe/care-fe-code-reviewers @coronasafe/code-reviewers\n\n*Merge Checklist*\n\n\u2610 Add specs that demonstrate bug / test a new feature.\n\u2610 Update <https://docs.coronasafe.network/coronasafe-care-documentation/architecture/architecture-and-layering-of-care|product documentation>.\n\u2610 Ensure that UI text is kept in I18n files.\n\u2610 Prep screenshot or demo video for changelog entry, and attach it to issue.\n\u2610 Request for Peer Reviews\n\u2610 Completion of QA\n\n*HOW*\n*:robot_face: Generated by Copilot at <https://github.com/coronasafe/care_fe/commit/3208faceb1e2323edd8f4779e10f87c1bd883fb3|3208fac>*\n\n\u2022 Add two custom hooks `useSlug` and `useSlugs` to extract slugs from the current path based on prefixes (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-c310c89b769df358f58f54862c57d7219fcf4b05062a82e2cd54da588d4f28b1R1-R45|link>)\n\u2022 Add a global error message property `$all` to the `FormErrors` type and display it using toast notifications in the `Form` component (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-69ec69794429da354604f57d8d5be26c6b5fc2de640f2d670acda3543cec0bbdL4-R6|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-1c65fcfe59a39c2fa19c4b333f9dd48e6a8d3c933e82585253b941f8bec98d3eR10|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-1c65fcfe59a39c2fa19c4b333f9dd48e6a8d3c933e82585253b941f8bec98d3eR55-R58|link>)\n\u2022 Add a `value` prop to the `NumericWithUnitsFormField` component to pass the numeric value of the field (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-68c921c72ca740919481f0b7bb832b6fdb181affcaea8c0dbf7972522a091913R37|link>)\n\u2022 Extract the validation logic for creating a prescription to a separate function `PrescriptionFormValidator` and import it in the `CreatePrescriptionForm` component (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-a1d1441d26a2799a1c7d13f82517edb80926e28c181dc5d5012646a67cccaef0R14|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-a1d1441d26a2799a1c7d13f82517edb80926e28c181dc5d5012646a67cccaef0L43-R44|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-100d45a25307e4e7a06c8dd98416bac6ec661ff791c503418dfd6dab5f7e4d0dR1-R49|link>)\n\u2022 Add a new component `EditPrescriptionForm` for editing an existing prescription, which takes an initial prescription object and a callback function as props, and renders a form with the same fields as the `CreatePrescriptionForm` component, but with the initial values populated (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-f17acfb34396783a40ddefa08f87e28f01fac5ce711b1c76594a6adf38eaade8R1-R158|link>)\n\u2022 Add a validation function `EditPrescriptionFormValidator` for editing a prescription, which takes an old and a new prescription object as arguments, and calls the `PrescriptionFormValidator` function on the new object, and also checks if the objects are the same, and if so, adds a global error message (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-100d45a25307e4e7a06c8dd98416bac6ec661ff791c503418dfd6dab5f7e4d0dR1-R49|link>)\n\u2022 Add an `Edit` button to the `PrescriptionRow` component in the `PrescriptionAdministrationsTable` component, which shows a modal dialog with the `EditPrescriptionForm` component when clicked (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-72e4733fee5da36cd347a741a637541d37363b7ecd2280dcc5ce01d6aa173150R23|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-72e4733fee5da36cd347a741a637541d37363b7ecd2280dcc5ce01d6aa173150R303|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-72e4733fee5da36cd347a741a637541d37363b7ecd2280dcc5ce01d6aa173150R392-R406|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-72e4733fee5da36cd347a741a637541d37363b7ecd2280dcc5ce01d6aa173150R416-R443|link>)\n\u2022 Add the `id` property as required to the `BasePrescription` type (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-b6d89e365687bdfdf20171e060aa22bd7141ac636df57d9b7b3c0ab46b180448L4-R4|link>)\n\u2022 Add the `TBody` and `TRes` properties to the `createPrescription` and `discontinuePrescription` routes in the `api.tsx` file, which specify the types of the request and response bodies for the API routes (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-21639e8b3b95469edd34a3d2641a85e6eb02393c442301e11d91665f10f1cf7cR4|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-21639e8b3b95469edd34a3d2641a85e6eb02393c442301e11d91665f10f1cf7cR976-R977|link>, <https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-21639e8b3b95469edd34a3d2641a85e6eb02393c442301e11d91665f10f1cf7cR1003-R1004|link>)\n\u2022 Add two new entries to the `Medicine.json` file for the caution note and the reason for edit field in the `EditPrescriptionForm` component (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-7e3945ff400caa2c6199744b03e75ab24909eb06ff93f3a0b18b239f491b1bb0L36-R38|link>)\n\u2022 Remove an unused import statement for the `FieldError` type in the `CreatePrescriptionForm.tsx` file (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-a1d1441d26a2799a1c7d13f82517edb80926e28c181dc5d5012646a67cccaef0L1-R1|link>)\n\u2022 Remove a trailing comma from the last entry in the `Medicine.json` file (<https://github.com/coronasafe/care_fe/pull/6369/files?diff=unified&w=0#diff-7e3945ff400caa2c6199744b03e75ab24909eb06ff93f3a0b18b239f491b1bb0L50-L49|link>)",
+                    "title": "#6369 :pill: Adds support for editing prescriptions +  Adds `useSlug` hook",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6369",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "needs testing",
+                            "title": "Labels",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2023-10-01 00:00:00": []
 }

@@ -1782,5 +1782,172 @@
                 }
             ]
         }
+    ],
+    "2023-09-30 00:00:00": [
+        {
+            "client_msg_id": "5fdd98c7-e5cb-4fc5-9961-8e70bf4f5a88",
+            "type": "message",
+            "text": "EOD 30/09/2023\n\nHow did the day go?\n\u2022 Replaced all `date-fns` functions from `DateInputV2` with `dayjs` utils for <https://github.com/coronasafe/care_fe/issues/6305|#6305>\n\u2022 Started understanding rescript\nWhat's next?\n\u2022 Replace the functions in `DateFns.res` with `dayjs` utility functions",
+            "user": "U051Q1RP1MG",
+            "ts": "1696093933.166579",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "1yGfe",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/09/2023\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Replaced all "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "date-fns",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " functions from "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "DateInputV2",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "dayjs ",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "utils for "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6305",
+                                            "text": "#6305",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Started understanding rescript"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Replace the functions in "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "DateFns.res",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " with "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "dayjs ",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "utility functions"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1695135829,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6305",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6305 Remove date-fns to reduce bundle size",
+                    "text": "*Is your feature request related to a problem? Please describe.*\n\n\u2022 This issue is related to <https://github.com/coronasafe/care_fe/issues/6004|#6004>\n\u2022 removing date-fns package saves 100kb\n\n*Describe the solution you'd like*  \nRemove date-fns and replace it with custom utility functions",
+                    "title": "#6305 Remove date-fns to reduce bundle size",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6305",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/thedevildude|@thedevildude>",
+                            "title": "Assignees",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

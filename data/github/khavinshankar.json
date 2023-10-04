@@ -1,6 +1,76 @@
 {
-  "last_updated": 1695832361.0,
+  "last_updated": 1696347156.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1696347156.0,
+      "title": "coronasafe/care_fe#6374",
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#pullrequestreview-1655505652",
+      "text": "Replaced dispatch with useQuery and request in Asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696347156.0,
+      "title": "coronasafe/care_fe#6374",
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#pullrequestreview-1655505652",
+      "text": "Replaced dispatch with useQuery and request in Asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696344761.0,
+      "title": "coronasafe/care_fe#6388",
+      "link": "https://github.com/coronasafe/care_fe/pull/6388#pullrequestreview-1655430519",
+      "text": "Refactor Asset Model Import Formatting"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696341139.0,
+      "title": "coronasafe/care#1630",
+      "link": "https://github.com/coronasafe/care/pull/1630#pullrequestreview-1655273073",
+      "text": "Support for archiving medicine administrations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696336780.0,
+      "title": "coronasafe/care#1654",
+      "link": "https://github.com/coronasafe/care/pull/1654#pullrequestreview-1655107520",
+      "text": "Refactor Asset Model Export Formatting"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/teleicu_middleware#103",
+      "time": 1696321664.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/103",
+      "text": "lock camera movements when ocr is taking an image"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696315519.0,
+      "title": "coronasafe/care_fe#6386",
+      "link": "https://github.com/coronasafe/care_fe/pull/6386#pullrequestreview-1654455035",
+      "text": "Revert \"Prescriptions: Shrink discontinued prescriptions + Flip MAR t\u2026"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/teleicu_middleware#102",
+      "time": 1696313216.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/issues/102",
+      "text": "Lock the camera move apis while clicking ocr image"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696309422.0,
+      "title": "coronasafe/care_fe#5347",
+      "link": "https://github.com/coronasafe/care_fe/pull/5347#pullrequestreview-1654357469",
+      "text": "fix: add action and recommend discharge data on patient consultation page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696301455.0,
+      "title": "coronasafe/care_fe#6384",
+      "link": "https://github.com/coronasafe/care_fe/pull/6384#pullrequestreview-1654191853",
+      "text": "Fix Flaky Cypress test in Facility Module "
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#6347",
@@ -23344,9 +23414,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/103",
+      "title": "lock camera movements when ocr is taking an image",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 37,
+      "stale_for": 5,
       "labels": [
         "waiting-for-review"
       ]
@@ -23354,13 +23430,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 221,
+      "stale_for": 227,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 2,
+      "stale_for": 8,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -23369,13 +23445,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 292,
+      "stale_for": 298,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 49,
+      "stale_for": 55,
       "labels": [
         "changes required"
       ]
@@ -23383,25 +23459,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 649,
+      "stale_for": 655,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 655,
+      "stale_for": 661,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 656,
+      "stale_for": 662,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 851,
+      "stale_for": 857,
       "labels": []
     }
   ],

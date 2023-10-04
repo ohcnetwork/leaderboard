@@ -1,6 +1,20 @@
 {
-  "last_updated": 1696174707.0,
+  "last_updated": 1696352529.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1696352529.0,
+      "title": "coronasafe/care_fe#6374",
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#pullrequestreview-1655715098",
+      "text": "Replaced dispatch with useQuery and request in Asset module"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6374",
+      "time": 1696346448.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#issuecomment-1745201942",
+      "text": "Fixed most of cypress tests for asset module, 1 remaining\r\nalso fixed the issue we discussed in call using useEffect hook, please check @nihal467 @khavinshankar "
+    },
     {
       "type": "pr_reviewed",
       "time": 1696174707.0,
@@ -436,7 +450,11 @@
       "link": "https://github.com/coronasafe/care_fe/pull/6374",
       "title": "Replaced dispatch with useQuery and request in Asset module",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "need Review",
+        "changes required",
+        "cypress failed"
+      ]
     }
   ],
   "authored_issue_and_pr": []

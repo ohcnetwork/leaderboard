@@ -1,6 +1,107 @@
 {
-  "last_updated": 1696176680.0,
+  "last_updated": 1696342179.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6341",
+      "time": 1696342179.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6341#issuecomment-1745059629",
+      "text": "As per discussions, we need to bin every 4 hours to 1 column"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6389",
+      "time": 1696340460.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6389",
+      "text": "Prescriptions: freeze columns and shrink discontinued"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696339018.0,
+      "title": "coronasafe/care#1654",
+      "link": "https://github.com/coronasafe/care/pull/1654#pullrequestreview-1655192511",
+      "text": "Refactor Asset Model Export Formatting"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696338979.0,
+      "title": "coronasafe/teleicu_middleware#103",
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/103#pullrequestreview-1655191154",
+      "text": "lock camera movements when ocr is taking an image"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6323",
+      "time": 1696338877.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6323",
+      "text": "Bug: Medicine Administrations table starts with an additional hour offset to the future"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6387",
+      "time": 1696320993.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6387",
+      "text": "Production Release; Oct Week 1; HotFix",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6177",
+      "time": 1696317503.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6177#issuecomment-1744346268",
+      "text": "Decided to only freeze the columns"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6386",
+      "time": 1696315543.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6386",
+      "text": "Revert \"Prescriptions: Shrink discontinued prescriptions + Flip MAR t\u2026"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6386",
+      "time": 1696314641.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6386",
+      "text": "Revert \"Prescriptions: Shrink discontinued prescriptions + Flip MAR t\u2026"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5293",
+      "time": 1696312042.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5293#issuecomment-1744251600",
+      "text": "We've decided to use the ICD API docker; FE would hit the ICD API for searching; and use the `theCode` attribute to perform a lookup on to care's ICD entries upon form submission."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696309442.0,
+      "title": "coronasafe/care#1260",
+      "link": "https://github.com/coronasafe/care/pull/1260#pullrequestreview-1654357660",
+      "text": "fix: added recommend_discharge as action"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696303031.0,
+      "title": "coronasafe/care_fe#6344",
+      "link": "https://github.com/coronasafe/care_fe/pull/6344#pullrequestreview-1654242882",
+      "text": "Replaced useDispatch with useQuery and request."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696303030.0,
+      "title": "coronasafe/care_fe#6344",
+      "link": "https://github.com/coronasafe/care_fe/pull/6344#pullrequestreview-1654242882",
+      "text": "Replaced useDispatch with useQuery and request."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6374",
+      "time": 1696302722.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#issuecomment-1744096007",
+      "text": "@kshitijv256 check the cypress tests failing"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6380",
@@ -23848,32 +23949,44 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6369",
-      "title": "\ud83d\udc8a Adds support for editing prescriptions +  Adds `useSlug` hook",
-      "stale_for": 2,
+      "link": "https://github.com/coronasafe/care_fe/pull/6389",
+      "title": "Prescriptions: freeze columns and shrink discontinued",
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6369",
+      "title": "\ud83d\udc8a Adds support for editing prescriptions +  Adds `useSlug` hook",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6365",
       "title": "Prescription: show prescribed on, by, and discontinued date in detail card",
-      "stale_for": 3,
-      "labels": []
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress passed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6363",
       "title": "Split routes of App Router",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "tested",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1636",
       "title": "Refactor ICD11 Table; Cleanup in-memory search",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review"
       ]
@@ -23881,7 +23994,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -23889,7 +24002,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -23898,7 +24011,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "stale"
       ]
@@ -23912,6 +24025,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6325",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6327"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6323",
+      "pr_link": "https://github.com/coronasafe/care/pull/1643"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6283",
@@ -23936,14 +24053,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1556",
       "pr_link": "https://github.com/coronasafe/care/pull/1557"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
-      "pr_link": "https://github.com/coronasafe/care/pull/1608"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6282"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6085",

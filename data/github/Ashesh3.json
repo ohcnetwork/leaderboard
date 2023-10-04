@@ -1,6 +1,62 @@
 {
-  "last_updated": 1696176680.0,
+  "last_updated": 1696344768.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6388",
+      "time": 1696344768.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6388",
+      "text": "Refactor Asset Model Import Formatting"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1654",
+      "time": 1696344142.0,
+      "link": "https://github.com/coronasafe/care/pull/1654",
+      "text": "Refactor Asset Model Export Formatting"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696341110.0,
+      "title": "coronasafe/care#1630",
+      "link": "https://github.com/coronasafe/care/pull/1630#pullrequestreview-1655271891",
+      "text": "Support for archiving medicine administrations"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1655",
+      "time": 1696335196.0,
+      "link": "https://github.com/coronasafe/care/pull/1655",
+      "text": "Refactor AssetPublicQRViewSet to Prefer qr_code_id Over Primary Key"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6388",
+      "time": 1696332088.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6388",
+      "text": "Refactor Asset Model Import Formatting"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1654",
+      "time": 1696331697.0,
+      "link": "https://github.com/coronasafe/care/pull/1654",
+      "text": "Refactor Asset Model Export Formatting"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1349",
+      "time": 1696320540.0,
+      "link": "https://github.com/coronasafe/care/pull/1349#issuecomment-1744424961",
+      "text": "@sainak is this ready to review or still pending changes?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696313896.0,
+      "title": "coronasafe/care#1260",
+      "link": "https://github.com/coronasafe/care/pull/1260#pullrequestreview-1654423658",
+      "text": "fix: added recommend_discharge as action"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6380",
@@ -13026,9 +13082,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1655",
+      "title": "Refactor AssetPublicQRViewSet to Prefer qr_code_id Over Primary Key",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6368",
       "title": "Middleware override feature in asset location",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "waiting for back end"
       ]
@@ -13036,7 +13098,7 @@
     {
       "link": "https://github.com/coronasafe/10bedicu/pull/73",
       "title": "feat: Display asset details after scanning an asset's QR code.",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": [
         "blocked"
       ]
@@ -13044,13 +13106,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1642",
       "title": "Implement Middleware Override in AssetLocation",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 180,
+      "stale_for": 182,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13059,13 +13121,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 193,
+      "stale_for": 195,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "blocked"
       ]

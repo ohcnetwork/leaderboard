@@ -1,6 +1,55 @@
 {
-  "last_updated": 1696176674.0,
+  "last_updated": 1696335581.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1696335581.0,
+      "title": "coronasafe/care#1655",
+      "link": "https://github.com/coronasafe/care/pull/1655#pullrequestreview-1655061680",
+      "text": "Refactor AssetPublicQRViewSet to Prefer qr_code_id Over Primary Key"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696333690.0,
+      "title": "coronasafe/care#1654",
+      "link": "https://github.com/coronasafe/care/pull/1654#pullrequestreview-1655005795",
+      "text": "Refactor Asset Model Export Formatting"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696322675.0,
+      "title": "coronasafe/teleicu_middleware#103",
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/103#pullrequestreview-1654669244",
+      "text": "lock camera movements when ocr is taking an image"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1349",
+      "time": 1696321471.0,
+      "link": "https://github.com/coronasafe/care/pull/1349#issuecomment-1744454729",
+      "text": "> @sainak is this ready to review or still pending changes?\r\n\r\nThis was a kind of poc but, you can review and give feedbacks or suggest better ways\r\n\r\ncc: @vigneshhari  "
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#1091",
+      "time": 1696314908.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1091",
+      "text": "Shifting outside the district"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#1091",
+      "time": 1696314907.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/1091#issuecomment-1744296431",
+      "text": "This will be handled by https://github.com/coronasafe/care/issues/895"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#928",
+      "time": 1696314842.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/928",
+      "text": "inter-district shifting"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1648",
@@ -6227,13 +6276,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1646",
       "title": "feat: docker multiplatform builds",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 19,
+      "stale_for": 21,
       "labels": [
         "In progress"
       ]
@@ -6241,15 +6290,15 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 12,
+      "stale_for": 14,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 3,
+      "stale_for": 1,
       "labels": [
-        "needs testing",
+        "test failed",
         "Major Code Change",
         "cypress passed"
       ]
@@ -6257,13 +6306,13 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 73,
+      "stale_for": 75,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 111,
+      "stale_for": 0,
       "labels": []
     }
   ],

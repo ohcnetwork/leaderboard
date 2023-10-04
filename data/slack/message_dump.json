@@ -87576,5 +87576,174 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-10-03 00:00:00": []
+    "2023-10-03 00:00:00": [
+        {
+            "client_msg_id": "17d00117-1095-4c28-b5e6-a7b92e5559ac",
+            "type": "message",
+            "text": "*EOD 03-10-2023*\nGot disconnected during EOD call due to power outage so updating here.\n\u2022 Worked on optimizing echarts bundle size, awaiting response in <#C010GQC5UE9|care_frontend> to decide whether it's sufficient or requires further reduction.\n\u2022 Learned about optimizing lodash bundle size as well, might take up the lodash optimization related issue next if current assignee is occupied. (will dm them)\n",
+            "user": "U05MBE2RASD",
+            "ts": "1696344421.264249",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "oD3BZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03-10-2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nGot disconnected during EOD call due to power outage so updating here.\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on optimizing echarts bundle size, awaiting response in "
+                                        },
+                                        {
+                                            "type": "channel",
+                                            "channel_id": "C010GQC5UE9"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " to decide whether it's sufficient or requires further reduction."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Learned about optimizing lodash bundle size as well, might take up the lodash optimization related issue next if current assignee is occupied. (will dm them)"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "87a87a2e-889b-4ad2-b3f2-50d2491e8a7b",
+            "type": "message",
+            "text": "*EOD 03-10-2023*\n\n*How did the day go?*\n\nWorking on the issue\n```Replace useDispatch w. useQuery/request: Consultations```\n<https://github.com/coronasafe/care_fe/issues/6372>",
+            "user": "U05LRJ1HDNH",
+            "ts": "1696341558.734099",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "pLYpK",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 03-10-2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nWorking on the issue\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_preformatted",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "Replace useDispatch w. useQuery/request: Consultations"
+                                }
+                            ],
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/6372"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U05LRJ1HDNH",
+                "ts": "1696341606.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1696004239,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6372",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6372 :hammer_and_wrench: Replace `useDispatch` w. `useQuery`/`request`: Consultations (`src/Components/Facility/Consultations/**`)",
+                    "title": "#6372 :hammer_and_wrench: Replace `useDispatch` w. `useQuery`/`request`: Consultations (`src/Components/Facility/Consultations/**`)",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6372",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/AshrafMd-1|@AshrafMd-1>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "good first issue",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
+    ],
+    "2023-10-04 00:00:00": []
 }

@@ -1,6 +1,104 @@
 {
-  "last_updated": 1696342179.0,
+  "last_updated": 1696431992.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6398",
+      "time": 1696431992.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6398",
+      "text": "Asset Create More: fix reset of `is_working` state"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6397",
+      "time": 1696431912.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6397",
+      "text": "Asset Create validation is not proper for \"Working status\" when doing \"Create and add more\""
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6396",
+      "time": 1696428288.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6396",
+      "text": "Medicine Administrations: group every 4 hour medicine administrations to 1 column"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5293",
+      "time": 1696425652.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5293#issuecomment-1746867295",
+      "text": "All results with: `entityType > 0` has this mentioned issue."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5293",
+      "time": 1696425608.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5293#issuecomment-1746865818",
+      "text": "we may not be able to use `theCode` for lookup. Attaching an example entity with `\"theCode\": \"PE95/\"` and `\"title\": \"Assault by exposure to or harmful effects of other inorganic substances\"`. This entity is not present in our `icd11.json` nor the spreadsheet export from ICD11's browsing tool.\r\n\r\nA similar one exists with `PE95`, title: `\"Assault by exposure to or harmful effects of other or unspecified substances chiefly nonmedicinal as to source\"`.\r\n\r\n<img width=\"1710\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/8af60147-25d2-4335-951c-01ac0c2d4a35\">\r\n\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6395",
+      "time": 1696424137.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6395",
+      "text": "Prescription activity view grouped by \"medicine\""
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6338",
+      "time": 1696424042.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6338#issuecomment-1746820788",
+      "text": "@khavinshankar "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696424019.0,
+      "title": "coronasafe/care_fe#6338",
+      "link": "https://github.com/coronasafe/care_fe/pull/6338#pullrequestreview-1657462269",
+      "text": "Assets date picker"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1636",
+      "time": 1696423026.0,
+      "link": "https://github.com/coronasafe/care/pull/1636#issuecomment-1746791189",
+      "text": "marking as hold for https://github.com/coronasafe/care_fe/issues/5293"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6392",
+      "time": 1696395816.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6392",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: Notifications (`src/Components/Notifications/**`)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6391",
+      "time": 1696395812.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6391",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: Facility (Part 2, E-Z) (`src/Components/Facility/[E-Z]*.tsx`)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6369",
+      "time": 1696394011.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6369",
+      "text": "\ud83d\udc8a Adds support for editing prescriptions +  Adds `useSlug` hook"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6365",
+      "time": 1696393575.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6365",
+      "text": "Prescription: show prescribed on, by, and discontinued date in detail card"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6363",
+      "time": 1696393532.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6363",
+      "text": "Split routes of App Router"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6341",
@@ -23949,46 +24047,37 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6389",
-      "title": "Prescriptions: freeze columns and shrink discontinued",
+      "link": "https://github.com/coronasafe/care_fe/pull/6398",
+      "title": "Asset Create More: fix reset of `is_working` state",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P2"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6396",
+      "title": "Medicine Administrations: group every 4 hour medicine administrations to 1 column",
       "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6369",
-      "title": "\ud83d\udc8a Adds support for editing prescriptions +  Adds `useSlug` hook",
-      "stale_for": 0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6389",
+      "title": "Prescriptions: freeze columns and shrink discontinued",
+      "stale_for": 1,
       "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6365",
-      "title": "Prescription: show prescribed on, by, and discontinued date in detail card",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6363",
-      "title": "Split routes of App Router",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "cypress passed"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1636",
       "title": "Refactor ICD11 Table; Cleanup in-memory search",
-      "stale_for": 7,
+      "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "waiting-for-review",
+        "Hold"
       ]
     },
     {
@@ -24002,16 +24091,17 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": [
         "needs testing",
-        "waiting for back end"
+        "waiting for back end",
+        "discussion"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "stale"
       ]
@@ -24029,6 +24119,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6323",
       "pr_link": "https://github.com/coronasafe/care/pull/1643"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6288",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6363"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6283",
@@ -24108,14 +24202,6 @@
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5941",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5940",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5945"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5934",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
     }
   ]

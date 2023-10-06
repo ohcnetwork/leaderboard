@@ -1,6 +1,100 @@
 {
-  "last_updated": 1696431992.0,
+  "last_updated": 1696531787.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1659",
+      "time": 1696531787.0,
+      "link": "https://github.com/coronasafe/care/issues/1659#issuecomment-1749462931",
+      "text": "duplicate of #1658"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1659",
+      "time": 1696531787.0,
+      "link": "https://github.com/coronasafe/care/issues/1659",
+      "text": "Load ICD11 data from file instead of hitting the db"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1659",
+      "time": 1696531734.0,
+      "link": "https://github.com/coronasafe/care/issues/1659",
+      "text": "Load ICD11 data from file instead of hitting the db"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1636",
+      "time": 1696531517.0,
+      "link": "https://github.com/coronasafe/care/pull/1636",
+      "text": "Refactor ICD11 Table; Cleanup in-memory search"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696507566.0,
+      "title": "coronasafe/care_fe#6402",
+      "link": "https://github.com/coronasafe/care_fe/pull/6402#pullrequestreview-1659681517",
+      "text": "Fix#6360"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696506125.0,
+      "title": "coronasafe/care_fe#6402",
+      "link": "https://github.com/coronasafe/care_fe/pull/6402#pullrequestreview-1659635714",
+      "text": "Fix#6360"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696506077.0,
+      "title": "coronasafe/care_fe#6402",
+      "link": "https://github.com/coronasafe/care_fe/pull/6402#pullrequestreview-1659634314",
+      "text": "Fix#6360"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696505923.0,
+      "title": "coronasafe/care_fe#6402",
+      "link": "https://github.com/coronasafe/care_fe/pull/6402#pullrequestreview-1659628655",
+      "text": "Fix#6360"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696505860.0,
+      "title": "coronasafe/care_fe#6402",
+      "link": "https://github.com/coronasafe/care_fe/pull/6402#pullrequestreview-1659626963",
+      "text": "Fix#6360"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696505801.0,
+      "title": "coronasafe/care_fe#6402",
+      "link": "https://github.com/coronasafe/care_fe/pull/6402#pullrequestreview-1659623068",
+      "text": "Fix#6360"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6389",
+      "time": 1696490528.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6389",
+      "text": "Prescriptions: freeze columns and shrink discontinued"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6398",
+      "time": 1696490313.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6398",
+      "text": "Asset Create More: fix reset of `is_working` state"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6398",
+      "time": 1696490313.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6398",
+      "text": "Asset Create More: fix reset of `is_working` state",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6398",
@@ -24047,43 +24141,18 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6398",
-      "title": "Asset Create More: fix reset of `is_working` state",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P2"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Medicine Administrations: group every 4 hour medicine administrations to 1 column",
       "stale_for": 0,
       "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6389",
-      "title": "Prescriptions: freeze columns and shrink discontinued",
-      "stale_for": 1,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1636",
-      "title": "Refactor ICD11 Table; Cleanup in-memory search",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review",
-        "Hold"
+        "needs testing",
+        "merge conflict"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -24091,7 +24160,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "waiting for back end",
@@ -24101,13 +24170,17 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5831",
       "title": "Cypress Test: update trigger to have write perms for fork PRs",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "stale"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6397",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6398"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6335",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6358"
@@ -24147,6 +24220,18 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1556",
       "pr_link": "https://github.com/coronasafe/care/pull/1557"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
+      "pr_link": "https://github.com/coronasafe/care/pull/1608"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6282"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6389"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6085",
@@ -24195,14 +24280,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5990",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5993"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5977",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5980"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5941",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5939"
     }
   ]
 }

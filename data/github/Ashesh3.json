@@ -1,6 +1,41 @@
 {
-  "last_updated": 1696344768.0,
+  "last_updated": 1696513789.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6404",
+      "time": 1696513789.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6404",
+      "text": "Fix password reset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1657",
+      "time": 1696500276.0,
+      "link": "https://github.com/coronasafe/care/pull/1657",
+      "text": "POC: AI discharge summary"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6401",
+      "time": 1696499608.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6401",
+      "text": "POC: AI discharge summary"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6400",
+      "time": 1696490389.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6400",
+      "text": "Show asset import progress"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6400",
+      "time": 1696488964.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6400",
+      "text": "Show asset import progress"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6388",
@@ -13082,15 +13117,40 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6404",
+      "title": "Fix password reset",
+      "stale_for": 0,
+      "labels": [
+        "test failed",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1657",
+      "title": "POC: AI discharge summary",
+      "stale_for": 0,
+      "labels": [
+        "POC"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6401",
+      "title": "POC: AI discharge summary",
+      "stale_for": 0,
+      "labels": [
+        "POC"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1655",
       "title": "Refactor AssetPublicQRViewSet to Prefer qr_code_id Over Primary Key",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6368",
       "title": "Middleware override feature in asset location",
-      "stale_for": 4,
+      "stale_for": 1,
       "labels": [
         "waiting for back end"
       ]
@@ -13098,7 +13158,7 @@
     {
       "link": "https://github.com/coronasafe/10bedicu/pull/73",
       "title": "feat: Display asset details after scanning an asset's QR code.",
-      "stale_for": 4,
+      "stale_for": 6,
       "labels": [
         "blocked"
       ]
@@ -13106,13 +13166,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1642",
       "title": "Implement Middleware Override in AssetLocation",
-      "stale_for": 2,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 182,
+      "stale_for": 184,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13121,13 +13181,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 195,
+      "stale_for": 197,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "blocked"
       ]

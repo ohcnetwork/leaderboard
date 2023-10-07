@@ -1,6 +1,62 @@
 {
-  "last_updated": 1696527925.0,
+  "last_updated": 1696607317.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6411",
+      "time": 1696607317.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6411",
+      "text": "Cypress Failure in development due to recent ICD-11 Change"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696607310.0,
+      "title": "coronasafe/care_fe#6412",
+      "link": "https://github.com/coronasafe/care_fe/pull/6412#pullrequestreview-1662175947",
+      "text": "cypress fix: select non group ICD11 entity"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6414",
+      "time": 1696607283.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6414",
+      "text": "End date picker focus issue"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696607266.0,
+      "title": "coronasafe/care_fe#6413",
+      "link": "https://github.com/coronasafe/care_fe/pull/6413#pullrequestreview-1662174520",
+      "text": "Fix date range end picker"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6403",
+      "time": 1696589414.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6403",
+      "text": "Password reset functionality is malfunctioning"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696589401.0,
+      "title": "coronasafe/care_fe#6404",
+      "link": "https://github.com/coronasafe/care_fe/pull/6404#pullrequestreview-1661611098",
+      "text": "Fix password reset"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/teleicu_middleware#104",
+      "time": 1696575802.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/104",
+      "text": "send bp last observation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696568237.0,
+      "title": "coronasafe/care_fe#6407",
+      "link": "https://github.com/coronasafe/care_fe/pull/6407#pullrequestreview-1661114658",
+      "text": "Vitals Monitor: Shows relative time for blood pressure and hide if stale (30 mins)"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/teleicu_middleware#104",
@@ -23652,15 +23708,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/teleicu_middleware/pull/104",
-      "title": "send bp last observation",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]
@@ -23668,13 +23718,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 229,
+      "stale_for": 230,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -23683,13 +23733,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 300,
+      "stale_for": 301,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 57,
+      "stale_for": 58,
       "labels": [
         "changes required"
       ]
@@ -23697,25 +23747,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 657,
+      "stale_for": 658,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 663,
+      "stale_for": 664,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 664,
+      "stale_for": 665,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 859,
+      "stale_for": 860,
       "labels": []
     }
   ],

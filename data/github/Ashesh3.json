@@ -1,6 +1,55 @@
 {
-  "last_updated": 1696513789.0,
+  "last_updated": 1696607282.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6413",
+      "time": 1696607282.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6413",
+      "text": "Fix date range end picker"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6414",
+      "time": 1696596033.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6414",
+      "text": "post selecting created by and after date filters in the patient tab, even though there are patients live in that filter range, it is not been shown in the patient export"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6413",
+      "time": 1696595685.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6413",
+      "text": "Fix date range end picker"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696593254.0,
+      "title": "coronasafe/care#1661",
+      "link": "https://github.com/coronasafe/care/pull/1661#pullrequestreview-1661703290",
+      "text": "ICD11 patch: load all to in-memory; but search filter by `is_leaf=True`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6404",
+      "time": 1696589413.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6404",
+      "text": "Fix password reset"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6408",
+      "time": 1696577411.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6408",
+      "text": "Track camera feed views and display offline status"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6404",
+      "time": 1696570650.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6404#issuecomment-1750011580",
+      "text": "> @Ashesh3 ![image](https://user-images.githubusercontent.com/57055998/273065042-c1778c05-31ac-4f2f-93b1-04cbdeeb44cb.png)\r\n> \r\n> the bug still persist\r\n\r\nFixed!"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6404",
@@ -13117,18 +13166,17 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6404",
-      "title": "Fix password reset",
+      "link": "https://github.com/coronasafe/care_fe/pull/6408",
+      "title": "Track camera feed views and display offline status",
       "stale_for": 0,
       "labels": [
-        "test failed",
-        "P1"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "POC"
       ]
@@ -13136,7 +13184,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "POC"
       ]
@@ -13144,13 +13192,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1655",
       "title": "Refactor AssetPublicQRViewSet to Prefer qr_code_id Over Primary Key",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6368",
       "title": "Middleware override feature in asset location",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting for back end"
       ]
@@ -13158,7 +13206,7 @@
     {
       "link": "https://github.com/coronasafe/10bedicu/pull/73",
       "title": "feat: Display asset details after scanning an asset's QR code.",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "blocked"
       ]
@@ -13166,13 +13214,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1642",
       "title": "Implement Middleware Override in AssetLocation",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 184,
+      "stale_for": 185,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13181,19 +13229,23 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 197,
+      "stale_for": 198,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "blocked"
       ]
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6414",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6413"
+    },
     {
       "issue_link": "https://github.com/coronasafe/teleicu_middleware/issues/98",
       "pr_link": "https://github.com/coronasafe/teleicu_middleware/pull/99"
@@ -13273,10 +13325,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3573",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3593"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3543",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3544"
     }
   ]
 }

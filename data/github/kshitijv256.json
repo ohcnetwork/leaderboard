@@ -1,6 +1,20 @@
 {
-  "last_updated": 1696352529.0,
+  "last_updated": 1696767178.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6418",
+      "time": 1696767178.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6418",
+      "text": "whitelisted jwt_token_refresh_interval"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_deploy_configs#18",
+      "time": 1696766901.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/18",
+      "text": "added jwt_token_refresh_interval"
+    },
     {
       "type": "pr_reviewed",
       "time": 1696352529.0,
@@ -447,12 +461,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6418",
+      "title": "whitelisted jwt_token_refresh_interval",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/18",
+      "title": "added jwt_token_refresh_interval",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6374",
       "title": "Replaced dispatch with useQuery and request in Asset module",
       "stale_for": 0,
       "labels": [
         "need Review",
         "changes required",
+        "merge conflict",
         "cypress failed"
       ]
     }

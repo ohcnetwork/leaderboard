@@ -1,6 +1,58 @@
 {
-  "last_updated": 1696767178.0,
+  "last_updated": 1696868455.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_deploy_configs#18",
+      "time": 1696868455.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/18",
+      "text": "added jwt_token_refresh_interval"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_deploy_configs#18",
+      "time": 1696868455.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/18",
+      "text": "added jwt_token_refresh_interval",
+      "collaborated_with": [
+        "rithviknishad"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_deploy_configs#18",
+      "time": 1696867295.0,
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/18#issuecomment-1753280167",
+      "text": "@rithviknishad updated config_schema.yaml"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6418",
+      "time": 1696848214.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6418",
+      "text": "whitelisted jwt_token_refresh_interval"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6374",
+      "time": 1696845577.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#issuecomment-1752707031",
+      "text": "@nihal467 removed cypress related changes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696843456.0,
+      "title": "coronasafe/care_fe#6374",
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#pullrequestreview-1664042242",
+      "text": "Replaced dispatch with useQuery and request in Asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696843421.0,
+      "title": "coronasafe/care_fe#6374",
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#pullrequestreview-1664041218",
+      "text": "Replaced dispatch with useQuery and request in Asset module"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6418",
@@ -461,23 +513,11 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6418",
-      "title": "whitelisted jwt_token_refresh_interval",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_deploy_configs/pull/18",
-      "title": "added jwt_token_refresh_interval",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6374",
       "title": "Replaced dispatch with useQuery and request in Asset module",
       "stale_for": 0,
       "labels": [
-        "need Review",
+        "test failed",
         "changes required",
         "merge conflict",
         "cypress failed"

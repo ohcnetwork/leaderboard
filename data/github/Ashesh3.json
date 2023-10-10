@@ -1,6 +1,20 @@
 {
-  "last_updated": 1696768014.0,
+  "last_updated": 1696856676.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1665",
+      "time": 1696856676.0,
+      "link": "https://github.com/coronasafe/care/pull/1665",
+      "text": "Ensure Deterministic Ordering of Local Self Government and Ward Data"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1642",
+      "time": 1696825586.0,
+      "link": "https://github.com/coronasafe/care/pull/1642#issuecomment-1752329090",
+      "text": "> @Ashesh3 does the dummy data facility disappear after the middleware was fixed, which we discussed during the huddle\r\n\r\nIssue was with dummy data itself; PR is fine. Will make a new PR to fix the dummy data. No changes are needed on the PR."
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6417",
@@ -13182,9 +13196,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1665",
+      "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6408",
       "title": "Track camera feed views and display offline status",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -13192,7 +13212,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "POC"
       ]
@@ -13200,7 +13220,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "POC"
       ]
@@ -13208,13 +13228,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1655",
       "title": "Refactor AssetPublicQRViewSet to Prefer qr_code_id Over Primary Key",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6368",
       "title": "Middleware override feature in asset location",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
         "waiting for back end"
       ]
@@ -13222,7 +13242,7 @@
     {
       "link": "https://github.com/coronasafe/10bedicu/pull/73",
       "title": "feat: Display asset details after scanning an asset's QR code.",
-      "stale_for": 9,
+      "stale_for": 10,
       "labels": [
         "blocked"
       ]
@@ -13236,7 +13256,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 187,
+      "stale_for": 188,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13245,13 +13265,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 200,
+      "stale_for": 201,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "blocked"
       ]

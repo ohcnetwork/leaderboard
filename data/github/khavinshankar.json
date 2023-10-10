@@ -1,6 +1,76 @@
 {
-  "last_updated": 1696768014.0,
+  "last_updated": 1696848482.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6317",
+      "time": 1696848482.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6317#issuecomment-1752774627",
+      "text": "@nihal467 can you just test the feed in this deploy preview, LGTM, no breaking changes"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6241",
+      "time": 1696848173.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6241",
+      "text": "Tracking Expiry of AMC/Warranty in CARE"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696848157.0,
+      "title": "coronasafe/care_fe#6364",
+      "link": "https://github.com/coronasafe/care_fe/pull/6364#pullrequestreview-1664175491",
+      "text": "Added AMC Warranty filters and expiry labels for assets"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6362",
+      "time": 1696848064.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6362",
+      "text": "Service History & Transaction History is misaligned "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696848050.0,
+      "title": "coronasafe/care_fe#6382",
+      "link": "https://github.com/coronasafe/care_fe/pull/6382#pullrequestreview-1664172958",
+      "text": "Aligned Service History & Transaction History in Asset Details"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6305",
+      "time": 1696848037.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6305",
+      "text": "Remove date-fns to reduce bundle size"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696848019.0,
+      "title": "coronasafe/care_fe#6405",
+      "link": "https://github.com/coronasafe/care_fe/pull/6405#pullrequestreview-1664172105",
+      "text": "Replaced date-fns utility functions from DateInputV2 component with day.js"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696839808.0,
+      "title": "coronasafe/care_fe#6421",
+      "link": "https://github.com/coronasafe/care_fe/pull/6421#pullrequestreview-1663941437",
+      "text": "Fix Cypress Failure in Assets"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696830377.0,
+      "title": "coronasafe/care_fe#6418",
+      "link": "https://github.com/coronasafe/care_fe/pull/6418#pullrequestreview-1663750449",
+      "text": "whitelisted jwt_token_refresh_interval"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696830159.0,
+      "title": "coronasafe/care_deploy_configs#18",
+      "link": "https://github.com/coronasafe/care_deploy_configs/pull/18#pullrequestreview-1663748198",
+      "text": "added jwt_token_refresh_interval"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6417",
@@ -23726,7 +23796,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "waiting-for-review"
       ]
@@ -23734,13 +23804,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 232,
+      "stale_for": 233,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/4575",
       "title": "Show error message when camera is offline",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "needs testing",
         "cypress passed"
@@ -23749,13 +23819,13 @@
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 303,
+      "stale_for": 304,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 60,
+      "stale_for": 61,
       "labels": [
         "changes required"
       ]
@@ -23763,25 +23833,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 660,
+      "stale_for": 661,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 666,
+      "stale_for": 667,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 667,
+      "stale_for": 668,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 862,
+      "stale_for": 863,
       "labels": []
     }
   ],

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1696664678.0,
+  "last_updated": 1696848626.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6424",
+      "time": 1696848626.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6424",
+      "text": "Using the treeshakable api for echarts"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6415",
+      "time": 1696847469.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6415#issuecomment-1752751992",
+      "text": "> @Omkar76 wasn't the issue about removing and using custom utility functions instead?\r\n> \r\n> This PR is just replacing with another package and updating the imports and doesn't make a noticeable difference in the final bundle size.\r\n> \r\n> We could achieve a much lower bundle size if we built the utility functions within care right?\r\n> \r\n> cc: @sainak\r\n\r\nI believe the size reduction is significant (547 -> 122). We can keep this PR on hold until @sainak has implemented the utilities to replace lodash. If that reduces size significantly more than this we can merge that instead. "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6415",
@@ -24,6 +38,14 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6424",
+      "title": "Using the treeshakable api for echarts",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6415",
       "title": "Optimize lodash. Fixes #6006",

@@ -2461,5 +2461,87 @@
                 }
             ]
         }
+    ],
+    "2023-10-10 00:00:00": [
+        {
+            "client_msg_id": "8a92fd28-43e8-4c62-9f40-d6037b551a62",
+            "type": "message",
+            "text": "*EOD 10/10/2023*\n\nWorked on the issue\n<https://github.com/coronasafe/care_fe/issues/6425>\nSubmitted a PR related to the issue\n<https://github.com/coronasafe/care_fe/pull/6431>",
+            "user": "U05LRJ1HDNH",
+            "ts": "1696955192.666539",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "Egtzx",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 10/10/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nWorked on the issue\n"
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/6425"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\nSubmitted a PR related to the issue\n"
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/pull/6431"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1696861657,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6425",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6425 Incorrect browser tab page title in Consultation: Medicines Tab",
+                    "title": "#6425 Incorrect browser tab page title in Consultation: Medicines Tab",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6425",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1696952251,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6431",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6431 Set page title to medicine",
+                    "title": "#6431 Set page title to medicine",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6431",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

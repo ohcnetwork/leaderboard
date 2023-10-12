@@ -1,6 +1,69 @@
 {
-  "last_updated": 1696953519.0,
+  "last_updated": 1697031168.0,
   "activity": [
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6443",
+      "time": 1697031168.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6443",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: Resource (`src/Components/Resource/**`)"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6442",
+      "time": 1697018848.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6442",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: Medicine (`src/Components/Medicine/**`)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#5695",
+      "time": 1697006187.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5695#issuecomment-1756923150",
+      "text": "@nihal467 is this issue still relevant? Users can always narrow down the search using the filters (created date, origin/approving/assigned facility. If not shall we move this to wishlist?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697001010.0,
+      "title": "coronasafe/care_fe#6416",
+      "link": "https://github.com/coronasafe/care_fe/pull/6416#pullrequestreview-1669956063",
+      "text": "change all useDispatch to useQuery and request hooks in Consultations (src/Components/Facility/Consultations/**) "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697000788.0,
+      "title": "coronasafe/care_fe#6402",
+      "link": "https://github.com/coronasafe/care_fe/pull/6402#pullrequestreview-1669953427",
+      "text": "Replaced useDispatch with useQuery and request in ExternalResult (src/Components/ExternalResult/** )"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697000749.0,
+      "title": "coronasafe/care_fe#6402",
+      "link": "https://github.com/coronasafe/care_fe/pull/6402#pullrequestreview-1669952953",
+      "text": "Replaced useDispatch with useQuery and request in ExternalResult (src/Components/ExternalResult/** )"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6437",
+      "time": 1697000508.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6437",
+      "text": "fixes nutrition tab showing nursing analysis"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6328",
+      "time": 1696998978.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6328#issuecomment-1756775731",
+      "text": "Hey @AlexVCS, we'll be unassigning you from this issue to keep it open for others as the related PR has become stale.\r\n\r\nFeel free to ping if you are facing any blockers or checkout other good first issues."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1696998750.0,
+      "title": "coronasafe/care_fe#6344",
+      "link": "https://github.com/coronasafe/care_fe/pull/6344#pullrequestreview-1669859421",
+      "text": "Replaced useDispatch with useQuery and request."
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care#1668",
@@ -24412,6 +24475,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6437",
+      "title": "fixes nutrition tab showing nursing analysis",
+      "stale_for": 0,
+      "labels": [
+        "urgent",
+        "needs testing",
+        "P1",
+        "reviewed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Medicine Administrations: group every 4 hour medicine administrations to 1 column",
       "stale_for": 0,
@@ -24420,7 +24494,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "waiting-for-review"
       ]
@@ -24428,7 +24502,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "needs testing",
         "waiting for back end",
@@ -24524,18 +24598,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care/issues/1516",
       "pr_link": "https://github.com/coronasafe/care/pull/1517"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1514",
-      "pr_link": "https://github.com/coronasafe/care/pull/1519"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1497",
-      "pr_link": "https://github.com/coronasafe/care/pull/1508"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1497",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5999"
     }
   ]
 }

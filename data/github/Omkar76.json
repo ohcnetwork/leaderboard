@@ -1,6 +1,13 @@
 {
-  "last_updated": 1696950461.0,
+  "last_updated": 1696993397.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6424",
+      "time": 1696993397.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6424",
+      "text": "Using the treeshakable api for echarts"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6321",
@@ -46,20 +53,12 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6424",
-      "title": "Using the treeshakable api for echarts",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "reviewed"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6415",
       "title": "Optimize lodash. Fixes #6006",
       "stale_for": 0,
       "labels": [
         "tested",
+        "changes required",
         "cypress passed",
         "reviewed"
       ]

@@ -23398,7 +23398,180 @@
                     ]
                 }
             ],
-            "team": "TC99SV7B6"
+            "team": "TC99SV7B6",
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "UC99MFPU1"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "2023-10-11 00:00:00": [
+        {
+            "client_msg_id": "e30e1598-05e4-405f-aef7-bb6be32e2709",
+            "type": "message",
+            "text": "*EOD 11/10/2023 <!subteam^S035L5S02RF|@care_engineering>*\n\n*How did the day go?*\n\u2022 reviewed all useQuery migration PRs\n\u2022 <https://github.com/coronasafe/care_fe/pull/6437|#6437>: fixed nutrition tab showing nursing analysis tab bug\n\u2022 <https://github.com/coronasafe/care_fe/pull/6396|#6396>: completed suggested changes in medicine administration table\n\u2022 <https://github.com/coronasafe/care_fe/issues/6442|#6442>: migrated useDispatch to useQuery/request in medicines/prescriptions module.\n*What's next?*\n\u2022 Work consultation form: route to facility.\n\u2022 Publish zoomdrive zoom app and make demo video.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1697037433.826309",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "wrLf3",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 11/10/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "reviewed all useQuery migration PRs"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6437",
+                                            "text": "#6437",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": fixed nutrition tab showing nursing analysis tab bug"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6396",
+                                            "text": "#6396",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": completed suggested changes in medicine administration table"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6442",
+                                            "text": "#6442",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": migrated useDispatch to useQuery/request in medicines/prescriptions module."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work consultation form: route to facility."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Publish zoomdrive zoom app and make demo video."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U02TDGQQPMJ",
+                "ts": "1697037441.000000"
+            }
         }
     ]
 }

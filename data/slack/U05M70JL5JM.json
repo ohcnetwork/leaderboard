@@ -1876,5 +1876,145 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-10-11 00:00:00": [
+        {
+            "client_msg_id": "bbc4c0eb-a85b-4ba5-b501-15bd3e576f47",
+            "type": "message",
+            "text": "*EOD 22/09/2023 - 11/10/2023*\n\n*How did the day go?*\n\u2022 *Worked on the issue -* <https://github.com/coronasafe/care_fe/issues/6330>\n\u2022 Made a PR for the issue - <https://github.com/coronasafe/care_fe/pull/6344>\n\u2022 Started working on the required changes.\n",
+            "user": "U05M70JL5JM",
+            "ts": "1697035754.116689",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "QVo43",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 22/09/2023 - 11/10/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Worked on the issue - ",
+                                            "style": {
+                                                "bold": true
+                                            }
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6330"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made a PR for the issue - "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6344"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Started working on the required changes."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1695396930,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6330",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6330 :hammer_and_wrench: Replace `useDispatch` w. `useQuery`/`request`: ABDM (`src/Components/ABDM/**`)",
+                    "title": "#6330 :hammer_and_wrench: Replace `useDispatch` w. `useQuery`/`request`: ABDM (`src/Components/ABDM/**`)",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6330",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1695656820,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6344",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6344 Replaced useDispatch with useQuery and request.",
+                    "title": "#6344 Replaced useDispatch with useQuery and request.",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6344",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ],
+            "reactions": [
+                {
+                    "name": "rocket",
+                    "users": [
+                        "U02TDGQQPMJ"
+                    ],
+                    "count": 1
+                }
+            ]
+        }
     ]
 }

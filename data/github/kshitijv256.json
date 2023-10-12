@@ -1,6 +1,13 @@
 {
-  "last_updated": 1696868455.0,
+  "last_updated": 1696998026.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6374",
+      "time": 1696998026.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#issuecomment-1756749355",
+      "text": "@nihal467 fixed the problem please check. transaction filter was being passed incorrectly in request and all transaction data was shown in all assets"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_deploy_configs#18",
@@ -517,10 +524,7 @@
       "title": "Replaced dispatch with useQuery and request in Asset module",
       "stale_for": 0,
       "labels": [
-        "test failed",
-        "changes required",
-        "merge conflict",
-        "cypress failed"
+        "needs testing"
       ]
     }
   ],

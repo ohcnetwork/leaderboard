@@ -1,6 +1,62 @@
 {
-  "last_updated": 1697031168.0,
+  "last_updated": 1697117408.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6444",
+      "time": 1697117408.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6444",
+      "text": "Consultation Form: Capture Date & Time of Admisison"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1672",
+      "time": 1697114265.0,
+      "link": "https://github.com/coronasafe/care/pull/1672",
+      "text": "Reset time of `admission_date` to 00:00"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1671",
+      "time": 1697113033.0,
+      "link": "https://github.com/coronasafe/care/issues/1671",
+      "text": "Patient Consultation: Route to Facility"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6437",
+      "time": 1697106148.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6437",
+      "text": "fixes nutrition tab showing nursing analysis"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6415",
+      "time": 1697102273.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6415#issuecomment-1759240041",
+      "text": "You could do: \r\n\r\n```jsx\r\n<span class=\"capitalize\">{\"COMPLETED\".toLowerCase()}</span> // \ud83d\udc49 Completed\r\n```"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#133",
+      "time": 1697090949.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/133",
+      "text": "Markdown content not being rendered as markdown html in short bio"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#130",
+      "time": 1697090877.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/130",
+      "text": "Darkmode Switch Badge default should be dark"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697090777.0,
+      "title": "coronasafe/leaderboard#131",
+      "link": "https://github.com/coronasafe/leaderboard/pull/131#pullrequestreview-1673101851",
+      "text": "Fix theme button in header"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6443",
@@ -24475,26 +24531,31 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6437",
-      "title": "fixes nutrition tab showing nursing analysis",
-      "stale_for": 0,
-      "labels": [
-        "urgent",
-        "needs testing",
-        "P1",
-        "reviewed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6396",
-      "title": "Medicine Administrations: group every 4 hour medicine administrations to 1 column",
+      "link": "https://github.com/coronasafe/care_fe/pull/6444",
+      "title": "Consultation Form: Capture Date & Time of Admisison",
       "stale_for": 0,
       "labels": []
     },
     {
+      "link": "https://github.com/coronasafe/care/pull/1672",
+      "title": "Reset time of `admission_date` to 00:00",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6396",
+      "title": "Group medicine administration by 4 hours + show administration notes and administered by in popover + migrate `useDispatch` to `useQuery`",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]
@@ -24502,7 +24563,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 7,
+      "stale_for": 8,
       "labels": [
         "needs testing",
         "waiting for back end",

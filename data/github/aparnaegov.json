@@ -1,6 +1,13 @@
 {
-  "last_updated": 1696511848.0,
+  "last_updated": 1697093065.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6423",
+      "time": 1697093065.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6423#issuecomment-1759008358",
+      "text": "@Deepjyoti14 \r\n\r\nWe are allowing users to register a patient and then later come back and file consultation, so that they have enough time to collect all consultation details before attempting to file consultation.\r\nThe worry is, if we allow registration of patient and filing consultation together, the registration of patient also may get delayed. \r\n\r\nIt is always a good idea to allow nurses to approach a large task in steps, Registration and then filing consultation, so that atleast 1 of the step gets performed. and then they can come back to the next.\r\n\r\nHowever, we also know that some nurses forget to, or leave out filing consultation.\r\n\r\nThis is why we have added a label on the patient card for \"No Consultation Filed\"\r\n\r\nThe reason why such patients are not shown in dashboard is because dashboard today is only for patient admitted to the ICU. And admission to ICU is marked in consultation.\r\n\r\nThis is something that may be taken care of by strengthening training.\r\n"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6340",

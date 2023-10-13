@@ -1,6 +1,13 @@
 {
-  "last_updated": 1696993397.0,
+  "last_updated": 1697101856.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6415",
+      "time": 1697101856.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6415#issuecomment-1759229691",
+      "text": "Hi @bodhish,\r\nWorking on your suggestion to use css text-transform instead of `startCase` and `camelCase`. From what I'm seeing I think it won't be able to replace those methods . Correct me if wrong\r\n\r\n> Is a keyword that converts the first letter of each word to uppercase. Other characters remain unchanged (they retain their original case as written in the element's text).\r\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/text-transform\r\n\r\n`sampleDetails.status` can have value \"COMPLETED\". We need \"Completed\".  `capitalize` class won't do that. Similar issue for `sampleDetails.doctor_name` and maybe in other places.\r\nhttps://play.tailwindcss.com/wR1YZEkNsO\r\n\r\n"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6424",

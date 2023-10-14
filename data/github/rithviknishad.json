@@ -1,6 +1,27 @@
 {
-  "last_updated": 1697117408.0,
+  "last_updated": 1697203628.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1697203628.0,
+      "title": "coronasafe/care#1673",
+      "link": "https://github.com/coronasafe/care/pull/1673#pullrequestreview-1676505304",
+      "text": "ICD-11 diagnosis cannot be both provisional and final"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697202891.0,
+      "title": "coronasafe/care_fe#6447",
+      "link": "https://github.com/coronasafe/care_fe/pull/6447#pullrequestreview-1676482184",
+      "text": "ICD-11 diagnosis cannot be both prov and final"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6446",
+      "time": 1697186161.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6446",
+      "text": "Pressure Sore popup does not close when clicked outside"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6444",
@@ -24531,23 +24552,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6444",
-      "title": "Consultation Form: Capture Date & Time of Admisison",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1672",
-      "title": "Reset time of `admission_date` to 00:00",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Group medicine administration by 4 hours + show administration notes and administered by in popover + migrate `useDispatch` to `useQuery`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -24555,7 +24562,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1630",
       "title": "Support for archiving medicine administrations",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]
@@ -24563,7 +24570,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "needs testing",
         "waiting for back end",

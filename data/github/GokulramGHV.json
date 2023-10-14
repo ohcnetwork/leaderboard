@@ -1,6 +1,27 @@
 {
-  "last_updated": 1696934773.0,
+  "last_updated": 1697203248.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6447",
+      "time": 1697203248.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6447#issuecomment-1761510858",
+      "text": "@rithviknishad I've updated the validations in the backend. Pls review this https://github.com/coronasafe/care/pull/1673"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1673",
+      "time": 1697202811.0,
+      "link": "https://github.com/coronasafe/care/pull/1673",
+      "text": "ICD-11 diagnosis cannot be both provisional and final"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6447",
+      "time": 1697202302.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6447",
+      "text": "ICD-11 diagnosis cannot be both prov and final"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6428",
@@ -2720,6 +2741,20 @@
     }
   ],
   "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1673",
+      "title": "ICD-11 diagnosis cannot be both provisional and final",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6447",
+      "title": "ICD-11 diagnosis cannot be both prov and final",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6428",
       "title": "Added cypress test to verify warranty expiry label on an asset",

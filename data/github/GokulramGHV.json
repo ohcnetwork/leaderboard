@@ -1,6 +1,20 @@
 {
-  "last_updated": 1697203248.0,
+  "last_updated": 1697312162.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6428",
+      "time": 1697312162.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6428#issuecomment-1763158095",
+      "text": "Unfortunately, we wouldn't be able to check the expiry label since we can't set the warranty expiry to a past date."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6428",
+      "time": 1697312041.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6428#issuecomment-1763157714",
+      "text": "@nihal467 I've updated the spec such that it also checks if the warranty expiry label goes off once the asset warranty is updated and set to greater than 3 months."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6447",
@@ -2750,7 +2764,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6447",
       "title": "ICD-11 diagnosis cannot be both prov and final",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]

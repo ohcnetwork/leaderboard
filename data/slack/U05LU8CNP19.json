@@ -728,5 +728,111 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-10-14 00:00:00": [
+        {
+            "client_msg_id": "8dc48ae5-8d45-453c-967d-1f260da35519",
+            "type": "message",
+            "text": "EOD 14/10/23\n\nHow did the day go?\n\u2022 Working on issue(<https://github.com/coronasafe/care_fe/issues/6443|6443>)\n\u2022 Implemented paginatedList in commentSection\n\u2022 replaced all get request with useQuery\nWhat's next?\n\u2022 Continue working to change all remaining requests.\n\u2022 create a PR ",
+            "user": "U05LU8CNP19",
+            "ts": "1697302836.244519",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "ZGtKS",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 14/10/23\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on issue("
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6443",
+                                            "text": "6443"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ")"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Implemented paginatedList in commentSection"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "replaced all get request with useQuery"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Continue working to change all remaining requests."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "create a PR "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

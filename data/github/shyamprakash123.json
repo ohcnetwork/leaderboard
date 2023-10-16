@@ -1,6 +1,34 @@
 {
-  "last_updated": 1697047199.0,
+  "last_updated": 1697382512.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6451",
+      "time": 1697382512.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6451",
+      "text": "Replaced export button Icon with relevant Export Icon"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6450",
+      "time": 1697380625.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6450#issuecomment-1763409333",
+      "text": "Hello, @rithviknishad @khavinshankar @mathew-alex In this PR I changed useDispatch with useQuery. It is working as expected and cypress tests for DeathReport are also passing. so, can you review this PR once?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6450",
+      "time": 1697380260.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6450",
+      "text": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6328",
+      "time": 1697371068.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6328#issuecomment-1763366977",
+      "text": "Hello, @rithviknishad where the `PrintDeathReport` component is used in CARE.\r\n\r\n- `PrintDeathReport` is present in src/Components/DeathReport/DeathReport.tsx"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6328",
@@ -81,12 +109,24 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6451",
+      "title": "Replaced export button Icon with relevant Export Icon",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6450",
+      "title": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6344",
       "title": "Replaced useDispatch with useQuery and request.",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
-        "test failed",
-        "changes required"
+        "needs testing",
+        "reviewed"
       ]
     }
   ],

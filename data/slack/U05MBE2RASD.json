@@ -891,5 +891,85 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-10-15 00:00:00": [
+        {
+            "client_msg_id": "27d756a7-b60d-4896-b7b0-b1f9ab100d1f",
+            "type": "message",
+            "text": "EOD 15/10/23\nHow did the day go?\n\u2022 Tried to debug <https://github.com/coronasafe/care_fe/issues/6321|#6321>. Looked into react-player and hls.js for same. Not resolved yet.\nWhat's next?\n\u2022 Continue working on #6321.",
+            "user": "U05MBE2RASD",
+            "ts": "1697375413.722239",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "4n3oZ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 15/10/23\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Tried to debug "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6321",
+                                            "text": "#6321",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ". Looked into react-player and hls.js for same. Not resolved yet."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "What's next?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Continue working on #6321."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

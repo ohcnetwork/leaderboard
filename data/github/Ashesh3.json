@@ -1,6 +1,55 @@
 {
-  "last_updated": 1697365087.0,
+  "last_updated": 1697461548.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1669",
+      "time": 1697461548.0,
+      "link": "https://github.com/coronasafe/care/pull/1669",
+      "text": "Add Medico-Legal Case Toggle and Filter"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1642",
+      "time": 1697461434.0,
+      "link": "https://github.com/coronasafe/care/pull/1642",
+      "text": "Implement Middleware Override in AssetLocation"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6456",
+      "time": 1697459954.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6456",
+      "text": "Add location filter for patients"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1669",
+      "time": 1697446763.0,
+      "link": "https://github.com/coronasafe/care/pull/1669#issuecomment-1764031287",
+      "text": "> LGTM, add tests\r\n\r\nAdded!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697444909.0,
+      "title": "coronasafe/care#1670",
+      "link": "https://github.com/coronasafe/care/pull/1670#pullrequestreview-1679410191",
+      "text": "fixed: updated consciousness levels"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6439",
+      "time": 1697435137.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6439#issuecomment-1763769383",
+      "text": "Discussed on EOD call to mark this as wishlist as it's not an immediate requirement."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6453",
+      "time": 1697431365.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6453",
+      "text": "Show camera feed only for admin and doctor"
+    },
     {
       "type": "pr_reviewed",
       "time": 1697365087.0,
@@ -13293,31 +13342,41 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1669",
-      "title": "Add Medico-Legal Case Toggle and Filter",
-      "stale_for": 4,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6440",
-      "title": "Add medico-legal case toggle and filter",
-      "stale_for": 4,
+      "link": "https://github.com/coronasafe/care_fe/pull/6456",
+      "title": "Add location filter for patients",
+      "stale_for": 0,
       "labels": [
         "waiting for back end"
       ]
     },
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6453",
+      "title": "Show camera feed only for admin and doctor",
+      "stale_for": 0,
+      "labels": [
+        "test failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6440",
+      "title": "Add medico-legal case toggle and filter",
+      "stale_for": 0,
+      "labels": [
+        "changes required",
+        "work-in-progress",
+        "merge conflict"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1665",
       "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 10,
+      "stale_for": 11,
       "labels": [
         "POC"
       ]
@@ -13325,35 +13384,21 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "POC"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6368",
-      "title": "Middleware override feature in asset location",
-      "stale_for": 6,
-      "labels": [
-        "waiting for back end"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/10bedicu/pull/73",
       "title": "feat: Display asset details after scanning an asset's QR code.",
-      "stale_for": 2,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1642",
-      "title": "Implement Middleware Override in AssetLocation",
-      "stale_for": 6,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 194,
+      "stale_for": 195,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13362,13 +13407,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 207,
+      "stale_for": 208,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 17,
+      "stale_for": 18,
       "labels": [
         "blocked"
       ]

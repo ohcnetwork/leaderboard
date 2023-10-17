@@ -2553,5 +2553,115 @@
                 }
             ]
         }
+    ],
+    "2023-10-16 00:00:00": [
+        {
+            "client_msg_id": "ca4b93d5-1f5d-42cd-b034-85e9ba128297",
+            "type": "message",
+            "text": "*EOD 16/10/2023*\n\n*How did the day go?*\n\u2022 Working on the issue <https://github.com/coronasafe/care_fe/issues/6372>\n\u2022 Changing files from dispatch to useQuery if there is a Get request ",
+            "user": "U05LRJ1HDNH",
+            "ts": "1697484151.613349",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "hnM8N",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 16/10/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on the issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6372"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Changing files from dispatch to useQuery if there is a Get request "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U05LRJ1HDNH",
+                "ts": "1697484161.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1696004239,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6372",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6372 :hammer_and_wrench: Replace `useDispatch` w. `useQuery`/`request`: Consultations (`src/Components/Facility/Consultations/**`)",
+                    "title": "#6372 :hammer_and_wrench: Replace `useDispatch` w. `useQuery`/`request`: Consultations (`src/Components/Facility/Consultations/**`)",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6372",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/AshrafMd-1|@AshrafMd-1>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "good first issue, work-in-progress",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -1,6 +1,55 @@
 {
-  "last_updated": 1697382512.0,
+  "last_updated": 1697568988.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6450",
+      "time": 1697568988.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6450#issuecomment-1766987126",
+      "text": "@rithviknishad, I have changed the code as per the requested changes. Can you review this PR once?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697568788.0,
+      "title": "coronasafe/care_fe#6450",
+      "link": "https://github.com/coronasafe/care_fe/pull/6450#pullrequestreview-1683140763",
+      "text": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697568733.0,
+      "title": "coronasafe/care_fe#6450",
+      "link": "https://github.com/coronasafe/care_fe/pull/6450#pullrequestreview-1683139335",
+      "text": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697568710.0,
+      "title": "coronasafe/care_fe#6450",
+      "link": "https://github.com/coronasafe/care_fe/pull/6450#pullrequestreview-1683138752",
+      "text": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697568685.0,
+      "title": "coronasafe/care_fe#6450",
+      "link": "https://github.com/coronasafe/care_fe/pull/6450#pullrequestreview-1683137596",
+      "text": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6344",
+      "time": 1697560543.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6344#issuecomment-1766779410",
+      "text": "> @shyamprakash123 <img alt=\"image\" width=\"920\" src=\"https://user-images.githubusercontent.com/57055998/275628604-bd6b7830-e8f6-42f0-8524-80428f41dade.png\">\r\n> \r\n> in the patient consultation page, once we enter the aadhar number, it is not getting redirected to the otp section\r\n\r\n@nihal467 I just checked the ABHA Link for the patient consultation page it is working as expected.\r\nYou can check the video I recorded while testing the linking of ABHA it is redirecting me to the OTP section.\r\nSo, I'm requesting you to once again re-test this PR.\r\nVideo link - https://www.loom.com/share/2684ce0ebfa24a18bcea3fc446c9d991"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6451",
+      "time": 1697504680.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6451",
+      "text": "Replaced export button Icon with relevant Export Icon"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6451",
@@ -109,24 +158,21 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6451",
-      "title": "Replaced export button Icon with relevant Export Icon",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6450",
       "title": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "changes required"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6344",
       "title": "Replaced useDispatch with useQuery and request.",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "reviewed"
+        "tested",
+        "merge conflict",
+        "cypress passed"
       ]
     }
   ],

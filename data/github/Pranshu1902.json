@@ -1,6 +1,70 @@
 {
-  "last_updated": 1697447900.0,
+  "last_updated": 1697532483.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6460",
+      "time": 1697532483.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6460",
+      "text": "Make Administer Medicine responsive view"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6459",
+      "time": 1697532320.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6459",
+      "text": "Administer Medicine Slider and Modal not responsive"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#141",
+      "time": 1697527236.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/141",
+      "text": "Use consistent header for admin and chat sidebar"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#138",
+      "time": 1697527144.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/138",
+      "text": "Show error message on new test suite form"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#136",
+      "time": 1697527114.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/136",
+      "text": "Use modals for delete confirmation instead of alerts"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#139",
+      "time": 1697527085.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/139",
+      "text": "Fetch all chats for admin view"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#364",
+      "time": 1697527061.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/364",
+      "text": "Get all chats for fetch all request"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6368",
+      "time": 1697504439.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6368",
+      "text": "Middleware override feature in asset location",
+      "collaborated_with": [
+        "thtauhid",
+        "sriharsh05",
+        "nihal467",
+        "rithviknishad",
+        "jevil25",
+        "Ashesh3"
+      ]
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/ayushma_fe#141",
@@ -6255,51 +6319,29 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/141",
-      "title": "Use consistent header for admin and chat sidebar",
+      "link": "https://github.com/coronasafe/care_fe/pull/6460",
+      "title": "Make Administer Medicine responsive view",
       "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/139",
-      "title": "Fetch all chats for admin view",
-      "stale_for": 2,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/ayushma/pull/364",
-      "title": "Get all chats for fetch all request",
-      "stale_for": 2,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/138",
-      "title": "Show error message on new test suite form",
-      "stale_for": 2,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/136",
-      "title": "Use modals for delete confirmation instead of alerts",
-      "stale_for": 3,
-      "labels": []
+      "labels": [
+        "test failed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/10bedicu/pull/72",
       "title": "Fix front-end issue for footer and cards",
-      "stale_for": 25,
+      "stale_for": 26,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1631",
       "title": "Put Principal Diagnosis before Provisional Diagnosis in Discharge Summary",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6253",
       "title": " Show only those facilties that aren't linked to user",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "waiting for back end"
@@ -6314,7 +6356,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1530",
       "title": "Check bed name before making new multiple beds with same name",
-      "stale_for": 53,
+      "stale_for": 54,
       "labels": [
         "changes required"
       ]
@@ -6322,29 +6364,49 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1505",
       "title": "Don't allow negative values for Doctor Count for facility",
-      "stale_for": 53,
+      "stale_for": 54,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 103,
+      "stale_for": 104,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 356,
+      "stale_for": 357,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 356,
+      "stale_for": 357,
       "labels": []
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma_fe/issues/140",
+      "pr_link": "https://github.com/coronasafe/ayushma_fe/pull/141"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma/issues/363",
+      "pr_link": "https://github.com/coronasafe/ayushma/pull/364"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma/issues/363",
+      "pr_link": "https://github.com/coronasafe/ayushma_fe/pull/139"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma_fe/issues/137",
+      "pr_link": "https://github.com/coronasafe/ayushma_fe/pull/138"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma_fe/issues/135",
+      "pr_link": "https://github.com/coronasafe/ayushma_fe/pull/136"
+    },
     {
       "issue_link": "https://github.com/coronasafe/ayushma_fe/issues/132",
       "pr_link": "https://github.com/coronasafe/ayushma_fe/pull/133"
@@ -6444,14 +6506,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6095",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6096"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6093",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6094"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/5996",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/5997"
     }
   ]
 }

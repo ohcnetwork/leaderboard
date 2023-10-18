@@ -1,6 +1,23 @@
 {
-  "last_updated": 1697362820.0,
+  "last_updated": 1697504640.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6428",
+      "time": 1697504640.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6428",
+      "text": "Added cypress test to verify warranty expiry label on an asset"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6428",
+      "time": 1697504640.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6428",
+      "text": "Added cypress test to verify warranty expiry label on an asset",
+      "collaborated_with": [
+        "nihal467"
+      ]
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6449",
@@ -2781,17 +2798,11 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6447",
       "title": "ICD-11 diagnosis cannot be both prov and final",
-      "stale_for": 2,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6428",
-      "title": "Added cypress test to verify warranty expiry label on an asset",
       "stale_for": 1,
       "labels": [
-        "needs testing"
+        "test failed",
+        "changes required",
+        "waiting for back end"
       ]
     }
   ],

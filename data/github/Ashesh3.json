@@ -1,6 +1,42 @@
 {
-  "last_updated": 1697461548.0,
+  "last_updated": 1697542805.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1679",
+      "time": 1697542805.0,
+      "link": "https://github.com/coronasafe/care/pull/1679",
+      "text": "Implement Location Filtering in Patient Consultations"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6453",
+      "time": 1697538142.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6453#issuecomment-1766120832",
+      "text": "> @Ashesh3 <img alt=\"image\" width=\"960\" src=\"https://user-images.githubusercontent.com/57055998/275649122-d0dc996f-e2dd-48af-81ee-3933c6fba9b6.png\">\r\n> \r\n> the vital configure button is missing for district admin users\r\n\r\nFixed.\r\n\r\n### DistrictAdmin / Doctor\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/64e3a7f0-8e65-4857-a4ff-c59f803e6118)\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/a681e20b-6d0f-4a1b-801a-284a66aac647)\r\n\r\n\r\n### Volunteer\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/2049bded-5137-4635-b48b-9a049c840f2d)\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/ec0758c7-e598-4784-95e6-20f04d8484d2)\r\n"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6368",
+      "time": 1697504439.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6368",
+      "text": "Middleware override feature in asset location"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6368",
+      "time": 1697504439.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6368",
+      "text": "Middleware override feature in asset location",
+      "collaborated_with": [
+        "thtauhid",
+        "sriharsh05",
+        "nihal467",
+        "rithviknishad",
+        "jevil25",
+        "Pranshu1902"
+      ]
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1669",
@@ -13342,6 +13378,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1679",
+      "title": "Implement Location Filtering in Patient Consultations",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6456",
       "title": "Add location filter for patients",
       "stale_for": 0,
@@ -13360,7 +13404,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6440",
       "title": "Add medico-legal case toggle and filter",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -13370,13 +13414,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1665",
       "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 11,
+      "stale_for": 12,
       "labels": [
         "POC"
       ]
@@ -13384,7 +13428,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "POC"
       ]
@@ -13392,13 +13436,13 @@
     {
       "link": "https://github.com/coronasafe/10bedicu/pull/73",
       "title": "feat: Display asset details after scanning an asset's QR code.",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 195,
+      "stale_for": 196,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13407,13 +13451,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 208,
+      "stale_for": 209,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 18,
+      "stale_for": 19,
       "labels": [
         "blocked"
       ]

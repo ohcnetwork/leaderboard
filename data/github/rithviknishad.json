@@ -1,6 +1,122 @@
 {
-  "last_updated": 1697461184.0,
+  "last_updated": 1697554183.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6311",
+      "time": 1697554183.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6311#issuecomment-1766578047",
+      "text": "As per discussion, the administration comment should be shown along with the administration event itself instead of a seperate event. And it should be greyed out too."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697547769.0,
+      "title": "coronasafe/care#1588",
+      "link": "https://github.com/coronasafe/care/pull/1588#pullrequestreview-1682284599",
+      "text": "Filter out those facilities that are already linked to user"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697547751.0,
+      "title": "coronasafe/care#1588",
+      "link": "https://github.com/coronasafe/care/pull/1588#pullrequestreview-1682284599",
+      "text": "Filter out those facilities that are already linked to user"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6240",
+      "time": 1697547254.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6240#issuecomment-1766361741",
+      "text": "@cp-Coder any updates on the front-end PR? \r\nThis issue will be unassigned from you due to no activity tonight."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697547033.0,
+      "title": "coronasafe/care_fe#6415",
+      "link": "https://github.com/coronasafe/care_fe/pull/6415#pullrequestreview-1682243539",
+      "text": "Optimize lodash. Fixes #6006"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697544887.0,
+      "title": "coronasafe/care#1679",
+      "link": "https://github.com/coronasafe/care/pull/1679#pullrequestreview-1682164036",
+      "text": "Implement Location Filtering in Patient Consultations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697534450.0,
+      "title": "coronasafe/care_fe#6460",
+      "link": "https://github.com/coronasafe/care_fe/pull/6460#pullrequestreview-1681814313",
+      "text": "Make Administer Medicine responsive view"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1678",
+      "time": 1697521585.0,
+      "link": "https://github.com/coronasafe/care/pull/1678",
+      "text": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6458",
+      "time": 1697521245.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6458",
+      "text": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697513303.0,
+      "title": "coronasafe/care_fe#6374",
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#pullrequestreview-1681301657",
+      "text": "Replaced dispatch with useQuery and request in Asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697513248.0,
+      "title": "coronasafe/care_fe#6374",
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#pullrequestreview-1681301114",
+      "text": "Replaced dispatch with useQuery and request in Asset module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697513001.0,
+      "title": "coronasafe/care_fe#6448",
+      "link": "https://github.com/coronasafe/care_fe/pull/6448#pullrequestreview-1681298643",
+      "text": "replace useDispatch with useQuery/request in facility module"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697512745.0,
+      "title": "coronasafe/care_fe#6456",
+      "link": "https://github.com/coronasafe/care_fe/pull/6456#pullrequestreview-1681296143",
+      "text": "Add location filter for patients"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6402",
+      "time": 1697504606.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6402",
+      "text": "Replaced useDispatch with useQuery and request in ExternalResult (src/Components/ExternalResult/** )",
+      "collaborated_with": [
+        "konavivekramakrishna"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6368",
+      "time": 1697504439.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6368",
+      "text": "Middleware override feature in asset location",
+      "collaborated_with": [
+        "thtauhid",
+        "sriharsh05",
+        "nihal467",
+        "jevil25",
+        "Pranshu1902",
+        "Ashesh3"
+      ]
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1630",
@@ -24625,6 +24741,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1678",
+      "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6458",
+      "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "Backend"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Group medicine administration by 4 hours + show administration notes and administered by in popover + migrate `useDispatch` to `useQuery`",
       "stale_for": 0,
@@ -24638,7 +24769,7 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "discussion"
+        "waiting for related PR"
       ]
     }
   ],
@@ -24650,6 +24781,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6335",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6358"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6326",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6327"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6325",
@@ -24721,10 +24856,6 @@
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6033",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6034"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6023",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6034"
     }
   ]

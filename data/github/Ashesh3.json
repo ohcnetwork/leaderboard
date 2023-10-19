@@ -1,6 +1,62 @@
 {
-  "last_updated": 1697542805.0,
+  "last_updated": 1697661009.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#373",
+      "time": 1697661009.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/373",
+      "text": "Monitor celery tasks in sentry"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#142",
+      "time": 1697658160.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/142",
+      "text": "Add GPT Visual support in testing suite"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#372",
+      "time": 1697658146.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/372",
+      "text": "Add GPT Visual support in testing suite"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#142",
+      "time": 1697650179.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/142#issuecomment-1769014185",
+      "text": "> Member\r\n\r\nI tried that, but couldn't fit it in the design, for now you can click the file to preview it. If you can think of a good design for the previews, do let me know!"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma#372",
+      "time": 1697650098.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/372#issuecomment-1769012443",
+      "text": "> @Ashesh3\r\n> \r\n> files stored locally do not work (run without s3 creds)\r\n\r\nBut we automatically store all files on s3 right?"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/10bedicu#73",
+      "time": 1697624864.0,
+      "link": "https://github.com/coronasafe/10bedicu/pull/73",
+      "text": "feat: Display asset details after scanning an asset's QR code."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#142",
+      "time": 1697623963.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/142",
+      "text": "Add GPT Visual support in testing suite"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma#372",
+      "time": 1697623787.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/372",
+      "text": "Add GPT Visual support in testing suite"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1679",
@@ -13378,6 +13434,12 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/ayushma/pull/373",
+      "title": "Monitor celery tasks in sentry",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1679",
       "title": "Implement Location Filtering in Patient Consultations",
       "stale_for": 0,
@@ -13390,13 +13452,14 @@
       "title": "Add location filter for patients",
       "stale_for": 0,
       "labels": [
+        "test failed",
         "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6453",
       "title": "Show camera feed only for admin and doctor",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed"
       ]
@@ -13404,7 +13467,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6440",
       "title": "Add medico-legal case toggle and filter",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -13414,13 +13477,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1665",
       "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": [
         "POC"
       ]
@@ -13428,21 +13491,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "POC"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/10bedicu/pull/73",
-      "title": "feat: Display asset details after scanning an asset's QR code.",
-      "stale_for": 1,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 196,
+      "stale_for": 197,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13451,13 +13508,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 209,
+      "stale_for": 210,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 19,
+      "stale_for": 20,
       "labels": [
         "blocked"
       ]

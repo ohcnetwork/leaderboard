@@ -1,6 +1,142 @@
 {
-  "last_updated": 1697554183.0,
+  "last_updated": 1697634689.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6435",
+      "time": 1697634689.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6435",
+      "text": "Daily Rounds: Updated consciousness levels choices to MEWS",
+      "collaborated_with": [
+        "cp-Coder"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697633708.0,
+      "title": "coronasafe/care_fe#6435",
+      "link": "https://github.com/coronasafe/care_fe/pull/6435#pullrequestreview-1685002693",
+      "text": "Daily Rounds: Updated consciousness levels choices to MEWS"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1670",
+      "time": 1697633336.0,
+      "link": "https://github.com/coronasafe/care/pull/1670",
+      "text": "Daily Rounds: Updated consciousness levels choices and migrated `CANNOT BE ASSESSED` to `UNKNOWN`",
+      "collaborated_with": [
+        "cp-Coder"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6466",
+      "time": 1697629177.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6466",
+      "text": "Fixes JWT token refresh interval default fallback to 5 mins (instead of 15 mins)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697626346.0,
+      "title": "coronasafe/care_fe#6450",
+      "link": "https://github.com/coronasafe/care_fe/pull/6450#pullrequestreview-1684744321",
+      "text": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6465",
+      "time": 1697621631.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6465",
+      "text": "Fix CSS unintentended RTL style"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6467",
+      "time": 1697621316.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6467",
+      "text": "Do not Merge: Mirroring JWT Token config as of prod"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6466",
+      "time": 1697620563.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6466",
+      "text": "Fixes JWT token refresh interval default fallback to 5 mins (instead of 15 mins)"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6465",
+      "time": 1697620418.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6465",
+      "text": "Fix CSS unintentended RTL style"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6464",
+      "time": 1697607646.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6464",
+      "text": "Adds user type: Nurse and Nurse (readonly)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6435",
+      "time": 1697605203.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6435#issuecomment-1767644679",
+      "text": "@nihal467 i've fixed the above mentioned issues, could you check again?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6006",
+      "time": 1697604940.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6006#issuecomment-1767640210",
+      "text": "Keeping the issue opened, as loadash was not removed and only replaced in previous PR"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6396",
+      "time": 1697601229.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6396#issuecomment-1767594846",
+      "text": "@nihal467 the other mentioned issues has been fixed.\r\n\r\n<img width=\"1040\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/040b7345-0650-42c0-855b-7a1145dc4a01\">\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6396",
+      "time": 1697601193.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6396#issuecomment-1767594503",
+      "text": "The stretch issue of the page cannot be solved easily, if I make the table horizontally scrollable, it'll clip out the Popover too (all vertical content) too. This issue is a limitation by the CSS itself. https://stackoverflow.com/a/6433475/7887936 \r\n\r\n`overflow-x-auto` causes vertical contents to be clipped (that'll include the Popover overflow too)\r\n`overflow-x-auto overflow-y-visible` has no effect.\r\n\r\ncc: @Ashesh3 @khavinshankar \r\n\r\nWe could make this in a dedicated page (for mobile view alone) maybe in a later PR?\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6458",
+      "time": 1697600503.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6458#issuecomment-1767579074",
+      "text": "@nihal467 ready for testing"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6458",
+      "time": 1697600353.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6458#issuecomment-1767577332",
+      "text": "@nihal467 nope, that's not an intentional behaviour as per discussions made. My bad, I had accidentally forgot to remove the range constraints."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6462",
+      "time": 1697597578.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6462",
+      "text": "Fixes pagination not working in Location Management (`PaginatedList` component)"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6374",
+      "time": 1697591792.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6374",
+      "text": "Replaced dispatch with useQuery and request in Asset module",
+      "collaborated_with": [
+        "nihal467",
+        "kshitijv256"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6311",
@@ -24741,9 +24877,26 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6464",
+      "title": "Adds user type: Nurse and Nurse (readonly)",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6462",
+      "title": "Fixes pagination not working in Location Management (`PaginatedList` component)",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
@@ -24760,13 +24913,13 @@
       "title": "Group medicine administration by 4 hours + show administration notes and administered by in popover + migrate `useDispatch` to `useQuery`",
       "stale_for": 0,
       "labels": [
-        "test failed"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing",
         "waiting for related PR"
@@ -24853,10 +25006,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6051",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6052"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6033",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6034"
     }
   ]
 }

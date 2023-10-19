@@ -90014,5 +90014,383 @@
             "team": "TC99SV7B6"
         }
     ],
-    "2023-10-18 00:00:00": []
+    "2023-10-18 00:00:00": [
+        {
+            "client_msg_id": "b664255a-d930-4a0e-ac02-ee7aaeb77469",
+            "type": "message",
+            "text": "EOD 18/10/2023 <!subteam^S035L5S02RF|@care_engineering>\n\nHow did the day go?\n\u2022 <https://github.com/coronasafe/care_fe/pull/6462|#6462>: Fixes missing `offset` in query params of `PaginatedList` component which prevented query from not being dispatched upon page navigations.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6458|#6458>: Fixes upon QA on consultation: route to facility PR\n\u2022 <https://github.com/coronasafe/care_fe/pull/6396|#6396>: Fixes upon QA (more responsiveness issues) on medicine administration group by 4 hour PR.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6464|#6464>: Added nurse user type (front-end)\n\u2022 <https://github.com/coronasafe/care/pull/1670|#1670>: optimized and rebased migrations of updating consciousness level choices aligning to MEWS\n\u2022 <https://github.com/coronasafe/care_fe/pull/6435|#6435>: Fixed issues with front-end PR of updating consciousness level choices aligning to MEWS\n\u2022 <https://github.com/coronasafe/care_fe/pull/6466|#6466>: Fixed accidental edit to the fallback value of JWT refresh token interval\n\u2022 <https://github.com/coronasafe/care_fe/pull/6465|#6465>: Fixed unintended RTL styles present in Neurological Monitoring table.\n\u2022 Partially worked on zoomdrive serverless.\n*What's next?*\n\u2022 Complete tests for consultation route to facility backend and follow up on QA.\n\u2022 Work on zoomdrive on vercel serverless functions.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1697637374.014539",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "UICx9",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 18/10/2023 "
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6462",
+                                            "text": "#6462",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixes missing "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "offset",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " in query params of "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "PaginatedList",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " component which prevented query from not being dispatched upon page navigations."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6458",
+                                            "text": "#6458",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixes upon QA on consultation: route to facility PR"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6396",
+                                            "text": "#6396",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixes upon QA (more responsiveness issues) on medicine administration group by 4 hour PR."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6464",
+                                            "text": "#6464",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Added nurse user type (front-end)"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care/pull/1670",
+                                            "text": "#1670",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": optimized and rebased migrations of updating consciousness level choices aligning to MEWS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6435",
+                                            "text": "#6435",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixed issues with front-end PR of updating consciousness level choices aligning to MEWS"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6466",
+                                            "text": "#6466",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixed accidental edit to the fallback value of JWT refresh token interval"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6465",
+                                            "text": "#6465",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fixed unintended RTL styles present in Neurological Monitoring table."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Partially worked on zoomdrive serverless."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Complete tests for consultation route to facility backend and follow up on QA."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on zoomdrive on vercel serverless functions."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        },
+        {
+            "client_msg_id": "a48b6d65-a34a-439c-bf35-91e3bee22b5e",
+            "type": "message",
+            "text": "*EOD 17/10/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 Fixed issues caught during QA for medicine administration binning PR. Rewrote the overflow overlay logic from scratch.\n\u2022 Fixed some issues in consultation route to facility PR and added some tests.\n\u2022 Looked into vercel serverless functions for zoomdrive.\n*What's next?*\n\u2022 Complete tests for consultation route to facility backend and follow up on QA.\n\u2022 Work on zoomdrive on vercel serverless functions.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1697598351.603289",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "v9X7Y",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 17/10/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed issues caught during QA for medicine administration binning PR. Rewrote the overflow overlay logic from scratch."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fixed some issues in consultation route to facility PR and added some tests."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Looked into vercel serverless functions for zoomdrive."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Complete tests for consultation route to facility backend and follow up on QA."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Work on zoomdrive on vercel serverless functions."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
+    ],
+    "2023-10-19 00:00:00": []
 }

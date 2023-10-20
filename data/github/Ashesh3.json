@@ -1,6 +1,48 @@
 {
-  "last_updated": 1697661009.0,
+  "last_updated": 1697739795.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6477",
+      "time": 1697739795.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6477",
+      "text": "Fix loadash-es import"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6472",
+      "time": 1697705802.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6472#issuecomment-1770364664",
+      "text": "> @Ashesh3 <img alt=\"image\" width=\"960\" src=\"https://user-images.githubusercontent.com/57055998/276545851-559d9b6a-4d7d-4da7-b3c8-3413512b4e17.png\">\r\n> \r\n> when i sign out, i have been redirected to session expired page\r\n\r\nShould be fixed now."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6472",
+      "time": 1697702730.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6472",
+      "text": "Fix session expiry detection"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/ayushma_fe#143",
+      "time": 1697689588.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/143",
+      "text": "Fix admin view of all chats"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697687513.0,
+      "title": "coronasafe/care#1589",
+      "link": "https://github.com/coronasafe/care/pull/1589#pullrequestreview-1686609256",
+      "text": "Adds Nurse user type and promote existing staffs to nurse"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma#373",
+      "time": 1697687358.0,
+      "link": "https://github.com/coronasafe/ayushma/pull/373",
+      "text": "Monitor celery tasks in sentry"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/ayushma#373",
@@ -13434,15 +13476,15 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/ayushma/pull/373",
-      "title": "Monitor celery tasks in sentry",
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/143",
+      "title": "Fix admin view of all chats",
       "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1679",
       "title": "Implement Location Filtering in Patient Consultations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -13450,7 +13492,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6456",
       "title": "Add location filter for patients",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "waiting for back end"
@@ -13459,7 +13501,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6453",
       "title": "Show camera feed only for admin and doctor",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "test failed"
       ]
@@ -13467,7 +13509,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6440",
       "title": "Add medico-legal case toggle and filter",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "changes required",
         "work-in-progress",
@@ -13477,13 +13519,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1665",
       "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": [
         "POC"
       ]
@@ -13491,7 +13533,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "POC"
       ]
@@ -13499,7 +13541,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 197,
+      "stale_for": 198,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13508,13 +13550,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 210,
+      "stale_for": 211,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "blocked"
       ]

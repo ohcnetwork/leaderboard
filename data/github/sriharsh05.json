@@ -1,6 +1,13 @@
 {
-  "last_updated": 1697504439.0,
+  "last_updated": 1697822349.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6479",
+      "time": 1697822349.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6479",
+      "text": "change the NIBP display from last 30 mins to current bed assignment date"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6368",
@@ -87,9 +94,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6479",
+      "title": "change the NIBP display from last 30 mins to current bed assignment date",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6448",
       "title": "replace useDispatch with useQuery/request in facility module",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "changes required",
         "merge conflict"

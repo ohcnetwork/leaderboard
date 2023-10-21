@@ -1,6 +1,55 @@
 {
-  "last_updated": 1697718406.0,
+  "last_updated": 1697793527.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1530",
+      "time": 1697793527.0,
+      "link": "https://github.com/coronasafe/care/pull/1530#issuecomment-1772378468",
+      "text": "The solution would be to index the bed names and before creating beds do a lookup of any existing beds with names \r\n\r\nbut creating unique index can cause conflict, so this is a blocker\r\n\r\n@vigneshhari what are your thoughts?\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1505",
+      "time": 1697793104.0,
+      "link": "https://github.com/coronasafe/care/pull/1505#issuecomment-1772367249",
+      "text": "@Pranshu1902 delete and recreate the migrations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697786238.0,
+      "title": "coronasafe/care#1589",
+      "link": "https://github.com/coronasafe/care/pull/1589#pullrequestreview-1689381216",
+      "text": "Adds Nurse user type and promote existing staffs to nurse"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697786238.0,
+      "title": "coronasafe/care#1589",
+      "link": "https://github.com/coronasafe/care/pull/1589#pullrequestreview-1689381216",
+      "text": "Adds Nurse user type and promote existing staffs to nurse"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1673",
+      "time": 1697784587.0,
+      "link": "https://github.com/coronasafe/care/pull/1673#issuecomment-1772180854",
+      "text": "> @sainak should we move the loading of icd11 to in-memory for tests to somewhere else?\r\n> \r\n> or is it fine for now since we'll soon rewrite how we populate icd11/medibase to in memory in the first place?\r\n\r\nit's fine for now"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697784522.0,
+      "title": "coronasafe/care#1673",
+      "link": "https://github.com/coronasafe/care/pull/1673#pullrequestreview-1689353051",
+      "text": "ICD-11 diagnosis cannot be both provisional and final"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697784345.0,
+      "title": "coronasafe/care#1683",
+      "link": "https://github.com/coronasafe/care/pull/1683#pullrequestreview-1689349297",
+      "text": "fix typo in docs for local dev installation"
+    },
     {
       "type": "pr_reviewed",
       "time": 1697718406.0,
@@ -6419,13 +6468,13 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6457",
       "title": "add support for webrtc stream",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 37,
+      "stale_for": 38,
       "labels": [
         "In progress"
       ]
@@ -6433,13 +6482,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 30,
+      "stale_for": 31,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "merge conflict",
@@ -6450,13 +6499,13 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 91,
+      "stale_for": 92,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 16,
+      "stale_for": 17,
       "labels": []
     }
   ],

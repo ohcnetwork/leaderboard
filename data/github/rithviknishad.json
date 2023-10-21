@@ -1,6 +1,48 @@
 {
-  "last_updated": 1697715541.0,
+  "last_updated": 1697811847.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1697811847.0,
+      "title": "coronasafe/care_fe#6474",
+      "link": "https://github.com/coronasafe/care_fe/pull/6474#pullrequestreview-1690165149",
+      "text": "Fix: Asset tab facility and location badges are malfunctioning"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1683",
+      "time": 1697802675.0,
+      "link": "https://github.com/coronasafe/care/pull/1683",
+      "text": "fix typo in docs for local dev installation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697784520.0,
+      "title": "coronasafe/care#1588",
+      "link": "https://github.com/coronasafe/care/pull/1588#pullrequestreview-1689353000",
+      "text": "Filter out those facilities that are already linked to user"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1683",
+      "time": 1697781729.0,
+      "link": "https://github.com/coronasafe/care/pull/1683",
+      "text": "fix typo in docs for local dev installation"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697777581.0,
+      "title": "coronasafe/care_fe#6461",
+      "link": "https://github.com/coronasafe/care_fe/pull/6461#pullrequestreview-1689184411",
+      "text": "Replaced useDispatch w. useQuery/request: Resource (src/Components/Resource/**)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1697777581.0,
+      "title": "coronasafe/care_fe#6461",
+      "link": "https://github.com/coronasafe/care_fe/pull/6461#pullrequestreview-1689184411",
+      "text": "Replaced useDispatch w. useQuery/request: Resource (src/Components/Resource/**)"
+    },
     {
       "type": "pr_reviewed",
       "time": 1697715541.0,
@@ -24959,7 +25001,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "tested",
         "waiting for back end"
@@ -24968,7 +25010,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6462",
       "title": "Fixes pagination not working in Location Management (`PaginatedList` component)",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "needs testing"
       ]
@@ -24976,7 +25018,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": []
     },
     {
@@ -24985,14 +25027,13 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "Backend",
-        "merge conflict"
+        "Backend"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Group medicine administration by 4 hours + show administration notes and administered by in popover + migrate `useDispatch` to `useQuery`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
@@ -25000,7 +25041,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "waiting for related PR"

@@ -1,6 +1,25 @@
 {
-  "last_updated": 1694189414.0,
+  "last_updated": 1697764088.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6135",
+      "time": 1697764088.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6135",
+      "text": "Added test of patient_crud.cy.ts"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6135",
+      "time": 1697764088.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6135",
+      "text": "Added test of patient_crud.cy.ts",
+      "collaborated_with": [
+        "kshitijv256",
+        "Pranshu1902",
+        "GokulramGHV"
+      ]
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6135",
@@ -491,23 +510,15 @@
       "text": "@nihal467  All the unclaimed tasks depend on the open PRs like adding, and editing consultation can only be done after creating patients, and configuration of the assets page can be done after creating an asset. So can I take those tasks which are already assigned (creating an asset) as the PR seems stale now? "
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6135",
-      "title": "Added test of patient_crud.cy.ts",
-      "stale_for": 0,
-      "labels": [
-        "need Review",
-        "tested",
-        "cypress failed",
-        "C4GT"
-      ]
-    }
-  ],
+  "open_prs": [],
   "authored_issue_and_pr": [
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6109",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6106"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5865",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6135"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5835",
@@ -516,6 +527,10 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/5835",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/5870"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5834",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6106"
     }
   ]
 }

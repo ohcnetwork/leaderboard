@@ -1,6 +1,13 @@
 {
-  "last_updated": 1697634689.0,
+  "last_updated": 1698070199.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1264",
+      "time": 1698070199.0,
+      "link": "https://github.com/coronasafe/care/pull/1264#issuecomment-1775292238",
+      "text": "Discussed in the EOD. Closing the PR as I will be creating a new endpoint that will do the same functionality"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6435",
@@ -7900,8 +7907,8 @@
   "open_prs": [
     {
       "link": "https://github.com/coronasafe/care/pull/1589",
-      "title": "fix: adds new user type \"Nurse\"",
-      "stale_for": 0,
+      "title": "Adds Nurse user type and promote existing staffs to nurse",
+      "stale_for": 3,
       "labels": [
         "waiting-for-review",
         "done"
@@ -7910,34 +7917,24 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1575",
       "title": "fix: tests for ambulance APIs",
-      "stale_for": 20,
+      "stale_for": 25,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1264",
-      "title": "fix: adds doctor and staff fields in location model",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review",
-        "P2"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5370",
       "title": "fix: Duty doctors and Staff for each Location in a Facility",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "tested",
         "P2",
         "waiting for back end",
-        "Deploy-Failed",
         "discussion"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 105,
+      "stale_for": 110,
       "labels": [
         "waiting-for-review"
       ]

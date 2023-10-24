@@ -2782,5 +2782,161 @@
                 }
             ]
         }
+    ],
+    "2023-10-23 00:00:00": [
+        {
+            "client_msg_id": "6952485b-4b7a-4e18-b03e-cf03e398cfa0",
+            "type": "message",
+            "text": "*EOD 21/10/2023 & EOD 22/10/2023*\n\n*How did the day go?*\n\u2022 Working on the issue <https://github.com/coronasafe/care_fe/issues/6372>\n\u2022 Added PaginatedLists to DailyRoundsList.tsx\n\u2022 Working on wd301 Capstone\n*What's next?*\n\u2022 Add Pagination to LiveFeed.tsx",
+            "user": "U05LRJ1HDNH",
+            "ts": "1698050284.745119",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "hzysu",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/10/2023 & EOD 22/10/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on the issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6372"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Added PaginatedLists to DailyRoundsList.tsx"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on wd301 Capstone"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Add Pagination to LiveFeed.tsx"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U05LRJ1HDNH",
+                "ts": "1698050312.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1696004239,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6372",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6372 :hammer_and_wrench: Replace `useDispatch` w. `useQuery`/`request`: Consultations (`src/Components/Facility/Consultations/**`)",
+                    "title": "#6372 :hammer_and_wrench: Replace `useDispatch` w. `useQuery`/`request`: Consultations (`src/Components/Facility/Consultations/**`)",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6372",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/AshrafMd-1|@AshrafMd-1>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "good first issue, work-in-progress",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

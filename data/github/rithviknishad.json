@@ -1,6 +1,20 @@
 {
-  "last_updated": 1697811847.0,
+  "last_updated": 1698036763.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1698036763.0,
+      "title": "coronasafe/care_fe#6479",
+      "link": "https://github.com/coronasafe/care_fe/pull/6479#pullrequestreview-1691704708",
+      "text": "change the NIBP display from last 30 mins to current bed assignment date"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698036763.0,
+      "title": "coronasafe/care_fe#6479",
+      "link": "https://github.com/coronasafe/care_fe/pull/6479#pullrequestreview-1691704708",
+      "text": "change the NIBP display from last 30 mins to current bed assignment date"
+    },
     {
       "type": "pr_reviewed",
       "time": 1697811847.0,
@@ -25001,7 +25015,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 2,
+      "stale_for": 5,
       "labels": [
         "tested",
         "waiting for back end"
@@ -25010,7 +25024,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6462",
       "title": "Fixes pagination not working in Location Management (`PaginatedList` component)",
-      "stale_for": 2,
+      "stale_for": 5,
       "labels": [
         "needs testing"
       ]
@@ -25019,12 +25033,14 @@
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6458",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "Backend"
@@ -25033,7 +25049,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Group medicine administration by 4 hours + show administration notes and administered by in popover + migrate `useDispatch` to `useQuery`",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -25041,7 +25057,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6311",
       "title": "Adds support for archiving medicine administrations",
-      "stale_for": 3,
+      "stale_for": 6,
       "labels": [
         "needs testing",
         "waiting for related PR"

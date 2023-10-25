@@ -1949,5 +1949,91 @@
                 }
             ]
         }
+    ],
+    "2023-10-24 00:00:00": [
+        {
+            "client_msg_id": "f593d34f-065b-4dd4-b6f5-a696cb9c7504",
+            "type": "message",
+            "text": "EOD 24/10/2023\n\nHow did the day go?\n\u2022 Made PR for issue <https://github.com/coronasafe/care_fe/issues/6446|#6446>",
+            "user": "U051Q1RP1MG",
+            "ts": "1698155932.024509",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "bRtn6",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 24/10/2023\n\nHow did the day go?\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Made PR for issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6446",
+                                            "text": "#6446",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/25143503/274844585-ab2a7e65-e40f-4a46-8a14-6a5bbd7b1993.png",
+                    "image_width": 3644,
+                    "image_height": 2252,
+                    "image_bytes": 955025,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1697186159,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6446",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "3644x2252px image",
+                    "text": "*Describe the bug*  \nPressure Sore popup does not close when clicked outside\n\n*To Reproduce*  \nSteps to reproduce the behavior:\n\n1. Go to a patient's consultation dashboard\n2. Open the \"Pressure Sore\" tab\n3. Open a popup and attempt to click outside\n\n*Expected behavior*  \nThe popup should close onBlur/click outside.\n\nConsider using headlessui's Popover component instead which would out of the box handle onBlur/click outside (and for consistent behaviour across other popover usages)\n\n*Screenshots*  \n<https://user-images.githubusercontent.com/25143503/274844585-ab2a7e65-e40f-4a46-8a14-6a5bbd7b1993.png|image>",
+                    "title": "#6446 Pressure Sore popup does not close when clicked outside",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6446",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/thedevildude|@thedevildude>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "good first issue, work-in-progress",
+                            "title": "Labels",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

@@ -1,6 +1,27 @@
 {
-  "last_updated": 1697800621.0,
+  "last_updated": 1698231090.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1698231090.0,
+      "title": "coronasafe/care_fe#6474",
+      "link": "https://github.com/coronasafe/care_fe/pull/6474#pullrequestreview-1696967568",
+      "text": "Fix: Asset tab facility and location badges are malfunctioning"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698223860.0,
+      "title": "coronasafe/care_fe#6474",
+      "link": "https://github.com/coronasafe/care_fe/pull/6474#pullrequestreview-1696737954",
+      "text": "Fix: Asset tab facility and location badges are malfunctioning"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1505",
+      "time": 1698220756.0,
+      "link": "https://github.com/coronasafe/care/pull/1505#issuecomment-1778719863",
+      "text": "@vigneshhari please review and merge the PR"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care#1505",
@@ -6391,27 +6412,28 @@
       "title": "Fix: Asset tab facility and location badges are malfunctioning",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "changes required",
+        "work-in-progress"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6460",
       "title": "Make Administer Medicine responsive view",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "needs testing"
+        "test failed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/10bedicu/pull/72",
       "title": "Fix front-end issue for footer and cards",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1631",
       "title": "Put Principal Diagnosis before Provisional Diagnosis in Discharge Summary",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": []
     },
     {
@@ -6419,7 +6441,9 @@
       "title": " Show only those facilties that aren't linked to user",
       "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "tested",
+        "waiting for back end",
+        "cypress passed"
       ]
     },
     {
@@ -6431,7 +6455,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1530",
       "title": "Check bed name before making new multiple beds with same name",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": [
         "changes required"
       ]
@@ -6445,19 +6469,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1157",
       "title": "Restrict Admin from unlinking users from other district",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/47",
       "title": "Removed whole card moving in responsive view",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_dashboard/pull/43",
       "title": "Added responsiveness on patients page",
-      "stale_for": 0,
+      "stale_for": 5,
       "labels": []
     }
   ],

@@ -1,6 +1,76 @@
 {
-  "last_updated": 1698040173.0,
+  "last_updated": 1698248402.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6367",
+      "time": 1698248402.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6367",
+      "text": "Medico-Legal Case"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698248384.0,
+      "title": "coronasafe/care_fe#6440",
+      "link": "https://github.com/coronasafe/care_fe/pull/6440#pullrequestreview-1697704425",
+      "text": "Add medico-legal case toggle and filter"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6328",
+      "time": 1698243173.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6328",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: DeathReport (`src/Components/DeathReport/**`)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698243161.0,
+      "title": "coronasafe/care_fe#6450",
+      "link": "https://github.com/coronasafe/care_fe/pull/6450#pullrequestreview-1697486324",
+      "text": "\ud83d\udee0\ufe0f Replaced useDispatch w. useQuery: DeathReport (src/Components/DeathReport/DeathReport.tsx)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6430",
+      "time": 1698243132.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6430",
+      "text": "Show camera feed ONLY to \"Doctor\", \"District Admin\" and \"State Admin\""
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698243121.0,
+      "title": "coronasafe/care_fe#6453",
+      "link": "https://github.com/coronasafe/care_fe/pull/6453#pullrequestreview-1697484765",
+      "text": "Show camera feed only for admin and doctor"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698243080.0,
+      "title": "coronasafe/care_fe#6462",
+      "link": "https://github.com/coronasafe/care_fe/pull/6462#pullrequestreview-1697483168",
+      "text": "Fixes pagination not working in Location Management (`PaginatedList` component)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698242986.0,
+      "title": "coronasafe/care_fe#6494",
+      "link": "https://github.com/coronasafe/care_fe/pull/6494#pullrequestreview-1697479373",
+      "text": "Lint CI: Show errors only and fix existing lint errors"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698228339.0,
+      "title": "coronasafe/care_fe#6490",
+      "link": "https://github.com/coronasafe/care_fe/pull/6490#pullrequestreview-1696887504",
+      "text": "Add GitHub Action for Linting on Pull Requests"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6487",
+      "time": 1698210032.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6487",
+      "text": "Abdm M3"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/teleicu_middleware#74",
@@ -24192,9 +24262,17 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6487",
+      "title": "Abdm M3",
+      "stale_for": 0,
+      "labels": [
+        "merge conflict"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 25,
+      "stale_for": 27,
       "labels": [
         "waiting-for-review"
       ]
@@ -24202,19 +24280,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 247,
+      "stale_for": 249,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 318,
+      "stale_for": 320,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 75,
+      "stale_for": 77,
       "labels": [
         "changes required"
       ]
@@ -24222,25 +24300,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 675,
+      "stale_for": 677,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 681,
+      "stale_for": 683,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 682,
+      "stale_for": 684,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 877,
+      "stale_for": 879,
       "labels": []
     }
   ],

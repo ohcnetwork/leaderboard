@@ -1,6 +1,20 @@
 {
-  "last_updated": 1697764088.0,
+  "last_updated": 1698259391.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6432",
+      "time": 1698259391.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6432#issuecomment-1779849467",
+      "text": "@aparnacoronasafe Should I change the existing \"Notes\" field to \"Instruction on titration\" for a titrated prescription, or do we need both the \"Notes\" and \"Instruction on titration\" fields for a titrated prescription?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1668",
+      "time": 1698226409.0,
+      "link": "https://github.com/coronasafe/care/issues/1668#issuecomment-1778877730",
+      "text": "@rithviknishad Can you assign me this?"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6135",
@@ -2810,11 +2824,11 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6447",
       "title": "ICD-11 diagnosis cannot be both prov and final",
-      "stale_for": 4,
+      "stale_for": 0,
       "labels": [
-        "test failed",
-        "changes required",
-        "waiting for back end"
+        "tested",
+        "waiting for back end",
+        "cypress passed"
       ]
     }
   ],

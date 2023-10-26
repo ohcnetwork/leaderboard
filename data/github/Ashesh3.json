@@ -1,6 +1,111 @@
 {
-  "last_updated": 1698156011.0,
+  "last_updated": 1698254702.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6489",
+      "time": 1698254702.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6489",
+      "text": "Show loading state for fetching asset locations in Asset Import"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6489",
+      "time": 1698254701.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6489#issuecomment-1779733327",
+      "text": "> @Ashesh3 `setLocationsLoading` is removed and in place of that `loading` variable of `useQuery` is used to handle the loading state. If I'm wrong correct me. Can you provide a screenshot of the problem for a better understanding?\r\n\r\nI noticed that this issue was just fixed with rithviknishad in this PR: https://github.com/coronasafe/care_fe/pull/6494/ . Closing this issue as resolved. "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6440",
+      "time": 1698248401.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6440",
+      "text": "Add medico-legal case toggle and filter"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6453",
+      "time": 1698243131.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6453",
+      "text": "Show camera feed only for admin and doctor"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698241935.0,
+      "title": "coronasafe/care_fe#6494",
+      "link": "https://github.com/coronasafe/care_fe/pull/6494#pullrequestreview-1697413903",
+      "text": "Lint CI: Show errors only and fix existing lint errors"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698240620.0,
+      "title": "coronasafe/care#1678",
+      "link": "https://github.com/coronasafe/care/pull/1678#pullrequestreview-1697357335",
+      "text": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6490",
+      "time": 1698228392.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6490",
+      "text": "Add GitHub Action for Linting on Pull Requests"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6489",
+      "time": 1698219857.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6489#issuecomment-1778697223",
+      "text": "> I want to work on this, assign me\r\n\r\nYou are assigned."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6490",
+      "time": 1698219062.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6490",
+      "text": "Create linter.yml"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6440",
+      "time": 1698218678.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6440#issuecomment-1778668500",
+      "text": "> @Ashesh3 <img alt=\"image\" width=\"479\" src=\"https://user-images.githubusercontent.com/57055998/277905918-2d944253-1d26-4b80-9343-18c025607012.png\">\r\n> \r\n> * [ ]  link abha number UI is fully black, keep it consistent like other icons\r\n> * [ ]  resolve the merge conflict\r\n> * [ ]  get the UI opinion from @gigincg\r\n\r\nResolved:\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/aaa641c8-b00c-42d0-9e0c-0b41df2b5da3)\r\n"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6489",
+      "time": 1698218095.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6489",
+      "text": "Show loading state for fetching asset locations in Asset Import"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698217998.0,
+      "title": "coronasafe/care_fe#6374",
+      "link": "https://github.com/coronasafe/care_fe/pull/6374#pullrequestreview-1696533805",
+      "text": "Replaced dispatch with useQuery and request in Asset module"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6440",
+      "time": 1698214571.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6440#issuecomment-1778584303",
+      "text": "> @Ashesh3 are the UI changes implemented\r\n\r\nYes, Implemented."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6488",
+      "time": 1698213198.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6488#issuecomment-1778561046",
+      "text": "@Omkar76 comment on this issue so that I can assign you."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6488",
+      "time": 1698213128.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6488",
+      "text": "Header buttons are clipping the Patient Dashboard title"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6486",
@@ -13527,13 +13632,13 @@
     {
       "link": "https://github.com/coronasafe/ayushma_fe/pull/143",
       "title": "Fix admin view of all chats",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1679",
       "title": "Implement Location Filtering in Patient Consultations",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review"
       ]
@@ -13541,40 +13646,23 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6456",
       "title": "Add location filter for patients",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "waiting for back end"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6453",
-      "title": "Show camera feed only for admin and doctor",
-      "stale_for": 4,
-      "labels": [
-        "needs testing"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6440",
-      "title": "Add medico-legal case toggle and filter",
-      "stale_for": 8,
-      "labels": [
-        "changes required",
-        "work-in-progress",
-        "merge conflict"
+        "tested",
+        "waiting for back end",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1665",
       "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
-      "stale_for": 8,
+      "stale_for": 0,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 19,
+      "stale_for": 20,
       "labels": [
         "POC"
       ]
@@ -13582,7 +13670,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "stale",
         "POC"
@@ -13591,7 +13679,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 203,
+      "stale_for": 204,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13600,13 +13688,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 216,
+      "stale_for": 217,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 26,
+      "stale_for": 27,
       "labels": [
         "blocked"
       ]
@@ -13692,10 +13780,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/3614",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/3639"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/3573",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/3593"
     }
   ]
 }

@@ -1,6 +1,90 @@
 {
-  "last_updated": 1698254702.0,
+  "last_updated": 1698330064.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/ayushma_fe#143",
+      "time": 1698330064.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/143",
+      "text": "Fix admin view of all chats"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6499",
+      "time": 1698315466.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6499",
+      "text": "Fix passing silent argument to linter"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6495",
+      "time": 1698315385.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#issuecomment-1780825046",
+      "text": "Try to think of a different way to pass the redirect url across pages/components \ud83e\udd14 Something like the session expired page can silently pass the redirect url to the login component internally without exposing it through the URL. @rithviknishad any suggestions?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6495",
+      "time": 1698314981.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#issuecomment-1780814949",
+      "text": "> now it adds a / in between of the .my.subdomian do you want me to sanitise the redirect further like remove any . or other symbols in front of the redirect? @Ashesh3\r\n\r\n@AshrafMd-1 The POC to redirect to a different domain still works \ud83d\ude05 , It can be exploited to redirect to a different website.\r\n\r\nPOC: https://deploy-preview-6495--care-egov-staging.netlify.app/session-expired?redirect=https://google.com"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6499",
+      "time": 1698314467.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6499",
+      "text": "Fix passing silent argument to linter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698313891.0,
+      "title": "coronasafe/care_fe#6495",
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#pullrequestreview-1699185421",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698313877.0,
+      "title": "coronasafe/care_fe#6495",
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#pullrequestreview-1699186184",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698313877.0,
+      "title": "coronasafe/care_fe#6495",
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#pullrequestreview-1699186184",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698313848.0,
+      "title": "coronasafe/care_fe#6495",
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#pullrequestreview-1699185421",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698313350.0,
+      "title": "coronasafe/care_fe#6495",
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#pullrequestreview-1699168111",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698313329.0,
+      "title": "coronasafe/care_fe#6495",
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#pullrequestreview-1699168111",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#143",
+      "time": 1698312942.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/pull/143#issuecomment-1780759597",
+      "text": "@skks1212 could you review this?"
+    },
     {
       "type": "issue_closed",
       "title": "coronasafe/care_fe#6489",
@@ -13630,12 +13714,6 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/ayushma_fe/pull/143",
-      "title": "Fix admin view of all chats",
-      "stale_for": 2,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1679",
       "title": "Implement Location Filtering in Patient Consultations",
       "stale_for": 0,
@@ -13662,7 +13740,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 20,
+      "stale_for": 21,
       "labels": [
         "POC"
       ]
@@ -13670,7 +13748,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": [
         "stale",
         "POC"
@@ -13679,7 +13757,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 204,
+      "stale_for": 205,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13688,13 +13766,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 217,
+      "stale_for": 218,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 27,
+      "stale_for": 28,
       "labels": [
         "blocked"
       ]

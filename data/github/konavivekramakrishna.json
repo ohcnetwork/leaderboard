@@ -1,6 +1,20 @@
 {
-  "last_updated": 1698157402.0,
+  "last_updated": 1698313924.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6461",
+      "time": 1698313924.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6461#issuecomment-1780786572",
+      "text": "@rithviknishad \r\nI didn't understand why auto-label conflicts and lint codebase arise even though Cypress passed."
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1687",
+      "time": 1698309766.0,
+      "link": "https://github.com/coronasafe/care/issues/1687",
+      "text": "Remove external_id in response body"
+    },
     {
       "type": "pr_reviewed",
       "time": 1698157402.0,
@@ -108,7 +122,9 @@
       "link": "https://github.com/coronasafe/care_fe/pull/6461",
       "title": "Replaced useDispatch w. useQuery/request: Resource (src/Components/Resource/**)",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing"
+      ]
     }
   ],
   "authored_issue_and_pr": []

@@ -1,6 +1,34 @@
 {
-  "last_updated": 1698258708.0,
+  "last_updated": 1698340551.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6495",
+      "time": 1698340551.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#issuecomment-1781524430",
+      "text": ">  The navigate should work, why is it navigating to\u00a0`/`\u00a0or going into the refresh loop?\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/98876115/49b0eef7-e99c-4c66-923e-7f80274167f1)\r\n![image](https://github.com/coronasafe/care_fe/assets/98876115/37f3c77f-22b6-4859-8689-c6d5bb23ea9b)\r\n\r\nThe issue arises from the `isAuthenticated` function continuing to return `true`, even when the token is incorrect. Furthermore, I can keep the browsing history intact until the session expiration page, but when I attempt to navigate to the login page, the entire history is wiped clean.\r\n\r\nAs a solution, I reached out to @rithviknishad , who suggested revisiting the query parameter approach. Now, the recommendation is to check if the origin of the redirect URL matches the origin of care.\r\n\r\n@Ashesh3 , I'm currently implementing the query parameter approach. "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6495",
+      "time": 1698321680.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#issuecomment-1780974460",
+      "text": "> We could use the custom hook we have `useAppHistory` (which would inherently be prone from the attack mentioned before)\r\n\r\nAs we are doing `window.location.href=\"/session-expired\"` we are losing all the history we have \r\ntried it with `navigate()` but that is directly changing the page URL to `/` or going on a refresh loop\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6495",
+      "time": 1698318795.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#issuecomment-1780911191",
+      "text": "Maybe we can check if the `history` from `useAppHistory` matches the site domain and then redirect "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6495",
+      "time": 1698314554.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#issuecomment-1780803719",
+      "text": "now it adds a / in between of the .my.subdomian \r\ndo you want me to sanitise the redirect further like remove any . or other symbols in front of the redirect?"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6495",
@@ -120,7 +148,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6484",
       "title": "Replace useDispatch w. useQuery/request: Consultations #6372",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "changes required"
       ]

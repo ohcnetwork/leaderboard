@@ -1,6 +1,34 @@
 {
-  "last_updated": 1698330064.0,
+  "last_updated": 1698409163.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1698409163.0,
+      "title": "coronasafe/care_fe#6495",
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#pullrequestreview-1701660299",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1688",
+      "time": 1698397725.0,
+      "link": "https://github.com/coronasafe/care/pull/1688",
+      "text": "Add notifications for doctor notes"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#4705",
+      "time": 1698390205.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/4705#issuecomment-1782404110",
+      "text": "The design of the doctor's notes has been updated to incorporate a chat feature. Could we re-evaluate the relevance of this feature in the context of the new design and conclude the assessment accordingly?\r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6495",
+      "time": 1698381937.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#issuecomment-1782284991",
+      "text": "> @Ashesh3 does this seem fine?\r\n\r\nYep, seems fine."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/ayushma_fe#143",
@@ -13714,9 +13742,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1688",
+      "title": "Add notifications for doctor notes",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1679",
       "title": "Implement Location Filtering in Patient Consultations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "waiting-for-review"
       ]
@@ -13724,7 +13758,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6456",
       "title": "Add location filter for patients",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "waiting for back end",
@@ -13734,13 +13768,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1665",
       "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 21,
+      "stale_for": 22,
       "labels": [
         "POC"
       ]
@@ -13748,7 +13782,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6401",
       "title": "POC: AI discharge summary",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "stale",
         "POC"
@@ -13757,7 +13791,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 205,
+      "stale_for": 206,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13766,13 +13800,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 218,
+      "stale_for": 219,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 28,
+      "stale_for": 29,
       "labels": [
         "blocked"
       ]

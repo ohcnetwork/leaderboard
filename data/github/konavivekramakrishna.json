@@ -1,6 +1,20 @@
 {
-  "last_updated": 1698313924.0,
+  "last_updated": 1698401303.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6461",
+      "time": 1698401303.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6461#issuecomment-1782651381",
+      "text": " ```\r\nconst { loading: isResourceLoading } = useQuery(routes.getAnyFacility, {\r\n    pathParams: { id: String(filter.approving_facility) },\r\n    onResponse: ({ res, data }) => {\r\n      if (res && data) {\r\n        setFilterState({ approving_facility_ref: data });\r\n      }\r\n    },\r\n    prefetch: filter.approving_facility !== undefined,\r\n  });\r\n\r\n  // useEffect(() => {\r\n  //   async function fetchData() {\r\n  //     if (filter.approving_facility) {\r\n  //       setResourceLoading(true);\r\n  //       const res = await dispatch(\r\n  //         getAnyFacility(filter.approving_facility, \"approving_facility\")\r\n  //       );\r\n  //       if (res && res.data) {\r\n  //         setFilterState({ approving_facility_ref: res.data });\r\n  //       }\r\n  //       setResourceLoading(false);\r\n  //     }\r\n  //   }\r\n  //   fetchData();\r\n  // }, [dispatch]);\r\n  ```\r\n  \r\n![image](https://github.com/coronasafe/care_fe/assets/101407963/bd7e1a33-e47e-4821-ad44-411d0abdf506)\r\n\r\n\r\n@rithviknishad \r\nwhen I apply a filter and see filter it is showing undefined the above I tried to debug the above code within useEffect is working fine but changing it to useQuery it shows undefined in the filter \r\n\r\n  "
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6461",
+      "time": 1698385294.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6461#issuecomment-1782328248",
+      "text": "@nihal467 \r\nthere is a minor issue with the filtering, and I will fix by today."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6461",
@@ -123,7 +137,7 @@
       "title": "Replaced useDispatch w. useQuery/request: Resource (src/Components/Resource/**)",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "work-in-progress"
       ]
     }
   ],

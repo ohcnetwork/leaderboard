@@ -3070,5 +3070,133 @@
                 }
             ]
         }
+    ],
+    "2023-10-27 00:00:00": [
+        {
+            "client_msg_id": "59fe476f-58aa-4386-a216-11c7dd5a3bd8",
+            "type": "message",
+            "text": "*EOD 25/10/2023 To EOD 27/10/2023*\n\n*How did the day go?*\n\u2022 Working on the issue <https://github.com/coronasafe/care_fe/issues/6486>\n\u2022 Submitted a PR <https://github.com/coronasafe/care_fe/pull/6495>\n\u2022 Working on the authentication for wd301 capstone\n",
+            "user": "U05LRJ1HDNH",
+            "ts": "1698414896.191499",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "eRAxQ",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 25/10/2023 To EOD 27/10/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on the issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6486"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Submitted a PR "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6495"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Working on the authentication for wd301 capstone"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1698155691,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6486",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6486 Redirect to Original URL After Session Expiry and Re-login",
+                    "title": "#6486 Redirect to Original URL After Session Expiry and Re-login",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6486",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1698258706,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6495",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6495 Redirect to Original URL After Session Expiry and Re-login",
+                    "title": "#6495 Redirect to Original URL After Session Expiry and Re-login",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6495",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

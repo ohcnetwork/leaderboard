@@ -1,6 +1,13 @@
 {
-  "last_updated": 1698241620.0,
+  "last_updated": 1698392427.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6479",
+      "time": 1698392427.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6479#issuecomment-1782449051",
+      "text": "hey @rithviknishad \r\nI've made some updates to the central nursing station component based on the requirements. I believe it might need a review. Please take a look and let me know if I've taken the right approach.\r\n\r\nI've used the useEffect function to fetch the BedAssignmentStartDates of all the patients in the facility. This required two request calls to fetch the required data. However, I'm not certain if I've provided the data to the HL7PatientVitalsMonitor component in the correct order.\r\n\r\nPlease review the code when you get a chance."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6479",
@@ -111,7 +118,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6448",
       "title": "replace useDispatch with useQuery/request in facility module  (Part 2, E-Z) (src/Components/Facility/[E-Z]*.tsx ",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
         "changes required",
         "merge conflict"

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1698401303.0,
+  "last_updated": 1698581313.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6461",
+      "time": 1698581313.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6461#issuecomment-1784086272",
+      "text": "Hello @rithviknishad \r\ncan you review it now"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6461",
+      "time": 1698578182.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6461#issuecomment-1784071196",
+      "text": "Hello @rithviknishad \r\ncurrenlty when disabling the prefetch when facilityId is undefined the list is not updating in BadgeList.tsx\r\nhttps://www.loom.com/share/c125a233ce1f4713a691495a5c73900e?sid=7db3e57f-cdc4-4243-aac0-b6fc5ae465ce\r\n\r\nI even tried\r\n`prefetch = faciltiyId !==undefined && faciltiyId !==null && faciltiyId !==null`\r\nbut the badgeList is not updating\r\n\r\nwhen i tried with request instead of useQuery for get requests in bageList it is working fine but the useEffects and useStates remain same"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6461",
@@ -137,7 +151,7 @@
       "title": "Replaced useDispatch w. useQuery/request: Resource (src/Components/Resource/**)",
       "stale_for": 0,
       "labels": [
-        "work-in-progress"
+        "needs testing"
       ]
     }
   ],

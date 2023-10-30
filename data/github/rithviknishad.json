@@ -1,6 +1,70 @@
 {
-  "last_updated": 1698512117.0,
+  "last_updated": 1698604793.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1698604793.0,
+      "title": "coronasafe/care_fe#6515",
+      "link": "https://github.com/coronasafe/care_fe/pull/6515#pullrequestreview-1703019185",
+      "text": "Make header in patient dashboard more responsive. Fixes #6488"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6516",
+      "time": 1698600827.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6516",
+      "text": "Production Release; Nov Week 1",
+      "collaborated_with": [
+        "shyamprakash123",
+        "khavinshankar",
+        "Ashesh3",
+        "Pranshu1902",
+        "sainak",
+        "Omkar76"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698600439.0,
+      "title": "coronasafe/care_fe#6509",
+      "link": "https://github.com/coronasafe/care_fe/pull/6509#pullrequestreview-1703001995",
+      "text": "\ud83d\udee0\ufe0f \u2705 Fixed User signout flow malfunctioning."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698596919.0,
+      "title": "coronasafe/care_fe#6448",
+      "link": "https://github.com/coronasafe/care_fe/pull/6448#pullrequestreview-1702990986",
+      "text": "replace useDispatch with useQuery/request in facility module  (Part 2, E-Z) (src/Components/Facility/[E-Z]*.tsx "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1690",
+      "time": 1698596726.0,
+      "link": "https://github.com/coronasafe/care/pull/1690",
+      "text": "Adds M2M Consultation Diagnosis model"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1673",
+      "time": 1698596657.0,
+      "link": "https://github.com/coronasafe/care/pull/1673#issuecomment-1784158422",
+      "text": "The model changes from https://github.com/coronasafe/care/issues/1574 will naturally solve the related issue."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6447",
+      "time": 1698596560.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6447#issuecomment-1784158006",
+      "text": "@GokulramGHV marking it as do not merge as the model changes made in https://github.com/coronasafe/care/issues/1574 will fix it."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698589082.0,
+      "title": "coronasafe/care_fe#6461",
+      "link": "https://github.com/coronasafe/care_fe/pull/6461#pullrequestreview-1702969563",
+      "text": "Replaced useDispatch w. useQuery/request: Resource (src/Components/Resource/**)"
+    },
     {
       "type": "pr_reviewed",
       "time": 1698512117.0,
@@ -25475,18 +25539,25 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1690",
+      "title": "Adds M2M Consultation Diagnosis model",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 10,
+      "stale_for": 0,
       "labels": [
         "tested",
+        "changes required",
         "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -25494,18 +25565,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6458",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 2,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
-        "Backend"
+        "Backend",
+        "tested",
+        "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Group medicine administration by 4 hours + Support for archiving medicines + Administration Activity View + migrate `useDispatch` to `useQuery`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
-        "needs testing",
+        "test failed",
         "Major Code Change"
       ]
     }

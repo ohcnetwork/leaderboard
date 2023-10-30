@@ -1,6 +1,20 @@
 {
-  "last_updated": 1698499090.0,
+  "last_updated": 1698602088.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1698602088.0,
+      "title": "coronasafe/care#1589",
+      "link": "https://github.com/coronasafe/care/pull/1589#pullrequestreview-1703008571",
+      "text": "Adds Nurse user type and promote existing staffs to nurse"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6512",
+      "time": 1698600774.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6512#issuecomment-1784177300",
+      "text": "> @cp-Coder the maximum 3 users limitation per location was discussed in EOD, as I am unable to find it mentioned in the issue\r\n\r\nActually, Aakash wanted to add a validation for limiting the number of staffs assigned to any particular location that's why I added a limit of 3 doctors and 3 staffs per location. So I had a talk with him in the EOD."
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6512",
@@ -7937,7 +7951,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1689",
       "title": "fix(asset_location): added duty_staff endpoint",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
@@ -7952,13 +7966,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1575",
       "title": "fix: tests for ambulance APIs",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 115,
+      "stale_for": 116,
       "labels": [
         "waiting-for-review"
       ]

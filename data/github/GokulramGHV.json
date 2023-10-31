@@ -1,6 +1,13 @@
 {
-  "last_updated": 1698259391.0,
+  "last_updated": 1698668242.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1692",
+      "time": 1698668242.0,
+      "link": "https://github.com/coronasafe/care/pull/1692",
+      "text": "adds titrated prescription"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6432",
@@ -2816,16 +2823,25 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1673",
-      "title": "ICD-11 diagnosis cannot be both provisional and final",
+      "link": "https://github.com/coronasafe/care/pull/1692",
+      "title": "Prescription: Titrated drug dose",
       "stale_for": 0,
       "labels": []
     },
     {
+      "link": "https://github.com/coronasafe/care/pull/1673",
+      "title": "ICD-11 diagnosis cannot be both provisional and final",
+      "stale_for": 1,
+      "labels": [
+        "do-not-merge"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6447",
       "title": "ICD-11 diagnosis cannot be both prov and final",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
+        "do not merge",
         "tested",
         "waiting for back end",
         "cypress passed"

@@ -1,6 +1,37 @@
 {
-  "last_updated": 1698600827.0,
+  "last_updated": 1698693152.0,
   "activity": [
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1588",
+      "time": 1698693152.0,
+      "link": "https://github.com/coronasafe/care/pull/1588",
+      "text": "Filter out those facilities that are already linked to user",
+      "collaborated_with": [
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698658254.0,
+      "title": "coronasafe/care#1678",
+      "link": "https://github.com/coronasafe/care/pull/1678#pullrequestreview-1703647923",
+      "text": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1691",
+      "time": 1698641755.0,
+      "link": "https://github.com/coronasafe/care/pull/1691",
+      "text": "add auto deployment for staging gcp deployment"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6519",
+      "time": 1698641693.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6519",
+      "text": "add auto deplovyment for staging gcp deployment"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6516",
@@ -6516,9 +6547,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1691",
+      "title": "add auto deployment for staging gcp deployment",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6519",
+      "title": "add auto deployment for staging gcp deployment",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6457",
       "title": "add support for webrtc stream",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "blocked",
         "changes required",
@@ -6529,7 +6572,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 47,
+      "stale_for": 48,
       "labels": [
         "In progress"
       ]
@@ -6537,13 +6580,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 40,
+      "stale_for": 41,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 4,
+      "stale_for": 5,
       "labels": [
         "test failed",
         "merge conflict",
@@ -6554,13 +6597,13 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 101,
+      "stale_for": 102,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 26,
+      "stale_for": 27,
       "labels": []
     }
   ],

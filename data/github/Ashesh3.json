@@ -1,6 +1,34 @@
 {
-  "last_updated": 1698600827.0,
+  "last_updated": 1698693290.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1679",
+      "time": 1698693290.0,
+      "link": "https://github.com/coronasafe/care/pull/1679",
+      "text": "Implement Location Filtering in Patient Consultations"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6475",
+      "time": 1698664456.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6475#issuecomment-1784970027",
+      "text": "> @Ashesh3, Is this issue solved? Because it is not showing the feed tab but it is showing the camera feed button in the header title buttons. Link : [care.coronasafe.in/facility/a3910fb7-db3d-4ddf-aa39-1f20e61d1453/patient/0e1a1fc1-148b-453d-9f86-04f9e56cf0ff/consultation/47d78e41-fe9f-4b3d-b0b7-9fc4117805b8](https://care.coronasafe.in/facility/a3910fb7-db3d-4ddf-aa39-1f20e61d1453/patient/0e1a1fc1-148b-453d-9f86-04f9e56cf0ff/consultation/47d78e41-fe9f-4b3d-b0b7-9fc4117805b8)\r\n> \r\n> User : devdistrictadmin\r\n\r\nThere is no bed attached to this patient, hence the feed tab will not show. The issue is about hiding the feed tab for patients who have a linked bed to them but that linked bad has no camera asset attached to it.\r\n\r\nExample: https://care.coronasafe.in/facility/a3910fb7-db3d-4ddf-aa39-1f20e61d1453/patient/400cbedd-98d7-4f8f-b835-155ba71cc28d/consultation/6ae67a3d-305b-4404-bfd6-b21b0d0f8426\r\n\r\nThis patient has an attached bed without a camera, in this case the feed tab should be hidden:\r\n![image](https://github.com/coronasafe/care_fe/assets/3626859/18248974-0ec7-44ac-819a-45245be372a9)\r\n\r\nThe bed's location is `NICU`\r\nHere's the corresponding asset: (same location)\r\nhttps://care.coronasafe.in/facility/a3910fb7-db3d-4ddf-aa39-1f20e61d1453/assets/ed2edbd7-4581-434e-8c6a-4620b4d0a4a0\r\n\r\nIt's an HL7 monitor and not a camera, there are no cameras in the same location as that bed, so the feed tab should be hidden.\r\n\r\n@nihal467 can you double check this message for any corrections?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6521",
+      "time": 1698649373.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6521",
+      "text": "Track patient card button clicks"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698646057.0,
+      "title": "coronasafe/teleicu_middleware#109",
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/109#pullrequestreview-1703319969",
+      "text": "Added typesafety"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care_fe#6516",
@@ -13757,23 +13785,23 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1688",
-      "title": "Add notifications for doctor notes",
-      "stale_for": 2,
-      "labels": []
+      "link": "https://github.com/coronasafe/care_fe/pull/6521",
+      "title": "Track patient card button clicks",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
     },
     {
-      "link": "https://github.com/coronasafe/care/pull/1679",
-      "title": "Implement Location Filtering in Patient Consultations",
-      "stale_for": 3,
-      "labels": [
-        "waiting-for-review"
-      ]
+      "link": "https://github.com/coronasafe/care/pull/1688",
+      "title": "Add notifications for doctor notes",
+      "stale_for": 0,
+      "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6456",
       "title": "Add location filter for patients",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "tested",
         "waiting for back end",
@@ -13783,13 +13811,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1665",
       "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 24,
+      "stale_for": 25,
       "labels": [
         "POC"
       ]
@@ -13797,7 +13825,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 208,
+      "stale_for": 209,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -13806,13 +13834,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 221,
+      "stale_for": 222,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 31,
+      "stale_for": 32,
       "labels": [
         "blocked"
       ]

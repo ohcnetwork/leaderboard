@@ -1,6 +1,20 @@
 {
-  "last_updated": 1698639809.0,
+  "last_updated": 1698746729.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6479",
+      "time": 1698746729.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6479#issuecomment-1786895831",
+      "text": "Hey @nihal467 \r\nThe NIBP of a patient will only be displayed if it's measured after the current bed assignment date. I think the details for the patient you provided in the above link were updated on October 27th, and then the bed was switched later.\r\nPlease correct me if I'm mistaken."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6479",
+      "time": 1698733041.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6479#issuecomment-1786517303",
+      "text": "Hey @nihal467 , the link above isn't working. It's showing a 'Page Not Found' error."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6518",
@@ -126,7 +140,8 @@
       "title": "change the NIBP display from last 30 mins to current bed assignment date",
       "stale_for": 0,
       "labels": [
-        "test failed"
+        "test failed",
+        "merge conflict"
       ]
     },
     {
@@ -134,7 +149,8 @@
       "title": "replace useDispatch with useQuery/request in facility module  (Part 2, E-Z) (src/Components/Facility/[E-Z]*.tsx ",
       "stale_for": 0,
       "labels": [
-        "changes required"
+        "changes required",
+        "merge conflict"
       ]
     }
   ],

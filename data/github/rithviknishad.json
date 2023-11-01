@@ -1,6 +1,69 @@
 {
-  "last_updated": 1698688223.0,
+  "last_updated": 1698764040.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1698764040.0,
+      "title": "coronasafe/care#1692",
+      "link": "https://github.com/coronasafe/care/pull/1692#pullrequestreview-1706481305",
+      "text": "Prescription: Titrated drug dose"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698764040.0,
+      "title": "coronasafe/care#1692",
+      "link": "https://github.com/coronasafe/care/pull/1692#pullrequestreview-1706481305",
+      "text": "Prescription: Titrated drug dose"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698754890.0,
+      "title": "coronasafe/care#1689",
+      "link": "https://github.com/coronasafe/care/pull/1689#pullrequestreview-1706165395",
+      "text": "fix(asset_location): added duty_staff endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698751107.0,
+      "title": "coronasafe/care_fe#6515",
+      "link": "https://github.com/coronasafe/care_fe/pull/6515#pullrequestreview-1706048913",
+      "text": "Make header in patient dashboard more responsive. Fixes #6488"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698749786.0,
+      "title": "coronasafe/care_fe#6479",
+      "link": "https://github.com/coronasafe/care_fe/pull/6479#pullrequestreview-1706008985",
+      "text": "change the NIBP display from last 30 mins to current bed assignment date"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698749786.0,
+      "title": "coronasafe/care_fe#6479",
+      "link": "https://github.com/coronasafe/care_fe/pull/6479#pullrequestreview-1706008985",
+      "text": "change the NIBP display from last 30 mins to current bed assignment date"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6529",
+      "time": 1698736810.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6529",
+      "text": "Show parent group / chapter for Principal Diagnosis"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6528",
+      "time": 1698736323.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6528",
+      "text": "Refactor Consultation Diagnosis (M2M relation, additional verification statuses and other improvements)"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1631",
+      "time": 1698729523.0,
+      "link": "https://github.com/coronasafe/care/pull/1631#issuecomment-1786463926",
+      "text": "@Pranshu1902 marking this as do not merge as more types of diagnoses have been added in #1690 "
+    },
     {
       "type": "pr_reviewed",
       "time": 1698688223.0,
@@ -25581,18 +25644,32 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6528",
+      "title": "Refactor Consultation Diagnosis (M2M relation, additional verification statuses and other improvements)",
+      "stale_for": 0,
+      "labels": [
+        "important",
+        "Backend",
+        "tested",
+        "waiting for back end",
+        "Cypress Test Pending"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1690",
       "title": "Adds M2M Consultation Diagnosis model",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "waiting-for-review",
+        "P2"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "tested",
-        "changes required",
         "waiting for back end"
       ]
     },
@@ -25607,7 +25684,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6458",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "Backend",
         "tested",
@@ -25617,9 +25694,10 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Group medicine administration by 4 hours + Support for archiving medicines + Administration Activity View + migrate `useDispatch` to `useQuery`",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "test failed",
+        "merge conflict",
         "Major Code Change"
       ]
     }
@@ -25688,10 +25766,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6085",
       "pr_link": "https://github.com/coronasafe/care/pull/1565"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6073",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6076"
     }
   ]
 }

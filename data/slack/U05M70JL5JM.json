@@ -2300,5 +2300,118 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-10-31 00:00:00": [
+        {
+            "client_msg_id": "5c8ce09f-054e-4205-8ac7-8b73671b8d92",
+            "type": "message",
+            "text": "*EOD 30/10/2023*\n\n*How did the day go?*\n\u2022 Started working on Adding page loader to the asset list.\n#Issue6505: <https://github.com/coronasafe/care_fe/issues/6505|https://github.com/coronasafe/care_fe/issues/6505>",
+            "user": "U05M70JL5JM",
+            "ts": "1698719410.366479",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "/jSZj",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 30/10/2023\n",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Started working on Adding page loader to the asset list."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "#Issue6505: "
+                                },
+                                {
+                                    "type": "link",
+                                    "url": "https://github.com/coronasafe/care_fe/issues/6505",
+                                    "text": "https://github.com/coronasafe/care_fe/issues/6505"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "image_url": "https://user-images.githubusercontent.com/57055998/278546479-2e5006f9-1dc0-44a8-840a-40b17ffceb9c.png",
+                    "image_width": 1920,
+                    "image_height": 1030,
+                    "image_bytes": 190815,
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1698385237,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6505",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "1920x1030px image",
+                    "text": "*Describe the bug*\n\nWhen we load the asset list tab, the page shows no asset rather than a page loader\n\n*To Reproduce*  \nSteps to reproduce the behavior:\n\n1. Go to <https://care.ohc.network/assets|https://care.ohc.network/assets>\n2. See error\n\n*Expected behavior*\n\nwhen we load the asset list tab, the page should be showing a page loader\n\n*Screenshots*\n\n<https://user-images.githubusercontent.com/57055998/278546479-2e5006f9-1dc0-44a8-840a-40b17ffceb9c.png|image>",
+                    "title": "#6505 Add Page loader to the asset list tab",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6505",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "fields": [
+                        {
+                            "value": "<https://github.com/shyamprakash123|@shyamprakash123>",
+                            "title": "Assignees",
+                            "short": true
+                        },
+                        {
+                            "value": "3",
+                            "title": "Comments",
+                            "short": true
+                        }
+                    ],
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

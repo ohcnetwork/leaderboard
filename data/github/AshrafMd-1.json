@@ -1,6 +1,20 @@
 {
-  "last_updated": 1698687576.0,
+  "last_updated": 1698761772.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6495",
+      "time": 1698761772.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#issuecomment-1787308013",
+      "text": "@nihal467 it works now\r\nThe issue was with merging this PR with develop "
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6526",
+      "time": 1698751059.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6526",
+      "text": "Fixed bed number coming up two time in patients page."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6484",
@@ -203,20 +217,11 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6526",
-      "title": "Fixed bed number coming up two time in patients page.",
-      "stale_for": 0,
-      "labels": [
-        "needs testing",
-        "P1"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6495",
       "title": "Redirect to Original URL After Session Expiry and Re-login",
       "stale_for": 0,
       "labels": [
-        "needs testing"
+        "test failed"
       ]
     },
     {
@@ -224,7 +229,8 @@
       "title": "Replace useDispatch w. useQuery/request: Consultations #6372",
       "stale_for": 0,
       "labels": [
-        "changes required"
+        "changes required",
+        "merge conflict"
       ]
     }
   ],

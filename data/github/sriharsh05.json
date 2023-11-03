@@ -1,6 +1,13 @@
 {
-  "last_updated": 1698833166.0,
+  "last_updated": 1698919508.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6535",
+      "time": 1698919508.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6535",
+      "text": "Remove redundant facility selection pop-up for single facility users"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6479",
@@ -150,9 +157,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6535",
+      "title": "Remove redundant facility selection pop-up for single facility users",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6479",
       "title": "change the NIBP display from last 30 mins to current bed assignment date",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "test failed",
         "merge conflict"
@@ -161,7 +174,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6448",
       "title": "replace useDispatch with useQuery/request in facility module  (Part 2, E-Z) (src/Components/Facility/[E-Z]*.tsx ",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "changes required",
         "merge conflict"

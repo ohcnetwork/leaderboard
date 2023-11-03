@@ -1,6 +1,20 @@
 {
-  "last_updated": 1698851740.0,
+  "last_updated": 1698941627.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6536",
+      "time": 1698941627.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6536",
+      "text": "\ud83d\udd27 Hide Camera Feed Tab for bed with no camera attached."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6475",
+      "time": 1698939370.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6475#issuecomment-1790972644",
+      "text": "> > @Ashesh3, Is this issue solved? Because it is not showing the feed tab but it is showing the camera feed button in the header title buttons. Link : [care.coronasafe.in/facility/a3910fb7-db3d-4ddf-aa39-1f20e61d1453/patient/0e1a1fc1-148b-453d-9f86-04f9e56cf0ff/consultation/47d78e41-fe9f-4b3d-b0b7-9fc4117805b8](https://care.coronasafe.in/facility/a3910fb7-db3d-4ddf-aa39-1f20e61d1453/patient/0e1a1fc1-148b-453d-9f86-04f9e56cf0ff/consultation/47d78e41-fe9f-4b3d-b0b7-9fc4117805b8)\r\n> > User : devdistrictadmin\r\n> \r\n> There is no bed attached to this patient, hence the feed tab will not show. The issue is about hiding the feed tab for patients who have a linked bed to them but that linked bad has no camera asset attached to it.\r\n> \r\n> Example: https://care.coronasafe.in/facility/a3910fb7-db3d-4ddf-aa39-1f20e61d1453/patient/400cbedd-98d7-4f8f-b835-155ba71cc28d/consultation/6ae67a3d-305b-4404-bfd6-b21b0d0f8426\r\n> \r\n> This patient has an attached bed without a camera, in this case the feed tab should be hidden: ![image](https://user-images.githubusercontent.com/3626859/279035666-18248974-0ec7-44ac-819a-45245be372a9.png)\r\n> \r\n> The bed's location is `NICU` Here's the corresponding asset: (same location) https://care.coronasafe.in/facility/a3910fb7-db3d-4ddf-aa39-1f20e61d1453/assets/ed2edbd7-4581-434e-8c6a-4620b4d0a4a0\r\n> \r\n> It's an HL7 monitor and not a camera, there are no cameras in the same location as that bed, so the feed tab should be hidden.\r\n> \r\n> @nihal467 can you double check this message for any corrections?\r\n\r\n@Ashesh3 I understood the problem and one more thing should I also hide the Camera Feed button in the Top Section of the Patient Dashboard?"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6532",
@@ -295,9 +309,15 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6536",
+      "title": "\ud83d\udd27 Hide Camera Feed Tab for bed with no camera attached.",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6532",
       "title": "\u2611\ufe0f Added Loading component while the assets are being fetched.",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     }
   ],

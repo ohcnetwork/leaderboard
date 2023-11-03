@@ -1,6 +1,13 @@
 {
-  "last_updated": 1698855593.0,
+  "last_updated": 1698943818.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6517",
+      "time": 1698943818.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6517#issuecomment-1791106894",
+      "text": "Hello @aparnacoronasafe \r\n\r\nI have added insurance details to the patient\u2019s details page. However, I noticed that we can add multiple insurance details (e.g., Insurance Details 1, Insurance Details 2, Insurance Details 3, etc.).\r\n\r\nI have a few questions regarding this:\r\n- How would you like these multiple insurance details to be displayed on the patient\u2019s details page? I have attached some images of my implementation for your reference.\r\n- Initially, I thought of adding a simple card in the same row as the location details and medical details. However, only one insurance detail can be added in this row. If no insurance details are present, should I display a message stating that no insurance details are recorded or simply not show the card?\r\n- What should be done if there are multiple insurance details? If the next detail is displayed in the next row, it may lead to wastage of space.\r\n- Could you clarify how the four details (Member ID*, Policy ID/Policy Name*, Insurer ID, Insurer Name) should be aligned in the card? Please note that Member ID* and Policy ID/Policy Name* are mandatory while Insurer ID and Insurer Name are not.\r\n\r\n\r\n\r\n![image](https://github.com/coronasafe/care_fe/assets/101407963/5ecc5332-8082-4e6b-9362-d805e240a784)\r\n![image](https://github.com/coronasafe/care_fe/assets/101407963/45271902-994f-4f6a-9b6f-0f877db2ceac)\r\n![image](https://github.com/coronasafe/care_fe/assets/101407963/10b3a0fc-8015-450e-8269-b77abac274e8)\r\n![image](https://github.com/coronasafe/care_fe/assets/101407963/724f80ab-c880-412e-9576-6c780188fd61)\r\n\r\n"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6533",

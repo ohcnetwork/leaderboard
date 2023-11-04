@@ -1,6 +1,125 @@
 {
-  "last_updated": 1698693152.0,
+  "last_updated": 1699028390.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1699028390.0,
+      "title": "coronasafe/care#1157",
+      "link": "https://github.com/coronasafe/care/pull/1157#pullrequestreview-1713097218",
+      "text": "Restrict Admin from unlinking users from other district"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699028327.0,
+      "title": "coronasafe/care#1157",
+      "link": "https://github.com/coronasafe/care/pull/1157#pullrequestreview-1713095428",
+      "text": "Restrict Admin from unlinking users from other district"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6519",
+      "time": 1699028031.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6519",
+      "text": "add auto deployment for staging gcp deployment"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1691",
+      "time": 1699028010.0,
+      "link": "https://github.com/coronasafe/care/pull/1691",
+      "text": "add auto deployment for staging gcp deployment"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699027858.0,
+      "title": "coronasafe/care#1690",
+      "link": "https://github.com/coronasafe/care/pull/1690#pullrequestreview-1713082211",
+      "text": "Adds M2M Consultation Diagnosis model"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1157",
+      "time": 1699026853.0,
+      "link": "https://github.com/coronasafe/care/pull/1157#issuecomment-1792693637",
+      "text": "@Pranshu1902 the test are not catching the changes, try to assert the error message response"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699001857.0,
+      "title": "coronasafe/care#1688",
+      "link": "https://github.com/coronasafe/care/pull/1688#pullrequestreview-1712086253",
+      "text": "Add notifications for doctor notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698996440.0,
+      "title": "coronasafe/care#1688",
+      "link": "https://github.com/coronasafe/care/pull/1688#pullrequestreview-1711941132",
+      "text": "Add notifications for doctor notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698996440.0,
+      "title": "coronasafe/care#1688",
+      "link": "https://github.com/coronasafe/care/pull/1688#pullrequestreview-1711941132",
+      "text": "Add notifications for doctor notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698996086.0,
+      "title": "coronasafe/care#1575",
+      "link": "https://github.com/coronasafe/care/pull/1575#pullrequestreview-1711935888",
+      "text": "fix: tests for ambulance APIs"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698996014.0,
+      "title": "coronasafe/care#1575",
+      "link": "https://github.com/coronasafe/care/pull/1575#pullrequestreview-1711934705",
+      "text": "fix: tests for ambulance APIs"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1689",
+      "time": 1698995611.0,
+      "link": "https://github.com/coronasafe/care/pull/1689#issuecomment-1791973391",
+      "text": "> When removing a duty staff user from asset location, those records are not set to `deleted=True` instead it's permanently deleted right?\r\n> \r\n> cc: @sainak\r\nyeah we can use a custom through model\r\n\r\n\r\ncc: @vigneshhari "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698995500.0,
+      "title": "coronasafe/care#1689",
+      "link": "https://github.com/coronasafe/care/pull/1689#pullrequestreview-1711915052",
+      "text": "fix(asset_location): added duty_staff endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698995501.0,
+      "title": "coronasafe/care#1689",
+      "link": "https://github.com/coronasafe/care/pull/1689#pullrequestreview-1711915052",
+      "text": "fix(asset_location): added duty_staff endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698993827.0,
+      "title": "coronasafe/care#1690",
+      "link": "https://github.com/coronasafe/care/pull/1690#pullrequestreview-1711902885",
+      "text": "Adds M2M Consultation Diagnosis model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698993489.0,
+      "title": "coronasafe/care#1690",
+      "link": "https://github.com/coronasafe/care/pull/1690#pullrequestreview-1711860765",
+      "text": "Adds M2M Consultation Diagnosis model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1698993489.0,
+      "title": "coronasafe/care#1690",
+      "link": "https://github.com/coronasafe/care/pull/1690#pullrequestreview-1711860765",
+      "text": "Adds M2M Consultation Diagnosis model"
+    },
     {
       "type": "pr_collaborated",
       "title": "coronasafe/care#1588",
@@ -6547,21 +6666,9 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1691",
-      "title": "add auto deployment for staging gcp deployment",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6519",
-      "title": "add auto deployment for staging gcp deployment",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6457",
       "title": "add support for webrtc stream",
-      "stale_for": 1,
+      "stale_for": 5,
       "labels": [
         "blocked",
         "changes required",
@@ -6572,7 +6679,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 48,
+      "stale_for": 52,
       "labels": [
         "In progress"
       ]
@@ -6580,30 +6687,31 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 41,
+      "stale_for": 45,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 5,
+      "stale_for": 0,
       "labels": [
         "test failed",
         "merge conflict",
         "Major Code Change",
+        "stale",
         "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 102,
+      "stale_for": 106,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 27,
+      "stale_for": 31,
       "labels": []
     }
   ],

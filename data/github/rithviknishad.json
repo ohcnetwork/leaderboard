@@ -1,6 +1,20 @@
 {
-  "last_updated": 1699033727.0,
+  "last_updated": 1699200779.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1699200779.0,
+      "title": "coronasafe/care_fe#6533",
+      "link": "https://github.com/coronasafe/care_fe/pull/6533#pullrequestreview-1714014012",
+      "text": "replaced useDispatch in Shifting"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6392",
+      "time": 1699200248.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6392#issuecomment-1793777261",
+      "text": "Yes. You can now\r\n\r\n1. Create the branch\r\n2. Push your changes to the branch\r\n3. Open a PR in this repository from your branch."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6536",
@@ -25856,7 +25870,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6528",
       "title": "Refactor Consultation Diagnosis (M2M relation, additional verification statuses and other improvements)",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "important",
         "Backend",
@@ -25868,7 +25882,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1690",
       "title": "Adds M2M Consultation Diagnosis model",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review",
         "P2"
@@ -25877,16 +25891,16 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
-        "tested",
+        "needs testing",
         "waiting for back end"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 3,
+      "stale_for": 5,
       "labels": [
         "waiting-for-review"
       ]
@@ -25894,7 +25908,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6458",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 5,
+      "stale_for": 7,
       "labels": [
         "Backend",
         "tested",
@@ -25904,7 +25918,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6396",
       "title": "Group medicine administration by 4 hours + Support for archiving medicines + Administration Activity View + migrate `useDispatch` to `useQuery`",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "needs testing",
         "Major Code Change"

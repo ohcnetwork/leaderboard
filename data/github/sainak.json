@@ -1,6 +1,27 @@
 {
-  "last_updated": 1699028390.0,
+  "last_updated": 1699260527.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1698",
+      "time": 1699260527.0,
+      "link": "https://github.com/coronasafe/care/pull/1698",
+      "text": "deploy to staging gcp instance from staging image"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6548",
+      "time": 1699260490.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6548",
+      "text": "deploy to staging gcp instance from staging image"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care#1697",
+      "time": 1699248610.0,
+      "link": "https://github.com/coronasafe/care/issues/1697",
+      "text": "Add created_by and updated_by fields to base model"
+    },
     {
       "type": "pr_reviewed",
       "time": 1699028390.0,
@@ -6666,9 +6687,21 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1698",
+      "title": "deploy to staging gcp instance from staging image",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6548",
+      "title": "deploy to staging gcp instance from staging image",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6457",
       "title": "add support for webrtc stream",
-      "stale_for": 5,
+      "stale_for": 8,
       "labels": [
         "blocked",
         "changes required",
@@ -6679,7 +6712,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 52,
+      "stale_for": 55,
       "labels": [
         "In progress"
       ]
@@ -6687,13 +6720,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 45,
+      "stale_for": 48,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6003",
       "title": "cleanup fireRequests and remove axios",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": [
         "test failed",
         "merge conflict",
@@ -6705,13 +6738,13 @@
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 106,
+      "stale_for": 109,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 31,
+      "stale_for": 34,
       "labels": []
     }
   ],

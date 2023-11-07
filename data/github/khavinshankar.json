@@ -1,6 +1,83 @@
 {
-  "last_updated": 1699029027.0,
+  "last_updated": 1699278716.0,
   "activity": [
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6459",
+      "time": 1699278716.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6459",
+      "text": "Administer Medicine Slider and Modal not responsive"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6184",
+      "time": 1699278716.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6184",
+      "text": "Support for archiving Medicine Administration Record"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6442",
+      "time": 1699278716.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6442",
+      "text": "\ud83d\udee0\ufe0f Replace `useDispatch` w. `useQuery`/`request`: Medicine (`src/Components/Medicine/**`)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6341",
+      "time": 1699278715.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6341",
+      "text": "Medicine Administrations to be grouped based on common frequency/interval instead of every hour"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699278697.0,
+      "title": "coronasafe/care_fe#6396",
+      "link": "https://github.com/coronasafe/care_fe/pull/6396#pullrequestreview-1715227146",
+      "text": "Group medicine administration by 4 hours + Support for archiving medicines + Administration Activity View + migrate `useDispatch` to `useQuery`"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6486",
+      "time": 1699272918.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6486",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699272892.0,
+      "title": "coronasafe/care_fe#6495",
+      "link": "https://github.com/coronasafe/care_fe/pull/6495#pullrequestreview-1715022570",
+      "text": "Redirect to Original URL After Session Expiry and Re-login"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6223",
+      "time": 1699272278.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6223#issuecomment-1794675406",
+      "text": "ETD: 15th November "
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/teleicu_middleware#110",
+      "time": 1699266945.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/110",
+      "text": "upload b64 image along with ocr data"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6547",
+      "time": 1699257332.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6547",
+      "text": "fix responsive issue in sidebar"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6545",
+      "time": 1699250686.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6545",
+      "text": "Unable to access signout in some mobile screens"
+    },
     {
       "type": "pr_reviewed",
       "time": 1699029027.0,
@@ -24599,15 +24676,30 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/teleicu_middleware/pull/110",
+      "title": "upload b64 image along with ocr data",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6547",
+      "title": "fix responsive issue in sidebar",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "cypress passed"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/109",
       "title": "Added typesafety",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6487",
       "title": "Abdm M3",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": [
         "merge conflict",
         "stale"
@@ -24616,7 +24708,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 36,
+      "stale_for": 39,
       "labels": [
         "waiting-for-review"
       ]
@@ -24624,19 +24716,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 258,
+      "stale_for": 261,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 329,
+      "stale_for": 332,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 86,
+      "stale_for": 89,
       "labels": [
         "changes required"
       ]
@@ -24644,25 +24736,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 686,
+      "stale_for": 689,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 692,
+      "stale_for": 695,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 693,
+      "stale_for": 696,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 888,
+      "stale_for": 891,
       "labels": []
     }
   ],

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1699226147.0,
+  "last_updated": 1699256205.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1699256205.0,
+      "title": "coronasafe/care_fe#6543",
+      "link": "https://github.com/coronasafe/care_fe/pull/6543#pullrequestreview-1714424830",
+      "text": "Replace useDispatch w. useQuery/request: Notifications (src/Components/Notifications/**) #6392"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6392",
@@ -70,7 +77,9 @@
       "link": "https://github.com/coronasafe/care_fe/pull/6543",
       "title": "Replace useDispatch w. useQuery/request: Notifications (src/Components/Notifications/**) #6392",
       "stale_for": 0,
-      "labels": []
+      "labels": [
+        "needs testing"
+      ]
     }
   ],
   "authored_issue_and_pr": []

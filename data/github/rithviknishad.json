@@ -1,6 +1,111 @@
 {
-  "last_updated": 1699297154.0,
+  "last_updated": 1699471983.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1704",
+      "time": 1699471983.0,
+      "link": "https://github.com/coronasafe/care/pull/1704",
+      "text": "Adds authz for Prescription & Medicine Administrations"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1690",
+      "time": 1699471549.0,
+      "link": "https://github.com/coronasafe/care/pull/1690",
+      "text": "Adds M2M Consultation Diagnosis model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699469923.0,
+      "title": "coronasafe/care_fe#6567",
+      "link": "https://github.com/coronasafe/care_fe/pull/6567#pullrequestreview-1721068781",
+      "text": "Improve rounding of the preset buttons. Fixes #6555"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1700",
+      "time": 1699468317.0,
+      "link": "https://github.com/coronasafe/care/pull/1700",
+      "text": "Fixes N+1 queries in Daily Rounds"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1701",
+      "time": 1699468219.0,
+      "link": "https://github.com/coronasafe/care/pull/1701",
+      "text": "Exclude `external_id` from resources serializers"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699462771.0,
+      "title": "coronasafe/care#1689",
+      "link": "https://github.com/coronasafe/care/pull/1689#pullrequestreview-1720849370",
+      "text": "fix(asset_location): added duty_staff endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699462737.0,
+      "title": "coronasafe/care#1689",
+      "link": "https://github.com/coronasafe/care/pull/1689#pullrequestreview-1720849370",
+      "text": "fix(asset_location): added duty_staff endpoint"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699462364.0,
+      "title": "coronasafe/care_fe#6565",
+      "link": "https://github.com/coronasafe/care_fe/pull/6565#pullrequestreview-1720814405",
+      "text": "Add titrated prescription dosage type"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699462364.0,
+      "title": "coronasafe/care_fe#6565",
+      "link": "https://github.com/coronasafe/care_fe/pull/6565#pullrequestreview-1720814405",
+      "text": "Add titrated prescription dosage type"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699439587.0,
+      "title": "coronasafe/care#1703",
+      "link": "https://github.com/coronasafe/care/pull/1703#pullrequestreview-1720000370",
+      "text": "add env vars to configure cors headers"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699435358.0,
+      "title": "coronasafe/care_fe#6564",
+      "link": "https://github.com/coronasafe/care_fe/pull/6564#pullrequestreview-1719778182",
+      "text": "New Cypress Test | Functionality test of Linking and Unlinking Facility | User Tab"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699433414.0,
+      "title": "coronasafe/care_fe#6564",
+      "link": "https://github.com/coronasafe/care_fe/pull/6564#pullrequestreview-1719706925",
+      "text": "New Cypress Test | Functionality test of Linking and Unlinking Facility | User Tab"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699433408.0,
+      "title": "coronasafe/care_fe#6564",
+      "link": "https://github.com/coronasafe/care_fe/pull/6564#pullrequestreview-1719706751",
+      "text": "New Cypress Test | Functionality test of Linking and Unlinking Facility | User Tab"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699433401.0,
+      "title": "coronasafe/care_fe#6564",
+      "link": "https://github.com/coronasafe/care_fe/pull/6564#pullrequestreview-1719706554",
+      "text": "New Cypress Test | Functionality test of Linking and Unlinking Facility | User Tab"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699433391.0,
+      "title": "coronasafe/care_fe#6564",
+      "link": "https://github.com/coronasafe/care_fe/pull/6564#pullrequestreview-1719706219",
+      "text": "New Cypress Test | Functionality test of Linking and Unlinking Facility | User Tab"
+    },
     {
       "type": "pr_reviewed",
       "time": 1699297154.0,
@@ -26309,11 +26414,11 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1700",
-      "title": "Fixes N+1 queries in Daily Rounds",
+      "link": "https://github.com/coronasafe/care/pull/1704",
+      "title": "Adds authz for Prescription & Medicine Administrations",
       "stale_for": 0,
       "labels": [
-        "waiting-for-review"
+        "changes required"
       ]
     },
     {
@@ -26324,23 +26429,13 @@
         "important",
         "Backend",
         "tested",
-        "P1",
-        "waiting for back end"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1690",
-      "title": "Adds M2M Consultation Diagnosis model",
-      "stale_for": 0,
-      "labels": [
-        "waiting-for-review",
-        "P2"
+        "P1"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
         "changes required",
         "waiting for back end"
@@ -26349,7 +26444,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 6,
+      "stale_for": 8,
       "labels": [
         "waiting-for-review"
       ]
@@ -26357,7 +26452,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6458",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 8,
+      "stale_for": 10,
       "labels": [
         "Backend",
         "tested",
@@ -26366,6 +26461,10 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/teleicu_middleware/issues/112",
+      "pr_link": "https://github.com/coronasafe/teleicu_middleware/pull/113"
+    },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6442",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6396"
@@ -26403,6 +26502,10 @@
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6284"
     },
     {
+      "issue_link": "https://github.com/coronasafe/care/issues/1574",
+      "pr_link": "https://github.com/coronasafe/care/pull/1690"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6199",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6200"
     },
@@ -26417,30 +26520,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6184",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6396"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6159",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6160"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6154",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6186"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1556",
-      "pr_link": "https://github.com/coronasafe/care/pull/1557"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
-      "pr_link": "https://github.com/coronasafe/care/pull/1608"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6282"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6151",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6389"
     }
   ]
 }

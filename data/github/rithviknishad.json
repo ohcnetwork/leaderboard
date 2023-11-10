@@ -1,6 +1,111 @@
 {
-  "last_updated": 1699471983.0,
+  "last_updated": 1699544059.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6546",
+      "time": 1699544059.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6546#issuecomment-1804059038",
+      "text": "Hey @krushn-a, feel free to look at the documentation https://github.com/coronasafe/care_fe/issues/6316 and the example PRs attached. \r\n\r\nFeel free to break this issue further down to multiple sub-tasks, and have multiple PR's so that it'd be easier to review and test (also to steer away from having merge conflicts). Have around 1-3 files changed at a time in a single PR."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699543759.0,
+      "title": "coronasafe/care_fe#6576",
+      "link": "https://github.com/coronasafe/care_fe/pull/6576#pullrequestreview-1722820429",
+      "text": "\u2714\ufe0f Fixed reloading issue while Opening Investigations or Treatment Summary in Consultation Dashboard."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6561",
+      "time": 1699543621.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6561#issuecomment-1804045642",
+      "text": "As discussed, \r\n\r\nWe'll need to show a Location Select popup when opening up the camera monitoring page of a facility."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699542028.0,
+      "title": "coronasafe/care_fe#6575",
+      "link": "https://github.com/coronasafe/care_fe/pull/6575#pullrequestreview-1722718997",
+      "text": "replace useDispatch with useQuery and request in FacilityCard, FacililyHome and FacilityUsers"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699542028.0,
+      "title": "coronasafe/care_fe#6575",
+      "link": "https://github.com/coronasafe/care_fe/pull/6575#pullrequestreview-1722718997",
+      "text": "replace useDispatch with useQuery and request in FacilityCard, FacililyHome and FacilityUsers"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6577",
+      "time": 1699540723.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6577",
+      "text": "Live Feed: Hide sorting filter"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6552",
+      "time": 1699531969.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6552#issuecomment-1803717439",
+      "text": "The back button would suffice I guess. Let's remove both. cc: @nihal467 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699531485.0,
+      "title": "coronasafe/care_fe#6574",
+      "link": "https://github.com/coronasafe/care_fe/pull/6574#pullrequestreview-1722383842",
+      "text": "\ud83d\ude80 Improved info of vitals monitor in mobile view."
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6528",
+      "time": 1699529902.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6528",
+      "text": "Refactor Consultation Diagnosis (M2M relation, additional verification statuses and other improvements)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699526306.0,
+      "title": "coronasafe/care_fe#6573",
+      "link": "https://github.com/coronasafe/care_fe/pull/6573#pullrequestreview-1722234659",
+      "text": "aligned buttons to right"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699525809.0,
+      "title": "coronasafe/care_fe#6573",
+      "link": "https://github.com/coronasafe/care_fe/pull/6573#pullrequestreview-1722217615",
+      "text": "aligned buttons to right"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699525809.0,
+      "title": "coronasafe/care_fe#6573",
+      "link": "https://github.com/coronasafe/care_fe/pull/6573#pullrequestreview-1722217615",
+      "text": "aligned buttons to right"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6569",
+      "time": 1699524836.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6569",
+      "text": "fix cypress: resource and sample test"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6569",
+      "time": 1699522761.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6569",
+      "text": "fix resource details page from navigating to undefined"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699519278.0,
+      "title": "coronasafe/care#1706",
+      "link": "https://github.com/coronasafe/care/pull/1706#pullrequestreview-1721986458",
+      "text": "remove deprecated diagnosis fields from fixtures"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1704",
@@ -26414,28 +26519,26 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6577",
+      "title": "Live Feed: Hide sorting filter",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "P1"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1704",
       "title": "Adds authz for Prescription & Medicine Administrations",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "changes required"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6528",
-      "title": "Refactor Consultation Diagnosis (M2M relation, additional verification statuses and other improvements)",
-      "stale_for": 0,
-      "labels": [
-        "important",
-        "Backend",
-        "tested",
-        "P1"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": [
         "changes required",
         "waiting for back end"
@@ -26444,7 +26547,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]
@@ -26452,11 +26555,12 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6458",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 10,
+      "stale_for": 0,
       "labels": [
         "Backend",
         "tested",
-        "waiting for back end"
+        "waiting for back end",
+        "merge conflict"
       ]
     }
   ],
@@ -26464,6 +26568,22 @@
     {
       "issue_link": "https://github.com/coronasafe/teleicu_middleware/issues/112",
       "pr_link": "https://github.com/coronasafe/teleicu_middleware/pull/113"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6544",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6528"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
+      "pr_link": "https://github.com/coronasafe/care/pull/1696"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6541"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6528"
     },
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6442",
@@ -26506,20 +26626,12 @@
       "pr_link": "https://github.com/coronasafe/care/pull/1690"
     },
     {
+      "issue_link": "https://github.com/coronasafe/care/issues/1574",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6528"
+    },
+    {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/6199",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/6200"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6198",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6274"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6184",
-      "pr_link": "https://github.com/coronasafe/care/pull/1630"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6184",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6396"
     }
   ]
 }

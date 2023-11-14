@@ -1,6 +1,20 @@
 {
-  "last_updated": 1699533021.0,
+  "last_updated": 1699894795.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6591",
+      "time": 1699894795.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6591#issuecomment-1808587995",
+      "text": "@rithviknishad \r\nPlease review this PR."
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6591",
+      "time": 1699859907.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6591",
+      "text": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6575",
@@ -178,17 +192,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6591",
+      "title": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6575",
       "title": "replace useDispatch with useQuery and request in FacilityCard, FacililyHome and FacilityUsers",
-      "stale_for": 0,
+      "stale_for": 2,
       "labels": [
-        "changes required"
+        "needs testing"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6448",
       "title": "replace useDispatch with useQuery/request in facility module  (Part 2, E-Z) (src/Components/Facility/[E-Z]*.tsx ",
-      "stale_for": 2,
+      "stale_for": 6,
       "labels": [
         "changes required",
         "merge conflict"

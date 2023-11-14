@@ -1,6 +1,34 @@
 {
-  "last_updated": 1699615679.0,
+  "last_updated": 1699897850.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1699897850.0,
+      "title": "coronasafe/care#1708",
+      "link": "https://github.com/coronasafe/care/pull/1708#pullrequestreview-1727887676",
+      "text": "Field to classify location as an ICU or Ward or Other"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1710",
+      "time": 1699883615.0,
+      "link": "https://github.com/coronasafe/care/pull/1710",
+      "text": "offload migrations to beat service"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1709",
+      "time": 1699880172.0,
+      "link": "https://github.com/coronasafe/care/pull/1709",
+      "text": "add deployment job to deploy to GKE Meghalaya"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6594",
+      "time": 1699880153.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6594",
+      "text": "add deployment job to deploy to GKE Meghalaya"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1707",
@@ -6750,39 +6778,57 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1710",
+      "title": "offload migrations to beat service",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1709",
+      "title": "add deployment job to deploy to GKE Meghalaya",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6594",
+      "title": "add deployment job to deploy to GKE Meghalaya",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1707",
       "title": "add management command to load skills",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1705",
       "title": "pin dependencies in pipenv",
-      "stale_for": 2,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1703",
       "title": "add env vars to configure cors headers",
-      "stale_for": 1,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1698",
       "title": "deploy to staging gcp instance from staging image",
-      "stale_for": 4,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6548",
       "title": "deploy to staging gcp instance from staging image",
-      "stale_for": 4,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6457",
       "title": "add support for webrtc stream",
-      "stale_for": 12,
+      "stale_for": 15,
       "labels": [
         "blocked",
         "changes required",
@@ -6793,7 +6839,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 59,
+      "stale_for": 62,
       "labels": [
         "In progress"
       ]
@@ -6801,31 +6847,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 52,
+      "stale_for": 55,
       "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6003",
-      "title": "cleanup fireRequests and remove axios",
-      "stale_for": 7,
-      "labels": [
-        "test failed",
-        "merge conflict",
-        "Major Code Change",
-        "stale",
-        "cypress passed"
-      ]
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 113,
+      "stale_for": 116,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 38,
+      "stale_for": 41,
       "labels": []
     }
   ],

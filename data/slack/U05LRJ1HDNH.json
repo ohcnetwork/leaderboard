@@ -3198,5 +3198,128 @@
                 }
             ]
         }
+    ],
+    "2023-11-13 00:00:00": [
+        {
+            "client_msg_id": "20b874ad-5f29-43a9-99ca-c0a691ad9604",
+            "type": "message",
+            "text": "*EOD 13/11/2023*\n\n*How did the day go?*\n\u2022 Took up an issue <https://github.com/coronasafe/care_fe/issues/6590|#6590>\n\u2022 <https://github.com/coronasafe/care_fe/pull/6484|#6484> is in the testing phase. \n",
+            "user": "U05LRJ1HDNH",
+            "ts": "1699879148.066749",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "HaUzE",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 13/11/2023",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Took up an issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6590",
+                                            "text": "#6590",
+                                            "unsafe": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6484",
+                                            "text": "#6484",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " is in the testing phase. "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": []
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1699859308,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6590",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6590 Consultation Medicine Tab: Displays \"Scroll for more prescription\" even during a single prescription.",
+                    "title": "#6590 Consultation Medicine Tab: Displays \"Scroll for more prescription\" even during a single prescription.",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6590",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1698142391,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/pull/6484",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6484 Replace useDispatch w. useQuery/request: Consultations #6372",
+                    "title": "#6484 Replace useDispatch w. useQuery/request: Consultations #6372",
+                    "title_link": "https://github.com/coronasafe/care_fe/pull/6484",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

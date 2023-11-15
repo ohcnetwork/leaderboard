@@ -1,6 +1,96 @@
 {
-  "last_updated": 1699897850.0,
+  "last_updated": 1699986062.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1699986062.0,
+      "title": "coronasafe/care#1712",
+      "link": "https://github.com/coronasafe/care/pull/1712#pullrequestreview-1730432393",
+      "text": "Fix for Incorrect Discharge Reasons in Patient Transfers and Readmissions"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699984258.0,
+      "title": "coronasafe/care#1712",
+      "link": "https://github.com/coronasafe/care/pull/1712#pullrequestreview-1730363011",
+      "text": "Fix for Incorrect Discharge Reasons in Patient Transfers and Readmissions"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699984258.0,
+      "title": "coronasafe/care#1712",
+      "link": "https://github.com/coronasafe/care/pull/1712#pullrequestreview-1730363011",
+      "text": "Fix for Incorrect Discharge Reasons in Patient Transfers and Readmissions"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6594",
+      "time": 1699971368.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6594",
+      "text": "add deployment job to deploy to GKE Meghalaya"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699955226.0,
+      "title": "coronasafe/care#1704",
+      "link": "https://github.com/coronasafe/care/pull/1704#pullrequestreview-1729328787",
+      "text": "Adds authz for Prescription & Medicine Administrations"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699947747.0,
+      "title": "coronasafe/care#1678",
+      "link": "https://github.com/coronasafe/care/pull/1678#pullrequestreview-1729076447",
+      "text": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1699947747.0,
+      "title": "coronasafe/care#1678",
+      "link": "https://github.com/coronasafe/care/pull/1678#pullrequestreview-1729076447",
+      "text": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1709",
+      "time": 1699941781.0,
+      "link": "https://github.com/coronasafe/care/pull/1709",
+      "text": "add deployment job to deploy to GKE Meghalaya"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1709",
+      "time": 1699941781.0,
+      "link": "https://github.com/coronasafe/care/pull/1709",
+      "text": "add deployment job to deploy to GKE Meghalaya",
+      "collaborated_with": [
+        "gigincg"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1698",
+      "time": 1699941738.0,
+      "link": "https://github.com/coronasafe/care/pull/1698",
+      "text": "deploy to staging gcp instance from staging image"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6548",
+      "time": 1699938377.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6548",
+      "text": "deploy to staging gcp instance from staging image"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6548",
+      "time": 1699938377.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6548",
+      "text": "deploy to staging gcp instance from staging image",
+      "collaborated_with": [
+        "gigincg"
+      ]
+    },
     {
       "type": "pr_reviewed",
       "time": 1699897850.0,
@@ -6780,55 +6870,31 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1710",
       "title": "offload migrations to beat service",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1709",
-      "title": "add deployment job to deploy to GKE Meghalaya",
-      "stale_for": 0,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6594",
-      "title": "add deployment job to deploy to GKE Meghalaya",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1707",
       "title": "add management command to load skills",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1705",
       "title": "pin dependencies in pipenv",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1703",
       "title": "add env vars to configure cors headers",
-      "stale_for": 4,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1698",
-      "title": "deploy to staging gcp instance from staging image",
-      "stale_for": 1,
-      "labels": []
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6548",
-      "title": "deploy to staging gcp instance from staging image",
-      "stale_for": 1,
+      "stale_for": 5,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6457",
       "title": "add support for webrtc stream",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": [
         "blocked",
         "changes required",
@@ -6839,7 +6905,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 62,
+      "stale_for": 63,
       "labels": [
         "In progress"
       ]
@@ -6847,19 +6913,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 55,
+      "stale_for": 56,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 116,
+      "stale_for": 117,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 41,
+      "stale_for": 42,
       "labels": []
     }
   ],

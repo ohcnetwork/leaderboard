@@ -1,6 +1,41 @@
 {
-  "last_updated": 1699894795.0,
+  "last_updated": 1700058319.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6645",
+      "time": 1700058319.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6645",
+      "text": "Add auto-scroll function to error in add triage form"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6643",
+      "time": 1700056056.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6643#issuecomment-1812566896",
+      "text": "> Also disable the submit button if invalid\r\n\r\nIf i disable the submit button, I don't think there is a requirement for backend validation. Shall i remove that too?"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6643",
+      "time": 1700055667.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6643",
+      "text": "Add Frontend validation in the add multiple bed function"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6622",
+      "time": 1700044587.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6622#issuecomment-1812213601",
+      "text": "I want to work on this issue. Please assign it to me."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6624",
+      "time": 1700044376.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6624#issuecomment-1812205408",
+      "text": "I want to work on this issue. Please assign it to me."
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6591",
@@ -192,26 +227,33 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6591",
-      "title": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files",
+      "link": "https://github.com/coronasafe/care_fe/pull/6645",
+      "title": "Add auto-scroll function to error in add triage form",
       "stale_for": 0,
       "labels": []
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6575",
-      "title": "replace useDispatch with useQuery and request in FacilityCard, FacililyHome and FacilityUsers",
-      "stale_for": 2,
+      "link": "https://github.com/coronasafe/care_fe/pull/6643",
+      "title": "Add Frontend validation in the add multiple bed function",
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6448",
-      "title": "replace useDispatch with useQuery/request in facility module  (Part 2, E-Z) (src/Components/Facility/[E-Z]*.tsx ",
-      "stale_for": 6,
+      "link": "https://github.com/coronasafe/care_fe/pull/6591",
+      "title": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files",
+      "stale_for": 1,
       "labels": [
-        "changes required",
-        "merge conflict"
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6575",
+      "title": "replace useDispatch with useQuery and request in FacilityCard, FacililyHome and FacilityUsers",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
       ]
     }
   ],

@@ -1,6 +1,20 @@
 {
-  "last_updated": 1699943294.0,
+  "last_updated": 1700058774.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6608",
+      "time": 1700058774.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6608#issuecomment-1812641190",
+      "text": "@nihal467 I want to work on this, can I know who don't have access to `Delete Facility`?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6584",
+      "time": 1700057281.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6584#issuecomment-1812599714",
+      "text": "![Screenshot 2023-11-15 193034](https://github.com/coronasafe/care_fe/assets/106866225/f962ced2-2293-47ee-bdf1-0c85e8845f9f)\r\n\r\n@nihal467 I'm getting default value of Rhythm as `unknown`. The form is getting submitted with the value `unknown` is this expected behaviour? Should I remove `\"*\"` in Rhythm field?"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6584",
@@ -418,13 +432,14 @@
       "title": "\ud83e\ude9b Fixed Non-uniform height of Asset List Tiles.",
       "stale_for": 0,
       "labels": [
-        "tested"
+        "tested",
+        "good to merge"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6576",
       "title": "\u2714\ufe0f Fixed reloading issue while Opening Investigations or Treatment Summary in Consultation Dashboard.",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]
@@ -434,7 +449,8 @@
       "title": "\ud83d\ude80 Improved info of vitals monitor in mobile view.",
       "stale_for": 0,
       "labels": [
-        "tested"
+        "tested",
+        "good to merge"
       ]
     }
   ],

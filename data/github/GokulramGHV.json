@@ -1,6 +1,27 @@
 {
-  "last_updated": 1699870421.0,
+  "last_updated": 1700142959.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1719",
+      "time": 1700142959.0,
+      "link": "https://github.com/coronasafe/care/pull/1719",
+      "text": "Display just the date in the CSV output of facility capacity for the updated date column"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6656",
+      "time": 1700139393.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6656",
+      "text": "Remove default ordering value"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1718",
+      "time": 1700138751.0,
+      "link": "https://github.com/coronasafe/care/pull/1718",
+      "text": "Sort \"No Consultation Filed\" patients to the top of Patient List page "
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6592",
@@ -2851,6 +2872,27 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1719",
+      "title": "Display just the date in the CSV output of facility capacity for the updated date column",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6656",
+      "title": "Remove default ordering value",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "waiting for back end"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1718",
+      "title": "Sort \"No Consultation Filed\" patients to the top of Patient List page ",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6592",
       "title": "Added location type to location form",
       "stale_for": 0,
@@ -2861,14 +2903,17 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1708",
       "title": "Field to classify location as an ICU or Ward or Other",
-      "stale_for": 0,
-      "labels": []
+      "stale_for": 2,
+      "labels": [
+        "reviewed"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6565",
       "title": "Add titrated prescription dosage type",
-      "stale_for": 3,
+      "stale_for": 0,
       "labels": [
+        "needs testing",
         "waiting for back end"
       ]
     },

@@ -1,6 +1,125 @@
 {
-  "last_updated": 1700059563.0,
+  "last_updated": 1700154039.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1700154039.0,
+      "title": "coronasafe/care_fe#6595",
+      "link": "https://github.com/coronasafe/care_fe/pull/6595#pullrequestreview-1734970527",
+      "text": "Implemented Insurance Details Page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700153888.0,
+      "title": "coronasafe/care_fe#6640",
+      "link": "https://github.com/coronasafe/care_fe/pull/6640#pullrequestreview-1734965123",
+      "text": "Use relative time for audit log details."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700153811.0,
+      "title": "coronasafe/care_fe#6656",
+      "link": "https://github.com/coronasafe/care_fe/pull/6656#pullrequestreview-1734961327",
+      "text": "Remove default ordering value"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700144241.0,
+      "title": "coronasafe/care#1719",
+      "link": "https://github.com/coronasafe/care/pull/1719#pullrequestreview-1734493083",
+      "text": "Display just the date in the CSV output of facility capacity for the updated date column"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700144181.0,
+      "title": "coronasafe/care#1718",
+      "link": "https://github.com/coronasafe/care/pull/1718#pullrequestreview-1734490333",
+      "text": "Sort \"No Consultation Filed\" patients to the top of Patient List page "
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6658",
+      "time": 1700142087.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6658",
+      "text": "Disallow editing \"Decision after consultation\" in edit consultation form"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700130738.0,
+      "title": "coronasafe/care#1692",
+      "link": "https://github.com/coronasafe/care/pull/1692#pullrequestreview-1734044865",
+      "text": "Prescription: Titrated drug dose"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700130628.0,
+      "title": "coronasafe/care_fe#6654",
+      "link": "https://github.com/coronasafe/care_fe/pull/6654#pullrequestreview-1734041441",
+      "text": "Made Covid Detail section by default collapsed in patient advance filters"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6591",
+      "time": 1700119186.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6591#issuecomment-1813908929",
+      "text": "@sriharsh05 cypress tests are still failing"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700119108.0,
+      "title": "coronasafe/care_fe#6591",
+      "link": "https://github.com/coronasafe/care_fe/pull/6591#pullrequestreview-1733647831",
+      "text": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700119108.0,
+      "title": "coronasafe/care_fe#6591",
+      "link": "https://github.com/coronasafe/care_fe/pull/6591#pullrequestreview-1733647831",
+      "text": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6648",
+      "time": 1700107655.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6648#issuecomment-1813758899",
+      "text": "We should also make the placement of the Add/Create and the Advanced Filter of Asset/Patient/User/... consistent"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6591",
+      "time": 1700105554.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6591#issuecomment-1813736761",
+      "text": "@sriharsh05 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700103363.0,
+      "title": "coronasafe/care#1716",
+      "link": "https://github.com/coronasafe/care/pull/1716#pullrequestreview-1733408376",
+      "text": "add DosageValidator to Prescription model"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700102844.0,
+      "title": "coronasafe/care_fe#6647",
+      "link": "https://github.com/coronasafe/care_fe/pull/6647#pullrequestreview-1733401048",
+      "text": "Fixed padding in \"Reviewed before\" chip in Consultation Dashboard"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#135",
+      "time": 1700102341.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/135",
+      "text": "Make the darkest Learning Activity a bit ligher"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/ayushma_fe#146",
+      "time": 1700101762.0,
+      "link": "https://github.com/coronasafe/ayushma_fe/issues/146#issuecomment-1813693180",
+      "text": "to next14?"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6645",
@@ -26934,7 +27053,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1704",
       "title": "Adds authz for Prescription & Medicine Administrations",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -26942,7 +27061,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "changes required",
         "waiting for back end"
@@ -26951,7 +27070,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "waiting-for-review"
       ]
@@ -26959,7 +27078,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6458",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": [
         "Backend",
         "tested",

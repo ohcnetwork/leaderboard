@@ -1,6 +1,20 @@
 {
-  "last_updated": 1700239006.0,
+  "last_updated": 1700301288.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6665",
+      "time": 1700301288.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6665#issuecomment-1817463174",
+      "text": "This is a bigger problem at its core with how route protection and login is being handled and just replacing `window.location.href =` with `navigate()` is not going to solve these issues. \r\n\r\nFor ex. when I am logged out and I navigate to `/shifting/board`, instead of being redirected to `/login` I stay on `/shifting/board` and in those cases, after logging in, it does `window.location.href = window.location.pathname.toString()`, using `navigate` here won't do anything because the path does not change, you have to reload the whole page. Same goes for any other url."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6665",
+      "time": 1700300406.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6665#issuecomment-1817458427",
+      "text": "Any reason this project is using [raviger](https://github.com/kyeotic/raviger) which barely anyone has ever heard of and has not been updated since 2022 instead of using the industry standard [React Router](https://github.com/remix-run/react-router)?"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6503",
@@ -41,7 +55,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6663",
       "title": "show delete user button only for stateAdmin",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "needs testing"
       ]

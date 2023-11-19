@@ -1,6 +1,20 @@
 {
-  "last_updated": 1700239764.0,
+  "last_updated": 1700330752.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6650",
+      "time": 1700330752.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6650#issuecomment-1817585406",
+      "text": "@konavivekramakrishna The API has responded with 202 Accepted. Hence no errors were encountered. Have you tried calling the list API for the same after a successful upsert?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6665",
+      "time": 1700303828.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6665#issuecomment-1817472008",
+      "text": "I don't see any issue with Raviger's routing.\r\n\r\nIf you look at the code, we have two routers: Session and App router. App router is accessible only if the query to get the current profile responds with 200, you'll be exposed to the App router, else it'll show the Session router.\r\n\r\nWe just need to invoke the refetch of the current user query somehow whenever the JWT access token is updated in the local storage. That'd cause the AuthUserProvider component to render, and hence exposing the appropriate router based on the response.\r\n\r\n<img width=\"566\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/6c5c9540-0d5a-4edf-879c-6e183eb0c73a\">\r\n\r\n<img width=\"691\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/f180b3cb-c646-4c7e-af9c-b35e8b0af0c0\">\r\n\r\n"
+    },
     {
       "type": "issue_opened",
       "title": "coronasafe/care_fe#6665",
@@ -27151,7 +27165,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1704",
       "title": "Adds authz for Prescription & Medicine Administrations",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -27159,7 +27173,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "changes required",
         "waiting for back end"
@@ -27168,7 +27182,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1678",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]
@@ -27176,7 +27190,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6458",
       "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 3,
+      "stale_for": 4,
       "labels": [
         "Backend",
         "tested",

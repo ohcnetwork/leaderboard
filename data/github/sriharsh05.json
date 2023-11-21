@@ -1,6 +1,13 @@
 {
-  "last_updated": 1700118675.0,
+  "last_updated": 1700490301.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6575",
+      "time": 1700490301.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6575#issuecomment-1819164296",
+      "text": "@rithviknishad \r\nI have made the requested changes also fixed the bug which @nihal467 pointed out. "
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6591",
@@ -257,13 +264,15 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6645",
       "title": "Add auto-scroll function to error in add triage form",
-      "stale_for": 0,
-      "labels": []
+      "stale_for": 3,
+      "labels": [
+        "needs testing"
+      ]
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6643",
       "title": "Add Frontend validation in the add multiple bed function",
-      "stale_for": 1,
+      "stale_for": 3,
       "labels": [
         "needs testing"
       ]
@@ -271,7 +280,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6591",
       "title": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files",
-      "stale_for": 0,
+      "stale_for": 4,
       "labels": [
         "cypress failed"
       ]
@@ -279,7 +288,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6575",
       "title": "replace useDispatch with useQuery and request in FacilityCard, FacililyHome and FacilityUsers",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "needs testing"
       ]

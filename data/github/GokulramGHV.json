@@ -1,6 +1,13 @@
 {
-  "last_updated": 1700142959.0,
+  "last_updated": 1700492893.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6674",
+      "time": 1700492893.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6674",
+      "text": "Rearranging buttons in the Patient consultation page"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1719",
@@ -2872,15 +2879,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6674",
+      "title": "Rearranging buttons in the Patient consultation page",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1719",
       "title": "Display just the date in the CSV output of facility capacity for the updated date column",
-      "stale_for": 0,
+      "stale_for": 4,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6656",
       "title": "Remove default ordering value",
-      "stale_for": 0,
+      "stale_for": 4,
       "labels": [
         "needs testing",
         "waiting for back end"
@@ -2889,7 +2904,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1718",
       "title": "Sort \"No Consultation Filed\" patients to the top of Patient List page ",
-      "stale_for": 0,
+      "stale_for": 4,
       "labels": []
     },
     {
@@ -2897,13 +2912,14 @@
       "title": "Added location type to location form",
       "stale_for": 0,
       "labels": [
-        "waiting for back end"
+        "waiting for back end",
+        "discussion"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1708",
       "title": "Field to classify location as an ICU or Ward or Other",
-      "stale_for": 2,
+      "stale_for": 6,
       "labels": [
         "reviewed"
       ]
@@ -2920,7 +2936,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1692",
       "title": "Prescription: Titrated drug dose",
-      "stale_for": 0,
+      "stale_for": 4,
       "labels": [
         "waiting-for-review"
       ]

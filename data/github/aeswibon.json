@@ -1,6 +1,13 @@
 {
-  "last_updated": 1700225585.0,
+  "last_updated": 1700483711.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care#1689",
+      "time": 1700483711.0,
+      "link": "https://github.com/coronasafe/care/pull/1689#issuecomment-1818984305",
+      "text": "> > When removing a duty staff user from asset location, those records are not set to deleted=True instead it's permanently deleted right?\r\n> \r\n> There still seems to be no API endpoint/way to unlink a staff from a location.\r\n\r\nWe can just remove the staff from the doctor/staff list in the location form and it will automatically unlink the staff. "
+    },
     {
       "type": "pr_reviewed",
       "time": 1700225585.0,
@@ -15,6 +22,7 @@
       "title": "fix(location): duty doctors and staff for each location in a facility",
       "stale_for": 0,
       "labels": [
+        "test failed",
         "waiting for back end"
       ]
     },
@@ -29,7 +37,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1589",
       "title": "Adds Nurse user type and promote existing staffs to nurse",
-      "stale_for": 1,
+      "stale_for": 0,
       "labels": [
         "waiting-for-review",
         "done"
@@ -38,13 +46,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1575",
       "title": "fix: tests for ambulance APIs",
-      "stale_for": 0,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1063",
       "title": "Fixed: Added depth in consultation model for symptoms",
-      "stale_for": 135,
+      "stale_for": 138,
       "labels": [
         "waiting-for-review"
       ]

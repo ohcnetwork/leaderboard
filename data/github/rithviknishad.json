@@ -1,6 +1,197 @@
 {
-  "last_updated": 1700491688.0,
+  "last_updated": 1700593209.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1678",
+      "time": 1700593209.0,
+      "link": "https://github.com/coronasafe/care/pull/1678",
+      "text": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700592045.0,
+      "title": "coronasafe/care_fe#6687",
+      "link": "https://github.com/coronasafe/care_fe/pull/6687#pullrequestreview-1742827818",
+      "text": "Hide KASP Advance Filter"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700591217.0,
+      "title": "coronasafe/care_fe#6687",
+      "link": "https://github.com/coronasafe/care_fe/pull/6687#pullrequestreview-1742797177",
+      "text": "Hide KASP Advance Filter"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6686",
+      "time": 1700582894.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6686#issuecomment-1821219487",
+      "text": "Ack"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6686",
+      "time": 1700582863.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6686",
+      "text": "Relative time in Medicine Administration Timeline shows when the data has entered instead of administered date time."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700582682.0,
+      "title": "coronasafe/care_fe#6565",
+      "link": "https://github.com/coronasafe/care_fe/pull/6565#pullrequestreview-1742394773",
+      "text": "Add titrated prescription dosage type"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6685",
+      "time": 1700582372.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6685",
+      "text": "Improve how time is shown in Administrations Timeline"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard-data#1",
+      "time": 1700574016.0,
+      "link": "https://github.com/coronasafe/leaderboard-data/pull/1",
+      "text": "Sync data and setup workflows"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/leaderboard-data#1",
+      "time": 1700573964.0,
+      "link": "https://github.com/coronasafe/leaderboard-data/pull/1#issuecomment-1820945370",
+      "text": "Merging for now to get the scrapper running. Deploy will be fixed in an upcoming PR"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700573716.0,
+      "title": "coronasafe/care_fe#6683",
+      "link": "https://github.com/coronasafe/care_fe/pull/6683#pullrequestreview-1742041342",
+      "text": "add concurrency to deploy workflow to cancel-in-progress runs"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700571671.0,
+      "title": "coronasafe/care_fe#6677",
+      "link": "https://github.com/coronasafe/care_fe/pull/6677#pullrequestreview-1741970305",
+      "text": "fixed the delete facility button to be hidden and not diabled"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6567",
+      "time": 1700566821.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6567",
+      "text": "Improve rounding of the preset buttons. Fixes #6555",
+      "collaborated_with": [
+        "nihal467",
+        "Omkar76"
+      ]
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard-data#1",
+      "time": 1700561760.0,
+      "link": "https://github.com/coronasafe/leaderboard-data/pull/1",
+      "text": "Sync data and setup workflows"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#141",
+      "time": 1700559149.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/141",
+      "text": "Move data to a separate repo"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/leaderboard#137",
+      "time": 1700558858.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/137",
+      "text": "Use GitHub user's ID instead of username to store contributors activity"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/leaderboard#140",
+      "time": 1700558752.0,
+      "link": "https://github.com/coronasafe/leaderboard/issues/140",
+      "text": "Profile Image's are not always square"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6392",
+      "time": 1700553863.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6392#issuecomment-1820415231",
+      "text": "> Question 1 - What DevOps services and tools does your project use? For each tool, please write how it is used in the project.\r\n\r\n@sainak should be able to provide you links to the deploy docs which you can refer to.\r\n\r\n> Question 2 - What was the test coverage like? Provide \"covered lines\" metrics - absolute or relative (if you measured them).\r\n\r\n@adriansliva we don't have \"covered lines\" metrics for the front-end. However we do have one for the backend, which you can see from here. https://app.codecov.io/gh/coronasafe/care\r\n\r\ncc: @nihal467 "
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700550005.0,
+      "title": "coronasafe/care_fe#6677",
+      "link": "https://github.com/coronasafe/care_fe/pull/6677#pullrequestreview-1741234853",
+      "text": "fixed the delete facility button to be hidden and not diabled"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6678",
+      "time": 1700549662.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6678#issuecomment-1820337505",
+      "text": "@Deepjyoti14 The PR https://github.com/coronasafe/care_fe/pull/6458 introduces support for capturing Date & Time. Once it is merged, the time part of the Admission Date & Time for existing records would be reset to 12AM (local time). \r\n\r\nI hope that'd solve this problem.\r\n\r\ncc: @aparnacoronasafe "
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care#1711",
+      "time": 1700549197.0,
+      "link": "https://github.com/coronasafe/care/pull/1711",
+      "text": "Production Release; Mid November",
+      "collaborated_with": [
+        "sainak",
+        "Ashesh3",
+        "Pranshu1902"
+      ]
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6600",
+      "time": 1700549196.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6600",
+      "text": "Production Release Mid November",
+      "collaborated_with": [
+        "sriharsh05",
+        "shyamprakash123",
+        "nihal467",
+        "thedevildude",
+        "adriansliva",
+        "sainak",
+        "AshrafMd-1",
+        "Pranshu1902",
+        "kshitijv256",
+        "konavivekramakrishna",
+        "Ashesh3",
+        "Omkar76"
+      ]
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700537315.0,
+      "title": "coronasafe/care_fe#6675",
+      "link": "https://github.com/coronasafe/care_fe/pull/6675#pullrequestreview-1741042151",
+      "text": "showing errors on wrong numbers in PhoneNumberFormField"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6671",
+      "time": 1700537209.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6671#issuecomment-1820154890",
+      "text": "> What does it mean \"only one facility is selected\"? Where do I select the facility?\r\n\r\n<img width=\"228\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/79b95742-4042-49e3-b3da-3d2448b4c63a\">\r\n\r\n> \"Make the location filter appear...\", should the whole Geography section be hidden? or just the Location input?\r\n\r\nJust the location input. Currently, it's disabled, right? The same condition in which it is disabled should be used to hide/show it instead. \r\n\r\n\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6608",
+      "time": 1700536956.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6608#issuecomment-1820152032",
+      "text": "Yes, but are you able to even read a facility that's outside of the district admin's district?\r\n\r\nIf not, why bother defining that no-op check that'd always evaluate to true?"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6612",
@@ -27343,99 +27534,6 @@
       "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
     }
   ],
-  "open_prs": [
-    {
-      "link": "https://github.com/coronasafe/care/pull/1704",
-      "title": "Adds authz for Prescription & Medicine Administrations",
-      "stale_for": 6,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6464",
-      "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 6,
-      "labels": [
-        "changes required",
-        "waiting for back end"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care/pull/1678",
-      "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a, Rename variable: `verified_by` to `treating_physician`",
-      "stale_for": 6,
-      "labels": [
-        "waiting-for-review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6458",
-      "title": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a",
-      "stale_for": 6,
-      "labels": [
-        "Backend",
-        "tested",
-        "waiting for back end"
-      ]
-    }
-  ],
-  "authored_issue_and_pr": [
-    {
-      "issue_link": "https://github.com/coronasafe/teleicu_middleware/issues/112",
-      "pr_link": "https://github.com/coronasafe/teleicu_middleware/pull/113"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6544",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6528"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
-      "pr_link": "https://github.com/coronasafe/care/pull/1696"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6541"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6528"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6442",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6396"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6397",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6398"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6341",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6396"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6335",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6358"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6326",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6327"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6325",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6327"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6323",
-      "pr_link": "https://github.com/coronasafe/care/pull/1643"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6288",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6363"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care_fe/issues/6283",
-      "pr_link": "https://github.com/coronasafe/care_fe/pull/6284"
-    }
-  ]
+  "open_prs": [],
+  "authored_issue_and_pr": []
 }

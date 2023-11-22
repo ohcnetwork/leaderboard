@@ -2126,5 +2126,110 @@
                 }
             ]
         }
+    ],
+    "2023-11-22 00:00:00": [
+        {
+            "client_msg_id": "c90dc4cf-0968-44bb-b470-2a7721eb338e",
+            "type": "message",
+            "text": "EOD 21/11/2023 | Weekly update\n\n\u2022 Finished working on issue <https://github.com/coronasafe/care_fe/issues/6530|#6530> and <https://github.com/coronasafe/care_fe/issues/6652|#6652> ",
+            "user": "U051Q1RP1MG",
+            "ts": "1700617403.714909",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "eaS1h",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/11/2023 | Weekly update\n\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Finished working on issue "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6530",
+                                            "text": "#6530",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " and "
+                                        },
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/issues/6652",
+                                            "text": "#6652",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "offset": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6",
+            "edited": {
+                "user": "U051Q1RP1MG",
+                "ts": "1700617555.000000"
+            },
+            "attachments": [
+                {
+                    "id": 1,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1698820696,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6530",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6530 Replace useDispatch w. useQuery/request: Users (src/Components/Users/**)",
+                    "title": "#6530 Replace useDispatch w. useQuery/request: Users (src/Components/Users/**)",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6530",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "footer_icon": "https://slack.github.com/static/img/favicon-neutral.png",
+                    "ts": 1700110437,
+                    "color": "36a64f",
+                    "bot_id": "B01V56NBBNC",
+                    "app_unfurl_url": "https://github.com/coronasafe/care_fe/issues/6652",
+                    "is_app_unfurl": true,
+                    "app_id": "A01BP7R4KNY",
+                    "fallback": "#6652 Multiple Same API Calls are been called in linked skills section",
+                    "title": "#6652 Multiple Same API Calls are been called in linked skills section",
+                    "title_link": "https://github.com/coronasafe/care_fe/issues/6652",
+                    "footer": "<https://github.com/coronasafe/care_fe|coronasafe/care_fe>",
+                    "mrkdwn_in": [
+                        "text"
+                    ]
+                }
+            ]
+        }
     ]
 }

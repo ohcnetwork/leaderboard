@@ -25199,5 +25199,151 @@
             ],
             "team": "TC99SV7B6"
         }
+    ],
+    "2023-11-21 00:00:00": [
+        {
+            "client_msg_id": "93c3d9eb-b1c6-4e81-b36f-d96f4556ebb5",
+            "type": "message",
+            "text": "*EOD 21/11/2023 <!subteam^S035L5S02RF|@care_engineering>* \n\n*How did the day go?*\n\u2022 Moved leaderboard org. data to separate repo. and added workflow to deploy to vercel.\n\u2022 <https://github.com/coronasafe/care_fe/pull/6685|#6685>: Fix administration timeline showing `created_date` instead of `administered_date`\n*What's next?*\n\u2022 Fix failing vercel deploy in new leaderboard data repo.",
+            "user": "U02TDGQQPMJ",
+            "ts": "1700585204.290059",
+            "blocks": [
+                {
+                    "type": "rich_text",
+                    "block_id": "D75vt",
+                    "elements": [
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "EOD 21/11/2023 ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "usergroup",
+                                    "usergroup_id": "S035L5S02RF",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " ",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "How did the day go?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Moved leaderboard org. data to separate repo. and added workflow to deploy to vercel."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "link",
+                                            "url": "https://github.com/coronasafe/care_fe/pull/6685",
+                                            "text": "#6685",
+                                            "unsafe": true
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": ": Fix administration timeline showing "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "created_date",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": " instead of "
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "administered_date",
+                                            "style": {
+                                                "code": true
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        },
+                        {
+                            "type": "rich_text_section",
+                            "elements": [
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "What's next?",
+                                    "style": {
+                                        "bold": true
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "\n"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "rich_text_list",
+                            "elements": [
+                                {
+                                    "type": "rich_text_section",
+                                    "elements": [
+                                        {
+                                            "type": "text",
+                                            "text": "Fix failing vercel deploy in new leaderboard data repo."
+                                        }
+                                    ]
+                                }
+                            ],
+                            "style": "bullet",
+                            "indent": 0,
+                            "border": 0
+                        }
+                    ]
+                }
+            ],
+            "team": "TC99SV7B6"
+        }
     ]
 }

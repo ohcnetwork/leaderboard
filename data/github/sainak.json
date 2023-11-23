@@ -1,6 +1,34 @@
 {
-  "last_updated": 1700601316.0,
+  "last_updated": 1700677957.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1725",
+      "time": 1700677957.0,
+      "link": "https://github.com/coronasafe/care/pull/1725",
+      "text": "update fixtures"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1725",
+      "time": 1700662398.0,
+      "link": "https://github.com/coronasafe/care/pull/1725",
+      "text": "update fixtures"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care#1724",
+      "time": 1700633459.0,
+      "link": "https://github.com/coronasafe/care/pull/1724",
+      "text": "fix migrations"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6683",
+      "time": 1700625063.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6683",
+      "text": "add concurrency to deploy workflow to cancel-in-progress runs"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care#1724",
@@ -6929,55 +6957,39 @@
   ],
   "open_prs": [
     {
-      "link": "https://github.com/coronasafe/care/pull/1724",
-      "title": "fix migrations",
-      "stale_for": 0,
-      "labels": [
-        "P1"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6683",
-      "title": "add concurrency to deploy workflow to cancel-in-progress runs",
-      "stale_for": 0,
-      "labels": [
-        "need Review"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1716",
       "title": "add DenominationValidator to validate dosage fields in Prescription model",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1710",
       "title": "offload migrations to beat service",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1707",
       "title": "add management command to load skills",
-      "stale_for": 5,
+      "stale_for": 6,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1705",
       "title": "pin dependencies in pipenv",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1703",
       "title": "add env vars to configure cors headers",
-      "stale_for": 12,
+      "stale_for": 13,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6457",
       "title": "add support for webrtc stream",
-      "stale_for": 23,
+      "stale_for": 24,
       "labels": [
         "blocked",
         "changes required",
@@ -6988,7 +7000,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 70,
+      "stale_for": 71,
       "labels": [
         "In progress"
       ]
@@ -6996,19 +7008,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 63,
+      "stale_for": 64,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 124,
+      "stale_for": 125,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 49,
+      "stale_for": 50,
       "labels": []
     }
   ],

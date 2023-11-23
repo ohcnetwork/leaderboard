@@ -1,6 +1,27 @@
 {
-  "last_updated": 1700593033.0,
+  "last_updated": 1700663716.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6691",
+      "time": 1700663716.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6691#issuecomment-1822889733",
+      "text": "For added context,\r\n\r\nWhen the sandbox attribute is present, it will:\r\n\r\n- treat the content as being from a unique origin\r\n- block form submission\r\n- block script execution\r\n- disable APIs\r\n- prevent links from targeting other browsing contexts\r\n- prevent content from using plugins (through `<embed>`, `<object>`, `<applet>`, or other)\r\n- prevent the content to navigate its top-level browsing context\r\n- block automatically triggered features (such as automatically playing a video or automatically focusing a form control)"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700663681.0,
+      "title": "coronasafe/care_fe#6691",
+      "link": "https://github.com/coronasafe/care_fe/pull/6691#pullrequestreview-1744564987",
+      "text": "sandbox iframe in fileupload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700662659.0,
+      "title": "coronasafe/care#1725",
+      "link": "https://github.com/coronasafe/care/pull/1725#pullrequestreview-1744526453",
+      "text": "update fixtures"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1688",
@@ -14089,6 +14110,117 @@
       "text": "Make Daily Round clone error more user friendly"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1665",
+      "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
+      "stale_for": 15,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1657",
+      "title": "POC: AI discharge summary",
+      "stale_for": 48,
+      "labels": [
+        "POC"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/5147",
+      "title": "[WIP] Integrate LiveKit for doctor connect",
+      "stale_for": 232,
+      "labels": [
+        "work-in-progress",
+        "merge conflict"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1227",
+      "title": "[WIP] Integrate LiveKit for doctor connect",
+      "stale_for": 245,
+      "labels": []
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1221",
+      "title": "feat(patient notes): add edit window validation and update endpoint",
+      "stale_for": 55,
+      "labels": [
+        "blocked"
+      ]
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6414",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6413"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/teleicu_middleware/issues/98",
+      "pr_link": "https://github.com/coronasafe/teleicu_middleware/pull/99"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5946",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5947"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma/issues/212",
+      "pr_link": "https://github.com/coronasafe/ayushma/pull/216"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/ayushma/issues/158",
+      "pr_link": "https://github.com/coronasafe/ayushma/pull/159"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1283",
+      "pr_link": "https://github.com/coronasafe/care/pull/1286"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5276",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5283"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5244",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5247"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/5075",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/5076"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4855",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4856"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4613",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4614"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4147",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4148"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4097",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4101"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4078",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4079"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/4022",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/4198"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3866",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3867"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3794",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3813"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/3641",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/3667"
+    }
+  ]
 }

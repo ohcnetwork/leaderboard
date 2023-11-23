@@ -1,6 +1,184 @@
 {
-  "last_updated": 1700593209.0,
+  "last_updated": 1700671696.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1700671696.0,
+      "title": "coronasafe/care_fe#6694",
+      "link": "https://github.com/coronasafe/care_fe/pull/6694#pullrequestreview-1744914680",
+      "text": "Modified the external results sample format"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6693",
+      "time": 1700670512.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6693",
+      "text": "Sort daily rounds by Measured At instead of Created at"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1726",
+      "time": 1700669835.0,
+      "link": "https://github.com/coronasafe/care/pull/1726",
+      "text": "Support filtering daily rounds by `taken_at` range"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#806",
+      "time": 1700668617.0,
+      "link": "https://github.com/coronasafe/care/issues/806",
+      "text": "Add occupation field in patient model"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care#1031",
+      "time": 1700668132.0,
+      "link": "https://github.com/coronasafe/care/issues/1031",
+      "text": "Symptoms: Building depth in consultation"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5482",
+      "time": 1700668063.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5482",
+      "text": "Bed Type in the location management and Facility Bed Capacity are not linked"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6692",
+      "time": 1700668037.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6692",
+      "text": "Phase out \"Covid\" classification from Bed Types in Bed Capacity"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6649",
+      "time": 1700667519.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6649#issuecomment-1823005496",
+      "text": "As discussed, you can create a clone of that sheet, modify as required and keep it in the github repo itself under https://github.com/coronasafe/care_fe/tree/develop/public directory"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6650",
+      "time": 1700667404.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6650#issuecomment-1823002047",
+      "text": "Currently, the user is able to upload results for other districts. However, the list view will only show results the user can access. \r\n\r\nSo if a user from Ernakulam uploads results with the local body that belongs to Kannur, then they won't be able to preview these bulk created results in the list view as the user does not have the permission."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700663610.0,
+      "title": "coronasafe/care_fe#6691",
+      "link": "https://github.com/coronasafe/care_fe/pull/6691#pullrequestreview-1744562461",
+      "text": "sandbox iframe in fileupload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700662613.0,
+      "title": "coronasafe/care#1725",
+      "link": "https://github.com/coronasafe/care/pull/1725#pullrequestreview-1744524844",
+      "text": "update fixtures"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700643005.0,
+      "title": "coronasafe/care_fe#6596",
+      "link": "https://github.com/coronasafe/care_fe/pull/6596#pullrequestreview-1743831092",
+      "text": "Replaced useDispatch w. useQuery/request: Users (src/Components/Users/**) [5 out of 5 components]"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700643006.0,
+      "title": "coronasafe/care_fe#6596",
+      "link": "https://github.com/coronasafe/care_fe/pull/6596#pullrequestreview-1743831092",
+      "text": "Replaced useDispatch w. useQuery/request: Users (src/Components/Users/**) [5 out of 5 components]"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6458",
+      "time": 1700635202.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6458",
+      "text": "Patient Consultation: Route to Facility \ud83c\udfe5, Admission Date & Time \ud83d\udd5a"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6605",
+      "time": 1700630496.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6605#issuecomment-1822132635",
+      "text": "> If I'm not mistaken, the state and district for which a user has access are stored in the state_object, and the district_object isn't, right?\r\n\r\nCorrect.\r\n\r\n> Also, I have a doubt: Can a user have access to multiple states and districts? If not, we can remove these from the filtering.\r\n\r\nThe highest user type we have is a State Admin, which will be linked to a particular state always. Hence the state filter seems to be a no-op. We could remove it from the filters right @nihal467? Am I missing any other cases?\r\n\r\nState Admins will be able to access multiple districts. Users less than or equal to the District Admin can have a disabled district filter with the accessible district pre-filled.\r\n"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6546",
+      "time": 1700629814.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6546#issuecomment-1822124387",
+      "text": "Hey @krushn-a \r\nWere you able to get back at this? Are you facing any blockers?"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700629594.0,
+      "title": "coronasafe/care_fe#6688",
+      "link": "https://github.com/coronasafe/care_fe/pull/6688#pullrequestreview-1743574692",
+      "text": "hide location filter if facility is not selected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700628673.0,
+      "title": "coronasafe/care_fe#6688",
+      "link": "https://github.com/coronasafe/care_fe/pull/6688#pullrequestreview-1743563529",
+      "text": "hide location filter if facility is not selected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700628558.0,
+      "title": "coronasafe/care_fe#6688",
+      "link": "https://github.com/coronasafe/care_fe/pull/6688#pullrequestreview-1743562242",
+      "text": "hide location filter if facility is not selected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700626494.0,
+      "title": "coronasafe/care_fe#6688",
+      "link": "https://github.com/coronasafe/care_fe/pull/6688#pullrequestreview-1743538964",
+      "text": "hide location filter if facility is not selected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700626430.0,
+      "title": "coronasafe/care_fe#6688",
+      "link": "https://github.com/coronasafe/care_fe/pull/6688#pullrequestreview-1743538178",
+      "text": "hide location filter if facility is not selected"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700626430.0,
+      "title": "coronasafe/care_fe#6688",
+      "link": "https://github.com/coronasafe/care_fe/pull/6688#pullrequestreview-1743538178",
+      "text": "hide location filter if facility is not selected"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6484",
+      "time": 1700624451.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6484",
+      "text": "Replace useDispatch w. useQuery/request: Consultations #6372",
+      "collaborated_with": [
+        "AshrafMd-1"
+      ]
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6684",
+      "time": 1700622860.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6684#issuecomment-1822023033",
+      "text": "Feel free to come up with a mock-up design \ud83d\ude04 We can iterate on that!"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700622581.0,
+      "title": "coronasafe/care_fe#6687",
+      "link": "https://github.com/coronasafe/care_fe/pull/6687#pullrequestreview-1743476721",
+      "text": "Hide KASP Advance Filter"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1678",
@@ -27534,6 +27712,79 @@
       "text": "Changes \"Patient Details\" to \"Patient Dashboard\" in Consultation Page"
     }
   ],
-  "open_prs": [],
-  "authored_issue_and_pr": []
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care/pull/1726",
+      "title": "Support filtering daily rounds by `taken_at` range",
+      "stale_for": 0,
+      "labels": [
+        "waiting-for-review",
+        "P2"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6685",
+      "title": "Improve how time is shown in Administrations Timeline",
+      "stale_for": 0,
+      "labels": [
+        "tested",
+        "P1"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care/pull/1704",
+      "title": "Adds authz for Prescription & Medicine Administrations",
+      "stale_for": 8,
+      "labels": [
+        "waiting-for-review"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6464",
+      "title": "Adds user type: Nurse and Nurse (readonly)",
+      "stale_for": 8,
+      "labels": [
+        "changes required",
+        "waiting for back end"
+      ]
+    }
+  ],
+  "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/teleicu_middleware/issues/112",
+      "pr_link": "https://github.com/coronasafe/teleicu_middleware/pull/113"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6544",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6528"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
+      "pr_link": "https://github.com/coronasafe/care/pull/1696"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6541"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6529",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6528"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1671",
+      "pr_link": "https://github.com/coronasafe/care/pull/1678"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6442",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6396"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care/issues/1662",
+      "pr_link": "https://github.com/coronasafe/care/pull/1678"
+    },
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6397",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6398"
+    }
+  ]
 }

@@ -1,6 +1,13 @@
 {
-  "last_updated": 1700566639.0,
+  "last_updated": 1700624603.0,
   "activity": [
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6645",
+      "time": 1700624603.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6645",
+      "text": "Add auto-scroll function to error in add triage form"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6643",
@@ -288,6 +295,25 @@
       "text": "I want to work on this issue."
     }
   ],
-  "open_prs": [],
+  "open_prs": [
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6591",
+      "title": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files",
+      "stale_for": 0,
+      "labels": [
+        "merge conflict",
+        "cypress failed"
+      ]
+    },
+    {
+      "link": "https://github.com/coronasafe/care_fe/pull/6575",
+      "title": "replace useDispatch with useQuery and request in FacilityCard, FacililyHome and FacilityUsers",
+      "stale_for": 0,
+      "labels": [
+        "test failed",
+        "merge conflict"
+      ]
+    }
+  ],
   "authored_issue_and_pr": []
 }

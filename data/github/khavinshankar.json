@@ -1,6 +1,48 @@
 {
-  "last_updated": 1700663531.0,
+  "last_updated": 1700749836.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6695",
+      "time": 1700749836.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6695",
+      "text": "add support to cache filter options"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5803",
+      "time": 1700708730.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5803",
+      "text": "Redesign Doctor Notes as Chat Popup"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#5493",
+      "time": 1700708730.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/5493",
+      "text": "[C4GT] Redesign Doctor Notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700708718.0,
+      "title": "coronasafe/care_fe#6224",
+      "link": "https://github.com/coronasafe/care_fe/pull/6224#pullrequestreview-1745641072",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6686",
+      "time": 1700706017.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6686",
+      "text": "Relative time in Medicine Administration Timeline shows when the data has entered instead of administered date time."
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700706003.0,
+      "title": "coronasafe/care_fe#6685",
+      "link": "https://github.com/coronasafe/care_fe/pull/6685#pullrequestreview-1745618421",
+      "text": "Improve how time is shown in Administrations Timeline"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6691",
@@ -25208,9 +25250,18 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6695",
+      "title": "add support to cache filter options",
+      "stale_for": 0,
+      "labels": [
+        "needs testing",
+        "need Review"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6691",
       "title": "sandbox iframe in fileupload",
-      "stale_for": 0,
+      "stale_for": 1,
       "labels": [
         "tested",
         "reviewed"
@@ -25219,7 +25270,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6557",
       "title": "Sort imports and use absolute imports",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": [
         "merge conflict",
         "stale"
@@ -25228,7 +25279,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 55,
+      "stale_for": 56,
       "labels": [
         "waiting-for-review"
       ]
@@ -25236,19 +25287,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 277,
+      "stale_for": 278,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 348,
+      "stale_for": 349,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 105,
+      "stale_for": 106,
       "labels": [
         "changes required"
       ]
@@ -25256,25 +25307,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 705,
+      "stale_for": 706,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 711,
+      "stale_for": 712,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 712,
+      "stale_for": 713,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 907,
+      "stale_for": 908,
       "labels": []
     }
   ],
@@ -25354,10 +25405,6 @@
     {
       "issue_link": "https://github.com/coronasafe/care_fe/issues/4085",
       "pr_link": "https://github.com/coronasafe/care_fe/pull/4086"
-    },
-    {
-      "issue_link": "https://github.com/coronasafe/care/issues/1096",
-      "pr_link": "https://github.com/coronasafe/care/pull/1097"
     }
   ]
 }

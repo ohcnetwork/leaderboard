@@ -1,6 +1,20 @@
 {
-  "last_updated": 1700663716.0,
+  "last_updated": 1700761243.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6703",
+      "time": 1700761243.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6703",
+      "text": "Fix cypress for doctor notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700749346.0,
+      "title": "coronasafe/care#1726",
+      "link": "https://github.com/coronasafe/care/pull/1726#pullrequestreview-1746566206",
+      "text": "Support filtering daily rounds by `taken_at` range"
+    },
     {
       "type": "comment_created",
       "title": "coronasafe/care_fe#6691",
@@ -14112,15 +14126,23 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6703",
+      "title": "Fix cypress for doctor notes",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1665",
       "title": "Ensure Deterministic Ordering of Local Self Government and Ward Data",
-      "stale_for": 15,
+      "stale_for": 16,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1657",
       "title": "POC: AI discharge summary",
-      "stale_for": 48,
+      "stale_for": 49,
       "labels": [
         "POC"
       ]
@@ -14128,7 +14150,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/5147",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 232,
+      "stale_for": 233,
       "labels": [
         "work-in-progress",
         "merge conflict"
@@ -14137,13 +14159,13 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1227",
       "title": "[WIP] Integrate LiveKit for doctor connect",
-      "stale_for": 245,
+      "stale_for": 246,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1221",
       "title": "feat(patient notes): add edit window validation and update endpoint",
-      "stale_for": 55,
+      "stale_for": 56,
       "labels": [
         "blocked"
       ]

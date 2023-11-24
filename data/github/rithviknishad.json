@@ -1,6 +1,156 @@
 {
-  "last_updated": 1700671696.0,
+  "last_updated": 1700762499.0,
   "activity": [
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6705",
+      "time": 1700762499.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6705#issuecomment-1824785637",
+      "text": "@Omkar76 you have multiple issues already assigned to you that has no PR / changes required.\r\n\r\nhttps://github.com/coronasafe/care_fe/issues/assigned/@me\r\n\r\nFeel free to take up once your existing assigned issues are cleared!"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6705",
+      "time": 1700761909.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6705",
+      "text": "Replace useDispatch with useQuery in Doctor Notes related components"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700761778.0,
+      "title": "coronasafe/care_fe#6702",
+      "link": "https://github.com/coronasafe/care_fe/pull/6702#pullrequestreview-1746865416",
+      "text": "Keep doctor notes popup opened when initially clicked"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6701",
+      "time": 1700759635.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6701",
+      "text": "Navigate to doctor notes page upon doctor notes clicked if popup already in view"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/care_fe#6700",
+      "time": 1700759404.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6700",
+      "text": "Keep doctor notes popup opened when initially clicked"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6698",
+      "time": 1700758552.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6698",
+      "text": "fixes missing warranty validity filters"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700753947.0,
+      "title": "coronasafe/care_fe#6695",
+      "link": "https://github.com/coronasafe/care_fe/pull/6695#pullrequestreview-1746711400",
+      "text": "add support to cache filter options"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700753942.0,
+      "title": "coronasafe/care_fe#6695",
+      "link": "https://github.com/coronasafe/care_fe/pull/6695#pullrequestreview-1746711271",
+      "text": "add support to cache filter options"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700753615.0,
+      "title": "coronasafe/care_fe#6696",
+      "link": "https://github.com/coronasafe/care_fe/pull/6696#pullrequestreview-1746677386",
+      "text": "Replaced useDispatch with useQuerry on DailyRoundListDetails"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700753615.0,
+      "title": "coronasafe/care_fe#6696",
+      "link": "https://github.com/coronasafe/care_fe/pull/6696#pullrequestreview-1746677386",
+      "text": "Replaced useDispatch with useQuerry on DailyRoundListDetails"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6695",
+      "time": 1700752913.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6695#issuecomment-1824607083",
+      "text": "Could be because asset list endpoint is a redirect and fetch is no longer able to cancel it?"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6695",
+      "time": 1700752853.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6695#issuecomment-1824605718",
+      "text": "Just noticed, we always end up having 2 API calls for Asset List page only now :/ \r\n\r\nThis at times causes behaviour to ignore the filter because the one with cached filters might respond faster than the one without cached filters. Wonder why the first query is not being aborted (although this same situation works fine by request being aborted in facility and patient list page)\r\n\r\n<img width=\"774\" alt=\"image\" src=\"https://github.com/coronasafe/care_fe/assets/25143503/3b0c49b9-1554-4d2a-a421-f5f771df6128\">\r\n"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700751169.0,
+      "title": "coronasafe/care_fe#6695",
+      "link": "https://github.com/coronasafe/care_fe/pull/6695#pullrequestreview-1746620846",
+      "text": "add support to cache filter options"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700750912.0,
+      "title": "coronasafe/care_fe#6695",
+      "link": "https://github.com/coronasafe/care_fe/pull/6695#pullrequestreview-1746613334",
+      "text": "add support to cache filter options"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700746801.0,
+      "title": "coronasafe/care#1727",
+      "link": "https://github.com/coronasafe/care/pull/1727#pullrequestreview-1746490601",
+      "text": "made patient notes consultation specific"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard-data#3",
+      "time": 1700744878.0,
+      "link": "https://github.com/coronasafe/leaderboard-data/pull/3",
+      "text": "Update vercel deploy scripts"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard-data#3",
+      "time": 1700744706.0,
+      "link": "https://github.com/coronasafe/leaderboard-data/pull/3",
+      "text": "Update vercel deploy scripts"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/leaderboard#142",
+      "time": 1700743304.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/142",
+      "text": "Add support for build from Vercel CLI"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/leaderboard#142",
+      "time": 1700743229.0,
+      "link": "https://github.com/coronasafe/leaderboard/pull/142",
+      "text": "Add support for build from Vercel CLI"
+    },
+    {
+      "type": "pr_collaborated",
+      "title": "coronasafe/care_fe#6224",
+      "time": 1700708729.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6224",
+      "text": "Redesign Doctor Notes (Review, QA, Testing)",
+      "collaborated_with": [
+        "Bhavik-ag"
+      ]
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6685",
+      "time": 1700706016.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6685",
+      "text": "Improve how time is shown in Administrations Timeline"
+    },
     {
       "type": "pr_reviewed",
       "time": 1700671696.0,
@@ -27714,6 +27864,14 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6698",
+      "title": "fixes missing warranty validity filters",
+      "stale_for": 0,
+      "labels": [
+        "tested"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1726",
       "title": "Support filtering daily rounds by `taken_at` range",
       "stale_for": 0,
@@ -27723,18 +27881,9 @@
       ]
     },
     {
-      "link": "https://github.com/coronasafe/care_fe/pull/6685",
-      "title": "Improve how time is shown in Administrations Timeline",
-      "stale_for": 0,
-      "labels": [
-        "tested",
-        "P1"
-      ]
-    },
-    {
       "link": "https://github.com/coronasafe/care/pull/1704",
       "title": "Adds authz for Prescription & Medicine Administrations",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "waiting-for-review"
       ]
@@ -27742,7 +27891,7 @@
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6464",
       "title": "Adds user type: Nurse and Nurse (readonly)",
-      "stale_for": 8,
+      "stale_for": 9,
       "labels": [
         "changes required",
         "waiting for back end"
@@ -27750,6 +27899,10 @@
     }
   ],
   "authored_issue_and_pr": [
+    {
+      "issue_link": "https://github.com/coronasafe/care_fe/issues/6686",
+      "pr_link": "https://github.com/coronasafe/care_fe/pull/6685"
+    },
     {
       "issue_link": "https://github.com/coronasafe/teleicu_middleware/issues/112",
       "pr_link": "https://github.com/coronasafe/teleicu_middleware/pull/113"

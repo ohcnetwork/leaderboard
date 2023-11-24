@@ -1,6 +1,27 @@
 {
-  "last_updated": 1700677957.0,
+  "last_updated": 1700748711.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1700748711.0,
+      "title": "coronasafe/care#1726",
+      "link": "https://github.com/coronasafe/care/pull/1726#pullrequestreview-1746547344",
+      "text": "Support filtering daily rounds by `taken_at` range"
+    },
+    {
+      "type": "issue_opened",
+      "title": "coronasafe/teleicu_middleware#114",
+      "time": 1700748194.0,
+      "link": "https://github.com/coronasafe/teleicu_middleware/issues/114",
+      "text": "Setup sentry cron monitors for 5para log updates"
+    },
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care#1727",
+      "time": 1700745426.0,
+      "link": "https://github.com/coronasafe/care/pull/1727",
+      "text": "made patient notes consultation specific"
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care#1725",
@@ -6957,39 +6978,45 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care/pull/1727",
+      "title": "made patient notes consultation specific",
+      "stale_for": 0,
+      "labels": []
+    },
+    {
       "link": "https://github.com/coronasafe/care/pull/1716",
       "title": "add DenominationValidator to validate dosage fields in Prescription model",
-      "stale_for": 2,
+      "stale_for": 3,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1710",
       "title": "offload migrations to beat service",
-      "stale_for": 1,
+      "stale_for": 2,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1707",
       "title": "add management command to load skills",
-      "stale_for": 6,
+      "stale_for": 7,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1705",
       "title": "pin dependencies in pipenv",
-      "stale_for": 14,
+      "stale_for": 15,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1703",
       "title": "add env vars to configure cors headers",
-      "stale_for": 13,
+      "stale_for": 14,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care_fe/pull/6457",
       "title": "add support for webrtc stream",
-      "stale_for": 24,
+      "stale_for": 25,
       "labels": [
         "blocked",
         "changes required",
@@ -7000,7 +7027,7 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1579",
       "title": "refactor all files as per ruff rules",
-      "stale_for": 71,
+      "stale_for": 72,
       "labels": [
         "In progress"
       ]
@@ -7008,19 +7035,19 @@
     {
       "link": "https://github.com/coronasafe/care/pull/1559",
       "title": "feat: use ruff",
-      "stale_for": 64,
+      "stale_for": 65,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/medibase/pull/7",
       "title": "Update dependencies",
-      "stale_for": 125,
+      "stale_for": 126,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1349",
       "title": "use signals to update patient and bed count of facilities",
-      "stale_for": 50,
+      "stale_for": 51,
       "labels": []
     }
   ],

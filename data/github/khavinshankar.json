@@ -1,6 +1,76 @@
 {
-  "last_updated": 1700749836.0,
+  "last_updated": 1700840721.0,
   "activity": [
+    {
+      "type": "pr_reviewed",
+      "time": 1700840721.0,
+      "title": "coronasafe/care_fe#6711",
+      "link": "https://github.com/coronasafe/care_fe/pull/6711#pullrequestreview-1748151445",
+      "text": "Add icu_admission_date field to ConsultationForm"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700838192.0,
+      "title": "coronasafe/care_fe#6710",
+      "link": "https://github.com/coronasafe/care_fe/pull/6710#pullrequestreview-1748097052",
+      "text": "Filter out push notif and Fix empty daily rounds design"
+    },
+    {
+      "type": "pr_merged",
+      "title": "coronasafe/care_fe#6691",
+      "time": 1700825631.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6691",
+      "text": "sandbox iframe in fileupload"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700825593.0,
+      "title": "coronasafe/care_fe#6709",
+      "link": "https://github.com/coronasafe/care_fe/pull/6709#pullrequestreview-1747796568",
+      "text": "Fix layout issue in DailyRoundsList component"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6706",
+      "time": 1700806682.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6706",
+      "text": "Camera Preset created are not shown in asset configure page"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700806674.0,
+      "title": "coronasafe/care_fe#6707",
+      "link": "https://github.com/coronasafe/care_fe/pull/6707#pullrequestreview-1747362681",
+      "text": "Revert buggy replacement of useDispatch with useQuery in Live Feed"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6699",
+      "time": 1700806308.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6699",
+      "text": "Cypress Failure : Doctor Notes"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700806301.0,
+      "title": "coronasafe/care_fe#6703",
+      "link": "https://github.com/coronasafe/care_fe/pull/6703#pullrequestreview-1747357751",
+      "text": "Fix cypress for doctor notes"
+    },
+    {
+      "type": "issue_closed",
+      "title": "coronasafe/care_fe#6697",
+      "time": 1700794203.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6697",
+      "text": "Warranty/AMC End of Validity filter is malfunctioning at asset tab"
+    },
+    {
+      "type": "pr_reviewed",
+      "time": 1700794194.0,
+      "title": "coronasafe/care_fe#6698",
+      "link": "https://github.com/coronasafe/care_fe/pull/6698#pullrequestreview-1747193570",
+      "text": "fixes missing warranty validity filters"
+    },
     {
       "type": "pr_opened",
       "title": "coronasafe/care_fe#6695",
@@ -25255,31 +25325,14 @@
       "stale_for": 0,
       "labels": [
         "needs testing",
-        "need Review"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6691",
-      "title": "sandbox iframe in fileupload",
-      "stale_for": 1,
-      "labels": [
-        "tested",
-        "reviewed"
-      ]
-    },
-    {
-      "link": "https://github.com/coronasafe/care_fe/pull/6557",
-      "title": "Sort imports and use absolute imports",
-      "stale_for": 7,
-      "labels": [
-        "merge conflict",
-        "stale"
+        "need Review",
+        "cypress passed"
       ]
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1229",
       "title": "Hcx Refactors",
-      "stale_for": 56,
+      "stale_for": 57,
       "labels": [
         "waiting-for-review"
       ]
@@ -25287,19 +25340,19 @@
     {
       "link": "https://github.com/coronasafe/care_fe_hcx/pull/3",
       "title": "Hcx/eligibility check workflow",
-      "stale_for": 278,
+      "stale_for": 279,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/teleicu_middleware/pull/62",
       "title": "Added an endpoint to get the time of the last request in observation",
-      "stale_for": 349,
+      "stale_for": 350,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/care/pull/1093",
       "title": "Added is_occupied field in Bed",
-      "stale_for": 106,
+      "stale_for": 107,
       "labels": [
         "changes required"
       ]
@@ -25307,25 +25360,25 @@
     {
       "link": "https://github.com/coronasafe/arike/pull/143",
       "title": "added browser confirmation for uncheduling in Agenda",
-      "stale_for": 706,
+      "stale_for": 707,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/141",
       "title": "Added search bar in Patients",
-      "stale_for": 712,
+      "stale_for": 713,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/arike/pull/140",
       "title": "Refactored Patients from ruby-html to rescript-react",
-      "stale_for": 713,
+      "stale_for": 714,
       "labels": []
     },
     {
       "link": "https://github.com/coronasafe/life/pull/306",
       "title": "filtered duplicate tweets",
-      "stale_for": 908,
+      "stale_for": 909,
       "labels": []
     }
   ],

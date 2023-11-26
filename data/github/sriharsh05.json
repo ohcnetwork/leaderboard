@@ -1,6 +1,48 @@
 {
-  "last_updated": 1700624603.0,
+  "last_updated": 1700927974.0,
   "activity": [
+    {
+      "type": "pr_opened",
+      "title": "coronasafe/care_fe#6712",
+      "time": 1700927974.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6712",
+      "text": "Remove blood group, weight and height badges on the top of patient info card"
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6615",
+      "time": 1700915192.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6615#issuecomment-1826296646",
+      "text": "@rithviknishad \r\nI want to work on this issue. Please assign this to me."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6657",
+      "time": 1700914111.0,
+      "link": "https://github.com/coronasafe/care_fe/issues/6657#issuecomment-1826293302",
+      "text": "@rithviknishad \r\nI want to work on this issue. Please assign this to me."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6591",
+      "time": 1700912928.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6591#issuecomment-1826289446",
+      "text": "@rithviknishad Please review the changes."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6591",
+      "time": 1700896289.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6591#issuecomment-1826237002",
+      "text": "@rithviknishad Please review the changes."
+    },
+    {
+      "type": "comment_created",
+      "title": "coronasafe/care_fe#6575",
+      "time": 1700883384.0,
+      "link": "https://github.com/coronasafe/care_fe/pull/6575#issuecomment-1826203155",
+      "text": "@rithviknishad Please review the PR."
+    },
     {
       "type": "pr_merged",
       "title": "coronasafe/care_fe#6645",
@@ -297,12 +339,19 @@
   ],
   "open_prs": [
     {
+      "link": "https://github.com/coronasafe/care_fe/pull/6712",
+      "title": "Remove blood group, weight and height badges on the top of patient info card",
+      "stale_for": 0,
+      "labels": [
+        "needs testing"
+      ]
+    },
+    {
       "link": "https://github.com/coronasafe/care_fe/pull/6591",
       "title": "Replaced useDipatch with useQuery/request in FacilityCreate and HospitalList files",
       "stale_for": 0,
       "labels": [
-        "merge conflict",
-        "cypress failed"
+        "needs testing"
       ]
     },
     {
@@ -310,8 +359,7 @@
       "title": "replace useDispatch with useQuery and request in FacilityCard, FacililyHome and FacilityUsers",
       "stale_for": 0,
       "labels": [
-        "test failed",
-        "merge conflict"
+        "needs testing"
       ]
     }
   ],

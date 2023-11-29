@@ -2,6 +2,7 @@
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
 import Link from "next/link";
+
 export default function InfoCard({
   contributor,
   minimal = true,
@@ -16,7 +17,7 @@ export default function InfoCard({
       className={clsx(
         "xl:text-left",
         isClickable &&
-          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4",
+          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4"
       )}
       role="listitem"
     >
@@ -26,12 +27,12 @@ export default function InfoCard({
           className=""
         >
           <div
-            className={`flex flex-shrink-0 items-center bg-opacity-50 rounded-full md:p-1 relative z-10 ${
+            className={`flex flex-shrink-0 items-center bg-opacity-50 rounded-full md:p-1 z-10 h-28 w-28 md:h-32 md:w-32 ${
               isClickable && `cursor-pointer`
             }`}
           >
             <img
-              className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-2 border-indigo-500"
+              className="rounded-full border-2 border-indigo-500"
               src={`https://avatars.githubusercontent.com/${contributor.github}`}
               alt={contributor.github}
             />
@@ -46,7 +47,7 @@ export default function InfoCard({
               <h3
                 className={clsx(
                   "text-lg md:text-2xl leading-tight ",
-                  isClickable && "cursor-pointer hover:text-primary-200",
+                  isClickable && "cursor-pointer hover:text-primary-200"
                 )}
               >
                 {contributor.name}

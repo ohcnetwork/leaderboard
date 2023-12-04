@@ -10,7 +10,7 @@ on:
 
 jobs:
   fetch-data:
-    name: Scrap data from GitHub and Slack
+    name: Scrape data from GitHub and Slack
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r scraper/requirements.txt
 
-      - name: Scrap GitHub data
+      - name: Scrape GitHub data
         uses: nick-fields/retry@v2
         with:
           timeout_minutes: 10
@@ -33,7 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Scrap EOD updates from Slack Channel
+      - name: Scrape EOD updates from Slack Channel
         if: ${{ env.SLACK_API_TOKEN && env.SLACK_CHANNEL }}
         run: python scraper/src/slack.py --lookback_days=2
         env:

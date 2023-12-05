@@ -1,0 +1,54 @@
+on:
+  workflow_call:
+    inputs:
+      slack-eod-channel:
+        required: false
+        type: string
+    secrets:
+      SLACK_API_TOKEN:
+        required: false
+
+jobs:
+  fetch-data:
+    name: Scrape data from GitHub and Slack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install -r scraper/requirements.txt
+
+      - name: Scrape GitHub data
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          command: python scraper/src/github.py ${{ github.repository_owner }} data/github -l DEBUG
+          on_retry_command: git checkout .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Scrape EOD updates from Slack Channel
+        if: ${{ env.SLACK_API_TOKEN && env.SLACK_CHANNEL }}
+        run: python scraper/src/slack.py --lookback_days=2
+        env:
+          SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+          SLACK_CHANNEL: ${{ inputs.slack-eod-channel }}
+
+      - name: Generate markdown files for new contributors
+        run: node scripts/generateNewContributors.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "🌍 Update JSON - $(date -d '+5 hours +30 minutes' +'%d %b %Y | %I:%M %p')"
+          git push

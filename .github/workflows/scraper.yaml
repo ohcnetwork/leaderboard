@@ -13,7 +13,13 @@ jobs:
     name: Scrape data from GitHub and Slack
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: coronasafe/leaderboard-data)
       - uses: actions/checkout@v4
+        with:
+          repository: coronasafe/leaderboard
+          path: ./leaderboard-repo
+          sparse-checkout: scraper
+      - run: mv ./leaderboard-repo/scraper ./scraper
 
       - name: setup python
         uses: actions/setup-python@v3
@@ -45,6 +51,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: rm -rf scraper
       - name: Commit changes
         run: |
           git config user.name github-actions

@@ -151,6 +151,7 @@ interface PushEvent extends GitHubEvent {
   payload: {
     ref: string;
     commits: Commit[];
+    size: number;
   };
 }
 

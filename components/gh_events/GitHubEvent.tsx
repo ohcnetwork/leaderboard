@@ -63,8 +63,8 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "PushEvent":
       title = (
         <>
-          pushed to{" "}
-          <span className="text-gray-300">
+          pushed {event.payload.size} commits to{" "}
+          <span className="text-gray-300 font-bold">
             {event.payload.ref.replace("refs/heads/", "")}
           </span>{" "}
           in{" "}
@@ -75,6 +75,25 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
             {event.repo.name}
           </a>
         </>
+      );
+      body = (
+        <ul className="text-xs">
+          {event.payload.commits.map((commit) => (
+            <a
+              className="hover:underline group"
+              href={`https://github.com/${event.repo.name}/commit/${commit.sha}`}
+            >
+              <li key={commit.sha}>
+                <span className="text-gray-500 font-mono px-2 group-hover:text-gray-700 dark:group-hover:text-gray-300">
+                  {commit.sha.slice(-7)}
+                </span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  {commit.message.split("\n")[0]}
+                </span>
+              </li>
+            </a>
+          ))}
+        </ul>
       );
       break;
 
@@ -116,7 +135,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
   return (
     <li>
-      <div className="relative pb-8">
+      <div className="relative pb-4">
         <span
           className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
           aria-hidden

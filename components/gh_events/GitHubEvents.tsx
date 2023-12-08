@@ -12,9 +12,11 @@ const excludeBlacklistedEvents = (event: IGitHubEvent) => {
   const blacklist = [
     "CreateEvent",
     "WatchEvent",
+    "PullRequestReviewEvent",
     "PullRequestReviewCommentEvent",
     "DeleteEvent",
-  ];
+    "IssueCommentEvent",
+  ] as IGitHubEvent["type"][];
 
   return !blacklist.includes(event.type);
 };
@@ -25,13 +27,16 @@ export default function GitHubEvents({ minimal }: { minimal?: boolean }) {
 
   useEffect(() => {
     fetch(
-      `https://api.github.com/orgs/${
-        process.env.NEXT_PUBLIC_GITHUB_ORG
-      }/events?per_page=${minimal ? 20 : 40}&page=${page}`
+      `https://api.github.com/orgs/${process.env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=20&page=${page}`
     )
       .then((res) => res.json())
       .then((data) =>
-        setEvents(data.filter(exludeBotEvents).filter(excludeBlacklistedEvents))
+        setEvents(
+          data
+            .filter(exludeBotEvents)
+            .filter(excludeBlacklistedEvents)
+            .slice(0, 5)
+        )
       );
   }, [page]);
 

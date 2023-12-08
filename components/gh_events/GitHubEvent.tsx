@@ -1,6 +1,7 @@
 import { IGitHubEvent } from "@/lib/gh_events";
 import GitHubReleaseEventBody from "./ReleaseEventBody";
-import Markdown from "../Markdown";
+import OpenGraphImage from "./OpenGraphImage";
+import timeSince from "@/lib/timeSince";
 
 export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
   if (!event) {
@@ -9,45 +10,15 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     );
   }
 
-  // TODO: move this to seperate utility. `const { title, body } = getEventDetails(event)`
   let title, body;
 
   switch (event.type) {
-    case "PullRequestReviewCommentEvent":
-      title = (
-        <>
-          {event.payload.action} review comment on{" "}
-          <a
-            className="underline cursor-pointer"
-            href={event.payload.pull_request.html_url}
-          >
-            {event.repo.name}#{event.payload.pull_request.number}
-          </a>
-        </>
-      );
-      body = event.payload.comment.body;
-      break;
-
-    case "PullRequestReviewEvent":
-      title = (
-        <>
-          reviewed{" "}
-          <a
-            className="underline cursor-pointer"
-            href={event.payload.pull_request.html_url}
-          >
-            {event.repo.name}#{event.payload.pull_request.number}
-          </a>
-        </>
-      );
-      break;
-
     case "MemberEvent":
       title = (
         <>
           {event.payload.action} member{" "}
           <a
-            className="underline cursor-pointer"
+            className="cursor-pointer text-gray-300 font-bold"
             href={"https://github.com/" + event.payload.member.login}
           >
             {event.payload.member.login}
@@ -60,16 +31,24 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "IssuesEvent":
       title = (
         <>
-          {event.payload.action} issue{" "}
+          {event.payload.action} an issue in{" "}
           <a
-            className="cursor-pointer font-medium text-white"
-            href={event.payload.issue.html_url}
+            className="cursor-pointer text-gray-300 font-bold"
+            href={"https://github.com/" + event.repo.name}
           >
-            {event.payload.issue.title}
-          </a>{" "}
-          on{" "}
+            {event.repo.name}
+          </a>
+        </>
+      );
+      body = <OpenGraphImage url={event.payload.issue.html_url} />;
+      break;
+
+    case "PullRequestEvent":
+      title = (
+        <>
+          {event.payload.action} a pull request in{" "}
           <a
-            className="underline cursor-pointer"
+            className="cursor-pointer text-gray-300 font-bold"
             href={"https://github.com/" + event.repo.name}
           >
             {event.repo.name}
@@ -77,61 +56,22 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
         </>
       );
       body = event.payload.action === "opened" && (
-        <Markdown
-          mode="gfm"
-          text={event.payload.issue.body}
-          context={event.repo.name}
-        />
-      );
-      break;
-
-    case "IssueCommentEvent":
-      title = (
-        <>
-          commented on issue{" "}
-          <a
-            className="cursor-pointer font-medium text-white"
-            href={event.payload.issue.html_url}
-          >
-            {event.payload.issue.title}
-          </a>
-        </>
-      );
-      body = (
-        <Markdown
-          mode="gfm"
-          text={event.payload.comment.body}
-          context={event.repo.name}
-        />
-      );
-      break;
-
-    case "PullRequestEvent":
-      title = (
-        <>
-          {event.payload.action} pull request{" "}
-          <a
-            className="cursor-pointer font-medium text-white"
-            href={event.payload.pull_request.html_url}
-          >
-            {event.payload.pull_request.title}
-          </a>
-        </>
-      );
-      body = event.payload.action === "opened" && (
-        <Markdown
-          mode="gfm"
-          text={event.payload.pull_request.body}
-          context={event.repo.name}
-        />
+        <OpenGraphImage url={event.payload.pull_request.html_url} />
       );
       break;
 
     case "PushEvent":
       title = (
         <>
-          pushed to {event.payload.ref.replace("refs/heads/", "")} on{" "}
-          <a className="underline cursor-pointer" href={event.repo.url}>
+          pushed to{" "}
+          <span className="text-gray-300">
+            {event.payload.ref.replace("refs/heads/", "")}
+          </span>{" "}
+          in{" "}
+          <a
+            className="cursor-pointer text-gray-300 font-bold"
+            href={event.repo.url}
+          >
             {event.repo.name}
           </a>
         </>
@@ -142,11 +82,15 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
       title = (
         <>
           forked{" "}
-          <a className="underline cursor-pointer" href={event.repo.url}>
+          <a
+            className="cursor-pointer text-gray-300 font-bold"
+            href={event.repo.url}
+          >
             {event.repo.name}
           </a>
         </>
       );
+      body = <OpenGraphImage url={event.payload.forkee.html_url} />;
       break;
 
     case "ReleaseEvent":
@@ -154,7 +98,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
         <>
           released{" "}
           <a
-            className="underline cursor-pointer"
+            className="cursor-pointer text-gray-300 font-bold"
             href={event.payload.release.html_url}
           >
             {event.repo.name}#{event.payload.release.tag_name}
@@ -204,20 +148,20 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
           <div className="min-w-0 flex-1">
             <div>
-              <span className="text-sm">
+              <span className="text-sm text-gray-700 dark:text-gray-300">
                 <a
                   href={`https://github.com/${event.actor.login}`}
-                  className="font-medium text-gray-900 dark:text-gray-100 underline cursor-pointer"
+                  className="font-bold text-gray-700 dark:text-gray-300 cursor-pointer"
                 >
                   {event.actor.login}
                 </a>{" "}
-                <span className="mt-0.5 text-sm text-gray-500">
-                  {title} on {new Date(event.created_at).toLocaleString()}
+                <span className="mt-0.5 text-sm text-gray-400">
+                  {title} {timeSince(event.created_at)}
                 </span>
               </span>
 
               {!!body && (
-                <div className="mt-2 text-sm text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700 p-6 bg-gray-50 dark:bg-gray-800">
+                <div className="mt-4 ml-2 max-w-lg rounded-xl overflow-hidden">
                   <p>{body}</p>
                 </div>
               )}

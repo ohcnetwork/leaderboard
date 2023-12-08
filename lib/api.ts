@@ -61,10 +61,10 @@ export function getSlackMessages(slackId: string) {
             time: new Date(message.ts * 1000).toISOString(),
             link: "",
             text: message.text,
-          })),
+          }))
         );
       },
-      [],
+      []
     );
   } else {
     return [] as Activity[];
@@ -90,7 +90,7 @@ export function getContributorBySlug(file: string, detail = false) {
 
   try {
     activityData = JSON.parse(
-      fs.readFileSync(join(githubRoot, `${githubHandle}.json`), "utf8"),
+      fs.readFileSync(join(githubRoot, `${githubHandle}.json`), "utf8")
     );
   } catch (e) {
     console.log(e);
@@ -135,7 +135,7 @@ export function getContributorBySlug(file: string, detail = false) {
       pr_reviewed: 0,
       issue_assigned: 0,
       issue_opened: 0,
-    } as Highlights & { activity: Activity[] },
+    } as Highlights & { activity: Activity[] }
   );
 
   const calendarData = getCalendarData(weightedActivity.activity);
@@ -202,24 +202,24 @@ export function getCalendarData(activity: Activity[]) {
       }
       return acc;
     },
-    {} as Record<string, any>,
+    {} as Record<string, any>
   );
   return [...Array(365)].map((_, i) => {
     // Current Date - i
     const iReverse = 365 - i;
     const date = new Date(
-      new Date().getTime() - iReverse * 24 * 60 * 60 * 1000,
+      new Date().getTime() - iReverse * 24 * 60 * 60 * 1000
     );
     // yyyy-mm-dd
     const dateString = `${date.getFullYear()}-${padZero(
-      date.getMonth() + 1,
+      date.getMonth() + 1
     )}-${padZero(date.getDate())}`;
     const returnable = {
       // date in format YYYY-MM-DD
       ...calendarData[dateString],
       date: dateString,
       count: calendarData[dateString]?.count || 0,
-      level: calendarData[dateString]?.types.length || 0,
+      level: Math.min(calendarData[dateString]?.types.length || 0, 4),
     };
     // console.log("Returning", returnable);
     return returnable;
@@ -228,7 +228,7 @@ export function getCalendarData(activity: Activity[]) {
 
 const computePoints = (
   calendarDataEntry: Highlights,
-  initialPoints: number,
+  initialPoints: number
 ) => {
   let pointsToAdd = initialPoints ?? 0;
   pointsToAdd += points.eod_update * (calendarDataEntry.eod_update ?? 0);
@@ -273,7 +273,7 @@ const getLastWeekHighlights = (calendarData: Highlights[]) => {
       pr_collaborated: 0,
       issue_assigned: 0,
       issue_opened: 0,
-    },
+    }
   );
 
   if (highlights.eod_update == 7) {

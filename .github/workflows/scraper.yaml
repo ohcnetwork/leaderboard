@@ -18,7 +18,9 @@ jobs:
         with:
           repository: coronasafe/leaderboard
           path: ./leaderboard
-          sparse-checkout: scraper
+          sparse-checkout: |
+            scraper
+            scripts
 
       - name: setup python
         uses: actions/setup-python@v3

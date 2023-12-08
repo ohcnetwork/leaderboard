@@ -17,9 +17,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: coronasafe/leaderboard
-          path: ./leaderboard-repo
+          path: ./leaderboard
           sparse-checkout: scraper
-      - run: mv ./leaderboard-repo/scraper ./scraper
 
       - name: setup python
         uses: actions/setup-python@v3
@@ -51,7 +50,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: rm -rf scraper
       - name: Commit changes
         run: |
           git config user.name github-actions

@@ -1,4 +1,5 @@
 import { Activity, ActivityData } from "@/lib/types";
+import { formatDuration } from "@/lib/utils";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -86,6 +87,12 @@ let renderText = (activity: Activity) => {
               <span className="dark:text-primary-300 text-primary-400 font-medium">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
+              {!!activity["turnaround_time"] && (
+                <span className="font-semibold text-gray-600 text-sm">
+                  {" with a turnaround time of "}
+                  {formatDuration(activity["turnaround_time"] * 1000)}
+                </span>
+              )}
             </div>
             {activity["type"] == "pr_merged" && (
               <div className="pt-4">

@@ -1,3 +1,8 @@
+import {
+  formatDuration as _formatDuration,
+  intervalToDuration,
+} from "date-fns";
+
 export const parametreize = (string: string) => {
   return string.replace(/\s/gu, "_").toLowerCase();
 };
@@ -66,3 +71,14 @@ export const getLastWeekDateRangeString = () => {
 
   return `${start} - ${end}`;
 };
+
+export const formatDuration = (duration_in_ms: number) =>
+  _formatDuration(
+    intervalToDuration({
+      start: new Date(0),
+      end: new Date(duration_in_ms),
+    })
+  )
+    .split(" ")
+    .splice(0, 4)
+    .join(" ");

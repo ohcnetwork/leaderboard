@@ -17,7 +17,7 @@ export default function InfoCard({
       className={clsx(
         "xl:text-left",
         isClickable &&
-          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4"
+          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4",
       )}
       role="listitem"
     >
@@ -47,7 +47,7 @@ export default function InfoCard({
               <h3
                 className={clsx(
                   "text-lg md:text-2xl leading-tight ",
-                  isClickable && "cursor-pointer hover:text-primary-200"
+                  isClickable && "cursor-pointer hover:text-primary-200",
                 )}
               >
                 {contributor.name}

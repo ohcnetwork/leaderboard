@@ -80,10 +80,11 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
         <ul className="text-xs">
           {event.payload.commits.map((commit) => (
             <a
+              key={commit.sha}
               className="hover:underline group"
               href={`https://github.com/${event.repo.name}/commit/${commit.sha}`}
             >
-              <li key={commit.sha}>
+              <li>
                 <span className="text-gray-500 font-mono px-2 group-hover:text-gray-700 dark:group-hover:text-gray-300">
                   {commit.sha.slice(-7)}
                 </span>

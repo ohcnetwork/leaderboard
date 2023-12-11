@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: coronasafe/leaderboard-data)
+        with:
+          token: ${{ secrets.GIT_ACCESS_TOKEN }}
       - uses: actions/checkout@v4
         with:
           repository: coronasafe/leaderboard

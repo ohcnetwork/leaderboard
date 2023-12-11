@@ -38,7 +38,7 @@ export default function Home() {
                     <div className="space-y-12">
                       <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                         <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-                          What's happening?
+                          What&apos;s happening?
                         </h2>
                       </div>
                       <GitHubEvents minimal />

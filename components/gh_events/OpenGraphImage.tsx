@@ -5,7 +5,7 @@ const hashed = (url: string) => {
 const OpenGraphImage = (props: { url: string; className?: string }) => {
   const src = props.url.replace(
     "https://github.com/",
-    `https://opengraph.githubassets.com/${hashed(props.url)}/`
+    `https://opengraph.githubassets.com/${hashed(props.url)}/`,
   );
 
   return (

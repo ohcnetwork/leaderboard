@@ -1,5 +1,6 @@
 import { Activity, ActivityData } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
+import OpenGraphImage from "../gh_events/OpenGraphImage";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -96,18 +97,7 @@ let renderText = (activity: Activity) => {
             </div>
             {activity["type"] == "pr_merged" && (
               <div className="pt-4">
-                <a href={activity["link"]}>
-                  <img
-                    alt={activity["link"]}
-                    className="rounded-xl"
-                    src={`https://opengraph.githubassets.com/${generateId()}/${activity[
-                      "link"
-                    ]
-                      .split("/")
-                      .slice(3, 7)
-                      .join("/")}/`}
-                  />
-                </a>
+                <OpenGraphImage url={activity["link"]} className="rounded-xl" />
               </div>
             )}
             {activity["type"] != "pr_merged" && (

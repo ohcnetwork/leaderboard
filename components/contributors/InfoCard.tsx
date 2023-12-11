@@ -2,6 +2,7 @@
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
 import Link from "next/link";
+
 export default function InfoCard({
   contributor,
   minimal = true,
@@ -26,12 +27,12 @@ export default function InfoCard({
           className=""
         >
           <div
-            className={`flex flex-shrink-0 items-center bg-opacity-50 rounded-full md:p-1 relative z-10 ${
+            className={`flex flex-shrink-0 items-center bg-opacity-50 rounded-full md:p-1 z-10 h-28 w-28 md:h-32 md:w-32 ${
               isClickable && `cursor-pointer`
             }`}
           >
             <img
-              className=" h-28 w-28 md:h-32 md:w-32 rounded-full border-2 border-indigo-500"
+              className="rounded-full border-2 border-indigo-500"
               src={`https://avatars.githubusercontent.com/${contributor.github}`}
               alt={contributor.github}
             />

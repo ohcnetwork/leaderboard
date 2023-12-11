@@ -2,6 +2,7 @@ import InfoCard from "../components/contributors/InfoCard";
 import Link from "next/link";
 import { getContributors } from "../lib/api";
 import { getLastWeekDateRangeString } from "../lib/utils";
+import GitHubEvents from "@/components/gh_events/GitHubEvents";
 
 export default function Home() {
   const contributors: any = getContributors();
@@ -31,6 +32,20 @@ export default function Home() {
                 ) : (
                   <div className="pt-0" />
                 )}
+
+                <div>
+                  <div className="mx-auto">
+                    <div className="space-y-12">
+                      <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+                          What&apos;s happening?
+                        </h2>
+                      </div>
+                      <GitHubEvents minimal />
+                    </div>
+                  </div>
+                </div>
+
                 <div>
                   <div className="mx-auto">
                     <div className="space-y-12">

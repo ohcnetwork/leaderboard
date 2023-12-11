@@ -28,12 +28,6 @@ jobs:
             data
             contributors
 
-      - name: Move sample data
-        run: |
-          rm -rf ./data ./contributors
-          mv ./data-repo/data ./data
-          mv ./data-repo/contributors ./contributors
-
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         id: pnpm-install

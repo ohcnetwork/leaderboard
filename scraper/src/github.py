@@ -176,6 +176,9 @@ class GitHubScraper:
             co_authors = re.findall('Co-authored-by: (.+) <(.+)>', commit['commit']['message'])
             if co_authors:
                 for (name, email) in co_authors:
+                    if is_blacklisted(name):
+                        continue
+                    
                     if name in self.name_user_cache:
                         collaborators.add(self.name_user_cache[name])
                         continue

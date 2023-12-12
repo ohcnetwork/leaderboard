@@ -1,0 +1,51 @@
+name: Vercel Preview Deployment
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  push:
+
+permissions:
+  pull-requests: read
+
+jobs:
+  Deploy-Preview:
+    runs-on: ubuntu-latest
+    environment:
+      name: Preview
+      url: ${{ steps.deploy.outputs.deployment_url }}
+    steps:
+      - name: Checkout Leaderboard
+        uses: actions/checkout@v4
+
+      - name: Checkout sample data from data repo
+        uses: actions/checkout@v4
+        with:
+          path: ./data-repo
+          repository: coronasafe/leaderboard-data
+          sparse-checkout: |
+            data
+            contributors
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 6
+          run_install: false
+
+      - name: Install Vercel CLI
+        run: pnpm add --global vercel@latest
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project Artifacts to Vercel
+        id: deploy
+        run: |
+          vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }} > url
+          echo "deployment_url=$(cat url)" >> $GITHUB_OUTPUT

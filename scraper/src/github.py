@@ -27,11 +27,17 @@ user_blacklist = {
 }
 
 
+def is_blacklisted(login: str):
+    return "[bot]" in login or login in user_blacklist
+
+
 def serializer(obj):
     return obj.timestamp() if isinstance(obj, datetime) else repr(obj)
 
 
 class GitHubScraper:
+    name_user_cache, email_user_cache = {}, {}
+
     def __init__(self, org, token, data_dir, date, days_back=1, log_level=logging.INFO):
         self.log = logging.getLogger("GitHubScraper")
         self.log.setLevel(log_level)
@@ -71,7 +77,7 @@ class GitHubScraper:
             _user = event["payload"]["pull_request"]["user"]["login"]
         except KeyError:
             _user = user
-        if _user.endswith("[bot]") or _user in user_blacklist:
+        if is_blacklisted(_user):
             self.log.debug(f"Skipping blacklisted user {_user}")
             return
 
@@ -162,6 +168,9 @@ class GitHubScraper:
         ).json()
 
         for commit in commits:
+            if is_blacklisted(commit["author"]["login"]):
+                continue
+
             collaborators.add(commit["author"]["login"])
 
             co_authors = re.findall(
@@ -169,6 +178,17 @@ class GitHubScraper:
             )
             if co_authors:
                 for name, email in co_authors:
+                    if is_blacklisted(name):
+                        continue
+
+                    if name in self.name_user_cache:
+                        collaborators.add(self.name_user_cache[name])
+                        continue
+
+                    if email in self.email_user_cache:
+                        collaborators.add(self.email_user_cache[email])
+                        continue
+
                     users = requests.get(
                         "https://api.github.com/search/users",
                         params={"q": email},
@@ -176,7 +196,9 @@ class GitHubScraper:
                     ).json()
 
                     if users["total_count"] > 0:
-                        collaborators.add(users["items"][0]["login"])
+                        login = users["items"][0]["login"]
+                        self.email_user_cache[email] = login
+                        collaborators.add(login)
                         continue
 
                     users = requests.get(
@@ -186,7 +208,9 @@ class GitHubScraper:
                     ).json()
 
                     if users["total_count"] == 1:
-                        collaborators.add(users["items"][0]["login"])
+                        login = users["items"][0]["login"]
+                        self.name_user_cache = login
+                        collaborators.add(login)
 
         if len(collaborators) > 1:
             for user in collaborators:

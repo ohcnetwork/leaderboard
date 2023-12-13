@@ -6,7 +6,6 @@ import {
   resolveGraduateAttributes,
 } from "../../../config/GraduateAttributes";
 import { getContributorBySlug } from "../../../lib/api";
-
 import ActivityCalendarGit from "../../../components/contributors/ActivityCalendarGitHub";
 import BadgeIcons from "../../../components/contributors/BadgeIcons";
 import GithubActivity from "../../../components/contributors/GithubActivity";
@@ -17,6 +16,7 @@ import markdownToHtml from "../../../lib/markdownToHtml";
 import clsx from "clsx";
 import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
+import { formatDuration } from "@/lib/utils";
 
 type Params = {
   params: {
@@ -264,6 +264,22 @@ export default async function Contributor({ params: { slug } }: Params) {
                 {contributor.highlights.eod_update}
               </dd>
             </div>
+            <div className="col-span-3 flex flex-col">
+              <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-300">
+                Avg. PR Turnaround Time
+              </dt>
+              <dd className="order-1 text-5xl font-extrabold text-foreground truncate whitespace-nowrap">
+                {formatDuration(
+                  (contributor.activityData?.activity
+                    .map((act) => act.turnaround_time)
+                    .filter(Boolean)
+                    .reduce(
+                      (acc, curr, i, array) => acc! + curr! / array.length,
+                      0
+                    ) || 0) * 1000
+                )}
+              </dd>
+            </div>
             {/* <div className="flex flex-col mt-4 sm:mt-0">
                   <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-200">
                     Points
@@ -290,7 +306,7 @@ export default async function Contributor({ params: { slug } }: Params) {
                         "text-sm mb-2 transition-colors duration-75 ease-in-out flex gap-2",
                         pr?.stale_for >= 7
                           ? "dark:text-gray-600 text-gray-700 dark:hover:text-primary-200 hover:text-primary-400"
-                          : "dark:text-gray-300 text-gray-400 dark:hover:text-primary-300 hover:text-primary-500",
+                          : "dark:text-gray-300 text-gray-400 dark:hover:text-primary-300 hover:text-primary-500"
                       )}
                       key={index}
                     >
@@ -310,7 +326,7 @@ export default async function Contributor({ params: { slug } }: Params) {
                               "text-xs tracking-wide px-1.5 py-1 rounded mr-2",
                               pr.stale_for >= 7
                                 ? "dark:bg-gray-800 bg-gray-200 dark:text-gray-600 text-gray-700"
-                                : "dark:bg-gray-600 bg-gray-100 dark:text-white text-gray-400",
+                                : "dark:bg-gray-600 bg-gray-100 dark:text-white text-gray-400"
                             )}
                           >
                             {pr.link

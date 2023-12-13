@@ -261,6 +261,10 @@ class GitHubScraper:
                     )
                 )
 
+            if (action["event"] == "connected"):
+                # TODO: currently there is no way to get the issue number from the timeline, handle this case while moving to graphql
+                pass
+
         linked_issues = list(set(map(lambda x: x[1:], linked_issues)))
 
         assigned_ats = []

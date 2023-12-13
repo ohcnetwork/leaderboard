@@ -68,6 +68,7 @@ export interface Activity {
   link: string;
   text: string;
   collaborated_with?: string[];
+  turnaround_time?: number;
 }
 
 export interface OpenPr {

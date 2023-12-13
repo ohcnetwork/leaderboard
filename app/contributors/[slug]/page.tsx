@@ -6,7 +6,6 @@ import {
   resolveGraduateAttributes,
 } from "../../../config/GraduateAttributes";
 import { getContributorBySlug } from "../../../lib/api";
-
 import ActivityCalendarGit from "../../../components/contributors/ActivityCalendarGitHub";
 import BadgeIcons from "../../../components/contributors/BadgeIcons";
 import GithubActivity from "../../../components/contributors/GithubActivity";
@@ -17,6 +16,7 @@ import markdownToHtml from "../../../lib/markdownToHtml";
 import clsx from "clsx";
 import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
+import { formatDuration } from "@/lib/utils";
 
 type Params = {
   params: {
@@ -262,6 +262,22 @@ export default async function Contributor({ params: { slug } }: Params) {
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.eod_update}
+              </dd>
+            </div>
+            <div className="col-span-3 flex flex-col">
+              <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-300">
+                Avg. PR Turnaround Time
+              </dt>
+              <dd className="order-1 text-5xl font-extrabold text-foreground truncate whitespace-nowrap">
+                {formatDuration(
+                  (contributor.activityData?.activity
+                    .map((act) => act.turnaround_time)
+                    .filter(Boolean)
+                    .reduce(
+                      (acc, curr, i, array) => acc! + curr! / array.length,
+                      0,
+                    ) || 0) * 1000,
+                )}
               </dd>
             </div>
             {/* <div className="flex flex-col mt-4 sm:mt-0">

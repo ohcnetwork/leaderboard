@@ -26,9 +26,9 @@ user_blacklist = {
     "codecov-commenter",
 }
 
+
 def is_blacklisted(login: str):
     return "[bot]" in login or login in user_blacklist
-
 
 
 def serializer(obj):
@@ -38,9 +38,7 @@ def serializer(obj):
 class GitHubScraper:
     name_user_cache, email_user_cache = {}, {}
 
-    def __init__(
-        self, org, token, data_dir, date, days_back=1, log_level=logging.INFO
-    ):
+    def __init__(self, org, token, data_dir, date, days_back=1, log_level=logging.INFO):
         self.log = logging.getLogger("GitHubScraper")
         self.log.setLevel(log_level)
         self.org = org
@@ -70,7 +68,7 @@ class GitHubScraper:
                 "last_updated": event["time"],
                 "activity": [event],
                 "open_prs": [],
-                "authored_issue_and_pr":[],
+                "authored_issue_and_pr": [],
             }
 
     def parse_event(self, event, event_time):
@@ -134,6 +132,7 @@ class GitHubScraper:
                 event["payload"]["action"] == "closed"
                 and event["payload"]["pull_request"]["merged"]
             ):
+                turnaround_time = self.caclculate_turnaround_time(event)
                 self.append(
                     event["payload"]["pull_request"]["user"]["login"],
                     {
@@ -142,6 +141,7 @@ class GitHubScraper:
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
+                        "turnaround_time": turnaround_time,
                     },
                 )
 
@@ -158,27 +158,29 @@ class GitHubScraper:
                     "text": event["payload"]["pull_request"]["title"],
                 },
             )
-    
+
     def add_collaborations(self, event, event_time):
         collaborators = set()
-        
+
         commits = requests.get(
-            event['payload']['pull_request']['commits_url'],
+            event["payload"]["pull_request"]["commits_url"],
             headers=self.headers,
         ).json()
 
         for commit in commits:
-            if is_blacklisted(commit['author']['login']):
+            if is_blacklisted(commit["author"]["login"]):
                 continue
 
-            collaborators.add(commit['author']['login'])
+            collaborators.add(commit["author"]["login"])
 
-            co_authors = re.findall('Co-authored-by: (.+) <(.+)>', commit['commit']['message'])
+            co_authors = re.findall(
+                "Co-authored-by: (.+) <(.+)>", commit["commit"]["message"]
+            )
             if co_authors:
-                for (name, email) in co_authors:
+                for name, email in co_authors:
                     if is_blacklisted(name):
                         continue
-                    
+
                     if name in self.name_user_cache:
                         collaborators.add(self.name_user_cache[name])
                         continue
@@ -188,28 +190,28 @@ class GitHubScraper:
                         continue
 
                     users = requests.get(
-                        'https://api.github.com/search/users',
-                        params={'q': email},
-                        headers=self.headers
+                        "https://api.github.com/search/users",
+                        params={"q": email},
+                        headers=self.headers,
                     ).json()
 
-                    if users['total_count'] > 0:
-                        login = users['items'][0]['login']
+                    if users["total_count"] > 0:
+                        login = users["items"][0]["login"]
                         self.email_user_cache[email] = login
                         collaborators.add(login)
                         continue
 
                     users = requests.get(
-                        'https://api.github.com/search/users',
-                        params={'q': name},
-                        headers=self.headers
+                        "https://api.github.com/search/users",
+                        params={"q": name},
+                        headers=self.headers,
                     ).json()
 
-                    if users['total_count'] == 1:
-                        login = users['items'][0]['login']
+                    if users["total_count"] == 1:
+                        login = users["items"][0]["login"]
                         self.name_user_cache = login
                         collaborators.add(login)
-            
+
         if len(collaborators) > 1:
             for user in collaborators:
                 others = collaborators.copy()
@@ -222,10 +224,87 @@ class GitHubScraper:
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
-                        "collaborated_with": list(others)
+                        "collaborated_with": list(others),
                     },
                 )
 
+    def caclculate_turnaround_time(self, event):
+        user = event["payload"]["pull_request"]["user"]["login"]
+        merged_at = datetime.strptime(
+            event["payload"]["pull_request"]["merged_at"], "%Y-%m-%dT%H:%M:%SZ"
+        )
+        created_at = datetime.strptime(
+            event["payload"]["pull_request"]["created_at"], "%Y-%m-%dT%H:%M:%SZ"
+        )
+
+        linked_issues = re.findall(
+            r"(fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved) ([\w\/.-]*)(#\d+)",
+            event["payload"]["pull_request"]["body"] or "",
+            re.IGNORECASE | re.MULTILINE,
+        )
+
+        pr_timeline = requests.get(
+            event["payload"]["pull_request"]["issue_url"] + "/timeline",
+            headers=self.headers,
+        ).json()
+        for action in pr_timeline:
+            if (
+                action["event"] == "cross-referenced"
+                and action["source"]["type"] == "issue"
+                and "pull_request" not in action["source"]["issue"]
+            ):
+                linked_issues.append(
+                    (
+                        "",
+                        action["source"]["issue"]["repository"]["full_name"],
+                        f'#{action["source"]["issue"]["number"]}',
+                    )
+                )
+
+            if (action["event"] == "connected"):
+                # TODO: currently there is no way to get the issue number from the timeline, handle this case while moving to graphql
+                pass
+
+        linked_issues = list(set(map(lambda x: x[1:], linked_issues)))
+
+        assigned_ats = []
+        for org_repo, issue in linked_issues:
+            org = org_repo.split("/")[0] or self.org
+            repo = org_repo.split("/")[-1] or event["repo"]["name"].split("/")[-1]
+            issue_number = int(issue.split("#")[-1])
+
+            issue_timeline = requests.get(
+                f"https://api.github.com/repos/{org}/{repo}/issues/{issue_number}/timeline",
+                headers=self.headers,
+            ).json()
+
+            for action in issue_timeline:
+                if (
+                    action["event"] == "assigned"
+                    and action["assignee"]["login"] == user
+                ):
+                    assigned_ats.append(
+                        {
+                            "issue": f"{org}/{repo}#{issue_number}",
+                            "time": datetime.strptime(
+                                action["created_at"], "%Y-%m-%dT%H:%M:%SZ"
+                            ),
+                        }
+                    )
+
+                if (
+                    action["event"] == "unassigned"
+                    and action["assignee"]["login"] == user
+                ):
+                    assigned_ats.pop()
+
+        assigned_at = (
+            None
+            if len(assigned_ats) == 0
+            else min(assigned_ats, key=lambda x: x["time"])["time"]
+        )
+
+        return (merged_at - (assigned_at or created_at)).seconds
 
     def fetch_events(self, page=1):
         self.log.info(f"Fetching events page:{page}")
@@ -241,8 +320,7 @@ class GitHubScraper:
 
         events_count = 0
         for event in events:
-            event_time = datetime.strptime(
-                event["created_at"], "%Y-%m-%dT%H:%M:%S%z")
+            event_time = datetime.strptime(event["created_at"], "%Y-%m-%dT%H:%M:%S%z")
 
             if event_time.date() > self.end_date:
                 continue
@@ -271,13 +349,16 @@ class GitHubScraper:
 
         for pr in pulls:
             today = datetime.now()
-            pr_last_updated = datetime.strptime(pr['updated_at'], "%Y-%m-%dT%H:%M:%SZ")
+            pr_last_updated = datetime.strptime(pr["updated_at"], "%Y-%m-%dT%H:%M:%SZ")
 
             self.data[user]["open_prs"].append(
                 {
                     "link": pr["html_url"],
                     "title": pr["title"],
-                    "stale_for": (today.replace(tzinfo=None) - pr_last_updated.replace(tzinfo=None)).days,
+                    "stale_for": (
+                        today.replace(tzinfo=None)
+                        - pr_last_updated.replace(tzinfo=None)
+                    ).days,
                     "labels": [label["name"] for label in pr["labels"]],
                 }
             )
@@ -314,18 +395,20 @@ class GitHubScraper:
             events = timeline_events.json()
             for event in events:
                 if self.resolve_autonomy_responsibility(event, user):
-                    if 'pull_request' in event["source"]["issue"]:
+                    if "pull_request" in event["source"]["issue"]:
                         pr = event["source"]["issue"]["pull_request"]
                         if pr["merged_at"]:
                             merged_prs.append(
                                 {
                                     "issue_link": issue["html_url"],
-                                    "pr_link": pr["html_url"]
+                                    "pr_link": pr["html_url"],
                                 }
                             )
         for pr in merged_prs:
             self.data[user]["authored_issue_and_pr"].append(pr)
-        self.log.debug(f"Fetched {len(merged_prs)} merged pull requests and issues for {user}")
+        self.log.debug(
+            f"Fetched {len(merged_prs)} merged pull requests and issues for {user}"
+        )
         return self.data
 
     def scrape(self):

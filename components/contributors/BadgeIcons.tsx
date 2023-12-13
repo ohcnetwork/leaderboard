@@ -27,7 +27,7 @@ function useOnClickOutside(
 }
 
 type Skill = GraduateAttribute & {
-  currentLevel: GraduateAttribute["levels"][number];
+  currentLevel?: GraduateAttribute["levels"][number];
 };
 
 export default function BadgeIcons({ skill }: { skill: Skill }) {
@@ -37,7 +37,9 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
 
   const glow = () => {
     const currentLevel =
-      skill.levels.map((l) => l.value).indexOf(skill.currentLevel.value) + 1;
+      skill.levels
+        .map((l) => l.value)
+        .indexOf(skill.currentLevel?.value ?? -1) + 1;
 
     switch (skill.levels.length - currentLevel) {
       case 0:
@@ -137,7 +139,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                 >
                   <p
                     className={`flex-shrink-0 bg-gray-700 px-1 py-0.5 rounded ${
-                      skill.currentLevel?.value >= level.value
+                      skill.currentLevel?.value ?? -1 >= level.value
                         ? "bg-green-400 text-white"
                         : ""
                     }`}
@@ -147,7 +149,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                   <div className="flex-grow pl-4">
                     <p
                       className={`flex items-center ${
-                        skill.currentLevel?.value >= level.value
+                        skill.currentLevel?.value ?? -1 >= level.value
                           ? "text-green-500"
                           : ""
                       }`}

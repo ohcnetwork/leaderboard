@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useRef, useEffect, RefObject } from "react";
 import Sparkle from "../Sparkles";
+import { GraduateAttribute } from "@/config/GraduateAttributes";
 
 function useOnClickOutside(
   ref: RefObject<HTMLInputElement>,
@@ -24,13 +25,19 @@ function useOnClickOutside(
     };
   }, [ref, handler]);
 }
-export default function BadgeIcons({ skill }: { skill: any }) {
+
+type Skill = GraduateAttribute & {
+  currentLevel: GraduateAttribute["levels"][number];
+};
+
+export default function BadgeIcons({ skill }: { skill: Skill }) {
   const [showModel, setShowModel] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
   useOnClickOutside(ref, () => setShowModel(false));
 
   const glow = () => {
-    const currentLevel = skill.levels.indexOf(skill.currentLevel) + 1;
+    const currentLevel =
+      skill.levels.map((l) => l.value).indexOf(skill.currentLevel.value) + 1;
 
     switch (skill.levels.length - currentLevel) {
       case 0:

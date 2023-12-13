@@ -1,3 +1,5 @@
+import { Contributor } from "@/lib/types";
+
 export let professionalSelfSkills = [
   {
     key: "creative_thinking",
@@ -238,23 +240,28 @@ export let humanValues = [
   },
 ];
 
-let resolveLevel = (attribute, value) => {
-  let level = undefined;
-
-  attribute.levels.map((l) => {
-    if (value >= l.value) {
-      level = l;
-    }
-  });
-
-  if (level) {
-    return { ...attribute, currentLevel: level };
-  } else {
-    return attribute;
-  }
+export type GraduateAttribute = {
+  key: string;
+  label: string;
+  icon: string;
+  levels: {
+    label: string;
+    value: number;
+    description: string;
+  }[];
 };
 
-export let resolveGraduateAttributes = (attribute, contributor) => {
+let resolveLevel = (attribute: GraduateAttribute, value: number) => {
+  return {
+    ...attribute,
+    currentLevel: attribute.levels.reduce((p, v) => (value >= v.value ? v : p)),
+  };
+};
+
+export let resolveGraduateAttributes = (
+  attribute: GraduateAttribute,
+  contributor: Contributor,
+) => {
   switch (attribute.key) {
     case "creative_thinking":
       return resolveLevel(attribute, contributor.highlights.issue_opened);
@@ -271,7 +278,7 @@ export let resolveGraduateAttributes = (attribute, contributor) => {
     case "community_engagement":
       return resolveLevel(attribute, contributor.highlights.points);
     case "leadership":
-      return resolveLevel(attribute, contributor.leadership?.length);
+      return resolveLevel(attribute, contributor.leadership?.length ?? 0);
     case "learn_how_to_learn":
       return resolveLevel(attribute, contributor.courses_completed?.length);
     case "skills_to_apply_dt_solutions":

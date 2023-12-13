@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useRef, useEffect, RefObject } from "react";
 import Sparkle from "../Sparkles";
+import { GraduateAttribute } from "@/config/GraduateAttributes";
 
 function useOnClickOutside(
   ref: RefObject<HTMLInputElement>,
@@ -24,13 +25,21 @@ function useOnClickOutside(
     };
   }, [ref, handler]);
 }
-export default function BadgeIcons({ skill }: { skill: any }) {
+
+type Skill = GraduateAttribute & {
+  currentLevel?: GraduateAttribute["levels"][number];
+};
+
+export default function BadgeIcons({ skill }: { skill: Skill }) {
   const [showModel, setShowModel] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
   useOnClickOutside(ref, () => setShowModel(false));
 
   const glow = () => {
-    const currentLevel = skill.levels.indexOf(skill.currentLevel) + 1;
+    const currentLevel =
+      skill.levels
+        .map((l) => l.value)
+        .indexOf(skill.currentLevel?.value ?? -1) + 1;
 
     switch (skill.levels.length - currentLevel) {
       case 0:
@@ -130,7 +139,7 @@ export default function BadgeIcons({ skill }: { skill: any }) {
                 >
                   <p
                     className={`flex-shrink-0 bg-gray-700 px-1 py-0.5 rounded ${
-                      skill.currentLevel?.value >= level.value
+                      skill.currentLevel?.value ?? -1 >= level.value
                         ? "bg-green-400 text-white"
                         : ""
                     }`}
@@ -140,7 +149,7 @@ export default function BadgeIcons({ skill }: { skill: any }) {
                   <div className="flex-grow pl-4">
                     <p
                       className={`flex items-center ${
-                        skill.currentLevel?.value >= level.value
+                        skill.currentLevel?.value ?? -1 >= level.value
                           ? "text-green-500"
                           : ""
                       }`}

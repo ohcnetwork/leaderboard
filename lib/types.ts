@@ -5,6 +5,7 @@ export interface Contributor {
   content: string;
   activityData: ActivityData;
   highlights: Highlights;
+  leadership?: string[];
   weekSummary: WeekSummary;
   calendarData: any[];
   name: string;

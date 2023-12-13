@@ -77,7 +77,7 @@ export const formatDuration = (duration_in_ms: number) =>
     intervalToDuration({
       start: new Date(0),
       end: new Date(duration_in_ms),
-    })
+    }),
   )
     .split(" ")
     .splice(0, 4)

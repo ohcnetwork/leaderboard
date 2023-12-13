@@ -132,7 +132,7 @@ class GitHubScraper:
                 event["payload"]["action"] == "closed"
                 and event["payload"]["pull_request"]["merged"]
             ):
-                turn_around_time = self.caclculate_turnaround_time(event)
+                turnaround_time = self.caclculate_turnaround_time(event)
                 self.append(
                     event["payload"]["pull_request"]["user"]["login"],
                     {
@@ -141,7 +141,7 @@ class GitHubScraper:
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
-                        "turn_around_time": turn_around_time,
+                        "turnaround_time": turnaround_time,
                     },
                 )
 

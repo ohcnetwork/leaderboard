@@ -55,9 +55,9 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           </a>
         </>
       );
-      body = event.payload.action === "opened" && (
-        <OpenGraphImage url={event.payload.pull_request.html_url} />
-      );
+      body = ["opened", "closed", "reopened"].includes(
+        event.payload.action,
+      ) && <OpenGraphImage url={event.payload.pull_request.html_url} />;
       break;
 
     case "PushEvent":

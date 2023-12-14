@@ -78,6 +78,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           </a>
         </>
       );
+      body = <OpenGraphImage url={event.payload.pull_request.html_url} />;
       break;
 
     case "PushEvent":

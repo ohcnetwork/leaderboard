@@ -67,12 +67,6 @@ h4 {
   font-size: 1.25rem;
 }
 
-.journey-map__milestone {
-  transform: perspective(200px) rotateX(75deg);
-  transform-style: preserve-3d;
-  @apply top-8;
-}
-
 :root {
   --light-background: #fafaff;
   --dark-background: #111827;

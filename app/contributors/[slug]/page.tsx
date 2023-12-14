@@ -19,13 +19,15 @@ import { Contributor } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 
 export async function generateStaticParams() {
-  return getContributorsSlugs().map((slug) => {
-    return { slug: slug.file.replace('.md', '') }
-  });
+  return getContributorsSlugs()
+    .filter((slug) => !slug.file.includes("[bot]"))
+    .map((slug) => {
+      return { slug: slug.file.replace(".md", "") };
+    });
 }
 
 type Params = {
-  params: { slug: string; };
+  params: { slug: string };
 };
 
 export default async function Contributor({ params }: Params) {

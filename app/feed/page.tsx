@@ -1,13 +1,8 @@
 import GitHubEvent from "@/components/gh_events/GitHubEvent";
 import { IGitHubEvent } from "@/lib/gh_events";
-import Link from "next/link";
-import {
-  MdLastPage,
-  MdFirstPage,
-  MdNavigateBefore,
-  MdNavigateNext,
-} from "react-icons/md";
 import FeedPagination from "./FeedPagination";
+
+export const revalidate = 300; // revalidate at most every 5 mins
 
 type Props = {
   searchParams: {

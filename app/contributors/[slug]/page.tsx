@@ -21,9 +21,7 @@ import { formatDuration } from "@/lib/utils";
 export async function generateStaticParams() {
   return getContributorsSlugs()
     .filter((slug) => !slug.file.includes("[bot]"))
-    .map((slug) => {
-      return { slug: slug.file.replace(".md", "") };
-    });
+    .map((slug) => ({ slug: slug.file.replace(".md", "") }));
 }
 
 type Params = {

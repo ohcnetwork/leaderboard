@@ -3,6 +3,10 @@ import Link from "next/link";
 import { getContributors } from "../lib/api";
 import { getLastWeekDateRangeString } from "../lib/utils";
 import GitHubEvents from "@/components/gh_events/GitHubEvents";
+import {
+  MdOutlineArrowForward,
+  MdOutlineArrowForwardIos,
+} from "react-icons/md";
 
 export default function Home() {
   const contributors: any = getContributors();
@@ -36,10 +40,17 @@ export default function Home() {
                 <div>
                   <div className="mx-auto">
                     <div className="space-y-12">
-                      <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                      <div className="flex justify-between items-center pr-10">
                         <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
                           What&apos;s happening?
                         </h2>
+                        <Link
+                          href="/feed"
+                          className="text-white px-3 py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2"
+                        >
+                          See all events
+                          <MdOutlineArrowForwardIos />
+                        </Link>
                       </div>
                       <GitHubEvents minimal />
                     </div>

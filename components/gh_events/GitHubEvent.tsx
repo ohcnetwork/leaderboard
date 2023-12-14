@@ -60,6 +60,26 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
       ) && <OpenGraphImage url={event.payload.pull_request.html_url} />;
       break;
 
+    case "PullRequestReviewEvent":
+      let action = "";
+      if (event.payload.review.state === "approved") action = "approved";
+      if (event.payload.review.state === "commented")
+        action = "commented on PR";
+      if (event.payload.review.state === "changes_requested")
+        action = "requested changes on";
+      title = (
+        <>
+          {action}{" "}
+          <a
+            className="cursor-pointer text-gray-300 font-bold"
+            href={event.payload.review.html_url}
+          >
+            {event.repo.name}#{event.payload.pull_request.number}
+          </a>
+        </>
+      );
+      break;
+
     case "PushEvent":
       title = (
         <>
@@ -81,14 +101,13 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           {event.payload.commits.map((commit) => (
             <a
               key={commit.sha}
-              className="hover:underline group"
               href={`https://github.com/${event.repo.name}/commit/${commit.sha}`}
             >
               <li>
-                <span className="text-gray-500 font-mono px-2 group-hover:text-gray-700 dark:group-hover:text-gray-300">
+                <span className="text-gray-500 font-mono px-2">
                   {commit.sha.slice(-7)}
                 </span>
-                <span className="text-gray-700 dark:text-gray-300">
+                <span className="text-gray-700 dark:text-gray-300 hover:underline">
                   {commit.message.split("\n")[0]}
                 </span>
               </li>
@@ -128,6 +147,21 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
       body = <GitHubReleaseEventBody event={event} />;
       break;
 
+    case "IssueCommentEvent":
+      title = (
+        <>
+          commented on{" "}
+          <a
+            className="cursor-pointer text-gray-300 font-bold"
+            href={event.payload.comment.html_url}
+          >
+            {event.repo.name}#{event.payload.issue.number}
+          </a>
+        </>
+      );
+      body = <span className="text-xs p-2">{event.payload.comment.body}</span>;
+      break;
+
     default:
       title = (event as IGitHubEvent).type;
       // body = JSON.stringify(event.payload);
@@ -135,17 +169,21 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
   }
 
   return (
-    <li>
+    <li className="group">
       <div className="relative pb-4">
         <span
-          className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
+          className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700 group-last:hidden"
           aria-hidden
         />
-        <div className="relative flex items-start space-x-5">
+        <div
+          className={`relative flex space-x-5 ${
+            body ? "items-start" : "items-center"
+          }`}
+        >
           <div className="relative">
             <img
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-gray-200 dark:ring-gray-700"
-              src={event.actor.avatar_url + "&s=40"}
+              className="flex h-10 w-10 group-hover:scale-125 items-center justify-center rounded-full bg-gray-400 ring-8 ring-gray-200 dark:ring-gray-800 group-hover:dark:ring-white/50 transition-all duration-200 ease-in-out group-hover:ring-2"
+              src={event.actor.avatar_url + "&s=64"}
               alt=""
             />
             {event.type.includes("Comment") && (
@@ -176,7 +214,10 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
                   {event.actor.login}
                 </a>{" "}
                 <span className="mt-0.5 text-sm text-gray-400">
-                  {title} {timeSince(event.created_at)}
+                  {title}{" "}
+                  <time dateTime={event.created_at}>
+                    {timeSince(event.created_at)}
+                  </time>
                 </span>
               </span>
 

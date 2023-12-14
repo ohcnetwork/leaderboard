@@ -58,6 +58,7 @@ interface Review {
   user: Actor;
   body: string;
   html_url: string;
+  state: string;
 }
 
 interface Issue {

@@ -162,66 +162,6 @@ export default async function Contributor({ params: { slug } }: Params) {
         </div>
 
         <div className="px-4 md:p-0">
-          {contributor.courses_completed && (
-            <div>
-              <h3 className="font-bold text-foreground mt-4">Journey Map</h3>
-              <div className="bg-[url('/images/map-bg-light.svg')] dark:bg-[url('/images/map-bg.svg')] bg-no-repeat bg-cover relative dark:bg-gray-800 text-center rounded-lg px-4 py-8 sm:px-8 xl:text-left mt-4">
-                <div className="flex flex-col md:flex-row overflow-x-auto md:space-y-0 md:space-x-3 font-semibold">
-                  {contributor.courses_completed.map((course) => (
-                    <div
-                      key={course}
-                      className="relative flex flex-col items-center justify-center"
-                    >
-                      <div className="journey-map__milestone relative z-10 p-2 w-24 h-24 dark:bg-gray-600 bg-gray-300 rounded-full flex items-center text-center shadow-xl"></div>
-                      <p className="text-sm text-center text-foreground mt-2 z-10 py-0.5">
-                        {course}
-                      </p>
-                      <div className="absolute top-12 z-20">
-                        <img
-                          className="mx-auto h-9 w-9"
-                          src="/images/map-check.png"
-                        ></img>
-                      </div>
-                    </div>
-                  ))}
-
-                  <div className="relative  flex flex-col items-center juustify-center">
-                    <div className="relative journey-map__milestone z-10 p-2 w-24 h-24 dark:bg-gray-600 bg-gray-300 rounded-full flex items-center text-center shadow-xl"></div>
-                    <p className="text-sm text-center text-foreground mt-2 z-10 py-0.5">
-                      Teaching Assistant &amp; Internship
-                    </p>
-                    <div className="absolute top-8 md:top-5 animate-bounce z-20 flex items-center justify-center">
-                      <img
-                        className="mx-auto w-14 md:w-16"
-                        src="/images/map-pointer.png"
-                      ></img>
-                      <img
-                        className="absolute top-1.5 mx-auto h-7 md:h-8 w-7 md:w-8 rounded-full border border-primary-200"
-                        src={`https://avatars.githubusercontent.com/${contributor.github}?size=200`}
-                        alt={contributor.github}
-                      />
-                    </div>
-                  </div>
-                  <div className="relative flex flex-col items-center juustify-center">
-                    <div className="relative journey-map__milestone z-10 p-2 w-24 h-24 dark:bg-gray-600 bg-gray-300 rounded-full flex items-center text-center shadow-xl"></div>
-                    <p className="text-sm text-center text-foreground mt-2 z-10 py-0.5">
-                      Industry Placement
-                    </p>
-                  </div>
-                  <div className="relative flex flex-col items-center juustify-center">
-                    <div className="relative journey-map__milestone z-10 p-2 w-24 h-24 dark:bg-gray-600 bg-gray-300 rounded-full flex items-center text-center shadow-xl"></div>
-                    <p className="text-sm text-center text-foreground mt-2 z-10 py-0.5">
-                      Alumni &amp; Teaching Fellow
-                    </p>
-                  </div>
-                </div>
-                <div className="w-2.5 md:w-auto md:h-2.5 absolute dark:bg-gray-900 bg-gray-400 top-24 bottom-20 left-1/2 transform -translate-x-1/2 md:-translate-x-0 md:left-20 md:right-20 z-1 md:bottom-24 mt-5"></div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        <div className="px-4 md:p-0">
           <h3 className="font-bold text-foreground my-4">Short Bio</h3>
           <div className="dark:bg-gray-800 bg-gray-100 w-full rounded-lg ">
             <div

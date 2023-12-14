@@ -1,6 +1,6 @@
 "use client";
 
-import { IGitHubEvent } from "@/lib/gh_events";
+import { IGitHubEvent, combineSimilarPushEvents } from "@/lib/gh_events";
 import { useEffect, useState } from "react";
 import GitHubEvent from "./GitHubEvent";
 
@@ -32,10 +32,9 @@ export default function GitHubEvents({ minimal }: { minimal?: boolean }) {
       .then((res) => res.json())
       .then((data) =>
         setEvents(
-          data
-            .filter(exludeBotEvents)
-            .filter(excludeBlacklistedEvents)
-            .slice(0, 5),
+          combineSimilarPushEvents(
+            data.filter(exludeBotEvents).filter(excludeBlacklistedEvents),
+          ).slice(0, 5),
         ),
       );
   }, [page]);

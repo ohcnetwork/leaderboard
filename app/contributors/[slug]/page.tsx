@@ -5,7 +5,7 @@ import {
   professionalTeamSkills,
   resolveGraduateAttributes,
 } from "../../../config/GraduateAttributes";
-import { getContributorBySlug } from "../../../lib/api";
+import { getContributorBySlug, getContributorsSlugs } from "../../../lib/api";
 import ActivityCalendarGit from "../../../components/contributors/ActivityCalendarGitHub";
 import BadgeIcons from "../../../components/contributors/BadgeIcons";
 import GithubActivity from "../../../components/contributors/GithubActivity";
@@ -18,13 +18,18 @@ import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 
+export async function generateStaticParams() {
+  return getContributorsSlugs()
+    .filter((slug) => !slug.file.includes("[bot]"))
+    .map((slug) => ({ slug: slug.file.replace(".md", "") }));
+}
+
 type Params = {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 };
 
-export default async function Contributor({ params: { slug } }: Params) {
+export default async function Contributor({ params }: Params) {
+  const { slug } = params;
   const contributor = getContributorBySlug(slug, true) as Contributor;
   const content = await markdownToHtml(contributor.content || "");
   return (

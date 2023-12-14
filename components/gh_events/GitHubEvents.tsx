@@ -27,7 +27,7 @@ export default function GitHubEvents({ minimal }: { minimal?: boolean }) {
 
   useEffect(() => {
     fetch(
-      `https://api.github.com/orgs/${process.env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=20&page=${page}`,
+      `https://api.github.com/orgs/${process.env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=100&page=${page}`,
     )
       .then((res) => res.json())
       .then((data) =>

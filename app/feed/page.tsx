@@ -1,5 +1,5 @@
 import GitHubEvent from "@/components/gh_events/GitHubEvent";
-import { IGitHubEvent } from "@/lib/gh_events";
+import { IGitHubEvent, combineSimilarPushEvents } from "@/lib/gh_events";
 import FeedPagination from "./FeedPagination";
 
 export const revalidate = 300; // revalidate at most every 5 mins
@@ -42,7 +42,9 @@ export default async function FeedPage({ searchParams }: Props) {
   const navLinks = linkHeader ? extractPaginationLinks(linkHeader) : undefined;
 
   const data = (await res.json()) as IGitHubEvent[];
-  const events = data.filter(exludeBotEvents).filter(excludeBlacklistedEvents);
+  const events = combineSimilarPushEvents(
+    data.filter(exludeBotEvents).filter(excludeBlacklistedEvents),
+  );
 
   return (
     <div className="flow-root max-w-4xl mx-auto my-8 relative">

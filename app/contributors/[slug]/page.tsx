@@ -17,7 +17,6 @@ import clsx from "clsx";
 import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
-import { FiAlertTriangle } from "react-icons/fi";
 
 export async function generateStaticParams() {
   return getContributorsSlugs()

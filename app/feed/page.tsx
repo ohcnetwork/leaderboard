@@ -35,7 +35,7 @@ export default async function FeedPage({ searchParams }: Props) {
   const page = (searchParams.page && parseInt(searchParams.page)) || 1;
 
   const res = await fetch(
-    `https://api.github.com/orgs/${process.env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=50&page=${page}`,
+    `https://api.github.com/orgs/${process.env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=1000&page=${page}`,
   );
 
   const linkHeader = res.headers.get("link");

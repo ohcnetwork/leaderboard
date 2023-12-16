@@ -210,7 +210,7 @@ export default async function Contributor({ params }: Params) {
                 <b className="text-white">
                   {contributor.weekSummary.pr_reviewed}
                 </b>{" "}
-                reviewed in last 7 days
+                in last 7 days
               </p>
             </div>
             <div className="flex flex-col mt-4 sm:mt-0">
@@ -224,7 +224,7 @@ export default async function Contributor({ params }: Params) {
                 <b className="text-white">
                   {contributor.weekSummary.eod_update}
                 </b>{" "}
-                updates in last 7 days
+                in last 7 days
               </p>
             </div>
             <div className="col-span-3 flex flex-col">

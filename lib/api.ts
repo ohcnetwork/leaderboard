@@ -80,12 +80,6 @@ export function getContributorsSlugs() {
   return contributorSlugs;
 }
 
-const calculateStalePrs = (activityData: any) =>
-  activityData?.open_prs?.reduce(
-    (acc: any, pr: any) => (pr?.stale_for >= 7 ? acc + 1 : acc),
-    0,
-  );
-
 export function getContributorBySlug(file: string, detail = false) {
   const fullPath = join(root, `${formatSlug(file)}.md`);
   const { data, content } = matter(fs.readFileSync(fullPath, "utf8"));
@@ -165,10 +159,7 @@ export function getContributorBySlug(file: string, detail = false) {
       issue_assigned: weightedActivity.issue_assigned,
       issue_opened: weightedActivity.issue_opened,
     },
-    weekSummary: {
-      ...getLastWeekHighlights(calendarData),
-      pr_stale: calculateStalePrs(activityData),
-    },
+    weekSummary: getLastWeekHighlights(calendarData),
     calendarData: detail ? calendarData : [],
     ...data,
   };

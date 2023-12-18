@@ -186,28 +186,46 @@ export default async function Contributor({ params }: Params) {
           <h3 className="font-bold text-foreground mt-6">Highlights</h3>
           <dl className="mt-4 text-center sm:max-w-3xl sm:mx-auto sm:grid sm:grid-cols-3 sm:gap-8">
             <div className="flex flex-col">
-              <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-300">
+              <dt className="order-3 mt-2 text-lg leading-6 font-medium text-primary-300">
                 Pull Request
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.pr_opened}
               </dd>
+              <p className="order-2 text-xl text-gray-400">
+                <b className="text-white">
+                  {contributor.weekSummary.pr_opened}
+                </b>{" "}
+                in last 7 days
+              </p>
             </div>
             <div className="flex flex-col mt-4 sm:mt-0">
-              <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-300">
+              <dt className="order-3 mt-2 text-lg leading-6 font-medium text-primary-300">
                 Reviews
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.pr_reviewed}
               </dd>
+              <p className="order-2 text-xl text-gray-400">
+                <b className="text-white">
+                  {contributor.weekSummary.pr_reviewed}
+                </b>{" "}
+                in last 7 days
+              </p>
             </div>
             <div className="flex flex-col mt-4 sm:mt-0">
-              <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-300">
+              <dt className="order-3 mt-2 text-lg leading-6 font-medium text-primary-300">
                 Feed
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.eod_update}
               </dd>
+              <p className="order-2 text-xl text-gray-400">
+                <b className="text-white">
+                  {contributor.weekSummary.eod_update}
+                </b>{" "}
+                in last 7 days
+              </p>
             </div>
             <div className="col-span-3 flex flex-col">
               <dt className="order-2 mt-2 text-lg leading-6 font-medium text-primary-300">

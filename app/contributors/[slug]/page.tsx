@@ -12,7 +12,6 @@ import GithubActivity from "../../../components/contributors/GithubActivity";
 import GraduateAttributeBadge from "../../../components/contributors/GraduateAttributeBadge";
 import InfoCard from "../../../components/contributors/InfoCard";
 import React from "react";
-import markdownToHtml from "../../../lib/markdownToHtml";
 import clsx from "clsx";
 import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
@@ -31,7 +30,7 @@ type Params = {
 export default async function Contributor({ params }: Params) {
   const { slug } = params;
   const contributor = getContributorBySlug(slug, true) as Contributor;
-  const content = await markdownToHtml(contributor.content || "");
+
   return (
     <div className="bg-background min-h-screen">
       {/* <Header /> */}

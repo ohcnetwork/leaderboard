@@ -11,7 +11,7 @@ import BadgeIcons from "../../../components/contributors/BadgeIcons";
 import GithubActivity from "../../../components/contributors/GithubActivity";
 import GraduateAttributeBadge from "../../../components/contributors/GraduateAttributeBadge";
 import InfoCard from "../../../components/contributors/InfoCard";
-import React from "react";
+import React, { Suspense } from "react";
 import clsx from "clsx";
 import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
@@ -177,7 +177,9 @@ export default async function Contributor({ params }: Params) {
 
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-foreground my-4">Learning Activity</h3>
-          <ActivityCalendarGit calendarData={contributor.calendarData} />
+          <Suspense fallback={<div>Loading</div>}>
+            <ActivityCalendarGit calendarData={contributor.calendarData} />
+          </Suspense>
         </div>
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-foreground mt-6">Highlights</h3>

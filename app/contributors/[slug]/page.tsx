@@ -16,6 +16,7 @@ import clsx from "clsx";
 import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
+import Markdown from "@/components/Markdown";
 
 export async function generateStaticParams() {
   return getContributorsSlugs()
@@ -168,12 +169,9 @@ export default async function Contributor({ params }: Params) {
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-foreground my-4">Short Bio</h3>
           <div className="dark:bg-gray-800 bg-gray-100 w-full rounded-lg ">
-            <div
-              className="prose dark:prose-invert py-10 px-6 rounded-lg xl:px-10 xl:text-left leading-relaxed"
-              dangerouslySetInnerHTML={{
-                __html: contributor.content,
-              }}
-            ></div>
+            <div className="py-10 px-6 rounded-lg xl:px-10">
+              <Markdown content={contributor.content} />
+            </div>
           </div>
         </div>
 

@@ -239,6 +239,11 @@ export default async function Contributor({ params }: Params) {
                       (acc, curr, i, array) => acc! + curr! / array.length,
                       0,
                     ) || 0) * 1000,
+                ) || (
+                  <span className="text-lg text-gray-500 font-bold">
+                    <p>N/A</p>
+                    <p>Yet to make contributions!</p>
+                  </span>
                 )}
               </dd>
             </div>

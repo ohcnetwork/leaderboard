@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ActivityCalendar from "react-activity-calendar";
 import ActivityModal from "./ActivityModal";
 import { useTheme } from "next-themes";
@@ -10,6 +10,17 @@ export default function ActivityCalendarGit({
 }: {
   calendarData: any;
 }) {
+  // Force rendering the calendar only on browser as the component throws the
+  // following when attempted to render on server side.
+  //
+  // calcTextDimensions() requires browser APIs
+  const [isBrowser, setIsBrowser] = useState(false);
+  useEffect(() => {
+    setIsBrowser(
+      !(typeof document === "undefined" || typeof window === "undefined"),
+    );
+  }, []);
+
   const { theme } = useTheme();
 
   const getCalendarData = (year: number) => {
@@ -65,51 +76,52 @@ export default function ActivityCalendarGit({
 
   return (
     <div className="sm:flex gap-3">
-      <div
-        className="py-8 dark:bg-gray-800 bg-gray-100 text-foreground text-center rounded-lg px-6 sm:px-10 xl:text-left hover:cursor-pointer"
-        suppressHydrationWarning
-      >
-        {year === 0 ? (
-          <ActivityCalendar
-            colorScheme={theme === "dark" ? "dark" : "light"}
-            showWeekdayLabels
-            data={calendarData}
-            theme={{
-              light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-              dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-            }}
-            eventHandlers={{
-              onClick: (event) => (data) => {
-                setIsOpen(true);
-                setActivityData(data);
-              },
-            }}
-            labels={{ totalCount: "{{count}} contributions in the last year" }}
-          />
-        ) : (
-          <ActivityCalendar
-            colorScheme={theme === "dark" ? "dark" : "light"}
-            showWeekdayLabels
-            data={getCalendarData(year)}
-            theme={{
-              light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-              dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-            }}
-            eventHandlers={{
-              onClick: (event) => (data) => {
-                setIsOpen(true);
-                setActivityData(data);
-              },
-            }}
-          />
-        )}
+      {isBrowser && (
+        <div className="py-8 dark:bg-gray-800 bg-gray-100 text-foreground text-center rounded-lg px-6 sm:px-10 xl:text-left hover:cursor-pointer">
+          {year === 0 ? (
+            <ActivityCalendar
+              colorScheme={theme === "dark" ? "dark" : "light"}
+              showWeekdayLabels
+              data={calendarData}
+              theme={{
+                light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+                dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+              }}
+              eventHandlers={{
+                onClick: (event) => (data) => {
+                  setIsOpen(true);
+                  setActivityData(data);
+                },
+              }}
+              labels={{
+                totalCount: "{{count}} contributions in the last year",
+              }}
+            />
+          ) : (
+            <ActivityCalendar
+              colorScheme={theme === "dark" ? "dark" : "light"}
+              showWeekdayLabels
+              data={getCalendarData(year)}
+              theme={{
+                light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+                dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+              }}
+              eventHandlers={{
+                onClick: (event) => (data) => {
+                  setIsOpen(true);
+                  setActivityData(data);
+                },
+              }}
+            />
+          )}
 
-        <ActivityModal
-          isopen={isOpen}
-          activityData={activityData}
-          closeFunc={() => setIsOpen(false)}
-        />
-      </div>
+          <ActivityModal
+            isopen={isOpen}
+            activityData={activityData}
+            closeFunc={() => setIsOpen(false)}
+          />
+        </div>
+      )}
       <div className="flex sm:flex-col gap-2 mt-2 sm:mt-0">
         {yearsList.map((y, i) => {
           return (

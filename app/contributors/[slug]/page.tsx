@@ -177,9 +177,7 @@ export default async function Contributor({ params }: Params) {
 
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-foreground my-4">Learning Activity</h3>
-          <Suspense fallback={<div>Loading</div>}>
-            <ActivityCalendarGit calendarData={contributor.calendarData} />
-          </Suspense>
+          <ActivityCalendarGit calendarData={contributor.calendarData} />
         </div>
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-foreground mt-6">Highlights</h3>

@@ -177,9 +177,7 @@ export default async function Contributor({ params }: Params) {
 
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-foreground my-4">Learning Activity</h3>
-          <Suspense fallback={<div>Loading</div>}>
-            <ActivityCalendarGit calendarData={contributor.calendarData} />
-          </Suspense>
+          <ActivityCalendarGit calendarData={contributor.calendarData} />
         </div>
         <div className="px-4 md:p-0">
           <h3 className="font-bold text-foreground mt-6">Highlights</h3>
@@ -268,21 +266,21 @@ export default async function Contributor({ params }: Params) {
               <div className="mt-4">
                 {contributor["activityData"]["open_prs"].map((pr, index) => (
                   <a href={pr.link} key={index} className="flex gap-2">
-                    <p
-                      className={clsx(
-                        "text-sm mb-2 transition-colors duration-75 ease-in-out flex gap-2",
-                        pr?.stale_for >= 7
-                          ? "dark:text-gray-600 text-gray-700 dark:hover:text-primary-200 hover:text-primary-400"
-                          : "dark:text-gray-300 text-gray-400 dark:hover:text-primary-300 hover:text-primary-500",
-                      )}
-                      key={index}
+                    <Tooltip
+                      tip={
+                        ((pr?.stale_for >= 7) as Boolean) &&
+                        `Stale for ${pr?.stale_for} days`
+                      }
+                      tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm flex flex-row gap-4"
                     >
-                      <Tooltip
-                        tip={
-                          ((pr?.stale_for >= 7) as Boolean) &&
-                          `Stale for ${pr?.stale_for} days`
-                        }
-                        tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm flex flex-row gap-4"
+                      <p
+                        className={clsx(
+                          "text-sm mb-2 transition-colors duration-75 ease-in-out flex gap-2",
+                          pr?.stale_for >= 7
+                            ? "dark:text-gray-600 text-gray-700 dark:hover:text-primary-200 hover:text-primary-400"
+                            : "dark:text-gray-300 text-gray-400 dark:hover:text-primary-300 hover:text-primary-500",
+                        )}
+                        key={index}
                       >
                         <span className="flex items-center">
                           <span className="text-primary-500 text-sm pr-2">
@@ -304,8 +302,8 @@ export default async function Contributor({ params }: Params) {
                           </code>
                           {pr.title}
                         </span>
-                      </Tooltip>
-                    </p>
+                      </p>
+                    </Tooltip>
                   </a>
                 ))}
               </div>

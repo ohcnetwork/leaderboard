@@ -1,6 +1,11 @@
+"use client";
+
 import { Activity, ActivityData } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
+import { useMemo } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import RelativeTime from "../RelativeTime";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -15,19 +20,8 @@ let commentTypes = (activityEvent: string[]) => {
   }
 };
 
-function generateId() {
-  return Math.random().toString(36).slice(2, 7);
-}
-
 let renderText = (activity: Activity) => {
-  const activity_time = (
-    new String(activity.time).length === 10
-      ? new Date(activity.time * 1000)
-      : new Date(activity.time)
-  ).toLocaleString(undefined, {
-    dateStyle: "long",
-    timeStyle: "medium",
-  });
+  const timestamp = getActivityTime(activity.time).toString();
   switch (activity["type"]) {
     case "eod_update":
       return (
@@ -35,7 +29,7 @@ let renderText = (activity: Activity) => {
           <div>
             <div className="">
               <div className="font-medium dark:text-primary-300 text-primary-500">
-                {activity_time.split("at")[0]}
+                <RelativeTime time={timestamp} />
                 <span className=" text-sm font-medium dark:text-gray-200 text-gray-700">
                   {" "}
                   - End of the day update from slack
@@ -63,7 +57,7 @@ let renderText = (activity: Activity) => {
 
                 <span className="font-normal text-foreground">
                   {" "}
-                  on {activity_time}
+                  <RelativeTime time={timestamp} />
                 </span>
               </p>
             </div>
@@ -107,7 +101,9 @@ let renderText = (activity: Activity) => {
                     {activity["text"]}
                   </span>
                 </a>
-                <span className="whitespace-nowrap ml-2">{activity_time}</span>
+                <span className="whitespace-nowrap ml-2">
+                  <RelativeTime time={timestamp} />
+                </span>
               </div>
             )}
           </div>
@@ -134,7 +130,9 @@ let renderText = (activity: Activity) => {
                 {activity["text"]}
               </span>
             </a>
-            <span className="whitespace-nowrap ml-2">{activity_time}</span>
+            <span className="whitespace-nowrap ml-2">
+              <RelativeTime time={timestamp} />
+            </span>
           </div>
         </div>
       );
@@ -149,7 +147,9 @@ let renderText = (activity: Activity) => {
             <div className="font-medium dark:text-gray-200 text-gray-700 ml-2">
               {activity["text"]}
             </div>
-            <span className="whitespace-nowrap ml-2">{activity_time}</span>
+            <span className="whitespace-nowrap ml-2">
+              <RelativeTime time={timestamp} />
+            </span>
           </div>
         </div>
       );
@@ -247,20 +247,112 @@ let showContribution = (activity: Activity) => {
   );
 };
 
+const getActivityTime = (time: Activity["time"]) => {
+  return typeof time === "number" ? new Date(time * 1e3) : new Date(time);
+};
+
+const activitiesBetween = (range: { from: Date; to: Date }) => {
+  const from = range.from.getTime();
+  const to = range.to.getTime();
+
+  return (activity: Activity) => {
+    const time = getActivityTime(activity.time).getTime();
+    return from < time && time < to;
+  };
+};
+
+const getRangeFilterPresets = (activities: Activity[]) => {
+  if (!activities.length) return [];
+
+  const latest = getActivityTime(activities[0].time);
+  let oldest = new Date(latest);
+
+  activities.forEach((activity) => {
+    const time = getActivityTime(activity.time);
+    if (time < oldest) {
+      oldest = time;
+    }
+  });
+
+  let current = new Date(oldest.getFullYear(), oldest.getMonth());
+  const end = new Date(latest.getFullYear(), latest.getMonth());
+
+  const results: string[] = [];
+  while (current <= end) {
+    results.push(
+      current.toLocaleString("default", { month: "long", year: "numeric" }),
+    );
+    current.setMonth(current.getMonth() + 1);
+  }
+  return results.reverse();
+};
+
 interface Props {
   activityData: ActivityData;
 }
 
 export default function GithubActivity({ activityData }: Props) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const rangeQuery = searchParams.get("range") ?? "last-month";
+
+  const range = useMemo(() => {
+    const lastActivity = new Date(activityData.last_updated * 1e3);
+
+    if (rangeQuery === "last-month") {
+      const from = new Date(lastActivity);
+      from.setDate(from.getDate() - 30);
+      return { from, to: lastActivity };
+    } else {
+      const from = new Date(rangeQuery);
+      const to = new Date(rangeQuery);
+      to.setMonth(to.getMonth() + 1);
+      return { from, to };
+    }
+  }, [rangeQuery, activityData.last_updated]);
+
+  const rangePresets = useMemo(
+    () => getRangeFilterPresets(activityData["activity"]),
+    [activityData],
+  );
+
+  const activities = activityData["activity"].filter(activitiesBetween(range));
+
   return (
-    <div className="mx-2 flow-root text-foreground mt-4">
-      <ul role="list" className="-mb-8">
-        {activityData["activity"].map((activity, i) => {
-          return <li key={i}>{showContribution(activity)}</li>;
-        })}
-      </ul>
-      <div className="mt-12 text-center mb-20">
-        More to come in the coming days...!
+    <div>
+      <select
+        className="-ml-px block w-full pl-2 rounded-l-none rounded-r-md border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground"
+        disabled={!rangePresets}
+        value={rangeQuery}
+        onChange={(event) => {
+          const current = new URLSearchParams(
+            Array.from(searchParams.entries()),
+          );
+          const value = event.target.value;
+          if (!value) {
+            current.delete("range");
+          } else {
+            current.set("range", event.target.value);
+          }
+          const search = current.toString();
+          const query = search ? `?${search}` : "";
+          router.replace(`${pathname}${query}`, { scroll: false });
+        }}
+      >
+        <option value="last-month">Last 30 days</option>
+        {rangePresets?.map((preset) => (
+          <option key={preset} value={preset}>
+            {preset}
+          </option>
+        ))}
+      </select>
+      <div className="mx-2 flow-root text-foreground mt-4">
+        <ul role="list" className="mb-8">
+          {activities.map((activity, i) => {
+            return <li key={i}>{showContribution(activity)}</li>;
+          })}
+        </ul>
       </div>
     </div>
   );

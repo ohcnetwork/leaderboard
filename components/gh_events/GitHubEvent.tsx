@@ -1,7 +1,7 @@
 import { IGitHubEvent } from "@/lib/gh_events";
 import GitHubReleaseEventBody from "./ReleaseEventBody";
 import OpenGraphImage from "./OpenGraphImage";
-import timeSince from "@/lib/timeSince";
+import RelativeTime from "../RelativeTime";
 
 export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
   if (!event) {
@@ -215,10 +215,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
                   {event.actor.login}
                 </a>{" "}
                 <span className="mt-0.5 text-sm text-gray-400">
-                  {title}{" "}
-                  <time dateTime={event.created_at}>
-                    {timeSince(event.created_at)}
-                  </time>
+                  {title} <RelativeTime time={event.created_at} />
                 </span>
               </span>
 

@@ -65,7 +65,7 @@ export interface Activity {
     | "pr_merged"
     | "pr_collaborated";
   title: string;
-  time: number;
+  time: number | string; // TODO: github events are in seconds since epoch, slack events are in timestamp strings. Unify it to one.
   link: string;
   text: string;
   collaborated_with?: string[];

@@ -165,6 +165,10 @@ export function getContributorBySlug(file: string, detail = false) {
   };
 }
 
+const getActivityTime = (time: Activity["time"]) => {
+  return typeof time === "number" ? new Date(time * 1e3) : new Date(time);
+};
+
 export function getContributors(detail = false) {
   const contributors = getContributorsSlugs()
     .map((path) => getContributorBySlug(path.file, detail))
@@ -177,13 +181,7 @@ export function getCalendarData(activity: Activity[]) {
   const calendarData = activity.reduce(
     (acc, activity) => {
       // Github activity.time ignores milliseconds (*1000)
-      const date = (
-        new String(activity.time).length === 10
-          ? new Date(activity.time * 1000)
-          : new Date(activity.time.toString().slice(0, 10))
-      )
-        .toISOString()
-        .split("T")[0];
+      const date = getActivityTime(activity.time).toISOString().split("T")[0];
       if (!acc[date]) {
         acc[date] = {
           count: 0,

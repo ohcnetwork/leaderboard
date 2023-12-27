@@ -123,7 +123,7 @@ let renderText = (activity: Activity) => {
               <span className="capitalize">
                 {activity["type"].split("_")[1]}
               </span>
-              <span>{" om a "}</span>
+              <span>{" an issue on "}</span>
               <span className="text-primary-300 font-medium">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>

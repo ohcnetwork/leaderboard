@@ -59,7 +59,9 @@ export default function Leaderboard({
       );
     }
 
-    filteredContributors = filteredContributors.sort((a: any, b: any) =>
+    filteredContributors = filteredContributors
+    .filter(contributor => contributor.weekSummary.pr_merged>0 || contributor.weekSummary.pr_opened>0 || contributor.weekSummary.pr_reviewed>0 || contributor.weekSummary.issue_opened>0 ) // Filter out contributors with zero contribution
+    .sort((a: any, b: any) =>
       a.weekSummary[sortBy] !== b.weekSummary[sortBy]
         ? a.weekSummary[sortBy] - b.weekSummary[sortBy]
         : a.weekSummary.points - b.weekSummary.points,

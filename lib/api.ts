@@ -100,9 +100,14 @@ export function getContributorBySlug(file: string, detail = false) {
     ...activityData,
     activity: [...activityData.activity, ...getSlackMessages(data.slack)],
   };
+  let AllUnqPrReviews = new Set();
 
-  const weightedActivity = activityData.activity.reduce(
+  let weightedActivity = activityData.activity.reduce(
     (acc, activity) => {
+      if (activity.type == "pr_reviewed") {
+        AllUnqPrReviews.add(activity.title);
+      }
+
       return {
         activity: [
           ...acc.activity,
@@ -116,8 +121,7 @@ export function getContributorBySlug(file: string, detail = false) {
         pr_merged: acc.pr_merged + (activity.type === "pr_merged" ? 1 : 0),
         pr_collaborated:
           acc.pr_collaborated + (activity.type === "pr_collaborated" ? 1 : 0),
-        pr_reviewed:
-          acc.pr_reviewed + (activity.type === "pr_reviewed" ? 1 : 0),
+        pr_reviewed: 0,
         issue_assigned:
           acc.issue_assigned + (activity.type === "issue_assigned" ? 1 : 0),
         issue_opened:
@@ -137,6 +141,8 @@ export function getContributorBySlug(file: string, detail = false) {
       issue_opened: 0,
     } as Highlights & { activity: Activity[] },
   );
+
+  weightedActivity.pr_reviewed = AllUnqPrReviews.size;
 
   const calendarData = getCalendarData(weightedActivity.activity);
   return {
@@ -191,10 +197,27 @@ export function getCalendarData(activity: Activity[]) {
         };
       }
       acc[date].count += 1;
+
+      const uniquePrReviews = new Set();
+
       if (acc[date][activity.type]) {
-        acc[date][activity.type] += 1;
+        if (
+          activity.type != "pr_reviewed" ||
+          (activity.type == "pr_reviewed" &&
+            uniquePrReviews.has(activity.title))
+        ) {
+          acc[date][activity.type] += 1;
+          
+        }
       } else {
-        acc[date][activity.type] = 1;
+        if (
+          activity.type != "pr_reviewed" ||
+          (activity.type == "pr_reviewed" &&
+            !uniquePrReviews.has(activity.title))
+        ) {
+          acc[date][activity.type] = 1;
+          uniquePrReviews.add(activity.title);
+        }
       }
       if (!acc[date].types.includes(activity.type)) {
         acc[date].types.push(activity.type);

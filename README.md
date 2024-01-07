@@ -2,46 +2,64 @@ A simple leaderboard app built with Next.js and Tailwind CSS to list top contrib
 
 ## Getting Started
 
-First, run the development server:
+### Starting the deployment server
+
+Run the following command in the terminal:
 
 ```bash
-npm run dev
-# or
+./load-fixtures.sh  
+```
+
+Now run the deployment server:
+
+```bash  
+npm run dev  
+# or  
 yarn dev
-```
-
-Then run the following command:
-```bash
-./load-fixtures.sh
-```
+# or
+pnpm dev
+```  
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Installing packages
+
+To install new packages, run the following command:
+
+```bash
+pnpm add <package_name>
+```
+
+> *You can get more info about `pnpm` through their official docs [pnpm docs](https://pnpm.io/motivation)*
+
 ## How to add a new member?
 
-Create a new markdown file with the github user name in the `contributors` folder. For example, if you want to add `john-doe` as a contributor, create a file named `john-doe.md` in the `contributors` folder.
+Create a new markdown file with the github user name in the `contributors` folder. For example, if you want to
+add `john-doe` as a contributor, create a file named `john-doe.md` in the `contributors` folder.
 
 The file should contain the following content:
 
-```md
----
-name: John Doe
-title: Full Stack Developer
-github: john-doe
-twitter: john-doe
-linkedin: john-doe
-slack: U02TDGQQPMJ
-joining_date: "09/05/2022"
-core: false
-intern: true
+```md  
+---  
+name: John Doe  
+title: Full Stack Developer  
+github: john-doe  
+twitter: john-doe  
+linkedin: john-doe  
+slack: U02TDGQQPMJ  
+joining_date: "09/05/2022"  
+core: false  
+intern: true  
 operations: false
----
+---  
 
-** A Bio about John Doe **
-_Passionate about creating scalable and distributed systems for the power grid and interested in contributing to open source digital public goods._ (supports markdown)
-```
+** A Bio about John Doe **  
+_Passionate about creating scalable and distributed systems for the power grid and interested in contributing to open
+source digital public goods._ (supports markdown)  
+```  
 
-All members marked with `core: true` will be listed in the core team section, they will be hidden from the leaderboard section by default. You can toggle the visibility of core team members by clicking on the `Core Team` button.
+All members marked with `core: true` will be listed in the core team section, they will be hidden from the leaderboard
+section by default. You can toggle the visibility of core team members by clicking on the `Core Team` button.
 
 All members marked with `operations: true` will be will be hidden from the leaderboard section.
 
@@ -51,31 +69,21 @@ You will be able to see the users profile page at `http://localhost:3000/contrib
 
 1. To add or remove a badge, edit the `config/GraduateAttributes.ts` file.
 
-2. To Setup the repo for a new org, update the [scraper config](https://github.com/coronasafe/leaderboard/blob/d42c7b7ba608c4911d932e92679ab1914371c8a0/.github/workflows/main.yml#L32)
+2. To Setup the repo for a new org, update
+   the [scraper config](https://github.com/coronasafe/leaderboard/blob/d42c7b7ba608c4911d932e92679ab1914371c8a0/.github/workflows/main.yml#L32)
 
 3. To change the colors, fonts, or plugins edit the `tailwind.config.js` file.
-
-### Installing new packages
-1. Install `pnpm`:
-```bash
- npm install -g pnpm
-```
-2. Install/Modify required packages
-3. Update dependencies in `pnpm-lock.yaml` file:
-```bash
-pnpm install
-```
 
 ### Environment Variables
 
 #### **Organization Details**
 
 - **NEXT_PUBLIC_ORG_NAME**
-  - Will be displayed in the navbar.
+    - Will be displayed in the navbar.
 - **NEXT_PUBLIC_ORG_INFO**
-  - (Optional) Will be displayed in the "What do we do?" section.
+    - (Optional) Will be displayed in the "What do we do?" section.
 - **NEXT_PUBLIC_ORG_LOGO**
-  - Will be displayed in the footer.
+    - Will be displayed in the footer.
 
 #### **SEO details**
 
@@ -87,6 +95,7 @@ pnpm install
 #### **Page Details**
 
 - **NEXT_PUBLIC_PAGE_TITLE**
-  - Will be displayed in page title.
+    - Will be displayed in page title.
 - **NEXT_PUBLIC_CONTRIBUTORS_INFO**
-  - (Optional) Will be displayed next to "Our Contributors" section. You can use it to display a note about your contributors.
+    - (Optional) Will be displayed next to "Our Contributors" section. You can use it to display a note about your
+      contributors.

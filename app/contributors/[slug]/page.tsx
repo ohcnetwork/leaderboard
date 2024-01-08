@@ -24,6 +24,8 @@ export async function generateStaticParams() {
     .map((slug) => ({ slug: slug.file.replace(".md", "") }));
 }
 
+export const dynamicParams = false;
+
 type Params = {
   params: { slug: string };
 };

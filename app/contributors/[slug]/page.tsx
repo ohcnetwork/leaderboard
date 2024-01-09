@@ -192,7 +192,7 @@ export default async function Contributor({ params }: Params) {
                 {contributor.highlights.pr_opened}
               </dd>
               <p className="order-2 text-xl text-gray-400">
-                <b className="text-white">
+                <b className="text-foreground">
                   {contributor.weekSummary.pr_opened}
                 </b>{" "}
                 in last 7 days
@@ -206,7 +206,7 @@ export default async function Contributor({ params }: Params) {
                 {contributor.highlights.pr_reviewed}
               </dd>
               <p className="order-2 text-xl text-gray-400">
-                <b className="text-white">
+                <b className="text-foreground">
                   {contributor.weekSummary.pr_reviewed}
                 </b>{" "}
                 in last 7 days
@@ -220,7 +220,7 @@ export default async function Contributor({ params }: Params) {
                 {contributor.highlights.eod_update}
               </dd>
               <p className="order-2 text-xl text-gray-400">
-                <b className="text-white">
+                <b className="text-foreground">
                   {contributor.weekSummary.eod_update}
                 </b>{" "}
                 in last 7 days

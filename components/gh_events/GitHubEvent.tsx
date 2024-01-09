@@ -100,19 +100,19 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
       body = (
         <ul className="text-xs">
           {event.payload.commits.map((commit) => (
-            <a
-              key={commit.sha}
-              href={`https://github.com/${event.repo.name}/commit/${commit.sha}`}
-            >
-              <li>
+            <li key={commit.sha}>
+              <a
+                href={`https://github.com/${event.repo.name}/commit/${commit.sha}`}
+                className="flex flex-row"
+              >
                 <span className="text-gray-500 font-mono px-2">
                   {commit.sha.slice(-7)}
                 </span>
                 <span className="text-gray-700 dark:text-gray-300 hover:underline">
                   {commit.message.split("\n")[0]}
                 </span>
-              </li>
-            </a>
+              </a>
+            </li>
           ))}
         </ul>
       );
@@ -177,9 +177,8 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           aria-hidden
         />
         <div
-          className={`relative flex space-x-5 ${
-            body ? "items-start" : "items-center"
-          }`}
+          className={`relative flex space-x-5 
+          ${body ? "items-start" : "items-center"}`}
         >
           <div className="relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}

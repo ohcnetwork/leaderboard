@@ -40,9 +40,7 @@ export default function InfoCard({
         </Link>
         <div
           className={`overflow-hidden ${
-            minimal
-              ? ""
-              : "flex flex-col items-center space-y-2 overflow-hidden"
+            minimal ? "" : "flex flex-col items-center space-y-2"
           }
           `}
         >

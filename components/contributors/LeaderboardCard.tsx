@@ -104,12 +104,12 @@ export default function LeaderBoardCard({
                     </span>
                   </div>
                 </dd>
-                {contributor.weekSummary?.pr_stale ? (
+                {contributor.activityData.pr_stale ? (
                   <dd className="flex mt-2">
                     <div className="flex items-center">
                       <span className="flex text-sm leading-5 text-yellow-500 dark:text-yellow-200">
                         <FiAlertTriangle size={18} className="mr-2" />{" "}
-                        {contributor.weekSummary?.pr_stale} stale
+                        {contributor.activityData.pr_stale} stale
                       </span>
                     </div>
                   </dd>

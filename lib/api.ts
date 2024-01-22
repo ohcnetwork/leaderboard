@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { Activity, ActivityData, Highlights } from "./types";
+import { Activity, ActivityData, Contributor, Highlights } from "./types";
 
 const root = join(process.cwd(), "contributors");
 const slackRoot = join(process.cwd(), "data/slack");
@@ -86,7 +86,7 @@ export function getContributorBySlug(file: string, detail = false) {
 
   const githubHandle = file.replace(/\.md$/, "");
 
-  let activityData = { activity: [] as Activity[] };
+  let activityData = { activity: [] as Activity[] } as ActivityData;
 
   try {
     activityData = JSON.parse(
@@ -147,6 +147,10 @@ export function getContributorBySlug(file: string, detail = false) {
     activityData: {
       ...activityData,
       activity: weightedActivity.activity,
+      pr_stale: activityData.open_prs.reduce(
+        (acc, pr) => (pr?.stale_for >= 7 ? acc + 1 : acc),
+        0,
+      ),
     },
     highlights: {
       points: weightedActivity.points,
@@ -162,7 +166,7 @@ export function getContributorBySlug(file: string, detail = false) {
     weekSummary: getLastWeekHighlights(calendarData),
     calendarData: detail ? calendarData : [],
     ...data,
-  };
+  } as Contributor;
 }
 
 export function getContributors(detail = false) {

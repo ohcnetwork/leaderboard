@@ -25,6 +25,7 @@ export interface ActivityData {
   last_updated: number;
   activity: Activity[];
   open_prs: OpenPr[];
+  pr_stale: number;
   authored_issue_and_pr: AuthoredIssueAndPr[];
 }
 
@@ -50,20 +51,22 @@ export interface WeekSummary {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
-  pr_stale?: number;
 }
 
+export const ACTIVITY_TYPES = [
+  "comment_created",
+  "issue_assigned",
+  "issue_closed",
+  "pr_reviewed",
+  "issue_opened",
+  "eod_update",
+  "pr_opened",
+  "pr_merged",
+  "pr_collaborated",
+] as const;
+
 export interface Activity {
-  type:
-    | "comment_created"
-    | "issue_assigned"
-    | "issue_closed"
-    | "pr_reviewed"
-    | "issue_opened"
-    | "eod_update"
-    | "pr_opened"
-    | "pr_merged"
-    | "pr_collaborated";
+  type: (typeof ACTIVITY_TYPES)[number];
   title: string;
   time: number;
   link: string;

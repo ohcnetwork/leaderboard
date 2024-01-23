@@ -76,7 +76,7 @@ export default function LeaderboardFilters(props: Props) {
             value={dateString(start)}
             onChange={(e) => {
               updateSearchParam(
-                "range",
+                "between",
                 `${e.target.value}...${dateString(end)}`,
               );
             }}
@@ -87,7 +87,7 @@ export default function LeaderboardFilters(props: Props) {
             value={dateString(end)}
             onChange={(e) => {
               updateSearchParam(
-                "range",
+                "between",
                 `${dateString(start)}...${e.target.value}`,
               );
             }}

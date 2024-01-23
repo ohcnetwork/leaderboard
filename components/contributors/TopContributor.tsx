@@ -20,16 +20,16 @@ export default function InfoCard({
   data: LeaderboardResultSet;
   category: TopContributorCategoryKey;
 }) {
-  const contributors = data
-    .filter((c) => c.summary[category])
-    .sort((a, b) =>
-      a.summary[category] !== b.summary[category]
-        ? b.summary[category] - a.summary[category]
-        : b.summary.points - a.summary.points,
-    )
+  let resultSet = data.filter((c) => c.summary[category]);
+
+  const points = Math.max(...resultSet.map((c) => c.summary[category]));
+
+  resultSet = resultSet
+    .filter((c) => c.summary[category] === points)
+    .sort((a, b) => b.summary.points - a.summary.points)
     .slice(0, 3);
 
-  if (!contributors.length) return null;
+  if (!resultSet.length) return null;
 
   return (
     <div
@@ -38,27 +38,31 @@ export default function InfoCard({
     >
       <span className="text-foreground text-sm font-mono text-center">
         Most # of{" "}
-        <p className="font-bold text-base">
+        <span className="font-bold">
           {TOP_CONTRIBUTOR_CATEGORIES[category]}
-        </p>
+        </span>
       </span>
-      <ul className="isolate space-x-3 mt-4">
-        {contributors.map((contributor, index) => (
+      <ul className="space-y-3 mt-4">
+        {resultSet.map((contributor, index) => (
           <li
             className={`relative inline-block hover:scale-105 ${
               ["opacity-100", "opacity-80", "opacity-60"][0]
             } hover:opacity-100`}
             key={contributor.github}
           >
-            <Link href={`/contributors/${contributor.github}`}>
+            <Link
+              href={`/contributors/${contributor.github}`}
+              className="flex gap-4 items-center w-full"
+            >
               <img
-                className={`rounded-full h-12 w-12 shadow-current shadow-lg ring-2 ring-current ${
-                  ["text-yellow-700", "text-stone-700", "text-amber-900"][index]
-                }`}
+                className="rounded-full h-11 w-11 ring-1 ring-primary-500 shadow-md shadow-primary-500"
                 src={`https://avatars.githubusercontent.com/${contributor.github}`}
                 alt={contributor.github}
                 title={contributor.name}
               />
+              <span className="font-mono font-bold text-primary-400">
+                {contributor.name}
+              </span>
             </Link>
           </li>
         ))}

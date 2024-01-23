@@ -66,11 +66,11 @@ const DateRangePicker = (props: Props) => {
                   />
                 </div>
 
-                <div className="flex flex-wrap items-start justify-center gap-2 mt-6">
+                <div className="grid grid-cols-2 gap-2 mt-6">
                   {rangePresets.map((range, index) => (
                     <button
                       key={index}
-                      className="hover:bg-white hover:text-black px-2 py-1 text-sm whitespace-nowrap rounded border border-gray-500 transition-all duration-100 ease-in-out"
+                      className="hover:bg-white hover:text-black px-2 py-1 text-sm whitespace-nowrap rounded border border-gray-500 transition-all duration-100 ease-in-out font-mono"
                       onClick={() => props.onChange(range.value)}
                     >
                       {range.label}
@@ -99,6 +99,13 @@ const getRangePresets = () => {
 
   return [
     {
+      label: "Yesterday",
+      value: {
+        start: subDays(today, 1),
+        end: subDays(today, 1),
+      },
+    },
+    {
       label: "Last 7 days",
       value: {
         start: subDays(today, 7),
@@ -109,6 +116,13 @@ const getRangePresets = () => {
       label: "Last 28 days",
       value: {
         start: subDays(today, 28),
+        end: today,
+      },
+    },
+    {
+      label: "Last 365 days",
+      value: {
+        start: subDays(today, 365),
         end: today,
       },
     },
@@ -124,13 +138,6 @@ const getRangePresets = () => {
       value: {
         start: startOfMonth(prevMonth),
         end: endOfMonth(prevMonth),
-      },
-    },
-    {
-      label: "Last 365 days",
-      value: {
-        start: subDays(today, 365),
-        end: today,
       },
     },
     {

@@ -25,7 +25,7 @@ const DateRangePicker = (props: Props) => {
   return (
     <div className="relative inline-block text-left whitespace-nowrap">
       <Popover>
-        {({ open }) => (
+        {({ open, close }) => (
           <>
             <Popover.Button
               className={`px-4 py-2 font-medium rounded-md block w-full p-2 sm:text-sm border border-gray-600 dark:border-gray-300 ${
@@ -71,7 +71,10 @@ const DateRangePicker = (props: Props) => {
                     <button
                       key={index}
                       className="hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black px-2 py-1 text-sm whitespace-nowrap rounded border border-gray-500 transition-all duration-100 ease-in-out font-mono"
-                      onClick={() => props.onChange(range.value)}
+                      onClick={() => {
+                        props.onChange(range.value);
+                        close();
+                      }}
                     >
                       {range.label}
                     </button>

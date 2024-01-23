@@ -9,7 +9,9 @@ import {
 } from "react-icons/md";
 
 export default function Home() {
-  const contributors: any = getContributors();
+  const contributors = getContributors().sort(
+    (a, b) => b.weekSummary.points - a.weekSummary.points,
+  );
   const dateRange = getLastWeekDateRangeString();
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -99,7 +101,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col gap-2 p-4 ">
                       {contributors
-                        .filter((contributor: any) => !contributor.core)
+                        .filter((contributor) => !contributor.core)
                         .slice(0, 5)
                         .map((contributor: any, index: number) => {
                           return (

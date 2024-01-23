@@ -1,7 +1,6 @@
 import { getContributors } from "@/lib/api";
 import { Contributor } from "@/lib/types";
-import Leaderboard from "./Leaderboard";
-import { LeaderboardSortKey } from "./Filters";
+import Leaderboard, { LeaderboardSortKey } from "./Leaderboard";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 
 const getResultSet = (searchParams: PageProps["searchParams"]) => {

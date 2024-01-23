@@ -64,7 +64,7 @@ export default function LeaderBoardCard({
                 <div className="font-bold text-green-500 truncate font-mono">
                   {contributor.name}
                 </div>
-                <p className="mt-1 flex items-center text-sm text-foreground">
+                <p className="flex items-center text-sm text-foreground">
                   <span className="truncate">{contributor.title}</span>
                 </p>
               </div>

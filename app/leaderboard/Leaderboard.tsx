@@ -9,19 +9,23 @@ import TopContributor, {
   TopContributorCategoryKey,
 } from "../../components/contributors/TopContributor";
 import { useState } from "react";
-import LeaderboardFilters from "./Filters";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   dateString,
   getWeekNumber,
   parseDateRangeSearchParam,
 } from "@/lib/utils";
+import DateRangePicker, { formatDate } from "@/components/DateRangePicker";
+import Search from "@/components/filters/Search";
+import Sort from "@/components/filters/Sort";
 
 type Props = {
   resultSet: LeaderboardResultSet;
 };
 
 export default function Leaderboard(props: Props) {
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
@@ -32,13 +36,56 @@ export default function Leaderboard(props: Props) {
     data = data.filter(filterBySearchTerm(searchTerm.toLowerCase()));
   }
 
+  const updateSearchParam = (key: string, value?: string) => {
+    const current = new URLSearchParams(Array.from(searchParams.entries()));
+    if (!value) {
+      current.delete(key);
+    } else {
+      current.set(key, value);
+    }
+    const search = current.toString();
+    const query = search ? `?${search}` : "";
+    router.replace(`${pathname}${query}`, { scroll: false });
+  };
+
   return (
     <section className="bg-background text-foreground border-t dark:border-gray-700 border-gray-300">
       <div className="max-w-6xl mx-auto">
-        <LeaderboardFilters
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-        />
+        <div className="mx-4 md:mx-0 mt-4 p-4 border border-primary-500 rounded-lg">
+          <div className="flex flex-col md:flex-row justify-evenly items-center md:items-start gap-4">
+            <Search
+              value={searchTerm}
+              handleOnChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full"
+            />
+            <DateRangePicker
+              value={{ start, end }}
+              onChange={(value) => {
+                updateSearchParam(
+                  "between",
+                  `${dateString(value.start)}...${dateString(value.end)}`,
+                );
+              }}
+            />
+            <Sort
+              sortByOptions={Object.entries(SORT_BY_OPTIONS).map(
+                ([value, text]) => ({ value, text }),
+              )}
+              sortBy={searchParams.get("sortBy") ?? "points"}
+              sortDescending={searchParams.get("ordering") === "asc"}
+              handleSortByChange={(e) =>
+                updateSearchParam("sortBy", e.target.value)
+              }
+              handleSortOrderChange={() => {
+                updateSearchParam(
+                  "ordering",
+                  searchParams.get("ordering") === "asc" ? "desc" : "asc",
+                );
+              }}
+              className="w-96"
+            />
+          </div>
+        </div>
         <div className="border-gray-600 mx-4 xl:mx-0">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
             <div className="lg:col-span-7 2xl:col-span-8">
@@ -47,7 +94,7 @@ export default function Leaderboard(props: Props) {
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                     {searchParams.get("between") ? (
                       <span>
-                        Leaderboard of {dateString(start)} - {dateString(end)}
+                        Leaderboard of {formatDate(start)} → {formatDate(end)}
                       </span>
                     ) : (
                       <span>
@@ -123,3 +170,17 @@ const filterBySearchTerm = (searchTermLC: string) => {
     contributor.linkedin.toLowerCase().includes(searchTermLC) ||
     contributor.twitter.toLowerCase().includes(searchTermLC);
 };
+
+const SORT_BY_OPTIONS = {
+  comment_created: "Comment Created",
+  eod_update: "EOD Update",
+  issue_assigned: "Issue Assigned",
+  issue_opened: "Issue Opened",
+  points: "Points",
+  pr_merged: "PR Merged",
+  pr_opened: "PR Opened",
+  pr_reviewed: "PR Reviewed",
+  pr_stale: "Stale PRs",
+};
+
+export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;

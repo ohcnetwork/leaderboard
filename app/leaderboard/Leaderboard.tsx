@@ -66,15 +66,6 @@ export default function Leaderboard(props: Props) {
                               position={index}
                               contributor={contributor}
                             />
-                            <div className="bg-black rounded-lg p-2 opacity-75">
-                              <code className="text-sm text-lime-400">
-                                {JSON.stringify(
-                                  contributor.summary,
-                                  undefined,
-                                  "  ",
-                                )}
-                              </code>
-                            </div>
                           </li>
                         );
                       })}

@@ -37,6 +37,7 @@ const getResultSet = (searchParams: PageProps["searchParams"]) => {
       // prop to client components from a server component
       summarize: undefined,
     }))
+    .filter((contributor) => contributor.summary.points)
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;

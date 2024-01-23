@@ -112,10 +112,3 @@ export const parseDateRangeSearchParam = (
 };
 
 export const padZero = (num: number) => (num < 10 ? `0${num}` : num);
-
-export const dateString = (dateObj: Date) => {
-  const year = dateObj.getFullYear();
-  const month = padZero(dateObj.getMonth() + 1);
-  const date = padZero(dateObj.getDate());
-  return `${year}-${month}-${date}`;
-};

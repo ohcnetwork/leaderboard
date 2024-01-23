@@ -10,14 +10,11 @@ import TopContributor, {
 } from "../../components/contributors/TopContributor";
 import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import {
-  dateString,
-  getWeekNumber,
-  parseDateRangeSearchParam,
-} from "@/lib/utils";
+import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
 import DateRangePicker, { formatDate } from "@/components/DateRangePicker";
 import Search from "@/components/filters/Search";
 import Sort from "@/components/filters/Sort";
+import format from "date-fns/format";
 
 type Props = {
   resultSet: LeaderboardResultSet;
@@ -63,7 +60,10 @@ export default function Leaderboard(props: Props) {
               onChange={(value) => {
                 updateSearchParam(
                   "between",
-                  `${dateString(value.start)}...${dateString(value.end)}`,
+                  `${format(value.start, "yyyy-MM-dd")}...${format(
+                    value.end,
+                    "yyyy-MM-dd",
+                  )}`,
                 );
               }}
             />

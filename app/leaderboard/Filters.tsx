@@ -68,17 +68,6 @@ export default function LeaderboardFilters(props: Props) {
             }}
             className="w-full"
           />
-          {/* <Tooltip
-            tip={showCoreMembers ? "Hide Core Members" : "Show Core Members"}
-            tipStyle="bottom-9 -right-16 w-48 text-white text-sm"
-          >
-            <IconToggle
-              state={showCoreMembers}
-              TrueIcon={BiHide}
-              FalseIcon={BiShow}
-              handleOnClick={() => setShowCoreMembers((prev) => !prev)}
-            />
-          </Tooltip> */}
         </div>
         <div className="w-full flex items-center justify-center gap-2">
           <input

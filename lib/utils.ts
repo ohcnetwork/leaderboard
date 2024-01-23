@@ -82,3 +82,40 @@ export const formatDuration = (duration_in_ms: number) =>
     .split(" ")
     .splice(0, 4)
     .join(" ");
+
+export const getWeekNumber = (date: Date) => {
+  const d = new Date(date);
+  const dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  return Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
+};
+
+export const parseDateRangeSearchParam = (
+  range?: string | null,
+  relativeDaysBefore = 7,
+) => {
+  if (range) {
+    const [startStr, endStr] = range.split("...");
+    const start = new Date(startStr);
+    const end = new Date(endStr);
+    end.setHours(23, 59, 59);
+    return [start, end];
+  }
+
+  // Last 7 days
+  const end = new Date();
+  const start = new Date(end);
+  start.setDate(end.getDate() - relativeDaysBefore);
+  end.setHours(23, 59, 59);
+  return [start, end];
+};
+
+export const padZero = (num: number) => (num < 10 ? `0${num}` : num);
+
+export const dateString = (dateObj: Date) => {
+  const year = dateObj.getFullYear();
+  const month = padZero(dateObj.getMonth() + 1);
+  const date = padZero(dateObj.getDate());
+  return `${year}-${month}-${date}`;
+};

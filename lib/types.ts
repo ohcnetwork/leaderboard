@@ -86,9 +86,3 @@ export interface AuthoredIssueAndPr {
   issue_link: string;
   pr_link: string;
 }
-
-export interface Category {
-  slug: string;
-  title: string;
-  contributor: Contributor;
-}

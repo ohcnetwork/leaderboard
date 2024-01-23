@@ -1,3 +1,4 @@
+import { LeaderboardResultSet } from "@/app/leaderboard/page";
 import { Contributor } from "@/lib/types";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
@@ -7,7 +8,7 @@ export default function LeaderBoardCard({
   contributor,
   position,
 }: {
-  contributor: Contributor;
+  contributor: LeaderboardResultSet[number];
   position: number;
 }) {
   const userPosition = position + 1;
@@ -44,18 +45,26 @@ export default function LeaderBoardCard({
         <div className="flex md:flex-row flex-col md:items-center justify-between w-full py-4">
           <div className="flex w-full">
             <div className="min-w-0 flex-1 flex items-center">
-              <div className="flex-shrink-0">
+              <div
+                className={`flex-shrink-0 ring-2 dark:ring-1 ring-current rounded-full ${
+                  ["text-yellow-600", "text-stone-600", "text-amber-700"][
+                    position
+                  ] ?? "text-purple-600"
+                }`}
+              >
                 <img
-                  className="h-12 w-12 rounded-full"
+                  className={`h-14 w-14 rounded-full ${
+                    position < 3 && "circular-shadow-motion"
+                  }`}
                   src={`https://avatars.githubusercontent.com/${contributor.github}`}
                   alt={contributor.github}
                 />
               </div>
               <div className="ml-4">
-                <div className="text-sm font-medium text-green-500 truncate">
+                <div className="font-bold text-green-500 truncate font-mono">
                   {contributor.name}
                 </div>
-                <p className="mt-2 flex items-center text-sm text-foreground">
+                <p className="mt-1 flex items-center text-sm text-foreground">
                   <span className="truncate">{contributor.title}</span>
                 </p>
               </div>
@@ -82,21 +91,21 @@ export default function LeaderBoardCard({
                       />
                     </svg>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.weekSummary.pr_opened}
+                      {contributor.summary.pr_opened}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       opened
                     </span>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.weekSummary.pr_reviewed}
+                      {contributor.summary.pr_reviewed}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       reviewed
                     </span>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.weekSummary.pr_merged}
+                      {contributor.summary.pr_merged}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
@@ -133,14 +142,14 @@ export default function LeaderBoardCard({
                       />
                     </svg>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.weekSummary.eod_update}
+                      {contributor.summary.eod_update}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       EOD updates
                     </span>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.weekSummary.comment_created}
+                      {contributor.summary.comment_created}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">

@@ -54,7 +54,7 @@ export default function LeaderBoardCard({
               >
                 <img
                   className={`h-14 w-14 rounded-full ${
-                    position < 3 && "circular-shadow-motion"
+                    position < 3 && "animate-circular-shadow"
                   }`}
                   src={`https://avatars.githubusercontent.com/${contributor.github}`}
                   alt={contributor.github}

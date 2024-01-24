@@ -1,126 +1,116 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import LeaderboardCard from "../../components/contributors/LeaderboardCard";
-import TopContributor from "../../components/contributors/TopContributor";
-import Filters from "../../components/filters/Filters";
+import LeaderBoardCard from "@/components/contributors/LeaderboardCard";
+import { Contributor } from "@/lib/types";
 import { TbZoomQuestion } from "react-icons/tb";
-import { Category, Contributor } from "@/lib/types";
+import { LeaderboardResultSet } from "./page";
+import TopContributor, {
+  TOP_CONTRIBUTOR_CATEGORIES,
+  TopContributorCategoryKey,
+} from "../../components/contributors/TopContributor";
+import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
+import DateRangePicker, { formatDate } from "@/components/DateRangePicker";
+import Search from "@/components/filters/Search";
+import Sort from "@/components/filters/Sort";
+import format from "date-fns/format";
 
-// Calculate week number
-const getWeekNumber = (date: Date) => {
-  const d = new Date(date);
-  const dayNum = d.getUTCDay() || 7;
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  return Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
+type Props = {
+  resultSet: LeaderboardResultSet;
 };
 
-const categories = [
-  { slug: "eod_update", title: "EOD Updates" },
-  { slug: "pr_opened", title: "Pull Requests Opened" },
-  { slug: "pr_merged", title: "Pull Requests Merged" },
-  { slug: "pr_reviewed", title: "Pull Requests Reviewed" },
-  { slug: "issue_opened", title: "Issues Opened" },
-  { slug: "comment_created", title: "Comments Created" },
-];
-
-export default function Leaderboard({
-  contributorsList,
-}: {
-  contributorsList: Contributor[];
-}) {
-  const [contributors, setContributors] = useState(contributorsList);
+export default function Leaderboard(props: Props) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState("points");
-  const [sortDescending, setSortDescending] = useState(true);
-  const [showCoreMembers, setShowCoreMembers] = useState(false);
-  const [categoryLeaderboard, setCategoryLeaderboard] = useState<Category[]>(
-    [],
-  );
+  const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
 
-  useEffect(() => {
-    let filteredContributors = contributorsList;
+  let data = props.resultSet;
 
-    if (!showCoreMembers) {
-      filteredContributors = filteredContributors.filter(
-        (contributor) => !contributor.core,
-      );
+  if (searchTerm) {
+    data = data.filter(filterBySearchTerm(searchTerm.toLowerCase()));
+  }
+
+  const updateSearchParam = (key: string, value?: string) => {
+    const current = new URLSearchParams(Array.from(searchParams.entries()));
+    if (!value) {
+      current.delete(key);
+    } else {
+      current.set(key, value);
     }
-
-    if (searchTerm) {
-      const searchTermLC = searchTerm.toLowerCase();
-      filteredContributors = filteredContributors.filter(
-        (contributor) =>
-          contributor.name.toLowerCase().includes(searchTermLC) ||
-          contributor.github.toLowerCase().includes(searchTermLC) ||
-          contributor.linkedin.toLowerCase().includes(searchTermLC) ||
-          contributor.twitter.toLowerCase().includes(searchTermLC),
-      );
-    }
-
-    filteredContributors = filteredContributors.sort((a: any, b: any) =>
-      a.weekSummary[sortBy] !== b.weekSummary[sortBy]
-        ? a.weekSummary[sortBy] - b.weekSummary[sortBy]
-        : a.weekSummary.points - b.weekSummary.points,
-    );
-
-    if (sortDescending) {
-      filteredContributors = filteredContributors.reverse();
-    }
-
-    setCategoryLeaderboard(() => {
-      let temp = contributorsList;
-      if (!showCoreMembers) {
-        temp = temp.filter((contributor) => !contributor.core);
-      }
-      return categories.map((category) => ({
-        ...category,
-        contributor: temp
-          .sort((a: any, b: any) =>
-            a.weekSummary[category.slug] !== b.weekSummary[category.slug]
-              ? a.weekSummary[category.slug] - b.weekSummary[category.slug]
-              : a.weekSummary.points - b.weekSummary.points,
-          )
-          .reverse()[0],
-      }));
-    });
-
-    setContributors([...filteredContributors]);
-  }, [contributorsList, searchTerm, sortBy, sortDescending, showCoreMembers]);
+    const search = current.toString();
+    const query = search ? `?${search}` : "";
+    router.replace(`${pathname}${query}`, { scroll: false });
+  };
 
   return (
     <section className="bg-background text-foreground border-t dark:border-gray-700 border-gray-300">
       <div className="max-w-6xl mx-auto">
-        <Filters
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          sortBy={sortBy}
-          setSortBy={setSortBy}
-          sortDescending={sortDescending}
-          setSortDescending={setSortDescending}
-          showCoreMembers={showCoreMembers}
-          setShowCoreMembers={setShowCoreMembers}
-        />
+        <div className="mx-4 md:mx-0 mt-4 p-4 border border-primary-500 rounded-lg">
+          <div className="flex flex-col md:flex-row justify-evenly items-center md:items-start gap-4">
+            <Search
+              value={searchTerm}
+              handleOnChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full"
+            />
+            <DateRangePicker
+              value={{ start, end }}
+              onChange={(value) => {
+                updateSearchParam(
+                  "between",
+                  `${format(value.start, "yyyy-MM-dd")}...${format(
+                    value.end,
+                    "yyyy-MM-dd",
+                  )}`,
+                );
+              }}
+            />
+            <Sort
+              sortByOptions={Object.entries(SORT_BY_OPTIONS).map(
+                ([value, text]) => ({ value, text }),
+              )}
+              sortBy={searchParams.get("sortBy") ?? "points"}
+              sortDescending={searchParams.get("ordering") === "asc"}
+              handleSortByChange={(e) =>
+                updateSearchParam("sortBy", e.target.value)
+              }
+              handleSortOrderChange={() => {
+                updateSearchParam(
+                  "ordering",
+                  searchParams.get("ordering") === "asc" ? "desc" : "asc",
+                );
+              }}
+              className="w-96"
+            />
+          </div>
+        </div>
         <div className="border-gray-600 mx-4 xl:mx-0">
           <div className="lg:grid lg:grid-cols-12 lg:gap-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
             <div className="lg:col-span-7 2xl:col-span-8">
               <div className="sticky top-0 pt-6">
                 <div className="terminal-container-bg border rounded-lg border-primary-500">
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
-                    <span>
-                      Live Leaderboard of last 7 days | Week{" "}
-                      {getWeekNumber(new Date())} of {new Date().getFullYear()}
-                    </span>
+                    {searchParams.get("between") ? (
+                      <span>
+                        Leaderboard of {formatDate(start)} → {formatDate(end)}
+                      </span>
+                    ) : (
+                      <span>
+                        Live Leaderboard of last 7 days | Week{" "}
+                        {getWeekNumber(new Date())} of{" "}
+                        {new Date().getFullYear()}
+                      </span>
+                    )}
                   </div>
-                  {contributors.length ? (
+                  {data.length ? (
                     <ul className="space-y-6 lg:space-y-8 overflow-x-auto p-6">
-                      {contributors.map((contributor, index) => {
+                      {data.map((contributor, index) => {
                         return (
                           <li key={contributor.github}>
-                            <LeaderboardCard
-                              position={searchTerm ? -1 : index}
-                              key={contributor.github}
+                            <LeaderBoardCard
+                              position={index}
                               contributor={contributor}
                             />
                           </li>
@@ -144,7 +134,8 @@ export default function Leaderboard({
                   <div className="space-y-12 p-4 border border-primary-500 rounded-lg">
                     <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                       <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                        Top Contributors of the week
+                        Top Contributors{" "}
+                        {!searchParams.get("between") && "of the week"}
                       </h2>
                       <p className="text-xl text-gray-500 dark:text-gray-300">
                         Our top contributers across different metrics
@@ -154,16 +145,12 @@ export default function Leaderboard({
                       role="list"
                       className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
                     >
-                      {categoryLeaderboard.map((category: Category, index) => {
-                        return (
-                          <TopContributor
-                            key={index}
-                            contributor={category.contributor}
-                            category={category}
-                            minimal={true}
-                          />
-                        );
-                      })}
+                      <TopContributor data={data} category="eod_update" />
+                      <TopContributor data={data} category="pr_opened" />
+                      <TopContributor data={data} category="pr_merged" />
+                      <TopContributor data={data} category="pr_reviewed" />
+                      <TopContributor data={data} category="issue_opened" />
+                      <TopContributor data={data} category="comment_created" />
                     </ul>
                   </div>
                 </div>
@@ -175,3 +162,25 @@ export default function Leaderboard({
     </section>
   );
 }
+
+const filterBySearchTerm = (searchTermLC: string) => {
+  return (contributor: Contributor) =>
+    contributor.name.toLowerCase().includes(searchTermLC) ||
+    contributor.github.toLowerCase().includes(searchTermLC) ||
+    contributor.linkedin.toLowerCase().includes(searchTermLC) ||
+    contributor.twitter.toLowerCase().includes(searchTermLC);
+};
+
+const SORT_BY_OPTIONS = {
+  comment_created: "Comment Created",
+  eod_update: "EOD Update",
+  issue_assigned: "Issue Assigned",
+  issue_opened: "Issue Opened",
+  points: "Points",
+  pr_merged: "PR Merged",
+  pr_opened: "PR Opened",
+  pr_reviewed: "PR Reviewed",
+  pr_stale: "Stale PRs",
+};
+
+export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;

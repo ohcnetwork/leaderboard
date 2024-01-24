@@ -13,7 +13,6 @@ import GraduateAttributeBadge from "../../../components/contributors/GraduateAtt
 import InfoCard from "../../../components/contributors/InfoCard";
 import React, { Suspense } from "react";
 import clsx from "clsx";
-import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 import Markdown from "@/components/Markdown";

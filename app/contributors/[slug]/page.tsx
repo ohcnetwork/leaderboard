@@ -13,7 +13,6 @@ import GraduateAttributeBadge from "../../../components/contributors/GraduateAtt
 import InfoCard from "../../../components/contributors/InfoCard";
 import React, { Suspense } from "react";
 import clsx from "clsx";
-import Tooltip from "../../../components/filters/Tooltip";
 import { Contributor } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
@@ -23,6 +22,8 @@ export async function generateStaticParams() {
     .filter((slug) => !slug.file.includes("[bot]"))
     .map((slug) => ({ slug: slug.file.replace(".md", "") }));
 }
+
+export const dynamicParams = false;
 
 type Params = {
   params: { slug: string };
@@ -190,7 +191,7 @@ export default async function Contributor({ params }: Params) {
                 {contributor.highlights.pr_opened}
               </dd>
               <p className="order-2 text-xl text-gray-400">
-                <b className="text-white">
+                <b className="text-foreground">
                   {contributor.weekSummary.pr_opened}
                 </b>{" "}
                 in last 7 days
@@ -204,7 +205,7 @@ export default async function Contributor({ params }: Params) {
                 {contributor.highlights.pr_reviewed}
               </dd>
               <p className="order-2 text-xl text-gray-400">
-                <b className="text-white">
+                <b className="text-foreground">
                   {contributor.weekSummary.pr_reviewed}
                 </b>{" "}
                 in last 7 days
@@ -218,7 +219,7 @@ export default async function Contributor({ params }: Params) {
                 {contributor.highlights.eod_update}
               </dd>
               <p className="order-2 text-xl text-gray-400">
-                <b className="text-white">
+                <b className="text-foreground">
                   {contributor.weekSummary.eod_update}
                 </b>{" "}
                 in last 7 days
@@ -266,13 +267,12 @@ export default async function Contributor({ params }: Params) {
               <div className="mt-4">
                 {contributor["activityData"]["open_prs"].map((pr, index) => (
                   <a href={pr.link} key={index} className="flex gap-2">
-                    <Tooltip
-                      tip={
-                        ((pr?.stale_for >= 7) as Boolean) &&
-                        `Stale for ${pr?.stale_for} days`
-                      }
-                      tipStyle="absolute w-48 -top-8 translate-x-1/2 text-white text-sm flex flex-row gap-4"
-                    >
+                    <div className="tooltip">
+                      {((pr?.stale_for >= 7) as Boolean) && (
+                        <span className="tooltip-text tooltip-bottom mr-auto">
+                          Stale for {pr?.stale_for} days
+                        </span>
+                      )}
                       <p
                         className={clsx(
                           "text-sm mb-2 transition-colors duration-75 ease-in-out flex gap-2",
@@ -303,7 +303,7 @@ export default async function Contributor({ params }: Params) {
                           {pr.title}
                         </span>
                       </p>
-                    </Tooltip>
+                    </div>
                   </a>
                 ))}
               </div>

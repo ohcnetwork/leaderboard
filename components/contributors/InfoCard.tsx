@@ -38,15 +38,20 @@ export default function InfoCard({
             />
           </div>
         </Link>
-        <div className={minimal ? "" : "flex flex-col items-center space-y-2"}>
-          <div className="font-medium text-lg space-y-1">
+        <div
+          className={`overflow-hidden ${
+            minimal ? "" : "flex flex-col items-center space-y-2"
+          }
+          `}
+        >
+          <div className="fnt-medium text-lg space-y-1 overflow-hidden">
             <Link
               href={isClickable ? `/contributors/${contributor.github}` : `#`}
               className=""
             >
               <h3
                 className={clsx(
-                  "text-lg md:text-2xl leading-tight ",
+                  "text-lg md:text-2xl leading-tight overflow-hidden overflow-ellipsis",
                   isClickable && "cursor-pointer hover:text-primary-200",
                 )}
               >

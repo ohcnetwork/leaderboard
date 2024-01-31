@@ -101,13 +101,12 @@ export function getContributorBySlug(file: string, detail = false) {
     ...activityData,
     activity: [...activityData.activity, ...getSlackMessages(data.slack)],
   };
-  let AllUnqPrReviews = new Set();
+  let allUnqPrReviews = new Set();
 
   let weightedActivity = activityData.activity.reduce(
     (acc, activity) => {
       if (activity.type == "pr_reviewed") {
-        
-        AllUnqPrReviews.add(activity.title);
+        allUnqPrReviews.add(activity.title);
       }
 
       return {
@@ -144,7 +143,7 @@ export function getContributorBySlug(file: string, detail = false) {
     } as Highlights & { activity: Activity[] },
   );
 
-  weightedActivity.pr_reviewed = AllUnqPrReviews.size;
+  weightedActivity.pr_reviewed = allUnqPrReviews.size;
 
   const calendarData = getCalendarData(weightedActivity.activity);
 
@@ -222,7 +221,6 @@ export function getCalendarData(activity: Activity[]) {
             uniquePrReviews.has(activity.title))
         ) {
           acc[date][activity.type] += 1;
-          
         }
       } else {
         if (

@@ -106,6 +106,7 @@ export function getContributorBySlug(file: string, detail = false) {
   let weightedActivity = activityData.activity.reduce(
     (acc, activity) => {
       if (activity.type == "pr_reviewed") {
+        
         AllUnqPrReviews.add(activity.title);
       }
 

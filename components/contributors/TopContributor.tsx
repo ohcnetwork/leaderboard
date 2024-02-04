@@ -45,7 +45,7 @@ export default function InfoCard({
       <ul className="space-y-3 mt-4">
         {resultSet.map((contributor, index) => (
           <li
-            className={`relative inline-block hover:scale-105 ${
+            className={`relative hover:scale-105 ${
               ["opacity-100", "opacity-80", "opacity-60"][0]
             } hover:opacity-100`}
             key={contributor.github}

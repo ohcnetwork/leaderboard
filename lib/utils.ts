@@ -87,3 +87,8 @@ export const parseDateRangeSearchParam = (
 };
 
 export const padZero = (num: number) => (num < 10 ? `0${num}` : num);
+
+export const scrollTo = (id: string | boolean) => {
+  const element = document.querySelector(`#${id}`);
+  element?.scrollIntoView({ behavior: "smooth", block: "center" });
+};

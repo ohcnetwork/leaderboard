@@ -64,5 +64,6 @@ type PageProps = {
 
 export default async function LeaderboardPage({ searchParams }: PageProps) {
   const resultSet = await getResultSet(searchParams);
+
   return <Leaderboard resultSet={resultSet} />;
 }

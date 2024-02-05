@@ -170,7 +170,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
   }
 
   return (
-    <li className="group">
+    <li className="group" id={`gh-event-${event.id}`}>
       <div className="relative pb-4">
         <span
           className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700 group-last:hidden"

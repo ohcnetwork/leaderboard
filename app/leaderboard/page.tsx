@@ -3,11 +3,11 @@ import { Contributor } from "@/lib/types";
 import Leaderboard, { LeaderboardSortKey } from "./Leaderboard";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 
-const getResultSet = (searchParams: PageProps["searchParams"]) => {
+const getResultSet = async (searchParams: PageProps["searchParams"]) => {
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
   const sortBy = searchParams.sortBy ?? "points";
 
-  let data = getContributors().filter((a) => a.highlights.points);
+  let data = (await getContributors()).filter((a) => a.highlights.points);
 
   const filterByRole = (contributor: Contributor) => {
     const roles = searchParams.roles?.split(",") ?? [];
@@ -51,7 +51,7 @@ const getResultSet = (searchParams: PageProps["searchParams"]) => {
   return result;
 };
 
-export type LeaderboardResultSet = ReturnType<typeof getResultSet>;
+export type LeaderboardResultSet = Awaited<ReturnType<typeof getResultSet>>;
 
 type PageProps = {
   searchParams: {
@@ -62,7 +62,7 @@ type PageProps = {
   };
 };
 
-export default function LeaderboardPage({ searchParams }: PageProps) {
-  const resultSet = getResultSet(searchParams);
+export default async function LeaderboardPage({ searchParams }: PageProps) {
+  const resultSet = await getResultSet(searchParams);
   return <Leaderboard resultSet={resultSet} />;
 }

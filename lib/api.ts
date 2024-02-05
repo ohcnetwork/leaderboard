@@ -3,6 +3,7 @@ import { join } from "path";
 import matter from "gray-matter";
 import { Activity, ActivityData, Contributor, Highlights } from "./types";
 import { padZero } from "./utils";
+import { readFile, readdir } from "fs/promises";
 
 const root = join(process.cwd(), "contributors");
 const slackRoot = join(process.cwd(), "data/slack");
@@ -26,31 +27,29 @@ const points = {
 // Opening a PR would give a single point and merging it would give you the other 7 points, making 8 per PR
 // Updating the EOD would get 2 points per day and additional 20 for regular daily updates plus 10 for just missing one
 
-export function formatSlug(slug: string) {
+function formatSlug(slug: string) {
   return slug.replace(/\.md$/, "");
 }
 
-export function formatSlugJSON(slug: string) {
+function formatSlugJSON(slug: string) {
   return slug.replace(/\.json$/, "");
 }
 
-export function getSlackSlugs() {
-  const slackSlugs: Record<string, string> = {};
-  fs.readdirSync(`${slackRoot}`).forEach((file) => {
-    slackSlugs[formatSlugJSON(file)] = file;
-  });
-
-  return slackSlugs;
+async function getSlackSlugs() {
+  const files = await readdir(`${slackRoot}`);
+  return Object.fromEntries(files.map((file) => [formatSlugJSON(file), file]));
 }
 
-let validSlackSlugs = getSlackSlugs();
+let validSlackSlugs: Awaited<ReturnType<typeof getSlackSlugs>> | null = null;
 
-export function getSlackMessages(slackId: string) {
+async function getSlackMessages(slackId: string) {
+  validSlackSlugs ??= await getSlackSlugs();
+
   const filePath = join(slackRoot, `${slackId}.json`);
   let fileContents = [];
   if (validSlackSlugs[slackId]) {
     try {
-      fileContents = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      fileContents = JSON.parse(await readFile(filePath, "utf8"));
     } catch (e) {
       console.log(e);
     }
@@ -72,18 +71,14 @@ export function getSlackMessages(slackId: string) {
   }
 }
 
-export function getContributorsSlugs() {
-  const contributorSlugs: { file: string }[] = [];
-  fs.readdirSync(`${root}`).forEach((file) => {
-    contributorSlugs.push({ file: file });
-  });
-
-  return contributorSlugs;
+export async function getContributorsSlugs() {
+  const files = await readdir(`${root}`);
+  return files.map((file) => ({ file }));
 }
 
-export function getContributorBySlug(file: string, detail = false) {
+export async function getContributorBySlug(file: string, detail = false) {
   const fullPath = join(root, `${formatSlug(file)}.md`);
-  const { data, content } = matter(fs.readFileSync(fullPath, "utf8"));
+  const { data, content } = matter(await readFile(fullPath, "utf8"));
 
   const githubHandle = file.replace(/\.md$/, "");
 
@@ -91,15 +86,17 @@ export function getContributorBySlug(file: string, detail = false) {
 
   try {
     activityData = JSON.parse(
-      fs.readFileSync(join(githubRoot, `${githubHandle}.json`), "utf8"),
+      await readFile(join(githubRoot, `${githubHandle}.json`), "utf8"),
     );
   } catch (e) {
     console.log(e);
   }
 
+  const slackMessages = await getSlackMessages(data.slack);
+
   activityData = {
     ...activityData,
-    activity: [...activityData.activity, ...getSlackMessages(data.slack)],
+    activity: [...activityData.activity, ...slackMessages],
   };
 
   const weightedActivity = activityData.activity.reduce(
@@ -181,13 +178,14 @@ export function getContributorBySlug(file: string, detail = false) {
   } as Contributor & { summarize: typeof summarize };
 }
 
-export function getContributors(detail = false) {
-  return getContributorsSlugs().map((path) =>
-    getContributorBySlug(path.file, detail),
+export async function getContributors(detail = false) {
+  const slugs = await getContributorsSlugs();
+  return Promise.all(
+    slugs.map((path) => getContributorBySlug(path.file, detail)),
   );
 }
 
-export function getCalendarData(activity: Activity[]) {
+function getCalendarData(activity: Activity[]) {
   const calendarData = activity.reduce(
     (acc, activity) => {
       // Github activity.time ignores milliseconds (*1000)

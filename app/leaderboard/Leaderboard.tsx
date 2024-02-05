@@ -4,10 +4,7 @@ import LeaderBoardCard from "@/components/contributors/LeaderboardCard";
 import { Contributor } from "@/lib/types";
 import { TbZoomQuestion } from "react-icons/tb";
 import { LeaderboardResultSet } from "./page";
-import TopContributor, {
-  TOP_CONTRIBUTOR_CATEGORIES,
-  TopContributorCategoryKey,
-} from "../../components/contributors/TopContributor";
+import TopContributor from "../../components/contributors/TopContributor";
 import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";

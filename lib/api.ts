@@ -1,4 +1,3 @@
-import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 import { Activity, ActivityData, Contributor, Highlights } from "./types";

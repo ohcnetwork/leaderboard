@@ -8,11 +8,12 @@ import {
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
 
-export default function Home() {
-  const contributors = getContributors().sort(
+export default async function Home() {
+  const contributors = (await getContributors()).sort(
     (a, b) => b.weekSummary.points - a.weekSummary.points,
   );
   const dateRange = getLastWeekDateRangeString();
+
   return (
     <div className="bg-background text-foreground min-h-screen">
       <section className="bg-background border-t dark:border-gray-700 border-gray-300 ">

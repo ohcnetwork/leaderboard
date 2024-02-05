@@ -18,7 +18,8 @@ import { formatDuration } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
 
 export async function generateStaticParams() {
-  return getContributorsSlugs()
+  const slugs = await getContributorsSlugs();
+  return slugs
     .filter((slug) => !slug.file.includes("[bot]"))
     .map((slug) => ({ slug: slug.file.replace(".md", "") }));
 }
@@ -31,7 +32,7 @@ type Params = {
 
 export default async function Contributor({ params }: Params) {
   const { slug } = params;
-  const contributor = getContributorBySlug(slug, true) as Contributor;
+  const contributor = await getContributorBySlug(slug, true);
 
   return (
     <div className="bg-background min-h-screen">

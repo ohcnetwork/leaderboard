@@ -31,31 +31,6 @@ const months = [
   "Dec",
 ];
 
-export const parseDateString = (dateStr: string) => {
-  const date = new Date(dateStr);
-
-  if (!isNaN(date.getTime())) return "";
-
-  let dateString = date.getDate() + " ";
-  dateString += months[date.getMonth()] + " ";
-  dateString += date.getFullYear() + " | ";
-  if (date.getHours() === 0) {
-    dateString += "12:";
-  } else {
-    dateString += date.getHours() < 10 ? "0" : "";
-    dateString +=
-      (date.getHours() > 12
-        ? date.getHours() - 12 < 10
-          ? "0" + (date.getHours() - 12)
-          : date.getHours() - 12
-        : date.getHours()) + ":";
-  }
-  dateString +=
-    date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-  dateString += date.getHours() > 11 ? " PM" : " AM";
-  return dateString;
-};
-
 export const getLastWeekDateRangeString = () => {
   let today = new Date();
   let lastWeek = new Date(today);
@@ -112,3 +87,8 @@ export const parseDateRangeSearchParam = (
 };
 
 export const padZero = (num: number) => (num < 10 ? `0${num}` : num);
+
+export const scrollTo = (id: string | boolean) => {
+  const element = document.querySelector(`#${id}`);
+  element?.scrollIntoView({ behavior: "smooth", block: "center" });
+};

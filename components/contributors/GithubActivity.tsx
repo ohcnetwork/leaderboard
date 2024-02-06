@@ -355,7 +355,7 @@ export default function GithubActivity({ activityData }: Props) {
 
   return (
     <div className="flex flex-row-reverse items-start justify-between gap-6">
-      <div className="sticky top-6 flex flex-col gap-2 p-4 my-4 border border-primary-500 rounded-lg font-mono">
+      <div className="sticky top-6 flex flex-col gap-2 p-4 my-4 border border-primary-500 rounded-lg font-mono w-64">
         <h3>Filter Activity</h3>
         <select
           className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground my-4"
@@ -388,14 +388,13 @@ export default function GithubActivity({ activityData }: Props) {
           <ActivityCheckbox
             key={type}
             type={type}
-            label={type.replaceAll("_", " ")}
             state={activityTypes}
             setState={setActivityTypes}
           />
         ))}
       </div>
       <div className="mx-2 flow-root text-foreground mt-4">
-        <ul role="list" className="my-4">
+        <ul role="list" className="my-4 w-full max-w-xl">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;
           })}
@@ -407,14 +406,14 @@ export default function GithubActivity({ activityData }: Props) {
 
 export const ActivityCheckbox = (props: {
   type: Activity["type"];
-  label: string;
   state: Activity["type"][];
   setState: (value: Activity["type"][]) => void;
 }) => {
   return (
-    <label className="flex whitespace-nowrap items-center gap-2">
+    <label className="flex whitespace-nowrap items-center gap-2 text-sm">
       <input
         name={props.type}
+        className="accent-primary-500 dark:accent-primary-400"
         type="checkbox"
         checked={props.state.includes(props.type)}
         onChange={(event) => {
@@ -425,7 +424,19 @@ export const ActivityCheckbox = (props: {
           props.setState(final);
         }}
       />{" "}
-      {props.label}
+      {
+        {
+          comment_created: "Comment",
+          eod_update: "Slack E.O.D. update",
+          issue_assigned: "Issue assigned",
+          issue_closed: "Issue closed",
+          issue_opened: "Iusse opened",
+          pr_collaborated: "PR collaborated",
+          pr_merged: "PR merged",
+          pr_opened: "PR opened",
+          pr_reviewed: "Code Review",
+        }[props.type]
+      }
     </label>
   );
 };

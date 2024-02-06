@@ -1,6 +1,11 @@
-import { Activity, ActivityData } from "@/lib/types";
+"use client";
+
+import { ACTIVITY_TYPES, Activity, ActivityData } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
+import { useMemo, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import RelativeTime from "../RelativeTime";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -15,19 +20,8 @@ let commentTypes = (activityEvent: string[]) => {
   }
 };
 
-function generateId() {
-  return Math.random().toString(36).slice(2, 7);
-}
-
 let renderText = (activity: Activity) => {
-  const activity_time = (
-    new String(activity.time).length === 10
-      ? new Date(activity.time * 1000)
-      : new Date(activity.time)
-  ).toLocaleString(undefined, {
-    dateStyle: "long",
-    timeStyle: "medium",
-  });
+  const timestamp = getActivityTime(activity.time).toString();
   switch (activity["type"]) {
     case "eod_update":
       return (
@@ -35,7 +29,7 @@ let renderText = (activity: Activity) => {
           <div>
             <div className="">
               <div className="font-medium dark:text-primary-300 text-primary-500">
-                {activity_time.split("at")[0]}
+                <RelativeTime time={timestamp} />
                 <span className=" text-sm font-medium dark:text-gray-200 text-gray-700">
                   {" "}
                   - End of the day update from slack
@@ -63,7 +57,7 @@ let renderText = (activity: Activity) => {
 
                 <span className="font-normal text-foreground">
                   {" "}
-                  on {activity_time}
+                  <RelativeTime time={timestamp} />
                 </span>
               </p>
             </div>
@@ -95,19 +89,21 @@ let renderText = (activity: Activity) => {
                 </span>
               )}
             </div>
-            {activity["type"] == "pr_merged" && (
-              <div className="pt-4">
+            {["pr_merged", "pr_opened"].includes(activity["type"]) && (
+              <div className="pt-4 max-w-xl">
                 <OpenGraphImage url={activity["link"]} className="rounded-xl" />
               </div>
             )}
-            {activity["type"] != "pr_merged" && (
+            {activity["type"] == "pr_reviewed" && (
               <div>
                 <a href={activity["link"]}>
                   <span className="font-medium dark:text-gray-200 text-gray-500">
                     {activity["text"]}
                   </span>
                 </a>
-                <span className="whitespace-nowrap ml-2">{activity_time}</span>
+                <span className="whitespace-nowrap ml-2">
+                  <RelativeTime time={timestamp} />
+                </span>
               </div>
             )}
           </div>
@@ -134,7 +130,9 @@ let renderText = (activity: Activity) => {
                 {activity["text"]}
               </span>
             </a>
-            <span className="whitespace-nowrap ml-2">{activity_time}</span>
+            <span className="whitespace-nowrap ml-2">
+              <RelativeTime time={timestamp} />
+            </span>
           </div>
         </div>
       );
@@ -151,7 +149,7 @@ let renderText = (activity: Activity) => {
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
-            <div className="pt-4">
+            <div className="pt-4 max-w-xl">
               <OpenGraphImage url={activity["link"]} className="rounded-xl" />
             </div>
           </div>
@@ -168,7 +166,9 @@ let renderText = (activity: Activity) => {
             <div className="font-medium dark:text-gray-200 text-gray-700 ml-2">
               {activity["text"]}
             </div>
-            <span className="whitespace-nowrap ml-2">{activity_time}</span>
+            <span className="whitespace-nowrap ml-2">
+              <RelativeTime time={timestamp} />
+            </span>
           </div>
         </div>
       );
@@ -266,21 +266,177 @@ let showContribution = (activity: Activity) => {
   );
 };
 
+const getActivityTime = (time: Activity["time"]) => {
+  return typeof time === "number" ? new Date(time * 1e3) : new Date(time);
+};
+
+const activitiesBetween = (range: { from: Date; to: Date }) => {
+  const from = range.from.getTime();
+  const to = range.to.getTime();
+
+  return (activity: Activity) => {
+    const time = getActivityTime(activity.time).getTime();
+    return from < time && time < to;
+  };
+};
+
+const activitiesOfType = (types: Activity["type"][]) => {
+  return (activity: Activity) => {
+    return types.includes(activity.type);
+  };
+};
+
+const getRangeFilterPresets = (activities: Activity[]) => {
+  if (!activities.length) return [];
+
+  const latest = getActivityTime(activities[0].time);
+  let oldest = new Date(latest);
+
+  activities.forEach((activity) => {
+    const time = getActivityTime(activity.time);
+    if (time < oldest) {
+      oldest = time;
+    }
+  });
+
+  let current = new Date(oldest.getFullYear(), oldest.getMonth());
+  const end = new Date(latest.getFullYear(), latest.getMonth());
+
+  const results: string[] = [];
+  while (current <= end) {
+    results.push(
+      current.toLocaleString("default", { month: "long", year: "numeric" }),
+    );
+    current.setMonth(current.getMonth() + 1);
+  }
+  return results.reverse();
+};
+
 interface Props {
   activityData: ActivityData;
 }
 
 export default function GithubActivity({ activityData }: Props) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const rangeQuery = searchParams.get("range") ?? "last-month";
+
+  const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
+
+  const range = useMemo(() => {
+    const lastActivity = new Date(activityData.last_updated * 1e3);
+    lastActivity.setDate(lastActivity.getDate() + 1);
+
+    if (rangeQuery === "last-month") {
+      const from = new Date(lastActivity);
+      from.setDate(from.getDate() - 30);
+      return { from, to: lastActivity };
+    } else if (rangeQuery === "last-week") {
+      const from = new Date(lastActivity);
+      from.setDate(from.getDate() - 7);
+      return { from, to: lastActivity };
+    } else {
+      const from = new Date(rangeQuery);
+      const to = new Date(rangeQuery);
+      to.setMonth(to.getMonth() + 1);
+      return { from, to };
+    }
+  }, [rangeQuery, activityData.last_updated]);
+
+  const rangePresets = useMemo(
+    () => getRangeFilterPresets(activityData["activity"]),
+    [activityData],
+  );
+
+  const activities = activityData.activity
+    .filter(activitiesBetween(range))
+    .filter(activitiesOfType(activityTypes));
+
   return (
-    <div className="mx-2 flow-root text-foreground mt-4">
-      <ul role="list" className="-mb-8">
-        {activityData["activity"].map((activity, i) => {
-          return <li key={i}>{showContribution(activity)}</li>;
-        })}
-      </ul>
-      <div className="mt-12 text-center mb-20">
-        More to come in the coming days...!
+    <div className="flex flex-row-reverse items-start justify-between gap-6">
+      <div className="sticky top-6 flex flex-col gap-2 p-4 my-4 border border-primary-500 rounded-lg font-mono w-64">
+        <h3>Filter Activity</h3>
+        <select
+          className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground my-4"
+          disabled={!rangePresets}
+          value={rangeQuery}
+          onChange={(event) => {
+            const current = new URLSearchParams(
+              Array.from(searchParams.entries()),
+            );
+            const value = event.target.value;
+            if (!value) {
+              current.delete("range");
+            } else {
+              current.set("range", event.target.value);
+            }
+            const search = current.toString();
+            const query = search ? `?${search}` : "";
+            router.replace(`${pathname}${query}`, { scroll: false });
+          }}
+        >
+          <option value="last-week">Last week</option>
+          <option value="last-month">Last 30 days</option>
+          {rangePresets?.map((preset) => (
+            <option key={preset} value={preset}>
+              {preset}
+            </option>
+          ))}
+        </select>
+        {ACTIVITY_TYPES.map((type) => (
+          <ActivityCheckbox
+            key={type}
+            type={type}
+            state={activityTypes}
+            setState={setActivityTypes}
+          />
+        ))}
+      </div>
+      <div className="mx-2 flow-root text-foreground mt-4">
+        <ul role="list" className="my-4 w-full max-w-xl">
+          {activities.map((activity, i) => {
+            return <li key={i}>{showContribution(activity)}</li>;
+          })}
+        </ul>
       </div>
     </div>
   );
 }
+
+export const ActivityCheckbox = (props: {
+  type: Activity["type"];
+  state: Activity["type"][];
+  setState: (value: Activity["type"][]) => void;
+}) => {
+  return (
+    <label className="flex whitespace-nowrap items-center gap-2 text-sm">
+      <input
+        name={props.type}
+        className="accent-primary-500 dark:accent-primary-400"
+        type="checkbox"
+        checked={props.state.includes(props.type)}
+        onChange={(event) => {
+          const final = event.target.checked
+            ? Array.from(new Set([...props.state, props.type]))
+            : props.state.filter((type) => type !== props.type);
+
+          props.setState(final);
+        }}
+      />{" "}
+      {
+        {
+          comment_created: "Comment",
+          eod_update: "Slack E.O.D. update",
+          issue_assigned: "Issue assigned",
+          issue_closed: "Issue closed",
+          issue_opened: "Iusse opened",
+          pr_collaborated: "PR collaborated",
+          pr_merged: "PR merged",
+          pr_opened: "PR opened",
+          pr_reviewed: "Code Review",
+        }[props.type]
+      }
+    </label>
+  );
+};

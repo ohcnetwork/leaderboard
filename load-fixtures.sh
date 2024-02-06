@@ -1,6 +1,7 @@
 : "${FIXTURES_SOURCE:=https://github.com/coronasafe/leaderboard-data.git}"
 
-mkdir -p data-repo
+rm -rf data-repo
+mkdir data-repo
 cd data-repo
 
 git init

@@ -68,7 +68,7 @@ export const ACTIVITY_TYPES = [
 export interface Activity {
   type: (typeof ACTIVITY_TYPES)[number];
   title: string;
-  time: number;
+  time: number | string; // TODO: github events are in seconds since epoch, slack events are in timestamp strings. Unify it to one.
   link: string;
   text: string;
   collaborated_with?: string[];

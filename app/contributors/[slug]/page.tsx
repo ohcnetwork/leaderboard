@@ -313,7 +313,7 @@ export default async function Contributor({ params }: Params) {
 
         {contributor["activityData"] &&
           contributor["activityData"]["activity"] && (
-            <div className="mt-6 overflow-x-hidden px-4 md:p-0">
+            <div className="mt-6 px-4 md:p-0">
               <h3 className="font-bold text-foreground">Contributions</h3>
               <GithubActivity activityData={contributor["activityData"]} />
             </div>

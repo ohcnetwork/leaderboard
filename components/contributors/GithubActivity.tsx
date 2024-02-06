@@ -1,9 +1,9 @@
 "use client";
 
-import { Activity, ActivityData } from "@/lib/types";
+import { ACTIVITY_TYPES, Activity, ActivityData } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
 
@@ -89,12 +89,12 @@ let renderText = (activity: Activity) => {
                 </span>
               )}
             </div>
-            {activity["type"] == "pr_merged" && (
-              <div className="pt-4">
+            {["pr_merged", "pr_opened"].includes(activity["type"]) && (
+              <div className="pt-4 max-w-xl">
                 <OpenGraphImage url={activity["link"]} className="rounded-xl" />
               </div>
             )}
-            {activity["type"] != "pr_merged" && (
+            {activity["type"] == "pr_reviewed" && (
               <div>
                 <a href={activity["link"]}>
                   <span className="font-medium dark:text-gray-200 text-gray-500">
@@ -149,7 +149,7 @@ let renderText = (activity: Activity) => {
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
-            <div className="pt-4">
+            <div className="pt-4 max-w-xl">
               <OpenGraphImage url={activity["link"]} className="rounded-xl" />
             </div>
           </div>
@@ -280,6 +280,12 @@ const activitiesBetween = (range: { from: Date; to: Date }) => {
   };
 };
 
+const activitiesOfType = (types: Activity["type"][]) => {
+  return (activity: Activity) => {
+    return types.includes(activity.type);
+  };
+};
+
 const getRangeFilterPresets = (activities: Activity[]) => {
   if (!activities.length) return [];
 
@@ -316,12 +322,18 @@ export default function GithubActivity({ activityData }: Props) {
   const searchParams = useSearchParams();
   const rangeQuery = searchParams.get("range") ?? "last-month";
 
+  const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
+
   const range = useMemo(() => {
     const lastActivity = new Date(activityData.last_updated * 1e3);
 
     if (rangeQuery === "last-month") {
       const from = new Date(lastActivity);
       from.setDate(from.getDate() - 30);
+      return { from, to: lastActivity };
+    } else if (rangeQuery === "last-week") {
+      const from = new Date(lastActivity);
+      from.setDate(from.getDate() - 7);
       return { from, to: lastActivity };
     } else {
       const from = new Date(rangeQuery);
@@ -336,38 +348,52 @@ export default function GithubActivity({ activityData }: Props) {
     [activityData],
   );
 
-  const activities = activityData["activity"].filter(activitiesBetween(range));
+  const activities = activityData.activity
+    .filter(activitiesBetween(range))
+    .filter(activitiesOfType(activityTypes));
 
   return (
     <div>
-      <select
-        className="-ml-px block w-full pl-2 rounded-l-none rounded-r-md border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground"
-        disabled={!rangePresets}
-        value={rangeQuery}
-        onChange={(event) => {
-          const current = new URLSearchParams(
-            Array.from(searchParams.entries()),
-          );
-          const value = event.target.value;
-          if (!value) {
-            current.delete("range");
-          } else {
-            current.set("range", event.target.value);
-          }
-          const search = current.toString();
-          const query = search ? `?${search}` : "";
-          router.replace(`${pathname}${query}`, { scroll: false });
-        }}
-      >
-        <option value="last-month">Last 30 days</option>
-        {rangePresets?.map((preset) => (
-          <option key={preset} value={preset}>
-            {preset}
-          </option>
+      <div className="flex flex-wrap gap-2 p-4 my-4 border border-primary-500 rounded-lg">
+        <select
+          className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground mr-2"
+          disabled={!rangePresets}
+          value={rangeQuery}
+          onChange={(event) => {
+            const current = new URLSearchParams(
+              Array.from(searchParams.entries()),
+            );
+            const value = event.target.value;
+            if (!value) {
+              current.delete("range");
+            } else {
+              current.set("range", event.target.value);
+            }
+            const search = current.toString();
+            const query = search ? `?${search}` : "";
+            router.replace(`${pathname}${query}`, { scroll: false });
+          }}
+        >
+          <option value="last-week">Last week</option>
+          <option value="last-month">Last 30 days</option>
+          {rangePresets?.map((preset) => (
+            <option key={preset} value={preset}>
+              {preset}
+            </option>
+          ))}
+        </select>
+        {ACTIVITY_TYPES.map((type) => (
+          <ActivityCheckbox
+            key={type}
+            type={type}
+            label={type.replaceAll("_", " ")}
+            state={activityTypes}
+            setState={setActivityTypes}
+          />
         ))}
-      </select>
+      </div>
       <div className="mx-2 flow-root text-foreground mt-4">
-        <ul role="list" className="mb-8">
+        <ul role="list" className="my-4">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;
           })}
@@ -376,3 +402,28 @@ export default function GithubActivity({ activityData }: Props) {
     </div>
   );
 }
+
+export const ActivityCheckbox = (props: {
+  type: Activity["type"];
+  label: string;
+  state: Activity["type"][];
+  setState: (value: Activity["type"][]) => void;
+}) => {
+  return (
+    <label className="flex whitespace-nowrap items-center gap-2">
+      <input
+        name={props.type}
+        type="checkbox"
+        checked={props.state.includes(props.type)}
+        onChange={(event) => {
+          const final = event.target.checked
+            ? Array.from(new Set([...props.state, props.type]))
+            : props.state.filter((type) => type !== props.type);
+
+          props.setState(final);
+        }}
+      />{" "}
+      {props.label}
+    </label>
+  );
+};

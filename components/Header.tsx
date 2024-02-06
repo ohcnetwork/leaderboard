@@ -8,7 +8,7 @@ export default function Header() {
         <Link className="inline-block cursor-pointer" href="/">
           <h1 className="flex flex-col items-end text-primary-400 cursor-pointer text-4xl">
             {process.env.NEXT_PUBLIC_ORG_NAME || "Open Source"}
-            <span className="text-xl font-medium block text-gray-400">
+            <span className="text-xl font-bold block text-gray-600 dark:text-gray-400 tracking-normal">
               Contributors
             </span>
           </h1>

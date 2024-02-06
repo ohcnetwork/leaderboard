@@ -14,7 +14,7 @@ export default async function Markdown(props: { content: string }) {
 
   return (
     <div
-      className="prose dark:prose-invert xl:text-left leading-relaxed"
+      className="prose dark:prose-invert xl:text-left leading-relaxed font-inter"
       dangerouslySetInnerHTML={{ __html: result.toString() }}
     />
   );

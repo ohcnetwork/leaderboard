@@ -70,7 +70,7 @@ const DateRangePicker = (props: Props) => {
                   {rangePresets.map((range, index) => (
                     <button
                       key={index}
-                      className="hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black px-2 py-1 text-sm whitespace-nowrap rounded border border-gray-500 transition-all duration-100 ease-in-out font-mono"
+                      className="hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black px-2 py-1 text-sm whitespace-nowrap rounded border border-gray-500 transition-all duration-100 ease-in-out"
                       onClick={() => {
                         props.onChange(range.value);
                         close();

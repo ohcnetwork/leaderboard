@@ -36,7 +36,7 @@ export default function InfoCard({
       className="py-6 px-2 bg-gray-100 dark:bg-gray-800 text-center rounded-lg xl:px-8 xl:text-left flex flex-col items-center"
       role="listitem"
     >
-      <span className="text-foreground text-sm font-mono text-center">
+      <span className="text-foreground text-sm text-center">
         Most # of{" "}
         <span className="font-bold">
           {TOP_CONTRIBUTOR_CATEGORIES[category]}
@@ -60,7 +60,7 @@ export default function InfoCard({
                 alt={contributor.github}
                 title={contributor.name}
               />
-              <span className="font-mono font-bold text-primary-400">
+              <span className="font-bold text-primary-400">
                 {contributor.name}
               </span>
             </Link>

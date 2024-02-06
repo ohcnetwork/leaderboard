@@ -28,7 +28,7 @@ let renderText = (activity: Activity) => {
         <div className="min-w-0 flex-1">
           <div>
             <div className="">
-              <div className="font-medium dark:text-primary-300 text-primary-500">
+              <div className="font-bold dark:text-primary-300 text-primary-500">
                 <RelativeTime time={timestamp} />
                 <span className=" text-sm font-medium dark:text-gray-200 text-gray-700">
                   {" "}
@@ -46,21 +46,19 @@ let renderText = (activity: Activity) => {
       return (
         <div className="min-w-0 flex-1">
           <div>
-            <div className="text-sm">
-              <p className="font-medium  ">
-                {"Shared a comment on "}
-                {commentTypes(activity["link"].split("/").slice(5, 6))}
-                {" in  "}
-                <span className="dark:text-primary-300 text-primary-400 font-medium">
-                  {activity["link"].split("/").slice(3, 5).join("/")}
-                </span>
+            <p className="font-bold">
+              {"Commented on "}
+              {commentTypes(activity["link"].split("/").slice(5, 6))}
+              {" in  "}
+              <span className="dark:text-primary-300 text-primary-400">
+                {activity["link"].split("/").slice(3, 5).join("/")}
+              </span>
 
-                <span className="font-normal text-foreground">
-                  {" "}
-                  <RelativeTime time={timestamp} />
-                </span>
-              </p>
-            </div>
+              <span className="font-normal text-foreground">
+                {" "}
+                <RelativeTime time={timestamp} />
+              </span>
+            </p>
           </div>
           <div className="mt-2 text-foreground">
             <p className="break-words">{activity["text"]}</p>
@@ -74,16 +72,16 @@ let renderText = (activity: Activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-foreground">
-            <div className="font-medium">
+            <div className="font-bold">
               <span className="capitalize">
                 {activity["type"].split("_")[1]}
               </span>
               <span>{" a pull request on "}</span>
-              <span className="dark:text-primary-300 text-primary-400 font-medium">
+              <span className="dark:text-primary-300 text-primary-400">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
               {!!activity["turnaround_time"] && (
-                <span className="font-semibold text-gray-600 text-sm">
+                <span className="text-gray-600 dark:text-gray-400 text-sm">
                   {" with a turnaround time of "}
                   {formatDuration(activity["turnaround_time"] * 1000)}
                 </span>
@@ -115,12 +113,12 @@ let renderText = (activity: Activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-foreground">
-            <div className="font-medium">
+            <div className="font-bold text-base">
               <span className="capitalize">
                 {activity["type"].split("_")[1]}
               </span>
               <span>{" an issue on "}</span>
-              <span className="text-primary-300 font-medium">
+              <span className="text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
@@ -140,12 +138,12 @@ let renderText = (activity: Activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-foreground">
-            <div className="font-medium">
+            <div className="font-bold">
               <span className="capitalize">
                 {activity["type"].split("_")[1]}
               </span>
               <span>{" on a pull request on "}</span>
-              <span className="dark:text-primary-300 text-primary-400 font-medium">
+              <span className="dark:text-primary-300 text-primary-400">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
@@ -355,7 +353,7 @@ export default function GithubActivity({ activityData }: Props) {
 
   return (
     <div className="flex flex-row-reverse items-start justify-between gap-6">
-      <div className="sticky top-6 flex flex-col gap-2 p-4 my-4 border border-primary-500 rounded-lg font-mono w-64">
+      <div className="sticky top-6 flex flex-col gap-2 p-4 my-4 border border-primary-500 rounded-lg w-64">
         <h3>Filter Activity</h3>
         <select
           className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground my-4"

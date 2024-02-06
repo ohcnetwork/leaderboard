@@ -105,7 +105,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
                 href={`https://github.com/${event.repo.name}/commit/${commit.sha}`}
                 className="flex flex-row"
               >
-                <span className="text-gray-500 font-mono px-2">
+                <span className="text-gray-500 px-2">
                   {commit.sha.slice(-7)}
                 </span>
                 <span className="text-gray-700 dark:text-gray-300 hover:underline">

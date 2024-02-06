@@ -326,6 +326,7 @@ export default function GithubActivity({ activityData }: Props) {
 
   const range = useMemo(() => {
     const lastActivity = new Date(activityData.last_updated * 1e3);
+    lastActivity.setDate(lastActivity.getDate() + 1);
 
     if (rangeQuery === "last-month") {
       const from = new Date(lastActivity);

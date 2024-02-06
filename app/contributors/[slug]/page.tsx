@@ -289,7 +289,7 @@ export default async function Contributor({ params }: Params) {
                           </span>
                           <code
                             className={clsx(
-                              "text-xs tracking-wide px-1.5 py-1 rounded mr-2",
+                              "text-xs px-1.5 py-1 rounded mr-2",
                               pr.stale_for >= 7
                                 ? "dark:bg-gray-800 bg-gray-200 dark:text-gray-600 text-gray-700"
                                 : "dark:bg-gray-600 bg-gray-100 dark:text-white text-gray-400",

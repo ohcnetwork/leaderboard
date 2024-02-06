@@ -31,22 +31,6 @@ const months = [
   "Dec",
 ];
 
-export const getLastWeekDateRangeString = () => {
-  let today = new Date();
-  let lastWeek = new Date(today);
-  lastWeek.setDate(today.getDate() - 7);
-
-  let start = String(lastWeek.getDate()).padStart(2, "0");
-  if (today.getMonth() !== lastWeek.getMonth()) {
-    start += ` ${months[lastWeek.getMonth()]}`;
-  }
-
-  let end = `${String(today.getDate()).padStart(2, "0")}`;
-  end += ` ${months[today.getMonth()]} ${today.getFullYear()}`;
-
-  return `${start} - ${end}`;
-};
-
 export const formatDuration = (duration_in_ms: number) =>
   _formatDuration(
     intervalToDuration({

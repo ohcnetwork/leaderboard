@@ -1,7 +1,6 @@
 import InfoCard from "../components/contributors/InfoCard";
 import Link from "next/link";
 import { getContributors } from "../lib/api";
-import { getLastWeekDateRangeString } from "../lib/utils";
 import GitHubEvents from "@/components/gh_events/GitHubEvents";
 import {
   MdOutlineArrowForward,
@@ -12,7 +11,6 @@ export default async function Home() {
   const contributors = (await getContributors()).sort(
     (a, b) => b.weekSummary.points - a.weekSummary.points,
   );
-  const dateRange = getLastWeekDateRangeString();
 
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -27,9 +25,9 @@ export default async function Home() {
                       <div className="space-y-12">
                         <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                           <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-                            What do we do?
+                            What we do?
                           </h2>
-                          <p className="text-xl text-gray-400">
+                          <p className="text-lg text-gray-400 font-inter text-justify font-medium">
                             {process.env.NEXT_PUBLIC_ORG_INFO}
                           </p>
                         </div>
@@ -94,11 +92,11 @@ export default async function Home() {
               <div className="lg:col-span-4">
                 <div className="sticky top-0 pt-20">
                   <div className="rounded-lg dark:bg-gray-800 bg-gray-100 bg-opacity-50 shadow-lg border dark:border-gray-800 border-gray-100">
-                    <div className="flex flex-col md:flex-row justify-between md:items-end dark:bg-gray-800 bg-gray-100 rounded-t-lg px-6 py-4 border-b dark:border-gray-700 border-gray-300 ">
-                      <p className="text-xl font-medium text-foreground">
-                        Leaderboard
-                      </p>
-                      <span className="block text-gray-500">{dateRange}</span>
+                    <div className="flex flex-col md:flex-row justify-between md:items-center dark:bg-gray-800 bg-gray-100 rounded-t-lg px-6 py-4 border-b dark:border-gray-700 border-gray-300 ">
+                      <h4 className="font-bold">Leaderboard</h4>
+                      <span className="text-gray-600 dark:text-gray-300">
+                        last 7 days
+                      </span>
                     </div>
                     <div className="flex flex-col gap-2 p-4 ">
                       {contributors

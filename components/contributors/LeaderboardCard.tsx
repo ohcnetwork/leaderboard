@@ -61,7 +61,7 @@ export default function LeaderBoardCard({
                 />
               </div>
               <div className="ml-4">
-                <div className="font-bold text-green-500 truncate font-mono">
+                <div className="font-bold text-green-500 truncate">
                   {contributor.name}
                 </div>
                 <p className="flex items-center text-sm text-foreground">

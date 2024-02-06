@@ -25,11 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-foreground">
-        <Provider>
-          <Header />
-          {children}
-          <Footer />
-        </Provider>
+        <div>
+          <Provider>
+            <Header />
+            {children}
+            <Footer />
+          </Provider>
+        </div>
       </body>
     </html>
   );

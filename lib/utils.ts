@@ -31,31 +31,6 @@ const months = [
   "Dec",
 ];
 
-export const parseDateString = (dateStr: string) => {
-  const date = new Date(dateStr);
-
-  if (!isNaN(date.getTime())) return "";
-
-  let dateString = date.getDate() + " ";
-  dateString += months[date.getMonth()] + " ";
-  dateString += date.getFullYear() + " | ";
-  if (date.getHours() === 0) {
-    dateString += "12:";
-  } else {
-    dateString += date.getHours() < 10 ? "0" : "";
-    dateString +=
-      (date.getHours() > 12
-        ? date.getHours() - 12 < 10
-          ? "0" + (date.getHours() - 12)
-          : date.getHours() - 12
-        : date.getHours()) + ":";
-  }
-  dateString +=
-    date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-  dateString += date.getHours() > 11 ? " PM" : " AM";
-  return dateString;
-};
-
 export const getLastWeekDateRangeString = () => {
   let today = new Date();
   let lastWeek = new Date(today);
@@ -82,3 +57,38 @@ export const formatDuration = (duration_in_ms: number) =>
     .split(" ")
     .splice(0, 4)
     .join(" ");
+
+export const getWeekNumber = (date: Date) => {
+  const d = new Date(date);
+  const dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  return Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
+};
+
+export const parseDateRangeSearchParam = (
+  range?: string | null,
+  relativeDaysBefore = 7,
+) => {
+  if (range) {
+    const [startStr, endStr] = range.split("...");
+    const start = new Date(startStr);
+    const end = new Date(endStr);
+    end.setHours(23, 59, 59);
+    return [start, end];
+  }
+
+  // Last 7 days
+  const end = new Date();
+  const start = new Date(end);
+  start.setDate(end.getDate() - relativeDaysBefore);
+  end.setHours(23, 59, 59);
+  return [start, end];
+};
+
+export const padZero = (num: number) => (num < 10 ? `0${num}` : num);
+
+export const scrollTo = (id: string | boolean) => {
+  const element = document.querySelector(`#${id}`);
+  element?.scrollIntoView({ behavior: "smooth", block: "center" });
+};

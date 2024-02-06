@@ -1,7 +1,8 @@
-import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { Activity, ActivityData, Highlights } from "./types";
+import { Activity, ActivityData, Contributor, Highlights } from "./types";
+import { padZero } from "./utils";
+import { readFile, readdir } from "fs/promises";
 
 const root = join(process.cwd(), "contributors");
 const slackRoot = join(process.cwd(), "data/slack");
@@ -25,31 +26,29 @@ const points = {
 // Opening a PR would give a single point and merging it would give you the other 7 points, making 8 per PR
 // Updating the EOD would get 2 points per day and additional 20 for regular daily updates plus 10 for just missing one
 
-export function formatSlug(slug: string) {
+function formatSlug(slug: string) {
   return slug.replace(/\.md$/, "");
 }
 
-export function formatSlugJSON(slug: string) {
+function formatSlugJSON(slug: string) {
   return slug.replace(/\.json$/, "");
 }
 
-export function getSlackSlugs() {
-  const slackSlugs: Record<string, string> = {};
-  fs.readdirSync(`${slackRoot}`).forEach((file) => {
-    slackSlugs[formatSlugJSON(file)] = file;
-  });
-
-  return slackSlugs;
+async function getSlackSlugs() {
+  const files = await readdir(`${slackRoot}`);
+  return Object.fromEntries(files.map((file) => [formatSlugJSON(file), file]));
 }
 
-let validSlackSlugs = getSlackSlugs();
+let validSlackSlugs: Awaited<ReturnType<typeof getSlackSlugs>> | null = null;
 
-export function getSlackMessages(slackId: string) {
+async function getSlackMessages(slackId: string) {
+  validSlackSlugs ??= await getSlackSlugs();
+
   const filePath = join(slackRoot, `${slackId}.json`);
   let fileContents = [];
   if (validSlackSlugs[slackId]) {
     try {
-      fileContents = JSON.parse(fs.readFileSync(filePath, "utf8"));
+      fileContents = JSON.parse(await readFile(filePath, "utf8"));
     } catch (e) {
       console.log(e);
     }
@@ -71,34 +70,32 @@ export function getSlackMessages(slackId: string) {
   }
 }
 
-export function getContributorsSlugs() {
-  const contributorSlugs: { file: string }[] = [];
-  fs.readdirSync(`${root}`).forEach((file) => {
-    contributorSlugs.push({ file: file });
-  });
-
-  return contributorSlugs;
+export async function getContributorsSlugs() {
+  const files = await readdir(`${root}`);
+  return files.map((file) => ({ file }));
 }
 
-export function getContributorBySlug(file: string, detail = false) {
+export async function getContributorBySlug(file: string, detail = false) {
   const fullPath = join(root, `${formatSlug(file)}.md`);
-  const { data, content } = matter(fs.readFileSync(fullPath, "utf8"));
+  const { data, content } = matter(await readFile(fullPath, "utf8"));
 
   const githubHandle = file.replace(/\.md$/, "");
 
-  let activityData = { activity: [] as Activity[] };
+  let activityData = { activity: [] as Activity[] } as ActivityData;
 
   try {
     activityData = JSON.parse(
-      fs.readFileSync(join(githubRoot, `${githubHandle}.json`), "utf8"),
+      await readFile(join(githubRoot, `${githubHandle}.json`), "utf8"),
     );
   } catch (e) {
     console.log(e);
   }
 
+  const slackMessages = await getSlackMessages(data.slack);
+
   activityData = {
     ...activityData,
-    activity: [...activityData.activity, ...getSlackMessages(data.slack)],
+    activity: [...activityData.activity, ...slackMessages],
   };
 
   const weightedActivity = activityData.activity.reduce(
@@ -139,6 +136,16 @@ export function getContributorBySlug(file: string, detail = false) {
   );
 
   const calendarData = getCalendarData(weightedActivity.activity);
+
+  const summarize = (start: Date, end: Date) => {
+    return calendarData
+      .filter((day) => {
+        const date = new Date(day.date);
+        return start <= date && date <= end;
+      })
+      .reduce(HighlightsReducer, HighlightsInitialValue) as Highlights;
+  };
+
   return {
     file: file,
     slug: formatSlug(file),
@@ -147,6 +154,10 @@ export function getContributorBySlug(file: string, detail = false) {
     activityData: {
       ...activityData,
       activity: weightedActivity.activity,
+      pr_stale: activityData.open_prs.reduce(
+        (acc, pr) => (pr?.stale_for >= 7 ? acc + 1 : acc),
+        0,
+      ),
     },
     highlights: {
       points: weightedActivity.points,
@@ -160,24 +171,24 @@ export function getContributorBySlug(file: string, detail = false) {
       issue_opened: weightedActivity.issue_opened,
     },
     weekSummary: getLastWeekHighlights(calendarData),
+    summarize,
     calendarData: detail ? calendarData : [],
     ...data,
-  };
+  } as Contributor & { summarize: typeof summarize };
 }
 
 const getActivityTime = (time: Activity["time"]) => {
   return typeof time === "number" ? new Date(time * 1e3) : new Date(time);
 };
 
-export function getContributors(detail = false) {
-  const contributors = getContributorsSlugs()
-    .map((path) => getContributorBySlug(path.file, detail))
-    .sort((a, b) => b.weekSummary.points - a.weekSummary.points);
-  // .sort((x, y) => (x.joining_date > y.joining_date ? 1 : -1));
-  return contributors;
+export async function getContributors(detail = false) {
+  const slugs = await getContributorsSlugs();
+  return Promise.all(
+    slugs.map((path) => getContributorBySlug(path.file, detail)),
+  );
 }
 
-export function getCalendarData(activity: Activity[]) {
+function getCalendarData(activity: Activity[]) {
   const calendarData = activity.reduce(
     (acc, activity) => {
       // Github activity.time ignores milliseconds (*1000)
@@ -224,55 +235,55 @@ export function getCalendarData(activity: Activity[]) {
   });
 }
 
+const HIGHLIGHT_KEYS = [
+  "eod_update",
+  "comment_created",
+  "pr_opened",
+  "pr_reviewed",
+  "pr_merged",
+  "pr_collaborated",
+  "issue_assigned",
+  "issue_opened",
+] as const;
+
 const computePoints = (
   calendarDataEntry: Highlights,
   initialPoints: number,
 ) => {
-  let pointsToAdd = initialPoints ?? 0;
-  pointsToAdd += points.eod_update * (calendarDataEntry.eod_update ?? 0);
-  pointsToAdd +=
-    points.comment_created * (calendarDataEntry.comment_created ?? 0);
-  pointsToAdd += points.pr_opened * (calendarDataEntry.pr_opened ?? 0);
-  pointsToAdd += points.pr_reviewed * (calendarDataEntry.pr_reviewed ?? 0);
-  pointsToAdd += points.pr_merged * (calendarDataEntry.pr_merged ?? 0);
-  pointsToAdd +=
-    points.pr_collaborated + (calendarDataEntry.pr_collaborated ?? 0);
-  pointsToAdd +=
-    points.issue_assigned * (calendarDataEntry.issue_assigned ?? 0);
-  pointsToAdd += points.issue_opened * (calendarDataEntry.issue_opened ?? 0);
-
-  return pointsToAdd;
+  return HIGHLIGHT_KEYS.map(
+    (key) => points[key] * (calendarDataEntry[key] ?? 0),
+  ).reduce((a, b) => a + b, initialPoints);
 };
+
+const HighlightsReducer = (acc: Highlights, day: Highlights) => {
+  return {
+    points: computePoints(day, acc.points),
+    eod_update: acc.eod_update + (day.eod_update ?? 0),
+    comment_created: acc.comment_created + (day.comment_created ?? 0),
+    pr_opened: acc.pr_opened + (day.pr_opened ?? 0),
+    pr_reviewed: acc.pr_reviewed + (day.pr_reviewed ?? 0),
+    pr_merged: acc.pr_merged + (day.pr_merged ?? 0),
+    pr_collaborated: acc.pr_collaborated + (day.pr_collaborated ?? 0),
+    issue_assigned: acc.issue_assigned + (day.issue_assigned ?? 0),
+    issue_opened: acc.issue_opened + (day.issue_opened ?? 0),
+  };
+};
+
+const HighlightsInitialValue = {
+  points: 0,
+  eod_update: 0,
+  comment_created: 0,
+  pr_opened: 0,
+  pr_reviewed: 0,
+  pr_merged: 0,
+  pr_collaborated: 0,
+  issue_assigned: 0,
+  issue_opened: 0,
+} as Highlights;
 
 const getLastWeekHighlights = (calendarData: Highlights[]) => {
   const lastWeek = calendarData.slice(-7);
-
-  const highlights = lastWeek.reduce(
-    (acc, day) => {
-      return {
-        points: computePoints(day, acc.points),
-        eod_update: acc.eod_update + (day.eod_update ?? 0),
-        comment_created: acc.comment_created + (day.comment_created ?? 0),
-        pr_opened: acc.pr_opened + (day.pr_opened ?? 0),
-        pr_reviewed: acc.pr_reviewed + (day.pr_reviewed ?? 0),
-        pr_merged: acc.pr_merged + (day.pr_merged ?? 0),
-        pr_collaborated: acc.pr_collaborated + (day.pr_collaborated ?? 0),
-        issue_assigned: acc.issue_assigned + (day.issue_assigned ?? 0),
-        issue_opened: acc.issue_opened + (day.issue_opened ?? 0),
-      };
-    },
-    {
-      points: 0,
-      eod_update: 0,
-      comment_created: 0,
-      pr_opened: 0,
-      pr_reviewed: 0,
-      pr_merged: 0,
-      pr_collaborated: 0,
-      issue_assigned: 0,
-      issue_opened: 0,
-    },
-  );
+  const highlights = lastWeek.reduce(HighlightsReducer, HighlightsInitialValue);
 
   if (highlights.eod_update == 7) {
     highlights.points += 20;
@@ -283,5 +294,3 @@ const getLastWeekHighlights = (calendarData: Highlights[]) => {
 
   return highlights;
 };
-
-const padZero = (num: number) => (num < 10 ? `0${num}` : num);

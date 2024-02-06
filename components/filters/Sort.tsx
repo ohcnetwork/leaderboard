@@ -2,7 +2,7 @@ import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 
 const Sort = ({
   sortByOptions = [],
-  sortBy = "",
+  sortBy,
   sortDescending = true,
   handleSortOrderChange,
   handleSortByChange,
@@ -37,7 +37,6 @@ const Sort = ({
         >
           {sortByOptions.map((option) => (
             <option
-              selected={option.value === sortBy}
               key={option.value}
               value={option.value}
               className="text-gray-700"

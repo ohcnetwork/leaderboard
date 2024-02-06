@@ -8,9 +8,12 @@ import {
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
 
-export default function Home() {
-  const contributors: any = getContributors();
+export default async function Home() {
+  const contributors = (await getContributors()).sort(
+    (a, b) => b.weekSummary.points - a.weekSummary.points,
+  );
   const dateRange = getLastWeekDateRangeString();
+
   return (
     <div className="bg-background text-foreground min-h-screen">
       <section className="bg-background border-t dark:border-gray-700 border-gray-300 ">
@@ -99,7 +102,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col gap-2 p-4 ">
                       {contributors
-                        .filter((contributor: any) => !contributor.core)
+                        .filter((contributor) => !contributor.core)
                         .slice(0, 5)
                         .map((contributor: any, index: number) => {
                           return (

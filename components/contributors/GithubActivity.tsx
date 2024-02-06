@@ -136,6 +136,25 @@ let renderText = (activity: Activity) => {
           </div>
         </div>
       );
+    case "pr_collaborated":
+      return (
+        <div className="min-w-0 flex-1 py-1.5">
+          <div className="text-foreground">
+            <div className="font-medium">
+              <span className="capitalize">
+                {activity["type"].split("_")[1]}
+              </span>
+              <span>{" on a pull request on "}</span>
+              <span className="dark:text-primary-300 text-primary-400 font-medium">
+                {activity["link"].split("/").slice(3, 5).join("/")}
+              </span>
+            </div>
+            <div className="pt-4">
+              <OpenGraphImage url={activity["link"]} className="rounded-xl" />
+            </div>
+          </div>
+        </div>
+      );
     default:
       return (
         <div className="min-w-0 flex-1 py-1.5">

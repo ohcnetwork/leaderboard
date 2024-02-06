@@ -354,10 +354,11 @@ export default function GithubActivity({ activityData }: Props) {
     .filter(activitiesOfType(activityTypes));
 
   return (
-    <div>
-      <div className="flex flex-wrap gap-2 p-4 my-4 border border-primary-500 rounded-lg">
+    <div className="flex flex-row-reverse items-start justify-between gap-6">
+      <div className="sticky top-6 flex flex-col gap-2 p-4 my-4 border border-primary-500 rounded-lg font-mono">
+        <h3>Filter Activity</h3>
         <select
-          className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground mr-2"
+          className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground my-4"
           disabled={!rangePresets}
           value={rangeQuery}
           onChange={(event) => {

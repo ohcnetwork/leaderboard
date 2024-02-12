@@ -1,6 +1,6 @@
+import { getLeaderboardData } from "../api/leaderboard/functions";
 import Leaderboard, { LeaderboardSortKey } from "./Leaderboard";
 import { parseDateRangeSearchParam } from "@/lib/utils";
-import { getLeaderboardData } from "../api/leaderboard/route";
 
 type PageProps = {
   searchParams: {

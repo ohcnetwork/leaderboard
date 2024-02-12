@@ -10,7 +10,7 @@ import DateRangePicker, { formatDate } from "@/components/DateRangePicker";
 import Search from "@/components/filters/Search";
 import Sort from "@/components/filters/Sort";
 import format from "date-fns/format";
-import { LeaderboardAPIResponse } from "../api/leaderboard/route";
+import { LeaderboardAPIResponse } from "../api/leaderboard/functions";
 
 export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
   const router = useRouter();

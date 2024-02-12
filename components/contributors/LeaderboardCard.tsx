@@ -1,4 +1,4 @@
-import { LeaderboardAPIResponse } from "@/app/api/leaderboard/route";
+import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
 

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { LeaderboardAPIResponse } from "@/app/api/leaderboard/route";
+import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
 import Link from "next/link";
 
 export const TOP_CONTRIBUTOR_CATEGORIES = {

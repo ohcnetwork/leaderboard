@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { LeaderboardResultSet } from "@/app/leaderboard/page";
+import { LeaderboardAPIResponse } from "@/app/api/leaderboard/route";
 import Link from "next/link";
 
 export const TOP_CONTRIBUTOR_CATEGORIES = {
@@ -17,16 +17,16 @@ export default function InfoCard({
   data,
   category,
 }: {
-  data: LeaderboardResultSet;
+  data: LeaderboardAPIResponse;
   category: TopContributorCategoryKey;
 }) {
-  let resultSet = data.filter((c) => c.summary[category]);
+  let resultSet = data.filter((c) => c.highlights[category]);
 
-  const points = Math.max(...resultSet.map((c) => c.summary[category]));
+  const points = Math.max(...resultSet.map((c) => c.highlights[category]));
 
   resultSet = resultSet
-    .filter((c) => c.summary[category] === points)
-    .sort((a, b) => b.summary.points - a.summary.points)
+    .filter((c) => c.highlights[category] === points)
+    .sort((a, b) => b.highlights.points - a.highlights.points)
     .slice(0, 3);
 
   if (!resultSet.length) return null;
@@ -48,20 +48,20 @@ export default function InfoCard({
             className={`relative hover:scale-105 ${
               ["opacity-100", "opacity-80", "opacity-60"][0]
             } hover:opacity-100`}
-            key={contributor.github}
+            key={contributor.user.social.github}
           >
             <Link
-              href={`/contributors/${contributor.github}`}
+              href={`/contributors/${contributor.user.social.github}`}
               className="flex gap-4 items-center w-full"
             >
               <img
                 className="rounded-full h-11 w-11 ring-1 ring-primary-500 shadow-md shadow-primary-500"
-                src={`https://avatars.githubusercontent.com/${contributor.github}`}
-                alt={contributor.github}
-                title={contributor.name}
+                src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
+                alt={contributor.user.social.github}
+                title={contributor.user.name}
               />
               <span className="font-bold text-primary-400">
-                {contributor.name}
+                {contributor.user.name}
               </span>
             </Link>
           </li>

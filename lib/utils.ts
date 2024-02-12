@@ -59,7 +59,7 @@ export const parseDateRangeSearchParam = (
     const start = new Date(startStr);
     const end = new Date(endStr);
     end.setHours(23, 59, 59);
-    return [start, end];
+    return [start, end] as const;
   }
 
   // Last 7 days
@@ -67,7 +67,7 @@ export const parseDateRangeSearchParam = (
   const start = new Date(end);
   start.setDate(end.getDate() - relativeDaysBefore);
   end.setHours(23, 59, 59);
-  return [start, end];
+  return [start, end] as const;
 };
 
 export const padZero = (num: number) => (num < 10 ? `0${num}` : num);

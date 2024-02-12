@@ -1,14 +1,13 @@
-import { LeaderboardResultSet } from "@/app/leaderboard/page";
-import { Contributor } from "@/lib/types";
+import { LeaderboardAPIResponse } from "@/app/api/leaderboard/route";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
 
 /* eslint-disable @next/next/no-img-element */
-export default function LeaderBoardCard({
+export default function LeaderboardCard({
   contributor,
   position,
 }: {
-  contributor: LeaderboardResultSet[number];
+  contributor: LeaderboardAPIResponse[number];
   position: number;
 }) {
   const userPosition = position + 1;
@@ -33,7 +32,10 @@ export default function LeaderBoardCard({
   }
 
   return (
-    <Link href={"/contributors/" + contributor.github} className="block">
+    <Link
+      href={"/contributors/" + contributor.user.social.github}
+      className="block"
+    >
       <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer">
         {!hideBadges && (
           <div
@@ -56,16 +58,16 @@ export default function LeaderBoardCard({
                   className={`h-14 w-14 rounded-full ${
                     position < 3 && "animate-circular-shadow"
                   }`}
-                  src={`https://avatars.githubusercontent.com/${contributor.github}`}
-                  alt={contributor.github}
+                  src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
+                  alt={contributor.user.social.github}
                 />
               </div>
               <div className="ml-4">
                 <div className="font-bold text-green-500 truncate">
-                  {contributor.name}
+                  {contributor.user.name}
                 </div>
                 <p className="flex items-center text-sm text-foreground">
-                  <span className="truncate">{contributor.title}</span>
+                  <span className="truncate">{contributor.user.title}</span>
                 </p>
               </div>
             </div>
@@ -91,21 +93,21 @@ export default function LeaderBoardCard({
                       />
                     </svg>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.summary.pr_opened}
+                      {contributor.highlights.pr_opened}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       opened
                     </span>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.summary.pr_reviewed}
+                      {contributor.highlights.pr_reviewed}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       reviewed
                     </span>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.summary.pr_merged}
+                      {contributor.highlights.pr_merged}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
@@ -113,12 +115,12 @@ export default function LeaderBoardCard({
                     </span>
                   </div>
                 </dd>
-                {contributor.activityData.pr_stale ? (
+                {contributor.highlights.pr_stale ? (
                   <dd className="flex mt-2">
                     <div className="flex items-center">
                       <span className="flex text-sm leading-5 text-yellow-500 dark:text-yellow-200">
                         <FiAlertTriangle size={18} className="mr-2" />{" "}
-                        {contributor.activityData.pr_stale} stale
+                        {contributor.highlights.pr_stale} stale
                       </span>
                     </div>
                   </dd>
@@ -142,14 +144,14 @@ export default function LeaderBoardCard({
                       />
                     </svg>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.summary.eod_update}
+                      {contributor.highlights.eod_update}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       EOD updates
                     </span>
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
-                      {contributor.summary.comment_created}
+                      {contributor.highlights.comment_created}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">

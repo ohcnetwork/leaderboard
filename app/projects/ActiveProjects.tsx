@@ -201,7 +201,13 @@ export default async function ActiveProjects(props: {
           </div>
 
           <div className="flex flex-col space-y-2 p-6">
-            <h3 className={`font-semibold text-2xl`}>{issue.title}</h3>
+            <h3
+              className={`font-semibold ${
+                props.small ? "text-2xl" : "text-4xl pb-2"
+              }`}
+            >
+              {issue.title}
+            </h3>
             <p className="text-gray-700 dark:text-gray-300 text-sm">
               Opened by{" "}
               <span className="font-semibold">{issue.author.login}</span>{" "}

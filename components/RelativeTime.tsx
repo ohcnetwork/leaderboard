@@ -1,5 +1,6 @@
 type Props = {
   time: string | Date | number;
+  className?: string;
 };
 
 export default function RelativeTime(props: Props) {
@@ -8,7 +9,11 @@ export default function RelativeTime(props: Props) {
   const absolute = time.toString();
 
   return (
-    <time dateTime={absolute} title={absolute} className="underline">
+    <time
+      dateTime={absolute}
+      title={absolute}
+      className={props.className ?? "underline"}
+    >
       {relative}
     </time>
   );

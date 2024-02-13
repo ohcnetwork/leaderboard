@@ -172,7 +172,7 @@ export default async function Contributor({ params }: Params) {
           <h3 className="font-bold text-foreground my-4">Short Bio</h3>
           <div className="dark:bg-gray-800 bg-gray-100 w-full rounded-lg ">
             <div className="py-10 px-6 rounded-lg xl:px-10">
-              <Markdown content={contributor.content} />
+              <Markdown>{contributor.content}</Markdown>
             </div>
           </div>
         </div>

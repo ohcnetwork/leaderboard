@@ -5,8 +5,6 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { ActiveProjectLabelConfig } from "./constants";
 
-const accessToken = "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";
-
 type FetchIssuesResponse = {
   data: {
     organization: {
@@ -42,6 +40,17 @@ type FetchIssuesResponse = {
 
 async function fetchIssues(labels: string[]) {
   const labelsFilter = labels.map((label) => `"${label}"`).join(", ");
+
+  const accessToken = process.env.GITHUB_PAT;
+
+  if (!accessToken) {
+    if (process.env.NODE_ENV === "development") {
+      console.error("'GITHUB_PAT' is not configured in the environment.");
+      return [];
+    }
+
+    throw "'GITHUB_PAT' is not configured in the environment.";
+  }
 
   const res = await fetch("https://api.github.com/graphql", {
     method: "POST",
@@ -117,6 +126,14 @@ export default async function ActiveProjects(props: {
         new Date(b.updatedAt).getDate() - new Date(a.updatedAt).getDate(),
     )
     .slice(0, props.limit);
+
+  if (issues.length === 0) {
+    return (
+      <span className="flex w-full justify-center text-gray-600 dark:text-gray-400 text-lg font-semibold py-10">
+        No ongoing active projects
+      </span>
+    );
+  }
 
   return (
     <ul className={props.className}>

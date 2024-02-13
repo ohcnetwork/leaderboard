@@ -1,9 +1,7 @@
 "use client";
 
-import LeaderBoardCard from "@/components/contributors/LeaderboardCard";
-import { Contributor } from "@/lib/types";
+import LeaderboardCard from "@/components/contributors/LeaderboardCard";
 import { TbZoomQuestion } from "react-icons/tb";
-import { LeaderboardResultSet } from "./page";
 import TopContributor from "../../components/contributors/TopContributor";
 import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -12,19 +10,16 @@ import DateRangePicker, { formatDate } from "@/components/DateRangePicker";
 import Search from "@/components/filters/Search";
 import Sort from "@/components/filters/Sort";
 import format from "date-fns/format";
+import { LeaderboardAPIResponse } from "../api/leaderboard/functions";
 
-type Props = {
-  resultSet: LeaderboardResultSet;
-};
-
-export default function Leaderboard(props: Props) {
+export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
 
-  let data = props.resultSet;
+  let data = props.data;
 
   if (searchTerm) {
     data = data.filter(filterBySearchTerm(searchTerm.toLowerCase()));
@@ -105,8 +100,8 @@ export default function Leaderboard(props: Props) {
                     <ul className="space-y-6 lg:space-y-8 overflow-x-auto p-6">
                       {data.map((contributor, index) => {
                         return (
-                          <li key={contributor.github}>
-                            <LeaderBoardCard
+                          <li key={contributor.user.social.github}>
+                            <LeaderboardCard
                               position={index}
                               contributor={contributor}
                             />
@@ -161,11 +156,11 @@ export default function Leaderboard(props: Props) {
 }
 
 const filterBySearchTerm = (searchTermLC: string) => {
-  return (contributor: Contributor) =>
-    contributor.name.toLowerCase().includes(searchTermLC) ||
-    contributor.github.toLowerCase().includes(searchTermLC) ||
-    contributor.linkedin.toLowerCase().includes(searchTermLC) ||
-    contributor.twitter.toLowerCase().includes(searchTermLC);
+  return (item: LeaderboardAPIResponse[number]) =>
+    item.user.name.toLowerCase().includes(searchTermLC) ||
+    item.user.social.github.toLowerCase().includes(searchTermLC) ||
+    item.user.social.linkedin.toLowerCase().includes(searchTermLC) ||
+    item.user.social.twitter.toLowerCase().includes(searchTermLC);
 };
 
 const SORT_BY_OPTIONS = {

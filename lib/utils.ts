@@ -76,3 +76,7 @@ export const scrollTo = (id: string | boolean) => {
   const element = document.querySelector(`#${id}`);
   element?.scrollIntoView({ behavior: "smooth", block: "center" });
 };
+
+export const parseIssueNumber = (url: string) => {
+  return url.replace(/^.*github\.com\/[\w-]+\/[\w-]+\/issues\//, "");
+};

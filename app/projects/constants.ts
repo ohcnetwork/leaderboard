@@ -11,9 +11,9 @@ export const ACTIVE_PROJECT_LABELS: ActiveProjectLabelConfig = {
     name: "Google Summer of Code",
     ref: "https://summerofcode.withgoogle.com/",
   },
-  C4GT: {
-    className: "text-blue-500",
-    name: "Code for GovTech",
-    ref: "https://www.codeforgovtech.in/",
-  },
+  // C4GT: {
+  //   className: "text-blue-500",
+  //   name: "Code for GovTech",
+  //   ref: "https://www.codeforgovtech.in/",
+  // },
 };

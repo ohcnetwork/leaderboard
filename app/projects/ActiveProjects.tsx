@@ -5,7 +5,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { ActiveProjectLabelConfig } from "./constants";
 
-type FetchIssuesResponse = {
+type GraphQLOrgActiveProjectsResponse = {
   data: {
     organization: {
       repositories: {
@@ -100,7 +100,7 @@ async function fetchIssues(labels: string[]) {
     throw new Error(`HTTP error! status: ${res.status}`);
   }
 
-  const json = (await res.json()) as FetchIssuesResponse;
+  const json = (await res.json()) as GraphQLOrgActiveProjectsResponse;
 
   const result = json.data.organization.repositories.edges.flatMap((repo) =>
     repo.node.issues.edges.map((issue) => ({

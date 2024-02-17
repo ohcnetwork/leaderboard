@@ -351,8 +351,11 @@ export default function GithubActivity({ activityData }: Props) {
     [activityData],
   );
 
-  const activities = activityData.activity
-    .filter(activitiesBetween(range))
+  const activitiesInRange = activityData.activity.filter(
+    activitiesBetween(range),
+  );
+
+  const activities = activitiesInRange
     .filter(activitiesOfType(activityTypes))
     .sort(compareByActivityTime);
 
@@ -391,6 +394,7 @@ export default function GithubActivity({ activityData }: Props) {
           <ActivityCheckbox
             key={type}
             type={type}
+            count={activitiesInRange.filter((a) => a.type === type).length}
             state={activityTypes}
             setState={setActivityTypes}
           />
@@ -409,6 +413,7 @@ export default function GithubActivity({ activityData }: Props) {
 
 export const ActivityCheckbox = (props: {
   type: Activity["type"];
+  count: number;
   state: Activity["type"][];
   setState: (value: Activity["type"][]) => void;
 }) => {
@@ -440,6 +445,9 @@ export const ActivityCheckbox = (props: {
           pr_reviewed: "Code Review",
         }[props.type]
       }
+      <span className="text-xs text-gray-500 dark:text-gray-400">
+        [{props.count || "None"}]
+      </span>
     </label>
   );
 };

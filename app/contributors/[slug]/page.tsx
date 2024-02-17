@@ -16,6 +16,12 @@ import clsx from "clsx";
 import { Contributor } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
+import {
+  FiAlertTriangle,
+  FiExternalLink,
+  FiGitPullRequest,
+} from "react-icons/fi";
+import { TbGitPullRequest } from "react-icons/tb";
 
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
@@ -69,12 +75,28 @@ export default async function Contributor({ params }: Params) {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto space-y-16">
+      <div className="max-w-4xl mx-auto space-y-16 pt-6">
+        {contributor.content.includes("Still waiting for this") && (
+          <div className="mt-10 py-4 px-6 xl:px-10 bg-amber-300/20 dark:bg-amber-500/20 rounded-lg text-amber-500 border border-current flex justify-between font-semibold">
+            <span className="flex gap-4 items-center">
+              <FiAlertTriangle size={20} />
+              Contributor profile has not been updated.
+            </span>
+            <a
+              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 text-white transition-all duration-200 ease-in-out py-2 px-3 rounded-lg font-bold"
+            >
+              <TbGitPullRequest />
+              Update Profile
+            </a>
+          </div>
+        )}
+
         <div className="pl-4 md:p-0">
-          <div className="flex items-end justify-between">
-            <h3 className="font-bold text-foreground mt-14">
-              Graduate Attributes
-            </h3>
+          <div className="flex items-end justify-between mt-8">
+            <h3 className="font-bold text-foreground">Graduate Attributes</h3>
             <a
               href="#"
               className="inline-flex items-center underline text-gray-400 space-x-2 hover:text-primary-400 transition mt-1 pl-1 pt-2"

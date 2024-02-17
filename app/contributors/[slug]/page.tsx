@@ -16,11 +16,7 @@ import clsx from "clsx";
 import { Contributor } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
-import {
-  FiAlertTriangle,
-  FiExternalLink,
-  FiGitPullRequest,
-} from "react-icons/fi";
+import { FiAlertTriangle } from "react-icons/fi";
 import { TbGitPullRequest } from "react-icons/tb";
 
 export async function generateStaticParams() {

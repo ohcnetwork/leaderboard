@@ -187,7 +187,18 @@ export default async function Contributor({ params }: Params) {
         </div>
 
         <div className="px-4 md:p-0">
-          <h3 className="font-bold text-foreground my-4">Short Bio</h3>
+          <div className="flex justify-between items-center">
+            <h3 className="font-bold text-foreground my-4">Short Bio</h3>
+            <a
+              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2 flex items-center gap-1 text-gray-500 dark:text-gray-300"
+            >
+              <TbGitPullRequest />
+              Update
+            </a>
+          </div>
           <div className="dark:bg-gray-800 bg-gray-100 w-full rounded-lg ">
             <div className="py-10 px-6 rounded-lg xl:px-10">
               <Markdown>{contributor.content}</Markdown>

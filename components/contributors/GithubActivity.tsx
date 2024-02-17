@@ -278,6 +278,10 @@ const activitiesBetween = (range: { from: Date; to: Date }) => {
   };
 };
 
+const compareByActivityTime = (a: Activity, b: Activity) => {
+  return getActivityTime(b.time).getTime() - getActivityTime(a.time).getTime();
+};
+
 const activitiesOfType = (types: Activity["type"][]) => {
   return (activity: Activity) => {
     return types.includes(activity.type);
@@ -349,7 +353,8 @@ export default function GithubActivity({ activityData }: Props) {
 
   const activities = activityData.activity
     .filter(activitiesBetween(range))
-    .filter(activitiesOfType(activityTypes));
+    .filter(activitiesOfType(activityTypes))
+    .sort(compareByActivityTime);
 
   return (
     <div className="flex flex-row-reverse items-start justify-between gap-6">

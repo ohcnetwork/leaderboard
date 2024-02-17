@@ -143,7 +143,7 @@ export default function InfoCard({
                 </a>
               </li>
             )}
-            {contributor.slack && (
+            {contributor.slack && process.env.NEXT_PUBLIC_SLACK_URL && (
               <li role="listitem">
                 <a
                   href={`${process.env.NEXT_PUBLIC_SLACK_URL}/team/${contributor.slack}`}

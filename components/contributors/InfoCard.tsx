@@ -2,6 +2,7 @@
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
 import Link from "next/link";
+import { BsSlack } from "react-icons/bs";
 
 export default function InfoCard({
   contributor,
@@ -138,6 +139,21 @@ export default function InfoCard({
                       />
                     </svg>
                     {!minimal && `@${contributor.linkedin}`}
+                  </div>
+                </a>
+              </li>
+            )}
+            {contributor.slack && (
+              <li role="listitem">
+                <a
+                  href={`${process.env.NEXT_PUBLIC_SLACK_URL}/team/${contributor.slack}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="text-gray-500 hover:text-primary-300 flex items-center">
+                    <span className="sr-only">Slack</span>
+                    <BsSlack className="w-6 md:w-7 h-6 md:h-7 p-1" />
+                    {!minimal && `@${contributor.slack}`}
                   </div>
                 </a>
               </li>

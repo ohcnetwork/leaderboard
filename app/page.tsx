@@ -5,7 +5,6 @@ import GitHubEvents from "@/components/gh_events/GitHubEvents";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ActiveProjects from "./projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
-import { FiExternalLink } from "react-icons/fi";
 
 export default async function Home() {
   const contributors = (await getContributors()).sort(

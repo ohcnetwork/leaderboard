@@ -11,7 +11,7 @@ export default async function Page() {
       {contributors.map((c) => (
         <li
           key={c.github}
-          className="hover:scale-125 transition-all duration-150 ease-in-out shadow-sm shadow-primary-500 hover:shadow-xl hover:shadow-primary-500"
+          className="hover:scale-125 transition-all duration-150 ease-in-out hover:shadow-xl hover:shadow-primary-500"
         >
           <Link href={`/contributors/${c.github}`}>
             <img

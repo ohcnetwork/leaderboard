@@ -18,6 +18,7 @@ import { formatDuration } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
 import { FiAlertTriangle } from "react-icons/fi";
 import { TbGitPullRequest } from "react-icons/tb";
+import RelativeTime from "@/components/RelativeTime";
 
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
@@ -343,7 +344,19 @@ export default async function Contributor({ params }: Params) {
         {contributor["activityData"] &&
           contributor["activityData"]["activity"] && (
             <div className="mt-6 px-4 md:p-0">
-              <h3 className="font-bold text-foreground">Contributions</h3>
+              <div className="flex flex-col gap-1">
+                <h3 className="font-bold text-foreground">Contributions</h3>
+                <span className="text-sm text-gray-500 dark:text-gray-400">
+                  Last contribution{" "}
+                  {contributor.activityData.last_updated ? (
+                    <RelativeTime
+                      time={contributor.activityData.last_updated * 1e3}
+                    />
+                  ) : (
+                    "unknown"
+                  )}
+                </span>
+              </div>
               <GithubActivity activityData={contributor["activityData"]} />
             </div>
           )}

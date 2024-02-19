@@ -81,14 +81,21 @@ export async function getContributorBySlug(file: string, detail = false) {
 
   const githubHandle = file.replace(/\.md$/, "");
 
-  let activityData = { activity: [] as Activity[] } as ActivityData;
+  let activityData;
 
   try {
     activityData = JSON.parse(
       await readFile(join(githubRoot, `${githubHandle}.json`), "utf8"),
-    );
+    ) as ActivityData;
   } catch (e) {
     console.log(e);
+    activityData = {
+      last_updated: undefined,
+      activity: [],
+      authored_issue_and_pr: [],
+      open_prs: [],
+      pr_stale: 0,
+    } satisfies ActivityData;
   }
 
   const slackMessages = await getSlackMessages(data.slack);

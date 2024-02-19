@@ -22,7 +22,7 @@ export interface Contributor {
 }
 
 export interface ActivityData {
-  last_updated: number;
+  last_updated?: number;
   activity: Activity[];
   open_prs: OpenPr[];
   pr_stale: number;

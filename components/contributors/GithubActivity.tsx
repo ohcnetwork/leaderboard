@@ -327,24 +327,24 @@ export default function GithubActivity({ activityData }: Props) {
   const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
 
   const range = useMemo(() => {
-    const lastActivity = new Date(activityData.last_updated * 1e3);
-    lastActivity.setDate(lastActivity.getDate() + 1);
+    const to = new Date();
+    to.setDate(to.getDate() + 1);
 
     if (rangeQuery === "last-month") {
-      const from = new Date(lastActivity);
+      const from = new Date(to);
       from.setDate(from.getDate() - 30);
-      return { from, to: lastActivity };
+      return { from, to: to };
     } else if (rangeQuery === "last-week") {
-      const from = new Date(lastActivity);
+      const from = new Date(to);
       from.setDate(from.getDate() - 7);
-      return { from, to: lastActivity };
+      return { from, to };
     } else {
       const from = new Date(rangeQuery);
       const to = new Date(rangeQuery);
       to.setMonth(to.getMonth() + 1);
       return { from, to };
     }
-  }, [rangeQuery, activityData.last_updated]);
+  }, [rangeQuery]);
 
   const rangePresets = useMemo(
     () => getRangeFilterPresets(activityData["activity"]),
@@ -407,6 +407,13 @@ export default function GithubActivity({ activityData }: Props) {
           })}
         </ul>
       </div>
+      {activities.length === 0 && (
+        <div className="flex w-full h-full items-center justify-center py-48">
+          <span className="text-gray-500 dark:text-gray-400">
+            No activities in this period
+          </span>
+        </div>
+      )}
     </div>
   );
 }

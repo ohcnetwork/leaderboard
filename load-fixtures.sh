@@ -11,4 +11,4 @@ git config core.sparseCheckout true
 echo "data/" >> .git/info/sparse-checkout
 echo "contributors/" >> .git/info/sparse-checkout
 
-git pull origin adds-missing-contributors
+git pull origin main

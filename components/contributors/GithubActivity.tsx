@@ -344,7 +344,7 @@ export default function GithubActivity({ activityData }: Props) {
       to.setMonth(to.getMonth() + 1);
       return { from, to };
     }
-  }, [rangeQuery, activityData.last_updated]);
+  }, [rangeQuery]);
 
   const rangePresets = useMemo(
     () => getRangeFilterPresets(activityData["activity"]),

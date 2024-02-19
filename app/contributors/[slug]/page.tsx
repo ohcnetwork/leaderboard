@@ -348,9 +348,13 @@ export default async function Contributor({ params }: Params) {
                 <h3 className="font-bold text-foreground">Contributions</h3>
                 <span className="text-sm text-gray-500 dark:text-gray-400">
                   Last contribution{" "}
-                  <RelativeTime
-                    time={contributor.activityData.last_updated * 1e3}
-                  />
+                  {contributor.activityData.last_updated ? (
+                    <RelativeTime
+                      time={contributor.activityData.last_updated * 1e3}
+                    />
+                  ) : (
+                    "unknown"
+                  )}
                 </span>
               </div>
               <GithubActivity activityData={contributor["activityData"]} />

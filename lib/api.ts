@@ -88,7 +88,6 @@ export async function getContributorBySlug(file: string, detail = false) {
       await readFile(join(githubRoot, `${githubHandle}.json`), "utf8"),
     ) as ActivityData;
   } catch (e) {
-    console.log(e);
     activityData = {
       last_updated: undefined,
       activity: [],

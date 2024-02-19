@@ -7,12 +7,12 @@ export default async function Page() {
   );
 
   return (
-    <div className="flex flex-col gap-8 max-w-7xl mx-auto my-8 justify-center items-center">
+    <div className="flex flex-col gap-8 max-w-full px-24 mx-auto justify-center items-center mb-20">
       <h1 className="text-6xl text-center leading-none drop-shadow-lg">
         <p>{contributors.length}</p>
         <p className="text-xl">contributors</p>
       </h1>
-      <ul className="flex flex-wrap gap-2 relative justify-center">
+      <ul className="flex flex-wrap gap-1 relative justify-center">
         {contributors.map((c) => (
           <li
             key={c.github}
@@ -20,8 +20,8 @@ export default async function Page() {
           >
             <Link href={`/contributors/${c.github}`}>
               <img
-                className="rounded-lg h-16 w-16 hover:ring hover:ring-primary-500"
-                src={`https://avatars.githubusercontent.com/${c.github}`}
+                className="rounded-lg h-12 w-12 hover:ring hover:ring-primary-500"
+                src={`https://avatars.githubusercontent.com/${c.github}?s=128`}
                 alt={c.github}
                 title={`${c.name} - @${c.github}`}
               />

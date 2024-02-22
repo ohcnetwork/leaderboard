@@ -26,7 +26,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "MemberEvent":
       title = (
         <div className="flex gap-1 items-center">
-          <GoPersonAdd />
+          <GoPersonAdd className="text-blue-500 text-lg" />
           {event.payload.action} member{" "}
           <a
             className="cursor-pointer text-gray-300 font-bold"
@@ -42,7 +42,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "IssuesEvent":
       title = (
         <div className="flex gap-1 items-center">
-          <VscIssues />
+          <VscIssues className="text-green-500 text-lg font-bold" />
           {event.payload.action} an issue in{" "}
           <a
             className="cursor-pointer text-gray-300 font-bold"
@@ -58,7 +58,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "PullRequestEvent":
       title = (
         <div className="flex gap-1 items-center">
-          <FaCodePullRequest />
+          <FaCodePullRequest className="text-green-500 " />
           {event.payload.action} a pull request in{" "}
           <a
             className="cursor-pointer text-gray-300 font-bold"
@@ -82,9 +82,15 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
         action = "requested changes on";
       title = (
         <div className="flex gap-1 items-center">
-          {action === "approved" && <GoCheck />}
-          {action === "commented on PR" && <GoComment />}
-          {action === "requested changes on" && <GoFileDiff />}
+          {action === "approved" && (
+            <GoCheck className="text-green-500 text-lg font-bold" />
+          )}
+          {action === "commented on PR" && (
+            <GoComment className="text-green-500 text-lg font-bold" />
+          )}
+          {action === "requested changes on" && (
+            <GoFileDiff className="text-green-500 text-lg font-bold" />
+          )}
           {action}{" "}
           <a
             className="cursor-pointer text-gray-300 font-bold"
@@ -100,7 +106,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "PushEvent":
       title = (
         <div className="flex gap-1 items-center">
-          <GoRepoPush />
+          <GoRepoPush className="text-green-500 text-lg font-bold" />
           pushed {event.payload.size} commits to{" "}
           <span className="text-gray-300 font-bold">
             {event.payload.ref.replace("refs/heads/", "")}
@@ -138,7 +144,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "ForkEvent":
       title = (
         <div className="flex gap-1 items-center">
-          <GoRepoForked />
+          <GoRepoForked className="text-blue-500 text-lg font-bold" />
           forked{" "}
           <a
             className="cursor-pointer text-gray-300 font-bold"
@@ -154,7 +160,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "ReleaseEvent":
       title = (
         <div className="flex gap-1 items-center">
-          <GoTag />
+          <GoTag className="text-blue-500 text-lg font-bold" />
           released{" "}
           <a
             className="cursor-pointer text-gray-300 font-bold"
@@ -170,7 +176,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "IssueCommentEvent":
       title = (
         <div className="flex gap-1 items-center">
-          <GoComment />
+          <GoComment className="text-green-500 text-lg font-bold" />
           commented on{" "}
           <a
             className="cursor-pointer text-gray-300 font-bold"

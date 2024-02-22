@@ -128,26 +128,23 @@ export default async function Home() {
                       </span>
                     </div>
                     <div className="flex flex-col gap-2 p-4 ">
-                      {contributors
-                        .filter((contributor) => !contributor.core)
-                        .slice(0, 5)
-                        .map((contributor: any, index: number) => {
-                          return (
-                            <Link
-                              key={index}
-                              href={`/contributors/${contributor.github}`}
-                            >
-                              <span className="hover:shadow-lg hover:shadow-primary-500 transition duration-300 flex space-x-3 items-center cursor-pointer bg-background bg-opacity-75 px-2 py-3 rounded-lg hover:bg-opacity-30">
-                                <span className="flex items-center justify-center text-lg h-10 w-10 dark:bg-gray-800 bg-gray-100 rounded-full">
-                                  {index + 1}
-                                </span>
-                                <span className="text-lg font-medium">
-                                  {contributor.name}
-                                </span>
+                      {contributors.slice(0, 5).map((contributor, index) => {
+                        return (
+                          <Link
+                            key={index}
+                            href={`/contributors/${contributor.github}`}
+                          >
+                            <span className="hover:shadow-lg hover:shadow-primary-500 transition duration-300 flex space-x-3 items-center cursor-pointer bg-background bg-opacity-75 px-2 py-3 rounded-lg hover:bg-opacity-30">
+                              <span className="flex items-center justify-center text-lg h-10 w-10 dark:bg-gray-800 bg-gray-100 rounded-full">
+                                {index + 1}
                               </span>
-                            </Link>
-                          );
-                        })}
+                              <span className="text-lg font-medium">
+                                {contributor.name}
+                              </span>
+                            </span>
+                          </Link>
+                        );
+                      })}
 
                       <div className="pt-2">
                         <Link

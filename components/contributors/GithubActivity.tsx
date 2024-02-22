@@ -364,7 +364,7 @@ export default function GithubActivity({ activityData }: Props) {
       <div className="sticky top-6 flex flex-col gap-2 p-4 my-4 border border-primary-500 rounded-lg w-64">
         <h3>Filter Activity</h3>
         <select
-          className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground my-4"
+          className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none text-foreground my-4"
           disabled={!rangePresets}
           value={rangeQuery}
           onChange={(event) => {

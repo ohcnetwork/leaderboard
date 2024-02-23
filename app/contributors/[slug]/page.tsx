@@ -19,6 +19,7 @@ import Markdown from "@/components/Markdown";
 import { FiAlertTriangle } from "react-icons/fi";
 import { TbGitPullRequest } from "react-icons/tb";
 import RelativeTime from "@/components/RelativeTime";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
@@ -79,7 +80,7 @@ export default async function Contributor({ params }: Params) {
               <FiAlertTriangle size={20} />
               Contributor profile has not been updated.
             </span>
-            <a
+            <Link
               href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
               target="_blank"
               rel="noreferrer"
@@ -87,14 +88,14 @@ export default async function Contributor({ params }: Params) {
             >
               <TbGitPullRequest />
               Update Profile
-            </a>
+            </Link>
           </div>
         )}
 
         <div className="pl-4 md:p-0">
           <div className="flex items-end justify-between mt-8">
             <h3 className="font-bold text-foreground">Graduate Attributes</h3>
-            <a
+            <Link
               href="#"
               className="inline-flex items-center underline text-gray-400 space-x-2 hover:text-primary-400 transition mt-1 pl-1 pt-2"
             >
@@ -111,7 +112,7 @@ export default async function Contributor({ params }: Params) {
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z" />
                 </svg>
               </span>
-            </a>
+            </Link>
           </div>
           <div className="mt-3">
             <div className="flex space-x-6 md:space-x-0 overflow-x-auto w-full md:grid md:grid-cols-2">
@@ -190,7 +191,7 @@ export default async function Contributor({ params }: Params) {
         <div className="px-4 md:p-0">
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-foreground my-4">Short Bio</h3>
-            <a
+            <Link
               href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
               target="_blank"
               rel="noreferrer"
@@ -198,7 +199,7 @@ export default async function Contributor({ params }: Params) {
             >
               <TbGitPullRequest />
               Update
-            </a>
+            </Link>
           </div>
           <div className="dark:bg-gray-800 bg-gray-100 w-full rounded-lg ">
             <div className="py-10 px-6 rounded-lg xl:px-10">
@@ -270,11 +271,11 @@ export default async function Contributor({ params }: Params) {
                       0,
                     ) || 0) * 1000,
                 ) || (
-                  <span className="text-lg text-gray-500 font-bold">
-                    <p>N/A</p>
-                    <p>Yet to make contributions!</p>
-                  </span>
-                )}
+                    <span className="text-lg text-gray-500 font-bold">
+                      <p>N/A</p>
+                      <p>Yet to make contributions!</p>
+                    </span>
+                  )}
               </dd>
             </div>
             {/* <div className="flex flex-col mt-4 sm:mt-0">
@@ -297,7 +298,7 @@ export default async function Contributor({ params }: Params) {
               </h3>
               <div className="mt-4">
                 {contributor["activityData"]["open_prs"].map((pr, index) => (
-                  <a href={pr.link} key={index} className="flex gap-2">
+                  <Link href={pr.link} key={index} className="flex gap-2">
                     <div className="tooltip">
                       {((pr?.stale_for >= 7) as Boolean) && (
                         <span className="tooltip-text tooltip-bottom mr-auto">
@@ -335,7 +336,7 @@ export default async function Contributor({ params }: Params) {
                         </span>
                       </p>
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 import { BsSlack } from "react-icons/bs";
 
@@ -18,7 +19,7 @@ export default function InfoCard({
       className={clsx(
         "xl:text-left",
         isClickable &&
-          "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4",
+        "border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4",
       )}
       role="listitem"
     >
@@ -28,21 +29,21 @@ export default function InfoCard({
           className=""
         >
           <div
-            className={`flex flex-shrink-0 items-center bg-opacity-50 rounded-full md:p-1 z-10 h-28 w-28 md:h-32 md:w-32 ${
-              isClickable && `cursor-pointer`
-            }`}
+            className={`flex flex-shrink-0 items-center bg-opacity-50 rounded-full md:p-1 z-10 h-28 w-28 md:h-32 md:w-32 ${isClickable && `cursor-pointer`
+              }`}
           >
-            <img
+            <Image
               className="rounded-full border-2 border-indigo-500"
               src={`https://avatars.githubusercontent.com/${contributor.github}`}
               alt={contributor.github}
+              height={112}
+              width={112}
             />
           </div>
         </Link>
         <div
-          className={`overflow-hidden ${
-            minimal ? "" : "flex flex-col items-center space-y-2"
-          }
+          className={`overflow-hidden ${minimal ? "" : "flex flex-col items-center space-y-2"
+            }
           `}
         >
           <div className="fnt-medium text-lg space-y-1 overflow-hidden">
@@ -72,7 +73,7 @@ export default function InfoCard({
           >
             {contributor.github && (
               <li role="listitem">
-                <a
+                <Link
                   href={`https://github.com/${contributor.github}`}
                   target="_blank"
                   rel="noreferrer"
@@ -92,12 +93,12 @@ export default function InfoCard({
                     </svg>
                     {!minimal && `@${contributor.github}`}
                   </span>
-                </a>
+                </Link>
               </li>
             )}
             {contributor.twitter && (
               <li role="listitem">
-                <a
+                <Link
                   href={`https://twitter.com/${contributor.twitter}`}
                   target="_blank"
                   rel="noreferrer"
@@ -114,12 +115,12 @@ export default function InfoCard({
                     </svg>
                     {!minimal && `@${contributor.twitter}`}
                   </div>
-                </a>
+                </Link>
               </li>
             )}
             {contributor.linkedin && (
               <li role="listitem">
-                <a
+                <Link
                   href={`https://linkedin.com/in/${contributor.linkedin}`}
                   target="_blank"
                   rel="noreferrer"
@@ -140,12 +141,12 @@ export default function InfoCard({
                     </svg>
                     {!minimal && `@${contributor.linkedin}`}
                   </div>
-                </a>
+                </Link>
               </li>
             )}
             {contributor.slack && process.env.NEXT_PUBLIC_SLACK_URL && (
               <li role="listitem">
-                <a
+                <Link
                   href={`${process.env.NEXT_PUBLIC_SLACK_URL}/team/${contributor.slack}`}
                   target="_blank"
                   rel="noreferrer"
@@ -155,7 +156,7 @@ export default function InfoCard({
                     <BsSlack className="w-6 md:w-7 h-6 md:h-7 p-1" />
                     {!minimal && `@${contributor.slack}`}
                   </div>
-                </a>
+                </Link>
               </li>
             )}
           </ul>

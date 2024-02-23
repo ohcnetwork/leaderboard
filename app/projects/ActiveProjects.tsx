@@ -127,6 +127,8 @@ export default async function ActiveProjects(props: {
     )
     .slice(0, props.limit);
 
+
+
   if (issues.length === 0) {
     return (
       <span className="flex w-full justify-center text-gray-600 dark:text-gray-400 text-lg font-semibold py-10">
@@ -151,34 +153,31 @@ export default async function ActiveProjects(props: {
                 {issue.labels
                   .filter((label) => label in props.labels)
                   .map((label) => (
-                    <a
+                    <Link
                       key={label}
                       href={props.labels[label].ref}
                       target="_blank"
-                      className={`rounded-full border font-semibold capitalize ${
-                        props.labels[label].className
-                      } ${
-                        props.small
+                      className={`rounded-full border font-semibold capitalize ${props.labels[label].className
+                        } ${props.small
                           ? "px-2.5 py-1 text-xs border-gray-200 dark:border-gray-800"
                           : "px-3 py-1 text-sm border-current"
-                      }`}
+                        }`}
                     >
                       {props.small ? label : props.labels[label].name}
-                    </a>
+                    </Link>
                   ))}
               </div>
-              <a
+              <Link
                 href={issue.url}
                 target="_blank"
-                className={`font-mono text-gray-700 dark:text-gray-300 font-bold tracking-wide ${
-                  props.small ? "text-xs" : "text-sm"
-                }`}
+                className={`font-mono text-gray-700 dark:text-gray-300 font-bold tracking-wide ${props.small ? "text-xs" : "text-sm"
+                  }`}
               >
                 <span className="text-gray-400 tracking-normal pr-0.5">
                   {process.env.NEXT_PUBLIC_GITHUB_ORG}/{issue.repo}
                 </span>
                 #{issue.number}
-              </a>
+              </Link>
             </div>
             {props.small ? (
               <Link
@@ -189,22 +188,21 @@ export default async function ActiveProjects(props: {
                 View
               </Link>
             ) : (
-              <a
+              <Link
                 href={issue.url}
                 target="_blank"
                 className="rounded-lg border text-gray-800 dark:text-gray-200 border-gray-200 dark:border-gray-800 px-4 py-2 flex items-center text-sm gap-2 transition-colors hover:bg-gray-100 hover:text-gray-900 hover:dark:bg-gray-800 hover:dark:text-gray-100"
               >
                 <FiGithub />
                 Open in GitHub
-              </a>
+              </Link>
             )}
           </div>
 
           <div className="flex flex-col space-y-2 p-6">
             <h3
-              className={`font-semibold ${
-                props.small ? "text-2xl" : "text-4xl pb-2"
-              }`}
+              className={`font-semibold ${props.small ? "text-2xl" : "text-4xl pb-2"
+                }`}
             >
               {issue.title}
             </h3>

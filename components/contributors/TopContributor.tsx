@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
+import Image from "next/image";
 import Link from "next/link";
 
 export const TOP_CONTRIBUTOR_CATEGORIES = {
@@ -54,11 +55,13 @@ export default function InfoCard({
               href={`/contributors/${contributor.user.social.github}`}
               className="flex gap-4 items-center w-full"
             >
-              <img
+              <Image
                 className="rounded-full h-11 w-11 ring-1 ring-primary-500 shadow-md shadow-primary-500"
                 src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
                 alt={contributor.user.social.github}
                 title={contributor.user.name}
+                height={44}
+                width={44}
               />
               <span className="font-bold text-primary-400">
                 {contributor.user.name}

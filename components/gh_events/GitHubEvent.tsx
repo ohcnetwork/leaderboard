@@ -3,7 +3,8 @@ import { IGitHubEvent } from "@/lib/gh_events";
 import GitHubReleaseEventBody from "./ReleaseEventBody";
 import OpenGraphImage from "./OpenGraphImage";
 import RelativeTime from "../RelativeTime";
-import { FaCodePullRequest } from "react-icons/fa6";
+
+import { GoGitPullRequest } from "react-icons/go";
 import { GoRepoForked } from "react-icons/go";
 import { VscIssues } from "react-icons/vsc";
 import { GoPersonAdd } from "react-icons/go";
@@ -58,7 +59,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
     case "PullRequestEvent":
       title = (
         <div className="flex gap-1 items-center">
-          <FaCodePullRequest />
+          <GoGitPullRequest />
           {event.payload.action} a pull request in{" "}
           <a
             className="cursor-pointer text-gray-300 font-bold"

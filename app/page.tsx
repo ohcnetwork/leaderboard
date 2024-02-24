@@ -5,6 +5,7 @@ import GitHubEvents from "@/components/gh_events/GitHubEvents";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ActiveProjects from "./projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
+import ReleaseSection from "@/components/releases/ReleaseSection";
 
 export default async function Home() {
   const contributors = (await getContributors()).sort(
@@ -52,6 +53,17 @@ export default async function Home() {
                       </Link>
                     </div>
                     <GitHubEvents minimal />
+                  </div>
+                </div>
+
+                <div className="mx-auto px-5">
+                  <div className="space-y-12">
+                    <div className="flex justify-between items-center pr-5">
+                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                        Recent Releases
+                      </h2>
+                    </div>
+                    <ReleaseSection />
                   </div>
                 </div>
 

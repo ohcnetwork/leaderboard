@@ -1,9 +1,9 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import { useState, useRef, useEffect, RefObject } from "react";
 import Sparkle from "../Sparkles";
 import { GraduateAttribute } from "@/config/GraduateAttributes";
+import Image from "next/image";
 
 function useOnClickOutside(
   ref: RefObject<HTMLInputElement>,
@@ -56,11 +56,13 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
   return (
     <div ref={ref} className="" role="listitem">
       <div className="relative w-14 h-14 cursor-pointer">
-        <img
+        <Image
           onClick={() => setShowModel(!showModel)}
           className={
             skill.currentLevel ? `badge-glow ${glow()}` : "grayscale opacity-30"
           }
+          height={56}
+          width={56}
           src={skill.icon}
           alt="Graduate attribute"
         />
@@ -115,13 +117,14 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                   />
                 </>
               )}
-              <img
+              <Image
                 onClick={() => setShowModel(!showModel)}
                 className={`mx-auto ${
                   skill.currentLevel
                     ? `badge-glow ${glow()}`
                     : "grayscale opacity-30"
                 }`}
+                layout="fill"
                 src={skill.icon}
                 alt="Graduate attribute"
               />

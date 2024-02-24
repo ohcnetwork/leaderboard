@@ -1,8 +1,8 @@
 import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
+import Image from "next/image";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
 
-/* eslint-disable @next/next/no-img-element */
 export default function LeaderboardCard({
   contributor,
   position,
@@ -54,10 +54,12 @@ export default function LeaderboardCard({
                   ] ?? "text-purple-600"
                 }`}
               >
-                <img
+                <Image
                   className={`h-14 w-14 rounded-full ${
                     position < 3 && "animate-circular-shadow"
                   }`}
+                  height={56}
+                  width={56}
                   src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
                   alt={contributor.user.social.github}
                 />

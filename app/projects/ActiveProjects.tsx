@@ -151,23 +151,24 @@ export default async function ActiveProjects(props: {
                 {issue.labels
                   .filter((label) => label in props.labels)
                   .map((label) => (
-                    <a
+                    <Link
                       key={label}
                       href={props.labels[label].ref}
                       target="_blank"
                       className={`rounded-full border font-semibold capitalize ${
                         props.labels[label].className
-                      } ${
-                        props.small
-                          ? "px-2.5 py-1 text-xs border-gray-200 dark:border-gray-800"
-                          : "px-3 py-1 text-sm border-current"
-                      }`}
+                      }
+                            ${
+                              props.small
+                                ? "px-2.5 py-1 text-xs border-gray-200 dark:border-gray-800"
+                                : "px-3 py-1 text-sm border-current"
+                            }`}
                     >
                       {props.small ? label : props.labels[label].name}
-                    </a>
+                    </Link>
                   ))}
               </div>
-              <a
+              <Link
                 href={issue.url}
                 target="_blank"
                 className={`font-mono text-gray-700 dark:text-gray-300 font-bold tracking-wide ${
@@ -178,7 +179,7 @@ export default async function ActiveProjects(props: {
                   {process.env.NEXT_PUBLIC_GITHUB_ORG}/{issue.repo}
                 </span>
                 #{issue.number}
-              </a>
+              </Link>
             </div>
             {props.small ? (
               <Link
@@ -189,14 +190,14 @@ export default async function ActiveProjects(props: {
                 View
               </Link>
             ) : (
-              <a
+              <Link
                 href={issue.url}
                 target="_blank"
                 className="rounded-lg border text-gray-800 dark:text-gray-200 border-gray-200 dark:border-gray-800 px-4 py-2 flex items-center text-sm gap-2 transition-colors hover:bg-gray-100 hover:text-gray-900 hover:dark:bg-gray-800 hover:dark:text-gray-100"
               >
                 <FiGithub />
                 Open in GitHub
-              </a>
+              </Link>
             )}
           </div>
 

@@ -1,4 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
+
 export default function GraduateAttributeBadge({
   skill,
   color,
@@ -24,10 +25,12 @@ export default function GraduateAttributeBadge({
             skill.currentLevel ? colorDark : "bg-gray-700"
           }`}
         >
-          <img
+          <Image
             className={`w-8 md:w-11 h-8 md:h-11 ${
               skill.currentLevel ? "" : "grayscale opacity-30"
             }`}
+            height={32}
+            width={32}
             src={skill.icon}
             alt="Graduate attribute"
           />

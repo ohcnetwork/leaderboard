@@ -1,4 +1,5 @@
 import { getContributors } from "@/lib/api";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function Page() {
@@ -19,7 +20,9 @@ export default async function Page() {
             className="hover:scale-125 transition-all duration-150 ease-in-out hover:shadow-xl hover:shadow-primary-500"
           >
             <Link href={`/contributors/${c.github}`}>
-              <img
+              <Image
+                height={48}
+                width={48}
                 className="rounded-lg h-12 w-12 hover:ring hover:ring-primary-500"
                 src={`https://avatars.githubusercontent.com/${c.github}?s=128`}
                 alt={c.github}

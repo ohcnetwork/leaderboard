@@ -12,7 +12,7 @@ export default function RelativeTime(props: Props) {
     <time
       dateTime={absolute}
       title={absolute}
-      className={props.className ?? "underline"}
+      className={props.className ?? "text-gray-400 text-sm underline"}
     >
       {relative}
     </time>

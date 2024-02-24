@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 const hashed = (url: string) => {
   return Buffer.from(url + new Date().toDateString()).toString("base64");
 };
@@ -11,10 +12,10 @@ const OpenGraphImage = (props: { url: string; className?: string }) => {
   );
 
   return (
-    <link href={props.url}>
+    <Link href={props.url}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img alt={props.url} className={props.className} src={src} />
-    </link>
+    </Link>
   );
 };
 

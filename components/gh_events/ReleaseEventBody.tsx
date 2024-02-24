@@ -19,7 +19,6 @@ export default function GitHubReleaseEventBody({
       <ul className="flex flex-wrap gap-2">
         {event.payload.release.mentions.map((contributor) => (
           <li key={contributor.login}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <Image
               src={contributor.avatar_url + "&s=64"}
               alt={contributor.login}

@@ -208,7 +208,6 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           ${body ? "items-start" : "items-center"}`}
         >
           <div className="relative">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <Image
               className="flex h-10 w-10 group-hover:scale-125 items-center justify-center rounded-full bg-gray-400 ring-8 ring-gray-200 dark:ring-gray-800 group-hover:dark:ring-white/50 transition-all duration-200 ease-in-out group-hover:ring-2"
               src={event.actor.avatar_url + "&s=64"}

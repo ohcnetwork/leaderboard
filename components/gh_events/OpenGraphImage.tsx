@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const hashed = (url: string) => {
@@ -12,7 +13,13 @@ const OpenGraphImage = (props: { url: string; className?: string }) => {
 
   return (
     <Link href={props.url}>
-      <img alt={props.url} className={props.className} src={src} />
+      <Image
+        alt={props.url}
+        className={props.className}
+        src={src}
+        height={630}
+        width={1200}
+      />
     </Link>
   );
 };

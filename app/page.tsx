@@ -56,7 +56,7 @@ export default async function Home() {
                   </div>
                 </div>
 
-                <div className="mx-auto px-5">
+                <div className="mx-auto">
                   <div className="space-y-12">
                     <div className="flex justify-between items-center pr-5">
                       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">

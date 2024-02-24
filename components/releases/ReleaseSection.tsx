@@ -1,18 +1,130 @@
-"use client";
+import Link from "next/link";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
-import React, { useEffect, useState } from "react";
-import Release from "@/app/api/releases/route";
+interface Release {
+  name: string;
+  createdAt: string;
+  description: string;
+  url: string;
+  repository: string;
+  author: {
+    login: string;
+    avatarUrl: string;
+  };
+  mentions: {
+    nodes: {
+      login: string;
+      avatarUrl: string;
+    }[];
+  };
+}
 
-const ReleaseSection: React.FC = () => {
-  const [releases, setReleases] = useState<Release[]>([]);
-  useEffect(() => {
-    fetch("/api/releases")
-      .then((res) => res.json())
-      .then((data: Release[]) => setReleases(data))
-      .catch((error) => console.error("Error fetching releases:", error));
-  }, []);
+interface Repository {
+  name: string;
+  releases: {
+    nodes: Release[];
+  };
+}
 
-  if (releases.length === 0) {
+interface Organization {
+  repositories: {
+    nodes: Repository[];
+  };
+}
+
+interface GitHubResponse {
+  data: any;
+  organization: Organization;
+}
+
+interface Repository {
+  name: string;
+  releases: {
+    nodes: Release[];
+  };
+}
+
+interface Organization {
+  repositories: {
+    nodes: Repository[];
+  };
+}
+
+interface GitHubResponse {
+  organization: Organization;
+}
+
+const ReleaseSection: React.FC = async () => {
+  const accessToken = process.env.GITHUB_PAT;
+
+  if (!accessToken) {
+    if (process.env.NODE_ENV === "development") {
+      console.error("'GITHUB_PAT' is not configured in the environment.");
+      return [];
+    }
+
+    throw "'GITHUB_PAT' is not configured in the environment.";
+  }
+
+  const response = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `{
+        organization(login: "${process.env.NEXT_PUBLIC_GITHUB_ORG}") {
+          repositories(first: 100) {
+            nodes {
+              name
+              releases(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
+                nodes {
+                  name
+                  createdAt
+                  description
+                  url
+                  author {
+                    login
+                    avatarUrl
+                  }
+                  mentions (first: 10) {
+                    nodes {
+                      login 
+                      avatarUrl
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }`,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const json = (await response.json()) as GitHubResponse;
+  const data = json.data;
+
+  const repositories: Repository[] = data.organization.repositories.nodes;
+  const allReleases: Release[] = [];
+  for (const repository of repositories) {
+    for (const release of repository.releases.nodes) {
+      release.repository = repository.name;
+      allReleases.push(release);
+    }
+  }
+
+  const sortedReleases = allReleases.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+  );
+  const latestReleases = sortedReleases.slice(0, 10);
+
+  if (latestReleases.length === 0) {
     return (
       <>
         <div className="w-full h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
@@ -26,8 +138,8 @@ const ReleaseSection: React.FC = () => {
   return (
     <div className="grid grid-cols-1">
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
-        {releases.map((release) => (
-          <li className="mb-10 ms-4 group">
+        {latestReleases.map((release) => (
+          <li key={release.createdAt} className="mb-10 ms-4 group">
             <div className="absolute mt-1.5 left-[-18px]">
               <img
                 src={release.author.avatarUrl}
@@ -37,13 +149,13 @@ const ReleaseSection: React.FC = () => {
             </div>
             <div className="ml-10">
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-400">
-                <a
+                <Link
                   href={`https://github.com/${release.author.login}`}
                   target="_blank"
                   className="text-gray-300 font-semibold"
                 >
                   {release.author.login}
-                </a>{" "}
+                </Link>{" "}
                 released a new version on{" "}
                 {new Date(release.createdAt).toLocaleDateString("en-US", {
                   day: "2-digit",
@@ -59,43 +171,32 @@ const ReleaseSection: React.FC = () => {
                 <div className="flex gap-2 mt-3">
                   <div className="grid grid-cols-3 md:grid-cols-10 gap-3">
                     {release.mentions.nodes.map((contributor) => (
-                      <a
+                      <Link
                         href={`https://github.com/${contributor.login}`}
                         target="_blank"
                         className="flex"
+                        key={contributor.avatarUrl}
                       >
                         <img
                           src={contributor.avatarUrl}
                           alt="img"
                           className="w-10 h-10 rounded-full"
                         />
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
               </div>
-              <a
+              <Link
                 href={release.url}
                 className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 mt-5"
                 target="_blank"
               >
-                Open in Github
-                <svg
-                  className="w-3 h-3 ms-2 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </a>
+                Open in Github{" "}
+                <span className="ml-1">
+                  <IoIosArrowRoundForward size={26} />
+                </span>
+              </Link>
             </div>
           </li>
         ))}

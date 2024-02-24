@@ -7,9 +7,9 @@ import ActiveProjects from "./projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
 
 export default async function Home() {
-  const contributors = (await getContributors()).sort(
-    (a, b) => b.weekSummary.points - a.weekSummary.points,
-  );
+  const contributors = (await getContributors())
+    .sort((a, b) => b.weekSummary.points - a.weekSummary.points)
+    .slice(0, 8);
 
   return (
     <div className="bg-background text-foreground min-h-screen">

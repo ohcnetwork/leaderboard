@@ -11,10 +11,10 @@ const OpenGraphImage = (props: { url: string; className?: string }) => {
   );
 
   return (
-    <Link href={props.url}>
+    <link href={props.url}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img alt={props.url} className={props.className} src={src} />
-    </Link>
+    </link>
   );
 };
 

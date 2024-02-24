@@ -157,11 +157,12 @@ export default async function ActiveProjects(props: {
                       target="_blank"
                       className={`rounded-full border font-semibold capitalize ${
                         props.labels[label].className
-                      } ${
-                        props.small
-                          ? "px-2.5 py-1 text-xs border-gray-200 dark:border-gray-800"
-                          : "px-3 py-1 text-sm border-current"
-                      }`}
+                      }
+                            ${
+                              props.small
+                                ? "px-2.5 py-1 text-xs border-gray-200 dark:border-gray-800"
+                                : "px-3 py-1 text-sm border-current"
+                            }`}
                     >
                       {props.small ? label : props.labels[label].name}
                     </Link>

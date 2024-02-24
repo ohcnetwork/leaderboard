@@ -281,7 +281,8 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
                 </span>
               </Link>
             </div>
-            <RelativeTime time={event.created_at} />
+
+            <RelativeTime className="text-gray-400 text-sm underline" time={event.created_at} />
             {!!body && (
               <div className="mt-4 ml-2 max-w-lg rounded-xl overflow-hidden">
                 <p>{body}</p>

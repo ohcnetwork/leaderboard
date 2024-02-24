@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
 import Image from "next/image";
 import Link from "next/link";

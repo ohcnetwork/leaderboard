@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
 
-/* eslint-disable @next/next/no-img-element */
 export default function LeaderboardCard({
   contributor,
   position,

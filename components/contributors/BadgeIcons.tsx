@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import { useState, useRef, useEffect, RefObject } from "react";
 import Sparkle from "../Sparkles";
 import { GraduateAttribute } from "@/config/GraduateAttributes";

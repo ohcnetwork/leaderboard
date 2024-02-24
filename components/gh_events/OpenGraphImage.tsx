@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-
 const hashed = (url: string) => {
   return Buffer.from(url + new Date().toDateString()).toString("base64");
 };

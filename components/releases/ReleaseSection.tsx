@@ -54,13 +54,19 @@ interface GitHubResponse {
   organization: Organization;
 }
 
-const ReleaseSection: React.FC = async () => {
+export default async function ReleaseSection() {
   const accessToken = process.env.GITHUB_PAT;
 
   if (!accessToken) {
     if (process.env.NODE_ENV === "development") {
       console.error("'GITHUB_PAT' is not configured in the environment.");
-      return [];
+      return (
+        <>
+          <span className="flex w-full justify-center text-gray-600 dark:text-gray-400 text-lg font-semibold py-10">
+            No recent releases
+          </span>
+        </>
+      );
     }
 
     throw "'GITHUB_PAT' is not configured in the environment.";
@@ -123,17 +129,6 @@ const ReleaseSection: React.FC = async () => {
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
   );
   const latestReleases = sortedReleases.slice(0, 10);
-
-  if (latestReleases.length === 0) {
-    return (
-      <>
-        <div className="w-full h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
-        <div className="w-full h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
-        <div className="w-full h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
-        <div className="w-full h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
-      </>
-    );
-  }
 
   return (
     <div className="grid grid-cols-1">
@@ -203,6 +198,4 @@ const ReleaseSection: React.FC = async () => {
       </ol>
     </div>
   );
-};
-
-export default ReleaseSection;
+}

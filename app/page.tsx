@@ -6,6 +6,7 @@ import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ActiveProjects from "./projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
 import ReleaseSection from "@/components/releases/ReleaseSection";
+import { Suspense } from "react";
 
 export default async function Home() {
   const contributors = (await getContributors()).sort(
@@ -63,7 +64,15 @@ export default async function Home() {
                         Recent Releases
                       </h2>
                     </div>
-                    <ReleaseSection />
+                    <Suspense
+                      fallback={
+                        <>
+                          <div className="w-full h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
+                        </>
+                      }
+                    >
+                      <ReleaseSection />
+                    </Suspense>
                   </div>
                 </div>
 

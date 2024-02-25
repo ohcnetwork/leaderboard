@@ -1,5 +1,4 @@
 let fs = require("fs");
-import { env } from "@/env.mjs";
 
 function generateContent(name, github) {
   return `---
@@ -34,7 +33,7 @@ function getNewContributors() {
 }
 
 function main() {
-  let token = env.GITHUB_TOKEN;
+  let token = process.env.GITHUB_TOKEN;
   let headers = {};
   if (token !== undefined) {
     headers = {

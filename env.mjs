@@ -4,7 +4,6 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     GITHUB_PAT: z.string(),
-    GITHUB_TOKEN: z.string().optional(),
   },
   client: {
     // organization details
@@ -40,6 +39,5 @@ export const env = createEnv({
       process.env.NODE_ENV === "development" && !process.env.GITHUB_PAT
         ? ""
         : process.env.GITHUB_PAT,
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   },
 });

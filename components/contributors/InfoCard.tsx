@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { BsSlack } from "react-icons/bs";
+import { env } from "@/env.mjs";
 
 export default function InfoCard({
   contributor,
@@ -146,10 +147,10 @@ export default function InfoCard({
                 </Link>
               </li>
             )}
-            {contributor.slack && process.env.NEXT_PUBLIC_SLACK_URL && (
+            {contributor.slack && env.NEXT_PUBLIC_SLACK_URL && (
               <li role="listitem">
                 <Link
-                  href={`${process.env.NEXT_PUBLIC_SLACK_URL}/team/${contributor.slack}`}
+                  href={`${env.NEXT_PUBLIC_SLACK_URL}/team/${contributor.slack}`}
                   target="_blank"
                   rel="noreferrer"
                 >

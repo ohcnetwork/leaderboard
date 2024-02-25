@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Provider from "./provider";
-import { env } from "@/env.mjs"
+import { env } from "@/env.mjs";
 
 export const metadata: Metadata = {
   title: env.NEXT_PUBLIC_PAGE_TITLE,

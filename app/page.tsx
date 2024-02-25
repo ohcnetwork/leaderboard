@@ -10,7 +10,6 @@ export default async function Home() {
   const contributors = (await getContributors()).sort(
     (a, b) => b.weekSummary.points - a.weekSummary.points,
   );
-
   return (
     <div className="bg-background text-foreground min-h-screen">
       <section className="bg-background border-t dark:border-gray-700 border-gray-300 ">
@@ -86,13 +85,6 @@ export default async function Home() {
                           <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
                             Our Contributors
                           </h2>
-                          <Link
-                            href="/people"
-                            className="text-gray-400 px-3 py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2"
-                          >
-                            Gallery
-                            <MdOutlineArrowForwardIos />
-                          </Link>
                         </div>
                         <p className="text-xl text-gray-400 hidden">
                           {process.env.NEXT_PUBLIC_CONTRIBUTORS_INFO}
@@ -102,17 +94,26 @@ export default async function Home() {
                         role="list"
                         className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8 mt-4"
                       >
-                        {contributors.map((contributor: any, index: number) => {
-                          return (
-                            <InfoCard
-                              key={index}
-                              contributor={contributor}
-                              minimal
-                              isClickable
-                            />
-                          );
-                        })}
+                        {contributors
+                          .slice(0, 8)
+                          .map((contributor: any, index: number) => {
+                            return (
+                              <InfoCard
+                                key={index}
+                                contributor={contributor}
+                                minimal
+                                isClickable
+                              />
+                            );
+                          })}
                       </ul>
+                      <Link
+                        className="text-gray-400 px-3 lg:ml-auto w-fit py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2 sm:justify-center"
+                        href={"/people"}
+                      >
+                        {contributors.length - 8} contributors more...
+                        <MdOutlineArrowForwardIos />
+                      </Link>
                     </div>
                   </div>
                 </div>

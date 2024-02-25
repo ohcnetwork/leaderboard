@@ -27,6 +27,7 @@ type OrderingKey = LeaderboardSortKey | `-${LeaderboardSortKey}`;
 export const getLeaderboardData = async (
   dateRange: readonly [Date, Date],
   ordering: OrderingKey,
+  role: string,
 ) => {
   const sortBy = ordering.replace("-", "") as LeaderboardSortKey;
   const shouldReverse = !ordering.startsWith("-");
@@ -45,6 +46,17 @@ export const getLeaderboardData = async (
         return b.activityData.pr_stale - a.activityData.pr_stale;
       }
       return b.summary[sortBy] - a.summary[sortBy];
+    })
+    .filter((contributor) => {
+      if (role === "any") return true;
+      if (role === "core") return contributor.core;
+      if (role === "intern") return contributor.intern;
+      if (role === "operations") return contributor.operations;
+      if (role === "contributor")
+        return (
+          !contributor.core && !contributor.intern && !contributor.operations
+        );
+      return false;
     });
 
   if (shouldReverse) {

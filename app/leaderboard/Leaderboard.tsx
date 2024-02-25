@@ -9,6 +9,7 @@ import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
 import DateRangePicker, { formatDate } from "@/components/DateRangePicker";
 import Search from "@/components/filters/Search";
 import Sort from "@/components/filters/Sort";
+import RoleFilter from "@/components/filters/RoleFilter";
 import format from "date-fns/format";
 import { LeaderboardAPIResponse } from "../api/leaderboard/functions";
 
@@ -58,6 +59,16 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                   )}`,
                 );
               }}
+            />
+            <RoleFilter
+              sortByOptions={Object.entries(SORT_BY_ROLE_OPTIONS).map(
+                ([value, text]) => ({ value, text }),
+              )}
+              sortBy={searchParams.get("role") ?? "any"}
+              handleSortByChange={(e) =>
+                updateSearchParam("role", e.target.value)
+              }
+              className="w-96"
             />
             <Sort
               sortByOptions={Object.entries(SORT_BY_OPTIONS).map(
@@ -176,3 +187,12 @@ const SORT_BY_OPTIONS = {
 };
 
 export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;
+
+const SORT_BY_ROLE_OPTIONS = {
+  core: "Core",
+  intern: "Intern",
+  operations: "Operations",
+  contributor: "Contributor",
+};
+
+export type RoleFilterKey = keyof typeof SORT_BY_ROLE_OPTIONS;

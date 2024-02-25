@@ -5,14 +5,15 @@ import { Metadata } from "next";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Provider from "./provider";
+import { env } from "@/env.mjs"
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_PAGE_TITLE,
-  description: process.env.NEXT_PUBLIC_META_DESCRIPTION,
+  title: env.NEXT_PUBLIC_PAGE_TITLE,
+  description: env.NEXT_PUBLIC_META_DESCRIPTION,
   openGraph: {
-    title: process.env.NEXT_PUBLIC_META_TITLE,
-    description: process.env.NEXT_PUBLIC_META_DESCRIPTION,
-    images: process.env.NEXT_PUBLIC_META_IMG,
+    title: env.NEXT_PUBLIC_META_TITLE,
+    description: env.NEXT_PUBLIC_META_DESCRIPTION,
+    images: env.NEXT_PUBLIC_META_IMG,
     type: "article",
   },
 };

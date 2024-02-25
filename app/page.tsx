@@ -5,6 +5,7 @@ import GitHubEvents from "@/components/gh_events/GitHubEvents";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ActiveProjects from "./projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
+import { env } from "@/env.mjs";
 
 export default async function Home() {
   const contributors = (await getContributors()).sort(
@@ -18,7 +19,7 @@ export default async function Home() {
           <div className="border-gray-600 mx-4 xl:mx-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-12 px-0 pb-10 lg:pb-20">
               <div className="lg:col-span-8 space-y-20">
-                {process.env.NEXT_PUBLIC_ORG_INFO ? (
+                {env.NEXT_PUBLIC_ORG_INFO ? (
                   <div className="pt-20">
                     <div className="mx-auto max-w-7xl">
                       <div className="space-y-12">
@@ -27,7 +28,7 @@ export default async function Home() {
                             What we do?
                           </h2>
                           <p className="text-lg text-gray-500 dark:text-gray-400 font-inter text-justify font-medium">
-                            {process.env.NEXT_PUBLIC_ORG_INFO}
+                            {env.NEXT_PUBLIC_ORG_INFO}
                           </p>
                         </div>
                       </div>
@@ -95,7 +96,7 @@ export default async function Home() {
                           </Link>
                         </div>
                         <p className="text-xl text-gray-400 hidden">
-                          {process.env.NEXT_PUBLIC_CONTRIBUTORS_INFO}
+                          {env.NEXT_PUBLIC_CONTRIBUTORS_INFO}
                         </p>
                       </div>
                       <ul

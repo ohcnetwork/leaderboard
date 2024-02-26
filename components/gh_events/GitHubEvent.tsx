@@ -73,24 +73,22 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
     case "PullRequestEvent":
       title = (
-        <div className="flex flex-col lg:flex lg:flex-row gap-1">
-          <span className="flex gap-1">
+        <Link
+          className="cursor-pointer text-gray-300 font-bold w-full flex flex-wrap lg:flex-row gap-1 "
+          href={"https://github.com/" + event.repo.name}
+        >
+          <div className="flex gap-1">
             {event.actor.login}
-            <GoGitPullRequest />
-            {event.payload.action} a pull request in{" "}
-          </span>
-          <span className="flex gap-1 items-center">
-            <Link
-              className="cursor-pointer text-gray-300 font-bold  gap-2"
-              href={"https://github.com/" + event.repo.name}
-            >
-              <span className="hidden sm:inline">{event.repo.name}</span>
-              <span className="sm:hidden">{event.repo.name.replace("coronasafe/", "")}</span>{" "}
-              <RelativeTime className="text-gray-400 text-sm underline" time={event.created_at} />
-            </Link>
-          </span>
-        </div>
-
+            <GoGitPullRequest className="items-center" />
+            {event.payload.action} a pull
+          </div>
+          <div className="flex gap-1 ">
+            request in
+            <div className="hidden sm:inline">{event.repo.name}</div>
+            <div className="sm:hidden">{event.repo.name.replace("coronasafe/", "")}</div>
+            <RelativeTime className="text-gray-400 text-sm underline ic" time={event.created_at} />
+          </div>
+        </Link>
       );
       body = ["opened", "closed", "reopened"].includes(
         event.payload.action,
@@ -104,27 +102,27 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
         action = "commented on PR";
       if (event.payload.review.state === "changes_requested")
         action = "requested changes on";
+
       title = (
-        <div className="flex flex-col lg:flex lg:flex-row gap-1">
-          <span className="flex gap-1 ">
+        <Link
+          className="cursor-pointer text-gray-300 font-bold w-full flex flex-wrap lg:flex-row gap-1 "
+          href={"https://github.com/" + event.repo.name}
+        >
+
+          <div className="flex gap-1">
             {event.actor.login}
             {action === "approved" && <GoCheck className="text-lg font-bold" />}
             {action === "commented on PR" && <GoComment className="text-lg font-bold" />}
             {action === "requested changes on" && <GoFileDiff className="text-lg font-bold" />}
             {action}
-          </span>
-          <Link
-            className="cursor-pointer text-gray-300 font-bold gap-2"
-            href={event.payload.review.html_url}
-          >
-            <span className="hidden sm:inline">{event.repo.name}</span>
-            <span className="sm:hidden">{event.repo.name.replace("coronasafe/", "")}</span>
-            #{event.payload.pull_request.number}{" "}
-            <RelativeTime className="text-gray-400 text-sm underline" time={event.created_at} />
-          </Link>
-        </div>
-
+          </div>
+          <span className="hidden sm:inline">{event.repo.name}</span>
+          <span className="sm:hidden">{event.repo.name.replace("coronasafe/", "")}</span>
+          #{event.payload.pull_request.number}{" "}
+          <RelativeTime className="text-gray-400 text-sm underline" time={event.created_at} />
+        </Link>
       );
+
       body = <OpenGraphImage url={event.payload.pull_request.html_url} />;
       break;
 
@@ -298,7 +296,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
                 href={`https://github.com/${event.actor.login}`}
                 className="font-bold text-gray-700 dark:text-gray-300 cursor-pointer gap-1  items-center inline-flex"
               >
-                <span className="mt-0.5 text-sm text-gray-400 gap-2 inline-flex">
+                <span className="mt-0.5 text-sm text-gray-400 gap-2 ">
                   {title}
                 </span>
               </Link>

@@ -44,7 +44,7 @@ export default function LeaderboardCard({
             {position + 1}
           </div>
         )}
-        <div className="flex md:flex-row flex-col md:items-center justify-between w-full py-4 ">
+        <div className="flex md:flex-row flex-col md:items-center justify-between w-full py-4">
           <div className="flex w-full   ">
             <div className="min-w-0 flex-1 flex items-center ">
               <div

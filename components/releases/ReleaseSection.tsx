@@ -1,58 +1,8 @@
 import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
-
-interface Release {
-  name: string;
-  createdAt: string;
-  description: string;
-  url: string;
-  repository: string;
-  author: {
-    login: string;
-    avatarUrl: string;
-  };
-  mentions: {
-    nodes: {
-      login: string;
-      avatarUrl: string;
-    }[];
-  };
-}
-
-interface Repository {
-  name: string;
-  releases: {
-    nodes: Release[];
-  };
-}
-
-interface Organization {
-  repositories: {
-    nodes: Repository[];
-  };
-}
-
-interface GitHubResponse {
-  data: any;
-  organization: Organization;
-}
-
-interface Repository {
-  name: string;
-  releases: {
-    nodes: Release[];
-  };
-}
-
-interface Organization {
-  repositories: {
-    nodes: Repository[];
-  };
-}
-
-interface GitHubResponse {
-  organization: Organization;
-}
+import { ReleasesResponse } from "@/lib/types";
+import { Repository } from "@/lib/types";
+import { Release } from "@/lib/types";
 
 export default async function ReleaseSection() {
   const accessToken = process.env.GITHUB_PAT;
@@ -113,7 +63,7 @@ export default async function ReleaseSection() {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  const json = (await response.json()) as GitHubResponse;
+  const json = (await response.json()) as ReleasesResponse;
   const data = json.data;
 
   const repositories: Repository[] = data.organization.repositories.nodes;
@@ -128,7 +78,7 @@ export default async function ReleaseSection() {
   const sortedReleases = allReleases.sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
   );
-  const latestReleases = sortedReleases.slice(0, 10);
+  const latestReleases = sortedReleases.slice(0, 4);
 
   return (
     <div className="grid grid-cols-1">

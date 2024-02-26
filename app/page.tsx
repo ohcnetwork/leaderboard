@@ -63,6 +63,13 @@ export default async function Home() {
                       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                         Recent Releases
                       </h2>
+                      <Link
+                        href="/releases"
+                        className="text-gray-400 px-3 py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2"
+                      >
+                        More
+                        <MdOutlineArrowForwardIos />
+                      </Link>
                     </div>
                     <Suspense
                       fallback={

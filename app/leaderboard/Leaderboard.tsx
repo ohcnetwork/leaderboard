@@ -82,7 +82,7 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
           <div className="lg:grid lg:grid-cols-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
             <div className="lg:col-span-7 2xl:col-span-8">
               <div className="sticky top-0 pt-6">
-                <div className="terminal-container-bg border rounded-lg border-primary-500">
+                <div className="terminal-container-bg border rounded-lg border-primary-500 ">
                   <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
                     {searchParams.get("between") ? (
                       <span>

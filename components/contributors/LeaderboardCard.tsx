@@ -36,7 +36,7 @@ export default function LeaderboardCard({
       href={"/contributors/" + contributor.user.social.github}
       className="block"
     >
-      <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer">
+      <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer   space-y-4    ">
         {!hideBadges && (
           <div
             className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr text-white ${badgeColors} border-4 mr-4 shrink-0`}
@@ -44,9 +44,9 @@ export default function LeaderboardCard({
             {position + 1}
           </div>
         )}
-        <div className="flex md:flex-row flex-col md:items-center justify-between w-full py-4">
-          <div className="flex w-full">
-            <div className="min-w-0 flex-1 flex items-center">
+        <div className="flex md:flex-row flex-col md:items-center justify-between w-full py-4 ">
+          <div className="flex w-full   ">
+            <div className="min-w-0 flex-1 flex items-center ">
               <div
                 className={`flex-shrink-0 ring-2 dark:ring-1 ring-current rounded-full ${
                   ["text-yellow-600", "text-stone-600", "text-amber-700"][
@@ -62,12 +62,14 @@ export default function LeaderboardCard({
                   alt={contributor.user.social.github}
                 />
               </div>
-              <div className="ml-4">
-                <div className="font-bold text-green-500 truncate">
+              <div className="ml-4 mr-4  pr-10  text-wrap basis-[60%] ">
+                <div className="font-bold text-green-500 truncate  border w-[180px] ">
                   {contributor.user.name}
                 </div>
-                <p className="flex items-center text-sm text-foreground">
-                  <span className="truncate">{contributor.user.title}</span>
+                <p className="flex items-center text-sm  ">
+                  <span className="truncate text-wrap">
+                    {contributor.user.title}
+                  </span>
                 </p>
               </div>
             </div>

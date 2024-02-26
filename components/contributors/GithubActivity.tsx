@@ -6,6 +6,7 @@ import OpenGraphImage from "../gh_events/OpenGraphImage";
 import { useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
+import Link from "next/link";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -94,11 +95,11 @@ let renderText = (activity: Activity) => {
             )}
             {activity["type"] == "pr_reviewed" && (
               <div>
-                <a href={activity["link"]}>
+                <Link href={activity["link"]}>
                   <span className="font-medium dark:text-gray-200 text-gray-500">
                     {activity["text"]}
                   </span>
-                </a>
+                </Link>
                 <span className="whitespace-nowrap ml-2">
                   <RelativeTime time={timestamp} />
                 </span>
@@ -123,11 +124,11 @@ let renderText = (activity: Activity) => {
               </span>
             </div>
 
-            <a href={activity["link"]} className="pt-1">
+            <Link href={activity["link"]} className="pt-1">
               <span className="font-medium text-foreground hover:text-primary-500">
                 {activity["text"]}
               </span>
-            </a>
+            </Link>
             <span className="whitespace-nowrap ml-2">
               <RelativeTime time={timestamp} />
             </span>

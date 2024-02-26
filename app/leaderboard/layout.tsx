@@ -1,7 +1,8 @@
 import { Metadata } from "next";
+import { env } from "@/env.mjs";
 
 export const metadata: Metadata = {
-  title: `Leaderboard | ${process.env.NEXT_PUBLIC_PAGE_TITLE}`,
+  title: `Leaderboard | ${env.NEXT_PUBLIC_PAGE_TITLE}`,
 };
 
 export default function LeaderboardLayout({

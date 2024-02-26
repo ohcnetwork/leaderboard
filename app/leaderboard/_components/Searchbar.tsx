@@ -1,21 +1,21 @@
 "use client";
 import { useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Search from "@/components/filters/Search";
 import Sort from "@/components/filters/Sort";
 import format from "date-fns/format";
 import DateRangePicker from "@/components/DateRangePicker";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 import { SORT_BY_OPTIONS } from "./Leaderboard";
+import { LeaderboardPageProps } from "../page";
 
-export default function Searchbar() {
+export default function Searchbar({ searchParams }: LeaderboardPageProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
-  const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
+  const [start, end] = parseDateRangeSearchParam(searchParams.between);
   const updateSearchParam = (key: string, value?: string) => {
-    const current = new URLSearchParams(Array.from(searchParams.entries()));
+    const current = new URLSearchParams(searchParams);
     if (!value) {
       current.delete(key);
     } else {
@@ -60,15 +60,15 @@ export default function Searchbar() {
           sortByOptions={Object.entries(SORT_BY_OPTIONS).map(
             ([value, text]) => ({ value, text }),
           )}
-          sortBy={searchParams.get("sortBy") ?? "points"}
-          sortDescending={searchParams.get("ordering") === "asc"}
+          sortBy={searchParams.sortBy ?? "points"}
+          sortDescending={searchParams.ordering === "asc"}
           handleSortByChange={(e) =>
             updateSearchParam("sortBy", e.target.value)
           }
           handleSortOrderChange={() => {
             updateSearchParam(
               "ordering",
-              searchParams.get("ordering") === "asc" ? "desc" : "asc",
+              searchParams.ordering === "asc" ? "desc" : "asc",
             );
           }}
           className="w-96"

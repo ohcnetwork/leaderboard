@@ -26,6 +26,47 @@ type SelectProps = {
     }
 );
 
+/**
+ * select component with customizable options.
+ *
+ * @component
+ * @example
+ * // Usage with single selection:
+ * <Select
+ *   options={[
+ *     { value: "option1", text: "Option 1" },
+ *     { value: "option2", text: "Option 2" },
+ *     { value: "option3", text: "Option 3" },
+ *   ]}
+ *  value={{ value: "option1", text: "Option 1" }}
+ *   onChange={(value) => console.log(value)}
+ * />
+ *
+ * // Usage with multiple selection:
+ * <Select
+ *   multiple
+ *   options={[
+ *     { value: "option1", text: "Option 1" },
+ *     { value: "option2", text: "Option 2" },
+ *     { value: "option3", text: "Option 3" },
+ *   ]}
+ *   value={[
+ *    { value: "option1", text: "Option 1" },
+ *   { value: "option2", text: "Option 2" },
+ *  ]}
+ *   onChange={(value) => console.log(value)}
+ * />
+ *
+ * @param {object} props - The component props.
+ * @param {SelectOption[]} props.options - The available options for selection.
+ * @param {string} [props.showSelectionsAs="tags"] - The style to display the selected options. Can be "tags" or "text".
+ * @param {boolean} [props.multiple=false] - Whether multiple options can be selected.
+ * @param {SelectOption | SelectOption[]} [props.value] - The currently selected option(s). You can pass default value(s) as well.
+ * @param {(value: SelectOption | SelectOption[]) => void} props.onChange - The callback function triggered when the selection changes.
+ *
+ * @returns {JSX.Element} The rendered Select component.
+ */
+
 export function Select({
   multiple = false,
   value = multiple ? [] : undefined,
@@ -68,7 +109,9 @@ export function Select({
             {showSelectionsAs ? (
               showSelectionsAs == "tags" ? (
                 <div className="top-9 left-[-2.5rem] flex flex-wrap gap-0.5 w-full">
-                  {Array.isArray(value) && value?.length > 0 ? (
+                  {Array.isArray(value) &&
+                  value?.length > 0 &&
+                  value.length !== options.length ? (
                     value.map((v) => (
                       <button
                         key={v.value}
@@ -82,17 +125,19 @@ export function Select({
                       </button>
                     ))
                   ) : (
-                    <span className="pl-2 text-white">All</span>
+                    <span className="pl-2 text-black dark:text-white">All</span>
                   )}
                 </div>
               ) : (
                 <div className="top-9 left-[-2.5rem] flex gap-0.5">
-                  {Array.isArray(value) && value.length > 0 ? (
+                  {Array.isArray(value) &&
+                  value.length > 0 &&
+                  value.length !== options.length ? (
                     <span className="px-[0.25em] hover:border-red-600 rounded-md cursor-pointer outline-none">
                       {value?.map((v) => v.text).join(",")}
                     </span>
                   ) : (
-                    <span className="pl-2 text-white">All</span>
+                    <span className="pl-2 text-black dark:text-white">All</span>
                   )}
                 </div>
               )

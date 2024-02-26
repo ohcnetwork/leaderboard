@@ -64,7 +64,7 @@ export default function LeaderboardCard({
                   alt={contributor.user.social.github}
                 />
               </div>
-              <div className="ml-4 mr-4  pr-10  text-wrap basis-[60%] ">
+              <div className="ml-4 mr-4 pr-10 text-wrap basis-[60%]">
                 <div className="font-bold text-green-500 truncate  border w-[180px] ">
                   {contributor.user.name}
                 </div>

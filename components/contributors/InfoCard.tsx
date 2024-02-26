@@ -1,8 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
+/*  */
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 import { BsSlack } from "react-icons/bs";
+import { env } from "@/env.mjs";
 
 export default function InfoCard({
   contributor,
@@ -32,10 +34,12 @@ export default function InfoCard({
               isClickable && `cursor-pointer`
             }`}
           >
-            <img
+            <Image
               className="rounded-full border-2 border-indigo-500"
               src={`https://avatars.githubusercontent.com/${contributor.github}`}
               alt={contributor.github}
+              height={112}
+              width={112}
             />
           </div>
         </Link>
@@ -72,7 +76,7 @@ export default function InfoCard({
           >
             {contributor.github && (
               <li role="listitem">
-                <a
+                <Link
                   href={`https://github.com/${contributor.github}`}
                   target="_blank"
                   rel="noreferrer"
@@ -92,12 +96,12 @@ export default function InfoCard({
                     </svg>
                     {!minimal && `@${contributor.github}`}
                   </span>
-                </a>
+                </Link>
               </li>
             )}
             {contributor.twitter && (
               <li role="listitem">
-                <a
+                <Link
                   href={`https://twitter.com/${contributor.twitter}`}
                   target="_blank"
                   rel="noreferrer"
@@ -114,12 +118,12 @@ export default function InfoCard({
                     </svg>
                     {!minimal && `@${contributor.twitter}`}
                   </div>
-                </a>
+                </Link>
               </li>
             )}
             {contributor.linkedin && (
               <li role="listitem">
-                <a
+                <Link
                   href={`https://linkedin.com/in/${contributor.linkedin}`}
                   target="_blank"
                   rel="noreferrer"
@@ -140,13 +144,13 @@ export default function InfoCard({
                     </svg>
                     {!minimal && `@${contributor.linkedin}`}
                   </div>
-                </a>
+                </Link>
               </li>
             )}
-            {contributor.slack && process.env.NEXT_PUBLIC_SLACK_URL && (
+            {contributor.slack && env.NEXT_PUBLIC_SLACK_URL && (
               <li role="listitem">
-                <a
-                  href={`${process.env.NEXT_PUBLIC_SLACK_URL}/team/${contributor.slack}`}
+                <Link
+                  href={`${env.NEXT_PUBLIC_SLACK_URL}/team/${contributor.slack}`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -155,7 +159,7 @@ export default function InfoCard({
                     <BsSlack className="w-6 md:w-7 h-6 md:h-7 p-1" />
                     {!minimal && `@${contributor.slack}`}
                   </div>
-                </a>
+                </Link>
               </li>
             )}
           </ul>

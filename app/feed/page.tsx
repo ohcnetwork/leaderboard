@@ -5,6 +5,7 @@ import { IGitHubEvent, combineSimilarPushEvents } from "@/lib/gh_events";
 import { useEffect, useState } from "react";
 import { scrollTo } from "@/lib/utils";
 import LoadingText from "@/components/LoadingText";
+import { env } from "@/env.mjs";
 
 type Props = {
   searchParams: {
@@ -39,7 +40,7 @@ export default function FeedPage({ searchParams }: Props) {
 
   useEffect(() => {
     fetch(
-      `https://api.github.com/orgs/${process.env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=1000&page=${lastFetchedPage}`,
+      `https://api.github.com/orgs/${env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=1000&page=${lastFetchedPage}`,
     )
       .then((res) => res.json())
       .then((data: IGitHubEvent[]) => {
@@ -55,7 +56,7 @@ export default function FeedPage({ searchParams }: Props) {
           scrollTo(`gh-event-${lastEvents[lastEvents.length - 1].id}`);
         }
       });
-  }, [lastFetchedPage]);
+  }, [lastFetchedPage, events]);
 
   const allEvents = ([] as IGitHubEvent[]).concat(...Object.values(events));
 

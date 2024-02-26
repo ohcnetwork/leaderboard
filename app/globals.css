@@ -3,139 +3,136 @@
 @tailwind utilities;
 
 @layer utilities {
-    @variants responsive {
-        .masonry {
-            column-gap: 1.5em;
-            column-count: 2;
-        }
-
-        .break-inside {
-            break-inside: avoid;
-        }
+  @variants responsive {
+    .masonry {
+      column-gap: 1.5em;
+      column-count: 2;
     }
+
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
 }
 
 body {
-    @apply font-mono;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  @apply font-mono;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .ContentSection {
-    @apply max-w-screen-sm mx-auto;
-    @apply py-8;
-    @apply px-6;
+  @apply max-w-screen-sm mx-auto;
+  @apply py-8;
+  @apply px-6;
 }
 
 @screen sm {
-    .ContentSection {
-        @apply max-w-screen-md;
-        @apply py-16;
-        @apply px-0;
-    }
+  .ContentSection {
+    @apply max-w-screen-md;
+    @apply py-16;
+    @apply px-0;
+  }
 }
 
 @screen md {
-    .ContentSection {
-        @apply max-w-screen-lg mx-auto;
-        @apply py-32;
-        @apply w-2/3;
-    }
+  .ContentSection {
+    @apply max-w-screen-lg mx-auto;
+    @apply py-32;
+    @apply w-2/3;
+  }
 }
 
 h1,
 h2,
 h3,
 h4 {
-    @apply font-bold;
+  @apply font-bold;
 }
 
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 h4 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 :root {
-    --light-background: #fafaff;
-    --dark-background: #111827;
-    --light-foreground: #020202;
-    --dark-foreground: #f9fafb;
+  --light-background: #fafaff;
+  --dark-background: #111827;
+  --light-foreground: #020202;
+  --dark-foreground: #f9fafb;
 }
 
 html.light {
-    --background: var(--light-background);
-    --foreground: var(--light-foreground);
+  --background: var(--light-background);
+  --foreground: var(--light-foreground);
 }
 
 html.dark {
-    --background: var(--dark-background);
-    --foreground: var(--dark-foreground);
+  --background: var(--dark-background);
+  --foreground: var(--dark-foreground);
 }
 
-
 .tooltip {
-    @apply relative
+  @apply relative;
 }
 
 .tooltip .tooltip-text {
-    visibility: hidden;
-    opacity: 0;
-    @apply bg-black/75 backdrop-blur text-white text-center p-2 rounded absolute z-50 text-sm block transition-opacity whitespace-nowrap pointer-events-none
+  visibility: hidden;
+  opacity: 0;
+  @apply bg-black/75 backdrop-blur text-white text-center p-2 rounded absolute z-50 text-sm block transition-opacity whitespace-nowrap pointer-events-none;
 }
 
 .tooltip .tooltip-left {
-    transform: translateX(20px);
+  transform: translateX(20px);
 }
 
 .tooltip .tooltip-right {
-    transform: translateX(-20px);
+  transform: translateX(-20px);
 }
 
 .tooltip .tooltip-top {
-    transform: translateY(20px);
+  transform: translateY(20px);
 }
 
 .tooltip .tooltip-bottom {
-    transform: translateY(-20px);
+  transform: translateY(-20px);
 }
 
 .tooltip .tooltip-right {
-    top: 20%;
-    left: calc(100% + 10px);
+  top: 20%;
+  left: calc(100% + 10px);
 }
 
-
 .tooltip .tooltip-top {
-    bottom: 100%;
-    left: 50%;
+  bottom: 100%;
+  left: 50%;
 }
 
 .tooltip .tooltip-bottom {
-    top: 100%;
-    left: 50%;
+  top: 100%;
+  left: 50%;
 }
 
 .tooltip .tooltip-left {
-    top: -5px;
-    right: calc(100% + 10px);
+  top: -5px;
+  right: calc(100% + 10px);
 }
 
 .tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 100;
-    transform: translateX(0px);
-    transform: translateY(0px);
+  visibility: visible;
+  opacity: 100;
+  transform: translateX(0px);
+  transform: translateY(0px);
 }
-

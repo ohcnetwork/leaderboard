@@ -55,6 +55,7 @@ export default function LeaderboardCard({
                 }`}
               >
                 <Image
+                  loading="lazy"
                   className={`h-14 w-14 rounded-full ${
                     position < 3 && "animate-circular-shadow"
                   }`}

@@ -1,4 +1,4 @@
-import { LeaderboardSortKey } from "@/app/leaderboard/Leaderboard";
+import { LeaderboardSortKey } from "@/app/leaderboard/_components/Leaderboard";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 import { getLeaderboardData } from "./functions";
 

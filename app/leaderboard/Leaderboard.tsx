@@ -26,7 +26,9 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
       ?.split(",")
       .map((value) => ({
         value,
-        text: SORT_BY_ROLE_OPTIONS[value as keyof typeof SORT_BY_ROLE_OPTIONS],
+        text: FILTER_BY_ROLE_OPTIONS[
+          value as keyof typeof FILTER_BY_ROLE_OPTIONS
+        ],
       })) || [],
   );
   const [sortBy, setSortBy] = useState<SelectOption | undefined>(
@@ -216,18 +218,18 @@ export const SortOptions = Object.entries(SORT_BY_OPTIONS).map(
 
 export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;
 
-const SORT_BY_ROLE_OPTIONS = {
+const FILTER_BY_ROLE_OPTIONS = {
   core: "Core",
   intern: "Intern",
   operations: "Operations",
   contributor: "Contributor",
 };
 
-export const RoleOptions = Object.entries(SORT_BY_ROLE_OPTIONS).map(
+export const RoleOptions = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
   ([value, text]) => ({
     value,
     text,
   }),
 );
 
-export type RoleFilterKey = keyof typeof SORT_BY_ROLE_OPTIONS;
+export type RoleFilterKey = keyof typeof FILTER_BY_ROLE_OPTIONS;

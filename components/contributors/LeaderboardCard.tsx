@@ -36,26 +36,26 @@ export default function LeaderboardCard({
       href={"/contributors/" + contributor.user.social.github}
       className="block"
     >
-      <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer space-y-4 justify-center  ">
+      <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer space-y-4 justify-center">
         {!hideBadges && (
           <div
-            className={` h-10  my-6  ml-3 rounded-full w-[40px]   flex items-center justify-center bg-gradient-to-tr text-white ${badgeColors} border-4 mr-4 shrink-0`}
+            className={`h-10 my-6 ml-3 rounded-full w-[40px] flex items-center justify-center bg-gradient-to-tr text-white ${badgeColors} border-4 mr-4 shrink-0`}
           >
             {position + 1}
           </div>
         )}
-        <div className="flex md:flex-row flex-col md:items-center justify-between w-full pb-2 ">
+        <div className="flex md:flex-row flex-col md:items-center justify-between w-full pb-2">
           <div className="flex w-full">
             <div className="min-w-0 flex-1 flex items-center">
               <div
-                className={`flex-shrink-0 ring-2 dark:ring-1 ring-current rounded-full  ${
+                className={`flex-shrink-0 ring-2 dark:ring-1 ring-current rounded-full ${
                   ["text-yellow-600", "text-stone-600", "text-amber-700"][
                     position
                   ] ?? "text-purple-600"
                 }`}
               >
                 <Image
-                  className={`h-14 w-14 rounded-full   ${
+                  className={`h-14 w-14 rounded-full ${
                     position < 3 && "animate-circular-shadow"
                   }`}
                   height={56}
@@ -78,7 +78,7 @@ export default function LeaderboardCard({
           </div>
 
           <div className="px-4 flex items-center justify-between  ">
-            <div className="md:block mt-4 md:mt-0   ">
+            <div className="md:block mt-4 md:mt-0">
               <dl>
                 <dt className="text-sm leading-5 font-medium text-foreground truncate">
                   PRs

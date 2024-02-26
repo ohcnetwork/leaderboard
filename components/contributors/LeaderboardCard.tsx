@@ -46,7 +46,7 @@ export default function LeaderboardCard({
         )}
         <div className="flex md:flex-row flex-col md:items-center justify-between w-full py-4">
           <div className="flex w-full   ">
-            <div className="min-w-0 flex-1 flex items-center ">
+            <div className="min-w-0 flex-1 flex items-center">
               <div
                 className={`flex-shrink-0 ring-2 dark:ring-1 ring-current rounded-full ${
                   ["text-yellow-600", "text-stone-600", "text-amber-700"][

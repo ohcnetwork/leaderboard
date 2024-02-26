@@ -1,6 +1,7 @@
-import { getLeaderboardData } from "../api/leaderboard/functions";
+import { Suspense } from "react";
 import Leaderboard, { LeaderboardSortKey } from "./Leaderboard";
-import { parseDateRangeSearchParam } from "@/lib/utils";
+import LeaderboardWrapper from "./_components/LeaderboardWrapper";
+import LoadingText from "@/components/LoadingText";
 
 type PageProps = {
   searchParams: {
@@ -11,10 +12,11 @@ type PageProps = {
 };
 
 export default async function LeaderboardPage({ searchParams }: PageProps) {
-  const data = await getLeaderboardData(
-    parseDateRangeSearchParam(searchParams.between),
-    searchParams.sortBy ?? "-points",
+  return (
+    <section className="bg-background text-foreground border-t dark:border-gray-700 border-gray-300">
+      <Suspense fallback={<LoadingText text="Ranking the contributors" />}>
+        <LeaderboardWrapper searchParams={searchParams} />
+      </Suspense>
+    </section>
   );
-
-  return <Leaderboard data={data} />;
 }

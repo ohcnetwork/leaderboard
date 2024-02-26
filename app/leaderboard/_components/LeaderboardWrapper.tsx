@@ -3,6 +3,9 @@ import { parseDateRangeSearchParam } from "@/lib/utils";
 import Leaderboard from "./Leaderboard";
 import { LeaderboardPageProps } from "../page";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 export default async function LeaderboardWrapper({
   searchParams,
 }: LeaderboardPageProps) {

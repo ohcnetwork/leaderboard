@@ -41,7 +41,7 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
     <section className="bg-background text-foreground border-t dark:border-gray-700 border-gray-300">
       <div className="max-w-6xl mx-auto">
         <div className="mx-4 md:mx-0 mt-4 p-4 border border-primary-500 rounded-lg">
-          <div className="flex flex-col md:flex-row justify-evenly items-center md:items-start gap-4">
+          <div className="flex flex-col md:flex-row justify-evenly items-start md:items-start gap-4">
             <Search
               value={searchTerm}
               handleOnChange={(e) => setSearchTerm(e.target.value)}
@@ -74,7 +74,7 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                   searchParams.get("ordering") === "asc" ? "desc" : "asc",
                 );
               }}
-              className="w-96"
+              className="w-full md:w-auto"
             />
           </div>
         </div>

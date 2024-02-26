@@ -36,7 +36,7 @@ export default function LeaderboardCard({
       href={"/contributors/" + contributor.user.social.github}
       className="block"
     >
-      <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer   space-y-4    ">
+      <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer space-y-4">
         {!hideBadges && (
           <div
             className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr text-white ${badgeColors} border-4 mr-4 shrink-0`}

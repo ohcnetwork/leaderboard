@@ -65,7 +65,7 @@ export default function LeaderboardCard({
                 />
               </div>
               <div className="ml-4 mr-4 pr-10 text-wrap basis-[60%]">
-                <div className="font-bold text-green-500 truncate  border w-[180px] ">
+                <div className="font-bold text-green-500 truncate w-[180px]">
                   {contributor.user.name}
                 </div>
                 <p className="flex items-center text-sm  ">

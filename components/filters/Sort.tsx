@@ -1,26 +1,27 @@
 import { HiSortAscending, HiSortDescending } from "react-icons/hi";
+import { Select, SelectOption } from "@/components/Select";
 
 const Sort = ({
   sortByOptions = [],
-  sortBy,
+  value,
   sortDescending = true,
   handleSortOrderChange,
-  handleSortByChange,
+  onChange,
   className = "",
 }: {
-  sortByOptions?: { value: string; text: string }[];
-  sortBy?: string;
+  sortByOptions?: SelectOption[];
+  value?: SelectOption;
   sortDescending?: boolean;
   handleSortOrderChange: () => void;
-  handleSortByChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChange: (value: SelectOption | undefined) => void;
   className?: string;
 }) => {
   return (
     <div className={className}>
-      <span className="w-full relative z-0 inline-flex shadow-sm rounded-md">
+      <span className="inline-flex relative shadow-sm rounded-md w-full ">
         <span
           onClick={handleSortOrderChange}
-          className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-600 dark:border-gray-300 cursor-pointer"
+          className="inline-flex relative items-center border-gray-600 dark:border-gray-300 px-2 py-2 border rounded-l-md cursor-pointer"
         >
           {sortDescending ? (
             <HiSortAscending className="text-foreground" size={20} />
@@ -28,23 +29,12 @@ const Sort = ({
             <HiSortDescending className="text-foreground" size={20} />
           )}
         </span>
-        <select
-          id="message-type"
-          name="message-type"
-          className="-ml-px block w-full pl-2 rounded-l-none rounded-r-md border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground"
-          onChange={handleSortByChange}
-          defaultValue={sortBy}
-        >
-          {sortByOptions.map((option) => (
-            <option
-              key={option.value}
-              value={option.value}
-              className="text-gray-700"
-            >
-              {option.text}
-            </option>
-          ))}
-        </select>
+
+        <Select
+          options={sortByOptions}
+          value={value}
+          onChange={(value) => onChange(value as SelectOption)}
+        />
       </span>
     </div>
   );

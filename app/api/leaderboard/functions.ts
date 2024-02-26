@@ -27,7 +27,7 @@ type OrderingKey = LeaderboardSortKey | `-${LeaderboardSortKey}`;
 export const getLeaderboardData = async (
   dateRange: readonly [Date, Date],
   ordering: OrderingKey,
-  role: string,
+  role: ("core" | "intern" | "operations" | "contributor")[],
 ) => {
   const sortBy = ordering.replace("-", "") as LeaderboardSortKey;
   const shouldReverse = !ordering.startsWith("-");
@@ -41,22 +41,25 @@ export const getLeaderboardData = async (
       summary: contributor.summarize(...dateRange),
     }))
     .filter((contributor) => contributor.summary.points)
+    .filter((contributor) => {
+      if (role.length === 0) return true;
+      if (role.includes("core") && contributor.core) return true;
+      if (role.includes("intern") && contributor.intern) return true;
+      if (role.includes("operations") && contributor.operations) return true;
+      if (
+        role.includes("contributor") &&
+        !contributor.core &&
+        !contributor.intern &&
+        !contributor.operations
+      )
+        return true;
+      return false;
+    })
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;
       }
       return b.summary[sortBy] - a.summary[sortBy];
-    })
-    .filter((contributor) => {
-      if (role === "any") return true;
-      if (role === "core") return contributor.core;
-      if (role === "intern") return contributor.intern;
-      if (role === "operations") return contributor.operations;
-      if (role === "contributor")
-        return (
-          !contributor.core && !contributor.intern && !contributor.operations
-        );
-      return false;
     });
 
   if (shouldReverse) {

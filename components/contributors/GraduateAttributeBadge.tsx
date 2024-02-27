@@ -11,23 +11,23 @@ export default function GraduateAttributeBadge({
 }) {
   return (
     <div
-      className={`flex text-white rounded-md ${
+      className={`flex rounded-md text-white ${
         skill.currentLevel ? color : "bg-gray-600 opacity-50"
       }`}
     >
       <div
-        className={`flex flex-shrink-0 items-center justify-center text-white rounded-l-md mr-1 ${
+        className={`mr-1 flex shrink-0 items-center justify-center rounded-l-md text-white ${
           skill.currentLevel ? color : "bg-gray-600"
         }`}
       >
         <div
-          className={`flex relative items-center h-full rounded-l-md px-1.5 py-1 ${
+          className={`relative flex h-full items-center rounded-l-md px-1.5 py-1 ${
             skill.currentLevel ? colorDark : "bg-gray-700"
           }`}
         >
           <Image
-            className={`w-8 md:w-11 h-8 md:h-11 ${
-              skill.currentLevel ? "" : "grayscale opacity-30"
+            className={`h-8 w-8 md:h-11 md:w-11 ${
+              skill.currentLevel ? "" : "opacity-30 grayscale"
             }`}
             height={32}
             width={32}
@@ -35,13 +35,13 @@ export default function GraduateAttributeBadge({
             alt="Graduate attribute"
           />
           {skill.currentLevel && (
-            <span className="absolute right-0 bottom-0 text-sm font-medium px-1 text-gray-900 bg-gray-100 rounded leading-tight">
+            <span className="absolute bottom-0 right-0 rounded bg-gray-100 px-1 text-sm font-medium leading-tight text-gray-900">
               {skill.currentLevel.label}
             </span>
           )}
         </div>
       </div>
-      <div className="py-1 px-2 relative flex items-center">
+      <div className="relative flex items-center px-2 py-1">
         <p>{skill.label}</p>
       </div>
     </div>

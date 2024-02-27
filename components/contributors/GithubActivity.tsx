@@ -29,9 +29,9 @@ let renderText = (activity: Activity) => {
         <div className="min-w-0 flex-1">
           <div>
             <div className="">
-              <div className="font-bold dark:text-primary-300 text-primary-500">
+              <div className="font-bold text-primary-500 dark:text-primary-300">
                 <RelativeTime time={timestamp} />
-                <span className=" text-sm font-medium dark:text-gray-200 text-gray-700">
+                <span className=" text-sm font-medium text-gray-700 dark:text-gray-200">
                   {" "}
                   - End of the day update from slack
                 </span>
@@ -51,7 +51,7 @@ let renderText = (activity: Activity) => {
               {"Commented on "}
               {commentTypes(activity["link"].split("/").slice(5, 6))}
               {" in  "}
-              <span className="dark:text-primary-300 text-primary-400">
+              <span className="text-primary-400 dark:text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
 
@@ -78,29 +78,29 @@ let renderText = (activity: Activity) => {
                 {activity["type"].split("_")[1]}
               </span>
               <span>{" a pull request on "}</span>
-              <span className="dark:text-primary-300 text-primary-400">
+              <span className="text-primary-400 dark:text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
               {!!activity["turnaround_time"] && (
-                <span className="text-gray-600 dark:text-gray-400 text-sm">
+                <span className="text-sm text-gray-600 dark:text-gray-400">
                   {" with a turnaround time of "}
                   {formatDuration(activity["turnaround_time"] * 1000)}
                 </span>
               )}
             </div>
             {["pr_merged", "pr_opened"].includes(activity["type"]) && (
-              <div className="pt-4 max-w-xl">
+              <div className="max-w-xl pt-4">
                 <OpenGraphImage url={activity["link"]} className="rounded-xl" />
               </div>
             )}
             {activity["type"] == "pr_reviewed" && (
               <div>
                 <Link href={activity["link"]}>
-                  <span className="font-medium dark:text-gray-200 text-gray-500">
+                  <span className="font-medium text-gray-500 dark:text-gray-200">
                     {activity["text"]}
                   </span>
                 </Link>
-                <span className="whitespace-nowrap ml-2">
+                <span className="ml-2 whitespace-nowrap">
                   <RelativeTime time={timestamp} />
                 </span>
               </div>
@@ -114,7 +114,7 @@ let renderText = (activity: Activity) => {
       return (
         <div className="min-w-0 flex-1 py-1.5">
           <div className="text-sm text-foreground">
-            <div className="font-bold text-base">
+            <div className="text-base font-bold">
               <span className="capitalize">
                 {activity["type"].split("_")[1]}
               </span>
@@ -129,7 +129,7 @@ let renderText = (activity: Activity) => {
                 {activity["text"]}
               </span>
             </Link>
-            <span className="whitespace-nowrap ml-2">
+            <span className="ml-2 whitespace-nowrap">
               <RelativeTime time={timestamp} />
             </span>
           </div>
@@ -144,11 +144,11 @@ let renderText = (activity: Activity) => {
                 {activity["type"].split("_")[1]}
               </span>
               <span>{" on a pull request on "}</span>
-              <span className="dark:text-primary-300 text-primary-400">
+              <span className="text-primary-400 dark:text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
             </div>
-            <div className="pt-4 max-w-xl">
+            <div className="max-w-xl pt-4">
               <OpenGraphImage url={activity["link"]} className="rounded-xl" />
             </div>
           </div>
@@ -162,10 +162,10 @@ let renderText = (activity: Activity) => {
               {activity["type"]}
             </span>
 
-            <div className="font-medium dark:text-gray-200 text-gray-700 ml-2">
+            <div className="ml-2 font-medium text-gray-700 dark:text-gray-200">
               {activity["text"]}
             </div>
-            <span className="whitespace-nowrap ml-2">
+            <span className="ml-2 whitespace-nowrap">
               <RelativeTime time={timestamp} />
             </span>
           </div>
@@ -248,13 +248,13 @@ let showContribution = (activity: Activity) => {
   return (
     <div className="relative pb-8">
       <span
-        className="absolute top-5 left-5 -ml-px h-full w-0.5 dark:bg-gray-200 bg-gray-700"
+        className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-700 dark:bg-gray-200"
         aria-hidden="true"
       ></span>
       <div className="relative flex items-start space-x-3">
         <div>
           <div className="relative px-1">
-            <div className="h-8 w-8 dark:bg-gray-300 bg-gray-100 rounded-full ring-8 dark:ring-gray-700 ring-gray-200 flex items-center justify-center">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-gray-200 dark:bg-gray-300 dark:ring-gray-700">
               {icon(type)}
             </div>
           </div>
@@ -360,10 +360,10 @@ export default function GithubActivity({ activityData }: Props) {
 
   return (
     <div className="flex flex-row-reverse items-start justify-between gap-6">
-      <div className="sticky top-6 flex flex-col gap-2 p-4 my-4 border border-primary-500 rounded-lg w-64">
+      <div className="sticky top-6 my-4 flex w-64 flex-col gap-2 rounded-lg border border-primary-500 p-4">
         <h3>Filter Activity</h3>
         <select
-          className="block px-2 py-1 rounded border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none text-foreground my-4"
+          className="my-4 block rounded border border-gray-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-gray-300"
           disabled={!rangePresets}
           value={rangeQuery}
           onChange={(event) => {
@@ -402,7 +402,7 @@ export default function GithubActivity({ activityData }: Props) {
           />
         ))}
       </div>
-      <div className="mx-2 flow-root text-foreground mt-4">
+      <div className="mx-2 mt-4 flow-root text-foreground">
         <ul role="list" className="my-4 w-full max-w-xl">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;
@@ -410,7 +410,7 @@ export default function GithubActivity({ activityData }: Props) {
         </ul>
       </div>
       {activities.length === 0 && (
-        <div className="flex w-full h-full items-center justify-center py-48">
+        <div className="flex h-full w-full items-center justify-center py-48">
           <span className="text-gray-500 dark:text-gray-400">
             No activities in this period
           </span>
@@ -427,7 +427,7 @@ export const ActivityCheckbox = (props: {
   setState: (value: Activity["type"][]) => void;
 }) => {
   return (
-    <label className="flex whitespace-nowrap items-center gap-2 text-sm">
+    <label className="flex items-center gap-2 whitespace-nowrap text-sm">
       <input
         name={props.type}
         className="accent-primary-500 dark:accent-primary-400"

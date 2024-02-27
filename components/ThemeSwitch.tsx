@@ -6,7 +6,7 @@ export default function ThemeSwitch({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className={`flex gap-2 items-center ${className}`}>
+    <div className={`flex items-center gap-2 ${className}`}>
       {theme === "light" ? (
         <button onClick={() => setTheme("dark")}>
           <svg
@@ -15,7 +15,7 @@ export default function ThemeSwitch({ className }: { className?: string }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 fill-current text-gray-500"
+            className="h-6 w-6 fill-current text-gray-500"
           >
             <path
               strokeLinecap="round"
@@ -32,7 +32,7 @@ export default function ThemeSwitch({ className }: { className?: string }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-[26px] h-[26px] fill-current text-gray-500"
+            className="h-[26px] w-[26px] fill-current text-gray-500"
           >
             <path
               strokeLinecap="round"

@@ -17,10 +17,10 @@ const Sort = ({
 }) => {
   return (
     <div className={className}>
-      <span className="w-full relative z-0 inline-flex shadow-sm rounded-md">
+      <span className="relative z-0 inline-flex w-full rounded-md shadow-sm">
         <span
           onClick={handleSortOrderChange}
-          className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-600 dark:border-gray-300 cursor-pointer"
+          className="relative inline-flex cursor-pointer items-center rounded-l-md border border-gray-600 px-2 py-2 dark:border-gray-300"
         >
           {sortDescending ? (
             <HiSortAscending className="text-foreground" size={20} />
@@ -31,7 +31,7 @@ const Sort = ({
         <select
           id="message-type"
           name="message-type"
-          className="-ml-px block w-full pl-2 rounded-l-none rounded-r-md border border-gray-600 dark:border-gray-300 text-sm font-medium focus:z-10 focus:outline-none bg-transparent text-foreground"
+          className="-ml-px block w-full rounded-l-none rounded-r-md border border-gray-600 bg-transparent pl-2 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-gray-300"
           onChange={handleSortByChange}
           defaultValue={sortBy}
         >

@@ -56,7 +56,7 @@ export default function FeedPage({ searchParams }: Props) {
           scrollTo(`gh-event-${lastEvents[lastEvents.length - 1].id}`);
         }
       });
-  }, [lastFetchedPage]);
+  }, [events, lastFetchedPage]);
 
   const allEvents = ([] as IGitHubEvent[]).concat(...Object.values(events));
 
@@ -65,16 +65,16 @@ export default function FeedPage({ searchParams }: Props) {
   }
 
   return (
-    <div className="flow-root max-w-4xl mx-auto my-8 relative">
-      <h1 className="text-primary-500 dark:text-white text-4xl">Feed</h1>
-      <ul role="list" className="space-y-4 flex flex-col gap-4 mt-10 mb-20">
+    <div className="relative mx-auto my-8 flow-root max-w-4xl">
+      <h1 className="text-4xl text-primary-500 dark:text-white">Feed</h1>
+      <ul role="list" className="mb-20 mt-10 flex flex-col gap-4 space-y-4">
         {allEvents.map((e) => (
           <GitHubEvent key={e.id} event={e} />
         ))}
       </ul>
       <div className="flex flex-row justify-center">
         <span
-          className="underline cursor-pointer"
+          className="cursor-pointer underline"
           onClick={() => setLastFetchedPage((p) => p + 1)}
         >
           Show more

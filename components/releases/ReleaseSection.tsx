@@ -1,14 +1,13 @@
 import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { ReleasesResponse } from "@/lib/types";
-import { Repository } from "@/lib/types";
-import { Release } from "@/lib/types";
+import { env } from "@/env.mjs";
+import fetchGitHubReleases from "@/app/api/leaderboard/functions";
 
 export default async function ReleaseSection() {
-  const accessToken = process.env.GITHUB_PAT;
+  const accessToken = env.GITHUB_PAT;
 
   if (!accessToken) {
-    if (process.env.NODE_ENV === "development") {
+    if (env.NODE_ENV === "development") {
       console.error("'GITHUB_PAT' is not configured in the environment.");
       return (
         <>
@@ -22,68 +21,12 @@ export default async function ReleaseSection() {
     throw "'GITHUB_PAT' is not configured in the environment.";
   }
 
-  const response = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      query: `{
-        organization(login: "${process.env.NEXT_PUBLIC_GITHUB_ORG}") {
-          repositories(first: 100) {
-            nodes {
-              name
-              releases(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
-                nodes {
-                  name
-                  createdAt
-                  description
-                  url
-                  author {
-                    login
-                    avatarUrl
-                  }
-                  mentions (first: 10) {
-                    nodes {
-                      login 
-                      avatarUrl
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }`,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
-  const json = (await response.json()) as ReleasesResponse;
-  const data = json.data;
-
-  const repositories: Repository[] = data.organization.repositories.nodes;
-  const allReleases: Release[] = [];
-  for (const repository of repositories) {
-    for (const release of repository.releases.nodes) {
-      release.repository = repository.name;
-      allReleases.push(release);
-    }
-  }
-
-  const sortedReleases = allReleases.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-  );
-  const latestReleases = sortedReleases.slice(0, 4);
+  const sortedReleases = await fetchGitHubReleases(4);
 
   return (
     <div className="grid grid-cols-1">
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
-        {latestReleases.map((release) => (
+        {sortedReleases.map((release) => (
           <li key={release.createdAt} className="mb-10 ms-4 group">
             <div className="absolute mt-1.5 left-[-18px]">
               <img

@@ -1,16 +1,14 @@
-import { ReleasesResponse } from "@/lib/types";
-import { Repository } from "@/lib/types";
-import { Release } from "@/lib/types";
 import Link from "next/link";
 import Markdown from "@/components/Markdown";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
-import LoadingText from "@/components/LoadingText";
+import { FiGithub } from "react-icons/fi";
+import { env } from "@/env.mjs";
+import fetchGitHubReleases from "../api/leaderboard/functions";
 
 export default async function Releases(props: { className?: string }) {
-  const accessToken = process.env.GITHUB_PAT;
+  const accessToken = env.GITHUB_PAT;
 
   if (!accessToken) {
-    if (process.env.NODE_ENV === "development") {
+    if (env.NODE_ENV === "development") {
       console.error("'GITHUB_PAT' is not configured in the environment.");
       return (
         <>
@@ -24,70 +22,7 @@ export default async function Releases(props: { className?: string }) {
     throw "'GITHUB_PAT' is not configured in the environment.";
   }
 
-  const response = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      query: `{
-          organization(login: "${process.env.NEXT_PUBLIC_GITHUB_ORG}") {
-            repositories(first: 100) {
-              nodes {
-                name
-                releases(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
-                  nodes {
-                    name
-                    createdAt
-                    description
-                    url
-                    author {
-                      login
-                      avatarUrl
-                    }
-                    mentions (first: 10) {
-                      nodes {
-                        login 
-                        avatarUrl
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
-  const json = (await response.json()) as ReleasesResponse;
-  const data = json.data;
-
-  const repositories: Repository[] = data.organization.repositories.nodes;
-  const allReleases: Release[] = [];
-  for (const repository of repositories) {
-    for (const release of repository.releases.nodes) {
-      release.repository = repository.name;
-      allReleases.push(release);
-    }
-  }
-
-  const sortedReleases = allReleases.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-  );
-
-  if (allReleases.length === 0) {
-    return (
-      <>
-        <LoadingText text="Fetching latest events" />;
-      </>
-    );
-  }
+  const sortedReleases = await fetchGitHubReleases(4);
 
   return (
     <>
@@ -106,7 +41,7 @@ export default async function Releases(props: { className?: string }) {
                     className={`font-mono text-gray-700 dark:text-gray-300 font-bold tracking-wide`}
                   >
                     <span className="text-gray-400 tracking-normal pr-0.5">
-                      {process.env.NEXT_PUBLIC_GITHUB_ORG}/{release.repository}
+                      {env.NEXT_PUBLIC_GITHUB_ORG}/{release.repository}
                     </span>
                   </a>
                 </div>

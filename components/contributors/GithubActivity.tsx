@@ -307,9 +307,7 @@ const getRangeFilterPresets = (activities: Activity[]) => {
 
   const results: string[] = [];
   while (current <= end) {
-    results.push(
-      current.toLocaleString("default", { month: "long", year: "numeric" }),
-    );
+    results.push(current.toISOString().slice(0, 7));
     current.setMonth(current.getMonth() + 1);
   }
   return results.reverse();
@@ -387,7 +385,10 @@ export default function GithubActivity({ activityData }: Props) {
           <option value="last-month">Last 30 days</option>
           {rangePresets?.map((preset) => (
             <option key={preset} value={preset}>
-              {preset}
+              {new Date(preset).toLocaleString("default", {
+                month: "long",
+                year: "numeric",
+              })}
             </option>
           ))}
         </select>

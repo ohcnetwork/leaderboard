@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.10"
           
-      - run: rm data contributors
+      - run: rm data contributors && mkdir data contributors
 
       - name: Install dependencies
         run: pip install -r scraper/requirements.txt

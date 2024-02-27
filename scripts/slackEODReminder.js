@@ -123,7 +123,6 @@ async function main() {
     }),
   );
 
-  console.log(status);
 }
 
 main();

@@ -450,6 +450,7 @@ class GitHubScraper:
 
     def merge_data(self):
         self.log.info("Updating data")
+        Path(self.data_dir).mkdir(parents=True, exist_ok=True)
         for user in self.data.keys():
             self.log.debug(f"Merging user data for {user}")
             old_data = self.load_user_data(user)

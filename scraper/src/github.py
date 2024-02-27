@@ -189,28 +189,31 @@ class GitHubScraper:
                         collaborators.add(self.email_user_cache[email])
                         continue
 
-                    users = requests.get(
-                        "https://api.github.com/search/users",
-                        params={"q": email},
-                        headers=self.headers,
-                    ).json()
+                    try:
+                        users = requests.get(
+                            "https://api.github.com/search/users",
+                            params={"q": email},
+                            headers=self.headers,
+                        ).json()
 
-                    if users["total_count"] > 0:
-                        login = users["items"][0]["login"]
-                        self.email_user_cache[email] = login
-                        collaborators.add(login)
-                        continue
+                        if users["total_count"] > 0:
+                            login = users["items"][0]["login"]
+                            self.email_user_cache[email] = login
+                            collaborators.add(login)
+                            continue
 
-                    users = requests.get(
-                        "https://api.github.com/search/users",
-                        params={"q": name},
-                        headers=self.headers,
-                    ).json()
+                        users = requests.get(
+                            "https://api.github.com/search/users",
+                            params={"q": name},
+                            headers=self.headers,
+                        ).json()
 
-                    if users["total_count"] == 1:
-                        login = users["items"][0]["login"]
-                        self.name_user_cache = login
-                        collaborators.add(login)
+                        if users["total_count"] == 1:
+                            login = users["items"][0]["login"]
+                            self.name_user_cache[name] = login
+                            collaborators.add(login)
+                    except Exception as e:
+                        self.log.error(f"Error fetching co-authors for commit {commit} - {name} <{email}>: {e}")
 
         if len(collaborators) > 1:
             for user in collaborators:

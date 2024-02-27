@@ -67,7 +67,6 @@ const DateRangePicker = (props: Props) => {
                       className="block border-gray-600 dark:border-gray-300 bg-transparent p-2 border rounded-md w-48 text-center text-foreground"
                     />
                   </div>
-
                   <div className="gap-2 grid grid-cols-2 mt-6">
                     {rangePresets.map((range, index) => (
                       <button

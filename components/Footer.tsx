@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { env } from "@/env.mjs";
 
 export default function Footer() {
   return (
@@ -9,8 +10,8 @@ export default function Footer() {
             Powered by{" "}
             <span className="w-20 ml-4">
               <Image
-                src={process.env.NEXT_PUBLIC_ORG_LOGO as string}
-                alt={process.env.NEXT_PUBLIC_ORG_NAME as string}
+                src={env.NEXT_PUBLIC_ORG_LOGO as string}
+                alt={env.NEXT_PUBLIC_ORG_NAME as string}
                 width="80"
                 height="22"
               />

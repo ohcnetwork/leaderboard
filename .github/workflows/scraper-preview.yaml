@@ -2,8 +2,6 @@ on:
   pull_request:
     paths:
       - scraper/**
-    branches-ignore:
-      - main
 
 jobs:
   test-run-github-scraper:

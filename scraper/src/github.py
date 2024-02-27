@@ -210,7 +210,7 @@ class GitHubScraper:
 
                         if users["total_count"] == 1:
                             login = users["items"][0]["login"]
-                            self.name_user_cache = login
+                            self.name_user_cache[name] = login
                             collaborators.add(login)
                     except Exception as e:
                         self.log.error(

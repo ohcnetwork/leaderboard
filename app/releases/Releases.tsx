@@ -22,7 +22,7 @@ export default async function Releases(props: { className?: string }) {
     throw "'GITHUB_PAT' is not configured in the environment.";
   }
 
-  const sortedReleases = await fetchGitHubReleases(4);
+  const sortedReleases = await fetchGitHubReleases(10);
 
   return (
     <>

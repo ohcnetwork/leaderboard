@@ -4,12 +4,12 @@ import { BsPersonFill } from "react-icons/bs";
 import { Select, SelectOption } from "@/components/Select";
 
 const RoleFilter = ({
-  sortByOptions = [],
+  filterOptions = [],
   value,
   onChange,
   className = "",
 }: {
-  sortByOptions?: SelectOption[];
+  filterOptions?: SelectOption[];
   value: SelectOption[];
   onChange: (value: SelectOption[]) => void;
   className?: string;
@@ -23,7 +23,7 @@ const RoleFilter = ({
 
         <Select
           multiple
-          options={sortByOptions}
+          options={filterOptions}
           value={value}
           onChange={(value) => onChange(value as SelectOption[])}
           showSelectionsAs="text"

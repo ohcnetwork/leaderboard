@@ -3,7 +3,7 @@
 import LeaderboardCard from "@/components/contributors/LeaderboardCard";
 import { TbZoomQuestion } from "react-icons/tb";
 import TopContributor from "../../components/contributors/TopContributor";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
 import DateRangePicker, { formatDate } from "@/components/DateRangePicker";
@@ -12,7 +12,6 @@ import Sort from "@/components/filters/Sort";
 import RoleFilter from "@/components/filters/RoleFilter";
 import format from "date-fns/format";
 import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
-import { SelectOption } from "@/components/Select";
 
 export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
   const router = useRouter();
@@ -20,27 +19,6 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
-  const [roleFilter, setRoleFilter] = useState<SelectOption[]>(
-    searchParams
-      .get("role")
-      ?.split(",")
-      .map((value) => ({
-        value,
-        text: FILTER_BY_ROLE_OPTIONS[
-          value as keyof typeof FILTER_BY_ROLE_OPTIONS
-        ],
-      })) || [],
-  );
-  const [sortBy, setSortBy] = useState<SelectOption | undefined>(
-    searchParams?.get("sortBy")
-      ? ({
-          value: searchParams.get("sortBy"),
-          text: SORT_BY_OPTIONS[
-            searchParams.get("sortBy") as keyof typeof SORT_BY_OPTIONS
-          ],
-        } as (typeof SortOptions)[number])
-      : { value: "points", text: "Points" },
-  );
 
   let data = props.data;
 
@@ -59,14 +37,6 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
     const query = search ? `?${search}` : "";
     router.replace(`${pathname}${query}`, { scroll: false });
   };
-
-  useEffect(() => {
-    updateSearchParam("role", roleFilter?.map((i) => i.value).join(","));
-  }, [roleFilter]);
-
-  useEffect(() => {
-    updateSearchParam("sortBy", sortBy?.value);
-  }, [sortBy]);
 
   return (
     <section className="border-gray-300 dark:border-gray-700 bg-background border-t text-foreground">
@@ -92,15 +62,43 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
               className="flex-grow md:flex-grow-1"
             />
             <RoleFilter
-              sortByOptions={RoleOptions}
-              value={roleFilter}
-              onChange={(value) => setRoleFilter(value)}
+              filterOptions={RoleOptions}
+              value={
+                searchParams
+                  .get("role")
+                  ?.split(",")
+                  .map((value) => ({
+                    value,
+                    text: FILTER_BY_ROLE_OPTIONS[
+                      value as keyof typeof FILTER_BY_ROLE_OPTIONS
+                    ],
+                  })) || []
+              }
+              onChange={(selectedOptions) =>
+                updateSearchParam(
+                  "role",
+                  selectedOptions?.map((i) => i.value).join(","),
+                )
+              }
               className="flex-grow md:flex-grow-1 md:min-w-[120px]"
             />
             <Sort
               sortByOptions={SortOptions}
-              value={sortBy}
-              onChange={(value) => setSortBy(value)}
+              value={
+                searchParams?.get("sortBy")
+                  ? ({
+                      value: searchParams.get("sortBy"),
+                      text: SORT_BY_OPTIONS[
+                        searchParams.get(
+                          "sortBy",
+                        ) as keyof typeof SORT_BY_OPTIONS
+                      ],
+                    } as (typeof SortOptions)[number])
+                  : { value: "points", text: "Points" }
+              }
+              onChange={(selectedOption) =>
+                updateSearchParam("sortBy", selectedOption?.value)
+              }
               sortDescending={searchParams.get("ordering") === "asc"}
               handleSortOrderChange={() => {
                 updateSearchParam(

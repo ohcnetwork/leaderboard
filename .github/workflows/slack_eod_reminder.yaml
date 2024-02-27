@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           repository: coronasafe/leaderboard
+          path: ./leaderboard
           sparse-checkout: scripts
 
       - uses: actions/setup-node@v4

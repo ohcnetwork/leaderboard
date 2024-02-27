@@ -9,7 +9,7 @@ jobs:
     name: Fetch activity from GitHub and call Slack Webhook
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: coronasafe/leaderboard-data)
       - uses: actions/checkout@v4
         with:
           repository: coronasafe/leaderboard
@@ -18,6 +18,8 @@ jobs:
 
       - uses: actions/setup-node@v4
       - run: npm install @octokit/action gray-matter
+      - run: ls
+      - run: ls scripts
       - run: node scripts/slackEODReminder.js
         env:
           GITHUB_ORG: ${{ github.repository_owner }}

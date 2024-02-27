@@ -122,7 +122,6 @@ async function main() {
       };
     }),
   );
-
 }
 
 main();

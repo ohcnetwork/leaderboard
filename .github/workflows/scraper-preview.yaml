@@ -1,0 +1,34 @@
+on:
+  pull_request:
+    paths:
+      - scraper/**
+    branches-ignore:
+      - main
+
+jobs:
+  test-run-github-scraper:
+    name: Test run GitHub Scraper
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install -r scraper/requirements.txt
+
+      - name: Scrape data from GitHub
+        run: python scraper/src/github.py ${{ github.repository_owner }} data/github -l DEBUG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate markdown files for new contributors
+        run: node scripts/generateNewContributors.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

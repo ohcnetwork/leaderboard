@@ -48,16 +48,14 @@ export default function LeaderboardCard({
           <div className="flex w-full">
             <div className="min-w-0 flex-1 flex items-center">
               <div
-                className={`flex-shrink-0 ring-2 dark:ring-1 ring-current rounded-full ${
+                className={`flex-shrink-0 border-2 dark:border-1 border-current rounded-full ${
                   ["text-yellow-600", "text-stone-600", "text-amber-700"][
                     position
                   ] ?? "text-purple-600"
-                }`}
+                } rounded-full ${position < 3 && "animate-circular-shadow"}`}
               >
                 <Image
-                  className={`h-14 w-14 rounded-full ${
-                    position < 3 && "animate-circular-shadow"
-                  }`}
+                  className="rounded-full"
                   height={56}
                   width={56}
                   src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}

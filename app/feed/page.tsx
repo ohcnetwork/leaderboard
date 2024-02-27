@@ -56,7 +56,7 @@ export default function FeedPage({ searchParams }: Props) {
           scrollTo(`gh-event-${lastEvents[lastEvents.length - 1].id}`);
         }
       });
-  }, [lastFetchedPage, events]);
+  }, [lastFetchedPage]);
 
   const allEvents = ([] as IGitHubEvent[]).concat(...Object.values(events));
 

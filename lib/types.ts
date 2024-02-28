@@ -86,3 +86,45 @@ export interface AuthoredIssueAndPr {
   issue_link: string;
   pr_link: string;
 }
+
+//release section types
+
+// Release interface
+export interface Release {
+  name: string;
+  createdAt: string;
+  description: string;
+  url: string;
+  repository: string;
+  author: {
+    login: string;
+    avatarUrl: string;
+  };
+  mentions: {
+    nodes: {
+      login: string;
+      avatarUrl: string;
+    }[];
+  };
+}
+
+// Repository interface
+export interface Repository {
+  name: string;
+  releases: {
+    nodes: Release[];
+  };
+}
+
+// Organization interface
+export interface Organization {
+  repositories: {
+    nodes: Repository[];
+  };
+}
+
+// GitHubResponse interface
+export interface ReleasesResponse {
+  data: any;
+  organization: Organization;
+}

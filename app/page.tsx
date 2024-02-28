@@ -5,6 +5,8 @@ import GitHubEvents from "@/components/gh_events/GitHubEvents";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ActiveProjects from "./projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
+import ReleaseSection from "@/components/releases/ReleaseSection";
+import { Suspense } from "react";
 import { env } from "@/env.mjs";
 
 export default async function Home() {
@@ -58,6 +60,32 @@ export default async function Home() {
                 <div className="mx-auto">
                   <div className="space-y-12">
                     <div className="flex items-center justify-between pr-5">
+                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                        Recent Releases
+                      </h2>
+                      <Link
+                        href="/releases"
+                        className="text-gray-400 px-3 py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2"
+                      >
+                        More
+                        <MdOutlineArrowForwardIos />
+                      </Link>
+                    </div>
+                    <Suspense
+                      fallback={
+                        <>
+                          <div className="w-full h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
+                        </>
+                      }
+                    >
+                      <ReleaseSection />
+                    </Suspense>
+                  </div>
+                </div>
+
+                <div className="mx-auto">
+                  <div className="space-y-12">
+                    <div className="flex justify-between items-center pr-5">
                       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                         Active Projects
                       </h2>

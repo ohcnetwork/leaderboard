@@ -71,8 +71,7 @@ export default function Leaderboard({
             <div className="space-y-12 rounded-lg border border-primary-500 p-4">
               <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                 <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                  Top Contributors
-                  {!searchParams.between && "of the week"}
+                  Top Contributors {!searchParams.between && "of the week"}
                 </h2>
                 <p className="text-xl text-gray-500 dark:text-gray-300">
                   Our top contributers across different metrics

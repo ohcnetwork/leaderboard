@@ -31,8 +31,16 @@ const isPROpenEvent = (event) => {
   return event.type === "PullRequestEvent" && event.payload.action === "opened";
 };
 
-const isIssueAssignEvent = (event) => {
-  return event.type === "IssuesEvent" && event.payload.action === "assigned";
+const isReviewEvent = (event) => {
+  return event.type === "PullRequestReviewEvent";
+};
+
+const isIssuePendingEvent = (event) => {
+  return (
+    event.type === "IssuesEvent" &&
+    event.payload.action === "assigned" &&
+    event.payload.issue.state === "open"
+  );
 };
 
 async function fetchGitHubEvents(authors) {
@@ -52,7 +60,9 @@ async function fetchGitHubEvents(authors) {
           authors.includes(event.actor.login) &&
           event.created_at &&
           new Date(event.created_at).getTime() > aDayAgo &&
-          (isPROpenEvent(event) || isIssueAssignEvent(event)),
+          (isPROpenEvent(event) ||
+            isReviewEvent(event) ||
+            isIssuePendingEvent(event)),
       ),
   );
 
@@ -60,24 +70,37 @@ async function fetchGitHubEvents(authors) {
 }
 
 function summarizeActivity(events) {
-  return {
-    activities:
-      events
-        .filter(isPROpenEvent)
-        .map(
-          (event) =>
-            `- Made a PR: ${event.payload.pull_request.title} (${event.payload.pull_request.html_url})`,
-        )
-        .join("\n") || "None",
+  const activities = events
+    .map((event) => {
+      if (isPROpenEvent(event)) {
+        return `- Made a PR: ${event.payload.pull_request.title} : ${event.payload.pull_request.html_url}`;
+      }
 
-    upcoming_activities:
-      events
-        .filter(isIssueAssignEvent)
-        .map(
-          (event) =>
-            `- Work on: ${event.payload.issue?.title} (${event.payload.issue.html_url})`,
-        )
-        .join("\n") || "None",
+      return null;
+    })
+    .filter(Boolean);
+
+  const reviewEvents = events.filter(isReviewEvent);
+  const reviewsDistinctOnPRs = Object.keys(
+    Object.groupBy(reviewEvents, (event) => event.payload.pull_request.id),
+  ).length;
+  if (reviewsDistinctOnPRs) {
+    activities.push(`- Reviewed ${reviewsDistinctOnPRs} pull request(s).`);
+  }
+
+  const upcoming = events
+    .map((event) => {
+      if (isIssuePendingEvent(event)) {
+        return `- Work on: ${event.payload.issue?.title} : ${event.payload.issue.html_url}`;
+      }
+
+      return null;
+    })
+    .filter(Boolean);
+
+  return {
+    activities: activities.join("\n") || "None",
+    upcoming_activities: upcoming.join("\n") || "None",
   };
 }
 

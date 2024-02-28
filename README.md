@@ -35,7 +35,7 @@ pnpm add <package_name>
 ## How to add a new member?
 
 Create a new markdown file with the github user name in the `contributors` folder. For example, if you want to
-add `john-doe` as a intern, create a file named `john-doe.md` in the `contributors` folder.
+add `john-doe` as a contributor, create a file named `john-doe.md` in the `contributors` folder.
 
 The file should contain the following content:
 
@@ -48,7 +48,7 @@ twitter: john-doe
 linkedin: john-doe
 slack: U02TDGQQPMJ
 joining_date: "09/05/2022"
-role: ""
+role: "contributor"
 ---
 
 ** A Bio about John Doe **  

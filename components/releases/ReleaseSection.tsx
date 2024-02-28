@@ -1,33 +1,23 @@
 import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { env } from "@/env.mjs";
 import fetchGitHubReleases from "@/app/api/leaderboard/functions";
 import Image from "next/image";
 
 export default async function ReleaseSection() {
-  const accessToken = env.GITHUB_PAT;
+  const releases = await fetchGitHubReleases(4);
 
-  if (!accessToken) {
-    if (env.NODE_ENV === "development") {
-      console.error("'GITHUB_PAT' is not configured in the environment.");
-      return (
-        <>
-          <span className="flex w-full justify-center py-10 text-lg font-semibold text-gray-600 dark:text-gray-400">
-            No recent releases
-          </span>
-        </>
-      );
-    }
-
-    throw "'GITHUB_PAT' is not configured in the environment.";
+  if (releases.length === 0) {
+    return (
+      <span className="flex w-full justify-center py-10 text-lg font-semibold text-gray-600 dark:text-gray-400">
+        No recent releases
+      </span>
+    );
   }
-
-  const sortedReleases = await fetchGitHubReleases(4);
 
   return (
     <div className="grid grid-cols-1">
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
-        {sortedReleases.map((release) => (
+        {releases.map((release) => (
           <li key={release.createdAt} className="group mb-10 ms-4">
             <div className="absolute left-[-18px] mt-1.5">
               <Image

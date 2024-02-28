@@ -6,30 +6,21 @@ import fetchGitHubReleases from "../api/leaderboard/functions";
 import Image from "next/image";
 
 export default async function Releases(props: { className?: string }) {
-  const accessToken = env.GITHUB_PAT;
+  const releases = await fetchGitHubReleases(10);
 
-  if (!accessToken) {
-    if (env.NODE_ENV === "development") {
-      console.error("'GITHUB_PAT' is not configured in the environment.");
-      return (
-        <>
-          <span className="flex w-full justify-center py-10 text-lg font-semibold text-gray-600 dark:text-gray-400">
-            No recent releases
-          </span>
-        </>
-      );
-    }
-
-    throw "'GITHUB_PAT' is not configured in the environment.";
+  if (releases.length === 0) {
+    return (
+      <span className="flex w-full justify-center py-10 text-lg font-semibold text-gray-600 dark:text-gray-400">
+        No recent releases
+      </span>
+    );
   }
-
-  const sortedReleases = await fetchGitHubReleases(10);
 
   return (
     <>
       <div>
         <ul className="space-y-10">
-          {sortedReleases.map((release) => (
+          {releases.map((release) => (
             <li
               key={release.createdAt}
               className="flex flex-col rounded-lg border shadow-sm dark:border-gray-700"

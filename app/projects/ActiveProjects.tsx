@@ -5,6 +5,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { ActiveProjectLabelConfig } from "./constants";
 import { env } from "@/env.mjs";
+import getGitHubAccessToken from "@/lib/getGitHubAccessToken";
 
 type GraphQLOrgActiveProjectsResponse = {
   data: {
@@ -42,15 +43,10 @@ type GraphQLOrgActiveProjectsResponse = {
 async function fetchIssues(labels: string[]) {
   const labelsFilter = labels.map((label) => `"${label}"`).join(", ");
 
-  const accessToken = env.GITHUB_PAT;
+  const accessToken = getGitHubAccessToken();
 
-  if (accessToken.length === 0) {
-    if (process.env.NODE_ENV === "development") {
-      console.error("'GITHUB_PAT' is not configured in the environment.");
-      return [];
-    }
-
-    throw "'GITHUB_PAT' is not configured in the environment.";
+  if (!accessToken) {
+    return [];
   }
 
   const res = await fetch("https://api.github.com/graphql", {

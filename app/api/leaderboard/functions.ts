@@ -5,6 +5,7 @@ import { ReleasesResponse } from "@/lib/types";
 import { Repository } from "@/lib/types";
 import { Release } from "@/lib/types";
 import { env } from "@/env.mjs";
+import getGitHubAccessToken from "@/lib/getGitHubAccessToken";
 
 export type LeaderboardAPIResponse = {
   user: {
@@ -104,10 +105,16 @@ export const getLeaderboardData = async (
 export default async function fetchGitHubReleases(
   sliceLimit: number,
 ): Promise<Release[]> {
+  const accessToken = getGitHubAccessToken();
+
+  if (!accessToken) {
+    return [];
+  }
+
   const response = await fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${env.GITHUB_PAT}`,
+      Authorization: `Bearer ${accessToken}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({

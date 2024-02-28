@@ -65,7 +65,7 @@ export default function FeedPage({ searchParams }: Props) {
   }
 
   return (
-    <div className="relative mx-auto my-8 flow-root max-w-4xl">
+    <div className="relative mx-auto my-8 flow-root max-w-4xl p-4">
       <h1 className="text-4xl text-primary-500 dark:text-white">Feed</h1>
       <ul role="list" className="mb-20 mt-10 flex flex-col gap-4 space-y-4">
         {allEvents.map((e) => (

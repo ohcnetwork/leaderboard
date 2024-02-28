@@ -28,11 +28,17 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
   switch (event.type) {
     case "MemberEvent":
       title = (
-        <div className="flex items-center gap-1">
-          <GoPersonAdd className=" text-lg" />
-          {event.payload.action} member{" "}
+        <div className="">
           <Link
-            className="cursor-pointer font-bold text-gray-300"
+            href={`https://github.com/${event.actor.login}`}
+            className="inline cursor-pointer font-bold text-gray-700 dark:text-gray-300 "
+          >
+            {event.actor.login}
+          </Link>{" "}
+          <GoPersonAdd className=" inline text-lg font-bold " />{" "}
+          <span className=" inline">{event.payload.action} member </span>{" "}
+          <Link
+            className="inline cursor-pointer font-bold text-gray-300"
             href={"https://github.com/" + event.payload.member.login}
           >
             {event.payload.member.login}
@@ -44,15 +50,30 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
     case "IssuesEvent":
       title = (
-        <div className="flex items-center gap-1">
-          <VscIssues className=" text-lg font-bold" />
-          {event.payload.action} an issue in{" "}
+        <div className="">
           <Link
-            className="cursor-pointer font-bold text-gray-300"
+            href={`https://github.com/${event.actor.login}`}
+            className="inline cursor-pointer font-bold text-gray-700 dark:text-gray-300 "
+          >
+            {event.actor.login}
+          </Link>{" "}
+          <span className=" inline">
+            <VscIssues className=" inline text-lg font-bold" />{" "}
+            {event.payload.action} an issue in{" "}
+          </span>
+          <Link
+            className="cursor-pointer gap-2 font-bold text-gray-300"
             href={"https://github.com/" + event.repo.name}
           >
-            {event.repo.name}
+            <span className="hidden sm:inline">{event.repo.name}</span>
+            <span className="sm:hidden">
+              {event.repo.name.replace("coronasafe/", "")}
+            </span>{" "}
           </Link>
+          <RelativeTime
+            className="inline text-sm text-gray-400 underline"
+            time={event.created_at}
+          />
         </div>
       );
       body = <OpenGraphImage url={event.payload.issue.html_url} />;
@@ -60,15 +81,30 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
     case "PullRequestEvent":
       title = (
-        <div className="flex items-center gap-1">
-          <GoGitPullRequest />
-          {event.payload.action} a pull request in{" "}
+        <div className="">
           <Link
-            className="cursor-pointer font-bold text-gray-300"
+            href={`https://github.com/${event.actor.login}`}
+            className="inline cursor-pointer font-bold text-gray-700 dark:text-gray-300"
+          >
+            {event.actor.login}
+          </Link>{" "}
+          <GoGitPullRequest className="inline" />{" "}
+          <span className="inline">
+            {event.payload.action} a pull request in{" "}
+          </span>
+          <Link
+            className="inline cursor-pointer gap-2 font-bold text-gray-300"
             href={"https://github.com/" + event.repo.name}
           >
-            {event.repo.name}
+            <span className="hidden sm:inline">{event.repo.name}</span>
+            <span className="sm:hidden ">
+              {event.repo.name.replace("coronasafe/", "")}
+            </span>{" "}
           </Link>
+          <RelativeTime
+            className="inline text-sm text-gray-400 underline"
+            time={event.created_at}
+          />
         </div>
       );
       body = ["opened", "closed", "reopened"].includes(
@@ -84,40 +120,66 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
       if (event.payload.review.state === "changes_requested")
         action = "requested changes on";
       title = (
-        <div className="flex items-center gap-1">
-          {action === "approved" && <GoCheck className=" text-lg font-bold" />}
-          {action === "commented on PR" && (
-            <GoComment className=" text-lg font-bold" />
-          )}
-          {action === "requested changes on" && (
-            <GoFileDiff className=" text-lg font-bold" />
-          )}
-          {action}{" "}
+        <div className="">
           <Link
-            className="cursor-pointer font-bold text-gray-300"
+            href={`https://github.com/${event.actor.login}`}
+            className="inline cursor-pointer font-bold text-gray-700 dark:text-gray-300 "
+          >
+            {event.actor.login}
+          </Link>{" "}
+          {action === "approved" && (
+            <GoCheck className="inline text-lg font-bold" />
+          )}{" "}
+          {action === "commented on PR" && (
+            <GoComment className="inline text-lg font-bold" />
+          )}{" "}
+          {action === "requested changes on" && (
+            <GoFileDiff className="inline text-lg font-bold" />
+          )}{" "}
+          <span className="inline">{action} </span>
+          <Link
+            className="inline cursor-pointer font-bold text-gray-300"
             href={event.payload.review.html_url}
           >
-            {event.repo.name}#{event.payload.pull_request.number}
-          </Link>
+            <span className="hidden sm:inline">{event.repo.name}</span>
+            <span className="sm:hidden">
+              {event.repo.name.replace("coronasafe/", "")}
+            </span>
+          </Link>{" "}
+          <span className="inline">#{event.payload.pull_request.number} </span>
+          <RelativeTime
+            className="inline text-sm text-gray-400 underline"
+            time={event.created_at}
+          />
         </div>
       );
+
       body = <OpenGraphImage url={event.payload.pull_request.html_url} />;
       break;
 
     case "PushEvent":
       title = (
-        <div className="flex items-center gap-1">
-          <GoRepoPush className=" text-lg font-bold" />
-          pushed {event.payload.size} commits to{" "}
-          <span className="font-bold text-gray-300">
+        <div className="">
+          <Link
+            href={`https://github.com/${event.actor.login}`}
+            className="inline cursor-pointer font-bold text-gray-700 dark:text-gray-300 "
+          >
+            {event.actor.login}
+          </Link>{" "}
+          <GoRepoPush className=" inline text-lg font-bold " />{" "}
+          <span className="inline">
+            pushed {event.payload.size} commits to{" "}
             {event.payload.ref.replace("refs/heads/", "")}
           </span>{" "}
           in{" "}
           <Link
-            className="cursor-pointer font-bold text-gray-300"
+            className="inline cursor-pointer font-bold text-gray-300"
             href={event.repo.url}
           >
-            {event.repo.name}
+            <span className="hidden sm:inline">{event.repo.name}</span>
+            <span className="sm:hidden">
+              {event.repo.name.replace("coronasafe/", "")}
+            </span>
           </Link>
         </div>
       );
@@ -144,15 +206,29 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
     case "ForkEvent":
       title = (
-        <div className="flex items-center gap-1">
-          <GoRepoForked className=" text-lg font-bold" />
-          forked{" "}
+        <div className="">
           <Link
-            className="cursor-pointer font-bold text-gray-300"
+            href={`https://github.com/${event.actor.login}`}
+            className="inline cursor-pointer font-bold text-gray-700 dark:text-gray-300 "
+          >
+            {event.actor.login}
+          </Link>{" "}
+          <span className="inline">
+            <GoRepoForked className=" inline text-lg font-bold" /> forked{" "}
+          </span>
+          <Link
+            className="inline cursor-pointer gap-2 font-bold text-gray-300"
             href={event.repo.url}
           >
-            {event.repo.name}
+            <span className="hidden sm:inline">{event.repo.name}</span>
+            <span className="sm:hidden">
+              {event.repo.name.replace("coronasafe/", "")}
+            </span>{" "}
           </Link>
+          <RelativeTime
+            className="inline text-sm text-gray-400 underline"
+            time={event.created_at}
+          />
         </div>
       );
       body = <OpenGraphImage url={event.payload.forkee.html_url} />;
@@ -160,15 +236,29 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
     case "ReleaseEvent":
       title = (
-        <div className="flex items-center gap-1">
-          <GoTag className=" text-lg font-bold" />
-          released{" "}
+        <div className="">
           <Link
-            className="cursor-pointer font-bold text-gray-300"
+            href={`https://github.com/${event.actor.login}`}
+            className="inline cursor-pointer font-bold text-gray-700 dark:text-gray-300 "
+          >
+            {event.actor.login}
+          </Link>{" "}
+          <GoTag className=" inline text-lg font-bold" />{" "}
+          <span className=" inline">released </span>
+          <Link
+            className="inline cursor-pointer gap-2 font-bold text-gray-300"
             href={event.payload.release.html_url}
           >
-            {event.repo.name}#{event.payload.release.tag_name}
+            <span className="hidden sm:inline">{event.repo.name}</span>
+            <span className="sm:hidden">
+              {event.repo.name.replace("coronasafe/", "")}
+            </span>
           </Link>
+          <span className="inline">#{event.payload.release.tag_name}</span>
+          <RelativeTime
+            className="inline text-sm text-gray-400 underline"
+            time={event.created_at}
+          />
         </div>
       );
       body = <GitHubReleaseEventBody event={event} />;
@@ -176,15 +266,29 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
     case "IssueCommentEvent":
       title = (
-        <div className="flex items-center gap-1">
-          <GoComment className=" text-lg font-bold" />
-          commented on{" "}
+        <div className="">
           <Link
-            className="cursor-pointer font-bold text-gray-300"
+            href={`https://github.com/${event.actor.login}`}
+            className="inline cursor-pointer font-bold text-gray-700 dark:text-gray-300 "
+          >
+            {event.actor.login}
+          </Link>
+          <GoComment className=" inline text-lg font-bold" />{" "}
+          <span className="inline">commented on </span>
+          <Link
+            className="inline cursor-pointer font-bold text-gray-300"
             href={event.payload.comment.html_url}
           >
-            {event.repo.name}#{event.payload.issue.number}
+            <span className="hidden sm:inline">{event.repo.name}</span>
+            <span className="sm:hidden">
+              {event.repo.name.replace("coronasafe/", "")}
+            </span>
           </Link>
+          <span className="inline">#{event.payload.issue.number}</span>
+          <RelativeTime
+            className="inline text-sm text-gray-400 underline"
+            time={event.created_at}
+          />
         </div>
       );
       body = <span className="p-2 text-xs">{event.payload.comment.body}</span>;
@@ -204,7 +308,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           aria-hidden
         />
         <div
-          className={`relative flex space-x-5 
+          className={`relative flex space-x-5
           ${body ? "items-start" : "items-center"}`}
         >
           <div className="relative">
@@ -234,25 +338,17 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           </div>
 
           <div className="min-w-0 flex-1">
-            <div>
-              <span className="flex items-center gap-1 text-sm text-gray-700 dark:text-gray-300">
-                <Link
-                  href={`https://github.com/${event.actor.login}`}
-                  className="cursor-pointer items-center font-bold text-gray-700 dark:text-gray-300"
-                >
-                  {event.actor.login}
-                </Link>{" "}
-                <span className="mt-0.5 flex gap-2 text-sm text-gray-400">
-                  {title} <RelativeTime time={event.created_at} />
-                </span>
-              </span>
-
-              {!!body && (
-                <div className="ml-2 mt-4 max-w-lg overflow-hidden rounded-xl">
-                  <p>{body}</p>
-                </div>
-              )}
+            <div className="gap-1 text-sm text-gray-700   dark:text-gray-300 lg:flex-row">
+              <div className="mt-0.5 flex gap-2 text-sm text-gray-400">
+                {title}
+              </div>
             </div>
+
+            {!!body && (
+              <div className="ml-2 mt-4 max-w-lg overflow-hidden rounded-xl">
+                <p>{body}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ export default function FeedLayout({
 }) {
   return (
     <div className="border-t border-gray-300 bg-background text-foreground dark:border-gray-700">
-      <div className="mx-auto max-w-6xl">{children}</div>
+      <div className="mx-auto max-w-6xl ">{children}</div>
     </div>
   );
 }

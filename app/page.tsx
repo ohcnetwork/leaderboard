@@ -45,7 +45,7 @@ export default async function Home() {
                       </h2>
                       <Link
                         href="/feed"
-                        className="flex items-center gap-1 rounded px-3 py-2 text-gray-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
+                        className="flex items-center gap-1 rounded px-3 py-2 text-gray-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200 "
                       >
                         More
                         <MdOutlineArrowForwardIos />

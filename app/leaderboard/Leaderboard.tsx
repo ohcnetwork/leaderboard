@@ -9,8 +9,9 @@ import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
 import DateRangePicker, { formatDate } from "@/components/DateRangePicker";
 import Search from "@/components/filters/Search";
 import Sort from "@/components/filters/Sort";
+import RoleFilter from "@/components/filters/RoleFilter";
 import format from "date-fns/format";
-import { LeaderboardAPIResponse } from "../api/leaderboard/functions";
+import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
 
 export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
   const router = useRouter();
@@ -41,11 +42,11 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
     <section className="border-t border-gray-300 bg-background text-foreground dark:border-gray-700">
       <div className="mx-auto max-w-6xl">
         <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
-          <div className="flex flex-col items-start justify-evenly gap-4 md:flex-row md:items-start">
+          <div className="flex flex-col flex-wrap gap-4 md:flex-row">
             <Search
               value={searchTerm}
               handleOnChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full"
+              className="grow"
             />
             <DateRangePicker
               value={{ start, end }}
@@ -58,23 +59,54 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                   )}`,
                 );
               }}
+              className="md:grow-1 grow"
+            />
+            <RoleFilter
+              filterOptions={RoleOptions}
+              value={
+                searchParams
+                  .get("role")
+                  ?.split(",")
+                  .map((value) => ({
+                    value,
+                    text: FILTER_BY_ROLE_OPTIONS[
+                      value as keyof typeof FILTER_BY_ROLE_OPTIONS
+                    ],
+                  })) || []
+              }
+              onChange={(selectedOptions) =>
+                updateSearchParam(
+                  "role",
+                  selectedOptions?.map((i) => i.value).join(","),
+                )
+              }
+              className="md:grow-1 grow md:min-w-[120px]"
             />
             <Sort
-              sortByOptions={Object.entries(SORT_BY_OPTIONS).map(
-                ([value, text]) => ({ value, text }),
-              )}
-              sortBy={searchParams.get("sortBy") ?? "points"}
-              sortDescending={searchParams.get("ordering") === "asc"}
-              handleSortByChange={(e) =>
-                updateSearchParam("sortBy", e.target.value)
+              sortByOptions={SortOptions}
+              value={
+                searchParams?.get("sortBy")
+                  ? ({
+                      value: searchParams.get("sortBy"),
+                      text: SORT_BY_OPTIONS[
+                        searchParams.get(
+                          "sortBy",
+                        ) as keyof typeof SORT_BY_OPTIONS
+                      ],
+                    } as (typeof SortOptions)[number])
+                  : { value: "points", text: "Points" }
               }
+              onChange={(selectedOption) =>
+                updateSearchParam("sortBy", selectedOption?.value)
+              }
+              sortDescending={searchParams.get("ordering") === "asc"}
               handleSortOrderChange={() => {
                 updateSearchParam(
                   "ordering",
                   searchParams.get("ordering") === "asc" ? "desc" : "asc",
                 );
               }}
-              className="w-full md:w-auto"
+              className="md:grow-1 grow md:w-[120px] "
             />
           </div>
         </div>
@@ -175,4 +207,27 @@ const SORT_BY_OPTIONS = {
   pr_stale: "Stale PRs",
 };
 
+export const SortOptions = Object.entries(SORT_BY_OPTIONS).map(
+  ([value, text]) => ({
+    value,
+    text,
+  }),
+);
+
 export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;
+
+const FILTER_BY_ROLE_OPTIONS = {
+  core: "Core",
+  intern: "Intern",
+  operations: "Operations",
+  contributor: "Contributor",
+};
+
+export const RoleOptions = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
+  ([value, text]) => ({
+    value,
+    text,
+  }),
+);
+
+export type RoleFilterKey = keyof typeof FILTER_BY_ROLE_OPTIONS;

@@ -18,6 +18,8 @@ jobs:
           sparse-checkout: scripts
 
       - uses: actions/setup-node@v4
+        with:
+          node-version: 21.x
 
       - run: npm install @octokit/action gray-matter
 

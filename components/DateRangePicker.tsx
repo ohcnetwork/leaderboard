@@ -25,22 +25,22 @@ const DateRangePicker = (props: Props) => {
 
   return (
     <div className={props.className}>
-      <div className="inline-block relative w-full text-left whitespace-nowrap">
+      <div className="relative inline-block w-full whitespace-nowrap text-left">
         <Popover>
           {({ open, close }) => (
             <>
               <Popover.Button
-                className={`px-4 py-2 font-medium rounded-md block w-full p-2 sm:text-sm border border-gray-600 dark:border-gray-300 ${
+                className={`block w-full rounded-md border border-gray-600 p-2 px-4 py-2 font-medium dark:border-gray-300 sm:text-sm ${
                   open
-                    ? "text-background bg-foreground"
-                    : "text-foreground bg-background"
+                    ? "bg-foreground text-background"
+                    : "bg-background text-foreground"
                 }`}
               >
                 {`${formatDate(startDate)} → ${formatDate(endDate)}`}
               </Popover.Button>
-              <Popover.Panel className="z-10 absolute border-primary-400 bg-background shadow-lg shadow-primary-500 mt-2 border rounded-lg">
+              <Popover.Panel className="absolute z-10 mt-2 rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500">
                 <div className="flex flex-col p-4">
-                  <div className="flex justify-between items-center gap-2 font-bold text-sm">
+                  <div className="flex items-center justify-between gap-2 text-sm font-bold">
                     <input
                       type="date"
                       name="start"
@@ -51,9 +51,9 @@ const DateRangePicker = (props: Props) => {
                           end: endDate,
                         })
                       }
-                      className="block border-gray-600 dark:border-gray-300 bg-transparent p-2 border rounded-md w-48 text-center text-foreground"
+                      className="block w-48 rounded-md border border-gray-600 bg-transparent p-2 text-center text-foreground dark:border-gray-300"
                     />
-                    <span className="font-bold text-base">→</span>
+                    <span className="text-base font-bold">→</span>
                     <input
                       type="date"
                       name="end"
@@ -64,14 +64,14 @@ const DateRangePicker = (props: Props) => {
                           end: e.target.valueAsDate ?? new Date(),
                         })
                       }
-                      className="block border-gray-600 dark:border-gray-300 bg-transparent p-2 border rounded-md w-48 text-center text-foreground"
+                      className="block w-48 rounded-md border border-gray-600 bg-transparent p-2 text-center text-foreground dark:border-gray-300"
                     />
                   </div>
-                  <div className="gap-2 grid grid-cols-2 mt-6">
+                  <div className="mt-6 grid grid-cols-2 gap-2">
                     {rangePresets.map((range, index) => (
                       <button
                         key={index}
-                        className="border-gray-500 hover:bg-primary-800 hover:dark:bg-white px-2 py-1 border rounded text-sm hover:text-white hover:dark:text-black whitespace-nowrap transition-all duration-100 ease-in-out"
+                        className="whitespace-nowrap rounded border border-gray-500 px-2 py-1 text-sm transition-all duration-100 ease-in-out hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black"
                         onClick={() => {
                           props.onChange(range.value);
                           close();

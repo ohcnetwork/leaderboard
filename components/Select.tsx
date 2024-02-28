@@ -101,14 +101,14 @@ export function Select({
       onBlur={() => setIsOpen(false)}
       onClick={() => setIsOpen((prev) => !prev)}
       tabIndex={0}
-      className="relative flex items-center border-gray-600 dark:border-gray-300 bg-background p-1 border rounded-l-none rounded-r-md w-full font-medium text-foreground text-sm hover:cursor-pointer outline-none"
+      className="relative flex w-full items-center rounded-l-none rounded-r-md border border-gray-600 bg-background p-1 text-sm font-medium text-foreground outline-none hover:cursor-pointer dark:border-gray-300"
     >
-      <span className="relative flex gap-1 grow">
+      <span className="relative flex grow gap-1">
         {multiple ? (
           <>
             {showSelectionsAs ? (
               showSelectionsAs == "tags" ? (
-                <div className="top-9 left-[-2.5rem] flex flex-wrap gap-0.5 w-full">
+                <div className="left-[-2.5rem] top-9 flex w-full flex-wrap gap-0.5">
                   {Array.isArray(value) &&
                   value?.length > 0 &&
                   value.length !== options.length ? (
@@ -118,10 +118,10 @@ export function Select({
                         onClick={() => {
                           selectOption(v);
                         }}
-                        className="flex items-center border-[#777] border-[0.05em] px-[0.25em] hover:border-red-600 border-solid rounded-md cursor-pointer outline-none"
+                        className="flex cursor-pointer items-center rounded-md border-[0.05em] border-solid border-[#777] px-[0.25em] outline-none hover:border-red-600"
                       >
                         {v.text}
-                        <RxCross2 className="hover:bg-white ml-1 rounded-full text-slate-600 hover:text-red-600" />
+                        <RxCross2 className="ml-1 rounded-full text-slate-600 hover:bg-white hover:text-red-600" />
                       </button>
                     ))
                   ) : (
@@ -129,11 +129,11 @@ export function Select({
                   )}
                 </div>
               ) : (
-                <div className="top-9 left-[-2.5rem] flex gap-0.5">
+                <div className="left-[-2.5rem] top-9 flex gap-0.5">
                   {Array.isArray(value) &&
                   value.length > 0 &&
                   value.length !== options.length ? (
-                    <span className="px-[0.25em] hover:border-red-600 rounded-md cursor-pointer outline-none">
+                    <span className="cursor-pointer rounded-md px-[0.25em] outline-none hover:border-red-600">
                       {value?.map((v) => v.text).join(",")}
                     </span>
                   ) : (
@@ -142,7 +142,7 @@ export function Select({
                 </div>
               )
             ) : (
-              <span className="pl-2 text-ellipsis text-sm whitespace-nowrap overflow-hidden">
+              <span className="overflow-hidden text-ellipsis whitespace-nowrap pl-2 text-sm">
                 {Array.isArray(value) && value.length > 0
                   ? `${value.length} Selected`
                   : "All"}
@@ -150,7 +150,7 @@ export function Select({
             )}
           </>
         ) : (
-          <span className="pl-2 overflow-hidden">
+          <span className="overflow-hidden pl-2">
             {Array.isArray(value) ? value[0]?.text : value?.text}
           </span>
         )}
@@ -163,14 +163,14 @@ export function Select({
             onClick={() => {
               onChange([]);
             }}
-            className="border-[none] bg-none p-0 text-[1.25em] text-white cursor-pointer outline-none"
+            className="cursor-pointer border-[none] bg-none p-0 text-[1.25em] text-white outline-none"
           >
             <RxCrossCircled />
           </button>
         )}
       <RiArrowDropDownLine size={30} />
       <ul
-        className={`absolute bg-background border border-gray-600 cursor-pointer dark:border-gray-300 font-medium max-h-48 mt-1 overflow-y-auto py-1 rounded-md text-foreground text-sm top-full w-full z-10 ${
+        className={`absolute top-full z-10 mt-1 max-h-48 w-full cursor-pointer overflow-y-auto rounded-md border border-gray-600 bg-background py-1 text-sm font-medium text-foreground dark:border-gray-300 ${
           isOpen ? "" : "hidden"
         }`}
       >
@@ -182,7 +182,7 @@ export function Select({
             key={option.value}
             className={` ${
               isOptionSelected(option) ? "bg-[hsl(240,46%,46%)] text-white" : ""
-            } hover:bg-[#7474e1] m-1 px-1 rounded-md overflow-x-hidden whitespace-nowrap	`}
+            } m-1 overflow-x-hidden whitespace-nowrap rounded-md px-1 hover:bg-[#7474e1]	`}
           >
             {option.text}
           </li>

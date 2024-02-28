@@ -39,14 +39,14 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
   };
 
   return (
-    <section className="border-gray-300 dark:border-gray-700 bg-background border-t text-foreground">
+    <section className="border-t border-gray-300 bg-background text-foreground dark:border-gray-700">
       <div className="mx-auto max-w-6xl">
-        <div className="border-primary-500 mx-4 md:mx-0 mt-4 p-4 border rounded-lg">
-          <div className="flex md:flex-row flex-col flex-wrap gap-4">
+        <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
+          <div className="flex flex-col flex-wrap gap-4 md:flex-row">
             <Search
               value={searchTerm}
               handleOnChange={(e) => setSearchTerm(e.target.value)}
-              className="flex-grow"
+              className="grow"
             />
             <DateRangePicker
               value={{ start, end }}
@@ -59,7 +59,7 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                   )}`,
                 );
               }}
-              className="flex-grow md:flex-grow-1"
+              className="md:grow-1 grow"
             />
             <RoleFilter
               filterOptions={RoleOptions}
@@ -80,7 +80,7 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                   selectedOptions?.map((i) => i.value).join(","),
                 )
               }
-              className="flex-grow md:flex-grow-1 md:min-w-[120px]"
+              className="md:grow-1 grow md:min-w-[120px]"
             />
             <Sort
               sortByOptions={SortOptions}
@@ -106,16 +106,16 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                   searchParams.get("ordering") === "asc" ? "desc" : "asc",
                 );
               }}
-              className="flex-grow md:flex-grow-1 md:w-[120px] "
+              className="md:grow-1 grow md:w-[120px] "
             />
           </div>
         </div>
-        <div className="border-gray-600 mx-4 xl:mx-0">
-          <div className="2xl:gap-5 lg:grid lg:grid-cols-12 px-0 pb-10 lg:pb-20">
+        <div className="mx-4 border-gray-600 xl:mx-0">
+          <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:pb-20 2xl:gap-5">
             <div className="lg:col-span-7 2xl:col-span-8">
-              <div className="top-0 sticky pt-6">
-                <div className="border-primary-500 border rounded-lg terminal-container-bg">
-                  <div className="flex space-x-2 border-primary-500 px-6 py-3 border-b ">
+              <div className="sticky top-0 pt-6">
+                <div className="terminal-container-bg rounded-lg border border-primary-500">
+                  <div className="flex space-x-2 border-b border-primary-500 px-6 py-3 ">
                     {searchParams.get("between") ? (
                       <span>
                         Leaderboard of {formatDate(start)} → {formatDate(end)}
@@ -129,7 +129,7 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                     )}
                   </div>
                   {data.length ? (
-                    <ul className="space-y-6 lg:space-y-8 p-6 overflow-x-auto">
+                    <ul className="space-y-6 overflow-x-auto p-6 lg:space-y-8">
                       {data.map((contributor, index) => {
                         return (
                           <li key={contributor.user.social.github}>
@@ -154,20 +154,20 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
             </div>
             <div className="lg:col-span-5 2xl:col-span-4">
               <div>
-                <div className="mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 max-w-6xl ">
-                  <div className="space-y-12 border-primary-500 p-4 border rounded-lg">
+                <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-24 ">
+                  <div className="space-y-12 rounded-lg border border-primary-500 p-4">
                     <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                      <h2 className="font-extrabold text-3xl sm:text-4xl tracking-tight">
+                      <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                         Top Contributors{" "}
                         {!searchParams.get("between") && "of the week"}
                       </h2>
-                      <p className="text-gray-500 text-xl dark:text-gray-300">
+                      <p className="text-xl text-gray-500 dark:text-gray-300">
                         Our top contributers across different metrics
                       </p>
                     </div>
                     <ul
                       role="list"
-                      className="sm:gap-6 lg:gap-8 space-y-4 sm:space-y-0 sm:grid sm:grid-cols-1 lg:grid-cols-1"
+                      className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
                     >
                       <TopContributor data={data} category="eod_update" />
                       <TopContributor data={data} category="pr_opened" />

@@ -18,10 +18,10 @@ const Sort = ({
 }) => {
   return (
     <div className={className}>
-      <span className="inline-flex relative shadow-sm rounded-md w-full ">
+      <span className="relative inline-flex w-full rounded-md shadow-sm ">
         <span
           onClick={handleSortOrderChange}
-          className="inline-flex relative items-center border-gray-600 dark:border-gray-300 px-2 py-2 border rounded-l-md cursor-pointer"
+          className="relative inline-flex cursor-pointer items-center rounded-l-md border border-gray-600 px-2 py-2 dark:border-gray-300"
         >
           {sortDescending ? (
             <HiSortAscending className="text-foreground" size={20} />
@@ -34,7 +34,6 @@ const Sort = ({
           value={value}
           onChange={(value) => onChange(value as SelectOption)}
         />
-
       </span>
     </div>
   );

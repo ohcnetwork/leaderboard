@@ -22,7 +22,7 @@ function main() {
         var updatedData = data
           .replace(
             /core: false\s+intern: false\s+operations: false/,
-            `role: ""`,
+            `role: "contributor"`,
           )
           .replace(
             /core: true\s+intern: false\s+operations: false/,

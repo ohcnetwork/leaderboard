@@ -1,4 +1,16 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/migration-from-tailwind-2": "error",
+    "tailwindcss/classnames-order": "error",
+    "tailwindcss/enforces-shorthand": "off",
+    "tailwindcss/no-contradicting-classname": "error",
+    "tailwindcss/enforces-negative-arbitrary-values": "off"
+  },
   "ignorePatterns": ["data"]
 }

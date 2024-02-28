@@ -38,10 +38,10 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
   };
 
   return (
-    <section className="bg-background text-foreground border-t dark:border-gray-700 border-gray-300">
-      <div className="max-w-6xl mx-auto">
-        <div className="mx-4 md:mx-0 mt-4 p-4 border border-primary-500 rounded-lg">
-          <div className="flex flex-col md:flex-row justify-evenly items-start md:items-start gap-4">
+    <section className="border-t border-gray-300 bg-background text-foreground dark:border-gray-700">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
+          <div className="flex flex-col items-start justify-evenly gap-4 md:flex-row md:items-start">
             <Search
               value={searchTerm}
               handleOnChange={(e) => setSearchTerm(e.target.value)}
@@ -78,12 +78,12 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
             />
           </div>
         </div>
-        <div className="border-gray-600 mx-4 xl:mx-0">
-          <div className="lg:grid lg:grid-cols-12 2xl:gap-5 px-0 pb-10 lg:pb-20">
+        <div className="mx-4 border-gray-600 xl:mx-0">
+          <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:pb-20 2xl:gap-5">
             <div className="lg:col-span-7 2xl:col-span-8">
               <div className="sticky top-0 pt-6">
-                <div className="terminal-container-bg border rounded-lg border-primary-500">
-                  <div className="flex space-x-2 px-6 py-3 border-b border-primary-500 ">
+                <div className="terminal-container-bg rounded-lg border border-primary-500">
+                  <div className="flex space-x-2 border-b border-primary-500 px-6 py-3 ">
                     {searchParams.get("between") ? (
                       <span>
                         Leaderboard of {formatDate(start)} → {formatDate(end)}
@@ -97,7 +97,7 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                     )}
                   </div>
                   {data.length ? (
-                    <ul className="space-y-6 lg:space-y-8 overflow-x-auto p-6">
+                    <ul className="space-y-6 overflow-x-auto p-6 lg:space-y-8">
                       {data.map((contributor, index) => {
                         return (
                           <li key={contributor.user.social.github}>
@@ -122,8 +122,8 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
             </div>
             <div className="lg:col-span-5 2xl:col-span-4">
               <div>
-                <div className="mx-auto py-12 px-4 max-w-6xl sm:px-6 lg:px-8 lg:py-24 ">
-                  <div className="space-y-12 p-4 border border-primary-500 rounded-lg">
+                <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-24 ">
+                  <div className="space-y-12 rounded-lg border border-primary-500 p-4">
                     <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                       <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                         Top Contributors{" "}

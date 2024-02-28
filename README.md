@@ -35,7 +35,7 @@ pnpm add <package_name>
 ## How to add a new member?
 
 Create a new markdown file with the github user name in the `contributors` folder. For example, if you want to
-add `john-doe` as a contributor, create a file named `john-doe.md` in the `contributors` folder.
+add `john-doe` as a intern, create a file named `john-doe.md` in the `contributors` folder.
 
 The file should contain the following content:
 
@@ -48,9 +48,7 @@ twitter: john-doe
 linkedin: john-doe
 slack: U02TDGQQPMJ
 joining_date: "09/05/2022"
-core: false
-intern: true
-operations: false
+role: ""
 ---
 
 ** A Bio about John Doe **  
@@ -58,10 +56,10 @@ _Passionate about creating scalable and distributed systems for the power grid a
 source digital public goods._ (supports markdown)
 ```
 
-All members marked with `core: true` will be listed in the core team section, they will be hidden from the leaderboard
+All members marked with `role: "core"` will be listed in the core team section, they will be hidden from the leaderboard
 section by default. You can toggle the visibility of core team members by clicking on the `Core Team` button.
 
-All members marked with `operations: true` will be will be hidden from the leaderboard section.
+All members marked with `role: "operations"` will be will be hidden from the leaderboard section.
 
 You will be able to see the users profile page at `http://localhost:3000/contributors/john-doe`.
 

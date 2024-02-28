@@ -65,7 +65,7 @@ export default async function Home() {
                       </h2>
                       <Link
                         href="/releases"
-                        className="text-gray-400 px-3 py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2"
+                        className="flex items-center gap-1 rounded px-3 py-2 text-gray-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
                       >
                         More
                         <MdOutlineArrowForwardIos />
@@ -74,7 +74,7 @@ export default async function Home() {
                     <Suspense
                       fallback={
                         <>
-                          <div className="w-full h-10 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
+                          <div className="h-10 w-full animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
                         </>
                       }
                     >
@@ -85,7 +85,7 @@ export default async function Home() {
 
                 <div className="mx-auto">
                   <div className="space-y-12">
-                    <div className="flex justify-between items-center pr-5">
+                    <div className="flex items-center justify-between pr-5">
                       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                         Active Projects
                       </h2>

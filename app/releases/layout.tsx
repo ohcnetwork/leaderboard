@@ -12,7 +12,7 @@ export default function ReleasesLayout({
 }) {
   return (
     <div className="mx-auto max-w-4xl p-10">
-      <h1 className="text-4xl pb-10">Recent Releases</h1>
+      <h1 className="pb-10 text-4xl">Recent Releases</h1>
       {children}
     </div>
   );

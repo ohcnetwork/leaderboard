@@ -19,6 +19,7 @@ export interface Contributor {
   intern: boolean;
   operations: boolean;
   courses_completed: string[];
+  first_activity: Date | string;
 }
 
 export interface ActivityData {
@@ -39,6 +40,7 @@ export interface Highlights {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
+  new_contributor?: number;
 }
 
 export interface WeekSummary {

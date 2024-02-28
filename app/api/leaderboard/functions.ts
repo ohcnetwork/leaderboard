@@ -39,13 +39,15 @@ export const getLeaderboardData = async (
 
   const contributors = await getContributors();
 
-  const data = contributors
+  let data = contributors
     .filter((a) => a.highlights.points)
     .map((contributor) => ({
       ...contributor,
       summary: contributor.summarize(...dateRange),
     }))
-    .filter((contributor) => contributor.summary.points)
+    .filter(
+      (contributor) => contributor.summary.points && contributor.first_activity,
+    )
     .filter((contributor) => {
       if (role.length === 0) return true;
       if (role.includes("core") && contributor.core) return true;
@@ -60,17 +62,48 @@ export const getLeaderboardData = async (
         return true;
       return false;
     })
+
     .sort((a, b) => {
+      if (
+        a.first_activity !== undefined &&
+        b.first_activity !== undefined &&
+        sortBy === "new_contributor"
+      ) {
+        return (
+          new Date(b.first_activity).getTime() -
+          new Date(a.first_activity).getTime()
+        );
+      }
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;
       }
-      return b.summary[sortBy] - a.summary[sortBy];
+      return (b.summary[sortBy] ?? 0) - (a.summary[sortBy] ?? 0);
     });
 
   if (shouldReverse) {
     data.reverse();
   }
 
+  if (sortBy === "new_contributor") {
+    data = data
+      .filter((a) => {
+        if (
+          a.first_activity !== undefined &&
+          typeof a.first_activity === "string"
+        ) {
+          let date = new Date(dateRange[1]);
+          date.setDate(date.getDate() - 8);
+
+          return (
+            new Date(a.first_activity) > date &&
+            new Date(a.first_activity) < new Date(dateRange[1])
+          );
+        }
+      })
+      .sort((a, b) => {
+        return b.highlights.points - a.highlights.points;
+      });
+  }
   return data.map((contributor): LeaderboardAPIResponse[number] => {
     const role: LeaderboardAPIResponse[number]["user"]["role"] = [];
 

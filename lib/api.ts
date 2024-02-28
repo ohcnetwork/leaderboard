@@ -98,7 +98,28 @@ export async function getContributorBySlug(file: string, detail = false) {
   }
 
   const slackMessages = await getSlackMessages(data.slack);
-
+  const UtctoDate = (date: number | string) => {
+    let dateObject;
+    if (
+      data.joining_date !== "Still waiting for this" &&
+      data.joining_date !== ""
+    ) {
+      const parts = data.joining_date.split("/");
+      const inputDate = new Date(parts[2], parts[0] - 1, parts[1]);
+      return inputDate.toISOString();
+    } else if (typeof date === "number") {
+      var timestamp = Number(date) * 1000;
+      dateObject = new Date(timestamp);
+      return dateObject.toISOString();
+    } else if (date != undefined) {
+      dateObject = new Date(date);
+      if (dateObject != undefined && date != undefined) {
+        return dateObject.toISOString();
+      }
+    } else if (date === undefined) {
+      return undefined;
+    }
+  };
   activityData = {
     ...activityData,
     activity: [...activityData.activity, ...slackMessages],
@@ -180,6 +201,9 @@ export async function getContributorBySlug(file: string, detail = false) {
     summarize,
     calendarData: detail ? calendarData : [],
     ...data,
+    first_activity: UtctoDate(
+      activityData?.activity[activityData.activity.length - 1]?.time,
+    ),
   } as Contributor & { summarize: typeof summarize };
 }
 

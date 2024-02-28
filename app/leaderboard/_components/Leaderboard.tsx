@@ -114,6 +114,7 @@ export const SORT_BY_OPTIONS = {
   pr_opened: "PR Opened",
   pr_reviewed: "PR Reviewed",
   pr_stale: "Stale PRs",
+  new_contributor: "New Contributor",
 };
 
 export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;

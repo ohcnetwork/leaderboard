@@ -5,6 +5,8 @@ import GitHubEvents from "@/components/gh_events/GitHubEvents";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ActiveProjects from "./projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
+import ReleaseSection from "@/components/releases/ReleaseSection";
+import { Suspense } from "react";
 import { env } from "@/env.mjs";
 
 export default async function Home() {
@@ -12,12 +14,12 @@ export default async function Home() {
     (a, b) => b.weekSummary.points - a.weekSummary.points,
   );
   return (
-    <div className="bg-background text-foreground min-h-screen">
-      <section className="bg-background border-t dark:border-gray-700 border-gray-300 ">
-        <div className="max-w-7xl mx-auto">
-          <div className="border-gray-600 mx-4 xl:mx-0">
-            <div className="lg:grid lg:grid-cols-12 lg:gap-12 px-0 pb-10 lg:pb-20">
-              <div className="lg:col-span-8 space-y-20">
+    <div className="min-h-screen bg-background text-foreground">
+      <section className="border-t border-gray-300 bg-background dark:border-gray-700 ">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-4 border-gray-600 xl:mx-0">
+            <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:gap-12 lg:pb-20">
+              <div className="space-y-20 lg:col-span-8">
                 {env.NEXT_PUBLIC_ORG_INFO ? (
                   <div className="pt-20">
                     <div className="mx-auto max-w-7xl">
@@ -26,7 +28,7 @@ export default async function Home() {
                           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                             What we do?
                           </h2>
-                          <p className="text-lg text-gray-500 dark:text-gray-400 font-inter text-justify font-medium">
+                          <p className="text-justify font-inter text-lg font-medium text-gray-500 dark:text-gray-400">
                             {env.NEXT_PUBLIC_ORG_INFO}
                           </p>
                         </div>
@@ -39,13 +41,13 @@ export default async function Home() {
 
                 <div className="mx-auto">
                   <div className="space-y-12">
-                    <div className="flex justify-between items-center pr-5">
+                    <div className="flex items-center justify-between pr-5">
                       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                         What&apos;s happening?
                       </h2>
                       <Link
                         href="/feed"
-                        className="text-gray-400 px-3 py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2"
+                        className="flex items-center gap-1 rounded px-3 py-2 text-gray-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200 "
                       >
                         More
                         <MdOutlineArrowForwardIos />
@@ -57,13 +59,39 @@ export default async function Home() {
 
                 <div className="mx-auto">
                   <div className="space-y-12">
-                    <div className="flex justify-between items-center pr-5">
+                    <div className="flex items-center justify-between pr-5">
+                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                        Recent Releases
+                      </h2>
+                      <Link
+                        href="/releases"
+                        className="flex items-center gap-1 rounded px-3 py-2 text-gray-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
+                      >
+                        More
+                        <MdOutlineArrowForwardIos />
+                      </Link>
+                    </div>
+                    <Suspense
+                      fallback={
+                        <>
+                          <div className="h-10 w-full animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
+                        </>
+                      }
+                    >
+                      <ReleaseSection />
+                    </Suspense>
+                  </div>
+                </div>
+
+                <div className="mx-auto">
+                  <div className="space-y-12">
+                    <div className="flex items-center justify-between pr-5">
                       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                         Active Projects
                       </h2>
                       <Link
                         href="/projects"
-                        className="text-gray-400 px-3 py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2"
+                        className="flex items-center gap-1 rounded px-3 py-2 text-gray-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
                       >
                         More
                         <MdOutlineArrowForwardIos />
@@ -71,7 +99,7 @@ export default async function Home() {
                     </div>
                     <ActiveProjects
                       small
-                      className="grid grid-cols-1 lg:grid-cols-2 gap-4 font-inter"
+                      className="grid grid-cols-1 gap-4 font-inter lg:grid-cols-2"
                       labels={ACTIVE_PROJECT_LABELS}
                       limit={6}
                     />
@@ -82,18 +110,18 @@ export default async function Home() {
                   <div className="mx-auto">
                     <div className="space-y-12">
                       <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                        <div className="flex justify-between items-center">
+                        <div className="flex items-center justify-between">
                           <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
                             Our Contributors
                           </h2>
                         </div>
-                        <p className="text-xl text-gray-400 hidden">
+                        <p className="hidden text-xl text-gray-400">
                           {env.NEXT_PUBLIC_CONTRIBUTORS_INFO}
                         </p>
                       </div>
                       <ul
                         role="list"
-                        className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8 mt-4"
+                        className="mt-4 space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
                       >
                         {contributors
                           .slice(0, 8)
@@ -109,7 +137,7 @@ export default async function Home() {
                           })}
                       </ul>
                       <Link
-                        className="text-gray-400 px-3 lg:ml-auto w-fit py-2 rounded underline flex items-center gap-1 underline-offset-2 hover:text-primary-200 transition-all duration-200 ease-in-out hover:gap-2 sm:justify-center"
+                        className="flex w-fit items-center gap-1 rounded px-3 py-2 text-gray-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200 sm:justify-center lg:ml-auto"
                         href={"/people"}
                       >
                         {contributors.length - 8} contributors more...
@@ -122,8 +150,8 @@ export default async function Home() {
 
               <div className="lg:col-span-4">
                 <div className="sticky top-0 pt-20">
-                  <div className="rounded-lg dark:bg-gray-800 bg-gray-100 bg-opacity-50 shadow-lg border dark:border-gray-800 border-gray-100">
-                    <div className="flex flex-col md:flex-row justify-between md:items-center dark:bg-gray-800 bg-gray-100 rounded-t-lg px-6 py-4 border-b dark:border-gray-700 border-gray-300 ">
+                  <div className="rounded-lg border border-gray-100 bg-gray-100/50 shadow-lg dark:border-gray-800 dark:bg-gray-800/50">
+                    <div className="flex flex-col justify-between rounded-t-lg border-b border-gray-300 bg-gray-100 px-6 py-4 dark:border-gray-700 dark:bg-gray-800 md:flex-row md:items-center ">
                       <h4 className="font-bold">Leaderboard</h4>
                       <span className="text-gray-600 dark:text-gray-300">
                         last 7 days
@@ -136,8 +164,8 @@ export default async function Home() {
                             key={index}
                             href={`/contributors/${contributor.github}`}
                           >
-                            <span className="hover:shadow-lg hover:shadow-primary-500 transition duration-300 flex space-x-3 items-center cursor-pointer bg-background bg-opacity-75 px-2 py-3 rounded-lg hover:bg-opacity-30">
-                              <span className="flex items-center justify-center text-lg h-10 w-10 dark:bg-gray-800 bg-gray-100 rounded-full">
+                            <span className="bg-background/75 hover:bg-background/30 flex cursor-pointer items-center space-x-3 rounded-lg px-2 py-3 transition duration-300 hover:shadow-lg hover:shadow-primary-500">
+                              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-lg dark:bg-gray-800">
                                 {index + 1}
                               </span>
                               <span className="text-lg font-medium">
@@ -150,7 +178,7 @@ export default async function Home() {
 
                       <div className="pt-2">
                         <Link
-                          className="block px-10 p-3 text-center bg-gradient-to-b from-primary-500 to-primary-700 text-white border border-primary-500 font-bold rounded shadow-lg hover:shadow-xl hover:from-gray-800 hover:to-gray-900 hover:text-primary-500 transition"
+                          className="block rounded border border-primary-500 bg-gradient-to-b from-primary-500 to-primary-700 p-3 px-10 text-center font-bold text-white shadow-lg transition hover:from-gray-800 hover:to-gray-900 hover:text-primary-500 hover:shadow-xl"
                           href="/leaderboard"
                         >
                           View Leaderboard

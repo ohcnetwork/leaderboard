@@ -33,16 +33,16 @@ export default function InfoCard({
 
   return (
     <div
-      className="py-6 px-2 bg-gray-100 dark:bg-gray-800 text-center rounded-lg xl:px-8 xl:text-left flex flex-col items-center"
+      className="flex flex-col items-center rounded-lg bg-gray-100 px-2 py-6 text-center dark:bg-gray-800 xl:px-8 xl:text-left"
       role="listitem"
     >
-      <span className="text-foreground text-sm text-center">
+      <span className="text-center text-sm text-foreground">
         Most # of{" "}
         <span className="font-bold">
           {TOP_CONTRIBUTOR_CATEGORIES[category]}
         </span>
       </span>
-      <ul className="space-y-3 mt-4">
+      <ul className="mt-4 space-y-3">
         {resultSet.map((contributor, index) => (
           <li
             className={`relative hover:scale-105 ${
@@ -52,11 +52,11 @@ export default function InfoCard({
           >
             <Link
               href={`/contributors/${contributor.user.social.github}`}
-              className="flex gap-4 items-center w-full"
+              className="flex w-full items-center gap-4"
             >
               <Image
                 loading="lazy"
-                className="rounded-full h-11 w-11 ring-1 ring-primary-500 shadow-md shadow-primary-500"
+                className="h-11 w-11 rounded-full shadow-md shadow-primary-500 ring-1 ring-primary-500"
                 src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
                 alt={contributor.user.social.github}
                 title={contributor.user.name}

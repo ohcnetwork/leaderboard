@@ -80,3 +80,10 @@ export const scrollTo = (id: string | boolean) => {
 export const parseIssueNumber = (url: string) => {
   return url.replace(/^.*github\.com\/[\w-]+\/[\w-]+\/issues\//, "");
 };
+
+export const navLinks = [
+  { title: "Feed", path: "/feed" },
+  { title: "Leaderboard", path: "/leaderboard" },
+  { title: "People", path: "/people" },
+  { title: "Projects", path: "/projects" },
+];

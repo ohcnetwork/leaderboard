@@ -9,6 +9,13 @@ export default async function LeaderboardWrapper({
   const data = await getLeaderboardData(
     parseDateRangeSearchParam(searchParams.between),
     searchParams.sortBy ?? "-points",
+    // @ts-ignore
+    (searchParams.role?.split(",") as (
+      | "core"
+      | "intern"
+      | "operations"
+      | "contributor"
+    )[]) ?? [],
   );
 
   return <Leaderboard data={data} searchParams={searchParams} />;

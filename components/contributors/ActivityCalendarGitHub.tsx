@@ -75,9 +75,9 @@ export default function ActivityCalendarGit({
   const [activityData, setActivityData] = useState({});
 
   return (
-    <div className="sm:flex gap-3">
+    <div className="gap-3 sm:flex">
       {isBrowser && (
-        <div className="py-8 dark:bg-gray-800 bg-gray-100 text-foreground text-center rounded-lg px-6 sm:px-10 xl:text-left hover:cursor-pointer">
+        <div className="rounded-lg bg-gray-100 px-6 py-8 text-center text-foreground hover:cursor-pointer dark:bg-gray-800 sm:px-10 xl:text-left">
           {year === 0 ? (
             <ActivityCalendar
               colorScheme={theme === "dark" ? "dark" : "light"}
@@ -122,15 +122,15 @@ export default function ActivityCalendarGit({
           />
         </div>
       )}
-      <div className="flex sm:flex-col gap-2 mt-2 sm:mt-0">
+      <div className="mt-2 flex gap-2 sm:mt-0 sm:flex-col">
         {yearsList.map((y, i) => {
           return (
             <button
               key={i}
               className={
                 y !== year
-                  ? "h-10 w-24 rounded-lg dark:bg-gray-800 bg-gray-100 text-foreground text-sm flex justify-center items-center hover:bg-gray-700"
-                  : "h-10 w-24 rounded-lg bg-primary-500 text-white text-sm flex justify-center items-center"
+                  ? "flex h-10 w-24 items-center justify-center rounded-lg bg-gray-100 text-sm text-foreground hover:bg-gray-700 dark:bg-gray-800"
+                  : "flex h-10 w-24 items-center justify-center rounded-lg bg-primary-500 text-sm text-white"
               }
               onClick={(_) => setYear(y)}
             >

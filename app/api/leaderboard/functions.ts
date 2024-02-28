@@ -1,6 +1,11 @@
 import { LeaderboardSortKey } from "@/app/leaderboard/_components/Leaderboard";
 import { getContributors } from "@/lib/api";
 import { Highlights } from "@/lib/types";
+import { ReleasesResponse } from "@/lib/types";
+import { Repository } from "@/lib/types";
+import { Release } from "@/lib/types";
+import { env } from "@/env.mjs";
+import getGitHubAccessToken from "@/lib/getGitHubAccessToken";
 
 export type LeaderboardAPIResponse = {
   user: {
@@ -27,6 +32,7 @@ type OrderingKey = LeaderboardSortKey | `-${LeaderboardSortKey}`;
 export const getLeaderboardData = async (
   dateRange: readonly [Date, Date],
   ordering: OrderingKey,
+  role: ("core" | "intern" | "operations" | "contributor")[],
 ) => {
   const sortBy = ordering.replace("-", "") as LeaderboardSortKey;
   const shouldReverse = !ordering.startsWith("-");
@@ -40,6 +46,20 @@ export const getLeaderboardData = async (
       summary: contributor.summarize(...dateRange),
     }))
     .filter((contributor) => contributor.summary.points)
+    .filter((contributor) => {
+      if (role.length === 0) return true;
+      if (role.includes("core") && contributor.core) return true;
+      if (role.includes("intern") && contributor.intern) return true;
+      if (role.includes("operations") && contributor.operations) return true;
+      if (
+        role.includes("contributor") &&
+        !contributor.core &&
+        !contributor.intern &&
+        !contributor.operations
+      )
+        return true;
+      return false;
+    })
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;
@@ -81,3 +101,71 @@ export const getLeaderboardData = async (
     };
   });
 };
+
+export default async function fetchGitHubReleases(
+  sliceLimit: number,
+): Promise<Release[]> {
+  const accessToken = getGitHubAccessToken();
+
+  if (!accessToken) {
+    return [];
+  }
+
+  const response = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `{
+        organization(login: "${env.NEXT_PUBLIC_GITHUB_ORG}") {
+          repositories(first: 100) {
+            nodes {
+              name
+              releases(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
+                nodes {
+                  name
+                  createdAt
+                  description
+                  url
+                  author {
+                    login
+                    avatarUrl
+                  }
+                  mentions (first: 10) {
+                    nodes {
+                      login 
+                      avatarUrl
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }`,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const json = (await response.json()) as ReleasesResponse;
+  const repositories: Repository[] = json.data.organization.repositories.nodes;
+  const allReleases: Release[] = [];
+
+  for (const repository of repositories) {
+    for (const release of repository.releases.nodes) {
+      release.repository = repository.name;
+      allReleases.push(release);
+    }
+  }
+
+  const sortedReleases = allReleases.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+  );
+
+  return sortedReleases.slice(0, sliceLimit);
+}

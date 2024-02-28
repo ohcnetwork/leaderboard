@@ -29,12 +29,12 @@ const Sort = ({
             <HiSortDescending className="text-foreground" size={20} />
           )}
         </span>
-
         <Select
           options={sortByOptions}
           value={value}
           onChange={(value) => onChange(value as SelectOption)}
         />
+
       </span>
     </div>
   );

@@ -4,8 +4,8 @@ export default function FeedLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-background text-foreground border-t dark:border-gray-700 border-gray-300">
-      <div className="max-w-6xl mx-auto">{children}</div>
+    <div className="border-t border-gray-300 bg-background text-foreground dark:border-gray-700">
+      <div className="mx-auto max-w-6xl">{children}</div>
     </div>
   );
 }

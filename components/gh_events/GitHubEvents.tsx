@@ -42,7 +42,7 @@ export default function GitHubEvents({ minimal }: { minimal?: boolean }) {
 
   return (
     <div className="flow-root">
-      <ul role="list" className="space-y-4 flex flex-col gap-4 mt-4 -mb-8">
+      <ul role="list" className="-mb-8 mt-4 flex flex-col gap-4 space-y-4">
         {events ? (
           events.map((e) => <GitHubEvent key={e.id} event={e} />)
         ) : (

@@ -17,7 +17,7 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
 
   const updateSearchParam = (key: string, value?: string) => {
-    const current = new URLSearchParams(searchParams);
+    const current = new URLSearchParams(searchParams as Record<string, string>);
     if (!value) {
       current.delete(key);
     } else {

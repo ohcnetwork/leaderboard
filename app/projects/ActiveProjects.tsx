@@ -4,6 +4,7 @@ import { parseIssueNumber } from "@/lib/utils";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { ActiveProjectLabelConfig } from "./constants";
+import { env } from "@/env.mjs";
 
 type GraphQLOrgActiveProjectsResponse = {
   data: {
@@ -41,9 +42,9 @@ type GraphQLOrgActiveProjectsResponse = {
 async function fetchIssues(labels: string[]) {
   const labelsFilter = labels.map((label) => `"${label}"`).join(", ");
 
-  const accessToken = process.env.GITHUB_PAT;
+  const accessToken = env.GITHUB_PAT;
 
-  if (!accessToken) {
+  if (accessToken.length === 0) {
     if (process.env.NODE_ENV === "development") {
       console.error("'GITHUB_PAT' is not configured in the environment.");
       return [];
@@ -61,7 +62,7 @@ async function fetchIssues(labels: string[]) {
     body: JSON.stringify({
       query: `
     {
-      organization(login: "${process.env.NEXT_PUBLIC_GITHUB_ORG}") {
+      organization(login: "${env.NEXT_PUBLIC_GITHUB_ORG}") {
         repositories(first: 100, orderBy: {field: PUSHED_AT, direction: DESC}) {
           edges {
             node {
@@ -176,7 +177,7 @@ export default async function ActiveProjects(props: {
                 }`}
               >
                 <span className="text-gray-400 tracking-normal pr-0.5">
-                  {process.env.NEXT_PUBLIC_GITHUB_ORG}/{issue.repo}
+                  {env.NEXT_PUBLIC_GITHUB_ORG}/{issue.repo}
                 </span>
                 #{issue.number}
               </Link>

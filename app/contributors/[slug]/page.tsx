@@ -20,6 +20,7 @@ import { FiAlertTriangle } from "react-icons/fi";
 import { TbGitPullRequest } from "react-icons/tb";
 import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
+import { env } from "@/env.mjs";
 
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
@@ -81,7 +82,7 @@ export default async function Contributor({ params }: Params) {
               Contributor profile has not been updated.
             </span>
             <Link
-              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
+              href={`https://github.com/${env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 text-white transition-all duration-200 ease-in-out py-2 px-3 rounded-lg font-bold"
@@ -192,7 +193,7 @@ export default async function Contributor({ params }: Params) {
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-foreground my-4">Short Bio</h3>
             <Link
-              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
+              href={`https://github.com/${env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
               target="_blank"
               rel="noreferrer"
               className="underline underline-offset-2 flex items-center gap-1 text-gray-500 dark:text-gray-300"

@@ -36,19 +36,19 @@ export default function LeaderboardCard({
       href={"/contributors/" + contributor.user.social.github}
       className="block"
     >
-      <div className="flex border-2 border-transparent hover:border-primary-400 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out transform rounded-lg p-4 md:items-center px-2 sm:px-6 md:py-0 py-2 cursor-pointer space-y-4 justify-center">
+      <div className="flex cursor-pointer justify-center space-y-4 rounded-lg border-2 border-transparent p-4 px-2 py-2 transition-all duration-300 ease-in-out hover:scale-105 hover:border-primary-400 hover:shadow-lg sm:px-6 md:items-center md:py-0">
         {!hideBadges && (
           <div
-            className={`h-10 my-6 ml-3 rounded-full w-[40px] flex items-center justify-center bg-gradient-to-tr text-white ${badgeColors} border-4 mr-4 shrink-0`}
+            className={`my-6 ml-3 flex h-10 w-[40px] items-center justify-center rounded-full bg-gradient-to-tr text-white ${badgeColors} mr-4 shrink-0 border-4`}
           >
             {position + 1}
           </div>
         )}
-        <div className="flex md:flex-row flex-col md:items-center justify-between w-full pb-2">
+        <div className="flex w-full flex-col justify-between pb-2 md:flex-row md:items-center">
           <div className="flex w-full">
-            <div className="min-w-0 flex-1 flex items-center">
+            <div className="flex min-w-0 flex-1 items-center">
               <div
-                className={`flex-shrink-0 border-2 dark:border-1 border-current rounded-full ${
+                className={`dark:border-1 shrink-0 rounded-full border-2 border-current ${
                   ["text-yellow-600", "text-stone-600", "text-amber-700"][
                     position
                   ] ?? "text-purple-600"
@@ -62,8 +62,8 @@ export default function LeaderboardCard({
                   alt={contributor.user.social.github}
                 />
               </div>
-              <div className="ml-4 mr-4 pr-10 text-wrap basis-[60%]">
-                <div className="font-bold text-green-500 truncate w-[180px]">
+              <div className="ml-4 mr-4 basis-[60%] text-wrap pr-10">
+                <div className="w-[180px] truncate font-bold text-green-500">
                   {contributor.user.name}
                 </div>
                 <p className="flex items-center text-sm  ">
@@ -75,16 +75,16 @@ export default function LeaderboardCard({
             </div>
           </div>
 
-          <div className="px-4 flex items-center justify-between  ">
-            <div className="md:block mt-4 md:mt-0">
+          <div className="flex items-center justify-between px-4  ">
+            <div className="mt-4 md:mt-0 md:block">
               <dl>
-                <dt className="text-sm leading-5 font-medium text-foreground truncate">
+                <dt className="truncate text-sm font-medium leading-5 text-foreground">
                   PRs
                 </dt>
                 <dd className="flex">
                   <div className="flex items-center">
                     <svg
-                      className="flex-shrink-0 h-5 w-5 text-green-500"
+                      className="h-5 w-5 shrink-0 text-green-500"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -94,21 +94,21 @@ export default function LeaderboardCard({
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
                       {contributor.highlights.pr_opened}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       opened
                     </span>
-                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
                       {contributor.highlights.pr_reviewed}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       reviewed
                     </span>
-                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
                       {contributor.highlights.pr_merged}
                     </span>
 
@@ -118,7 +118,7 @@ export default function LeaderboardCard({
                   </div>
                 </dd>
                 {contributor.highlights.pr_stale ? (
-                  <dd className="flex mt-2">
+                  <dd className="mt-2 flex">
                     <div className="flex items-center">
                       <span className="flex text-sm leading-5 text-yellow-500 dark:text-yellow-200">
                         <FiAlertTriangle size={18} className="mr-2" />{" "}
@@ -129,13 +129,13 @@ export default function LeaderboardCard({
                 ) : null}
               </dl>
               <dl className="">
-                <dt className="text-sm leading-5 font-medium text-foreground truncate mt-4">
+                <dt className="mt-4 truncate text-sm font-medium leading-5 text-foreground">
                   Activity
                 </dt>
                 <dd className="flex">
                   <div className="flex items-center">
                     <svg
-                      className="flex-shrink-0 h-5 w-5 text-green-500"
+                      className="h-5 w-5 shrink-0 text-green-500"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -145,18 +145,18 @@ export default function LeaderboardCard({
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
                       {contributor.highlights.eod_update}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       EOD updates
                     </span>
-                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
                       {contributor.highlights.comment_created}
                     </span>
 
-                    <span className="ml-2 text-sm leading-5 font-semibold text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
                       Comments
                     </span>
                   </div>

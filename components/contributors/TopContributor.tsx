@@ -55,6 +55,7 @@ export default function InfoCard({
               className="flex w-full items-center gap-4"
             >
               <Image
+                loading="lazy"
                 className="h-11 w-11 rounded-full shadow-md shadow-primary-500 ring-1 ring-primary-500"
                 src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
                 alt={contributor.user.social.github}

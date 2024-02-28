@@ -1,4 +1,4 @@
-import { LeaderboardSortKey } from "@/app/leaderboard/Leaderboard";
+import { LeaderboardSortKey } from "@/app/leaderboard/_components/Leaderboard";
 import { getContributors } from "@/lib/api";
 import { Highlights } from "@/lib/types";
 import { ReleasesResponse } from "@/lib/types";

@@ -7,7 +7,7 @@ A simple leaderboard app built with Next.js and Tailwind CSS to list top contrib
 Run the following command in the terminal:
 
 ```bash
-./load-fixtures.sh
+./load-org-data.sh
 ```
 
 Now run the deployment server:

@@ -10,10 +10,7 @@ git config core.sparseCheckout true
 
 echo "data/" >> .git/info/sparse-checkout
 echo "contributors/" >> .git/info/sparse-checkout
-echo "tailwind.config.js" >> .git/info/sparse-checkout
+echo "colorPalette.json" >> .git/info/sparse-checkout
 
 git pull origin main
 
-cd ..
-rm tailwind.config.js
-ln -s ./data-repo/tailwind.config.js tailwind.config.js

@@ -105,7 +105,7 @@ export async function getContributorBySlug(file: string, detail = false) {
       return undefined;
     }
     if (typeof date === "number") {
-      var timestamp = Number(date) * 1000;
+      let timestamp = Number(date) * 1000;
       dateObject = new Date(timestamp);
       return dateObject.toISOString();
     } else if (typeof date === "string") {
@@ -114,10 +114,9 @@ export async function getContributorBySlug(file: string, detail = false) {
       return dateObject.toISOString();
     }
   };
-  let dat = {
-    ...activityData,
-    activity: [...activityData.activity],
-  };
+
+  let Firstactivity =
+    activityData?.activity[activityData.activity.length - 1]?.time;
 
   activityData = {
     ...activityData,
@@ -200,7 +199,7 @@ export async function getContributorBySlug(file: string, detail = false) {
     summarize,
     calendarData: detail ? calendarData : [],
     ...data,
-    first_activity: UtctoDate(dat?.activity[dat.activity.length - 1]?.time),
+    first_activity: UtctoDate(Firstactivity),
   } as Contributor & { summarize: typeof summarize };
 }
 

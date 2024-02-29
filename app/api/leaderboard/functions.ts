@@ -104,7 +104,10 @@ export const getLeaderboardData = async (
         }
       })
       .sort((a, b) => {
-        return b.highlights.points - a.highlights.points;
+        if (sortBy !== "new_contributor") {
+          return b.highlights.points - a.highlights.points;
+        }
+        return 0;
       });
   }
   return data.map((contributor): LeaderboardAPIResponse[number] => {

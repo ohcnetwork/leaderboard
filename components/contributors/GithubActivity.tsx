@@ -359,8 +359,8 @@ export default function GithubActivity({ activityData }: Props) {
     .sort(compareByActivityTime);
 
   return (
-    <div className="flex flex-row-reverse items-start justify-between gap-6">
-      <div className="sticky top-6 my-4 flex w-64 flex-col gap-2 rounded-lg border border-primary-500 p-4">
+    <div className="flex flex-row-reverse flex-wrap items-start justify-between gap-6 md:flex-nowrap">
+      <div className="top-6 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-64">
         <h3>Filter Activity</h3>
         <select
           className="my-4 block rounded border border-gray-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-gray-300"
@@ -402,7 +402,7 @@ export default function GithubActivity({ activityData }: Props) {
           />
         ))}
       </div>
-      <div className="mx-2 mt-4 flow-root text-foreground">
+      <div className="mt-4 w-full px-1 text-foreground sm:px-2">
         <ul role="list" className="my-4 w-full max-w-xl">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;

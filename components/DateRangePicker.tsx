@@ -30,7 +30,7 @@ const DateRangePicker = (props: Props) => {
           {({ open, close }) => (
             <>
               <Popover.Button
-                className={`block w-full rounded-md border border-gray-600 p-2 px-4 py-2 font-medium dark:border-gray-300 sm:text-sm ${
+                className={`block w-full rounded-md border border-gray-600 px-4 py-2 font-medium dark:border-gray-300 sm:text-sm ${
                   open
                     ? "bg-foreground text-background"
                     : "bg-background text-foreground"

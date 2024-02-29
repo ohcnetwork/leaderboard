@@ -1,6 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 import colorPallete from "./data-repo/colorPalette.json";
-console.log("colir pallate:", colorPallete);
+
 module.exports = {
   darkMode: "class",
   content: [

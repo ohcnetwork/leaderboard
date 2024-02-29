@@ -77,7 +77,10 @@ export const getLeaderboardData = async (
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;
       }
-      return (b.summary[sortBy] ?? 0) - (a.summary[sortBy] ?? 0);
+      if (sortBy !== "new_contributor") {
+        return (b.summary[sortBy] ?? 0) - (a.summary[sortBy] ?? 0);
+      }
+      return 0;
     });
 
   if (shouldReverse) {

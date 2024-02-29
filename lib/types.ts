@@ -40,7 +40,7 @@ export interface Highlights {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
-  new_contributor?: number;
+  // new_contributor?: number;
 }
 
 export interface WeekSummary {

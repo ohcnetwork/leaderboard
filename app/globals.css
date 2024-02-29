@@ -136,3 +136,9 @@ html.dark {
   transform: translateX(0px);
   transform: translateY(0px);
 }
+
+.text-gradient {
+  background: linear-gradient(45deg, #6366f1, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

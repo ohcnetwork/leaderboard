@@ -174,7 +174,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           in{" "}
           <Link
             className="inline cursor-pointer font-bold text-gray-300"
-            href={event.repo.url}
+            href={`https://github.com/${event.repo.name}`}
           >
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">

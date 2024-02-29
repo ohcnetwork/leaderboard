@@ -164,7 +164,7 @@ export default async function Home() {
                             key={index}
                             href={`/contributors/${contributor.github}`}
                           >
-                            <span className="bg-background/75 hover:bg-background/30 flex cursor-pointer items-center space-x-3 rounded-lg px-2 py-3 transition duration-300 hover:shadow-lg hover:shadow-primary-500">
+                            <span className="flex cursor-pointer items-center space-x-3 rounded-lg bg-background px-2 py-3 transition duration-300 hover:shadow-lg hover:shadow-primary-500">
                               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-lg dark:bg-gray-800">
                                 {index + 1}
                               </span>

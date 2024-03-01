@@ -22,19 +22,19 @@ function main() {
         var updatedData = data
           .replace(
             /core: false\s+intern: false\s+operations: false/,
-            `role: "contributor"`,
+            `role: contributor`,
           )
           .replace(
             /core: true\s+intern: false\s+operations: false/,
-            `role: "core"`,
+            `role: core`,
           )
           .replace(
             /core: false\s+intern: true\s+operations: false/,
-            `role: "intern"`,
+            `role: intern`,
           )
           .replace(
             /core: false\s+intern: false\s+operations: true/,
-            `role: "operations"`,
+            `role: operations`,
           );
 
         fs.writeFile(testFile, updatedData, function (err) {

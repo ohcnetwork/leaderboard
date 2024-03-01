@@ -9,7 +9,7 @@ twitter: ""
 linkedin: ""
 slack: ""
 joining_date: ""
-role : "contributor"
+role : contributor
 ---
 
 Still waiting for this

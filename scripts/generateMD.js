@@ -30,7 +30,7 @@ twitter: ${github}
 linkedin: ${github}
 slack: ${slack}
 joining_date: "09/05/2022"
-role: "intern"
+role: intern
 ---
 
 Still waiting for this    

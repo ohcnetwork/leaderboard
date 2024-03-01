@@ -8,7 +8,8 @@ export default async function LeaderboardWrapper({
 }: LeaderboardPageProps) {
   const data = await getLeaderboardData(
     parseDateRangeSearchParam(searchParams.between),
-    searchParams.sortBy ?? "-points",
+    searchParams.sortBy ?? "points",
+    searchParams.ordering ?? "desc",
     // @ts-ignore
     (searchParams.role?.split(",") as (
       | "core"

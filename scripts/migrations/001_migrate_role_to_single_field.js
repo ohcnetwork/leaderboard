@@ -1,3 +1,8 @@
+/**
+ * Migration to migrate multiple fields in contributors markdown that represents
+ * role to a single field.
+ */
+
 var fs = require("fs");
 var path = require("path");
 

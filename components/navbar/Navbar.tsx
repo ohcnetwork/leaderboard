@@ -6,6 +6,7 @@ import MenuItems from "./MenuItems";
 import Logo from "./Logo";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -35,7 +36,7 @@ const Navbar = () => {
         </div>
         {open && (
           <div className="px-2 py-1 transition-transform duration-300 ease-in-out lg:hidden">
-            <MenuItems />
+            <Sidebar />
           </div>
         )}
       </div>

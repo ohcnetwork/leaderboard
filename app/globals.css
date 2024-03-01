@@ -1,3 +1,4 @@
+@import "../theme.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,13 +66,6 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
-}
-
-:root {
-  --light-background: #fafaff;
-  --dark-background: #111827;
-  --light-foreground: #020202;
-  --dark-foreground: #f9fafb;
 }
 
 html.light {

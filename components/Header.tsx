@@ -25,8 +25,6 @@ export default function Header() {
           </h1>
         </Link>
       </div>
-      {/* Theme Switch */}
-      <ThemeSwitch className="lg:hidden" />
       {/* Mobile View Navbar */}
       <div className="sm:hidden">
         <button
@@ -45,7 +43,7 @@ export default function Header() {
       <div
         className={`fixed inset-y-0 right-0 z-50 w-[53%] bg-white dark:bg-gray-800 sm:hidden ${isSidebarOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-in-out`}
       >
-        <div className="flex h-full w-full flex-col gap-5 bg-gray-300 px-6 py-4 dark:bg-gray-800">
+        <div className="relative flex h-full w-full flex-col gap-5 bg-gray-300 px-6 py-4 dark:bg-gray-800">
           <div className="flex justify-end">
             {/* Close Sidebar Button */}
             <button
@@ -66,6 +64,7 @@ export default function Header() {
               </li>
             ))}
           </ul>
+          <ThemeSwitch className="absolute bottom-7 left-0 w-full items-center" />
         </div>
       </div>
       {/* Desktop View Navbar */}

@@ -15,9 +15,7 @@ export interface Contributor {
   linkedin: string;
   slack: string;
   joining_date: string;
-  core: boolean;
-  intern: boolean;
-  operations: boolean;
+  role: "core" | "intern" | "operations" | "contributor";
   courses_completed: string[];
 }
 

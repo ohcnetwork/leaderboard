@@ -19,6 +19,9 @@ export default function Leaderboard({
 } & LeaderboardPageProps) {
   const searchTerm = searchParams.search ?? undefined;
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
+  const filteredData = data.filter((item) => {
+    return searchParams.role?.includes(item.user.role) ?? true;
+  });
 
   if (searchTerm) {
     data = data.filter(filterBySearchTerm(searchTerm.toLowerCase()));
@@ -81,12 +84,15 @@ export default function Leaderboard({
                 role="list"
                 className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
               >
-                <TopContributor data={data} category="eod_update" />
-                <TopContributor data={data} category="pr_opened" />
-                <TopContributor data={data} category="pr_merged" />
-                <TopContributor data={data} category="pr_reviewed" />
-                <TopContributor data={data} category="issue_opened" />
-                <TopContributor data={data} category="comment_created" />
+                <TopContributor data={filteredData} category="eod_update" />
+                <TopContributor data={filteredData} category="pr_opened" />
+                <TopContributor data={filteredData} category="pr_merged" />
+                <TopContributor data={filteredData} category="pr_reviewed" />
+                <TopContributor data={filteredData} category="issue_opened" />
+                <TopContributor
+                  data={filteredData}
+                  category="comment_created"
+                />
               </ul>
             </div>
           </div>

@@ -44,7 +44,7 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
           value={searchTerm}
           handleSubmit={handleSubmit}
           handleOnChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full"
+          className="grow"
         />
         <DateRangePicker
           value={{ start, end }}
@@ -57,7 +57,7 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
               )}`,
             );
           }}
-          className="md:grow-1 grow"
+          className="md:grow-1"
         />
         <RoleFilter
           filterOptions={RoleOptions}

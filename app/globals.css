@@ -72,6 +72,17 @@ h4 {
   --dark-background: #111827;
   --light-foreground: #020202;
   --dark-foreground: #f9fafb;
+
+  --primary-50: #f8f5fc;
+  --primary-100: #f0eafb;
+  --primary-200: #d3bff3;
+  --primary-300: #b08ee6;
+  --primary-400: #976ae2;
+  --primary-500: #6025c0;
+  --primary-600: #4d1e9a;
+  --primary-700: #380d80;
+  --primary-800: #35156b;
+  --primary-900: #1f0d40;
 }
 
 html.light {
@@ -138,7 +149,7 @@ html.dark {
 }
 
 .text-gradient {
-  background: linear-gradient(45deg, #6366f1, #1d4ed8);
+  background: linear-gradient(45deg, var(--primary-500), var(--primary-700));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

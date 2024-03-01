@@ -27,16 +27,12 @@ type ContributorSocials = {
   slack: string;
 };
 
-type OrderingKey = LeaderboardSortKey | `-${LeaderboardSortKey}`;
-
 export const getLeaderboardData = async (
   dateRange: readonly [Date, Date],
-  ordering: OrderingKey,
-  role: ("core" | "intern" | "operations" | "contributor")[],
+  sortBy: LeaderboardSortKey = "points",
+  ordering: "asc" | "desc" = "desc",
+  roles: ("core" | "intern" | "operations" | "contributor")[] = [],
 ) => {
-  const sortBy = ordering.replace("-", "") as LeaderboardSortKey;
-  const shouldReverse = !ordering.startsWith("-");
-
   const contributors = await getContributors();
 
   const data = contributors
@@ -47,7 +43,7 @@ export const getLeaderboardData = async (
     }))
     .filter((contributor) => contributor.summary.points)
     .filter(
-      (contributor) => role.length == 0 || role.includes(contributor.role),
+      (contributor) => roles.length == 0 || roles.includes(contributor.role),
     )
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
@@ -56,7 +52,7 @@ export const getLeaderboardData = async (
       return b.summary[sortBy] - a.summary[sortBy];
     });
 
-  if (shouldReverse) {
+  if (ordering === "asc") {
     data.reverse();
   }
 

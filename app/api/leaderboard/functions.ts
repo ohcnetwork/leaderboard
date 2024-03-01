@@ -46,21 +46,9 @@ export const getLeaderboardData = async (
       summary: contributor.summarize(...dateRange),
     }))
     .filter((contributor) => contributor.summary.points)
-    .filter((contributor) => {
-      if (role.length === 0) return true;
-      if (role.includes("core") && contributor.role === "core") return true;
-      if (role.includes("intern") && contributor.role === "intern") return true;
-      if (role.includes("operations") && contributor.role === "operations")
-        return true;
-      if (
-        role.includes("contributor") &&
-        contributor.role !== "core" &&
-        contributor.role !== "intern" &&
-        contributor.role !== "operations"
-      )
-        return true;
-      return false;
-    })
+    .filter(
+      (contributor) => role.length == 0 || role.includes(contributor.role),
+    )
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;

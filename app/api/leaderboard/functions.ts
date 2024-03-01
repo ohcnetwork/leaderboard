@@ -12,7 +12,7 @@ export type LeaderboardAPIResponse = {
     slug: string;
     name: string;
     title: string;
-    role: ("core" | "intern" | "operations" | "contributor")[];
+    role: "core" | "intern" | "operations" | "contributor";
     content: string;
     social: ContributorSocials;
     joining_date: string;
@@ -27,16 +27,12 @@ type ContributorSocials = {
   slack: string;
 };
 
-type OrderingKey = LeaderboardSortKey | `-${LeaderboardSortKey}`;
-
 export const getLeaderboardData = async (
   dateRange: readonly [Date, Date],
-  ordering: OrderingKey,
-  role: ("core" | "intern" | "operations" | "contributor")[],
+  sortBy: LeaderboardSortKey = "points",
+  ordering: "asc" | "desc" = "desc",
+  roles: ("core" | "intern" | "operations" | "contributor")[] = [],
 ) => {
-  const sortBy = ordering.replace("-", "") as LeaderboardSortKey;
-  const shouldReverse = !ordering.startsWith("-");
-
   const contributors = await getContributors();
 
   const data = contributors
@@ -46,20 +42,9 @@ export const getLeaderboardData = async (
       summary: contributor.summarize(...dateRange),
     }))
     .filter((contributor) => contributor.summary.points)
-    .filter((contributor) => {
-      if (role.length === 0) return true;
-      if (role.includes("core") && contributor.core) return true;
-      if (role.includes("intern") && contributor.intern) return true;
-      if (role.includes("operations") && contributor.operations) return true;
-      if (
-        role.includes("contributor") &&
-        !contributor.core &&
-        !contributor.intern &&
-        !contributor.operations
-      )
-        return true;
-      return false;
-    })
+    .filter(
+      (contributor) => roles.length == 0 || roles.includes(contributor.role),
+    )
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;
@@ -67,24 +52,17 @@ export const getLeaderboardData = async (
       return b.summary[sortBy] - a.summary[sortBy];
     });
 
-  if (shouldReverse) {
+  if (ordering === "asc") {
     data.reverse();
   }
 
   return data.map((contributor): LeaderboardAPIResponse[number] => {
-    const role: LeaderboardAPIResponse[number]["user"]["role"] = [];
-
-    if (contributor.intern) role.push("intern");
-    if (contributor.operations) role.push("operations");
-    if (contributor.core) role.push("core");
-    if (!role.length) role.push("contributor");
-
     return {
       user: {
         slug: contributor.slug,
         name: contributor.name,
         title: contributor.title,
-        role: role,
+        role: contributor.role,
         content: contributor.content,
         joining_date: contributor.joining_date,
         social: {

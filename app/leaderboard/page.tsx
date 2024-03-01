@@ -8,7 +8,7 @@ export type LeaderboardPageProps = {
   searchParams: {
     search?: string;
     between?: string; // <start-date>...<end-date>
-    sortBy?: LeaderboardSortKey | `-${LeaderboardSortKey}`;
+    sortBy?: LeaderboardSortKey;
     role?: ("core" | "intern" | "operations" | "contributor")[];
     ordering?: "asc" | "desc";
   };

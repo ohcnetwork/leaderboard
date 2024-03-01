@@ -26,29 +26,17 @@ export default function GitHubEvents({ minimal }: { minimal?: boolean }) {
   const [events, setEvents] = useState<IGitHubEvent[]>();
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch(
-          `https://api.github.com/orgs/${env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=100&page=${page}`,
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await response.json();
-        const filteredData = data
-          .filter(exludeBotEvents)
-          .filter(excludeBlacklistedEvents);
-        const combinedEvents = combineSimilarPushEvents(filteredData).slice(
-          0,
-          5,
-        );
-        setEvents(combinedEvents);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchEvents();
+    fetch(
+      `https://api.github.com/orgs/${env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=100&page=${page}`,
+    )
+      .then((res) => res.json())
+      .then((data) =>
+        setEvents(
+          combineSimilarPushEvents(
+            data.filter(exludeBotEvents).filter(excludeBlacklistedEvents),
+          ).slice(0, 5),
+        ),
+      );
   }, [page]);
 
   return (

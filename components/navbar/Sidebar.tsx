@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col items-center justify-center rounded bg-gray-100 px-1 py-1 font-inter font-semibold dark:bg-gray-700/50 md:rounded-full md:px-4 md:py-2">
+    <div className="flex flex-col items-center justify-center gap-2 md:px-4 md:py-2">
       <Link href="/leaderboard">
         <p className="cursor-pointer p-1 text-sm md:p-2 md:text-base">
           Leaderboard

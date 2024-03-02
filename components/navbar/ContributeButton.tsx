@@ -10,9 +10,6 @@ const ContributeButton = () => {
       rel="nonreferrer"
     >
       <div className="flex cursor-pointer  flex-row items-center justify-center gap-1">
-        <p className="text-gradient hidden text-base font-bold md:block">
-          Contribute Now
-        </p>
         <AiFillGithub className="text-3xl" />
       </div>
     </Link>

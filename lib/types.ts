@@ -1,3 +1,8 @@
+import {
+  SORT_BY_OPTIONS,
+  FILTER_BY_ROLE_OPTIONS,
+  TOP_CONTRIBUTOR_CATEGORIES,
+} from "./const";
 export interface Contributor {
   file: string;
   slug: string;
@@ -126,3 +131,39 @@ export interface ReleasesResponse {
   data: any;
   organization: Organization;
 }
+
+export type LeaderboardAPIResponse = {
+  user: {
+    slug: string;
+    name: string;
+    title: string;
+    role: "core" | "intern" | "operations" | "contributor";
+    content: string;
+    social: ContributorSocials;
+    joining_date: string;
+  };
+  highlights: Highlights & { pr_stale: number };
+}[];
+
+export type ContributorSocials = {
+  github: string;
+  twitter: string;
+  linkedin: string;
+  slack: string;
+};
+
+export type LeaderboardPageProps = {
+  searchParams: {
+    search?: string;
+    between?: string; // <start-date>...<end-date>
+    sortBy?: LeaderboardSortKey;
+    role?: ("core" | "intern" | "operations" | "contributor")[];
+    ordering?: "asc" | "desc";
+  };
+};
+
+export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;
+
+export type RoleFilterKey = keyof typeof FILTER_BY_ROLE_OPTIONS;
+
+export type TopContributorCategoryKey = keyof typeof TOP_CONTRIBUTOR_CATEGORIES;

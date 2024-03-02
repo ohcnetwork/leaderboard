@@ -1,6 +1,7 @@
 import {
   formatDuration as _formatDuration,
   intervalToDuration,
+  format,
 } from "date-fns";
 
 export const parametreize = (string: string) => {
@@ -88,3 +89,7 @@ export const navLinks = [
   { title: "Projects", path: "/projects" },
   { title: "Releases", path: "/releases" },
 ];
+
+export const formatDate = (date: Date) => {
+  return format(date, "MMM dd, yyyy");
+};

@@ -1,4 +1,4 @@
-import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
+import { LeaderboardAPIResponse } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";

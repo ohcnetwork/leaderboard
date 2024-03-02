@@ -1,5 +1,4 @@
 "use client";
-
 import { IGitHubEvent, combineSimilarPushEvents } from "@/lib/gh_events";
 import { useEffect, useState } from "react";
 import GitHubEvent from "./GitHubEvent";

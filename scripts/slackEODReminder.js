@@ -45,7 +45,7 @@ const isIssuePendingEvent = (event) => {
 
 async function fetchGitHubEvents(authors) {
   const aDayAgoDate = new Date();
-  aDayAgoDate.setDate(aDayAgoDate.getDate() - 2);
+  aDayAgoDate.setDate(aDayAgoDate.getDate() - 1);
   const aDayAgo = aDayAgoDate.getTime();
 
   const events = await octokit.paginate(

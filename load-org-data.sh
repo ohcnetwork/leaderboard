@@ -10,5 +10,7 @@ git config core.sparseCheckout true
 
 echo "data/" >> .git/info/sparse-checkout
 echo "contributors/" >> .git/info/sparse-checkout
+echo "config/" >> .git/info/sparse-checkout
 
 git pull origin main
+

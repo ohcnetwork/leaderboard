@@ -86,4 +86,5 @@ export const navLinks = [
   { title: "Leaderboard", path: "/leaderboard" },
   { title: "People", path: "/people" },
   { title: "Projects", path: "/projects" },
+  { title: "Releases", path: "/releases" },
 ];

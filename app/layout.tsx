@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-background text-foreground">
+      <body className="customScrollbar bg-background text-foreground">
         <div>
           <Provider>
             <Header />

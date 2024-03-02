@@ -12,17 +12,17 @@ export default function GraduateAttributeBadge({
   return (
     <div
       className={`flex rounded-md text-white ${
-        skill.currentLevel ? color : "bg-gray-600 opacity-50"
+        skill.currentLevel ? color : "bg-secondary-600 opacity-50"
       }`}
     >
       <div
         className={`mr-1 flex shrink-0 items-center justify-center rounded-l-md text-white ${
-          skill.currentLevel ? color : "bg-gray-600"
+          skill.currentLevel ? color : "bg-secondary-600"
         }`}
       >
         <div
           className={`relative flex h-full items-center rounded-l-md px-1.5 py-1 ${
-            skill.currentLevel ? colorDark : "bg-gray-700"
+            skill.currentLevel ? colorDark : "bg-secondary-700"
           }`}
         >
           <Image
@@ -35,7 +35,7 @@ export default function GraduateAttributeBadge({
             alt="Graduate attribute"
           />
           {skill.currentLevel && (
-            <span className="absolute bottom-0 right-0 rounded bg-gray-100 px-1 text-sm font-medium leading-tight text-gray-900">
+            <span className="absolute bottom-0 right-0 rounded bg-secondary-100 px-1 text-sm font-medium leading-tight text-secondary-900">
               {skill.currentLevel.label}
             </span>
           )}

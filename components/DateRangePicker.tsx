@@ -71,7 +71,14 @@ const DateRangePicker = (props: Props) => {
                     {rangePresets.map((range, index) => (
                       <button
                         key={index}
-                        className="whitespace-nowrap rounded border border-gray-500 px-2 py-1 text-sm transition-all duration-100 ease-in-out hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black"
+                        className={`whitespace-nowrap rounded border border-gray-500 px-2 py-1 text-sm transition-all duration-100 ease-in-out hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black ${
+                          range.value.start.toDateString() ===
+                            props.value?.start.toDateString() &&
+                          range.value.end.toDateString() ===
+                            props.value?.end.toDateString()
+                            ? "bg-background text-foreground dark:bg-white dark:text-black"
+                            : ""
+                        } `}
                         onClick={() => {
                           props.onChange(range.value);
                           close();

@@ -20,10 +20,10 @@ const Navbar = () => {
             <MenuItems />
           </div>
           <div className="align-center flex flex-row justify-center gap-4">
-            <div className="hidden items-center justify-center md:flex">
+            <div className="hidden items-center justify-center lg:flex">
               <ContributeButton />
             </div>
-            <div className="hidden items-center justify-center md:flex">
+            <div className="hidden items-center justify-center lg:flex">
               <ThemeSwitch />
             </div>
             <div
@@ -41,7 +41,7 @@ const Navbar = () => {
       </div>
       {open && (
         <div
-          className={`fixed inset-y-0 right-0 z-50 w-[53%] bg-white dark:bg-gray-800 sm:hidden ${open ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-in-out`}
+          className={`fixed inset-y-0 right-0 z-50 w-[53%] bg-white transition-transform duration-300 ease-in-out dark:bg-gray-800 lg:hidden`}
         >
           <div className="relative flex h-full w-full flex-col gap-5 bg-gray-300 px-6 py-4 dark:bg-gray-800">
             <div className="flex justify-end">

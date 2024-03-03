@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="customScrollbar bg-background text-foreground">
+      <body className="bg-background text-foreground  scrollbar scrollbar-thumb-primary-500 scrollbar-thumb-rounded-full scrollbar-w-2">
         <div>
           <Provider>
             <Navbar />

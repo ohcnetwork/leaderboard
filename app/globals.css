@@ -130,31 +130,3 @@ html.dark {
   transform: translateX(0px);
   transform: translateY(0px);
 }
-
-@media (max-width: 767px) {
-  .customScrollbar::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .customScrollbar::-webkit-scrollbar {
-    width: 15px;
-  }
-
-  .customScrollbar::-webkit-scrollbar-track {
-    background: var(--background);
-    border-radius: 5px;
-  }
-
-  .customScrollbar::-webkit-scrollbar-thumb {
-    background-color: var(--primary-500);
-    border-radius: 14px;
-    border: 3px solid var(--background);
-  }
-}
-
-.home-campaign-glowing-icon-glow-2 {
-  background-color: var(--primary-700);
-  filter: blur(20px);
-}

@@ -56,7 +56,7 @@ _Passionate about creating scalable and distributed systems for the power grid a
 source digital public goods._ (supports markdown)
 ```
 
-All members marked with `role: core` and `role: operations` will be will be hidden from the leaderboard section by default.ou can toggle their visibility by changing filters.
+All members marked with `role: core` and `role: operations` will be will be hidden from the leaderboard section by default.You can toggle their visibility by changing filters.
 
 You will be able to see the users profile page at `http://localhost:3000/contributors/john-doe`.
 

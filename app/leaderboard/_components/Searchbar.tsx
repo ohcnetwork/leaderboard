@@ -9,6 +9,7 @@ import RoleFilter from "@/components/filters/RoleFilter";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 import { SORT_BY_OPTIONS } from "./Leaderboard";
 import { LeaderboardPageProps } from "../page";
+import { deaultRoles } from "@/lib/const";
 
 export default function Searchbar({ searchParams }: LeaderboardPageProps) {
   const router = useRouter();
@@ -72,7 +73,7 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
                       value as keyof typeof FILTER_BY_ROLE_OPTIONS
                     ],
                   }))
-              : []
+              : deaultRoles
           }
           onChange={(selectedOptions) =>
             updateSearchParam(

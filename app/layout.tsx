@@ -3,7 +3,7 @@ import "./badges.css";
 
 import { Metadata } from "next";
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Navbar from "@/components/navbar/Navbar";
 import Provider from "./provider";
 import { env } from "@/env.mjs";
 
@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className="bg-background text-foreground">
         <div>
           <Provider>
-            <Header />
+            <Navbar />
             {children}
             <Footer />
           </Provider>

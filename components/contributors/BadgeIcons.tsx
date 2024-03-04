@@ -124,7 +124,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                     ? `badge-glow ${glow()}`
                     : "opacity-30 grayscale"
                 }`}
-                layout="fill"
+                fill
                 src={skill.icon}
                 alt="Graduate attribute"
               />

@@ -23,7 +23,7 @@ const DateRangePicker = (props: Props) => {
   const rangePresets = getRangePresets();
 
   return (
-    <div className="relative inline-block text-left whitespace-nowrap w-full md:w-auto">
+    <div className="relative inline-block text-left whitespace-nowrap">
       <Popover>
         {({ open, close }) => (
           <>

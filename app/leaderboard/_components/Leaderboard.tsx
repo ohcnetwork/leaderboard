@@ -2,9 +2,7 @@ import LeaderboardCard from "@/components/contributors/LeaderboardCard";
 import { TbZoomQuestion } from "react-icons/tb";
 import TopContributor from "../../../components/contributors/TopContributor";
 import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
-// import { formatDate } from "@/components/DateRangePicker";
-import { LeaderboardAPIResponse } from "@/lib/types";
-import { LeaderboardPageProps } from "@/lib/types";
+import { LeaderboardAPIResponse, LeaderboardPageProps } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
 
 const filterBySearchTerm = (searchTermLC: string) => {

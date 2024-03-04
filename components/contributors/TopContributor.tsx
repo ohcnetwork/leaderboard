@@ -1,8 +1,7 @@
-import { LeaderboardAPIResponse } from "@/lib/types";
+import { LeaderboardAPIResponse, TopContributorCategoryKey } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { TOP_CONTRIBUTOR_CATEGORIES } from "@/lib/const";
-import { TopContributorCategoryKey } from "@/lib/types";
 
 export default function InfoCard({
   data,

@@ -137,7 +137,7 @@ export type LeaderboardAPIResponse = {
     slug: string;
     name: string;
     title: string;
-    role: "core" | "intern" | "operations" | "contributor";
+    role: keyof typeof FILTER_BY_ROLE_OPTIONS;
     content: string;
     social: ContributorSocials;
     joining_date: string;
@@ -157,7 +157,7 @@ export type LeaderboardPageProps = {
     search?: string;
     between?: string; // <start-date>...<end-date>
     sortBy?: LeaderboardSortKey;
-    role?: ("core" | "intern" | "operations" | "contributor")[];
+    role?: (keyof typeof FILTER_BY_ROLE_OPTIONS)[];
     ordering?: "asc" | "desc";
   };
 };

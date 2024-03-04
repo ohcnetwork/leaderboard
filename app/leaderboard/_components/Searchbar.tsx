@@ -7,9 +7,21 @@ import format from "date-fns/format";
 import DateRangePicker from "@/components/DateRangePicker";
 import RoleFilter from "@/components/filters/RoleFilter";
 import { parseDateRangeSearchParam } from "@/lib/utils";
-import { SORT_BY_OPTIONS } from "./Leaderboard";
-import { LeaderboardPageProps } from "../page";
+import { SORT_BY_OPTIONS, FILTER_BY_ROLE_OPTIONS } from "@/lib/const";
+import { LeaderboardPageProps } from "@/lib/types";
 import { env } from "@/env.mjs";
+
+const SortOptions = Object.entries(SORT_BY_OPTIONS).map(([value, text]) => ({
+  value,
+  text,
+}));
+
+export const RoleOptions = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
+  ([value, text]) => ({
+    value,
+    text,
+  }),
+);
 
 export default function Searchbar({ searchParams }: LeaderboardPageProps) {
   const router = useRouter();
@@ -118,28 +130,3 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
     </div>
   );
 }
-
-export const SortOptions = Object.entries(SORT_BY_OPTIONS).map(
-  ([value, text]) => ({
-    value,
-    text,
-  }),
-);
-
-export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;
-
-const FILTER_BY_ROLE_OPTIONS = {
-  core: "Core",
-  intern: "Intern",
-  operations: "Operations",
-  contributor: "Contributor",
-};
-
-export const RoleOptions = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
-  ([value, text]) => ({
-    value,
-    text,
-  }),
-);
-
-export type RoleFilterKey = keyof typeof FILTER_BY_ROLE_OPTIONS;

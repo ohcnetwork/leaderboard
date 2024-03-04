@@ -1,7 +1,7 @@
 import { getLeaderboardData } from "../../api/leaderboard/functions";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 import Leaderboard from "./Leaderboard";
-import { LeaderboardPageProps } from "../page";
+import { LeaderboardPageProps } from "@/lib/types";
 import { env } from "@/env.mjs";
 
 export default async function LeaderboardWrapper({

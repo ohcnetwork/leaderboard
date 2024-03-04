@@ -9,6 +9,7 @@ import {
   endOfMonth,
   subMonths,
 } from "date-fns";
+import { formatDate } from "@/lib/utils";
 
 type DateRange = { start: Date; end: Date };
 
@@ -99,10 +100,6 @@ const DateRangePicker = (props: Props) => {
 };
 
 export default DateRangePicker;
-
-export const formatDate = (date: Date) => {
-  return format(date, "MMM dd, yyyy");
-};
 
 const getRangePresets = () => {
   const today = new Date();

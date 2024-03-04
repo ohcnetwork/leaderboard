@@ -1,18 +1,8 @@
 import { Suspense } from "react";
-import { LeaderboardSortKey } from "./_components/Leaderboard";
 import LeaderboardWrapper from "./_components/LeaderboardWrapper";
 import LoadingText from "@/components/LoadingText";
 import Searchbar from "./_components/Searchbar";
-
-export type LeaderboardPageProps = {
-  searchParams: {
-    search?: string;
-    between?: string; // <start-date>...<end-date>
-    sortBy?: LeaderboardSortKey;
-    role?: ("core" | "intern" | "operations" | "contributor")[];
-    ordering?: "asc" | "desc";
-  };
-};
+import type { LeaderboardPageProps } from "@/lib/types";
 
 export default async function LeaderboardPage({
   searchParams,

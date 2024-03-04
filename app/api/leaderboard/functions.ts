@@ -1,31 +1,13 @@
-import { LeaderboardSortKey } from "@/app/leaderboard/_components/Leaderboard";
+import { LeaderboardSortKey } from "@/lib/types";
 import { getContributors } from "@/lib/api";
-import { Highlights } from "@/lib/types";
-import { ReleasesResponse } from "@/lib/types";
-import { Repository } from "@/lib/types";
-import { Release } from "@/lib/types";
+import {
+  ReleasesResponse,
+  Repository,
+  LeaderboardAPIResponse,
+  Release,
+} from "@/lib/types";
 import { env } from "@/env.mjs";
 import getGitHubAccessToken from "@/lib/getGitHubAccessToken";
-
-export type LeaderboardAPIResponse = {
-  user: {
-    slug: string;
-    name: string;
-    title: string;
-    role: "core" | "intern" | "operations" | "contributor";
-    content: string;
-    social: ContributorSocials;
-    joining_date: string;
-  };
-  highlights: Highlights & { pr_stale: number };
-}[];
-
-type ContributorSocials = {
-  github: string;
-  twitter: string;
-  linkedin: string;
-  slack: string;
-};
 
 export const getLeaderboardData = async (
   dateRange: readonly [Date, Date],

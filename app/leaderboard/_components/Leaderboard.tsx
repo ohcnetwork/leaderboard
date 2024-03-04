@@ -2,13 +2,15 @@ import LeaderboardCard from "@/components/contributors/LeaderboardCard";
 import { TbZoomQuestion } from "react-icons/tb";
 import TopContributor from "../../../components/contributors/TopContributor";
 import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
-// import { formatDate } from "@/components/DateRangePicker";
-import { LeaderboardAPIResponse } from "../../api/leaderboard/functions";
-import { LeaderboardPageProps } from "../page";
-import { format } from "date-fns";
+import { LeaderboardAPIResponse, LeaderboardPageProps } from "@/lib/types";
+import { formatDate } from "@/lib/utils";
 
-export const formatDate = (date: Date) => {
-  return format(date, "MMM dd, yyyy");
+const filterBySearchTerm = (searchTermLC: string) => {
+  return (item: LeaderboardAPIResponse[number]) =>
+    item.user.name.toLowerCase().includes(searchTermLC) ||
+    item.user.social.github.toLowerCase().includes(searchTermLC) ||
+    item.user.social.linkedin.toLowerCase().includes(searchTermLC) ||
+    item.user.social.twitter.toLowerCase().includes(searchTermLC);
 };
 
 export default function Leaderboard({
@@ -101,25 +103,3 @@ export default function Leaderboard({
     </div>
   );
 }
-
-const filterBySearchTerm = (searchTermLC: string) => {
-  return (item: LeaderboardAPIResponse[number]) =>
-    item.user.name.toLowerCase().includes(searchTermLC) ||
-    item.user.social.github.toLowerCase().includes(searchTermLC) ||
-    item.user.social.linkedin.toLowerCase().includes(searchTermLC) ||
-    item.user.social.twitter.toLowerCase().includes(searchTermLC);
-};
-
-export const SORT_BY_OPTIONS = {
-  comment_created: "Comment Created",
-  eod_update: "EOD Update",
-  issue_assigned: "Issue Assigned",
-  issue_opened: "Issue Opened",
-  points: "Points",
-  pr_merged: "PR Merged",
-  pr_opened: "PR Opened",
-  pr_reviewed: "PR Reviewed",
-  pr_stale: "Stale PRs",
-};
-
-export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;

@@ -10,9 +10,14 @@ import { Suspense } from "react";
 import { env } from "@/env.mjs";
 
 export default async function Home() {
-  const contributors = (await getContributors()).sort(
-    (a, b) => b.weekSummary.points - a.weekSummary.points,
-  );
+  const contributors = (await getContributors())
+    .filter(
+      (contributor) =>
+        (env.NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES as string)
+          .split(",")
+          .includes(contributor.role) ?? true,
+    )
+    .sort((a, b) => b.weekSummary.points - a.weekSummary.points);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="border-t border-gray-300 bg-background dark:border-gray-700 ">

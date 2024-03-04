@@ -209,7 +209,10 @@ export default async function ActiveProjects(props: {
             <p className="text-sm text-secondary-700 dark:text-secondary-300">
               Opened by{" "}
               <span className="font-semibold">{issue.author.login}</span>{" "}
-              <RelativeTime time={issue.createdAt} className="text-secondary-500" />
+              <RelativeTime
+                time={issue.createdAt}
+                className="text-secondary-500"
+              />
             </p>
           </div>
 

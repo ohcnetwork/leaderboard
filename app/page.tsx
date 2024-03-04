@@ -6,6 +6,7 @@ import { MdOutlineArrowForwardIos } from "react-icons/md";
 import ActiveProjects from "./projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
 import { env } from "@/env.mjs";
+import ForkedStar from "@/app/ForkedStar";
 
 export default async function Home() {
   const contributors = (await getContributors()).sort(
@@ -122,6 +123,9 @@ export default async function Home() {
 
               <div className="lg:col-span-4">
                 <div className="sticky top-0 pt-20">
+                  <div>
+                    <ForkedStar />
+                  </div>
                   <div className="rounded-lg dark:bg-gray-800 bg-gray-100 bg-opacity-50 shadow-lg border dark:border-gray-800 border-gray-100">
                     <div className="flex flex-col md:flex-row justify-between md:items-center dark:bg-gray-800 bg-gray-100 rounded-t-lg px-6 py-4 border-b dark:border-gray-700 border-gray-300 ">
                       <h4 className="font-bold">Leaderboard</h4>
@@ -129,6 +133,7 @@ export default async function Home() {
                         last 7 days
                       </span>
                     </div>
+
                     <div className="flex flex-col gap-2 p-4 ">
                       {contributors.slice(0, 5).map((contributor, index) => {
                         return (

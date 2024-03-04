@@ -251,7 +251,7 @@ let showContribution = (activity: Activity) => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.2 }}
       >
         <span
           className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-secondary-700 dark:bg-secondary-200"
@@ -265,7 +265,7 @@ let showContribution = (activity: Activity) => {
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.2 }}
                 className="relative"
               >
                 {icon(type)}
@@ -276,7 +276,7 @@ let showContribution = (activity: Activity) => {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6, type: "tween" }}
+          transition={{ delay: 0.2, type: "tween" }}
           className="min-w-0 flex-1"
         >
           {renderText(activity)}

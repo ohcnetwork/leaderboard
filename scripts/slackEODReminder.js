@@ -111,13 +111,11 @@ async function main() {
   const members = (await getContributors()).filter((c) => c.slack);
   const events = await fetchGitHubEvents(members.map((c) => c.github));
 
-  const memberEvents = members
-    .map((c) => ({
-      slack: c.slack,
-      github: c.github,
-      events: events.filter((e) => e.actor.login === c.github),
-    }))
-    .filter((e) => e.events.length);
+  const memberEvents = members.map((c) => ({
+    slack: c.slack,
+    github: c.github,
+    events: events.filter((e) => e.actor.login === c.github),
+  }));
 
   const status = await Promise.all(
     memberEvents.map(async (member) => {

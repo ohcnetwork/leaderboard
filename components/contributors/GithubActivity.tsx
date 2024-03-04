@@ -7,6 +7,7 @@ import { useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -247,19 +248,39 @@ let showContribution = (activity: Activity) => {
   let type = activity["type"];
   return (
     <div className="relative pb-8">
-      <span
-        className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-secondary-700 dark:bg-secondary-200"
-        aria-hidden="true"
-      ></span>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <span
+          className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-secondary-700 dark:bg-secondary-200"
+          aria-hidden="true"
+        ></span>
+      </motion.div>
       <div className="relative flex items-start space-x-3">
         <div>
           <div className="relative px-1">
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-100 ring-8 ring-secondary-200 dark:bg-secondary-300 dark:ring-secondary-700">
-              {icon(type)}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="relative"
+              >
+                {icon(type)}
+              </motion.div>
             </div>
           </div>
         </div>
-        {renderText(activity)}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6, type: "tween" }}
+          className="min-w-0 flex-1"
+        >
+          {renderText(activity)}
+        </motion.div>
       </div>
     </div>
   );
@@ -359,51 +380,67 @@ export default function GithubActivity({ activityData }: Props) {
     .sort(compareByActivityTime);
 
   return (
-    <div className="flex flex-row-reverse flex-wrap items-start justify-between gap-6 md:flex-nowrap">
-      <div className="top-6 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-64">
-        <h3>Filter Activity</h3>
-        <select
-          className="my-4 block rounded border border-secondary-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-secondary-300"
-          disabled={!rangePresets}
-          value={rangeQuery}
-          onChange={(event) => {
-            const current = new URLSearchParams(
-              Array.from(searchParams.entries()),
-            );
-            const value = event.target.value;
-            if (!value) {
-              current.delete("range");
-            } else {
-              current.set("range", event.target.value);
-            }
-            const search = current.toString();
-            const query = search ? `?${search}` : "";
-            router.replace(`${pathname}${query}`, { scroll: false });
-          }}
-        >
-          <option value="last-week">Last week</option>
-          <option value="last-month">Last 30 days</option>
-          {rangePresets?.map((preset) => (
-            <option key={preset} value={preset}>
-              {new Date(preset).toLocaleString("default", {
-                month: "long",
-                year: "numeric",
-              })}
+    <div className="flex flex-col justify-center md:flex-row  md:justify-between ">
+      <div className="mr-10 w-full md:w-2/5">
+        <div className="top-20 my-4 flex flex-col gap-2 rounded p-4 shadow-md dark:bg-primary-900 md:sticky">
+          <h3 className="text-center">Filter Activity</h3>
+          <select
+            className="my-4 block rounded bg-secondary-100 px-2 py-1 text-sm font-medium text-foreground scrollbar scrollbar-thumb-primary-500 scrollbar-thumb-rounded-full scrollbar-w-2 focus:z-10 focus:outline-none dark:bg-secondary-700"
+            disabled={!rangePresets}
+            value={rangeQuery}
+            onChange={(event) => {
+              const current = new URLSearchParams(
+                Array.from(searchParams.entries()),
+              );
+              const value = event.target.value;
+              if (!value) {
+                current.delete("range");
+              } else {
+                current.set("range", event.target.value);
+              }
+              const search = current.toString();
+              const query = search ? `?${search}` : "";
+              router.replace(`${pathname}${query}`, { scroll: false });
+            }}
+          >
+            <option
+              className="bg-secondary-100 dark:bg-secondary-700"
+              value="last-week"
+            >
+              Last week
             </option>
+            <option
+              className="bg-secondary-100 dark:bg-secondary-700"
+              value="last-month"
+            >
+              Last 30 days
+            </option>
+            {rangePresets?.map((preset) => (
+              <option
+                className="bg-secondary-100 dark:bg-secondary-700"
+                key={preset}
+                value={preset}
+              >
+                {new Date(preset).toLocaleString("default", {
+                  month: "long",
+                  year: "numeric",
+                })}
+              </option>
+            ))}
+          </select>
+          {ACTIVITY_TYPES.map((type) => (
+            <ActivityCheckbox
+              key={type}
+              type={type}
+              count={activitiesInRange.filter((a) => a.type === type).length}
+              state={activityTypes}
+              setState={setActivityTypes}
+            />
           ))}
-        </select>
-        {ACTIVITY_TYPES.map((type) => (
-          <ActivityCheckbox
-            key={type}
-            type={type}
-            count={activitiesInRange.filter((a) => a.type === type).length}
-            state={activityTypes}
-            setState={setActivityTypes}
-          />
-        ))}
+        </div>
       </div>
-      <div className="mt-4 w-full px-1 text-foreground sm:px-2">
-        <ul role="list" className="my-4 w-full max-w-xl">
+      <div className="w-full md:w-3/5">
+        <ul role="list" className="my-4">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;
           })}
@@ -430,7 +467,7 @@ export const ActivityCheckbox = (props: {
     <label className="flex items-center gap-2 whitespace-nowrap text-sm">
       <input
         name={props.type}
-        className="accent-primary-500 dark:accent-primary-400"
+        className="size-3 accent-primary-500 dark:accent-primary-400"
         type="checkbox"
         checked={props.state.includes(props.type)}
         onChange={(event) => {

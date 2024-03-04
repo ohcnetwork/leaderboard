@@ -25,7 +25,7 @@ export default async function FeedPage({ searchParams }: Props) {
       org: GITHUB_ORG,
       per_page: 1000,
     },
-    (response: any) => {
+    (response) => {
       const data = response.data as IGitHubEvent[];
       const filteredData = data
         .filter(exludeBotEvents)

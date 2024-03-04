@@ -1,6 +1,8 @@
 import ActiveProjects from "./ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./constants";
 
+export const revalidate = 900; // revalidates atmost once every 15 mins
+
 export default function Page() {
   return (
     <div className="mx-auto max-w-4xl p-10">

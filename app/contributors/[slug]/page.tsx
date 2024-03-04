@@ -42,12 +42,12 @@ export default async function Contributor({ params }: Params) {
   return (
     <div className="min-h-screen bg-background">
       {/* <Header /> */}
-      <div className="border-b border-gray-300 bg-gray-200/50 pb-3 pt-2 shadow-md dark:border-gray-700 dark:bg-gray-700/50">
-        <h1 className="mx-auto max-w-6xl text-center text-sm text-gray-600 dark:text-gray-400 md:text-xl">
+      <div className="bg-secondary-200/50 dark:bg-secondary-700/50 border-b border-secondary-300 pb-3 pt-2 shadow-md dark:border-secondary-700">
+        <h1 className="mx-auto max-w-6xl text-center text-sm text-secondary-600 dark:text-secondary-400 md:text-xl">
           Personal Learning Dashboard (Beta)
         </h1>
       </div>
-      <section className="bg-gray-200 px-4 py-8 dark:bg-gray-800">
+      <section className="bg-secondary-200 px-4 py-8 dark:bg-secondary-800">
         <div className="mx-auto flex max-w-6xl flex-col md:flex-row ">
           <div className="md:w-2/3">
             <InfoCard contributor={contributor} />
@@ -98,7 +98,7 @@ export default async function Contributor({ params }: Params) {
             <h3 className="font-bold text-foreground">Graduate Attributes</h3>
             <Link
               href="#"
-              className="mt-1 inline-flex items-center space-x-2 pl-1 pt-2 text-gray-400 underline transition hover:text-primary-400"
+              className="mt-1 inline-flex items-center space-x-2 pl-1 pt-2 text-secondary-400 underline transition hover:text-primary-400"
             >
               <span>Learn More</span>
               <span>
@@ -117,8 +117,8 @@ export default async function Contributor({ params }: Params) {
           </div>
           <div className="mt-3">
             <div className="flex w-full space-x-6 overflow-x-auto md:grid md:grid-cols-2 md:space-x-0">
-              <div className="flex w-3/4 shrink-0 flex-col rounded-tl-lg bg-gray-200 pb-2 dark:bg-gray-800 md:w-auto md:justify-between md:pr-2">
-                <div className="flex items-center rounded-t-lg bg-gray-300 p-3 dark:bg-gray-700 md:justify-center">
+              <div className="flex w-3/4 shrink-0 flex-col rounded-tl-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:pr-2">
+                <div className="flex items-center rounded-t-lg bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center">
                   <p className="font-semibold text-foreground md:text-lg">
                     Individual Skills
                   </p>
@@ -134,8 +134,8 @@ export default async function Contributor({ params }: Params) {
                   ))}
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col rounded-tr-lg bg-gray-200 pb-2 dark:bg-gray-800 md:w-auto md:justify-between md:border-l-4 md:border-indigo-700 md:pl-2">
-                <div className="flex items-center rounded-t-lg bg-gray-300 p-3 dark:bg-gray-700 md:justify-center">
+              <div className="flex w-3/4 shrink-0 flex-col rounded-tr-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:border-l-4 md:border-indigo-700 md:pl-2">
+                <div className="flex items-center rounded-t-lg bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center">
                   <p className="font-semibold text-foreground md:text-lg">
                     Team Skills
                   </p>
@@ -151,7 +151,7 @@ export default async function Contributor({ params }: Params) {
                   ))}
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col-reverse justify-end rounded-bl-lg bg-gray-200 dark:bg-gray-800 md:w-auto md:flex-col md:justify-between md:border-t-4 md:border-indigo-700 md:pr-2 md:pt-2">
+              <div className="flex w-3/4 shrink-0 flex-col-reverse justify-end rounded-bl-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-t-4 md:border-indigo-700 md:pr-2 md:pt-2">
                 <div className="flex flex-wrap gap-2 py-2 pl-2 pr-2 leading-tight md:flex-row-reverse md:pr-0">
                   {advancedSkills.map((skill) => (
                     <GraduateAttributeBadge
@@ -162,13 +162,13 @@ export default async function Contributor({ params }: Params) {
                     />
                   ))}
                 </div>
-                <div className="flex items-center rounded-b-lg bg-gray-300 p-3 dark:bg-gray-700 md:justify-center ">
+                <div className="flex items-center rounded-b-lg bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center ">
                   <p className="font-semibold text-foreground md:text-lg">
                     Advanced Skills
                   </p>
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col-reverse justify-end rounded-br-lg bg-gray-200 dark:bg-gray-800 md:w-auto md:flex-col md:justify-between md:border-l-4 md:border-t-4 md:border-indigo-700 md:pl-2 md:pt-2">
+              <div className="flex w-3/4 shrink-0 flex-col-reverse justify-end rounded-br-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-l-4 md:border-t-4 md:border-indigo-700 md:pl-2 md:pt-2">
                 <div className="flex flex-wrap gap-2 py-2 pl-2 pr-2 md:pl-0">
                   {humanValues.map((skill) => (
                     <GraduateAttributeBadge
@@ -179,7 +179,7 @@ export default async function Contributor({ params }: Params) {
                     />
                   ))}
                 </div>
-                <div className="flex items-center bg-gray-300 p-3 dark:bg-gray-700 md:justify-center md:rounded-b-lg">
+                <div className="flex items-center bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center md:rounded-b-lg">
                   <p className="font-semibold text-foreground md:text-lg">
                     Cultural Skills
                   </p>
@@ -196,13 +196,13 @@ export default async function Contributor({ params }: Params) {
               href={`https://github.com/${env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1 text-gray-500 underline underline-offset-2 dark:text-gray-300"
+              className="flex items-center gap-1 text-secondary-500 underline underline-offset-2 dark:text-secondary-300"
             >
               <TbGitPullRequest />
               Update
             </Link>
           </div>
-          <div className="w-full rounded-lg bg-gray-100 dark:bg-gray-800 ">
+          <div className="w-full rounded-lg bg-secondary-100 dark:bg-secondary-800 ">
             <div className="rounded-lg px-6 py-10 xl:px-10">
               <Markdown>{contributor.content}</Markdown>
             </div>
@@ -223,7 +223,7 @@ export default async function Contributor({ params }: Params) {
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.pr_opened}
               </dd>
-              <p className="order-2 text-xl text-gray-400">
+              <p className="order-2 text-xl text-secondary-400">
                 <b className="text-foreground">
                   {contributor.weekSummary.pr_opened}
                 </b>{" "}
@@ -237,7 +237,7 @@ export default async function Contributor({ params }: Params) {
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.pr_reviewed}
               </dd>
-              <p className="order-2 text-xl text-gray-400">
+              <p className="order-2 text-xl text-secondary-400">
                 <b className="text-foreground">
                   {contributor.weekSummary.pr_reviewed}
                 </b>{" "}
@@ -251,7 +251,7 @@ export default async function Contributor({ params }: Params) {
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.eod_update}
               </dd>
-              <p className="order-2 text-xl text-gray-400">
+              <p className="order-2 text-xl text-secondary-400">
                 <b className="text-foreground">
                   {contributor.weekSummary.eod_update}
                 </b>{" "}
@@ -272,7 +272,7 @@ export default async function Contributor({ params }: Params) {
                       0,
                     ) || 0) * 1000,
                 ) || (
-                  <span className="text-lg font-bold text-gray-500">
+                  <span className="text-lg font-bold text-secondary-500">
                     <p>N/A</p>
                     <p>Yet to make contributions!</p>
                   </span>
@@ -310,8 +310,8 @@ export default async function Contributor({ params }: Params) {
                         className={clsx(
                           "mb-2 flex gap-2 text-sm transition-colors duration-75 ease-in-out",
                           pr?.stale_for >= 7
-                            ? "text-gray-700 hover:text-primary-400 dark:text-gray-600 dark:hover:text-primary-200"
-                            : "text-gray-400 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-300",
+                            ? "text-secondary-700 hover:text-primary-400 dark:text-secondary-600 dark:hover:text-primary-200"
+                            : "text-secondary-400 hover:text-primary-500 dark:text-secondary-300 dark:hover:text-primary-300",
                         )}
                         key={index}
                       >
@@ -323,8 +323,8 @@ export default async function Contributor({ params }: Params) {
                             className={clsx(
                               "mr-2 rounded px-1.5 py-1 text-xs",
                               pr.stale_for >= 7
-                                ? "bg-gray-200 text-gray-700 dark:bg-gray-800 dark:text-gray-600"
-                                : "bg-gray-100 text-gray-400 dark:bg-gray-600 dark:text-white",
+                                ? "bg-secondary-200 text-secondary-700 dark:bg-secondary-800 dark:text-secondary-600"
+                                : "bg-secondary-100 text-secondary-400 dark:bg-secondary-600 dark:text-white",
                             )}
                           >
                             {pr.link
@@ -348,7 +348,7 @@ export default async function Contributor({ params }: Params) {
             <div className="mt-6 px-4 md:p-0">
               <div className="flex flex-col gap-1">
                 <h3 className="font-bold text-foreground">Contributions</h3>
-                <span className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-sm text-secondary-500 dark:text-secondary-400">
                   Last contribution{" "}
                   {contributor.activityData.last_updated ? (
                     <RelativeTime

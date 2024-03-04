@@ -23,7 +23,7 @@ const Search = ({
           id="search"
           value={value}
           onChange={handleOnChange}
-          className="block w-full rounded-md border border-gray-600 bg-transparent p-2 pl-10 text-foreground dark:border-gray-300 sm:text-sm"
+          className="block w-full rounded-md border border-secondary-600 bg-transparent p-2 pl-10 text-foreground dark:border-secondary-300 sm:text-sm"
           placeholder="Start typing to search..."
         />
       </form>

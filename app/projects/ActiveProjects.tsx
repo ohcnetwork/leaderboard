@@ -126,7 +126,7 @@ export default async function ActiveProjects(props: {
 
   if (issues.length === 0) {
     return (
-      <span className="flex w-full justify-center py-10 text-lg font-semibold text-gray-600 dark:text-gray-400">
+      <span className="flex w-full justify-center py-10 text-lg font-semibold text-secondary-600 dark:text-secondary-400">
         No ongoing active projects
       </span>
     );
@@ -138,7 +138,7 @@ export default async function ActiveProjects(props: {
         <li
           key={issue.url}
           id={`${issue.repo}-${issue.number}`}
-          className="flex flex-col rounded-lg border shadow-sm dark:border-gray-700"
+          className="flex flex-col rounded-lg border shadow-sm dark:border-secondary-700"
         >
           <div className="flex items-center justify-between p-6 pb-0 pt-4">
             <div
@@ -157,7 +157,7 @@ export default async function ActiveProjects(props: {
                       }
                             ${
                               props.small
-                                ? "border-gray-200 px-2.5 py-1 text-xs dark:border-gray-800"
+                                ? "border-secondary-200 px-2.5 py-1 text-xs dark:border-secondary-800"
                                 : "border-current px-3 py-1 text-sm"
                             }`}
                     >
@@ -168,11 +168,11 @@ export default async function ActiveProjects(props: {
               <Link
                 href={issue.url}
                 target="_blank"
-                className={`font-mono font-bold tracking-wide text-gray-700 dark:text-gray-300 ${
+                className={`font-mono font-bold tracking-wide text-secondary-700 dark:text-secondary-300 ${
                   props.small ? "text-xs" : "text-sm"
                 }`}
               >
-                <span className="pr-0.5 tracking-normal text-gray-400">
+                <span className="pr-0.5 tracking-normal text-secondary-400">
                   {env.NEXT_PUBLIC_GITHUB_ORG}/{issue.repo}
                 </span>
                 #{issue.number}
@@ -181,7 +181,7 @@ export default async function ActiveProjects(props: {
             {props.small ? (
               <Link
                 href={`/projects#${issue.repo}-${issue.number}`}
-                className="flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:border-gray-800 dark:text-gray-200 hover:dark:bg-gray-800 hover:dark:text-gray-100"
+                className="flex items-center gap-2 rounded-lg border border-secondary-200 px-4 py-2 text-sm text-secondary-800 transition-colors hover:bg-secondary-100 hover:text-secondary-900 dark:border-secondary-800 dark:text-secondary-200 hover:dark:bg-secondary-800 hover:dark:text-secondary-100"
               >
                 <FiExternalLink />
                 View
@@ -190,7 +190,7 @@ export default async function ActiveProjects(props: {
               <Link
                 href={issue.url}
                 target="_blank"
-                className="flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:border-gray-800 dark:text-gray-200 hover:dark:bg-gray-800 hover:dark:text-gray-100"
+                className="flex items-center gap-2 rounded-lg border border-secondary-200 px-4 py-2 text-sm text-secondary-800 transition-colors hover:bg-secondary-100 hover:text-secondary-900 dark:border-secondary-800 dark:text-secondary-200 hover:dark:bg-secondary-800 hover:dark:text-secondary-100"
               >
                 <FiGithub />
                 Open in GitHub
@@ -206,15 +206,18 @@ export default async function ActiveProjects(props: {
             >
               {issue.title}
             </h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
+            <p className="text-sm text-secondary-700 dark:text-secondary-300">
               Opened by{" "}
               <span className="font-semibold">{issue.author.login}</span>{" "}
-              <RelativeTime time={issue.createdAt} className="text-gray-500" />
+              <RelativeTime
+                time={issue.createdAt}
+                className="text-secondary-500"
+              />
             </p>
           </div>
 
           {!props.small && (
-            <div className="break-all bg-gray-100 p-6 text-sm dark:bg-gray-800 ">
+            <div className="break-all bg-secondary-100 p-6 text-sm dark:bg-secondary-800 ">
               <Markdown>{issue.body}</Markdown>
             </div>
           )}

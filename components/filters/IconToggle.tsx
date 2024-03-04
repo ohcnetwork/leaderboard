@@ -13,7 +13,7 @@ const IconToggle = ({
   return (
     <div
       onClick={handleOnClick}
-      className="cursor-pointer rounded border border-gray-600 p-2 shadow-sm dark:border-gray-300"
+      className="cursor-pointer rounded border border-secondary-600 p-2 shadow-sm dark:border-secondary-300"
     >
       {state ? (
         <TrueIcon className="text-foreground" size={20} />

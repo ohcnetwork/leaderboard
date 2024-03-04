@@ -77,13 +77,13 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
         {/* model */}
 
         <div
-          className={`absolute inset-x-0 z-20 mx-4 mt-1 translate-y-5 rounded-lg bg-gray-800 text-white shadow-2xl transition-all md:inset-auto md:-left-[calc(125px-50%)] md:top-[calc(100%+10px)] md:mx-0 md:w-[250px] ${
+          className={`absolute inset-x-0 z-20 mx-4 mt-1 translate-y-5 rounded-lg bg-secondary-800 text-white shadow-2xl transition-all md:inset-auto md:-left-[calc(125px-50%)] md:top-[calc(100%+10px)] md:mx-0 md:w-[250px] ${
             showModel
               ? "visible translate-y-0 opacity-100"
               : "invisible opacity-0"
           }`}
         >
-          <div className="flex items-center justify-center rounded-t-lg border-b border-gray-700 bg-gray-900 px-4 py-3">
+          <div className="flex items-center justify-center rounded-t-lg border-b border-secondary-700 bg-secondary-900 px-4 py-3">
             <div className="relative h-24 w-24">
               {skill.currentLevel && (
                 <>
@@ -138,10 +138,10 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
               {skill.levels.map((level: any) => (
                 <div
                   key={level.value}
-                  className="flex items-center font-medium text-gray-400"
+                  className="flex items-center font-medium text-secondary-400"
                 >
                   <p
-                    className={`shrink-0 rounded bg-gray-700 px-1 py-0.5 ${
+                    className={`shrink-0 rounded bg-secondary-700 px-1 py-0.5 ${
                       skill.currentLevel?.value ?? -1 >= level.value
                         ? "bg-green-400 text-white"
                         : ""

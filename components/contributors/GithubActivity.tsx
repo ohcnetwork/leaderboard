@@ -254,7 +254,7 @@ let showContribution = (activity: Activity) => {
       <div className="relative flex items-start space-x-3">
         <div>
           <div className="relative px-1">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-100 ring-8 ring-gray-200 dark:bg-secondary-300 dark:ring-gray-700">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-100 ring-8 ring-secondary-200 dark:bg-secondary-300 dark:ring-secondary-700">
               {icon(type)}
             </div>
           </div>
@@ -363,7 +363,7 @@ export default function GithubActivity({ activityData }: Props) {
       <div className="top-6 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-64">
         <h3>Filter Activity</h3>
         <select
-          className="my-4 block rounded border border-gray-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-gray-300"
+          className="my-4 block rounded border border-secondary-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-secondary-300"
           disabled={!rangePresets}
           value={rangeQuery}
           onChange={(event) => {

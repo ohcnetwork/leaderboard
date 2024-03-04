@@ -313,7 +313,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
         >
           <div className="relative">
             <Image
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-400 ring-8 ring-gray-200 transition-all duration-200 ease-in-out group-hover:scale-125 group-hover:ring-2 dark:ring-gray-800 group-hover:dark:ring-white/50"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-400 ring-8 ring-secondary-200 transition-all duration-200 ease-in-out group-hover:scale-125 group-hover:ring-2 dark:ring-secondary-800 group-hover:dark:ring-white/50"
               src={event.actor.avatar_url + "&s=64"}
               alt=""
               height={40}

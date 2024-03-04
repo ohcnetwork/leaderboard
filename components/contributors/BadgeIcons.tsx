@@ -83,7 +83,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
               : "invisible opacity-0"
           }`}
         >
-          <div className="flex items-center justify-center rounded-t-lg border-b border-gray-700 bg-secondary-900 px-4 py-3">
+          <div className="flex items-center justify-center rounded-t-lg border-b border-secondary-700 bg-secondary-900 px-4 py-3">
             <div className="relative h-24 w-24">
               {skill.currentLevel && (
                 <>

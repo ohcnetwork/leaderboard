@@ -101,7 +101,7 @@ export function Select({
       onBlur={() => setIsOpen(false)}
       onClick={() => setIsOpen((prev) => !prev)}
       tabIndex={0}
-      className="relative flex w-full items-center rounded-l-none rounded-r-md border border-gray-600 bg-background p-1 text-sm font-medium text-foreground outline-none hover:cursor-pointer dark:border-gray-300"
+      className="relative flex w-full items-center rounded-l-none rounded-r-md border border-secondary-600 bg-background p-1 text-sm font-medium text-foreground outline-none hover:cursor-pointer dark:border-secondary-300"
     >
       <span className="relative flex grow gap-1">
         {multiple ? (
@@ -170,7 +170,7 @@ export function Select({
         )}
       <RiArrowDropDownLine size={30} />
       <ul
-        className={`absolute top-full z-10 mt-1 max-h-48 w-full cursor-pointer overflow-y-auto rounded-md border border-gray-600 bg-background py-1 text-sm font-medium text-foreground dark:border-gray-300 ${
+        className={`absolute top-full z-10 mt-1 max-h-48 w-full cursor-pointer overflow-y-auto rounded-md border border-secondary-600 bg-background py-1 text-sm font-medium text-foreground dark:border-secondary-300 ${
           isOpen ? "" : "hidden"
         }`}
       >

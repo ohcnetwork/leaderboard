@@ -382,7 +382,7 @@ export default function GithubActivity({ activityData }: Props) {
   return (
     <div className="flex flex-col justify-center md:flex-row  md:justify-between ">
       <div className="mr-10 w-full md:w-2/5">
-        <div className="top-20 my-4 flex flex-col gap-2 rounded p-4 shadow-md dark:bg-primary-900 md:sticky">
+        <div className="top-20 my-4 flex flex-col gap-2 rounded p-4 shadow-md dark:bg-secondary-800 md:sticky">
           <h3 className="text-center">Filter Activity</h3>
           <select
             className="my-4 block rounded bg-secondary-100 px-2 py-1 text-sm font-medium text-foreground scrollbar scrollbar-thumb-primary-500 scrollbar-thumb-rounded-full scrollbar-w-2 focus:z-10 focus:outline-none dark:bg-secondary-700"

@@ -1,6 +1,7 @@
 import {
   formatDuration as _formatDuration,
   intervalToDuration,
+  format,
 } from "date-fns";
 
 export const parametreize = (string: string) => {
@@ -79,4 +80,16 @@ export const scrollTo = (id: string | boolean) => {
 
 export const parseIssueNumber = (url: string) => {
   return url.replace(/^.*github\.com\/[\w-]+\/[\w-]+\/issues\//, "");
+};
+
+export const navLinks = [
+  { title: "Feed", path: "/feed" },
+  { title: "Leaderboard", path: "/leaderboard" },
+  { title: "People", path: "/people" },
+  { title: "Projects", path: "/projects" },
+  { title: "Releases", path: "/releases" },
+];
+
+export const formatDate = (date: Date) => {
+  return format(date, "MMM dd, yyyy");
 };

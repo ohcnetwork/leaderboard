@@ -7,7 +7,7 @@ A simple leaderboard app built with Next.js and Tailwind CSS to list top contrib
 Run the following command in the terminal:
 
 ```bash
-./load-fixtures.sh
+./load-org-data.sh
 ```
 
 Now run the deployment server:
@@ -48,9 +48,7 @@ twitter: john-doe
 linkedin: john-doe
 slack: U02TDGQQPMJ
 joining_date: "09/05/2022"
-core: false
-intern: true
-operations: false
+role: contributor
 ---
 
 ** A Bio about John Doe **  
@@ -58,10 +56,7 @@ _Passionate about creating scalable and distributed systems for the power grid a
 source digital public goods._ (supports markdown)
 ```
 
-All members marked with `core: true` will be listed in the core team section, they will be hidden from the leaderboard
-section by default. You can toggle the visibility of core team members by clicking on the `Core Team` button.
-
-All members marked with `operations: true` will be will be hidden from the leaderboard section.
+All members marked with `role: core` and `role: operations` will be will be hidden from the leaderboard section by default.You can toggle their visibility by changing filters.
 
 You will be able to see the users profile page at `http://localhost:3000/contributors/john-doe`.
 

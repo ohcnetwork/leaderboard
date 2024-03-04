@@ -9,11 +9,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "opengraph.githubassets.com",
+        hostname: "avatars.githubusercontent.com",
       },
       {
         protocol: "https",
-        hostname: "avatars.githubusercontent.com",
+        hostname: "opengraph.githubassets.com",
       },
     ],
   },

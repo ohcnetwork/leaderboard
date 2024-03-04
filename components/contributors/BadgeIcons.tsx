@@ -55,11 +55,11 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
 
   return (
     <div ref={ref} className="" role="listitem">
-      <div className="relative w-14 h-14 cursor-pointer">
+      <div className="relative h-14 w-14 cursor-pointer">
         <Image
           onClick={() => setShowModel(!showModel)}
           className={
-            skill.currentLevel ? `badge-glow ${glow()}` : "grayscale opacity-30"
+            skill.currentLevel ? `badge-glow ${glow()}` : "opacity-30 grayscale"
           }
           height={56}
           width={56}
@@ -67,7 +67,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
           alt="Graduate attribute"
         />
         {skill.currentLevel && (
-          <div className="bg-white flex items-center justify-center absolute rounded bottom-0 right-0 z-10 py-0.5 px-1 leading-tight">
+          <div className="absolute bottom-0 right-0 z-10 flex items-center justify-center rounded bg-white px-1 py-0.5 leading-tight">
             <span className="text-xs font-medium text-black">
               {skill.currentLevel.label}
             </span>
@@ -77,14 +77,14 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
         {/* model */}
 
         <div
-          className={`inset-x-0 md:top-[calc(100%+10px)] md:inset-auto md:-left-[calc(125px-50%)] absolute z-20 bg-gray-800 rounded-lg shadow-2xl md:w-[250px] translate-y-5 transition-all mt-1 mx-4 md:mx-0 text-white ${
+          className={`absolute inset-x-0 z-20 mx-4 mt-1 translate-y-5 rounded-lg bg-secondary-800 text-white shadow-2xl transition-all md:inset-auto md:-left-[calc(125px-50%)] md:top-[calc(100%+10px)] md:mx-0 md:w-[250px] ${
             showModel
-              ? "opacity-100 translate-y-0 visible"
+              ? "visible translate-y-0 opacity-100"
               : "invisible opacity-0"
           }`}
         >
-          <div className="bg-gray-900 rounded-t-lg px-4 py-3 border-b border-gray-700 flex justify-center items-center">
-            <div className="w-24 h-24 relative">
+          <div className="flex items-center justify-center rounded-t-lg border-b border-secondary-700 bg-secondary-900 px-4 py-3">
+            <div className="relative h-24 w-24">
               {skill.currentLevel && (
                 <>
                   {/* Yayy sparkles!! */}
@@ -122,9 +122,9 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                 className={`mx-auto ${
                   skill.currentLevel
                     ? `badge-glow ${glow()}`
-                    : "grayscale opacity-30"
+                    : "opacity-30 grayscale"
                 }`}
-                layout="fill"
+                fill
                 src={skill.icon}
                 alt="Graduate attribute"
               />
@@ -132,16 +132,16 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
 
             <i className="fas fa-circle" />
           </div>
-          <div className="px-4 pt-2 pb-4">
-            <p className="font-bold pb-2">{skill.label}</p>
+          <div className="px-4 pb-4 pt-2">
+            <p className="pb-2 font-bold">{skill.label}</p>
             <div className="space-y-1 text-sm">
               {skill.levels.map((level: any) => (
                 <div
                   key={level.value}
-                  className="flex items-center font-medium text-gray-400"
+                  className="flex items-center font-medium text-secondary-400"
                 >
                   <p
-                    className={`flex-shrink-0 bg-gray-700 px-1 py-0.5 rounded ${
+                    className={`shrink-0 rounded bg-secondary-700 px-1 py-0.5 ${
                       skill.currentLevel?.value ?? -1 >= level.value
                         ? "bg-green-400 text-white"
                         : ""
@@ -149,7 +149,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                   >
                     {level.label}
                   </p>
-                  <div className="flex-grow pl-4">
+                  <div className="grow pl-4">
                     <p
                       className={`flex items-center ${
                         skill.currentLevel?.value ?? -1 >= level.value

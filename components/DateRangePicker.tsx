@@ -9,12 +9,14 @@ import {
   endOfMonth,
   subMonths,
 } from "date-fns";
+import { formatDate } from "@/lib/utils";
 
 type DateRange = { start: Date; end: Date };
 
 type Props = {
   value?: DateRange;
   onChange: (value: DateRange) => void;
+  className?: string;
 };
 
 const DateRangePicker = (props: Props) => {
@@ -23,77 +25,81 @@ const DateRangePicker = (props: Props) => {
   const rangePresets = getRangePresets();
 
   return (
-    <div className="relative inline-block text-left whitespace-nowrap">
-      <Popover>
-        {({ open, close }) => (
-          <>
-            <Popover.Button
-              className={`px-4 py-2 font-medium rounded-md block w-full p-2 sm:text-sm border border-gray-600 dark:border-gray-300 ${
-                open
-                  ? "text-background bg-foreground"
-                  : "text-foreground bg-background"
-              }`}
-            >
-              {`${formatDate(startDate)} → ${formatDate(endDate)}`}
-            </Popover.Button>
-            <Popover.Panel className="absolute z-10 mt-2 bg-background rounded-lg shadow-lg shadow-primary-500 border border-primary-400">
-              <div className="flex flex-col p-4">
-                <div className="flex gap-2 justify-between items-center text-sm font-bold">
-                  <input
-                    type="date"
-                    name="start"
-                    value={format(startDate, "yyyy-MM-dd")}
-                    onChange={(e) =>
-                      props.onChange({
-                        start: e.target.valueAsDate ?? new Date(),
-                        end: endDate,
-                      })
-                    }
-                    className="block w-48 text-center p-2 rounded-md border border-gray-600 dark:border-gray-300 bg-transparent text-foreground"
-                  />
-                  <span className="text-base font-bold">→</span>
-                  <input
-                    type="date"
-                    name="end"
-                    value={format(endDate, "yyyy-MM-dd")}
-                    onChange={(e) =>
-                      props.onChange({
-                        start: startDate,
-                        end: e.target.valueAsDate ?? new Date(),
-                      })
-                    }
-                    className="block w-48 text-center p-2 rounded-md border border-gray-600 dark:border-gray-300 bg-transparent text-foreground"
-                  />
+    <div className={props.className}>
+      <div className="relative inline-block w-full whitespace-nowrap text-left">
+        <Popover>
+          {({ open, close }) => (
+            <>
+              <Popover.Button
+                className={`block w-full rounded-md border border-secondary-600 px-4 py-2 font-medium dark:border-secondary-300 sm:text-sm ${
+                  open
+                    ? "bg-foreground text-background"
+                    : "bg-background text-foreground"
+                }`}
+              >
+                {`${formatDate(startDate)} → ${formatDate(endDate)}`}
+              </Popover.Button>
+              <Popover.Panel className="absolute z-10 mt-2 rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500">
+                <div className="flex flex-col p-4">
+                  <div className="flex items-center justify-between gap-2 text-sm font-bold">
+                    <input
+                      type="date"
+                      name="start"
+                      value={format(startDate, "yyyy-MM-dd")}
+                      onChange={(e) =>
+                        props.onChange({
+                          start: e.target.valueAsDate ?? new Date(),
+                          end: endDate,
+                        })
+                      }
+                      className="block w-48 rounded-md border border-secondary-600 bg-transparent p-2 text-center text-foreground dark:border-secondary-300"
+                    />
+                    <span className="text-base font-bold">→</span>
+                    <input
+                      type="date"
+                      name="end"
+                      value={format(endDate, "yyyy-MM-dd")}
+                      onChange={(e) =>
+                        props.onChange({
+                          start: startDate,
+                          end: e.target.valueAsDate ?? new Date(),
+                        })
+                      }
+                      className="block w-48 rounded-md border border-secondary-600 bg-transparent p-2 text-center text-foreground dark:border-secondary-300"
+                    />
+                  </div>
+                  <div className="mt-6 grid grid-cols-2 gap-2">
+                    {rangePresets.map((range, index) => (
+                      <button
+                        key={index}
+                        className={`whitespace-nowrap rounded border border-secondary-500 px-2 py-1 text-sm transition-all duration-100 ease-in-out hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black ${
+                          range.value.start.toDateString() ===
+                            props.value?.start.toDateString() &&
+                          range.value.end.toDateString() ===
+                            props.value?.end.toDateString()
+                            ? "bg-background text-foreground dark:bg-white dark:text-black"
+                            : ""
+                        } `}
+                        onClick={() => {
+                          props.onChange(range.value);
+                          close();
+                        }}
+                      >
+                        {range.label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-
-                <div className="grid grid-cols-2 gap-2 mt-6">
-                  {rangePresets.map((range, index) => (
-                    <button
-                      key={index}
-                      className="hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black px-2 py-1 text-sm whitespace-nowrap rounded border border-gray-500 transition-all duration-100 ease-in-out"
-                      onClick={() => {
-                        props.onChange(range.value);
-                        close();
-                      }}
-                    >
-                      {range.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </Popover.Panel>
-          </>
-        )}
-      </Popover>
+              </Popover.Panel>
+            </>
+          )}
+        </Popover>
+      </div>
     </div>
   );
 };
 
 export default DateRangePicker;
-
-export const formatDate = (date: Date) => {
-  return format(date, "MMM dd, yyyy");
-};
 
 const getRangePresets = () => {
   const today = new Date();

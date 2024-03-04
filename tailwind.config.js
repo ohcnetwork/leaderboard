@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+import colorPallete from "./data-repo/colorPalette.json";
+
+/** @type {import("tailwindcss").Config} */
 module.exports = {
   darkMode: "class",
   content: [
@@ -14,16 +16,29 @@ module.exports = {
       },
       colors: {
         primary: {
-          50: "#f8f5fc",
-          100: "#f0eafb",
-          200: "#d3bff3",
-          300: "#b08ee6",
-          400: "#976ae2",
-          500: "#6025c0",
-          600: "#4d1e9a",
-          700: "#380d80",
-          800: "#35156b",
-          900: "#1f0d40",
+          50: "var(--primary-50)",
+          100: "var(--primary-100)",
+          200: "var(--primary-200)",
+          300: "var(--primary-300)",
+          400: "var(--primary-400)",
+          500: "var(--primary-500)",
+          600: "var(--primary-600)",
+          700: "var(--primary-700)",
+          800: "var(--primary-800)",
+          900: "var(--primary-900)",
+        },
+        secondary: {
+          50: "var(--secondary-50)",
+          100: "var(--secondary-100)",
+          200: "var(--secondary-200)",
+          300: "var(--secondary-300)",
+          400: "var(--secondary-400)",
+          500: "var(--secondary-500)",
+          600: "var(--secondary-600)",
+          700: "var(--secondary-700)",
+          800: "var(--secondary-800)",
+          900: "var(--secondary-900)",
+          950: "var(--secondary-950)",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -1,20 +1,22 @@
-import { getLeaderboardData } from "../api/leaderboard/functions";
-import Leaderboard, { LeaderboardSortKey } from "./Leaderboard";
-import { parseDateRangeSearchParam } from "@/lib/utils";
+import { Suspense } from "react";
+import LeaderboardWrapper from "./_components/LeaderboardWrapper";
+import LoadingText from "@/components/LoadingText";
+import Searchbar from "./_components/Searchbar";
+import type { LeaderboardPageProps } from "@/lib/types";
 
-type PageProps = {
-  searchParams: {
-    between?: string; // <start-date>...<end-date>
-    sortBy?: LeaderboardSortKey | `-${LeaderboardSortKey}`;
-    roles?: string; // typeof subsetOf("core", "intern", "operations", "contributor").join(',')
-  };
-};
-
-export default async function LeaderboardPage({ searchParams }: PageProps) {
-  const data = await getLeaderboardData(
-    parseDateRangeSearchParam(searchParams.between),
-    searchParams.sortBy ?? "-points",
+export default async function LeaderboardPage({
+  searchParams,
+}: LeaderboardPageProps) {
+  return (
+    <section className="border-t border-secondary-300 bg-background text-foreground dark:border-secondary-700">
+      <div className="mx-auto max-w-6xl">
+        <Searchbar searchParams={searchParams} />
+        <div className="mx-4 border-secondary-600 xl:mx-0">
+          <Suspense fallback={<LoadingText text="Ranking the contributors" />}>
+            <LeaderboardWrapper searchParams={searchParams} />
+          </Suspense>
+        </div>
+      </div>
+    </section>
   );
-
-  return <Leaderboard data={data} />;
 }

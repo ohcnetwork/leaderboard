@@ -21,18 +21,18 @@ export default async function ForkedStar() {
     <div className="flex justify-center">
       {forkCount > 0 && starCount > 0 ? (
         <>
-          <div className="flex items-center justify-center bg-violet-950 m-4 p-2 w-6/12 rounded-md border-2 border-slate-400 ">
-            <GoRepoForked className=" text-lg font-bold mr-1 text-slate-500" />
-            <div className="text-slate-300">Forked</div>
-            <div className="bg-slate-900 py-2 px-4 rounded-md ml-4">
+          <div className="flex items-center justify-center bg-primary-700 m-4 p-2 w-6/12 rounded-md border-2 border-gray-500 ">
+            <GoRepoForked className=" text-lg font-bold mr-1 text-gray-300" />
+            <div className="text-gray-300">Forked</div>
+            <div className="bg-background py-2 px-4 rounded-md ml-4">
               {forkCount}
             </div>
           </div>
-          <div className="flex items-center justify-center bg-violet-950 m-4 p-2 w-6/12 rounded-md border-2 border-slate-400">
-            <GoStar className=" text-lg font-bold mr-1 text-slate-500" />
-            <div className="text-slate-300">Starred</div>
+          <div className="flex items-center justify-center bg-primary-700 m-4 p-2 w-6/12 rounded-md border-2 border-gray-500">
+            <GoStar className=" text-lg font-bold mr-1 text-gray-300" />
+            <div className="text-gray-300">Starred</div>
 
-            <div className="bg-slate-900 py-2 px-4 rounded-md ml-4">
+            <div className="bg-background py-2 px-4 rounded-md ml-4">
               {starCount}
             </div>
           </div>

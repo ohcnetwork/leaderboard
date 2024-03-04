@@ -17,15 +17,12 @@ export default function Leaderboard({
 }: {
   data: LeaderboardAPIResponse;
 } & LeaderboardPageProps) {
-  const searchTerm = searchParams.search ?? undefined;
+  const searchTerm = searchParams.search ?? "";
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
   const filteredData = data.filter((item) => {
     return searchParams.role?.includes(item.user.role) ?? true;
   });
-
-  if (searchTerm) {
-    data = data.filter(filterBySearchTerm(searchTerm.toLowerCase()));
-  }
+  const ordering = searchParams.ordering ?? "desc";
 
   return (
     <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:pb-20 2xl:gap-5">
@@ -46,16 +43,22 @@ export default function Leaderboard({
             </div>
             {data.length ? (
               <ul className="space-y-6 overflow-x-auto p-6 lg:space-y-8">
-                {data.map((contributor, index) => {
-                  return (
-                    <li key={contributor.user.social.github}>
-                      <LeaderboardCard
-                        position={index}
-                        contributor={contributor}
-                      />
-                    </li>
-                  );
-                })}
+                {data
+                  .filter(filterBySearchTerm(searchTerm.toLowerCase()))
+                  .map((contributor) => {
+                    return (
+                      <li key={contributor.user.social.github}>
+                        <LeaderboardCard
+                          position={
+                            ordering === "desc"
+                              ? data.indexOf(contributor)
+                              : data.length - data.indexOf(contributor) - 1
+                          }
+                          contributor={contributor}
+                        />
+                      </li>
+                    );
+                  })}
               </ul>
             ) : (
               <div className="my-4 overflow-x-auto">

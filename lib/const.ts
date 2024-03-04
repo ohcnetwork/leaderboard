@@ -8,14 +8,14 @@ export const SORT_BY_OPTIONS = {
   pr_opened: "PR Opened",
   pr_reviewed: "PR Reviewed",
   pr_stale: "Stale PRs",
-};
+} as const;
 
 export const FILTER_BY_ROLE_OPTIONS = {
   core: "Core",
   intern: "Intern",
   operations: "Operations",
   contributor: "Contributor",
-};
+} as const;
 
 export const TOP_CONTRIBUTOR_CATEGORIES = {
   eod_update: "EOD Updates",
@@ -24,4 +24,4 @@ export const TOP_CONTRIBUTOR_CATEGORIES = {
   pr_reviewed: "Pull Requests Reviewed",
   issue_opened: "Issues Opened",
   comment_created: "Comments Created",
-};
+} as const;

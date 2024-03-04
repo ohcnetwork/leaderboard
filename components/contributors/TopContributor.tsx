@@ -23,7 +23,7 @@ export default function InfoCard({
 
   return (
     <div
-      className="flex flex-col items-center rounded-lg bg-gray-100 px-2 py-6 text-center dark:bg-gray-800 xl:px-8 xl:text-left"
+      className="flex flex-col items-center rounded-lg bg-secondary-100 px-2 py-6 text-center dark:bg-secondary-800 xl:px-8 xl:text-left"
       role="listitem"
     >
       <span className="text-center text-sm text-foreground">

@@ -9,6 +9,7 @@ import RoleFilter from "@/components/filters/RoleFilter";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 import { SORT_BY_OPTIONS, FILTER_BY_ROLE_OPTIONS } from "@/lib/const";
 import { LeaderboardPageProps } from "@/lib/types";
+import { env } from "@/env.mjs";
 
 const SortOptions = Object.entries(SORT_BY_OPTIONS).map(([value, text]) => ({
   value,
@@ -84,7 +85,14 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
                       value as keyof typeof FILTER_BY_ROLE_OPTIONS
                     ],
                   }))
-              : []
+              : (env.NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES as string)
+                  .split(",")
+                  .map((value) => ({
+                    value,
+                    text: FILTER_BY_ROLE_OPTIONS[
+                      value as keyof typeof FILTER_BY_ROLE_OPTIONS
+                    ],
+                  })) || []
           }
           onChange={(selectedOptions) =>
             updateSearchParam(

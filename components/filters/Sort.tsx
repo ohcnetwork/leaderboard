@@ -21,7 +21,7 @@ const Sort = ({
       <span className="relative inline-flex w-full rounded-md shadow-sm ">
         <span
           onClick={handleSortOrderChange}
-          className="relative inline-flex cursor-pointer items-center rounded-l-md border border-gray-600 px-2 py-2 dark:border-gray-300"
+          className="relative inline-flex cursor-pointer items-center rounded-l-md border border-secondary-600 px-2 py-2 dark:border-secondary-300"
         >
           {sortDescending ? (
             <HiSortAscending className="text-foreground" size={20} />

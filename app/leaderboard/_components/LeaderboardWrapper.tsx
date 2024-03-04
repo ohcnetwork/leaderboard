@@ -2,6 +2,7 @@ import { getLeaderboardData } from "../../api/leaderboard/functions";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 import Leaderboard from "./Leaderboard";
 import { LeaderboardPageProps } from "@/lib/types";
+import { env } from "@/env.mjs";
 
 export default async function LeaderboardWrapper({
   searchParams,
@@ -16,7 +17,9 @@ export default async function LeaderboardWrapper({
       | "intern"
       | "operations"
       | "contributor"
-    )[]) ?? [],
+    )[]) ??
+      (env.NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES as string).split(",") ??
+      [],
   );
 
   return <Leaderboard data={data} searchParams={searchParams} />;

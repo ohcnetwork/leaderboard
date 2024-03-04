@@ -31,7 +31,7 @@ let renderText = (activity: Activity) => {
             <div className="">
               <div className="font-bold text-primary-500 dark:text-primary-300">
                 <RelativeTime time={timestamp} />
-                <span className=" text-sm font-medium text-gray-700 dark:text-gray-200">
+                <span className=" text-sm font-medium text-secondary-700 dark:text-secondary-200">
                   {" "}
                   - End of the day update from slack
                 </span>
@@ -82,7 +82,7 @@ let renderText = (activity: Activity) => {
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
               {!!activity["turnaround_time"] && (
-                <span className="text-sm text-gray-600 dark:text-gray-400">
+                <span className="text-sm text-secondary-600 dark:text-secondary-400">
                   {" with a turnaround time of "}
                   {formatDuration(activity["turnaround_time"] * 1000)}
                 </span>
@@ -96,7 +96,7 @@ let renderText = (activity: Activity) => {
             {activity["type"] == "pr_reviewed" && (
               <div>
                 <Link href={activity["link"]}>
-                  <span className="font-medium text-gray-500 dark:text-gray-200">
+                  <span className="font-medium text-secondary-500 dark:text-secondary-200">
                     {activity["text"]}
                   </span>
                 </Link>
@@ -162,7 +162,7 @@ let renderText = (activity: Activity) => {
               {activity["type"]}
             </span>
 
-            <div className="ml-2 font-medium text-gray-700 dark:text-gray-200">
+            <div className="ml-2 font-medium text-secondary-700 dark:text-secondary-200">
               {activity["text"]}
             </div>
             <span className="ml-2 whitespace-nowrap">
@@ -180,7 +180,7 @@ let icon = (type: string) => {
     case "eod_update":
       return (
         <svg
-          className="h-5 w-5 text-gray-700"
+          className="h-5 w-5 text-secondary-700"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -199,7 +199,7 @@ let icon = (type: string) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
-          className="h-5 w-5 text-gray-700"
+          className="h-5 w-5 text-secondary-700"
           fill="currentColor"
           aria-hidden="true"
         >
@@ -211,7 +211,7 @@ let icon = (type: string) => {
     case "issue_assigned":
       return (
         <svg
-          className="h-5 w-5 text-gray-700"
+          className="h-5 w-5 text-secondary-700"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -227,7 +227,7 @@ let icon = (type: string) => {
     default:
       return (
         <svg
-          className="h-5 w-5 text-gray-700"
+          className="h-5 w-5 text-secondary-700"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -248,13 +248,13 @@ let showContribution = (activity: Activity) => {
   return (
     <div className="relative pb-8">
       <span
-        className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-700 dark:bg-gray-200"
+        className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-secondary-700 dark:bg-secondary-200"
         aria-hidden="true"
       ></span>
       <div className="relative flex items-start space-x-3">
         <div>
           <div className="relative px-1">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-gray-200 dark:bg-gray-300 dark:ring-gray-700">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-100 ring-8 ring-secondary-200 dark:bg-secondary-300 dark:ring-secondary-700">
               {icon(type)}
             </div>
           </div>
@@ -363,7 +363,7 @@ export default function GithubActivity({ activityData }: Props) {
       <div className="top-6 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-64">
         <h3>Filter Activity</h3>
         <select
-          className="my-4 block rounded border border-gray-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-gray-300"
+          className="my-4 block rounded border border-secondary-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-secondary-300"
           disabled={!rangePresets}
           value={rangeQuery}
           onChange={(event) => {
@@ -411,7 +411,7 @@ export default function GithubActivity({ activityData }: Props) {
       </div>
       {activities.length === 0 && (
         <div className="flex h-full w-full items-center justify-center py-48">
-          <span className="text-gray-500 dark:text-gray-400">
+          <span className="text-secondary-500 dark:text-secondary-400">
             No activities in this period
           </span>
         </div>
@@ -454,7 +454,7 @@ export const ActivityCheckbox = (props: {
           pr_reviewed: "Code Review",
         }[props.type]
       }
-      <span className="text-xs text-gray-500 dark:text-gray-400">
+      <span className="text-xs text-secondary-500 dark:text-secondary-400">
         [{props.count || "None"}]
       </span>
     </label>

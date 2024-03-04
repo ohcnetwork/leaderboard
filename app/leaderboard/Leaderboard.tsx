@@ -74,7 +74,7 @@ export default function Leaderboard(props: { data: LeaderboardAPIResponse }) {
                   searchParams.get("ordering") === "asc" ? "desc" : "asc",
                 );
               }}
-              className="md:w-96"
+              className="w-96"
             />
           </div>
         </div>

@@ -5,7 +5,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { ActiveProjectLabelConfig } from "./constants";
 import { env } from "@/env.mjs";
-import getGitHubAccessToken from "@/lib/getGitHubAccessToken";
+import { getGitHubAccessToken } from "@/lib/octokit";
 
 type GraphQLOrgActiveProjectsResponse = {
   data: {

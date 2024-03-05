@@ -1,6 +1,7 @@
 import { env } from "@/env.mjs";
+import { Octokit } from "octokit";
 
-export default function getGitHubAccessToken() {
+export const getGitHubAccessToken = () => {
   const accessToken = env.GITHUB_PAT as string | null;
 
   if (!accessToken) {
@@ -13,4 +14,10 @@ export default function getGitHubAccessToken() {
   }
 
   return accessToken;
-}
+};
+
+const octokit = new Octokit({
+  auth: getGitHubAccessToken(),
+});
+
+export default octokit;

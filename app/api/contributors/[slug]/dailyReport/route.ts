@@ -21,7 +21,18 @@ export async function GET(
   { params }: { params: { slug: string } },
 ) {
   const user = params.slug;
-  getContributorBySlug(user); // Check if contributor belongs to the organization
+  try {
+    // Check if contributor belongs to the organization
+    await getContributorBySlug(user);
+  } catch (e) {
+    return Response.json(
+      { error: `"${user}" not a contributor of "${org}"` },
+      {
+        status: 404,
+      },
+    );
+  }
+
   const dateRange = getDateRange();
 
   const [pull_requests, commits, reviews, issues_active, issues_pending] =

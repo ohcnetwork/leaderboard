@@ -26,7 +26,7 @@ export async function GET(
     await getContributorBySlug(user);
   } catch (e) {
     return Response.json(
-      { error: `"${user}" not a contributor of "${org}"` },
+      { error: `'${user}' is not a contributor of '${org}'` },
       {
         status: 404,
       },

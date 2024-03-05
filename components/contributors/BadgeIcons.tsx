@@ -67,7 +67,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
           alt="Graduate attribute"
         />
         {skill.currentLevel && (
-          <div className="absolute bottom-0 right-0 z-10 flex items-center justify-center rounded bg-white px-1 py-0.5 leading-tight">
+          <div className="absolute bottom-0 right-0 z-0 flex items-center justify-center rounded bg-white px-1 py-0.5 leading-tight">
             <span className="text-xs font-medium text-black">
               {skill.currentLevel.label}
             </span>

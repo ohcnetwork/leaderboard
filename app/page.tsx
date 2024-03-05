@@ -23,7 +23,7 @@ export default async function Home() {
       <section className="border-t border-secondary-300 bg-background dark:border-secondary-700 ">
         <div className="mx-auto max-w-7xl">
           <div className="mx-4 border-secondary-600 xl:mx-0">
-            <div className="px-0 pb-10 lg:px-4 lg:grid lg:grid-cols-12 lg:gap-12 lg:pb-20">
+            <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:gap-12 lg:pb-20 lg:px-4 ">
               <div className="space-y-20 lg:col-span-8">
                 {env.NEXT_PUBLIC_ORG_INFO ? (
                   <div className="pt-20">

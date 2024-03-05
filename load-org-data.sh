@@ -1,6 +1,6 @@
 : "${FIXTURES_SOURCE:=https://github.com/coronasafe/leaderboard-data.git}"
 
-if [ -d "data-repo/.git" ]; then
+if [ -d "data-repo/.git" ] && (cd data-repo && git remote -v | grep -q 'upstream'); then
   echo "Updating existing data repository..."
   
   cd data-repo

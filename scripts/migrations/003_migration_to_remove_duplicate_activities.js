@@ -8,7 +8,7 @@ const path = require("path");
 const githubDataPath = path.join(__dirname, "../../data-repo/data/github");
 
 async function main() {
-  const files = await readdir("../../data-repo/data/github");
+  const files = await readdir(githubDataPath);
   console.log(`Processing ${files.length} files...`);
 
   await Promise.all(

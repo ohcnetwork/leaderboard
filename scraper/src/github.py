@@ -32,7 +32,7 @@ def is_blacklisted(login: str):
 
 
 def serializer(obj):
-    return obj.timestamp() if isinstance(obj, datetime) else repr(obj)
+    return obj.isoformat() if isinstance(obj, datetime) else repr(obj)
 
 
 class GitHubScraper:
@@ -455,7 +455,11 @@ class GitHubScraper:
             self.log.debug(f"Merging user data for {user}")
             old_data = self.load_user_data(user)
             data = self.data.get(user)
-            data["activity"].extend(old_data["activity"])
+            new_unique_events = []
+            for event in data["activity"]:
+                if event not in old_data["activity"]:
+                    new_unique_events.append(event)
+            data["activity"] = new_unique_events + old_data["activity"]
             self.save_user_data(user, data)
         self.log.info("Updated data")
 

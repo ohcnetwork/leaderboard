@@ -2,51 +2,32 @@
  * Migration to remove duplicate activities from the users data.
  */
 
-const fs = require("fs");
+const { readFile, readdir, writeFile } = require("fs/promises");
 const path = require("path");
 
-function removeDuplicates(data) {
-  const uniqueActivities = [];
-  const seenActivities = new Set();
+const githubDataPath = path.join(__dirname, "../../data-repo/data/github");
 
-  data.activity.forEach((activity) => {
-    const activityKey = JSON.stringify(activity);
+async function main() {
+  const files = await readdir("../../data-repo/data/github");
+  console.log(`Processing ${files.length} files...`);
 
-    if (!seenActivities.has(activityKey)) {
-      uniqueActivities.push(activity);
-      seenActivities.add(activityKey);
-    }
-  });
+  await Promise.all(
+    files.map(async (file) => {
+      const filePath = path.join(githubDataPath, file);
+      const data = JSON.parse(await readFile(filePath));
 
-  data.activity = uniqueActivities;
-  return JSON.stringify(data, null, 2);
-}
-
-function main() {
-  const dir = path.join(__dirname, "../../data-repo/data/github");
-  fs.readdir(dir, function (err, files) {
-    if (err) {
-      return console.log(err);
-    }
-
-    files.forEach((file) => {
-      const file_to_update = path.join(dir, file);
-
-      fs.readFile(file_to_update, "utf8", function (err, data) {
-        if (err) {
-          return console.log(err);
-        }
-        const updatedData = removeDuplicates(JSON.parse(data));
-        fs.writeFile(file_to_update, updatedData, function (err) {
-          if (err) {
-            return console.log(err);
-          }
-
-          console.log(`Updated ${file}`);
-        });
+      data.activity = Object.values(
+        Object.fromEntries(
+          data.activity.map((event) => [JSON.stringify(event), event]),
+        ),
+      );
+      await writeFile(filePath, JSON.stringify(data, undefined, "  "), {
+        encoding: "utf-8",
       });
-    });
-  });
+    }),
+  );
+
+  console.log("Processed");
 }
 
 main();

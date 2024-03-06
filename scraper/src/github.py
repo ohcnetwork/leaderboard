@@ -32,7 +32,7 @@ def is_blacklisted(login: str):
 
 
 def serializer(obj):
-    return obj.timestamp() if isinstance(obj, datetime) else repr(obj)
+    return obj.isoformat() if isinstance(obj, datetime) else repr(obj)
 
 
 class GitHubScraper:

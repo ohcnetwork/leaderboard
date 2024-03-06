@@ -22,7 +22,7 @@ let commentTypes = (activityEvent: string[]) => {
 };
 
 let renderText = (activity: Activity) => {
-  const timestamp = getActivityTime(activity.time).toString();
+  const timestamp = new Date(activity.time).toString();
   switch (activity["type"]) {
     case "eod_update":
       return (
@@ -265,22 +265,18 @@ let showContribution = (activity: Activity) => {
   );
 };
 
-const getActivityTime = (time: Activity["time"]) => {
-  return typeof time === "number" ? new Date(time * 1e3) : new Date(time);
-};
-
 const activitiesBetween = (range: { from: Date; to: Date }) => {
   const from = range.from.getTime();
   const to = range.to.getTime();
 
   return (activity: Activity) => {
-    const time = getActivityTime(activity.time).getTime();
+    const time = new Date(activity.time).getTime();
     return from < time && time < to;
   };
 };
 
 const compareByActivityTime = (a: Activity, b: Activity) => {
-  return getActivityTime(b.time).getTime() - getActivityTime(a.time).getTime();
+  return new Date(b.time).getTime() - new Date(a.time).getTime();
 };
 
 const activitiesOfType = (types: Activity["type"][]) => {
@@ -292,11 +288,11 @@ const activitiesOfType = (types: Activity["type"][]) => {
 const getRangeFilterPresets = (activities: Activity[]) => {
   if (!activities.length) return [];
 
-  const latest = getActivityTime(activities[0].time);
+  const latest = new Date(activities[0].time);
   let oldest = new Date(latest);
 
   activities.forEach((activity) => {
-    const time = getActivityTime(activity.time);
+    const time = new Date(activity.time);
     if (time < oldest) {
       oldest = time;
     }

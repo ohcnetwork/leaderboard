@@ -25,7 +25,7 @@ export interface Contributor {
 }
 
 export interface ActivityData {
-  last_updated?: number;
+  last_updated?: string;
   activity: Activity[];
   open_prs: OpenPr[];
   pr_stale: number;
@@ -71,7 +71,7 @@ export const ACTIVITY_TYPES = [
 export interface Activity {
   type: (typeof ACTIVITY_TYPES)[number];
   title: string;
-  time: number | string; // TODO: github events are in seconds since epoch, slack events are in timestamp strings. Unify it to one.
+  time: string;
   link: string;
   text: string;
   collaborated_with?: string[];

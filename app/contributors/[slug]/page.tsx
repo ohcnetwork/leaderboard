@@ -352,7 +352,7 @@ export default async function Contributor({ params }: Params) {
                   Last contribution{" "}
                   {contributor.activityData.last_updated ? (
                     <RelativeTime
-                      time={contributor.activityData.last_updated * 1e3}
+                      time={contributor.activityData.last_updated}
                     />
                   ) : (
                     "unknown"

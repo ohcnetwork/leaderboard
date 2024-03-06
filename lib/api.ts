@@ -183,10 +183,6 @@ export async function getContributorBySlug(file: string, detail = false) {
   } as Contributor & { summarize: typeof summarize };
 }
 
-const getActivityTime = (time: Activity["time"]) => {
-  return typeof time === "number" ? new Date(time * 1e3) : new Date(time);
-};
-
 export async function getContributors(detail = false) {
   const slugs = await getContributorsSlugs();
   return Promise.all(
@@ -197,8 +193,7 @@ export async function getContributors(detail = false) {
 function getCalendarData(activity: Activity[]) {
   const calendarData = activity.reduce(
     (acc, activity) => {
-      // Github activity.time ignores milliseconds (*1000)
-      const date = getActivityTime(activity.time).toISOString().split("T")[0];
+      const date = new Date(activity.time).toISOString().split("T")[0];
       if (!acc[date]) {
         acc[date] = {
           count: 0,

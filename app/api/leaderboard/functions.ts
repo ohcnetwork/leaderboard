@@ -7,7 +7,7 @@ import {
   Release,
 } from "@/lib/types";
 import { env } from "@/env.mjs";
-import getGitHubAccessToken from "@/lib/getGitHubAccessToken";
+import { getGitHubAccessToken } from "@/lib/octokit";
 
 export const getLeaderboardData = async (
   dateRange: readonly [Date, Date],

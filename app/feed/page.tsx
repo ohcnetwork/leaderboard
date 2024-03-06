@@ -53,7 +53,7 @@ const excludeBlacklistedEvents = (event: IGitHubEvent) => {
     "PullRequestReviewCommentEvent",
     "DeleteEvent",
     "IssueCommentEvent",
-  ] as IGitHubEvent["type"][];
+  ];
 
   return !blacklist.includes(event.type);
 };

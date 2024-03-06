@@ -7,7 +7,7 @@ import Image from "next/image";
 
 function useOnClickOutside(
   ref: RefObject<HTMLInputElement>,
-  handler: () => void
+  handler: () => void,
 ) {
   useEffect(() => {
     const listener = (event: any) => {
@@ -144,7 +144,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                     className={`shrink-0 rounded px-1 py-0.5 ${
                       index <=
                       skill.levels.findIndex(
-                        (l) => l.value === skill.currentLevel?.value
+                        (l) => l.value === skill.currentLevel?.value,
                       )
                         ? "bg-green-400 text-white"
                         : "bg-secondary-700 opacity-40 grayscale"
@@ -157,7 +157,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                       className={`flex items-center ${
                         index <=
                         skill.levels.findIndex(
-                          (l) => l.value === skill.currentLevel?.value
+                          (l) => l.value === skill.currentLevel?.value,
                         )
                           ? "text-green-500"
                           : "opacity-40 grayscale"

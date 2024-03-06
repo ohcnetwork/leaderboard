@@ -1,11 +1,10 @@
 import LoadingText from "@/components/LoadingText";
 import { IGitHubEvent } from "@/lib/gh_events";
 import GitHubEvent from "@/components/gh_events/GitHubEvent";
-import { Octokit } from "octokit";
-import getGitHubAccessToken from "@/lib/getGitHubAccessToken";
+import { env } from "@/env.mjs";
+import octokit from "@/lib/octokit";
 
-const GITHUB_PAT: string = getGitHubAccessToken() || "";
-const GITHUB_ORG: string = process.env.NEXT_PUBLIC_GITHUB_ORG || "";
+const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
 export const revalidate = 600;
 
@@ -14,9 +13,6 @@ type Props = {
     page?: string;
   };
 };
-const octokit = new Octokit({
-  auth: GITHUB_PAT,
-});
 
 export default async function FeedPage({ searchParams }: Props) {
   const events = await octokit.paginate(
@@ -27,10 +23,7 @@ export default async function FeedPage({ searchParams }: Props) {
     },
     (response) => {
       const data = response.data as IGitHubEvent[];
-      const filteredData = data
-        .filter(exludeBotEvents)
-        .filter(excludeBlacklistedEvents);
-      return filteredData;
+      return data.filter(exludeBotEvents).filter(excludeBlacklistedEvents);
     },
   );
   if (!Object.entries(events).length) {
@@ -48,7 +41,11 @@ export default async function FeedPage({ searchParams }: Props) {
   );
 }
 
-const excludeBlacklistedEvents = (event: IGitHubEvent): boolean => {
+const exludeBotEvents = (event: IGitHubEvent) => {
+  return !event.actor.login.includes("bot");
+};
+
+const excludeBlacklistedEvents = (event: IGitHubEvent) => {
   const blacklist = [
     "CreateEvent",
     "WatchEvent",
@@ -59,8 +56,4 @@ const excludeBlacklistedEvents = (event: IGitHubEvent): boolean => {
   ] as IGitHubEvent["type"][];
 
   return !blacklist.includes(event.type);
-};
-
-const exludeBotEvents = (event: IGitHubEvent): boolean => {
-  return !event.actor.login.includes("bot");
 };

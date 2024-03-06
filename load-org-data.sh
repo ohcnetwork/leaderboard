@@ -6,10 +6,12 @@ if [ -d "data-repo/.git" ] && (cd data-repo && git remote -v | grep -q 'upstream
   echo "Updating existing data repository..."
   
   cd data-repo
-  
+
+  git clean -df
   git fetch upstream
   git checkout --force main
   git reset --hard main
+  git pull upstream main
   
   cd ..
 else

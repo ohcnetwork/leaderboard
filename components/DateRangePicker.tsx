@@ -9,6 +9,7 @@ import {
   endOfMonth,
   subMonths,
 } from "date-fns";
+import { formatDate } from "@/lib/utils";
 
 type DateRange = { start: Date; end: Date };
 
@@ -30,7 +31,7 @@ const DateRangePicker = (props: Props) => {
           {({ open, close }) => (
             <>
               <Popover.Button
-                className={`block w-full rounded-md border border-gray-600 px-4 py-2 font-medium dark:border-gray-300 sm:text-sm ${
+                className={`block w-full rounded-md border border-secondary-600 px-4 py-2 font-medium dark:border-secondary-300 sm:text-sm ${
                   open
                     ? "bg-foreground text-background"
                     : "bg-background text-foreground"
@@ -51,7 +52,7 @@ const DateRangePicker = (props: Props) => {
                           end: endDate,
                         })
                       }
-                      className="block w-48 rounded-md border border-gray-600 bg-transparent p-2 text-center text-foreground dark:border-gray-300"
+                      className="block w-48 rounded-md border border-secondary-600 bg-transparent p-2 text-center text-foreground dark:border-secondary-300"
                     />
                     <span className="text-base font-bold">→</span>
                     <input
@@ -64,14 +65,21 @@ const DateRangePicker = (props: Props) => {
                           end: e.target.valueAsDate ?? new Date(),
                         })
                       }
-                      className="block w-48 rounded-md border border-gray-600 bg-transparent p-2 text-center text-foreground dark:border-gray-300"
+                      className="block w-48 rounded-md border border-secondary-600 bg-transparent p-2 text-center text-foreground dark:border-secondary-300"
                     />
                   </div>
                   <div className="mt-6 grid grid-cols-2 gap-2">
                     {rangePresets.map((range, index) => (
                       <button
                         key={index}
-                        className="whitespace-nowrap rounded border border-gray-500 px-2 py-1 text-sm transition-all duration-100 ease-in-out hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black"
+                        className={`whitespace-nowrap rounded border border-secondary-500 px-2 py-1 text-sm transition-all duration-100 ease-in-out hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black ${
+                          range.value.start.toDateString() ===
+                            props.value?.start.toDateString() &&
+                          range.value.end.toDateString() ===
+                            props.value?.end.toDateString()
+                            ? "bg-background text-foreground dark:bg-white dark:text-black"
+                            : ""
+                        } `}
                         onClick={() => {
                           props.onChange(range.value);
                           close();
@@ -92,10 +100,6 @@ const DateRangePicker = (props: Props) => {
 };
 
 export default DateRangePicker;
-
-export const formatDate = (date: Date) => {
-  return format(date, "MMM dd, yyyy");
-};
 
 const getRangePresets = () => {
   const today = new Date();

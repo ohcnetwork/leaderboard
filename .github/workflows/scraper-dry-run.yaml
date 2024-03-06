@@ -34,3 +34,11 @@ jobs:
         run: node scripts/generateNewContributors.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: output
+          retention-days: 5
+          path: |
+            data
+            contributors

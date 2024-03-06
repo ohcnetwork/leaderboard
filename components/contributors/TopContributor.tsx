@@ -1,17 +1,7 @@
-import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
+import { LeaderboardAPIResponse, TopContributorCategoryKey } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
-
-export const TOP_CONTRIBUTOR_CATEGORIES = {
-  eod_update: "EOD Updates",
-  pr_opened: "Pull Requests Opened",
-  pr_merged: "Pull Requests Merged",
-  pr_reviewed: "Pull Requests Reviewed",
-  issue_opened: "Issues Opened",
-  comment_created: "Comments Created",
-};
-
-export type TopContributorCategoryKey = keyof typeof TOP_CONTRIBUTOR_CATEGORIES;
+import { TOP_CONTRIBUTOR_CATEGORIES } from "@/lib/const";
 
 export default function InfoCard({
   data,
@@ -33,7 +23,7 @@ export default function InfoCard({
 
   return (
     <div
-      className="flex flex-col items-center rounded-lg bg-gray-100 px-2 py-6 text-center dark:bg-gray-800 xl:px-8 xl:text-left"
+      className="flex flex-col items-center rounded-lg bg-secondary-100 px-2 py-6 text-center dark:bg-secondary-800 xl:px-8 xl:text-left"
       role="listitem"
     >
       <span className="text-center text-sm text-foreground">

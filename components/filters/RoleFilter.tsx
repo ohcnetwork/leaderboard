@@ -17,7 +17,7 @@ const RoleFilter = ({
   return (
     <div className={className}>
       <span className="relative flex w-full rounded-md shadow-sm">
-        <span className="relative inline-flex items-center rounded-l-md border border-gray-600 px-2 py-2 dark:border-gray-300 ">
+        <span className="relative inline-flex items-center rounded-l-md border border-secondary-600 px-2 py-2 dark:border-secondary-300 ">
           <BsPersonFill className="text-foreground" size={20} />
         </span>
 

@@ -1,4 +1,4 @@
-import { LeaderboardAPIResponse } from "@/app/api/leaderboard/functions";
+import { LeaderboardAPIResponse } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
@@ -12,7 +12,7 @@ export default function LeaderboardCard({
 }) {
   const userPosition = position + 1;
   const hideBadges = position === -1;
-  let badgeColors = "bg-gray-400 dark:bg-gray-800 border-black/20";
+  let badgeColors = "bg-secondary-400 dark:bg-secondary-800 border-black/20";
 
   switch (userPosition) {
     case 1:
@@ -95,21 +95,21 @@ export default function LeaderboardCard({
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-secondary-500 dark:text-secondary-100">
                       {contributor.highlights.pr_opened}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       opened
                     </span>
-                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-secondary-500 dark:text-secondary-100">
                       {contributor.highlights.pr_reviewed}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       reviewed
                     </span>
-                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-secondary-500 dark:text-secondary-100">
                       {contributor.highlights.pr_merged}
                     </span>
 
@@ -146,18 +146,18 @@ export default function LeaderboardCard({
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-secondary-500 dark:text-secondary-100">
                       {contributor.highlights.eod_update}
                     </span>
 
                     <span className="ml-2 text-sm leading-5 text-foreground">
                       EOD updates
                     </span>
-                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-secondary-500 dark:text-secondary-100">
                       {contributor.highlights.comment_created}
                     </span>
 
-                    <span className="ml-2 text-sm font-semibold leading-5 text-gray-500 dark:text-gray-100">
+                    <span className="ml-2 text-sm font-semibold leading-5 text-secondary-500 dark:text-secondary-100">
                       Comments
                     </span>
                   </div>

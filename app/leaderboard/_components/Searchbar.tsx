@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Search from "@/components/filters/Search";
 import Sort from "@/components/filters/Sort";
@@ -7,13 +6,26 @@ import format from "date-fns/format";
 import DateRangePicker from "@/components/DateRangePicker";
 import RoleFilter from "@/components/filters/RoleFilter";
 import { parseDateRangeSearchParam } from "@/lib/utils";
-import { SORT_BY_OPTIONS } from "./Leaderboard";
-import { LeaderboardPageProps } from "../page";
+import { SORT_BY_OPTIONS, FILTER_BY_ROLE_OPTIONS } from "@/lib/const";
+import { LeaderboardPageProps } from "@/lib/types";
+import { env } from "@/env.mjs";
+import { useDebouncedCallback } from "use-debounce";
+
+const SortOptions = Object.entries(SORT_BY_OPTIONS).map(([value, text]) => ({
+  value,
+  text,
+}));
+
+export const RoleOptions = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
+  ([value, text]) => ({
+    value,
+    text,
+  }),
+);
 
 export default function Searchbar({ searchParams }: LeaderboardPageProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const [searchTerm, setSearchTerm] = useState("");
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
 
   const updateSearchParam = (key: string, value?: string) => {
@@ -28,22 +40,20 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
     router.replace(`${pathname}${query}`, { scroll: false });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (searchTerm) {
-      updateSearchParam("search", searchTerm);
+  const handleSearch = useDebouncedCallback((value: string) => {
+    if (value) {
+      updateSearchParam("search", value);
     } else {
       updateSearchParam("search");
     }
-  };
+  }, 300);
 
   return (
     <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
       <div className="flex flex-col flex-wrap gap-4 md:flex-row">
         <Search
-          value={searchTerm}
-          handleSubmit={handleSubmit}
-          handleOnChange={(e) => setSearchTerm(e.target.value)}
+          defaultValue={searchParams.search}
+          handleOnChange={(e) => handleSearch(e.target.value)}
           className="grow"
         />
         <DateRangePicker
@@ -72,7 +82,14 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
                       value as keyof typeof FILTER_BY_ROLE_OPTIONS
                     ],
                   }))
-              : []
+              : (env.NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES as string)
+                  .split(",")
+                  .map((value) => ({
+                    value,
+                    text: FILTER_BY_ROLE_OPTIONS[
+                      value as keyof typeof FILTER_BY_ROLE_OPTIONS
+                    ],
+                  })) || []
           }
           onChange={(selectedOptions) =>
             updateSearchParam(
@@ -110,28 +127,3 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
     </div>
   );
 }
-
-export const SortOptions = Object.entries(SORT_BY_OPTIONS).map(
-  ([value, text]) => ({
-    value,
-    text,
-  }),
-);
-
-export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;
-
-const FILTER_BY_ROLE_OPTIONS = {
-  core: "Core",
-  intern: "Intern",
-  operations: "Operations",
-  contributor: "Contributor",
-};
-
-export const RoleOptions = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
-  ([value, text]) => ({
-    value,
-    text,
-  }),
-);
-
-export type RoleFilterKey = keyof typeof FILTER_BY_ROLE_OPTIONS;

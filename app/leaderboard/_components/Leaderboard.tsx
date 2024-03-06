@@ -2,13 +2,15 @@ import LeaderboardCard from "@/components/contributors/LeaderboardCard";
 import { TbZoomQuestion } from "react-icons/tb";
 import TopContributor from "../../../components/contributors/TopContributor";
 import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
-// import { formatDate } from "@/components/DateRangePicker";
-import { LeaderboardAPIResponse } from "../../api/leaderboard/functions";
-import { LeaderboardPageProps } from "../page";
-import { format } from "date-fns";
+import { LeaderboardAPIResponse, LeaderboardPageProps } from "@/lib/types";
+import { formatDate } from "@/lib/utils";
 
-export const formatDate = (date: Date) => {
-  return format(date, "MMM dd, yyyy");
+const filterBySearchTerm = (searchTermLC: string) => {
+  return (item: LeaderboardAPIResponse[number]) =>
+    item.user.name.toLowerCase().includes(searchTermLC) ||
+    item.user.social.github.toLowerCase().includes(searchTermLC) ||
+    item.user.social.linkedin.toLowerCase().includes(searchTermLC) ||
+    item.user.social.twitter.toLowerCase().includes(searchTermLC);
 };
 
 export default function Leaderboard({
@@ -17,15 +19,12 @@ export default function Leaderboard({
 }: {
   data: LeaderboardAPIResponse;
 } & LeaderboardPageProps) {
-  const searchTerm = searchParams.search ?? undefined;
+  const searchTerm = searchParams.search ?? "";
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
   const filteredData = data.filter((item) => {
     return searchParams.role?.includes(item.user.role) ?? true;
   });
-
-  if (searchTerm) {
-    data = data.filter(filterBySearchTerm(searchTerm.toLowerCase()));
-  }
+  const ordering = searchParams.ordering ?? "desc";
 
   return (
     <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:pb-20 2xl:gap-5">
@@ -46,16 +45,22 @@ export default function Leaderboard({
             </div>
             {data.length ? (
               <ul className="space-y-6 overflow-x-auto p-6 lg:space-y-8">
-                {data.map((contributor, index) => {
-                  return (
-                    <li key={contributor.user.social.github}>
-                      <LeaderboardCard
-                        position={index}
-                        contributor={contributor}
-                      />
-                    </li>
-                  );
-                })}
+                {data
+                  .filter(filterBySearchTerm(searchTerm.toLowerCase()))
+                  .map((contributor) => {
+                    return (
+                      <li key={contributor.user.social.github}>
+                        <LeaderboardCard
+                          position={
+                            ordering === "desc"
+                              ? data.indexOf(contributor)
+                              : data.length - data.indexOf(contributor) - 1
+                          }
+                          contributor={contributor}
+                        />
+                      </li>
+                    );
+                  })}
               </ul>
             ) : (
               <div className="my-4 overflow-x-auto">
@@ -76,7 +81,7 @@ export default function Leaderboard({
                 <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                   Top Contributors {!searchParams.between && "of the week"}
                 </h2>
-                <p className="text-xl text-gray-500 dark:text-gray-300">
+                <p className="text-xl text-secondary-500 dark:text-secondary-300">
                   Our top contributers across different metrics
                 </p>
               </div>
@@ -101,25 +106,3 @@ export default function Leaderboard({
     </div>
   );
 }
-
-const filterBySearchTerm = (searchTermLC: string) => {
-  return (item: LeaderboardAPIResponse[number]) =>
-    item.user.name.toLowerCase().includes(searchTermLC) ||
-    item.user.social.github.toLowerCase().includes(searchTermLC) ||
-    item.user.social.linkedin.toLowerCase().includes(searchTermLC) ||
-    item.user.social.twitter.toLowerCase().includes(searchTermLC);
-};
-
-export const SORT_BY_OPTIONS = {
-  comment_created: "Comment Created",
-  eod_update: "EOD Update",
-  issue_assigned: "Issue Assigned",
-  issue_opened: "Issue Opened",
-  points: "Points",
-  pr_merged: "PR Merged",
-  pr_opened: "PR Opened",
-  pr_reviewed: "PR Reviewed",
-  pr_stale: "Stale PRs",
-};
-
-export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;

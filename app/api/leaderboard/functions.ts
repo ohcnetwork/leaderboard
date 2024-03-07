@@ -1,4 +1,4 @@
-import { LeaderboardSortKey } from "@/lib/types";
+import { Contributor, LeaderboardSortKey } from "@/lib/types";
 import { getContributors } from "@/lib/api";
 import {
   ReleasesResponse,
@@ -129,3 +129,34 @@ export default async function fetchGitHubReleases(
 
   return sortedReleases.slice(0, sliceLimit);
 }
+
+export const getContributorsData = async () => {
+  const contributors = await getContributors();
+
+  const data = contributors.sort(
+    (a, b) => b.highlights.points - a.highlights.points,
+  );
+
+  return data.map((contributor): Contributor => {
+    return {
+      file: contributor.file,
+      slug: contributor.slug,
+      path: contributor.path,
+      content: contributor.content,
+      activityData: contributor.activityData,
+      highlights: contributor.highlights,
+      leadership: contributor.leadership,
+      weekSummary: contributor.weekSummary,
+      calendarData: contributor.calendarData,
+      name: contributor.name,
+      title: contributor.title,
+      github: contributor.github,
+      linkedin: contributor.linkedin,
+      slack: contributor.slack,
+      twitter: contributor.twitter,
+      joining_date: contributor.joining_date,
+      role: contributor.role,
+      courses_completed: contributor.courses_completed,
+    };
+  });
+};

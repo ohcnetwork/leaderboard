@@ -6,7 +6,7 @@ import { GoStar } from "react-icons/go";
 const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
 export default async function ForkedStar() {
-  let count = await getData().then((data) => {
+  const count = await getData().then((data) => {
     return data.reduce(
       (acc, ls) => {
         if (ls.forks) {

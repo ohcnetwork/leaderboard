@@ -159,8 +159,8 @@ export default async function Home() {
                   <div>
                     <ForkedStar />
                   </div>
-                  <div className="border·border-gray-100·bg-gray-100·bg-opacity-50·shadow-lg·dark:border-gray-800·dark:bg-gray-8">
-                    <div className="justify-between·rounded-t-lg·border-b·border-gray-300·bg-gray-100·px-6·py-4·dark:border-gray-700·dark:bg-gray-800·md:flex-row·md:items-center">
+                  <div className="bg-secondary-100/50 dark:bg-secondary-800/50 rounded-lg border border-secondary-100 shadow-lg dark:border-secondary-800">
+                    <div className="flex flex-col justify-between rounded-t-lg border-b border-secondary-300 bg-secondary-100 px-6 py-4 dark:border-secondary-700 dark:bg-secondary-800 md:flex-row md:items-center">
                       <h4 className="font-bold">Leaderboard</h4>
                       <span className="text-secondary-600 dark:text-secondary-300">
                         last 7 days

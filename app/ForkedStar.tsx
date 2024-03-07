@@ -1,28 +1,24 @@
-// const { Octokit } = require("@octokit/action");
-const { Octokit } = require("octokit"); // Use this for local development
+import octokit from "@/lib/octokit";
 import { env } from "@/env.mjs";
 import { GoRepoForked } from "react-icons/go";
 import { GoStar } from "react-icons/go";
 
-const GITHUB_TOKEN = env.GITHUB_TOKEN;
-const GITHUB_ORG = env.GITHUB_ORG;
-
-const octokit = new Octokit({
-  auth: GITHUB_TOKEN,
-});
+const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
 export default async function ForkedStar() {
-  let count = { forkCount: 0, starCount: 0 };
-
-  const data = await getData();
-
-  data?.map((ls: { forks: number; stargazers_count: number }) => {
-    if (ls.forks) {
-      count.forkCount += ls.forks;
-    }
-    if (ls.stargazers_count) {
-      count.starCount += ls.stargazers_count;
-    }
+  let count = await getData().then((data) => {
+    return data.reduce(
+      (acc, ls) => {
+        if (ls.forks) {
+          acc.forkCount += ls.forks;
+        }
+        if (ls.stargazers_count) {
+          acc.starCount += ls.stargazers_count;
+        }
+        return acc;
+      },
+      { forkCount: 0, starCount: 0 },
+    );
   });
 
   return (
@@ -50,15 +46,13 @@ export default async function ForkedStar() {
 
 async function getData() {
   const res = await octokit.paginate(
-    `GET /orgs/${env.NEXT_PUBLIC_GITHUB_ORG}/repos`,
+    "GET /orgs/{org}/repos",
     {
       org: GITHUB_ORG,
       per_page: 1000,
     },
-    (res: {
-      data: { name: string; forks: number; stargazers_count: number }[];
-    }) => {
-      const data = res.data.map((ls) => {
+    (response) => {
+      const data = response.data.map((ls) => {
         return {
           name: ls.name,
           forks: ls.forks,

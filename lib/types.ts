@@ -161,6 +161,11 @@ export type LeaderboardPageProps = {
     ordering?: "asc" | "desc";
   };
 };
+export type ContributorsPageProps = {
+  searchParams: {
+    search?: string;
+  };
+};
 
 export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;
 

@@ -8,7 +8,6 @@ import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
 import ReleaseSection from "@/components/releases/ReleaseSection";
 import { Suspense } from "react";
 import { env } from "@/env.mjs";
-import ForkedStar from "@/app/ForkedStar";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -156,11 +155,8 @@ export default async function Home() {
 
               <div className="lg:col-span-4">
                 <div className="sticky top-0 pt-20">
-                  <div>
-                    <ForkedStar />
-                  </div>
-                  <div className="rounded-lg dark:bg-gray-800 bg-gray-100 bg-opacity-50 shadow-lg border dark:border-gray-800 border-gray-100">
-                    <div className="flex flex-col md:flex-row justify-between md:items-center dark:bg-gray-800 bg-gray-100 rounded-t-lg px-6 py-4 border-b dark:border-gray-700 border-gray-300 ">
+                  <div className="bg-secondary-100/50 dark:bg-secondary-800/50 rounded-lg border border-secondary-100 shadow-lg dark:border-secondary-800">
+                    <div className="flex flex-col justify-between rounded-t-lg border-b border-secondary-300 bg-secondary-100 px-6 py-4 dark:border-secondary-700 dark:bg-secondary-800 md:flex-row md:items-center">
                       <h4 className="font-bold">Leaderboard</h4>
                       <span className="text-secondary-600 dark:text-secondary-300">
                         last 7 days

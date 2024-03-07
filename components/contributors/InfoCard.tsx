@@ -39,7 +39,7 @@ export default async function InfoCard({
       <div className="flex shrink-0 items-center space-x-2 md:space-y-6 xl:space-y-1 ">
         <div className="flex">
           {showRank && (
-            <div className="mr-5 flex h-20 w-20 items-center self-center text-5xl font-bold tracking-wider text-gray-500 dark:text-gray-400 lg:text-6xl">
+            <div className="mr-5 flex h-20 w-20 items-center self-center text-5xl font-bold tracking-wider text-secondary-500 dark:text-secondary-400 lg:text-6xl">
               #{userPosition + 1}
             </div>
           )}
@@ -79,7 +79,7 @@ export default async function InfoCard({
                 {contributor.name}
               </h3>
             </Link>
-            <p className="text-sm text-gray-400 md:text-base">
+            <p className="text-sm text-secondary-400 md:text-base">
               {contributor.title}
             </p>
           </div>
@@ -92,7 +92,7 @@ export default async function InfoCard({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="flex items-center text-gray-500 hover:text-primary-300">
+                  <span className="flex items-center text-secondary-500 hover:text-primary-300">
                     <span className="sr-only">Github</span>
                     <svg
                       viewBox="0 0 24 24"
@@ -116,7 +116,7 @@ export default async function InfoCard({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="flex items-center text-gray-500 hover:text-primary-300">
+                  <div className="flex items-center text-secondary-500 hover:text-primary-300">
                     <span className="sr-only">Twitter</span>
                     <svg
                       className="h-6 w-6 md:h-7 md:w-7"
@@ -137,7 +137,7 @@ export default async function InfoCard({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="flex items-center text-gray-500 hover:text-primary-300">
+                  <div className="flex items-center text-secondary-500 hover:text-primary-300">
                     <span className="sr-only">LinkedIn</span>
                     <svg
                       className="h-6 w-6 md:h-7 md:w-7"
@@ -162,7 +162,7 @@ export default async function InfoCard({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <div className="flex items-center text-gray-500 hover:text-primary-300">
+                  <div className="flex items-center text-secondary-500 hover:text-primary-300">
                     <span className="sr-only">Slack</span>
                     <BsSlack className="h-6 w-6 p-1 md:h-7 md:w-7" />
                   </div>

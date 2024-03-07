@@ -48,9 +48,9 @@ export default async function Contributor({ params }: Params) {
         </h1>
       </div>
       <section className="bg-secondary-200 px-4 py-8 dark:bg-secondary-800">
-        <div className="mx-auto flex max-w-6xl flex-col md:flex-row ">
+        <div className="mx-auto flex max-w-6xl flex-col md:flex-row lg:space-x-12 ">
           <div className="md:w-2/3">
-            <InfoCard contributor={contributor} />
+            <InfoCard contributor={contributor} showRank />
           </div>
           <div className="mt-6 flex w-full gap-2 overflow-x-auto md:mt-0 md:grid md:grid-cols-7 md:overflow-x-visible">
             {[

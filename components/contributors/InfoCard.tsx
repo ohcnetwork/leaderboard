@@ -5,28 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsSlack } from "react-icons/bs";
 import { env } from "@/env.mjs";
-import { getLeaderboardData } from "@/app/api/leaderboard/functions";
-import { parseDateRangeSearchParam } from "@/lib/utils";
 
 export default async function InfoCard({
   contributor,
-  showRank,
+  rank = 0,
   isClickable = false,
 }: {
   contributor: Contributor;
-  showRank?: boolean;
+  rank?: number;
   isClickable?: boolean;
 }) {
-  const leaderboardData = await getLeaderboardData(
-    parseDateRangeSearchParam(),
-    "points",
-    "desc",
-    [],
-  );
-  const userPosition = leaderboardData.findIndex(
-    (data) => data.user.social.github === contributor.github,
-  );
-
   return (
     <div
       className={clsx(
@@ -38,9 +26,9 @@ export default async function InfoCard({
     >
       <div className="flex shrink-0 items-center space-x-2 md:space-y-6 xl:space-y-1 ">
         <div className="flex">
-          {showRank && (
-            <div className="mr-5 flex h-20 w-20 items-center self-center text-5xl font-bold tracking-wider text-secondary-500 dark:text-secondary-400 lg:text-6xl">
-              #{userPosition + 1}
+          {rank > 0 && (
+            <div className="mr-5 flex h-20 items-center self-center text-5xl font-bold tracking-wider text-secondary-500 dark:text-secondary-400 lg:text-6xl">
+              #{rank}
             </div>
           )}
           <Link
@@ -50,9 +38,9 @@ export default async function InfoCard({
             <div
               className={`dark:border-1 z-10 mr-2 shrink-0 rounded-full border-2 border-current ${
                 ["text-yellow-600", "text-stone-600", "text-amber-700"][
-                  userPosition
+                  rank - 1
                 ] ?? "text-purple-600"
-              } rounded-full ${userPosition <= 2 && "animate-circular-shadow"}`}
+              } rounded-full ${rank > 0 && rank <= 3 && "animate-circular-shadow"}`}
             >
               <Image
                 className="rounded-full"

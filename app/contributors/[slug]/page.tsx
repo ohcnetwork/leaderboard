@@ -14,13 +14,14 @@ import InfoCard from "../../../components/contributors/InfoCard";
 import React, { Suspense } from "react";
 import clsx from "clsx";
 import { Contributor } from "@/lib/types";
-import { formatDuration } from "@/lib/utils";
+import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
 import { FiAlertTriangle } from "react-icons/fi";
 import { TbGitPullRequest } from "react-icons/tb";
 import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { env } from "@/env.mjs";
+import { getLeaderboardData } from "@/app/api/leaderboard/functions";
 
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
@@ -39,6 +40,18 @@ export default async function Contributor({ params }: Params) {
   const { slug } = params;
   const contributor = await getContributorBySlug(slug, true);
 
+  const leaderboardData = await getLeaderboardData(
+    parseDateRangeSearchParam(),
+    "points",
+    "desc",
+    [],
+  );
+  const userPosition = leaderboardData.findIndex(
+    (data) =>
+      data.user.social.github === contributor.github &&
+      contributor.weekSummary.points !== 0,
+  );
+
   return (
     <div className="min-h-screen bg-background">
       {/* <Header /> */}
@@ -48,9 +61,9 @@ export default async function Contributor({ params }: Params) {
         </h1>
       </div>
       <section className="bg-secondary-200 px-4 py-8 dark:bg-secondary-800">
-        <div className="mx-auto flex max-w-6xl flex-col md:flex-row lg:space-x-12 ">
-          <div className="md:w-2/3">
-            <InfoCard contributor={contributor} showRank />
+        <div className="mx-auto flex max-w-6xl flex-col md:flex-row lg:gap-16">
+          <div className="min-w-max">
+            <InfoCard contributor={contributor} rank={userPosition + 1} />
           </div>
           <div className="mt-6 flex w-full gap-2 overflow-x-auto md:mt-0 md:grid md:grid-cols-7 md:overflow-x-visible">
             {[

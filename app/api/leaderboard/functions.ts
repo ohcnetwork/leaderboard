@@ -6,7 +6,6 @@ import {
 } from "@/lib/types";
 import { getContributors } from "@/lib/api";
 import { env } from "@/env.mjs";
-import { getGitHubAccessToken } from "@/lib/octokit";
 import octokit from "@/lib/octokit";
 
 export const getLeaderboardData = async (
@@ -65,14 +64,8 @@ export const getLeaderboardData = async (
 export default async function fetchGitHubReleases(
   sliceLimit: number,
 ): Promise<Release[]> {
-  const accessToken = getGitHubAccessToken();
-
-  if (!accessToken) {
-    return [];
-  }
-  try {
-    const response: ReleasesResponse = await octokit.graphql({
-      query: `
+  const response: ReleasesResponse = await octokit.graphql({
+    query: `
         query GetReleases($org: String!) {
           organization(login: $org) {
             repositories(first: 100) {
@@ -101,26 +94,18 @@ export default async function fetchGitHubReleases(
           }
         }
       `,
-      org: env.NEXT_PUBLIC_GITHUB_ORG,
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-    });
-    return response.organization.repositories.nodes
-      .flatMap((repository) =>
-        repository.releases.nodes.map((release) => ({
-          ...release,
-          name: repository.name,
-        })),
-      )
-      .sort(
-        (a, b) =>
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-      )
-      .slice(0, sliceLimit);
-  } catch (error: any) {
-    console.error("Error fetching GitHub releases:", error.message);
-    return [];
-  }
+    org: env.NEXT_PUBLIC_GITHUB_ORG,
+  });
+  return response.organization.repositories.nodes
+    .flatMap((repository) =>
+      repository.releases.nodes.map((release) => ({
+        ...release,
+        name: repository.name,
+      })),
+    )
+    .sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+    )
+    .slice(0, sliceLimit);
 }

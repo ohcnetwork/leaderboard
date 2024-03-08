@@ -2,6 +2,8 @@ import octokit from "@/lib/octokit";
 import { env } from "@/env.mjs";
 import { GoRepoForked } from "react-icons/go";
 import { GoStar } from "react-icons/go";
+import { GoPeople } from "react-icons/go";
+import { getContributors } from "@/lib/api";
 
 const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
@@ -21,22 +23,29 @@ export default async function ForkedStar() {
     );
   });
 
+  const contributors = await getContributors();
+
   return (
     <div className="flex justify-center">
       <>
-        <div className="m-4 flex w-6/12 items-center justify-center rounded-md border-2 border-secondary-500 bg-primary-700 p-2">
-          <GoRepoForked className="mr-1 text-lg font-bold text-secondary-100" />
-          <div className="text-secondary-300">Forked</div>
-          <div className="ml-4 rounded-md bg-background px-4 py-2">
+        <div className="g-secondary-100 m-4 flex w-4/12 items-center justify-center rounded-md border-2 border-secondary-700 p-2 dark:bg-secondary-800">
+          <GoRepoForked className="mr-2 text-lg font-bold text-secondary-200 " />
+          <div className="tracking-wider/widest font-bold">
             {count.forkCount}
           </div>
         </div>
-        <div className="m-4 flex w-6/12 items-center justify-center rounded-md border-2 border-secondary-500 bg-primary-700 p-2">
-          <GoStar className="mr-1 text-lg font-bold text-secondary-100" />
-          <div className="text-secondary-300">Starred</div>
+        <div className="g-secondary-100 m-4 flex w-4/12 items-center justify-center rounded-md border-2 border-secondary-700 p-2 dark:bg-secondary-800">
+          <GoStar className="mr-2 text-lg font-bold text-secondary-200" />
 
-          <div className="ml-4 rounded-md bg-background px-4 py-2">
+          <div className="tracking-wider/widest font-bold">
             {count.starCount}
+          </div>
+        </div>
+        <div className="g-secondary-100 m-4 flex w-4/12 items-center justify-center rounded-md border-2 border-secondary-700 p-2 dark:bg-secondary-800">
+          <GoPeople className="mr-2 text-lg font-bold text-secondary-200" />
+
+          <div className="tracking-wider/widest font-bold">
+            {contributors?.length}
           </div>
         </div>
       </>

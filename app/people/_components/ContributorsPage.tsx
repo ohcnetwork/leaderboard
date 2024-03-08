@@ -37,7 +37,7 @@ export default function ContributorsPage({
                   src={`https://avatars.githubusercontent.com/${c.github}?s=128`}
                   alt={c.github}
                 />
-                <div className="absolute right-4 mt-1 translate-x-1/2 transform opacity-0 group-hover:opacity-100 ">
+                <div className="collapse absolute right-4 mt-1 translate-x-1/2 transform opacity-0 group-hover:visible  group-hover:opacity-100">
                   <HoverInfoCard contributor={c} />
                 </div>
               </Link>

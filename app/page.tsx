@@ -135,7 +135,6 @@ export default async function Home() {
                               <InfoCard
                                 key={index}
                                 contributor={contributor}
-                                minimal
                                 isClickable
                               />
                             );

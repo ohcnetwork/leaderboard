@@ -21,8 +21,11 @@ const excludeBlacklistedEvents = (event: IGitHubEvent) => {
 };
 
 export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
-  const events = await getEvent().then((data: any) =>
-    data.filter(excludeBlacklistedEvents).filter(exludeBotEvents).slice(0, 5),
+  const events = await getEvent().then((data) =>
+    data
+      .filter(excludeBlacklistedEvents as any)
+      .filter(exludeBotEvents as any)
+      .slice(0, 5),
   );
   if (!env.NEXT_PUBLIC_GITHUB_ORG) {
     throw new Error("Missing NEXT_PUBLIC_GITHUB_ORG");
@@ -32,7 +35,7 @@ export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
     <div className="flow-root">
       <ul role="list" className="-mb-8 mt-4 flex flex-col gap-4 space-y-4">
         {events ? (
-          events.map((e: any) => (
+          events.map((e) => (
             <GitHubEvent key={e.id} event={e as IGitHubEvent | undefined} />
           ))
         ) : (

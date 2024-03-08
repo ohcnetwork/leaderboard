@@ -1,6 +1,10 @@
-import { LeaderboardSortKey, ReleasesResponse } from "@/lib/types";
+import {
+  LeaderboardSortKey,
+  ReleasesResponse,
+  LeaderboardAPIResponse,
+  Release,
+} from "@/lib/types";
 import { getContributors } from "@/lib/api";
-import { Repository, LeaderboardAPIResponse, Release } from "@/lib/types";
 import { env } from "@/env.mjs";
 import { getGitHubAccessToken } from "@/lib/octokit";
 import octokit from "@/lib/octokit";

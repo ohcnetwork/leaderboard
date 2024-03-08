@@ -152,18 +152,13 @@ export type ContributorSocials = {
   slack: string;
 };
 
-export type LeaderboardPageProps = {
+export type PageProps = {
   searchParams: {
     search?: string;
     between?: string; // <start-date>...<end-date>
     sortBy?: LeaderboardSortKey;
     role?: (keyof typeof FILTER_BY_ROLE_OPTIONS)[];
     ordering?: "asc" | "desc";
-  };
-};
-export type ContributorsPageProps = {
-  searchParams: {
-    search?: string;
   };
 };
 

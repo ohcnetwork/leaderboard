@@ -1,10 +1,10 @@
 /*  */
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
-import ContriButorImage from "./ContriButorImage";
 import Link from "next/link";
 import { BsSlack } from "react-icons/bs";
 import { env } from "@/env.mjs";
+import ContributorImage from "./ContributorImage";
 
 export default async function InfoCard({
   contributor,
@@ -35,7 +35,7 @@ export default async function InfoCard({
             href={isClickable ? `/contributors/${contributor.github}` : `#`}
             className=""
           >
-            <ContriButorImage
+            <ContributorImage
               contributorGithub={contributor.github}
               rank={rank}
               height={112}

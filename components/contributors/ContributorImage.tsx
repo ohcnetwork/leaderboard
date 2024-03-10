@@ -6,7 +6,7 @@ interface ContributorImageProps {
   height: number;
   width: number;
 }
-const ContriButorImage = ({
+const ContributorImage = ({
   contributorGithub,
   rank,
   height,
@@ -37,4 +37,4 @@ const ContriButorImage = ({
   );
 };
 
-export default ContriButorImage;
+export default ContributorImage;

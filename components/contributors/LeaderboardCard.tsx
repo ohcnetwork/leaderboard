@@ -1,7 +1,7 @@
 import { LeaderboardAPIResponse } from "@/lib/types";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
-import ContriButorImage from "./ContriButorImage";
+import ContributorImage from "./ContributorImage";
 
 export default function LeaderboardCard({
   contributor,
@@ -47,7 +47,7 @@ export default function LeaderboardCard({
         <div className="flex w-full flex-col justify-between pb-2 md:flex-row md:items-center">
           <div className="flex w-full">
             <div className="flex min-w-0 flex-1 items-center">
-              <ContriButorImage
+              <ContributorImage
                 contributorGithub={contributor.user.social.github}
                 rank={position + 1}
                 height={56}

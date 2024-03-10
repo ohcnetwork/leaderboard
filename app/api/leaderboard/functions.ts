@@ -81,7 +81,7 @@ export default async function fetchGitHubReleases(
                       login
                       avatarUrl
                     }
-                    mentions (first: 10) {
+                    mentions (first: 100) {
                       nodes {
                         login
                         avatarUrl

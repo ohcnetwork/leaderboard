@@ -22,33 +22,35 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-10 mx-auto flex max-w-7xl items-center justify-between px-4 py-1 backdrop-blur xl:px-3">
-        <Logo />
+      <nav className="sticky top-0 z-10 border-b border-secondary-300 px-4 py-1 backdrop-blur dark:border-secondary-700">
+        <div className="mx-auto flex max-w-7xl items-center justify-between xl:px-3">
+          <Logo />
 
-        <div className="hidden flex-row items-center justify-between gap-3 rounded bg-secondary-100 font-semibold dark:bg-secondary-800 md:rounded-full md:px-6 md:py-1 lg:flex">
-          {Object.entries(MenuItems).map(([href, label]) => (
-            <Link
-              key={href}
-              className="text-sm transition-all hover:text-primary-500 hover:underline hover:dark:text-primary-300 md:p-2 md:text-base"
-              href={href}
+          <div className="hidden flex-row items-center justify-between gap-3 rounded bg-secondary-100 font-semibold dark:bg-secondary-800 md:rounded-full md:px-6 md:py-1 lg:flex">
+            {Object.entries(MenuItems).map(([href, label]) => (
+              <Link
+                key={href}
+                className="text-sm transition-all hover:text-primary-500 hover:underline hover:dark:text-primary-300 md:p-2 md:text-base"
+                href={href}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="align-center flex flex-row justify-center gap-4">
+            <div className="hidden items-center justify-center md:flex">
+              <ContributeButton />
+            </div>
+            <div className="hidden md:block">
+              <ThemeSwitch />
+            </div>
+            <div
+              className="flex cursor-pointer items-center justify-center text-3xl transition-transform duration-300 ease-in-out lg:hidden"
+              onClick={() => setOpen(!open)}
             >
-              {label}
-            </Link>
-          ))}
-        </div>
-
-        <div className="align-center flex flex-row justify-center gap-4">
-          <div className="hidden items-center justify-center md:flex">
-            <ContributeButton />
-          </div>
-          <div className="hidden md:block">
-            <ThemeSwitch />
-          </div>
-          <div
-            className="flex cursor-pointer items-center justify-center text-3xl transition-transform duration-300 ease-in-out lg:hidden"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <IoClose /> : <RxHamburgerMenu />}
+              {open ? <IoClose /> : <RxHamburgerMenu />}
+            </div>
           </div>
         </div>
       </nav>

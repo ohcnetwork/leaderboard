@@ -20,7 +20,7 @@ export default async function Home() {
     .sort((a, b) => b.weekSummary.points - a.weekSummary.points);
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <section className="border-t border-secondary-300 bg-background dark:border-secondary-700 ">
+      <section className="bg-background">
         <div className="mx-auto max-w-7xl">
           <div className="mx-4 border-secondary-600 xl:mx-0">
             <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-4 lg:pb-20">
@@ -156,12 +156,13 @@ export default async function Home() {
               <div className="lg:col-span-4">
                 <div className="sticky top-0 pt-20">
                   <div className="bg-secondary-100/50 dark:bg-secondary-800/50 rounded-lg border border-secondary-100 shadow-lg dark:border-secondary-800">
-                    <div className="flex flex-col justify-between rounded-t-lg border-b border-secondary-300 bg-secondary-100 px-6 py-4 dark:border-secondary-700 dark:bg-secondary-800 md:flex-row md:items-center ">
+                    <div className="flex flex-col justify-between rounded-t-lg border-b border-secondary-300 bg-secondary-100 px-6 py-4 dark:border-secondary-700 dark:bg-secondary-800 md:flex-row md:items-center">
                       <h4 className="font-bold">Leaderboard</h4>
                       <span className="text-secondary-600 dark:text-secondary-300">
                         last 7 days
                       </span>
                     </div>
+
                     <div className="flex flex-col gap-2 p-4 ">
                       {contributors.slice(0, 5).map((contributor, index) => {
                         return (

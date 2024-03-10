@@ -52,7 +52,7 @@ export default async function Contributor({ params }: Params) {
           <div className="md:w-2/3">
             <InfoCard contributor={contributor} />
           </div>
-          <div className="mt-6 flex w-full gap-2 overflow-x-auto md:mt-0 md:grid md:grid-cols-7 md:overflow-x-visible">
+          <div className="mx-1/7 flex flex-wrap justify-center">
             {[
               professionalSelfSkills,
               professionalTeamSkills,
@@ -61,7 +61,7 @@ export default async function Contributor({ params }: Params) {
             ].map((attributeGroup) => {
               return attributeGroup.map((skill) => (
                 <div
-                  className="flex shrink-0 items-center justify-center rounded-lg"
+                  className="mx-2 mt-3 flex shrink-0 items-center justify-center rounded-lg lg:mx-5"
                   key={skill.key}
                 >
                   <BadgeIcons

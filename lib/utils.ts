@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import {
   formatDuration as _formatDuration,
   intervalToDuration,

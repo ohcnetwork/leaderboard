@@ -1,8 +1,7 @@
 import { LeaderboardAPIResponse } from "@/lib/types";
-import { contributorRankClasses } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
+import ContriButorImage from "./ContriButorImage";
 
 export default function LeaderboardCard({
   contributor,
@@ -48,18 +47,12 @@ export default function LeaderboardCard({
         <div className="flex w-full flex-col justify-between pb-2 md:flex-row md:items-center">
           <div className="flex w-full">
             <div className="flex min-w-0 flex-1 items-center">
-              <div
-                className={`dark:border-1 shrink-0 rounded-full border-2 border-current ${contributorRankClasses(userPosition)}`}
-              >
-                <Image
-                  loading="lazy"
-                  className="rounded-full"
-                  height={56}
-                  width={56}
-                  src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
-                  alt={contributor.user.social.github}
-                />
-              </div>
+              <ContriButorImage
+                contributorGithub={contributor.user.social.github}
+                rank={userPosition}
+                height={56}
+                width={56}
+              />
               <div className="ml-4 mr-4 basis-[60%] text-wrap pr-10">
                 <div className="w-[180px] truncate font-bold text-green-500">
                   {contributor.user.name}

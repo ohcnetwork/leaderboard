@@ -94,13 +94,3 @@ export const navLinks = [
 export const formatDate = (date: Date) => {
   return format(date, "MMM dd, yyyy");
 };
-
-export function contributorRankClasses(rank: number | null): string {
-  if (!rank || rank > 3) {
-    return "text-purple-500";
-  }
-  const rankColor = ["text-yellow-600", "text-stone-600", "text-amber-700"][
-    rank - 1
-  ];
-  return `${rankColor} animate-circular-shadow`;
-}

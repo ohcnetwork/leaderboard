@@ -1,11 +1,10 @@
 /*  */
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
-import Image from "next/image";
+import ContriButorImage from "./ContriButorImage";
 import Link from "next/link";
 import { BsSlack } from "react-icons/bs";
 import { env } from "@/env.mjs";
-import { contributorRankClasses } from "@/lib/utils";
 
 export default async function InfoCard({
   contributor,
@@ -25,8 +24,8 @@ export default async function InfoCard({
       )}
       role="listitem"
     >
-      <div className="flex shrink-0 items-center space-x-2 md:space-y-6 xl:space-y-1 ">
-        <div className="flex">
+      <div className=" flex shrink-0 items-center space-x-2 md:space-y-6 xl:space-y-1 ">
+        <div className="mr-2 flex">
           {!!rank && (
             <div className="mr-5 flex h-20 items-center self-center text-5xl font-bold tracking-wider text-secondary-500 dark:text-secondary-400 lg:text-6xl">
               #{rank}
@@ -36,17 +35,12 @@ export default async function InfoCard({
             href={isClickable ? `/contributors/${contributor.github}` : `#`}
             className=""
           >
-            <div
-              className={`dark:border-1 z-10 mr-2 shrink-0 rounded-full border-2 border-current ${contributorRankClasses(rank)}`}
-            >
-              <Image
-                className="rounded-full"
-                src={`https://avatars.githubusercontent.com/${contributor.github}`}
-                alt={contributor.github}
-                height={112}
-                width={112}
-              />
-            </div>
+            <ContriButorImage
+              contributorGithub={contributor.github}
+              rank={rank}
+              height={112}
+              width={112}
+            />
           </Link>
         </div>
         <div className="overflow-hidden">

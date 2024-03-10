@@ -96,9 +96,11 @@ export const formatDate = (date: Date) => {
 };
 
 export function contributorRankClasses(rank: number | null): string {
-  return clsx(
-    rank != null && rank > 0 && rank <= 3
-      ? `${["text-yellow-600", "text-stone-600", "text-amber-700"][rank - 1]} animate-circular-shadow`
-      : "text-purple-600",
-  );
+  if (!rank || rank > 3) {
+    return "text-purple-500";
+  }
+  const rankColor = ["text-yellow-600", "text-stone-600", "text-amber-700"][
+    rank - 1
+  ];
+  return `${rankColor} animate-circular-shadow`;
 }

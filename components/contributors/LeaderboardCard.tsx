@@ -1,4 +1,5 @@
 import { LeaderboardAPIResponse } from "@/lib/types";
+import { contributorRankClasses } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
@@ -48,11 +49,7 @@ export default function LeaderboardCard({
           <div className="flex w-full">
             <div className="flex min-w-0 flex-1 items-center">
               <div
-                className={`dark:border-1 shrink-0 rounded-full border-2 border-current ${
-                  ["text-yellow-600", "text-stone-600", "text-amber-700"][
-                    position
-                  ] ?? "text-purple-600"
-                } rounded-full ${position < 3 && "animate-circular-shadow"}`}
+                className={`dark:border-1 shrink-0 rounded-full border-2 border-current ${contributorRankClasses(userPosition)}`}
               >
                 <Image
                   loading="lazy"

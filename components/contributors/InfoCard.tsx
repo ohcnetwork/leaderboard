@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsSlack } from "react-icons/bs";
 import { env } from "@/env.mjs";
+import { contributorRankClasses } from "@/lib/utils";
 
 export default async function InfoCard({
   contributor,
@@ -36,13 +37,7 @@ export default async function InfoCard({
             className=""
           >
             <div
-              className={`dark:border-1 z-10 mr-2 shrink-0 rounded-full border-2 border-current ${
-                rank != null
-                  ? ["text-yellow-600", "text-stone-600", "text-amber-700"][
-                      rank - 1
-                    ] ?? "text-purple-600"
-                  : "text-purple-600"
-              } rounded-full ${rank != null && rank > 0 && rank <= 3 && "animate-circular-shadow"}`}
+              className={`dark:border-1 z-10 mr-2 shrink-0 rounded-full border-2 border-current ${contributorRankClasses(rank)}`}
             >
               <Image
                 className="rounded-full"

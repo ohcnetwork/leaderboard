@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import {
   formatDuration as _formatDuration,
   intervalToDuration,
@@ -93,3 +94,11 @@ export const navLinks = [
 export const formatDate = (date: Date) => {
   return format(date, "MMM dd, yyyy");
 };
+
+export function contributorRankClasses(rank: number | null): string {
+  return clsx(
+    rank != null && rank > 0 && rank <= 3
+      ? `${["text-yellow-600", "text-stone-600", "text-amber-700"][rank - 1]} animate-circular-shadow`
+      : "text-purple-600",
+  );
+}

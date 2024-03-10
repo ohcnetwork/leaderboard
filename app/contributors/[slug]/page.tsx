@@ -46,11 +46,12 @@ export default async function Contributor({ params }: Params) {
     "desc",
     [],
   );
-  const userPosition = leaderboardData.findIndex(
-    (data) =>
-      data.user.social.github === contributor.github &&
-      contributor.weekSummary.points !== 0,
-  );
+  const rank =
+    leaderboardData.findIndex(
+      (data) =>
+        data.user.social.github === contributor.github &&
+        contributor.weekSummary.points !== 0,
+    ) + 1 || null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -63,7 +64,7 @@ export default async function Contributor({ params }: Params) {
       <section className="bg-secondary-200 px-4 py-8 dark:bg-secondary-800">
         <div className="mx-auto flex max-w-6xl flex-col md:flex-row lg:gap-16">
           <div className="min-w-max">
-            <InfoCard contributor={contributor} rank={userPosition + 1} />
+            <InfoCard contributor={contributor} rank={rank} />
           </div>
           <div className="mt-6 flex w-full gap-2 overflow-x-auto md:mt-0 md:grid md:grid-cols-7 md:overflow-x-visible">
             {[

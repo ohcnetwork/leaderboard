@@ -8,11 +8,11 @@ import { env } from "@/env.mjs";
 
 export default async function InfoCard({
   contributor,
-  rank = 0,
+  rank = null,
   isClickable = false,
 }: {
   contributor: Contributor;
-  rank?: number;
+  rank?: number | null;
   isClickable?: boolean;
 }) {
   return (
@@ -26,7 +26,7 @@ export default async function InfoCard({
     >
       <div className="flex shrink-0 items-center space-x-2 md:space-y-6 xl:space-y-1 ">
         <div className="flex">
-          {rank > 0 && (
+          {!!rank && (
             <div className="mr-5 flex h-20 items-center self-center text-5xl font-bold tracking-wider text-secondary-500 dark:text-secondary-400 lg:text-6xl">
               #{rank}
             </div>
@@ -37,10 +37,12 @@ export default async function InfoCard({
           >
             <div
               className={`dark:border-1 z-10 mr-2 shrink-0 rounded-full border-2 border-current ${
-                ["text-yellow-600", "text-stone-600", "text-amber-700"][
-                  rank - 1
-                ] ?? "text-purple-600"
-              } rounded-full ${rank > 0 && rank <= 3 && "animate-circular-shadow"}`}
+                rank != null
+                  ? ["text-yellow-600", "text-stone-600", "text-amber-700"][
+                      rank - 1
+                    ] ?? "text-purple-600"
+                  : "text-purple-600"
+              } rounded-full ${rank != null && rank > 0 && rank <= 3 && "animate-circular-shadow"}`}
             >
               <Image
                 className="rounded-full"

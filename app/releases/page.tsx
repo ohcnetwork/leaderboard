@@ -26,22 +26,22 @@ export default async function Page() {
             key={release.createdAt}
             className="flex flex-col rounded-lg border shadow-sm dark:border-secondary-700"
           >
-            <div className="flex items-center justify-between p-6 pb-0 pt-4">
+            <div className="flex items-center justify-between p-3 pb-0 pt-4 sm:p-6">
               <div className="flex items-center">
                 <a
                   href={`https://github.com/coronasafe/${release.repository}`}
                   target="_blank"
                   className={`font-mono font-bold tracking-wide text-secondary-700 dark:text-secondary-300`}
                 >
-                  <span className="pr-0.5 tracking-normal text-secondary-400">
-                    {env.NEXT_PUBLIC_GITHUB_ORG}/{release.repository}
+                  <span className="hidden pr-0.5 text-sm tracking-normal text-secondary-400 min-[390px]:inline sm:text-base">
+                    {env.NEXT_PUBLIC_GITHUB_ORG}/care_fe
                   </span>
                 </a>
               </div>
               <a
                 href={release.url}
                 target="_blank"
-                className="flex items-center gap-2 rounded-lg border border-secondary-200 px-4 py-2 text-sm text-secondary-800 transition-colors hover:bg-secondary-100 hover:text-secondary-900 dark:border-secondary-800 dark:text-secondary-200 hover:dark:bg-secondary-800 hover:dark:text-secondary-100"
+                className="flex items-center gap-2 rounded-lg border border-secondary-200 px-4 py-2 text-xs text-secondary-800 transition-colors hover:bg-secondary-100 hover:text-secondary-900 dark:border-secondary-800 dark:text-secondary-200 hover:dark:bg-secondary-800 hover:dark:text-secondary-100 sm:text-sm"
               >
                 <FiGithub />
                 Open in GitHub
@@ -50,19 +50,25 @@ export default async function Page() {
 
             <div className="flex flex-col p-6">
               <h3 className={`font-semibold`}>{release.name}</h3>
-              <p className="text-sm text-secondary-700 dark:text-secondary-300">
+              <p className="text-xs text-secondary-700 dark:text-secondary-300 sm:text-sm">
                 Released by{" "}
                 <a
                   href={`https://github.com/${release.author.login}`}
                   target="_blank"
-                  className="font-semibold"
+                  className="text-sm font-semibold sm:text-base"
                 >
                   {release.author.login}
                 </a>{" "}
+                on{" "}
+                {new Date(release.createdAt).toLocaleDateString("en-US", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                })}
               </p>
             </div>
 
-            <div className="p-6 pt-0">
+            <div className="p-6 pt-0 text-sm sm:text-base">
               <p>Contributors - </p>
               <div className="mt-3 flex gap-2">
                 <div className="grid grid-cols-5 gap-3 md:grid-cols-10">
@@ -86,7 +92,7 @@ export default async function Page() {
               </div>
             </div>
 
-            <div className="break-all bg-secondary-100 p-6 text-sm dark:bg-secondary-800 ">
+            <div className="break-all bg-secondary-100 p-6 text-xs dark:bg-secondary-800 sm:text-sm ">
               <Markdown>{release.description}</Markdown>
             </div>
           </li>

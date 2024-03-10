@@ -137,6 +137,8 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
             <GoFileDiff className="inline text-lg font-bold" />
           )}{" "}
           <span className="inline">{action} </span>
+          <span className="inline">#{event.payload.pull_request.number} </span>
+          {" in "}
           <Link
             className="inline cursor-pointer font-bold text-secondary-300"
             href={event.payload.review.html_url}
@@ -146,7 +148,6 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
               {event.repo.name.replace("coronasafe/", "")}
             </span>
           </Link>{" "}
-          <span className="inline">#{event.payload.pull_request.number} </span>
           <RelativeTime
             className="inline text-sm text-secondary-400 underline"
             time={event.created_at}

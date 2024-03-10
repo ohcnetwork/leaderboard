@@ -68,7 +68,7 @@ export default async function fetchGitHubReleases(
     query: `
         query GetReleases($org: String!) {
           organization(login: $org) {
-            repositories(first: 100) {
+            repositories(first: 100, orderBy: { field: UPDATED_AT, direction: DESC })  {
               nodes {
                 name
                 releases(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {

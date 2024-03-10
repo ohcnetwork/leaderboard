@@ -65,7 +65,7 @@ export default async function Page() {
             <div className="p-6 pt-0">
               <p>Contributors - </p>
               <div className="mt-3 flex gap-2">
-                <div className="grid grid-cols-3 gap-3 md:grid-cols-10">
+                <div className="grid grid-cols-5 gap-3 md:grid-cols-10">
                   {release.mentions.nodes.map((contributor) => (
                     <Link
                       href={`https://github.com/${contributor.login}`}

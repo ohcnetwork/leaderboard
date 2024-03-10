@@ -128,7 +128,6 @@ export interface Organization {
 
 // GitHubResponse interface
 export interface ReleasesResponse {
-  data: any;
   organization: Organization;
 }
 

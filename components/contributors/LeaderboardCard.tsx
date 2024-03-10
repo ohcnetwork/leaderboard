@@ -49,7 +49,7 @@ export default function LeaderboardCard({
             <div className="flex min-w-0 flex-1 items-center">
               <ContriButorImage
                 contributorGithub={contributor.user.social.github}
-                rank={userPosition}
+                rank={position + 1}
                 height={56}
                 width={56}
               />

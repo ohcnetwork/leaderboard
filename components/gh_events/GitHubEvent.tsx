@@ -15,6 +15,7 @@ import { GoTag } from "react-icons/go";
 import { GoFileDiff } from "react-icons/go";
 import Link from "next/link";
 import Image from "next/image";
+import { env } from "@/env.mjs";
 
 export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
   if (!event) {
@@ -67,7 +68,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           >
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">
-              {event.repo.name.replace("coronasafe/", "")}
+              {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
             </span>{" "}
           </Link>
           <RelativeTime
@@ -98,7 +99,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           >
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden ">
-              {event.repo.name.replace("coronasafe/", "")}
+              {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
             </span>{" "}
           </Link>
           <RelativeTime
@@ -145,7 +146,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           >
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">
-              {event.repo.name.replace("coronasafe/", "")}
+              {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
             </span>
           </Link>{" "}
           <RelativeTime
@@ -179,7 +180,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           >
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">
-              {event.repo.name.replace("coronasafe/", "")}
+              {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
             </span>
           </Link>
         </div>
@@ -223,7 +224,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           >
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">
-              {event.repo.name.replace("coronasafe/", "")}
+              {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
             </span>{" "}
           </Link>
           <RelativeTime
@@ -252,7 +253,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           >
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">
-              {event.repo.name.replace("coronasafe/", "")}
+              {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
             </span>
           </Link>
           <span className="inline">#{event.payload.release.tag_name}</span>
@@ -282,7 +283,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           >
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">
-              {event.repo.name.replace("coronasafe/", "")}
+              {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
             </span>
           </Link>
           <span className="inline">#{event.payload.issue.number}</span>

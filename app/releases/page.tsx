@@ -3,7 +3,6 @@ import Image from "next/image";
 import Markdown from "@/components/Markdown";
 import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
-import { FaRegStar } from "react-icons/fa";
 import { formatDate } from "@/lib/utils";
 import { GoTag } from "react-icons/go";
 export const revalidate = 900; // revalidates atmost once every 15 mins
@@ -18,10 +17,10 @@ export default async function Page() {
       </span>
     );
   }
-  // Finds all the repositories present
-  let myRepos = new Set<string>();
+
+  let myyRepos = new Set<string>();
   releases.map((release) => {
-    myRepos.add(release.repository);
+    myyRepos.add(release.repository);
   });
 
   return (
@@ -35,19 +34,19 @@ export default async function Page() {
             <div className="flex items-center justify-between p-3 pb-0 pt-4 sm:p-6">
               <div className="flex items-center">
                 <h3 className={`flex justify-center font-semibold`}>
-                  <div className="hidden sm:inline">{release.repository}-</div>
+                  <div>{release.repository}</div>
+                  <p className="hidden sm:inline"> - </p>
                   <GoTag
-                    className="relative pt-1.5"
+                    className="relative  hidden pt-1.5 sm:inline"
                     size={35}
-                    color="#238636"
+                    color="green"
                   />
-                  <div className="px-1 ">{release.name}</div>
-                  {myRepos.has(release.repository) &&
-                    myRepos.delete(release.repository) && (
-                      <FaRegStar
-                        className="relative mx-2 pt-1 "
-                        color="#238636"
-                      />
+                  <div className="hidden px-1 sm:inline ">{release.name}</div>
+                  {myyRepos.has(release.repository) &&
+                    myyRepos.delete(release.repository) && (
+                      <span className="relative ml-2 rounded-full border border-green-700 p-1 pt-2.5 text-xs text-green-700 ">
+                        Latest
+                      </span>
                     )}
                 </h3>
               </div>

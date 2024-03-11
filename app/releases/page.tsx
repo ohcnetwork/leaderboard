@@ -29,7 +29,11 @@ export default async function Page() {
           >
             <div className="flex items-center justify-between p-3 pb-0 pt-4 sm:p-6">
               <div className="flex items-center">
-                <h3 className={`font-semibold`}>{release.name}</h3>
+                <h3 className={`font-semibold`}>
+                  {release.repository}
+                  {" - "}
+                  {release.name}
+                </h3>
               </div>
               <a
                 href={release.url}
@@ -37,7 +41,7 @@ export default async function Page() {
                 className="flex items-center gap-2 rounded-lg border border-secondary-200 px-4 py-2 text-xs text-secondary-800 transition-colors hover:bg-secondary-100 hover:text-secondary-900 dark:border-secondary-800 dark:text-secondary-200 hover:dark:bg-secondary-800 hover:dark:text-secondary-100 sm:text-sm"
               >
                 <FiGithub />
-                <span className="hidden min-[380px]:inline">
+                <span className="hidden min-[480px]:inline">
                   Open in GitHub
                 </span>
               </a>

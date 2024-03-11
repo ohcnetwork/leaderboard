@@ -10,6 +10,7 @@ import { Suspense } from "react";
 import { env } from "@/env.mjs";
 import CommunityEngagemet from "@/app/CommunityEngagementSummary";
 import { differenceInWeeks, parseISO } from "date-fns";
+import { formatDate } from "@/lib/utils";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -22,8 +23,6 @@ export default async function Home() {
     .sort((a, b) => b.weekSummary.points - a.weekSummary.points);
 
   const startDate = parseISO(env.NEXT_PUBLIC_ORG_START_DATE);
-  const currentDate = new Date();
-  const totalWeeks = differenceInWeeks(currentDate, startDate);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -171,10 +170,10 @@ export default async function Home() {
                       <span className="text-secondary-600 dark:text-secondary-300">
                         <time
                           dateTime={env.NEXT_PUBLIC_ORG_START_DATE}
-                          title={`Since ${startDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}`}
-                          className="underline"
+                          title={`Since ${formatDate(startDate)}}`}
+                          className="underline underline-offset-4"
                         >
-                          Week {totalWeeks}
+                          Week {differenceInWeeks(new Date(), startDate)}
                         </time>
                       </span>
                     </div>

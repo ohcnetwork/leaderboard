@@ -110,7 +110,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                     style={{
                       bottom: "10px",
                       left: "20px",
-                      "--size": "25px",
+                      "--size": "15px",
                       "--rotate": "-20deg",
                       "--delay": "3s",
                     }}

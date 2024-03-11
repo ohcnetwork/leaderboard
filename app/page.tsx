@@ -9,6 +9,8 @@ import ReleaseSection from "@/components/releases/ReleaseSection";
 import { Suspense } from "react";
 import { env } from "@/env.mjs";
 import CommunityEngagemet from "@/app/CommunityEngagementSummary";
+import { differenceInWeeks, parseISO } from "date-fns";
+import { formatDate } from "@/lib/utils";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -19,6 +21,9 @@ export default async function Home() {
           .includes(contributor.role) ?? true,
     )
     .sort((a, b) => b.weekSummary.points - a.weekSummary.points);
+
+  const startDate = parseISO(env.NEXT_PUBLIC_ORG_START_DATE);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="bg-background">
@@ -162,7 +167,13 @@ export default async function Home() {
                     <div className="flex flex-col justify-between rounded-t-lg border-b border-secondary-300 bg-secondary-100 px-6 py-4 dark:border-secondary-700 dark:bg-secondary-800 md:flex-row md:items-center">
                       <h4 className="font-bold">Leaderboard</h4>
                       <span className="text-secondary-600 dark:text-secondary-300">
-                        last 7 days
+                        <time
+                          dateTime={env.NEXT_PUBLIC_ORG_START_DATE}
+                          title={`Since ${formatDate(startDate)}}`}
+                          className="underline underline-offset-4"
+                        >
+                          Week {differenceInWeeks(new Date(), startDate)}
+                        </time>
                       </span>
                     </div>
 

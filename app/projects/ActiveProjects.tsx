@@ -129,7 +129,7 @@ export default async function ActiveProjects(props: {
         >
           <div className="flex justify-between p-6 pb-0 pt-4 max-sm:flex-col max-sm:gap-3 sm:items-center">
             <div
-              className={`bg-red-200x flex items-center ${props.small ? "gap-2" : "gap-3"}`}
+              className={`flex items-center ${props.small ? "gap-2" : "gap-3"}`}
             >
               <div className="flex flex-wrap gap-2">
                 {issue.labels

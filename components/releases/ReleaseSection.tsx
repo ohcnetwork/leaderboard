@@ -2,6 +2,7 @@ import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import fetchGitHubReleases from "@/app/api/leaderboard/functions";
 import Image from "next/image";
+import { formatDate } from "@/lib/utils";
 
 export default async function ReleaseSection() {
   const releases = await fetchGitHubReleases(4);
@@ -38,11 +39,7 @@ export default async function ReleaseSection() {
                   {release.author.login}
                 </Link>{" "}
                 released a new version on{" "}
-                {new Date(release.createdAt).toLocaleDateString("en-US", {
-                  day: "2-digit",
-                  month: "short",
-                  year: "numeric",
-                })}
+                {formatDate(new Date(release.createdAt))}
               </time>
               <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-300">
                 {release.repository} - {release.name}

@@ -4,6 +4,7 @@ import Markdown from "@/components/Markdown";
 import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
 import { env } from "@/env.mjs";
+import { formatDate } from "@/lib/utils";
 
 export const revalidate = 900; // revalidates atmost once every 15 mins
 
@@ -28,15 +29,7 @@ export default async function Page() {
           >
             <div className="flex items-center justify-between p-3 pb-0 pt-4 sm:p-6">
               <div className="flex items-center">
-                <a
-                  href={`https://github.com/coronasafe/${release.repository}`}
-                  target="_blank"
-                  className={`font-mono font-bold tracking-wide text-secondary-700 dark:text-secondary-300`}
-                >
-                  <span className="hidden pr-0.5 text-sm tracking-normal text-secondary-400 min-[390px]:inline sm:text-base">
-                    {env.NEXT_PUBLIC_GITHUB_ORG}/care_fe
-                  </span>
-                </a>
+                <h3 className={`font-semibold`}>{release.name}</h3>
               </div>
               <a
                 href={release.url}
@@ -44,12 +37,13 @@ export default async function Page() {
                 className="flex items-center gap-2 rounded-lg border border-secondary-200 px-4 py-2 text-xs text-secondary-800 transition-colors hover:bg-secondary-100 hover:text-secondary-900 dark:border-secondary-800 dark:text-secondary-200 hover:dark:bg-secondary-800 hover:dark:text-secondary-100 sm:text-sm"
               >
                 <FiGithub />
-                Open in GitHub
+                <span className="hidden min-[380px]:inline">
+                  Open in GitHub
+                </span>
               </a>
             </div>
 
             <div className="flex flex-col p-6">
-              <h3 className={`font-semibold`}>{release.name}</h3>
               <p className="text-xs text-secondary-700 dark:text-secondary-300 sm:text-sm">
                 Released by{" "}
                 <a
@@ -59,12 +53,7 @@ export default async function Page() {
                 >
                   {release.author.login}
                 </a>{" "}
-                on{" "}
-                {new Date(release.createdAt).toLocaleDateString("en-US", {
-                  day: "2-digit",
-                  month: "short",
-                  year: "numeric",
-                })}
+                on {formatDate(new Date(release.createdAt))}
               </p>
             </div>
 

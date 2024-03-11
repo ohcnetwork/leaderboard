@@ -3,9 +3,9 @@ import Image from "next/image";
 import Markdown from "@/components/Markdown";
 import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
-import { env } from "@/env.mjs";
+import { FaRegStar } from "react-icons/fa";
 import { formatDate } from "@/lib/utils";
-
+import { GoTag } from "react-icons/go";
 export const revalidate = 900; // revalidates atmost once every 15 mins
 
 export default async function Page() {
@@ -18,6 +18,11 @@ export default async function Page() {
       </span>
     );
   }
+  // Finds all the repositories present
+  let myRepos = new Set<string>();
+  releases.map((release) => {
+    myRepos.add(release.repository);
+  });
 
   return (
     <div>
@@ -29,10 +34,21 @@ export default async function Page() {
           >
             <div className="flex items-center justify-between p-3 pb-0 pt-4 sm:p-6">
               <div className="flex items-center">
-                <h3 className={`font-semibold`}>
-                  {release.repository}
-                  {" - "}
-                  {release.name}
+                <h3 className={`flex justify-center font-semibold`}>
+                  <div className="hidden sm:inline">{release.repository}-</div>
+                  <GoTag
+                    className="relative pt-1.5"
+                    size={35}
+                    color="#238636"
+                  />
+                  <div className="px-1 ">{release.name}</div>
+                  {myRepos.has(release.repository) &&
+                    myRepos.delete(release.repository) && (
+                      <FaRegStar
+                        className="relative mx-2 pt-1 "
+                        color="#238636"
+                      />
+                    )}
                 </h3>
               </div>
               <a
@@ -41,9 +57,7 @@ export default async function Page() {
                 className="flex items-center gap-2 rounded-lg border border-secondary-200 px-4 py-2 text-xs text-secondary-800 transition-colors hover:bg-secondary-100 hover:text-secondary-900 dark:border-secondary-800 dark:text-secondary-200 hover:dark:bg-secondary-800 hover:dark:text-secondary-100 sm:text-sm"
               >
                 <FiGithub />
-                <span className="hidden min-[480px]:inline">
-                  Open in GitHub
-                </span>
+                <span className="hidden sm:inline">Open in GitHub</span>
               </a>
             </div>
 

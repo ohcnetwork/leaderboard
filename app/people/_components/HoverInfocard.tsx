@@ -34,8 +34,10 @@ export default function HoverInfoCard({
           </div>
         </div>
       </div>
-      <p className="sm:p-x-4 max-h-64 p-2 text-xs text-secondary-700 dark:text-secondary-300 ">
-        <Markdown>{contributor.content}</Markdown>
+      <p className="sm:p-x-4 max-h-64 p-2 text-secondary-700 dark:text-secondary-300 ">
+        <Markdown className="text-xs md:text-sm">
+          {contributor.content}
+        </Markdown>
       </p>
     </div>
   );

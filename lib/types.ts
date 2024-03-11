@@ -151,7 +151,7 @@ export type ContributorSocials = {
   slack: string;
 };
 
-export type LeaderboardPageProps = {
+export type PageProps = {
   searchParams: {
     search?: string;
     between?: string; // <start-date>...<end-date>

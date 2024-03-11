@@ -2,11 +2,9 @@ import { Suspense } from "react";
 import LeaderboardWrapper from "./_components/LeaderboardWrapper";
 import LoadingText from "@/components/LoadingText";
 import Searchbar from "./_components/Searchbar";
-import type { LeaderboardPageProps } from "@/lib/types";
+import type { PageProps } from "@/lib/types";
 
-export default async function LeaderboardPage({
-  searchParams,
-}: LeaderboardPageProps) {
+export default async function LeaderboardPage({ searchParams }: PageProps) {
   return (
     <section className="border-t border-secondary-300 bg-background text-foreground dark:border-secondary-700">
       <div className="mx-auto max-w-6xl">

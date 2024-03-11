@@ -83,7 +83,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
               : "invisible opacity-0"
           }`}
         >
-          <div className="flex items-center justify-center rounded-t-lg border-b border-secondary-700 bg-secondary-900 px-4 py-3">
+          <div className="flex items-center justify-center rounded-t-lg border-b border-secondary-700 bg-secondary-950 px-4 py-3">
             <div className="relative h-24 w-24">
               {skill.currentLevel && (
                 <>
@@ -135,16 +135,19 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
           <div className="px-4 pb-4 pt-2">
             <p className="pb-2 font-bold">{skill.label}</p>
             <div className="space-y-1 text-sm">
-              {skill.levels.map((level: any) => (
+              {skill.levels.map((level: any, index: number) => (
                 <div
                   key={level.value}
                   className="flex items-center font-medium text-secondary-400"
                 >
                   <p
-                    className={`shrink-0 rounded bg-secondary-700 px-1 py-0.5 ${
-                      skill.currentLevel?.value ?? -1 >= level.value
+                    className={`shrink-0 rounded px-1 py-0.5 ${
+                      index <=
+                      skill.levels.findIndex(
+                        (l) => l.value === skill.currentLevel?.value,
+                      )
                         ? "bg-green-400 text-white"
-                        : ""
+                        : "bg-secondary-700 opacity-40 grayscale"
                     }`}
                   >
                     {level.label}
@@ -152,9 +155,12 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                   <div className="grow pl-4">
                     <p
                       className={`flex items-center ${
-                        skill.currentLevel?.value ?? -1 >= level.value
+                        index <=
+                        skill.levels.findIndex(
+                          (l) => l.value === skill.currentLevel?.value,
+                        )
                           ? "text-green-500"
-                          : ""
+                          : "opacity-40 grayscale"
                       }`}
                     >
                       {level.description}

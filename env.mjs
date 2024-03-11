@@ -12,6 +12,7 @@ export const env = createEnv({
     NEXT_PUBLIC_ORG_LOGO: z.string(),
     NEXT_PUBLIC_GITHUB_ORG: z.string(),
     NEXT_PUBLIC_SLACK_URL: z.string().url(),
+    NEXT_PUBLIC_ORG_START_DATE: z.string(),
 
     // SEO details
     NEXT_PUBLIC_META_TITLE: z.string(),
@@ -36,6 +37,7 @@ export const env = createEnv({
     NEXT_PUBLIC_META_URL: process.env.NEXT_PUBLIC_META_URL,
     NEXT_PUBLIC_PAGE_TITLE: process.env.NEXT_PUBLIC_PAGE_TITLE,
     NEXT_PUBLIC_CONTRIBUTORS_INFO: process.env.NEXT_PUBLIC_CONTRIBUTORS_INFO,
+    NEXT_PUBLIC_ORG_START_DATE: process.env.NEXT_PUBLIC_ORG_START_DATE,
     NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES:
       process.env.NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES,
     GITHUB_PAT:

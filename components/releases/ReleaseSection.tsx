@@ -15,7 +15,7 @@ export default async function ReleaseSection() {
   }
 
   return (
-    <div className="grid grid-cols-1">
+    <div className="ml-5 grid grid-cols-1">
       <ol className="relative border-s border-secondary-200 dark:border-secondary-700">
         {releases.map((release) => (
           <li key={release.createdAt} className="group mb-10 ms-4">

@@ -14,13 +14,14 @@ import InfoCard from "../../../components/contributors/InfoCard";
 import React, { Suspense } from "react";
 import clsx from "clsx";
 import { Contributor } from "@/lib/types";
-import { formatDuration } from "@/lib/utils";
+import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
 import { FiAlertTriangle } from "react-icons/fi";
 import { TbGitPullRequest } from "react-icons/tb";
 import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { env } from "@/env.mjs";
+import { getLeaderboardData } from "@/app/api/leaderboard/functions";
 
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
@@ -39,6 +40,19 @@ export default async function Contributor({ params }: Params) {
   const { slug } = params;
   const contributor = await getContributorBySlug(slug, true);
 
+  const leaderboardData = await getLeaderboardData(
+    parseDateRangeSearchParam(),
+    "points",
+    "desc",
+    [],
+  );
+  const rank =
+    leaderboardData.findIndex(
+      (data) =>
+        data.user.social.github === contributor.github &&
+        contributor.weekSummary.points !== 0,
+    ) + 1 || null;
+
   return (
     <div className="min-h-screen bg-background">
       {/* <Header /> */}
@@ -47,12 +61,12 @@ export default async function Contributor({ params }: Params) {
           Personal Learning Dashboard (Beta)
         </h1>
       </div>
-      <section className="bg-secondary-200 px-4 py-8 dark:bg-secondary-800">
-        <div className="mx-auto flex max-w-6xl flex-col md:flex-row ">
-          <div className="md:w-2/3">
-            <InfoCard contributor={contributor} />
+      <section className="bg-secondary-200 px-4 py-6 dark:bg-secondary-800">
+        <div className=" mx-auto flex max-w-6xl flex-col gap-2 md:flex-row lg:gap-16">
+          <div className="mx-auto my-auto min-w-max md:w-2/3">
+            <InfoCard contributor={contributor} rank={rank} />
           </div>
-          <div className="mx-1/7 flex flex-wrap justify-center">
+          <div className="mb-2 flex flex-wrap justify-center lg:grid lg:w-full lg:grid-cols-7 lg:gap-2">
             {[
               professionalSelfSkills,
               professionalTeamSkills,
@@ -61,7 +75,7 @@ export default async function Contributor({ params }: Params) {
             ].map((attributeGroup) => {
               return attributeGroup.map((skill) => (
                 <div
-                  className="mx-2 mt-3 flex shrink-0 items-center justify-center rounded-lg lg:mx-5"
+                  className="mx-2 mt-3 shrink-0 items-center justify-center rounded-lg lg:mx-5"
                   key={skill.key}
                 >
                   <BadgeIcons

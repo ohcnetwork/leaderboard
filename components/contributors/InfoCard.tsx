@@ -1,18 +1,18 @@
 /*  */
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import { BsSlack } from "react-icons/bs";
 import { env } from "@/env.mjs";
+import ContributorImage from "./ContributorImage";
 
-export default function InfoCard({
+export default async function InfoCard({
   contributor,
-  minimal = true,
+  rank = null,
   isClickable = false,
 }: {
   contributor: Contributor;
-  minimal?: boolean;
+  rank?: number | null;
   isClickable?: boolean;
 }) {
   return (
@@ -24,35 +24,30 @@ export default function InfoCard({
       )}
       role="listitem"
     >
-      <div className="flex shrink-0 items-center space-x-4 md:space-y-6 xl:space-y-1 ">
-        <Link
-          href={isClickable ? `/contributors/${contributor.github}` : `#`}
-          className=""
-        >
-          <div
-            className={`z-10 flex h-28 w-28 shrink-0 items-center rounded-full md:h-32 md:w-32 md:p-1 ${
-              isClickable && `cursor-pointer`
-            }`}
+      <div className=" flex shrink-0 items-center space-x-2 md:space-y-6 xl:space-y-1 ">
+        <div className="mr-2 flex">
+          {!!rank && (
+            <div className="mr-5 hidden h-20 items-center self-center text-5xl font-bold tracking-wider text-secondary-500 dark:text-secondary-400 md:flex lg:flex lg:text-6xl">
+              #{rank}
+            </div>
+          )}
+          <Link
+            href={isClickable ? `/contributors/${contributor.github}` : `#`}
+            className=""
           >
-            <Image
-              className="rounded-full border-2 border-indigo-500"
-              src={`https://avatars.githubusercontent.com/${contributor.github}`}
-              alt={contributor.github}
+            <ContributorImage
+              contributorGithub={contributor.github}
+              rank={rank}
               height={112}
               width={112}
             />
-          </div>
-        </Link>
-        <div
-          className={`overflow-hidden ${
-            minimal ? "" : "flex flex-col items-center space-y-2"
-          }
-          `}
-        >
+          </Link>
+        </div>
+        <div className="overflow-hidden">
           <div className="fnt-medium space-y-1 overflow-hidden text-lg">
             <Link
               href={isClickable ? `/contributors/${contributor.github}` : `#`}
-              className=""
+              className="flex gap-2"
             >
               <h3
                 className={clsx(
@@ -62,18 +57,16 @@ export default function InfoCard({
               >
                 {contributor.name}
               </h3>
+              <span className="flex text-lg font-bold leading-tight tracking-wider text-secondary-500 dark:text-secondary-400 md:hidden lg:hidden">
+                #{rank}
+              </span>
             </Link>
             <p className="text-sm text-secondary-400 md:text-base">
               {contributor.title}
             </p>
           </div>
 
-          <ul
-            role="list"
-            className={
-              minimal ? "mt-4 flex items-center space-x-4" : "space-y-2"
-            }
-          >
+          <ul role="list" className="mt-4 flex items-center space-x-4">
             {contributor.github && (
               <li role="listitem">
                 <Link
@@ -94,7 +87,6 @@ export default function InfoCard({
                         d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0112 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48C19.137 20.107 22 16.373 22 11.969 22 6.463 17.522 2 12 2z"
                       ></path>
                     </svg>
-                    {!minimal && `@${contributor.github}`}
                   </span>
                 </Link>
               </li>
@@ -116,7 +108,6 @@ export default function InfoCard({
                     >
                       <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
                     </svg>
-                    {!minimal && `@${contributor.twitter}`}
                   </div>
                 </Link>
               </li>
@@ -142,7 +133,6 @@ export default function InfoCard({
                         clipRule="evenodd"
                       />
                     </svg>
-                    {!minimal && `@${contributor.linkedin}`}
                   </div>
                 </Link>
               </li>
@@ -157,7 +147,6 @@ export default function InfoCard({
                   <div className="flex items-center text-secondary-500 hover:text-primary-300">
                     <span className="sr-only">Slack</span>
                     <BsSlack className="h-6 w-6 p-1 md:h-7 md:w-7" />
-                    {!minimal && `@${contributor.slack}`}
                   </div>
                 </Link>
               </li>

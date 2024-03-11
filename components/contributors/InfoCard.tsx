@@ -27,7 +27,7 @@ export default async function InfoCard({
       <div className=" flex shrink-0 items-center space-x-2 md:space-y-6 xl:space-y-1 ">
         <div className="mr-2 flex">
           {!!rank && (
-            <div className="mr-5 flex h-20 items-center self-center text-5xl font-bold tracking-wider text-secondary-500 dark:text-secondary-400 lg:text-6xl">
+            <div className="mr-5 hidden h-20 items-center self-center text-5xl font-bold tracking-wider text-secondary-500 dark:text-secondary-400 md:flex lg:flex lg:text-6xl">
               #{rank}
             </div>
           )}
@@ -47,7 +47,7 @@ export default async function InfoCard({
           <div className="fnt-medium space-y-1 overflow-hidden text-lg">
             <Link
               href={isClickable ? `/contributors/${contributor.github}` : `#`}
-              className=""
+              className="flex gap-2"
             >
               <h3
                 className={clsx(
@@ -57,6 +57,9 @@ export default async function InfoCard({
               >
                 {contributor.name}
               </h3>
+              <span className="flex text-lg font-bold leading-tight tracking-wider text-secondary-500 dark:text-secondary-400 md:hidden lg:hidden">
+                #{rank}
+              </span>
             </Link>
             <p className="text-sm text-secondary-400 md:text-base">
               {contributor.title}

@@ -8,6 +8,7 @@ import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
 import ReleaseSection from "@/components/releases/ReleaseSection";
 import { Suspense } from "react";
 import { env } from "@/env.mjs";
+import CommunityEngagemet from "@/app/CommunityEngagementSummary";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -23,7 +24,7 @@ export default async function Home() {
       <section className="bg-background">
         <div className="mx-auto max-w-7xl">
           <div className="mx-4 border-secondary-600 xl:mx-0">
-            <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-4 lg:pb-20">
+            <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:gap-12 lg:pb-20">
               <div className="space-y-20 lg:col-span-8">
                 {env.NEXT_PUBLIC_ORG_INFO ? (
                   <div className="pt-20">
@@ -155,6 +156,9 @@ export default async function Home() {
 
               <div className="lg:col-span-4">
                 <div className="sticky top-0 pt-20">
+                  <div>
+                    <CommunityEngagemet />
+                  </div>
                   <div className="bg-secondary-100/50 dark:bg-secondary-800/50 rounded-lg border border-secondary-100 shadow-lg dark:border-secondary-800">
                     <div className="flex flex-col justify-between rounded-t-lg border-b border-secondary-300 bg-secondary-100 px-6 py-4 dark:border-secondary-700 dark:bg-secondary-800 md:flex-row md:items-center">
                       <h4 className="font-bold">Leaderboard</h4>

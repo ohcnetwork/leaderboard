@@ -14,7 +14,7 @@ export default function HoverInfoCard({
       role="listitem"
     >
       <div className="flex shrink-0 items-center  space-y-2 xl:space-y-1">
-        <div className="z-10 flex h-16 w-16 shrink-0 items-center rounded-full md:h-20 md:w-20 p-1">
+        <div className="z-10 flex h-16 w-16 shrink-0 items-center rounded-full p-1 md:h-20 md:w-20">
           <Image
             className="rounded-full border-2 border-indigo-500"
             src={`https://avatars.githubusercontent.com/${contributor.github}`}
@@ -34,7 +34,7 @@ export default function HoverInfoCard({
           </div>
         </div>
       </div>
-      <p className="max-h-64 p-2 sm:p-x-4 text-xs text-secondary-700 dark:text-secondary-300 ">
+      <p className="sm:p-x-4 max-h-64 p-2 text-xs text-secondary-700 dark:text-secondary-300 ">
         <Markdown>{contributor.content}</Markdown>
       </p>
     </div>

@@ -21,12 +21,16 @@ const excludeBlacklistedEvents = (event: IGitHubEvent) => {
 };
 
 export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
-  const events = await getEvents().then((res) =>
-    res.data
-      .filter(excludeBlacklistedEvents)
-      .filter(exludeBotEvents)
-      .slice(0, 5),
-  );
+  const res = await octokit.request("GET /orgs/{org}/events", {
+    org: env.NEXT_PUBLIC_GITHUB_ORG,
+    per_page: 100,
+    page: 1,
+  });
+
+  const events = (res.data as IGitHubEvent[])
+    .filter(excludeBlacklistedEvents)
+    .filter(exludeBotEvents)
+    .slice(0, 5);
 
   return (
     <div className="flow-root">
@@ -45,14 +49,4 @@ export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
       </ul>
     </div>
   );
-}
-
-async function getEvents() {
-  const response = await octokit.request("GET /orgs/{org}/events", {
-    org: env.NEXT_PUBLIC_GITHUB_ORG,
-    per_page: 100,
-    page: 1,
-  });
-
-  return response;
 }

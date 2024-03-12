@@ -33,15 +33,17 @@ export default async function Page() {
           >
             <div className="flex items-center justify-between p-3 pb-0 pt-4 sm:p-6">
               <div className="flex items-center">
-                <h3 className={`flex justify-center font-semibold`}>
-                  <div>{release.repository}</div>
-                  <p className="hidden sm:inline"> - </p>
+                <h3
+                  className={` justify-center  text-lg font-semibold sm:flex sm:text-2xl`}
+                >
+                  {release.repository}
+                  {" - "}
                   <GoTag
-                    className="relative  hidden pt-1.5 sm:inline"
-                    size={35}
+                    className="relative hidden pt-1 text-lg sm:inline sm:pt-1.5 "
+                    size={30}
                     color="green"
                   />
-                  <div className="hidden px-1 sm:inline ">{release.name}</div>
+                  {release.name}
                   {myyRepos.has(release.repository) &&
                     myyRepos.delete(release.repository) && (
                       <span className="relative ml-2 rounded-full border border-green-700 p-1 pt-2.5 text-xs text-green-700 ">

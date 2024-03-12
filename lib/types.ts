@@ -95,6 +95,9 @@ export interface AuthoredIssueAndPr {
 // Release interface
 export interface Release {
   name: string;
+  tag: {
+    name: string;
+  };
   createdAt: string;
   description: string;
   url: string;

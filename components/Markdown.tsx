@@ -16,12 +16,11 @@ export default async function Markdown(props: {
     .process(props.children || "");
 
   return (
-    <div
-      className={clsx(
-        `prose font-inter leading-relaxed dark:prose-invert xl:text-left`,
-        props.className ? props.className : "text-sm sm:text-base",
-      )}
-      dangerouslySetInnerHTML={{ __html: result.toString() }}
-    />
+    <div className="prose font-inter text-sm leading-relaxed dark:prose-invert sm:text-base xl:text-left">
+      <div
+        className={clsx(props.className ?? "")}
+        dangerouslySetInnerHTML={{ __html: result.toString() }}
+      />
+    </div>
   );
 }

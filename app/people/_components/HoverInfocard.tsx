@@ -10,7 +10,7 @@ export default function HoverInfoCard({
 }) {
   return (
     <div
-      className="max-h-64 w-44 overflow-hidden rounded-lg border-2 border-primary-700 bg-secondary-300 pb-2 dark:bg-secondary-800 xl:text-left"
+      className="max-h-64 w-44 overflow-hidden rounded-lg border-2 border-primary-700 bg-secondary-300 pb-1 dark:bg-secondary-800 md:pb-2 xl:text-left"
       role="listitem"
     >
       <div className="flex shrink-0 items-center  space-y-2 xl:space-y-1">
@@ -34,11 +34,11 @@ export default function HoverInfoCard({
           </div>
         </div>
       </div>
-      <p className="sm:p-x-4 max-h-64 p-2 text-secondary-700 dark:text-secondary-300 ">
+      <div className="sm:p-x-4 max-h-64 p-2 text-secondary-700 dark:text-secondary-300 ">
         <Markdown className="text-xs md:text-sm">
           {contributor.content}
         </Markdown>
-      </p>
+      </div>
     </div>
   );
 }

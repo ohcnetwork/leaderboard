@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 "use client";
 
 import { useState } from "react";
@@ -70,6 +71,7 @@ export default function Navbar() {
             <div className="flex flex-col items-center justify-center gap-2 md:px-4 md:py-2">
               {Object.entries(MenuItems).map(([href, label]) => (
                 <Link
+                  onClick={() => setOpen(!open)}
                   key={href}
                   href={href}
                   className="p-1 text-sm hover:text-primary-500 hover:underline md:p-2 md:text-base"

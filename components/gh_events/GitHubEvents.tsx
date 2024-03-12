@@ -1,4 +1,4 @@
-import { IGitHubEvent } from "@/lib/gh_events";
+import { IGitHubEvent, Github } from "@/lib/gh_events";
 import GitHubEvent from "./GitHubEvent";
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
@@ -21,7 +21,7 @@ const excludeBlacklistedEvents = (event: IGitHubEvent) => {
 };
 
 export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
-  const events = await getEvents().then((res: any) =>
+  const events = await getEvents().then((res) =>
     res.data
       .filter(excludeBlacklistedEvents)
       .filter(exludeBotEvents)

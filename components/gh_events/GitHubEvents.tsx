@@ -1,4 +1,4 @@
-import { IGitHubEvent, combineSimilarPushEvents } from "@/lib/gh_events";
+import { IGitHubEvent } from "@/lib/gh_events";
 import GitHubEvent from "./GitHubEvent";
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
@@ -21,23 +21,18 @@ const excludeBlacklistedEvents = (event: IGitHubEvent) => {
 };
 
 export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
-  const events = await getEvent().then((data) =>
-    data
-      .filter(excludeBlacklistedEvents as any)
-      .filter(exludeBotEvents as any)
+  const events = await getEvents().then((res: any) =>
+    res.data
+      .filter(excludeBlacklistedEvents)
+      .filter(exludeBotEvents)
       .slice(0, 5),
   );
-  if (!env.NEXT_PUBLIC_GITHUB_ORG) {
-    throw new Error("Missing NEXT_PUBLIC_GITHUB_ORG");
-  }
 
   return (
     <div className="flow-root">
       <ul role="list" className="-mb-8 mt-4 flex flex-col gap-4 space-y-4">
         {events ? (
-          events.map((e) => (
-            <GitHubEvent key={e.id} event={e as IGitHubEvent | undefined} />
-          ))
+          events.map((e) => <GitHubEvent key={e.id} event={e} />)
         ) : (
           <>
             <GitHubEvent />
@@ -52,8 +47,8 @@ export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
   );
 }
 
-async function getEvent() {
-  const response = await octokit.paginate("GET /orgs/{org}/events", {
+async function getEvents() {
+  const response = await octokit.request("GET /orgs/{org}/events", {
     org: env.NEXT_PUBLIC_GITHUB_ORG,
     per_page: 100,
     page: 1,

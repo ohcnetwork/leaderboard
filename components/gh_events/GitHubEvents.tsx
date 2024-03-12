@@ -1,4 +1,4 @@
-import { IGitHubEvent, Github } from "@/lib/gh_events";
+import { IGitHubEvent } from "@/lib/gh_events";
 import GitHubEvent from "./GitHubEvent";
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";

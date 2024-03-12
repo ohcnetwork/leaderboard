@@ -37,8 +37,12 @@ let renderText = (activity: Activity) => {
               </div>
             </div>
           </div>
-          <div className="mt-2 text-foreground">
-            <p className="break-words">{activity["text"]}</p>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            <a href={activity["link"]} target="_blank">
+              <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                {activity["text"]}
+              </span>
+            </a>
           </div>
         </div>
       );
@@ -60,11 +64,13 @@ let renderText = (activity: Activity) => {
               </span>
             </p>
           </div>
-          <a href={activity["link"]} target="_blank" className="pt-1">
-            <span className="cursor-pointer font-medium text-foreground hover:text-primary-500">
-              {activity["text"]}
-            </span>
-          </a>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            <a href={activity["link"]} target="_blank">
+              <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                {activity["text"]}
+              </span>
+            </a>
+          </div>
         </div>
       );
     case "pr_opened":
@@ -81,10 +87,15 @@ let renderText = (activity: Activity) => {
               <span className="text-primary-400 dark:text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
-              {!!activity["turnaround_time"] && (
+              {!!activity["turnaround_time"] ? (
                 <span className="text-sm text-secondary-600 dark:text-secondary-400">
                   {" with a turnaround time of "}
                   {formatDuration(activity["turnaround_time"] * 1000)}
+                </span>
+              ) : (
+                <span className="text-foreground">
+                  {" "}
+                  <RelativeTime time={timestamp} />
                 </span>
               )}
             </div>
@@ -94,15 +105,12 @@ let renderText = (activity: Activity) => {
               </div>
             )}
             {activity["type"] == "pr_reviewed" && (
-              <div>
-                <a href={activity["link"]} target="_blank" className="pt-1">
-                  <span className="cursor-pointer font-medium text-foreground hover:text-primary-500">
+              <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+                <a href={activity["link"]} target="_blank">
+                  <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
                     {activity["text"]}
                   </span>
                 </a>
-                <span className="ml-2 whitespace-nowrap">
-                  <RelativeTime time={timestamp} />
-                </span>
               </div>
             )}
           </div>
@@ -126,11 +134,13 @@ let renderText = (activity: Activity) => {
                 <RelativeTime time={timestamp} />
               </span>
             </div>
-            <a href={activity["link"]} target="_blank" className="pt-1">
-              <span className="cursor-pointer font-medium text-foreground hover:text-primary-500">
-                {activity["text"]}
-              </span>
-            </a>
+            <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+              <a href={activity["link"]} target="_blank">
+                <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                  {activity["text"]}
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       );
@@ -398,7 +408,7 @@ export default function GithubActivity({ activityData }: Props) {
         ))}
       </div>
       <div className="mt-4 w-full px-1 text-foreground sm:px-2">
-        <ul role="list" className="my-4 w-full max-w-xl">
+        <ul role="list" className="my-4 w-full max-w-2xl">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;
           })}

@@ -134,12 +134,8 @@ let renderText = (activity: Activity) => {
                 <RelativeTime time={timestamp} />
               </span>
             </div>
-            <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
-              <a href={activity["link"]} target="_blank">
-                <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
-                  {activity["text"]}
-                </span>
-              </a>
+            <div className="max-w-xl pt-4">
+              <OpenGraphImage url={activity["link"]} className="rounded-xl" />
             </div>
           </div>
         </div>
@@ -408,7 +404,7 @@ export default function GithubActivity({ activityData }: Props) {
         ))}
       </div>
       <div className="mt-4 w-full px-1 text-foreground sm:px-2">
-        <ul role="list" className="my-4 w-full max-w-2xl">
+        <ul role="list" className="my-4 w-full max-w-xl">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;
           })}

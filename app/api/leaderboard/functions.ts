@@ -74,6 +74,9 @@ export default async function fetchGitHubReleases(
                 releases(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
                   nodes {
                     name
+                    tag{
+                      name
+                    }
                     createdAt
                     description
                     url
@@ -100,7 +103,8 @@ export default async function fetchGitHubReleases(
     .flatMap((repository) =>
       repository.releases.nodes.map((release) => ({
         ...release,
-        name: repository.name,
+        name: release.tag.name,
+        repository: repository.name,
       })),
     )
     .sort(

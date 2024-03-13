@@ -54,7 +54,7 @@ export default async function Contributor({ params }: Params) {
     ) + 1 || null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       {/* <Header /> */}
       <div className="bg-secondary-200/50 dark:bg-secondary-700/50 border-b border-secondary-300 pb-3 pt-2 shadow-md dark:border-secondary-700">
         <h1 className="mx-auto max-w-6xl text-center text-sm text-secondary-600 dark:text-secondary-400 md:text-xl">
@@ -90,7 +90,7 @@ export default async function Contributor({ params }: Params) {
 
       <div className="mx-auto max-w-4xl space-y-16 pt-6">
         {contributor.content.includes("Still waiting for this") && (
-          <div className="mt-10 flex justify-between rounded-lg border border-current bg-amber-300/20 px-6 py-4 font-semibold text-amber-500 dark:bg-amber-500/20 xl:px-10">
+          <div className="mt-10 flex justify-between rounded-lg border border-current bg-amber-300/20 px-4 py-4 font-semibold text-amber-500 dark:bg-amber-500/20 sm:px-6 xl:px-10 ">
             <span className="flex items-center gap-4">
               <FiAlertTriangle size={20} />
               Contributor profile has not been updated.
@@ -99,7 +99,7 @@ export default async function Contributor({ params }: Params) {
               href={`https://github.com/${env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 rounded-lg bg-amber-500 px-3 py-2 font-bold text-white transition-all duration-200 ease-in-out hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700"
+              className="flex items-center justify-center gap-2 rounded-lg bg-amber-500 px-2 py-2 font-bold text-white transition-all duration-200 ease-in-out hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 sm:px-3"
             >
               <TbGitPullRequest />
               Update Profile
@@ -225,7 +225,9 @@ export default async function Contributor({ params }: Params) {
 
         <div className="px-4 md:p-0">
           <h3 className="my-4 font-bold text-foreground">Learning Activity</h3>
-          <ActivityCalendarGit calendarData={contributor.calendarData} />
+          <div className="overflow-x-auto">
+            <ActivityCalendarGit calendarData={contributor.calendarData} />
+          </div>
         </div>
         <div className="px-4 md:p-0">
           <h3 className="mt-6 font-bold text-foreground">Highlights</h3>

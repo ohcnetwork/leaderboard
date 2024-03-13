@@ -168,10 +168,14 @@ class GitHubScraper:
         ).json()
 
         for commit in commits:
-            if is_blacklisted(commit["author"]["login"]):
+            author_login = commit["author"] and commit["author"]["login"]
+            if not author_login:
+                author_login = commit["commit"]["author"]["name"]
+
+            if is_blacklisted(author_login):
                 continue
 
-            collaborators.add(commit["author"]["login"])
+            collaborators.add(author_login)
 
             co_authors = re.findall(
                 "Co-authored-by: (.+) <(.+)>", commit["commit"]["message"]

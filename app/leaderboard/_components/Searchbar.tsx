@@ -10,6 +10,7 @@ import { SORT_BY_OPTIONS, FILTER_BY_ROLE_OPTIONS } from "@/lib/const";
 import { LeaderboardPageProps } from "@/lib/types";
 import { env } from "@/env.mjs";
 import { useDebouncedCallback } from "use-debounce";
+import { useState } from "react";
 
 const SortOptions = Object.entries(SORT_BY_OPTIONS).map(([value, text]) => ({
   value,
@@ -27,6 +28,7 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
+  const [showFilter, setShowFilter] = useState(false);
 
   const updateSearchParam = (key: string, value?: string) => {
     const current = new URLSearchParams(searchParams as Record<string, string>);
@@ -48,14 +50,9 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
     }
   }, 300);
 
-  return (
-    <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
-      <div className="flex flex-col flex-wrap gap-4 md:flex-row">
-        <Search
-          defaultValue={searchParams.search}
-          handleOnChange={(e) => handleSearch(e.target.value)}
-          className="grow"
-        />
+  const FilterComponents = () => {
+    return (
+      <>
         <DateRangePicker
           value={{ start, end }}
           onChange={(value) => {
@@ -121,8 +118,39 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
               searchParams.ordering === "asc" ? "desc" : "asc",
             );
           }}
-          className="md:grow-1 grow md:w-[120px] "
+          className="md:grow-1 mb-4 grow md:w-[120px]"
         />
+      </>
+    );
+  };
+
+  return (
+    <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
+      <div className="flex flex-col flex-wrap sm:hidden">
+        <Search
+          defaultValue={searchParams.search}
+          handleOnChange={(e) => handleSearch(e.target.value)}
+          className="mb-4 grow"
+        />
+        <div
+          className={`${showFilter ? "max-h-[50vh]" : "max-h-0"} flex flex-col gap-4 overflow-hidden transition-[max-height] duration-500 sm:hidden`}
+        >
+          <FilterComponents />
+        </div>
+        <button
+          onClick={() => setShowFilter(!showFilter)}
+          className="w-full rounded-md bg-transparent p-1"
+        >
+          {showFilter ? "Hide" : "Show"} filters
+        </button>
+      </div>
+      <div className="hidden flex-col flex-wrap gap-4 sm:flex md:flex-row">
+        <Search
+          defaultValue={searchParams.search}
+          handleOnChange={(e) => handleSearch(e.target.value)}
+          className="grow"
+        />
+        <FilterComponents />
       </div>
     </div>
   );

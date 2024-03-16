@@ -54,8 +54,9 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
         <Search
           defaultValue={searchParams.search}
           handleOnChange={(e) => handleSearch(e.target.value)}
-          className="grow"
+          className="w-1/3 grow"
         />
+        <div className="flex flex-col md:grow-1 flex-1 gap-4 md:flex-row">
         <DateRangePicker
           value={{ start, end }}
           onChange={(value) => {
@@ -67,7 +68,7 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
               )}`,
             );
           }}
-          className="md:grow-1"
+          className="flex-1 grow"
         />
         <RoleFilter
           filterOptions={RoleOptions}
@@ -97,7 +98,7 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
               selectedOptions?.map((i) => i.value).join(","),
             )
           }
-          className="md:grow-1 grow md:min-w-[120px]"
+          className="flex-1 grow"
         />
         <Sort
           sortByOptions={SortOptions}
@@ -121,8 +122,9 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
               searchParams.ordering === "asc" ? "desc" : "asc",
             );
           }}
-          className="md:grow-1 grow md:w-[120px] "
+          className="flex-1 grow "
         />
+        </div>
       </div>
     </div>
   );

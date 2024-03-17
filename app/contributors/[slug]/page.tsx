@@ -13,7 +13,6 @@ import GraduateAttributeBadge from "../../../components/contributors/GraduateAtt
 import InfoCard from "../../../components/contributors/InfoCard";
 import React, { Suspense } from "react";
 import clsx from "clsx";
-import { Contributor } from "@/lib/types";
 import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
 import { FiAlertTriangle } from "react-icons/fi";
@@ -36,7 +35,7 @@ type Params = {
   params: { slug: string };
 };
 
-export default async function Contributor({ params }: Params) {
+export default async function Page({ params }: Params) {
   const { slug } = params;
   const contributor = await getContributorBySlug(slug, true);
 

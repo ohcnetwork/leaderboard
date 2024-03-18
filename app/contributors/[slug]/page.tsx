@@ -90,7 +90,7 @@ export default async function Contributor({ params }: Params) {
 
       <div className="mx-auto max-w-4xl space-y-16 pt-6">
         {contributor.content.includes("Still waiting for this") && (
-          <div className="mt-10 flex justify-between rounded-lg border border-current bg-amber-300/20 px-4 py-4 font-semibold text-amber-500 dark:bg-amber-500/20 sm:px-6 xl:px-10 ">
+          <div className="mt-10 flex flex-col justify-between rounded-lg border border-current bg-amber-300/20 px-4 py-4 font-semibold text-amber-500 dark:bg-amber-500/20 max-sm:mx-3 max-sm:gap-3 sm:flex-row sm:px-6 xl:px-10 ">
             <span className="flex items-center gap-4">
               <FiAlertTriangle size={20} />
               Contributor profile has not been updated.

@@ -1,5 +1,8 @@
 A simple leaderboard app built with Next.js and Tailwind CSS to list top contributors of a GitHub organization.
 
+<img width="1822" alt="image" src="https://github.com/coronasafe/leaderboard/assets/25143503/6352a4cf-4b8b-4f80-b45c-6af323ee502e">
+
+
 ## Getting Started
 
 ### Starting the deployment server

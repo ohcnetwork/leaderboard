@@ -6,7 +6,6 @@ import OpenGraphImage from "../gh_events/OpenGraphImage";
 import { useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
-import Link from "next/link";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -38,8 +37,12 @@ let renderText = (activity: Activity) => {
               </div>
             </div>
           </div>
-          <div className="mt-2 text-foreground">
-            <p className="break-words">{activity["text"]}</p>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            <a href={activity["link"]} target="_blank">
+              <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                {activity["text"]}
+              </span>
+            </a>
           </div>
         </div>
       );
@@ -55,15 +58,18 @@ let renderText = (activity: Activity) => {
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
 
-              <span className="font-normal text-foreground">
+              <span className="text-foreground">
                 {" "}
                 <RelativeTime time={timestamp} />
               </span>
             </p>
           </div>
-          <div className="mt-2 text-foreground">
-            <p className="break-words">{activity["text"]}</p>
-            <p className="break-words">{activity["link"]}</p>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            <a href={activity["link"]} target="_blank">
+              <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                {activity["text"]}
+              </span>
+            </a>
           </div>
         </div>
       );
@@ -81,10 +87,15 @@ let renderText = (activity: Activity) => {
               <span className="text-primary-400 dark:text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
-              {!!activity["turnaround_time"] && (
+              {!!activity["turnaround_time"] ? (
                 <span className="text-sm text-secondary-600 dark:text-secondary-400">
                   {" with a turnaround time of "}
                   {formatDuration(activity["turnaround_time"] * 1000)}
+                </span>
+              ) : (
+                <span className="text-foreground">
+                  {" "}
+                  <RelativeTime time={timestamp} />
                 </span>
               )}
             </div>
@@ -94,15 +105,12 @@ let renderText = (activity: Activity) => {
               </div>
             )}
             {activity["type"] == "pr_reviewed" && (
-              <div>
-                <Link href={activity["link"]}>
-                  <span className="font-medium text-secondary-500 dark:text-secondary-200">
+              <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+                <a href={activity["link"]} target="_blank">
+                  <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
                     {activity["text"]}
                   </span>
-                </Link>
-                <span className="ml-2 whitespace-nowrap">
-                  <RelativeTime time={timestamp} />
-                </span>
+                </a>
               </div>
             )}
           </div>
@@ -122,16 +130,13 @@ let renderText = (activity: Activity) => {
               <span className="text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
-            </div>
-
-            <Link href={activity["link"]} className="pt-1">
-              <span className="font-medium text-foreground hover:text-primary-500">
-                {activity["text"]}
+              <span className="ml-2 whitespace-nowrap">
+                <RelativeTime time={timestamp} />
               </span>
-            </Link>
-            <span className="ml-2 whitespace-nowrap">
-              <RelativeTime time={timestamp} />
-            </span>
+            </div>
+            <div className="max-w-xl pt-4">
+              <OpenGraphImage url={activity["link"]} className="rounded-xl" />
+            </div>
           </div>
         </div>
       );

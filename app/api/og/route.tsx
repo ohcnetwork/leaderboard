@@ -8,14 +8,6 @@ import { MdUpdate } from "react-icons/md";
 
 export const runtime = "edge";
 
-const highlightsStyles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: "1rem",
-} as React.CSSProperties;
-
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
   const decodedUrl = decodeURIComponent(url.toString());
@@ -30,90 +22,54 @@ export async function GET(request: NextRequest) {
   const eod_update = parsedUrl.searchParams.get("eod_update") || "0";
 
   const logoImageData = await fetch(
-    new URL("../../../public/logo.png", import.meta.url),
+    new URL("../../../public/logo.jpg", import.meta.url),
   ).then((res) => res.arrayBuffer());
   const profileImage = `https://avatars.githubusercontent.com/${github_username}`;
 
   const fontData = await fetch(
-    new URL("./Roboto-Bold.ttf", import.meta.url),
+    new URL("../../../public/Roboto-Bold.ttf", import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     (
-      <div
-        style={{
-          display: "flex",
-          height: "100%",
-          width: "100%",
-          borderBottom: "30px solid #976AE2",
-          flexWrap: "wrap",
-        }}
-      >
-        <div style={{ display: "flex", position: "relative" }}>
+      <div tw="flex h-full w-full flex-wrap bg-white border-b-[30px] border-solid border-purple-600">
+        <div tw="relative flex">
           <img
-            style={{
-              borderRadius: "50%",
-              margin: "2rem",
-              height: "200px",
-              width: "200px",
-            }}
+            tw="m-8 h-52 w-52 rounded-full"
             src={profileImage}
             alt={github_username}
           />
-          <div
-            style={{
-              marginLeft: "0.5rem",
-              display: "flex",
-              flexDirection: "column",
-              width: "70%",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "50%",
-                marginTop: "2rem",
-              }}
-            >
-              <h2 style={{ fontSize: 35 }}>{github_username}</h2>
-              <p style={{ fontSize: 25 }}>{content}</p>
+          <div tw="ml-2 flex w-[70%] flex-col">
+            <div tw="mt-8 flex h-1/2 flex-col">
+              <h2 tw="text-3xl">{github_username}</h2>
+              <p tw="text-2xl">{content}</p>
             </div>
-            <div
-              style={{
-                display: "flex",
-                fontSize: 30,
-                gap: "5rem",
-                marginTop: "2.5rem",
-              }}
-            >
-              <div style={highlightsStyles}>
+            <div tw="mt-12 flex text-3xl">
+              <div tw="flex flex-col items-center justify-center">
                 <GoGitPullRequest size={30} />
-                <span>Pull Request</span>
+                <span tw="my-4">Pull Request</span>
                 <span>{pr_opened}</span>
               </div>
-              <div style={highlightsStyles}>
+              <div tw="mx-20 flex flex-col items-center justify-center">
                 <GoCodeReview size={30} />
-                <span>Reviews</span>
+                <span tw="my-4">Reviews</span>
                 <span>{pr_reviewed}</span>
               </div>
-              <div style={highlightsStyles}>
+              <div tw="flex flex-col items-center justify-center">
                 <MdUpdate size={30} />
-                <span>Feed Updates</span>
+                <span tw="my-4">Feed Updates</span>
                 <span>{eod_update}</span>
               </div>
             </div>
             <img
               style={{
-                width: "200px",
-                height: "70px",
                 position: "absolute",
-                top: 10,
-                right: -40,
-                inset: 0,
+                right: 0,
+                top: "10px",
+                filter: "invert(100%) brightness(100%)",
               }}
               src={logoImageData}
-              alt={"organization_logo"}
+              alt="organization_logo"
               width={180}
               height={60}
             />

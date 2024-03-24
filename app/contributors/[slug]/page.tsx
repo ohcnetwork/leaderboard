@@ -55,11 +55,6 @@ export default async function Page({ params }: Params) {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
       {/* <Header /> */}
-      <div className="bg-secondary-200/50 dark:bg-secondary-700/50 border-b border-secondary-300 pb-3 pt-2 shadow-md dark:border-secondary-700">
-        <h1 className="mx-auto max-w-6xl text-center text-sm text-secondary-600 dark:text-secondary-400 md:text-xl">
-          Personal Learning Dashboard (Beta)
-        </h1>
-      </div>
       <section className="bg-secondary-200 px-4 py-6 dark:bg-secondary-800">
         <div className=" mx-auto flex max-w-6xl flex-col gap-2 md:flex-row lg:gap-16">
           <div className="mx-auto my-auto min-w-max md:w-2/3">

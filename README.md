@@ -5,15 +5,9 @@ A simple leaderboard app built with Next.js and Tailwind CSS to list top contrib
 
 ## Getting Started
 
-### Starting the deployment server
+### Starting the development server
 
-Run the following command in the terminal:
-
-```bash
-./load-org-data.sh
-```
-
-Now run the deployment server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -63,37 +57,26 @@ All members marked with `role: core` and `role: operations` will be will be hidd
 
 You will be able to see the users profile page at `http://localhost:3000/contributors/john-doe`.
 
-## Customizing the app
+# Customizing the app
 
 1. To add or remove a badge, edit the `config/GraduateAttributes.ts` file.
 
 2. To Setup the repo for a new org, update
-   the [scraper config](https://github.com/coronasafe/leaderboard/blob/d42c7b7ba608c4911d932e92679ab1914371c8a0/.github/workflows/main.yml#L32)
+   the [scraper config](https://github.com/coronasafe/leaderboard/blob/060d88f1caf2190792beffaa464a2a48bfa6f2db/.github/workflows/scraper.yaml#L40) and update the `DATA_SOURCE` variable in the `.env` file to match the repo containing your organization data.
 
 3. To change the colors, fonts, or plugins edit the `tailwind.config.js` file.
 
-### Environment Variables
+## Environment Variables
 
-#### **Organization Details**
-
-- **NEXT_PUBLIC_ORG_NAME**
-  - Will be displayed in the navbar.
-- **NEXT_PUBLIC_ORG_INFO**
-  - (Optional) Will be displayed in the "What do we do?" section.
-- **NEXT_PUBLIC_ORG_LOGO**
-  - Will be displayed in the footer.
-
-#### **SEO details**
-
-- **NEXT_PUBLIC_META_TITLE**
-- **NEXT_PUBLIC_META_IMG**
-- **NEXT_PUBLIC_META_DESCRIPTION**
-- **NEXT_PUBLIC_META_URL**
-
-#### **Page Details**
-
-- **NEXT_PUBLIC_PAGE_TITLE**
-  - Will be displayed in page title.
-- **NEXT_PUBLIC_CONTRIBUTORS_INFO**
-  - (Optional) Will be displayed next to "Our Contributors" section. You can use it to display a note about your
-    contributors.
+| Variable | Description | Default | Optional? |
+|---|---|---|---|
+| **NEXT_PUBLIC_ORG_NAME** | Will be displayed in the navbar | ohc.network | No |
+| **NEXT_PUBLIC_ORG_INFO** | Will be displayed in the "What do we do?" section. | Open Healthcare Network is a free and open-source disaster management system that is used by National Health Mission, Government of India and various state governments for reimaging digital war rooms. The solution that students got an opportunity to intern with has supported 3.34Lac patient management and 1.29 Lac ambulance shiftings and is approved by the United Nations as a Digital Public Good. | Yes |
+| **NEXT_PUBLIC_ORG_LOGO** | Will be displayed in the footer. | /logo.webp | No |
+| **NEXT_PUBLIC_META_TITLE** | Metadata title | Open Healthcare Network | No |
+| **NEXT_PUBLIC_META_IMG** | Metadata img | /logo.webp | No |
+| **NEXT_PUBLIC_META_DESCRIPTION** | Metadata description | OHC Network Leaderboard tracks the weekly progress of all coronasafe contributors. | No |
+| **NEXT_PUBLIC_META_URL** | Metadata url | https://leaderboard.ohc.network | No |
+| **NEXT_PUBLIC_PAGE_TITLE** | Will be displayed in page title. | OHC Network Contributors | No |
+| **NEXT_PUBLIC_CONTRIBUTORS_INFO** | Will be displayed next to "Our Contributors" section. You can use it to display a note about your contributors. |  | Yes |
+| **DATA_SOURCE** | Url for data repository | https://github.com/coronasafe/leaderboard-data.git | Yes |

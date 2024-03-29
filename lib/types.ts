@@ -76,6 +76,7 @@ export interface Activity {
   text: string;
   collaborated_with?: string[];
   turnaround_time?: number;
+  no_of_linked_issues?: number;
 }
 
 export interface OpenPr {

@@ -71,6 +71,14 @@ class GitHubScraper:
                 "authored_issue_and_pr": [],
             }
 
+    def parse_linked_issues(self, pr_body):
+        if isinstance(pr_body, str):
+            pattern = r"#(\d+)"
+            matches = re.findall(pattern, pr_body)
+            return len(set(matches))
+        else:
+            return 0  
+
     def parse_event(self, event, event_time):
         user = event["actor"]["login"]
         try:
@@ -116,6 +124,8 @@ class GitHubScraper:
                 )
 
         elif event["type"] == "PullRequestEvent":
+            pr_body = event["payload"]["pull_request"]["body"]
+            no_of_linked_issues = self.parse_linked_issues(pr_body)
             if event["payload"]["action"] == "opened":
                 self.append(
                     user,
@@ -125,6 +135,7 @@ class GitHubScraper:
                         "time": event_time,
                         "link": event["payload"]["pull_request"]["html_url"],
                         "text": event["payload"]["pull_request"]["title"],
+                        "no_of_linked_issues" : no_of_linked_issues
                     },
                 )
 

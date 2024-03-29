@@ -15,6 +15,7 @@ const points = {
   issue_opened: 4,
   eod_update: 2,
   pr_opened: 1,
+  no_of_linked_issues: 1,
   pr_merged: 7,
   pr_collaborated: 2,
   issue_closed: 0,
@@ -24,6 +25,7 @@ const points = {
 // Reviewing a PR would get 4 points
 // Finding a bug would add up to 4 points
 // Opening a PR would give a single point and merging it would give you the other 7 points, making 8 per PR
+// For each linked issue in pr body, points would increase by 1.
 // Updating the EOD would get 2 points per day and additional 20 for regular daily updates plus 10 for just missing one
 
 function formatSlug(slug: string) {
@@ -115,9 +117,17 @@ export async function getContributorBySlug(file: string, detail = false) {
       return {
         activity: [
           ...acc.activity,
-          { ...activity, points: points[activity.type] || 0 },
+          {
+            ...activity,
+            points:
+              (points[activity.type] || 0) +
+              (activity.no_of_linked_issues || 0),
+          },
         ],
-        points: acc.points + (points[activity.type] || 0),
+        points:
+          acc.points +
+          (points[activity.type] || 0) +
+          (activity.no_of_linked_issues || 0),
         comment_created:
           acc.comment_created + (activity.type === "comment_created" ? 1 : 0),
         eod_update: acc.eod_update + (activity.type === "eod_update" ? 1 : 0),
@@ -218,6 +228,16 @@ function getCalendarData(activity: Activity[]) {
       } else {
         acc[date][activity.type] = 1;
       }
+      if (!acc[date]["points"]) {
+        acc[date]["points"] = points[activity.type];
+      } else {
+        acc[date]["points"] += points[activity.type];
+        if (activity.type === "pr_opened") {
+          acc[date]["points"] +=
+            (activity.no_of_linked_issues ?? 0) * points["no_of_linked_issues"];
+        }
+      }
+
       if (!acc[date].types.includes(activity.type)) {
         acc[date].types.push(activity.type);
         // console.log(activity.type);
@@ -248,29 +268,30 @@ function getCalendarData(activity: Activity[]) {
   });
 }
 
-const HIGHLIGHT_KEYS = [
-  "eod_update",
-  "comment_created",
-  "pr_opened",
-  "pr_reviewed",
-  "pr_merged",
-  "pr_collaborated",
-  "issue_assigned",
-  "issue_opened",
-] as const;
+// const HIGHLIGHT_KEYS = [
+//   "eod_update",
+//   "comment_created",
+//   "pr_opened",
+//   "pr_reviewed",
+//   "pr_merged",
+//   "pr_collaborated",
+//   "issue_assigned",
+//   "issue_opened",
+// ] as const;
 
-const computePoints = (
-  calendarDataEntry: Highlights,
-  initialPoints: number,
-) => {
-  return HIGHLIGHT_KEYS.map(
-    (key) => points[key] * (calendarDataEntry[key] ?? 0),
-  ).reduce((a, b) => a + b, initialPoints);
-};
+// const computePoints = (
+//   calendarDataEntry: Highlights,
+//   initialPoints: number,
+// ) => {
+//   return HIGHLIGHT_KEYS.map(
+//     (key) => points[key] * (calendarDataEntry[key] ?? 0),
+//   ).reduce((a, b) => a + b, initialPoints);
+// };
 
 const HighlightsReducer = (acc: Highlights, day: Highlights) => {
   return {
-    points: computePoints(day, acc.points),
+    // points: computePoints(day, acc.points),
+    points: acc.points + (day.points ?? 0),
     eod_update: acc.eod_update + (day.eod_update ?? 0),
     comment_created: acc.comment_created + (day.comment_created ?? 0),
     pr_opened: acc.pr_opened + (day.pr_opened ?? 0),

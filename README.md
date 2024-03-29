@@ -2,7 +2,6 @@ A simple leaderboard app built with Next.js and Tailwind CSS to list top contrib
 
 <img width="1822" alt="image" src="https://github.com/coronasafe/leaderboard/assets/25143503/6352a4cf-4b8b-4f80-b45c-6af323ee502e">
 
-
 ## Getting Started
 
 ### Starting the deployment server
@@ -13,13 +12,15 @@ Run the following command in the terminal:
 ./load-org-data.sh
 ```
 
+Install dependencies:
+
+```bash
+pnpm install
+```
+
 Now run the deployment server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 

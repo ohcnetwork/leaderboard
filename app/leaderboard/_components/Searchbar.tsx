@@ -11,6 +11,7 @@ import { LeaderboardPageProps } from "@/lib/types";
 import { env } from "@/env.mjs";
 import { useDebouncedCallback } from "use-debounce";
 import { useState } from "react";
+import { MdFilterList, MdFilterListOff } from "react-icons/md";
 
 const SortOptions = Object.entries(SORT_BY_OPTIONS).map(([value, text]) => ({
   value,
@@ -127,22 +128,25 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
   return (
     <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
       <div className="flex flex-col flex-wrap sm:hidden">
-        <Search
-          defaultValue={searchParams.search}
-          handleOnChange={(e) => handleSearch(e.target.value)}
-          className="mb-4 grow"
-        />
+        <div className="flex flex-row gap-2">
+          <Search
+            defaultValue={searchParams.search}
+            handleOnChange={(e) => handleSearch(e.target.value)}
+            className="grow"
+          />
+          <button onClick={() => setShowFilter(!showFilter)} className="">
+            {showFilter ? (
+              <MdFilterList className="mx-auto h-8 w-8 cursor-pointer" />
+            ) : (
+              <MdFilterListOff className="mx-auto h-8 w-8 cursor-pointer" />
+            )}
+          </button>
+        </div>
         <div
-          className={`${showFilter ? "max-h-[50vh]" : "max-h-0"} flex flex-col gap-4 overflow-hidden transition-[max-height] duration-500 sm:hidden`}
+          className={`${showFilter ? "mt-4 max-h-[50vh]" : "max-h-0"} flex flex-col gap-4 overflow-hidden transition-all duration-500 sm:hidden`}
         >
           <FilterComponents />
         </div>
-        <button
-          onClick={() => setShowFilter(!showFilter)}
-          className="w-full rounded-md bg-transparent p-1"
-        >
-          {showFilter ? "Hide" : "Show"} filters
-        </button>
       </div>
       <div className="hidden flex-col flex-wrap gap-4 sm:flex md:flex-row">
         <Search

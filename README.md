@@ -12,13 +12,15 @@ Run the following command in the terminal:
 ./load-org-data.sh
 ```
 
+Install dependencies:
+
+```bash
+pnpm install
+```
+
 Now run the deployment server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 

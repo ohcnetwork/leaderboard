@@ -151,8 +151,8 @@ export default async function Home() {
                         href={"/people"}
                       >
                         {contributors.length > 8
-                          ? `${contributors.length - 8} contributors more...`
-                          : "Show all contributors ..."}
+                          ? `${contributors.length - 8} contributors more`
+                          : "Show all contributors"}
                         <MdOutlineArrowForwardIos />
                       </Link>
                     </div>

@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
   const profileImage = `https://avatars.githubusercontent.com/${github_username}`;
 
   const fontData = await fetch(
-    new URL("../../../public/Roboto-Bold.ttf", import.meta.url),
+    new URL("/Roboto-Bold.ttf", import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(

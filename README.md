@@ -1,10 +1,10 @@
-A simple leaderboard app built with Next.js and Tailwind CSS to list top contributors of a GitHub organization.
+A simple leaderboard app built with Next.js and Tailwind CSS to list the top contributors of a GitHub organization.
 
 <img width="1822" alt="image" src="https://github.com/coronasafe/leaderboard/assets/25143503/6352a4cf-4b8b-4f80-b45c-6af323ee502e">
 
 ## Getting Started
 
-### Preriquisits
+### Prerequisites
 
 - Ensure that `npm` is installed on your device, or you can use a package manager like `nvm` to manage multiple versions of Node.js. [Read more](https://www.educative.io/answers/what-is-nvm)
 - Install pnpm, a package manager, to run the project.
@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Troubleshooting
 If you encounter any issues during setup, refer to the following troubleshooting tips:
 
-- For new contributers you may encounter the error
+- For new contributors you may encounter the error
   ```
    GITHUB_PAT is not configured in the environment.
    Request quota exhausted for request POST /graphql
@@ -61,8 +61,8 @@ pnpm add <package_name>
 
 ## How to add a new member?
 
-Create a new markdown file with the github user name in the `contributors` folder. For example, if you want to
-add `john-doe` as a contributor, create a file named `john-doe.md` in the `contributors` folder.
+Create a new markdown file with the GitHub user name in the `contributors` folder. For example, if you want to
+add `john-doe` as a contributor, and create a file named `john-doe.md` in the `contributors` folder.
 
 The file should contain the following content:
 
@@ -83,9 +83,9 @@ _Passionate about creating scalable and distributed systems for the power grid a
 source digital public goods._ (supports markdown)
 ```
 
-All members marked with `role: core` and `role: operations` will be will be hidden from the leaderboard section by default.You can toggle their visibility by changing filters.
+All members marked with `role: core` and `role: operations` will be hidden from the leaderboard section by default. You can toggle their visibility by changing filters.
 
-You will be able to see the users profile page at `http://localhost:3000/contributors/john-doe`.
+You will be able to see the user's profile page at `http://localhost:3000/contributors/john-doe`.
 
 # Customizing the app
 

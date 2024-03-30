@@ -1,4 +1,4 @@
 {
   "framework": "nextjs",
-  "buildCommand": "pnpm build"
+  "buildCommand": "node ./scripts/loadOrgData.js && next build"
 }

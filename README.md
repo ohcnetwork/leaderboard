@@ -4,6 +4,14 @@ A simple leaderboard app built with Next.js and Tailwind CSS to list top contrib
 
 ## Getting Started
 
+### Preriquisits
+
+- Ensure that `npm` is installed on your device, or you can use a package manager like `nvm` to manage multiple versions of Node.js. [Read more](https://www.educative.io/answers/what-is-nvm)
+- Install pnpm, a package manager, to run the project.
+```bash
+npm install -g pnpm
+```
+
 ### Starting the development server
 
 Install dependencies:
@@ -19,6 +27,27 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Troubleshooting
+If you encounter any issues during setup, refer to the following troubleshooting tips:
+
+- For new contributers you may encounter the error
+  ```
+   GITHUB_PAT is not configured in the environment.
+   Request quota exhausted for request POST /graphql
+  ```
+  In place of running `pnpm dev` create you own GitHub access token. [Read Steps here](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+  Then run the following command instead:
+  ```
+  GITHUB_PAT=<YOUR_KEY> pnpm dev
+  ```
+
+- If you are getting the error:
+  ```
+   fatal: unable to access 'https://github.com/coronasafe/leaderboard-data.git/': Could not resolve host: github.com
+   Error executing command: git clone
+  ```
+  Make sure you are connected to an active internet connection, or your antivirus may also cause this issue. Try running the command with your antivirus closed.
 
 ### Installing packages
 

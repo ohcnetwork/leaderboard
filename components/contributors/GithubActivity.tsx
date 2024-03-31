@@ -3,7 +3,7 @@
 import { ACTIVITY_TYPES, Activity, ActivityData } from "@/lib/types";
 import { formatDuration } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
 
@@ -323,6 +323,7 @@ export default function GithubActivity({ activityData }: Props) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const rangeQuery = searchParams.get("range") ?? "last-month";
+  const batchSize = 5;
 
   const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
 
@@ -358,6 +359,33 @@ export default function GithubActivity({ activityData }: Props) {
   const activities = activitiesInRange
     .filter(activitiesOfType(activityTypes))
     .sort(compareByActivityTime);
+
+  let startIndex = 0;
+  const [showActivities, setShowActivities] = useState<Activity[]>(
+    activities.slice(startIndex, batchSize),
+  );
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + window.scrollY >=
+      document.documentElement.offsetHeight - 20
+    ) {
+      startIndex += batchSize;
+      const newData = activities.slice(startIndex, startIndex + batchSize);
+
+      setShowActivities((prevMainList) => {
+        const newActivities = [...prevMainList, ...newData];
+        return newActivities;
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="flex flex-row-reverse flex-wrap items-start justify-between gap-6 md:flex-nowrap">
@@ -405,7 +433,7 @@ export default function GithubActivity({ activityData }: Props) {
       </div>
       <div className="mt-4 w-full px-1 text-foreground sm:px-2">
         <ul role="list" className="my-4 w-full max-w-xl">
-          {activities.map((activity, i) => {
+          {showActivities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;
           })}
         </ul>

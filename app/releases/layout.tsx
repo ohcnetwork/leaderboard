@@ -11,8 +11,8 @@ export default function ReleasesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto max-w-4xl p-10">
-      <h1 className="pb-10 text-4xl">Recent Releases</h1>
+    <div className="mx-auto max-w-4xl p-5 sm:p-10">
+      <h1 className="pb-10 text-3xl sm:text-4xl">Recent Releases</h1>
       {children}
     </div>
   );

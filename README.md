@@ -1,26 +1,45 @@
-A simple leaderboard app built with Next.js and Tailwind CSS to list top contributors of a GitHub organization.
+A simple leaderboard app built with Next.js and Tailwind CSS to list the top contributors of a GitHub organization.
+
+<img width="1822" alt="image" src="https://github.com/coronasafe/leaderboard/assets/25143503/6352a4cf-4b8b-4f80-b45c-6af323ee502e">
 
 ## Getting Started
 
-### Starting the deployment server
+### Prerequisites
 
-Run the following command in the terminal:
+Ensure that `pnpm` is installed on your device. You can check the steps for installation here. [Docs Link](https://pnpm.io/installation)
+
+### Starting the development server
+
+Install dependencies:
 
 ```bash
-./load-org-data.sh
+pnpm install
 ```
 
-Now run the deployment server:
+Now run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Troubleshooting
+If you encounter any issues during setup, refer to the following troubleshooting tips:
+
+- **Error: GITHUB_PAT is not configured in the environment. Request quota exhausted for request POST /graphql**
+  - If you're facing this error for new contributors, follow these steps:
+    1. Instead of running `pnpm dev`, create your own GitHub access token. [Read Steps here](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+    2. Run the following command instead:
+       
+       ```bash
+       GITHUB_PAT=<YOUR_KEY> pnpm dev
+       ```
+  - Alternatively, if you have the `gh cli` installed and configured on your device, you can run the following command without creating an access token:
+    
+    ```bash
+    GITHUB_PAT=$(gh auth token) pnpm dev
+    ```
 
 ### Installing packages
 
@@ -34,8 +53,8 @@ pnpm add <package_name>
 
 ## How to add a new member?
 
-Create a new markdown file with the github user name in the `contributors` folder. For example, if you want to
-add `john-doe` as a contributor, create a file named `john-doe.md` in the `contributors` folder.
+Create a new markdown file with the GitHub user name in the `contributors` folder. For example, if you want to
+add `john-doe` as a contributor, and create a file named `john-doe.md` in the `contributors` folder.
 
 The file should contain the following content:
 
@@ -56,41 +75,30 @@ _Passionate about creating scalable and distributed systems for the power grid a
 source digital public goods._ (supports markdown)
 ```
 
-All members marked with `role: core` and `role: operations` will be will be hidden from the leaderboard section by default.You can toggle their visibility by changing filters.
+All members marked with `role: core` and `role: operations` will be hidden from the leaderboard section by default. You can toggle their visibility by changing filters.
 
-You will be able to see the users profile page at `http://localhost:3000/contributors/john-doe`.
+You will be able to see the user's profile page at `http://localhost:3000/contributors/john-doe`.
 
-## Customizing the app
+# Customizing the app
 
 1. To add or remove a badge, edit the `config/GraduateAttributes.ts` file.
 
 2. To Setup the repo for a new org, update
-   the [scraper config](https://github.com/coronasafe/leaderboard/blob/d42c7b7ba608c4911d932e92679ab1914371c8a0/.github/workflows/main.yml#L32)
+   the [scraper config](https://github.com/coronasafe/leaderboard/blob/060d88f1caf2190792beffaa464a2a48bfa6f2db/.github/workflows/scraper.yaml#L40) and update the `DATA_SOURCE` variable in the `.env` file to match the repo containing your organization data.
 
 3. To change the colors, fonts, or plugins edit the `tailwind.config.js` file.
 
-### Environment Variables
+## Environment Variables
 
-#### **Organization Details**
-
-- **NEXT_PUBLIC_ORG_NAME**
-  - Will be displayed in the navbar.
-- **NEXT_PUBLIC_ORG_INFO**
-  - (Optional) Will be displayed in the "What do we do?" section.
-- **NEXT_PUBLIC_ORG_LOGO**
-  - Will be displayed in the footer.
-
-#### **SEO details**
-
-- **NEXT_PUBLIC_META_TITLE**
-- **NEXT_PUBLIC_META_IMG**
-- **NEXT_PUBLIC_META_DESCRIPTION**
-- **NEXT_PUBLIC_META_URL**
-
-#### **Page Details**
-
-- **NEXT_PUBLIC_PAGE_TITLE**
-  - Will be displayed in page title.
-- **NEXT_PUBLIC_CONTRIBUTORS_INFO**
-  - (Optional) Will be displayed next to "Our Contributors" section. You can use it to display a note about your
-    contributors.
+| Variable | Description | Default | Optional? |
+|---|---|---|---|
+| **NEXT_PUBLIC_ORG_NAME** | Will be displayed in the navbar | ohc.network | No |
+| **NEXT_PUBLIC_ORG_INFO** | Will be displayed in the "What do we do?" section. | Open Healthcare Network is a free and open-source disaster management system that is used by National Health Mission, Government of India and various state governments for reimaging digital war rooms. The solution that students got an opportunity to intern with has supported 3.34Lac patient management and 1.29 Lac ambulance shiftings and is approved by the United Nations as a Digital Public Good. | Yes |
+| **NEXT_PUBLIC_ORG_LOGO** | Will be displayed in the footer. | /logo.webp | No |
+| **NEXT_PUBLIC_META_TITLE** | Metadata title | Open Healthcare Network | No |
+| **NEXT_PUBLIC_META_IMG** | Metadata img | /logo.webp | No |
+| **NEXT_PUBLIC_META_DESCRIPTION** | Metadata description | OHC Network Leaderboard tracks the weekly progress of all coronasafe contributors. | No |
+| **NEXT_PUBLIC_META_URL** | Metadata url | https://leaderboard.ohc.network | No |
+| **NEXT_PUBLIC_PAGE_TITLE** | Will be displayed in page title. | OHC Network Contributors | No |
+| **NEXT_PUBLIC_CONTRIBUTORS_INFO** | Will be displayed next to "Our Contributors" section. You can use it to display a note about your contributors. |  | Yes |
+| **DATA_SOURCE** | Url for data repository | https://github.com/coronasafe/leaderboard-data.git | Yes |

@@ -1,8 +1,7 @@
-"use client";
-import { IGitHubEvent, combineSimilarPushEvents } from "@/lib/gh_events";
-import { useEffect, useState } from "react";
+import { IGitHubEvent } from "@/lib/gh_events";
 import GitHubEvent from "./GitHubEvent";
 import { env } from "@/env.mjs";
+import octokit from "@/lib/octokit";
 
 const exludeBotEvents = (event: IGitHubEvent) => {
   return !event.actor.login.includes("bot");
@@ -21,23 +20,17 @@ const excludeBlacklistedEvents = (event: IGitHubEvent) => {
   return !blacklist.includes(event.type);
 };
 
-export default function GitHubEvents({ minimal }: { minimal?: boolean }) {
-  const [page, setPage] = useState(1);
-  const [events, setEvents] = useState<IGitHubEvent[]>();
+export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
+  const res = await octokit.request("GET /orgs/{org}/events", {
+    org: env.NEXT_PUBLIC_GITHUB_ORG,
+    per_page: 100,
+    page: 1,
+  });
 
-  useEffect(() => {
-    fetch(
-      `https://api.github.com/orgs/${env.NEXT_PUBLIC_GITHUB_ORG}/events?per_page=100&page=${page}`,
-    )
-      .then((res) => res.json())
-      .then((data) =>
-        setEvents(
-          combineSimilarPushEvents(
-            data.filter(exludeBotEvents).filter(excludeBlacklistedEvents),
-          ).slice(0, 5),
-        ),
-      );
-  }, [page]);
+  const events = (res.data as IGitHubEvent[])
+    .filter(excludeBlacklistedEvents)
+    .filter(exludeBotEvents)
+    .slice(0, 5);
 
   return (
     <div className="flow-root">

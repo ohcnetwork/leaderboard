@@ -15,6 +15,13 @@ const nextConfig = {
         protocol: "https",
         hostname: "opengraph.githubassets.com",
       },
+      // fix for crash if a path starts with period
+      // ref: https://github.com/coronasafe/leaderboard/pull/376
+      {
+        protocol: "https",
+        hostname: "opengraph.githubassets.com",
+        pathname: "/**/.*/**",
+      },
     ],
   },
 };

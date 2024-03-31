@@ -2,7 +2,8 @@ import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import fetchGitHubReleases from "@/app/api/leaderboard/functions";
 import Image from "next/image";
-
+import { formatDate } from "@/lib/utils";
+import { GoTag } from "react-icons/go";
 export default async function ReleaseSection() {
   const releases = await fetchGitHubReleases(4);
 
@@ -38,14 +39,16 @@ export default async function ReleaseSection() {
                   {release.author.login}
                 </Link>{" "}
                 released a new version on{" "}
-                {new Date(release.createdAt).toLocaleDateString("en-US", {
-                  day: "2-digit",
-                  month: "short",
-                  year: "numeric",
-                })}
+                {formatDate(new Date(release.createdAt))}
               </time>
-              <h3 className="text-lg font-semibold text-secondary-900 dark:text-secondary-300">
-                {release.repository} - {release.name}
+              <h3 className="flex text-lg font-semibold text-secondary-900 dark:text-secondary-300">
+                {release.repository} -{" "}
+                <GoTag
+                  className="relative ml-1 mr-1.5 pt-1.5"
+                  size={25}
+                  color="#238636"
+                />{" "}
+                {release.name}
               </h3>
               <div className="mt-3 text-secondary-400">
                 <p>Contributors - </p>

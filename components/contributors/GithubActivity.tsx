@@ -1,12 +1,13 @@
 "use client";
 
 import { ACTIVITY_TYPES, Activity, ActivityData } from "@/lib/types";
-import { formatDuration } from "@/lib/utils";
+import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
 import { useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
-import Link from "next/link";
+import DateRangePicker from "../DateRangePicker";
+import { format } from "date-fns";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -38,8 +39,12 @@ let renderText = (activity: Activity) => {
               </div>
             </div>
           </div>
-          <div className="mt-2 text-foreground">
-            <p className="break-words">{activity["text"]}</p>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            <a href={activity["link"]} target="_blank">
+              <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                {activity["text"]}
+              </span>
+            </a>
           </div>
         </div>
       );
@@ -55,15 +60,18 @@ let renderText = (activity: Activity) => {
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
 
-              <span className="font-normal text-foreground">
+              <span className="text-foreground">
                 {" "}
                 <RelativeTime time={timestamp} />
               </span>
             </p>
           </div>
-          <div className="mt-2 text-foreground">
-            <p className="break-words">{activity["text"]}</p>
-            <p className="break-words">{activity["link"]}</p>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            <a href={activity["link"]} target="_blank">
+              <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                {activity["text"]}
+              </span>
+            </a>
           </div>
         </div>
       );
@@ -81,10 +89,15 @@ let renderText = (activity: Activity) => {
               <span className="text-primary-400 dark:text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
-              {!!activity["turnaround_time"] && (
+              {!!activity["turnaround_time"] ? (
                 <span className="text-sm text-secondary-600 dark:text-secondary-400">
                   {" with a turnaround time of "}
                   {formatDuration(activity["turnaround_time"] * 1000)}
+                </span>
+              ) : (
+                <span className="text-foreground">
+                  {" "}
+                  <RelativeTime time={timestamp} />
                 </span>
               )}
             </div>
@@ -94,15 +107,12 @@ let renderText = (activity: Activity) => {
               </div>
             )}
             {activity["type"] == "pr_reviewed" && (
-              <div>
-                <Link href={activity["link"]}>
-                  <span className="font-medium text-secondary-500 dark:text-secondary-200">
+              <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+                <a href={activity["link"]} target="_blank">
+                  <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
                     {activity["text"]}
                   </span>
-                </Link>
-                <span className="ml-2 whitespace-nowrap">
-                  <RelativeTime time={timestamp} />
-                </span>
+                </a>
               </div>
             )}
           </div>
@@ -122,16 +132,13 @@ let renderText = (activity: Activity) => {
               <span className="text-primary-300">
                 {activity["link"].split("/").slice(3, 5).join("/")}
               </span>
-            </div>
-
-            <Link href={activity["link"]} className="pt-1">
-              <span className="font-medium text-foreground hover:text-primary-500">
-                {activity["text"]}
+              <span className="ml-2 whitespace-nowrap">
+                <RelativeTime time={timestamp} />
               </span>
-            </Link>
-            <span className="ml-2 whitespace-nowrap">
-              <RelativeTime time={timestamp} />
-            </span>
+            </div>
+            <div className="max-w-xl pt-4">
+              <OpenGraphImage url={activity["link"]} className="rounded-xl" />
+            </div>
           </div>
         </div>
       );
@@ -285,7 +292,7 @@ const activitiesOfType = (types: Activity["type"][]) => {
   };
 };
 
-const getRangeFilterPresets = (activities: Activity[]) => {
+/*const getRangeFilterPresets = (activities: Activity[]) => {
   if (!activities.length) return [];
 
   const latest = new Date(activities[0].time);
@@ -307,7 +314,7 @@ const getRangeFilterPresets = (activities: Activity[]) => {
     current.setMonth(current.getMonth() + 1);
   }
   return results.reverse();
-};
+};*/
 
 interface Props {
   activityData: ActivityData;
@@ -317,11 +324,24 @@ export default function GithubActivity({ activityData }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const rangeQuery = searchParams.get("range") ?? "last-month";
+  // const rangeQuery = searchParams.get("range") ?? "last-month";
+  const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
+
+  const updateSearchParam = (key: string, value?: string) => {
+    const current = new URLSearchParams(searchParams);
+    if (!value) {
+      current.delete(key);
+    } else {
+      current.set(key, value);
+    }
+    const search = current.toString();
+    const query = search ? `?${search}` : "";
+    router.replace(`${pathname}${query}`, { scroll: false });
+  };
 
   const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
 
-  const range = useMemo(() => {
+  /*const range = useMemo(() => {
     const to = new Date();
     to.setDate(to.getDate() + 1);
 
@@ -339,15 +359,15 @@ export default function GithubActivity({ activityData }: Props) {
       to.setMonth(to.getMonth() + 1);
       return { from, to };
     }
-  }, [rangeQuery]);
+  }, [rangeQuery]);*/
 
-  const rangePresets = useMemo(
+  /*const rangePresets = useMemo(
     () => getRangeFilterPresets(activityData["activity"]),
     [activityData],
-  );
+  );*/
 
   const activitiesInRange = activityData.activity.filter(
-    activitiesBetween(range),
+    activitiesBetween({ from: start, to: end }),
   );
 
   const activities = activitiesInRange
@@ -356,9 +376,21 @@ export default function GithubActivity({ activityData }: Props) {
 
   return (
     <div className="flex flex-row-reverse flex-wrap items-start justify-between gap-6 md:flex-nowrap">
-      <div className="top-6 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-64">
+      <div className="top-24 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-[42rem]">
         <h3>Filter Activity</h3>
-        <select
+        <DateRangePicker
+          value={{ start, end }}
+          onChange={(value) => {
+            updateSearchParam(
+              "between",
+              `${format(value.start, "yyyy-MM-dd")}...${format(
+                value.end,
+                "yyyy-MM-dd",
+              )}`,
+            );
+          }}
+        />
+        {/* <select
           className="my-4 block rounded border border-secondary-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-secondary-300"
           disabled={!rangePresets}
           value={rangeQuery}
@@ -387,7 +419,7 @@ export default function GithubActivity({ activityData }: Props) {
               })}
             </option>
           ))}
-        </select>
+        </select> */}
         {ACTIVITY_TYPES.map((type) => (
           <ActivityCheckbox
             key={type}
@@ -398,7 +430,7 @@ export default function GithubActivity({ activityData }: Props) {
           />
         ))}
       </div>
-      <div className="mt-4 w-full px-1 text-foreground sm:px-2">
+      <div className="mt-4 w-full grow px-1 text-foreground sm:px-2">
         <ul role="list" className="my-4 w-full max-w-xl">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;
@@ -443,7 +475,7 @@ export const ActivityCheckbox = (props: {
           eod_update: "Slack E.O.D. update",
           issue_assigned: "Issue assigned",
           issue_closed: "Issue closed",
-          issue_opened: "Iusse opened",
+          issue_opened: "Issue opened",
           pr_collaborated: "PR collaborated",
           pr_merged: "PR merged",
           pr_opened: "PR opened",

@@ -254,7 +254,9 @@ export type GraduateAttribute = {
 let resolveLevel = (attribute: GraduateAttribute, value: number) => {
   return {
     ...attribute,
-    currentLevel: attribute.levels.reduce((p, v) => (value >= v.value ? v : p)),
+    currentLevel: value
+      ? attribute.levels.reduce((p, v) => (value >= v.value ? v : p))
+      : undefined,
   };
 };
 

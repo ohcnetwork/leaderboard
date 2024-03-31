@@ -4,9 +4,9 @@ import { Activity, ActivityData, Contributor, Highlights } from "./types";
 import { padZero } from "./utils";
 import { readFile, readdir } from "fs/promises";
 
-const root = join(process.cwd(), "contributors");
-const slackRoot = join(process.cwd(), "data/slack");
-const githubRoot = join(process.cwd(), "data/github");
+const root = join(process.cwd(), "data-repo/contributors");
+const slackRoot = join(process.cwd(), "data-repo/data/slack");
+const githubRoot = join(process.cwd(), "data-repo/data/github");
 
 const points = {
   comment_created: 1,
@@ -70,9 +70,15 @@ async function getSlackMessages(slackId: string) {
   }
 }
 
-export async function getContributorsSlugs() {
-  const files = await readdir(`${root}`);
-  return files.map((file) => ({ file }));
+let contributorSlugs: Awaited<ReturnType<typeof getContributorsSlugs>> | null =
+  null;
+
+export async function getContributorsSlugs(): Promise<{ file: string }[]> {
+  if (!contributorSlugs) {
+    const files = await readdir(`${root}`);
+    contributorSlugs = files.map((file) => ({ file }));
+  }
+  return contributorSlugs;
 }
 
 export async function getContributorBySlug(file: string, detail = false) {
@@ -183,11 +189,17 @@ export async function getContributorBySlug(file: string, detail = false) {
   } as Contributor & { summarize: typeof summarize };
 }
 
-export async function getContributors(detail = false) {
-  const slugs = await getContributorsSlugs();
-  return Promise.all(
-    slugs.map((path) => getContributorBySlug(path.file, detail)),
-  );
+let contributors: Awaited<ReturnType<typeof getContributorBySlug>>[] | null =
+  null;
+
+export async function getContributors() {
+  if (!contributors) {
+    const slugs = await getContributorsSlugs();
+    contributors = await Promise.all(
+      slugs.map((path) => getContributorBySlug(path.file)),
+    );
+  }
+  return contributors;
 }
 
 function getCalendarData(activity: Activity[]) {

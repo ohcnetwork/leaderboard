@@ -355,7 +355,7 @@ export default async function Page({ params }: Params) {
 
         {contributor["activityData"] &&
           contributor["activityData"]["activity"] && (
-            <div className="mt-6 px-4 md:p-0">
+            <div className="mt-6 px-4 md:w-[64rem] md:p-0">
               <div className="flex flex-col gap-1">
                 <h3 className="font-bold text-foreground">Contributions</h3>
                 <span className="text-sm text-secondary-500 dark:text-secondary-400">

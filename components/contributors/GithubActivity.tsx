@@ -1,11 +1,13 @@
 "use client";
 
 import { ACTIVITY_TYPES, Activity, ActivityData } from "@/lib/types";
-import { formatDuration } from "@/lib/utils";
+import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
 import { useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
+import DateRangePicker from "../DateRangePicker";
+import { format } from "date-fns";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -290,7 +292,7 @@ const activitiesOfType = (types: Activity["type"][]) => {
   };
 };
 
-const getRangeFilterPresets = (activities: Activity[]) => {
+/*const getRangeFilterPresets = (activities: Activity[]) => {
   if (!activities.length) return [];
 
   const latest = new Date(activities[0].time);
@@ -312,7 +314,7 @@ const getRangeFilterPresets = (activities: Activity[]) => {
     current.setMonth(current.getMonth() + 1);
   }
   return results.reverse();
-};
+};*/
 
 interface Props {
   activityData: ActivityData;
@@ -322,11 +324,24 @@ export default function GithubActivity({ activityData }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const rangeQuery = searchParams.get("range") ?? "last-month";
+  // const rangeQuery = searchParams.get("range") ?? "last-month";
+  const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
+
+  const updateSearchParam = (key: string, value?: string) => {
+    const current = new URLSearchParams(searchParams);
+    if (!value) {
+      current.delete(key);
+    } else {
+      current.set(key, value);
+    }
+    const search = current.toString();
+    const query = search ? `?${search}` : "";
+    router.replace(`${pathname}${query}`, { scroll: false });
+  };
 
   const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
 
-  const range = useMemo(() => {
+  /*const range = useMemo(() => {
     const to = new Date();
     to.setDate(to.getDate() + 1);
 
@@ -344,15 +359,15 @@ export default function GithubActivity({ activityData }: Props) {
       to.setMonth(to.getMonth() + 1);
       return { from, to };
     }
-  }, [rangeQuery]);
+  }, [rangeQuery]);*/
 
-  const rangePresets = useMemo(
+  /*const rangePresets = useMemo(
     () => getRangeFilterPresets(activityData["activity"]),
     [activityData],
-  );
+  );*/
 
   const activitiesInRange = activityData.activity.filter(
-    activitiesBetween(range),
+    activitiesBetween({ from: start, to: end }),
   );
 
   const activities = activitiesInRange
@@ -361,9 +376,21 @@ export default function GithubActivity({ activityData }: Props) {
 
   return (
     <div className="flex flex-row-reverse flex-wrap items-start justify-between gap-6 md:flex-nowrap">
-      <div className="top-6 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-64">
+      <div className="top-24 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-[42rem]">
         <h3>Filter Activity</h3>
-        <select
+        <DateRangePicker
+          value={{ start, end }}
+          onChange={(value) => {
+            updateSearchParam(
+              "between",
+              `${format(value.start, "yyyy-MM-dd")}...${format(
+                value.end,
+                "yyyy-MM-dd",
+              )}`,
+            );
+          }}
+        />
+        {/* <select
           className="my-4 block rounded border border-secondary-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-secondary-300"
           disabled={!rangePresets}
           value={rangeQuery}
@@ -392,7 +419,7 @@ export default function GithubActivity({ activityData }: Props) {
               })}
             </option>
           ))}
-        </select>
+        </select> */}
         {ACTIVITY_TYPES.map((type) => (
           <ActivityCheckbox
             key={type}
@@ -403,7 +430,7 @@ export default function GithubActivity({ activityData }: Props) {
           />
         ))}
       </div>
-      <div className="mt-4 w-full px-1 text-foreground sm:px-2">
+      <div className="mt-4 w-full grow px-1 text-foreground sm:px-2">
         <ul role="list" className="my-4 w-full max-w-xl">
           {activities.map((activity, i) => {
             return <li key={i}>{showContribution(activity)}</li>;

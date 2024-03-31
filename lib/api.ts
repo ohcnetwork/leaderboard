@@ -4,9 +4,9 @@ import { Activity, ActivityData, Contributor, Highlights } from "./types";
 import { padZero } from "./utils";
 import { readFile, readdir } from "fs/promises";
 
-const root = join(process.cwd(), "contributors");
-const slackRoot = join(process.cwd(), "data/slack");
-const githubRoot = join(process.cwd(), "data/github");
+const root = join(process.cwd(), "data-repo/contributors");
+const slackRoot = join(process.cwd(), "data-repo/data/slack");
+const githubRoot = join(process.cwd(), "data-repo/data/github");
 
 const points = {
   comment_created: 1,

@@ -4,7 +4,7 @@ const matter = require("gray-matter");
 const { readFile, readdir } = require("fs/promises");
 const { join } = require("path");
 
-const root = join(process.cwd(), "contributors");
+const root = join(process.cwd(), "data-repo/contributors");
 
 const GITHUB_ORG = process.env.GITHUB_ORG;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;

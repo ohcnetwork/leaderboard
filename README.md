@@ -1,8 +1,12 @@
-A simple leaderboard app built with Next.js and Tailwind CSS to list top contributors of a GitHub organization.
+A simple leaderboard app built with Next.js and Tailwind CSS to list the top contributors of a GitHub organization.
 
 <img width="1822" alt="image" src="https://github.com/coronasafe/leaderboard/assets/25143503/6352a4cf-4b8b-4f80-b45c-6af323ee502e">
 
 ## Getting Started
+
+### Prerequisites
+
+Ensure that `pnpm` is installed on your device. You can check the steps for installation here. [Docs Link](https://pnpm.io/installation)
 
 ### Starting the development server
 
@@ -20,6 +24,23 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Troubleshooting
+If you encounter any issues during setup, refer to the following troubleshooting tips:
+
+- **Error: GITHUB_PAT is not configured in the environment. Request quota exhausted for request POST /graphql**
+  - If you're facing this error for new contributors, follow these steps:
+    1. Instead of running `pnpm dev`, create your own GitHub access token. [Read Steps here](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+    2. Run the following command instead:
+       
+       ```bash
+       GITHUB_PAT=<YOUR_KEY> pnpm dev
+       ```
+  - Alternatively, if you have the `gh cli` installed and configured on your device, you can run the following command without creating an access token:
+    
+    ```bash
+    GITHUB_PAT=$(gh auth token) pnpm dev
+    ```
+
 ### Installing packages
 
 To install new packages, run the following command:
@@ -32,8 +53,8 @@ pnpm add <package_name>
 
 ## How to add a new member?
 
-Create a new markdown file with the github user name in the `contributors` folder. For example, if you want to
-add `john-doe` as a contributor, create a file named `john-doe.md` in the `contributors` folder.
+Create a new markdown file with the GitHub user name in the `contributors` folder. For example, if you want to
+add `john-doe` as a contributor, and create a file named `john-doe.md` in the `contributors` folder.
 
 The file should contain the following content:
 
@@ -54,9 +75,9 @@ _Passionate about creating scalable and distributed systems for the power grid a
 source digital public goods._ (supports markdown)
 ```
 
-All members marked with `role: core` and `role: operations` will be will be hidden from the leaderboard section by default.You can toggle their visibility by changing filters.
+All members marked with `role: core` and `role: operations` will be hidden from the leaderboard section by default. You can toggle their visibility by changing filters.
 
-You will be able to see the users profile page at `http://localhost:3000/contributors/john-doe`.
+You will be able to see the user's profile page at `http://localhost:3000/contributors/john-doe`.
 
 # Customizing the app
 

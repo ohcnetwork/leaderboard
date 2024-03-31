@@ -43,7 +43,8 @@ export default function Leaderboard({
                 </span>
               )}
             </div>
-            {data.length ? (
+            {data.filter(filterBySearchTerm(searchTerm.toLowerCase()))
+              .length ? (
               <ul className="space-y-6 overflow-x-auto p-6 lg:space-y-8">
                 {data
                   .filter(filterBySearchTerm(searchTerm.toLowerCase()))

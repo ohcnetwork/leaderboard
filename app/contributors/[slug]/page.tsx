@@ -53,7 +53,7 @@ export default async function Page({ params }: Params) {
     ) + 1 || null;
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background">
+    <div className="min-h-screen overflow-hidden bg-background">
       {/* <Header /> */}
       <section className="bg-secondary-200 px-4 py-6 dark:bg-secondary-800">
         <div className=" mx-auto flex max-w-6xl flex-col gap-2 md:flex-row lg:gap-16">

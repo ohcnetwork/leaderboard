@@ -376,7 +376,7 @@ export default function GithubActivity({ activityData }: Props) {
 
   return (
     <div className="flex flex-row-reverse flex-wrap items-start justify-between gap-6 md:flex-nowrap">
-      <div className="top-24 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-[32rem]">
+      <div className="top-24 my-4 flex w-full flex-col gap-2 rounded-lg border border-primary-500 p-4 md:sticky md:w-[42rem]">
         <h3>Filter Activity</h3>
         <DateRangePicker
           value={{ start, end }}

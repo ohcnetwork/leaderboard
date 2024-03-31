@@ -6,11 +6,7 @@ A simple leaderboard app built with Next.js and Tailwind CSS to list the top con
 
 ### Prerequisites
 
-- Ensure that `npm` is installed on your device, or you can use a package manager like `nvm` to manage multiple versions of Node.js. [Read more](https://www.educative.io/answers/what-is-nvm)
-- Install pnpm, a package manager, to run the project.
-```bash
-npm install -g pnpm
-```
+Ensure that `pnpm` is installed on your device. You can check the steps for installation here. [Docs Link](https://pnpm.io/installation)
 
 ### Starting the development server
 
@@ -31,23 +27,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Troubleshooting
 If you encounter any issues during setup, refer to the following troubleshooting tips:
 
-- For new contributors you may encounter the error
-  ```
-   GITHUB_PAT is not configured in the environment.
-   Request quota exhausted for request POST /graphql
-  ```
-  In place of running `pnpm dev` create you own GitHub access token. [Read Steps here](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
-  Then run the following command instead:
-  ```
-  GITHUB_PAT=<YOUR_KEY> pnpm dev
-  ```
-
-- If you are getting the error:
-  ```
-   fatal: unable to access 'https://github.com/coronasafe/leaderboard-data.git/': Could not resolve host: github.com
-   Error executing command: git clone
-  ```
-  Make sure you are connected to an active internet connection, or your antivirus may also cause this issue. Try running the command with your antivirus closed.
+- **Error: GITHUB_PAT is not configured in the environment. Request quota exhausted for request POST /graphql**
+  - If you're facing this error for new contributors, follow these steps:
+    1. Instead of running `pnpm dev`, create your own GitHub access token. [Read Steps here](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+    2. Run the following command instead:
+       
+       ```bash
+       GITHUB_PAT=<YOUR_KEY> pnpm dev
+       ```
+  - Alternatively, if you have the `gh cli` installed and configured on your device, you can run the following command without creating an access token:
+    
+    ```bash
+    GITHUB_PAT=$(gh auth token) pnpm dev
+    ```
 
 ### Installing packages
 

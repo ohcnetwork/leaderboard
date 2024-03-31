@@ -448,7 +448,7 @@ export const ActivityCheckbox = (props: {
           eod_update: "Slack E.O.D. update",
           issue_assigned: "Issue assigned",
           issue_closed: "Issue closed",
-          issue_opened: "Iusse opened",
+          issue_opened: "Issue opened",
           pr_collaborated: "PR collaborated",
           pr_merged: "PR merged",
           pr_opened: "PR opened",

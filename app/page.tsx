@@ -10,7 +10,7 @@ import { Suspense } from "react";
 import { env } from "@/env.mjs";
 import CommunityEngagemet from "@/app/CommunityEngagementSummary";
 import { differenceInWeeks, parseISO } from "date-fns";
-import { formatDate } from "@/lib/utils";
+import { featureIsEnabled, formatDate } from "@/lib/utils";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -68,7 +68,7 @@ export default async function Home() {
                   </div>
                 </div>
 
-                {env.NEXT_PUBLIC_FEATURES?.split(",").includes("Releases") && (
+                {featureIsEnabled("Releases") && (
                   <div className="mx-auto">
                     <div className="space-y-12">
                       <div className="flex items-center justify-between pr-5">
@@ -96,7 +96,7 @@ export default async function Home() {
                   </div>
                 )}
 
-                {env.NEXT_PUBLIC_FEATURES?.split(",").includes("Projects") && (
+                {featureIsEnabled("Projects") && (
                   <div className="mx-auto">
                     <div className="space-y-12">
                       <div className="flex items-center justify-between pr-5">

@@ -93,3 +93,7 @@ export const navLinks = [
 export const formatDate = (date: Date) => {
   return format(date, "MMM dd, yyyy");
 };
+
+export const featureIsEnabled = (feature: string) => {
+  return process.env.NEXT_PUBLIC_FEATURES?.split(",").includes(feature);
+};

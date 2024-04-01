@@ -3,7 +3,7 @@ import {
   intervalToDuration,
   format,
 } from "date-fns";
-
+import { env } from "@/env.mjs";
 export const parametreize = (string: string) => {
   return string.replace(/\s/gu, "_").toLowerCase();
 };
@@ -93,7 +93,7 @@ export const navLinks = [
 export const formatDate = (date: Date) => {
   return format(date, "MMM dd, yyyy");
 };
-
-export const featureIsEnabled = (feature: string) => {
-  return process.env.NEXT_PUBLIC_FEATURES?.split(",").includes(feature);
+type Features = "Projects" | "Releases";
+export const featureIsEnabled = (feature: Features) => {
+  return env.NEXT_PUBLIC_FEATURES?.split(",").includes(feature);
 };

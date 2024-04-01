@@ -24,6 +24,8 @@ export const env = createEnv({
     NEXT_PUBLIC_PAGE_TITLE: z.string(),
     NEXT_PUBLIC_CONTRIBUTORS_INFO: z.string().optional(),
     NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES: z.string().optional(),
+
+    NEXT_PUBLIC_FEATURES: z.string(),
   },
   runtimeEnv: {
     NEXT_PUBLIC_ORG_NAME: process.env.NEXT_PUBLIC_ORG_NAME,
@@ -44,5 +46,6 @@ export const env = createEnv({
       process.env.NODE_ENV === "development" && !process.env.GITHUB_PAT
         ? ""
         : process.env.GITHUB_PAT,
+    NEXT_PUBLIC_FEATURES: process.env.NEXT_PUBLIC_FEATURES,
   },
 });

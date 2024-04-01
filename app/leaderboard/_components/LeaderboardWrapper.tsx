@@ -1,12 +1,10 @@
 import { getLeaderboardData } from "../../api/leaderboard/functions";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 import Leaderboard from "./Leaderboard";
-import { LeaderboardPageProps } from "@/lib/types";
+import { PageProps } from "@/lib/types";
 import { env } from "@/env.mjs";
 
-export default async function LeaderboardWrapper({
-  searchParams,
-}: LeaderboardPageProps) {
+export default async function LeaderboardWrapper({ searchParams }: PageProps) {
   const data = await getLeaderboardData(
     parseDateRangeSearchParam(searchParams.between),
     searchParams.sortBy ?? "points",

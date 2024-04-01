@@ -15,7 +15,6 @@ const points = {
   issue_opened: 4,
   eod_update: 2,
   pr_opened: 1,
-  no_of_linked_issues: 1,
   pr_merged: 7,
   pr_collaborated: 2,
   issue_closed: 0,
@@ -121,13 +120,13 @@ export async function getContributorBySlug(file: string, detail = false) {
             ...activity,
             points:
               (points[activity.type] || 0) +
-              (activity.no_of_linked_issues || 0),
+              (activity.linked_issues?.length || 0),
           },
         ],
         points:
           acc.points +
           (points[activity.type] || 0) +
-          (activity.no_of_linked_issues || 0),
+          (activity.linked_issues?.length || 0),
         comment_created:
           acc.comment_created + (activity.type === "comment_created" ? 1 : 0),
         eod_update: acc.eod_update + (activity.type === "eod_update" ? 1 : 0),
@@ -141,6 +140,8 @@ export async function getContributorBySlug(file: string, detail = false) {
           acc.issue_assigned + (activity.type === "issue_assigned" ? 1 : 0),
         issue_opened:
           acc.issue_opened + (activity.type === "issue_opened" ? 1 : 0),
+        linked_issues:
+          acc.linked_issues + (activity.linked_issues?.length || 0),
       };
     },
     {
@@ -154,6 +155,7 @@ export async function getContributorBySlug(file: string, detail = false) {
       pr_reviewed: 0,
       issue_assigned: 0,
       issue_opened: 0,
+      linked_issues: 0,
     } as Highlights & { activity: Activity[] },
   );
 
@@ -191,12 +193,13 @@ export async function getContributorBySlug(file: string, detail = false) {
       pr_collaborated: weightedActivity.pr_collaborated,
       issue_assigned: weightedActivity.issue_assigned,
       issue_opened: weightedActivity.issue_opened,
+      linked_issues: weightedActivity.linked_issues,
     },
     weekSummary: getLastWeekHighlights(calendarData),
     summarize,
     calendarData: detail ? calendarData : [],
     ...data,
-  } as Contributor & { summarize: typeof summarize };
+  } as unknown as Contributor & { summarize: typeof summarize };
 }
 
 let contributors: Awaited<ReturnType<typeof getContributorBySlug>>[] | null =
@@ -228,13 +231,12 @@ function getCalendarData(activity: Activity[]) {
       } else {
         acc[date][activity.type] = 1;
       }
-      if (!acc[date]["points"]) {
-        acc[date]["points"] = points[activity.type];
-      } else {
-        acc[date]["points"] += points[activity.type];
-        if (activity.type === "pr_opened") {
-          acc[date]["points"] +=
-            (activity.no_of_linked_issues ?? 0) * points["no_of_linked_issues"];
+
+      if (activity.type === "pr_merged") {
+        if (acc[date]["linked_issues"]) {
+          acc[date]["linked_issues"] += activity.linked_issues?.length || 0;
+        } else {
+          acc[date]["linked_issues"] = activity.linked_issues?.length || 0;
         }
       }
 
@@ -268,30 +270,31 @@ function getCalendarData(activity: Activity[]) {
   });
 }
 
-// const HIGHLIGHT_KEYS = [
-//   "eod_update",
-//   "comment_created",
-//   "pr_opened",
-//   "pr_reviewed",
-//   "pr_merged",
-//   "pr_collaborated",
-//   "issue_assigned",
-//   "issue_opened",
-// ] as const;
+const HIGHLIGHT_KEYS = [
+  "eod_update",
+  "comment_created",
+  "pr_opened",
+  "pr_reviewed",
+  "pr_merged",
+  "pr_collaborated",
+  "issue_assigned",
+  "issue_opened",
+] as const;
 
-// const computePoints = (
-//   calendarDataEntry: Highlights,
-//   initialPoints: number,
-// ) => {
-//   return HIGHLIGHT_KEYS.map(
-//     (key) => points[key] * (calendarDataEntry[key] ?? 0),
-//   ).reduce((a, b) => a + b, initialPoints);
-// };
+const computePoints = (
+  calendarDataEntry: Highlights,
+  initialPoints: number,
+) => {
+  let totalPoints = HIGHLIGHT_KEYS.map(
+    (key) => points[key] * (calendarDataEntry[key] ?? 0),
+  ).reduce((a, b) => a + b, initialPoints);
+  totalPoints += calendarDataEntry.linked_issues || 0;
+  return totalPoints;
+};
 
 const HighlightsReducer = (acc: Highlights, day: Highlights) => {
   return {
-    // points: computePoints(day, acc.points),
-    points: acc.points + (day.points ?? 0),
+    points: computePoints(day, acc.points),
     eod_update: acc.eod_update + (day.eod_update ?? 0),
     comment_created: acc.comment_created + (day.comment_created ?? 0),
     pr_opened: acc.pr_opened + (day.pr_opened ?? 0),
@@ -300,6 +303,7 @@ const HighlightsReducer = (acc: Highlights, day: Highlights) => {
     pr_collaborated: acc.pr_collaborated + (day.pr_collaborated ?? 0),
     issue_assigned: acc.issue_assigned + (day.issue_assigned ?? 0),
     issue_opened: acc.issue_opened + (day.issue_opened ?? 0),
+    linked_issues: acc.linked_issues + (day.linked_issues ?? 0),
   };
 };
 
@@ -313,6 +317,7 @@ const HighlightsInitialValue = {
   pr_collaborated: 0,
   issue_assigned: 0,
   issue_opened: 0,
+  linked_issues: 0,
 } as Highlights;
 
 const getLastWeekHighlights = (calendarData: Highlights[]) => {

@@ -21,7 +21,7 @@ export interface Contributor {
   slack: string;
   joining_date: string;
   role: "core" | "intern" | "operations" | "contributor";
-  courses_completed: string[];
+  courses_completed?: string[];
 }
 
 export interface ActivityData {
@@ -42,6 +42,7 @@ export interface Highlights {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
+  linked_issues: number;
 }
 
 export interface WeekSummary {
@@ -76,7 +77,7 @@ export interface Activity {
   text: string;
   collaborated_with?: string[];
   turnaround_time?: number;
-  no_of_linked_issues?: number;
+  linked_issues?: string[]; //issues url, which are linked to merged prs
 }
 
 export interface OpenPr {

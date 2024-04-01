@@ -15,7 +15,6 @@ export const getLeaderboardData = async (
   roles: ("core" | "intern" | "operations" | "contributor")[] = [],
 ) => {
   const contributors = await getContributors();
-
   const data = contributors
     .filter((a) => a.highlights.points)
     .map((contributor) => ({

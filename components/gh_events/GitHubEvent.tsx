@@ -348,7 +348,7 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
 
             {!!body && (
               <div className="ml-2 mt-4 max-w-lg overflow-hidden rounded-xl">
-                <p>{body}</p>
+                {body}
               </div>
             )}
           </div>

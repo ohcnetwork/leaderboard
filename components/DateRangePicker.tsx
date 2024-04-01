@@ -39,9 +39,9 @@ const DateRangePicker = (props: Props) => {
               >
                 {`${formatDate(startDate)} → ${formatDate(endDate)}`}
               </Popover.Button>
-              <Popover.Panel className="absolute z-10 mt-2 rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500">
+              <Popover.Panel className="absolute z-10 mt-2 w-full rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500 sm:min-w-[23rem]">
                 <div className="flex flex-col p-4">
-                  <div className="flex items-center justify-between gap-2 text-sm font-bold">
+                  <div className="flex flex-col items-center justify-between gap-0 text-sm font-bold sm:flex-row sm:gap-2">
                     <input
                       type="date"
                       name="start"
@@ -52,9 +52,12 @@ const DateRangePicker = (props: Props) => {
                           end: endDate,
                         })
                       }
-                      className="block w-48 rounded-md border border-secondary-600 bg-transparent p-2 text-center text-foreground dark:border-secondary-300"
+                      className="block w-full rounded-md border border-secondary-600 bg-transparent p-2 text-center text-foreground dark:border-secondary-300"
                     />
-                    <span className="text-base font-bold">→</span>
+                    <span className="hidden text-base font-bold sm:block">
+                      →
+                    </span>
+                    <span className="text-base font-bold sm:hidden">↓</span>
                     <input
                       type="date"
                       name="end"
@@ -65,10 +68,10 @@ const DateRangePicker = (props: Props) => {
                           end: e.target.valueAsDate ?? new Date(),
                         })
                       }
-                      className="block w-48 rounded-md border border-secondary-600 bg-transparent p-2 text-center text-foreground dark:border-secondary-300"
+                      className="block w-full rounded-md border border-secondary-600 bg-transparent p-2 text-center text-foreground dark:border-secondary-300"
                     />
                   </div>
-                  <div className="mt-6 grid grid-cols-2 gap-2">
+                  <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {rangePresets.map((range, index) => (
                       <button
                         key={index}

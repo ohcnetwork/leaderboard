@@ -10,7 +10,13 @@
     "tailwindcss/classnames-order": "error",
     "tailwindcss/enforces-shorthand": "off",
     "tailwindcss/no-contradicting-classname": "error",
-    "tailwindcss/enforces-negative-arbitrary-values": "off"
+    "tailwindcss/enforces-negative-arbitrary-values": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   },
-  "ignorePatterns": ["data"]
+  "ignorePatterns": ["data"]  
 }

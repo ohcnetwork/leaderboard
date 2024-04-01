@@ -24,7 +24,6 @@ const points = {
 // Reviewing a PR would get 4 points
 // Finding a bug would add up to 4 points
 // Opening a PR would give a single point and merging it would give you the other 7 points, making 8 per PR
-// For each linked issue in pr body, points would increase by 1.
 // Updating the EOD would get 2 points per day and additional 20 for regular daily updates plus 10 for just missing one
 
 function formatSlug(slug: string) {

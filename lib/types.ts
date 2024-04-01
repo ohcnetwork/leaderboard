@@ -21,7 +21,7 @@ export interface Contributor {
   slack: string;
   joining_date: string;
   role: "core" | "intern" | "operations" | "contributor";
-  courses_completed?: string[];
+  courses_completed: string[];
 }
 
 export interface ActivityData {

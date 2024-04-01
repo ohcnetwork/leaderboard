@@ -19,11 +19,11 @@ Still waiting for this
 function getNewContributors() {
   let newContributors = new Set();
 
-  fs.readdirSync("./data-repo/data/github").forEach((file) => {
+  fs.readdirSync("./data/github").forEach((file) => {
     newContributors.add(file.split(".")[0]);
   });
 
-  fs.readdirSync("./data-repo/contributors").forEach((file) => {
+  fs.readdirSync("./contributors").forEach((file) => {
     newContributors.delete(file.split(".")[0]);
   });
 
@@ -54,7 +54,7 @@ function main() {
       .then((data) => {
         if (data.name === null) data.name = data.login;
         fs.writeFile(
-          `./data-repo/contributors/${data.login}.md`,
+          `./contributors/${data.login}.md`,
           generateContent(data.name, data.login),
           (err) => {
             if (err) throw err;

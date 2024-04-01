@@ -2,7 +2,7 @@ import LeaderboardCard from "@/components/contributors/LeaderboardCard";
 import { TbZoomQuestion } from "react-icons/tb";
 import TopContributor from "../../../components/contributors/TopContributor";
 import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
-import { LeaderboardAPIResponse, LeaderboardPageProps } from "@/lib/types";
+import { LeaderboardAPIResponse, PageProps } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
 
 const filterBySearchTerm = (searchTermLC: string) => {
@@ -18,7 +18,7 @@ export default function Leaderboard({
   searchParams,
 }: {
   data: LeaderboardAPIResponse;
-} & LeaderboardPageProps) {
+} & PageProps) {
   const searchTerm = searchParams.search ?? "";
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
   const filteredData = data.filter((item) => {
@@ -43,7 +43,8 @@ export default function Leaderboard({
                 </span>
               )}
             </div>
-            {data.length ? (
+            {data.filter(filterBySearchTerm(searchTerm.toLowerCase()))
+              .length ? (
               <ul className="space-y-6 overflow-x-auto p-6 lg:space-y-8">
                 {data
                   .filter(filterBySearchTerm(searchTerm.toLowerCase()))

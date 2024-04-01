@@ -3,8 +3,11 @@ import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
-
-export default async function Markdown(props: { children: string }) {
+import clsx from "clsx";
+export default async function Markdown(props: {
+  children: string;
+  className?: string;
+}) {
   const result = await unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -13,9 +16,11 @@ export default async function Markdown(props: { children: string }) {
     .process(props.children || "");
 
   return (
-    <div
-      className="prose font-inter text-sm leading-relaxed dark:prose-invert sm:text-base xl:text-left"
-      dangerouslySetInnerHTML={{ __html: result.toString() }}
-    />
+    <div className="prose font-inter text-sm leading-relaxed dark:prose-invert sm:text-base xl:text-left">
+      <div
+        className={clsx(props.className ?? "")}
+        dangerouslySetInnerHTML={{ __html: result.toString() }}
+      />
+    </div>
   );
 }

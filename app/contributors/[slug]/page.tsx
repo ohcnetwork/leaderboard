@@ -53,7 +53,7 @@ export default async function Page({ params }: Params) {
     ) + 1 || null;
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background">
+    <div className="min-h-screen overflow-hidden bg-background">
       {/* <Header /> */}
       <section className="bg-secondary-200 px-4 py-6 dark:bg-secondary-800">
         <div className=" mx-auto flex max-w-6xl flex-col gap-2 md:flex-row lg:gap-16">
@@ -355,7 +355,7 @@ export default async function Page({ params }: Params) {
 
         {contributor["activityData"] &&
           contributor["activityData"]["activity"] && (
-            <div className="mt-6 px-4 md:p-0">
+            <div className="mt-6 px-4 md:w-[64rem] md:p-0">
               <div className="flex flex-col gap-1">
                 <h3 className="font-bold text-foreground">Contributions</h3>
                 <span className="text-sm text-secondary-500 dark:text-secondary-400">

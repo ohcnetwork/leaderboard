@@ -168,6 +168,8 @@ const getUserJson = (activities) => {
     {
       last_updated: new Date().toISOString(),
       activity: activities,
+      open_prs: [],
+      authored_issue_and_pr: [],
     },
     undefined,
     "  ",

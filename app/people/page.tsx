@@ -1,5 +1,5 @@
 import { getContributors } from "@/lib/api";
-import Image from "next/image";
+import ImageWithBlur from "@/components/ImageWithBlur";
 import Link from "next/link";
 
 export default async function Page() {
@@ -20,7 +20,8 @@ export default async function Page() {
             className="transition-all duration-150 ease-in-out hover:scale-125 hover:shadow-xl hover:shadow-primary-500"
           >
             <Link href={`/contributors/${c.github}`}>
-              <Image
+              <ImageWithBlur
+                imageUrl={`https://avatars.githubusercontent.com/${c.github}`}
                 height={48}
                 width={48}
                 className="h-12 w-12 rounded-lg hover:ring hover:ring-primary-500"

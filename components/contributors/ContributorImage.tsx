@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { getBase64Url } from "@/lib/plaiceholder";
+import ImageWithBlur from "../ImageWithBlur";
 
 interface ContributorImageProps {
   contributorGithub: string;
@@ -24,19 +23,13 @@ export default async function ContributorImage({
     return `${rankColor} animate-circular-shadow`;
   };
 
-  const base64Url = await getBase64Url(
-    `https://avatars.githubusercontent.com/${contributorGithub}`,
-  );
-
   return (
     <div
       className={`dark:border-1 shrink-0 rounded-full border-2 border-current ${contributorRankClasses(rank)}`}
     >
-      <Image
-        loading="lazy"
+      <ImageWithBlur
+        imageUrl={`https://avatars.githubusercontent.com/${contributorGithub}`}
         className="rounded-full"
-        placeholder="blur"
-        blurDataURL={base64Url}
         src={`https://avatars.githubusercontent.com/${contributorGithub}`}
         alt={contributorGithub}
         height={height}

@@ -1,8 +1,7 @@
 import { LeaderboardAPIResponse, TopContributorCategoryKey } from "@/lib/types";
-import Image from "next/image";
+import ImageWithBlur from "../ImageWithBlur";
 import Link from "next/link";
 import { TOP_CONTRIBUTOR_CATEGORIES } from "@/lib/const";
-import TopContributorImage from "./TopContributorImage";
 
 export default function InfoCard({
   data,
@@ -45,10 +44,14 @@ export default function InfoCard({
               href={`/contributors/${contributor.user.social.github}`}
               className="flex w-full items-center gap-4"
             >
-              <TopContributorImage
+              <ImageWithBlur
+                imageUrl={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
+                className="h-11 w-11 rounded-full shadow-md shadow-primary-500 ring-1 ring-primary-500"
                 src={`https://avatars.githubusercontent.com/${contributor.user.social.github}`}
                 alt={contributor.user.social.github}
                 title={contributor.user.name}
+                height={44}
+                width={44}
               />
               <span className="font-bold text-primary-400">
                 {contributor.user.name}

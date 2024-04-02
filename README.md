@@ -29,13 +29,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 If you encounter any issues during setup, refer to the following troubleshooting tips:
 
 - **Error: GITHUB_PAT is not configured in the environment. Request quota exhausted for request POST /graphql**
+
   - If you're facing this error for new contributors, follow these steps:
+
     1. Instead of running `pnpm dev`, create your own GitHub access token. [Read Steps here](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
     2. Run the following command instead:
 
        ```bash
        GITHUB_PAT=<YOUR_KEY> pnpm dev
        ```
+
   - Alternatively, if you have the `gh cli` installed and configured on your device, you can run the following command without creating an access token:
 
     ```bash

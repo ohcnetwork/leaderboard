@@ -4,8 +4,8 @@ import { env } from "@/env.mjs";
 export default function Footer() {
   return (
     <footer className="">
-      <div className="h-full border-t border-secondary-300 bg-secondary-800 p-4 dark:border-secondary-700 lg:p-10">
-        <div className="max-w-5xl text-center text-sm font-bold text-white dark:text-primary-500 lg:mx-auto lg:leading-tight">
+      <div className="h-full border-t border-secondary-300 bg-primary-300 p-4 dark:border-secondary-700 dark:bg-secondary-800 lg:p-10">
+        <div className="max-w-5xl text-center text-sm font-bold text-foreground dark:text-primary-500 lg:mx-auto lg:leading-tight">
           <div className="flex w-full items-center justify-center">
             Powered by{" "}
             <span className="ml-4 w-20">

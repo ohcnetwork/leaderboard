@@ -28,7 +28,6 @@ export default async function ContributorImage({
       className={`dark:border-1 shrink-0 rounded-full border-2 border-current ${contributorRankClasses(rank)}`}
     >
       <ImageWithBlur
-        imageUrl={`https://avatars.githubusercontent.com/${contributorGithub}`}
         className="rounded-full"
         src={`https://avatars.githubusercontent.com/${contributorGithub}`}
         alt={contributorGithub}

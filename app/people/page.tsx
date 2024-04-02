@@ -21,7 +21,6 @@ export default async function Page() {
           >
             <Link href={`/contributors/${c.github}`}>
               <ImageWithBlur
-                imageUrl={`https://avatars.githubusercontent.com/${c.github}`}
                 height={48}
                 width={48}
                 className="h-12 w-12 rounded-lg hover:ring hover:ring-primary-500"

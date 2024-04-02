@@ -2,18 +2,25 @@ import Image, { ImageProps } from "next/image";
 import { getBase64Url } from "@/lib/plaiceholder";
 
 export default async function ImageWithBlur({
-  imageUrl,
   alt,
+  src,
   ...props
-}: ImageProps & { imageUrl: string }) {
-  const blurDataURL = await getBase64Url(imageUrl);
+}: ImageProps) {
+  if (typeof src === "string") {
+    const blurDataURL = await getBase64Url(src);
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        {...props}
+        loading="lazy"
+        placeholder="blur"
+        blurDataURL={blurDataURL}
+      />
+    );
+  }
+
   return (
-    <Image
-      alt={alt}
-      {...props}
-      loading="lazy"
-      placeholder="blur"
-      blurDataURL={blurDataURL}
-    />
+    <Image {...props} src={src} alt={alt} loading="lazy" placeholder="blur" />
   );
 }

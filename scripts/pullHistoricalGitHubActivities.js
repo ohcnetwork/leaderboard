@@ -4,17 +4,12 @@
  * Supports populating the ollowing activity types:
  *
  * - [x] issue_opened
- * - [ ] issue_closed
  * - [x] pr_opened
  * - [x] pr_merged
- *
- * !! NOTE !!
- * Overwrites any existing activity data present for a user. Does not support
- * merging with existing activity data and removing duplicates yet.
  */
 
 const { join } = require("path");
-const { writeFile, mkdir } = require("fs/promises");
+const { writeFile, mkdir, readFile } = require("fs/promises");
 const { Octokit } = require("octokit");
 
 const basePath = join(process.env.DATA_REPO || process.cwd(), "data/github");
@@ -39,22 +34,25 @@ const blacklistedAccounts = ["dependabot", "snykbot", "codecov-commenter"];
 
 const octokit = new Octokit({ auth: token });
 
-const repositoryIterator = octokit.graphql.paginate.iterator(
-  `query paginate($cursor: String, $org: String!) {
-    organization(login: $org) {
-      repositories(first: 100, orderBy: { field: UPDATED_AT, direction: DESC }, after: $cursor)  {
-        nodes {
-          name
-        }
-        pageInfo {
-          hasNextPage
-          endCursor
+const getRepositories = async () => {
+  const { organization } = await octokit.graphql.paginate(
+    `query paginate($cursor: String, $org: String!) {
+      organization(login: $org) {
+        repositories(first: 100, orderBy: { field: UPDATED_AT, direction: DESC }, after: $cursor)  {
+          nodes {
+            name
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
         }
       }
-    }
-  }`,
-  { org },
-);
+    }`,
+    { org },
+  );
+  return organization.repositories.nodes.map((node) => node.name);
+};
 
 const getIssues = async (repo) => {
   const { repository } = await octokit.graphql.paginate(
@@ -120,42 +118,52 @@ const getUserActivities = async () => {
     userActivities[user].push(activity);
   };
 
-  for await (const response of repositoryIterator) {
-    for (const { name: repo } of response.organization.repositories.nodes) {
-      console.info(`Pulling activities for repository '${repo}'`);
+  const repositories = await getRepositories();
 
-      const issues = await getIssues(repo);
-      console.info(`  Captured ${issues.length} issues`);
-      for (const issue of issues) {
-        addActivity(issue.author.login, {
-          type: "issue_opened",
-          title: `${org}/${repo}#${issue.number}`,
-          time: issue.createdAt,
-          link: issue.url,
-          text: issue.title,
-        });
+  for (const [i, repo] of repositories.entries()) {
+    console.info(
+      `[${i + 1}/${repositories.length}] Pulling activities for repository '${repo}'`,
+    );
+
+    const issues = await getIssues(repo);
+    console.info(`  Captured ${issues.length} issues`);
+    for (const issue of issues) {
+      if (!issues.author?.login) {
+        continue;
       }
 
-      const pulls = await getPullRequests(repo);
-      console.info(`  Captured ${pulls.length} pull requests`);
-      for (const pr of pulls) {
+      addActivity(issue.author.login, {
+        type: "issue_opened",
+        title: `${org}/${repo}#${issue.number}`,
+        time: issue.createdAt,
+        link: issue.url,
+        text: issue.title,
+      });
+    }
+
+    const pulls = await getPullRequests(repo);
+    console.info(`  Captured ${pulls.length} pull requests`);
+    for (const pr of pulls) {
+      if (!pr.author?.login) {
+        continue;
+      }
+
+      addActivity(pr.author.login, {
+        type: "pr_opened",
+        title: `${org}/${repo}#${pr.number}`,
+        time: pr.createdAt,
+        link: pr.url,
+        text: pr.title,
+      });
+
+      if (pr.merged) {
         addActivity(pr.author.login, {
-          type: "pr_opened",
+          type: "pr_merged",
           title: `${org}/${repo}#${pr.number}`,
-          time: pr.createdAt,
+          time: pr.mergedAt,
           link: pr.url,
           text: pr.title,
         });
-
-        if (pr.merged) {
-          addActivity(pr.author.login, {
-            type: "pr_merged",
-            title: `${org}/${repo}#${pr.number}`,
-            time: pr.mergedAt,
-            link: pr.url,
-            text: pr.title,
-          });
-        }
       }
     }
   }
@@ -163,17 +171,29 @@ const getUserActivities = async () => {
   return userActivities;
 };
 
-const getUserJson = (activities) => {
-  return JSON.stringify(
-    {
-      last_updated: new Date().toISOString(),
-      activity: activities,
+const getUserJson = async (user, scrapedActivities) => {
+  try {
+    const data = JSON.parse(
+      await readFile(join(basePath, `${user}.json`), "utf8"),
+    );
+
+    const oldActivities = data.activities;
+    const newActivities = scrapedActivities.filter(
+      (a) => !existing.find((b) => a.link === b.link && a.type === b.type),
+    );
+
+    return {
+      ...data,
+      activities: [...oldActivities, newActivities],
+    };
+  } catch {
+    return {
+      last_updated: scrapedActivities[0]?.time ?? new Date().toISOString(),
+      activity: scrapedActivities,
       open_prs: [],
       authored_issue_and_pr: [],
-    },
-    undefined,
-    "  ",
-  );
+    };
+  }
 };
 
 const isBlacklisted = (login) => {
@@ -199,7 +219,13 @@ async function main() {
 
       const path = join(basePath, `${user}.json`);
       console.log(`Writing activities for '${user}' to '${path}'.`);
-      await writeFile(path, getUserJson(activities), { encoding: "utf-8" });
+      await writeFile(
+        path,
+        JSON.stringify(await getUserJson(user, activities), undefined, "  "),
+        {
+          encoding: "utf-8",
+        },
+      );
     }),
   );
 

@@ -177,14 +177,14 @@ const getUserJson = async (user, scrapedActivities) => {
       await readFile(join(basePath, `${user}.json`), "utf8"),
     );
 
-    const oldActivities = data.activities;
+    const oldActivities = data.activity;
     const newActivities = scrapedActivities.filter(
-      (a) => !existing.find((b) => a.link === b.link && a.type === b.type),
+      (a) => !oldActivities.find((b) => a.link === b.link && a.type === b.type),
     );
 
     return {
       ...data,
-      activities: [...oldActivities, newActivities],
+      activity: [...oldActivities, ...newActivities],
     };
   } catch {
     return {

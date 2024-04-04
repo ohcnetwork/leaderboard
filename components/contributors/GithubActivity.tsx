@@ -325,7 +325,6 @@ export default function GithubActivity({ activityData }: Props) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-
   const batchSize = 5;
 
   // const rangeQuery = searchParams.get("range") ?? "last-month";
@@ -342,7 +341,6 @@ export default function GithubActivity({ activityData }: Props) {
     const query = search ? `?${search}` : "";
     router.replace(`${pathname}${query}`, { scroll: false });
   };
-
 
   const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
 

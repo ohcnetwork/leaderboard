@@ -1,4 +1,5 @@
-let fs = require("fs");
+const fs = require("fs");
+const { join } = require("path");
 
 function generateContent(name, github) {
   return `---
@@ -16,14 +17,16 @@ Still waiting for this
 `;
 }
 
+const basePath = join(process.env.DATA_REPO || process.cwd());
+
 function getNewContributors() {
   let newContributors = new Set();
 
-  fs.readdirSync("./data-repo/data/github").forEach((file) => {
+  fs.readdirSync(join(basePath, "data/github")).forEach((file) => {
     newContributors.add(file.split(".")[0]);
   });
 
-  fs.readdirSync("./data-repo/contributors").forEach((file) => {
+  fs.readdirSync(join(basePath, "contributors")).forEach((file) => {
     newContributors.delete(file.split(".")[0]);
   });
 
@@ -54,7 +57,7 @@ function main() {
       .then((data) => {
         if (data.name === null) data.name = data.login;
         fs.writeFile(
-          `./data-repo/contributors/${data.login}.md`,
+          join(basePath, `contributors/${data.login}.md`),
           generateContent(data.name, data.login),
           (err) => {
             if (err) throw err;

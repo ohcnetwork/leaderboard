@@ -6,7 +6,7 @@ import ContributeButton from "./ContributeButton";
 import Logo from "./Logo";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
-import Sidebar from "./Sidebar";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const MenuItems = {
@@ -19,7 +19,7 @@ const MenuItems = {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+  const pathname = usePathname();
   return (
     <>
       <nav className="sticky top-0 z-10 border-b border-secondary-300 bg-background px-4 py-1 shadow-md dark:border-secondary-700 sm:shadow-lg">
@@ -30,8 +30,13 @@ export default function Navbar() {
             {Object.entries(MenuItems).map(([href, label]) => (
               <Link
                 key={href}
-                className="text-sm transition-all hover:text-primary-500 hover:underline hover:dark:text-primary-300 md:p-2 md:text-base"
                 href={href}
+                className={
+                  "cursor-pointer text-sm transition-all hover:text-primary-500 hover:underline hover:dark:text-primary-300 md:p-2 md:text-base " +
+                  (pathname === href
+                    ? "text-primary-500 dark:text-primary-300"
+                    : "")
+                }
               >
                 {label}
               </Link>
@@ -70,10 +75,15 @@ export default function Navbar() {
             <div className="flex flex-col items-center justify-center gap-2 md:px-4 md:py-2">
               {Object.entries(MenuItems).map(([href, label]) => (
                 <Link
-                  onClick={() => setOpen(!open)}
                   key={href}
+                  onClick={() => setOpen(!open)}
                   href={href}
-                  className="p-1 text-sm hover:text-primary-500 hover:underline md:p-2 md:text-base"
+                  className={
+                    "cursor-pointer p-1 text-sm hover:text-primary-500 hover:underline md:p-2 md:text-base " +
+                    (pathname === href
+                      ? "text-primary-500 dark:text-primary-300"
+                      : "")
+                  }
                 >
                   {label}
                 </Link>

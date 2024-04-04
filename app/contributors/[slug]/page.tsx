@@ -35,13 +35,6 @@ export async function generateMetadata(
   const contributor = await getContributorBySlug(slug, true);
   const url = env.NEXT_PUBLIC_META_URL;
 
-  const ogParams = new URLSearchParams();
-  ogParams.set("github_username", slug);
-  ogParams.set("pr_opened", contributor.highlights.pr_opened.toString());
-  ogParams.set("pr_reviewed", contributor.highlights.pr_reviewed.toString());
-  ogParams.set("eod_update", contributor.highlights.eod_update.toString());
-  ogParams.set("content", contributor.content.toString());
-
   return {
     title: slug,
     description: contributor.content,
@@ -49,11 +42,6 @@ export async function generateMetadata(
       title: slug,
       description: contributor.content,
       url: `${url}/contributors/${slug}`,
-      images: [
-        {
-          url: `/api/og?${ogParams.toString()}`,
-        },
-      ],
     },
   };
 }

@@ -29,6 +29,10 @@ export default async function FeedPage({ searchParams }: Props) {
   if (!Object.entries(events).length) {
     return <LoadingText text="Fetching latest events" />;
   }
+  console.log(
+    "Fetched Events",
+    events.map((e) => console.log(e.type)),
+  );
   return (
     <div className="relative mx-auto my-8 flow-root max-w-4xl p-4">
       <h1 className="text-4xl text-primary-500 dark:text-white">Feed</h1>

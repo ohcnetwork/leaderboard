@@ -159,6 +159,17 @@ class GitHubScraper:
                 },
             )
 
+        elif event["type"] == "PushEvent":
+            self.append(
+                user,
+                {
+                    "type": "commit_direct",
+                    "time": event_time,
+                    "title": f'{event["repo"]["name"]}#{event["payload"]["commit"]["sha"]}',
+                    "link": event["payload"]["commit"]["html_url"],
+                    "text": event["payload"]["commit"]["message"],
+                },
+            )
     def add_collaborations(self, event, event_time):
         collaborators = set()
 
@@ -343,6 +354,8 @@ class GitHubScraper:
             next_page = dict(parse_qsl(urlparse(has_next).query)).get("page", 99)
             return self.fetch_events(int(next_page))
         return self.data
+
+    # def fetch_direct_commits
 
     def fetch_open_pulls(self, user):
         self.log.debug(f"Fetching open pull requests for {user}")

@@ -34,26 +34,21 @@ export default function HoverCardWrapper({
   const [hover, setHover] = useState(false);
 
   return (
-    <li
-      key={github}
-      className="group transition-all duration-150 ease-in-out hover:scale-125 hover:shadow-xl hover:shadow-primary-500"
+    <div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
-      <div
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-      >
-        {children}
-        <div className="absolute right-0 mt-1.5 translate-x-16 opacity-0 group-hover:opacity-100">
-          {hover && (
-            <HoverInfocard
-              github={github}
-              name={name}
-              title={title}
-              content={content}
-            />
-          )}
-        </div>
+      {children}
+      <div className="absolute right-0 mt-1.5 translate-x-16 opacity-0 group-hover:opacity-100">
+        {hover && (
+          <HoverInfocard
+            github={github}
+            name={name}
+            title={title}
+            content={content}
+          />
+        )}
       </div>
-    </li>
+    </div>
   );
 }

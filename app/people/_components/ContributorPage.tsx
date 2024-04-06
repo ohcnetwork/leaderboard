@@ -28,23 +28,28 @@ export default function ContributorPage({
           </h1>
           <ul className="relative flex flex-wrap justify-center gap-1">
             {contributors.map((c) => (
-              <HoverCardWrapper
+              <li
                 key={c.github}
-                github={c.github}
-                name={c.name}
-                title={c.title}
-                content={c.content}
+                className="group transition-all duration-150 ease-in-out hover:scale-125 hover:shadow-xl hover:shadow-primary-500"
               >
-                <Link href={`/contributors/${c.github}`}>
-                  <Image
-                    height={48}
-                    width={48}
-                    className="h-12 w-12 rounded-lg hover:ring hover:ring-primary-500"
-                    src={`https://avatars.githubusercontent.com/${c.github}?s=128`}
-                    alt={c.github}
-                  />
-                </Link>
-              </HoverCardWrapper>
+                <HoverCardWrapper
+                  key={c.github}
+                  github={c.github}
+                  name={c.name}
+                  title={c.title}
+                  content={c.content}
+                >
+                  <Link href={`/contributors/${c.github}`}>
+                    <Image
+                      height={48}
+                      width={48}
+                      className="h-12 w-12 rounded-lg hover:ring hover:ring-primary-500"
+                      src={`https://avatars.githubusercontent.com/${c.github}?s=128`}
+                      alt={c.github}
+                    />
+                  </Link>
+                </HoverCardWrapper>
+              </li>
             ))}
           </ul>
         </>

@@ -1,15 +1,14 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import Search from "@/components/filters/Search";
 import Sort from "@/components/filters/Sort";
 import format from "date-fns/format";
 import DateRangePicker from "@/components/DateRangePicker";
 import RoleFilter from "@/components/filters/RoleFilter";
 import { parseDateRangeSearchParam } from "@/lib/utils";
 import { SORT_BY_OPTIONS, FILTER_BY_ROLE_OPTIONS } from "@/lib/const";
-import { LeaderboardPageProps } from "@/lib/types";
+import { PageProps } from "@/lib/types";
 import { env } from "@/env.mjs";
-import { useDebouncedCallback } from "use-debounce";
+import TextSearchBar from "@/components/TextSearchBar";
 
 const SortOptions = Object.entries(SORT_BY_OPTIONS).map(([value, text]) => ({
   value,
@@ -23,7 +22,7 @@ export const RoleOptions = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
   }),
 );
 
-export default function Searchbar({ searchParams }: LeaderboardPageProps) {
+export default function Searchbar({ searchParams }: PageProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
@@ -40,22 +39,10 @@ export default function Searchbar({ searchParams }: LeaderboardPageProps) {
     router.replace(`${pathname}${query}`, { scroll: false });
   };
 
-  const handleSearch = useDebouncedCallback((value: string) => {
-    if (value) {
-      updateSearchParam("search", value);
-    } else {
-      updateSearchParam("search");
-    }
-  }, 300);
-
   return (
     <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
       <div className="flex flex-col flex-wrap gap-4 md:flex-row">
-        <Search
-          defaultValue={searchParams.search}
-          handleOnChange={(e) => handleSearch(e.target.value)}
-          className="grow"
-        />
+        <TextSearchBar searchString={searchParams.search} />
         <DateRangePicker
           value={{ start, end }}
           onChange={(value) => {

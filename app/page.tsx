@@ -150,7 +150,9 @@ export default async function Home() {
                         className="flex w-fit items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200 sm:justify-center lg:ml-auto"
                         href={"/people"}
                       >
-                        {contributors.length - 8} contributors more...
+                        {contributors.length > 8
+                          ? `${contributors.length - 8} contributors more`
+                          : "Show all contributors"}
                         <MdOutlineArrowForwardIos />
                       </Link>
                     </div>

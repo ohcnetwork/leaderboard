@@ -33,9 +33,6 @@ export default function HoverCardWrapper({
 }) {
   const [hover, setHover] = useState(false);
 
-  useEffect(() => {
-    console.log(hover);
-  }, [hover]);
   return (
     <li
       key={github}

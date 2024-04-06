@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HoverInfocard from "./HoverInfocard";
 import { TbZoomQuestion } from "react-icons/tb";
+import HoverCardWrapper from "./HoverCardWrapper";
 export default function ContributorPage({
   data,
   searchString,
@@ -27,9 +28,12 @@ export default function ContributorPage({
           </h1>
           <ul className="relative flex flex-wrap justify-center gap-1">
             {contributors.map((c) => (
-              <li
+              <HoverCardWrapper
                 key={c.github}
-                className="group transition-all duration-150 ease-in-out hover:scale-125 hover:shadow-xl hover:shadow-primary-500"
+                github={c.github}
+                name={c.name}
+                title={c.title}
+                content={c.content}
               >
                 <Link href={`/contributors/${c.github}`}>
                   <Image
@@ -40,10 +44,7 @@ export default function ContributorPage({
                     alt={c.github}
                   />
                 </Link>
-                <div className="absolute right-0 mt-1.5 translate-x-16 opacity-0 group-hover:opacity-100">
-                  <HoverInfocard contributor={c} />
-                </div>
-              </li>
+              </HoverCardWrapper>
             ))}
           </ul>
         </>

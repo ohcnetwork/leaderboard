@@ -66,6 +66,7 @@ export const ACTIVITY_TYPES = [
   "pr_opened",
   "pr_merged",
   "pr_collaborated",
+  "commit_direct",
 ] as const;
 
 export interface Activity {
@@ -74,6 +75,7 @@ export interface Activity {
   time: string;
   link: string;
   text: string;
+  branch?: string;
   collaborated_with?: string[];
   turnaround_time?: number;
 }

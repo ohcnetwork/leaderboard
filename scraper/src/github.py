@@ -26,6 +26,7 @@ user_blacklist = {
     "codecov-commenter",
 }
 
+default_branch_repos = {}
 
 def is_blacklisted(login: str):
     return "[bot]" in login or login in user_blacklist
@@ -70,7 +71,18 @@ class GitHubScraper:
                 "open_prs": [],
                 "authored_issue_and_pr": [],
             }
-
+            
+    def get_default_banch(self, repoOwner, reponame):
+        if reponame in default_branch_repos:
+            return default_branch_repos[reponame]
+        
+        response = requests.get(f"https://api.github.com/repos/{repoOwner}/{reponame}")
+        response_json = response.json()
+        defaultBranchName = response_json["default_branch"]
+        default_branch_repos[reponame] = defaultBranchName
+        
+        return defaultBranchName
+    
     def parse_event(self, event, event_time):
         user = event["actor"]["login"]
         try:
@@ -160,16 +172,24 @@ class GitHubScraper:
             )
 
         elif event["type"] == "PushEvent":
-            self.append(
-                user,
-                {
-                    "type": "commit_direct",
-                    "time": event_time,
-                    "title": f'{event["repo"]["name"]}#{event["payload"]["commit"]["sha"]}',
-                    "link": event["payload"]["commit"]["html_url"],
-                    "text": event["payload"]["commit"]["message"],
-                },
-            )
+            repoOwner = "coronasafe"
+            reponame = event["repo"]["name"].split('/')[-1]
+            branch = event["payload"]["ref"].split('/')[-1] 
+            commits = event["payload"]["commits"]
+            defaultBranchName = self.get_default_banch(repoOwner, reponame)
+            for commit in commits:
+                self.append(
+                    user,
+                    {
+                        "type": "commit_direct",
+                        "time": event_time,
+                        "title": f'{event["repo"]["name"]}#{commit["sha"]}',
+                        "link": commit["url"],
+                        "text": commit["message"],
+                        "branch": f'{branch} (default)' if branch == defaultBranchName else branch,
+                    },
+                )
+
     def add_collaborations(self, event, event_time):
         collaborators = set()
 
@@ -354,8 +374,6 @@ class GitHubScraper:
             next_page = dict(parse_qsl(urlparse(has_next).query)).get("page", 99)
             return self.fetch_events(int(next_page))
         return self.data
-
-    # def fetch_direct_commits
 
     def fetch_open_pulls(self, user):
         self.log.debug(f"Fetching open pull requests for {user}")

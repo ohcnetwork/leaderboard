@@ -7,7 +7,7 @@ import { existsSync } from "fs";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
-const githubRoot = join(process.cwd(), "data-repo/data/github");
+const githubRoot = join(process.cwd(), "data-repo/github");
 
 const points = {
   comment_created: 1,
@@ -19,6 +19,7 @@ const points = {
   pr_merged: 7,
   pr_collaborated: 2,
   issue_closed: 0,
+  commit_direct: 2,
 };
 // Comments will get a single point
 // Picking up an issue would get a point
@@ -26,7 +27,7 @@ const points = {
 // Finding a bug would add up to 4 points
 // Opening a PR would give a single point and merging it would give you the other 7 points, making 8 per PR
 // Updating the EOD would get 2 points per day and additional 20 for regular daily updates plus 10 for just missing one
-
+// Push direct commmmit have two points
 function formatSlug(slug: string) {
   return slug.replace(/\.md$/, "");
 }

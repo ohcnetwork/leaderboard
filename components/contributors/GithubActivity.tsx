@@ -161,6 +161,33 @@ let renderText = (activity: Activity) => {
           </div>
         </div>
       );
+    case "commit_direct":
+      return (
+        <div className="min-w-0 flex-1">
+          <div>
+            <p className="font-bold">
+              {"Direct Commit to "}
+              {activity["branch"]}
+              {" in  "}
+              <span className="text-primary-400 dark:text-primary-300">
+                {activity["link"].split("/").slice(3, 5).join("/")}
+              </span>
+
+              <span className="text-foreground">
+                {" "}
+                <RelativeTime time={timestamp} />
+              </span>
+            </p>
+          </div>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            <a href={activity["link"]} target="_blank">
+              <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                {activity["text"]}
+              </span>
+            </a>
+          </div>
+        </div>
+      );
     default:
       return (
         <div className="min-w-0 flex-1 py-1.5">
@@ -480,6 +507,7 @@ export const ActivityCheckbox = (props: {
           pr_merged: "PR merged",
           pr_opened: "PR opened",
           pr_reviewed: "Code Review",
+          commit_direct: "Direct Commit",
         }[props.type]
       }
       <span className="text-xs text-secondary-500 dark:text-secondary-400">

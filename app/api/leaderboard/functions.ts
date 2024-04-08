@@ -113,3 +113,53 @@ export default async function fetchGitHubReleases(
     )
     .slice(0, sliceLimit);
 }
+
+export async function fetchAllReposName() {
+  const response = await octokit.graphql({
+    query: `
+        query GetTop10ActiveRepos($org: String!) {
+          organization(login: $org) {
+            repositories(first: 20, orderBy: { field: UPDATED_AT, direction: DESC }) {
+              nodes {
+                name
+              }
+            }
+          }
+        }
+      `,
+    org: env.NEXT_PUBLIC_GITHUB_ORG,
+  });
+
+  const repos = response.organization.repositories.nodes.map(
+    (repo) => repo.name,
+  );
+  // console.log(repos);
+  return ["All", ...repos.flat()];
+}
+
+// export async function fetchAllBranchName() {
+//   const response = await octokit.graphql({
+//     query: `
+//         query GetTop10ActiveBranches($org: String!) {
+//           organization(login: $org) {
+//             repositories(first: 20, orderBy: { field: UPDATED_AT, direction: DESC }) {
+//               nodes {
+//                 refs(first: 10, refPrefix: "refs/heads/") {
+//                   nodes {
+//                     name
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       `,
+//     org: env.NEXT_PUBLIC_GITHUB_ORG,
+//   });
+
+//   const branches = response.organization.repositories.nodes.flatMap(
+//     (repo) => repo.refs.nodes.map((branch) => branch.name),
+//   );
+//   console.log(branches);
+//   return branches;
+// }

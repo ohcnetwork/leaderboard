@@ -3,6 +3,11 @@ import { IGitHubEvent } from "@/lib/gh_events";
 import GitHubEvent from "@/components/gh_events/GitHubEvent";
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
+import {
+  // fetchAllBranchName,
+  fetchAllReposName,
+} from "../api/leaderboard/functions";
+import GithubFeed from "./GithubFeed";
 
 const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
@@ -15,6 +20,24 @@ type Props = {
 };
 
 export default async function FeedPage({ searchParams }: Props) {
+  const filterEvetns = [
+    { title: "Repository", options: await fetchAllReposName() },
+    {
+      title: "Events",
+      options: [
+        "All",
+        "PullRequestReviewCommentEvent",
+        "PullRequestReviewEvent",
+        "MemberEvent",
+        "IssuesEvent",
+        "IssueCommentEvent",
+        "PullRequestEvent",
+        "PushEvent",
+        "ForkEvent",
+        "ReleaseEvent",
+      ],
+    },
+  ];
   const events = await octokit.paginate(
     "GET /orgs/{org}/events",
     {
@@ -30,14 +53,19 @@ export default async function FeedPage({ searchParams }: Props) {
     return <LoadingText text="Fetching latest events" />;
   }
   return (
-    <div className="relative mx-auto my-8 flow-root max-w-4xl p-4">
-      <h1 className="text-4xl text-primary-500 dark:text-white">Feed</h1>
-      <ul role="list" className="mb-20 mt-10 flex flex-col gap-4 space-y-4">
-        {events.map((e) => (
-          <GitHubEvent key={e.id} event={e} />
-        ))}
-      </ul>
-    </div>
+    <>
+      {/* // <div className="flex"> */}
+      {/* //   <div className="relative mx-auto my-8 flow-root max-w-4xl p-4"> */}
+      {/* //     <h1 className="text-4xl text-primary-500 dark:text-white">Feed</h1> */}
+      <GithubFeed events={events} filterEvetns={filterEvetns} />
+      {/* <ul role="list" className="mb-20 mt-10 flex flex-col gap-4 space-y-4">
+          {events.map((e) => (
+            <GitHubEvent key={e.id} event={e} />
+          ))}
+        </ul> */}
+      {/* </div> */}
+      {/* </div> */}
+    </>
   );
 }
 

@@ -1,28 +1,38 @@
 "use client";
 import GitHubEvent from "@/components/gh_events/GitHubEvent";
-import { useState, useEffect } from "react";
+import { IGitHubEvent } from "@/lib/gh_events";
+import { useState } from "react";
 
-const GithubFeed = (props: any) => {
-  const { events } = props;
-  const { filterEvetns } = props;
-  const [e, setEvents] = useState<any[]>(events);
+interface Filter {
+  title: string;
+  options: string[];
+}
+interface Props {
+  events: IGitHubEvent[];
+  filterEvetns: Filter[];
+}
+
+const GithubFeed = (props: Props) => {
+  const { events, filterEvetns } = props;
+  const [e, setEvents] = useState(events);
   const [repo, setRepo] = useState("All");
   const [eventType, setEventType] = useState("All");
 
   const filterEvents = () => {
-    console.log("Hey I am here");
-    let filteredEvents = events;
-    console.log(eventType);
+    let filteredEvents = e;
     if (repo !== "All" && eventType !== "All") {
-      filteredEvents = events.filter(
-        (event: any) =>
-          event.repo.name.split("/").pop() === repo && event.type === eventType,
+      filteredEvents = e.filter(
+        (events: IGitHubEvent) =>
+          events.repo.name.split("/").pop() === repo &&
+          events.type === eventType,
       );
     } else if (eventType !== "All") {
-      filteredEvents = events.filter((event: any) => event.type === eventType);
-    } else if (repo !== "All") {
       filteredEvents = events.filter(
-        (event: any) => event.repo.name.split("/").pop() === repo,
+        (events: IGitHubEvent) => events.type === eventType,
+      );
+    } else if (repo !== "All") {
+      filteredEvents = e.filter(
+        (events: IGitHubEvent) => events.repo.name.split("/").pop() === repo,
       );
     }
     setEvents(filteredEvents);
@@ -38,20 +48,21 @@ const GithubFeed = (props: any) => {
               No Activity Found
             </div>
           )}
-          {e.map((event: any) => (
+          {e.map((event: IGitHubEvent) => (
             <GitHubEvent key={event.id} event={event} />
           ))}
         </ul>
       </div>
       <div className="my-20 h-fit max-w-min rounded-md border border-white p-4">
-        <span className="text-xl">Filter Activity</span>
+        <span className="mb-2 text-2xl font-bold">Filter Activity</span>
         <div className="mx-auto h-fit">
-          <ul className="mx-auto">
+          <ul className="filters mx-auto">
             {filterEvetns.map((filter, index) => (
-              <li key={index}>
-                <span>{filter.title}</span>
+              <li key={index} className="filter-item">
+                <span className="filter-title">{filter.title}</span>
                 {filter.options && (
                   <select
+                    className="filter-select"
                     value={filter.title === "Events" ? eventType : repo}
                     onChange={(e) => {
                       if (filter.title === "Repository")
@@ -61,13 +72,16 @@ const GithubFeed = (props: any) => {
                     }}
                   >
                     {filter.options.map((option, optionIndex) => (
-                      <option key={optionIndex}>{option}</option>
+                      <option key={optionIndex} value={option}>
+                        {option}
+                      </option>
                     ))}
                   </select>
                 )}
               </li>
             ))}
           </ul>
+
           <button
             onClick={() => filterEvents()}
             className="mx-auto mt-3 block cursor-pointer rounded border border-primary-500 bg-gradient-to-b from-primary-500 to-primary-700 p-3 px-10 text-center font-bold text-white shadow-lg transition hover:from-secondary-800 hover:to-secondary-900 hover:text-primary-500 hover:shadow-xl"

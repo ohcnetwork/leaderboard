@@ -176,19 +176,25 @@ class GitHubScraper:
             reponame = event["repo"]["name"].split('/')[-1]
             branch = event["payload"]["ref"].split('/')[-1] 
             commits = event["payload"]["commits"]
-            defaultBranchName = self.get_default_banch(repoOwner, reponame)
+            # defaultBranchName = self.get_default_banch(repoOwner, reponame)
+            all_commits = []
             for commit in commits:
-                self.append(
-                    user,
-                    {
-                        "type": "commit_direct",
-                        "time": event_time,
+                    commit_data = {
                         "title": f'{event["repo"]["name"]}#{commit["sha"]}',
                         "link": commit["url"],
                         "text": commit["message"],
-                        "branch": f'{branch} (default)' if branch == defaultBranchName else branch,
-                    },
-                )
+                    }
+                    all_commits.append(commit_data)  # Append commit data to the array
+            print(all_commits)
+            self.append(
+                user,
+                {
+                    "type": "commit_direct",
+                    "time": event_time,
+                    "title": f'Pushed({len(commits)}) to {event["repo"]["name"]}({branch})',
+                    "commits": all_commits,
+                },
+            )
 
     def add_collaborations(self, event, event_time):
         collaborators = set()

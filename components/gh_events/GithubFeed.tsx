@@ -39,19 +39,19 @@ const GithubFeed = (props: Props) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row-reverse lg:justify-end">
+    <div className="lg:justify-betw flex flex-col lg:flex-row-reverse">
       {/* Filter Component */}
-      <div className="w-full lg:sticky lg:top-20">
+      <div className="w-full lg:sticky lg:top-20 lg:ml-auto lg:mr-0">
         <div className="mx-auto h-fit max-w-min rounded-md border border-white p-4 lg:my-20">
           <span className="mb-2 text-2xl font-bold">Filter Activity</span>
-          <div className="mx-auto h-fit">
-            <ul className="filters mx-auto">
+          <div className="mx-auto mt-4 h-fit">
+            <ul className="filters mx-auto space-y-2">
               {filterEvetns.map((filter, index) => (
                 <li key={index} className="filter-item">
                   <span className="filter-title">{filter.title}</span>
                   {filter.options && (
                     <select
-                      className="filter-select"
+                      className="filter-select rounded-md bg-secondary-800 p-2"
                       value={filter.title === "Events" ? eventType : repo}
                       onChange={(e) => {
                         if (filter.title === "Repository")

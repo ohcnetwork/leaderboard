@@ -1,13 +1,12 @@
 import LoadingText from "@/components/LoadingText";
 import { IGitHubEvent } from "@/lib/gh_events";
-import GitHubEvent from "@/components/gh_events/GitHubEvent";
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
 import {
   // fetchAllBranchName,
   fetchAllReposName,
 } from "../api/leaderboard/functions";
-import GithubFeed from "./GithubFeed";
+import GithubFeed from "../../components/gh_events/GithubFeed";
 
 const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 

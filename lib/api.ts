@@ -7,7 +7,7 @@ import { existsSync } from "fs";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
-const githubRoot = join(process.cwd(), "data-repo/github");
+const githubRoot = join(process.cwd(), "data-repo/data/github");
 
 const points = {
   comment_created: 1,

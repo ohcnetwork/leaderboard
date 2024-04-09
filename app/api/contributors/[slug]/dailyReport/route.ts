@@ -33,4 +33,4 @@ export async function GET(
   }
 
   return Response.json(getDailyReport(user));
-};
+}

@@ -93,4 +93,3 @@ export const navLinks = [
 export const formatDate = (date: Date) => {
   return format(date, "MMM dd, yyyy");
 };
-

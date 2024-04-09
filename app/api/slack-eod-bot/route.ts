@@ -1,5 +1,5 @@
 // Handles incoming POST requests from Slack's Event API
-import { addEODUpdate } from "@/lib/utils";
+import { addEODUpdate } from "@/lib/slackbotutils";
 import { createHmac } from "crypto";
 import { NextResponse } from "next/server";
 

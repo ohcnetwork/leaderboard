@@ -1,5 +1,5 @@
+import { getSlackContributors } from "@/lib/slackbotutils";
 import { NextRequest } from "next/server";
-import { getSlackContributors } from "@/lib/utils";
 
 export const GET = async (req: NextRequest) => {
     const params = req.nextUrl.searchParams;

@@ -1,8 +1,8 @@
-import { sendSlackMessage } from "@/lib/utils";
 import { NextRequest } from "next/server";
 import fs from "fs";
 import { join } from "path";
 import { kv } from "@vercel/kv";
+import { sendSlackMessage } from "@/lib/slackbotutils";
 
 export async function GET(req: NextRequest, { params }: { params: { username: string } }) {
     const { username } = params;

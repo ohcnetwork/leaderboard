@@ -1,4 +1,14 @@
 {
   "framework": "nextjs",
-  "buildCommand": "node ./scripts/loadOrgData.js && next build"
+  "buildCommand": "node ./scripts/loadOrgData.js && next build",
+  "crons": [
+    {
+      "path": "/api/slack-eod-bot/cron/post-update?preview=yes",
+      "schedule": "0 19 * * *"
+    },
+    {
+      "path": "/api/slack-eod-bot/cron/post-update",
+      "schedule": "30 19 * * *"
+    }
+  ]
 }

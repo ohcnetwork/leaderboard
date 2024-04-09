@@ -1,8 +1,8 @@
-import { getDailyReport } from "@/app/api/contributors/[slug]/dailyReport/route";
 import { NextRequest } from "next/server";
 import fs from "fs";
 import { join } from "path";
 import { getHumanReadableUpdates, sendSlackMessage } from "@/lib/slackbotutils";
+import { getDailyReport } from "@/lib/contributor";
 
 export async function GET(req: NextRequest, { params }: { params: { username: string } }) {
     const { username } = params;

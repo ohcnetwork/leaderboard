@@ -1,10 +1,11 @@
-import { getDailyReport } from "@/app/api/contributors/[slug]/dailyReport/route";
+
 import { kv } from "@vercel/kv";
 import {
     formatDuration as _formatDuration,
 } from "date-fns";
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
+import { getDailyReport } from "./contributor";
 
 export const getHumanReadableUpdates = (data: Awaited<ReturnType<typeof getDailyReport>>, slackID: string) => {
 

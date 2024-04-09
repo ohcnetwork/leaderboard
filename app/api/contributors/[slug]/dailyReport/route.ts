@@ -33,24 +33,32 @@ export async function GET(
     );
   }
 
+  return Response.json(getDailyReport(user));
+
+};
+
+
+export const getDailyReport = async (user: string) => {
   const dateRange = getDateRange();
 
-  const [pull_requests, commits, reviews, issues_active, issues_pending] =
+  const [pull_requests, commits, reviews, issues_active, issues_pending, user_info] =
     await Promise.all([
       getPullRequestsOpened(user, dateRange),
       getCommits(user, dateRange),
       getPullRequestReviews(user, dateRange),
       getActiveIssues(user),
       getPendingIssues(user),
+      getUserInfo(user),
     ]);
 
-  return Response.json({
+  return {
     pull_requests,
     commits,
     reviews,
     issues_active,
     issues_pending,
-  });
+    user_info,
+  };
 }
 
 const Q = (filters: Record<string, string | string[]>) => {
@@ -71,6 +79,10 @@ const getDateRange = () => {
     .map((a) => a.toISOString())
     .join("..");
 };
+
+const getUserInfo = async (user: string) => {
+  return octokit.rest.users.getByUsername({ username: user });
+}
 
 const getPullRequestsOpened = (user: string, dateRange: string) => {
   return octokit.paginate(
@@ -203,4 +215,4 @@ const getPullRequestReviews = async (user: string, dateRange: string) => {
         })),
     ),
   );
-};
+}

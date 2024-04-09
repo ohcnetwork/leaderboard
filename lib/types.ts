@@ -66,8 +66,13 @@ export const ACTIVITY_TYPES = [
   "pr_opened",
   "pr_merged",
   "pr_collaborated",
-  "commit_direct",
+  "pushed_commits",
 ] as const;
+
+export interface commit {
+  link: string;
+  text: string;
+}
 
 export interface Activity {
   type: (typeof ACTIVITY_TYPES)[number];
@@ -75,7 +80,7 @@ export interface Activity {
   time: string;
   link: string;
   text: string;
-  branch?: string;
+  commits?: commit[];
   collaborated_with?: string[];
   turnaround_time?: number;
 }

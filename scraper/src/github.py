@@ -172,29 +172,36 @@ class GitHubScraper:
             )
 
         elif event["type"] == "PushEvent":
-            repoOwner = "coronasafe"
-            reponame = event["repo"]["name"].split('/')[-1]
             branch = event["payload"]["ref"].split('/')[-1] 
             commits = event["payload"]["commits"]
-            # defaultBranchName = self.get_default_banch(repoOwner, reponame)
             all_commits = []
+
+            # Iterate through each commit
             for commit in commits:
+                # Fetch full commit details
+                commit_details = requests.get(commit["url"], headers=self.headers).json()  
+                
+                if len(commit_details.get("parents", [])) in [0, 1]:  
+                    # Prepare commit data
                     commit_data = {
-                        "title": f'{event["repo"]["name"]}#{commit["sha"]}',
-                        "link": commit["url"],
+                        "link": commit_details["html_url"],
                         "text": commit["message"],
                     }
-                    all_commits.append(commit_data)  # Append commit data to the array
-            print(all_commits)
+                    # Append commit data to the array
+                    all_commits.append(commit_data)  
+
+            # Append pushed commits event
             self.append(
                 user,
                 {
-                    "type": "commit_direct",
+                    "type": "pushed_commits",
                     "time": event_time,
-                    "title": f'Pushed({len(commits)}) to {event["repo"]["name"]}({branch})',
+                    "title": f'Pushed({len(all_commits)}) commits to {event["repo"]["name"]}({branch})',
                     "commits": all_commits,
                 },
             )
+
+
 
     def add_collaborations(self, event, event_time):
         collaborators = set()

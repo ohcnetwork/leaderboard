@@ -8,6 +8,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
 import DateRangePicker from "../DateRangePicker";
 import { format } from "date-fns";
+import Link from "next/link";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -161,33 +162,34 @@ let renderText = (activity: Activity) => {
           </div>
         </div>
       );
-    case "commit_direct":
+    case "pushed_commits":
       return (
         <div className="min-w-0 flex-1">
           <div>
             <p className="font-bold">
-              {"Direct Commit to "}
-              {activity["branch"]}
-              {" in  "}
-              <span className="text-primary-400 dark:text-primary-300">
-                {activity["link"].split("/").slice(3, 5).join("/")}
-              </span>
-
+              {activity.title}
               <span className="text-foreground">
-                {" "}
-                <RelativeTime time={timestamp} />
+                <RelativeTime time={activity.time} />
               </span>
             </p>
           </div>
           <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
-            <a href={activity["link"]} target="_blank">
-              <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
-                {activity["text"]}
-              </span>
-            </a>
+            {activity?.commits?.map((commit, index) => (
+              <div key={index} className="mb-2 flex items-center">
+                <Link href={commit.link} target="_blank" className="flex gap-1">
+                  <span className="text-sm font-medium text-foreground">
+                    {index + 1}.
+                  </span>{" "}
+                  <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
+                    {commit.text}
+                  </span>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       );
+
     default:
       return (
         <div className="min-w-0 flex-1 py-1.5">
@@ -508,6 +510,7 @@ export const ActivityCheckbox = (props: {
           pr_opened: "PR opened",
           pr_reviewed: "Code Review",
           commit_direct: "Direct Commit",
+          pushed_commits: "Pushed Commits",
         }[props.type]
       }
       <span className="text-xs text-secondary-500 dark:text-secondary-400">

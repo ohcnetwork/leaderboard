@@ -181,11 +181,12 @@ class GitHubScraper:
                 # Fetch full commit details
                 commit_details = requests.get(commit["url"], headers=self.headers).json()  
                 
-                if len(commit_details.get("parents", [])) in [0, 1]:  
+                if len(commit_details.get("parents", [])) < 2:  
                     # Prepare commit data
                     commit_data = {
                         "link": commit_details["html_url"],
                         "text": commit["message"],
+                        "sha" : commit["sha"][-7:],
                     }
                     # Append commit data to the array
                     all_commits.append(commit_data)  
@@ -196,7 +197,9 @@ class GitHubScraper:
                 {
                     "type": "pushed_commits",
                     "time": event_time,
-                    "title": f'Pushed({len(all_commits)}) commits to {event["repo"]["name"]}({branch})',
+                    # "title": f'Pushed({len(all_commits)}) commits to {event["repo"]["name"]}({branch})',
+                    "repo": event["repo"]["name"],
+                    "branch": branch,
                     "commits": all_commits,
                 },
             )

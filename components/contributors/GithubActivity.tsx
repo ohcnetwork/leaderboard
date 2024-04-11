@@ -167,7 +167,8 @@ let renderText = (activity: Activity) => {
         <div className="min-w-0 flex-1">
           <div>
             <p className="font-bold">
-              {activity.title}
+              pushed({activity?.commits?.length}) commits to {activity.branch}{" "}
+              in {activity.repo}{" "}
               <span className="text-foreground">
                 <RelativeTime time={activity.time} />
               </span>
@@ -176,12 +177,14 @@ let renderText = (activity: Activity) => {
           <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
             {activity?.commits?.map((commit, index) => (
               <div key={index} className="mb-2 flex items-center">
-                <Link href={commit.link} target="_blank" className="flex gap-1">
-                  <span className="text-sm font-medium text-foreground">
-                    {index + 1}.
-                  </span>{" "}
+                <Link
+                  href={commit.link}
+                  target="_blank"
+                  className="flex gap-2 text-secondary-500"
+                >
+                  <span>{commit.sha}</span>
                   <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
-                    {commit.text}
+                    {commit.text.split("\n")[0]}
                   </span>
                 </Link>
               </div>

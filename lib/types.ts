@@ -69,9 +69,10 @@ export const ACTIVITY_TYPES = [
   "pushed_commits",
 ] as const;
 
-export interface commit {
+export interface Commit {
   link: string;
   text: string;
+  sha: string;
 }
 
 export interface Activity {
@@ -80,7 +81,9 @@ export interface Activity {
   time: string;
   link: string;
   text: string;
-  commits?: commit[];
+  branch?: string;
+  repo?: string;
+  commits?: Commit[];
   collaborated_with?: string[];
   turnaround_time?: number;
 }

@@ -3,6 +3,7 @@ import {
   ReleasesResponse,
   LeaderboardAPIResponse,
   Release,
+  Repository,
 } from "@/lib/types";
 import { getContributors } from "@/lib/api";
 import { env } from "@/env.mjs";
@@ -114,12 +115,31 @@ export default async function fetchGitHubReleases(
     .slice(0, sliceLimit);
 }
 
+interface RepositoriesResponse {
+  organization: {
+    repositories: {
+      pageInfo: {
+        hasNextPage: boolean;
+        endCursor: string | null;
+      };
+      nodes: Repository[];
+    };
+  };
+}
 export async function fetchAllReposName() {
-  const response = await octokit.graphql({
-    query: `
-        query GetTop10ActiveRepos($org: String!) {
+  let repos: string[] = [];
+  let afterCursor: string | null = null;
+
+  do {
+    const response: RepositoriesResponse = await octokit.graphql({
+      query: `
+        query GetTop10ActiveRepos($org: String!, $after: String) {
           organization(login: $org) {
-            repositories(first: 20, orderBy: { field: UPDATED_AT, direction: DESC }) {
+            repositories(first: 20, after: $after, orderBy: { field: UPDATED_AT, direction: DESC }) {
+              pageInfo {
+                hasNextPage
+                endCursor
+              }
               nodes {
                 name
               }
@@ -127,12 +147,13 @@ export async function fetchAllReposName() {
           }
         }
       `,
-    org: env.NEXT_PUBLIC_GITHUB_ORG,
-  });
+      org: env.NEXT_PUBLIC_GITHUB_ORG,
+      after: afterCursor,
+    });
+    const { nodes, pageInfo } = response.organization.repositories;
+    repos.push(...nodes.map((repo) => repo.name));
+    afterCursor = pageInfo.hasNextPage ? pageInfo.endCursor : null;
+  } while (afterCursor !== null);
 
-  const repos = (
-    response as ReleasesResponse
-  ).organization.repositories.nodes.map((repo) => repo.name);
-
-  return ["All", ...repos.flat()];
+  return repos;
 }

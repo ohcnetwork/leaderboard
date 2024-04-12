@@ -4,6 +4,7 @@ import { NextRequest } from "next/server";
 export const GET = async (req: NextRequest) => {
   const params = req.nextUrl.searchParams;
   const preview = params.get("preview");
+
   if (
     process.env.CRON_SECRET &&
     req.headers.get("Authorization") !== `Bearer ${process.env.CRON_SECRET}`
@@ -24,8 +25,6 @@ export const GET = async (req: NextRequest) => {
       },
     );
   }
-
-  console.log(slackContributors);
 
   return new Response("OK");
 };

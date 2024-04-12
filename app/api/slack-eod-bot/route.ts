@@ -1,7 +1,6 @@
 // Handles incoming POST requests from Slack's Event API
 import { addEODUpdate } from "@/lib/slackbotutils";
 import { createHmac } from "crypto";
-import { NextResponse } from "next/server";
 
 export const POST = async (req: Request) => {
   const timestamp = req.headers.get("X-Slack-Request-Timestamp") || "0";
@@ -34,7 +33,7 @@ export const POST = async (req: Request) => {
     addEODUpdate(message, user);
   }
 
-  return NextResponse.json({
+  return Response.json({
     challenge: body.challenge,
   });
 };

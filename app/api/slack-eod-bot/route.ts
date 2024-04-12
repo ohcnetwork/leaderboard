@@ -1,5 +1,5 @@
 // Handles incoming POST requests from Slack's Event API
-import { addEODUpdate } from "@/lib/slackbotutils";
+import { addEODUpdate, updateAppHome } from "@/lib/slackbotutils";
 import { createHmac } from "crypto";
 
 export const POST = async (req: Request) => {
@@ -23,17 +23,27 @@ export const POST = async (req: Request) => {
 
   if (signature !== incoming_signature) {
     console.log("Invalid signature");
-    return new Response("Invalid signature", { status: 400 });
+    return new Response("Invalid signature", { status: 403 });
   }
 
   const body = JSON.parse(raw_body);
+
+  if (body.type === "url_verification") {
+    return Response.json({
+      challenge: body.challenge,
+    });
+  }
+
   if (body.event.type === "message") {
     const message = body.event.text;
     const user = body.event.user;
     addEODUpdate(message, user);
   }
 
-  return Response.json({
-    challenge: body.challenge,
-  });
+  if (body.event.type === "app_home_opened") {
+    const user = body.event.user;
+    updateAppHome(user);
+  }
+
+  return new Response(null, { status: 204 });
 };

@@ -12,7 +12,7 @@ export const GET = async (req: NextRequest) => {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  const slackContributors = getSlackContributors();
+  const slackContributors = await getSlackContributors();
 
   for (const contributor of slackContributors) {
     fetch(

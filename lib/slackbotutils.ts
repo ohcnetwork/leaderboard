@@ -1,8 +1,7 @@
 import { kv } from "@vercel/kv";
 import { formatDuration as _formatDuration } from "date-fns";
-import { readFileSync, readdirSync } from "fs";
-import { join } from "path";
 import { getDailyReport } from "./contributor";
+import { getContributors } from "@/lib/api";
 
 export const getHumanReadableUpdates = (
   data: Awaited<ReturnType<typeof getDailyReport>>,
@@ -162,42 +161,23 @@ export const sendSlackMessage = async (
   });
 };
 
-export const getSlackContributors = () => {
-  const contributorsRoot = join(process.cwd(), "data-repo/contributors");
-  const contributors = readdirSync(contributorsRoot);
+export const getSlackContributors = async () => {
+  const contributors = await getContributors();
 
-  let slackContributors: {
+  const slackContributors: {
     githubUsername: string;
     slackID: string;
     updates?: any;
-  }[] = [];
+  }[] = contributors
+    .filter((c) => !!c.slack)
+    .map((c) => ({ githubUsername: c.github, slackID: c.slack }));
 
-  for (const contributor of contributors) {
-    const md = readFileSync(join(contributorsRoot, contributor)).toString();
-    const infoBlock = md.split("---")[1];
-    let info: any = {};
-    infoBlock
-      .split("\r\n")
-      .slice(1, -1)
-      .forEach((line: string) => {
-        const [key, value] = line.split(": ");
-        info[key] = value?.replace('""', "");
-      });
-    if (info.slack) {
-      slackContributors.push({
-        githubUsername: info.github,
-        slackID: info.slack,
-      });
-    }
-  }
   return slackContributors;
 };
 
 export const addEODUpdate = async (message: string, user: string) => {
-  const contributors = getSlackContributors();
-  const contributor = contributors.find(
-    (contributor) => contributor.slackID === user,
-  );
+  const contributors = await getSlackContributors();
+  const contributor = contributors.find((c) => c.slackID === user);
 
   if (!contributor) {
     return;
@@ -213,4 +193,173 @@ export const addEODUpdate = async (message: string, user: string) => {
   if (clear) {
     sendSlackMessage(contributor.slackID, "Your updates have been cleared");
   }
+};
+
+export const updateAppHome = async (user: string) => {
+  const contributors = await getSlackContributors();
+  const contributor = contributors.find((c) => c.slackID === user);
+
+  if (!contributor) {
+    console.error(`No user found for: ${user}`);
+    return;
+  }
+  console.log(`Updating app home for: ${contributor?.githubUsername}`);
+
+  const dailyReport = await getDailyReport(contributor.githubUsername);
+  const updates: string[] =
+    (await kv.get("eod:" + contributor.githubUsername)) || [];
+
+  const res = await fetch(`https://slack.com/api/views.publish`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
+    },
+    body: JSON.stringify({
+      user_id: user,
+      view: {
+        type: "home",
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: `
+Hey there 👋 
+Activities Bot is in beta.
+              `,
+            },
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "header",
+            text: {
+              type: "plain_text",
+              text: `Manually added EOD updates (${updates.length})`,
+              emoji: true,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text:
+                updates.map((update) => `· ${update}\n`).join("") ||
+                "_No manually entered EOD updates..._",
+            },
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "header",
+            text: {
+              type: "plain_text",
+              text: `Pull Requests (${dailyReport.pull_requests.length})`,
+              emoji: true,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text:
+                dailyReport.pull_requests
+                  .map((pr) => `· ${pr.title}\n`)
+                  .join("") || "_No pull requests..._",
+            },
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "header",
+            text: {
+              type: "plain_text",
+              text: `Commits (${dailyReport.commits.length})`,
+              emoji: true,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text:
+                dailyReport.commits
+                  .map((commit) => `· ${commit.title}\n`)
+                  .join("") || "_No commits made..._",
+            },
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "header",
+            text: {
+              type: "plain_text",
+              text: `Code Reviews (${dailyReport.reviews.length})`,
+              emoji: true,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text:
+                dailyReport.reviews
+                  .map((review) => `· ${review.state} ${review.pull_request}\n`)
+                  .join("") || "_No code reviews..._",
+            },
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "header",
+            text: {
+              type: "plain_text",
+              text: `Active Issues (${dailyReport.issues_active.length})`,
+              emoji: true,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text:
+                dailyReport.issues_active
+                  .map((issue) => `· ${issue.title}}\n`)
+                  .join("") || "_No ative issues..._",
+            },
+          },
+          {
+            type: "divider",
+          },
+          {
+            type: "header",
+            text: {
+              type: "plain_text",
+              text: `Pending Issues (${dailyReport.issues_pending.length})`,
+              emoji: true,
+            },
+          },
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text:
+                dailyReport.issues_pending
+                  .map((issue) => `· ${issue.title}\n`)
+                  .join("") || "_No pending issues..._",
+            },
+          },
+        ],
+      },
+    }),
+  });
+
+  console.log(res.status);
+  console.log(await res.json());
 };

@@ -1,8 +1,7 @@
 import { NextRequest } from "next/server";
-import fs from "fs";
-import { join } from "path";
 import { kv } from "@vercel/kv";
 import { sendSlackMessage } from "@/lib/slackbotutils";
+import { getContributorBySlug } from "@/lib/api";
 
 export async function GET(
   req: NextRequest,
@@ -16,21 +15,8 @@ export async function GET(
   ) {
     return new Response("Unauthorized", { status: 401 });
   }
-  const contributorsRoot = join(process.cwd(), "data-repo/contributors");
-  const md = fs
-    .readFileSync(join(contributorsRoot, username + ".md"))
-    .toString();
-  const infoBlock = md.split("---")[1];
-  let info: any = {};
-  infoBlock
-    .split("\r\n")
-    .slice(1, -1)
-    .forEach((line: string) => {
-      const [key, value] = line.split(": ");
-      info[key] = value?.replace('""', "");
-    });
-  if (!info.slack) {
-    console.log("Slack ID not found");
+  const contributor = await getContributorBySlug(`${username}.md`);
+  if (!contributor.slack) {
     return new Response("Slack ID not found", { status: 404 });
   }
 
@@ -39,13 +25,13 @@ export async function GET(
   const readableUpdates =
     updates.length > 0
       ? `
-        Hello <@${info.slack}>, here are your updates for today:\n
+        Hello <@${contributor.slack}>, here are your updates for today:\n
         ${updates.map((update) => `${update}`).join("\n\n")}\n
         If you wish to add more updates, please reply to this message with your updates.
         If you wish to rewrite all updates, please reply with \`clear updates\` and then specify your updates.
     `
       : `
-        Hello <@${info.slack}>, you have not specified any EOD updates for today.
+        Hello <@${contributor.slack}>, you have not specified any EOD updates for today.
         If you wish to add updates, please reply to this message with your updates.
     `;
 
@@ -57,7 +43,7 @@ export async function GET(
     .map((s) => s.trim())
     .join("\n");
 
-  const slackMessage = await sendSlackMessage(info.slack, message);
+  const slackMessage = await sendSlackMessage(contributor.slack, message);
   console.log(await slackMessage.json());
   return new Response("OK");
 }

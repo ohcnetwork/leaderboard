@@ -5,6 +5,7 @@ import { getContributors } from "@/lib/api";
 
 export const getHumanReadableUpdates = (
   data: Awaited<ReturnType<typeof getDailyReport>>,
+  generalUpdates: string[],
   slackID: string,
 ) => {
   const sections = [
@@ -31,6 +32,11 @@ export const getHumanReadableUpdates = (
         title: review.pull_request,
         url: review.url,
       })),
+    },
+    {
+      title: `General updates`,
+      count: generalUpdates.length,
+      items: generalUpdates.map((title) => ({ title, url: undefined })),
     },
     {
       title: `Active Issues`,
@@ -125,11 +131,16 @@ export const getHumanReadableUpdates = (
                   elements: section.items.map((item) => ({
                     type: "rich_text_section",
                     elements: [
-                      {
-                        type: "link",
-                        url: item.url,
-                        text: item.title,
-                      },
+                      item.url
+                        ? {
+                            type: "link",
+                            text: item.title,
+                            url: item.url,
+                          }
+                        : {
+                            type: "text",
+                            text: item.title,
+                          },
                     ],
                   })),
                 },

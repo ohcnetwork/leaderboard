@@ -121,10 +121,6 @@ interface RepositoriesResponse {
       nodes: {
         name: string;
       }[];
-      pageInfo: {
-        hasNextPage: boolean;
-        endCursor: string | null;
-      };
     };
   };
 }

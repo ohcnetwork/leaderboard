@@ -15,6 +15,7 @@ const MenuItems = {
   "/projects": "Projects",
   "/feed": "Feed",
   "/releases": "Releases",
+  "/issues": "Issues",
 };
 const availableMenuItems = Object.fromEntries(
   Object.entries(MenuItems).filter(([href, label]) => {

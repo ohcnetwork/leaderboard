@@ -20,7 +20,7 @@ const Search = ({
         id="search"
         onChange={handleOnChange}
         defaultValue={defaultValue}
-        className="block w-full rounded-md border border-secondary-600 bg-transparent p-2 pl-10 text-foreground dark:border-secondary-300 sm:text-sm"
+        className="block w-full rounded-md border border-secondary-600 bg-transparent p-2 pl-10 text-sm text-foreground dark:border-secondary-300"
         placeholder="Start typing to search..."
       />
     </div>

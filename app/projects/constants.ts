@@ -2,7 +2,7 @@
 
 export type ActiveProjectLabelConfig = Record<
   string,
-  { className: string; shortName: string; name: string; ref: string }
+  { className: string; shortName?: string; name: string; ref: string }
 >;
 
 export const ACTIVE_PROJECT_LABELS: ActiveProjectLabelConfig = {

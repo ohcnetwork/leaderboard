@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import { Activity, ActivityData, Contributor, Highlights } from "./types";
 import { padZero } from "./utils";
 import { readFile, readdir } from "fs/promises";
+import { existsSync } from "fs";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
@@ -35,7 +36,10 @@ function formatSlugJSON(slug: string) {
 }
 
 async function getSlackSlugs() {
-  const files = await readdir(`${slackRoot}`);
+  if (!existsSync(slackRoot)) {
+    return {};
+  }
+  const files = await readdir(slackRoot);
   return Object.fromEntries(files.map((file) => [formatSlugJSON(file), file]));
 }
 

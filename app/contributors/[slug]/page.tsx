@@ -218,8 +218,8 @@ export default async function Page({ params }: Params) {
         </div>
 
         <div className="px-4 md:p-0">
-          <h3 className="my-4 font-bold text-foreground">Learning Activity</h3>
-          <div className="overflow-x-auto">
+          <h3 className="my-4 font-bold text-foreground">Activity</h3>
+          <div>
             <ActivityCalendarGit calendarData={contributor.calendarData} />
           </div>
         </div>

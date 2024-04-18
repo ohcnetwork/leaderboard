@@ -8,6 +8,8 @@ import { parseDateRangeSearchParam } from "@/lib/utils";
 import { SORT_BY_OPTIONS, FILTER_BY_ROLE_OPTIONS } from "@/lib/const";
 import { PageProps } from "@/lib/types";
 import { env } from "@/env.mjs";
+import { useState } from "react";
+import { MdFilterList, MdFilterListOff } from "react-icons/md";
 import TextSearchBar from "@/components/TextSearchBar";
 
 const SortOptions = Object.entries(SORT_BY_OPTIONS).map(([value, text]) => ({
@@ -26,6 +28,7 @@ export default function Searchbar({ searchParams }: PageProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [start, end] = parseDateRangeSearchParam(searchParams.between);
+  const [showFilter, setShowFilter] = useState(false);
 
   const updateSearchParam = (key: string, value?: string) => {
     const current = new URLSearchParams(searchParams as Record<string, string>);
@@ -39,10 +42,9 @@ export default function Searchbar({ searchParams }: PageProps) {
     router.replace(`${pathname}${query}`, { scroll: false });
   };
 
-  return (
-    <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
-      <div className="flex flex-col flex-wrap gap-4 md:flex-row">
-        <TextSearchBar searchString={searchParams.search} />
+  const FilterComponents = () => {
+    return (
+      <>
         <DateRangePicker
           value={{ start, end }}
           onChange={(value) => {
@@ -108,8 +110,34 @@ export default function Searchbar({ searchParams }: PageProps) {
               searchParams.ordering === "asc" ? "desc" : "asc",
             );
           }}
-          className="md:grow-1 grow md:w-[120px] "
+          className="md:grow-1 mb-4 grow md:w-[120px]"
         />
+      </>
+    );
+  };
+
+  return (
+    <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
+      <div className="flex flex-col flex-wrap sm:hidden">
+        <div className="flex flex-row gap-2">
+          <TextSearchBar searchString={searchParams.search} />
+          <button onClick={() => setShowFilter(!showFilter)} className="">
+            {showFilter ? (
+              <MdFilterList className="mx-auto h-8 w-8 cursor-pointer" />
+            ) : (
+              <MdFilterListOff className="mx-auto h-8 w-8 cursor-pointer" />
+            )}
+          </button>
+        </div>
+        <div
+          className={`${showFilter ? "mt-4 max-h-[50vh]" : "max-h-0"} flex flex-col gap-4 overflow-hidden transition-all duration-500 sm:hidden`}
+        >
+          <FilterComponents />
+        </div>
+      </div>
+      <div className="hidden flex-col flex-wrap gap-4 sm:flex md:flex-row">
+        <TextSearchBar searchString={searchParams.search} />
+        <FilterComponents />
       </div>
     </div>
   );

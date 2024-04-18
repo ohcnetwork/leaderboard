@@ -118,42 +118,51 @@ export default async function fetchGitHubReleases(
 interface RepositoriesResponse {
   organization: {
     repositories: {
+      nodes: {
+        name: string;
+      }[];
       pageInfo: {
         hasNextPage: boolean;
         endCursor: string | null;
       };
-      nodes: Repository[];
     };
   };
 }
+
 export async function fetchAllReposName() {
-  let repos: string[] = [];
-  let afterCursor: string | null = null;
+  const allRepositoryNames: string[] = [];
+  let cursor = null;
 
   do {
-    const response: RepositoriesResponse = await octokit.graphql({
-      query: `
-        query GetTop10ActiveRepos($org: String!, $after: String) {
-          organization(login: $org) {
-            repositories(first: 20, after: $after, orderBy: { field: UPDATED_AT, direction: DESC }) {
-              pageInfo {
-                hasNextPage
-                endCursor
-              }
-              nodes {
-                name
-              }
+    const result: RepositoriesResponse = await octokit.graphql.paginate(
+      `
+      query paginate($cursor: String, $organization: String!) {
+        organization(login: $organization) {
+          repositories(first: 10, after: $cursor, orderBy: { field: STARGAZERS, direction: DESC }) {
+            nodes {
+              name
+            }
+            pageInfo {
+              hasNextPage
+              endCursor
             }
           }
         }
+      }
       `,
-      org: env.NEXT_PUBLIC_GITHUB_ORG,
-      after: afterCursor,
-    });
-    const { nodes, pageInfo } = response.organization.repositories;
-    repos.push(...nodes.map((repo) => repo.name));
-    afterCursor = pageInfo.hasNextPage ? pageInfo.endCursor : null;
-  } while (afterCursor !== null);
+      {
+        organization: "coronasafe",
+        cursor: cursor,
+      },
+    );
 
-  return repos;
+    const repositories = result.organization.repositories.nodes;
+    repositories.forEach((repo) => {
+      allRepositoryNames.push(repo.name);
+    });
+
+    cursor = result.organization.repositories.pageInfo.endCursor;
+  } while (cursor !== null);
+
+  return allRepositoryNames;
 }

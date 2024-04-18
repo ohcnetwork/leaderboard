@@ -15,6 +15,7 @@ const MenuItems = {
   "/projects": "Projects",
   "/feed": "Feed",
   "/releases": "Releases",
+  "/issues": "Issues",
 };
 
 export default function Navbar() {

@@ -131,11 +131,8 @@ interface RepositoriesResponse {
 
 export async function fetchAllReposName() {
   const allRepositoryNames: string[] = [];
-  let cursor = null;
-
-  do {
-    const result: RepositoriesResponse = await octokit.graphql.paginate(
-      `
+  const result: RepositoriesResponse = await octokit.graphql.paginate(
+    `
       query paginate($cursor: String, $organization: String!) {
         organization(login: $organization) {
           repositories(first: 10, after: $cursor, orderBy: { field: STARGAZERS, direction: DESC }) {
@@ -150,19 +147,15 @@ export async function fetchAllReposName() {
         }
       }
       `,
-      {
-        organization: "coronasafe",
-        cursor: cursor,
-      },
-    );
+    {
+      organization: "coronasafe",
+    },
+  );
 
-    const repositories = result.organization.repositories.nodes;
-    repositories.forEach((repo) => {
-      allRepositoryNames.push(repo.name);
-    });
-
-    cursor = result.organization.repositories.pageInfo.endCursor;
-  } while (cursor !== null);
+  const repositories = result.organization.repositories.nodes;
+  repositories.forEach((repo) => {
+    allRepositoryNames.push(repo.name);
+  });
 
   return allRepositoryNames;
 }

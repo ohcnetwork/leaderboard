@@ -15,8 +15,13 @@ const MenuItems = {
   "/projects": "Projects",
   "/feed": "Feed",
   "/releases": "Releases",
+  "/issues": "Issues",
 };
-
+const availableMenuItems = Object.fromEntries(
+  Object.entries(MenuItems).filter(([href, label]) => {
+    return process.env.NEXT_PUBLIC_FEATURES?.split(",").includes(label);
+  }),
+);
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -27,7 +32,7 @@ export default function Navbar() {
           <Logo />
 
           <div className="hidden flex-row items-center justify-between gap-3 rounded bg-secondary-100 font-semibold dark:bg-secondary-800 md:rounded-full md:px-6 md:py-1 lg:flex">
-            {Object.entries(MenuItems).map(([href, label]) => (
+            {Object.entries(availableMenuItems).map(([href, label]) => (
               <Link
                 key={href}
                 href={href}
@@ -73,7 +78,7 @@ export default function Navbar() {
               </button>
             </div>
             <div className="flex flex-col items-center justify-center gap-2 md:px-4 md:py-2">
-              {Object.entries(MenuItems).map(([href, label]) => (
+              {Object.entries(availableMenuItems).map(([href, label]) => (
                 <Link
                   key={href}
                   onClick={() => setOpen(!open)}

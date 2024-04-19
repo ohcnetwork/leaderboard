@@ -1,5 +1,10 @@
 // Handles incoming POST requests from Slack's Event API
-import { addEODUpdate, updateAppHome } from "@/lib/slackbotutils";
+import { getContributors } from "@/lib/api";
+import {
+  EODUpdatesManager,
+  reactToMessage,
+  updateAppHome,
+} from "@/lib/slackbotutils";
 import { createHmac } from "crypto";
 
 export const POST = async (req: Request) => {
@@ -9,7 +14,7 @@ export const POST = async (req: Request) => {
 
   const time = Math.floor(new Date().getTime() / 1000);
   if (Math.abs(time - parseInt(timestamp)) > 60 * 5) {
-    console.log("Request is too old");
+    console.error("Request is too old");
     return new Response("Request is too old", { status: 400 });
   }
 
@@ -22,28 +27,47 @@ export const POST = async (req: Request) => {
       .digest("hex");
 
   if (signature !== incoming_signature) {
-    console.log("Invalid signature");
+    console.error("Invalid signature");
     return new Response("Invalid signature", { status: 403 });
   }
 
   const body = JSON.parse(raw_body);
-
   if (body.type === "url_verification") {
     return Response.json({
       challenge: body.challenge,
     });
   }
 
+  const contributor = await getContributor(body.event.user);
+  if (!contributor) {
+    console.error(`Unauthorized user ${body.event.user}`);
+    return new Response("Unauthorized", { status: 403 });
+  }
+
   if (body.event.type === "message") {
+    const eodUpdates = EODUpdatesManager(contributor);
     const message = body.event.text;
-    const user = body.event.user;
-    addEODUpdate(message, user);
+
+    if (message.toLowerCase() === "clear updates") {
+      console.debug(`clearing updates for ${contributor.github}`);
+      await eodUpdates.clear();
+    } else {
+      console.debug(`adding updates for ${contributor.github}`);
+      await eodUpdates.append(message);
+    }
+
+    reactToMessage(body.event.channel, body.event.ts, "white_check_mark");
   }
 
   if (body.event.type === "app_home_opened") {
-    const user = body.event.user;
-    updateAppHome(user);
+    console.debug(`updating app home for ${contributor.github}`);
+    updateAppHome(contributor);
   }
 
   return new Response(null, { status: 204 });
+};
+
+const getContributor = async (slackUserID: string) => {
+  const contributors = await getContributors();
+  return contributors.find((c) => c.slack === slackUserID);
 };

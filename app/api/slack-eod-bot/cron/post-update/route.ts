@@ -1,4 +1,4 @@
-import { getSlackContributors } from "@/lib/slackbotutils";
+import { getContributors } from "@/lib/api";
 import { NextRequest } from "next/server";
 
 export const GET = async (req: NextRequest) => {
@@ -9,14 +9,14 @@ export const GET = async (req: NextRequest) => {
     process.env.CRON_SECRET &&
     req.headers.get("Authorization") !== `Bearer ${process.env.CRON_SECRET}`
   ) {
-    return new Response("Unauthorized", { status: 401 });
+    return new Response("Unauthorized", { status: 403 });
   }
 
-  const slackContributors = await getSlackContributors();
+  const users = (await getContributors()).filter((c) => !!c.slack);
 
-  for (const contributor of slackContributors) {
+  for (const user of users) {
     fetch(
-      `${process.env.NEXT_PUBLIC_META_URL}/api/slack-eod-bot/cron/post-update/${contributor.githubUsername}${preview === "yes" ? "/preview" : ""}`,
+      `${process.env.NEXT_PUBLIC_META_URL}/api/slack-eod-bot/cron/post-update/${user.github}${preview === "yes" ? "/preview" : ""}`,
       {
         method: "GET",
         headers: {

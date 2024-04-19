@@ -2,6 +2,7 @@ import { kv } from "@vercel/kv";
 import { formatDuration as _formatDuration } from "date-fns";
 import { getDailyReport } from "./contributor";
 import { getContributors } from "@/lib/api";
+import { Contributor } from "@/lib/types";
 
 export const getHumanReadableUpdates = (
   data: Awaited<ReturnType<typeof getDailyReport>>,
@@ -153,17 +154,19 @@ export const getHumanReadableUpdates = (
   };
 };
 
+const slackApiHeaders = {
+  "Content-Type": "application/json",
+  Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
+};
+
 export const sendSlackMessage = async (
   channel: string,
   text: string,
   blocks?: any,
 ) => {
-  return await fetch(`https://slack.com/api/chat.postMessage`, {
+  return await fetch("https://slack.com/api/chat.postMessage", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
-    },
+    headers: slackApiHeaders,
     body: JSON.stringify({
       channel,
       text,
@@ -172,53 +175,51 @@ export const sendSlackMessage = async (
   });
 };
 
-export const getSlackContributors = async () => {
-  const contributors = await getContributors();
-
-  const slackContributors: {
-    githubUsername: string;
-    slackID: string;
-    updates?: any;
-  }[] = contributors
-    .filter((c) => !!c.slack)
-    .map((c) => ({ githubUsername: c.github, slackID: c.slack }));
-
-  return slackContributors;
+export const reactToMessage = async (
+  channel: string,
+  timestamp: string,
+  reaction: string,
+) => {
+  return await fetch("https://slack.com/api/reactions.add", {
+    method: "POST",
+    headers: slackApiHeaders,
+    body: JSON.stringify({
+      channel,
+      timestamp,
+      name: reaction,
+    }),
+  });
 };
 
-export const addEODUpdate = async (message: string, user: string) => {
-  const contributors = await getSlackContributors();
-  const contributor = contributors.find((c) => c.slackID === user);
-
-  if (!contributor) {
-    return;
-  }
-
-  const updates: string[] =
-    (await kv.get("eod:" + contributor.githubUsername)) || [];
-
-  const clear = message.toLowerCase() === "clear updates";
-
-  const newUpdates = clear ? [] : [...updates, message];
-  await kv.set("eod:" + contributor.githubUsername, newUpdates);
-  if (clear) {
-    sendSlackMessage(contributor.slackID, "Your updates have been cleared");
-  }
+const getEODUpdates = async (contributor: Contributor) => {
+  return ((await kv.get("eod:" + contributor.github)) || []) as string[];
 };
 
-export const updateAppHome = async (user: string) => {
-  const contributors = await getSlackContributors();
-  const contributor = contributors.find((c) => c.slackID === user);
+const setEODUpdates = async (contributor: Contributor, updates: string[]) => {
+  await kv.set("eod:" + contributor.github, updates);
+};
 
-  if (!contributor) {
-    console.error(`No user found for: ${user}`);
-    return;
-  }
-  console.log(`Updating app home for: ${contributor?.githubUsername}`);
+const clearEODUpdates = async (contributor: Contributor) => {
+  await setEODUpdates(contributor, []);
+};
 
-  const dailyReport = await getDailyReport(contributor.githubUsername);
-  const updates: string[] =
-    (await kv.get("eod:" + contributor.githubUsername)) || [];
+const appendEODUpdate = async (contributor: Contributor, ...arr: string[]) => {
+  const existing = await getEODUpdates(contributor);
+  await setEODUpdates(contributor, [...existing, ...arr]);
+};
+
+export const EODUpdatesManager = (contributor: Contributor) => {
+  return {
+    get: () => getEODUpdates(contributor),
+    set: (eodUpdates: string[]) => setEODUpdates(contributor, eodUpdates),
+    clear: () => clearEODUpdates(contributor),
+    append: (...updates: string[]) => appendEODUpdate(contributor, ...updates),
+  };
+};
+
+export const updateAppHome = async (contributor: Contributor) => {
+  const dailyReport = await getDailyReport(contributor.github);
+  const eodUpdates = await EODUpdatesManager(contributor).get();
 
   const res = await fetch(`https://slack.com/api/views.publish`, {
     method: "POST",
@@ -227,7 +228,7 @@ export const updateAppHome = async (user: string) => {
       Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
     },
     body: JSON.stringify({
-      user_id: user,
+      user_id: contributor.slack,
       view: {
         type: "home",
         blocks: [
@@ -248,7 +249,7 @@ Activities Bot is in beta.
             type: "header",
             text: {
               type: "plain_text",
-              text: `Manually added EOD updates (${updates.length})`,
+              text: `Manually added EOD updates (${eodUpdates.length})`,
               emoji: true,
             },
           },
@@ -257,7 +258,7 @@ Activities Bot is in beta.
             text: {
               type: "mrkdwn",
               text:
-                updates.map((update) => `· ${update}\n`).join("") ||
+                eodUpdates.map((update) => `· ${update}\n`).join("") ||
                 "_No manually entered EOD updates..._",
             },
           },
@@ -370,7 +371,4 @@ Activities Bot is in beta.
       },
     }),
   });
-
-  console.log(res.status);
-  console.log(await res.json());
 };

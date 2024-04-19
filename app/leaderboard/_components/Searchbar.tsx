@@ -32,7 +32,6 @@ export default function Searchbar({ searchParams }: PageProps) {
 
   const updateSearchParam = (key: string, value?: string) => {
     const current = new URLSearchParams(searchParams as Record<string, string>);
-    console.log(current);
     if (!value) {
       current.delete(key);
     } else {

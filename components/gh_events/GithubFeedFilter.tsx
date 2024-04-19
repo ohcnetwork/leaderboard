@@ -11,7 +11,7 @@ const GithubFeed = (props: { filterEvents: FilterOption[] }) => {
   const updateSearchParam = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
 
-    value !== "All" ? params.set(key, value) : params.delete(key);
+    !!value ? params.set(key, value) : params.delete(key);
 
     router.push(pathname + "?" + params.toString());
   };
@@ -35,6 +35,9 @@ const GithubFeed = (props: { filterEvents: FilterOption[] }) => {
                         updateSearchParam(filter.title, e.target.value);
                       }}
                     >
+                      <option className="w-2 sm:w-auto sm:text-sm" value="">
+                        All
+                      </option>
                       {filter.options.map((option, optionIndex) => (
                         <option
                           className="w-2 sm:w-auto sm:text-sm"

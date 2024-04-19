@@ -126,7 +126,6 @@ interface RepositoriesResponse {
 }
 
 export async function fetchAllReposName() {
-  const allRepositoryNames: string[] = [];
   const result: RepositoriesResponse = await octokit.graphql.paginate(
     `
       query paginate($cursor: String, $organization: String!) {
@@ -148,10 +147,9 @@ export async function fetchAllReposName() {
     },
   );
 
-  const repositories = result.organization.repositories.nodes;
-  repositories.forEach((repo) => {
-    allRepositoryNames.push(repo.name);
-  });
+  const allRepositoryNames = result.organization.repositories.nodes.map(
+    (repo) => repo.name,
+  );
 
   return allRepositoryNames;
 }

@@ -14,15 +14,21 @@ const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
 export const revalidate = 600;
 
-export default async function FeedPage({ searchParams }: any) {
-  const { Repository, Events } = searchParams;
+interface FeedPageProps {
+  searchParams: {
+    repository: string;
+    events: string;
+  };
+}
+
+export default async function FeedPage({ searchParams }: FeedPageProps) {
+  const { repository, events } = searchParams;
   const repositories = await fetchAllReposName();
   const filterEvents: FilterOption[] = [
-    { title: "Repository", options: ["All", ...repositories] },
+    { title: "repository", options: repositories },
     {
-      title: "Events",
+      title: "events",
       options: [
-        "All",
         "PullRequestReviewCommentEvent",
         "PullRequestReviewEvent",
         "MemberEvent",
@@ -35,7 +41,7 @@ export default async function FeedPage({ searchParams }: any) {
       ],
     },
   ] as const;
-  let events = await octokit.paginate(
+  let allEvents = await octokit.paginate(
     "GET /orgs/{org}/events",
     {
       org: GITHUB_ORG,
@@ -46,33 +52,20 @@ export default async function FeedPage({ searchParams }: any) {
       return data.filter(exludeBotEvents).filter(excludeBlacklistedEvents);
     },
   );
-  if (!Object.entries(events).length) {
+  if (!Object.entries(allEvents).length) {
     return <LoadingText text="Fetching latest events" />;
   }
 
-  if (Repository && Events) {
-    events = events.filter((event) => {
-      const repoName = event.repo.name.replace(
-        `${env.NEXT_PUBLIC_GITHUB_ORG}/`,
-        "",
-      );
-      return (
-        repoName === searchParams.Repository &&
-        event.type === searchParams.Events
-      );
-    });
-  } else if (Repository) {
-    events = events.filter((event) => {
-      const repoName = event.repo.name.replace(
-        `${env.NEXT_PUBLIC_GITHUB_ORG}/`,
-        "",
-      );
-      return repoName === searchParams.Repository;
-    });
-  } else if (Events) {
-    events = events.filter((event) => {
-      return event.type === searchParams.Events;
-    });
+  if (searchParams.repository) {
+    allEvents = allEvents.filter((e) =>
+      e.repo.name.includes(
+        env.NEXT_PUBLIC_GITHUB_ORG + "/" + searchParams.repository,
+      ),
+    );
+  }
+
+  if (searchParams.events) {
+    allEvents = allEvents.filter((e) => e.type === searchParams.events);
   }
 
   return (
@@ -82,7 +75,7 @@ export default async function FeedPage({ searchParams }: any) {
         <div className="relative flow-root w-full max-w-4xl p-4 lg:my-8">
           <h1 className="text-4xl text-primary-500 dark:text-white">Feed</h1>
           <ul role="list" className="mb-20 mt-10 flex flex-col gap-4 space-y-4">
-            {events.map((e) => (
+            {allEvents.map((e) => (
               <GitHubEvent key={e.id} event={e} />
             ))}
           </ul>

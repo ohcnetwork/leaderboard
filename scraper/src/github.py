@@ -71,17 +71,6 @@ class GitHubScraper:
                 "open_prs": [],
                 "authored_issue_and_pr": [],
             }
-            
-    def get_default_banch(self, repoOwner, reponame):
-        if reponame in default_branch_repos:
-            return default_branch_repos[reponame]
-        
-        response = requests.get(f"https://api.github.com/repos/{repoOwner}/{reponame}")
-        response_json = response.json()
-        defaultBranchName = response_json["default_branch"]
-        default_branch_repos[reponame] = defaultBranchName
-        
-        return defaultBranchName
     
     def parse_event(self, event, event_time):
         user = event["actor"]["login"]
@@ -197,14 +186,11 @@ class GitHubScraper:
                 {
                     "type": "pushed_commits",
                     "time": event_time,
-                    # "title": f'Pushed({len(all_commits)}) commits to {event["repo"]["name"]}({branch})',
                     "repo": event["repo"]["name"],
                     "branch": branch,
                     "commits": all_commits,
                 },
             )
-
-
 
     def add_collaborations(self, event, event_time):
         collaborators = set()

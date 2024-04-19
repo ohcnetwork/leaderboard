@@ -115,18 +115,8 @@ export default async function fetchGitHubReleases(
     .slice(0, sliceLimit);
 }
 
-interface RepositoriesResponse {
-  organization: {
-    repositories: {
-      nodes: {
-        name: string;
-      }[];
-    };
-  };
-}
-
 export async function fetchAllReposName() {
-  const result: RepositoriesResponse = await octokit.graphql.paginate(
+  const result = await octokit.graphql.paginate(
     `
       query paginate($cursor: String, $organization: String!) {
         organization(login: $organization) {
@@ -143,13 +133,11 @@ export async function fetchAllReposName() {
       }
       `,
     {
-      organization: "coronasafe",
+      organization: env.NEXT_PUBLIC_GITHUB_ORG,
     },
   );
 
-  const allRepositoryNames = result.organization.repositories.nodes.map(
-    (repo) => repo.name,
-  );
-
-  return allRepositoryNames;
+  return result.organization.repositories.nodes.map(
+    (r: { name: string }) => r.name,
+  ) as string[];
 }

@@ -32,5 +32,5 @@ export async function GET(
     );
   }
 
-  return Response.json(getDailyReport(user));
+  return Response.json(await getDailyReport(user));
 }

@@ -7,6 +7,8 @@ import {
 import { getDailyReport } from "@/lib/contributor";
 import { getContributorBySlug } from "@/lib/api";
 
+export const maxDuration = 300;
+
 export async function GET(
   req: NextRequest,
   { params }: { params: { username: string } },

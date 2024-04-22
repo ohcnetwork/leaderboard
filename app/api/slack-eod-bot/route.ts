@@ -7,6 +7,8 @@ import {
 } from "@/lib/slackbotutils";
 import { createHmac } from "crypto";
 
+export const maxDuration = 300;
+
 export const POST = async (req: Request) => {
   const timestamp = req.headers.get("X-Slack-Request-Timestamp") || "0";
 
@@ -36,6 +38,10 @@ export const POST = async (req: Request) => {
     return Response.json({
       challenge: body.challenge,
     });
+  }
+
+  if (body.event.bot_profile) {
+    return new Response(null, { status: 200 });
   }
 
   const contributor = await getContributor(body.event.user);

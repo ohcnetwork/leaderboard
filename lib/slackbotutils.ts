@@ -253,10 +253,7 @@ export const updateAppHome = async (contributor: Contributor) => {
 
   await fetch(`https://slack.com/api/views.publish`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
-    },
+    headers: slackApiHeaders,
     body: JSON.stringify({
       user_id: contributor.slack,
       view: {

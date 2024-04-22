@@ -22,7 +22,7 @@ export const POST = async (req: Request) => {
   const basestring = ["v0", timestamp, raw_body].join(":");
   const signature =
     "v0=" +
-    createHmac("sha256", process.env.SLACK_SIGNING_SECRET || "")
+    createHmac("sha256", process.env.SLACK_EOD_BOT_SIGNING_SECRET || "")
       .update(basestring)
       .digest("hex");
 

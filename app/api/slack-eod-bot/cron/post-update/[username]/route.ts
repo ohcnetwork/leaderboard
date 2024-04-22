@@ -35,7 +35,7 @@ export async function GET(
     contributor.slack,
   );
 
-  sendSlackMessage(process.env.SLACK_BOT_EOD_CHANNEL || "", "", updates);
+  sendSlackMessage(process.env.SLACK_EOD_BOT_CHANNEL || "", "", updates);
   eodUpdatesManager.clear();
   return new Response("OK");
 }

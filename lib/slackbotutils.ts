@@ -156,7 +156,7 @@ export const getHumanReadableUpdates = (
 
 const slackApiHeaders = {
   "Content-Type": "application/json",
-  Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
+  Authorization: `Bearer ${process.env.SLACK_EOD_BOT_TOKEN}`,
 };
 
 export const sendSlackMessage = async (

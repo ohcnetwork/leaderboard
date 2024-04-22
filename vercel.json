@@ -4,11 +4,11 @@
   "crons": [
     {
       "path": "/api/slack-eod-bot/cron/post-update?preview=yes",
-      "schedule": "0 19 * * *"
+      "schedule": "30 13 * * *"
     },
     {
       "path": "/api/slack-eod-bot/cron/post-update",
-      "schedule": "30 19 * * *"
+      "schedule": "00 14 * * *"
     }
   ]
 }

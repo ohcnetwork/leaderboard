@@ -56,12 +56,12 @@ export const POST = async (req: Request) => {
       await eodUpdates.append(message);
     }
 
-    reactToMessage(body.event.channel, body.event.ts, "white_check_mark");
+    await reactToMessage(body.event.channel, body.event.ts, "white_check_mark");
   }
 
   if (body.event.type === "app_home_opened") {
     console.debug(`updating app home for ${contributor.github}`);
-    updateAppHome(contributor);
+    await updateAppHome(contributor);
   }
 
   return new Response(null, { status: 204 });

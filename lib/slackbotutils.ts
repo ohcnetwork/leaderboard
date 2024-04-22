@@ -251,7 +251,7 @@ export const updateAppHome = async (contributor: Contributor) => {
   const dailyReport = await getDailyReport(contributor.github);
   const eodUpdates = await EODUpdatesManager(contributor).get();
 
-  await fetch(`https://slack.com/api/views.publish`, {
+  const res = await fetch(`https://slack.com/api/views.publish`, {
     method: "POST",
     headers: slackApiHeaders,
     body: JSON.stringify({
@@ -320,4 +320,7 @@ export const updateAppHome = async (contributor: Contributor) => {
       },
     }),
   });
+
+  console.info(`updated app home for ${contributor.github}`);
+  console.info(await res.json());
 };

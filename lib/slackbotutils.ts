@@ -217,11 +217,41 @@ export const EODUpdatesManager = (contributor: Contributor) => {
   };
 };
 
+const appHomeSection = (title: string, items: object[][]) => {
+  return {
+    type: "rich_text",
+    elements: [
+      {
+        type: "rich_text_section",
+        elements: [
+          {
+            type: "text",
+            text: `${title} (${items.length})`,
+            style: { bold: true },
+          },
+          {
+            type: "text",
+            text: `\n${items.length === 0 ? `No ${title} for today` : ""}`,
+          },
+        ],
+      },
+      {
+        type: "rich_text_list",
+        style: "bullet",
+        elements: items.map((item) => ({
+          type: "rich_text_section",
+          elements: [...item],
+        })),
+      },
+    ],
+  };
+};
+
 export const updateAppHome = async (contributor: Contributor) => {
   const dailyReport = await getDailyReport(contributor.github);
   const eodUpdates = await EODUpdatesManager(contributor).get();
 
-  const res = await fetch(`https://slack.com/api/views.publish`, {
+  await fetch(`https://slack.com/api/views.publish`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -236,137 +266,59 @@ export const updateAppHome = async (contributor: Contributor) => {
             type: "section",
             text: {
               type: "mrkdwn",
-              text: `
-Hey there 👋 
-Activities Bot is in beta.
-              `,
+              text: `Hey there 👋 Activities Bot is in beta. _Last updated on ${new Date().toLocaleString("en-US", { timeZone: process.env.NEXT_PUBLIC_TIMEZONE })}_`,
             },
           },
-          {
-            type: "divider",
-          },
-          {
-            type: "header",
-            text: {
-              type: "plain_text",
-              text: `Manually added EOD updates (${eodUpdates.length})`,
-              emoji: true,
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text:
-                eodUpdates.map((update) => `· ${update}\n`).join("") ||
-                "_No manually entered EOD updates..._",
-            },
-          },
-          {
-            type: "divider",
-          },
-          {
-            type: "header",
-            text: {
-              type: "plain_text",
-              text: `Pull Requests (${dailyReport.pull_requests.length})`,
-              emoji: true,
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text:
-                dailyReport.pull_requests
-                  .map((pr) => `· ${pr.title}\n`)
-                  .join("") || "_No pull requests..._",
-            },
-          },
-          {
-            type: "divider",
-          },
-          {
-            type: "header",
-            text: {
-              type: "plain_text",
-              text: `Commits (${dailyReport.commits.length})`,
-              emoji: true,
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text:
-                dailyReport.commits
-                  .map((commit) => `· ${commit.title}\n`)
-                  .join("") || "_No commits made..._",
-            },
-          },
-          {
-            type: "divider",
-          },
-          {
-            type: "header",
-            text: {
-              type: "plain_text",
-              text: `Code Reviews (${dailyReport.reviews.length})`,
-              emoji: true,
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text:
-                dailyReport.reviews
-                  .map((review) => `· ${review.state} ${review.pull_request}\n`)
-                  .join("") || "_No code reviews..._",
-            },
-          },
-          {
-            type: "divider",
-          },
-          {
-            type: "header",
-            text: {
-              type: "plain_text",
-              text: `Active Issues (${dailyReport.issues_active.length})`,
-              emoji: true,
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text:
-                dailyReport.issues_active
-                  .map((issue) => `· ${issue.title}}\n`)
-                  .join("") || "_No ative issues..._",
-            },
-          },
-          {
-            type: "divider",
-          },
-          {
-            type: "header",
-            text: {
-              type: "plain_text",
-              text: `Pending Issues (${dailyReport.issues_pending.length})`,
-              emoji: true,
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text:
-                dailyReport.issues_pending
-                  .map((issue) => `· ${issue.title}\n`)
-                  .join("") || "_No pending issues..._",
-            },
-          },
+          { type: "divider" },
+          appHomeSection(
+            "General EOD updates",
+            eodUpdates.map((update) => [{ type: "text", text: update }]),
+            // "_No general updates added for the day. Converse with the bot in the messages tab to add one._",
+          ),
+          { type: "divider" },
+          appHomeSection(
+            "Pull Requests",
+            dailyReport.pull_requests.map((pr) => [
+              { type: "link", text: pr.title, url: pr.url },
+            ]),
+          ),
+          { type: "divider" },
+          appHomeSection(
+            "Commits",
+            dailyReport.commits.map((commit) => [
+              { type: "link", text: commit.title, url: commit.url },
+            ]),
+          ),
+          { type: "divider" },
+          appHomeSection(
+            "Code Reviews",
+            dailyReport.reviews.map((review) => [
+              {
+                type: "text",
+                text:
+                  ({
+                    CHANGES_REQUESTED: "Changes Requested",
+                    APPROVED: "Approved",
+                    COMMENTED: "Reviewed",
+                  }[review.state] ?? "Reviewed") + ": ",
+              },
+              { type: "link", text: review.pull_request, url: review.url },
+            ]),
+          ),
+          { type: "divider" },
+          appHomeSection(
+            "Active Issues",
+            dailyReport.issues_active.map((issue) => [
+              { type: "link", text: issue.title, url: issue.url },
+            ]),
+          ),
+          { type: "divider" },
+          appHomeSection(
+            "Pending Issues",
+            dailyReport.issues_pending.map((issue) => [
+              { type: "link", text: issue.title, url: issue.url },
+            ]),
+          ),
         ],
       },
     }),

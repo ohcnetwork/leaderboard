@@ -164,7 +164,7 @@ export const sendSlackMessage = async (
   text: string,
   blocks?: any,
 ) => {
-  return await fetch("https://slack.com/api/chat.postMessage", {
+  const res = await fetch("https://slack.com/api/chat.postMessage", {
     method: "POST",
     headers: slackApiHeaders,
     body: JSON.stringify({
@@ -173,6 +173,11 @@ export const sendSlackMessage = async (
       ...blocks,
     }),
   });
+
+  const data = await res.json();
+  if (!data.ok) {
+    console.error(data);
+  }
 };
 
 export const reactToMessage = async (
@@ -180,7 +185,7 @@ export const reactToMessage = async (
   timestamp: string,
   reaction: string,
 ) => {
-  return await fetch("https://slack.com/api/reactions.add", {
+  const res = await fetch("https://slack.com/api/reactions.add", {
     method: "POST",
     headers: slackApiHeaders,
     body: JSON.stringify({
@@ -189,6 +194,11 @@ export const reactToMessage = async (
       name: reaction,
     }),
   });
+
+  const data = await res.json();
+  if (!data.ok) {
+    console.error(data);
+  }
 };
 
 const getEODUpdates = async (contributor: Contributor) => {

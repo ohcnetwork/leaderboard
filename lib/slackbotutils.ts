@@ -164,11 +164,16 @@ export const sendSlackMessage = async (
   text: string,
   blocks?: any,
 ) => {
+  const resolvedChannel =
+    process.env.SLACK_EOD_BOT_DEBUG === "true"
+      ? process.env.SLACK_EOD_BOT_CHANNEL
+      : channel;
+
   const res = await fetch("https://slack.com/api/chat.postMessage", {
     method: "POST",
     headers: slackApiHeaders,
     body: JSON.stringify({
-      channel,
+      channel: resolvedChannel,
       text,
       ...blocks,
     }),

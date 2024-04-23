@@ -27,23 +27,20 @@ export async function GET(
   const readableUpdates =
     eodUdpates.length > 0
       ? `
-        Hello <@${contributor.slack}>, here are your updates for today:\n
-        ${eodUdpates.map((update) => `${update}`).join("\n\n")}\n
-        If you wish to add more updates, please reply to this message with your updates.
-        If you wish to rewrite all updates, please reply with \`clear updates\` and then specify your updates.
-    `
+Hello <@${contributor.slack}>, here are your updates for today:
+
+${eodUdpates.map((update, i) => `${i + 1}. ${update}`).join("\n")}
+
+If you wish to add more updates, please reply to this message with your updates.
+If you wish to rewrite all updates, please reply with \`clear updates\` and then specify your updates.`
       : `
-        Hello <@${contributor.slack}>, you have not specified any EOD updates for today.
-        If you wish to add updates, please reply to this message with your updates.
-    `;
+Hello <@${contributor.slack}>, you have not specified any EOD updates for today.
+If you wish to add updates, please reply to this message with your updates.`;
 
   const message = `
-        ${readableUpdates}\n
-        These updates will be sent to the EOD channel at the end of the working day along with your contribution data.
-    `
-    .split("\n")
-    .map((s) => s.trim())
-    .join("\n");
+${readableUpdates}
+These updates will be sent to the EOD channel at the end of the working day along with your contribution data.
+    `;
 
   await sendSlackMessage(contributor.slack, message);
 

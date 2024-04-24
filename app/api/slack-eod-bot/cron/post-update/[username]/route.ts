@@ -9,11 +9,12 @@ import { getContributorBySlug } from "@/lib/api";
 
 export const maxDuration = 300;
 
-export async function GET(
+export async function POST(
   req: NextRequest,
   { params }: { params: { username: string } },
 ) {
   const { username } = params;
+  const { reviews } = await req.json();
 
   if (
     process.env.CRON_SECRET &&
@@ -28,7 +29,7 @@ export async function GET(
   }
 
   const eodUpdatesManager = EODUpdatesManager(contributor);
-  const report = await getDailyReport(username);
+  const report = await getDailyReport(username, reviews);
   const eodUpdates = await eodUpdatesManager.get();
 
   const updates = getHumanReadableUpdates(
@@ -37,7 +38,7 @@ export async function GET(
     contributor.slack,
   );
 
-  sendSlackMessage(process.env.SLACK_EOD_BOT_CHANNEL || "", "", updates);
+  await sendSlackMessage(process.env.SLACK_EOD_BOT_CHANNEL || "", "", updates);
   eodUpdatesManager.clear();
   return new Response("OK");
 }

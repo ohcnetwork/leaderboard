@@ -22,7 +22,7 @@ export const GET = async (req: NextRequest) => {
   if (preview) {
     for (const user of users) {
       fetch(
-        `${process.env.NEXT_PUBLIC_META_URL}/api/slack-eod-bot/cron/post-update/${user.github}/preview}`,
+        `https://contributors.ohc.network/api/slack-eod-bot/cron/post-update/${user.github}/preview`,
         { method: "GET", headers },
       );
     }
@@ -30,7 +30,7 @@ export const GET = async (req: NextRequest) => {
     const reviews = await getPullRequestReviews();
     for (const user of users) {
       fetch(
-        `${process.env.NEXT_PUBLIC_META_URL}/api/slack-eod-bot/cron/post-update/${user.github}}`,
+        `https://contributors.ohc.network/api/slack-eod-bot/cron/post-update/${user.github}`,
         {
           method: "POST",
           headers,

@@ -4,11 +4,15 @@ const Search = ({
   handleOnChange,
   className = "",
   defaultValue = "",
+  suggestions = [],
 }: {
   handleOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   defaultValue?: string;
+  suggestions?: string[];
 }) => {
+  const showSuggestions = suggestions.length > 0;
+
   return (
     <div className={"relative rounded-md shadow-sm " + className}>
       <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">

@@ -29,15 +29,15 @@ export default async function FeedPage({ searchParams }: FeedPageProps) {
     {
       title: "events",
       options: [
-        "PullRequestReviewCommentEvent",
-        "PullRequestReviewEvent",
-        "MemberEvent",
-        "IssuesEvent",
-        "IssueCommentEvent",
-        "PullRequestEvent",
-        "PushEvent",
-        "ForkEvent",
-        "ReleaseEvent",
+        "PullRequest ReviewCommentEvent",
+        "PullRequest ReviewEvent",
+        "Member Event",
+        "Issues Event",
+        "Issue CommentEvent",
+        "Pull RequestEvent",
+        "Push Event",
+        "Fork Event",
+        "Release Event",
       ],
     },
   ] as const;
@@ -70,7 +70,7 @@ export default async function FeedPage({ searchParams }: FeedPageProps) {
 
   return (
     <>
-      <div className="lg:justify-betw flex flex-col lg:flex-row-reverse">
+      <div className="flex-col">
         <GithubFeedFilter filterEvents={filterEvents} />
         <div className="relative flow-root w-full max-w-4xl p-4 lg:my-8">
           <h1 className="text-4xl text-primary-500 dark:text-white">Feed</h1>

@@ -27,10 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-foreground">
-        <div>
+        <div className="flex min-h-screen flex-col justify-between">
           <Provider>
-            <Navbar />
-            {children}
+            <div>
+              <Navbar />
+              {children}
+            </div>
             <Footer />
           </Provider>
         </div>

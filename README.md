@@ -25,18 +25,22 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### Troubleshooting
+
 If you encounter any issues during setup, refer to the following troubleshooting tips:
 
 - **Error: GITHUB_PAT is not configured in the environment. Request quota exhausted for request POST /graphql**
+
   - If you're facing this error for new contributors, follow these steps:
+
     1. Instead of running `pnpm dev`, create your own GitHub access token. [Read Steps here](https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
     2. Run the following command instead:
-       
+
        ```bash
        GITHUB_PAT=<YOUR_KEY> pnpm dev
        ```
+
   - Alternatively, if you have the `gh cli` installed and configured on your device, you can run the following command without creating an access token:
-    
+
     ```bash
     GITHUB_PAT=$(gh auth token) pnpm dev
     ```
@@ -90,15 +94,16 @@ You will be able to see the user's profile page at `http://localhost:3000/contri
 
 ## Environment Variables
 
-| Variable | Description | Default | Optional? |
-|---|---|---|---|
-| **NEXT_PUBLIC_ORG_NAME** | Will be displayed in the navbar | ohc.network | No |
-| **NEXT_PUBLIC_ORG_INFO** | Will be displayed in the "What do we do?" section. | Open Healthcare Network is a free and open-source disaster management system that is used by National Health Mission, Government of India and various state governments for reimaging digital war rooms. The solution that students got an opportunity to intern with has supported 3.34Lac patient management and 1.29 Lac ambulance shiftings and is approved by the United Nations as a Digital Public Good. | Yes |
-| **NEXT_PUBLIC_ORG_LOGO** | Will be displayed in the footer. | /logo.webp | No |
-| **NEXT_PUBLIC_META_TITLE** | Metadata title | Open Healthcare Network | No |
-| **NEXT_PUBLIC_META_IMG** | Metadata img | /logo.webp | No |
-| **NEXT_PUBLIC_META_DESCRIPTION** | Metadata description | OHC Network Leaderboard tracks the weekly progress of all coronasafe contributors. | No |
-| **NEXT_PUBLIC_META_URL** | Metadata url | https://leaderboard.ohc.network | No |
-| **NEXT_PUBLIC_PAGE_TITLE** | Will be displayed in page title. | OHC Network Contributors | No |
-| **NEXT_PUBLIC_CONTRIBUTORS_INFO** | Will be displayed next to "Our Contributors" section. You can use it to display a note about your contributors. |  | Yes |
-| **DATA_SOURCE** | Url for data repository | https://github.com/coronasafe/leaderboard-data.git | Yes |
+| Variable                          | Description                                                                                                     | Default                                                                                                                                                                                                                                                                                                                                                                                                         | Optional? |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| **NEXT_PUBLIC_ORG_NAME**          | Will be displayed in the navbar                                                                                 | ohc.network                                                                                                                                                                                                                                                                                                                                                                                                     | No        |
+| **NEXT_PUBLIC_ORG_INFO**          | Will be displayed in the "What do we do?" section.                                                              | Open Healthcare Network is a free and open-source disaster management system that is used by National Health Mission, Government of India and various state governments for reimaging digital war rooms. The solution that students got an opportunity to intern with has supported 3.34Lac patient management and 1.29 Lac ambulance shiftings and is approved by the United Nations as a Digital Public Good. | Yes       |
+| **NEXT_PUBLIC_ORG_LOGO**          | Will be displayed in the footer.                                                                                | /logo.webp                                                                                                                                                                                                                                                                                                                                                                                                      | No        |
+| **NEXT_PUBLIC_META_TITLE**        | Metadata title                                                                                                  | Open Healthcare Network                                                                                                                                                                                                                                                                                                                                                                                         | No        |
+| **NEXT_PUBLIC_META_IMG**          | Metadata img                                                                                                    | /logo.webp                                                                                                                                                                                                                                                                                                                                                                                                      | No        |
+| **NEXT_PUBLIC_META_DESCRIPTION**  | Metadata description                                                                                            | OHC Network Leaderboard tracks the weekly progress of all coronasafe contributors.                                                                                                                                                                                                                                                                                                                              | No        |
+| **NEXT_PUBLIC_META_URL**          | Metadata url                                                                                                    | https://leaderboard.ohc.network                                                                                                                                                                                                                                                                                                                                                                                 | No        |
+| **NEXT_PUBLIC_PAGE_TITLE**        | Will be displayed in page title.                                                                                | OHC Network Contributors                                                                                                                                                                                                                                                                                                                                                                                        | No        |
+| **NEXT_PUBLIC_CONTRIBUTORS_INFO** | Will be displayed next to "Our Contributors" section. You can use it to display a note about your contributors. |                                                                                                                                                                                                                                                                                                                                                                                                                 | Yes       |
+| **DATA_SOURCE**                   | Url for data repository                                                                                         | https://github.com/coronasafe/leaderboard-data.git                                                                                                                                                                                                                                                                                                                                                              | Yes       |
+| **NEXT_PUBLIC_FEATURES**                   | These features will be displayed                                                                                    | Leaderboard,Contributors,Feed,Releases,                                                                                                                               | Yes       |

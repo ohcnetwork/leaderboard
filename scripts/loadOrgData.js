@@ -35,7 +35,11 @@ if (fs.existsSync(path.join(dataRepoPath, ".git"))) {
   console.log("Cloning data repository for the first time...");
 
   fs.rmSync(dataRepoPath, { recursive: true, force: true });
+<<<<<<< HEAD
   executeCommand(`git clone ${DATA_SOURCE} ${dataRepoPath}`);
+=======
+  executeCommand(`git clone --depth=1 ${DATA_SOURCE} ${dataRepoPath}`);
+>>>>>>> fe7c741c839a63b0e4539ebae45f2e48739939e8
   executeCommand("git remote add upstream " + DATA_SOURCE, dataRepoPath);
   executeCommand("git remote remove origin", dataRepoPath);
   executeCommand("git pull upstream main", dataRepoPath);

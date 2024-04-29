@@ -49,16 +49,3 @@ if (fs.existsSync(path.join(dataRepoPath, "config/assets"))) {
     { recursive: true },
   );
 }
-const additionalFileSrc = path.join(dataRepoPath, "config/opengraph-image.tsx");
-const additionalFileDest = path.join(
-  cwd,
-  "app/contributors/[slug]",
-  "opengraph-image.tsx",
-);
-
-if (fs.existsSync(additionalFileSrc)) {
-  console.log("Copying additional file opengraph-image.tsx...");
-  fs.copyFileSync(additionalFileSrc, additionalFileDest);
-} else {
-  console.error("File opengraph-image.tsx not found in the config folder");
-}

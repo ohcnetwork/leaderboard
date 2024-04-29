@@ -175,7 +175,7 @@ export default async function Home() {
                       <span className="text-secondary-600 dark:text-secondary-300">
                         <time
                           dateTime={env.NEXT_PUBLIC_ORG_START_DATE}
-                          title={`Since ${formatDate(startDate)}}`}
+                          title={`Since ${formatDate(startDate)}`}
                           className="underline underline-offset-4"
                         >
                           Week {differenceInWeeks(new Date(), startDate)}

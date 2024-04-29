@@ -35,11 +35,7 @@ if (fs.existsSync(path.join(dataRepoPath, ".git"))) {
   console.log("Cloning data repository for the first time...");
 
   fs.rmSync(dataRepoPath, { recursive: true, force: true });
-<<<<<<< HEAD
-  executeCommand(`git clone ${DATA_SOURCE} ${dataRepoPath}`);
-=======
   executeCommand(`git clone --depth=1 ${DATA_SOURCE} ${dataRepoPath}`);
->>>>>>> fe7c741c839a63b0e4539ebae45f2e48739939e8
   executeCommand("git remote add upstream " + DATA_SOURCE, dataRepoPath);
   executeCommand("git remote remove origin", dataRepoPath);
   executeCommand("git pull upstream main", dataRepoPath);
@@ -52,4 +48,17 @@ if (fs.existsSync(path.join(dataRepoPath, "config/assets"))) {
     path.join(cwd, "public"),
     { recursive: true },
   );
+}
+const additionalFileSrc = path.join(dataRepoPath, "config/opengraph-image.tsx");
+const additionalFileDest = path.join(
+  cwd,
+  "app/contributors/[slug]",
+  "opengraph-image.tsx",
+);
+
+if (fs.existsSync(additionalFileSrc)) {
+  console.log("Copying additional file opengraph-image.tsx...");
+  fs.copyFileSync(additionalFileSrc, additionalFileDest);
+} else {
+  console.error("File opengraph-image.tsx not found in the config folder");
 }

@@ -1,11 +1,10 @@
-import { NextRequest } from "next/server";
 import { EODUpdatesManager, sendSlackMessage } from "@/lib/slackbotutils";
 import { getContributorBySlug } from "@/lib/api";
 
 export const maxDuration = 300;
 
 export async function GET(
-  req: NextRequest,
+  req: Request,
   { params }: { params: { username: string } },
 ) {
   const { username } = params;

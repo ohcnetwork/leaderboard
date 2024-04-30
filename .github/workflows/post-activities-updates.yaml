@@ -1,7 +1,22 @@
 on:
   workflow_call:
+    inputs:
+      LEADERBOARD_URL:
+        type: string
+        required: true
+        description: URL to the Leaderboard Deployment (to access the EOD API's)
+
     secrets:
-      SLACK_EOD_BOT_WEBHOOK:
+      GITHUB_TOKEN:
+        required: true
+
+      LEADERBOARD_API_KEY:
+        required: true
+
+      SLACK_EOD_BOT_CHANNEL:
+        required: true
+
+      SLACK_EOD_BOT_TOKEN:
         required: true
 
 jobs:
@@ -15,7 +30,7 @@ jobs:
         with:
           repository: coronasafe/leaderboard
           path: ./leaderboard
-          sparse-checkout: scripts
+          sparse-checkout: activities-bot
 
       - uses: actions/setup-node@v4
         with:
@@ -27,4 +42,7 @@ jobs:
         env:
           GITHUB_ORG: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SLACK_EOD_BOT_WEBHOOK_URL: ${{ secrets.SLACK_EOD_BOT_WEBHOOK }}
+          LEADERBOARD_URL: ${{ inputs.LEADERBOARD_URL }}
+          LEADERBOARD_API_KEY: ${{ secrets.LEADERBOARD_API_KEY }}
+          SLACK_EOD_BOT_CHANNEL: ${{ secrets.SLACK_EOD_BOT_CHANNEL }}
+          SLACK_EOD_BOT_TOKEN: ${{ secrets.SLACK_EOD_BOT_TOKEN }}

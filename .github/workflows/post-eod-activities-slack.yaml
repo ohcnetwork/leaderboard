@@ -38,7 +38,7 @@ jobs:
 
       - run: npm install @octokit/action gray-matter
 
-      - run: node scripts/slackEODReminder.js
+      - run: node activities-bot/postUpdates.js
         env:
           GITHUB_ORG: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}

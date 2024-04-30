@@ -2,7 +2,6 @@ const { readFile, readdir } = require("fs/promises");
 const { join } = require("path");
 const matter = require("gray-matter");
 
-// const { Octokit } = require("@octokit/action");
 const { Octokit } = require("octokit");
 
 const root = join(process.cwd(), "data-repo/contributors");

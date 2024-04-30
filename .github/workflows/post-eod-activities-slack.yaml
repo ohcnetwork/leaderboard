@@ -7,7 +7,7 @@ on:
         description: URL to the Leaderboard Deployment (to access the EOD API's)
 
     secrets:
-      GITHUB_TOKEN:
+      GITHUB_PAT:
         required: true
 
       LEADERBOARD_API_KEY:
@@ -41,7 +41,7 @@ jobs:
       - run: node scripts/slackEODReminder.js
         env:
           GITHUB_ORG: ${{ github.repository_owner }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
           LEADERBOARD_URL: ${{ inputs.LEADERBOARD_URL }}
           LEADERBOARD_API_KEY: ${{ secrets.LEADERBOARD_API_KEY }}
           SLACK_EOD_BOT_CHANNEL: ${{ secrets.SLACK_EOD_BOT_CHANNEL }}

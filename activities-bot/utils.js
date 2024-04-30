@@ -178,7 +178,7 @@ function getHumanReadableUpdates({ updates, counts }, slackID, githubId) {
 
 Summary: Opened *${counts.pull_requests}* pull requests, Reviewed *${counts.reviews}* PRs and *${counts.eod_updates}* other general updates.
 
-<https://github.com/${githubId}|GitHub Profile> | <${process.env.NEXT_PUBLIC_META_URL}/contributors/${githubId}|Contributor Profile>
+<https://github.com/${githubId}|GitHub Profile> | <${LEADERBOARD_URL}/contributors/${githubId}|Contributor Profile>
 `,
             },
             accessory: {

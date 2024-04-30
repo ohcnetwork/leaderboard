@@ -46,4 +46,4 @@ jobs:
           LEADERBOARD_API_KEY: ${{ secrets.LEADERBOARD_API_KEY }}
           SLACK_EOD_BOT_CHANNEL: ${{ secrets.SLACK_EOD_BOT_CHANNEL }}
           SLACK_EOD_BOT_TOKEN: ${{ secrets.SLACK_EOD_BOT_TOKEN }}
-          CONTRIBUTORS_DIR: "data/contributors"
+          CONTRIBUTORS_DIR: "contributors"

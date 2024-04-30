@@ -139,8 +139,7 @@ async function sendSlackMessage(channel, text, blocks) {
     method: "POST",
     headers: slackApiHeaders,
     body: JSON.stringify({
-      // channel,
-      channel: "U02TDGQQPMJ", // TODO: replace with channel before pushign
+      channel,
       text,
       ...blocks,
     }),

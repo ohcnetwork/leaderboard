@@ -19,8 +19,6 @@ async function main() {
 
   console.info("⚙️ Ready to post EOD updates onto Slack Channel");
   for (const [github, slack] of Object.entries(allContributors)) {
-    if (github !== "rithviknishad") continue; // TODO: remove this before pushing to prod
-
     const events = allEvents[github] ?? [];
     const eodUpdates = allEodUpdates[github] ?? [];
 

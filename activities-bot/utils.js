@@ -4,8 +4,10 @@ const matter = require("gray-matter");
 
 const { Octokit } = require("octokit");
 
-const root =
-  process.env.CONTRIBUTORS_DIR || join(process.cwd(), "data-repo/contributors");
+const root = join(
+  process.cwd(),
+  process.env.CONTRIBUTORS_DIR || "data-repo/contributors",
+);
 
 async function getContributorBySlug(file) {
   const { data } = matter(await readFile(join(root, file), "utf8"));

@@ -2,8 +2,8 @@ const { readFile, readdir } = require("fs/promises");
 const { join } = require("path");
 const matter = require("gray-matter");
 
-const { Octokit } = require("@octokit/action");
-// const { Octokit } = require("octokit");
+// const { Octokit } = require("@octokit/action");
+const { Octokit } = require("octokit");
 
 const root = join(process.cwd(), "data-repo/contributors");
 
@@ -15,7 +15,7 @@ async function getContributorBySlug(file) {
   };
 }
 
-export async function getContributors() {
+async function getContributors() {
   const slugs = await readdir(`${root}`);
   const contributors = await Promise.all(
     slugs.map((path) => getContributorBySlug(path)),
@@ -28,12 +28,12 @@ export async function getContributors() {
   );
 }
 
-export const GITHUB_ORG = process.env.GITHUB_ORG;
-export const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-export const LEADERBOARD_API_KEY = process.env.LEADERBOARD_API_KEY;
-export const LEADERBOARD_URL = process.env.LEADERBOARD_URL;
-export const SLACK_EOD_BOT_TOKEN = process.env.SLACK_EOD_BOT_TOKEN;
-export const SLACK_EOD_BOT_CHANNEL = process.env.SLACK_EOD_BOT_CHANNEL;
+const GITHUB_ORG = process.env.GITHUB_ORG;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const LEADERBOARD_API_KEY = process.env.LEADERBOARD_API_KEY;
+const LEADERBOARD_URL = process.env.LEADERBOARD_URL;
+const SLACK_EOD_BOT_TOKEN = process.env.SLACK_EOD_BOT_TOKEN;
+const SLACK_EOD_BOT_CHANNEL = process.env.SLACK_EOD_BOT_CHANNEL;
 
 function isAllowedEvent(event) {
   if (event.type === "PullRequestEvent") {
@@ -45,9 +45,9 @@ function isAllowedEvent(event) {
   }
 }
 
-export const octokit = new Octokit({ auth: GITHUB_TOKEN });
+const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
-export async function getEvents(allowedAuthors) {
+async function getEvents(allowedAuthors) {
   const aDayAgoDate = new Date();
   aDayAgoDate.setDate(aDayAgoDate.getDate() - 1);
   const aDayAgo = aDayAgoDate.getTime();
@@ -68,7 +68,7 @@ export async function getEvents(allowedAuthors) {
   return Object.groupBy(events, (e) => e.actor.login);
 }
 
-export function mergeUpdates(events, eodUpdates) {
+function mergeUpdates(events, eodUpdates) {
   const updates = [];
   const counts = {
     eod_updates: eodUpdates.length,
@@ -112,14 +112,14 @@ const leaderboardApiHeaders = {
 
 const eodUpdatesApi = `${LEADERBOARD_URL}/api/slack-eod-bot/eod-updates`;
 
-export async function getEODUpdates() {
+async function getEODUpdates() {
   const res = await fetch(eodUpdatesApi, {
     headers: leaderboardApiHeaders,
   });
   return res.json();
 }
 
-export async function flushEODUpdates() {
+async function flushEODUpdates() {
   const res = await fetch(eodUpdatesApi, {
     headers: leaderboardApiHeaders,
     method: "DELETE",
@@ -150,11 +150,7 @@ async function sendSlackMessage(channel, text, blocks) {
   }
 }
 
-export function getHumanReadableUpdates(
-  { updates, counts },
-  slackID,
-  githubId,
-) {
+function getHumanReadableUpdates({ updates, counts }, slackID, githubId) {
   const colorRange = [
     { color: "#00FF00", min: 5 },
     { color: "#FFFF00", min: 1 },
@@ -252,10 +248,19 @@ Summary: Opened *${counts.pull_requests}* pull requests, Reviewed *${counts.revi
   };
 }
 
-export async function postEODMessage({ github, slack, updates }) {
+async function postEODMessage({ github, slack, updates }) {
   await sendSlackMessage(
     SLACK_EOD_BOT_CHANNEL,
     "",
     getHumanReadableUpdates(updates, slack, github),
   );
 }
+
+module.exports = {
+  getContributors,
+  getEvents,
+  getEODUpdates,
+  postEODMessage,
+  mergeUpdates,
+  flushEODUpdates,
+};

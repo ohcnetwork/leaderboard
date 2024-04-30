@@ -39,13 +39,13 @@ export const POST = async (req: Request) => {
   // Prevent Duplicates
   const event_id = body.event_id;
   if (event_id) {
-    const event = await kv.get("event:" + event_id);
+    const event = await kv.get("slack-event:" + event_id);
     if (event) {
       console.debug("Duplicate event");
       return new Response(null, { status: 204 });
     }
 
-    await kv.set("event:" + event_id, "1", { ex: 60 });
+    await kv.set("slack-event:" + event_id, "1", { ex: 60 });
   }
 
   if (body.type === "url_verification") {

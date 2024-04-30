@@ -110,15 +110,17 @@ const leaderboardApiHeaders = {
   Authorization: `${LEADERBOARD_API_KEY}`,
 };
 
+const eodUpdatesApi = `${LEADERBOARD_URL}/api/slack-eod-bot/eod-updates`;
+
 export async function getEODUpdates() {
-  const res = await fetch(LEADERBOARD_URL, {
+  const res = await fetch(eodUpdatesApi, {
     headers: leaderboardApiHeaders,
   });
   return res.json();
 }
 
 export async function flushEODUpdates() {
-  const res = await fetch(LEADERBOARD_URL, {
+  const res = await fetch(eodUpdatesApi, {
     headers: leaderboardApiHeaders,
     method: "DELETE",
   });

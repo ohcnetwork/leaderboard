@@ -36,8 +36,8 @@ async function main() {
     console.info(`- ✅ ${github}: Posted ${activityCount} updates.`);
   }
 
-  // console.info("Flushing EOD updates from cache.");
-  // await flushEODUpdates();
+  console.info("Flushing EOD updates from cache.");
+  await flushEODUpdates();
 
   console.info("✅ Completed!");
 }

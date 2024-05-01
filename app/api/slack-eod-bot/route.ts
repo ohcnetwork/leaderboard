@@ -5,6 +5,7 @@ import {
   reactToMessage,
   updateAppHome,
 } from "@/lib/slackbotutils";
+import { kv } from "@vercel/kv";
 import { createHmac } from "crypto";
 
 export const maxDuration = 300;
@@ -34,6 +35,19 @@ export const POST = async (req: Request) => {
   }
 
   const body = JSON.parse(raw_body);
+
+  // Prevent Duplicates
+  const event_id = body.event_id;
+  if (event_id) {
+    const event = await kv.get("slack-event:" + event_id);
+    if (event) {
+      console.debug("Duplicate event");
+      return new Response(null, { status: 204 });
+    }
+
+    await kv.set("slack-event:" + event_id, "1", { ex: 60 });
+  }
+
   if (body.type === "url_verification") {
     return Response.json({
       challenge: body.challenge,

@@ -3,7 +3,7 @@ import { clearAllEODUpdates, getAllEODUpdates } from "@/lib/slackbotutils";
 
 export const GET = async (req: Request) => {
   if (!isAuthenticated(req)) {
-    return Response.json({ error: "Unauthorized" }, { status: 403 });
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
   const updates = await getAllEODUpdates();
   return Response.json(updates);
@@ -11,7 +11,7 @@ export const GET = async (req: Request) => {
 
 export const DELETE = async (req: Request) => {
   if (!isAuthenticated(req)) {
-    return Response.json({ error: "Unauthorized" }, { status: 403 });
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
   const count = await clearAllEODUpdates();
   return Response.json({ count });

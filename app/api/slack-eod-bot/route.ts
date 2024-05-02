@@ -31,7 +31,7 @@ export const POST = async (req: Request) => {
 
   if (signature !== incoming_signature) {
     console.error("Invalid signature");
-    return new Response("Invalid signature", { status: 403 });
+    return new Response("Invalid signature", { status: 401 });
   }
 
   const body = JSON.parse(raw_body);
@@ -61,7 +61,7 @@ export const POST = async (req: Request) => {
   const contributor = await getContributor(body.event.user);
   if (!contributor) {
     console.error(`Unauthorized user ${body.event.user}`);
-    return new Response("Unauthorized", { status: 403 });
+    return new Response("Unauthorized", { status: 401 });
   }
 
   if (body.event.type === "message") {

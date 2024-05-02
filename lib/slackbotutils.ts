@@ -89,7 +89,6 @@ const getEODUpdates = async (contributor: Contributor) => {
 
 const setEODUpdates = async (contributor: Contributor, updates: string[]) => {
   await kv.set("eod:" + contributor.github, updates);
-  await kv.del("daily-report:" + contributor.github);
 };
 
 const clearEODUpdates = async (contributor: Contributor) => {

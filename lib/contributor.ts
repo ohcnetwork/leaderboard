@@ -4,14 +4,7 @@ import { parseDateRangeSearchParam } from "@/lib/utils";
 
 const org = env.NEXT_PUBLIC_GITHUB_ORG;
 
-export type DailyReport = {
-  pull_requests: Awaited<ReturnType<typeof getPullRequestsOpened>>;
-  commits: Awaited<ReturnType<typeof getCommits>>;
-  reviews: Awaited<ReturnType<typeof getPullRequestReviews>>;
-  issues_active: Awaited<ReturnType<typeof getActiveIssues>>;
-  issues_pending: Awaited<ReturnType<typeof getPendingIssues>>;
-  user_info: Awaited<ReturnType<typeof getUserInfo>>;
-};
+export type DailyReport = Awaited<ReturnType<typeof getDailyReport>>;
 
 export const getDailyReport = async (
   user: string,
@@ -19,21 +12,14 @@ export const getDailyReport = async (
 ) => {
   const dateRange = getDateRange();
 
-  const [
-    pull_requests,
-    commits,
-    reviews,
-    issues_active,
-    issues_pending,
-    user_info,
-  ] = await Promise.all([
-    getPullRequestsOpened(user, dateRange),
-    getCommits(user, dateRange),
-    !defaultReviews ? getPullRequestReviews(user, dateRange) : defaultReviews,
-    getActiveIssues(user),
-    getPendingIssues(user),
-    getUserInfo(user),
-  ]);
+  const [pull_requests, commits, reviews, issues_active, issues_pending] =
+    await Promise.all([
+      getPullRequestsOpened(user, dateRange),
+      getCommits(user, dateRange),
+      !defaultReviews ? getPullRequestReviews(user, dateRange) : defaultReviews,
+      getActiveIssues(user),
+      getPendingIssues(user),
+    ]);
 
   return {
     pull_requests,
@@ -41,7 +27,6 @@ export const getDailyReport = async (
     reviews,
     issues_active,
     issues_pending,
-    user_info,
   };
 };
 

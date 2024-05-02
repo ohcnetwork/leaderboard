@@ -140,8 +140,10 @@ const appHomeSection = (title: string, items: object[][]) => {
 };
 
 export const updateAppHome = async (contributor: Contributor) => {
-  const dailyReportRes = await fetch(`${process.env.NEXT_PUBLIC_META_URL}/api/contributors/${contributor.github}/dailyReport`);
-  const dailyReport : DailyReport = await dailyReportRes.json();
+  const dailyReportRes = await fetch(
+    `${process.env.NEXT_PUBLIC_META_URL}/api/contributors/${contributor.github}/dailyReport`,
+  );
+  const dailyReport: DailyReport = await dailyReportRes.json();
   const eodUpdates = await EODUpdatesManager(contributor).get();
 
   const res = await fetch(`https://slack.com/api/views.publish`, {

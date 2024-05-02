@@ -11,7 +11,7 @@ export type DailyReport = {
   issues_active: Awaited<ReturnType<typeof getActiveIssues>>;
   issues_pending: Awaited<ReturnType<typeof getPendingIssues>>;
   user_info: Awaited<ReturnType<typeof getUserInfo>>;
-}
+};
 
 export const getDailyReport = async (
   user: string,
@@ -166,7 +166,7 @@ export const getPullRequestReviews = async (
 
   const data: IGetReviewsResponse = await (user
     ? octokit.graphql(
-      `
+        `
       query getReviews($org: String!, $author: String!) {
         organization(login: $org) {
           repositories(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}) {
@@ -189,10 +189,10 @@ export const getPullRequestReviews = async (
         }
       }
       `,
-      { org, author: user },
-    )
+        { org, author: user },
+      )
     : octokit.graphql(
-      `
+        `
       query getReviews($org: String!) {
         organization(login: $org) {
           repositories(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}) {
@@ -218,8 +218,8 @@ export const getPullRequestReviews = async (
         }
       }
       `,
-      { org },
-    ));
+        { org },
+      ));
 
   return data.organization.repositories.nodes.flatMap((repo) =>
     repo.pullRequests.nodes.flatMap((pr) =>

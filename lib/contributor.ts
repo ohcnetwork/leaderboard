@@ -1,14 +1,33 @@
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
 import { parseDateRangeSearchParam } from "@/lib/utils";
+import { kv } from "@vercel/kv";
 
 const org = env.NEXT_PUBLIC_GITHUB_ORG;
+
+export type DailyReport = {
+  pull_requests: Awaited<ReturnType<typeof getPullRequestsOpened>>;
+  commits: Awaited<ReturnType<typeof getCommits>>;
+  reviews: Awaited<ReturnType<typeof getPullRequestReviews>>;
+  issues_active: Awaited<ReturnType<typeof getActiveIssues>>;
+  issues_pending: Awaited<ReturnType<typeof getPendingIssues>>;
+  user_info: Awaited<ReturnType<typeof getUserInfo>>;
+}
 
 export const getDailyReport = async (
   user: string,
   defaultReviews?: Awaited<ReturnType<typeof getPullRequestReviews>>,
+  cached: boolean = false,
 ) => {
   const dateRange = getDateRange();
+
+  if (cached) {
+    const cachedData: DailyReport | null = await kv.get("daily-report:" + user);
+    if (cachedData) {
+      console.log("Displaying cached data");
+      return cachedData;
+    }
+  }
 
   const [
     pull_requests,
@@ -26,7 +45,7 @@ export const getDailyReport = async (
     getUserInfo(user),
   ]);
 
-  return {
+  const data = {
     pull_requests,
     commits,
     reviews,
@@ -34,6 +53,11 @@ export const getDailyReport = async (
     issues_pending,
     user_info,
   };
+
+  kv.set("daily-report:" + user, data, { ex: 60 * 60 });
+
+  return data;
+
 };
 
 const Q = (filters: Record<string, string | string[]>) => {
@@ -157,7 +181,7 @@ export const getPullRequestReviews = async (
 
   const data: IGetReviewsResponse = await (user
     ? octokit.graphql(
-        `
+      `
       query getReviews($org: String!, $author: String!) {
         organization(login: $org) {
           repositories(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}) {
@@ -180,10 +204,10 @@ export const getPullRequestReviews = async (
         }
       }
       `,
-        { org, author: user },
-      )
+      { org, author: user },
+    )
     : octokit.graphql(
-        `
+      `
       query getReviews($org: String!) {
         organization(login: $org) {
           repositories(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}) {
@@ -209,8 +233,8 @@ export const getPullRequestReviews = async (
         }
       }
       `,
-        { org },
-      ));
+      { org },
+    ));
 
   return data.organization.repositories.nodes.flatMap((repo) =>
     repo.pullRequests.nodes.flatMap((pr) =>

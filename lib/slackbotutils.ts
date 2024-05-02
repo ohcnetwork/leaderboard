@@ -89,6 +89,7 @@ const getEODUpdates = async (contributor: Contributor) => {
 
 const setEODUpdates = async (contributor: Contributor, updates: string[]) => {
   await kv.set("eod:" + contributor.github, updates);
+  await kv.del("daily-report:" + contributor.github);
 };
 
 const clearEODUpdates = async (contributor: Contributor) => {
@@ -140,7 +141,7 @@ const appHomeSection = (title: string, items: object[][]) => {
 };
 
 export const updateAppHome = async (contributor: Contributor) => {
-  const dailyReport = await getDailyReport(contributor.github);
+  const dailyReport = await getDailyReport(contributor.github, undefined, true);
   const eodUpdates = await EODUpdatesManager(contributor).get();
 
   const res = await fetch(`https://slack.com/api/views.publish`, {

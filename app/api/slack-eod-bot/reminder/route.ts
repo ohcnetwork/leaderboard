@@ -26,7 +26,7 @@ ${formatUpdatesMessage(updates)}`,
   );
 };
 
-const formatUpdatesMessage = async (updates?: string[]) => {
+const formatUpdatesMessage = (updates?: string[]) => {
   if (updates?.length) {
     return `
 Here are your updates for today:

@@ -1,7 +1,6 @@
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
 import { parseDateRangeSearchParam } from "@/lib/utils";
-import { kv } from "@vercel/kv";
 
 const org = env.NEXT_PUBLIC_GITHUB_ORG;
 
@@ -17,17 +16,8 @@ export type DailyReport = {
 export const getDailyReport = async (
   user: string,
   defaultReviews?: Awaited<ReturnType<typeof getPullRequestReviews>>,
-  cached: boolean = false,
 ) => {
   const dateRange = getDateRange();
-
-  if (cached) {
-    const cachedData: DailyReport | null = await kv.get("daily-report:" + user);
-    if (cachedData) {
-      console.log("Displaying cached data");
-      return cachedData;
-    }
-  }
 
   const [
     pull_requests,
@@ -45,7 +35,7 @@ export const getDailyReport = async (
     getUserInfo(user),
   ]);
 
-  const data = {
+  return {
     pull_requests,
     commits,
     reviews,
@@ -53,11 +43,6 @@ export const getDailyReport = async (
     issues_pending,
     user_info,
   };
-
-  kv.set("daily-report:" + user, data, { ex: 60 * 60 });
-
-  return data;
-
 };
 
 const Q = (filters: Record<string, string | string[]>) => {

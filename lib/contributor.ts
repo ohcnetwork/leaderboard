@@ -4,27 +4,22 @@ import { parseDateRangeSearchParam } from "@/lib/utils";
 
 const org = env.NEXT_PUBLIC_GITHUB_ORG;
 
+export type DailyReport = Awaited<ReturnType<typeof getDailyReport>>;
+
 export const getDailyReport = async (
   user: string,
   defaultReviews?: Awaited<ReturnType<typeof getPullRequestReviews>>,
 ) => {
   const dateRange = getDateRange();
 
-  const [
-    pull_requests,
-    commits,
-    reviews,
-    issues_active,
-    issues_pending,
-    user_info,
-  ] = await Promise.all([
-    getPullRequestsOpened(user, dateRange),
-    getCommits(user, dateRange),
-    !defaultReviews ? getPullRequestReviews(user, dateRange) : defaultReviews,
-    getActiveIssues(user),
-    getPendingIssues(user),
-    getUserInfo(user),
-  ]);
+  const [pull_requests, commits, reviews, issues_active, issues_pending] =
+    await Promise.all([
+      getPullRequestsOpened(user, dateRange),
+      getCommits(user, dateRange),
+      !defaultReviews ? getPullRequestReviews(user, dateRange) : defaultReviews,
+      getActiveIssues(user),
+      getPendingIssues(user),
+    ]);
 
   return {
     pull_requests,
@@ -32,7 +27,6 @@ export const getDailyReport = async (
     reviews,
     issues_active,
     issues_pending,
-    user_info,
   };
 };
 

@@ -1,158 +1,7 @@
 import { kv } from "@vercel/kv";
 import { formatDuration as _formatDuration } from "date-fns";
-import { getDailyReport } from "./contributor";
-import { getContributors } from "@/lib/api";
+import { DailyReport, getDailyReport } from "./contributor";
 import { Contributor } from "@/lib/types";
-
-export const getHumanReadableUpdates = (
-  data: Awaited<ReturnType<typeof getDailyReport>>,
-  generalUpdates: string[],
-  slackID: string,
-) => {
-  const sections = [
-    {
-      title: `Pull Requests Opened`,
-      count: data.pull_requests.length,
-      items: data.pull_requests.map((pr) => ({
-        title: pr.title,
-        url: pr.url,
-      })),
-    },
-    {
-      title: `Commits`,
-      count: data.commits.length,
-      items: data.commits.map((commit) => ({
-        title: commit.title,
-        url: commit.url,
-      })),
-    },
-    {
-      title: `Reviews`,
-      count: data.reviews.length,
-      items: data.reviews.map((review) => ({
-        title: review.pull_request,
-        url: review.url,
-      })),
-    },
-    {
-      title: `General updates`,
-      count: generalUpdates.length,
-      items: generalUpdates.map((title) => ({ title, url: undefined })),
-    },
-    {
-      title: `Active Issues`,
-      count: data.issues_active.length,
-      items: data.issues_active.map((issue) => ({
-        title: issue.title,
-        url: issue.url,
-      })),
-    },
-    {
-      title: `Pending Issues`,
-      count: data.issues_pending.length,
-      items: data.issues_pending.map((issue) => ({
-        title: issue.title,
-        url: issue.url,
-      })),
-    },
-  ];
-
-  const colorRange = [
-    {
-      color: "#00FF00",
-      min: 5,
-    },
-    {
-      color: "#FFFF00",
-      min: 1,
-    },
-    {
-      color: "#FF0000",
-      min: 0,
-    },
-  ];
-
-  const color =
-    colorRange.find(
-      (range) =>
-        range.min <=
-        data.pull_requests.length + data.commits.length + data.reviews.length,
-    )?.color || "#0000FF";
-
-  return {
-    attachments: [
-      {
-        color,
-        blocks: [
-          {
-            type: "header",
-            text: {
-              type: "plain_text",
-              text: `Updates for ${data.user_info.data.name || data.user_info.data.url.split("/").at(-1)}`,
-            },
-          },
-          {
-            type: "section",
-            text: {
-              type: "mrkdwn",
-              text: `_${data.user_info.data.url.split("/").at(-1)}_\n<@${slackID}>\n<${data.user_info.data.url}|Github Profile>\n<${process.env.NEXT_PUBLIC_META_URL}/contributors/${data.user_info.data.url.split("/").at(-1)}|Contributor Profile>`,
-            },
-            accessory: {
-              type: "image",
-              image_url: data.user_info.data.avatar_url,
-              alt_text: "profile image",
-            },
-          },
-          ...sections.flatMap((section) => [
-            {
-              type: "divider",
-            },
-            {
-              type: "rich_text",
-              elements: [
-                {
-                  type: "rich_text_section",
-                  elements: [
-                    {
-                      type: "text",
-                      text: `${section.title} (${section.count})`,
-                      style: {
-                        bold: true,
-                      },
-                    },
-                    {
-                      type: "text",
-                      text: `\n${section.items.length === 0 ? `No ${section.title.toLowerCase()} for today` : ""}`,
-                    },
-                  ],
-                },
-                {
-                  type: "rich_text_list",
-                  style: "bullet",
-                  elements: section.items.map((item) => ({
-                    type: "rich_text_section",
-                    elements: [
-                      item.url
-                        ? {
-                            type: "link",
-                            text: item.title,
-                            url: item.url,
-                          }
-                        : {
-                            type: "text",
-                            text: item.title,
-                          },
-                    ],
-                  })),
-                },
-              ],
-            },
-          ]),
-        ],
-      },
-    ],
-  };
-};
 
 const slackApiHeaders = {
   "Content-Type": "application/json",
@@ -164,19 +13,10 @@ export const sendSlackMessage = async (
   text: string,
   blocks?: any,
 ) => {
-  const resolvedChannel =
-    process.env.SLACK_EOD_BOT_DEBUG === "true"
-      ? process.env.SLACK_EOD_BOT_CHANNEL
-      : channel;
-
   const res = await fetch("https://slack.com/api/chat.postMessage", {
     method: "POST",
     headers: slackApiHeaders,
-    body: JSON.stringify({
-      channel: resolvedChannel,
-      text,
-      ...blocks,
-    }),
+    body: JSON.stringify({ channel, text, ...blocks }),
   });
 
   const data = await res.json();
@@ -204,6 +44,34 @@ export const reactToMessage = async (
   if (!data.ok) {
     console.error(data);
   }
+};
+
+const getAllEODUpdatesKeys = async () => {
+  const keys: string[] = [];
+  for await (const key of kv.scanIterator({ match: "eod:*", count: 100 })) {
+    keys.push(key);
+  }
+  return keys;
+};
+
+export const getAllEODUpdates = async () => {
+  const userUpdates: Record<string, string[]> = {};
+
+  const keys = await getAllEODUpdatesKeys();
+
+  if (keys.length) {
+    const values: string[][] = await kv.mget(...keys);
+    for (let i = 0; i < keys.length; i++) {
+      userUpdates[keys[i].replace("eod:", "")] = Array.from(new Set(values[i]));
+    }
+  }
+
+  return userUpdates;
+};
+
+export const clearAllEODUpdates = async () => {
+  const keys = await getAllEODUpdatesKeys();
+  return kv.del(...keys);
 };
 
 const getEODUpdates = async (contributor: Contributor) => {
@@ -263,7 +131,10 @@ const appHomeSection = (title: string, items: object[][]) => {
 };
 
 export const updateAppHome = async (contributor: Contributor) => {
-  const dailyReport = await getDailyReport(contributor.github);
+  const dailyReportRes = await fetch(
+    `${process.env.NEXT_PUBLIC_META_URL}/api/contributors/${contributor.github}/dailyReport`,
+  );
+  const dailyReport: DailyReport = await dailyReportRes.json();
   const eodUpdates = await EODUpdatesManager(contributor).get();
 
   const res = await fetch(`https://slack.com/api/views.publish`, {

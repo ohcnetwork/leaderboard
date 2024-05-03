@@ -120,7 +120,10 @@ export default function Searchbar({ searchParams }: PageProps) {
     <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
       <div className="flex flex-col flex-wrap sm:hidden">
         <div className="flex flex-row gap-2">
-          <TextSearchBar searchString={searchParams.search} />
+          <TextSearchBar
+            searchString={searchParams.search}
+            className="w-full sm:w-1/3"
+          />
           <button onClick={() => setShowFilter(!showFilter)} className="">
             {showFilter ? (
               <MdFilterList className="mx-auto h-8 w-8 cursor-pointer" />
@@ -136,7 +139,10 @@ export default function Searchbar({ searchParams }: PageProps) {
         </div>
       </div>
       <div className="hidden flex-col flex-wrap gap-4 sm:flex md:flex-row">
-        <TextSearchBar searchString={searchParams.search} />
+        <TextSearchBar
+          searchString={searchParams.search}
+          className="w-full md:w-1/3"
+        />
         <FilterComponents />
       </div>
     </div>

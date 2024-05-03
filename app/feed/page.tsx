@@ -2,10 +2,7 @@ import LoadingText from "@/components/LoadingText";
 import { IGitHubEvent } from "@/lib/gh_events";
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
-import {
-  // fetchAllBranchName,
-  fetchAllReposName,
-} from "../api/leaderboard/functions";
+import { fetchAllReposName } from "../api/leaderboard/functions";
 import GithubFeedFilter from "../../components/gh_events/GithubFeedFilter";
 import GitHubEvent from "@/components/gh_events/GitHubEvent";
 import { FilterOption } from "@/lib/types";
@@ -13,7 +10,6 @@ import { FilterOption } from "@/lib/types";
 const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
 export const revalidate = 600;
-
 interface FeedPageProps {
   searchParams: {
     repository: string;
@@ -22,7 +18,6 @@ interface FeedPageProps {
 }
 
 export default async function FeedPage({ searchParams }: FeedPageProps) {
-  const { repository, events } = searchParams;
   const repositories = await fetchAllReposName();
   const filterEvents: FilterOption[] = [
     { title: "repository", options: repositories },

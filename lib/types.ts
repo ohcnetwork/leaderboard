@@ -154,6 +154,7 @@ export type ContributorSocials = {
   slack: string;
 };
 export type FilterOption = {
+  [x: string]: any;
   title: string;
   options: string[];
   selectedOption?: string; // Add selectedOption property

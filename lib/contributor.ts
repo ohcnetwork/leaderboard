@@ -4,24 +4,22 @@ import { parseDateRangeSearchParam } from "@/lib/utils";
 
 const org = env.NEXT_PUBLIC_GITHUB_ORG;
 
-export const getDailyReport = async (user: string) => {
+export type DailyReport = Awaited<ReturnType<typeof getDailyReport>>;
+
+export const getDailyReport = async (
+  user: string,
+  defaultReviews?: Awaited<ReturnType<typeof getPullRequestReviews>>,
+) => {
   const dateRange = getDateRange();
 
-  const [
-    pull_requests,
-    commits,
-    reviews,
-    issues_active,
-    issues_pending,
-    user_info,
-  ] = await Promise.all([
-    getPullRequestsOpened(user, dateRange),
-    getCommits(user, dateRange),
-    getPullRequestReviews(user, dateRange),
-    getActiveIssues(user),
-    getPendingIssues(user),
-    getUserInfo(user),
-  ]);
+  const [pull_requests, commits, reviews, issues_active, issues_pending] =
+    await Promise.all([
+      getPullRequestsOpened(user, dateRange),
+      getCommits(user, dateRange),
+      !defaultReviews ? getPullRequestReviews(user, dateRange) : defaultReviews,
+      getActiveIssues(user),
+      getPendingIssues(user),
+    ]);
 
   return {
     pull_requests,
@@ -29,7 +27,6 @@ export const getDailyReport = async (user: string) => {
     reviews,
     issues_active,
     issues_pending,
-    user_info,
   };
 };
 
@@ -131,6 +128,7 @@ type IGetReviewsResponse = {
             title: string;
             reviews: {
               nodes: Array<{
+                author?: { login: string };
                 state: string;
                 createdAt: string;
                 url: string;
@@ -143,11 +141,17 @@ type IGetReviewsResponse = {
   };
 };
 
-const getPullRequestReviews = async (user: string, dateRange: string) => {
-  const since = new Date(dateRange.split("..")[0]).getTime();
+export const getPullRequestReviews = async (
+  user?: string,
+  dateRange?: string,
+) => {
+  const since = new Date(
+    (dateRange || getDateRange()).split("..")[0],
+  ).getTime();
 
-  const data: IGetReviewsResponse = await octokit.graphql(
-    `
+  const data: IGetReviewsResponse = await (user
+    ? octokit.graphql(
+        `
       query getReviews($org: String!, $author: String!) {
         organization(login: $org) {
           repositories(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}) {
@@ -170,17 +174,44 @@ const getPullRequestReviews = async (user: string, dateRange: string) => {
         }
       }
       `,
-    {
-      org,
-      author: user,
-    },
-  );
+        { org, author: user },
+      )
+    : octokit.graphql(
+        `
+      query getReviews($org: String!) {
+        organization(login: $org) {
+          repositories(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}) {
+            nodes {
+              name
+              pullRequests(first: 50, orderBy: {field: UPDATED_AT, direction: DESC}) {
+                nodes {
+                  title
+                  reviews(last: 10) {
+                    nodes {
+                      author {
+                        login
+                      }
+                      state
+                      createdAt
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      `,
+        { org },
+      ));
 
   return data.organization.repositories.nodes.flatMap((repo) =>
     repo.pullRequests.nodes.flatMap((pr) =>
       pr.reviews.nodes
         .filter((review) => new Date(review.createdAt).getTime() > since)
         .map((review) => ({
+          author: review.author?.login,
           state: review.state,
           pull_request: pr.title,
           url: review.url,

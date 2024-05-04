@@ -21,7 +21,30 @@ import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { env } from "@/env.mjs";
 import { getLeaderboardData } from "@/app/api/leaderboard/functions";
+import { Metadata, ResolvingMetadata } from "next";
 
+type Params = {
+  params: { slug: string };
+};
+
+export async function generateMetadata(
+  { params }: Params,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const slug = params.slug;
+  const contributor = await getContributorBySlug(slug, true);
+  const url = env.NEXT_PUBLIC_META_URL;
+
+  return {
+    title: slug,
+    description: contributor.content,
+    openGraph: {
+      title: slug,
+      description: contributor.content,
+      url: `${url}/contributors/${slug}`,
+    },
+  };
+}
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
   return slugs
@@ -30,10 +53,6 @@ export async function generateStaticParams() {
 }
 
 export const dynamicParams = false;
-
-type Params = {
-  params: { slug: string };
-};
 
 export default async function Page({ params }: Params) {
   const { slug } = params;

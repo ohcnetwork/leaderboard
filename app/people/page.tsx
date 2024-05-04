@@ -3,6 +3,9 @@ import { Suspense } from "react";
 import ContributorWrapper from "./_components/ContributorWrapper";
 import { PageProps } from "@/lib/types";
 import TextSearchBar from "@/components/TextSearchBar";
+
+export const maxDuration = 300;
+
 export default async function Page({ searchParams }: PageProps) {
   const keyString = `search=${searchParams?.search}`;
   return (

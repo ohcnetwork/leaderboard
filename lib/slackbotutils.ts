@@ -15,6 +15,7 @@ export const sendSlackMessage = async (
 ) => {
   const res = await fetch("https://slack.com/api/chat.postMessage", {
     method: "POST",
+    cache: "no-store",
     headers: slackApiHeaders,
     body: JSON.stringify({ channel, text, ...blocks }),
   });

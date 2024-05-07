@@ -1,29 +1,11 @@
 import { kv } from "@vercel/kv";
 import { formatDuration as _formatDuration } from "date-fns";
-import { DailyReport, getDailyReport } from "./contributor";
+import { DailyReport } from "./contributor";
 import { Contributor } from "@/lib/types";
 
 const slackApiHeaders = {
   "Content-Type": "application/json",
   Authorization: `Bearer ${process.env.SLACK_EOD_BOT_TOKEN}`,
-};
-
-export const sendSlackMessage = async (
-  channel: string,
-  text: string,
-  blocks?: any,
-) => {
-  const res = await fetch("https://slack.com/api/chat.postMessage", {
-    method: "POST",
-    cache: "no-store",
-    headers: slackApiHeaders,
-    body: JSON.stringify({ channel, text, ...blocks }),
-  });
-
-  const data = await res.json();
-  if (!data.ok) {
-    console.error(data);
-  }
 };
 
 export const reactToMessage = async (

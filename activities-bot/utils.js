@@ -122,11 +122,10 @@ async function getEODUpdates() {
 }
 
 async function flushEODUpdates() {
-  const res = await fetch(eodUpdatesApi, {
+  await fetch(eodUpdatesApi, {
     headers: leaderboardApiHeaders,
     method: "DELETE",
   });
-  return res.json();
 }
 
 const slackApiHeaders = {
@@ -261,6 +260,7 @@ module.exports = {
   getContributors,
   getEvents,
   getEODUpdates,
+  sendSlackMessage,
   postEODMessage,
   mergeUpdates,
   flushEODUpdates,

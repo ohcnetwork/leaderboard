@@ -1,8 +1,7 @@
 import { readFile, readdir } from "fs/promises";
 import { join } from "path";
 import matter from "gray-matter";
-
-const { Octokit } = require("octokit");
+import { Octokit } from "octokit";
 
 const root = join(
   process.cwd(),

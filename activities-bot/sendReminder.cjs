@@ -1,4 +1,8 @@
-const { getContributors, getEODUpdates, sendSlackMessage } = require("./utils");
+const {
+  getContributors,
+  getEODUpdates,
+  sendSlackMessage,
+} = require("./utils.cjs");
 
 const remind = async ({ slackId, updates }) => {
   await sendSlackMessage(

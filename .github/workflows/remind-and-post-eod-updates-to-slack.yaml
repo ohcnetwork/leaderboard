@@ -49,9 +49,9 @@ jobs:
       - run: npm install octokit gray-matter
 
       - name: Send reminders to eligible contributors
-        run: node leaderboard/activities-bot/sendReminder.cjs
+        run: node leaderboard/activities-bot/sendReminder.mjs
 
       - run: sleep 30m
 
       - name: Post EOD Updates to Slack Channel
-        run: node leaderboard/activities-bot/postUpdates.cjs
+        run: node leaderboard/activities-bot/postUpdates.mjs

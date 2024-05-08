@@ -2,7 +2,7 @@ const {
   getContributors,
   getEODUpdates,
   sendSlackMessage,
-} = require("./utils.cjs");
+} = require("./utils.mjs");
 
 const remind = async ({ slackId, updates }) => {
   await sendSlackMessage(

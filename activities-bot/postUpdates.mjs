@@ -5,7 +5,7 @@ const {
   postEODMessage,
   mergeUpdates,
   flushEODUpdates,
-} = require("./utils.cjs");
+} = require("./utils.mjs");
 
 async function main() {
   const allContributors = await getContributors();

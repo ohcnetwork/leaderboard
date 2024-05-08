@@ -1,8 +1,4 @@
-const {
-  getContributors,
-  getEODUpdates,
-  sendSlackMessage,
-} = require("./utils.mjs");
+import { getContributors, getEODUpdates, sendSlackMessage } from "./utils.mjs";
 
 const remind = async ({ slackId, updates }) => {
   await sendSlackMessage(

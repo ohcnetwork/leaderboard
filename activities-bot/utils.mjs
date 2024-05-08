@@ -1,6 +1,6 @@
-const { readFile, readdir } = require("fs/promises");
-const { join } = require("path");
-const matter = require("gray-matter");
+import { readFile, readdir } from "fs/promises";
+import { join } from "path";
+import matter from "gray-matter";
 
 const { Octokit } = require("octokit");
 

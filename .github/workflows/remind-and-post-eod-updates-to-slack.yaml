@@ -32,7 +32,7 @@ jobs:
       LEADERBOARD_API_KEY: ${{ secrets.LEADERBOARD_API_KEY }}
       SLACK_EOD_BOT_CHANNEL: ${{ secrets.SLACK_EOD_BOT_CHANNEL }}
       SLACK_EOD_BOT_TOKEN: ${{ secrets.SLACK_EOD_BOT_TOKEN }}
-      CONTRIBUTORS_DIR: "contributors"
+      CONTRIBUTORS_DIR: "../../contributors"
     steps:
       - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: coronasafe/leaderboard-data)
 

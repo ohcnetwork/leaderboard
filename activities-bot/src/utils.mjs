@@ -3,10 +3,8 @@ import { join } from "path";
 import matter from "gray-matter";
 import { Octokit } from "octokit";
 
-const root = join(
-  process.cwd(),
-  process.env.CONTRIBUTORS_DIR || "data-repo/contributors",
-);
+const root =
+  process.env.CONTRIBUTORS_DIR || join(process.cwd(), "data-repo/contributors");
 
 async function getContributorBySlug(file) {
   const { data } = matter(await readFile(join(root, file), "utf8"));

@@ -46,13 +46,15 @@ jobs:
         with:
           node-version: 21.x
 
-      - run: cd leaderboard/activities-bot
       - run: npm install --from-lockfile
+        working-directory: leaderboard/activities-bot
 
       - name: Send reminders to eligible contributors
         run: npm run remind
+        working-directory: leaderboard/activities-bot
 
       - run: sleep 30m
 
       - name: Post EOD Updates to Slack Channel
         run: npm run post-updates
+        working-directory: leaderboard/activities-bot

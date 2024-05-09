@@ -46,12 +46,13 @@ jobs:
         with:
           node-version: 21.x
 
-      - run: npm install octokit gray-matter
+      - run: cd activities-bot
+      - run: npm install --from-lockfile
 
       - name: Send reminders to eligible contributors
-        run: node leaderboard/activities-bot/sendReminder.mjs
+        run: npm run remind
 
       - run: sleep 30m
 
       - name: Post EOD Updates to Slack Channel
-        run: node leaderboard/activities-bot/postUpdates.mjs
+        run: npm run post-updates

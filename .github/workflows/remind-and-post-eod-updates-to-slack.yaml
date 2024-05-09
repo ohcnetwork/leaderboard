@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: 21.x
 
-      - run: cd activities-bot
+      - run: cd leaderboard/activities-bot
       - run: npm install --from-lockfile
 
       - name: Send reminders to eligible contributors

@@ -40,13 +40,11 @@ async function main() {
   const eodUpdates = await getEODUpdates();
 
   console.info("⚙️ Reminding users...");
-  await Promise.all(
-    Object.entries(allContributors).map(([githubId, slackId]) =>
-      withRetry(() => remind({ slackId, updates: eodUpdates[githubId] }), {
-        attempts: 3,
-      }),
-    ),
-  );
+  for (const [githubId, slackId] of Object.entries(allContributors)) {
+    await withRetry(() => remind({ slackId, updates: eodUpdates[githubId] }), {
+      attempts: 3,
+    });
+  }
   console.info("✅ Completed!");
 }
 

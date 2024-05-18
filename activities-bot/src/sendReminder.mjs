@@ -1,4 +1,9 @@
-import { getContributors, getEODUpdates, sendSlackMessage } from "./utils.mjs";
+import {
+  getContributors,
+  getEODUpdates,
+  sendSlackMessage,
+  withRetry,
+} from "./utils.mjs";
 
 const remind = async ({ slackId, updates }) => {
   await sendSlackMessage(
@@ -37,9 +42,8 @@ async function main() {
   console.info("⚙️ Reminding users...");
   await Promise.all(
     Object.entries(allContributors).map(([githubId, slackId]) =>
-      remind({
-        slackId,
-        updates: eodUpdates[githubId],
+      withRetry(() => remind({ slackId, updates: eodUpdates[githubId] }), {
+        attempts: 3,
       }),
     ),
   );

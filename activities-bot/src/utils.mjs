@@ -252,3 +252,17 @@ export async function postEODMessage({ github, slack, updates }) {
     getHumanReadableUpdates(updates, slack, github),
   );
 }
+
+export async function withRetry(method, { attempts }) {
+  while (attempts) {
+    try {
+      return await method();
+    } catch (error) {
+      attempts -= 1;
+
+      if (!attempts) {
+        throw error;
+      }
+    }
+  }
+}

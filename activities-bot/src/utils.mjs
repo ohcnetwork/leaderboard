@@ -44,7 +44,9 @@ function isAllowedEvent(event) {
   }
 }
 
-const throwForHttpError = async (res) => {
+const throwForHttpError = async (promise) => {
+  const res = await promise;
+
   if (!res.ok) {
     throw new Error(await res.text());
   }
@@ -120,8 +122,8 @@ const leaderboardApiHeaders = {
 const eodUpdatesApi = `${LEADERBOARD_URL}/api/slack-eod-bot/eod-updates`;
 
 export async function getEODUpdates() {
-  const res = throwForHttpError(
-    await fetch(eodUpdatesApi, {
+  const res = await throwForHttpError(
+    fetch(eodUpdatesApi, {
       headers: leaderboardApiHeaders,
     }),
   );
@@ -130,8 +132,8 @@ export async function getEODUpdates() {
 }
 
 export async function flushEODUpdates() {
-  const res = throwForHttpError(
-    await fetch(eodUpdatesApi, {
+  const res = await throwForHttpError(
+    fetch(eodUpdatesApi, {
       headers: leaderboardApiHeaders,
       method: "DELETE",
     }),
@@ -144,8 +146,8 @@ const slackApiHeaders = {
 };
 
 export async function sendSlackMessage(channel, text, blocks) {
-  const res = throwForHttpError(
-    await fetch("https://slack.com/api/chat.postMessage", {
+  const res = await throwForHttpError(
+    fetch("https://slack.com/api/chat.postMessage", {
       method: "POST",
       headers: slackApiHeaders,
       body: JSON.stringify({

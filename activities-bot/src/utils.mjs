@@ -44,6 +44,16 @@ function isAllowedEvent(event) {
   }
 }
 
+const throwForHttpError = async (promise) => {
+  const res = await promise;
+
+  if (!res.ok) {
+    throw new Error(await res.text());
+  }
+
+  return res;
+};
+
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
 export async function getEvents(allowedAuthors) {
@@ -112,17 +122,22 @@ const leaderboardApiHeaders = {
 const eodUpdatesApi = `${LEADERBOARD_URL}/api/slack-eod-bot/eod-updates`;
 
 export async function getEODUpdates() {
-  const res = await fetch(eodUpdatesApi, {
-    headers: leaderboardApiHeaders,
-  });
+  const res = await throwForHttpError(
+    fetch(eodUpdatesApi, {
+      headers: leaderboardApiHeaders,
+    }),
+  );
+
   return res.json();
 }
 
 export async function flushEODUpdates() {
-  await fetch(eodUpdatesApi, {
-    headers: leaderboardApiHeaders,
-    method: "DELETE",
-  });
+  const res = await throwForHttpError(
+    fetch(eodUpdatesApi, {
+      headers: leaderboardApiHeaders,
+      method: "DELETE",
+    }),
+  );
 }
 
 const slackApiHeaders = {
@@ -131,15 +146,17 @@ const slackApiHeaders = {
 };
 
 export async function sendSlackMessage(channel, text, blocks) {
-  const res = await fetch("https://slack.com/api/chat.postMessage", {
-    method: "POST",
-    headers: slackApiHeaders,
-    body: JSON.stringify({
-      channel,
-      text,
-      ...blocks,
+  const res = await throwForHttpError(
+    fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: slackApiHeaders,
+      body: JSON.stringify({
+        channel,
+        text,
+        ...blocks,
+      }),
     }),
-  });
+  );
 
   const data = await res.json();
   if (!data.ok) {
@@ -251,4 +268,18 @@ export async function postEODMessage({ github, slack, updates }) {
     "",
     getHumanReadableUpdates(updates, slack, github),
   );
+}
+
+export async function withRetry(method, { attempts }) {
+  while (attempts) {
+    try {
+      return await method();
+    } catch (error) {
+      attempts -= 1;
+
+      if (!attempts) {
+        throw error;
+      }
+    }
+  }
 }

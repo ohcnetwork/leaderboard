@@ -459,7 +459,7 @@ class GitHubScraper:
             self.log.debug(f"Merging user data for {user}")
             old_data = self.load_user_data(user)
             data = self.data.get(user)
-            new_unique_events = []
+            new_unique_events = []  
             for event in data["activity"]:
                 if event not in old_data["activity"]:
                     new_unique_events.append(event)
@@ -512,7 +512,7 @@ def main():
     if args.date is None:
         date = datetime.now(tz=ZoneInfo("UTC")) - timedelta(days=1)
     else:
-        date = datetime.strptime(date, "%Y-%m-%d").replace(tzinfo=ZoneInfo("UTC"))
+        date = datetime.strptime(args.date, "%Y-%m-%d").replace(tzinfo=ZoneInfo("UTC"))
 
     scraper = GitHubScraper(
         args.org_name,

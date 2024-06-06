@@ -1,0 +1,22 @@
+  {
+    "name": "scraper",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@octokit/graphql": "^8.1.1",
+      "@octokit/types": "^13.5.0",
+      "date-fns": "^3.6.0",
+      "octokit": "^4.0.2",
+      "yargs": "^17.7.2"
+    },
+    "devDependencies": {
+      "typescript": "^5.4.5"
+    }
+  }

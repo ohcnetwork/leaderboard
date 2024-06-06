@@ -33,20 +33,22 @@ export default async function GitHubEvents({ minimal }: { minimal?: boolean }) {
     .slice(0, 5);
 
   return (
-    <div className="flow-root">
-      <ul role="list" className="-mb-8 mt-4 flex flex-col gap-4 space-y-4">
-        {events ? (
-          events.map((e) => <GitHubEvent key={e.id} event={e} />)
-        ) : (
-          <>
-            <GitHubEvent />
-            <GitHubEvent />
-            <GitHubEvent />
-            <GitHubEvent />
-            <GitHubEvent />
-          </>
-        )}
-      </ul>
-    </div>
+    <>
+      <div className="flow-root">
+        <ul role="list" className="-mb-8 mt-4 flex flex-col gap-4 space-y-4">
+          {events ? (
+            events.map((e) => <GitHubEvent key={e.id} event={e} />)
+          ) : (
+            <>
+              <GitHubEvent />
+              <GitHubEvent />
+              <GitHubEvent />
+              <GitHubEvent />
+              <GitHubEvent />
+            </>
+          )}
+        </ul>
+      </div>
+    </>
   );
 }

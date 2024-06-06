@@ -28,8 +28,11 @@ export interface ActivityData {
   last_updated?: string;
   activity: Activity[];
   open_prs: OpenPr[];
-  pr_stale: number;
+  pr_stale?: number;
   authored_issue_and_pr: AuthoredIssueAndPr[];
+}
+export interface ProcessData {
+  [key: string]: ActivityData;
 }
 
 export interface Highlights {
@@ -67,9 +70,28 @@ export const ACTIVITY_TYPES = [
   "pr_merged",
   "pr_collaborated",
 ] as const;
-
+export interface Action {
+  event: string;
+  source: {
+    type: string;
+    issue: {
+      pull_request: boolean;
+      repository: {
+        full_name: string;
+      };
+      user: {
+        login: string;
+      };
+      number: number;
+    };
+  };
+  assignee: {
+    login: string;
+  };
+  created_at: Date;
+}
 export interface Activity {
-  type: (typeof ACTIVITY_TYPES)[number];
+  type: (typeof ACTIVITY_TYPES)[number] | string;
   title: string;
   time: string;
   link: string;

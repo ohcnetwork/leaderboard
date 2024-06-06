@@ -37,21 +37,25 @@ interface Comment {
   updated_at: string;
 }
 
-interface PullRequest {
+export interface PullRequest {
   html_url: string;
   user: Actor;
   title: string;
   body: string;
   number: number;
-  labels: string[];
+  labels: string[] | { name: string }[];
   comments: number;
   review_comments: number;
   commits: number;
   additions: number;
   deletions: number;
   changed_files: number;
-  created_at: string;
+  created_at: Date;
   updated_at: string;
+  merged_at: Date;
+  issue_url: string;
+  merged?: string;
+  commits_url?: string;
 }
 
 interface Review {
@@ -139,7 +143,7 @@ interface IssueCommentEvent extends GitHubEvent {
   };
 }
 
-interface PullRequestEvent extends GitHubEvent {
+export interface PullRequestEvent extends GitHubEvent {
   type: "PullRequestEvent";
   payload: {
     action: string;

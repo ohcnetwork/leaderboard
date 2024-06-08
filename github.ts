@@ -1,172 +1,21 @@
-import { formatISO, parseISO, startOfDay, subDays } from "date-fns";
 import fs from "fs";
 import path from "path";
-import { Activity, ActivityData, ProcessData, Action } from "../../lib/types";
-import { PullRequestEvent, IGitHubEvent } from "../../lib/gh_events";
-import { Octokit } from "octokit";
+import { parseISO, subDays, formatISO, startOfDay } from "date-fns";
+import octokit from "./lib/octokit";
+import {
+  Action,
+  Activity,
+  ProcessData,
+  UserData,
+  // IGitHubEvent,
+  PullRequest,
+  PullRequestEvent,
+} from "./lib/scraper_types";
+import { IGitHubEvent as IG } from "./lib/gh_events";
 
+const userBlacklist = new Set(["dependabot", "snyk-bot", "codecov-commenter"]);
 let processedData: ProcessData = {};
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-if (!GITHUB_TOKEN) {
-  console.error("GITHUB_TOKEN not found in environment");
-  process.exit(1);
-}
-const octokit = new Octokit({
-  auth: GITHUB_TOKEN,
-});
-
-const fetchEvents = async (org: string, startDate: Date, endDate: Date) => {
-  const events = await octokit.paginate(
-    "GET /orgs/{org}/events",
-    {
-      org: org,
-      per_page: 1000,
-    },
-    (response: { data: IGitHubEvent[] }) => {
-      return response.data;
-    },
-  );
-
-  let eventsCount: number = 0;
-  let filteredEvents = [];
-  for (const event of events) {
-    const eventTime: Date = new Date(event.created_at ?? 0);
-
-    if (eventTime > endDate) {
-      continue;
-    } else if (eventTime <= startDate) {
-      return filteredEvents;
-    }
-    const isBlacklisted: boolean = [
-      "dependabot",
-      "snyk-bot",
-      "codecov-commenter",
-      "github-actions[bot]",
-    ].includes(event.actor.login);
-    const isRequiredEventType: boolean = [
-      "IssueCommentEvent",
-      "IssuesEvent",
-      "PullRequestEvent",
-      "PullRequestReviewEvent",
-    ].includes(event.type ?? "");
-    console.log(isRequiredEventType);
-    if (!isBlacklisted && isRequiredEventType) {
-      console.log(event.type);
-      filteredEvents.push(event);
-    }
-    eventsCount++;
-  }
-  console.log("Fetched " + { eventsCount } + " events");
-
-  return filteredEvents;
-};
-function appendEvent(user: string, event: Activity) {
-  console.log(`Appending event for ${user}`);
-  if (!processedData[user]) {
-    console.log(`Creating new user data for ${user}`);
-    processedData[user] = {
-      last_updated: event.time,
-      activity: [event],
-      open_prs: [],
-      authored_issue_and_pr: [],
-    };
-  } else {
-    processedData[user]["activity"].push(event);
-    if (event["time"] > (processedData[user]["last_updated"] ?? 0)) {
-      processedData[user]["last_updated"] = event["time"];
-    }
-  }
-}
-const userBlacklist = new Set(["dependabot", "snyk-bot", "codecov-commenter"]);
-
-const isBlacklisted = (login: string): boolean => {
-  return login.includes("[bot]") || userBlacklist.has(login);
-};
-function parseISODate(isoDate: Date) {
-  return new Date(isoDate);
-}
-async function calculateTurnaroundTime(event: PullRequestEvent) {
-  const user: string = event.payload.pull_request.user.login;
-  const mergedAt: Date = parseISODate(event.payload.pull_request.merged_at);
-  const createdAt: Date = parseISODate(event.payload.pull_request.created_at);
-
-  const linkedIssues: [string, string][] = [];
-  const body = event.payload.pull_request.body || "";
-  const regex =
-    /(fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved) ([\w\/.-]*)(#\d+)/gi;
-  let match: RegExpExecArray | null;
-
-  while ((match = regex.exec(body)) !== null) {
-    linkedIssues.push([match[2], match[3]]);
-  }
-
-  const prTimelineResponse = await octokit.request(
-    `GET ${event.payload?.pull_request?.issue_url}/timeline`,
-  );
-
-  const prTimeline = prTimelineResponse.data;
-
-  prTimeline.forEach((action: Action) => {
-    if (
-      action.event === "cross-referenced" &&
-      action.source.type === "issue" &&
-      !action.source.issue.pull_request
-    ) {
-      linkedIssues.push([
-        action.source.issue.repository.full_name,
-        `#${action.source.issue.number}`,
-      ]);
-    }
-
-    if (action.event === "connected") {
-      // TODO: currently there is no way to get the issue number from the timeline, handle this case while moving to graphql
-    }
-  });
-  const uniqueLinkedIssues: [string, string][] = Array.from(
-    new Set(linkedIssues.map((issue) => JSON.stringify(issue))),
-  ).map((item) => JSON.parse(item) as [string, string]);
-  const assignedAts: { issue: string; time: Date }[] = [];
-
-  for (const [org_repo, issue] of uniqueLinkedIssues) {
-    const org = org_repo.split("/")[0] || event.repo.name.split("/")[0];
-    const repo = org_repo.split("/")[-1] || event.repo.name.split("/")[1];
-    const issueNumber = parseInt(issue.split("#")[1]);
-
-    const issueTimelineResponse = await octokit.request(
-      "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline",
-      {
-        owner: org,
-        repo: repo,
-        issue_number: issueNumber,
-      },
-    );
-
-    const issueTimeline = issueTimelineResponse.data;
-    issueTimeline.forEach((action: Action) => {
-      if (action.event === "assigned" && action.assignee.login === user) {
-        assignedAts.push({
-          issue: `${org}/${repo}#${issueNumber}`,
-          time: parseISODate(action.created_at),
-        });
-      }
-
-      if (action.event === "unassigned" && action.assignee.login === user) {
-        assignedAts.pop();
-      }
-    });
-  }
-
-  const assignedAt: Date | null =
-    assignedAts.length === 0
-      ? null
-      : assignedAts.reduce((min, current) =>
-          current.time < min.time ? current : min,
-        ).time;
-  const turnaroundTime =
-    (mergedAt.getTime() - (assignedAt || createdAt.getTime()).valueOf()) / 1000;
-  return turnaroundTime;
-}
 async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   let nameUserCache: { [key: string]: string } = {};
   let emailUserCache: { [key: string]: string } = {};
@@ -254,7 +103,239 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
     }
   }
 }
-async function resolve_autonomy_responsibility(event: Action, user: string) {
+
+const fetchEvents = async (
+  org: string,
+  startDate: Date,
+  endDate: Date,
+  page: number = 1,
+) => {
+  const events = await octokit.paginate(
+    "GET /orgs/{org}/events",
+    {
+      org: org,
+      per_page: 1000,
+    },
+    (response: { data: IG[] }) => {
+      return response.data as IG[];
+    },
+  );
+  console.log(events.length);
+  let eventsCount: number = 0;
+  let filteredEvents = [];
+  for (const event of events) {
+    const eventTime: Date = new Date(event.created_at ?? "");
+
+    if (eventTime > endDate) {
+      continue;
+    } else if (eventTime <= startDate) {
+      return filteredEvents;
+    }
+    const isBlacklisted: boolean = [
+      "dependabot",
+      "snyk-bot",
+      "codecov-commenter",
+      "github-actions[bot]",
+    ].includes(event.actor.login);
+    const isRequiredEventType: boolean = [
+      "IssueCommentEvent",
+      "IssuesEvent",
+      "PullRequestEvent",
+      "PullRequestReviewEvent",
+    ].includes(event.type);
+
+    if (!isBlacklisted && isRequiredEventType) {
+      console.log("Hello");
+      filteredEvents.push(event);
+      eventsCount++;
+    }
+  }
+  console.log("Fetched " + { eventsCount } + " events");
+  console.log(filteredEvents.length);
+  return filteredEvents;
+};
+const isBlacklisted = (login: string): boolean => {
+  return login.includes("[bot]") || userBlacklist.has(login);
+};
+function appendEvent(user: string, event: Activity) {
+  console.log(`Appending event for ${user}`);
+  if (!processedData[user]) {
+    console.log(`Creating new user data for ${user}`);
+    processedData[user] = {
+      last_updated: event.time,
+      activity: [event],
+      open_prs: [],
+      authored_issue_and_pr: [],
+    };
+  } else {
+    processedData[user]["activity"].push(event);
+    if (event["time"] > processedData[user]["last_updated"]) {
+      processedData[user]["last_updated"] = event["time"];
+    }
+  }
+}
+function parseISODate(isoDate: Date) {
+  return new Date(isoDate);
+}
+async function calculateTurnaroundTime(event: PullRequestEvent) {
+  const user: string = event.payload.pull_request.user.login;
+  const mergedAt: Date = parseISODate(event.payload.pull_request.merged_at);
+  const createdAt: Date = parseISODate(event.payload.pull_request.created_at);
+
+  const linkedIssues: [string, string][] = [];
+  const body = event.payload.pull_request.body || "";
+  const regex =
+    /(fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved) ([\w\/.-]*)(#\d+)/gi;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(body)) !== null) {
+    linkedIssues.push([match[2], match[3]]);
+  }
+
+  const prTimelineResponse = await octokit.request(
+    `GET ${event.payload?.pull_request?.issue_url}/timeline`,
+  );
+
+  const prTimeline = prTimelineResponse.data;
+
+  prTimeline.forEach((action: Action) => {
+    if (
+      action.event === "cross-referenced" &&
+      action.source.type === "issue" &&
+      !action.source.issue.pull_request
+    ) {
+      linkedIssues.push([
+        action.source.issue.repository.full_name,
+        `#${action.source.issue.number}`,
+      ]);
+    }
+
+    if (action.event === "connected") {
+      // TODO: currently there is no way to get the issue number from the timeline, handle this case while moving to graphql
+    }
+  });
+  const uniqueLinkedIssues: [string, string][] = Array.from(
+    new Set(linkedIssues.map((issue) => JSON.stringify(issue))),
+  ).map((item) => JSON.parse(item) as [string, string]);
+  const assignedAts: { issue: string; time: Date }[] = [];
+
+  for (const [org_repo, issue] of uniqueLinkedIssues) {
+    const org = org_repo.split("/")[0] || event.repo.name.split("/")[0];
+    const repo = org_repo.split("/")[-1] || event.repo.name.split("/")[1];
+    const issueNumber = parseInt(issue.split("#")[1]);
+
+    const issueTimelineResponse = await octokit.request(
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline",
+      {
+        owner: org,
+        repo: repo,
+        issue_number: issueNumber,
+      },
+    );
+    type issueTimelineResponseType = typeof issueTimelineResponse;
+
+    const issueTimeline = issueTimelineResponse.data;
+
+    // const issueTimeline = issueTimelineResponse.data;
+
+    issueTimeline.forEach((action: any) => {
+      if (action.event === "assigned" && action.assignee.login === user) {
+        assignedAts.push({
+          issue: `${org}/${repo}#${issueNumber}`,
+          time: parseISODate(action.created_at),
+        });
+      }
+
+      if (action.event === "unassigned" && action.assignee.login === user) {
+        assignedAts.pop();
+      }
+    });
+  }
+
+  const assignedAt: Date | null =
+    assignedAts.length === 0
+      ? null
+      : assignedAts.reduce((min, current) =>
+          current.time < min.time ? current : min,
+        ).time;
+  const turnaroundTime =
+    (mergedAt.getTime() - (assignedAt || createdAt.getTime()).valueOf()) / 1000;
+  return turnaroundTime;
+}
+
+const parse_event = async (events: any) => {
+  for (const event of events) {
+    const eventTime: Date = parseISO(event.created_at);
+    const user: string = event.actor.login;
+    if (isBlacklisted(user)) continue;
+
+    console.log("Processing event for user: ", user);
+    console.log("event_id : ", event.id);
+
+    switch (event.type) {
+      case "IssueCommentEvent":
+        if (event.payload.action === "created") {
+          appendEvent(user, {
+            type: "comment_created",
+            title: `${event.repo.name}#${event.payload.issue.number}`,
+            time: eventTime.toISOString(),
+            link: event.payload.comment.html_url,
+            text: event.payload.comment.body,
+          });
+        }
+        break;
+      case "IssuesEvent":
+        if (["opened", "assigned", "closed"].includes(event.payload.action)) {
+          appendEvent(user, {
+            type: `issue_${event.payload.action}`,
+            title: `${event.repo.name}#${event.payload.issue.number}`,
+            time: eventTime.toISOString(),
+            link: event.payload.issue.html_url,
+            text: event.payload.issue.title,
+          });
+        }
+        break;
+      case "PullRequestEvent":
+        if (event.payload.action === "opened") {
+          appendEvent(user, {
+            type: "pr_opened",
+            title: `${event.repo.name}#${event.payload.pull_request.number}`,
+            time: eventTime.toISOString(),
+            link: event.payload.pull_request.html_url,
+            text: event.payload.pull_request.title,
+          });
+        } else if (
+          event.payload.action === "closed" &&
+          event.payload.pull_request.merged
+        ) {
+          const turnaroundTime: number = await calculateTurnaroundTime(event);
+          appendEvent(user, {
+            type: "pr_merged",
+            title: `${event.repo.name}#${event.payload.pull_request.number}`,
+            time: eventTime.toISOString(),
+            link: event.payload.pull_request.html_url,
+            text: event.payload.pull_request.title,
+            turnaround_time: turnaroundTime,
+          });
+          await addCollaborations(event, eventTime);
+        }
+        break;
+      case "PullRequestReviewEvent":
+        appendEvent(user, {
+          type: "pr_reviewed",
+          time: eventTime.toISOString(),
+          title: `${event.repo.name}#${event.payload.pull_request.number}`,
+          link: event.payload.review.html_url,
+          text: event.payload.pull_request.title,
+        });
+        break;
+      default:
+        break;
+    }
+  }
+  return processedData;
+};
+async function resolve_autonomy_responsibility(event: any, user: string) {
   if (event.event === "cross-referenced" && event.source.type === "issue") {
     return event.source.issue.user.login === user;
   }
@@ -310,10 +391,10 @@ const fetchOpenPulls = async (user: string, org: string) => {
     q: `is:pr is:open org:${org} author:${user}`,
   });
 
-  type PullsData = (typeof data.items)[0];
-  let pulls: PullsData[] = data.items;
+  //   let pulls = data.items;
+  let pulls = data.items as unknown as PullRequest[];
 
-  pulls.forEach((pr: PullsData) => {
+  pulls.forEach((pr) => {
     let today: Date = new Date();
     let prLastUpdated: Date = new Date(pr.updated_at);
     let staleFor: number = Math.floor(
@@ -339,77 +420,36 @@ const fetchOpenPulls = async (user: string, org: string) => {
   console.log(`Fetched ${pulls.length} open pull requests for ${user}`);
   return processedData;
 };
-const parse_event = async (events: IGitHubEvent[]) => {
-  for (const event of events) {
-    const eventTime: Date = parseISO(event.created_at);
-    const user: string = event.actor.login;
-    if (isBlacklisted(user)) continue;
+const scrapeGitHub = async (
+  org: string,
+  dataDir: string,
+  date: string,
+  numDays: number = 1,
+): Promise<void> => {
+  const endDate: Date = startOfDay(parseISO(date));
+  const startDate: Date = startOfDay(subDays(endDate, numDays));
 
-    console.log("Processing event for user: ", user);
-    console.log("event_id : ", event.id);
+  console.log(
+    `Scraping GitHub data for ${org} from ${formatISO(startDate)} to ${formatISO(endDate)}`,
+  );
 
-    switch (event.type) {
-      case "IssueCommentEvent":
-        if (event.payload.action === "created") {
-          appendEvent(user, {
-            type: "comment_created",
-            title: `${event.repo.name}#${event.payload.issue.number}`,
-            time: eventTime.toISOString(),
-            link: event.payload.comment.html_url,
-            text: event.payload.comment.body,
-          });
-        }
-        break;
-      case "IssuesEvent":
-        if (["opened", "assigned", "closed"].includes(event.payload.action)) {
-          appendEvent(user, {
-            type: `issue_${event.payload.action}`,
-            title: `${event.repo.name}#${event.payload.issue?.number}`,
-            time: eventTime.toISOString(),
-            link: event.payload.issue.html_url,
-            text: event.payload.issue.title,
-          });
-        }
-        break;
-      case "PullRequestEvent":
-        if (event.payload.action === "opened") {
-          appendEvent(user, {
-            type: "pr_opened",
-            title: `${event.repo.name}#${event.payload.pull_request.number}`,
-            time: eventTime.toISOString(),
-            link: event.payload.pull_request.html_url,
-            text: event.payload.pull_request.title,
-          });
-        } else if (
-          event.payload.action === "closed" &&
-          event.payload.pull_request?.merged
-        ) {
-          const turnaroundTime: number = await calculateTurnaroundTime(event);
-          appendEvent(user, {
-            type: "pr_merged",
-            title: `${event.repo.name}#${event.payload.pull_request.number}`,
-            time: eventTime.toISOString(),
-            link: event.payload.pull_request.html_url,
-            text: event.payload.pull_request.title,
-            turnaround_time: turnaroundTime,
-          });
-          await addCollaborations(event, eventTime);
-        }
-        break;
-      case "PullRequestReviewEvent":
-        appendEvent(user, {
-          type: "pr_reviewed",
-          time: eventTime.toISOString(),
-          title: `${event.repo.name}#${event.payload.pull_request.number}`,
-          link: event.payload.review.html_url,
-          text: event.payload.pull_request.title,
-        });
-        break;
-      default:
-        break;
+  const events: any = await fetchEvents(org, startDate, endDate);
+  processedData = await parse_event(events);
+
+  for (const user of Object.keys(processedData)) {
+    try {
+      await fetch_merge_events(user, org);
+    } catch (e) {
+      console.error(`Error fetching merge events for ${user}: ${e}`);
+    }
+    try {
+      await fetchOpenPulls(user, org);
+    } catch (e) {
+      console.error(`Error fetching open pulls for ${user}: ${e}`);
     }
   }
-  return processedData;
+
+  console.log("Scraping completed");
 };
 function loadUserData(user: string, dataDir: string) {
   const file = path.join(dataDir, `${user}.json`);
@@ -417,7 +457,7 @@ function loadUserData(user: string, dataDir: string) {
 
   try {
     const response = fs.readFileSync(file);
-    const data: ActivityData = JSON.parse(response.toString());
+    const data: UserData = JSON.parse(response.toString());
     return data;
   } catch (error: any) {
     if (error.code === "ENOENT" || error.name === "SyntaxError") {
@@ -430,7 +470,7 @@ function loadUserData(user: string, dataDir: string) {
 }
 function saveUserData(
   user: string,
-  data: ActivityData,
+  data: UserData,
   dataDir: string,
   serializer: any,
 ) {
@@ -459,7 +499,8 @@ const merged_data = async (dataDir: string) => {
       for (let event of userData.activity) {
         if (
           !oldData.activity.some(
-            (oldEvent) => JSON.stringify(oldEvent) === JSON.stringify(event),
+            (oldEvent: Activity) =>
+              JSON.stringify(oldEvent) === JSON.stringify(event),
           )
         ) {
           newUniqueEvents.push(event);
@@ -472,41 +513,6 @@ const merged_data = async (dataDir: string) => {
   }
 };
 
-const scrapeGitHub = async (
-  org: string,
-  date: string,
-  numDays: number = 1,
-): Promise<void> => {
-  const endDate: Date = startOfDay(parseISO(date));
-  const startDate: Date = startOfDay(subDays(endDate, numDays));
-  console.log(
-    `Scraping GitHub data for ${org} from ${formatISO(startDate)} to ${formatISO(endDate)}`,
-  );
-
-  const events: IGitHubEvent[] = (await fetchEvents(
-    org,
-    startDate,
-    endDate,
-  )) as IGitHubEvent[];
-  processedData = await parse_event(events);
-
-  for (const user of Object.keys(processedData)) {
-    try {
-      await fetch_merge_events(user, org);
-    } catch (e) {
-      console.error(`Error fetching merge events for ${user}: ${e}`);
-    }
-    try {
-      await fetchOpenPulls(user, org);
-    } catch (e) {
-      console.error(`Error fetching open pulls for ${user}: ${e}`);
-    }
-  }
-
-  console.log("Scraping completed");
-};
-
-// Type Done and check done
 const main = async () => {
   // Extract command line arguments (skip the first two default arguments)
   const args: string[] = process.argv.slice(2);
@@ -524,7 +530,7 @@ const main = async () => {
     process.exit(1);
   }
 
-  await scrapeGitHub(orgName, date, Number(numDays));
+  await scrapeGitHub(orgName, dataDir, date, Number(numDays));
   await merged_data(dataDir);
   console.log("Done");
 };

@@ -10,7 +10,7 @@
     "lint-fix": "eslint . --fix",
     "format": "prettier --write .",
     "load-data": "node ./scripts/loadOrgData.js",
-    "prepare": "husky install",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",

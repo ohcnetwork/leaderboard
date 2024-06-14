@@ -2,19 +2,20 @@
   "name": "scraper",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scraper": "node --loader ts-node/esm src/github-scraper/index.ts coronasafe ../../data-repo/github"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "pnpm build && pnpm start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "date-fns": "^3.6.0",
-    "octokit": "^4.0.2",
-    "yargs": "^17.7.2"
+    "octokit": "^4.0.2"
   },
   "devDependencies": {
     "@types/node": "^16.11.18",

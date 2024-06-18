@@ -20,6 +20,7 @@ function appendEvent(user: string, event: Activity) {
       activity: [event],
       open_prs: [],
       authored_issue_and_pr: [],
+      discussions: [],
     };
   } else {
     processedData[user]["activity"].push(event);
@@ -123,7 +124,11 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
     const user = event.actor.login;
     if (isBlacklisted(user)) continue;
 
-    console.log("Processing event for user:", user + " | " + "event_id : ", event.id);
+    console.log(
+      "Processing event for user:",
+      user + " | " + "event_id : ",
+      event.id,
+    );
 
     switch (event.type) {
       case "IssueCommentEvent":

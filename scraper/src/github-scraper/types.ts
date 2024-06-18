@@ -136,6 +136,7 @@ export interface ActivityData {
   open_prs: OpenPr[];
   pr_stale?: number;
   authored_issue_and_pr: AuthoredIssueAndPr[];
+  discussions?: any;
 }
 export interface ProcessData {
   [key: string]: ActivityData;
@@ -194,3 +195,46 @@ export interface AuthoredIssueAndPr {
   issue_link: string;
   pr_link: string;
 }
+
+export type Discussion = {
+  node: {
+    id: string;
+    title: string;
+    author: {
+      login: string;
+      avatarUrl: string;
+    };
+    url: string;
+    category: {
+      id: string;
+      name: string;
+      emoji: string;
+    };
+    upvoteCount: number;
+    reactions: {
+      totalCount: number;
+    };
+    comments: {
+      edges: {
+        node: {
+          author: {
+            login: string;
+            avatarUrl: string;
+          };
+          upvoteCount: number;
+          isAnswer: boolean;
+        };
+      }[];
+    };
+    createdAt: string;
+    isAnswered: boolean;
+  };
+};
+
+export type Edge = {
+  node: {
+    discussions: {
+      edges: Discussion[];
+    };
+  };
+};

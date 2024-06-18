@@ -3,7 +3,6 @@ import { octokit } from "./config.js";
 import { Action, ActivityData, PullRequestEvent } from "./types.js";
 import { promises as fs } from "fs";
 
-
 export const parseISODate = (isoDate: Date) => {
   return new Date(isoDate);
 };
@@ -89,8 +88,8 @@ export async function calculateTurnaroundTime(event: PullRequestEvent) {
     assignedAts.length === 0
       ? null
       : assignedAts.reduce((min, current) =>
-        current.time < min.time ? current : min,
-      ).time;
+          current.time < min.time ? current : min,
+        ).time;
   const turnaroundTime =
     (mergedAt.getTime() - (assignedAt || createdAt.getTime()).valueOf()) / 1000;
   return turnaroundTime;

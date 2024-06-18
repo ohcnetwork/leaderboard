@@ -4,6 +4,7 @@ import { fetch_merge_events, fetchOpenPulls } from "./fetchUserData.js";
 import { fetchEvents } from "./fetchEvents.js";
 import { parseEvents } from "./parseEvents.js";
 import { merged_data } from "./saveData.js";
+import { fetchAllDiscussionEventsByOrg } from "./discussion.js";
 
 let processedData: ProcessData = {};
 
@@ -11,6 +12,7 @@ const scrapeGitHub = async (
   org: string,
   date: string,
   numDays: number = 1,
+  orgName: string,
 ): Promise<void> => {
   const endDate: Date = startOfDay(parseISO(date));
   const startDate: Date = startOfDay(subDays(endDate, numDays));
@@ -24,7 +26,6 @@ const scrapeGitHub = async (
     endDate,
   )) as IGitHubEvent[];
   processedData = await parseEvents(events);
-
   for (const user of Object.keys(processedData)) {
     if (!processedData[user]) {
       processedData[user] = {
@@ -32,6 +33,7 @@ const scrapeGitHub = async (
         last_updated: "",
         activity: [],
         open_prs: [],
+        discussions: [],
       };
     }
     try {
@@ -51,6 +53,20 @@ const scrapeGitHub = async (
       console.error(`Error fetching open pulls for ${user}: ${e}`);
     }
   }
+  const discussions = await fetchAllDiscussionEventsByOrg(orgName);
+  console.log("Scraping discussions");
+  discussions.forEach((d) => {
+    if (!processedData[d.user]) {
+      processedData[d.user] = {
+        authored_issue_and_pr: [],
+        last_updated: "",
+        activity: [],
+        open_prs: [],
+        discussions: [],
+      };
+    }
+    processedData[d.user].discussions = d.discussions;
+  });
 
   console.log("Scraping completed");
 };
@@ -73,7 +89,7 @@ const main = async () => {
     process.exit(1);
   }
 
-  await scrapeGitHub(orgName, date, Number(numDays));
+  await scrapeGitHub(orgName, date, Number(numDays), orgName);
   await merged_data(dataDir, processedData);
   console.log("Done");
 };

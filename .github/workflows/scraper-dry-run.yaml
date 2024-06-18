@@ -15,24 +15,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: setup python
-        uses: actions/setup-python@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: "3.10"
+          node-version: "20"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pip install -r scraper/requirements.txt
+        run: pnpm install --frozen-lockfile
+        working-directory: scraper
+
+      - name: Build the project
+        run: pnpm build
+        working-directory: scraper
 
       - name: Scrape data from GitHub
-        run: python scraper/src/github.py ${{ github.repository_owner }} data/github -l DEBUG
+        run: pnpm start -- ${{ github.repository_owner }} data/github 
+        working-directory: scraper
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify scraper output
+        run: ls -l data/github
 
       - name: Generate markdown files for new contributors
         run: node scripts/generateNewContributors.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Verify generated markdown files
+        run: ls -l contributors
+        
       - uses: actions/upload-artifact@v4
         with:
           name: output

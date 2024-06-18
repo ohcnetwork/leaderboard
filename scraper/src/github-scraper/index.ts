@@ -77,15 +77,22 @@ const main = async () => {
   const args: string[] = process.argv.slice(2);
 
   // Destructure arguments with default values
-  const [
-    orgName,
-    dataDir,
-    date = formatISO(subDays(new Date(), 1), { representation: "date" }),
-    numDays = 1,
-  ] = args;
+  const [orgName, dataDir, dateArg = "", numDays = 1] = args;
 
   if (!orgName || !dataDir) {
     console.error("Usage: node script.js <org> <dataDir> [date] [numDays]");
+    process.exit(1);
+  }
+
+  let date: string;
+  try {
+    if (dateArg) {
+      date = new Date(dateArg).toISOString();
+    } else {
+      date = formatISO(subDays(new Date(), 1), { representation: "date" });
+    }
+  } catch (error) {
+    console.error("Invalid date value:", dateArg);
     process.exit(1);
   }
 

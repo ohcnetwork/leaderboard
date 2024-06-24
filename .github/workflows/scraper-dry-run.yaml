@@ -38,15 +38,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify scraper output
-        run: ls -l data/github
+        run: ls -l ../data-repo/data/github
 
       - name: Generate markdown files for new contributors
-        run: node scripts/generateNewContributors.js
+        run: node ../scripts/generateNewContributors.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify generated markdown files
-        run: ls -l contributors
+        run: ls -l ../data-repo/contributors
         
       - uses: actions/upload-artifact@v4
         with:

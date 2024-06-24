@@ -77,7 +77,7 @@ const main = async () => {
   const args: string[] = process.argv.slice(2);
 
   // Destructure arguments with default values
-  const [orgName, dataDir, dateArg = "", numDays = 1] = args;
+  const [orgName, dataDir, dateArg = null, numDays = 1] = args;
 
   if (!orgName || !dataDir) {
     console.error("Usage: node script.js <org> <dataDir> [date] [numDays]");
@@ -95,7 +95,6 @@ const main = async () => {
     console.error("Invalid date value:", dateArg);
     process.exit(1);
   }
-
   await scrapeGitHub(orgName, date, Number(numDays), orgName);
   await merged_data(dataDir, processedData);
   console.log("Done");

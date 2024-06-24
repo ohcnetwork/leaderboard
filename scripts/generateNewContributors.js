@@ -22,11 +22,11 @@ const basePath = join(process.env.DATA_REPO || process.cwd());
 function getNewContributors() {
   let newContributors = new Set();
 
-  fs.readdirSync(join(basePath, "data-repo/data/github")).forEach((file) => {
+  fs.readdirSync(join(basePath, "data/github")).forEach((file) => {
     newContributors.add(file.split(".")[0]);
   });
 
-  fs.readdirSync(join(basePath, "data-repo/contributors")).forEach((file) => {
+  fs.readdirSync(join(basePath, "contributors")).forEach((file) => {
     newContributors.delete(file.split(".")[0]);
   });
 
@@ -43,6 +43,7 @@ function main() {
   }
 
   let newContributors = getNewContributors();
+  console.log(newContributors);
 
   newContributors.forEach(async (value) => {
     // fetch the user data from the github api

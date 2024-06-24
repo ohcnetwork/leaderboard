@@ -41,7 +41,6 @@ export const fetchEvents = async (
     ].includes(event.type ?? "");
 
     if (!isBlacklisted && isRequiredEventType) {
-      console.log(event.type);
       filteredEvents.push(event);
     }
     eventsCount++;

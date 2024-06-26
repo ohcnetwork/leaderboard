@@ -8,7 +8,7 @@ import yaml from "yaml";
 const cwd = process.cwd();
 
 const SCHEMA_FILE = join(cwd, "schemas/github-data.yaml");
-const GH_DATA = join(cwd, process.env.DATA_REPO || "data-repo", "data/github");
+const GH_DATA = join(cwd, process.env.DATA_REPO ?? "data-repo", "data/github");
 
 const schema = yaml.parse(fs.readFileSync(SCHEMA_FILE).toString());
 

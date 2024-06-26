@@ -1,6 +1,7 @@
 name: Scraper Dry Run & Validate Schema
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - scraper/**

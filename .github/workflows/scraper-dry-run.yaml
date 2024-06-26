@@ -1,4 +1,4 @@
-name: Scraper Dry Run
+name: Scraper Dry Run & Validate Schema
 
 on:
   workflow_dispatch:
@@ -15,6 +15,8 @@ jobs:
     permissions:
       issues: read
       pull-requests: read
+    env:
+      DATA_REPO: ./
     steps:
       - uses: actions/checkout@v4
 
@@ -31,6 +33,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: mkdir contributors
+
       - name: Generate markdown files for new contributors
         run: node scripts/generateNewContributors.js
         env:
@@ -43,3 +47,34 @@ jobs:
           path: |
             data
             contributors
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Tests
+        run: pnpm test

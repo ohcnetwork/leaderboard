@@ -33,6 +33,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: mkdir contributors
+
       - name: Generate markdown files for new contributors
         run: node scripts/generateNewContributors.js
         env:

@@ -5,8 +5,8 @@ on:
   pull_request:
     paths:
       - scraper/**
-      - tests
-      - schemas
+      - tests/**
+      - schemas/**
 
 jobs:
   test-run-github-scraper:

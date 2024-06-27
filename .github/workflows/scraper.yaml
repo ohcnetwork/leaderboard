@@ -5,6 +5,8 @@ on:
         required: false
         type: string
     secrets:
+      GIT_ACCESS_TOKEN:
+        required: true
       SLACK_API_TOKEN:
         required: false
 

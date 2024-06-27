@@ -1,5 +1,5 @@
 import { ProcessData } from "./types.js";
-import { promises as fs } from "fs";
+import { mkdir } from "fs/promises";
 import { loadUserData, saveUserData } from "./utils.js";
 
 export const merged_data = async (
@@ -7,7 +7,7 @@ export const merged_data = async (
   processedData: ProcessData,
 ) => {
   console.log("Updating data");
-  await fs.mkdir(dataDir, { recursive: true });
+  await mkdir(dataDir, { recursive: true });
 
   for (let user in processedData) {
     if (processedData.hasOwnProperty(user)) {

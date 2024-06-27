@@ -37,25 +37,21 @@ interface Comment {
   updated_at: string;
 }
 
-export interface PullRequest {
+interface PullRequest {
   html_url: string;
   user: Actor;
   title: string;
   body: string;
   number: number;
-  labels: string[] | { name: string }[];
+  labels: string[];
   comments: number;
   review_comments: number;
   commits: number;
   additions: number;
   deletions: number;
   changed_files: number;
-  created_at: Date;
+  created_at: string;
   updated_at: string;
-  merged_at: Date;
-  issue_url: string;
-  merged?: string;
-  commits_url?: string;
 }
 
 interface Review {
@@ -86,7 +82,6 @@ interface Commit {
   url: string;
   message: string;
 }
-
 interface GitHubEvent {
   id: string;
   actor: Actor;
@@ -108,7 +103,6 @@ interface PullRequestReviewCommentEvent extends GitHubEvent {
     pull_request: PullRequest;
   };
 }
-
 interface PullRequestReviewEvent extends GitHubEvent {
   type: "PullRequestReviewEvent";
   payload: {
@@ -117,7 +111,6 @@ interface PullRequestReviewEvent extends GitHubEvent {
     pull_request: PullRequest;
   };
 }
-
 interface MemberEvent extends GitHubEvent {
   type: "MemberEvent";
   payload: {
@@ -143,7 +136,7 @@ interface IssueCommentEvent extends GitHubEvent {
   };
 }
 
-export interface PullRequestEvent extends GitHubEvent {
+interface PullRequestEvent extends GitHubEvent {
   type: "PullRequestEvent";
   payload: {
     action: string;

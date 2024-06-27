@@ -28,7 +28,7 @@ export const getLeaderboardData = async (
     )
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
-        return (b.activityData.pr_stale ?? 0) - (a.activityData.pr_stale ?? 0);
+        return b.activityData.pr_stale - a.activityData.pr_stale;
       }
       return b.summary[sortBy] - a.summary[sortBy];
     });

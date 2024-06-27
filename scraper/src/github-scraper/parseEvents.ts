@@ -9,7 +9,7 @@ import { parseISO } from "date-fns";
 import { isBlacklisted } from "./utils.js";
 import { octokit } from "./config.js";
 
-let processedData: ProcessData = {};
+const processedData: ProcessData = {};
 
 function appendEvent(user: string, event: Activity) {
   console.log(`Appending event for ${user}`);
@@ -30,9 +30,9 @@ function appendEvent(user: string, event: Activity) {
   }
 }
 
+const nameUserCache: { [key: string]: string } = {};
+const emailUserCache: { [key: string]: string } = {};
 async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
-  let nameUserCache: { [key: string]: string } = {};
-  let emailUserCache: { [key: string]: string } = {};
   const collaborators: Set<string> = new Set();
 
   const url: string | undefined = event.payload.pull_request?.commits_url;

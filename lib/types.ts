@@ -28,7 +28,7 @@ export interface ActivityData {
   last_updated?: string;
   activity: Activity[];
   open_prs: OpenPr[];
-  pr_stale?: number;
+  pr_stale: number;
   authored_issue_and_pr: AuthoredIssueAndPr[];
 }
 export interface ProcessData {
@@ -91,7 +91,7 @@ export interface Action {
   created_at: Date;
 }
 export interface Activity {
-  type: (typeof ACTIVITY_TYPES)[number] | string;
+  type: (typeof ACTIVITY_TYPES)[number];
   title: string;
   time: string;
   link: string;

@@ -1,6 +1,7 @@
 import { Octokit } from "octokit";
 
-export const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+
 if (!GITHUB_TOKEN) {
   console.error("GITHUB_TOKEN not found in environment");
   process.exit(1);

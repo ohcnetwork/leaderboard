@@ -157,6 +157,7 @@ export const ACTIVITY_TYPES = [
 export interface Action {
   event: string;
   source: {
+    [x: string]: any;
     type: string;
     issue: {
       pull_request: boolean;
@@ -228,13 +229,5 @@ export type Discussion = {
     };
     createdAt: string;
     isAnswered: boolean;
-  };
-};
-
-export type Edge = {
-  node: {
-    discussions: {
-      edges: Discussion[];
-    };
   };
 };

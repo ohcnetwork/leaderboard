@@ -1,5 +1,5 @@
 import { octokit } from "./config.js";
-import { Discussion, Edge } from "./types.js";
+import { Discussion } from "./types.js";
 
 // Query to fetch discussions from GitHub
 const query = `
@@ -55,26 +55,17 @@ query($org: String!, $cursor: String) {
   }
 }
 `;
+
 async function fetchDiscussionsForOrg(org: string, cursor = null) {
   const variables = { org, cursor };
-  const response = await octokit.graphql(query, variables);
+  const response = await octokit.graphql.paginate(query, variables);
+
+  type Edge = typeof response.organization.repositories.edges;
   const discussions = response.organization.repositories.edges.map(
     (edge: Edge) => edge.node.discussions.edges,
   );
-  const hasNextPage = response.organization.repositories.pageInfo.hasNextPage;
-  const nextCursor = response.organization.repositories.pageInfo.endCursor;
 
-  const allDiscussions = discussions.flat();
-
-  if (hasNextPage) {
-    const nextDiscussions: Discussion[] = await fetchDiscussionsForOrg(
-      org,
-      nextCursor,
-    );
-    return allDiscussions.concat(nextDiscussions);
-  }
-
-  return allDiscussions;
+  return discussions.flat();
 }
 
 async function parseDiscussionData(allDiscussions: Discussion[]) {

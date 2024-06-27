@@ -1,6 +1,5 @@
 import { octokit } from "./config.js";
-import { OpenPr } from "./types.js";
-import { resolve_autonomy_responsibility } from "./utils.js";
+import { resolveAutonomyResponsibility } from "./utils.js";
 
 export const fetch_merge_events = async (user: string, org: string) => {
   console.log("Merge events for : ", user);
@@ -10,7 +9,7 @@ export const fetch_merge_events = async (user: string, org: string) => {
     q: `is:issue is:closed org:${org} author:${user}`,
   });
 
-  let merged_prs = [];
+  const merged_prs = [];
 
   for (const issue of issues.items) {
     const { data: timeline_events } = await octokit.request(
@@ -18,7 +17,7 @@ export const fetch_merge_events = async (user: string, org: string) => {
     );
 
     for (const event of timeline_events) {
-      if (await resolve_autonomy_responsibility(event, user)) {
+      if (await resolveAutonomyResponsibility(event, user)) {
         const pull_request = event.source.issue.pull_request;
         if (pull_request && pull_request.merged_at) {
           merged_prs.push({
@@ -40,22 +39,21 @@ export const fetchOpenPulls = async (user: string, org: string) => {
   });
 
   type PullsData = (typeof data.items)[0];
-  let pulls: PullsData[] = data.items;
-  let open_prs: OpenPr[] = [];
+  const pulls: PullsData[] = data.items;
 
-  pulls.forEach((pr: PullsData) => {
-    let today: Date = new Date();
-    let prLastUpdated: Date = new Date(pr.updated_at);
-    let staleFor: number = Math.floor(
+  const open_prs = pulls.map((pr: PullsData) => {
+    const today: Date = new Date();
+    const prLastUpdated: Date = new Date(pr.updated_at);
+    const staleFor: number = Math.floor(
       (today.getTime() - prLastUpdated.getTime()) / (1000 * 60 * 60 * 24),
     );
 
-    open_prs.push({
+    return {
       link: pr.html_url,
       title: pr.title,
       stale_for: staleFor,
       labels: pr.labels.map((label: { name: string }) => label.name),
-    });
+    };
   });
 
   console.log(`Fetched ${pulls.length} open pull requests for ${user}`);

@@ -1,5 +1,21 @@
 import { octokit } from "./config.js";
 import { IGitHubEvent } from "./types.js";
+import dotenv from "dotenv";
+dotenv.config();
+
+const blacklistedUsers = [
+  "dependabot",
+  "snyk-bot",
+  "codecov-commenter",
+  "github-actions[bot]",
+].concat(process.env.BLACKLISTED_USERS?.split(",") ?? []);
+
+const requiredEventType = [
+  "IssueCommentEvent",
+  "IssuesEvent",
+  "PullRequestEvent",
+  "PullRequestReviewEvent",
+];
 
 export const fetchEvents = async (
   org: string,
@@ -17,8 +33,7 @@ export const fetchEvents = async (
     },
   );
 
-  let eventsCount: number = 0;
-  let filteredEvents = [];
+  const filteredEvents = [];
   for (const event of events) {
     const eventTime: Date = new Date(event.created_at ?? 0);
 
@@ -27,25 +42,15 @@ export const fetchEvents = async (
     } else if (eventTime <= startDate) {
       return filteredEvents;
     }
-    const isBlacklisted: boolean = [
-      "dependabot",
-      "snyk-bot",
-      "codecov-commenter",
-      "github-actions[bot]",
-    ].includes(event.actor.login);
-    const isRequiredEventType: boolean = [
-      "IssueCommentEvent",
-      "IssuesEvent",
-      "PullRequestEvent",
-      "PullRequestReviewEvent",
-    ].includes(event.type ?? "");
 
-    if (!isBlacklisted && isRequiredEventType) {
+    if (
+      !blacklistedUsers.includes(event.actor.login) &&
+      requiredEventType.includes(event.type)
+    ) {
       filteredEvents.push(event);
     }
-    eventsCount++;
   }
-  console.log("Fetched " + { eventsCount } + " events");
+  console.log("Fetched " + filteredEvents.length + " events");
 
   return filteredEvents;
 };

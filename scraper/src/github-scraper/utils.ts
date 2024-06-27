@@ -1,7 +1,7 @@
 import path from "path";
 import { octokit } from "./config.js";
 import { Action, ActivityData, PullRequestEvent } from "./types.js";
-import { promises as fs } from "fs";
+import { readFile, writeFile } from "fs/promises";
 
 export const parseISODate = (isoDate: Date) => {
   return new Date(isoDate);
@@ -19,22 +19,17 @@ export async function calculateTurnaroundTime(event: PullRequestEvent) {
   const createdAt: Date = parseISODate(event.payload.pull_request.created_at);
 
   const linkedIssues: [string, string][] = [];
-  const body = event.payload.pull_request.body || "";
-  const regex =
-    /(fix|fixes|fixed|close|closes|closed|resolve|resolves|resolved) ([\w\/.-]*)(#\d+)/gi;
-  let match: RegExpExecArray | null;
-
-  while ((match = regex.exec(body)) !== null) {
-    linkedIssues.push([match[2], match[3]]);
-  }
+  const linkedIssuesResponse = await octokit.request(
+    `GET ${event.payload?.pull_request?.issue_url}`,
+  );
+  // Fetch url all linked issues url from the response
+  linkedIssues.push([event.repo.name, `#${linkedIssuesResponse.data.number}`]);
 
   const prTimelineResponse = await octokit.request(
     `GET ${event.payload?.pull_request?.issue_url}/timeline`,
   );
 
-  const prTimeline = prTimelineResponse.data;
-
-  prTimeline.forEach((action: Action) => {
+  prTimelineResponse.data.forEach((action: Action) => {
     if (
       action.event === "cross-referenced" &&
       action.source.type === "issue" &&
@@ -47,12 +42,15 @@ export async function calculateTurnaroundTime(event: PullRequestEvent) {
     }
 
     if (action.event === "connected") {
-      // TODO: currently there is no way to get the issue number from the timeline, handle this case while moving to graphql
+      // Fetch the issue number from the url
+      linkedIssues.push([action.source.repository.full_name, `#${0}`]);
     }
   });
-  const uniqueLinkedIssues: [string, string][] = Array.from(
+
+  const uniqueLinkedIssues = Array.from(
     new Set(linkedIssues.map((issue) => JSON.stringify(issue))),
   ).map((item) => JSON.parse(item) as [string, string]);
+
   const assignedAts: { issue: string; time: Date }[] = [];
 
   for (const [org_repo, issue] of uniqueLinkedIssues) {
@@ -95,7 +93,7 @@ export async function calculateTurnaroundTime(event: PullRequestEvent) {
   return turnaroundTime;
 }
 
-export async function resolve_autonomy_responsibility(
+export async function resolveAutonomyResponsibility(
   event: Action,
   user: string,
 ) {
@@ -110,7 +108,7 @@ export async function loadUserData(user: string, dataDir: string) {
   console.log(`Loading user data from ${file}`);
 
   try {
-    const response = await fs.readFile(file);
+    const response = await readFile(file);
     const data: ActivityData = JSON.parse(response.toString());
     return data;
   } catch (error: any) {
@@ -134,7 +132,7 @@ export async function saveUserData(
 
   try {
     const jsonData = JSON.stringify(data, serializer, 2);
-    await fs.writeFile(file, jsonData);
+    await writeFile(file, jsonData);
   } catch (error: any) {
     console.error(`Failed to save user data for ${user}: ${error.message}`);
     throw error;

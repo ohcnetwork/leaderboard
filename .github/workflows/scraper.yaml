@@ -50,7 +50,7 @@ jobs:
         env:
           SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
           SLACK_CHANNEL: ${{ inputs.slack-eod-channel }}
-
+      - run: mkdir -p contributors
       - name: Generate markdown files for new contributors
         run: node scripts/generateNewContributors.js
         env:

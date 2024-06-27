@@ -20,25 +20,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: setup python
+        uses: actions/setup-python@v3
         with:
-          node-version: "20.14.0"
-
-      - name: Install pnpm
-        run: npm install -g pnpm
+          python-version: "3.10"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-        working-directory: scraper
-
-      - name: Build the project
-        run: pnpm build
-        working-directory: scraper
+        run: pip install -r scraper/requirements.txt
 
       - name: Scrape data from GitHub
-        run: pnpm start ${{ github.repository_owner }} data/github 
-        working-directory: scraper
+        run: python scraper/src/github.py ${{ github.repository_owner }} data/github -l DEBUG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -48,7 +39,7 @@ jobs:
         run: node scripts/generateNewContributors.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - uses: actions/upload-artifact@v4
         with:
           name: output

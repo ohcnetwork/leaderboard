@@ -75,7 +75,7 @@ async function parseDiscussionData(allDiscussions: Discussion[]) {
     )
     .flat();
   authorList.push(...allDiscussions.map((d) => d.node.author.login));
-  const uniqueAuthors = [...new Set(authorList)];
+  const uniqueAuthors = Array.from(new Set(authorList));
   const authorDiscussionList = uniqueAuthors.map((author) => {
     const discussions = allDiscussions.filter(
       (d) =>
@@ -93,7 +93,7 @@ async function parseDiscussionData(allDiscussions: Discussion[]) {
         isAnswered: d.node.isAnswered,
         upvoteCount: d.node.upvoteCount,
         participants: [
-          ...new Map(
+          new Map(
             d.node.comments.edges.map((c) => [
               c.node.author.login,
               {

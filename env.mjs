@@ -24,7 +24,6 @@ export const env = createEnv({
     NEXT_PUBLIC_PAGE_TITLE: z.string(),
     NEXT_PUBLIC_CONTRIBUTORS_INFO: z.string().optional(),
     NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES: z.string().optional(),
-    BLACKLISTED_USERS: z.string().array(),
 
     NEXT_PUBLIC_FEATURES: z.string(),
   },
@@ -48,6 +47,5 @@ export const env = createEnv({
         ? ""
         : process.env.GITHUB_PAT,
     NEXT_PUBLIC_FEATURES: process.env.NEXT_PUBLIC_FEATURES,
-    BLACKLISTED_USERS: process.env.BLACKLISTED_USERS,
   },
 });

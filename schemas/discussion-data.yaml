@@ -1,0 +1,59 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: GitHub Discussions Schema
+type: array
+
+required:
+  - id
+  - title
+  - author
+  - url
+  - category
+  - createdAt
+  - isAnswered
+
+properties:
+  discussions:
+    type: array
+    items:
+      type: object
+      required:
+        ["id", "title", "author", "url", "category", "createdAt", "isAnswered"]
+      properties:
+        id: string
+        title: string
+        author:
+          type: object
+          required: ["login", "avatarUrl"]
+          properties:
+            login: string
+            avatarUrl: string
+        url: string
+        category:
+          type: object
+          required: ["id", "name", "emoji"]
+          properties:
+            id: string
+            name: string
+            emoji: string
+        upvoteCount: integer
+        reactions:
+          type: object
+          required: ["totalCount"]
+          properties:
+            totalCount: integer
+        comments:
+          type: array
+          items:
+            type: object
+            required: ["author", "upvoteCount", "isAnswer"]
+            properties:
+              author:
+                type: object
+                required: ["login", "avatarUrl"]
+                properties:
+                  login: string
+                  avatarUrl: string
+              upvoteCount: integer
+              isAnswer: boolean
+        createdAt: string
+        isAnswered: boolean

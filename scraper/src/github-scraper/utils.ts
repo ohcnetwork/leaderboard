@@ -1,7 +1,7 @@
 import path from "path";
 import { octokit } from "./config.js";
-import { Action, ActivityData, PullRequestEvent } from "./types.js";
-import { readFile, writeFile } from "fs/promises";
+import { Action, ActivityData, Discussion, PullRequestEvent } from "./types.js";
+import { mkdir, readFile, writeFile } from "fs/promises";
 
 export const parseISODate = (isoDate: Date) => {
   return new Date(isoDate);
@@ -135,6 +135,24 @@ export async function saveUserData(
     await writeFile(file, jsonData);
   } catch (error: any) {
     console.error(`Failed to save user data for ${user}: ${error.message}`);
+    throw error;
+  }
+}
+
+export async function saveDiscussionData(
+  discussions: Discussion,
+  dataDir: string,
+) {
+  const discussionDir = path.join(dataDir, "discussions");
+  await mkdir(discussionDir, { recursive: true });
+  const file = path.join(discussionDir, "discussions.json");
+  console.log(`Saving discussion data to ${file}`);
+
+  try {
+    const jsonData = JSON.stringify(discussions, null, 2);
+    await writeFile(file, jsonData);
+  } catch (error: any) {
+    console.error(`Failed to save discussion data: ${error.message}`);
     throw error;
   }
 }

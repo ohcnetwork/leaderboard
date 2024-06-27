@@ -20,7 +20,6 @@ function appendEvent(user: string, event: Activity) {
       activity: [event],
       open_prs: [],
       authored_issue_and_pr: [],
-      discussions: [],
     };
   } else {
     processedData[user]["activity"].push(event);

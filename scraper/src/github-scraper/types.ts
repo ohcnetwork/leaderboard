@@ -136,7 +136,6 @@ export interface ActivityData {
   open_prs: OpenPr[];
   pr_stale?: number;
   authored_issue_and_pr: AuthoredIssueAndPr[];
-  discussions?: any;
 }
 export interface ProcessData {
   [key: string]: ActivityData;

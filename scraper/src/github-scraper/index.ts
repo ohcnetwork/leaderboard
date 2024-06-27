@@ -33,7 +33,6 @@ const scrapeGitHub = async (
         last_updated: "",
         activity: [],
         open_prs: [],
-        discussions: [],
       };
     }
     try {
@@ -53,20 +52,6 @@ const scrapeGitHub = async (
       console.error(`Error fetching open pulls for ${user}: ${e}`);
     }
   }
-  const discussions = await fetchAllDiscussionEventsByOrg(orgName);
-  console.log("Scraping discussions");
-  discussions.forEach((d) => {
-    if (!processedData[d.user]) {
-      processedData[d.user] = {
-        authored_issue_and_pr: [],
-        last_updated: "",
-        activity: [],
-        open_prs: [],
-        discussions: [],
-      };
-    }
-    processedData[d.user].discussions = d.discussions;
-  });
 
   console.log("Scraping completed");
 };
@@ -97,6 +82,8 @@ const main = async () => {
   }
   await scrapeGitHub(orgName, date, Number(numDays), orgName);
   await merged_data(dataDir, processedData);
+  await fetchAllDiscussionEventsByOrg(orgName, dataDir);
+
   console.log("Done");
 };
 

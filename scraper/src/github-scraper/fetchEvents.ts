@@ -38,6 +38,7 @@ export const fetchEvents = async (
 
     if (
       !blacklistedUsers.includes(event.actor.login) &&
+      event.type &&
       requiredEventType.includes(event.type)
     ) {
       filteredEvents.push(event);

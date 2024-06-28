@@ -1,5 +1,4 @@
 import { octokit } from "./config.js";
-import { IGitHubEvent } from "./types.js";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -22,16 +21,10 @@ export const fetchEvents = async (
   startDate: Date,
   endDate: Date,
 ) => {
-  const events = await octokit.paginate(
-    "GET /orgs/{org}/events",
-    {
-      org: org,
-      per_page: 1000,
-    },
-    (response: { data: IGitHubEvent[] }) => {
-      return response.data;
-    },
-  );
+  const events = await octokit.paginate("GET /orgs/{org}/events", {
+    org: org,
+    per_page: 1000,
+  });
 
   const filteredEvents = [];
   for (const event of events) {

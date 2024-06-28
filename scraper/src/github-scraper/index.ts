@@ -1,5 +1,5 @@
 import { formatISO, parseISO, startOfDay, subDays } from "date-fns";
-import { IGitHubEvent, ProcessData } from "./types.js";
+import { ProcessData } from "./types.js";
 import { fetchMergeEvents, fetchOpenPulls } from "./fetchUserData.js";
 import { fetchEvents } from "./fetchEvents.js";
 import { parseEvents } from "./parseEvents.js";
@@ -20,11 +20,7 @@ const scrapeGitHub = async (
     `Scraping GitHub data for ${org} from ${formatISO(startDate)} to ${formatISO(endDate)}`,
   );
 
-  const events: IGitHubEvent[] = (await fetchEvents(
-    org,
-    startDate,
-    endDate,
-  )) as IGitHubEvent[];
+  const events = await fetchEvents(org, startDate, endDate);
   processedData = await parseEvents(events);
   for (const user of Object.keys(processedData)) {
     if (!processedData[user]) {

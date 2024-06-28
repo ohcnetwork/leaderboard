@@ -51,7 +51,7 @@ async function fetchDiscussionsForOrg(org: string, cursor = null) {
   const response = await octokit.graphql.paginate(query, variables);
 
   type Edge = typeof response.organization.repositories.edges;
-  const discussions: Edge[] = response.organization.repositories.edges.map(
+  const discussions = response.organization.repositories.edges.map(
     (edge: Edge) => edge.node.discussions.edges,
   );
 

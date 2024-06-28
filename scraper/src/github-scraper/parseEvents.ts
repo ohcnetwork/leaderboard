@@ -31,6 +31,7 @@ function appendEvent(user: string, event: Activity) {
 
 const nameUserCache: { [key: string]: string } = {};
 const emailUserCache: { [key: string]: string } = {};
+
 async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   const collaborators: Set<string> = new Set();
 

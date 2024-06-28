@@ -3,57 +3,36 @@ title: GitHub Discussions Schema
 type: array
 
 required:
-  - id
+  -source
   - title
   - author
   - url
   - category
-  - createdAt
-  - isAnswered
+  - time
 
 properties:
-  discussions:
-    type: array
-    items:
+    source:
+      type: string
+    title:
+      type: string
+    author:
+      type: string
+    url:
+      type: string
+    time:
+      type: string
+    category:
       type: object
       required:
-        ["id", "title", "author", "url", "category", "createdAt", "isAnswered"]
+        - name
+        - emoji
       properties:
-        id: string
-        title: string
-        author:
-          type: object
-          required: ["login", "avatarUrl"]
-          properties:
-            login: string
-            avatarUrl: string
-        url: string
-        category:
-          type: object
-          required: ["id", "name", "emoji"]
-          properties:
-            id: string
-            name: string
-            emoji: string
-        upvoteCount: integer
-        reactions:
-          type: object
-          required: ["totalCount"]
-          properties:
-            totalCount: integer
-        comments:
-          type: array
-          items:
-            type: object
-            required: ["author", "upvoteCount", "isAnswer"]
-            properties:
-              author:
-                type: object
-                required: ["login", "avatarUrl"]
-                properties:
-                  login: string
-                  avatarUrl: string
-              upvoteCount: integer
-              isAnswer: boolean
-        createdAt: string
-        isAnswered: boolean
+        name:
+          type: string
+        emoji:
+          type: string
+    participants:
+      type: array
+      items:
+        type: string
+

@@ -198,35 +198,37 @@ export interface AuthoredIssueAndPr {
 
 export type Discussion = {
   node: {
-    id: string;
     title: string;
     author: {
       login: string;
-      avatarUrl: string;
     };
     url: string;
     category: {
-      id: string;
       name: string;
       emoji: string;
-    };
-    upvoteCount: number;
-    reactions: {
-      totalCount: number;
     };
     comments: {
       edges: {
         node: {
           author: {
             login: string;
-            avatarUrl: string;
           };
-          upvoteCount: number;
-          isAnswer: boolean;
         };
       }[];
     };
     createdAt: string;
-    isAnswered: boolean;
   };
+};
+
+export type ParsedDiscussion = {
+  source: string;
+  title: string;
+  author: string;
+  url: string;
+  time: string;
+  category: {
+    name: string;
+    emoji: string;
+  };
+  participants: string[];
 };

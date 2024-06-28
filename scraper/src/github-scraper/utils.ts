@@ -1,6 +1,11 @@
 import path from "path";
 import { octokit } from "./config.js";
-import { Action, ActivityData, Discussion, PullRequestEvent } from "./types.js";
+import {
+  Action,
+  ActivityData,
+  ParsedDiscussion,
+  PullRequestEvent,
+} from "./types.js";
 import { mkdir, readFile, writeFile } from "fs/promises";
 
 export const parseISODate = (isoDate: Date) => {
@@ -97,10 +102,11 @@ export async function resolveAutonomyResponsibility(
   event: Action,
   user: string,
 ) {
-  if (event.event === "cross-referenced" && event.source.type === "issue") {
-    return event.source.issue.user.login === user;
-  }
-  return false;
+  return (
+    event.event === "cross-referenced" &&
+    event.source.type === "issue" &&
+    event.source.issue.user.login === user
+  );
 }
 
 export async function loadUserData(user: string, dataDir: string) {
@@ -140,7 +146,7 @@ export async function saveUserData(
 }
 
 export async function saveDiscussionData(
-  discussions: Discussion,
+  discussions: ParsedDiscussion[],
   dataDir: string,
 ) {
   const discussionDir = path.join(dataDir, "discussions");

@@ -14,19 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: read
-      pull_requests: read
+      pull-requests: read
     env:
       DATA_REPO: ./
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js and PNPM
-        uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: "20.14.0"
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -48,7 +48,7 @@ jobs:
         run: node scripts/generateNewContributors.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          
       - uses: actions/upload-artifact@v4
         with:
           name: output
@@ -57,11 +57,15 @@ jobs:
             data
             contributors
 
-      - name: Setup PNPM cache
-        uses: actions/cache@v4
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
         with:
-          path: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          key: ${{ runner.os }}-pnpm-store-
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 

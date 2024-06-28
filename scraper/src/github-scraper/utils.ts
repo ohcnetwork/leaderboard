@@ -28,7 +28,33 @@ export async function calculateTurnaroundTime(event: PullRequestEvent) {
     `GET ${event.payload?.pull_request?.issue_url}`,
   );
   // Fetch url all linked issues url from the response
+  // What if the issue was cross-referenced from another repository than the repository of the PR made also add this feature
   linkedIssues.push([event.repo.name, `#${linkedIssuesResponse.data.number}`]);
+
+  // Fetch issue events to find cross-referenced issues
+  const issueEventsUrl = linkedIssuesResponse.data.events_url;
+  const issueEventsResponse = await octokit.request(`GET ${issueEventsUrl}`);
+
+  type issueEvent = typeof issueEventsResponse.data;
+  // Filter for cross-referenced events and add them if they are from a different repo
+  issueEventsResponse.data.forEach((event: issueEvent) => {
+    if (event.event === "cross-referenced" && event.source?.issue) {
+      const crossReferencedRepoFullName =
+        event.source.issue.repository.full_name;
+      const crossReferencedIssueNumber = `#${event.source.issue.number}`;
+
+      // Check if the cross-referenced issue is from a different repository
+      if (
+        crossReferencedRepoFullName !==
+        linkedIssuesResponse.data.repository.full_name
+      ) {
+        linkedIssues.push([
+          crossReferencedRepoFullName,
+          crossReferencedIssueNumber,
+        ]);
+      }
+    }
+  });
 
   const prTimelineResponse = await octokit.request(
     `GET ${event.payload?.pull_request?.issue_url}/timeline`,

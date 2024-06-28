@@ -1,7 +1,7 @@
 import { octokit } from "./config.js";
 import { resolveAutonomyResponsibility } from "./utils.js";
 
-export const fetch_merge_events = async (user: string, org: string) => {
+export const fetchMergeEvents = async (user: string, org: string) => {
   console.log("Merge events for : ", user);
 
   // Fetching closed issues authored by the user

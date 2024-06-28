@@ -1,9 +1,9 @@
 import { formatISO, parseISO, startOfDay, subDays } from "date-fns";
 import { IGitHubEvent, ProcessData } from "./types.js";
-import { fetch_merge_events, fetchOpenPulls } from "./fetchUserData.js";
+import { fetchMergeEvents, fetchOpenPulls } from "./fetchUserData.js";
 import { fetchEvents } from "./fetchEvents.js";
 import { parseEvents } from "./parseEvents.js";
-import { merged_data } from "./saveData.js";
+import { mergedData } from "./saveData.js";
 import { fetchAllDiscussionEventsByOrg } from "./discussion.js";
 
 let processedData: ProcessData = {};
@@ -36,7 +36,7 @@ const scrapeGitHub = async (
       };
     }
     try {
-      const merged_prs = await fetch_merge_events(user, org);
+      const merged_prs = await fetchMergeEvents(user, org);
       for (const pr of merged_prs) {
         processedData[user].authored_issue_and_pr.push(pr);
       }
@@ -81,7 +81,7 @@ const main = async () => {
     process.exit(1);
   }
   await scrapeGitHub(orgName, date, Number(numDays), orgName);
-  await merged_data(dataDir, processedData);
+  await mergedData(dataDir, processedData);
   await fetchAllDiscussionEventsByOrg(orgName, dataDir);
 
   console.log("Done");

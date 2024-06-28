@@ -6,23 +6,10 @@ interface Actor {
   avatar_url: string;
 }
 
-interface Reactions {
-  total_count: number;
-  "+1": number;
-  "-1": number;
-  laugh: number;
-  hooray: number;
-  confused: number;
-  heart: number;
-  rocket: number;
-  eyes: number;
-}
-
 interface Comment {
   html_url: string;
   user: Actor;
   body: string;
-  reactions: Reactions;
   created_at: string;
   updated_at: string;
 }
@@ -61,20 +48,9 @@ interface Issue {
   title: string;
   body: string;
   labels: string[];
-  reactions: Reactions;
   number: number;
   created_at: string;
   updated_at: string;
-}
-
-interface Commit {
-  sha: string;
-  author: {
-    name: string;
-    email: string;
-  };
-  url: string;
-  message: string;
 }
 
 interface GitHubEvent {

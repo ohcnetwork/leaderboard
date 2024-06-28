@@ -2,7 +2,7 @@ import { ProcessData } from "./types.js";
 import { mkdir } from "fs/promises";
 import { loadUserData, saveUserData } from "./utils.js";
 
-export const merged_data = async (
+export const mergedData = async (
   dataDir: string,
   processedData: ProcessData,
 ) => {

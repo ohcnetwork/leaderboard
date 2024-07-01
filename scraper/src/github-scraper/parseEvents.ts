@@ -8,7 +8,6 @@ import { calculateTurnaroundTime } from "./utils.js";
 import { parseISO } from "date-fns";
 import { isBlacklisted } from "./utils.js";
 import { octokit } from "./config.js";
-
 const processedData: ProcessData = {};
 
 function appendEvent(user: string, event: Activity) {
@@ -136,7 +135,7 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
           appendEvent(user, {
             type: "comment_created",
             title: `${event.repo.name}#${event.payload.issue.number}`,
-            time: eventTime.toISOString(),
+            time: eventTime?.toISOString(),
             link: event.payload.comment.html_url,
             text: event.payload.comment.body,
           });
@@ -146,7 +145,7 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
         if (["opened", "assigned", "closed"].includes(event.payload.action)) {
           appendEvent(user, {
             type: `issue_${event.payload.action}`,
-            title: `${event.repo.name}#${event.payload.issue?.number}`,
+            title: `${event.repo.name}#${event.payload.issue.number}`,
             time: eventTime.toISOString(),
             link: event.payload.issue.html_url,
             text: event.payload.issue.title,
@@ -170,7 +169,7 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
           appendEvent(user, {
             type: "pr_merged",
             title: `${event.repo.name}#${event.payload.pull_request.number}`,
-            time: eventTime.toISOString(),
+            time: eventTime?.toISOString(),
             link: event.payload.pull_request.html_url,
             text: event.payload.pull_request.title,
             turnaround_time: turnaroundTime,
@@ -181,7 +180,7 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
       case "PullRequestReviewEvent":
         appendEvent(user, {
           type: "pr_reviewed",
-          time: eventTime.toISOString(),
+          time: eventTime?.toISOString(),
           title: `${event.repo.name}#${event.payload.pull_request.number}`,
           link: event.payload.review.html_url,
           text: event.payload.pull_request.title,

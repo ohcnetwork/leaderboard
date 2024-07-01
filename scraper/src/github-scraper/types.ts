@@ -164,7 +164,7 @@ export interface OpenPr {
   link: string;
   title: string;
   stale_for: number;
-  labels: string[];
+  labels: (string | undefined)[];
 }
 
 export interface AuthoredIssueAndPr {

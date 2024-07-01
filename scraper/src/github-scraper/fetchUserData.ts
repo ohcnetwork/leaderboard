@@ -52,7 +52,7 @@ export const fetchOpenPulls = async (user: string, org: string) => {
       link: pr.html_url,
       title: pr.title,
       stale_for: staleFor,
-      labels: pr.labels.map((label: { name: string }) => label.name),
+      labels: pr.labels.map((label: { name?: string }) => label.name),
     };
   });
 

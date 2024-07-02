@@ -28,11 +28,10 @@ export async function calculateTurnaroundTime(event: PullRequestEvent) {
     `GET ${event.payload?.pull_request?.issue_url}`,
   );
   // Fetch url all linked issues url from the response
-  // What if the issue was cross-referenced from another repository than the repository of the PR made also add this feature
   linkedIssues.push([event.repo.name, `#${linkedIssuesResponse.data.number}`]);
 
   // Fetch issue events to find cross-referenced issues
-  const issueEventsUrl = linkedIssuesResponse.data.events_url;
+  const issueEventsUrl = await linkedIssuesResponse.data.events_url;
   const issueEventsResponse = await octokit.request(`GET ${issueEventsUrl}`);
 
   type issueEvent = typeof issueEventsResponse.data;
@@ -97,31 +96,33 @@ export async function calculateTurnaroundTime(event: PullRequestEvent) {
         issue_number: issueNumber,
       },
     );
+    type IssueTimelineType = (typeof issueTimelineResponse.data)[0];
+    issueTimelineResponse.data.forEach((action: IssueTimelineType) => {
+      if ("assignee" in action) {
+        if (action.event === "assigned" && action.assignee?.login === user) {
+          assignedAts.push({
+            issue: `${org}/${repo}#${issueNumber}`,
+            time: parseISODate(new Date(action.created_at)),
+          });
+        }
 
-    const issueTimeline = issueTimelineResponse.data;
-    issueTimeline.forEach((action: Action) => {
-      if (action.event === "assigned" && action.assignee.login === user) {
-        assignedAts.push({
-          issue: `${org}/${repo}#${issueNumber}`,
-          time: parseISODate(action.created_at),
-        });
-      }
-
-      if (action.event === "unassigned" && action.assignee.login === user) {
-        assignedAts.pop();
+        if (action.event === "unassigned" && action.assignee?.login === user) {
+          assignedAts.pop();
+        }
       }
     });
-  }
 
-  const assignedAt: Date | null =
-    assignedAts.length === 0
-      ? null
-      : assignedAts.reduce((min, current) =>
-          current.time < min.time ? current : min,
-        ).time;
-  const turnaroundTime =
-    (mergedAt.getTime() - (assignedAt || createdAt.getTime()).valueOf()) / 1000;
-  return turnaroundTime;
+    const assignedAt: Date | null =
+      assignedAts.length === 0
+        ? null
+        : assignedAts.reduce((min, current) =>
+            current.time < min.time ? current : min,
+          ).time;
+    const turnaroundTime =
+      (mergedAt.getTime() - (assignedAt || createdAt.getTime()).valueOf()) /
+      1000;
+    return turnaroundTime;
+  }
 }
 
 export async function resolveAutonomyResponsibility(

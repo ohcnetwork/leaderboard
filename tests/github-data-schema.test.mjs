@@ -18,7 +18,6 @@ use(chaiJsonSchema);
 const filesInDir = fs
   .readdirSync(GH_DATA)
   .filter((file) => path.extname(file) === ".json");
-console.log(filesInDir.length);
 
 filesInDir.forEach((file) => {
   const content = fs.readFileSync(join(GH_DATA, file)).toString();

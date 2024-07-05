@@ -175,6 +175,7 @@ export interface AuthoredIssueAndPr {
 export type Discussion = {
   node: {
     title: string;
+    body: string;
     author: {
       login: string;
     };
@@ -199,6 +200,7 @@ export type Discussion = {
 export type ParsedDiscussion = {
   source: string;
   title: string;
+  description: string;
   author: string;
   url: string;
   time: string;

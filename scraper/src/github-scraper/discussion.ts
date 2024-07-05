@@ -18,6 +18,7 @@ query($org: String!, $cursor: String) {
             edges {
               node {
                 title
+                body
                 author {
                   login
                 }
@@ -66,6 +67,7 @@ async function parseDiscussionData(allDiscussions: Discussion[]) {
     return {
       source: "github",
       title: d.node.title,
+      description: d.node.body,
       author: d.node.author.login,
       url: d.node.url,
       time: d.node.createdAt,

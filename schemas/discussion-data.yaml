@@ -5,6 +5,7 @@ type: array
 required:
   - source
   - title
+  - description
   - author
   - url
   - category
@@ -14,6 +15,8 @@ properties:
     source:
       type: string
     title:
+      type: string
+    description:
       type: string
     author:
       type: string

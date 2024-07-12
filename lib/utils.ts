@@ -88,12 +88,13 @@ export const navLinks = [
   { title: "People", path: "/people" },
   { title: "Projects", path: "/projects" },
   { title: "Releases", path: "/releases" },
+  { title: "Discussion", path: "/discussion" },
 ];
 
 export const formatDate = (date: Date) => {
   return format(date, "MMM dd, yyyy");
 };
-type Features = "Projects" | "Releases";
+type Features = "Projects" | "Releases" | "Discussions";
 export const featureIsEnabled = (feature: Features) => {
   return env.NEXT_PUBLIC_FEATURES?.split(",").includes(feature);
 };

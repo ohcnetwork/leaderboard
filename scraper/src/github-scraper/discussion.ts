@@ -25,7 +25,7 @@ query($org: String!, $cursor: String) {
                 url
                 category{
                   name
-                  emoji
+                  emojiHTML 
                 }
                 comments(first: 10) {
                   edges {
@@ -67,11 +67,14 @@ async function parseDiscussionData(allDiscussions: Discussion[]) {
     return {
       source: "github",
       title: d.node.title,
-      description: d.node.body,
+      text: d.node.body,
       author: d.node.author.login,
-      url: d.node.url,
+      link: d.node.url,
       time: d.node.createdAt,
-      category: d.node.category,
+      category: {
+        name: d.node.category.name,
+        emoji: d.node.category.emojiHTML.replace(/<\/?div>/g, ""),
+      },
       participants,
     };
   });

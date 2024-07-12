@@ -182,7 +182,7 @@ export type Discussion = {
     url: string;
     category: {
       name: string;
-      emoji: string;
+      emojiHTML: string;
     };
     comments: {
       edges: {
@@ -198,15 +198,15 @@ export type Discussion = {
 };
 
 export type ParsedDiscussion = {
-  source: string;
+  source?: string;
   title: string;
-  description: string;
-  author: string;
-  url: string;
+  text: string;
+  author?: string;
+  link: string;
   time: string;
-  category: {
+  category?: {
     name: string;
     emoji: string;
   };
-  participants: string[];
+  participants?: string[];
 };

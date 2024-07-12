@@ -4,12 +4,14 @@ import { Activity, ActivityData, Contributor, Highlights } from "./types";
 import { padZero } from "./utils";
 import { readFile, readdir } from "fs/promises";
 import { existsSync } from "fs";
+import { fetchGithubDiscussionForUser } from "@/lib/discussion";
+import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
 const githubRoot = join(process.cwd(), "data-repo/data/github");
 
-const points = {
+const points: { [key: string]: number } = {
   comment_created: 1,
   issue_assigned: 1,
   pr_reviewed: 4,
@@ -85,6 +87,24 @@ export async function getContributorsSlugs(): Promise<{ file: string }[]> {
   return contributorSlugs;
 }
 
+async function getGithubDiscussions(githubHandle: string) {
+  const response = await fetchGithubDiscussionForUser(githubHandle);
+  const discussions = await response.map((discussion: ParsedDiscussion) => {
+    const title =
+      discussion.author === githubHandle
+        ? `Started a GitHub Discussion on`
+        : `Commented on a GitHub Discussion`;
+    return {
+      type: "github_discussion",
+      title: title,
+      time: discussion.time,
+      link: discussion.link,
+      discussion: discussion,
+    };
+  });
+  return discussions;
+}
+
 export async function getContributorBySlug(file: string, detail = false) {
   const fullPath = join(root, `${formatSlug(file)}.md`);
   const { data, content } = matter(await readFile(fullPath, "utf8"));
@@ -97,6 +117,13 @@ export async function getContributorBySlug(file: string, detail = false) {
     activityData = JSON.parse(
       await readFile(join(githubRoot, `${githubHandle}.json`), "utf8"),
     ) as ActivityData;
+    // in activitydata need to add github discussion data
+    const discussions = await getGithubDiscussions(githubHandle);
+    // Add discussions to activityData in activity array
+    activityData = {
+      ...activityData,
+      activity: [...activityData.activity, ...discussions],
+    };
   } catch (e) {
     activityData = {
       last_updated: undefined,

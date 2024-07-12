@@ -3,11 +3,13 @@
 import { ACTIVITY_TYPES, Activity, ActivityData } from "@/lib/types";
 import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
 import DateRangePicker from "../DateRangePicker";
 import { format } from "date-fns";
+import GithubDiscussion from "../discussions/GithubDiscussion";
+import { IoIosChatboxes } from "react-icons/io";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -161,6 +163,31 @@ let renderText = (activity: Activity) => {
           </div>
         </div>
       );
+    case "github_discussion":
+      return (
+        <div className="min-w-0 flex-1">
+          <div>
+            <p className="font-bold">
+              {activity.title}{" "}
+              <span className="text-primary-400 dark:text-primary-300">
+                {activity["link"].split("/").slice(3, 5).join("/")}
+              </span>
+              <span className="text-foreground">
+                {" "}
+                <RelativeTime time={activity.time} />
+              </span>
+            </p>
+          </div>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            {activity.discussion && (
+              <GithubDiscussion
+                discussion={activity.discussion}
+                isProfilePage
+              />
+            )}
+          </div>
+        </div>
+      );
     default:
       return (
         <div className="min-w-0 flex-1 py-1.5">
@@ -231,6 +258,8 @@ let icon = (type: string) => {
           />
         </svg>
       );
+    case "github_discussion":
+      return <IoIosChatboxes className="h-5 w-5 text-secondary-700" />;
     default:
       return (
         <svg
@@ -480,6 +509,7 @@ export const ActivityCheckbox = (props: {
           pr_merged: "PR merged",
           pr_opened: "PR opened",
           pr_reviewed: "Code Review",
+          github_discussion: "GitHub Discussion",
         }[props.type]
       }
       <span className="text-xs text-secondary-500 dark:text-secondary-400">

@@ -1,3 +1,4 @@
+import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
 import {
   SORT_BY_OPTIONS,
   FILTER_BY_ROLE_OPTIONS,
@@ -66,6 +67,7 @@ export const ACTIVITY_TYPES = [
   "pr_opened",
   "pr_merged",
   "pr_collaborated",
+  "github_discussion",
 ] as const;
 
 export interface Activity {
@@ -73,9 +75,10 @@ export interface Activity {
   title: string;
   time: string;
   link: string;
-  text: string;
+  text?: string;
   collaborated_with?: string[];
   turnaround_time?: number;
+  discussion?: ParsedDiscussion;
 }
 
 export interface OpenPr {

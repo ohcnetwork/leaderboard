@@ -55,7 +55,7 @@ export const getLeaderboardData = async (
       },
       highlights: {
         ...contributor.summary,
-        pr_stale: contributor.activityData.pr_stale,
+        pr_stale: contributor.activityData.pr_stale ?? 0,
       },
     };
   });

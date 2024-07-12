@@ -53,7 +53,7 @@ export default function LeaderboardCard({
                 height={56}
                 width={56}
               />
-              <div className="ml-4 mr-4 basis-[60%] text-wrap pr-10">
+              <div className="ml-4 mr-4 basis-3/5 text-wrap pr-10">
                 <div className="w-[180px] truncate font-bold text-green-500">
                   {contributor.user.name}
                 </div>

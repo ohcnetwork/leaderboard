@@ -108,7 +108,7 @@ export function Select({
           <>
             {showSelectionsAs ? (
               showSelectionsAs == "tags" ? (
-                <div className="left-[-2.5rem] top-9 flex w-full flex-wrap gap-0.5">
+                <div className="-left-10 top-9 flex w-full flex-wrap gap-0.5">
                   {Array.isArray(value) &&
                   value?.length > 0 &&
                   value.length !== options.length ? (
@@ -129,7 +129,7 @@ export function Select({
                   )}
                 </div>
               ) : (
-                <div className="left-[-2.5rem] top-9 flex gap-0.5">
+                <div className="-left-10 top-9 flex gap-0.5">
                   {Array.isArray(value) &&
                   value.length > 0 &&
                   value.length !== options.length ? (

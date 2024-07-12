@@ -75,8 +75,8 @@ const main = async () => {
     console.error("Invalid date value:", dateArg);
     process.exit(1);
   }
-  // await scrapeGitHub(orgName, date, Number(numDays), orgName);
-  // await mergedData(dataDir, processedData);
+  await scrapeGitHub(orgName, date, Number(numDays), orgName);
+  await mergedData(dataDir, processedData);
   await fetchAllDiscussionEventsByOrg(orgName, dataDir);
 
   console.log("Done");

@@ -67,7 +67,7 @@ export const ACTIVITY_TYPES = [
   "pr_opened",
   "pr_merged",
   "pr_collaborated",
-  "github_discussion",
+  "discussion",
 ] as const;
 
 export interface Activity {

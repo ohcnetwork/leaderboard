@@ -6,6 +6,7 @@ import { readFile, readdir } from "fs/promises";
 import { existsSync } from "fs";
 import { fetchGithubDiscussionForUser } from "@/lib/discussion";
 import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
+import { env } from "@/env.mjs";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
@@ -92,10 +93,10 @@ async function getGithubDiscussions(githubHandle: string) {
   const discussions = await response.map((discussion: ParsedDiscussion) => {
     const title =
       discussion.author === githubHandle
-        ? `Started a GitHub Discussion on`
-        : `Commented on a GitHub Discussion`;
+        ? `Started a Discussion`
+        : `Commented on a Discussion`;
     return {
-      type: "github_discussion",
+      type: "discussion",
       title: title,
       time: discussion.time,
       link: discussion.link,

@@ -12,7 +12,10 @@ const GH_DATA = join(
 );
 export const categoriesMap = new Map();
 
-export async function fetchGithubDiscussion(noOfDiscussion?: number) {
+export async function fetchGithubDiscussion(
+  noOfDiscussion?: number | null,
+  user?: string,
+) {
   const filesInDir = fs
     .readdirSync(GH_DATA)
     .filter((file) => path.extname(file) === ".json");
@@ -30,27 +33,15 @@ export async function fetchGithubDiscussion(noOfDiscussion?: number) {
     }
   });
 
-  return noOfDiscussion
-    ? discussions[0].slice(0, noOfDiscussion)
-    : discussions[0];
-}
-
-export async function fetchGithubDiscussionForUser(user?: string) {
-  const filesInDir = fs
-    .readdirSync(GH_DATA)
-    .filter((file) => path.extname(file) === ".json");
-
-  const discussions = filesInDir.map((file) => {
-    const content = fs.readFileSync(path.join(GH_DATA, file)).toString();
-    return JSON.parse(stripJsonComments(content));
-  });
-
-  return (
-    user &&
-    discussions[0].filter(
+  if (user) {
+    return discussions[0].filter(
       (discussion: ParsedDiscussion) =>
         (discussion.participants ?? []).includes(user) ||
         discussion.author === user,
-    )
-  );
+    );
+  }
+
+  return noOfDiscussion
+    ? discussions[0].slice(0, noOfDiscussion)
+    : discussions[0];
 }

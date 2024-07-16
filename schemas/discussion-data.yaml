@@ -10,6 +10,7 @@ required:
   - url
   - category
   - time
+  - repoName
 
 properties:
     source:
@@ -38,4 +39,6 @@ properties:
       type: array
       items:
         type: string
+    repoName:
+      type: string
 

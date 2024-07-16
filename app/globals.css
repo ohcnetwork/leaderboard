@@ -130,3 +130,12 @@ html.dark {
   transform: translateX(0px);
   transform: translateY(0px);
 }
+
+.prose-for-h2-markdown :where(h2):not(:where([class~="not-prose"],[class~="not-prose"] *)){
+  color: var(--tw-prose-headings);
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 0.75em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}

@@ -1,18 +1,19 @@
 import { join } from "path";
 import matter from "gray-matter";
 import { Activity, ActivityData, Contributor, Highlights } from "./types";
-import { padZero } from "./utils";
+import { padZero, parseOrgRepoFromURL } from "./utils";
 import { readFile, readdir } from "fs/promises";
 import { existsSync } from "fs";
-import { fetchGithubDiscussionForUser } from "@/lib/discussion";
+import { fetchGithubDiscussion } from "@/lib/discussion";
 import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
 import { env } from "@/env.mjs";
+import octokit from "./octokit";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
 const githubRoot = join(process.cwd(), "data-repo/data/github");
 
-const points: { [key: string]: number } = {
+const points = {
   comment_created: 1,
   issue_assigned: 1,
   pr_reviewed: 4,
@@ -22,6 +23,9 @@ const points: { [key: string]: number } = {
   pr_merged: 7,
   pr_collaborated: 2,
   issue_closed: 0,
+  discussion_created: 2,
+  discussion_answered: 5,
+  discussion_comment_created: 1,
 };
 // Comments will get a single point
 // Picking up an issue would get a point
@@ -87,22 +91,74 @@ export async function getContributorsSlugs(): Promise<{ file: string }[]> {
   }
   return contributorSlugs;
 }
-
-async function getGithubDiscussions(githubHandle: string) {
-  const response = await fetchGithubDiscussionForUser(githubHandle);
-  const discussions = await response.map((discussion: ParsedDiscussion) => {
-    const title =
-      discussion.author === githubHandle
-        ? `Started a Discussion`
-        : `Commented on a Discussion`;
-    return {
-      type: "discussion",
-      title: title,
-      time: discussion.time,
-      link: discussion.link,
-      discussion: discussion,
+async function checkAnsweredByUser(
+  github: string,
+  number: string,
+  repoName: string,
+) {
+  const org = env.NEXT_PUBLIC_GITHUB_ORG;
+  interface Dicussion {
+    repository: {
+      discussion: {
+        answer: {
+          author: {
+            login: string;
+          };
+        };
+      };
     };
-  });
+  }
+  const dicussion: Dicussion = await octokit.graphql(`query {
+    repository(owner: "${org}", name: "${repoName}") {
+      discussion (number: ${number}) {
+        answer {
+          author {
+            login
+          }
+        }
+      }
+    }
+  }`);
+  if (dicussion.repository.discussion.answer !== null) {
+    return dicussion.repository.discussion.answer.author.login === github;
+  } else return false;
+}
+async function getGithubDiscussions(githubHandle: string) {
+  const response = await fetchGithubDiscussion(null, githubHandle);
+
+  const discussions = await Promise.all(
+    response.map(async (discussion: ParsedDiscussion) => {
+      const isAuthor = discussion.author === githubHandle;
+      let title, activityType;
+
+      if (isAuthor) {
+        title = "Started a Discussion";
+        activityType = "discussion_created";
+      } else {
+        const isAnswered = await checkAnsweredByUser(
+          githubHandle,
+          discussion.link?.split("/").pop() ?? "",
+          discussion.repoName,
+        );
+        title = isAnswered
+          ? "Answered a Discussion"
+          : "Commented on a Discussion";
+        activityType = isAnswered
+          ? "discussion_answered"
+          : "discussion_comment_created";
+      }
+
+      return {
+        type: activityType,
+        title: title,
+        time: discussion.time,
+        link: discussion.link,
+        text: "",
+        discussion: discussion,
+      };
+    }),
+  );
+
   return discussions;
 }
 
@@ -120,6 +176,7 @@ export async function getContributorBySlug(file: string, detail = false) {
     ) as ActivityData;
     // in activitydata need to add github discussion data
     const discussions = await getGithubDiscussions(githubHandle);
+
     // Add discussions to activityData in activity array
     activityData = {
       ...activityData,
@@ -147,9 +204,9 @@ export async function getContributorBySlug(file: string, detail = false) {
       return {
         activity: [
           ...acc.activity,
-          { ...activity, points: points[activity.type] || 0 },
+          { ...activity, points: points[activity.type] },
         ],
-        points: acc.points + (points[activity.type] || 0),
+        points: acc.points + points[activity.type],
         comment_created:
           acc.comment_created + (activity.type === "comment_created" ? 1 : 0),
         eod_update: acc.eod_update + (activity.type === "eod_update" ? 1 : 0),
@@ -163,6 +220,15 @@ export async function getContributorBySlug(file: string, detail = false) {
           acc.issue_assigned + (activity.type === "issue_assigned" ? 1 : 0),
         issue_opened:
           acc.issue_opened + (activity.type === "issue_opened" ? 1 : 0),
+        discussion_created:
+          acc.discussion_created +
+          (activity.type === "discussion_created" ? 2 : 0),
+        discussion_answered:
+          acc.discussion_answered +
+          (activity.type === "discussion_answered" ? 5 : 0),
+        discussion_comment_created:
+          acc.discussion_comment_created +
+          (activity.type === "discussion_comment_created" ? 1 : 0),
       };
     },
     {
@@ -176,6 +242,9 @@ export async function getContributorBySlug(file: string, detail = false) {
       pr_reviewed: 0,
       issue_assigned: 0,
       issue_opened: 0,
+      discussion_created: 0,
+      discussion_answered: 0,
+      discussion_comment_created: 0,
     } as Highlights & { activity: Activity[] },
   );
 
@@ -213,6 +282,9 @@ export async function getContributorBySlug(file: string, detail = false) {
       pr_collaborated: weightedActivity.pr_collaborated,
       issue_assigned: weightedActivity.issue_assigned,
       issue_opened: weightedActivity.issue_opened,
+      discussion_created: weightedActivity.discussion_created,
+      discussion_answered: weightedActivity.discussion_answered,
+      discussion_comment_created: weightedActivity.discussion_comment_created,
     },
     weekSummary: getLastWeekHighlights(calendarData),
     summarize,
@@ -289,6 +361,9 @@ const HIGHLIGHT_KEYS = [
   "pr_collaborated",
   "issue_assigned",
   "issue_opened",
+  "discussion_created",
+  "discussion_answered",
+  "discussion_comment_created",
 ] as const;
 
 const computePoints = (
@@ -311,6 +386,11 @@ const HighlightsReducer = (acc: Highlights, day: Highlights) => {
     pr_collaborated: acc.pr_collaborated + (day.pr_collaborated ?? 0),
     issue_assigned: acc.issue_assigned + (day.issue_assigned ?? 0),
     issue_opened: acc.issue_opened + (day.issue_opened ?? 0),
+    discussion_created: acc.discussion_created + (day.discussion_created ?? 0),
+    discussion_answered:
+      acc.discussion_answered + (day.discussion_answered ?? 0),
+    discussion_comment_created:
+      acc.discussion_comment_created + (day.discussion_comment_created ?? 0),
   };
 };
 
@@ -324,6 +404,9 @@ const HighlightsInitialValue = {
   pr_collaborated: 0,
   issue_assigned: 0,
   issue_opened: 0,
+  discussion_created: 0,
+  discussion_answered: 0,
+  discussion_comment_created: 0,
 } as Highlights;
 
 const getLastWeekHighlights = (calendarData: Highlights[]) => {

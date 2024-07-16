@@ -1,31 +1,33 @@
-"use client";
 import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import { FaAngleDoubleDown, FaAngleDoubleUp } from "react-icons/fa";
 import RelativeTime from "../RelativeTime";
-import { env } from "@/env.mjs";
 import { FiGithub } from "react-icons/fi";
-import DiscussionMarkdown from "@/components/discussions/DiscussionMarkdown";
+import { parseOrgRepoFromURL } from "@/lib/utils";
+import Markdown from "../Markdown";
+import { FaAnglesRight } from "react-icons/fa6";
 
-interface params {
+interface Props {
   discussion: ParsedDiscussion;
+  minimal?: boolean;
   isProfilePage?: boolean;
 }
 
-const GithubDiscussion = ({ discussion, isProfilePage = false }: params) => {
-  const [isFullDescription, setFullDescription] = useState(false);
+const GithubDiscussion = ({
+  discussion,
+  minimal = false,
+  isProfilePage = false,
+}: Props) => {
   const lengthOfDescription = isProfilePage ? 300 : 500;
-  const orgRepoName = discussion["link"].split("/").slice(3, 5).join("/");
-  const repository =
-    orgRepoName === `orgs/${env.NEXT_PUBLIC_GITHUB_ORG}` ? "" : orgRepoName;
+  const { org, repository } = parseOrgRepoFromURL(discussion.link);
 
   return (
-    <div className={`mt-3 flex w-full gap-3 ${!isProfilePage && "mt-5"}`}>
+    <div
+      className={`group mt-3 flex w-full gap-3 ${minimal ? "lg:w-full" : "lg:w-[75%]"}  ${!isProfilePage ? "mt-5" : "lg:w-full"}`}
+    >
       {/* Left side */}
       {!isProfilePage && (
-        <div className="relative min-w-10">
+        <div className=" relative min-w-10">
           {/* Profile image */}
           <Image
             className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-400 ring-8 ring-secondary-200 transition-all duration-200 ease-in-out group-hover:scale-125 group-hover:ring-2 dark:ring-secondary-800 group-hover:dark:ring-white/50"
@@ -37,9 +39,8 @@ const GithubDiscussion = ({ discussion, isProfilePage = false }: params) => {
           <span className="absolute left-6 top-6 text-xl lg:text-2xl">
             {discussion.category?.emoji}
           </span>
-          {/* Vertical Line under Profile */}
           <span
-            className="top-13 absolute left-5 -ml-px h-full w-0.5 justify-center bg-secondary-200 group-last:hidden dark:bg-secondary-700"
+            className="absolute left-5 top-12 -ml-px h-full w-0.5 justify-center bg-secondary-200 group-last:hidden dark:bg-secondary-700"
             aria-hidden="true"
           />
         </div>
@@ -48,8 +49,8 @@ const GithubDiscussion = ({ discussion, isProfilePage = false }: params) => {
       {/* Right side */}
       <div className="ml-2">
         {/* Title and Time */}
-        <div className={`flex items-center justify-between `}>
-          <div className={`${isProfilePage && "flex"}`}>
+        <div className={`flex items-center justify-end `}>
+          <div className={`${isProfilePage && "flex"} w-3/4`}>
             <Link href={discussion.link}>
               <p className="w-full text-lg font-semibold text-primary-900 dark:text-primary-100">
                 {discussion.title}
@@ -73,13 +74,10 @@ const GithubDiscussion = ({ discussion, isProfilePage = false }: params) => {
                       target="_blank"
                     >
                       <span className="hidden font-bold text-secondary-700 dark:text-secondary-300 sm:inline">
-                        {repository}
+                        {org}/{repository}
                       </span>
                       <span className="font-bold text-secondary-700 dark:text-secondary-300 sm:hidden">
-                        {repository.replace(
-                          `${env.NEXT_PUBLIC_GITHUB_ORG}/`,
-                          "",
-                        )}
+                        {repository.replace(`${org}/`, "")}
                       </span>
                     </Link>
                   </>
@@ -103,34 +101,24 @@ const GithubDiscussion = ({ discussion, isProfilePage = false }: params) => {
         <div
           className={`${
             !isProfilePage && "mt-2 bg-secondary-100 p-4 dark:bg-secondary-800"
-          } ${isProfilePage && "-mt-10"} break-all rounded-md text-xs lg:text-sm`}
+          } break-all rounded-md text-xs lg:text-sm`}
         >
           {discussion.text.length > lengthOfDescription ? (
-            <div>
-              <DiscussionMarkdown>
-                {isFullDescription
-                  ? discussion.text
-                  : discussion.text.slice(0, lengthOfDescription)}
-              </DiscussionMarkdown>
-              <button
-                className="mx-auto flex w-fit gap-2 text-sm"
-                onClick={() => setFullDescription(!isFullDescription)}
+            <div className="-mt-3">
+              <Markdown className="prose-for-h2-markdown">
+                {discussion.text.slice(0, lengthOfDescription) + "..."}
+              </Markdown>
+              <Link
+                className="flex w-full justify-end gap-1 self-center text-primary-300 underline hover:text-primary-700 dark:text-primary-300 dark:hover:text-primary-400"
+                href={discussion.link}
               >
-                {isFullDescription ? (
-                  <>
-                    Read Less
-                    <FaAngleDoubleUp className="self-center" />
-                  </>
-                ) : (
-                  <>
-                    Read More
-                    <FaAngleDoubleDown className="self-center" />
-                  </>
-                )}
-              </button>
+                Read More <FaAnglesRight className="self-center" />
+              </Link>
             </div>
           ) : (
-            <DiscussionMarkdown>{discussion.text}</DiscussionMarkdown>
+            <Markdown className="prose-for-h2-markdown">
+              {discussion.text}
+            </Markdown>
           )}
         </div>
 

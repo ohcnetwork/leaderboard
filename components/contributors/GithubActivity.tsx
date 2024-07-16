@@ -1,7 +1,11 @@
 "use client";
 
 import { ACTIVITY_TYPES, Activity, ActivityData } from "@/lib/types";
-import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
+import {
+  formatDuration,
+  parseDateRangeSearchParam,
+  parseOrgRepoFromURL,
+} from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
 import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -10,7 +14,7 @@ import DateRangePicker from "../DateRangePicker";
 import { format } from "date-fns";
 import GithubDiscussion from "../discussions/GithubDiscussion";
 import { IoIosChatboxes } from "react-icons/io";
-import { env } from "@/env.mjs";
+import Link from "next/link";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -164,10 +168,11 @@ let renderText = (activity: Activity) => {
           </div>
         </div>
       );
-    case "discussion":
-      const orgRepoName = activity["link"].split("/").slice(3, 5).join("/");
-      const repository =
-        orgRepoName === `orgs/${env.NEXT_PUBLIC_GITHUB_ORG}` ? "" : orgRepoName;
+    case "discussion_answered":
+    case "discussion_comment_created":
+    case "discussion_created":
+      const { org, repository } = parseOrgRepoFromURL(activity.link);
+
       return (
         <div className="min-w-0 flex-1">
           <div>
@@ -176,9 +181,14 @@ let renderText = (activity: Activity) => {
               {repository && (
                 <>
                   in{" "}
-                  <span className="text-primary-400 dark:text-primary-300">
-                    {repository}
-                  </span>
+                  <Link
+                    href={`https://github.com/${repository}`}
+                    target="_blank"
+                  >
+                    <span className="text-primary-400 dark:text-primary-300">
+                      {org}/{repository}
+                    </span>
+                  </Link>
                 </>
               )}
               <span className="text-foreground">
@@ -518,7 +528,9 @@ export const ActivityCheckbox = (props: {
           pr_merged: "PR merged",
           pr_opened: "PR opened",
           pr_reviewed: "Code Review",
-          discussion: "Discussion",
+          discussion_comment_created: " Commented on Discussion",
+          discussion_created: "Discussion started",
+          discussion_answered: "Discussion Answered",
         }[props.type]
       }
       <span className="text-xs text-secondary-500 dark:text-secondary-400">

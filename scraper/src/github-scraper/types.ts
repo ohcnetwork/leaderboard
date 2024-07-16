@@ -201,7 +201,7 @@ export type ParsedDiscussion = {
   source?: string;
   title: string;
   text: string;
-  author?: string;
+  author: string;
   link: string;
   time: string;
   category?: {
@@ -209,4 +209,5 @@ export type ParsedDiscussion = {
     emoji: string;
   };
   participants?: string[];
+  repoName: string;
 };

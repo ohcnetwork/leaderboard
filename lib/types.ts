@@ -43,6 +43,9 @@ export interface Highlights {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
+  discussion_created: number;
+  discussion_answered: number;
+  discussion_comment_created: number;
 }
 
 export interface WeekSummary {
@@ -55,6 +58,9 @@ export interface WeekSummary {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
+  discussion_created: number;
+  discussion_answered: number;
+  discussion_comment_created: number;
 }
 
 export const ACTIVITY_TYPES = [
@@ -67,7 +73,9 @@ export const ACTIVITY_TYPES = [
   "pr_opened",
   "pr_merged",
   "pr_collaborated",
-  "discussion",
+  "discussion_created",
+  "discussion_comment_created",
+  "discussion_answered",
 ] as const;
 
 export interface Activity {
@@ -75,7 +83,7 @@ export interface Activity {
   title: string;
   time: string;
   link: string;
-  text?: string;
+  text: string;
   collaborated_with?: string[];
   turnaround_time?: number;
   discussion?: ParsedDiscussion;

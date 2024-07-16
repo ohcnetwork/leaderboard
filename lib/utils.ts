@@ -98,3 +98,21 @@ type Features = "Projects" | "Releases" | "Discussions";
 export const featureIsEnabled = (feature: Features) => {
   return env.NEXT_PUBLIC_FEATURES?.split(",").includes(feature);
 };
+
+export const parseOrgRepoFromURL = (url: string) => {
+  const parts = url.split("/");
+
+  let org, repository;
+
+  if (parts[3] === "orgs") {
+    // Handle the URL format: /orgs/{org}/discussions/{id}
+    org = parts[4];
+    repository = "";
+  } else {
+    // Handle the URL format: /{org}/{repo}/discussions/{id}
+    org = parts[3];
+    repository = parts[4] === org ? "" : parts[4];
+  }
+
+  return { org, repository };
+};

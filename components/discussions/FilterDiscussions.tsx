@@ -21,7 +21,6 @@ const FilterDiscussions = ({ categories }: params) => {
   const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
 
   const updateSearchParam = (key: string, value: string) => {
-    key === "category" && setSelectedCategory(value);
     const current = new URLSearchParams(searchParams);
     if (!value) {
       current.delete(key);

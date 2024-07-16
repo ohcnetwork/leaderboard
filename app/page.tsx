@@ -11,8 +11,9 @@ import { env } from "@/env.mjs";
 import CommunityEngagemet from "@/app/CommunityEngagementSummary";
 import { differenceInWeeks, parseISO } from "date-fns";
 import { featureIsEnabled, formatDate } from "@/lib/utils";
-import GithubDiscussions from "../components/discussions/GithubDiscussions";
 import { fetchGithubDiscussion } from "../lib/discussion";
+import GithubDiscussion from "@/components/discussions/GithubDiscussion";
+import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -97,23 +98,36 @@ export default async function Home() {
                     </div>
                   </div>
                 )}
-                <div className="mx-auto">
-                  <div className="space-y-12">
-                    <div className="flex items-center justify-between pr-2">
-                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                        Discussions
-                      </h2>
-                      <Link
-                        href="/discussion"
-                        className="flex items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
-                      >
-                        More
-                        <MdOutlineArrowForwardIos />
-                      </Link>
+                {featureIsEnabled("Discussions") && (
+                  <div className="mx-auto">
+                    <div className="space-y-12">
+                      <div className="flex items-center justify-between pr-2">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                          Discussions
+                        </h2>
+                        <Link
+                          href="/discussion"
+                          className="flex items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
+                        >
+                          More
+                          <MdOutlineArrowForwardIos />
+                        </Link>
+                      </div>
+                      {discussions.map(
+                        (discussion: ParsedDiscussion, index: number) => {
+                          return (
+                            <div key={index}>
+                              <GithubDiscussion
+                                discussion={discussion}
+                                minimal
+                              />
+                            </div>
+                          );
+                        },
+                      )}
                     </div>
-                    <GithubDiscussions discussions={discussions} />
                   </div>
-                </div>
+                )}
                 {featureIsEnabled("Projects") && (
                   <div className="mx-auto">
                     <div className="space-y-12">

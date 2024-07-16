@@ -200,7 +200,7 @@ export async function getContributorBySlug(file: string, detail = false) {
   };
 
   const weightedActivity = activityData.activity.reduce(
-    (acc, activity) => {
+    (acc, activity: Activity) => {
       return {
         activity: [
           ...acc.activity,

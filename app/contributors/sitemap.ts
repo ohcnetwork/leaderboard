@@ -1,5 +1,5 @@
 import { sitemapEntry } from "@/app/sitemap";
-import { getContributors, getContributorsSlugs } from "@/lib/api";
+import { getContributors } from "@/lib/api";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

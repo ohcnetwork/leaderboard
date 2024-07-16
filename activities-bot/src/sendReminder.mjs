@@ -17,19 +17,19 @@ const remind = async ({ slackId, updates }) => {
 const formatUpdatesMessage = (updates) => {
   if (updates?.length) {
     return `
-  Here are your updates for today:
-  
-  ${updates.map((update, i) => `${i + 1}. ${update}`).join("\n")}
-  
-  _If you wish to add more updates, *send each of the update as an individual message*._
-  _If you wish to clear or re-write your updates, message *\`clear updates\`*._
-  _These updates will be sent to the channel at the end of the working day along with your contribution data from GitHub._
+Here are your updates for today:
+
+${updates.map((update, i) => `${i + 1}. ${update}`).join("\n")}
+
+_If you wish to add more updates, *send each of the update as an individual message*._
+_If you wish to clear or re-write your updates, message *\`clear updates\`*._
+_These updates will be sent to the channel at the end of the working day along with your contribution data from GitHub._
   `;
   }
 
   return `
-  You have not specified any EOD updates for today.
-  If you wish to add updates, *send each of the update as an individual message*.`;
+You have not specified any EOD updates for today.
+If you wish to add updates, *send each of the update as an individual message*.`;
 };
 
 async function main() {

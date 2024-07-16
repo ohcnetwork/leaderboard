@@ -16,7 +16,7 @@ export default async function Markdown(props: {
     .process(props.children || "");
 
   return (
-    <div className="prose font-inter text-sm leading-relaxed dark:prose-invert sm:text-base xl:text-left">
+    <div className="prose font-inter text-sm leading-relaxed dark:prose-invert prose-h2:mt-3 sm:text-base xl:text-left">
       <div
         className={clsx(props.className ?? "")}
         dangerouslySetInnerHTML={{ __html: result.toString() }}

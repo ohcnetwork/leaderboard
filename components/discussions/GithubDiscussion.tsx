@@ -19,7 +19,7 @@ const GithubDiscussion = ({
   isProfilePage = false,
 }: Props) => {
   const lengthOfDescription = isProfilePage ? 300 : 500;
-  const { org, repository } = parseOrgRepoFromURL(discussion.link);
+  const { org, repo } = parseOrgRepoFromURL(discussion.link);
 
   return (
     <div
@@ -66,18 +66,15 @@ const GithubDiscussion = ({
                   {discussion.author}
                 </Link>{" "}
                 started a discussion{" "}
-                {repository.length > 0 && (
+                {repo && (
                   <>
                     in{" "}
-                    <Link
-                      href={`https://github.com/${repository}`}
-                      target="_blank"
-                    >
+                    <Link href={`https://github.com/${repo}`} target="_blank">
                       <span className="hidden font-bold text-secondary-700 dark:text-secondary-300 sm:inline">
-                        {org}/{repository}
+                        {org}/{repo}
                       </span>
                       <span className="font-bold text-secondary-700 dark:text-secondary-300 sm:hidden">
-                        {repository.replace(`${org}/`, "")}
+                        {repo.replace(`${org}/`, "")}
                       </span>
                     </Link>
                   </>

@@ -27,14 +27,8 @@ export const getLeaderboardData = async (
       (contributor) => roles.length == 0 || roles.includes(contributor.role),
     )
     .filter((contributor) => {
-      if (sortBy === "discussion_answered") {
-        return contributor.summary.discussion_answered > 0;
-      }
-      if (sortBy === "discussion_comment_created") {
-        return contributor.summary.discussion_comment_created > 0;
-      }
-      if (sortBy === "discussion_created") {
-        return contributor.summary.discussion_created > 0;
+      if (sortBy) {
+        return contributor.summary[sortBy] ?? 0 > 0;
       }
     })
     .sort((a, b) => {

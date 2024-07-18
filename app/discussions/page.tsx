@@ -5,12 +5,15 @@ interface Params {
   searchParams: { [key: string]: string };
 }
 
-const page = async ({ searchParams }: Params) => {
+export default async function Page({ searchParams }: Params) {
   const discussions = await fetchGithubDiscussion();
 
   return (
-    <GithubDiscussions discussions={discussions} searchParams={searchParams} />
+    discussions && (
+      <GithubDiscussions
+        discussions={discussions}
+        searchParams={searchParams}
+      />
+    )
   );
-};
-
-export default page;
+}

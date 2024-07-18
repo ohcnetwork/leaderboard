@@ -10,7 +10,7 @@ interface Props {
 const GithubDiscussions = ({ discussions, searchParams }: Props) => {
   const category = searchParams?.category;
   const dateRange = searchParams?.between;
-  const [start, end] = parseDateRangeSearchParam(dateRange);
+  const [start, end] = parseDateRangeSearchParam(dateRange, 30);
 
   if (category && dateRange) {
     discussions = discussions.filter(
@@ -30,7 +30,12 @@ const GithubDiscussions = ({ discussions, searchParams }: Props) => {
         new Date(discussion.time) <= new Date(end),
     );
   }
-
+  discussions = discussions.filter(
+    (discussion) =>
+      new Date(discussion.time) >= new Date(start) &&
+      new Date(discussion.time) <= new Date(end) &&
+      (!category || discussion.category?.name === category),
+  );
   return (
     <div className="flex w-full flex-col items-start justify-center lg:w-[90%]">
       {discussions.length > 0 ? (

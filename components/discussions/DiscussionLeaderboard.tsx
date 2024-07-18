@@ -1,38 +1,46 @@
 import { getContributors } from "@/lib/api";
 import Link from "next/link";
 
+interface Contributor {
+  name: string;
+  points: number;
+  githubHandle: string;
+}
+
 export async function calculateContributor() {
   const contributors = await getContributors();
-  const contributorsMap = new Map();
 
-  // If we have contributors then we will calculate the top contributors and save it in the map like object {name, points, githubHandle}
+  // If we have contributors then we will calculate the top contributors and save it in an array of objects {name, points, githubHandle}
   // points = 1 for each comment + 2 for creating a discussion + 5 discussion marked as helpful
   if (contributors) {
+    const contributorsArray: Contributor[] = [];
+
     contributors.forEach((contributor) => {
-      const existingInfo = contributorsMap.get(contributor.name) || {
-        points: 0,
-        githubHandle: contributor.slug,
-      };
+      const existingContributor = contributorsArray.find(
+        (c) => c.name === contributor.name,
+      );
+
       const points =
-        existingInfo.points + contributor.highlights.discussion_answered ||
+        contributor.highlights.discussion_answered ||
         contributor.highlights.discussion_created ||
         contributor.highlights.discussion_comment_created ||
         0;
 
-      const contributorInfo = {
-        points: points,
-        githubHandle: contributor.slug,
-      };
-
-      contributorsMap.set(contributor.name, contributorInfo);
+      if (existingContributor) {
+        existingContributor.points += points;
+      } else {
+        contributorsArray.push({
+          name: contributor.name,
+          points: points,
+          githubHandle: contributor.slug,
+        });
+      }
     });
+
+    return contributorsArray;
   }
 
-  return Array.from(contributorsMap, ([name, { points, githubHandle }]) => ({
-    name,
-    points,
-    githubHandle,
-  }));
+  return [];
 }
 
 const DiscussionLeaderboard = async () => {

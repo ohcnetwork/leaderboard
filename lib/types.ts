@@ -43,6 +43,7 @@ export interface Highlights {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
+  pr_stale?: number; // stale PRs added because there is need in app/api/leadeborad/functions.ts to avoid type error
   discussion_created: number;
   discussion_answered: number;
   discussion_comment_created: number;
@@ -74,8 +75,8 @@ export const ACTIVITY_TYPES = [
   "pr_merged",
   "pr_collaborated",
   "discussion_created",
-  "discussion_comment_created",
   "discussion_answered",
+  "discussion_comment_created",
 ] as const;
 
 export interface Activity {
@@ -88,7 +89,6 @@ export interface Activity {
   turnaround_time?: number;
   discussion?: ParsedDiscussion;
 }
-
 export interface OpenPr {
   link: string;
   title: string;

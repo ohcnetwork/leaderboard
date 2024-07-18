@@ -13,7 +13,6 @@ import { differenceInWeeks, parseISO } from "date-fns";
 import { featureIsEnabled, formatDate } from "@/lib/utils";
 import { fetchGithubDiscussion } from "../lib/discussion";
 import GithubDiscussion from "@/components/discussions/GithubDiscussion";
-import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -98,7 +97,7 @@ export default async function Home() {
                     </div>
                   </div>
                 )}
-                {featureIsEnabled("Discussions") && (
+                {discussions && (
                   <div className="mx-auto">
                     <div className="space-y-12">
                       <div className="flex items-center justify-between pr-2">
@@ -113,18 +112,15 @@ export default async function Home() {
                           <MdOutlineArrowForwardIos />
                         </Link>
                       </div>
-                      {discussions.map(
-                        (discussion: ParsedDiscussion, index: number) => {
-                          return (
-                            <div key={index}>
-                              <GithubDiscussion
-                                discussion={discussion}
-                                minimal
-                              />
-                            </div>
-                          );
-                        },
-                      )}
+                      {discussions.map((discussion, index) => {
+                        return (
+                          <GithubDiscussion
+                            key={index}
+                            discussion={discussion}
+                            minimal
+                          />
+                        );
+                      })}
                     </div>
                   </div>
                 )}

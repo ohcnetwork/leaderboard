@@ -171,22 +171,19 @@ let renderText = (activity: Activity) => {
     case "discussion_answered":
     case "discussion_comment_created":
     case "discussion_created":
-      const { org, repository } = parseOrgRepoFromURL(activity.link);
+      const { org, repo } = parseOrgRepoFromURL(activity.link);
 
       return (
         <div className="min-w-0 flex-1">
           <div>
             <p className="font-bold">
               {activity.title}{" "}
-              {repository && (
+              {repo && (
                 <>
                   in{" "}
-                  <Link
-                    href={`https://github.com/${repository}`}
-                    target="_blank"
-                  >
+                  <Link href={`https://github.com/${repo}`} target="_blank">
                     <span className="text-primary-400 dark:text-primary-300">
-                      {org}/{repository}
+                      {org}/{repo}
                     </span>
                   </Link>
                 </>
@@ -278,7 +275,7 @@ let icon = (type: string) => {
         </svg>
       );
     case "discussion":
-      return <IoIosChatboxes className="h-5 w-5 text-secondary-700" />;
+      return <IoIosChatboxes className="size-5 text-secondary-700" />;
     default:
       return (
         <svg
@@ -528,9 +525,9 @@ export const ActivityCheckbox = (props: {
           pr_merged: "PR merged",
           pr_opened: "PR opened",
           pr_reviewed: "Code Review",
-          discussion_comment_created: " Commented on Discussion",
-          discussion_created: "Discussion started",
-          discussion_answered: "Discussion Answered",
+          discussion_comment_created: "Commented on a discussion",
+          discussion_created: "Started a discussion",
+          discussion_answered: "Answered on a discussion",
         }[props.type]
       }
       <span className="text-xs text-secondary-500 dark:text-secondary-400">

@@ -4,7 +4,7 @@ import { Activity, ActivityData, Contributor, Highlights } from "./types";
 import { padZero, parseOrgRepoFromURL } from "./utils";
 import { readFile, readdir } from "fs/promises";
 import { existsSync } from "fs";
-import { fetchGithubDiscussion } from "@/lib/discussion";
+import { fetchGithubDiscussion, getGithubDiscussions } from "@/lib/discussion";
 import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
 import { env } from "@/env.mjs";
 import octokit from "./octokit";
@@ -90,76 +90,6 @@ export async function getContributorsSlugs(): Promise<{ file: string }[]> {
     contributorSlugs = files.map((file) => ({ file }));
   }
   return contributorSlugs;
-}
-async function checkAnsweredByUser(
-  github: string,
-  number: string,
-  repoName: string,
-) {
-  const org = env.NEXT_PUBLIC_GITHUB_ORG;
-  interface Dicussion {
-    repository: {
-      discussion: {
-        answer: {
-          author: {
-            login: string;
-          };
-        };
-      };
-    };
-  }
-  const dicussion: Dicussion = await octokit.graphql(`query {
-    repository(owner: "${org}", name: "${repoName}") {
-      discussion (number: ${number}) {
-        answer {
-          author {
-            login
-          }
-        }
-      }
-    }
-  }`);
-  if (dicussion.repository.discussion.answer !== null) {
-    return dicussion.repository.discussion.answer.author.login === github;
-  } else return false;
-}
-async function getGithubDiscussions(githubHandle: string) {
-  const response = await fetchGithubDiscussion(null, githubHandle);
-
-  const discussions = await Promise.all(
-    response.map(async (discussion: ParsedDiscussion) => {
-      const isAuthor = discussion.author === githubHandle;
-      let title, activityType;
-
-      if (isAuthor) {
-        title = "Started a Discussion";
-        activityType = "discussion_created";
-      } else {
-        const isAnswered = await checkAnsweredByUser(
-          githubHandle,
-          discussion.link?.split("/").pop() ?? "",
-          discussion.repoName,
-        );
-        title = isAnswered
-          ? "Answered a Discussion"
-          : "Commented on a Discussion";
-        activityType = isAnswered
-          ? "discussion_answered"
-          : "discussion_comment_created";
-      }
-
-      return {
-        type: activityType,
-        title: title,
-        time: discussion.time,
-        link: discussion.link,
-        text: "",
-        discussion: discussion,
-      };
-    }),
-  );
-
-  return discussions;
 }
 
 export async function getContributorBySlug(file: string, detail = false) {

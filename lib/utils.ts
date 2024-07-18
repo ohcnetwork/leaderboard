@@ -99,20 +99,22 @@ export const featureIsEnabled = (feature: Features) => {
   return env.NEXT_PUBLIC_FEATURES?.split(",").includes(feature);
 };
 
-export const parseOrgRepoFromURL = (url: string) => {
+export const parseOrgRepoFromURL = (
+  url: string,
+): { org: string; repo: string | null } => {
   const parts = url.split("/");
 
-  let org, repository;
+  let org: string, repo: string | null;
 
   if (parts[3] === "orgs") {
     // Handle the URL format: /orgs/{org}/discussions/{id}
     org = parts[4];
-    repository = "";
+    repo = null;
   } else {
     // Handle the URL format: /{org}/{repo}/discussions/{id}
     org = parts[3];
-    repository = parts[4] === org ? "" : parts[4];
+    repo = parts[4] === org ? "" : parts[4];
   }
 
-  return { org, repository };
+  return { org, repo };
 };

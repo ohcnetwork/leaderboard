@@ -7,13 +7,8 @@ import octokit from "./octokit";
 import { featureIsEnabled } from "./utils";
 import { Activity } from "./types";
 
-const cwd = process.cwd();
+const root = join(process.cwd(), "data-repo/data/github/discussions");
 
-const GH_DATA = join(
-  cwd,
-  process.env.DATA_REPO ?? "data-repo",
-  "../data/github/discussions",
-);
 export const categories: { name: string; emoji: string }[] = [];
 
 export async function fetchGithubDiscussion(
@@ -24,11 +19,11 @@ export async function fetchGithubDiscussion(
     return null;
   }
   const filesInDir = fs
-    .readdirSync(GH_DATA)
+    .readdirSync(root)
     .filter((file) => path.extname(file) === ".json");
 
   const discussions = filesInDir.map((file) => {
-    const content = fs.readFileSync(path.join(GH_DATA, file)).toString();
+    const content = fs.readFileSync(path.join(root, file)).toString();
     return JSON.parse(stripJsonComments(content));
   })[0] as ParsedDiscussion[];
 

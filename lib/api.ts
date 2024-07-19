@@ -1,13 +1,10 @@
 import { join } from "path";
 import matter from "gray-matter";
 import { Activity, ActivityData, Contributor, Highlights } from "./types";
-import { padZero, parseOrgRepoFromURL } from "./utils";
+import { padZero } from "./utils";
 import { readFile, readdir } from "fs/promises";
 import { existsSync } from "fs";
-import { fetchGithubDiscussion, getGithubDiscussions } from "@/lib/discussion";
-import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
-import { env } from "@/env.mjs";
-import octokit from "./octokit";
+import { getGithubDiscussions } from "@/lib/discussion";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");

@@ -90,7 +90,9 @@ const GithubDiscussion = ({
             className="flex items-center gap-2 rounded-lg border border-secondary-200 px-4 py-2 text-xs text-secondary-800 transition-colors hover:bg-secondary-100 hover:text-secondary-900 dark:border-secondary-800 dark:text-secondary-200 hover:dark:bg-secondary-800 hover:dark:text-secondary-100 sm:text-sm"
           >
             <FiGithub />
-            <span className="hidden sm:inline">Open in GitHub</span>
+            <span className="hidden whitespace-nowrap sm:inline">
+              Open in GitHub
+            </span>
           </Link>
         </div>
 

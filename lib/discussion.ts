@@ -5,6 +5,7 @@ import path, { join } from "path";
 import stripJsonComments from "strip-json-comments";
 import octokit from "./octokit";
 import { featureIsEnabled } from "./utils";
+import { Activity } from "./types";
 
 const cwd = process.cwd();
 
@@ -95,7 +96,7 @@ export async function checkAnsweredByUser(
 export async function getGithubDiscussions(githubHandle: string) {
   const response = await fetchGithubDiscussion(null, githubHandle);
 
-  if (response === null) return [];
+  if (response === null) return [] as Activity[];
   const discussions = await Promise.all(
     response.map(async (discussion: ParsedDiscussion) => {
       const isAuthor = discussion.author === githubHandle;
@@ -123,7 +124,7 @@ export async function getGithubDiscussions(githubHandle: string) {
         link: discussion.link,
         text: "",
         discussion: discussion,
-      };
+      } as Activity;
     }),
   );
 

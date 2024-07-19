@@ -3,7 +3,7 @@ import { env } from "@/env.mjs";
 import { notFound } from "next/navigation";
 import { featureIsEnabled } from "@/lib/utils";
 import FilterDiscussions from "../../components/discussions/FilterDiscussions";
-import { categoriesArray } from "../../lib/discussion";
+import { categories } from "../../lib/discussion";
 import DiscussionLeaderboard from "../../components/discussions/DiscussionLeaderboard";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function DiscussionsLayout({
     <div className="mx-auto max-w-6xl p-5">
       <div className="items-center gap-5 pb-8 lg:mt-10 lg:flex">
         <h1 className="text-3xl sm:text-4xl">Disucssions</h1>
-        <FilterDiscussions categories={categoriesArray} />
+        <FilterDiscussions categories={categories} />
       </div>
       <div className="flex w-full flex-col-reverse gap-3 lg:flex lg:flex-row">
         {children}

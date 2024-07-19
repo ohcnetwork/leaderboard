@@ -43,7 +43,7 @@ export interface Highlights {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
-  pr_stale?: number; // stale PRs added because there is need in app/api/leadeborad/functions.ts to avoid type error
+  pr_stale?: number;
   discussion_created: number;
   discussion_answered: number;
   discussion_comment_created: number;

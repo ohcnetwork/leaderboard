@@ -13,10 +13,10 @@ export async function calculateContributor() {
   // If we have contributors then we will calculate the top contributors and save it in an array of objects {name, points, githubHandle}
   // points = 1 for each comment + 2 for creating a discussion + 5 discussion marked as helpful
   if (contributors) {
-    const contributorsArray: Contributor[] = [];
+    const uniqueContributors: Contributor[] = [];
 
     contributors.forEach((contributor) => {
-      const existingContributor = contributorsArray.find(
+      const existingContributor = uniqueContributors.find(
         (c) => c.name === contributor.name,
       );
 
@@ -29,7 +29,7 @@ export async function calculateContributor() {
       if (existingContributor) {
         existingContributor.points += points;
       } else {
-        contributorsArray.push({
+        uniqueContributors.push({
           name: contributor.name,
           points: points,
           githubHandle: contributor.slug,
@@ -37,7 +37,7 @@ export async function calculateContributor() {
       }
     });
 
-    return contributorsArray;
+    return uniqueContributors;
   }
 
   return [];

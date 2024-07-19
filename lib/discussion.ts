@@ -13,7 +13,7 @@ const GH_DATA = join(
   process.env.DATA_REPO ?? "data-repo",
   "../data/github/discussions",
 );
-export const categoriesArray: { name: string; emoji: string }[] = [];
+export const categories: { name: string; emoji: string }[] = [];
 
 export async function fetchGithubDiscussion(
   noOfDiscussion?: number | null,
@@ -35,13 +35,13 @@ export async function fetchGithubDiscussion(
     if (d.category) {
       const key = `${d.category.name}-${d.category.emoji}`;
       if (
-        !categoriesArray.some(
+        !categories.some(
           (category) =>
             category.name === d.category!.name &&
             category.emoji === d.category!.emoji,
         )
       ) {
-        categoriesArray.push(d.category);
+        categories.push(d.category);
       }
     }
   });
@@ -110,9 +110,7 @@ export async function getGithubDiscussions(githubHandle: string) {
           discussion.link?.split("/").pop() ?? "",
           discussion.repoName,
         );
-        title = isAnswered
-          ? "Answered a Discussion"
-          : "Commented on a Discussion";
+        title = isAnswered ? "Discussion Answered" : "Commented on discussion";
         activityType = isAnswered
           ? "discussion_answered"
           : "discussion_comment_created";

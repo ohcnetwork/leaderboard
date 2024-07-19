@@ -224,7 +224,28 @@ export let humanValues = [
     key: "empathy",
     label: "Empathy",
     icon: "/images/Human-Values/Empathy.svg",
-    levels: [],
+    levels: [
+      {
+        label: "1x",
+        value: 1,
+        description: "Resolved 1 Question in the community",
+      },
+      {
+        label: "2x",
+        value: 10,
+        description: "Resolved 10 Question in the community",
+      },
+      {
+        label: "3x",
+        value: 100,
+        description: "Resolved 100 Question in the community",
+      },
+      {
+        label: "4x",
+        value: 1000,
+        description: "Resolved 1000 Question in the community",
+      },
+    ],
   },
   {
     key: "value_inculcation",
@@ -289,6 +310,11 @@ export let resolveGraduateAttributes = (
       return resolveLevel(
         attribute,
         contributor.activityData?.authored_issue_and_pr?.length,
+      );
+    case "empathy":
+      return resolveLevel(
+        attribute,
+        contributor.highlights.discussion_answered / 5,
       );
     default:
       return { ...attribute };

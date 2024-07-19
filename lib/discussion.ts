@@ -7,9 +7,53 @@ import octokit from "./octokit";
 import { featureIsEnabled } from "./utils";
 import { Activity } from "./types";
 
+interface Participant {
+  repository: {
+    discussion: {
+      comments: {
+        edges: {
+          node: {
+            author: {
+              login: string;
+            };
+          };
+        }[];
+      };
+    };
+  };
+}
+
 const root = join(process.cwd(), "data-repo/data/github/discussions");
 
 export const categories: { name: string; emoji: string }[] = [];
+
+export async function fetchParticipants(discussion: ParsedDiscussion) {
+  const org = env.NEXT_PUBLIC_GITHUB_ORG;
+  const number = discussion.link?.split("/").pop() ?? "";
+
+  const participants: Participant = await octokit.graphql(`query {
+    repository(owner: "${org}", name: "${discussion.repoName}") {
+      discussion (number: ${number}) {
+        comments(first: 100) {
+          edges {
+            node {
+              author {
+                login
+              }
+            }
+          }
+        }
+      }
+    }
+  }`);
+  return Array.from(
+    new Set(
+      participants.repository.discussion.comments.edges.map(
+        (c) => c.node.author.login,
+      ),
+    ),
+  );
+}
 
 export async function fetchGithubDiscussion(
   noOfDiscussion?: number | null,
@@ -42,6 +86,12 @@ export async function fetchGithubDiscussion(
     }
   });
 
+  // get all particpants for github discussions
+  discussions.forEach(async (discussion) => {
+    // append participants to discussion
+    discussion.participants = await fetchParticipants(discussion);
+  });
+
   if (user) {
     return discussions.filter(
       (discussion) =>
@@ -50,7 +100,6 @@ export async function fetchGithubDiscussion(
     );
   }
 
-  // return noOfDiscussion ? discussions.slice(0, noOfDiscussion) : discussions;
   return noOfDiscussion ? discussions.slice(0, noOfDiscussion) : discussions;
 }
 interface Dicussion {

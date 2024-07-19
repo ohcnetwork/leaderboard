@@ -101,14 +101,6 @@ export async function getContributorBySlug(file: string, detail = false) {
     activityData = JSON.parse(
       await readFile(join(githubRoot, `${githubHandle}.json`), "utf8"),
     ) as ActivityData;
-    // in activitydata need to add github discussion data
-    const discussions = await getGithubDiscussions(githubHandle);
-
-    // Add discussions to activityData in activity array
-    activityData = {
-      ...activityData,
-      activity: [...activityData.activity, ...discussions],
-    };
   } catch (e) {
     activityData = {
       last_updated: undefined,
@@ -119,6 +111,14 @@ export async function getContributorBySlug(file: string, detail = false) {
     } satisfies ActivityData;
   }
 
+  // in activitydata need to add github discussion data
+  const discussions = await getGithubDiscussions(githubHandle);
+
+  // Add discussions to activityData in activity array
+  activityData = {
+    ...activityData,
+    activity: [...activityData.activity, ...discussions],
+  };
   const slackMessages = await getSlackMessages(data.slack);
 
   activityData = {

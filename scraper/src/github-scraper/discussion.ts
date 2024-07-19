@@ -1,3 +1,4 @@
+import { parseISO, startOfDay, subDays } from "date-fns";
 import { octokit } from "./config.js";
 import { Discussion, ParsedDiscussion } from "./types.js";
 import { saveDiscussionData } from "./utils.js";
@@ -27,15 +28,6 @@ query($org: String!, $cursor: String) {
                   name
                   emojiHTML 
                 }
-                comments(first: 10) {
-                  edges {
-                    node {
-                      author {
-                        login
-                      }
-                    }
-                  }
-                }
                 createdAt
               }
             }
@@ -52,43 +44,48 @@ async function fetchDiscussionsForOrg(org: string, cursor = null) {
   const response = await octokit.graphql.paginate(query, variables);
 
   type Edge = typeof response.organization.repositories.edges;
-  // const discussions = response.organization.repositories.edges.map(
-  //   (edge: Edge) => edge.node.discussions.edges,
-  // );
 
-  // return discussions.flat();
   const discussions = response.organization.repositories.edges.map(
     (edge: Edge) => ({
       repoName: edge.node.name,
       discussions: edge.node.discussions.edges,
     }),
   );
+
   return discussions;
 }
 
 async function parseDiscussionData(
   allDiscussions: { repoName: string; discussions: Discussion[] }[],
+  date: string,
+  numDays: number,
 ) {
-  const parsedDiscussions: ParsedDiscussion[] = allDiscussions.flatMap((repo) =>
-    repo.discussions.map((d) => {
-      const participants = Array.from(
-        new Set(d.node.comments.edges.map((c) => c.node.author.login)),
-      );
-      return {
-        source: "github",
-        title: d.node.title,
-        text: d.node.body,
-        author: d.node.author.login,
-        link: d.node.url,
-        time: d.node.createdAt,
-        category: {
-          name: d.node.category.name,
-          emoji: d.node.category.emojiHTML.replace(/<\/?div>/g, ""),
-        },
-        participants,
-        repoName: repo.repoName,
-      };
-    }),
+  const endDate: Date = startOfDay(parseISO(date));
+  const startDate: Date = startOfDay(subDays(endDate, numDays));
+
+  const parsedDiscussions: ParsedDiscussion[] = allDiscussions.flatMap(
+    (repo) => {
+      const filteredDiscussions = repo.discussions.filter((d) => {
+        const discussionTime: Date = new Date(d.node.createdAt);
+        return discussionTime > startDate && discussionTime <= endDate;
+      });
+
+      return filteredDiscussions.map((d) => {
+        return {
+          source: "github",
+          title: d.node.title,
+          text: d.node.body,
+          author: d.node.author.login,
+          link: d.node.url,
+          time: d.node.createdAt,
+          category: {
+            name: d.node.category.name,
+            emoji: d.node.category.emojiHTML.replace(/<\/?div>/g, ""),
+          },
+          repoName: repo.repoName,
+        };
+      });
+    },
   );
 
   return parsedDiscussions;
@@ -97,10 +94,16 @@ async function parseDiscussionData(
 export async function fetchAllDiscussionEventsByOrg(
   organizationName: string,
   dataDir: string,
+  date: string,
+  numDays: number = 1,
 ) {
   try {
     const allDiscussions = await fetchDiscussionsForOrg(organizationName);
-    const parsedDiscussions = await parseDiscussionData(allDiscussions);
+    const parsedDiscussions = await parseDiscussionData(
+      allDiscussions,
+      date,
+      numDays,
+    );
     await saveDiscussionData(parsedDiscussions, dataDir);
   } catch (error: any) {
     throw new Error(`Error fetching discussions: ${error.message}`);

@@ -77,7 +77,7 @@ const main = async () => {
   }
   await scrapeGitHub(orgName, date, Number(numDays), orgName);
   await mergedData(dataDir, processedData);
-  await fetchAllDiscussionEventsByOrg(orgName, dataDir);
+  await fetchAllDiscussionEventsByOrg(orgName, dataDir, date, Number(numDays));
 
   console.log("Done");
 };

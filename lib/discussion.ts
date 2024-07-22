@@ -55,16 +55,16 @@ export async function fetchGithubDiscussion(
   });
 
   if (user) {
-    return await discussions.filter(
+    return discussions.filter(
       (discussion) =>
         (discussion.participants ?? []).includes(user) ||
         discussion.author === user,
     );
   } else if (noOfDiscussion) {
     return discussions.slice(0, noOfDiscussion);
+  } else {
+    return discussions;
   }
-
-  return discussions;
 }
 
 export async function checkAnsweredByUser(

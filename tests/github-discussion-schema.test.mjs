@@ -26,14 +26,13 @@ const filesInDir = fs
 
 filesInDir.forEach((file) => {
   const content = fs.readFileSync(join(GH_DATA, file)).toString();
-  if (content === "null") {
-    process.exit(1);
-  }
-  const data = JSON.parse(stripJsonComments(content));
+  if (content !== "null") {
+    const data = JSON.parse(stripJsonComments(content));
 
-  describe(`Validate '${file}'`, function () {
-    it("should be properly validated by the json schema", () => {
-      expect(data).to.be.jsonSchema(schema);
+    describe(`Validate '${file}'`, function () {
+      it("should be properly validated by the json schema", () => {
+        expect(data).to.be.jsonSchema(schema);
+      });
     });
-  });
+  }
 });

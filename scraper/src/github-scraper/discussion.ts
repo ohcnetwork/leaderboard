@@ -138,12 +138,14 @@ export async function scrapeDiscussions(
       endDate,
       startDate,
     );
-    const parsedDiscussions = await parseDiscussionData(
-      allDiscussions,
-      endDate,
-      startDate,
-    );
-    await saveDiscussionData(parsedDiscussions, dataDir);
+    if (allDiscussions) {
+      const parsedDiscussions = await parseDiscussionData(
+        allDiscussions,
+        endDate,
+        startDate,
+      );
+      await saveDiscussionData(parsedDiscussions, dataDir);
+    }
   } catch (error: any) {
     throw new Error(`Error fetching discussions: ${error.message}`);
   }

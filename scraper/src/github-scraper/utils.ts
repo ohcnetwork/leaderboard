@@ -177,7 +177,9 @@ export async function mergeDiscussions(
   newDiscussions: ParsedDiscussion[],
 ) {
   const mergedDiscussions = [...oldData];
-
+  if (!newDiscussions) {
+    return mergedDiscussions;
+  }
   newDiscussions.forEach((newDiscussion) => {
     const oldIndex = oldData.findIndex(
       (oldDiscussion) => oldDiscussion.link === newDiscussion.link,
@@ -203,14 +205,14 @@ export async function saveDiscussionData(
   dataDir: string,
 ) {
   // check data dir present or not and file is present or not if not then create it
-  await mkdir(dataDir + "/discussions", { recursive: true });
+  const discussionsDir = path.join(dataDir, "discussions");
+  await mkdir(discussionsDir, { recursive: true });
 
-  const file = path.join(dataDir + "/discussions", "discussions.json");
+  const file = path.join(discussionsDir, "discussions.json");
   try {
     // Try reading the file
     const response = await readFile(file);
     const oldData = JSON.parse(response.toString());
-
     const newData = await mergeDiscussions(oldData, discussions);
     const jsonData = JSON.stringify(newData, null, 2);
     await writeFile(file, jsonData);

@@ -26,6 +26,9 @@ const filesInDir = fs
 
 filesInDir.forEach((file) => {
   const content = fs.readFileSync(join(GH_DATA, file)).toString();
+  if (content === "null") {
+    process.exit(1);
+  }
   const data = JSON.parse(stripJsonComments(content));
 
   describe(`Validate '${file}'`, function () {

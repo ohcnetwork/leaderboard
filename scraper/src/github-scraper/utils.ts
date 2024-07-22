@@ -172,6 +172,32 @@ export async function saveUserData(
   }
 }
 
+export async function mergeDiscussions(
+  oldData: ParsedDiscussion[],
+  newDiscussions: ParsedDiscussion[],
+) {
+  const mergedDiscussions = [...oldData];
+
+  newDiscussions.forEach((newDiscussion) => {
+    const oldIndex = oldData.findIndex(
+      (oldDiscussion) => oldDiscussion.link === newDiscussion.link,
+    );
+
+    if (oldIndex !== -1) {
+      if (
+        oldData[oldIndex].updateTime !== newDiscussion.updateTime ||
+        oldData[oldIndex].participants !== newDiscussion.participants
+      ) {
+        mergedDiscussions[oldIndex] = newDiscussion;
+      }
+    } else {
+      mergedDiscussions.push(newDiscussion);
+    }
+  });
+
+  return mergedDiscussions;
+}
+
 export async function saveDiscussionData(
   discussions: ParsedDiscussion[],
   dataDir: string,
@@ -184,7 +210,8 @@ export async function saveDiscussionData(
     // Try reading the file
     const response = await readFile(file);
     const oldData = JSON.parse(response.toString());
-    const newData = oldData.concat(discussions);
+
+    const newData = await mergeDiscussions(oldData, discussions);
     const jsonData = JSON.stringify(newData, null, 2);
     await writeFile(file, jsonData);
   } catch (err) {

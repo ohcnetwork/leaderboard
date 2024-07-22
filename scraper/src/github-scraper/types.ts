@@ -173,29 +173,28 @@ export interface AuthoredIssueAndPr {
 }
 
 export type Discussion = {
-  node: {
-    isAnswered: Boolean;
-    title: string;
-    body: string;
-    author: {
-      login: string;
-    };
-    url: string;
-    category: {
-      name: string;
-      emojiHTML: string;
-    };
-    comments: {
-      edges: {
-        node: {
-          author: {
-            login: string;
-          };
-        };
-      }[];
-    };
-    createdAt: string;
+  isAnswered: Boolean;
+  title: string;
+  body: string;
+  author: {
+    login: string;
   };
+  url: string;
+  category: {
+    name: string;
+    emojiHTML: string;
+  };
+  comments: {
+    edges: {
+      node: {
+        author: {
+          login: string;
+        };
+      };
+    }[];
+  };
+  createdAt: string;
+  updatedAt: string;
 };
 
 export type ParsedDiscussion = {
@@ -206,6 +205,7 @@ export type ParsedDiscussion = {
   link: string;
   isAnswered: Boolean;
   time: string;
+  updateTime: string;
   category?: {
     name: string;
     emoji: string;

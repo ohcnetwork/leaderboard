@@ -4,7 +4,6 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import clsx from "clsx";
-import { useMemo } from "react";
 
 export default function Markdown(props: {
   children: string;

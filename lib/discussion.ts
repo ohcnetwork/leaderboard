@@ -7,21 +7,6 @@ import octokit from "./octokit";
 import { featureIsEnabled } from "./utils";
 import { Activity } from "./types";
 
-interface Participant {
-  repository: {
-    discussion: {
-      comments: {
-        edges: {
-          node: {
-            author: {
-              login: string;
-            };
-          };
-        }[];
-      };
-    };
-  };
-}
 interface Dicussion {
   repository: {
     discussion: {
@@ -37,56 +22,6 @@ interface Dicussion {
 const root = join(process.cwd(), "data-repo/data/github/discussions");
 
 export const categories: { name: string; emoji: string }[] = [];
-
-export async function fetchParticipants(discussion: ParsedDiscussion) {
-  const org = env.NEXT_PUBLIC_GITHUB_ORG;
-  const number = discussion.link?.split("/").pop() ?? "";
-
-  const query = `query($org: String!, $repoName: String!, $discussionNumber: Int!, $cursor: String) {
-    repository(owner: $org, name: $repoName) {
-      discussion(number: $discussionNumber) {
-        comments(first: 100, after: $cursor) {
-          pageInfo {
-            hasNextPage
-            endCursor
-          }
-          edges {
-            node {
-              author {
-                login
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-  const participants: Participant = await octokit.graphql.paginate(query, {
-    org,
-    repoName: discussion.repoName,
-    discussionNumber: Number(number),
-    cursor: null,
-  });
-  return Array.from(
-    new Set(
-      participants.repository.discussion.comments.edges.map(
-        (c) => c.node.author.login,
-      ),
-    ),
-  );
-}
-
-async function appendParticipantsToDiscussions(
-  discussions: ParsedDiscussion[],
-) {
-  await Promise.all(
-    discussions.map(async (discussion) => {
-      if (!discussion.isAnswered) discussion.participants = []; // await fetchParticipants(discussion);
-    }),
-  );
-  return discussions;
-}
 
 export async function fetchGithubDiscussion(
   noOfDiscussion?: number | null,
@@ -119,19 +54,17 @@ export async function fetchGithubDiscussion(
     }
   });
 
-  let discussionsToReturn: ParsedDiscussion[] = discussions;
-
   if (user) {
-    discussionsToReturn = discussions.filter(
+    return await discussions.filter(
       (discussion) =>
         (discussion.participants ?? []).includes(user) ||
         discussion.author === user,
     );
   } else if (noOfDiscussion) {
-    discussionsToReturn = discussions.slice(0, noOfDiscussion);
+    return discussions.slice(0, noOfDiscussion);
   }
 
-  return await appendParticipantsToDiscussions(discussionsToReturn);
+  return discussions;
 }
 
 export async function checkAnsweredByUser(

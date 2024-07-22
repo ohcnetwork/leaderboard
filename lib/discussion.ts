@@ -82,8 +82,7 @@ async function appendParticipantsToDiscussions(
 ) {
   await Promise.all(
     discussions.map(async (discussion) => {
-      if (!discussion.isAnswered)
-        discussion.participants = await fetchParticipants(discussion);
+      if (!discussion.isAnswered) discussion.participants = []; // await fetchParticipants(discussion);
     }),
   );
   return discussions;

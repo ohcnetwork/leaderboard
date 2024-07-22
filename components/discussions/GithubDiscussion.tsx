@@ -102,23 +102,21 @@ const GithubDiscussion = ({
             !isProfilePage && "mt-2 bg-secondary-100 p-4 dark:bg-secondary-800"
           } break-all rounded-md text-xs lg:text-sm`}
         >
-          {discussion.text.length > lengthOfDescription ? (
-            <div className="-mt-3">
-              <Markdown className="prose-for-h2-markdown">
-                {discussion.text.slice(0, lengthOfDescription) + "..."}
-              </Markdown>
+          <div>
+            <Markdown>
+              {discussion.text.length > lengthOfDescription
+                ? discussion.text.slice(0, lengthOfDescription) + "..."
+                : discussion.text}
+            </Markdown>
+            {discussion.text.length > lengthOfDescription && (
               <Link
                 className="flex w-full justify-end gap-1 self-center text-primary-300 underline hover:text-primary-700 dark:text-primary-300 dark:hover:text-primary-400"
                 href={discussion.link}
               >
                 Read More <FaAnglesRight className="self-center" />
               </Link>
-            </div>
-          ) : (
-            <Markdown className="prose-for-h2-markdown">
-              {discussion.text}
-            </Markdown>
-          )}
+            )}
+          </div>
         </div>
 
         {/* Participants */}

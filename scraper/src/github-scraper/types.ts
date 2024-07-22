@@ -174,6 +174,7 @@ export interface AuthoredIssueAndPr {
 
 export type Discussion = {
   node: {
+    isAnswered: Boolean;
     title: string;
     body: string;
     author: {
@@ -203,6 +204,7 @@ export type ParsedDiscussion = {
   text: string;
   author: string;
   link: string;
+  isAnswered: Boolean;
   time: string;
   category?: {
     name: string;

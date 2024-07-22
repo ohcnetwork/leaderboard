@@ -4,18 +4,15 @@ import { IGitHubEvent, ProcessData } from "./types.js";
 import { fetchEvents } from "./fetchEvents.js";
 import { parseEvents } from "./parseEvents.js";
 import { mergedData } from "./saveData.js";
-import { fetchAllDiscussionEventsByOrg } from "./discussion.js";
+import { scrapeDiscussions } from "./discussion.js";
 
 let processedData: ProcessData = {};
 
 const scrapeGitHub = async (
   org: string,
-  date: string,
-  numDays: number = 1,
-  orgName: string,
+  endDate: Date,
+  startDate: Date,
 ): Promise<void> => {
-  const endDate: Date = startOfDay(parseISO(date));
-  const startDate: Date = startOfDay(subDays(endDate, numDays));
   console.log(
     `Scraping GitHub data for ${org} from ${formatISO(startDate)} to ${formatISO(endDate)}`,
   );
@@ -75,9 +72,12 @@ const main = async () => {
     console.error("Invalid date value:", dateArg);
     process.exit(1);
   }
-  await scrapeGitHub(orgName, date, Number(numDays), orgName);
+  const endDate: Date = startOfDay(parseISO(date));
+  const startDate: Date = startOfDay(subDays(endDate, Number(numDays)));
+
+  await scrapeGitHub(orgName, endDate, startDate);
   await mergedData(dataDir, processedData);
-  await fetchAllDiscussionEventsByOrg(orgName, dataDir, date, Number(numDays));
+  await scrapeDiscussions(orgName, dataDir, endDate, startDate);
 
   console.log("Done");
 };

@@ -1,3 +1,4 @@
+import { points } from "@/lib/api";
 import { Contributor } from "@/lib/types";
 
 export let professionalSelfSkills = [
@@ -314,7 +315,7 @@ export let resolveGraduateAttributes = (
     case "empathy":
       return resolveLevel(
         attribute,
-        contributor.highlights.discussion_answered / 5,
+        contributor.highlights.discussion_created / points.discussion_answered,
       );
     default:
       return { ...attribute };

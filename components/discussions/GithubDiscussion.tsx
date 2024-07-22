@@ -49,7 +49,7 @@ const GithubDiscussion = ({
       {/* Right side */}
       <div className="ml-2">
         {/* Title and Time */}
-        <div className={`flex items-center justify-end `}>
+        <div className={`flex items-center justify-start `}>
           <div className={`${isProfilePage && "flex"} w-3/4`}>
             <Link href={discussion.link}>
               <p className="w-full text-lg font-semibold text-primary-900 dark:text-primary-100">

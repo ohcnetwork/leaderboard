@@ -22,6 +22,17 @@ interface Participant {
     };
   };
 }
+interface Dicussion {
+  repository: {
+    discussion: {
+      answer: {
+        author: {
+          login: string;
+        };
+      };
+    };
+  };
+}
 
 const root = join(process.cwd(), "data-repo/data/github/discussions");
 
@@ -31,10 +42,14 @@ export async function fetchParticipants(discussion: ParsedDiscussion) {
   const org = env.NEXT_PUBLIC_GITHUB_ORG;
   const number = discussion.link?.split("/").pop() ?? "";
 
-  const participants: Participant = await octokit.graphql(`query {
-    repository(owner: "${org}", name: "${discussion.repoName}") {
-      discussion (number: ${number}) {
-        comments(first: 100) {
+  const query = `query($org: String!, $repoName: String!, $discussionNumber: Int!, $cursor: String) {
+    repository(owner: $org, name: $repoName) {
+      discussion(number: $discussionNumber) {
+        comments(first: 100, after: $cursor) {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
           edges {
             node {
               author {
@@ -45,7 +60,14 @@ export async function fetchParticipants(discussion: ParsedDiscussion) {
         }
       }
     }
-  }`);
+  }
+`;
+  const participants: Participant = await octokit.graphql.paginate(query, {
+    org,
+    repoName: discussion.repoName,
+    discussionNumber: Number(number),
+    cursor: null,
+  });
   return Array.from(
     new Set(
       participants.repository.discussion.comments.edges.map(
@@ -53,6 +75,18 @@ export async function fetchParticipants(discussion: ParsedDiscussion) {
       ),
     ),
   );
+}
+
+async function appendParticipantsToDiscussions(
+  discussions: ParsedDiscussion[],
+) {
+  await Promise.all(
+    discussions.map(async (discussion) => {
+      if (!discussion.isAnswered)
+        discussion.participants = await fetchParticipants(discussion);
+    }),
+  );
+  return discussions;
 }
 
 export async function fetchGithubDiscussion(
@@ -86,32 +120,19 @@ export async function fetchGithubDiscussion(
     }
   });
 
-  // get all particpants for github discussions
-  discussions.forEach(async (discussion) => {
-    // append participants to discussion
-    discussion.participants = await fetchParticipants(discussion);
-  });
+  let discussionsToReturn: ParsedDiscussion[] = discussions;
 
   if (user) {
-    return discussions.filter(
+    discussionsToReturn = discussions.filter(
       (discussion) =>
         (discussion.participants ?? []).includes(user) ||
         discussion.author === user,
     );
+  } else if (noOfDiscussion) {
+    discussionsToReturn = discussions.slice(0, noOfDiscussion);
   }
 
-  return noOfDiscussion ? discussions.slice(0, noOfDiscussion) : discussions;
-}
-interface Dicussion {
-  repository: {
-    discussion: {
-      answer: {
-        author: {
-          login: string;
-        };
-      };
-    };
-  };
+  return await appendParticipantsToDiscussions(discussionsToReturn);
 }
 
 export async function checkAnsweredByUser(

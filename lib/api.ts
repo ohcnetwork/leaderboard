@@ -10,7 +10,7 @@ const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
 const githubRoot = join(process.cwd(), "data-repo/data/github");
 
-const points = {
+export const points = {
   comment_created: 1,
   issue_assigned: 1,
   pr_reviewed: 4,

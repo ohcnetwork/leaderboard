@@ -274,7 +274,9 @@ let icon = (type: string) => {
           />
         </svg>
       );
-    case "discussion":
+    case "discussion_answered":
+    case "discussion_comment_created":
+    case "discussion_created":
       return <IoIosChatboxes className="size-5 text-secondary-700" />;
     default:
       return (
@@ -373,7 +375,7 @@ export default function GithubActivity({ activityData }: Props) {
   const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
 
   const updateSearchParam = (key: string, value?: string) => {
-    const current = new URLSearchParams(searchParams);
+    const current = new URLSearchParams(searchParams.toString());
     if (!value) {
       current.delete(key);
     } else {

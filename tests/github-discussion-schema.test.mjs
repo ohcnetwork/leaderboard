@@ -26,7 +26,6 @@ if (!fs.existsSync(GH_DATA)) {
   process.exit(0);
 }
 
-// There will be more files in the folder becuase futrue plan is sharded dat
 const filesInDir = fs
   .readdirSync(GH_DATA)
   .filter((file) => path.extname(file) === ".json");

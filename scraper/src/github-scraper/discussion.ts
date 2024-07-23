@@ -4,7 +4,7 @@ import { saveDiscussionData } from "./utils.js";
 
 const query = `query($org: String!, $cursor: String) {
   organization(login: $org) {
-    repositories(first: 100, after: $cursor) {
+    repositories(first: 100, after: $cursor, orderBy: {field: UPDATED_AT, direction: DESC}) {
       pageInfo {
         hasNextPage
         endCursor
@@ -53,7 +53,7 @@ async function fetchGitHubDiscussions(
 ) {
   const iterator = octokit.graphql.paginate.iterator(query, { org });
 
-  let Discussions: { repository: string; discussion: Discussion }[] = [];
+  let discussionsList: { repository: string; discussion: Discussion }[] = [];
 
   for await (const response of iterator) {
     const repositories: Repository[] = response.organization.repositories.edges;
@@ -63,7 +63,8 @@ async function fetchGitHubDiscussions(
         repository: repo.node.name,
         discussion: discussion.node,
       }));
-      const discussionsWithinDateRange = discussions.find((d) => {
+
+      const isDiscussionOutOfDateRange = discussions.find((d) => {
         const createdAt = new Date(d.discussion.createdAt);
         const updatedAt = new Date(d.discussion.updatedAt);
 
@@ -74,14 +75,14 @@ async function fetchGitHubDiscussions(
           (updatedAt <= new Date(startDate) && updatedAt >= new Date(endDate))
         );
       });
-      if (discussionsWithinDateRange) {
-        return Discussions;
+      if (isDiscussionOutOfDateRange) {
+        return discussionsList;
       }
-      Discussions = Discussions.concat(discussions);
+      discussionsList = discussionsList.concat(discussions);
     }
   }
 
-  return Discussions;
+  return discussionsList;
 }
 
 async function parseDiscussionData(

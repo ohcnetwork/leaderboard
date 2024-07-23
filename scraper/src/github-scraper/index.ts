@@ -48,7 +48,6 @@ const scrapeGitHub = async (
   console.log("Scraping completed");
 };
 
-// Type Done and check done
 const main = async () => {
   // Extract command line arguments (skip the first two default arguments)
   const args: string[] = process.argv.slice(2);

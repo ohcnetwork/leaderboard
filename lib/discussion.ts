@@ -70,12 +70,12 @@ export async function fetchGithubDiscussion(
 export async function checkAnsweredByUser(
   github: string,
   number: string,
-  repoName: string,
+  repository: string,
 ) {
   const org = env.NEXT_PUBLIC_GITHUB_ORG;
 
   const dicussion: Dicussion = await octokit.graphql(`query {
-    repository(owner: "${org}", name: "${repoName}") {
+    repository(owner: "${org}", name: "${repository}") {
       discussion (number: ${number}) {
         answer {
           author {
@@ -106,7 +106,7 @@ export async function getGithubDiscussions(githubHandle: string) {
         const isAnswered = await checkAnsweredByUser(
           githubHandle,
           discussion.link?.split("/").pop() ?? "",
-          discussion.repoName,
+          discussion.repository,
         );
         title = isAnswered ? "Discussion Answered" : "Commented on discussion";
         activityType = isAnswered

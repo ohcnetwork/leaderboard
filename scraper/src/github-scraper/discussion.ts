@@ -1,5 +1,5 @@
 import { octokit } from "./config.js";
-import { Discussion, ParsedDiscussion } from "./types.js";
+import { Discussion, ParsedDiscussion, Repository } from "./types.js";
 import { saveDiscussionData } from "./utils.js";
 
 const query = `query($org: String!, $cursor: String) {
@@ -50,44 +50,42 @@ async function fetchGitHubDiscussions(
   org: string,
   endDate: Date,
   startDate: Date,
-  cursor = null,
 ) {
-  const variables = {
-    org,
-    cursor,
-  };
-  for await (const response of octokit.graphql.paginate.iterator(
-    query,
-    variables,
-  )) {
-    const repositories = await response.organization.repositories.edges;
-    type repo = (typeof repositories)[0];
+  const iterator = octokit.graphql.paginate.iterator(query, { org });
+
+  let Discussions: { repository: string; discussion: Discussion }[] = [];
+
+  for await (const response of iterator) {
+    const repositories: Repository[] = response.organization.repositories.edges;
+
     for (const repo of repositories) {
-      const discussions = await repo.node.discussions.edges.map(
-        (discussion: repo) => ({
-          repoName: repo.node.name,
-          discussion: discussion.node,
-        }),
-      );
-      const discussionsWithinDateRange = await discussions.find((d: repo) => {
+      const discussions = repo.node.discussions.edges.map((discussion) => ({
+        repository: repo.node.name,
+        discussion: discussion.node,
+      }));
+      const discussionsWithinDateRange = discussions.find((d) => {
         const createdAt = new Date(d.discussion.createdAt);
         const updatedAt = new Date(d.discussion.updatedAt);
 
         return (
-          createdAt >= new Date(startDate) || updatedAt >= new Date(startDate)
+          // When created or updated date will be lower than the start date and greater than end date then return true
+          (createdAt <= new Date(startDate) &&
+            createdAt >= new Date(endDate)) ||
+          (updatedAt <= new Date(startDate) && updatedAt >= new Date(endDate))
         );
       });
       if (discussionsWithinDateRange) {
-        return discussions;
+        return Discussions;
       }
+      Discussions = Discussions.concat(discussions);
     }
   }
 
-  return null;
+  return Discussions;
 }
 
 async function parseDiscussionData(
-  allDiscussions: { repoName: string; discussion: Discussion }[],
+  allDiscussions: { repository: string; discussion: Discussion }[],
   endDate: Date,
   startDate: Date,
 ) {
@@ -119,7 +117,7 @@ async function parseDiscussionData(
           emoji: d.discussion.category.emojiHTML.replace(/<\/?div>/g, ""),
         },
         participants: participants || [],
-        repoName: d.repoName,
+        repository: d.repository,
       };
     },
   );
@@ -138,9 +136,11 @@ export async function scrapeDiscussions(
       endDate,
       startDate,
     );
-    const parsedDiscussions =
-      allDiscussions &&
-      (await parseDiscussionData(allDiscussions, endDate, startDate));
+    const parsedDiscussions = await parseDiscussionData(
+      allDiscussions,
+      endDate,
+      startDate,
+    );
     await saveDiscussionData(parsedDiscussions, dataDir);
   } catch (error: any) {
     throw new Error(`Error fetching discussions: ${error.message}`);

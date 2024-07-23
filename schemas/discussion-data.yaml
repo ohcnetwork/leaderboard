@@ -10,7 +10,7 @@ required:
   - url
   - category
   - time
-  - repoName
+  - repository
   - participants
 
 properties:
@@ -40,6 +40,6 @@ properties:
       type: array
       items:
         type: string
-    repoName:
+    repository:
       type: string
 

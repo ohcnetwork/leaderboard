@@ -205,16 +205,18 @@ export async function saveDiscussionData(
   dataDir: string,
 ) {
   // check data dir present or not and file is present or not if not then create it
+  await mkdir(dataDir + "/discussions", { recursive: true });
+  if (discussions.length === 0) {
+    return;
+  }
   const discussionsDir = path.join(dataDir, "discussions");
-  await mkdir(discussionsDir, { recursive: true });
-
   const file = path.join(discussionsDir, "discussions.json");
   try {
     // Try reading the file
     const response = await readFile(file);
     const oldData = JSON.parse(response.toString());
-    const newData = await mergeDiscussions(oldData, discussions);
-    const jsonData = JSON.stringify(newData, null, 2);
+    const mergedData = await mergeDiscussions(oldData, discussions);
+    const jsonData = JSON.stringify(mergedData, null, 2);
     await writeFile(file, jsonData);
   } catch (err) {
     // File doesn't exist, create it with initial data

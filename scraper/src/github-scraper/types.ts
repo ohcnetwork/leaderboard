@@ -197,6 +197,17 @@ export type Discussion = {
   updatedAt: string;
 };
 
+export type Repository = {
+  node: {
+    name: string;
+    discussions: {
+      edges: {
+        node: Discussion;
+      }[];
+    };
+  };
+};
+
 export type ParsedDiscussion = {
   source?: string;
   title: string;
@@ -211,5 +222,5 @@ export type ParsedDiscussion = {
     emoji: string;
   };
   participants?: string[];
-  repoName: string;
+  repository: string;
 };

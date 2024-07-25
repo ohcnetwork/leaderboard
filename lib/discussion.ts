@@ -30,6 +30,11 @@ export async function fetchGithubDiscussion(
   if (!featureIsEnabled("Discussions")) {
     return null;
   }
+
+  if (!fs.existsSync(root)) {
+    return [];
+  }
+
   const filesInDir = fs
     .readdirSync(root)
     .filter((file) => path.extname(file) === ".json");

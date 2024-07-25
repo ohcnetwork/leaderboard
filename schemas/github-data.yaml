@@ -1,0 +1,49 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: GitHub User Data Schema
+type: object
+
+required:
+  - last_updated
+  - activity
+  - open_prs
+  # - authored_issue_and_pr
+
+
+properties:
+  last_updated:
+    type: string
+
+  activity:
+    type: array
+    items:
+      type: object
+      required: ["type", "title", "time", "link", "text"]
+      properties:
+        type: string
+        title: string
+        time: string
+        link: string
+        text: string
+        collaborated_with:
+          type: array
+          items:
+            type: string
+
+  open_prs:
+    type: array
+    items:
+      type: object
+      required: ["link", "title"]
+      properties:
+        link: string
+        title: string
+        stale_for: integer
+
+  authored_issue_and_pr:
+    type: array
+    items:
+      type: object
+      required: ["issue_link", "pr_link"]
+      properties:
+        issue_link: string
+        pr_link: string

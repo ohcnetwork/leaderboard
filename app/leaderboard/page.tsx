@@ -8,7 +8,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
   const keyString = `search=${searchParams?.search}`;
   return (
     <section className="border-t border-secondary-300 bg-background text-foreground dark:border-secondary-700">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <Searchbar searchParams={searchParams} />
         <div className="mx-4 border-secondary-600 xl:mx-0">
           <Suspense

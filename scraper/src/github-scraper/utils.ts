@@ -172,20 +172,55 @@ export async function saveUserData(
   }
 }
 
+export async function mergeDiscussions(
+  oldData: ParsedDiscussion[],
+  newDiscussions: ParsedDiscussion[],
+) {
+  const mergedDiscussions = [...oldData];
+  if (!newDiscussions) {
+    return mergedDiscussions;
+  }
+  newDiscussions.forEach((newDiscussion) => {
+    const oldIndex = oldData.findIndex(
+      (oldDiscussion) => oldDiscussion.link === newDiscussion.link,
+    );
+
+    if (oldIndex !== -1) {
+      if (
+        oldData[oldIndex].updateTime !== newDiscussion.updateTime ||
+        oldData[oldIndex].participants !== newDiscussion.participants
+      ) {
+        mergedDiscussions[oldIndex] = newDiscussion;
+      }
+    } else {
+      mergedDiscussions.push(newDiscussion);
+    }
+  });
+
+  return mergedDiscussions;
+}
+
 export async function saveDiscussionData(
   discussions: ParsedDiscussion[],
   dataDir: string,
 ) {
-  const discussionDir = path.join(dataDir, "discussions");
-  await mkdir(discussionDir, { recursive: true });
-  const file = path.join(discussionDir, "discussions.json");
-  console.log(`Saving discussion data to ${file}`);
-
+  // check data dir present or not and file is present or not if not then create it
+  await mkdir(dataDir + "/discussions", { recursive: true });
+  if (discussions.length === 0) {
+    return;
+  }
+  const discussionsDir = path.join(dataDir, "discussions");
+  const file = path.join(discussionsDir, "discussions.json");
   try {
+    // Try reading the file
+    const response = await readFile(file);
+    const oldData = JSON.parse(response.toString());
+    const mergedData = await mergeDiscussions(oldData, discussions);
+    const jsonData = JSON.stringify(mergedData, null, 2);
+    await writeFile(file, jsonData);
+  } catch (err) {
+    // File doesn't exist, create it with initial data
     const jsonData = JSON.stringify(discussions, null, 2);
     await writeFile(file, jsonData);
-  } catch (error: any) {
-    console.error(`Failed to save discussion data: ${error.message}`);
-    throw error;
   }
 }

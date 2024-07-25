@@ -19,7 +19,13 @@ const schema = await yaml.parse(fs.readFileSync(SCHEMA_FILE).toString());
 
 use(chaiJsonSchema);
 
-// There will be more files in the folder becuase futrue plan is sharded data
+if (!fs.existsSync(GH_DATA)) {
+  console.log(
+    `Directory ${GH_DATA} does not exist. Skipping discussions test.`,
+  );
+  process.exit(0);
+}
+
 const filesInDir = fs
   .readdirSync(GH_DATA)
   .filter((file) => path.extname(file) === ".json");

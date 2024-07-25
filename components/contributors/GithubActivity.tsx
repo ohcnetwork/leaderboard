@@ -1,13 +1,20 @@
 "use client";
 
 import { ACTIVITY_TYPES, Activity, ActivityData } from "@/lib/types";
-import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
+import {
+  formatDuration,
+  parseDateRangeSearchParam,
+  parseOrgRepoFromURL,
+} from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
 import DateRangePicker from "../DateRangePicker";
 import { format } from "date-fns";
+import GithubDiscussion from "../discussions/GithubDiscussion";
+import { IoIosChatboxes } from "react-icons/io";
+import Link from "next/link";
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -161,6 +168,42 @@ let renderText = (activity: Activity) => {
           </div>
         </div>
       );
+    case "discussion_answered":
+    case "discussion_comment_created":
+    case "discussion_created":
+      const { org, repo } = parseOrgRepoFromURL(activity.link);
+
+      return (
+        <div className="min-w-0 flex-1">
+          <div>
+            <p className="font-bold">
+              {activity.title}{" "}
+              {repo && (
+                <>
+                  in{" "}
+                  <Link href={`https://github.com/${repo}`} target="_blank">
+                    <span className="text-primary-400 dark:text-primary-300">
+                      {org}/{repo}
+                    </span>
+                  </Link>
+                </>
+              )}
+              <span className="text-foreground">
+                {" "}
+                <RelativeTime time={activity.time} />
+              </span>
+            </p>
+          </div>
+          <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
+            {activity.discussion && (
+              <GithubDiscussion
+                discussion={activity.discussion}
+                isProfilePage
+              />
+            )}
+          </div>
+        </div>
+      );
     default:
       return (
         <div className="min-w-0 flex-1 py-1.5">
@@ -231,6 +274,10 @@ let icon = (type: string) => {
           />
         </svg>
       );
+    case "discussion_answered":
+    case "discussion_comment_created":
+    case "discussion_created":
+      return <IoIosChatboxes className="size-5 text-secondary-700" />;
     default:
       return (
         <svg
@@ -328,7 +375,7 @@ export default function GithubActivity({ activityData }: Props) {
   const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
 
   const updateSearchParam = (key: string, value?: string) => {
-    const current = new URLSearchParams(searchParams);
+    const current = new URLSearchParams(searchParams.toString());
     if (!value) {
       current.delete(key);
     } else {
@@ -480,6 +527,9 @@ export const ActivityCheckbox = (props: {
           pr_merged: "PR merged",
           pr_opened: "PR opened",
           pr_reviewed: "Code Review",
+          discussion_comment_created: "Commented on a discussion",
+          discussion_created: "Started a discussion",
+          discussion_answered: "Answered on a discussion",
         }[props.type]
       }
       <span className="text-xs text-secondary-500 dark:text-secondary-400">

@@ -11,7 +11,7 @@ import BadgeIcons from "../../../components/contributors/BadgeIcons";
 import GithubActivity from "../../../components/contributors/GithubActivity";
 import GraduateAttributeBadge from "../../../components/contributors/GraduateAttributeBadge";
 import InfoCard from "../../../components/contributors/InfoCard";
-import React, { Suspense } from "react";
+import React from "react";
 import clsx from "clsx";
 import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
 import Markdown from "@/components/Markdown";

@@ -26,6 +26,11 @@ export const getLeaderboardData = async (
     .filter(
       (contributor) => roles.length == 0 || roles.includes(contributor.role),
     )
+    .filter((contributor) => {
+      if (sortBy) {
+        return contributor.summary[sortBy] ?? 0 > 0;
+      }
+    })
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;

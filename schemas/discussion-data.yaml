@@ -10,6 +10,8 @@ required:
   - url
   - category
   - time
+  - repository
+  - participants
 
 properties:
     source:
@@ -38,4 +40,6 @@ properties:
       type: array
       items:
         type: string
+    repository:
+      type: string
 

@@ -173,40 +173,54 @@ export interface AuthoredIssueAndPr {
 }
 
 export type Discussion = {
-  node: {
-    title: string;
-    body: string;
-    author: {
-      login: string;
-    };
-    url: string;
-    category: {
-      name: string;
-      emoji: string;
-    };
-    comments: {
-      edges: {
-        node: {
-          author: {
-            login: string;
-          };
+  isAnswered: Boolean;
+  title: string;
+  body: string;
+  author: {
+    login: string;
+  };
+  url: string;
+  category: {
+    name: string;
+    emojiHTML: string;
+  };
+  comments: {
+    edges: {
+      node: {
+        author: {
+          login: string;
         };
+      };
+    }[];
+  };
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type Repository = {
+  node: {
+    name: string;
+    discussions: {
+      edges: {
+        node: Discussion;
       }[];
     };
-    createdAt: string;
   };
 };
 
 export type ParsedDiscussion = {
-  source: string;
+  source?: string;
   title: string;
-  description: string;
+  text: string;
   author: string;
-  url: string;
+  link: string;
+  isAnswered: Boolean;
   time: string;
-  category: {
+  updateTime: string;
+  category?: {
     name: string;
     emoji: string;
   };
-  participants: string[];
+  participants?: string[];
+  repository: string;
 };

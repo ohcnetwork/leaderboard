@@ -4,33 +4,6 @@ import {
   format,
 } from "date-fns";
 import { env } from "@/env.mjs";
-export const parametreize = (string: string) => {
-  return string.replace(/\s/gu, "_").toLowerCase();
-};
-
-export const humanize = (str: string) => {
-  return str
-    .replace(/^[\s_]+|[\s_]+$/g, "")
-    .replace(/[_\s]+/g, " ")
-    .replace(/^[a-z]/, function (m) {
-      return m.toUpperCase();
-    });
-};
-
-const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "July",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
 
 export const formatDuration = (duration_in_ms: number) =>
   _formatDuration(
@@ -72,11 +45,6 @@ export const parseDateRangeSearchParam = (
 };
 
 export const padZero = (num: number) => (num < 10 ? `0${num}` : num);
-
-export const scrollTo = (id: string | boolean) => {
-  const element = document.querySelector(`#${id}`);
-  element?.scrollIntoView({ behavior: "smooth", block: "center" });
-};
 
 export const parseIssueNumber = (url: string) => {
   return url.replace(/^.*github\.com\/[\w-]+\/[\w-]+\/issues\//, "");

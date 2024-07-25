@@ -6,6 +6,7 @@ import { FiGithub } from "react-icons/fi";
 import { parseOrgRepoFromURL } from "@/lib/utils";
 import Markdown from "../Markdown";
 import { FaAnglesRight } from "react-icons/fa6";
+import { Suspense } from "react";
 
 interface Props {
   discussion: ParsedDiscussion;
@@ -102,21 +103,23 @@ const GithubDiscussion = ({
             !isProfilePage && "mt-2 bg-secondary-100 p-4 dark:bg-secondary-800"
           } break-all rounded-md text-xs lg:text-sm`}
         >
-          <div>
-            <Markdown>
-              {discussion.text.length > lengthOfDescription
-                ? discussion.text.slice(0, lengthOfDescription) + "..."
-                : discussion.text}
-            </Markdown>
-            {discussion.text.length > lengthOfDescription && (
-              <Link
-                className="flex w-full justify-end gap-1 self-center text-primary-300 underline hover:text-primary-700 dark:text-primary-300 dark:hover:text-primary-400"
-                href={discussion.link}
-              >
-                Read More <FaAnglesRight className="self-center" />
-              </Link>
-            )}
-          </div>
+          <Suspense fallback="...">
+            <div>
+              <Markdown>
+                {discussion.text.length > lengthOfDescription
+                  ? discussion.text.slice(0, lengthOfDescription) + "..."
+                  : discussion.text}
+              </Markdown>
+              {discussion.text.length > lengthOfDescription && (
+                <Link
+                  className="flex w-full justify-end gap-1 self-center text-primary-300 underline hover:text-primary-700 dark:text-primary-300 dark:hover:text-primary-400"
+                  href={discussion.link}
+                >
+                  Read More <FaAnglesRight className="self-center" />
+                </Link>
+              )}
+            </div>
+          </Suspense>
         </div>
 
         {/* Participants */}

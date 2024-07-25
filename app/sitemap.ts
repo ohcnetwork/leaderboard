@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/releases"),
     entry("/leaderboard"),
     entry("/issues"),
+    entry("/discussions"),
     entry("/feed", { changeFrequency: "always", priority: 0.7 }),
   ];
 }

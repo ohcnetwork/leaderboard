@@ -4,6 +4,11 @@ on:
       slack-eod-channel:
         required: false
         type: string
+      leaderboard_ref:
+        required: false
+        type: string
+        default: main
+        description: A specific branch of scraper that is to be used.
     secrets:
       GIT_ACCESS_TOKEN:
         required: true
@@ -22,27 +27,34 @@ jobs:
         with:
           repository: coronasafe/leaderboard
           path: ./leaderboard
+          ref: ${{ inputs.leaderboard_ref }}
           sparse-checkout: |
             scraper
             scripts
 
-      - name: setup python
-        uses: actions/setup-python@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.14.0"
+      - run: npm install -g pnpm
+
+      - run: pnpm install --frozen-lockfile
+        working-directory: scraper
+
+      - run: pnpm build
+        working-directory: scraper
+
+      - name: Scrape data from GitHub
+        run: pnpm start ${{ github.repository_owner }} ../../data/github
+        working-directory: scraper
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v3
         with:
           python-version: "3.10"
 
       - name: Install dependencies
         run: pip install -r scraper/requirements.txt
-
-      - name: Scrape GitHub data
-        uses: nick-fields/retry@v2
-        with:
-          timeout_minutes: 10
-          max_attempts: 3
-          command: python scraper/src/github.py ${{ github.repository_owner }} data/github -l DEBUG
-          on_retry_command: git checkout .
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Scrape EOD updates from Slack Channel
         if: ${{ env.SLACK_API_TOKEN && env.SLACK_CHANNEL }}
@@ -50,7 +62,9 @@ jobs:
         env:
           SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
           SLACK_CHANNEL: ${{ inputs.slack-eod-channel }}
+
       - run: mkdir -p contributors
+
       - name: Generate markdown files for new contributors
         run: node scripts/generateNewContributors.js
         env:

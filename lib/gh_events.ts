@@ -82,7 +82,6 @@ interface Commit {
   url: string;
   message: string;
 }
-
 interface GitHubEvent {
   id: string;
   actor: Actor;
@@ -104,7 +103,6 @@ interface PullRequestReviewCommentEvent extends GitHubEvent {
     pull_request: PullRequest;
   };
 }
-
 interface PullRequestReviewEvent extends GitHubEvent {
   type: "PullRequestReviewEvent";
   payload: {
@@ -113,7 +111,6 @@ interface PullRequestReviewEvent extends GitHubEvent {
     pull_request: PullRequest;
   };
 }
-
 interface MemberEvent extends GitHubEvent {
   type: "MemberEvent";
   payload: {

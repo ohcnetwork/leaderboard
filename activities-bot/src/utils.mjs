@@ -1,13 +1,10 @@
-const { readFile, readdir } = require("fs/promises");
-const { join } = require("path");
-const matter = require("gray-matter");
+import { readFile, readdir } from "fs/promises";
+import { join } from "path";
+import matter from "gray-matter";
+import { Octokit } from "octokit";
 
-const { Octokit } = require("octokit");
-
-const root = join(
-  process.cwd(),
-  process.env.CONTRIBUTORS_DIR || "data-repo/contributors",
-);
+const root =
+  process.env.CONTRIBUTORS_DIR || join(process.cwd(), "data-repo/contributors");
 
 async function getContributorBySlug(file) {
   const { data } = matter(await readFile(join(root, file), "utf8"));
@@ -17,7 +14,7 @@ async function getContributorBySlug(file) {
   };
 }
 
-async function getContributors() {
+export async function getContributors() {
   const slugs = await readdir(`${root}`);
   const contributors = await Promise.all(
     slugs.map((path) => getContributorBySlug(path)),
@@ -47,9 +44,19 @@ function isAllowedEvent(event) {
   }
 }
 
+const throwForHttpError = async (promise) => {
+  const res = await promise;
+
+  if (!res.ok) {
+    throw new Error(await res.text());
+  }
+
+  return res;
+};
+
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
-async function getEvents(allowedAuthors) {
+export async function getEvents(allowedAuthors) {
   const aDayAgoDate = new Date();
   aDayAgoDate.setDate(aDayAgoDate.getDate() - 1);
   const aDayAgo = aDayAgoDate.getTime();
@@ -70,7 +77,7 @@ async function getEvents(allowedAuthors) {
   return Object.groupBy(events, (e) => e.actor.login);
 }
 
-function mergeUpdates(events, eodUpdates) {
+export function mergeUpdates(events, eodUpdates) {
   const updates = [];
   const counts = {
     eod_updates: eodUpdates.length,
@@ -114,19 +121,23 @@ const leaderboardApiHeaders = {
 
 const eodUpdatesApi = `${LEADERBOARD_URL}/api/slack-eod-bot/eod-updates`;
 
-async function getEODUpdates() {
-  const res = await fetch(eodUpdatesApi, {
-    headers: leaderboardApiHeaders,
-  });
+export async function getEODUpdates() {
+  const res = await throwForHttpError(
+    fetch(eodUpdatesApi, {
+      headers: leaderboardApiHeaders,
+    }),
+  );
+
   return res.json();
 }
 
-async function flushEODUpdates() {
-  const res = await fetch(eodUpdatesApi, {
-    headers: leaderboardApiHeaders,
-    method: "DELETE",
-  });
-  return res.json();
+export async function flushEODUpdates() {
+  const res = await throwForHttpError(
+    fetch(eodUpdatesApi, {
+      headers: leaderboardApiHeaders,
+      method: "DELETE",
+    }),
+  );
 }
 
 const slackApiHeaders = {
@@ -134,16 +145,18 @@ const slackApiHeaders = {
   Authorization: `Bearer ${SLACK_EOD_BOT_TOKEN}`,
 };
 
-async function sendSlackMessage(channel, text, blocks) {
-  const res = await fetch("https://slack.com/api/chat.postMessage", {
-    method: "POST",
-    headers: slackApiHeaders,
-    body: JSON.stringify({
-      channel,
-      text,
-      ...blocks,
+export async function sendSlackMessage(channel, text, blocks) {
+  const res = await throwForHttpError(
+    fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: slackApiHeaders,
+      body: JSON.stringify({
+        channel,
+        text,
+        ...blocks,
+      }),
     }),
-  });
+  );
 
   const data = await res.json();
   if (!data.ok) {
@@ -249,7 +262,7 @@ Summary: Opened *${counts.pull_requests}* pull requests, Reviewed *${counts.revi
   };
 }
 
-async function postEODMessage({ github, slack, updates }) {
+export async function postEODMessage({ github, slack, updates }) {
   await sendSlackMessage(
     SLACK_EOD_BOT_CHANNEL,
     "",
@@ -257,11 +270,16 @@ async function postEODMessage({ github, slack, updates }) {
   );
 }
 
-module.exports = {
-  getContributors,
-  getEvents,
-  getEODUpdates,
-  postEODMessage,
-  mergeUpdates,
-  flushEODUpdates,
-};
+export async function withRetry(method, { attempts }) {
+  while (attempts) {
+    try {
+      return await method();
+    } catch (error) {
+      attempts -= 1;
+
+      if (!attempts) {
+        throw error;
+      }
+    }
+  }
+}

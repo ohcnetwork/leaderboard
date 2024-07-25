@@ -1,11 +1,11 @@
-const {
+import {
   getContributors,
   getEvents,
   getEODUpdates,
   postEODMessage,
   mergeUpdates,
   flushEODUpdates,
-} = require("./utils");
+} from "./utils.mjs";
 
 async function main() {
   const allContributors = await getContributors();

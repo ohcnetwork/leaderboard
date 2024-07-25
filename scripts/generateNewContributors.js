@@ -17,7 +17,7 @@ Still waiting for this
 `;
 }
 
-const basePath = join(process.env.DATA_REPO || process.cwd());
+const basePath = join(process.cwd(), process.env.DATA_REPO ?? ".");
 
 function getNewContributors() {
   let newContributors = new Set();

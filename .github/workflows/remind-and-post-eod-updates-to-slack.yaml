@@ -1,0 +1,60 @@
+name: Sends reminders and Posts Contributor's EOD Updates to Slack
+
+on:
+  workflow_call:
+    inputs:
+      LEADERBOARD_URL:
+        type: string
+        required: true
+        description: URL to the Leaderboard Deployment (to access the EOD API's)
+
+    secrets:
+      GITHUB_PAT:
+        required: true
+
+      LEADERBOARD_API_KEY:
+        required: true
+
+      SLACK_EOD_BOT_CHANNEL:
+        required: true
+
+      SLACK_EOD_BOT_TOKEN:
+        required: true
+
+jobs:
+  main:
+    name: Remind, wait, and Post EOD updates of contributors to slack channel
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_ORG: ${{ github.repository_owner }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
+      LEADERBOARD_URL: ${{ inputs.LEADERBOARD_URL }}
+      LEADERBOARD_API_KEY: ${{ secrets.LEADERBOARD_API_KEY }}
+      SLACK_EOD_BOT_CHANNEL: ${{ secrets.SLACK_EOD_BOT_CHANNEL }}
+      SLACK_EOD_BOT_TOKEN: ${{ secrets.SLACK_EOD_BOT_TOKEN }}
+      CONTRIBUTORS_DIR: "../../contributors"
+    steps:
+      - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: coronasafe/leaderboard-data)
+
+      - uses: actions/checkout@v4
+        with:
+          repository: coronasafe/leaderboard
+          path: ./leaderboard
+          sparse-checkout: activities-bot
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 21.x
+
+      - run: npm install --from-lockfile
+        working-directory: leaderboard/activities-bot
+
+      - name: Send reminders to eligible contributors
+        run: npm run remind
+        working-directory: leaderboard/activities-bot
+
+      - run: sleep 30m
+
+      - name: Post EOD Updates to Slack Channel
+        run: npm run post-updates
+        working-directory: leaderboard/activities-bot

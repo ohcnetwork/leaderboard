@@ -1,9 +1,3 @@
-import { env } from "@/env.mjs";
-import octokit from "@/lib/octokit";
-import Image from "next/image";
-import Link from "next/link";
-import { GoIssueOpened } from "react-icons/go";
-import Markdown from "@/components/Markdown";
 import ActiveProjects from "../projects/ActiveProjects";
 
 const page = async () => {

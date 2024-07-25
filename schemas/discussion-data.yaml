@@ -1,0 +1,45 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: GitHub Discussions Schema
+type: array
+
+required:
+  - source
+  - title
+  - description
+  - author
+  - url
+  - category
+  - time
+  - repository
+  - participants
+
+properties:
+    source:
+      type: string
+    title:
+      type: string
+    description:
+      type: string
+    author:
+      type: string
+    url:
+      type: string
+    time:
+      type: string
+    category:
+      type: object
+      required:
+        - name
+        - emoji
+      properties:
+        name:
+          type: string
+        emoji:
+          type: string
+    participants:
+      type: array
+      items:
+        type: string
+    repository:
+      type: string
+

@@ -4,6 +4,11 @@ on:
       slack-eod-channel:
         required: false
         type: string
+      leaderboard_ref:
+        required: false
+        type: string
+        default: main
+        description: A specific branch of scraper that is to be used.
     secrets:
       GIT_ACCESS_TOKEN:
         required: true
@@ -22,6 +27,7 @@ jobs:
         with:
           repository: coronasafe/leaderboard
           path: ./leaderboard
+          ref: ${{ inputs.leaderboard_ref }}
           sparse-checkout: |
             scraper
             scripts

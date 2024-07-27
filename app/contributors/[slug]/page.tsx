@@ -28,16 +28,15 @@ type Params = {
   params: { slug: string };
 };
 
-export async function generateMetadata(
-  { params }: Params,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const slug = params.slug;
   const contributor = await getContributorBySlug(slug, true);
   const url = env.NEXT_PUBLIC_META_URL;
-  const org =  env.NEXT_PUBLIC_META_TITLE;
+  const org = env.NEXT_PUBLIC_META_TITLE;
+
   const title = `${slug} | ${org}`;
-  const description = `${contributor.name} has opened ${contributor.highlights.pr_opened} pull requests so far since ${contributor.joining_date} at ${org}.`;
+  const description = contributor.content;
+
   return {
     title,
     description,

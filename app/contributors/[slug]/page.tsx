@@ -21,8 +21,7 @@ import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { env } from "@/env.mjs";
 import { getLeaderboardData } from "@/app/api/leaderboard/functions";
-import { Metadata, ResolvingMetadata } from "next";
-import { sl } from "date-fns/locale";
+import { Metadata } from "next";
 
 type Params = {
   params: { slug: string };

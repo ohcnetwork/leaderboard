@@ -1,11 +1,13 @@
 /**
  * Script to populate the data-repo with historical information from GitHub.
  *
- * Supports populating the ollowing activity types:
+ * Supports populating the following activity types: 
  *
  * - [x] issue_opened
  * - [x] pr_opened
  * - [x] pr_merged
+ * - [x] discussion_created
+ * - [x] discussion_comment
  */
 
 const { join } = require("path");
@@ -110,6 +112,60 @@ const getPullRequests = async (repo) => {
   return repository.pullRequests.nodes;
 };
 
+const getDiscussions = async (repo) => {
+  const { repository } = await octokit.graphql.paginate(
+    `query paginate($cursor: String, $org: String!, $repo: String!) {
+      repository(owner: $org, name: $repo) {
+        discussions(first: 100, after: $cursor) {
+          nodes {
+            number
+            title
+            url
+            createdAt
+            author {
+              login
+            }
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
+      }
+    }
+    `,
+    { org, repo },
+  );
+  return repository.discussions.nodes;
+};
+
+const getDiscussionComments = async (repo, discussionNumber) => {
+  const { repository } = await octokit.graphql.paginate(
+    `query paginate($cursor: String, $org: String!, $repo: String!, $number: Int!) {
+      repository(owner: $org, name: $repo) {
+        discussion(number: $number) {
+          comments(first: 100, after: $cursor) {
+            nodes {
+              id
+              createdAt
+              author {
+                login
+              }
+            }
+            pageInfo {
+              hasNextPage
+              endCursor
+            }
+          }
+        }
+      }
+    }
+    `,
+    { org, repo, number: discussionNumber },
+  );
+  return repository.discussion.comments.nodes;
+};
+
 const getUserActivities = async () => {
   const userActivities = {};
 
@@ -128,7 +184,7 @@ const getUserActivities = async () => {
     const issues = await getIssues(repo);
     console.info(`  Captured ${issues.length} issues`);
     for (const issue of issues) {
-      if (!issues.author?.login) {
+      if (!issue.author?.login) {
         continue;
       }
 
@@ -163,6 +219,38 @@ const getUserActivities = async () => {
           time: pr.mergedAt,
           link: pr.url,
           text: pr.title,
+        });
+      }
+    }
+
+    const discussions = await getDiscussions(repo);
+    console.info(`  Captured ${discussions.length} discussions`);
+    for (const discussion of discussions) {
+      if (!discussion.author?.login) {
+        continue;
+      }
+
+      addActivity(discussion.author.login, {
+        type: "discussion_created",
+        title: `${org}/${repo}#${discussion.number}`,
+        time: discussion.createdAt,
+        link: discussion.url,
+        text: discussion.title,
+      });
+
+      const comments = await getDiscussionComments(repo, discussion.number);
+      console.info(`    Captured ${comments.length} comments for discussion #${discussion.number}`);
+      for (const comment of comments) {
+        if (!comment.author?.login) {
+          continue;
+        }
+
+        addActivity(comment.author.login, {
+          type: "discussion_comment",
+          title: `${org}/${repo}#${discussion.number}`,
+          time: comment.createdAt,
+          link: `${discussion.url}#discussioncomment-${comment.id}`,
+          text: "Commented on discussion",
         });
       }
     }

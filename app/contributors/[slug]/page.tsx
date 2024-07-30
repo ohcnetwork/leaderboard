@@ -21,26 +21,27 @@ import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { env } from "@/env.mjs";
 import { getLeaderboardData } from "@/app/api/leaderboard/functions";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 type Params = {
   params: { slug: string };
 };
 
-export async function generateMetadata(
-  { params }: Params,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const slug = params.slug;
   const contributor = await getContributorBySlug(slug, true);
   const url = env.NEXT_PUBLIC_META_URL;
+  const org = env.NEXT_PUBLIC_META_TITLE;
+
+  const title = `${slug} | ${org}`;
+  const description = contributor.content;
 
   return {
-    title: slug,
-    description: contributor.content,
+    title,
+    description,
     openGraph: {
-      title: slug,
-      description: contributor.content,
+      title,
+      description,
       url: `${url}/contributors/${slug}`,
     },
   };

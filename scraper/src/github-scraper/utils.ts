@@ -72,8 +72,7 @@ export async function calculateTurnaroundTime(event: PullRequestEvent) {
     }
 
     if (action.event === "connected") {
-      // Fetch the issue number from the url
-      linkedIssues.push([action.source.repository.full_name, `#${0}`]);
+      // TODO: currently there is no way to get the issue number from the timeline, handle this case while moving to graphql
     }
   });
 

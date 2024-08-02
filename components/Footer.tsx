@@ -9,12 +9,14 @@ export default function Footer() {
           <div className="flex w-full items-center justify-center">
             Powered by{" "}
             <span className="ml-4 w-20 brightness-0 dark:brightness-150">
-              <Image
-                src={env.NEXT_PUBLIC_ORG_LOGO as string}
-                alt={env.NEXT_PUBLIC_ORG_NAME as string}
-                width="80"
-                height="22"
-              />
+              <a href={env.NEXT_PUBLIC_ORG_URL as string}>
+                <Image
+                  src={env.NEXT_PUBLIC_ORG_LOGO as string}
+                  alt={env.NEXT_PUBLIC_ORG_NAME as string}
+                  width="80"
+                  height="22"
+                />
+              </a>
             </span>
           </div>
         </div>

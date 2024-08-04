@@ -193,7 +193,7 @@ export default async function Home() {
               </div>
 
               <div className="lg:col-span-4">
-                <div className="top-0 pt-20">
+                <div className="sticky top-0 pt-20">
                   <div>
                     <CommunityEngagemet />
                   </div>

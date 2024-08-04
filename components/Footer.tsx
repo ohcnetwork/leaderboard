@@ -3,20 +3,65 @@ import { env } from "@/env.mjs";
 
 export default function Footer() {
   return (
-    <footer className="">
-      <div className="h-full border-t border-secondary-300 bg-secondary-300 p-4 dark:border-secondary-700 dark:bg-secondary-800 lg:p-10">
-        <div className="max-w-5xl text-center text-sm font-bold text-foreground dark:text-primary-500 lg:mx-auto lg:leading-tight">
-          <div className="flex w-full items-center justify-center">
-            Powered by{" "}
-            <span className="ml-4 w-20 brightness-0 dark:brightness-150">
-              <Image
-                src={env.NEXT_PUBLIC_ORG_LOGO as string}
-                alt={env.NEXT_PUBLIC_ORG_NAME as string}
-                width="80"
-                height="22"
-              />
-            </span>
+    <footer className="bg-gray-900 p-4 text-gray-100 dark:bg-gray-800 dark:text-gray-300">
+      <div className="container mx-auto text-center">
+        <div className="mb-4 flex flex-col items-center">
+          <h2 className="mb-2 text-lg font-semibold">Connect with Us</h2>
+          <div className="mb-2 flex items-center">
+            <span className="mr-2 text-sm text-gray-300">Powered by</span>
+            <Image
+              src={env.NEXT_PUBLIC_ORG_LOGO as string}
+              alt={env.NEXT_PUBLIC_ORG_NAME as string}
+              width={100}
+              height={24}
+              className="ml-2"
+            />
           </div>
+        </div>
+        <div className="mb-4">
+          <a
+            href={env.NEXT_PUBLIC_DATA_SOURCE}
+            className="mb-1 block text-base font-medium text-gray-300 hover:text-gray-200"
+          >
+            Data Repository
+          </a>
+          <a
+            href={env.NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL}
+            className="block text-base font-medium text-gray-300 hover:text-gray-200"
+          >
+            Flat Repository Explorer
+          </a>
+        </div>
+        <div className="mb-4">
+          <h3 className="mb-1 text-base font-semibold">Socials</h3>
+          <div className="flex justify-center space-x-2">
+            <a
+              href={env.NEXT_PUBLIC_YOUTUBE_URL}
+              className="text-base text-gray-300 hover:text-gray-200"
+            >
+              YouTube
+            </a>
+            <a
+              href={env.NEXT_PUBLIC_LINKEDIN_URL}
+              className="text-base text-gray-300 hover:text-gray-200"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={env.NEXT_PUBLIC_GITHUB_URL}
+              className="text-base text-gray-300 hover:text-gray-200"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div>
+          <a
+            href={`mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+            className="text-base font-medium text-gray-300 hover:text-gray-200"
+          >
+            Contact Us
+          </a>
         </div>
       </div>
     </footer>

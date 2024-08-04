@@ -13,6 +13,10 @@ export const env = createEnv({
     NEXT_PUBLIC_GITHUB_ORG: z.string(),
     NEXT_PUBLIC_SLACK_URL: z.string().url(),
     NEXT_PUBLIC_ORG_START_DATE: z.string(),
+    NEXT_PUBLIC_GITHUB_URL: z.string(),
+    NEXT_PUBLIC_LINKEDIN_URL: z.string(),
+    NEXT_PUBLIC_YOUTUBE_URL: z.string(),
+    NEXT_PUBLIC_CONTACT_EMAIL: z.string(),
 
     // SEO details
     NEXT_PUBLIC_META_TITLE: z.string(),
@@ -26,6 +30,8 @@ export const env = createEnv({
     NEXT_PUBLIC_LEADERBOARD_DEFAULT_ROLES: z.string().optional(),
 
     NEXT_PUBLIC_FEATURES: z.string(),
+    NEXT_PUBLIC_DATA_SOURCE: z.string(),
+    NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL: z.string()
   },
   runtimeEnv: {
     NEXT_PUBLIC_ORG_NAME: process.env.NEXT_PUBLIC_ORG_NAME,
@@ -47,5 +53,11 @@ export const env = createEnv({
         ? ""
         : process.env.GITHUB_PAT,
     NEXT_PUBLIC_FEATURES: process.env.NEXT_PUBLIC_FEATURES,
+    NEXT_PUBLIC_DATA_SOURCE: process.env.NEXT_PUBLIC_DATA_SOURCE,
+    NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL: process.env.NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL,
+    NEXT_PUBLIC_GITHUB_URL: process.env.NEXT_PUBLIC_GITHUB_URL,
+    NEXT_PUBLIC_LINKEDIN_URL: process.env.NEXT_PUBLIC_LINKEDIN_URL,
+    NEXT_PUBLIC_YOUTUBE_URL: process.env.NEXT_PUBLIC_YOUTUBE_URL,
+    NEXT_PUBLIC_CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
   },
 });

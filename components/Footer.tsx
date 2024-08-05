@@ -9,13 +9,15 @@ export default function Footer() {
           <h2 className="mb-2 text-lg font-semibold">Connect with Us</h2>
           <div className="mb-2 flex items-center">
             <span className="mr-2 text-sm text-gray-300">Powered by</span>
-            <Image
-              src={env.NEXT_PUBLIC_ORG_LOGO as string}
-              alt={env.NEXT_PUBLIC_ORG_NAME as string}
-              width={100}
-              height={24}
-              className="ml-2"
-            />
+            <a href={env.NEXT_PUBLIC_ORG_URL as string}>
+              <Image
+                src={env.NEXT_PUBLIC_ORG_LOGO as string}
+                alt={env.NEXT_PUBLIC_ORG_NAME as string}
+                width={100}
+                height={24}
+                className="ml-2"
+              />
+            </a>
           </div>
         </div>
         <div className="mb-4">

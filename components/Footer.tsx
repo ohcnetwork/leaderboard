@@ -1,10 +1,21 @@
 import Image from "next/image";
 import { env } from "@/env.mjs";
 import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { ReactNode } from "react";
 
-const SocialLink = ({ href, icon: Icon, label }) => (
+const SocialLink = ({
+  href,
+  icon: Icon,
+  label,
+}: {
+  href: string;
+  icon: any;
+  label: string;
+}) => (
   <a
     href={href}
+    target="_blank"
+    rel="noopener noreferrer"
     className="text-gray-300 transition-colors duration-300 hover:text-[rgb(176,142,230)]"
     aria-label={label}
   >
@@ -12,16 +23,30 @@ const SocialLink = ({ href, icon: Icon, label }) => (
   </a>
 );
 
-const FooterSection = ({ title, children }) => (
+const FooterSection = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) => (
   <div className="mb-6 md:mb-0">
     <h3 className="mb-3 text-lg font-semibold">{title}</h3>
     {children}
   </div>
 );
 
-const FooterLink = ({ href, children }) => (
+const FooterLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
   <a
     href={href}
+    target="_blank"
+    rel="noopener noreferrer"
     className="mb-2 block text-sm text-gray-300 transition-colors duration-300 hover:text-[rgb(176,142,230)]"
   >
     {children}
@@ -37,7 +62,11 @@ export default function Footer() {
             <FooterSection title="About Us">
               <div className="mb-4 flex items-center">
                 <span className="mr-2 text-sm">Powered by</span>
-                <a href={env.NEXT_PUBLIC_ORG_URL}>
+                <a
+                  href={env.NEXT_PUBLIC_ORG_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
                     src={env.NEXT_PUBLIC_ORG_LOGO}
                     alt={env.NEXT_PUBLIC_ORG_NAME}

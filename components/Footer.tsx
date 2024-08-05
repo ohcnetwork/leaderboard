@@ -47,7 +47,8 @@ export default function Footer() {
                 </a>
               </div>
               <p className="max-w-xs text-sm text-gray-400">
-                Connecting healthcare through open data and innovative solutions.
+                Connecting healthcare through open data and innovative
+                solutions.
               </p>
             </FooterSection>
           </div>

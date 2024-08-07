@@ -24,11 +24,11 @@ const GithubDiscussion = ({
 
   return (
     <div
-      className={`group mt-3 flex w-full gap-3 ${minimal ? "lg:w-full" : "lg:w-[75%]"}  ${!isProfilePage ? "mt-5" : "lg:w-full"}`}
+      className={`group mt-3 flex w-full gap-3 ${minimal ? "lg:w-full" : "lg:max-w-3xl"} ${!isProfilePage ? "mt-5" : "lg:w-full"}`}
     >
       {/* Left side */}
       {!isProfilePage && (
-        <div className=" relative min-w-10">
+        <div className="relative min-w-10">
           {/* Profile image */}
           <Image
             className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-400 ring-8 ring-secondary-200 transition-all duration-200 ease-in-out group-hover:scale-125 group-hover:ring-2 dark:ring-secondary-800 group-hover:dark:ring-white/50"
@@ -50,7 +50,7 @@ const GithubDiscussion = ({
       {/* Right side */}
       <div className="ml-2">
         {/* Title and Time */}
-        <div className={`flex items-center justify-start `}>
+        <div className={`flex items-center justify-start`}>
           <div className={`${isProfilePage && "flex"} w-3/4`}>
             <Link href={discussion.link}>
               <p className="w-full text-lg font-semibold text-primary-900 dark:text-primary-100">

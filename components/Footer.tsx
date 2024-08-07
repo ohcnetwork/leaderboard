@@ -2,7 +2,6 @@ import Image from "next/image";
 import { env } from "@/env.mjs";
 import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
-
 import { ReactNode } from "react";
 
 const SocialLink = ({
@@ -96,31 +95,38 @@ export default function Footer() {
 
             <FooterSection title="Connect">
               <div className="flex space-x-4">
-                <SocialLink
-                  href={env.NEXT_PUBLIC_YOUTUBE_URL}
-                  icon={FaYoutube}
-                  label="YouTube"
-                />
-                <SocialLink
-                  href={env.NEXT_PUBLIC_LINKEDIN_URL}
-                  icon={FaLinkedin}
-                  label="LinkedIn"
-                />
-                <SocialLink
-                  href={env.NEXT_PUBLIC_GITHUB_URL}
-                  icon={FaGithub}
-                  label="GitHub"
-                />
-                <SocialLink
-                  href={`mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`}
-                  icon={FaEnvelope}
-                  label="Email"
-                />
-                <SocialLink
-                  href={`mailto:${env.NEXT_PUBLIC_TWITTER_URL}`}
-                  icon={BsTwitterX}
-                  label="Email"
-                />
+                {env.NEXT_PUBLIC_YOUTUBE_URL && (
+                  <SocialLink
+                    href={env.NEXT_PUBLIC_YOUTUBE_URL}
+                    icon={FaYoutube}
+                    label="YouTube"
+                  />
+                )}
+                {
+                  <SocialLink
+                    href={env.NEXT_PUBLIC_LINKEDIN_URL}
+                    icon={FaLinkedin}
+                    label="LinkedIn"
+                  />
+                }
+                {
+                  <SocialLink
+                    href={env.NEXT_PUBLIC_GITHUB_URL}
+                    icon={FaGithub}
+                    label="GitHub"
+                  />
+                }
+                {
+                  <SocialLink
+                    href={`mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                    icon={FaEnvelope}
+                    label="Email"
+                  />
+                }
+                {/* Static Twitter icon */}
+                <div className="text-gray-300 transition-colors duration-300 hover:text-[rgb(176,142,230)]">
+                  <BsTwitterX className="h-6 w-6" aria-label="Twitter" />
+                </div>
               </div>
             </FooterSection>
           </div>

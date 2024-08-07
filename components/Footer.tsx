@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { env } from "@/env.mjs";
 import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+
 import { ReactNode } from "react";
 
 const SocialLink = ({
@@ -112,6 +114,11 @@ export default function Footer() {
                 <SocialLink
                   href={`mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                   icon={FaEnvelope}
+                  label="Email"
+                />
+                <SocialLink
+                  href={`mailto:${env.NEXT_PUBLIC_TWITTER_URL}`}
+                  icon={BsTwitterX}
                   label="Email"
                 />
               </div>

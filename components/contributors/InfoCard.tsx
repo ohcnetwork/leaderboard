@@ -76,7 +76,7 @@ export default async function InfoCard({
                 >
                   <span className="flex items-center text-secondary-500 hover:text-primary-300">
                     <span className="sr-only">Github</span>
-                    <BsGithub className="h-6 w-6 md:h-7 md:w-7" />
+                    <BsGithub className="size-6 md:size-7" />
                   </span>
                 </Link>
               </li>
@@ -90,7 +90,7 @@ export default async function InfoCard({
                 >
                   <div className="flex items-center text-secondary-500 hover:text-primary-300">
                     <span className="sr-only">Twitter</span>
-                    <BsTwitterX className="h-6 w-6 md:h-7 md:w-7" />
+                    <BsTwitterX className="size-6 md:size-7" />
                   </div>
                 </Link>
               </li>
@@ -104,7 +104,7 @@ export default async function InfoCard({
                 >
                   <div className="flex items-center text-secondary-500 hover:text-primary-300">
                     <span className="sr-only">LinkedIn</span>
-                    <BsLinkedin className="h-6 w-6 md:h-7 md:w-7" />
+                    <BsLinkedin className="size-6 md:size-7" />
                   </div>
                 </Link>
               </li>

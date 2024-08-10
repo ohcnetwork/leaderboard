@@ -17,6 +17,7 @@ export const env = createEnv({
     NEXT_PUBLIC_GITHUB_URL: z.string(),
     NEXT_PUBLIC_LINKEDIN_URL: z.string(),
     NEXT_PUBLIC_YOUTUBE_URL: z.string(),
+    NEXT_PUBLIC_TWITTER_URL: z.string().optional(), // Add this line
     NEXT_PUBLIC_CONTACT_EMAIL: z.string(),
 
     // SEO details
@@ -32,7 +33,7 @@ export const env = createEnv({
 
     NEXT_PUBLIC_FEATURES: z.string(),
     NEXT_PUBLIC_DATA_SOURCE: z.string(),
-    NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL: z.string()
+    NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL: z.string(),
   },
   runtimeEnv: {
     NEXT_PUBLIC_ORG_NAME: process.env.NEXT_PUBLIC_ORG_NAME,
@@ -56,10 +57,12 @@ export const env = createEnv({
         : process.env.GITHUB_PAT,
     NEXT_PUBLIC_FEATURES: process.env.NEXT_PUBLIC_FEATURES,
     NEXT_PUBLIC_DATA_SOURCE: process.env.NEXT_PUBLIC_DATA_SOURCE,
-    NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL: process.env.NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL,
+    NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL:
+      process.env.NEXT_PUBLIC_FLAT_REPO_EXPLORER_URL,
     NEXT_PUBLIC_GITHUB_URL: process.env.NEXT_PUBLIC_GITHUB_URL,
     NEXT_PUBLIC_LINKEDIN_URL: process.env.NEXT_PUBLIC_LINKEDIN_URL,
     NEXT_PUBLIC_YOUTUBE_URL: process.env.NEXT_PUBLIC_YOUTUBE_URL,
+    NEXT_PUBLIC_TWITTER_URL: process.env.NEXT_PUBLIC_TWITTER_URL, // Add this line
     NEXT_PUBLIC_CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
   },
 });

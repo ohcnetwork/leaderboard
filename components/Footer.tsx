@@ -2,26 +2,28 @@ import Image from "next/image";
 import { env } from "@/env.mjs";
 import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { ReactNode } from "react";
+import { BsTwitterX } from "react-icons/bs";
 
 const SocialLink = ({
   href,
   icon: Icon,
   label,
 }: {
-  href: string;
+  href?: string;
   icon: any;
   label: string;
-}) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-300 transition-colors duration-300 hover:text-[rgb(176,142,230)]"
-    aria-label={label}
-  >
-    <Icon className="h-6 w-6" />
-  </a>
-);
+}) =>
+  href && (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-300 transition-colors duration-300 hover:text-[rgb(176,142,230)]"
+      aria-label={label}
+    >
+      <Icon className="h-6 w-6" />
+    </a>
+  );
 
 const FooterSection = ({
   title,
@@ -110,9 +112,17 @@ export default function Footer() {
                   label="GitHub"
                 />
                 <SocialLink
-                  href={`mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                  href={
+                    env.NEXT_PUBLIC_CONTACT_EMAIL &&
+                    `mailto:${env.NEXT_PUBLIC_CONTACT_EMAIL}`
+                  }
                   icon={FaEnvelope}
                   label="Email"
+                />
+                <SocialLink
+                  href={env.NEXT_PUBLIC_X_URL}
+                  icon={BsTwitterX}
+                  label="Twitter"
                 />
               </div>
             </FooterSection>

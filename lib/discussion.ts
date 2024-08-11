@@ -77,6 +77,7 @@ export async function checkAnsweredByUser(
   number: string,
   repository: string,
 ) {
+  return false;
   const org = env.NEXT_PUBLIC_GITHUB_ORG;
 
   const dicussion: Dicussion = await octokit.graphql(`query {

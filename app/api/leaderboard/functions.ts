@@ -46,7 +46,7 @@ export const getLeaderboardData = async (
     return {
       user: {
         slug: contributor.slug,
-        name: contributor.name,
+        name: `${contributor.name}`,
         title: contributor.title,
         role: contributor.role,
         content: contributor.content,

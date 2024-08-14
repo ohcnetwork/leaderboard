@@ -45,14 +45,14 @@ export const getLeaderboardData = async (
   return data.map((contributor): LeaderboardAPIResponse[number] => {
     return {
       user: {
-        slug: contributor.slug,
+        slug: `${contributor.slug}`,
         name: `${contributor.name}`,
         title: contributor.title,
         role: contributor.role,
         content: contributor.content,
         joining_date: contributor.joining_date,
         social: {
-          github: contributor.github,
+          github: `${contributor.github}`,
           linkedin: contributor.linkedin,
           slack: contributor.slack,
           twitter: contributor.twitter,

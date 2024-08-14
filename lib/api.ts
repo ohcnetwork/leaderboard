@@ -223,20 +223,12 @@ export async function getContributorBySlug(file: string, detail = false) {
 let contributors: Awaited<ReturnType<typeof getContributorBySlug>>[] | null =
   null;
 
-const BATCH_SIZE = 100;
-
 export async function getContributors() {
   if (!contributors) {
     const slugs = await getContributorsSlugs();
-    contributors = [];
-    for (let i = 0; i < slugs.length; i += BATCH_SIZE) {
-      const slugsChunk = slugs.slice(i, i + BATCH_SIZE);
-      contributors.push(
-        ...(await Promise.all(
-          slugsChunk.map((path) => getContributorBySlug(path.file)),
-        )),
-      );
-    }
+    contributors = await Promise.all(
+      slugs.map((path) => getContributorBySlug(path.file)),
+    );
   }
   return contributors;
 }

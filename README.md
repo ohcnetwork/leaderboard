@@ -6,7 +6,10 @@ A simple leaderboard app built with Next.js and Tailwind CSS to list the top con
 
 ### Prerequisites
 
-Ensure that `pnpm` is installed on your device. You can check the steps for installation here. [Docs Link](https://pnpm.io/installation)
+Ensure that `pnpm` is installed on your device. You can install it globally using the following command:
+
+```bash
+npm install -g pnpm
 
 ### Starting the development server
 

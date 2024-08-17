@@ -18,14 +18,17 @@ const MenuItems = {
   "/issues": "Issues",
   "/discussions": "Discussions",
 };
+
 const availableMenuItems = Object.fromEntries(
   Object.entries(MenuItems).filter(([href, label]) => {
     return process.env.NEXT_PUBLIC_FEATURES?.split(",").includes(label);
   }),
 );
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
   return (
     <>
       <nav className="sticky top-0 z-10 border-b border-secondary-300 bg-background px-4 py-1 shadow-md dark:border-secondary-700 sm:shadow-lg">
@@ -60,14 +63,20 @@ export default function Navbar() {
               className="flex cursor-pointer items-center justify-center text-3xl transition-transform duration-300 ease-in-out lg:hidden"
               onClick={() => setOpen(!open)}
             >
-              {open ? <IoClose /> : <RxHamburgerMenu />}
+              {open ? (
+                <IoClose className="hover:text-primary-500" />
+              ) : (
+                <RxHamburgerMenu className="hover:text-primary-500" />
+              )}
             </div>
           </div>
         </div>
       </nav>
       {open && (
         <div
-          className={`fixed inset-y-0 right-0 z-50 w-full max-w-96 bg-white dark:bg-secondary-800 lg:hidden ${open ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease-in-out`}
+          className={`fixed inset-y-0 right-0 z-50 w-full max-w-96 bg-white dark:bg-secondary-800 lg:hidden ${
+            open ? "translate-x-0" : "translate-x-full"
+          } transition-transform duration-300 ease-in-out`}
         >
           <div className="relative flex h-full w-full flex-col gap-5 bg-secondary-300 px-6 py-4 dark:bg-secondary-800">
             <div className="flex justify-end">
@@ -75,7 +84,7 @@ export default function Navbar() {
                 onClick={() => setOpen(!open)}
                 className="mt-3 self-center text-secondary-600 dark:text-secondary-400"
               >
-                <IoClose className="text-3xl" />
+                <IoClose className="text-3xl hover:text-primary-500" />
               </button>
             </div>
             <div className="flex flex-col items-center justify-center gap-2 md:px-4 md:py-2">

@@ -7,7 +7,7 @@ export type ActiveProjectLabelConfig = Record<
 
 export const ACTIVE_PROJECT_LABELS: ActiveProjectLabelConfig = {
   GSoC: {
-    className: "text-yellow-500",
+    className: "text-yellow-500 hover:bg-yellow-500 hover:text-white",
     name: "Google Summer of Code",
     shortName: "GSoC",
     ref: "https://summerofcode.withgoogle.com/",

@@ -65,14 +65,14 @@ const main = async () => {
     if (dateArg) {
       date = new Date(dateArg).toISOString();
     } else {
-      date = formatISO(subDays(new Date(), 1), { representation: "date" });
+      date = formatISO(new Date(), { representation: "date" });
     }
   } catch (error) {
     console.error("Invalid date value:", dateArg);
     process.exit(1);
   }
-  const endDate: Date = startOfDay(parseISO(date));
-  const startDate: Date = startOfDay(subDays(endDate, Number(numDays)));
+  const endDate = parseISO(date);
+  const startDate = subDays(endDate, Number(numDays));
 
   await scrapeGitHub(orgName, endDate, startDate);
   await mergedData(dataDir, processedData);

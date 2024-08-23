@@ -20,7 +20,7 @@ const token = process.env.GITHUB_TOKEN;
 
 if (!org) {
   throw Error(
-    "'GITHUB_ORG' environment needs to be set with a GitHub Organization (e.g.: 'coronasafe').",
+    "'GITHUB_ORG' environment needs to be set with a GitHub Organization (e.g.: 'ohcnetwork').",
   );
 }
 

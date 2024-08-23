@@ -34,11 +34,11 @@ jobs:
       SLACK_EOD_BOT_TOKEN: ${{ secrets.SLACK_EOD_BOT_TOKEN }}
       CONTRIBUTORS_DIR: "../../contributors"
     steps:
-      - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: coronasafe/leaderboard-data)
+      - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: ohcnetwork/leaderboard-data)
 
       - uses: actions/checkout@v4
         with:
-          repository: coronasafe/leaderboard
+          repository: ohcnetwork/leaderboard
           path: ./leaderboard
           sparse-checkout: activities-bot
 

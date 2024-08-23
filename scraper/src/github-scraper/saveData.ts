@@ -2,6 +2,12 @@ import { ProcessData } from "./types.js";
 import { mkdir } from "fs/promises";
 import { loadUserData, saveUserData } from "./utils.js";
 
+const deduplicate = <T>(hash: (value: T) => string, arr: T[]) => {
+  return Object.values(
+    Object.fromEntries(arr.map((item) => [hash(item), item])),
+  );
+};
+
 export const mergedData = async (
   dataDir: string,
   processedData: ProcessData,
@@ -9,24 +15,19 @@ export const mergedData = async (
   console.log("Updating data");
   await mkdir(dataDir, { recursive: true });
 
-  for (let user in processedData) {
+  for (const user in processedData) {
     if (processedData.hasOwnProperty(user)) {
       console.log(`Merging user data for ${user}`);
-      let oldData = await loadUserData(user, dataDir);
-      let userData = processedData[user];
-      let newUniqueEvents = [];
 
-      for (let event of userData.activity) {
-        if (
-          !oldData.activity.some(
-            (oldEvent) => JSON.stringify(oldEvent) === JSON.stringify(event),
-          )
-        ) {
-          newUniqueEvents.push(event);
-        }
-      }
+      const userData = processedData[user];
+      const existing = await loadUserData(user, dataDir);
+      const combinedActivities = [...userData.activity, ...existing.activity];
 
-      userData.activity = newUniqueEvents.concat(oldData.activity);
+      userData.activity = deduplicate(
+        (activity) => `${activity.type}--${activity.link}`,
+        combinedActivities,
+      );
+
       saveUserData(user, userData, dataDir, null);
     }
   }

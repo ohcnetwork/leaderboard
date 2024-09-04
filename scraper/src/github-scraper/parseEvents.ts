@@ -166,7 +166,7 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
           event.payload.pull_request?.merged
         ) {
           const turnaroundTime = await calculateTurnaroundTime(event);
-          appendEvent(user, {
+          appendEvent(event.payload.pull_request.user.login, {
             type: "pr_merged",
             title: `${event.repo.name}#${event.payload.pull_request.number}`,
             time: eventTime?.toISOString(),

@@ -1,6 +1,6 @@
 import { kv } from "@vercel/kv";
 import { formatDuration as _formatDuration } from "date-fns";
-import { DailyReport } from "./contributor";
+import { getDailyReport } from "./contributor";
 import { Contributor } from "@/lib/types";
 
 const slackApiHeaders = {
@@ -114,10 +114,7 @@ const appHomeSection = (title: string, items: object[][]) => {
 };
 
 export const updateAppHome = async (contributor: Contributor) => {
-  const dailyReportRes = await fetch(
-    `${process.env.NEXT_PUBLIC_META_URL}/api/contributors/${contributor.github}/dailyReport`,
-  );
-  const dailyReport: DailyReport = await dailyReportRes.json();
+  const dailyReport = await getDailyReport(contributor.github);
   const eodUpdates = await EODUpdatesManager(contributor).get();
 
   const res = await fetch(`https://slack.com/api/views.publish`, {

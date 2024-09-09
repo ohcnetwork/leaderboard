@@ -12,7 +12,7 @@ on:
       projects-board-id:
         required: false
         type: string
-        description: Experimental; Works only with particular project board structure. Requires `read:project` scope for the GITHUB_TOKEN. Disabled if not configured.
+        description: Experimental; Works only with particular project board structure. Requires `read:project` scope for the SCRAPER_GITHUB_TOKEN. Disabled if not configured.
     secrets:
       SCRAPER_GITHUB_TOKEN:
         required: false

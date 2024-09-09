@@ -3,7 +3,7 @@
  * for pulling items from project board's of other orgs.
  *
  * Notes:
- * - GITHUB_TOKEN requires `read:project` scope.
+ * - SCRAPER_GITHUB_TOKEN requires `read:project` scope.
  * - Status change events can't be extracted atm. using GraphQL API, however should be in future. (Ref: Ref: https://github.com/orgs/community/discussions/5859#discussioncomment-4679381)
  */
 

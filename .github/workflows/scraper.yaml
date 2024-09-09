@@ -14,6 +14,9 @@ on:
         type: string
         description: Experimental; Works only with particular project board structure. Requires `read:project` scope for the GITHUB_TOKEN. Disabled if not configured.
     secrets:
+      SCRAPER_GITHUB_TOKEN:
+        required: false
+        description: Allows overriding the default GITHUB_TOKEN for providing scopes beyond what GITHUB_TOKEN can offer.
       GIT_ACCESS_TOKEN:
         required: true
       SLACK_API_TOKEN:
@@ -51,7 +54,7 @@ jobs:
         run: pnpm start ${{ github.repository_owner }} ../../data/github
         working-directory: scraper
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SCRAPER_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           PROJECTS_BOARD_ID: ${{ inputs.projects-board-id }}
 
       - uses: actions/setup-python@v3

@@ -154,10 +154,5 @@ export default async function scrapeProjectBoardItems(
 ) {
   await mkdir(path.join(rootDir, "project-boards"), { recursive: true });
   const file = path.join(rootDir, "project-boards", `${projectId}.json`);
-  try {
-    await upsertItems(await getProjectBoardItems(projectId), file);
-  } catch (e) {
-    console.error("Failed to scrape project board items.");
-    console.error(e);
-  }
+  await upsertItems(await getProjectBoardItems(projectId), file);
 }

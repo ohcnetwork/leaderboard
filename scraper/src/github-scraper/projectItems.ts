@@ -22,6 +22,7 @@ async function getProjectBoardItems(projectId: string) {
                         id
                         createdAt
                         updatedAt
+                        type
                         fieldValues(first: 10) {
                             nodes {
                                 ... on ProjectV2ItemFieldTextValue {
@@ -114,6 +115,7 @@ async function getProjectBoardItems(projectId: string) {
       return [
         node.id,
         {
+          type: node.type,
           url: node.content.url,
           title: get("Title").text,
           createdAt: node.createdAt,

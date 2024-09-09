@@ -15,6 +15,7 @@ jobs:
     permissions:
       issues: read
       pull-requests: read
+      repository-projects: read
     env:
       DATA_REPO: ./
     steps:
@@ -37,10 +38,11 @@ jobs:
         working-directory: scraper
 
       - name: Scrape data from GitHub
-        run: pnpm start ${{ github.repository_owner }} ../data/github 
+        run: pnpm start ${{ github.repository_owner }} ../data/github
         working-directory: scraper
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROJECTS_BOARD_ID: PVT_kwDOA7JD8804yA
 
       - run: mkdir contributors
 
@@ -48,7 +50,7 @@ jobs:
         run: node scripts/generateNewContributors.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - uses: actions/upload-artifact@v4
         with:
           name: output
@@ -56,7 +58,7 @@ jobs:
           path: |
             data
             contributors
-            
+
       - name: Get pnpm store directory
         shell: bash
         run: |

@@ -9,6 +9,10 @@ on:
         type: string
         default: main
         description: A specific branch of scraper that is to be used.
+      projects-board-id:
+        required: false
+        type: string
+        description: Experimental; Works only with particular project board structure. Requires `read:project` scope for the GITHUB_TOKEN. Disabled if not configured.
     secrets:
       GIT_ACCESS_TOKEN:
         required: true
@@ -48,6 +52,7 @@ jobs:
         working-directory: scraper
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROJECTS_BOARD_ID: ${{ inputs.projects-board-id }}
 
       - uses: actions/setup-python@v3
         with:

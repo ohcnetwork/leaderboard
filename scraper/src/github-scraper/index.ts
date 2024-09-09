@@ -1,10 +1,11 @@
-import { formatISO, parseISO, startOfDay, subDays } from "date-fns";
+import { formatISO, parseISO, subDays } from "date-fns";
 import { fetchMergeEvents, fetchOpenPulls } from "./fetchUserData.js";
 import { IGitHubEvent, ProcessData } from "./types.js";
 import { fetchEvents } from "./fetchEvents.js";
 import { parseEvents } from "./parseEvents.js";
 import { mergedData } from "./saveData.js";
 import { scrapeDiscussions } from "./discussion.js";
+import scrapeProjectBoardItems from "./projectItems.js";
 
 let processedData: ProcessData = {};
 
@@ -77,6 +78,10 @@ const main = async () => {
   await scrapeGitHub(orgName, endDate, startDate);
   await mergedData(dataDir, processedData);
   await scrapeDiscussions(orgName, dataDir, endDate, startDate);
+
+  if (process.env.PROJECTS_BOARD_ID) {
+    await scrapeProjectBoardItems(process.env.PROJECTS_BOARD_ID, dataDir);
+  }
 
   console.log("Done");
 };

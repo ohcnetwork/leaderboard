@@ -1,4 +1,5 @@
 "use client";
+
 import { usePathname, useRouter } from "next/navigation";
 import Sort from "@/components/filters/Sort";
 import format from "date-fns/format";
@@ -18,10 +19,7 @@ const SortOptions = Object.entries(SORT_BY_OPTIONS).map(([value, text]) => ({
 }));
 
 export const RoleOptions = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
-  ([value, text]) => ({
-    value,
-    text,
-  }),
+  ([value, text]) => ({ value, text }),
 );
 
 export default function Searchbar({ searchParams }: PageProps) {

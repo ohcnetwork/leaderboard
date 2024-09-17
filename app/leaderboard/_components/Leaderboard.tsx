@@ -1,9 +1,23 @@
+"use client";
+
 import LeaderboardCard from "@/components/contributors/LeaderboardCard";
 import { TbZoomQuestion } from "react-icons/tb";
 import TopContributor from "../../../components/contributors/TopContributor";
-import { getWeekNumber, parseDateRangeSearchParam } from "@/lib/utils";
-import { LeaderboardAPIResponse, PageProps } from "@/lib/types";
+import {
+  calcDateRange,
+  getWeekNumber,
+  LeaderboardFilterDurations,
+} from "@/lib/utils";
+import { LeaderboardAPIResponse } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
+import { useState } from "react";
+import Search from "@/components/filters/Search";
+import { MdFilterList, MdFilterListOff } from "react-icons/md";
+import { BsPersonFill } from "react-icons/bs";
+import { Select } from "@/components/Select";
+import { RoleOptions } from "@/app/leaderboard/_components/Searchbar";
+import { FILTER_BY_ROLE_OPTIONS, SORT_BY_OPTIONS } from "@/lib/const";
+import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 
 const filterBySearchTerm = (searchTermLC: string) => {
   return (item: LeaderboardAPIResponse[number]) =>
@@ -13,97 +27,222 @@ const filterBySearchTerm = (searchTermLC: string) => {
     item.user.social.twitter.toLowerCase().includes(searchTermLC);
 };
 
-export default function Leaderboard({
-  data,
-  searchParams,
-}: {
+const ORDERING_OPTIONS = Object.entries(SORT_BY_OPTIONS).map(
+  ([value, text]) => ({ value, text }),
+);
+
+export const ROLE_OPTIONS = Object.entries(FILTER_BY_ROLE_OPTIONS).map(
+  ([value, text]) => ({ value, text }),
+);
+
+type Props = {
   data: LeaderboardAPIResponse;
-} & PageProps) {
-  const searchTerm = searchParams.search ?? "";
-  const [start, end] = parseDateRangeSearchParam(searchParams.between);
-  const filteredData = data.filter((item) => {
-    return searchParams.role?.includes(item.user.role) ?? true;
+  duration: (typeof LeaderboardFilterDurations)[number];
+};
+
+export default function Leaderboard(props: Props) {
+  const [start, end] = calcDateRange(props.duration)!;
+  const [search, setSearch] = useState("");
+  const [showFilter, setShowFilter] = useState(false);
+  const [roles, setRoles] = useState(ROLE_OPTIONS);
+  const [ordering, setOrdering] = useState<(typeof ORDERING_OPTIONS)[number]>({
+    value: "points",
+    text: "Points",
   });
-  const ordering = searchParams.ordering ?? "desc";
+  const [isReversed, setIsReversed] = useState(false);
+
+  let resultSet = props.data;
+
+  if (roles.length) {
+    const selected = roles.map(({ value }) => value);
+    resultSet = resultSet.filter((a) => selected.includes(a.user.role));
+  }
+
+  if (isReversed) {
+    resultSet = resultSet.toReversed();
+  }
+
+  const OtherFilters = () => {
+    return (
+      <>
+        {/* Duration Filter */}
+        {/* <DateRangePicker
+          value={{ start, end }}
+          onChange={(value) => {
+            updateSearchParam(
+              "between",
+              `${format(value.start, "yyyy-MM-dd")}...${format(
+                value.end,
+                "yyyy-MM-dd",
+              )}`,
+            );
+          }}
+          className="md:grow-1"
+        /> */}
+        {/* Role filter */}
+        <div className="md:grow-1 grow md:min-w-[120px]">
+          <span className="relative flex w-full rounded-md shadow-sm">
+            <span className="relative inline-flex items-center rounded-l-md border border-secondary-600 px-2 py-2 dark:border-secondary-300 ">
+              <BsPersonFill className="text-foreground" size={20} />
+            </span>
+            <Select
+              multiple
+              options={RoleOptions}
+              value={roles}
+              onChange={(value) => setRoles(value as typeof roles)}
+              showSelectionsAs="text"
+            />
+          </span>
+        </div>
+        {/* Ordering */}
+        <div className="md:grow-1 mb-4 grow md:w-[120px]">
+          <span className="relative inline-flex w-full rounded-md shadow-sm ">
+            <span
+              onClick={() => setIsReversed(!isReversed)}
+              className="relative inline-flex cursor-pointer items-center rounded-l-md border border-secondary-600 px-2 py-2 dark:border-secondary-300"
+            >
+              {!isReversed ? (
+                <HiSortAscending className="text-foreground" size={20} />
+              ) : (
+                <HiSortDescending className="text-foreground" size={20} />
+              )}
+            </span>
+            <Select
+              options={ORDERING_OPTIONS}
+              value={ordering}
+              onChange={(value) => setOrdering(value as typeof ordering)}
+            />
+          </span>
+        </div>
+      </>
+    );
+  };
 
   return (
-    <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:pb-20 2xl:gap-5">
-      <div className="lg:col-span-7 2xl:col-span-8">
-        <div className="sticky top-0 pt-6">
-          <div className="terminal-container-bg rounded-lg border border-primary-500">
-            <div className="flex space-x-2 border-b border-primary-500 px-6 py-3 ">
-              {searchParams.between ? (
-                <span>
-                  Leaderboard of {formatDate(start)} → {formatDate(end)}
-                </span>
-              ) : (
-                <span>
-                  Live Leaderboard of last 7 days | Week{" "}
-                  {getWeekNumber(new Date())} of {new Date().getFullYear()}
-                </span>
-              )}
+    <section className="border-t border-secondary-300 bg-background text-foreground dark:border-secondary-700">
+      <div className="mx-auto max-w-7xl">
+        {/* Ordering and Filters */}
+        <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
+          <div className="flex flex-col flex-wrap sm:hidden">
+            <div className="flex flex-row gap-2">
+              <Search
+                defaultValue={search}
+                handleOnChange={(e) => setSearch(e.target.value)}
+                className="w-full sm:w-1/3"
+              />
+              <button onClick={() => setShowFilter(!showFilter)}>
+                {showFilter ? (
+                  <MdFilterList className="mx-auto size-6 cursor-pointer" />
+                ) : (
+                  <MdFilterListOff className="mx-auto size-6 cursor-pointer" />
+                )}
+              </button>
             </div>
-            {data.filter(filterBySearchTerm(searchTerm.toLowerCase()))
-              .length ? (
-              <ul className="space-y-6 overflow-x-auto p-6 lg:space-y-8">
-                {data
-                  .filter(filterBySearchTerm(searchTerm.toLowerCase()))
-                  .map((contributor) => {
-                    return (
-                      <li key={contributor.user.social.github}>
-                        <LeaderboardCard
-                          position={
-                            ordering === "desc"
-                              ? data.indexOf(contributor)
-                              : data.length - data.indexOf(contributor) - 1
-                          }
-                          contributor={contributor}
-                        />
-                      </li>
-                    );
-                  })}
-              </ul>
-            ) : (
-              <div className="my-4 overflow-x-auto">
-                <div className="flex flex-row justify-center">
-                  <TbZoomQuestion size={25} />{" "}
-                  <span className="ml-4">No results found</span>
+            <div
+              className={`${showFilter ? "mt-4 max-h-[50vh]" : "max-h-0"} flex flex-col gap-4 overflow-hidden transition-all duration-500 sm:hidden`}
+            >
+              <OtherFilters />
+            </div>
+          </div>
+          <div className="hidden flex-col flex-wrap gap-4 sm:flex md:flex-row">
+            <Search
+              defaultValue={search}
+              handleOnChange={(e) => setSearch(e.target.value)}
+              className="w-full sm:w-1/3"
+            />
+            <OtherFilters />
+          </div>
+        </div>
+
+        {/* Leaderboard List */}
+        <div className="mx-4 border-secondary-600 xl:mx-0">
+          <div className="px-0 pb-10 lg:grid lg:grid-cols-12 lg:pb-20 2xl:gap-5">
+            <div className="lg:col-span-7 2xl:col-span-8">
+              <div className="sticky top-0 pt-6">
+                <div className="terminal-container-bg rounded-lg border border-primary-500">
+                  <div className="flex space-x-2 border-b border-primary-500 px-6 py-3 ">
+                    {props.duration !== "week" ? (
+                      <span>
+                        Leaderboard of {formatDate(start)} → {formatDate(end)}
+                      </span>
+                    ) : (
+                      <span>
+                        Live Leaderboard of last 7 days | Week{" "}
+                        {getWeekNumber(new Date())} of{" "}
+                        {new Date().getFullYear()}
+                      </span>
+                    )}
+                  </div>
+                  {resultSet.filter(filterBySearchTerm(search.toLowerCase()))
+                    .length ? (
+                    <ul className="space-y-6 overflow-x-auto p-6 lg:space-y-8">
+                      {resultSet
+                        .filter(filterBySearchTerm(search.toLowerCase()))
+                        .map((contributor) => {
+                          return (
+                            <li key={contributor.user.social.github}>
+                              <LeaderboardCard
+                                position={
+                                  !isReversed
+                                    ? resultSet.indexOf(contributor)
+                                    : resultSet.length -
+                                      resultSet.indexOf(contributor) -
+                                      1
+                                }
+                                contributor={contributor}
+                              />
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  ) : (
+                    <div className="my-4 overflow-x-auto">
+                      <div className="flex flex-row justify-center">
+                        <TbZoomQuestion size={25} />{" "}
+                        <span className="ml-4">No results found</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className="lg:col-span-5 2xl:col-span-4">
-        <div>
-          <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-24 ">
-            <div className="space-y-12 rounded-lg border border-primary-500 p-4">
-              <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-                <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-                  Top Contributors {!searchParams.between && "of the week"}
-                </h2>
-                <p className="text-xl text-secondary-500 dark:text-secondary-300">
-                  Our top contributers across different metrics
-                </p>
+            </div>
+            <div className="lg:col-span-5 2xl:col-span-4">
+              <div>
+                <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-24 ">
+                  <div className="space-y-12 rounded-lg border border-primary-500 p-4">
+                    <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                      <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                        Top Contributors{" "}
+                        {props.duration === "week" && "of the week"}
+                      </h2>
+                      <p className="text-xl text-secondary-500 dark:text-secondary-300">
+                        Our top contributers across different metrics
+                      </p>
+                    </div>
+                    <ul
+                      role="list"
+                      className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
+                    >
+                      <TopContributor data={resultSet} category="eod_update" />
+                      <TopContributor data={resultSet} category="pr_opened" />
+                      <TopContributor data={resultSet} category="pr_merged" />
+                      <TopContributor data={resultSet} category="pr_reviewed" />
+                      <TopContributor
+                        data={resultSet}
+                        category="issue_opened"
+                      />
+                      <TopContributor
+                        data={resultSet}
+                        category="comment_created"
+                      />
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <ul
-                role="list"
-                className="space-y-4 sm:grid sm:grid-cols-1 sm:gap-6 sm:space-y-0 lg:grid-cols-1 lg:gap-8"
-              >
-                <TopContributor data={filteredData} category="eod_update" />
-                <TopContributor data={filteredData} category="pr_opened" />
-                <TopContributor data={filteredData} category="pr_merged" />
-                <TopContributor data={filteredData} category="pr_reviewed" />
-                <TopContributor data={filteredData} category="issue_opened" />
-                <TopContributor
-                  data={filteredData}
-                  category="comment_created"
-                />
-              </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

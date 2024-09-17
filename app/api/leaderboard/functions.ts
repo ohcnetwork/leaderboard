@@ -49,7 +49,6 @@ export const getLeaderboardData = async (
         name: `${contributor.name}`,
         title: contributor.title,
         role: contributor.role,
-        content: contributor.content,
         joining_date: contributor.joining_date,
         social: {
           github: `${contributor.github}`,

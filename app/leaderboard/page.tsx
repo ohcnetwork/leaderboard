@@ -1,19 +1,5 @@
-import { Suspense } from "react";
-import LeaderboardWrapper from "./_components/LeaderboardWrapper";
-import LoadingText from "@/components/LoadingText";
-import Searchbar from "./_components/Searchbar";
+import { redirect } from "next/navigation";
 
-export default async function LeaderboardPage() {
-  return (
-    <section className="border-t border-secondary-300 bg-background text-foreground dark:border-secondary-700">
-      <div className="mx-auto max-w-7xl">
-        <Searchbar searchParams={{}} />
-        <div className="mx-4 border-secondary-600 xl:mx-0">
-          <Suspense fallback={<LoadingText text="Ranking the contributors" />}>
-            <LeaderboardWrapper searchParams={{}} />
-          </Suspense>
-        </div>
-      </div>
-    </section>
-  );
+export default async function Page() {
+  redirect("/leaderboard/week");
 }

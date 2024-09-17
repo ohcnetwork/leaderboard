@@ -24,6 +24,25 @@ export const getWeekNumber = (date: Date) => {
   return Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
 };
 
+const now = new Date();
+
+export const LeaderboardFilterDurations = [
+  "week",
+  "fortnight",
+  "month",
+  "prev-month",
+  `year-${now.getFullYear()}`,
+  `year-${now.getFullYear() - 1}`,
+] as const;
+
+export const calcDateRange = (
+  duration: (typeof LeaderboardFilterDurations)[number],
+) => {
+  if (duration === "week") return parseDateRangeSearchParam(null, 7);
+  if (duration === "fortnight") return parseDateRangeSearchParam(null, 14);
+  if (duration === "month") return parseDateRangeSearchParam(null, 28);
+};
+
 export const parseDateRangeSearchParam = (
   range?: string | null,
   relativeDaysBefore = 7,

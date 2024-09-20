@@ -15,9 +15,10 @@ import Search from "@/components/filters/Search";
 import { MdFilterList, MdFilterListOff } from "react-icons/md";
 import { BsPersonFill } from "react-icons/bs";
 import { Select } from "@/components/Select";
-import { RoleOptions } from "@/app/leaderboard/_components/Searchbar";
 import { FILTER_BY_ROLE_OPTIONS, SORT_BY_OPTIONS } from "@/lib/const";
 import { HiSortAscending, HiSortDescending } from "react-icons/hi";
+import { Popover } from "@headlessui/react";
+import Link from "next/link";
 
 const filterBySearchTerm = (searchTermLC: string) => {
   return (item: LeaderboardAPIResponse[number]) =>
@@ -66,28 +67,56 @@ export default function Leaderboard(props: Props) {
     return (
       <>
         {/* Duration Filter */}
-        {/* <DateRangePicker
-          value={{ start, end }}
-          onChange={(value) => {
-            updateSearchParam(
-              "between",
-              `${format(value.start, "yyyy-MM-dd")}...${format(
-                value.end,
-                "yyyy-MM-dd",
-              )}`,
-            );
-          }}
-          className="md:grow-1"
-        /> */}
+        <div>
+          <div className="relative inline-block w-full whitespace-nowrap text-left">
+            <Popover>
+              {({ open, close }) => (
+                <>
+                  <Popover.Button
+                    className={`block w-full rounded-md border border-secondary-600 px-4 py-2 text-sm font-medium dark:border-secondary-300 ${
+                      open
+                        ? "bg-foreground text-background"
+                        : "bg-background text-foreground"
+                    }`}
+                  >
+                    <span className="capitalize">
+                      {props.duration.replace("-", " ")}
+                    </span>
+                  </Popover.Button>
+                  <Popover.Panel className="absolute z-10 mt-2 w-full rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500 sm:min-w-[23rem] ">
+                    <div className="grid grid-cols-1 gap-2 p-4 sm:grid-cols-2">
+                      {LeaderboardFilterDurations.map((duration) => (
+                        <Link
+                          key={duration}
+                          className={`whitespace-nowrap rounded border border-secondary-500 px-2 py-1 text-center text-sm transition-all duration-100 ease-in-out hover:bg-primary-800 hover:text-white hover:dark:bg-white hover:dark:text-black ${
+                            props.duration === duration
+                              ? "bg-background text-foreground dark:bg-white dark:text-black"
+                              : ""
+                          } `}
+                          href={`/leaderboard/${duration}`}
+                          onClick={close}
+                        >
+                          <span className="capitalize">
+                            {duration.replace("-", " ")}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </Popover.Panel>
+                </>
+              )}
+            </Popover>
+          </div>
+        </div>
         {/* Role filter */}
-        <div className="md:grow-1 grow md:min-w-[120px]">
+        <div className="md:min-w-72">
           <span className="relative flex w-full rounded-md shadow-sm">
             <span className="relative inline-flex items-center rounded-l-md border border-secondary-600 px-2 py-2 dark:border-secondary-300 ">
               <BsPersonFill className="text-foreground" size={20} />
             </span>
             <Select
               multiple
-              options={RoleOptions}
+              options={ROLE_OPTIONS}
               value={roles}
               onChange={(value) => setRoles(value as typeof roles)}
               showSelectionsAs="text"
@@ -95,7 +124,7 @@ export default function Leaderboard(props: Props) {
           </span>
         </div>
         {/* Ordering */}
-        <div className="md:grow-1 mb-4 grow md:w-[120px]">
+        <div className="md:min-w-72">
           <span className="relative inline-flex w-full rounded-md shadow-sm ">
             <span
               onClick={() => setIsReversed(!isReversed)}
@@ -123,12 +152,12 @@ export default function Leaderboard(props: Props) {
       <div className="mx-auto max-w-7xl">
         {/* Ordering and Filters */}
         <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
-          <div className="flex flex-col flex-wrap sm:hidden">
+          <div className="flex flex-col sm:hidden">
             <div className="flex flex-row gap-2">
               <Search
                 defaultValue={search}
                 handleOnChange={(e) => setSearch(e.target.value)}
-                className="w-full sm:w-1/3"
+                className="w-full"
               />
               <button onClick={() => setShowFilter(!showFilter)}>
                 {showFilter ? (
@@ -144,11 +173,11 @@ export default function Leaderboard(props: Props) {
               <OtherFilters />
             </div>
           </div>
-          <div className="hidden flex-col flex-wrap gap-4 sm:flex md:flex-row">
+          <div className="hidden flex-col gap-4 sm:flex md:flex-row">
             <Search
               defaultValue={search}
               handleOnChange={(e) => setSearch(e.target.value)}
-              className="w-full sm:w-1/3"
+              className="w-full"
             />
             <OtherFilters />
           </div>
@@ -161,7 +190,7 @@ export default function Leaderboard(props: Props) {
               <div className="sticky top-0 pt-6">
                 <div className="terminal-container-bg rounded-lg border border-primary-500">
                   <div className="flex space-x-2 border-b border-primary-500 px-6 py-3 ">
-                    {props.duration !== "week" ? (
+                    {props.duration !== "last-week" ? (
                       <span>
                         Leaderboard of {formatDate(start)} → {formatDate(end)}
                       </span>
@@ -213,7 +242,7 @@ export default function Leaderboard(props: Props) {
                     <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
                       <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                         Top Contributors{" "}
-                        {props.duration === "week" && "of the week"}
+                        {props.duration === "last-week" && "of the week"}
                       </h2>
                       <p className="text-xl text-secondary-500 dark:text-secondary-300">
                         Our top contributers across different metrics

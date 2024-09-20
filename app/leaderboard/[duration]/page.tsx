@@ -1,14 +1,10 @@
 import { getLeaderboardData } from "@/app/api/leaderboard/functions";
-import Leaderboard from "@/app/leaderboard/_components/Leaderboard";
-import {
-  calcDateRange,
-  LeaderboardFilterDurations,
-  parseDateRangeSearchParam,
-} from "@/lib/utils";
+import Leaderboard from "@/app/leaderboard/[duration]/Leaderboard";
+import { calcDateRange, LeaderboardFilterDurations } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: { duration: "week" | "fortnight" | "month" | `year-${number}` };
+  params: { duration: (typeof LeaderboardFilterDurations)[number] };
 };
 
 export const dynamicParams = false;

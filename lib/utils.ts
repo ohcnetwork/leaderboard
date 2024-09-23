@@ -24,6 +24,40 @@ export const getWeekNumber = (date: Date) => {
   return Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
 };
 
+const now = new Date();
+
+export const LeaderboardFilterDurations = [
+  "last-week",
+  "last-fortnight",
+  "last-month",
+  "previous-month",
+  `year-${now.getFullYear()}`,
+  `year-${now.getFullYear() - 1}`,
+] as const;
+
+export const calcDateRange = (
+  duration: (typeof LeaderboardFilterDurations)[number],
+) => {
+  if (duration === "last-week") return parseDateRangeSearchParam(null, 7);
+  if (duration === "last-fortnight") return parseDateRangeSearchParam(null, 14);
+  if (duration === "last-month") return parseDateRangeSearchParam(null, 28);
+
+  if (duration === "previous-month") {
+    const end = new Date();
+    end.setDate(0);
+    const start = new Date(end);
+    start.setDate(1);
+    return [start, end] as const;
+  }
+
+  if (duration.startsWith("year-")) {
+    const year = parseInt(duration.replace("year-", ""));
+    const end = new Date(`${year}-12-31`);
+    const start = new Date(`${year}-01`);
+    return [start, end] as const;
+  }
+};
+
 export const parseDateRangeSearchParam = (
   range?: string | null,
   relativeDaysBefore = 7,

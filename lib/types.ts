@@ -151,7 +151,6 @@ export type LeaderboardAPIResponse = {
     name: string;
     title: string;
     role: keyof typeof FILTER_BY_ROLE_OPTIONS;
-    content: string;
     social: ContributorSocials;
     joining_date: string;
   };

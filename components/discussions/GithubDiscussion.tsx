@@ -24,7 +24,7 @@ const GithubDiscussion = ({
 
   return (
     <div
-      className={`group mt-3 flex w-full gap-3 ${minimal ? "lg:w-full" : "lg:w-[75%]"}  ${!isProfilePage ? "mt-5" : "lg:w-full"}`}
+      className={`group mt-3 flex w-full gap-3 ${minimal ? "lg:w-full" : "lg:w-3/4"}  ${!isProfilePage ? "mt-5" : "lg:w-full"}`}
     >
       {/* Left side */}
       {!isProfilePage && (

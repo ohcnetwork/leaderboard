@@ -27,7 +27,7 @@ export default async function Page() {
                   github={c.github}
                   name={c.name}
                   title={c.title}
-                  content={c.content}
+                  content={c.content && c.content.trim() !== "Still waiting for this" ? c.content : ""}
                 >
                   <Link href={`/contributors/${c.github}`}>
                     <Image

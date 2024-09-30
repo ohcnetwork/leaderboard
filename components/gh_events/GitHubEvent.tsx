@@ -233,7 +233,11 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           />
         </div>
       );
-      body = <OpenGraphImage url={event.payload.forkee.html_url} />;
+      body = (
+        <OpenGraphImage
+          url={`https://github.com/${event.payload.forkee.full_name}`}
+        />
+      );
       break;
 
     case "ReleaseEvent":

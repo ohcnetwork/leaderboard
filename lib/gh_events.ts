@@ -12,7 +12,6 @@ interface Repo {
   full_name: string;
   owner: Actor;
   url: string;
-  html_url: string;
   fork: boolean;
 }
 

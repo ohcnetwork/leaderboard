@@ -50,11 +50,13 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
 
     collaborators.add(authorLogin);
 
-    const coAuthors = commit.commit.message.match(
-      /Co-authored-by: (.+) <(.+)>/,
+    const coAuthors = commit.commit.message.matchAll(
+      /Co-authored-by: (.+?) <(.+?)>/g
     );
     if (coAuthors) {
-      for (const [name, email] of coAuthors) {
+      for (const coAuthor of coAuthors) {
+        const name = coAuthor[1]; // Access name from the match
+        const email = coAuthor[2]; // Access email from the match
         if (isBlacklisted(name)) {
           continue;
         }

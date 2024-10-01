@@ -53,8 +53,6 @@ export async function generateStaticParams() {
     .map((slug) => ({ slug: slug.file.replace(".md", "") }));
 }
 
-export const dynamicParams = false;
-
 export default async function Page({ params }: Params) {
   const { slug } = params;
   const contributor = await getContributorBySlug(slug, true);

@@ -7,8 +7,6 @@ type Props = {
   params: { duration: (typeof LeaderboardFilterDurations)[number] };
 };
 
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
   return LeaderboardFilterDurations.map((duration) => ({ duration }));
 }

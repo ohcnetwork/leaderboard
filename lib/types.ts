@@ -10,6 +10,7 @@ export interface Contributor {
   path: string;
   content: string;
   activityData: ActivityData;
+  firstActivity: string | null;
   highlights: Highlights;
   leadership?: string[];
   weekSummary: WeekSummary;

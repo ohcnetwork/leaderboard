@@ -199,6 +199,11 @@ export async function getContributorBySlug(file: string, detail = false) {
         0,
       ),
     },
+    firstActivity: activityData.activity.reduce<string | null>(
+      (p, v) =>
+        p == null ? v.time : new Date(p) > new Date(v.time) ? v.time : p,
+      null,
+    ),
     highlights: {
       points: weightedActivity.points,
       eod_update: weightedActivity.eod_update,

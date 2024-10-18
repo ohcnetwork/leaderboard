@@ -39,6 +39,11 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   const response = await octokit.request("GET " + url);
   const commits = response.data;
   for (const commit of commits) {
+    // Merge commits has more than 1 parent commits; skip merge commit authors from being counted as collaborators
+    if (commit.parents.length > 1) {
+      continue;
+    }
+
     let authorLogin = commit.author && commit.author.login;
     if (!authorLogin) {
       authorLogin = commit.commit.author.name;

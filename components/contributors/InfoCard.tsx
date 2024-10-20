@@ -38,8 +38,7 @@ export default async function InfoCard({
             <ContributorImage
               contributorGithub={contributor.github}
               rank={rank}
-              height={112}
-              width={112}
+              size="large"
             />
           </Link>
         </div>

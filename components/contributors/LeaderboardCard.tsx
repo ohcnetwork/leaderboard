@@ -50,8 +50,7 @@ export default function LeaderboardCard({
               <ContributorImage
                 contributorGithub={contributor.user.social.github}
                 rank={position + 1}
-                height={56}
-                width={56}
+                size="large"
               />
               <div className="ml-4 mr-4 basis-3/5 text-wrap pr-10">
                 <div className="w-[180px] truncate font-bold text-green-500">

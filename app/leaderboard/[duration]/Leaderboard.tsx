@@ -10,6 +10,7 @@ import {
 } from "@/lib/utils";
 import { LeaderboardAPIResponse } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
+import { useState } from "react";
 import Search from "@/components/filters/Search";
 import { MdFilterList, MdFilterListOff } from "react-icons/md";
 import { BsPersonFill } from "react-icons/bs";
@@ -42,12 +43,13 @@ type Props = {
 };
 
 export default function Leaderboard(props: Props) {
+  const [showFilter, setShowFilter] = useState(false);
   const [start, end] = calcDateRange(props.duration)!;
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const search = searchParams.get("search") || "";
-  const showFilter = searchParams.get("showFilter") === "true";
+
   const roles = searchParams.get("roles")?.split(",") || [];
   const ordering = ORDERING_OPTIONS.find(
     (option) => option.value === searchParams.get("ordering"),
@@ -187,9 +189,7 @@ export default function Leaderboard(props: Props) {
                 }
                 className="w-full"
               />
-              <button
-                onClick={() => updateSearchParams("showFilter", !showFilter)}
-              >
+              <button onClick={() => setShowFilter(!showFilter)}>
                 {showFilter ? (
                   <MdFilterList className="mx-auto size-6 cursor-pointer" />
                 ) : (

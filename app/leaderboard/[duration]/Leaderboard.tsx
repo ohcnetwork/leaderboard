@@ -14,11 +14,12 @@ import { useState } from "react";
 import Search from "@/components/filters/Search";
 import { MdFilterList, MdFilterListOff } from "react-icons/md";
 import { BsPersonFill } from "react-icons/bs";
-import { Select } from "@/components/Select";
+import { Select, SelectOption } from "@/components/Select";
 import { FILTER_BY_ROLE_OPTIONS, SORT_BY_OPTIONS } from "@/lib/const";
 import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 import { Popover } from "@headlessui/react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const filterBySearchTerm = (searchTermLC: string) => {
   return (item: LeaderboardAPIResponse[number]) =>
@@ -42,26 +43,41 @@ type Props = {
 };
 
 export default function Leaderboard(props: Props) {
-  const [start, end] = calcDateRange(props.duration)!;
-  const [search, setSearch] = useState("");
   const [showFilter, setShowFilter] = useState(false);
-  const [roles, setRoles] = useState(ROLE_OPTIONS);
-  const [ordering, setOrdering] = useState<(typeof ORDERING_OPTIONS)[number]>({
-    value: "points",
-    text: "Points",
-  });
-  const [isReversed, setIsReversed] = useState(false);
+  const [start, end] = calcDateRange(props.duration)!;
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const search = searchParams.get("search") || "";
+
+  const roles = searchParams.get("roles")?.split(",") || [];
+  const ordering = ORDERING_OPTIONS.find(
+    (option) => option.value === searchParams.get("ordering"),
+  ) || { value: "points", text: "Points" };
+  const isReversed = searchParams.get("isReversed") === "true";
 
   let resultSet = props.data;
 
   if (roles.length) {
-    const selected = roles.map(({ value }) => value);
-    resultSet = resultSet.filter((a) => selected.includes(a.user.role));
+    resultSet = resultSet.filter((a) => roles.includes(a.user.role));
   }
 
   if (isReversed) {
     resultSet = resultSet.toReversed();
   }
+
+  const updateSearchParams = (
+    key: string,
+    value: string | boolean | string[],
+  ) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (Array.isArray(value)) {
+      params.set(key, value.join(","));
+    } else {
+      params.set(key, value.toString());
+    }
+    router.push(`?${params.toString()}`);
+  };
 
   const OtherFilters = () => {
     return (
@@ -117,8 +133,15 @@ export default function Leaderboard(props: Props) {
             <Select
               multiple
               options={ROLE_OPTIONS}
-              value={roles}
-              onChange={(value) => setRoles(value as typeof roles)}
+              value={ROLE_OPTIONS.filter((option) =>
+                roles.includes(option.value),
+              )}
+              onChange={(value: SelectOption | SelectOption[]) =>
+                updateSearchParams(
+                  "roles",
+                  (Array.isArray(value) ? value : [value]).map((v) => v.value),
+                )
+              }
               showSelectionsAs="text"
             />
           </span>
@@ -127,7 +150,7 @@ export default function Leaderboard(props: Props) {
         <div className="md:min-w-72">
           <span className="relative inline-flex w-full rounded-md shadow-sm ">
             <span
-              onClick={() => setIsReversed(!isReversed)}
+              onClick={() => updateSearchParams("isReversed", !isReversed)}
               className="relative inline-flex cursor-pointer items-center rounded-l-md border border-secondary-600 px-2 py-2 dark:border-secondary-300"
             >
               {!isReversed ? (
@@ -139,7 +162,12 @@ export default function Leaderboard(props: Props) {
             <Select
               options={ORDERING_OPTIONS}
               value={ordering}
-              onChange={(value) => setOrdering(value as typeof ordering)}
+              onChange={(value: SelectOption | SelectOption[]) =>
+                updateSearchParams(
+                  "ordering",
+                  Array.isArray(value) ? value[0].value : value.value,
+                )
+              }
             />
           </span>
         </div>
@@ -156,7 +184,9 @@ export default function Leaderboard(props: Props) {
             <div className="flex flex-row gap-2">
               <Search
                 defaultValue={search}
-                handleOnChange={(e) => setSearch(e.target.value)}
+                handleOnChange={(e) =>
+                  updateSearchParams("search", e.target.value)
+                }
                 className="w-full"
               />
               <button onClick={() => setShowFilter(!showFilter)}>
@@ -176,7 +206,9 @@ export default function Leaderboard(props: Props) {
           <div className="hidden flex-col gap-4 sm:flex md:flex-row">
             <Search
               defaultValue={search}
-              handleOnChange={(e) => setSearch(e.target.value)}
+              handleOnChange={(e) =>
+                updateSearchParams("search", e.target.value)
+              }
               className="w-full"
             />
             <OtherFilters />

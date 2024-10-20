@@ -1,6 +1,8 @@
 "use client";
+
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
+
 const HoverInfocard = dynamic(() => import("./HoverInfocard"), {
   ssr: false,
   loading: () => (

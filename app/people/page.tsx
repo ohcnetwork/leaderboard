@@ -1,18 +1,22 @@
 import HoverCardWrapper from "@/app/people/_components/HoverCardWrapper";
 import { getContributors } from "@/lib/api";
+import { Contributor } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import { TbZoomQuestion } from "react-icons/tb";
+
 export default async function Page() {
   const contributors = (await getContributors()).sort(
     (a, b) => b.highlights.points - a.highlights.points,
   );
 
+  console.table(getContributorsGroupedByFirstActivityMonth(contributors));
+
   return (
     <div className="mx-auto mb-20 flex max-w-full flex-col items-center justify-center gap-8 px-24">
       {contributors.length ? (
         <>
-          <h1 className="text-center text-6xl leading-none drop-shadow-lg">
+          <h1 className="pt-10 text-center text-6xl leading-none drop-shadow-lg">
             <p>{contributors.length}</p>
             <p className="text-xl">contributors</p>
           </h1>
@@ -46,6 +50,16 @@ export default async function Page() {
               </li>
             ))}
           </ul>
+          {/* <div className="whitespace-nowrap">
+            <PeopleJoinOrgChart
+              data={Object.entries(
+                getContributorsGroupedByFirstActivityMonth(contributors),
+              ).map(([group, contributors]) => {
+                const [year, month] = group.split("-").map((a) => parseInt(a));
+                return { year, month, newContributors: contributors.length };
+              })}
+            />
+          </div> */}
         </>
       ) : (
         <div className="my-4 overflow-x-auto">
@@ -58,3 +72,24 @@ export default async function Page() {
     </div>
   );
 }
+
+const getContributorsGroupedByFirstActivityMonth = (
+  contributors: Contributor[],
+) => {
+  const result: Record<string, number> = {};
+  for (const contributor of contributors) {
+    if (!contributor.firstActivity) {
+      continue;
+    }
+    const firstActivity = new Date(contributor.firstActivity);
+    const group = `${firstActivity.getFullYear()}-${firstActivity.getMonth() + 1}`;
+    result[group] ??= 0;
+    result[group] += 1;
+  }
+
+  return Object.fromEntries(
+    Object.entries(result).toSorted(
+      ([a], [b]) => new Date(a).getTime() - new Date(b).getTime(),
+    ),
+  );
+};

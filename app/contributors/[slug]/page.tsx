@@ -119,7 +119,7 @@ export default async function Page({ params }: Params) {
           </div>
         )}
 
-        <div className="pl-4 md:p-0">
+        <div className="px-4 md:p-0">
           <div className="mt-8 flex items-end justify-between">
             <h3 className="font-bold text-foreground">Graduate Attributes</h3>
             <Link
@@ -142,8 +142,8 @@ export default async function Page({ params }: Params) {
             </Link>
           </div>
           <div className="mt-3">
-            <div className="flex w-full space-x-6 overflow-x-auto md:grid md:grid-cols-2 md:space-x-0">
-              <div className="flex w-3/4 shrink-0 flex-col rounded-tl-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:pr-2">
+            <div className="w-full md:grid md:grid-cols-2 md:space-x-0 md:overflow-x-auto">
+              <div className="flex w-full shrink-0 flex-col rounded-tl-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:pr-2">
                 <div className="flex items-center rounded-t-lg bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center">
                   <p className="font-semibold text-foreground md:text-lg">
                     Individual Skills
@@ -160,7 +160,7 @@ export default async function Page({ params }: Params) {
                   ))}
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col rounded-tr-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:border-l-4 md:border-indigo-700 md:pl-2">
+              <div className="flex w-full shrink-0 flex-col rounded-tr-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:border-l-4 md:border-indigo-700 md:pl-2">
                 <div className="flex items-center rounded-t-lg bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center">
                   <p className="font-semibold text-foreground md:text-lg">
                     Team Skills
@@ -177,7 +177,7 @@ export default async function Page({ params }: Params) {
                   ))}
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col-reverse justify-end rounded-bl-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-t-4 md:border-indigo-700 md:pr-2 md:pt-2">
+              <div className="flex w-full shrink-0 flex-col-reverse justify-end rounded-bl-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-t-4 md:border-indigo-700 md:pr-2 md:pt-2">
                 <div className="flex flex-wrap gap-2 py-2 pl-2 pr-2 leading-tight md:flex-row-reverse md:pr-0">
                   {advancedSkills.map((skill) => (
                     <GraduateAttributeBadge
@@ -194,7 +194,7 @@ export default async function Page({ params }: Params) {
                   </p>
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col-reverse justify-end rounded-br-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-l-4 md:border-t-4 md:border-indigo-700 md:pl-2 md:pt-2">
+              <div className="flex w-full shrink-0 flex-col-reverse justify-end rounded-br-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-l-4 md:border-t-4 md:border-indigo-700 md:pl-2 md:pt-2">
                 <div className="flex flex-wrap gap-2 py-2 pl-2 pr-2 md:pl-0">
                   {humanValues.map((skill) => (
                     <GraduateAttributeBadge

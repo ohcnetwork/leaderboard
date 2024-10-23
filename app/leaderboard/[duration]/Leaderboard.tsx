@@ -50,28 +50,18 @@ export default function Leaderboard(props: Props) {
 
   const search = searchParams.get("search") || "";
 
-  const [roles, setRoles] = useState<string[]>(
-    searchParams.get("roles")?.split(",") || [],
-  );
+  const roles = searchParams.get("roles")?.split(",") || [];
 
-  const [ordering, setOrdering] = useState<SelectOption>(
-    ORDERING_OPTIONS.find(
-      (option) => option.value === searchParams.get("ordering"),
-    ) || { value: "points", text: "Points" },
-  );
+  const ordering = ORDERING_OPTIONS.find(
+    (option) => option.value === searchParams.get("ordering"),
+  ) || { value: "points", text: "Points" };
 
-  const [resultSet, setResultSet] = useState(props.data);
+  const isReversed = searchParams.get("isReversed") === "true";
 
-  const [isReversed, setIsReversed] = useState<boolean>(
-    searchParams.get("isReversed") === "true",
-  );
+  let resultSet = props.data;
 
-  const updateResultSet = (
-    isReversed: boolean,
-    roles: string[],
-    ordering: SelectOption,
-  ) => {
-    const filteredAndSortedResultSet = [...props.data].sort((a, b) => {
+  if (ordering.value) {
+    resultSet = props.data.sort((a, b) => {
       const aValue = a.highlights[ordering.value as keyof typeof a.highlights];
       const bValue = b.highlights[ordering.value as keyof typeof a.highlights];
 
@@ -82,33 +72,16 @@ export default function Leaderboard(props: Props) {
         ? aNumericValue - bNumericValue
         : bNumericValue - aNumericValue;
     });
+  }
 
-    setResultSet(
-      roles.length
-        ? filteredAndSortedResultSet.filter((a) => roles.includes(a.user.role))
-        : filteredAndSortedResultSet,
-    );
-  };
+  if (roles.length) {
+    resultSet = resultSet.filter((a) => roles.includes(a.user.role));
+  }
+
   const updateSearchParams = (
     key: string,
     value: string | boolean | string[],
   ) => {
-    if (key === "isReversed") {
-      setIsReversed(value as boolean);
-      updateResultSet(value as boolean, roles, ordering);
-    } else if (key === "roles") {
-      setRoles(value as string[]);
-      updateResultSet(isReversed, value as string[], ordering);
-    } else if (key === "ordering") {
-      const ordering = ORDERING_OPTIONS.find(
-        (option) => option.value === value,
-      ) || {
-        value: "points",
-        text: "Points",
-      };
-      setOrdering(ordering);
-      updateResultSet(isReversed, roles, ordering);
-    }
     const params = new URLSearchParams(searchParams.toString());
     if (Array.isArray(value)) {
       params.set(key, value.join(","));

@@ -60,22 +60,17 @@ export default function Leaderboard(props: Props) {
 
   let resultSet = props.data;
 
-  if (ordering.value || isReversed) {
-    resultSet = props.data.sort((a, b) => {
-      const aValue = a.highlights[ordering.value as keyof typeof a.highlights];
-      const bValue = b.highlights[ordering.value as keyof typeof a.highlights];
-
-      const aNumericValue = typeof aValue === "number" ? aValue : 0;
-      const bNumericValue = typeof bValue === "number" ? bValue : 0;
-
-      return isReversed
-        ? aNumericValue - bNumericValue
-        : bNumericValue - aNumericValue;
-    });
-  }
-
   if (roles.length) {
     resultSet = resultSet.filter((a) => roles.includes(a.user.role));
+  }
+
+  if (ordering.value || isReversed) {
+    const key =
+      ordering.value as keyof LeaderboardAPIResponse[number]["highlights"];
+    resultSet = props.data.sort((a, b) => {
+      const delta = b.highlights[key] - a.highlights[key];
+      return isReversed ? -delta : delta;
+    });
   }
 
   const updateSearchParams = (

@@ -60,7 +60,7 @@ export default function Leaderboard(props: Props) {
 
   let resultSet = props.data;
 
-  if (ordering.value) {
+  if (ordering.value || isReversed) {
     resultSet = props.data.sort((a, b) => {
       const aValue = a.highlights[ordering.value as keyof typeof a.highlights];
       const bValue = b.highlights[ordering.value as keyof typeof a.highlights];

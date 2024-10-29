@@ -9,7 +9,19 @@ import { parseISO } from "date-fns";
 import { isBlacklisted } from "./utils.js";
 import { octokit } from "./config.js";
 const processedData: ProcessData = {};
-
+async function fetchdefaultbranch(org: string, repo: string) {
+  try {
+    const { data } = await octokit.request('GET /repos/{owner}/{repo}', {
+      owner: org,
+      repo: repo,
+    });
+    return data.default_branch;
+  } catch (e) {
+    console.error(
+      `Error fetching default branch for organisation ${org} /${repo} `,
+    );
+  }
+}
 function appendEvent(user: string, event: Activity) {
   console.log(`Appending event for ${user}`);
   if (!processedData[user]) {
@@ -33,7 +45,8 @@ const emailUserCache: { [key: string]: string } = {};
 
 async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   const collaborators: Set<string> = new Set();
-
+  const repo = event.repo.name.split('/');
+  const default_branch = await fetchdefaultbranch(repo[0], repo[1])
   const url: string | undefined = event.payload.pull_request?.commits_url;
 
   const response = await octokit.request("GET " + url);
@@ -105,19 +118,22 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
 
   if (collaborators.size > 1) {
     const collaboratorArray = Array.from(collaborators); // Convert Set to Array
-    for (const user of collaboratorArray) {
-      const others = new Set(collaborators);
-      const othersArray = Array.from(others);
+    if (event.payload.pull_request.base.ref === default_branch) {
+      for (const user of collaboratorArray) {
+        const others = new Set(collaborators);
+        const othersArray = Array.from(others);
 
-      others.delete(user);
-      appendEvent(user, {
-        type: "pr_collaborated",
-        title: `${event.repo.name}#${event.payload.pull_request.number}`,
-        time: eventTime.toISOString(),
-        link: event.payload.pull_request.html_url,
-        text: event.payload.pull_request.title,
-        collaborated_with: [...othersArray],
-      });
+        others.delete(user);
+
+        appendEvent(user, {
+          type: "pr_collaborated",
+          title: `${event.repo.name}#${event.payload.pull_request.number}`,
+          time: eventTime.toISOString(),
+          link: event.payload.pull_request.html_url,
+          text: event.payload.pull_request.title,
+          collaborated_with: [...othersArray],
+        });
+      }
     }
   }
 }

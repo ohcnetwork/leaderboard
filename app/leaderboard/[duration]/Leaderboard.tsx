@@ -49,7 +49,6 @@ export default function Leaderboard(props: Props) {
   const searchParams = useSearchParams();
 
   const search = searchParams.get("search") || "";
-
   const roles = searchParams.get("roles")?.split(",") || [];
 
   const ordering = ORDERING_OPTIONS.find(
@@ -67,7 +66,7 @@ export default function Leaderboard(props: Props) {
   if (ordering.value || isReversed) {
     const key =
       ordering.value as keyof LeaderboardAPIResponse[number]["highlights"];
-    resultSet = props.data.sort((a, b) => {
+    resultSet = resultSet.sort((a, b) => {
       const delta = b.highlights[key] - a.highlights[key];
       return isReversed ? -delta : delta;
     });

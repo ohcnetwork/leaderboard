@@ -8,22 +8,27 @@ const path = require("path");
 const githubDataPath = path.join(__dirname, "../../data-repo/data/github");
 
 async function main() {
-  const files = await readdir(githubDataPath);
+  let files = await readdir(githubDataPath);
+  files = files.filter((f) => f.endsWith(".json"));
   console.log(`Processing ${files.length} files...`);
 
   await Promise.all(
     files.map(async (file) => {
       const filePath = path.join(githubDataPath, file);
-      const data = JSON.parse(await readFile(filePath));
+      const data = JSON.parse(await readFile(filePath, { encoding: "utf-8" }));
 
+      const before = data.activity.length;
       data.activity = Object.values(
         Object.fromEntries(
           data.activity.map((event) => [JSON.stringify(event), event]),
         ),
       );
-      await writeFile(filePath, JSON.stringify(data, undefined, "  "), {
-        encoding: "utf-8",
-      });
+      const after = data.activity.length;
+      if (before !== after) {
+        await writeFile(filePath, JSON.stringify(data, undefined, "  "), {
+          encoding: "utf-8",
+        });
+      }
     }),
   );
 

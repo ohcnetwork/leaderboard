@@ -15,7 +15,18 @@ interface Comment {
 }
 
 export interface PullRequest {
-  base:{ref:string};
+  base: {
+    label: string;
+    ref: string;
+    sha: string;
+    user: Actor;
+  };
+  head: {
+    label: string;
+    ref: string;
+    sha: string;
+    user: Actor;
+  };
   html_url: string;
   user: Actor;
   title: string;

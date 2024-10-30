@@ -246,7 +246,13 @@ export default async function Page({ params }: Params) {
           <dl className="mt-4 text-center sm:mx-auto sm:grid sm:max-w-3xl sm:grid-cols-3 sm:gap-8">
             <div className="flex flex-col">
               <dt className="order-3 mt-2 text-lg font-medium leading-6 text-primary-300">
-                Pull Request
+                <Link
+                  href={`https://github.com/pulls?q=sort%3Aupdated-desc+org%3A${env.NEXT_PUBLIC_GITHUB_ORG}+is%3Apr+is%3Aopen+archived%3Afalse+author%3A${contributor.github}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Pull Requests
+                </Link>
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.pr_opened}

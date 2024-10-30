@@ -8,8 +8,24 @@ import { calculateTurnaroundTime } from "./utils.js";
 import { parseISO } from "date-fns";
 import { isBlacklisted } from "./utils.js";
 import { octokit } from "./config.js";
-const processedData: ProcessData = {};
 
+const processedData: ProcessData = {};
+const defaultBranches: Record<string, string> = {};
+
+async function getDefaultBranch(owner: string, repo: string) {
+  if (defaultBranches[repo] == null) {
+    try {
+      const { data } = await octokit.request("GET /repos/{owner}/{repo}", {
+        owner,
+        repo,
+      });
+      defaultBranches[repo] = data.default_branch;
+    } catch (e) {
+      console.error(`Error fetching default branch for  ${owner}/${repo} `);
+    }
+  }
+  return defaultBranches[repo];
+}
 function appendEvent(user: string, event: Activity) {
   console.log(`Appending event for ${user}`);
   if (!processedData[user]) {
@@ -34,10 +50,14 @@ const emailUserCache: { [key: string]: string } = {};
 async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   const collaborators: Set<string> = new Set();
 
-  const url: string | undefined = event.payload.pull_request?.commits_url;
+  const [owner, repo] = event.repo.name.split("/");
+  const defaultBranch = await getDefaultBranch(owner, repo);
+  if (event.payload.pull_request.base.ref !== defaultBranch) {
+    return;
+  }
 
-  const response = await octokit.request("GET " + url);
-  const commits = response.data;
+  const url = event.payload.pull_request?.commits_url;
+  const { data: commits } = await octokit.request("GET " + url);
   for (const commit of commits) {
     // Merge commits has more than 1 parent commits; skip merge commit authors from being counted as collaborators
     if (commit.parents.length > 1) {
@@ -104,11 +124,10 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   }
 
   if (collaborators.size > 1) {
-    const collaboratorArray = Array.from(collaborators); // Convert Set to Array
+    const collaboratorArray = Array.from(collaborators);
     for (const user of collaboratorArray) {
       const others = new Set(collaborators);
       const othersArray = Array.from(others);
-
       others.delete(user);
       appendEvent(user, {
         type: "pr_collaborated",

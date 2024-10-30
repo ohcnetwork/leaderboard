@@ -7,6 +7,8 @@ const path = require("path");
 
 const githubDataPath = path.join(__dirname, "../../data-repo/data/github");
 
+const hash = (event) => `${event.type}--${event.title}`;
+
 async function main() {
   let files = await readdir(githubDataPath);
   files = files.filter((f) => f.endsWith(".json"));
@@ -19,9 +21,7 @@ async function main() {
 
       const before = data.activity.length;
       data.activity = Object.values(
-        Object.fromEntries(
-          data.activity.map((event) => [JSON.stringify(event), event]),
-        ),
+        Object.fromEntries(data.activity.map((event) => [hash(event), event])),
       );
       const after = data.activity.length;
       if (before !== after) {

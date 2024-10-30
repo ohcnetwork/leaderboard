@@ -24,7 +24,7 @@ export const mergedData = async (
       const combinedActivities = [...userData.activity, ...existing.activity];
 
       userData.activity = deduplicate(
-        (activity) => `${activity.type}--${activity.link}`,
+        (activity) => `${activity.type}--${activity.title}`,
         combinedActivities,
       );
 

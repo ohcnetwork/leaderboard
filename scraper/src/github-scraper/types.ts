@@ -15,7 +15,7 @@ interface Comment {
 }
 
 export interface PullRequest {
-  base: any;
+  base:{ref:string};
   html_url: string;
   user: Actor;
   title: string;

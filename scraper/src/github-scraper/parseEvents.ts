@@ -9,8 +9,12 @@ import { parseISO } from "date-fns";
 import { isBlacklisted } from "./utils.js";
 import { octokit } from "./config.js";
 const processedData: ProcessData = {};
-async function fetchdefaultbranch(org: string, repo: string) {
+const DefaultBranch = new Map<string, string>();
+async function getDefaultBranch(org: string, repo: string) {
   try {
+    if (DefaultBranch.has(`${org}/${repo}`)) {
+      return DefaultBranch.get(`${org}/${repo}`);
+    }
     const { data } = await octokit.request('GET /repos/{owner}/{repo}', {
       owner: org,
       repo: repo,
@@ -46,7 +50,7 @@ const emailUserCache: { [key: string]: string } = {};
 async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   const collaborators: Set<string> = new Set();
   const repo = event.repo.name.split('/');
-  const default_branch = await fetchdefaultbranch(repo[0], repo[1])
+  const default_branch = await getDefaultBranch(repo[0], repo[1])
   const url: string | undefined = event.payload.pull_request?.commits_url;
 
   const response = await octokit.request("GET " + url);
@@ -116,9 +120,8 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
     }
   }
 
-  if (collaborators.size > 1) {
+  if (collaborators.size > 1 && event.payload.pull_request.base.ref === default_branch) {
     const collaboratorArray = Array.from(collaborators); // Convert Set to Array
-    if (event.payload.pull_request.base.ref === default_branch) {
       for (const user of collaboratorArray) {
         const others = new Set(collaborators);
         const othersArray = Array.from(others);
@@ -133,7 +136,6 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
           text: event.payload.pull_request.title,
           collaborated_with: [...othersArray],
         });
-      }
     }
   }
 }

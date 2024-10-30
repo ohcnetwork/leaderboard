@@ -67,6 +67,7 @@ jobs:
       - name: Scrape EOD updates from Slack Channel
         if: ${{ env.SLACK_API_TOKEN && env.SLACK_CHANNEL }}
         run: python scraper/src/slack.py --lookback_days=2
+        continue-on-error: true
         env:
           SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
           SLACK_CHANNEL: ${{ inputs.slack-eod-channel }}

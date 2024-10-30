@@ -9,7 +9,7 @@ const githubDataPath = path.join(__dirname, "../../data-repo/data/github");
 
 const hash = (activity) => {
   if (activity.type === "pr_reviewed") {
-    `${activity.type}--${activity.title}`;
+    return `${activity.type}--${activity.title}`;
   }
   return `${activity.type}--${activity.link}`;
 };

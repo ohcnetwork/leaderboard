@@ -25,7 +25,7 @@ export const mergedData = async (
 
       userData.activity = deduplicate((activity) => {
         if (activity.type === "pr_reviewed") {
-          `${activity.type}--${activity.title}`;
+          return `${activity.type}--${activity.title}`;
         }
         return `${activity.type}--${activity.link}`;
       }, combinedActivities);

@@ -7,7 +7,12 @@ const path = require("path");
 
 const githubDataPath = path.join(__dirname, "../../data-repo/data/github");
 
-const hash = (event) => `${event.type}--${event.title}`;
+const hash = (activity) => {
+  if (activity.type === "pr_reviewed") {
+    `${activity.type}--${activity.title}`;
+  }
+  return `${activity.type}--${activity.link}`;
+};
 
 async function main() {
   let files = await readdir(githubDataPath);

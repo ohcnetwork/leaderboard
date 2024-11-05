@@ -202,15 +202,15 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
         }
         break;
       case "PullRequestReviewEvent":
-          if (event.payload.pull_request.user.login !== user.login) {
-            appendEvent(user, {
-              type: "pr_reviewed",
-              time: eventTime?.toISOString(),
-              title: `${event.repo.name}#${event.payload.pull_request.number}`,
-              link: event.payload.review.html_url,
-              text: event.payload.pull_request.title,
-            });
-          }
+        if (event.payload.pull_request.user.login !== user) {
+          appendEvent(user, {
+            type: "pr_reviewed",
+            time: eventTime?.toISOString(),
+            title: `${event.repo.name}#${event.payload.pull_request.number}`,
+            link: event.payload.review.html_url,
+            text: event.payload.pull_request.title,
+          });
+        }
         break;
       default:
         break;

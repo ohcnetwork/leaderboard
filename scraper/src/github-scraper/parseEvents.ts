@@ -75,14 +75,24 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
 
     collaborators.add(authorLogin);
 
-    const coAuthors = commit.commit.message.match(
-      /Co-authored-by: (.+) <(.+)>/,
-    );
-    if (coAuthors) {
-      for (const [name, email] of coAuthors) {
-        if (isBlacklisted(name)) {
-          continue;
-        }
+    async function processCoAuthors(
+      commit: any,
+      isBlacklisted: (login: string) => boolean,
+      nameUserCache: { [key: string]: string } = {},
+      emailUserCache: { [key: string]: string } = {},
+      collaborators: Set<string>,
+      octokit: any,
+    ): Promise<void> {
+      const coAuthorRegex = /Co-authored-by:\s*(.+)\s*<(.+)>/g;
+
+      const coAuthors = commit.commit.message.matchAll(coAuthorRegex);
+
+      for (const match of coAuthors) {
+        // Destructure and ignore the full match at index 0, using name and email only
+        console.log(coAuthors);
+        const [, name, email] = match;
+
+        if (isBlacklisted(name)) continue;
 
         if (name in nameUserCache) {
           collaborators.add(nameUserCache[name]);
@@ -98,7 +108,6 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
           const usersByEmail = await octokit.request("GET /search/users", {
             q: email,
           });
-
           if (usersByEmail.data.total_count > 0) {
             const login = usersByEmail.data.items[0].login;
             emailUserCache[email] = login;
@@ -108,7 +117,6 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
           const usersByName = await octokit.request("GET /search/users", {
             q: name,
           });
-
           if (usersByName.data.total_count === 1) {
             const login = usersByName.data.items[0].login;
             nameUserCache[name] = login;

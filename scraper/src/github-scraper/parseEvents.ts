@@ -8,24 +8,8 @@ import { calculateTurnaroundTime } from "./utils.js";
 import { parseISO } from "date-fns";
 import { isBlacklisted } from "./utils.js";
 import { octokit } from "./config.js";
-
 const processedData: ProcessData = {};
-const defaultBranches: Record<string, string> = {};
 
-async function getDefaultBranch(owner: string, repo: string) {
-  if (defaultBranches[repo] == null) {
-    try {
-      const { data } = await octokit.request("GET /repos/{owner}/{repo}", {
-        owner,
-        repo,
-      });
-      defaultBranches[repo] = data.default_branch;
-    } catch (e) {
-      console.error(`Error fetching default branch for  ${owner}/${repo} `);
-    }
-  }
-  return defaultBranches[repo];
-}
 function appendEvent(user: string, event: Activity) {
   console.log(`Appending event for ${user}`);
   if (!processedData[user]) {
@@ -50,20 +34,11 @@ const emailUserCache: { [key: string]: string } = {};
 async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   const collaborators: Set<string> = new Set();
 
-  const [owner, repo] = event.repo.name.split("/");
-  const defaultBranch = await getDefaultBranch(owner, repo);
-  if (event.payload.pull_request.base.ref !== defaultBranch) {
-    return;
-  }
+  const url: string | undefined = event.payload.pull_request?.commits_url;
 
-  const url = event.payload.pull_request?.commits_url;
-  const { data: commits } = await octokit.request("GET " + url);
+  const response = await octokit.request("GET " + url);
+  const commits = response.data;
   for (const commit of commits) {
-    // Merge commits has more than 1 parent commits; skip merge commit authors from being counted as collaborators
-    if (commit.parents.length > 1) {
-      continue;
-    }
-
     let authorLogin = commit.author && commit.author.login;
     if (!authorLogin) {
       authorLogin = commit.commit.author.name;
@@ -75,24 +50,15 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
 
     collaborators.add(authorLogin);
 
-    async function processCoAuthors(
-      commit: any,
-      isBlacklisted: (login: string) => boolean,
-      nameUserCache: { [key: string]: string } = {},
-      emailUserCache: { [key: string]: string } = {},
-      collaborators: Set<string>,
-      octokit: any,
-    ): Promise<void> {
-      const coAuthorRegex = /Co-authored-by:\s*(.+)\s*<(.+)>/g;
-
-      const coAuthors = commit.commit.message.matchAll(coAuthorRegex);
-
-      for (const match of coAuthors) {
-        // Destructure and ignore the full match at index 0, using name and email only
-        console.log(coAuthors);
-        const [, name, email] = match;
-
-        if (isBlacklisted(name)) continue;
+    const coAuthors = commit.commit.message.matchAll(
+      /Co-authored-by: (.+?) <(.+?)>/g,
+    );
+    if (coAuthors) {
+      //First Element of the Array is full match and not the name
+      for (const [, name, email] of coAuthors) {
+        if (isBlacklisted(name)) {
+          continue;
+        }
 
         if (name in nameUserCache) {
           collaborators.add(nameUserCache[name]);
@@ -108,6 +74,7 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
           const usersByEmail = await octokit.request("GET /search/users", {
             q: email,
           });
+
           if (usersByEmail.data.total_count > 0) {
             const login = usersByEmail.data.items[0].login;
             emailUserCache[email] = login;
@@ -117,6 +84,7 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
           const usersByName = await octokit.request("GET /search/users", {
             q: name,
           });
+
           if (usersByName.data.total_count === 1) {
             const login = usersByName.data.items[0].login;
             nameUserCache[name] = login;
@@ -132,10 +100,11 @@ async function addCollaborations(event: PullRequestEvent, eventTime: Date) {
   }
 
   if (collaborators.size > 1) {
-    const collaboratorArray = Array.from(collaborators);
+    const collaboratorArray = Array.from(collaborators); // Convert Set to Array
     for (const user of collaboratorArray) {
       const others = new Set(collaborators);
       const othersArray = Array.from(others);
+
       others.delete(user);
       appendEvent(user, {
         type: "pr_collaborated",
@@ -210,15 +179,13 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
         }
         break;
       case "PullRequestReviewEvent":
-        if (event.payload.pull_request.user.login !== user) {
-          appendEvent(user, {
-            type: "pr_reviewed",
-            time: eventTime?.toISOString(),
-            title: `${event.repo.name}#${event.payload.pull_request.number}`,
-            link: event.payload.review.html_url,
-            text: event.payload.pull_request.title,
-          });
-        }
+        appendEvent(user, {
+          type: "pr_reviewed",
+          time: eventTime?.toISOString(),
+          title: `${event.repo.name}#${event.payload.pull_request.number}`,
+          link: event.payload.review.html_url,
+          text: event.payload.pull_request.title,
+        });
         break;
       default:
         break;

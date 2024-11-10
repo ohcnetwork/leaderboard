@@ -110,6 +110,34 @@ const getPullRequests = async (repo) => {
   return repository.pullRequests.nodes;
 };
 
+// New function to fetch discussions
+const getDiscussions = async (repo) => {
+  const { repository } = await octokit.graphql.paginate(
+    `query paginate($cursor: String, $org: String!, $repo: String!) {
+      repository(owner: $org, name: $repo) {
+        discussions(first: 100, after: $cursor) {
+          nodes {
+            number
+            title
+            url
+            createdAt
+            author {
+              login
+            }
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+        }
+      }
+    }
+    `,
+    { org, repo },
+  );
+  return repository.discussions.nodes;
+};
+
 const getUserActivities = async () => {
   const userActivities = {};
 
@@ -165,6 +193,22 @@ const getUserActivities = async () => {
           text: pr.title,
         });
       }
+    }
+
+    const discussions = await getDiscussions(repo);
+    console.info(`  Captured ${discussions.length} discussions`);
+    for (const discussion of discussions) {
+      if (!discussion.author?.login) {
+        continue;
+      }
+
+      addActivity(discussion.author.login, {
+        type: "discussion_started",
+        title: `${org}/${repo}#${discussion.number}`,
+        time: discussion.createdAt,
+        link: discussion.url,
+        text: discussion.title,
+      });
     }
   }
 

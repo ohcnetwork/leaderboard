@@ -20,6 +20,9 @@ import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 import { Popover } from "@headlessui/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { BiGitPullRequest } from "react-icons/bi";
+import { GoIssueOpened, GoIssueClosed } from "react-icons/go";
+import { VscGitPullRequestClosed } from "react-icons/vsc";
 
 const filterBySearchTerm = (searchTermLC: string) => {
   return (item: LeaderboardAPIResponse[number]) =>
@@ -218,6 +221,71 @@ export default function Leaderboard(props: Props) {
               className="w-full"
             />
             <OtherFilters />
+          </div>
+        </div>
+
+        {/* Stats Summary */}
+        <div className="mx-4 mt-4 rounded-lg border border-primary-500 p-4 md:mx-0">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            <div className="flex items-center space-x-2 rounded-lg border border-secondary-600 p-3 dark:border-secondary-300">
+              <GoIssueOpened className="text-2xl text-green-500" />
+              <div>
+                <p className="text-sm text-secondary-500 dark:text-secondary-300">
+                  Issues Opened
+                </p>
+                <p className="text-xl font-semibold">
+                  {resultSet.reduce(
+                    (sum, user) => sum + user.highlights.issue_opened,
+                    0,
+                  )}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-2 rounded-lg border border-secondary-600 p-3 dark:border-secondary-300">
+              <GoIssueClosed className="text-2xl text-purple-500" />
+              <div>
+                <p className="text-sm text-secondary-500 dark:text-secondary-300">
+                  Issues Closed
+                </p>
+                <p className="text-xl font-semibold">
+                  {resultSet.reduce(
+                    (sum, user) => sum + user.highlights.issue_closed,
+                    0,
+                  )}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-2 rounded-lg border border-secondary-600 p-3 dark:border-secondary-300">
+              <BiGitPullRequest className="text-2xl text-blue-500" />
+              <div>
+                <p className="text-sm text-secondary-500 dark:text-secondary-300">
+                  PRs Opened
+                </p>
+                <p className="text-xl font-semibold">
+                  {resultSet.reduce(
+                    (sum, user) => sum + user.highlights.pr_opened,
+                    0,
+                  )}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-2 rounded-lg border border-secondary-600 p-3 dark:border-secondary-300">
+              <VscGitPullRequestClosed className="text-2xl text-orange-500" />
+              <div>
+                <p className="text-sm text-secondary-500 dark:text-secondary-300">
+                  PRs Merged
+                </p>
+                <p className="text-xl font-semibold">
+                  {resultSet.reduce(
+                    (sum, user) => sum + user.highlights.pr_merged,
+                    0,
+                  )}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

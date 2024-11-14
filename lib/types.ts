@@ -43,6 +43,7 @@ export interface Highlights {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
+  issue_closed: number;
   pr_stale?: number;
   discussion_created: number;
   discussion_answered: number;
@@ -59,6 +60,7 @@ export interface WeekSummary {
   pr_collaborated: number;
   issue_assigned: number;
   issue_opened: number;
+  issue_closed: number;
   discussion_created: number;
   discussion_answered: number;
   discussion_comment_created: number;

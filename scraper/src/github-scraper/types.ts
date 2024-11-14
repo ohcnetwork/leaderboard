@@ -135,6 +135,7 @@ export const ACTIVITY_TYPES = [
   "issue_closed",
   "pr_reviewed",
   "issue_opened",
+  "issue_closed",
   "eod_update",
   "pr_opened",
   "pr_merged",

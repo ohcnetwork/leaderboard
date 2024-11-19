@@ -7,7 +7,7 @@ import {
   parseOrgRepoFromURL,
 } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
-import { useState } from "react";
+import { useState,useEffect} from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
 import DateRangePicker from "../DateRangePicker";
@@ -386,32 +386,22 @@ export default function GithubActivity({ activityData }: Props) {
     router.replace(`${pathname}${query}`, { scroll: false });
   };
 
-  const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
+  
+  const [activityTypes, setActivityTypes] = useState<Activity["type"][] | null>(null);
 
-  /*const range = useMemo(() => {
-    const to = new Date();
-    to.setDate(to.getDate() + 1);
-
-    if (rangeQuery === "last-month") {
-      const from = new Date(to);
-      from.setDate(from.getDate() - 30);
-      return { from, to: to };
-    } else if (rangeQuery === "last-week") {
-      const from = new Date(to);
-      from.setDate(from.getDate() - 7);
-      return { from, to };
+  useEffect(() => {
+    const storedFilters = window.localStorage.getItem('filters');
+    if (storedFilters) {
+      setActivityTypes(JSON.parse(storedFilters));
     } else {
-      const from = new Date(rangeQuery);
-      const to = new Date(rangeQuery);
-      to.setMonth(to.getMonth() + 1);
-      return { from, to };
+      window.localStorage.setItem('filters', JSON.stringify(ACTIVITY_TYPES));
+      setActivityTypes([...ACTIVITY_TYPES]);
     }
-  }, [rangeQuery]);*/
+  }, []);
 
-  /*const rangePresets = useMemo(
-    () => getRangeFilterPresets(activityData["activity"]),
-    [activityData],
-  );*/
+  if (!activityTypes) {
+    return null;
+  }
 
   const activitiesInRange = activityData.activity.filter(
     activitiesBetween({ from: start, to: end }),
@@ -507,13 +497,17 @@ export const ActivityCheckbox = (props: {
         name={props.type}
         className="accent-primary-500 dark:accent-primary-400"
         type="checkbox"
-        checked={props.state.includes(props.type)}
+        checked={props.state?.includes(props.type)}
         onChange={(event) => {
           const final = event.target.checked
             ? Array.from(new Set([...props.state, props.type]))
             : props.state.filter((type) => type !== props.type);
 
           props.setState(final);
+          // Only access localStorage in browser environment
+          if (typeof window !== 'undefined') {
+            window.localStorage.setItem('filters', JSON.stringify(final));
+          }
         }}
       />{" "}
       {

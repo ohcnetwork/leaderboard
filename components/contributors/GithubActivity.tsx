@@ -15,6 +15,15 @@ import { format } from "date-fns";
 import GithubDiscussion from "../discussions/GithubDiscussion";
 import { IoIosChatboxes } from "react-icons/io";
 import Link from "next/link";
+import { atomWithStorage } from "jotai/utils";
+import { useAtom } from "jotai";
+import { useEffect } from "react";
+
+// atom used for caching
+const activityTypesAtom = atomWithStorage<Activity["type"][]>(
+  "activityTypes",
+  [],
+);
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -387,6 +396,11 @@ export default function GithubActivity({ activityData }: Props) {
   };
 
   const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
+  const [storedFilters, setStoredFilters] = useAtom(activityTypesAtom);
+
+  useEffect(() => {
+    if (storedFilters) setActivityTypes(storedFilters);
+  }, [storedFilters]);
 
   /*const range = useMemo(() => {
     const to = new Date();
@@ -501,19 +515,22 @@ export const ActivityCheckbox = (props: {
   state: Activity["type"][];
   setState: (value: Activity["type"][]) => void;
 }) => {
+  const [selectedActivityType, setSelectedActivityType] =
+    useAtom(activityTypesAtom);
   return (
     <label className="flex items-center gap-2 whitespace-nowrap text-sm">
       <input
         name={props.type}
         className="accent-primary-500 dark:accent-primary-400"
         type="checkbox"
-        checked={props.state.includes(props.type)}
+        checked={selectedActivityType.includes(props.type)}
         onChange={(event) => {
           const final = event.target.checked
-            ? Array.from(new Set([...props.state, props.type]))
-            : props.state.filter((type) => type !== props.type);
+            ? Array.from(new Set([...selectedActivityType, props.type]))
+            : selectedActivityType.filter((type) => type !== props.type);
 
           props.setState(final);
+          setSelectedActivityType(final);
         }}
       />{" "}
       {

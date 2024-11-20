@@ -7,7 +7,6 @@ import {
   parseOrgRepoFromURL,
 } from "@/lib/utils";
 import OpenGraphImage from "../gh_events/OpenGraphImage";
-import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "../RelativeTime";
 import DateRangePicker from "../DateRangePicker";
@@ -17,13 +16,10 @@ import { IoIosChatboxes } from "react-icons/io";
 import Link from "next/link";
 import { atomWithStorage } from "jotai/utils";
 import { useAtom } from "jotai";
-import { useEffect } from "react";
 
-// atom used for caching
-const activityTypesAtom = atomWithStorage<Activity["type"][]>(
-  "activityTypes",
-  [],
-);
+const activityTypesAtom = atomWithStorage("leaderboard-activity-types", [
+  ...ACTIVITY_TYPES,
+]);
 
 let commentTypes = (activityEvent: string[]) => {
   switch (activityEvent[0]) {
@@ -348,30 +344,6 @@ const activitiesOfType = (types: Activity["type"][]) => {
   };
 };
 
-/*const getRangeFilterPresets = (activities: Activity[]) => {
-  if (!activities.length) return [];
-
-  const latest = new Date(activities[0].time);
-  let oldest = new Date(latest);
-
-  activities.forEach((activity) => {
-    const time = new Date(activity.time);
-    if (time < oldest) {
-      oldest = time;
-    }
-  });
-
-  let current = new Date(oldest.getFullYear(), oldest.getMonth());
-  const end = new Date(latest.getFullYear(), latest.getMonth());
-
-  const results: string[] = [];
-  while (current <= end) {
-    results.push(current.toISOString().slice(0, 7));
-    current.setMonth(current.getMonth() + 1);
-  }
-  return results.reverse();
-};*/
-
 interface Props {
   activityData: ActivityData;
 }
@@ -380,7 +352,6 @@ export default function GithubActivity({ activityData }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  // const rangeQuery = searchParams.get("range") ?? "last-month";
   const [start, end] = parseDateRangeSearchParam(searchParams.get("between"));
 
   const updateSearchParam = (key: string, value?: string) => {
@@ -395,37 +366,7 @@ export default function GithubActivity({ activityData }: Props) {
     router.replace(`${pathname}${query}`, { scroll: false });
   };
 
-  const [activityTypes, setActivityTypes] = useState([...ACTIVITY_TYPES]);
-  const [storedFilters, setStoredFilters] = useAtom(activityTypesAtom);
-
-  useEffect(() => {
-    if (storedFilters) setActivityTypes(storedFilters);
-  }, [storedFilters]);
-
-  /*const range = useMemo(() => {
-    const to = new Date();
-    to.setDate(to.getDate() + 1);
-
-    if (rangeQuery === "last-month") {
-      const from = new Date(to);
-      from.setDate(from.getDate() - 30);
-      return { from, to: to };
-    } else if (rangeQuery === "last-week") {
-      const from = new Date(to);
-      from.setDate(from.getDate() - 7);
-      return { from, to };
-    } else {
-      const from = new Date(rangeQuery);
-      const to = new Date(rangeQuery);
-      to.setMonth(to.getMonth() + 1);
-      return { from, to };
-    }
-  }, [rangeQuery]);*/
-
-  /*const rangePresets = useMemo(
-    () => getRangeFilterPresets(activityData["activity"]),
-    [activityData],
-  );*/
+  const [activityTypes, setActivityTypes] = useAtom(activityTypesAtom);
 
   const activitiesInRange = activityData.activity.filter(
     activitiesBetween({ from: start, to: end }),
@@ -451,36 +392,6 @@ export default function GithubActivity({ activityData }: Props) {
             );
           }}
         />
-        {/* <select
-          className="my-4 block rounded border border-secondary-600 px-2 py-1 text-sm font-medium text-foreground focus:z-10 focus:outline-none dark:border-secondary-300"
-          disabled={!rangePresets}
-          value={rangeQuery}
-          onChange={(event) => {
-            const current = new URLSearchParams(
-              Array.from(searchParams.entries()),
-            );
-            const value = event.target.value;
-            if (!value) {
-              current.delete("range");
-            } else {
-              current.set("range", event.target.value);
-            }
-            const search = current.toString();
-            const query = search ? `?${search}` : "";
-            router.replace(`${pathname}${query}`, { scroll: false });
-          }}
-        >
-          <option value="last-week">Last week</option>
-          <option value="last-month">Last 30 days</option>
-          {rangePresets?.map((preset) => (
-            <option key={preset} value={preset}>
-              {new Date(preset).toLocaleString("default", {
-                month: "long",
-                year: "numeric",
-              })}
-            </option>
-          ))}
-        </select> */}
         {ACTIVITY_TYPES.map((type) => (
           <ActivityCheckbox
             key={type}
@@ -515,22 +426,18 @@ export const ActivityCheckbox = (props: {
   state: Activity["type"][];
   setState: (value: Activity["type"][]) => void;
 }) => {
-  const [selectedActivityType, setSelectedActivityType] =
-    useAtom(activityTypesAtom);
   return (
     <label className="flex items-center gap-2 whitespace-nowrap text-sm">
       <input
         name={props.type}
         className="accent-primary-500 dark:accent-primary-400"
         type="checkbox"
-        checked={selectedActivityType.includes(props.type)}
+        checked={props.state.includes(props.type)}
         onChange={(event) => {
-          const final = event.target.checked
-            ? Array.from(new Set([...selectedActivityType, props.type]))
-            : selectedActivityType.filter((type) => type !== props.type);
-
-          props.setState(final);
-          setSelectedActivityType(final);
+          const isChecked = event.target.checked;
+          const final = new Set([...props.state]);
+          final[isChecked ? "add" : "delete"](props.type);
+          props.setState(Array.from(final));
         }}
       />{" "}
       {

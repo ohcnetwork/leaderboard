@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/github-scraper/index.js",
     "dev": "pnpm build && pnpm start"
   },
   "keywords": [],

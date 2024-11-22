@@ -1,4 +1,8 @@
-import { Octokit } from "octokit";
+import { Octokit } from "@octokit/core";
+import { paginateRest } from "@octokit/plugin-paginate-rest";
+import { paginateGraphql } from "@octokit/plugin-paginate-graphql";
+
+const MyOctokit = Octokit.plugin(paginateRest, paginateGraphql);
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
@@ -7,6 +11,6 @@ if (!GITHUB_TOKEN) {
   process.exit(1);
 }
 
-export const octokit = new Octokit({
+export const octokit = new MyOctokit({
   auth: GITHUB_TOKEN,
 });

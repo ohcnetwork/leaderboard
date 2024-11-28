@@ -20,10 +20,7 @@ const AllowedEventTypes = [
 export const fetchEvents = async (org: string) => {
   const events = await octokit.paginate(
     "GET /orgs/{org}/events",
-    {
-      org,
-      per_page: 100,
-    },
+    { org, per_page: 100 },
     (response) => {
       const filtered = response.data.filter((event) => {
         if (!event.type) {
@@ -31,15 +28,12 @@ export const fetchEvents = async (org: string) => {
           return false;
         }
         if (event.actor.login.includes("[bot]")) {
-          console.debug(`Skipping bot user: ${event.actor.login}`);
           return false;
         }
         if (BlacklistedUsers.includes(event.actor.login)) {
-          console.debug(`Skipping blacklisted user: ${event.actor.login}`);
           return false;
         }
         if (!AllowedEventTypes.includes(event.type)) {
-          console.debug(`Skipping event type: ${event.type}`);
           return false;
         }
         return true;
@@ -56,17 +50,27 @@ export const fetchEvents = async (org: string) => {
       events[0].created_at ?? "",
     ).toLocaleString()} to ${new Date(
       events[events.length - 1].created_at ?? "",
-    ).toLocaleString()}`,
+    ).toLocaleString()} (${getDurationString(
+      new Date(events[0].created_at ?? ""),
+      new Date(events[events.length - 1].created_at ?? ""),
+    )})`,
   );
 
-  const delay =
-    new Date().getTime() - new Date(events[0].created_at ?? "").getTime();
-  const delayHours = Math.floor(delay / 1000 / 60 / 60);
-  const delayMinutes = Math.floor((delay / 1000 / 60) % 60);
-
   console.log(
-    `The latest event is ${delayHours.toString().padStart(2, "0")}h ${delayMinutes.toString().padStart(2, "0")}m behind from now`,
+    `The latest event is ${getDurationString(
+      new Date(),
+      new Date(events[0].created_at ?? ""),
+    )} behind from now`,
   );
 
   return events;
+};
+
+const getDurationString = (a: Date, b: Date) => {
+  const diff = Math.abs(b.getTime() - a.getTime());
+  const hours = Math.floor(diff / 1000 / 60 / 60);
+  const minutes = Math.floor((diff / 1000 / 60) % 60);
+  return `${hours.toString().padStart(2, "0")}h ${minutes
+    .toString()
+    .padStart(2, "0")}m`;
 };

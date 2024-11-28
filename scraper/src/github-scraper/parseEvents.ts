@@ -27,7 +27,9 @@ async function getDefaultBranch(owner: string, repo: string) {
   return defaultBranches[repo];
 }
 function appendEvent(user: string, event: Activity) {
-  console.log(`Appending event for ${user}`);
+  console.debug(
+    `Appending ${event.type} event for user ${user}. ${event.link}`,
+  );
   if (!processedData[user]) {
     console.log(`Creating new user data for ${user}`);
     processedData[user] = {

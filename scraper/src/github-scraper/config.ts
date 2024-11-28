@@ -1,8 +1,8 @@
 import { Octokit } from "@octokit/core";
 import { paginateRest } from "@octokit/plugin-paginate-rest";
-import { paginateGraphql } from "@octokit/plugin-paginate-graphql";
+import { paginateGraphQL } from "@octokit/plugin-paginate-graphql";
 
-const MyOctokit = Octokit.plugin(paginateRest, paginateGraphql);
+const MyOctokit = Octokit.plugin(paginateRest, paginateGraphQL);
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 

@@ -6,13 +6,16 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/github-scraper/index.js",
     "dev": "pnpm build && pnpm start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@octokit/core": "^6.1.2",
+    "@octokit/plugin-paginate-graphql": "^5.2.4",
+    "@octokit/plugin-paginate-rest": "^11.3.6",
     "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
     "octokit": "^4.0.2"

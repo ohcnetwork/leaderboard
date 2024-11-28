@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@octokit/core':
+        specifier: ^6.1.2
+        version: 6.1.2
       '@octokit/plugin-paginate-graphql':
         specifier: ^5.2.4
         version: 5.2.4(@octokit/core@6.1.2)
@@ -242,7 +245,7 @@ snapshots:
       '@octokit/graphql': 8.1.1
       '@octokit/request': 9.1.3
       '@octokit/request-error': 6.1.4
-      '@octokit/types': 13.5.0
+      '@octokit/types': 13.6.2
       before-after-hook: 3.0.2
       universal-user-agent: 7.0.2
 
@@ -254,7 +257,7 @@ snapshots:
   '@octokit/graphql@8.1.1':
     dependencies:
       '@octokit/request': 9.1.3
-      '@octokit/types': 13.5.0
+      '@octokit/types': 13.6.2
       universal-user-agent: 7.0.2
 
   '@octokit/oauth-app@7.1.3':

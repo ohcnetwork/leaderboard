@@ -81,7 +81,11 @@ export default function Leaderboard(props: Props) {
   ) => {
     const params = new URLSearchParams(searchParams.toString());
     if (Array.isArray(value)) {
-      params.set(key, value.join(","));
+      if (value.length) {
+        params.set(key, value.join(","));
+      } else {
+        params.delete(key);
+      }
     } else {
       params.set(key, value.toString());
     }

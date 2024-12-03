@@ -97,7 +97,7 @@ async function getProjectBoardItems(projectId: string) {
                             ... on Issue {
                                 url
                                 closedAt
-                                state
+                                stateReason
                                 author {
                                     login
                                 }
@@ -157,7 +157,7 @@ async function getProjectBoardItems(projectId: string) {
 
       let completedAt = null;
 
-      if (node.type === "ISSUE" && node.content.state === "CLOSED") {
+      if (node.type === "ISSUE" && node.content.stateReason === "COMPLETED") {
         completedAt = node.content.closedAt;
       }
       if (node.type === "PULL_REQUEST" && node.content.merged) {

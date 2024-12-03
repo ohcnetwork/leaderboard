@@ -19,7 +19,7 @@ interface ProjectBoardItem {
   createdAt: string;
   updatedAt: string;
   closedAt: string | null;
-  closedAtMonth: string | null;
+  completedAtMonth: string | null;
   sprint: string | null;
   category: string | null;
   status: string | null;
@@ -97,6 +97,7 @@ async function getProjectBoardItems(projectId: string) {
                             ... on Issue {
                                 url
                                 closedAt
+                                state
                                 author {
                                     login
                                 }
@@ -109,6 +110,8 @@ async function getProjectBoardItems(projectId: string) {
                             ... on PullRequest {
                                 url
                                 closedAt
+                                merged
+                                mergedAt
                                 author {
                                     login
                                 }
@@ -152,13 +155,13 @@ async function getProjectBoardItems(projectId: string) {
         }
       }
 
-      const closedAt = node.content.closedAt;
-      let closedAtMonth = null;
-      if (closedAt) {
-        closedAtMonth = new Date(closedAt).toLocaleString("default", {
-          month: "short",
-          year: "numeric",
-        });
+      let completedAt = null;
+
+      if (node.type === "ISSUE" && node.content.state === "CLOSED") {
+        completedAt = node.content.closedAt;
+      }
+      if (node.type === "PULL_REQUEST" && node.content.merged) {
+        completedAt = node.content.mergedAt;
       }
 
       const baseData = {
@@ -167,8 +170,13 @@ async function getProjectBoardItems(projectId: string) {
         title: get("Title").text,
         createdAt: node.createdAt,
         updatedAt: node.updatedAt,
-        closedAt,
-        closedAtMonth,
+        closedAt: node.content.closedAt,
+        completedAtMonth:
+          completedAt &&
+          new Date(completedAt).toLocaleString("default", {
+            month: "short",
+            year: "numeric",
+          }),
         sprint: get("Sprint")?.title,
         assignees: Array.from(assignees).join(","),
         category: get("Category")?.name,

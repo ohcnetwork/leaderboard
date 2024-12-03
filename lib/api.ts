@@ -147,6 +147,8 @@ export async function getContributorBySlug(file: string, detail = false) {
           acc.issue_assigned + (activity.type === "issue_assigned" ? 1 : 0),
         issue_opened:
           acc.issue_opened + (activity.type === "issue_opened" ? 1 : 0),
+        issue_closed:
+          acc.issue_closed + (activity.type === "issue_closed" ? 1 : 0),
         discussion_created:
           acc.discussion_created +
           (activity.type === "discussion_created" ? 2 : 0),
@@ -169,6 +171,7 @@ export async function getContributorBySlug(file: string, detail = false) {
       pr_reviewed: 0,
       issue_assigned: 0,
       issue_opened: 0,
+      issue_closed: 0,
       discussion_created: 0,
       discussion_answered: 0,
       discussion_comment_created: 0,
@@ -209,6 +212,7 @@ export async function getContributorBySlug(file: string, detail = false) {
       pr_collaborated: weightedActivity.pr_collaborated,
       issue_assigned: weightedActivity.issue_assigned,
       issue_opened: weightedActivity.issue_opened,
+      issue_closed: weightedActivity.issue_closed,
       discussion_created: weightedActivity.discussion_created,
       discussion_answered: weightedActivity.discussion_answered,
       discussion_comment_created: weightedActivity.discussion_comment_created,
@@ -288,6 +292,7 @@ const HIGHLIGHT_KEYS = [
   "pr_collaborated",
   "issue_assigned",
   "issue_opened",
+  "issue_closed",
   "discussion_created",
   "discussion_answered",
   "discussion_comment_created",
@@ -313,6 +318,7 @@ const HighlightsReducer = (acc: Highlights, day: Highlights) => {
     pr_collaborated: acc.pr_collaborated + (day.pr_collaborated ?? 0),
     issue_assigned: acc.issue_assigned + (day.issue_assigned ?? 0),
     issue_opened: acc.issue_opened + (day.issue_opened ?? 0),
+    issue_closed: acc.issue_closed + (day.issue_closed ?? 0),
     discussion_created: acc.discussion_created + (day.discussion_created ?? 0),
     discussion_answered:
       acc.discussion_answered + (day.discussion_answered ?? 0),
@@ -331,6 +337,7 @@ const HighlightsInitialValue = {
   pr_collaborated: 0,
   issue_assigned: 0,
   issue_opened: 0,
+  issue_closed: 0,
   discussion_created: 0,
   discussion_answered: 0,
   discussion_comment_created: 0,

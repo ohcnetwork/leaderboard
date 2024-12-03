@@ -11,13 +11,36 @@ import { mkdir, readFile, writeFile } from "fs/promises";
 import { octokit } from "./config.js";
 import path from "path";
 
+interface ProjectBoardItem {
+  user: string;
+  type: "PULL_REQUEST" | "ISSUE" | "DRAFT_ISSUE";
+  url: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  closedAt: string | null;
+  closedAtMonth: string | null;
+  sprint: string | null;
+  category: string | null;
+  status: string | null;
+  storyPoints: number | null;
+  priority: string | null;
+  author: string;
+  assignees: string; // comma separated list of assignees
+  focus: string | null;
+}
+
 async function getProjectBoardItems(projectId: string) {
-  const data: any = await octokit.graphql(
-    `query getProjectItems($projectId: ID!) {
+  const iterator = octokit.graphql.paginate.iterator(
+    `query getProjectItems($projectId: ID!, $cursor: String) {
         node(id: $projectId) {
             ... on ProjectV2 {
                 updatedAt
-                items(first: 100, orderBy: {field: POSITION, direction: DESC}) {
+                items(first: 100, orderBy: {field: POSITION, direction: DESC}, after: $cursor) {
+                    pageInfo {
+                        hasNextPage
+                        endCursor
+                    }
                     nodes {
                         id
                         createdAt
@@ -104,37 +127,69 @@ async function getProjectBoardItems(projectId: string) {
     { projectId },
   );
 
-  return Object.fromEntries(
-    data.node.items.nodes.map((node: any) => {
+  let items: [string, ProjectBoardItem][] = [];
+
+  for await (const response of iterator) {
+    console.log(`Processing ${response.node.items.nodes.length} items`);
+
+    for (const node of response.node.items.nodes) {
       const get = (fieldName: string) => {
         return node.fieldValues.nodes.find(
           (fieldValue: any) => fieldValue.field?.name === fieldName,
         );
       };
 
-      return [
-        node.id,
-        {
-          type: node.type,
-          url: node.content.url,
-          title: get("Title").text,
-          createdAt: node.createdAt,
-          updatedAt: node.updatedAt,
-          closedAt: node.content.closedAt,
-          sprint: get("Sprint")?.title,
-          category: get("Category")?.name,
-          status: get("Status")?.name,
-          storyPoints: get("Story Points")?.number,
-          priority: get("Priority")?.name,
-          author: node.content.author?.login,
-          assignees: node.content.assignees.nodes.map(
-            (user: any) => user.login,
-          ),
-          focus: get("Focus")?.name,
-        },
-      ];
-    }),
-  );
+      let assignees = new Set<string>(
+        node.content.assignees.nodes.map((user: any) => user.login),
+      );
+
+      // Adding author as assignee for PRs because they may not be present in
+      // the assignees list.
+      if (node.content.type === "PULL_REQUEST") {
+        const author = node.content.author?.login;
+        if (author) {
+          assignees.add(author);
+        }
+      }
+
+      const closedAt = node.content.closedAt;
+      let closedAtMonth = null;
+      if (closedAt) {
+        closedAtMonth = new Date(closedAt).toLocaleString("default", {
+          month: "short",
+          year: "numeric",
+        });
+      }
+
+      const baseData = {
+        type: node.type,
+        url: node.content.url,
+        title: get("Title").text,
+        createdAt: node.createdAt,
+        updatedAt: node.updatedAt,
+        closedAt,
+        closedAtMonth,
+        sprint: get("Sprint")?.title,
+        assignees: Array.from(assignees).join(","),
+        category: get("Category")?.name,
+        status: get("Status")?.name,
+        storyPoints: get("Story Points")?.number,
+        priority: get("Priority")?.name,
+        author: node.content.author?.login,
+        focus: get("Focus")?.name,
+      } satisfies Omit<ProjectBoardItem, "id" | "user">;
+
+      // Voluntarily duplicating for each contributor because, contributors
+      // are the first class citizen in the cache.
+      assignees.forEach((assignee) => {
+        items.push([`${node.id}/${assignee}`, { ...baseData, user: assignee }]);
+      });
+    }
+  }
+
+  console.log(`Processed ${items.length} items`);
+
+  return Object.fromEntries(items);
 }
 
 async function readExistingItems(filePath: string): Promise<object> {

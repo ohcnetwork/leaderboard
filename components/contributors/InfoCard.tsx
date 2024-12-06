@@ -1,4 +1,3 @@
-/*  */
 import { Contributor } from "@/lib/types";
 import clsx from "clsx";
 import Link from "next/link";
@@ -6,7 +5,7 @@ import { BsSlack, BsTwitterX, BsLinkedin, BsGithub } from "react-icons/bs";
 import { env } from "@/env.mjs";
 import ContributorImage from "./ContributorImage";
 
-export default async function InfoCard({
+export default function InfoCard({
   contributor,
   rank = null,
   isClickable = false,

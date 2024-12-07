@@ -26,9 +26,9 @@
     "jotai": "^2.10.2",
     "next": "^14.2.10",
     "next-themes": "^0.2.1",
-    "react": "^18.3.1",
+    "react": "^19.0.0",
     "react-activity-calendar": "^2.2.11",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.0.0",
     "react-icons": "^4.12.0",
     "rehype-stringify": "^9.0.4",
     "remark": "^14.0.3",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.14.12",
-    "@types/react": "^18.3.3",
+    "@types/react": "^19.0.1",
     "autoprefixer": "^10.4.19",
     "chai": "^5.1.1",
     "chai-json-schema": "^1.5.1",
@@ -63,5 +63,8 @@
     "tailwindcss": "^3.4.6",
     "typescript": "^5.5.4",
     "yaml": "^2.5.0"
+  },
+  "overrides": {
+    "@types/react": "19.0.1"
   }
 }

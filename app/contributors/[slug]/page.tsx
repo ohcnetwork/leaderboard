@@ -23,12 +23,10 @@ import { env } from "@/env.mjs";
 import { getLeaderboardData } from "@/app/api/leaderboard/functions";
 import { Metadata } from "next";
 
-type Params = {
-  params: { slug: string };
-};
+type Params = Promise<{ slug: string }>;
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const slug = params.slug;
+export async function generateMetadata({ params }: { params: Params }) {
+  const { slug } = await params;
   const contributor = await getContributorBySlug(slug, true);
   const url = env.NEXT_PUBLIC_META_URL;
   const org = env.NEXT_PUBLIC_META_TITLE;
@@ -44,7 +42,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       description,
       url: `${url}/contributors/${slug}`,
     },
-  };
+  } satisfies Metadata;
 }
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
@@ -53,8 +51,8 @@ export async function generateStaticParams() {
     .map((slug) => ({ slug: slug.file.replace(".md", "") }));
 }
 
-export default async function Page({ params }: Params) {
-  const { slug } = params;
+export default async function Page({ params }: { params: Params }) {
+  const { slug } = await params;
   const contributor = await getContributorBySlug(slug, true);
 
   const leaderboardData = await getLeaderboardData(

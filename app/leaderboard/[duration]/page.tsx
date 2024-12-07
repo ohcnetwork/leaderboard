@@ -3,16 +3,17 @@ import Leaderboard from "@/app/leaderboard/[duration]/Leaderboard";
 import { calcDateRange, LeaderboardFilterDurations } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
-type Props = {
-  params: { duration: (typeof LeaderboardFilterDurations)[number] };
-};
+type Params = Promise<{
+  duration: (typeof LeaderboardFilterDurations)[number];
+}>;
 
 export async function generateStaticParams() {
   return LeaderboardFilterDurations.map((duration) => ({ duration }));
 }
 
-export default async function Page({ params }: Props) {
-  const dateRange = calcDateRange(params.duration);
+export default async function Page({ params }: { params: Params }) {
+  const { duration } = await params;
+  const dateRange = calcDateRange(duration);
 
   if (!dateRange) {
     return notFound();
@@ -20,5 +21,5 @@ export default async function Page({ params }: Props) {
 
   const data = await getLeaderboardData(dateRange);
 
-  return <Leaderboard data={data} duration={params.duration} />;
+  return <Leaderboard data={data} duration={duration} />;
 }

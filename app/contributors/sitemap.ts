@@ -2,6 +2,8 @@ import { sitemapEntry } from "@/app/sitemap";
 import { getContributors } from "@/lib/api";
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const contriutors = await getContributors();
   return contriutors.map((contributor) =>

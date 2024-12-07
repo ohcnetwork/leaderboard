@@ -4,6 +4,7 @@ import { FaYoutube, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { ReactNode } from "react";
 import { BsTwitterX } from "react-icons/bs";
 import RelativeTime from "@/components/RelativeTime";
+import Link from "next/link";
 
 const SocialLink = ({
   href,
@@ -15,7 +16,7 @@ const SocialLink = ({
   label: string;
 }) =>
   href && (
-    <a
+    <Link
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -23,7 +24,7 @@ const SocialLink = ({
       aria-label={label}
     >
       <Icon className="h-6 w-6" />
-    </a>
+    </Link>
   );
 
 const FooterSection = ({
@@ -46,14 +47,14 @@ const FooterLink = ({
   href: string;
   children: React.ReactNode;
 }) => (
-  <a
+  <Link
     href={href}
     target="_blank"
     rel="noopener noreferrer"
     className="mb-2 block text-sm text-gray-300 transition-colors duration-300 hover:text-[rgb(176,142,230)]"
   >
     {children}
-  </a>
+  </Link>
 );
 
 export default function Footer() {
@@ -65,7 +66,7 @@ export default function Footer() {
             <FooterSection title="About Us">
               <div className="mb-4 flex items-center">
                 <span className="mr-2 text-sm">Powered by</span>
-                <a
+                <Link
                   href={env.NEXT_PUBLIC_ORG_URL}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -76,7 +77,7 @@ export default function Footer() {
                     width={100}
                     height={24}
                   />
-                </a>
+                </Link>
               </div>
               <p className="max-w-xs text-sm text-gray-400">
                 Connecting healthcare through open data and innovative

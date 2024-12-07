@@ -52,11 +52,11 @@ let renderText = (activity: Activity) => {
             </div>
           </div>
           <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
-            <a href={activity["link"]} target="_blank">
+            <Link href={activity["link"]} target="_blank">
               <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
                 {activity["text"]}
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       );
@@ -79,11 +79,11 @@ let renderText = (activity: Activity) => {
             </p>
           </div>
           <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
-            <a href={activity["link"]} target="_blank">
+            <Link href={activity["link"]} target="_blank">
               <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
                 {activity["text"]}
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       );
@@ -120,11 +120,11 @@ let renderText = (activity: Activity) => {
             )}
             {activity["type"] == "pr_reviewed" && (
               <div className="mt-2 rounded-lg border border-secondary-600 p-2 md:p-4">
-                <a href={activity["link"]} target="_blank">
+                <Link href={activity["link"]} target="_blank">
                   <span className="cursor-pointer break-words text-sm font-medium text-foreground hover:text-primary-500">
                     {activity["text"]}
                   </span>
-                </a>
+                </Link>
               </div>
             )}
           </div>

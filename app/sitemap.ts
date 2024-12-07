@@ -1,6 +1,8 @@
 import { env } from "@/env.mjs";
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export const sitemapEntry = (
   path: string,
   attrs: Omit<MetadataRoute.Sitemap[number], "url"> = {},

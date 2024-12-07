@@ -43,7 +43,7 @@ export async function calculateContributor() {
   return [];
 }
 
-const DiscussionLeaderboard = async () => {
+export default async function DiscussionLeaderboard() {
   const contributors = await calculateContributor();
 
   return (
@@ -85,6 +85,4 @@ const DiscussionLeaderboard = async () => {
       </div>
     </>
   );
-};
-
-export default DiscussionLeaderboard;
+}

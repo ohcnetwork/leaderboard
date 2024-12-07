@@ -230,9 +230,10 @@ let contributors: Awaited<ReturnType<typeof getContributorBySlug>>[] | null =
 export async function getContributors() {
   if (!contributors) {
     const slugs = await getContributorsSlugs();
-    contributors = await Promise.all(
-      slugs.map((path) => getContributorBySlug(path.file)),
-    );
+    contributors = [];
+    for (const slug of slugs) {
+      contributors.push(await getContributorBySlug(slug.file));
+    }
   }
   return contributors;
 }

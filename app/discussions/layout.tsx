@@ -7,7 +7,7 @@ import { categories } from "../../lib/discussion";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: `Disucssions | ${env.NEXT_PUBLIC_PAGE_TITLE}`,
+  title: `Discussions | ${env.NEXT_PUBLIC_PAGE_TITLE}`,
 };
 
 export default function DiscussionsLayout({

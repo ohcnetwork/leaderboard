@@ -1,8 +1,13 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
-const dotenv = require("dotenv");
-dotenv.config();
+
+try {
+  const dotenv = require("dotenv");
+  dotenv.config();
+} catch (error) {
+  console.error("No .env file found");
+}
 
 const DATA_SOURCE = process.env.DATA_SOURCE || null;
 if (!DATA_SOURCE) {

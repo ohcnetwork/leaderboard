@@ -7,7 +7,6 @@ import octokit from "@/lib/octokit";
 const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
 export default async function FeedPage() {
-  console.log(GITHUB_ORG);
   const events = await octokit.paginate(
     "GET /orgs/{org}/events",
     {

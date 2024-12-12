@@ -6,7 +6,7 @@ import { GraduateAttribute } from "@/config/GraduateAttributes";
 import Image from "next/image";
 
 function useOnClickOutside(
-  ref: RefObject<HTMLInputElement>,
+  ref: RefObject<HTMLInputElement | null>,
   handler: () => void,
 ) {
   useEffect(() => {

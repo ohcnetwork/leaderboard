@@ -5,7 +5,7 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import clsx from "clsx";
 
-export default async function Markdown(props: {
+export default function Markdown(props: {
   children: string;
   className?: string;
 }) {

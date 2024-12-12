@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { featureIsEnabled } from "@/lib/utils";
 import FilterDiscussions from "../../components/discussions/FilterDiscussions";
 import { categories } from "../../lib/discussion";
-import DiscussionLeaderboard from "../../components/discussions/DiscussionLeaderboard";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
@@ -28,7 +27,6 @@ export default function DiscussionsLayout({
       </div>
       <div className="flex w-full flex-col-reverse gap-3 lg:flex lg:flex-row">
         {children}
-        <DiscussionLeaderboard />
       </div>
     </div>
   );

@@ -209,7 +209,14 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
             text: event.payload.pull_request.title,
             turnaround_time: turnaroundTime,
           });
-          await addCollaborations(event, eventTime);
+          try {
+            await addCollaborations(event, eventTime);
+          } catch (e) {
+            console.error(
+              `Error adding collaborations for event ${event.id}: ${e}`,
+              event,
+            );
+          }
         }
         break;
       case "PullRequestReviewEvent":

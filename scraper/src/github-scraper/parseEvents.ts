@@ -191,7 +191,16 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
           event.payload.action === "closed" &&
           event.payload.pull_request?.merged
         ) {
-          const turnaroundTime = await calculateTurnaroundTime(event);
+          let turnaroundTime: number | undefined = undefined;
+          try {
+            turnaroundTime = await calculateTurnaroundTime(event);
+          } catch (e) {
+            console.error(
+              `Error calculating turnaround time for event ${event.id}: ${e}`,
+              `Likely due to PR author ${event.payload.pull_request.user.login} being deleted`,
+              event,
+            );
+          }
           appendEvent(event.payload.pull_request.user.login, {
             type: "pr_merged",
             title: `${event.repo.name}#${event.payload.pull_request.number}`,

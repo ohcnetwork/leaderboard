@@ -84,7 +84,9 @@ let contributorSlugs: Awaited<ReturnType<typeof getContributorsSlugs>> | null =
 export async function getContributorsSlugs(): Promise<{ file: string }[]> {
   if (!contributorSlugs) {
     const files = await readdir(`${root}`);
-    contributorSlugs = files.map((file) => ({ file }));
+    contributorSlugs = files
+      .filter((slug) => !slug.includes("[bot]"))
+      .map((file) => ({ file }));
   }
   return contributorSlugs;
 }

@@ -39,8 +39,7 @@ export default function LeaderboardCard({
       <div className="flex cursor-pointer justify-center space-y-4 rounded-lg border-2 border-transparent p-4 px-2 py-2 transition-all duration-300 ease-in-out hover:scale-105 hover:border-primary-400 hover:shadow-lg sm:px-6 md:items-center md:py-0">
         {!hideBadges && (
           <div
-            className={`my-6 ml-3 flex h-10 w-[40px] items-center justify-center rounded-full bg-gradient-to-tr text-white ${badgeColors} mr-4 shrink-0 border-4 
-    max-sm:h-8 max-sm:w-[32px]`}
+            className={`my-6 ml-3 flex h-10 w-[40px] items-center justify-center rounded-full bg-gradient-to-tr text-white ${badgeColors} mr-4 shrink-0 border-4 max-sm:h-8 max-sm:w-[32px]`}
           >
             {position + 1}
           </div>

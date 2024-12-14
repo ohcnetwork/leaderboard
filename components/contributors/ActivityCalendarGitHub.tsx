@@ -24,7 +24,6 @@ export default function ActivityCalendarGit({
   const { theme } = useTheme();
 
   const getCalendarData = (year: number) => {
-    console.log(year);
     const currentYear = year;
     let dates = [];
     let date = new Date(`01-01-${year}`);

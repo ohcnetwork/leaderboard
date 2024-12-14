@@ -24,6 +24,7 @@ export default function ActivityCalendarGit({
   const { theme } = useTheme();
 
   const getCalendarData = (year: number) => {
+    console.log(year);
     const currentYear = year;
     let dates = [];
     let date = new Date(`01-01-${year}`);
@@ -73,7 +74,7 @@ export default function ActivityCalendarGit({
   const [year, setYear] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [activityData, setActivityData] = useState({});
-
+  // console.log(getCalendarData(year));
   return (
     <div className="gap-3 sm:flex">
       {isBrowser && (
@@ -82,7 +83,7 @@ export default function ActivityCalendarGit({
             <ActivityCalendar
               colorScheme={theme === "dark" ? "dark" : "light"}
               showWeekdayLabels
-              data={calendarData}
+              data={getCalendarData(new Date().getFullYear())}
               theme={{
                 light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
                 dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],

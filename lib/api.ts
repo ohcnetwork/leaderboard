@@ -119,6 +119,7 @@ export async function getContributorBySlug(file: string, detail = false) {
     ...activityData,
     activity: [...activityData.activity, ...discussions],
   };
+
   const slackMessages = await getSlackMessages(data.slack);
 
   activityData = {
@@ -241,6 +242,7 @@ function getCalendarData(activity: Activity[]) {
   const calendarData = activity.reduce(
     (acc, activity) => {
       const date = new Date(activity.time).toISOString().split("T")[0];
+
       if (!acc[date]) {
         acc[date] = {
           count: 0,
@@ -261,9 +263,10 @@ function getCalendarData(activity: Activity[]) {
     },
     {} as Record<string, any>,
   );
-  return [...Array(365)].map((_, i) => {
+
+  return [...Array(Object.keys(calendarData).length)].map((_, i) => {
     // Current Date - i
-    const iReverse = 365 - i;
+    const iReverse = Object.keys(calendarData).length - i;
     const date = new Date(
       new Date().getTime() - iReverse * 24 * 60 * 60 * 1000,
     );

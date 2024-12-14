@@ -70,7 +70,7 @@ export default function ActivityCalendarGit({
   const yearDiff = Number(new Date().getFullYear()) - getFirstContribYear();
   const yearsList = lastNYears(yearDiff);
 
-  const [year, setYear] = useState(0);
+  const [year, setYear] = useState(new Date().getFullYear());
   const [isOpen, setIsOpen] = useState(false);
   const [activityData, setActivityData] = useState({});
   // console.log(getCalendarData(year));
@@ -78,42 +78,24 @@ export default function ActivityCalendarGit({
     <div className="gap-3 sm:flex">
       {isBrowser && (
         <div className="rounded-lg bg-secondary-100 px-6 py-8 text-center text-foreground hover:cursor-pointer dark:bg-secondary-800 sm:px-10 xl:text-left">
-          {year === 0 ? (
-            <ActivityCalendar
-              colorScheme={theme === "dark" ? "dark" : "light"}
-              showWeekdayLabels
-              data={getCalendarData(new Date().getFullYear())}
-              theme={{
-                light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-                dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-              }}
-              eventHandlers={{
-                onClick: (event) => (data) => {
-                  setIsOpen(true);
-                  setActivityData(data);
-                },
-              }}
-              labels={{
-                totalCount: "{{count}} contributions in the last year",
-              }}
-            />
-          ) : (
-            <ActivityCalendar
-              colorScheme={theme === "dark" ? "dark" : "light"}
-              showWeekdayLabels
-              data={getCalendarData(year)}
-              theme={{
-                light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-                dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-              }}
-              eventHandlers={{
-                onClick: (event) => (data) => {
-                  setIsOpen(true);
-                  setActivityData(data);
-                },
-              }}
-            />
-          )}
+          <ActivityCalendar
+            colorScheme={theme === "dark" ? "dark" : "light"}
+            showWeekdayLabels
+            data={getCalendarData(year)}
+            theme={{
+              light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+              dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+            }}
+            eventHandlers={{
+              onClick: (event) => (data) => {
+                setIsOpen(true);
+                setActivityData(data);
+              },
+            }}
+            labels={{
+              totalCount: "{{count}} contributions in {{year}}",
+            }}
+          />
 
           <ActivityModal
             isopen={isOpen}

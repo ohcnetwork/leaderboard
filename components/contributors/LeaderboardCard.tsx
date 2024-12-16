@@ -52,7 +52,7 @@ export default function LeaderboardCard({
                 rank={position + 1}
                 size="large"
               />
-              <div className="ml-4 mr-4 basis-3/5 text-wrap pr-10">
+              <div className="ml-4 mr-4 basis-3/5 text-wrap">
                 <div className="w-[180px] truncate font-bold text-green-500">
                   {contributor.user.name}
                 </div>
@@ -65,7 +65,7 @@ export default function LeaderboardCard({
             </div>
           </div>
 
-          <div className="flex items-center justify-between px-4  ">
+          <div className="flex items-center justify-between">
             <div className="mt-4 md:mt-0 md:block">
               <dl>
                 <dt className="truncate text-sm font-medium leading-5 text-foreground">

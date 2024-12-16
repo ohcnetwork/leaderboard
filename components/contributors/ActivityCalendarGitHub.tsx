@@ -24,31 +24,57 @@ export default function ActivityCalendarGit({
   const { theme } = useTheme();
 
   const getCalendarData = (year: number) => {
-    const currentYear = year;
     let dates = [];
-    let date = new Date(`01-01-${year}`);
-    date.setDate(date.getDate() + 1);
-    while (date.getFullYear() === currentYear) {
+    let currentYear: number;
+
+    if (year === 0) {
+      currentYear = new Date().getFullYear();
+      let date = new Date();
+      date.setDate(date.getDate() - 365);
+
+      for (let i = 0; i < 365; i++) {
+        dates.push({
+          date: new Date(date).toISOString().split("T")[0],
+          count: 0,
+          level: 0,
+        });
+        date.setDate(date.getDate() + 1);
+      }
+    } else {
+      currentYear = year;
+      let date = new Date(`01-01-${year}`);
+      date.setDate(date.getDate() + 1);
+
+      while (date.getFullYear() === currentYear) {
+        dates.push({
+          date: new Date(date).toISOString().split("T")[0],
+          count: 0,
+          level: 0,
+        });
+        date.setDate(date.getDate() + 1);
+      }
       dates.push({
         date: new Date(date).toISOString().split("T")[0],
         count: 0,
         level: 0,
       });
-      date.setDate(date.getDate() + 1);
     }
-    dates.push({
-      date: new Date(date).toISOString().split("T")[0],
-      count: 0,
-      level: 0,
+
+    let calDates = calendarData.filter((d: any) => {
+      if (year === 0) {
+        return dates.some((dateObj) => dateObj.date === d.date);
+      } else {
+        return d.date.slice(0, 4) === String(currentYear);
+      }
     });
 
-    let calDates = calendarData.filter(
-      (d: any) => d.date.slice(0, 4) === String(currentYear),
-    );
-
-    for (let i = 0; i < dates.length; i++)
-      for (let j = 0; j < calDates.length; j++)
-        if (dates[i].date === calDates[j].date) dates[i] = calDates[j];
+    for (let i = 0; i < dates.length; i++) {
+      for (let j = 0; j < calDates.length; j++) {
+        if (dates[i].date === calDates[j].date) {
+          dates[i] = calDates[j];
+        }
+      }
+    }
 
     return dates;
   };
@@ -70,10 +96,9 @@ export default function ActivityCalendarGit({
   const yearDiff = Number(new Date().getFullYear()) - getFirstContribYear();
   const yearsList = lastNYears(yearDiff);
 
-  const [year, setYear] = useState(new Date().getFullYear());
+  const [year, setYear] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [activityData, setActivityData] = useState({});
-  // console.log(getCalendarData(year));
   return (
     <div className="gap-3 sm:flex">
       {isBrowser && (
@@ -93,7 +118,10 @@ export default function ActivityCalendarGit({
               },
             }}
             labels={{
-              totalCount: "{{count}} contributions in {{year}}",
+              totalCount:
+                year === 0
+                  ? "{{count}} contributions in the last year"
+                  : "{{count}} contributions in {{year}}",
             }}
           />
 

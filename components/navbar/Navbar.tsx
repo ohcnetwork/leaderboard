@@ -1,13 +1,13 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { IoClose } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
 import ThemeSwitch from "../ThemeSwitch";
 import ContributeButton from "./ContributeButton";
 import Logo from "./Logo";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoClose } from "react-icons/io5";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 
 const MenuItems = {
   "/leaderboard": "Leaderboard",
@@ -39,7 +39,7 @@ export default function Navbar() {
                 href={href}
                 className={
                   "cursor-pointer text-sm transition-all hover:text-primary-500 hover:underline hover:dark:text-primary-300 md:p-2 md:text-base " +
-                  (pathname === href
+                  (pathname === href || pathname.includes(href)
                     ? "text-primary-500 dark:text-primary-300"
                     : "")
                 }
@@ -86,7 +86,7 @@ export default function Navbar() {
                   href={href}
                   className={
                     "cursor-pointer p-1 text-sm hover:text-primary-500 hover:underline md:p-2 md:text-base " +
-                    (pathname === href
+                    (pathname === href || pathname.includes(href)
                       ? "text-primary-500 dark:text-primary-300"
                       : "")
                   }

@@ -15,11 +15,11 @@ export default async function Page() {
   return (
     <>
       <GithubDiscussions discussions={discussions} searchParams={{}} />
-      <div className="bg-secondary-100/50 dark:bg-secondary-800/50 lg:top-30 h-fit w-full rounded-lg border border-secondary-100 shadow-lg dark:border-secondary-800 lg:sticky lg:right-28 lg:w-[23%]">
+
+      <div className="bg-secondary-100/50 dark:bg-secondary-800/50 sticky top-20 h-fit w-full rounded-lg border border-secondary-100  shadow-lg  dark:border-secondary-800 lg:fixed lg:right-28 lg:top-20 lg:w-[23%]">
         <div className="flex flex-col justify-between rounded-t-lg border-b border-secondary-300 bg-secondary-100 px-6 py-4 dark:border-secondary-700 dark:bg-secondary-800 md:flex-row md:items-center">
           <h4 className="font-bold">Most Helpful</h4>
         </div>
-
         <div className="flex flex-col gap-2 p-4 ">
           {contributors
             .filter((contributor) => contributor.points > 0)

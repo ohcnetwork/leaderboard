@@ -14,6 +14,9 @@ export default function ActivityCalendarGit({
   // following when attempted to render on server side.
   //
   // calcTextDimensions() requires browser APIs
+  calendarData = calendarData.sort(
+    (a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+  );
   const [isBrowser, setIsBrowser] = useState(false);
   useEffect(() => {
     setIsBrowser(
@@ -24,31 +27,57 @@ export default function ActivityCalendarGit({
   const { theme } = useTheme();
 
   const getCalendarData = (year: number) => {
-    const currentYear = year;
     let dates = [];
-    let date = new Date(`01-01-${year}`);
-    date.setDate(date.getDate() + 1);
-    while (date.getFullYear() === currentYear) {
+    let currentYear: number;
+
+    if (year === 0) {
+      currentYear = new Date().getFullYear();
+      let date = new Date();
+      date.setDate(date.getDate() - 365);
+
+      for (let i = 0; i < 365; i++) {
+        dates.push({
+          date: new Date(date).toISOString().split("T")[0],
+          count: 0,
+          level: 0,
+        });
+        date.setDate(date.getDate() + 1);
+      }
+    } else {
+      currentYear = year;
+      let date = new Date(`01-01-${year}`);
+      date.setDate(date.getDate() + 1);
+
+      while (date.getFullYear() === currentYear) {
+        dates.push({
+          date: new Date(date).toISOString().split("T")[0],
+          count: 0,
+          level: 0,
+        });
+        date.setDate(date.getDate() + 1);
+      }
       dates.push({
         date: new Date(date).toISOString().split("T")[0],
         count: 0,
         level: 0,
       });
-      date.setDate(date.getDate() + 1);
     }
-    dates.push({
-      date: new Date(date).toISOString().split("T")[0],
-      count: 0,
-      level: 0,
+
+    let calDates = calendarData.filter((d: any) => {
+      if (year === 0) {
+        return dates.some((dateObj) => dateObj.date === d.date);
+      } else {
+        return d.date.slice(0, 4) === String(currentYear);
+      }
     });
 
-    let calDates = calendarData.filter(
-      (d: any) => d.date.slice(0, 4) === String(currentYear),
-    );
-
-    for (let i = 0; i < dates.length; i++)
-      for (let j = 0; j < calDates.length; j++)
-        if (dates[i].date === calDates[j].date) dates[i] = calDates[j];
+    for (let i = 0; i < dates.length; i++) {
+      for (let j = 0; j < calDates.length; j++) {
+        if (dates[i].date === calDates[j].date) {
+          dates[i] = calDates[j];
+        }
+      }
+    }
 
     return dates;
   };
@@ -73,47 +102,31 @@ export default function ActivityCalendarGit({
   const [year, setYear] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [activityData, setActivityData] = useState({});
-
   return (
     <div className="gap-3 sm:flex">
       {isBrowser && (
         <div className="rounded-lg bg-secondary-100 px-6 py-8 text-center text-foreground hover:cursor-pointer dark:bg-secondary-800 sm:px-10 xl:text-left">
-          {year === 0 ? (
-            <ActivityCalendar
-              colorScheme={theme === "dark" ? "dark" : "light"}
-              showWeekdayLabels
-              data={calendarData}
-              theme={{
-                light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-                dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-              }}
-              eventHandlers={{
-                onClick: (event) => (data) => {
-                  setIsOpen(true);
-                  setActivityData(data);
-                },
-              }}
-              labels={{
-                totalCount: "{{count}} contributions in the last year",
-              }}
-            />
-          ) : (
-            <ActivityCalendar
-              colorScheme={theme === "dark" ? "dark" : "light"}
-              showWeekdayLabels
-              data={getCalendarData(year)}
-              theme={{
-                light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-                dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-              }}
-              eventHandlers={{
-                onClick: (event) => (data) => {
-                  setIsOpen(true);
-                  setActivityData(data);
-                },
-              }}
-            />
-          )}
+          <ActivityCalendar
+            colorScheme={theme === "dark" ? "dark" : "light"}
+            showWeekdayLabels
+            data={getCalendarData(year)}
+            theme={{
+              light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+              dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+            }}
+            eventHandlers={{
+              onClick: (event) => (data) => {
+                setIsOpen(true);
+                setActivityData(data);
+              },
+            }}
+            labels={{
+              totalCount:
+                year === 0
+                  ? "{{count}} contributions in the last year"
+                  : "{{count}} contributions in {{year}}",
+            }}
+          />
 
           <ActivityModal
             isopen={isOpen}

@@ -97,7 +97,6 @@ export default function ActivityCalendarGit({
   };
 
   const yearDiff = Number(new Date().getFullYear()) - getFirstContribYear();
-  console.log(getFirstContribYear());
   const yearsList = lastNYears(yearDiff);
 
   const [year, setYear] = useState(0);

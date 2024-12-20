@@ -14,6 +14,9 @@ export default function ActivityCalendarGit({
   // following when attempted to render on server side.
   //
   // calcTextDimensions() requires browser APIs
+  calendarData = calendarData.sort(
+    (a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+  );
   const [isBrowser, setIsBrowser] = useState(false);
   useEffect(() => {
     setIsBrowser(
@@ -94,6 +97,7 @@ export default function ActivityCalendarGit({
   };
 
   const yearDiff = Number(new Date().getFullYear()) - getFirstContribYear();
+  console.log(getFirstContribYear());
   const yearsList = lastNYears(yearDiff);
 
   const [year, setYear] = useState(0);

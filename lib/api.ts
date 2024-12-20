@@ -264,12 +264,11 @@ function getCalendarData(activity: Activity[]) {
     {} as Record<string, any>,
   );
 
-  return [...Array(Object.keys(calendarData).length)].map((_, i) => {
+  const dateKeyArr = Object.keys(calendarData);
+  return [...Array(dateKeyArr.length)].map((_, i) => {
     // Current Date - i
-    const iReverse = Object.keys(calendarData).length - i;
-    const date = new Date(
-      new Date().getTime() - iReverse * 24 * 60 * 60 * 1000,
-    );
+    const date = new Date(dateKeyArr[i]);
+
     // yyyy-mm-dd
     const dateString = `${date.getFullYear()}-${padZero(
       date.getMonth() + 1,

@@ -15,7 +15,7 @@ export default async function Page() {
   return (
     <>
       <GithubDiscussions discussions={discussions} searchParams={{}} />
-      <div className="sticky top-4 h-fit  w-full  rounded-lg pt-6  lg:fixed lg:right-28 lg:top-20 lg:w-[23%]">
+      <div className="sticky top-0 h-fit  w-full rounded-lg pt-7 lg:fixed lg:right-28 lg:top-20 lg:w-[23%]">
         <div className="bg-secondary-100/50 dark:bg-secondary-800/50 w-full border border-secondary-100  shadow-lg dark:border-secondary-800">
           <div className="flex flex-col justify-between rounded-t-lg border-b border-secondary-300 bg-secondary-100 px-6 py-4 dark:border-secondary-700 dark:bg-secondary-800 md:flex-row md:items-center">
             <h4 className="font-bold">Most Helpful</h4>

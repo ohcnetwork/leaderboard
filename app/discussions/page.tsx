@@ -1,7 +1,7 @@
 import { getContributors } from "@/lib/api";
 import Link from "next/link";
-import GithubDiscussions from "../../components/discussions/GithubDiscussions";
-import { fetchGithubDiscussion } from "../../lib/discussion";
+import GithubDiscussions from "@/components/discussions/GithubDiscussions";
+import { fetchGithubDiscussion } from "@/lib/discussion";
 
 export default async function Page() {
   const discussions = await fetchGithubDiscussion();
@@ -44,7 +44,7 @@ export default async function Page() {
           <div className="pt-2">
             <Link
               className="block rounded border border-primary-500 bg-gradient-to-b from-primary-500 to-primary-700 p-3 px-10 text-center font-bold text-white shadow-lg transition hover:from-secondary-800 hover:to-secondary-900 hover:text-primary-500 hover:shadow-xl"
-              href="/leaderboard?sortBy=discussion_comment_created"
+              href="/leaderboard/last-week?ordering=discussion_created"
             >
               Show More
             </Link>

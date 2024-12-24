@@ -20,7 +20,7 @@ export default function DiscussionsLayout({
   return (
     <div className="mx-auto max-w-6xl p-5">
       <div className="items-center gap-5 pb-8 lg:mt-10 lg:flex">
-        <h1 className="text-3xl sm:text-4xl">Disucssions</h1>
+        <h1 className="text-3xl sm:text-4xl">Discussions</h1>
         <Suspense fallback={<></>}>
           <FilterDiscussions categories={categories} />
         </Suspense>

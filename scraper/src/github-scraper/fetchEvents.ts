@@ -21,9 +21,6 @@ export const fetchEvents = async (org: string) => {
           console.debug(`Skipping event without type`);
           return false;
         }
-        if (event.actor.login.includes("[bot]")) {
-          return false;
-        }
         if (isBlacklisted(event.actor.login)) {
           return false;
         }

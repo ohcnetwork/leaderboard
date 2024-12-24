@@ -19,7 +19,11 @@ const userBlacklist = new Set(
 );
 
 export const isBlacklisted = (login: string): boolean => {
-  return login.includes("[bot]") || userBlacklist.has(login);
+  return (
+    login.includes("[bot]") ||
+    login.endsWith("-bot") ||
+    userBlacklist.has(login)
+  );
 };
 
 export async function calculateTurnaroundTime(event: PullRequestEvent) {

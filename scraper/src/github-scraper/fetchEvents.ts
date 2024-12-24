@@ -1,14 +1,8 @@
 import { octokit } from "./config.js";
 import dotenv from "dotenv";
+import { isBlacklisted } from "./utils.js";
 
 dotenv.config();
-
-const BlacklistedUsers = [
-  "dependabot",
-  "snyk-bot",
-  "codecov-commenter",
-  "github-actions[bot]",
-].concat(process.env.BLACKLISTED_USERS?.split(",") ?? []);
 
 const AllowedEventTypes = [
   "IssueCommentEvent",
@@ -30,7 +24,7 @@ export const fetchEvents = async (org: string) => {
         if (event.actor.login.includes("[bot]")) {
           return false;
         }
-        if (BlacklistedUsers.includes(event.actor.login)) {
+        if (isBlacklisted(event.actor.login)) {
           return false;
         }
         if (!AllowedEventTypes.includes(event.type)) {

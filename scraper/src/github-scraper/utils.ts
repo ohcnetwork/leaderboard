@@ -12,7 +12,11 @@ export const parseISODate = (isoDate: Date) => {
   return new Date(isoDate);
 };
 
-const userBlacklist = new Set(["dependabot", "snyk-bot", "codecov-commenter"]);
+const userBlacklist = new Set(
+  ["dependabot", "snyk-bot", "codecov-commenter"].concat(
+    process.env.BLACKLISTED_USERS?.split(",") ?? [],
+  ),
+);
 
 export const isBlacklisted = (login: string): boolean => {
   return login.includes("[bot]") || userBlacklist.has(login);

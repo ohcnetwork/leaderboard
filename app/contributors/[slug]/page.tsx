@@ -48,9 +48,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
-  return slugs
-    .filter((slug) => !slug.file.includes("[bot]"))
-    .map((slug) => ({ slug: slug.file.replace(".md", "") }));
+  return slugs.map((slug) => ({ slug: slug.file.replace(".md", "") }));
 }
 
 export default async function Page({ params }: Params) {

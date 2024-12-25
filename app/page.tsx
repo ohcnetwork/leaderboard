@@ -200,7 +200,7 @@ export default async function Home() {
                                 contributor={contributor}
                                 isClickable
                                 isFirstTimeContributor={
-                                  !!(index < firstTimePRContributors.length)
+                                  index < firstTimePRContributors.length
                                 }
                               />
                             );

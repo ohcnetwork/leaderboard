@@ -26,6 +26,31 @@ export default async function Home() {
   const discussions = await fetchGithubDiscussion(5);
   const startDate = parseISO(env.NEXT_PUBLIC_ORG_START_DATE);
 
+  const today = new Date();
+  const lastWeekStart = new Date(today);
+  lastWeekStart.setDate(today.getDate() - today.getDay() - 7);
+
+  const lastWeekEnd = new Date(lastWeekStart);
+  lastWeekEnd.setDate(lastWeekStart.getDate() + 6);
+
+  const firstTimePRContributors = contributors.filter((contributor) => {
+    const { activity } = contributor.activityData;
+
+    if (!activity || activity.length === 0) return false;
+
+    const prMergedActivities = activity
+      .filter((act) => act.type === "pr_merged")
+      .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
+
+    if (prMergedActivities.length === 0) return false;
+
+    const firstActivityTime = new Date(prMergedActivities[0].time);
+
+    return (
+      firstActivityTime >= lastWeekStart && firstActivityTime <= lastWeekEnd
+    );
+  });
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <section className="bg-background">
@@ -166,14 +191,17 @@ export default async function Home() {
                         role="list"
                         className="mt-4 space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
                       >
-                        {contributors
-                          .slice(0, 8)
+                        {firstTimePRContributors
+                          .concat(contributors.slice(0, 8))
                           .map((contributor: any, index: number) => {
                             return (
                               <InfoCard
                                 key={index}
                                 contributor={contributor}
                                 isClickable
+                                isFirstTimeContributor={
+                                  !!(index < firstTimePRContributors.length)
+                                }
                               />
                             );
                           })}

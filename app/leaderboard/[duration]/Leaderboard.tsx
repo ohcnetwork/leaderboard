@@ -19,7 +19,7 @@ import { FILTER_BY_ROLE_OPTIONS, SORT_BY_OPTIONS } from "@/lib/const";
 import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 import { Popover } from "@headlessui/react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { BiGitPullRequest } from "react-icons/bi";
 import { GoIssueOpened, GoIssueClosed } from "react-icons/go";
 import { VscGitPullRequestClosed } from "react-icons/vsc";
@@ -48,7 +48,6 @@ type Props = {
 export default function Leaderboard(props: Props) {
   const [showFilter, setShowFilter] = useState(false);
   const [start, end] = calcDateRange(props.duration)!;
-  const router = useRouter();
   const searchParams = useSearchParams();
 
   const search = searchParams.get("search") || "";
@@ -79,17 +78,19 @@ export default function Leaderboard(props: Props) {
     key: string,
     value: string | boolean | string[],
   ) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const updatedParams = new URLSearchParams(searchParams.toString());
+
     if (Array.isArray(value)) {
       if (value.length) {
-        params.set(key, value.join(","));
+        updatedParams.set(key, value.join(","));
       } else {
-        params.delete(key);
+        updatedParams.delete(key);
       }
     } else {
-      params.set(key, value.toString());
+      updatedParams.set(key, value.toString());
     }
-    router.push(`?${params.toString()}`);
+
+    window.history.pushState(null, "", `?${updatedParams.toString()}`);
   };
 
   const OtherFilters = () => {

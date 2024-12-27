@@ -11,12 +11,6 @@ const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
 const githubRoot = join(process.cwd(), "data-repo/data/github");
 
-const today = new Date();
-const lastWeekStart = new Date(today);
-lastWeekStart.setDate(today.getDate() - today.getDay() - 7);
-const lastWeekEnd = new Date(lastWeekStart);
-lastWeekEnd.setDate(lastWeekStart.getDate() + 6);
-
 export const points = {
   comment_created: 1,
   issue_assigned: 1,

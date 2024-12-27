@@ -10,6 +10,12 @@ const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
 const githubRoot = join(process.cwd(), "data-repo/data/github");
 
+const today = new Date();
+const lastWeekStart = new Date(today);
+lastWeekStart.setDate(today.getDate() - today.getDay() - 7);
+const lastWeekEnd = new Date(lastWeekStart);
+lastWeekEnd.setDate(lastWeekStart.getDate() + 6);
+
 export const points = {
   comment_created: 1,
   issue_assigned: 1,
@@ -180,6 +186,24 @@ export async function getContributorBySlug(file: string, detail = false) {
 
   const calendarData = getCalendarData(weightedActivity.activity);
 
+  const isNewContributor = (() => {
+    const { activity } = activityData;
+
+    if (!activity || activity.length === 0) return false;
+
+    const prMergedActivities = activity
+      .filter((act) => act.type === "pr_merged")
+      .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
+
+    if (prMergedActivities.length === 0) return false;
+
+    const firstActivityTime = new Date(prMergedActivities[0].time);
+
+    return (
+      firstActivityTime >= lastWeekStart && firstActivityTime <= lastWeekEnd
+    );
+  })();
+
   const summarize = (start: Date, end: Date) => {
     return calendarData
       .filter((day) => {
@@ -194,6 +218,7 @@ export async function getContributorBySlug(file: string, detail = false) {
     slug: formatSlug(file),
     path: fullPath,
     content: content,
+    isNewContributor,
     activityData: {
       ...activityData,
       activity: weightedActivity.activity,

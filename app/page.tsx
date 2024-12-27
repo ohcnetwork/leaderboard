@@ -26,30 +26,16 @@ export default async function Home() {
   const discussions = await fetchGithubDiscussion(5);
   const startDate = parseISO(env.NEXT_PUBLIC_ORG_START_DATE);
 
-  const today = new Date();
-  const lastWeekStart = new Date(today);
-  lastWeekStart.setDate(today.getDate() - today.getDay() - 7);
+  const firstTimeContributors = contributors.filter(
+    (contributor) => contributor.isNewContributor,
+  );
 
-  const lastWeekEnd = new Date(lastWeekStart);
-  lastWeekEnd.setDate(lastWeekStart.getDate() + 6);
-
-  const firstTimePRContributors = contributors.filter((contributor) => {
-    const { activity } = contributor.activityData;
-
-    if (!activity || activity.length === 0) return false;
-
-    const prMergedActivities = activity
-      .filter((act) => act.type === "pr_merged")
-      .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime());
-
-    if (prMergedActivities.length === 0) return false;
-
-    const firstActivityTime = new Date(prMergedActivities[0].time);
-
-    return (
-      firstActivityTime >= lastWeekStart && firstActivityTime <= lastWeekEnd
-    );
-  });
+  const topContributors = [
+    ...firstTimeContributors,
+    ...contributors
+      .filter((contributor) => !contributor.isNewContributor)
+      .slice(0, 8),
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -191,20 +177,17 @@ export default async function Home() {
                         role="list"
                         className="mt-4 space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
                       >
-                        {firstTimePRContributors
-                          .concat(contributors.slice(0, 8))
-                          .map((contributor: any, index: number) => {
+                        {topContributors.map(
+                          (contributor: any, index: number) => {
                             return (
                               <InfoCard
                                 key={index}
                                 contributor={contributor}
                                 isClickable
-                                isFirstTimeContributor={
-                                  index < firstTimePRContributors.length
-                                }
                               />
                             );
-                          })}
+                          },
+                        )}
                       </ul>
                       <Link
                         className="flex w-fit items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200 sm:justify-center lg:ml-auto"

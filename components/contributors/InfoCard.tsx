@@ -9,7 +9,6 @@ export default function InfoCard({
   contributor,
   rank = null,
   isClickable = false,
-  isFirstTimeContributor = false,
 }: {
   contributor: Contributor;
   rank?: number | null;
@@ -45,11 +44,6 @@ export default function InfoCard({
         </div>
         <div className="overflow-hidden">
           <div className="fnt-medium space-y-1 overflow-hidden text-lg">
-            {isFirstTimeContributor && (
-              <p className="inline-block rounded-full bg-primary-500 px-2 py-1 text-sm text-primary-100 md:text-base">
-                @New Contributor
-              </p>
-            )}
             <Link
               href={isClickable ? `/contributors/${contributor.github}` : `#`}
               className="flex gap-2"
@@ -66,9 +60,15 @@ export default function InfoCard({
                 #{rank}
               </span>
             </Link>
-            <p className="text-sm text-secondary-400 md:text-base">
-              {contributor.title}
-            </p>
+            {contributor.isNewContributor ? (
+              <p className="inline-block rounded-full text-sm text-primary-400 md:text-base">
+                New Contributor 🎉
+              </p>
+            ) : (
+              <p className="text-sm text-secondary-400 md:text-base">
+                {contributor.title}
+              </p>
+            )}
           </div>
 
           <ul role="list" className="mt-4 flex items-center space-x-4">

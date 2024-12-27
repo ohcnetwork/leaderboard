@@ -5,7 +5,7 @@ import { padZero } from "./utils";
 import { readFile, readdir } from "fs/promises";
 import { existsSync } from "fs";
 import { getGithubDiscussions } from "@/lib/discussion";
-import { isAfter, sub } from "date-fns";
+import { compareAsc, isAfter, sub } from "date-fns";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
@@ -188,9 +188,9 @@ export async function getContributorBySlug(file: string, detail = false) {
 
     const firstActivity = activity
       .filter((act) => act.type === "pr_merged")
-      .sort(
-        (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime(),
-      )[0];
+      .sort((a, b) => compareAsc(new Date(a.time), new Date(b.time)))[0];
+
+    if (!firstActivity) return false;
 
     return isAfter(new Date(firstActivity?.time), aWeekAgo);
   })();

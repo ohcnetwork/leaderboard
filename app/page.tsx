@@ -26,12 +26,8 @@ export default async function Home() {
   const discussions = await fetchGithubDiscussion(5);
   const startDate = parseISO(env.NEXT_PUBLIC_ORG_START_DATE);
 
-  const firstTimeContributors = contributors.filter(
-    (contributor) => contributor.isNewContributor,
-  );
-
   const topContributors = [
-    ...firstTimeContributors,
+    ...contributors.filter((contributor) => contributor.isNewContributor),
     ...contributors
       .filter((contributor) => !contributor.isNewContributor)
       .slice(0, 8),

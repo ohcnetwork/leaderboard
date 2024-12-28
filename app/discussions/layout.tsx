@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { env } from "@/env.mjs";
 import { notFound } from "next/navigation";
 import { featureIsEnabled } from "@/lib/utils";
-import FilterDiscussions from "../../components/discussions/FilterDiscussions";
-import { categories } from "../../lib/discussion";
+import FilterDiscussions from "@/components/discussions/FilterDiscussions";
+import { categories } from "@/lib/discussion";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

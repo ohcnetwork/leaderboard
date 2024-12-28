@@ -1,5 +1,5 @@
 "use client";
-import Search from "./filters/Search";
+import Search from "@/components/filters/Search";
 import { useDebouncedCallback } from "use-debounce";
 import { usePathname, useRouter } from "next/navigation";
 

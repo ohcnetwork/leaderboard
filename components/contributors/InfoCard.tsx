@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { BsSlack, BsTwitterX, BsLinkedin, BsGithub } from "react-icons/bs";
 import { env } from "@/env.mjs";
-import ContributorImage from "./ContributorImage";
+import ContributorImage from "@/components/contributors/ContributorImage";
 
 export default function InfoCard({
   contributor,

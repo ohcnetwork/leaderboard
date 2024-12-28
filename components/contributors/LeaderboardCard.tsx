@@ -1,7 +1,7 @@
 import { LeaderboardAPIResponse } from "@/lib/types";
 import Link from "next/link";
 import { FiAlertTriangle } from "react-icons/fi";
-import ContributorImage from "./ContributorImage";
+import ContributorImage from "@/components/contributors/ContributorImage";
 
 export default function LeaderboardCard({
   contributor,

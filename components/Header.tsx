@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
-import ThemeSwitch from "./ThemeSwitch";
+import ThemeSwitch from "@/components/ThemeSwitch";
 import { env } from "@/env.mjs";
 import { navLinks } from "@/lib/utils";
 

@@ -1,5 +1,5 @@
-import "@/globals.css";
-import "@/badges.css";
+import "./globals.css";
+import "./badges.css";
 
 import { Metadata } from "next";
 import Footer from "@/components/Footer";

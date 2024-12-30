@@ -113,7 +113,7 @@ export default function Leaderboard(props: Props) {
                       {props.duration.replace("-", " ")}
                     </span>
                   </Popover.Button>
-                  <Popover.Panel className="absolute z-10 mt-2 w-full rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500 sm:min-w-[23rem] ">
+                  <Popover.Panel className="absolute z-10 mt-2 w-full rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500 sm:min-w-[23rem]">
                     <div className="grid grid-cols-1 gap-2 p-4 sm:grid-cols-2">
                       {LeaderboardFilterDurations.map((duration) => (
                         <Link
@@ -212,7 +212,7 @@ export default function Leaderboard(props: Props) {
               </button>
             </div>
             <div
-              className={`${showFilter ? "mt-4 max-h-[50vh]" : "max-h-0"} flex flex-col gap-4 overflow-hidden transition-all duration-500 sm:hidden`}
+              className={`${showFilter ? "mt-4 max-h-[50vh] " : "max-h-0 overflow-hidden"} flex flex-col gap-4  transition-all duration-500 sm:hidden`}
             >
               <OtherFilters />
             </div>

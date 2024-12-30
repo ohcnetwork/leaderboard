@@ -65,7 +65,7 @@ export default function LeaderboardCard({
             </div>
           </div>
 
-          <div className="flex items-center justify-between px-4  ">
+          <div className="flex items-center justify-between px-4">
             <div className="mt-4 md:mt-0 md:block">
               <dl>
                 <dt className="truncate text-sm font-medium leading-5 text-foreground">

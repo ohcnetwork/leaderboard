@@ -27,6 +27,9 @@ async function getDefaultBranch(owner: string, repo: string) {
   return defaultBranches[repo];
 }
 function appendEvent(user: string, event: Activity) {
+  if (isBlacklisted(user)) {
+    return;
+  }
   console.debug(
     `Appending ${event.type} event for user ${user}. ${event.link}`,
   );

@@ -19,7 +19,7 @@ import { FILTER_BY_ROLE_OPTIONS, SORT_BY_OPTIONS } from "@/lib/const";
 import { HiSortAscending, HiSortDescending } from "react-icons/hi";
 import { Popover } from "@headlessui/react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { BiGitPullRequest } from "react-icons/bi";
 import { GoIssueOpened, GoIssueClosed } from "react-icons/go";
 import { VscGitPullRequestClosed } from "react-icons/vsc";
@@ -48,7 +48,6 @@ type Props = {
 export default function Leaderboard(props: Props) {
   const [showFilter, setShowFilter] = useState(false);
   const [start, end] = calcDateRange(props.duration)!;
-  const router = useRouter();
   const searchParams = useSearchParams();
 
   const search = searchParams.get("search") || "";
@@ -79,17 +78,19 @@ export default function Leaderboard(props: Props) {
     key: string,
     value: string | boolean | string[],
   ) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const updatedParams = new URLSearchParams(searchParams.toString());
+
     if (Array.isArray(value)) {
       if (value.length) {
-        params.set(key, value.join(","));
+        updatedParams.set(key, value.join(","));
       } else {
-        params.delete(key);
+        updatedParams.delete(key);
       }
     } else {
-      params.set(key, value.toString());
+      updatedParams.set(key, value.toString());
     }
-    router.push(`?${params.toString()}`);
+
+    window.history.pushState(null, "", `?${updatedParams.toString()}`);
   };
 
   const OtherFilters = () => {
@@ -112,7 +113,7 @@ export default function Leaderboard(props: Props) {
                       {props.duration.replace("-", " ")}
                     </span>
                   </Popover.Button>
-                  <Popover.Panel className="absolute z-10 mt-2 w-full rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500 sm:min-w-[23rem] ">
+                  <Popover.Panel className="absolute z-10 mt-2 w-full rounded-lg border border-primary-400 bg-background shadow-lg shadow-primary-500 sm:min-w-[23rem]">
                     <div className="grid grid-cols-1 gap-2 p-4 sm:grid-cols-2">
                       {LeaderboardFilterDurations.map((duration) => (
                         <Link
@@ -211,7 +212,7 @@ export default function Leaderboard(props: Props) {
               </button>
             </div>
             <div
-              className={`${showFilter ? "mt-4 max-h-[50vh]" : "max-h-0"} flex flex-col gap-4 overflow-hidden transition-all duration-500 sm:hidden`}
+              className={`${showFilter ? "mt-4 max-h-[50vh] " : "max-h-0 overflow-hidden"} flex flex-col gap-4  transition-all duration-500 sm:hidden`}
             >
               <OtherFilters />
             </div>

@@ -12,7 +12,7 @@ export default async function Page() {
     <div className="mx-auto mb-20 flex max-w-full flex-col items-center justify-center gap-8 px-24">
       {contributors.length ? (
         <>
-          <h1 className="text-center text-6xl leading-none drop-shadow-lg">
+          <h1 className="mt-2 text-center text-6xl leading-none drop-shadow-lg">
             <p>{contributors.length}</p>
             <p className="text-xl">contributors</p>
           </h1>

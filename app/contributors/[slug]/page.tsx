@@ -48,9 +48,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 export async function generateStaticParams() {
   const slugs = await getContributorsSlugs();
-  return slugs
-    .filter((slug) => !slug.file.includes("[bot]"))
-    .map((slug) => ({ slug: slug.file.replace(".md", "") }));
+  return slugs.map((slug) => ({ slug: slug.file.replace(".md", "") }));
 }
 
 export default async function Page({ params }: Params) {
@@ -105,7 +103,7 @@ export default async function Page({ params }: Params) {
           <div className="mt-10 flex flex-col justify-between rounded-lg border border-current bg-amber-300/20 px-4 py-4 font-semibold text-amber-500 dark:bg-amber-500/20 max-sm:mx-3 max-sm:gap-3 sm:flex-row sm:px-6 xl:px-10 ">
             <span className="flex items-center gap-4">
               <FiAlertTriangle size={20} />
-              Contributor profile has not been updated.
+              Bio is missing. Update it to complete the profile!
             </span>
             <Link
               href={`https://github.com/${env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}

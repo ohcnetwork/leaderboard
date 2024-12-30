@@ -121,7 +121,7 @@ export default async function Page({ params }: Params) {
           <div className="mt-8 flex items-end justify-between">
             <h3 className="font-bold text-foreground">Graduate Attributes</h3>
             <Link
-              href="#"
+              href="/contributors/graduateAttributes"
               className="mt-1 inline-flex items-center space-x-2 pl-1 pt-2 text-secondary-400 underline transition hover:text-primary-400"
             >
               <span>Learn More</span>

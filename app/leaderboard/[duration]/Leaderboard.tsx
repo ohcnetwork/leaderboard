@@ -5,7 +5,7 @@ import { TbZoomQuestion } from "react-icons/tb";
 import TopContributor from "../../../components/contributors/TopContributor";
 import {
   calcDateRange,
-  getWeekNumber,
+  getWeekNumberAndYear,
   LeaderboardFilterDurations,
 } from "@/lib/utils";
 import { LeaderboardAPIResponse } from "@/lib/types";
@@ -23,6 +23,8 @@ import { useSearchParams } from "next/navigation";
 import { BiGitPullRequest } from "react-icons/bi";
 import { GoIssueOpened, GoIssueClosed } from "react-icons/go";
 import { VscGitPullRequestClosed } from "react-icons/vsc";
+
+const { weekNumber, weekYear } = getWeekNumberAndYear(new Date());
 
 const filterBySearchTerm = (searchTermLC: string) => {
   return (item: LeaderboardAPIResponse[number]) =>
@@ -307,9 +309,8 @@ export default function Leaderboard(props: Props) {
                       </span>
                     ) : (
                       <span>
-                        Live Leaderboard of last 7 days | Week{" "}
-                        {getWeekNumber(new Date())} of{" "}
-                        {new Date().getFullYear()}
+                        Live Leaderboard of last 7 days | Week {weekNumber} of{" "}
+                        {weekYear}
                       </span>
                     )}
                   </div>

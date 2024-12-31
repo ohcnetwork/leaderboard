@@ -16,12 +16,21 @@ export const formatDuration = (duration_in_ms: number) =>
     .splice(0, 4)
     .join(" ");
 
-export const getWeekNumber = (date: Date) => {
+export const getWeekNumberAndYear = (date: Date) => {
   const d = new Date(date);
   const dayNum = d.getUTCDay() || 7;
   d.setUTCDate(d.getUTCDate() + 4 - dayNum);
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  return Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
+  
+  const weekNumber = Math.ceil(((Number(d) - Number(yearStart)) / 86400000 + 1) / 7);
+
+  const weekYear = d.getUTCFullYear();
+  if (d < yearStart) {
+    return { weekNumber: 52, weekYear: weekYear - 1 }; 
+  } else if (d >= new Date(Date.UTC(d.getUTCFullYear(), 11, 29))) {
+    return { weekNumber: 1, weekYear: weekYear + 1 };
+  }
+  return { weekNumber, weekYear };
 };
 
 const now = new Date();

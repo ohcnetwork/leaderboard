@@ -77,7 +77,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
         {/* model */}
 
         <div
-          className={`absolute inset-x-0 z-20 mx-4 mt-1 translate-y-5 rounded-lg bg-secondary-200 text-black shadow-2xl transition-all dark:bg-secondary-800 dark:text-white md:inset-auto md:-left-[calc(125px-50%)] md:top-[calc(100%+10px)] md:mx-0 md:w-[250px] ${
+          className={`absolute inset-auto right-[calc(50%-125px)] z-20 mx-0 mt-1 w-[250px] translate-y-5 rounded-lg bg-secondary-200 text-black shadow-2xl transition-all dark:bg-secondary-800 dark:text-white md:top-[calc(100%+10px)] ${
             showModel
               ? "visible translate-y-0 opacity-100"
               : "invisible opacity-0"

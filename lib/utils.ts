@@ -3,6 +3,8 @@ import {
   intervalToDuration,
   format,
   getISOWeek,
+  startOfISOWeek,
+  addDays,
   getISOWeekYear,
 } from "date-fns";
 import { env } from "@/env.mjs";
@@ -18,10 +20,17 @@ export const formatDuration = (duration_in_ms: number) =>
     .splice(0, 4)
     .join(" ");
 
-export const getWeekNumberAndYear = (date: Date) => {
-  const weekNumber = getISOWeek(date);
-  const weekYear = getISOWeekYear(date);
-  return { weekNumber, weekYear };
+export const getWeekNumber = (date: Date) => {
+  let weekNumber = getISOWeek(date);
+
+  if (weekNumber === 1 && date.getMonth() === 11) {
+    const startOfWeek = startOfISOWeek(date);
+    if (startOfWeek.getFullYear() !== getISOWeekYear(date)) {
+      const lastDayOfLastWeekThisYear = addDays(startOfWeek, -1);
+      weekNumber = getISOWeek(lastDayOfLastWeekThisYear);
+    }
+  }
+  return weekNumber;
 };
 
 const now = new Date();

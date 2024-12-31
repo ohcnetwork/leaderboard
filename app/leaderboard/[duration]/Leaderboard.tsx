@@ -2,7 +2,7 @@
 
 import LeaderboardCard from "@/components/contributors/LeaderboardCard";
 import { TbZoomQuestion } from "react-icons/tb";
-import TopContributor from "../../../components/contributors/TopContributor";
+import TopContributor from "@/components/contributors/TopContributor";
 import {
   calcDateRange,
   getWeekNumber,

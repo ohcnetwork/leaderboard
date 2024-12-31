@@ -4,13 +4,13 @@ import {
   professionalSelfSkills,
   professionalTeamSkills,
   resolveGraduateAttributes,
-} from "../../../config/GraduateAttributes";
-import { getContributorBySlug, getContributorsSlugs } from "../../../lib/api";
-import ActivityCalendarGit from "../../../components/contributors/ActivityCalendarGitHub";
-import BadgeIcons from "../../../components/contributors/BadgeIcons";
-import GithubActivity from "../../../components/contributors/GithubActivity";
-import GraduateAttributeBadge from "../../../components/contributors/GraduateAttributeBadge";
-import InfoCard from "../../../components/contributors/InfoCard";
+} from "@/config/GraduateAttributes";
+import { getContributorBySlug, getContributorsSlugs } from "@/lib/api";
+import ActivityCalendarGit from "@/components/contributors/ActivityCalendarGitHub";
+import BadgeIcons from "@/components/contributors/BadgeIcons";
+import GithubActivity from "@/components/contributors/GithubActivity";
+import GraduateAttributeBadge from "@/components/contributors/GraduateAttributeBadge";
+import InfoCard from "@/components/contributors/InfoCard";
 import React from "react";
 import clsx from "clsx";
 import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";

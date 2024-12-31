@@ -1,4 +1,4 @@
-import ActiveProjects from "../projects/ActiveProjects";
+import ActiveProjects from "@/app/projects/ActiveProjects";
 
 const page = async () => {
   const refUrl = `https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/encouraging-helpful-contributions-to-your-project-with-labels`;

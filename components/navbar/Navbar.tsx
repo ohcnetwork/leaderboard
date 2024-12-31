@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
-import ThemeSwitch from "../ThemeSwitch";
-import ContributeButton from "./ContributeButton";
-import Logo from "./Logo";
+import ThemeSwitch from "@/components/ThemeSwitch";
+import ContributeButton from "@/components/navbar/ContributeButton";
+import Logo from "@/components/navbar/Logo";
 
 const MenuItems = {
   "/leaderboard": "Leaderboard",

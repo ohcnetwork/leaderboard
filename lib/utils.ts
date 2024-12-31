@@ -2,6 +2,8 @@ import {
   formatDuration as _formatDuration,
   intervalToDuration,
   format,
+  getISOWeek,
+  getISOWeekYear,
 } from "date-fns";
 import { env } from "@/env.mjs";
 
@@ -17,20 +19,8 @@ export const formatDuration = (duration_in_ms: number) =>
     .join(" ");
 
 export const getWeekNumberAndYear = (date: Date) => {
-  const d = new Date(date);
-  const dayNum = d.getUTCDay() || 7;
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-  const weekNumber = Math.ceil(
-    ((Number(d) - Number(yearStart)) / 86400000 + 1) / 7,
-  );
-
-  const weekYear = d.getUTCFullYear();
-  if (d < yearStart) {
-    return { weekNumber: 52, weekYear: weekYear - 1 };
-  } else if (d >= new Date(Date.UTC(d.getUTCFullYear(), 11, 29))) {
-    return { weekNumber: 1, weekYear: weekYear + 1 };
-  }
+  const weekNumber = getISOWeek(date);
+  const weekYear = getISOWeekYear(date);
   return { weekNumber, weekYear };
 };
 

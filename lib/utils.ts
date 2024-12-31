@@ -27,9 +27,9 @@ export const getWeekNumber = (date: Date) => {
     const startOfWeek = startOfISOWeek(date);
     if (startOfWeek.getFullYear() !== getISOWeekYear(date)) {
       const lastDayOfLastWeekThisYear = addDays(startOfWeek, -1);
-      weekNumber = getISOWeek(lastDayOfLastWeekThisYear);
-    }
+      weekNumber = getISOWeek(lastDayOfLastWeekThisYear) + 1;
   }
+}
   return weekNumber;
 };
 

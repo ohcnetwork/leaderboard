@@ -181,8 +181,12 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">
               {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
-            </span>
+            </span>{" "}
           </Link>
+          <RelativeTime
+            className="inline text-sm text-secondary-400 underline"
+            time={event.created_at}
+          />
         </div>
       );
       body = (

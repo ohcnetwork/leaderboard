@@ -121,7 +121,7 @@ export default async function Page({ params }: Params) {
           <div className="mt-8 flex items-end justify-between">
             <h3 className="font-bold text-foreground">Graduate Attributes</h3>
             <Link
-              href="/contributors/graduateAttributes"
+              href="#"
               className="mt-1 inline-flex items-center space-x-2 pl-1 pt-2 text-secondary-400 underline transition hover:text-primary-400"
             >
               <span>Learn More</span>
@@ -140,7 +140,7 @@ export default async function Page({ params }: Params) {
             </Link>
           </div>
           <div className="mt-3">
-            <div className="w-full md:grid md:grid-cols-2 md:space-x-0 md:overflow-x-auto">
+            <div className="w-full md:grid md:grid-cols-2 md:space-x-0 md:overflow-hidden">
               <div className="flex w-full shrink-0 flex-col rounded-tl-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:pr-2">
                 <div className="flex items-center rounded-t-lg bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center">
                   <p className="font-semibold text-foreground md:text-lg">

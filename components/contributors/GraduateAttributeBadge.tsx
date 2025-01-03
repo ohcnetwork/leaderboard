@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BadgeIcons from "./BadgeIcons";
 
 export default function GraduateAttributeBadge({
   skill,
@@ -25,20 +26,7 @@ export default function GraduateAttributeBadge({
             skill.currentLevel ? colorDark : "bg-secondary-700"
           }`}
         >
-          <Image
-            className={`h-8 w-8 md:h-11 md:w-11 ${
-              skill.currentLevel ? "" : "opacity-30 grayscale"
-            }`}
-            height={32}
-            width={32}
-            src={skill.icon}
-            alt="Graduate attribute"
-          />
-          {skill.currentLevel && (
-            <span className="absolute bottom-0 right-0 rounded bg-secondary-100 px-1 text-sm font-medium leading-tight text-secondary-900">
-              {skill.currentLevel.label}
-            </span>
-          )}
+          <BadgeIcons skill={skill} />
         </div>
       </div>
       <div className="relative flex items-center px-2 py-1">

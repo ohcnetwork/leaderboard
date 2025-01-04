@@ -23,6 +23,7 @@ export interface Contributor {
   joining_date: string;
   role: "core" | "intern" | "operations" | "contributor";
   courses_completed: string[];
+  isNewContributor: boolean;
 }
 
 export interface ActivityData {

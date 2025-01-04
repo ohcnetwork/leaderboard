@@ -13,6 +13,7 @@ export default function InfoCard({
   contributor: Contributor;
   rank?: number | null;
   isClickable?: boolean;
+  isFirstTimeContributor?: boolean;
 }) {
   return (
     <div
@@ -59,9 +60,15 @@ export default function InfoCard({
                 #{rank}
               </span>
             </Link>
-            <p className="text-sm text-secondary-400 md:text-base">
-              {contributor.title}
-            </p>
+            {contributor.isNewContributor ? (
+              <p className="inline-block rounded-full text-sm text-primary-400 md:text-base">
+                New Contributor 🎉
+              </p>
+            ) : (
+              <p className="text-sm text-secondary-400 md:text-base">
+                {contributor.title}
+              </p>
+            )}
           </div>
 
           <ul role="list" className="mt-4 flex items-center space-x-4">

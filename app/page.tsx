@@ -13,6 +13,7 @@ import { differenceInWeeks, parseISO } from "date-fns";
 import { featureIsEnabled, formatDate } from "@/lib/utils";
 import { fetchGithubDiscussion } from "../lib/discussion";
 import GithubDiscussion from "@/components/discussions/GithubDiscussion";
+import { Contributor } from "@/lib/types";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -174,7 +175,7 @@ export default async function Home() {
                         className="mt-4 space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
                       >
                         {topContributors.map(
-                          (contributor: any, index: number) => {
+                          (contributor: Contributor, index: number) => {
                             return (
                               <InfoCard
                                 key={index}

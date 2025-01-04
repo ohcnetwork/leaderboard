@@ -192,7 +192,7 @@ export async function getContributorBySlug(file: string, detail = false) {
 
     if (!firstActivity) return false;
 
-    return isAfter(new Date(firstActivity?.time), aWeekAgo);
+    return isAfter(new Date(firstActivity.time), aWeekAgo);
   })();
 
   const summarize = (start: Date, end: Date) => {

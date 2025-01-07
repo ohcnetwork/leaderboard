@@ -1,8 +1,8 @@
 "use client";
 
 import LeaderboardCard from "@/components/contributors/LeaderboardCard";
-import { TbZoomQuestion } from "react-icons/tb";
 import TopContributor from "@/components/contributors/TopContributor";
+import { TbGitMerge, TbZoomQuestion } from "react-icons/tb";
 import {
   calcDateRange,
   getWeekNumber,
@@ -278,7 +278,7 @@ export default function Leaderboard(props: Props) {
             </div>
 
             <div className="flex items-center space-x-2 rounded-lg border border-secondary-600 p-3 dark:border-secondary-300">
-              <VscGitPullRequestClosed className="text-2xl text-orange-500" />
+              <TbGitMerge className="text-2xl text-orange-500" />
               <div>
                 <p className="text-sm text-secondary-500 dark:text-secondary-300">
                   PRs Merged

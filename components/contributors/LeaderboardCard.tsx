@@ -39,14 +39,14 @@ export default function LeaderboardCard({
       <div className="flex cursor-pointer justify-center space-y-4 rounded-lg border-2 border-transparent p-4 px-2 py-2 transition-all duration-300 ease-in-out hover:scale-105 hover:border-primary-400 hover:shadow-lg sm:px-6 md:items-center md:py-0">
         {!hideBadges && (
           <div
-            className={`my-6 ml-3 flex h-10 w-[40px] items-center justify-center rounded-full bg-gradient-to-tr text-white ${badgeColors} mr-4 shrink-0 border-4`}
+            className={`my-6 ml-3 flex h-10 w-[40px] items-center justify-center rounded-full bg-gradient-to-tr text-white ${badgeColors} mr-4 shrink-0 border-4 max-sm:h-8 max-sm:w-[32px]`}
           >
             {position + 1}
           </div>
         )}
         <div className="flex w-full flex-col justify-between pb-2 md:flex-row md:items-center">
           <div className="flex w-full">
-            <div className="flex min-w-0 flex-1 items-center">
+            <div className="flex min-w-0 flex-1 flex-wrap items-center gap-4 md:flex-nowrap md:gap-0">
               <ContributorImage
                 contributorGithub={contributor.user.social.github}
                 rank={position + 1}
@@ -65,14 +65,14 @@ export default function LeaderboardCard({
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between px-4">
             <div className="mt-4 md:mt-0 md:block">
               <dl>
                 <dt className="truncate text-sm font-medium leading-5 text-foreground">
                   PRs
                 </dt>
                 <dd className="flex">
-                  <div className="flex items-center">
+                  <div className="flex flex-wrap items-center md:flex-nowrap">
                     <svg
                       className="h-5 w-5 shrink-0 text-green-500"
                       fill="currentColor"
@@ -123,7 +123,7 @@ export default function LeaderboardCard({
                   Activity
                 </dt>
                 <dd className="flex">
-                  <div className="flex items-center">
+                  <div className="flex flex-wrap items-center md:flex-nowrap">
                     <svg
                       className="h-5 w-5 shrink-0 text-green-500"
                       fill="currentColor"

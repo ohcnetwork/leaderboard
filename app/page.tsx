@@ -27,7 +27,7 @@ export default async function Home() {
   const discussions = await fetchGithubDiscussion(5);
   const startDate = parseISO(env.NEXT_PUBLIC_ORG_START_DATE);
 
-  const topContributors = [
+  const featuredContributors = [
     ...contributors.filter((contributor) => contributor.isNewContributor),
     ...contributors
       .filter((contributor) => !contributor.isNewContributor)
@@ -174,7 +174,7 @@ export default async function Home() {
                         role="list"
                         className="mt-4 space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
                       >
-                        {topContributors.map(
+                        {featuredContributors.map(
                           (contributor: Contributor, index: number) => {
                             return (
                               <InfoCard
@@ -191,7 +191,7 @@ export default async function Home() {
                         href={"/people"}
                       >
                         {contributors.length > 8
-                          ? `${contributors.length - topContributors.length} contributors more`
+                          ? `${contributors.length - featuredContributors.length} contributors more`
                           : "Show all contributors"}
                         <MdOutlineArrowForwardIos />
                       </Link>

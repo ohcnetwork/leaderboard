@@ -188,7 +188,7 @@ export async function getContributorBySlug(file: string, detail = false) {
 
     const firstActivity = activity
       .filter((act) => act.type === "pr_merged")
-      .sort((a, b) => compareAsc(new Date(a.time), new Date(b.time)))[0];
+      .sort((a, b) => compareAsc(a.time, b.time))[0];
 
     if (!firstActivity) return false;
 

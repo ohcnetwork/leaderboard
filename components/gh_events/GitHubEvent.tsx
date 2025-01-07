@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { IGitHubEvent } from "@/lib/gh_events";
-import GitHubReleaseEventBody from "./ReleaseEventBody";
-import OpenGraphImage from "./OpenGraphImage";
-import RelativeTime from "../RelativeTime";
+import GitHubReleaseEventBody from "@/components/gh_events/ReleaseEventBody";
+import OpenGraphImage from "@/components/gh_events/OpenGraphImage";
+import RelativeTime from "@/components/RelativeTime";
 
 import { GoGitPullRequest } from "react-icons/go";
 import { GoRepoForked } from "react-icons/go";

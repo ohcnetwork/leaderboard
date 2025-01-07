@@ -3,7 +3,7 @@ import RelativeTime from "@/components/RelativeTime";
 import { parseIssueNumber } from "@/lib/utils";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
-import { ActiveProjectLabelConfig } from "./constants";
+import { ActiveProjectLabelConfig } from "@/app/projects/constants";
 import { env } from "@/env.mjs";
 import octokit, { getGitHubAccessToken } from "@/lib/octokit";
 

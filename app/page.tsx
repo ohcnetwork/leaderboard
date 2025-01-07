@@ -1,9 +1,9 @@
-import InfoCard from "../components/contributors/InfoCard";
+import InfoCard from "@/components/contributors/InfoCard";
 import Link from "next/link";
-import { getContributors } from "../lib/api";
+import { getContributors } from "@/lib/api";
 import GitHubEvents from "@/components/gh_events/GitHubEvents";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
-import ActiveProjects from "./projects/ActiveProjects";
+import ActiveProjects from "@/app/projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
 import ReleaseSection from "@/components/releases/ReleaseSection";
 import { Suspense } from "react";
@@ -11,7 +11,7 @@ import { env } from "@/env.mjs";
 import CommunityEngagemet from "@/app/CommunityEngagementSummary";
 import { differenceInWeeks, parseISO } from "date-fns";
 import { featureIsEnabled, formatDate } from "@/lib/utils";
-import { fetchGithubDiscussion } from "../lib/discussion";
+import { fetchGithubDiscussion } from "@/lib/discussion";
 import GithubDiscussion from "@/components/discussions/GithubDiscussion";
 import { Contributor } from "@/lib/types";
 

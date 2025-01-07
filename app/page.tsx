@@ -13,6 +13,7 @@ import { differenceInWeeks, parseISO } from "date-fns";
 import { featureIsEnabled, formatDate } from "@/lib/utils";
 import { fetchGithubDiscussion } from "@/lib/discussion";
 import GithubDiscussion from "@/components/discussions/GithubDiscussion";
+import { Contributor } from "@/lib/types";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -25,6 +26,13 @@ export default async function Home() {
     .sort((a, b) => b.weekSummary.points - a.weekSummary.points);
   const discussions = await fetchGithubDiscussion(5);
   const startDate = parseISO(env.NEXT_PUBLIC_ORG_START_DATE);
+
+  const featuredContributors = [
+    ...contributors.filter((contributor) => contributor.isNewContributor),
+    ...contributors
+      .filter((contributor) => !contributor.isNewContributor)
+      .slice(0, 8),
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -166,9 +174,8 @@ export default async function Home() {
                         role="list"
                         className="mt-4 space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
                       >
-                        {contributors
-                          .slice(0, 8)
-                          .map((contributor: any, index: number) => {
+                        {featuredContributors.map(
+                          (contributor: Contributor, index: number) => {
                             return (
                               <InfoCard
                                 key={index}
@@ -176,14 +183,15 @@ export default async function Home() {
                                 isClickable
                               />
                             );
-                          })}
+                          },
+                        )}
                       </ul>
                       <Link
                         className="flex w-fit items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200 sm:justify-center lg:ml-auto"
                         href={"/people"}
                       >
                         {contributors.length > 8
-                          ? `${contributors.length - 8} contributors more`
+                          ? `${contributors.length - featuredContributors.length} contributors more`
                           : "Show all contributors"}
                         <MdOutlineArrowForwardIos />
                       </Link>

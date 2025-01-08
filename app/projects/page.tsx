@@ -1,5 +1,5 @@
-import ActiveProjects from "./ActiveProjects";
-import { ACTIVE_PROJECT_LABELS } from "./constants";
+import ActiveProjects from "@/app/projects/ActiveProjects";
+import { ACTIVE_PROJECT_LABELS } from "@/app/projects/constants";
 import { notFound } from "next/navigation";
 import { featureIsEnabled } from "@/lib/utils";
 

@@ -124,21 +124,14 @@ interface PushEvent extends GitHubEvent {
 }
 
 interface Commit {
-  id: string;
-  message: string;
-  timestamp: string;
-  url: string;
+  sha: string;
   author: {
     name: string;
     email: string;
-    username?: string;
   };
-  committer: {
-    name: string;
-    email: string;
-    username?: string;
-  };
-  parents: Array<{ id: string; url: string }>;
+  message: string;
+  distinct: boolean;
+  url: string;
 }
 
 export type IGitHubEvent =

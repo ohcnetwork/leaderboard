@@ -227,7 +227,7 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
           for (const commit of event.payload.commits) {
             appendEvent(user, {
               type: "pushed_commits",
-              title: `${event.repo.name}@${commit.id.slice(0, 7)}`,
+              title: `${event.repo.name}@${commit.sha.slice(0, 7)}`,
               time: eventTime?.toISOString(),
               link: commit.url,
               text: commit.message,

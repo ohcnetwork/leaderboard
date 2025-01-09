@@ -222,6 +222,19 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
           }
         }
         break;
+      case "PushEvent":
+        if (event.payload?.commits?.length > 0) {
+          for (const commit of event.payload.commits) {
+            appendEvent(user, {
+              type: "pushed_commits",
+              title: `${event.repo.name}@${commit.id.slice(0, 7)}`,
+              time: eventTime?.toISOString(),
+              link: commit.url,
+              text: commit.message,
+            });
+          }
+        }
+        break;
       case "PullRequestReviewEvent":
         if (event.payload.pull_request.user.login !== user) {
           appendEvent(user, {

@@ -1,10 +1,10 @@
 import { ParsedDiscussion } from "@/scraper/src/github-scraper/types";
 import Image from "next/image";
 import Link from "next/link";
-import RelativeTime from "../RelativeTime";
+import RelativeTime from "@/components/RelativeTime";
 import { FiGithub } from "react-icons/fi";
 import { parseOrgRepoFromURL } from "@/lib/utils";
-import Markdown from "../Markdown";
+import Markdown from "@/components/Markdown";
 import { FaAnglesRight } from "react-icons/fa6";
 import { Suspense } from "react";
 

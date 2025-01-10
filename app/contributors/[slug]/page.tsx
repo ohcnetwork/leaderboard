@@ -54,7 +54,6 @@ export async function generateStaticParams() {
 export default async function Page({ params }: Params) {
   const { slug } = params;
   const contributor = await getContributorBySlug(slug, true);
-
   const leaderboardData = await getLeaderboardData(
     parseDateRangeSearchParam(),
     "points",

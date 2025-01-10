@@ -252,53 +252,83 @@ export async function getContributors() {
   }
   return contributors;
 }
-
 function getCalendarData(activity: Activity[]) {
-  const calendarData = activity.reduce(
-    (acc, activity) => {
-      const date = new Date(activity.time).toISOString().split("T")[0];
-      if (!acc[date]) {
-        acc[date] = {
-          count: 0,
-          types: [],
-        };
-      }
-      acc[date].count += 1;
-      if (acc[date][activity.type]) {
-        acc[date][activity.type] += 1;
-      } else {
-        acc[date][activity.type] = 1;
-      }
-      if (!acc[date].types.includes(activity.type)) {
-        acc[date].types.push(activity.type);
-        // console.log(activity.type);
-      }
-      return acc;
-    },
-    {} as Record<string, any>,
-  );
-  return [...Array(365)].map((_, i) => {
-    // Current Date - i
-    const iReverse = 365 - i;
-    const date = new Date(
-      new Date().getTime() - iReverse * 24 * 60 * 60 * 1000,
-    );
-    // yyyy-mm-dd
-    const dateString = `${date.getFullYear()}-${padZero(
-      date.getMonth() + 1,
-    )}-${padZero(date.getDate())}`;
-    const returnable = {
-      // date in format YYYY-MM-DD
-      ...calendarData[dateString],
-      date: dateString,
-      count: calendarData[dateString]?.count || 0,
-      level: Math.min(calendarData[dateString]?.types.length || 0, 4),
-    };
-    // console.log("Returning", returnable);
-    return returnable;
-  });
-}
+  if (!activity || activity.length === 0) {
+    return [];
+  }
 
+  try {
+    const validDates = activity
+      .map((a) => new Date(a.time))
+      .filter((d) => !isNaN(d.getTime()));
+
+    if (validDates.length === 0) {
+      console.warn("No valid dates found in activity data");
+      return [];
+    }
+
+    const oldestDate = new Date(
+      Math.min(...validDates.map((d) => d.getTime())),
+    );
+    const newestDate = new Date(); // Use the current date as the latest point
+
+    // Calculate total days difference
+    const daysDiff = Math.ceil(
+      (newestDate.getTime() - oldestDate.getTime()) / (24 * 60 * 60 * 1000),
+    );
+    if (daysDiff < 0) {
+      console.warn(`Invalid date range detected: ${daysDiff} days`);
+      return [];
+    }
+
+    // Build the activity map
+    const calendarData = activity.reduce(
+      (acc, activity) => {
+        const activityDate = new Date(activity.time);
+        if (isNaN(activityDate.getTime())) {
+          return acc; // Skip invalid dates
+        }
+
+        const date = activityDate.toISOString().split("T")[0];
+        if (!acc[date]) {
+          acc[date] = {
+            count: 0,
+            types: [],
+          };
+        }
+        acc[date].count += 1;
+        if (acc[date][activity.type]) {
+          acc[date][activity.type] += 1;
+        } else {
+          acc[date][activity.type] = 1;
+        }
+        if (!acc[date].types.includes(activity.type)) {
+          acc[date].types.push(activity.type);
+        }
+        return acc;
+      },
+      {} as Record<string, any>,
+    );
+
+    // Generate array for all days in the range
+    return Array.from({ length: daysDiff + 1 }, (_, i) => {
+      const date = new Date(oldestDate.getTime() + i * 24 * 60 * 60 * 1000);
+      const dateString = `${date.getFullYear()}-${padZero(
+        date.getMonth() + 1,
+      )}-${padZero(date.getDate())}`;
+
+      return {
+        ...calendarData[dateString],
+        date: dateString,
+        count: calendarData[dateString]?.count || 0,
+        level: Math.min(calendarData[dateString]?.types.length || 0, 4),
+      };
+    });
+  } catch (error) {
+    console.error("Error in getCalendarData:", error);
+    return [];
+  }
+}
 const HIGHLIGHT_KEYS = [
   "eod_update",
   "comment_created",

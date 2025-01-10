@@ -26,7 +26,7 @@ async function getDefaultBranch(owner: string, repo: string) {
   }
   return defaultBranches[repo];
 }
-export function appendEvent(user: string, event: Activity) {
+function appendEvent(user: string, event: Activity) {
   if (isBlacklisted(user)) {
     return;
   }

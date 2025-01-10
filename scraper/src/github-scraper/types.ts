@@ -245,24 +245,6 @@ export type Repository = {
   };
 };
 
-export type Fork = {
-  name: string;
-  owner: {
-    login: string;
-  };
-};
-
-export type Branch = {
-  name: string;
-};
-
-export type CommitEvent = {
-  oid: string;
-  message: string;
-  committedDate: string;
-  url: string;
-};
-
 export type ParsedDiscussion = {
   source?: string;
   title: string;

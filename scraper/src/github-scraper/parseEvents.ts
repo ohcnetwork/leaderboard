@@ -225,6 +225,7 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
       case "PushEvent":
         if (event.payload?.commits?.length > 0) {
           for (const commit of event.payload.commits) {
+            if (!commit.distinct) continue;
             appendEvent(user, {
               type: "pushed_commits",
               title: `${event.repo.name}@${commit.sha.slice(0, 7)}`,

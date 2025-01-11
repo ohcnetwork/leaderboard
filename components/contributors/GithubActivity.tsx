@@ -6,12 +6,12 @@ import {
   parseDateRangeSearchParam,
   parseOrgRepoFromURL,
 } from "@/lib/utils";
-import OpenGraphImage from "../gh_events/OpenGraphImage";
+import OpenGraphImage from "@/components/gh_events/OpenGraphImage";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import RelativeTime from "../RelativeTime";
-import DateRangePicker from "../DateRangePicker";
+import RelativeTime from "@/components/RelativeTime";
+import DateRangePicker from "@/components/DateRangePicker";
 import { format } from "date-fns";
-import GithubDiscussion from "../discussions/GithubDiscussion";
+import GithubDiscussion from "@/components/discussions/GithubDiscussion";
 import { IoIosChatboxes } from "react-icons/io";
 import Link from "next/link";
 import { atomWithStorage } from "jotai/utils";

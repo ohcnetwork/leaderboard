@@ -74,6 +74,13 @@ export default function ActivityCalendarGit({
   const [isOpen, setIsOpen] = useState(false);
   const [activityData, setActivityData] = useState({});
 
+  const today = new Date();
+  // Grab the date one year ago from today
+  const previousYearDate = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate()); 
+  const defaultCalendarData = calendarData.filter(
+    (d: any) => new Date(d.date) >= previousYearDate,
+  );
+
   return (
     <div className="gap-3 sm:flex">
       {isBrowser && (
@@ -82,7 +89,7 @@ export default function ActivityCalendarGit({
             <ActivityCalendar
               colorScheme={theme === "dark" ? "dark" : "light"}
               showWeekdayLabels
-              data={calendarData}
+              data={defaultCalendarData}
               theme={{
                 light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
                 dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],

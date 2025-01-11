@@ -261,9 +261,8 @@ function getCalendarData(activity: Activity[]) {
     },
     {} as Record<string, any>,
   );
-  return [...Array(365)].map((_, i) => {
-    // Current Date - i
-    const iReverse = 365 - i;
+  return [...Array(365 * 3)].map((_, i) => {
+    const iReverse = 365 * 3 - i;
     const date = new Date(
       new Date().getTime() - iReverse * 24 * 60 * 60 * 1000,
     );

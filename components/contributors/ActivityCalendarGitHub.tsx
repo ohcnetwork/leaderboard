@@ -75,7 +75,6 @@ export default function ActivityCalendarGit({
   const [activityData, setActivityData] = useState({});
 
   const today = new Date();
-  // Grab the date one year ago from today
   const previousYearDate = new Date(
     today.getFullYear() - 1,
     today.getMonth(),

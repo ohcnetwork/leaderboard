@@ -1,143 +1,152 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import ActivityCalendar from "react-activity-calendar";
 import ActivityModal from "@/components/contributors/ActivityModal";
 import { useTheme } from "next-themes";
 
+interface ContributionDay {
+  date: string;
+  count: number;
+  level: number;
+  types?: string[];
+}
+
+interface ActivityModalData extends ContributionDay {
+  isOpen: boolean;
+}
+
+const THEMES = {
+  light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+  dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
+} as const;
+
 export default function ActivityCalendarGit({
   calendarData,
 }: {
-  calendarData: any;
+  calendarData: ContributionDay[];
 }) {
-  // Force rendering the calendar only on browser as the component throws the
-  // following when attempted to render on server side.
-  //
-  // calcTextDimensions() requires browser APIs
+  // Client-side rendering check
   const [isBrowser, setIsBrowser] = useState(false);
   useEffect(() => {
-    setIsBrowser(
-      !(typeof document === "undefined" || typeof window === "undefined"),
-    );
+    setIsBrowser(true);
   }, []);
 
+  // Theme
   const { theme } = useTheme();
 
-  const getCalendarData = (year: number) => {
-    const currentYear = year;
-    let dates = [];
-    let date = new Date(`01-01-${year}`);
-    date.setDate(date.getDate() + 1);
-    while (date.getFullYear() === currentYear) {
-      dates.push({
-        date: new Date(date).toISOString().split("T")[0],
-        count: 0,
-        level: 0,
-      });
-      date.setDate(date.getDate() + 1);
-    }
-    dates.push({
-      date: new Date(date).toISOString().split("T")[0],
-      count: 0,
-      level: 0,
-    });
+  // States
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
+  const [selectedYear, setSelectedYear] = useState(currentYear);
+  const [modalData, setModalData] = useState<ActivityModalData>({
+    isOpen: false,
+    date: "",
+    count: 0,
+    level: 0,
+  });
 
-    let calDates = calendarData.filter(
-      (d: any) => d.date.slice(0, 4) === String(currentYear),
+  // Memoized data processing
+  const contributionsMap = useMemo(() => {
+    return new Map(calendarData.map((entry) => [entry.date, entry]));
+  }, [calendarData]);
+
+  const availableYears = useMemo(() => {
+    if (!calendarData.length) return [currentYear];
+
+    const yearsSet = new Set(
+      calendarData.map((entry) => new Date(entry.date).getFullYear()),
     );
+    yearsSet.add(currentYear);
 
-    for (let i = 0; i < dates.length; i++)
-      for (let j = 0; j < calDates.length; j++)
-        if (dates[i].date === calDates[j].date) dates[i] = calDates[j];
+    return Array.from(yearsSet).sort((a, b) => b - a);
+  }, [calendarData, currentYear]);
 
-    return dates;
+  const getYearDataWithContinuity = (year: number): ContributionDay[] => {
+    // Find the first Sunday before January 1st
+    const startDate = new Date(year, 0, 1);
+    startDate.setDate(startDate.getDate() - startDate.getDay());
+
+    // Find the last Saturday after December 31st
+    const endDate = new Date(year, 11, 31);
+    endDate.setDate(endDate.getDate() + (6 - endDate.getDay()));
+
+    const yearDates: ContributionDay[] = [];
+    const currentDate = new Date(startDate);
+
+    // Generate all dates including partial weeks
+    while (currentDate <= endDate) {
+      const dateStr = currentDate.toISOString().split("T")[0];
+      yearDates.push(
+        contributionsMap.get(dateStr) || {
+          date: dateStr,
+          count: 0,
+          level: 0,
+        },
+      );
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    return yearDates;
   };
 
-  const getFirstContribYear = () => {
-    let i;
-    for (i = 0; i < calendarData.length; i++)
-      if (calendarData[i].count > 0) break;
-    return Number(calendarData[i]?.date.slice(0, 4));
-  };
+  // Memoize the year data to prevent unnecessary recalculations
+  const currentYearData = useMemo(
+    () => getYearDataWithContinuity(selectedYear),
+    [selectedYear, contributionsMap],
+  );
 
-  const lastNYears = (n: number) => {
-    const currentYear = Number(new Date().getFullYear());
-    let years = [];
-    for (let i = 0; i <= n; i++) years.push(currentYear - i);
-    return years;
-  };
-
-  const yearDiff = Number(new Date().getFullYear()) - getFirstContribYear();
-  const yearsList = lastNYears(yearDiff);
-
-  const [year, setYear] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-  const [activityData, setActivityData] = useState({});
+  if (!isBrowser) {
+    return null;
+  }
 
   return (
     <div className="gap-3 sm:flex">
-      {isBrowser && (
-        <div className="rounded-lg bg-secondary-100 px-6 py-8 text-center text-foreground hover:cursor-pointer dark:bg-secondary-800 sm:px-10 xl:text-left">
-          {year === 0 ? (
-            <ActivityCalendar
-              colorScheme={theme === "dark" ? "dark" : "light"}
-              showWeekdayLabels
-              data={calendarData}
-              theme={{
-                light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-                dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-              }}
-              eventHandlers={{
-                onClick: (event) => (data) => {
-                  setIsOpen(true);
-                  setActivityData(data);
-                },
-              }}
-              labels={{
-                totalCount: "{{count}} contributions in the last year",
-              }}
-            />
-          ) : (
-            <ActivityCalendar
-              colorScheme={theme === "dark" ? "dark" : "light"}
-              showWeekdayLabels
-              data={getCalendarData(year)}
-              theme={{
-                light: ["#e5e7eb", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-                dark: ["#374151", "#d3bff3", "#b08ee6", "#976ae2", "#6025c0"],
-              }}
-              eventHandlers={{
-                onClick: (event) => (data) => {
-                  setIsOpen(true);
-                  setActivityData(data);
-                },
-              }}
-            />
-          )}
+      <div className="rounded-lg bg-secondary-100 px-6 py-8 text-center text-foreground hover:cursor-pointer dark:bg-secondary-800 sm:px-10 xl:text-left">
+        <ActivityCalendar
+          colorScheme={theme === "dark" ? "dark" : "light"}
+          showWeekdayLabels
+          hideMonthLabels={false}
+          hideTotalCount={false}
+          data={currentYearData}
+          theme={THEMES}
+          eventHandlers={{
+            onClick: (event) => (data) => {
+              setModalData({
+                ...data,
+                isOpen: true,
+              });
+            },
+          }}
+          labels={{
+            totalCount: `{{count}} contributions in ${selectedYear}`,
+          }}
+        />
 
-          <ActivityModal
-            isopen={isOpen}
-            activityData={activityData}
-            closeFunc={() => setIsOpen(false)}
-          />
-        </div>
-      )}
+        <ActivityModal
+          isopen={modalData.isOpen}
+          activityData={modalData}
+          closeFunc={() => setModalData((prev) => ({ ...prev, isOpen: false }))}
+        />
+      </div>
+
       <div className="mt-2 flex gap-2 sm:mt-0 sm:flex-col">
-        {yearsList.map((y, i) => {
-          return (
-            <button
-              key={i}
-              className={
-                y !== year
-                  ? "flex h-10 w-24 items-center justify-center rounded-lg bg-secondary-100 text-sm text-foreground hover:bg-secondary-700 dark:bg-secondary-800"
-                  : "flex h-10 w-24 items-center justify-center rounded-lg bg-primary-500 text-sm text-white"
+        {availableYears.map((year) => (
+          <button
+            key={year}
+            className={`
+              flex h-10 w-24 items-center justify-center rounded-lg text-sm 
+              transition-colors duration-200 ease-in-out
+              ${
+                year === selectedYear
+                  ? "bg-primary-500 text-white"
+                  : "bg-secondary-100 text-foreground hover:bg-secondary-700 dark:bg-secondary-800"
               }
-              onClick={(_) => setYear(y)}
-            >
-              {y}
-            </button>
-          );
-        })}
+            `}
+            onClick={() => setSelectedYear(year)}
+          >
+            {year}
+          </button>
+        ))}
       </div>
     </div>
   );

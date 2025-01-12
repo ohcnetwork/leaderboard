@@ -12,13 +12,15 @@ let processedData: ProcessData = {};
 
 const scrapeGitHub = async (org: string): Promise<void> => {
   console.log(`Scraping GitHub data for: '${org}'`);
+  const processedDataFromForks = await fetchForkedCommits(org);
   const events = await fetchEvents(org);
   const processedDataFromEvents = await parseEvents(events as IGitHubEvent[]);
-  const processedDataFromForks = await fetchForkedCommits(org);
+
   const processedData: ProcessData = {
     ...processedDataFromEvents,
     ...processedDataFromForks,
   };
+
   for (const user of Object.keys(processedData)) {
     if (!processedData[user]) {
       processedData[user] = {

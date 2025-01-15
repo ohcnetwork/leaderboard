@@ -356,7 +356,7 @@ export default function Leaderboard(props: Props) {
                         {props.duration === "last-week" && "of the week"}
                       </h2>
                       <p className="text-xl text-secondary-500 dark:text-secondary-300">
-                        Our top contributers across different metrics
+                        Our top contributors across different metrics
                       </p>
                     </div>
                     <ul

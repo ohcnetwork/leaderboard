@@ -3,11 +3,13 @@ import { parseISO } from "date-fns";
 import { isBlacklisted } from "./utils.js";
 import { octokit } from "./config.js";
 
-const processedData: ProcessData = {};
-
-export function appendEvent(user: string, event: Activity) {
+export function appendEvent(
+  user: string,
+  event: Activity,
+  processedData: ProcessData,
+) {
   if (isBlacklisted(user)) {
-    return;
+    return processedData;
   }
   console.debug(
     `Appending ${event.type} event for user ${user}. ${event.link}. ${event.text}`,
@@ -26,9 +28,13 @@ export function appendEvent(user: string, event: Activity) {
       processedData[user]["last_updated"] = event["time"];
     }
   }
+  return processedData;
 }
 
-export const fetchForkedCommits = async (org: string) => {
+export const fetchForkedCommits = async (
+  org: string,
+  processedData: ProcessData,
+) => {
   try {
     const members = await octokit.graphql.paginate(
       `query ($org: String!, $cursor: String) {
@@ -150,13 +156,17 @@ export const fetchForkedCommits = async (org: string) => {
           const commitSha = commit.url.split("/").pop();
           const githubCommitUrl = `https://github.com/${repoOwner}/${repoName}/commit/${commitSha}`;
 
-          appendEvent(commitAuthor, {
-            type: "pushed_commits",
-            title: `${repoName}@${commit.url.split("/").pop().slice(0, 7)}`,
-            time: eventTime.toISOString(),
-            link: githubCommitUrl,
-            text: commit.message,
-          });
+          processedData = appendEvent(
+            commitAuthor,
+            {
+              type: "pushed_commits",
+              title: `${repoName}@${commit.url.split("/").pop().slice(0, 7)}`,
+              time: eventTime.toISOString(),
+              link: githubCommitUrl,
+              text: commit.message,
+            },
+            processedData,
+          );
         }
       }
     }

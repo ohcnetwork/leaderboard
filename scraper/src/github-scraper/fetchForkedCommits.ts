@@ -3,7 +3,7 @@ import { parseISO } from "date-fns";
 import { isBlacklisted } from "./utils.js";
 import { octokit } from "./config.js";
 
-export function appendEvent(
+function appendEvent(
   user: string,
   event: Activity,
   processedData: ProcessData,

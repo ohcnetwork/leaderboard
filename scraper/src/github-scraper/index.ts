@@ -16,7 +16,7 @@ const scrapeGitHub = async (org: string): Promise<void> => {
   const events = await fetchEvents(org);
   const processedDataFromEvents = await parseEvents(events as IGitHubEvent[]);
 
-  const processedData: ProcessData = {
+  processedData = {
     ...processedDataFromEvents,
     ...processedDataFromForks,
   };

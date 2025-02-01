@@ -117,3 +117,30 @@ export default async function fetchGitHubReleases(
     )
     .slice(0, sliceLimit);
 }
+
+export async function fetchAllReposName() {
+  const result = await octokit.graphql.paginate(
+    `
+  query paginate($cursor: String, $organization: String!) {
+    organization(login: $organization) {
+      repositories(first: 10, after: $cursor, orderBy: { field: STARGAZERS, direction: DESC }) {
+        nodes {
+          name
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+      }
+    }
+  }
+  `,
+    {
+      organization: env.NEXT_PUBLIC_GITHUB_ORG,
+    },
+  );
+
+  return result.organization.repositories.nodes.map(
+    (r: { name: string }) => r.name,
+  ) as string[];
+}

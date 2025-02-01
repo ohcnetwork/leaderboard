@@ -2,7 +2,7 @@ import LoadingText from "@/components/LoadingText";
 import { IGitHubEvent } from "@/lib/gh_events";
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
-import Feed from "./Feed";
+import Feed from "@/components/gh_events/Feed";
 import { EVENT_TYPES } from "@/lib/types";
 import { fetchAllReposName } from "@/app/api/leaderboard/functions";
 const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;

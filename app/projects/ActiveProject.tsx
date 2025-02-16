@@ -5,7 +5,7 @@ import Markdown from "@/components/Markdown";
 import Link from "next/link";
 import { env } from "process";
 import { useState } from "react";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiChevronDown } from "react-icons/fi";
 
 type Issue = {
   labels: string[];
@@ -96,11 +96,18 @@ export default function ActiveProject({
         </div>
 
         <div className="flex flex-col p-6">
-          <h3
-            className={`font-semibold ${small ? "text-2xl" : "pb-2 text-4xl"}`}
-          >
-            {issue.title}
-          </h3>
+          <div className="flex items-center justify-between">
+            <h3 className={`text-2xl font-semibold ${small ? "" : "pb-2"}`}>
+              {issue.title}
+            </h3>
+            {!small && (
+              <FiChevronDown
+                className={`h-6 w-6 transition-transform duration-200 ${
+                  isExpanded ? "rotate-180" : ""
+                }`}
+              />
+            )}
+          </div>
         </div>
       </button>
 

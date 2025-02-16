@@ -12,7 +12,7 @@ export default function Page() {
       <h1 className="pb-10 text-4xl">Active Projects</h1>
       <ActiveProjects
         labels={ACTIVE_PROJECT_LABELS}
-        className="flex flex-col gap-10"
+        className="flex flex-col gap-4"
       />
     </div>
   );

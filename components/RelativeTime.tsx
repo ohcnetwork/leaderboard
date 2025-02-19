@@ -1,12 +1,26 @@
+"use client";
+import { useEffect, useMemo, useState } from "react";
+
 type Props = {
   time: string | Date | number;
   className?: string;
 };
 
 export default function RelativeTime(props: Props) {
-  const time = new Date(props.time);
-  const relative = getRelativeTimeString(time);
+  const [relative, setRelative] = useState("");
+  const time = useMemo(() => new Date(props.time), [props.time]);
   const absolute = time.toString();
+
+  useEffect(() => {
+    const updateRelativeTime = () => {
+      setRelative(getRelativeTimeString(time));
+    };
+
+    updateRelativeTime();
+
+    const intervalId = setInterval(updateRelativeTime, 60000);
+    return () => clearInterval(intervalId);
+  }, [time]);
 
   return (
     <time

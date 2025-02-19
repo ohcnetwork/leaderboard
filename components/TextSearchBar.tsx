@@ -1,13 +1,17 @@
 "use client";
-import Search from "./filters/Search";
+import Search from "@/components/filters/Search";
 import { useDebouncedCallback } from "use-debounce";
 import { usePathname, useRouter } from "next/navigation";
 
 export type SearchbarParams = {
   searchString: string | undefined;
+  className?: string;
 };
 
-export default function TextSearchBar({ searchString }: SearchbarParams) {
+export default function TextSearchBar({
+  searchString,
+  className,
+}: SearchbarParams) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -35,7 +39,7 @@ export default function TextSearchBar({ searchString }: SearchbarParams) {
     <Search
       defaultValue={searchString ?? ""}
       handleOnChange={(e) => handleSearch(e.target.value)}
-      className="grow"
+      className={className}
     />
   );
 }

@@ -4,14 +4,14 @@ import {
   professionalSelfSkills,
   professionalTeamSkills,
   resolveGraduateAttributes,
-} from "../../../config/GraduateAttributes";
-import { getContributorBySlug, getContributorsSlugs } from "../../../lib/api";
-import ActivityCalendarGit from "../../../components/contributors/ActivityCalendarGitHub";
-import BadgeIcons from "../../../components/contributors/BadgeIcons";
-import GithubActivity from "../../../components/contributors/GithubActivity";
-import GraduateAttributeBadge from "../../../components/contributors/GraduateAttributeBadge";
-import InfoCard from "../../../components/contributors/InfoCard";
-import React, { Suspense } from "react";
+} from "@/config/GraduateAttributes";
+import { getContributorBySlug, getContributorsSlugs } from "@/lib/api";
+import ActivityCalendarGit from "@/components/contributors/ActivityCalendarGitHub";
+import BadgeIcons from "@/components/contributors/BadgeIcons";
+import GithubActivity from "@/components/contributors/GithubActivity";
+import GraduateAttributeBadge from "@/components/contributors/GraduateAttributeBadge";
+import InfoCard from "@/components/contributors/InfoCard";
+import React from "react";
 import clsx from "clsx";
 import { formatDuration, parseDateRangeSearchParam } from "@/lib/utils";
 import Markdown from "@/components/Markdown";
@@ -21,19 +21,35 @@ import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { env } from "@/env.mjs";
 import { getLeaderboardData } from "@/app/api/leaderboard/functions";
-
-export async function generateStaticParams() {
-  const slugs = await getContributorsSlugs();
-  return slugs
-    .filter((slug) => !slug.file.includes("[bot]"))
-    .map((slug) => ({ slug: slug.file.replace(".md", "") }));
-}
-
-export const dynamicParams = false;
+import { Metadata } from "next";
 
 type Params = {
   params: { slug: string };
 };
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const slug = params.slug;
+  const contributor = await getContributorBySlug(slug, true);
+  const url = env.NEXT_PUBLIC_META_URL;
+  const org = env.NEXT_PUBLIC_META_TITLE;
+
+  const title = `${slug} | ${org}`;
+  const description = contributor.content;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${url}/contributors/${slug}`,
+    },
+  };
+}
+export async function generateStaticParams() {
+  const slugs = await getContributorsSlugs();
+  return slugs.map((slug) => ({ slug: slug.file.replace(".md", "") }));
+}
 
 export default async function Page({ params }: Params) {
   const { slug } = params;
@@ -87,7 +103,7 @@ export default async function Page({ params }: Params) {
           <div className="mt-10 flex flex-col justify-between rounded-lg border border-current bg-amber-300/20 px-4 py-4 font-semibold text-amber-500 dark:bg-amber-500/20 max-sm:mx-3 max-sm:gap-3 sm:flex-row sm:px-6 xl:px-10 ">
             <span className="flex items-center gap-4">
               <FiAlertTriangle size={20} />
-              Contributor profile has not been updated.
+              Bio is missing. Update it to complete the profile!
             </span>
             <Link
               href={`https://github.com/${env.NEXT_PUBLIC_GITHUB_ORG}/leaderboard-data/edit/main/contributors/${contributor.github}.md`}
@@ -101,7 +117,7 @@ export default async function Page({ params }: Params) {
           </div>
         )}
 
-        <div className="pl-4 md:p-0">
+        <div className="px-4 md:p-0">
           <div className="mt-8 flex items-end justify-between">
             <h3 className="font-bold text-foreground">Graduate Attributes</h3>
             <Link
@@ -124,8 +140,8 @@ export default async function Page({ params }: Params) {
             </Link>
           </div>
           <div className="mt-3">
-            <div className="flex w-full space-x-6 overflow-x-auto md:grid md:grid-cols-2 md:space-x-0">
-              <div className="flex w-3/4 shrink-0 flex-col rounded-tl-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:pr-2">
+            <div className="w-full md:grid md:grid-cols-2 md:space-x-0 md:overflow-hidden">
+              <div className="flex w-full shrink-0 flex-col rounded-tl-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:pr-2">
                 <div className="flex items-center rounded-t-lg bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center">
                   <p className="font-semibold text-foreground md:text-lg">
                     Individual Skills
@@ -142,7 +158,7 @@ export default async function Page({ params }: Params) {
                   ))}
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col rounded-tr-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:border-l-4 md:border-indigo-700 md:pl-2">
+              <div className="flex w-full shrink-0 flex-col rounded-tr-lg bg-secondary-200 pb-2 dark:bg-secondary-800 md:w-auto md:justify-between md:border-l-4 md:border-indigo-700 md:pl-2">
                 <div className="flex items-center rounded-t-lg bg-secondary-300 p-3 dark:bg-secondary-700 md:justify-center">
                   <p className="font-semibold text-foreground md:text-lg">
                     Team Skills
@@ -159,7 +175,7 @@ export default async function Page({ params }: Params) {
                   ))}
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col-reverse justify-end rounded-bl-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-t-4 md:border-indigo-700 md:pr-2 md:pt-2">
+              <div className="flex w-full shrink-0 flex-col-reverse justify-end rounded-bl-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-t-4 md:border-indigo-700 md:pr-2 md:pt-2">
                 <div className="flex flex-wrap gap-2 py-2 pl-2 pr-2 leading-tight md:flex-row-reverse md:pr-0">
                   {advancedSkills.map((skill) => (
                     <GraduateAttributeBadge
@@ -176,7 +192,7 @@ export default async function Page({ params }: Params) {
                   </p>
                 </div>
               </div>
-              <div className="flex w-3/4 shrink-0 flex-col-reverse justify-end rounded-br-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-l-4 md:border-t-4 md:border-indigo-700 md:pl-2 md:pt-2">
+              <div className="flex w-full shrink-0 flex-col-reverse justify-end rounded-br-lg bg-secondary-200 dark:bg-secondary-800 md:w-auto md:flex-col md:justify-between md:border-l-4 md:border-t-4 md:border-indigo-700 md:pl-2 md:pt-2">
                 <div className="flex flex-wrap gap-2 py-2 pl-2 pr-2 md:pl-0">
                   {humanValues.map((skill) => (
                     <GraduateAttributeBadge
@@ -218,8 +234,8 @@ export default async function Page({ params }: Params) {
         </div>
 
         <div className="px-4 md:p-0">
-          <h3 className="my-4 font-bold text-foreground">Learning Activity</h3>
-          <div className="overflow-x-auto">
+          <h3 className="my-4 font-bold text-foreground">Activity</h3>
+          <div>
             <ActivityCalendarGit calendarData={contributor.calendarData} />
           </div>
         </div>
@@ -228,7 +244,13 @@ export default async function Page({ params }: Params) {
           <dl className="mt-4 text-center sm:mx-auto sm:grid sm:max-w-3xl sm:grid-cols-3 sm:gap-8">
             <div className="flex flex-col">
               <dt className="order-3 mt-2 text-lg font-medium leading-6 text-primary-300">
-                Pull Request
+                <Link
+                  href={`https://github.com/pulls?q=sort%3Aupdated-desc+org%3A${env.NEXT_PUBLIC_GITHUB_ORG}+is%3Apr+is%3Aopen+archived%3Afalse+author%3A${contributor.github}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Pull Requests
+                </Link>
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-foreground">
                 {contributor.highlights.pr_opened}

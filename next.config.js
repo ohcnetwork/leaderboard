@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
+  output: "export",
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -16,7 +14,7 @@ const nextConfig = {
         hostname: "opengraph.githubassets.com",
       },
       // fix for crash if a path starts with period
-      // ref: https://github.com/coronasafe/leaderboard/pull/376
+      // ref: https://github.com/ohcnetwork/leaderboard/pull/376
       {
         protocol: "https",
         hostname: "opengraph.githubassets.com",

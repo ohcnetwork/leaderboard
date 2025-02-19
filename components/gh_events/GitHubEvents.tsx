@@ -1,5 +1,5 @@
 import { IGitHubEvent } from "@/lib/gh_events";
-import GitHubEvent from "./GitHubEvent";
+import GitHubEvent from "@/components/gh_events/GitHubEvent";
 import { env } from "@/env.mjs";
 import octokit from "@/lib/octokit";
 

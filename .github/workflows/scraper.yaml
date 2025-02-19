@@ -4,7 +4,21 @@ on:
       slack-eod-channel:
         required: false
         type: string
+      leaderboard_ref:
+        required: false
+        type: string
+        default: main
+        description: A specific branch of scraper that is to be used.
+      projects-board-id:
+        required: false
+        type: string
+        description: Experimental; Works only with particular project board structure. Requires `read:project` scope for the SCRAPER_GITHUB_TOKEN. Disabled if not configured.
     secrets:
+      SCRAPER_GITHUB_TOKEN:
+        required: false
+        description: Allows overriding the default GITHUB_TOKEN for providing scopes beyond what GITHUB_TOKEN can offer.
+      GIT_ACCESS_TOKEN:
+        required: true
       SLACK_API_TOKEN:
         required: false
 
@@ -13,41 +27,52 @@ jobs:
     name: Scrape data from GitHub and Slack
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: coronasafe/leaderboard-data)
+      - uses: actions/checkout@v4 # This pulls the caller workflow's repo (eg: ohcnetwork/leaderboard-data)
         with:
           token: ${{ secrets.GIT_ACCESS_TOKEN }}
       - uses: actions/checkout@v4
         with:
-          repository: coronasafe/leaderboard
+          repository: ohcnetwork/leaderboard
           path: ./leaderboard
+          ref: ${{ inputs.leaderboard_ref }}
           sparse-checkout: |
             scraper
             scripts
 
-      - name: setup python
-        uses: actions/setup-python@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.14.0"
+      - run: npm install -g pnpm
+
+      - run: pnpm install --frozen-lockfile
+        working-directory: scraper
+
+      - run: pnpm build
+        working-directory: scraper
+
+      - name: Scrape data from GitHub
+        run: pnpm start ${{ github.repository_owner }} ../../data/github
+        working-directory: scraper
+        env:
+          GITHUB_TOKEN: ${{ secrets.SCRAPER_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+          PROJECTS_BOARD_ID: ${{ inputs.projects-board-id }}
+
+      - uses: actions/setup-python@v3
         with:
           python-version: "3.10"
 
       - name: Install dependencies
         run: pip install -r scraper/requirements.txt
 
-      - name: Scrape GitHub data
-        uses: nick-fields/retry@v2
-        with:
-          timeout_minutes: 10
-          max_attempts: 3
-          command: python scraper/src/github.py ${{ github.repository_owner }} data/github -l DEBUG
-          on_retry_command: git checkout .
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Scrape EOD updates from Slack Channel
         if: ${{ env.SLACK_API_TOKEN && env.SLACK_CHANNEL }}
         run: python scraper/src/slack.py --lookback_days=2
+        continue-on-error: true
         env:
           SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
           SLACK_CHANNEL: ${{ inputs.slack-eod-channel }}
+
+      - run: mkdir -p contributors
 
       - name: Generate markdown files for new contributors
         run: node scripts/generateNewContributors.js

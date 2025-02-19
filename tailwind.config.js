@@ -1,5 +1,3 @@
-import colorPallete from "./data-repo/colorPalette.json";
-
 /** @type {import("tailwindcss").Config} */
 module.exports = {
   darkMode: "class",

@@ -1,16 +1,19 @@
-import InfoCard from "../components/contributors/InfoCard";
+import InfoCard from "@/components/contributors/InfoCard";
 import Link from "next/link";
-import { getContributors } from "../lib/api";
+import { getContributors } from "@/lib/api";
 import GitHubEvents from "@/components/gh_events/GitHubEvents";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
-import ActiveProjects from "./projects/ActiveProjects";
+import ActiveProjects from "@/app/projects/ActiveProjects";
 import { ACTIVE_PROJECT_LABELS } from "./projects/constants";
 import ReleaseSection from "@/components/releases/ReleaseSection";
 import { Suspense } from "react";
 import { env } from "@/env.mjs";
 import CommunityEngagemet from "@/app/CommunityEngagementSummary";
 import { differenceInWeeks, parseISO } from "date-fns";
-import { formatDate } from "@/lib/utils";
+import { featureIsEnabled, formatDate } from "@/lib/utils";
+import { fetchGithubDiscussion } from "@/lib/discussion";
+import GithubDiscussion from "@/components/discussions/GithubDiscussion";
+import { Contributor } from "@/lib/types";
 
 export default async function Home() {
   const contributors = (await getContributors())
@@ -21,8 +24,15 @@ export default async function Home() {
           .includes(contributor.role) ?? true,
     )
     .sort((a, b) => b.weekSummary.points - a.weekSummary.points);
-
+  const discussions = await fetchGithubDiscussion(5);
   const startDate = parseISO(env.NEXT_PUBLIC_ORG_START_DATE);
+
+  const featuredContributors = [
+    ...contributors.filter((contributor) => contributor.isNewContributor),
+    ...contributors
+      .filter((contributor) => !contributor.isNewContributor)
+      .slice(0, 8),
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -68,54 +78,84 @@ export default async function Home() {
                   </div>
                 </div>
 
-                <div className="mx-auto">
-                  <div className="space-y-12">
-                    <div className="flex items-center justify-between pr-5">
-                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                        Recent Releases
-                      </h2>
-                      <Link
-                        href="/releases"
-                        className="flex items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
+                {featureIsEnabled("Releases") && (
+                  <div className="mx-auto">
+                    <div className="space-y-12">
+                      <div className="flex items-center justify-between pr-5">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                          Recent Releases
+                        </h2>
+                        <Link
+                          href="/releases"
+                          className="flex items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
+                        >
+                          More
+                          <MdOutlineArrowForwardIos />
+                        </Link>
+                      </div>
+                      <Suspense
+                        fallback={
+                          <>
+                            <div className="h-10 w-full animate-pulse rounded bg-secondary-200 dark:bg-secondary-700" />
+                          </>
+                        }
                       >
-                        More
-                        <MdOutlineArrowForwardIos />
-                      </Link>
+                        <ReleaseSection />
+                      </Suspense>
                     </div>
-                    <Suspense
-                      fallback={
-                        <>
-                          <div className="h-10 w-full animate-pulse rounded bg-secondary-200 dark:bg-secondary-700" />
-                        </>
-                      }
-                    >
-                      <ReleaseSection />
-                    </Suspense>
                   </div>
-                </div>
-
-                <div className="mx-auto">
-                  <div className="space-y-12">
-                    <div className="flex items-center justify-between pr-5">
-                      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                        Active Projects
-                      </h2>
-                      <Link
-                        href="/projects"
-                        className="flex items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
-                      >
-                        More
-                        <MdOutlineArrowForwardIos />
-                      </Link>
+                )}
+                {discussions && (
+                  <div className="mx-auto">
+                    <div className="space-y-12">
+                      <div className="flex items-center justify-between pr-2">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                          Discussions
+                        </h2>
+                        <Link
+                          href="/discussions"
+                          className="flex items-center gap-1 rounded p-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
+                        >
+                          More
+                          <MdOutlineArrowForwardIos />
+                        </Link>
+                      </div>
+                      {discussions.map((discussion, index) => {
+                        return (
+                          <GithubDiscussion
+                            key={index}
+                            discussion={discussion}
+                            minimal
+                          />
+                        );
+                      })}
                     </div>
-                    <ActiveProjects
-                      small
-                      className="grid grid-cols-1 gap-4 font-inter lg:grid-cols-2"
-                      labels={ACTIVE_PROJECT_LABELS}
-                      limit={6}
-                    />
                   </div>
-                </div>
+                )}
+                {featureIsEnabled("Projects") && (
+                  <div className="mx-auto">
+                    <div className="space-y-12">
+                      <div className="flex items-center justify-between pr-5">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                          Active Projects
+                        </h2>
+                        <Link
+                          href="/projects"
+                          className="flex items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200"
+                        >
+                          More
+                          <MdOutlineArrowForwardIos />
+                        </Link>
+                      </div>
+                      <ActiveProjects
+                        small
+                        className="grid grid-cols-1 gap-4 font-inter lg:grid-cols-2"
+                        labels={ACTIVE_PROJECT_LABELS}
+                        limit={6}
+                      />
+                    </div>
+                  </div>
+                )}
 
                 <div>
                   <div className="mx-auto">
@@ -134,9 +174,8 @@ export default async function Home() {
                         role="list"
                         className="mt-4 space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-8"
                       >
-                        {contributors
-                          .slice(0, 8)
-                          .map((contributor: any, index: number) => {
+                        {featuredContributors.map(
+                          (contributor: Contributor, index: number) => {
                             return (
                               <InfoCard
                                 key={index}
@@ -144,14 +183,15 @@ export default async function Home() {
                                 isClickable
                               />
                             );
-                          })}
+                          },
+                        )}
                       </ul>
                       <Link
                         className="flex w-fit items-center gap-1 rounded px-3 py-2 text-secondary-400 underline underline-offset-2 transition-all duration-200 ease-in-out hover:gap-2 hover:text-primary-200 sm:justify-center lg:ml-auto"
                         href={"/people"}
                       >
                         {contributors.length > 8
-                          ? `${contributors.length - 8} contributors more`
+                          ? `${contributors.length - featuredContributors.length} contributors more`
                           : "Show all contributors"}
                         <MdOutlineArrowForwardIos />
                       </Link>
@@ -171,7 +211,7 @@ export default async function Home() {
                       <span className="text-secondary-600 dark:text-secondary-300">
                         <time
                           dateTime={env.NEXT_PUBLIC_ORG_START_DATE}
-                          title={`Since ${formatDate(startDate)}}`}
+                          title={`Since ${formatDate(startDate)}`}
                           className="underline underline-offset-4"
                         >
                           Week {differenceInWeeks(new Date(), startDate)}

@@ -11,7 +11,7 @@ const Search = ({
 }) => {
   return (
     <div className={"relative rounded-md shadow-sm " + className}>
-      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+      <div className="pointer-events-none absolute top-3 flex items-center pl-3">
         <BsSearch className="text-foreground" />
       </div>
       <input
@@ -20,7 +20,7 @@ const Search = ({
         id="search"
         onChange={handleOnChange}
         defaultValue={defaultValue}
-        className="block w-full rounded-md border border-secondary-600 bg-transparent p-2 pl-10 text-foreground dark:border-secondary-300 sm:text-sm"
+        className="block w-full rounded-md border border-secondary-600 bg-transparent p-2 pl-10 text-sm text-foreground dark:border-secondary-300"
         placeholder="Start typing to search..."
       />
     </div>

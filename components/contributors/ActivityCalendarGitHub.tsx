@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ActivityCalendar from "react-activity-calendar";
-import ActivityModal from "./ActivityModal";
+import ActivityModal from "@/components/contributors/ActivityModal";
 import { useTheme } from "next-themes";
 
 export default function ActivityCalendarGit({

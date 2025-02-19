@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { IGitHubEvent } from "@/lib/gh_events";
-import GitHubReleaseEventBody from "./ReleaseEventBody";
-import OpenGraphImage from "./OpenGraphImage";
-import RelativeTime from "../RelativeTime";
+import GitHubReleaseEventBody from "@/components/gh_events/ReleaseEventBody";
+import OpenGraphImage from "@/components/gh_events/OpenGraphImage";
+import RelativeTime from "@/components/RelativeTime";
 
 import { GoGitPullRequest } from "react-icons/go";
 import { GoRepoForked } from "react-icons/go";
@@ -181,8 +181,12 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
             <span className="hidden sm:inline">{event.repo.name}</span>
             <span className="sm:hidden">
               {event.repo.name.replace(`${env.NEXT_PUBLIC_GITHUB_ORG}/`, "")}
-            </span>
+            </span>{" "}
           </Link>
+          <RelativeTime
+            className="inline text-sm text-secondary-400 underline"
+            time={event.created_at}
+          />
         </div>
       );
       body = (
@@ -233,7 +237,11 @@ export default function GitHubEvent({ event }: { event?: IGitHubEvent }) {
           />
         </div>
       );
-      body = <OpenGraphImage url={event.payload.forkee.html_url} />;
+      body = (
+        <OpenGraphImage
+          url={`https://github.com/${event.payload.forkee.full_name}`}
+        />
+      );
       break;
 
     case "ReleaseEvent":

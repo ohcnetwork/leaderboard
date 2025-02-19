@@ -6,15 +6,7 @@ import octokit from "@/lib/octokit";
 
 const GITHUB_ORG: string = env.NEXT_PUBLIC_GITHUB_ORG;
 
-export const revalidate = 600;
-
-type Props = {
-  searchParams: {
-    page?: string;
-  };
-};
-
-export default async function FeedPage({ searchParams }: Props) {
+export default async function FeedPage() {
   const events = await octokit.paginate(
     "GET /orgs/{org}/events",
     {

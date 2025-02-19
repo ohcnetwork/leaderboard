@@ -46,7 +46,7 @@ export default async function Page() {
                   {release.name}
                   {myyRepos.has(release.repository) &&
                     myyRepos.delete(release.repository) && (
-                      <span className="relative ml-2 rounded-full border border-green-700 p-1 text-xs text-green-700 ">
+                      <span className="relative ml-2 rounded-full border border-green-700 px-1 pb-1 pt-2 text-xs text-green-700">
                         Latest
                       </span>
                     )}

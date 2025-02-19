@@ -7,7 +7,6 @@
 .pnp.js
 bun.lockb
 package-lock.json
-pnpm-lock.yaml
 
 # testing
 /coverage
@@ -44,3 +43,9 @@ data-repo
 # Package Lock
 package-lock.json
 yarn.lock
+
+# Files placed by data-repo
+
+data/views/
+
+.venv/

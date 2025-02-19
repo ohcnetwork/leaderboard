@@ -8,6 +8,9 @@ export const SORT_BY_OPTIONS = {
   pr_opened: "PR Opened",
   pr_reviewed: "PR Reviewed",
   pr_stale: "Stale PRs",
+  discussion_answered: "Discussion Answered",
+  discussion_comment_created: "Commented on discussion",
+  discussion_created: "Discussion Created",
 } as const;
 
 export const FILTER_BY_ROLE_OPTIONS = {

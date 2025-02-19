@@ -26,6 +26,11 @@ export const getLeaderboardData = async (
     .filter(
       (contributor) => roles.length == 0 || roles.includes(contributor.role),
     )
+    .filter((contributor) => {
+      if (sortBy) {
+        return contributor.summary[sortBy] ?? 0 > 0;
+      }
+    })
     .sort((a, b) => {
       if (sortBy === "pr_stale") {
         return b.activityData.pr_stale - a.activityData.pr_stale;
@@ -40,14 +45,13 @@ export const getLeaderboardData = async (
   return data.map((contributor): LeaderboardAPIResponse[number] => {
     return {
       user: {
-        slug: contributor.slug,
-        name: contributor.name,
+        slug: `${contributor.slug}`,
+        name: `${contributor.name}`,
         title: contributor.title,
         role: contributor.role,
-        content: contributor.content,
         joining_date: contributor.joining_date,
         social: {
-          github: contributor.github,
+          github: `${contributor.github}`,
           linkedin: contributor.linkedin,
           slack: contributor.slack,
           twitter: contributor.twitter,
@@ -55,7 +59,7 @@ export const getLeaderboardData = async (
       },
       highlights: {
         ...contributor.summary,
-        pr_stale: contributor.activityData.pr_stale,
+        pr_stale: contributor.activityData.pr_stale ?? 0,
       },
     };
   });

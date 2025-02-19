@@ -6,7 +6,7 @@ import { GraduateAttribute } from "@/config/GraduateAttributes";
 import Image from "next/image";
 
 function useOnClickOutside(
-  ref: RefObject<HTMLInputElement>,
+  ref: RefObject<HTMLInputElement | null>,
   handler: () => void,
 ) {
   useEffect(() => {
@@ -77,13 +77,13 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
         {/* model */}
 
         <div
-          className={`absolute inset-x-0 z-20 mx-4 mt-1 translate-y-5 rounded-lg bg-secondary-800 text-white shadow-2xl transition-all md:inset-auto md:-left-[calc(125px-50%)] md:top-[calc(100%+10px)] md:mx-0 md:w-[250px] ${
+          className={`absolute inset-auto right-[calc(50%-125px)] z-20 mx-0 mt-1 w-[250px] translate-y-5 rounded-lg bg-secondary-200 text-black shadow-2xl transition-all dark:bg-secondary-800 dark:text-white md:top-[calc(100%+10px)] ${
             showModel
               ? "visible translate-y-0 opacity-100"
               : "invisible opacity-0"
           }`}
         >
-          <div className="flex items-center justify-center rounded-t-lg border-b border-secondary-700 bg-secondary-950 px-4 py-3">
+          <div className="flex items-center justify-center rounded-t-lg border-b border-secondary-700 bg-secondary-300 px-4 py-3 dark:bg-secondary-700">
             <div className="relative h-24 w-24">
               {skill.currentLevel && (
                 <>
@@ -132,13 +132,13 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
 
             <i className="fas fa-circle" />
           </div>
-          <div className="px-4 pb-4 pt-2">
-            <p className="pb-2 font-bold">{skill.label}</p>
+          <div className="bg-white px-4 pb-4 pt-2 text-black dark:bg-secondary-800 dark:text-white">
+            <p className="pb-2 font-bold text-foreground">{skill.label}</p>
             <div className="space-y-1 text-sm">
               {skill.levels.map((level: any, index: number) => (
                 <div
                   key={level.value}
-                  className="flex items-center font-medium text-secondary-400"
+                  className="flex items-center font-medium text-secondary-500 dark:text-secondary-300"
                 >
                   <p
                     className={`shrink-0 rounded px-1 py-0.5 ${
@@ -147,7 +147,7 @@ export default function BadgeIcons({ skill }: { skill: Skill }) {
                         (l) => l.value === skill.currentLevel?.value,
                       )
                         ? "bg-green-400 text-white"
-                        : "bg-secondary-700 opacity-40 grayscale"
+                        : "bg-secondary-400 opacity-40 grayscale dark:bg-secondary-700"
                     }`}
                   >
                     {level.label}

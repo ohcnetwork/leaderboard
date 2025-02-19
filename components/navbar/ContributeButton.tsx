@@ -6,11 +6,11 @@ const ContributeButton = () => {
   return (
     <Link
       href={`https://github.com/${env.NEXT_PUBLIC_GITHUB_ORG}`}
-      className="flex  items-center justify-center"
+      className="flex items-center justify-center"
       rel="nonreferrer"
     >
-      <div className="flex cursor-pointer  flex-row items-center justify-center gap-1">
-        <AiFillGithub className="text-3xl" />
+      <div className="flex cursor-pointer flex-row items-center justify-center gap-1 transition-transform duration-200 hover:scale-110">
+        <AiFillGithub className="text-3xl transition-colors duration-200 hover:text-gray-500" />
       </div>
     </Link>
   );

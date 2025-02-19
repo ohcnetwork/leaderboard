@@ -12,7 +12,6 @@ interface Repo {
   full_name: string;
   owner: Actor;
   url: string;
-  html_url: string;
   fork: boolean;
 }
 
@@ -82,7 +81,6 @@ interface Commit {
   url: string;
   message: string;
 }
-
 interface GitHubEvent {
   id: string;
   actor: Actor;
@@ -104,7 +102,6 @@ interface PullRequestReviewCommentEvent extends GitHubEvent {
     pull_request: PullRequest;
   };
 }
-
 interface PullRequestReviewEvent extends GitHubEvent {
   type: "PullRequestReviewEvent";
   payload: {
@@ -113,7 +110,6 @@ interface PullRequestReviewEvent extends GitHubEvent {
     pull_request: PullRequest;
   };
 }
-
 interface MemberEvent extends GitHubEvent {
   type: "MemberEvent";
   payload: {
@@ -194,42 +190,3 @@ export type IGitHubEvent =
   | PushEvent
   | ForkEvent
   | ReleaseEvent;
-
-export const combineSimilarPushEvents = (events: IGitHubEvent[]) => {
-  const result: IGitHubEvent[] = [];
-
-  events.forEach((event) => {
-    if (!result.length || event.type !== "PushEvent") {
-      result.push(event);
-      return;
-    }
-
-    const prev = result[result.length - 1];
-
-    if (
-      prev.type !== "PushEvent" ||
-      prev.actor.id !== event.actor.id ||
-      prev.payload.ref !== event.payload.ref ||
-      prev.repo.id !== event.repo.id
-    ) {
-      result.push(event);
-      return;
-    }
-
-    // At this point, we know prev and event are "PushEvent" and their actor, repo and ref are same.
-    // Note: `prev` is the latest event as GitHub events are reverse sorted by time.
-    const combinedPush: PushEvent = {
-      ...prev,
-      payload: {
-        ref: prev.payload.ref,
-        size: prev.payload.size + event.payload.size,
-        commits: prev.payload.commits.concat(event.payload.commits),
-      },
-    };
-
-    // Replace last one with the combined one
-    result[result.length - 1] = combinedPush;
-  });
-
-  return result;
-};

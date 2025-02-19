@@ -42,8 +42,24 @@ export default function InfoCard({
           >
             <Link
               href={`/contributors/${contributor.user.social.github}`}
-              className="flex w-full items-center gap-4"
+              className="tooltip flex w-full items-center gap-4"
             >
+              <span className="tooltip-text tooltip-left">
+                {Object.entries(TOP_CONTRIBUTOR_CATEGORIES).map(
+                  ([key, label]) => (
+                    <div
+                      key={key}
+                      className={key === category ? "text-primary-400" : ""}
+                    >
+                      <strong>{label}:</strong>{" "}
+                      {contributor.highlights[
+                        key as keyof typeof TOP_CONTRIBUTOR_CATEGORIES
+                      ] || "0"}
+                    </div>
+                  ),
+                )}
+              </span>
+
               <Image
                 loading="lazy"
                 className="h-11 w-11 rounded-full shadow-md shadow-primary-500 ring-1 ring-primary-500"

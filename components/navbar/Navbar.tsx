@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import ThemeSwitch from "../ThemeSwitch";
-import ContributeButton from "./ContributeButton";
-import Logo from "./Logo";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoClose } from "react-icons/io5";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { IoClose } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
+import ThemeSwitch from "@/components/ThemeSwitch";
+import ContributeButton from "@/components/navbar/ContributeButton";
+import Logo from "@/components/navbar/Logo";
 
 const MenuItems = {
   "/leaderboard": "Leaderboard",
@@ -15,25 +15,31 @@ const MenuItems = {
   "/projects": "Projects",
   "/feed": "Feed",
   "/releases": "Releases",
+  "/issues": "Issues",
+  "/discussions": "Discussions",
 };
-
+const availableMenuItems = Object.fromEntries(
+  Object.entries(MenuItems).filter(([href, label]) => {
+    return process.env.NEXT_PUBLIC_FEATURES?.split(",").includes(label);
+  }),
+);
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   return (
     <>
-      <nav className="sticky top-0 z-10 border-b border-secondary-300 bg-background px-4 py-1 shadow-md dark:border-secondary-700 sm:shadow-lg">
+      <nav className="sticky top-0 z-10 border-b border-secondary-300 bg-background px-4 py-1 shadow dark:border-secondary-700">
         <div className="mx-auto flex max-w-7xl items-center justify-between xl:px-3">
           <Logo />
 
           <div className="hidden flex-row items-center justify-between gap-3 rounded bg-secondary-100 font-semibold dark:bg-secondary-800 md:rounded-full md:px-6 md:py-1 lg:flex">
-            {Object.entries(MenuItems).map(([href, label]) => (
+            {Object.entries(availableMenuItems).map(([href, label]) => (
               <Link
                 key={href}
                 href={href}
                 className={
                   "cursor-pointer text-sm transition-all hover:text-primary-500 hover:underline hover:dark:text-primary-300 md:p-2 md:text-base " +
-                  (pathname === href
+                  (pathname === href || pathname.includes(href)
                     ? "text-primary-500 dark:text-primary-300"
                     : "")
                 }
@@ -73,14 +79,14 @@ export default function Navbar() {
               </button>
             </div>
             <div className="flex flex-col items-center justify-center gap-2 md:px-4 md:py-2">
-              {Object.entries(MenuItems).map(([href, label]) => (
+              {Object.entries(availableMenuItems).map(([href, label]) => (
                 <Link
                   key={href}
                   onClick={() => setOpen(!open)}
                   href={href}
                   className={
                     "cursor-pointer p-1 text-sm hover:text-primary-500 hover:underline md:p-2 md:text-base " +
-                    (pathname === href
+                    (pathname === href || pathname.includes(href)
                       ? "text-primary-500 dark:text-primary-300"
                       : "")
                   }

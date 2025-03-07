@@ -61,11 +61,14 @@ async function getSlackMessages(slackId: string) {
     } catch (e) {
       console.log(e);
     }
-    return Object.values(fileContents).reduce(
+
+    // First, map all messages to Activity objects
+    const allActivities = Object.values(fileContents).reduce(
       (acc: Activity[], messages: any) => {
         return acc.concat(
           messages.map((message: any) => ({
-            type: "eod_update",
+            type: "eod_update" as const,
+            title: "EOD Update", // Adding required title field
             time: new Date(message.ts * 1000).toISOString(),
             link: "",
             text: message.text,
@@ -74,6 +77,31 @@ async function getSlackMessages(slackId: string) {
       },
       [],
     );
+
+    // Group activities by date (YYYY-MM-DD)
+    const groupedByDate: Record<string, Activity[]> = {};
+
+    for (const activity of allActivities) {
+      const date = activity.time.split("T")[0]; // Extract YYYY-MM-DD part
+      if (!groupedByDate[date]) {
+        groupedByDate[date] = [];
+      }
+      groupedByDate[date].push(activity);
+    }
+
+    // Create a single activity per date with joined text
+    return Object.entries(groupedByDate).map(([date, activities]) => {
+      // Sort activities by time to maintain chronological order
+      activities.sort((a, b) => a.time.localeCompare(b.time));
+
+      return {
+        type: "eod_update" as const,
+        title: `EOD Updates for ${date}`,
+        time: `${date}T00:00:00.000Z`, // Set to start of the day
+        link: "",
+        text: activities.map((a) => a.text).join("\n\n"),
+      } as Activity;
+    });
   } else {
     return [] as Activity[];
   }

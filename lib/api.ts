@@ -12,7 +12,7 @@ const slackRoot = join(process.cwd(), "data-repo/data/slack");
 const githubRoot = join(process.cwd(), "data-repo/data/github");
 
 export const points = {
-  comment_created: 1,
+  comment_created: 0,
   issue_assigned: 1,
   pr_reviewed: 4,
   issue_opened: 4,

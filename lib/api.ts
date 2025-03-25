@@ -305,26 +305,26 @@ function getCalendarData(activity: Activity[]) {
     },
     {} as Record<string, any>,
   );
-  return [...Array(365)].map((_, i) => {
-    // Current Date - i
-    const iReverse = 365 - i;
-    const date = new Date(
-      new Date().getTime() - iReverse * 24 * 60 * 60 * 1000,
-    );
-    // yyyy-mm-dd
-    const dateString = `${date.getFullYear()}-${padZero(
-      date.getMonth() + 1,
-    )}-${padZero(date.getDate())}`;
-    const returnable = {
-      // date in format YYYY-MM-DD
+  // Get the earliest activity date
+  const allDates = Object.keys(calendarData);
+  const minDate = new Date(
+    Math.min(...allDates.map((d) => new Date(d).getTime())),
+  );
+  const maxDate = new Date(); // Today
+
+  // Generate all days from minDate to today
+  const dateArray = [];
+  for (let d = new Date(minDate); d <= maxDate; d.setDate(d.getDate() + 1)) {
+    const dateString = `${d.getFullYear()}-${padZero(d.getMonth() + 1)}-${padZero(d.getDate())}`;
+    dateArray.push({
       ...calendarData[dateString],
       date: dateString,
       count: calendarData[dateString]?.count || 0,
-      level: Math.min(calendarData[dateString]?.types.length || 0, 4),
-    };
-    // console.log("Returning", returnable);
-    return returnable;
-  });
+      level: Math.min(calendarData[dateString]?.types?.length || 0, 4),
+    });
+  }
+
+  return dateArray;
 }
 
 const HIGHLIGHT_KEYS = [

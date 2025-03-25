@@ -142,6 +142,11 @@ async function getProjectBoardItems(projectId: string) {
         );
       };
 
+      if (!node.content) {
+        console.log("No content for node", node);
+        continue;
+      }
+
       let assignees = new Set<string>(
         node.content.assignees.nodes.map((user: any) => user.login),
       );

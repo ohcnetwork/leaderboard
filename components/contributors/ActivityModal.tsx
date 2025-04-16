@@ -14,17 +14,17 @@ type ActivityData = {
 };
 
 export default function ActivityModal({
-  isopen,
+  isOpen,
   closeFunc,
   activityData,
 }: {
-  isopen: boolean;
+  isOpen: boolean;
   closeFunc: () => void;
   activityData: ActivityData;
 }) {
   return (
     <>
-      <Transition appear show={isopen} as={Fragment}>
+      <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeFunc}>
           <Transition.Child
             as={Fragment}

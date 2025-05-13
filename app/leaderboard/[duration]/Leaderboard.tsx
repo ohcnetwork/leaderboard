@@ -22,7 +22,6 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { BiGitPullRequest } from "react-icons/bi";
 import { GoIssueOpened, GoIssueClosed } from "react-icons/go";
-import { VscGitPullRequestClosed } from "react-icons/vsc";
 
 const filterBySearchTerm = (searchTermLC: string) => {
   return (item: LeaderboardAPIResponse[number]) =>

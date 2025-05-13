@@ -4,7 +4,7 @@ import { Activity, ActivityData, Contributor, Highlights } from "./types";
 import { readFile, readdir } from "fs/promises";
 import { existsSync } from "fs";
 import { getGithubDiscussions } from "@/lib/discussion";
-import { compareAsc, format, isAfter, isWithinInterval, sub } from "date-fns";
+import { compareAsc, differenceInDays, format, isAfter, sub } from "date-fns";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
@@ -304,9 +304,16 @@ function getCalendarData(activity: Activity[]) {
     },
     {} as Record<string, any>,
   );
-  return [...Array(365)].map((_, i) => {
+
+  const earliestDate = activity.reduce((acc, activity) => {
+    return Math.min(acc, new Date(activity.time).getTime());
+  }, new Date().getTime());
+
+  const daysSinceNow = differenceInDays(new Date(), new Date(earliestDate));
+
+  return [...Array(daysSinceNow + 1)].map((_, i) => {
     // Current Date - i
-    const iReverse = 365 - i;
+    const iReverse = daysSinceNow - i;
     const date = new Date(
       new Date().getTime() - iReverse * 24 * 60 * 60 * 1000,
     );

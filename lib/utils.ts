@@ -6,6 +6,14 @@ import {
   startOfISOWeek,
   addDays,
   getISOWeekYear,
+  subDays,
+  startOfMonth,
+  subMonths,
+  endOfMonth,
+  endOfYear,
+  startOfYear,
+  startOfDay,
+  endOfDay,
 } from "date-fns";
 import { env } from "@/env.mjs";
 
@@ -52,18 +60,14 @@ export const calcDateRange = (
   if (duration === "last-month") return parseDateRangeSearchParam(null, 28);
 
   if (duration === "previous-month") {
-    const end = new Date();
-    end.setDate(0);
-    const start = new Date(end);
-    start.setDate(1);
+    const start = startOfMonth(subMonths(now, 1));
+    const end = endOfMonth(subMonths(now, 1));
     return [start, end] as const;
   }
 
   if (duration.startsWith("year-")) {
     const year = parseInt(duration.replace("year-", ""));
-    const end = new Date(`${year}-12-31`);
-    const start = new Date(`${year}-01`);
-    return [start, end] as const;
+    return [startOfYear(year), endOfYear(year)] as const;
   }
 };
 
@@ -73,21 +77,16 @@ export const parseDateRangeSearchParam = (
 ) => {
   if (range) {
     const [startStr, endStr] = range.split("...");
-    const start = new Date(startStr);
-    const end = new Date(endStr);
-    end.setHours(23, 59, 59);
+    const start = startOfDay(new Date(startStr));
+    const end = endOfDay(new Date(endStr));
     return [start, end] as const;
   }
 
   // Last 7 days
   const end = new Date();
-  const start = new Date(end);
-  start.setDate(end.getDate() - relativeDaysBefore);
-  end.setHours(23, 59, 59);
-  return [start, end] as const;
+  const start = subDays(end, relativeDaysBefore);
+  return [startOfDay(start), endOfDay(end)] as const;
 };
-
-export const padZero = (num: number) => (num < 10 ? `0${num}` : num);
 
 export const parseIssueNumber = (url: string) => {
   return url.replace(/^.*github\.com\/[\w-]+\/[\w-]+\/issues\//, "");

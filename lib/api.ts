@@ -1,11 +1,10 @@
 import { join } from "path";
 import matter from "gray-matter";
 import { Activity, ActivityData, Contributor, Highlights } from "./types";
-import { padZero } from "./utils";
 import { readFile, readdir } from "fs/promises";
 import { existsSync } from "fs";
 import { getGithubDiscussions } from "@/lib/discussion";
-import { compareAsc, isAfter, sub } from "date-fns";
+import { compareAsc, format, isAfter, isWithinInterval, sub } from "date-fns";
 
 const root = join(process.cwd(), "data-repo/contributors");
 const slackRoot = join(process.cwd(), "data-repo/data/slack");
@@ -284,7 +283,7 @@ export async function getContributors() {
 function getCalendarData(activity: Activity[]) {
   const calendarData = activity.reduce(
     (acc, activity) => {
-      const date = new Date(activity.time).toISOString().split("T")[0];
+      const date = format(activity.time, "yyyy-MM-dd");
       if (!acc[date]) {
         acc[date] = {
           count: 0,
@@ -312,9 +311,7 @@ function getCalendarData(activity: Activity[]) {
       new Date().getTime() - iReverse * 24 * 60 * 60 * 1000,
     );
     // yyyy-mm-dd
-    const dateString = `${date.getFullYear()}-${padZero(
-      date.getMonth() + 1,
-    )}-${padZero(date.getDate())}`;
+    const dateString = format(date, "yyyy-MM-dd");
     const returnable = {
       // date in format YYYY-MM-DD
       ...calendarData[dateString],

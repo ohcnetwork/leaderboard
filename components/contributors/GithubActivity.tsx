@@ -10,7 +10,7 @@ import OpenGraphImage from "@/components/gh_events/OpenGraphImage";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import RelativeTime from "@/components/RelativeTime";
 import DateRangePicker from "@/components/DateRangePicker";
-import { format } from "date-fns";
+import { format, isWithinInterval } from "date-fns";
 import GithubDiscussion from "@/components/discussions/GithubDiscussion";
 import { IoIosChatboxes } from "react-icons/io";
 import Link from "next/link";
@@ -330,7 +330,7 @@ const activitiesBetween = (range: { from: Date; to: Date }) => {
 
   return (activity: Activity) => {
     const time = new Date(activity.time).getTime();
-    return from < time && time < to;
+    return isWithinInterval(time, { start: from, end: to });
   };
 };
 

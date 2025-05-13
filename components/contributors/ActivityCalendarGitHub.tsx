@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ActivityCalendar from "react-activity-calendar";
 import ActivityModal from "@/components/contributors/ActivityModal";
 import { useTheme } from "next-themes";
+import { format } from "date-fns";
 
 export default function ActivityCalendarGit({
   calendarData,
@@ -30,14 +31,14 @@ export default function ActivityCalendarGit({
     date.setDate(date.getDate() + 1);
     while (date.getFullYear() === currentYear) {
       dates.push({
-        date: new Date(date).toISOString().split("T")[0],
+        date: format(date, "yyyy-MM-dd"),
         count: 0,
         level: 0,
       });
       date.setDate(date.getDate() + 1);
     }
     dates.push({
-      date: new Date(date).toISOString().split("T")[0],
+      date: format(date, "yyyy-MM-dd"),
       count: 0,
       level: 0,
     });

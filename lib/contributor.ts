@@ -4,8 +4,6 @@ import { parseDateRangeSearchParam } from "@/lib/utils";
 
 const org = env.NEXT_PUBLIC_GITHUB_ORG;
 
-export type DailyReport = Awaited<ReturnType<typeof getDailyReport>>;
-
 export const getDailyReport = async (
   user: string,
   defaultReviews?: Awaited<ReturnType<typeof getPullRequestReviews>>,
@@ -47,10 +45,6 @@ const getDateRange = () => {
   return parseDateRangeSearchParam(null, 1)
     .map((a) => a.toISOString())
     .join("..");
-};
-
-const getUserInfo = async (user: string) => {
-  return octokit.rest.users.getByUsername({ username: user });
 };
 
 const getPullRequestsOpened = (user: string, dateRange: string) => {

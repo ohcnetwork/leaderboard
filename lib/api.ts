@@ -81,7 +81,7 @@ async function getSlackMessages(slackId: string) {
     const groupedByDate: Record<string, Activity[]> = {};
 
     for (const activity of allActivities) {
-      const date = activity.time.split("T")[0]; // Extract YYYY-MM-DD part
+      const date = format(activity.time, "yyyy-MM-dd");
       if (!groupedByDate[date]) {
         groupedByDate[date] = [];
       }

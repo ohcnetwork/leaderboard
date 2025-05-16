@@ -14,6 +14,7 @@ import {
   startOfYear,
   startOfDay,
   endOfDay,
+  min,
 } from "date-fns";
 import { env } from "@/env.mjs";
 
@@ -66,8 +67,8 @@ export const calcDateRange = (
   }
 
   if (duration.startsWith("year-")) {
-    const year = parseInt(duration.replace("year-", ""));
-    return [startOfYear(year), endOfYear(year)] as const;
+    const year = new Date(`${duration.replace("year-", "")}-01-01`);
+    return [startOfYear(year), min([endOfYear(year), now])] as const;
   }
 };
 

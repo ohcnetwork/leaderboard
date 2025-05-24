@@ -182,3 +182,31 @@ export type LeaderboardSortKey = keyof typeof SORT_BY_OPTIONS;
 export type RoleFilterKey = keyof typeof FILTER_BY_ROLE_OPTIONS;
 
 export type TopContributorCategoryKey = keyof typeof TOP_CONTRIBUTOR_CATEGORIES;
+
+export interface FilterOption {
+  title: string;
+  options: readonly string[] | string[];
+}
+
+export type EventType =
+  | "PullRequestReviewCommentEvent"
+  | "PullRequestReviewEvent"
+  | "MemberEvent"
+  | "IssuesEvent"
+  | "IssueCommentEvent"
+  | "PullRequestEvent"
+  | "PushEvent"
+  | "ForkEvent"
+  | "ReleaseEvent";
+
+export const EVENT_TYPES: readonly EventType[] = [
+  "PullRequestReviewCommentEvent",
+  "PullRequestReviewEvent",
+  "MemberEvent",
+  "IssuesEvent",
+  "IssueCommentEvent",
+  "PullRequestEvent",
+  "PushEvent",
+  "ForkEvent",
+  "ReleaseEvent",
+] as const;

@@ -13,8 +13,8 @@ const githubRoot = join(process.cwd(), "data-repo/data/github");
 export const points = {
   comment_created: 0,
   issue_assigned: 1,
-  pr_reviewed: 4,
-  issue_opened: 4,
+  pr_reviewed: 2,
+  issue_opened: 3,
   eod_update: 2,
   pr_opened: 1,
   pr_merged: 7,
@@ -26,8 +26,8 @@ export const points = {
 };
 // Comments will get a single point
 // Picking up an issue would get a point
-// Reviewing a PR would get 4 points
-// Finding a bug would add up to 4 points
+// Reviewing a PR would get 2 points
+// Finding a bug would add up to 3 points
 // Opening a PR would give a single point and merging it would give you the other 7 points, making 8 per PR
 // Updating the EOD would get 2 points per day and additional 20 for regular daily updates plus 10 for just missing one
 

@@ -78,7 +78,7 @@ export default function ActivityCalendarGit({
   return (
     <div className="gap-3 sm:flex">
       {isBrowser && (
-        <div className="rounded-lg bg-secondary-100 px-6 py-8 text-center text-foreground hover:cursor-pointer dark:bg-secondary-800 sm:px-10 xl:text-left">
+        <div className="w-max overflow-x-auto rounded-lg bg-secondary-100 px-6 py-8 text-center text-foreground hover:cursor-pointer dark:bg-secondary-800 sm:px-10 xl:text-left">
           {year === 0 ? (
             <ActivityCalendar
               colorScheme={theme === "dark" ? "dark" : "light"}

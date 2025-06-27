@@ -112,11 +112,34 @@ export interface PullRequestEvent extends GitHubEvent {
   };
 }
 
+interface PushEvent extends GitHubEvent {
+  type: "PushEvent";
+  payload: {
+    size: number;
+    ref: string;
+    head: string;
+    before: string;
+    commits: Commit[];
+  };
+}
+
+interface Commit {
+  sha: string;
+  author: {
+    name: string;
+    email: string;
+  };
+  message: string;
+  distinct: boolean;
+  url: string;
+}
+
 export type IGitHubEvent =
   | PullRequestReviewEvent
   | IssuesEvent
   | IssueCommentEvent
-  | PullRequestEvent;
+  | PullRequestEvent
+  | PushEvent;
 
 export interface ActivityData {
   last_updated?: string;
@@ -140,6 +163,7 @@ export const ACTIVITY_TYPES = [
   "pr_opened",
   "pr_merged",
   "pr_collaborated",
+  "pushed_commits",
 ] as const;
 
 export interface Action {

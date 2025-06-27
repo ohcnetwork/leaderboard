@@ -144,15 +144,15 @@ export default function Leaderboard(props: Props) {
               <BsPersonFill className="text-foreground" size={20} />
             </span>
             <Select
-              multiple
               options={ROLE_OPTIONS}
-              value={ROLE_OPTIONS.filter((option) =>
-                roles.includes(option.value),
-              )}
+              value={
+                ROLE_OPTIONS.find((option) => roles.includes(option.value)) ||
+                undefined
+              }
               onChange={(value: SelectOption | SelectOption[]) =>
                 updateSearchParams(
                   "roles",
-                  (Array.isArray(value) ? value : [value]).map((v) => v.value),
+                  Array.isArray(value) ? value[0].value : value.value,
                 )
               }
               showSelectionsAs="text"

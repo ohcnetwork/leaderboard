@@ -51,7 +51,7 @@ export default async function PostersPage() {
 
             {/* Background Pattern */}
             <div className="absolute inset-0 -z-10 bg-background opacity-15">
-              <div className="flex flex-wrap justify-center gap-1">
+              <div className="flex flex-wrap justify-between gap-1 p-1">
                 {Array(48)
                   .fill(null)
                   .map((_, index) =>

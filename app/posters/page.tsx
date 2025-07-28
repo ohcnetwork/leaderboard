@@ -50,7 +50,7 @@ export default async function PostersPage() {
             </div>
 
             {/* Background Pattern */}
-            <div className="absolute inset-0 -z-10 bg-background opacity-15">
+            <div className="absolute inset-0 -z-10 bg-black opacity-15">
               <div className="flex flex-wrap justify-between gap-1 p-1">
                 {Array(48)
                   .fill(null)
@@ -124,7 +124,7 @@ export default async function PostersPage() {
                 </div>
               </div>
             </div>
-            <p className="absolute bottom-4 left-4 text-xs font-semibold text-secondary-500 opacity-35">
+            <p className="absolute bottom-4 left-4 text-xs font-semibold text-secondary-500 opacity-40">
               Taken on: {formattedDate}
             </p>
           </div>

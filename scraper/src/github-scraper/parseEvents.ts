@@ -222,6 +222,25 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
           }
         }
         break;
+      case "PushEvent":
+        if (event.payload?.commits?.length > 0) {
+          for (const commit of event.payload.commits) {
+            if (
+              commit.message.startsWith("Merge pull request") ||
+              commit.message.startsWith("Merge branch")
+            )
+              continue;
+            console.log(commit);
+            appendEvent(user, {
+              type: "pushed_commits",
+              title: `${event.repo.name}@${commit.sha.slice(0, 7)}`,
+              time: eventTime?.toISOString(),
+              link: `https://github.com/${event.repo.name}/commit/${commit.sha}`,
+              text: commit.message,
+            });
+          }
+        }
+        break;
       case "PullRequestReviewEvent":
         if (event.payload.pull_request.user.login !== user) {
           appendEvent(user, {

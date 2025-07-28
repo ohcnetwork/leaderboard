@@ -9,6 +9,7 @@ const AllowedEventTypes = [
   "IssuesEvent",
   "PullRequestEvent",
   "PullRequestReviewEvent",
+  "PushEvent"
 ];
 
 export const fetchEvents = async (org: string) => {

@@ -8,7 +8,6 @@ import {
 import { getContributorBySlug, getContributorsSlugs } from "@/lib/api";
 import ActivityCalendarGit from "@/components/contributors/ActivityCalendarGitHub";
 import BadgeIcons from "@/components/contributors/BadgeIcons";
-import GithubActivity from "@/components/contributors/GithubActivity";
 import GraduateAttributeBadge from "@/components/contributors/GraduateAttributeBadge";
 import InfoCard from "@/components/contributors/InfoCard";
 import React from "react";
@@ -22,6 +21,7 @@ import Link from "next/link";
 import { env } from "@/env.mjs";
 import { getLeaderboardData } from "@/app/api/leaderboard/functions";
 import { Metadata } from "next";
+import GithubActivityCompact from "@/components/contributors/GithubActivityCompact";
 
 type Params = {
   params: { slug: string };
@@ -391,7 +391,9 @@ export default async function Page({ params }: Params) {
                   )}
                 </span>
               </div>
-              <GithubActivity activityData={contributor["activityData"]} />
+              <GithubActivityCompact
+                activityData={contributor["activityData"]}
+              />
             </div>
           )}
       </div>

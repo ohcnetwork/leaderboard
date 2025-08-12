@@ -65,13 +65,15 @@ async function getSlackMessages(slackId: string) {
     const allActivities = Object.values(fileContents).reduce(
       (acc: Activity[], messages: any) => {
         return acc.concat(
-          messages.map((message: any) => ({
-            type: "eod_update" as const,
-            title: "EOD Update", // Adding required title field
-            time: new Date(message.ts * 1000).toISOString(),
-            link: "",
-            text: message.text,
-          })),
+          messages
+            .filter((message: any) => message.text.trim().length > 5)
+            .map((message: any) => ({
+              type: "eod_update" as const,
+              title: "EOD Update", // Adding required title field
+              time: new Date(message.ts * 1000).toISOString(),
+              link: "",
+              text: message.text,
+            })),
         );
       },
       [],

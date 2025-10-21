@@ -223,7 +223,7 @@ export const parseEvents = async (events: IGitHubEvent[]) => {
         }
         break;
       case "PullRequestReviewEvent":
-        if (event.payload.pull_request.user.login !== user) {
+        if (event.payload.pull_request.user?.login !== user) {
           appendEvent(user, {
             type: "pr_reviewed",
             time: eventTime?.toISOString(),

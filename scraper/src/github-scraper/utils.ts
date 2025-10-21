@@ -13,7 +13,7 @@ export const parseISODate = (isoDate: Date) => {
 };
 
 const userBlacklist = new Set(
-  ["dependabot", "snyk-bot", "codecov-commenter"].concat(
+  ["dependabot", "snyk-bot", "codecov-commenter", "Copilot"].concat(
     process.env.BLACKLISTED_USERS?.split(",") ?? [],
   ),
 );

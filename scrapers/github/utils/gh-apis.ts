@@ -81,40 +81,6 @@ async function getRepoIssues(repo: string, since?: string) {
 }
 
 /**
- * Get all pull requests from a repository
- * If since is provided, only get pull requests updated since the date
- * @param repo - The repository to get pull requests from
- * @param since - The date to start getting pull requests from based on the `updated_at` field (optional)
- * @returns An array of pull requests
- */
-async function getRepoPullRequests(repo: string, since?: string) {
-  const pullRequests = [];
-
-  for await (const response of octokit.paginate.iterator(
-    "GET /repos/{owner}/{repo}/pulls",
-    { owner: org, repo, state: "all", sort: "updated", direction: "desc" }
-  )) {
-    for (const pr of response.data) {
-      // If since is provided and PR is older than since, stop pagination
-      if (since && pr.updated_at && new Date(pr.updated_at) < new Date(since)) {
-        return pullRequests;
-      }
-
-      // Skip PRs without required fields
-      if (!pr.updated_at) continue;
-
-      pullRequests.push({
-        title: pr.title,
-        number: pr.number,
-        updated_at: pr.updated_at,
-      });
-    }
-  }
-
-  return pullRequests;
-}
-
-/**
  * Get all pull requests and their reviews from a repository using GraphQL
  * If since is provided, only get pull requests updated since the date
  * @param repo - The repository to get pull requests from

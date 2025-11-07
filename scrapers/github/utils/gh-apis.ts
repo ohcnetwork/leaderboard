@@ -151,7 +151,7 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
               createdAt
               mergedAt
               closedAt
-              reviews(first: 100, orderBy: { field: SUBMITTED_AT, direction: DESC }) {
+              reviews(first: 100) {
                 nodes {
                   author {
                     login

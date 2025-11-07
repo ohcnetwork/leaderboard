@@ -80,8 +80,6 @@ async function getRepoIssues(repo: string, since?: string) {
   return issues;
 }
 
-async function getRepoPullRequestReviews(repo: string, since?: string) {}
-
 /**
  * Get all pull requests from a repository
  * If since is provided, only get pull requests updated since the date
@@ -111,6 +109,125 @@ async function getRepoPullRequests(repo: string, since?: string) {
         updated_at: pr.updated_at,
       });
     }
+  }
+
+  return pullRequests;
+}
+
+/**
+ * Get all pull requests and their reviews from a repository using GraphQL
+ * If since is provided, only get pull requests updated since the date
+ * @param repo - The repository to get pull requests from
+ * @param since - The date to start getting pull requests from based on the `updated_at` field (optional)
+ * @returns An array of pull requests with their reviews
+ */
+async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
+  const pullRequests = [];
+
+  let hasNextPage = true;
+  let cursor: string | null = null;
+
+  while (hasNextPage) {
+    const query = `
+      query($owner: String!, $repo: String!, $cursor: String) {
+        repository(owner: $owner, name: $repo) {
+          pullRequests(
+            first: 100
+            orderBy: { field: UPDATED_AT, direction: DESC }
+            after: $cursor
+          ) {
+            pageInfo {
+              hasNextPage
+              endCursor
+            }
+            nodes {
+              number
+              title
+              url
+              author {
+                login
+              }
+              updatedAt
+              createdAt
+              mergedAt
+              closedAt
+              reviews(first: 100, orderBy: { field: SUBMITTED_AT, direction: DESC }) {
+                nodes {
+                  author {
+                    login
+                  }
+                  state
+                  submittedAt
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const response: {
+      repository: {
+        pullRequests: {
+          nodes: Array<{
+            number: number;
+            title: string;
+            url: string;
+            author: { login: string | null };
+            updatedAt: string;
+            createdAt: string;
+            mergedAt: string | null;
+            closedAt: string | null;
+            reviews: {
+              nodes: Array<{
+                author: { login: string | null };
+                state: string;
+                submittedAt: string | null;
+              }>;
+            };
+          }>;
+          pageInfo: {
+            hasNextPage: boolean;
+            endCursor: string | null;
+          };
+        };
+      };
+    } = await octokit.graphql(query, {
+      owner: org,
+      repo,
+      cursor,
+    });
+
+    const prs = response.repository.pullRequests.nodes;
+
+    for (const pr of prs) {
+      // If since is provided and PR is older than since, stop pagination
+      if (since && pr.updatedAt && new Date(pr.updatedAt) < new Date(since)) {
+        return pullRequests;
+      }
+
+      // Skip PRs without required fields
+      if (!pr.updatedAt) continue;
+
+      pullRequests.push({
+        number: pr.number,
+        title: pr.title,
+        url: pr.url,
+        author: pr.author?.login ?? null,
+        updated_at: pr.updatedAt,
+        created_at: pr.createdAt,
+        merged_at: pr.mergedAt,
+        closed_at: pr.closedAt,
+        reviews: pr.reviews.nodes.map((review) => ({
+          author: review.author?.login ?? null,
+          state: review.state,
+          submitted_at: review.submittedAt,
+        })),
+      });
+    }
+
+    hasNextPage = response.repository.pullRequests.pageInfo.hasNextPage;
+    cursor = response.repository.pullRequests.pageInfo.endCursor;
   }
 
   return pullRequests;
@@ -152,8 +269,8 @@ async function main() {
   }
 
   for (const { name: repo } of repositories) {
-    const pullRequests = await getRepoPullRequests(repo, since);
-    console.log(`${repo}: ${pullRequests.length}`);
+    const pullRequests = await getRepoPullRequestsAndReviews(repo, since);
+    console.log(JSON.stringify(pullRequests, null, 2));
   }
 }
 

@@ -1,5 +1,5 @@
 import { octokit } from "@/scrapers/github/utils/octokit";
-import { subDays, subYears } from "date-fns";
+import { subDays } from "date-fns";
 
 const org = process.env.GITHUB_ORG!;
 // const apiVersion = process.env.GITHUB_API_VERSION ?? "2022-11-28";
@@ -11,36 +11,33 @@ const org = process.env.GITHUB_ORG!;
  * @param since - The date to start getting repositories from based on the `updated_at` field (optional)
  * @returns An array of repositories
  */
-async function getAllRepositories(
-  org: string,
-  since?: string
-): Promise<Array<{ name: string; url: string; updated_at: string }>> {
+async function getAllRepositories(org: string, since?: string) {
   const repos = [];
 
   for await (const response of octokit.paginate.iterator(
     "GET /orgs/{org}/repos",
     {
       org,
-      sort: "updated",
+      sort: "pushed",
     }
   )) {
     for (const repo of response.data) {
       // If since is provided and repo is older than since, stop pagination
       if (
         since &&
-        repo.updated_at &&
-        new Date(repo.updated_at) < new Date(since)
+        repo.pushed_at &&
+        new Date(repo.pushed_at) < new Date(since)
       ) {
         return repos;
       }
 
       // Skip repos without required fields
-      if (!repo.updated_at) continue;
+      if (!repo.pushed_at) continue;
 
       repos.push({
         name: repo.name,
         url: repo.html_url,
-        updated_at: repo.updated_at,
+        defaultBranch: repo.default_branch,
       });
     }
   }
@@ -334,6 +331,114 @@ export async function getAssignedIssues(repo: string, since?: string) {
   return issues;
 }
 
+export async function getCommitsAcrossBranches(
+  repo: string,
+  since?: string
+): ReturnType<typeof getBranchCommits> {
+  const commits = [];
+
+  let hasNextPage = true;
+  let cursor: string | null = null;
+
+  while (hasNextPage) {
+    const query = `
+      query($owner: String!, $repo: String!, $cursor: String, $since: GitTimestamp) {
+        repository(owner: $owner, name: $repo) {
+          refs(refPrefix: "refs/heads/", first: 50, orderBy: { field: TAG_COMMIT_DATE, direction: DESC }, after: $cursor) {
+            pageInfo {
+              hasNextPage
+              endCursor
+            }
+            nodes {
+              name
+              target {
+                ... on Commit {
+                  history(since: $since) {
+                    nodes {
+                      messageHeadline
+                      committedDate
+                      author {
+                        user { login }
+                      }
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const response: {
+      repository: {
+        refs: {
+          nodes: Array<{
+            name: string;
+            target: {
+              history: {
+                nodes: Array<{
+                  messageHeadline: string;
+                  committedDate: string;
+                  author: {
+                    user: { login: string | null } | null;
+                  };
+                  url: string;
+                }>;
+              };
+            };
+          }>;
+          pageInfo: { hasNextPage: boolean; endCursor: string | null };
+        };
+      };
+    } = await octokit.graphql(query, { owner: org, repo, cursor, since });
+
+    const branches = response.repository.refs.nodes;
+
+    for (const branch of branches) {
+      // if (since && branch.target.history.nodes.length === 0) {
+      //   //Voluntarily checking against commit history as we are already filtering by since in the graphql query
+      //   return commits;
+      // }
+
+      const commitHistory = branch.target.history.nodes;
+
+      // Only include commits in branches that had activity in the last 5 days
+      for (const commit of commitHistory) {
+        commits.push({
+          branchName: branch.name,
+          commitMessage: commit.messageHeadline,
+          committedDate: commit.committedDate,
+          author: commit.author.user?.login ?? null,
+          url: commit.url,
+        });
+      }
+    }
+
+    hasNextPage = response.repository.refs.pageInfo.hasNextPage;
+    cursor = response.repository.refs.pageInfo.endCursor;
+  }
+
+  return commits;
+}
+
+export async function getBranchCommits(repo: string, branch: string) {
+  const commits = await octokit.paginate(
+    "GET /repos/{owner}/{repo}/commits",
+    { owner: org, repo, sha: branch },
+    (response) =>
+      response.data.map((commit) => ({
+        branchName: branch,
+        commitMessage: commit.commit.message,
+        committedDate: commit.commit.committer?.date ?? null,
+        author: commit.author?.login ?? null,
+        url: commit.html_url,
+      }))
+  );
+  return commits;
+}
+
 const activityDefinitions = [
   "comment_created",
   "issue_assigned",
@@ -364,23 +469,37 @@ async function main() {
   const repositories = await getAllRepositories(org, since);
   console.log(`${repositories.length} repositories found`);
 
-  for (const { name: repo } of repositories) {
-    const issues = await getRepoIssues(repo, since);
-    console.log(`${repo}: ${issues.length}`);
-  }
+  // for (const { name: repo } of repositories) {
+  //   const issues = await getRepoIssues(repo, since);
+  //   console.log(`${repo}: ${issues.length}`);
+  // }
 
-  for (const { name: repo } of repositories) {
-    const pullRequests = await getRepoPullRequestsAndReviews(repo, since);
-    console.log(JSON.stringify(pullRequests, null, 2));
-  }
+  // for (const { name: repo } of repositories) {
+  //   const pullRequests = await getRepoPullRequestsAndReviews(repo, since);
+  //   console.log(JSON.stringify(pullRequests, null, 2));
+  // }
 
-  for (const { name: repo } of repositories) {
-    const comments = await getRepoComments(repo, since);
-    console.log(JSON.stringify(comments, null, 2));
-  }
-  for (const { name: repo } of repositories) {
-    const assignedIssues = await getAssignedIssues(repo, since);
-    console.log(JSON.stringify(assignedIssues, null, 2));
+  // for (const { name: repo } of repositories) {
+  //   const comments = await getRepoComments(repo, since);
+  //   console.log(JSON.stringify(comments, null, 2));
+  // }
+  // for (const { name: repo } of repositories) {
+  //   const assignedIssues = await getAssignedIssues(repo, since);
+  //   console.log(JSON.stringify(assignedIssues, null, 2));
+  // }
+  if (since) {
+    for (const { name: repo } of repositories) {
+      const commits = await getCommitsAcrossBranches(repo, since);
+      console.log(JSON.stringify(repo));
+      console.log(JSON.stringify(commits, null, 2));
+    }
+  } else {
+    for (const { name: repo, defaultBranch } of repositories) {
+      if (!defaultBranch) continue; // When repo is freshly created, default branch is not set
+      const commits = await getBranchCommits(repo, defaultBranch);
+      console.log(JSON.stringify(repo));
+      console.log(JSON.stringify(commits, null, 2));
+    }
   }
 }
 

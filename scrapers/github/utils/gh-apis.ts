@@ -199,6 +199,141 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
   return pullRequests;
 }
 
+async function getRepoComments(repo: string, since?: string) {
+  const comments = await octokit.paginate(
+    "GET /repos/{owner}/{repo}/issues/comments",
+    { owner: org, repo, since, sort: "updated", direction: "desc" },
+    (response) =>
+      response.data.map((comment) => ({
+        created_at: comment.created_at,
+        updated_at: comment.updated_at,
+        author: comment.user?.login,
+        issue_url: comment.issue_url,
+      }))
+  );
+  return comments;
+}
+
+export async function getAssignedIssues(repo: string, since?: string) {
+  const issues: {
+    number: number;
+    title: string;
+    url: string;
+    author: { login: string | null };
+    closedAt: string | null;
+    updatedAt: string;
+    createdAt: string;
+    assignedEvents: Array<{
+      createdAt: string;
+      actor: { login: string | null };
+      assignee: { login: string | null };
+    }>;
+  }[] = [];
+
+  let hasNextPage = true;
+  let cursor: string | null = null;
+
+  while (hasNextPage) {
+    const query = `
+      query($owner: String!, $repo: String!, $cursor: String) {
+        repository(owner: $owner, name: $repo) {
+          issues(first: 50, orderBy: { field: UPDATED_AT, direction: DESC }, after: $cursor) {
+            pageInfo {
+              hasNextPage
+              endCursor
+            }
+            nodes {
+              number
+              title
+              url
+              updatedAt
+              author { login }
+              closedAt
+              createdAt
+              timelineItems(itemTypes: [ASSIGNED_EVENT], first: 10) {
+                nodes {
+                  ... on AssignedEvent {
+                    createdAt
+                    actor { login }
+                    assignee {
+                      __typename
+                      ... on User { login }
+                      ... on Mannequin { login }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    const response: {
+      repository: {
+        issues: {
+          nodes: Array<{
+            number: number;
+            title: string;
+            url: string;
+            author: { login: string | null };
+            updatedAt: string;
+            closedAt: string | null;
+            createdAt: string;
+            timelineItems: {
+              nodes: Array<{
+                createdAt: string;
+                actor: { login: string | null };
+                assignee: { login: string | null };
+              }>;
+            };
+          }>;
+          pageInfo: {
+            hasNextPage: boolean;
+            endCursor: string | null;
+          };
+        };
+      };
+    } = await octokit.graphql(query, {
+      owner: org,
+      repo,
+      cursor,
+    });
+
+    const allIssues = response.repository.issues.nodes;
+
+    for (const issue of allIssues) {
+      // Optional stop if issue is older than `since`
+      if (since && new Date(issue.updatedAt) < new Date(since)) {
+        return issues;
+      }
+
+      const assignedEvents =
+        issue.timelineItems.nodes?.filter((e) => e.createdAt) ?? [];
+
+      issues.push({
+        number: issue.number,
+        title: issue.title,
+        url: issue.url,
+        author: { login: issue.author?.login ?? null },
+        closedAt: issue.closedAt,
+        updatedAt: issue.updatedAt,
+        createdAt: issue.createdAt,
+        assignedEvents: assignedEvents.map((e) => ({
+          createdAt: e.createdAt,
+          actor: { login: e.actor?.login ?? null },
+          assignee: { login: e.assignee?.login ?? null },
+        })),
+      });
+    }
+
+    hasNextPage = response.repository.issues.pageInfo.hasNextPage;
+    cursor = response.repository.issues.pageInfo.endCursor;
+  }
+
+  return issues;
+}
+
 const activityDefinitions = [
   "comment_created",
   "issue_assigned",
@@ -237,6 +372,15 @@ async function main() {
   for (const { name: repo } of repositories) {
     const pullRequests = await getRepoPullRequestsAndReviews(repo, since);
     console.log(JSON.stringify(pullRequests, null, 2));
+  }
+
+  for (const { name: repo } of repositories) {
+    const comments = await getRepoComments(repo, since);
+    console.log(JSON.stringify(comments, null, 2));
+  }
+  for (const { name: repo } of repositories) {
+    const assignedIssues = await getAssignedIssues(repo, since);
+    console.log(JSON.stringify(assignedIssues, null, 2));
   }
 }
 

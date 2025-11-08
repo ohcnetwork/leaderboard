@@ -45,8 +45,14 @@ leaderboard:
 # Scraper configurations
 scrapers: ## optional
   github:
+    cron: 0 0 * * *
+    source: https://github.com/ohcnetwork/leaderboard-github-scraper ## required
+    ## attributes specifically defined by the github scraper (can be any number of unknown attributes)
     org: ohcnetwork
     token: ${{ GITHUB_TOKEN }}
 
   slack:
+    cron: 0 0 * * * ## required
+    source: https://github.com/ohcnetwork/leaderboard-slack-scraper ## required
+    ## attributes specifically defined by the slack scraper (can be any number of unknown attributes)
     api_key: ${{ SLACK_API_KEY }}

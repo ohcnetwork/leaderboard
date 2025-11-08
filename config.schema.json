@@ -143,33 +143,27 @@
     },
     "scrapers": {
       "type": "object",
-      "description": "Scraper configurations",
-      "properties": {
-        "github": {
+      "description": "Scraper configurations - each key is a unique scraper identifier",
+      "patternProperties": {
+        "^[a-z_]+$": {
           "type": "object",
-          "description": "GitHub scraper configuration",
+          "description": "Individual scraper configuration",
+          "required": ["source"],
           "properties": {
-            "org": {
+            "source": {
               "type": "string",
-              "description": "GitHub organization name"
+              "description": "Git URL or relative local path to the scraper"
             },
-            "token": {
+            "cron": {
               "type": "string",
-              "description": "GitHub API token (supports template variables like ${{ GITHUB_TOKEN }})"
+              "description": "Cron expression for scheduled execution (optional - if not specified, scraper is manually triggered)",
+              "pattern": "^(@(annually|yearly|monthly|weekly|daily|hourly|reboot))|(@every (\\d+(ns|us|µs|ms|s|m|h))+)|((((\\d+,)+\\d+|(\\d+([/\\-])\\d+)|\\d+|\\*) ?){5,7})$"
             }
           },
-          "additionalProperties": false
-        },
-        "slack": {
-          "type": "object",
-          "description": "Slack scraper configuration",
-          "properties": {
-            "api_key": {
-              "type": "string",
-              "description": "Slack API key (supports template variables like ${{ SLACK_API_KEY }})"
-            }
-          },
-          "additionalProperties": false
+          "additionalProperties": {
+            "type": "string",
+            "description": "Scraper-specific configuration attributes (supports template variables like ${{ VAR_NAME }})"
+          }
         }
       },
       "additionalProperties": false

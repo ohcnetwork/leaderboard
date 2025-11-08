@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Leaderboard Configuration",
+  "description": "Configuration schema for the leaderboard application",
+  "type": "object",
+  "required": ["org", "meta", "leaderboard"],
+  "properties": {
+    "org": {
+      "type": "object",
+      "description": "Organization information",
+      "required": ["name", "description", "url", "logo_url"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Organization name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Organization description"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Organization website URL"
+        },
+        "logo_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Organization logo URL"
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Organization start date (YYYY-MM-DD)"
+        },
+        "socials": {
+          "type": "object",
+          "description": "Social media links",
+          "properties": {
+            "github": {
+              "type": "string",
+              "format": "uri",
+              "description": "GitHub organization URL"
+            },
+            "slack": {
+              "type": "string",
+              "format": "uri",
+              "description": "Slack workspace URL"
+            },
+            "linkedin": {
+              "type": "string",
+              "format": "uri",
+              "description": "LinkedIn company URL"
+            },
+            "youtube": {
+              "type": "string",
+              "format": "uri",
+              "description": "YouTube channel URL"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "Contact email address"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "meta": {
+      "type": "object",
+      "description": "Site and SEO metadata",
+      "required": [
+        "title",
+        "description",
+        "image_url",
+        "site_url",
+        "favicon_url"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Site title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Site description for SEO"
+        },
+        "image_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Open Graph image URL"
+        },
+        "site_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Site URL"
+        },
+        "favicon_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Favicon URL"
+        }
+      },
+      "additionalProperties": false
+    },
+    "leaderboard": {
+      "type": "object",
+      "description": "Leaderboard related configurations",
+      "required": ["data_source", "roles"],
+      "properties": {
+        "data_source": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the leaderboard data repository"
+        },
+        "roles": {
+          "type": "object",
+          "description": "User roles configuration",
+          "minProperties": 1,
+          "patternProperties": {
+            "^[a-z_]+$": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Display name for the role"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Role description"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "scrapers": {
+      "type": "object",
+      "description": "Scraper configurations",
+      "properties": {
+        "github": {
+          "type": "object",
+          "description": "GitHub scraper configuration",
+          "properties": {
+            "org": {
+              "type": "string",
+              "description": "GitHub organization name"
+            },
+            "token": {
+              "type": "string",
+              "description": "GitHub API token (supports template variables like ${{ GITHUB_TOKEN }})"
+            }
+          },
+          "additionalProperties": false
+        },
+        "slack": {
+          "type": "object",
+          "description": "Slack scraper configuration",
+          "properties": {
+            "api_key": {
+              "type": "string",
+              "description": "Slack API key (supports template variables like ${{ SLACK_API_KEY }})"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

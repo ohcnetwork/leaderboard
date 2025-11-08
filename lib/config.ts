@@ -20,8 +20,8 @@ function getValidator() {
  */
 function substituteEnvVars(obj: string | object): string | object {
   if (typeof obj === "string") {
-    // Match ${{ VAR_NAME }} pattern
-    const match = obj.match(/^\$\{\{\s*([A-Z_]+)\s*\}\}$/);
+    // Match ${{ VAR_NAME }} pattern (supports uppercase letters, numbers, and underscores)
+    const match = obj.match(/^\$\{\{\s*([A-Z0-9_]+)\s*\}\}$/);
     if (match) {
       const envVar = match[1];
       return process.env[envVar] || obj;

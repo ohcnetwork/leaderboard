@@ -6,6 +6,11 @@ async function main() {
         CREATE TABLE IF NOT EXISTS contributor (
             username                VARCHAR PRIMARY KEY,
             name                    VARCHAR,
+            role                    VARCHAR,
+            avatar_url              VARCHAR,
+            profile_url             VARCHAR,
+            email                   VARCHAR,
+            bio                     TEXT
         );
 
         CREATE TABLE IF NOT EXISTS activity_definition (
@@ -26,6 +31,10 @@ async function main() {
             points                  SMALLINT CHECK (points IS NULL OR points > -1),
             meta                    JSON
         );
+
+        CREATE INDEX IF NOT EXISTS idx_activity_occured_at ON activity(occured_at);
+        CREATE INDEX IF NOT EXISTS idx_activity_contributor ON activity(contributor);
+        CREATE INDEX IF NOT EXISTS idx_activity_definition ON activity(activity_definition);
     `);
 
   runGitHub(db);

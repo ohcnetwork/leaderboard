@@ -331,93 +331,80 @@ export async function getAssignedIssues(repo: string, since?: string) {
   return issues;
 }
 
-export async function getCommitsAcrossBranches(
+export async function getPushedEventsAcrossBranches(
   repo: string,
   since?: string
 ): ReturnType<typeof getBranchCommits> {
   const commits = [];
 
-  let hasNextPage = true;
-  let cursor: string | null = null;
-
-  while (hasNextPage) {
-    const query = `
-      query($owner: String!, $repo: String!, $cursor: String, $since: GitTimestamp) {
-        repository(owner: $owner, name: $repo) {
-          refs(refPrefix: "refs/heads/", first: 50, orderBy: { field: TAG_COMMIT_DATE, direction: DESC }, after: $cursor) {
-            pageInfo {
-              hasNextPage
-              endCursor
-            }
-            nodes {
-              name
-              target {
-                ... on Commit {
-                  history(since: $since) {
-                    nodes {
-                      messageHeadline
-                      committedDate
-                      author {
-                        user { login }
-                      }
-                      url
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+  // Iterate through repository events using paginate.iterator
+  for await (const response of octokit.paginate.iterator(
+    "GET /repos/{owner}/{repo}/events",
+    {
+      owner: org,
+      repo,
+      per_page: 100,
+    }
+  )) {
+    for (const event of response.data) {
+      // Check if event is older than since parameter - if so, stop pagination
+      if (
+        since &&
+        event.created_at &&
+        new Date(event.created_at) < new Date(since)
+      ) {
+        return commits;
       }
-    `;
 
-    const response: {
-      repository: {
-        refs: {
-          nodes: Array<{
-            name: string;
-            target: {
-              history: {
-                nodes: Array<{
-                  messageHeadline: string;
-                  committedDate: string;
-                  author: {
-                    user: { login: string | null } | null;
-                  };
-                  url: string;
-                }>;
-              };
-            };
-          }>;
-          pageInfo: { hasNextPage: boolean; endCursor: string | null };
-        };
+      // Only process PushEvents
+      if (event.type !== "PushEvent") {
+        continue;
+      }
+
+      const payload = event.payload as {
+        head?: string;
+        before?: string;
+        ref?: string;
       };
-    } = await octokit.graphql(query, { owner: org, repo, cursor, since });
 
-    const branches = response.repository.refs.nodes;
+      // Skip events without required payload fields or initial pushes (before is null)
+      if (!payload.head || !payload.before || !payload.ref) {
+        continue;
+      }
 
-    for (const branch of branches) {
-      // if (since && branch.target.history.nodes.length === 0) {
-      //   //Voluntarily checking against commit history as we are already filtering by since in the graphql query
-      //   return commits;
-      // }
+      // Extract branch name from ref (strip "refs/heads/" prefix)
+      const branchName = payload.ref.replace("refs/heads/", "");
 
-      const commitHistory = branch.target.history.nodes;
+      try {
+        // Use Compare API to get commits between before and head
+        const compareResponse = await octokit.request(
+          "GET /repos/{owner}/{repo}/compare/{basehead}",
+          {
+            owner: org,
+            repo,
+            basehead: `${payload.before}...${payload.head}`,
+          }
+        );
 
-      // Only include commits in branches that had activity in the last 5 days
-      for (const commit of commitHistory) {
-        commits.push({
-          branchName: branch.name,
-          commitMessage: commit.messageHeadline,
-          committedDate: commit.committedDate,
-          author: commit.author.user?.login ?? null,
-          url: commit.url,
-        });
+        // Extract and transform commits to match expected structure
+        for (const commit of compareResponse.data.commits) {
+          commits.push({
+            branchName,
+            commitMessage: commit.commit.message?.split("\n")[0] ?? "", // Get headline (first line)
+            committedDate: commit.commit.committer?.date ?? null,
+            author: commit.author?.login ?? null,
+            url: commit.html_url,
+          });
+        }
+      } catch (error) {
+        // Skip this push event if compare fails (e.g., commits deleted, force push)
+        console.error(
+          `Failed to compare ${payload.before}...${payload.head} in ${repo}:`,
+          error
+        );
+        continue;
       }
     }
-
-    hasNextPage = response.repository.refs.pageInfo.hasNextPage;
-    cursor = response.repository.refs.pageInfo.endCursor;
   }
 
   return commits;
@@ -489,7 +476,7 @@ async function main() {
   // }
   if (since) {
     for (const { name: repo } of repositories) {
-      const commits = await getCommitsAcrossBranches(repo, since);
+      const commits = await getPushedEventsAcrossBranches(repo, since);
       console.log(JSON.stringify(repo));
       console.log(JSON.stringify(commits, null, 2));
     }

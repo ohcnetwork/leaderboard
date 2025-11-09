@@ -121,6 +121,7 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
                   }
                   state
                   submittedAt
+                  htmlUrl
                 }
               }
             }
@@ -146,6 +147,7 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
                 author: { login: string | null };
                 state: string;
                 submittedAt: string | null;
+                htmlUrl: string | null;
               }>;
             };
           }>;
@@ -185,6 +187,7 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
           author: review.author?.login ?? null,
           state: review.state,
           submitted_at: review.submittedAt,
+          html_url: review.htmlUrl,
         })),
       });
     }
@@ -205,7 +208,7 @@ async function getRepoComments(repo: string, since?: string) {
         created_at: comment.created_at,
         updated_at: comment.updated_at,
         author: comment.user?.login,
-        issue_url: comment.issue_url,
+        html_url: comment.html_url,
       }))
   );
   return comments;
@@ -331,7 +334,13 @@ export async function getAssignedIssues(repo: string, since?: string) {
   return issues;
 }
 
-export async function getPushedEventsAcrossBranches(
+/**
+ * Get all commits from push events of a repository from its events API.
+ * @param repo - The repository to get commits from
+ * @param since - The date to start getting commits from based on the push event's `created_at` field (optional)
+ * @returns An array of commits
+ */
+export async function getCommitsFromPushEvents(
   repo: string,
   since?: string
 ): ReturnType<typeof getBranchCommits> {
@@ -476,7 +485,7 @@ async function main() {
   // }
   if (since) {
     for (const { name: repo } of repositories) {
-      const commits = await getPushedEventsAcrossBranches(repo, since);
+      const commits = await getCommitsFromPushEvents(repo, since);
       console.log(JSON.stringify(repo));
       console.log(JSON.stringify(commits, null, 2));
     }
@@ -488,6 +497,16 @@ async function main() {
       console.log(JSON.stringify(commits, null, 2));
     }
   }
+
+  // build activity entries, each activity entry should have a unique slug (slug format: ${activity_definition}_${unique})
+  // update existing api functions to get id for certain entities
+  // cleanup api functions to return only and everything that's needed
+  // compute set of contributors from activity entries, and write to db
+  // insert or do nothing contributors
+  // upsert activities
+
+  // future plan for when username change
+  // traverse all contributors, find all contributors with duplicate github_pk_id, and merge them into single one
 }
 
 main();

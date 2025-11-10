@@ -54,7 +54,7 @@ async function getAllRepositories(org: string, since?: string) {
  * @param since - The date to start getting pull requests from based on the `updated_at` field (optional)
  * @returns An array of pull requests with their reviews
  */
-async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
+async function getPRsAndReviews(repo: string, since?: string) {
   const pullRequests = [];
 
   let hasNextPage = true;
@@ -83,15 +83,19 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
               updatedAt
               createdAt
               mergedAt
+              mergedBy {
+                login
+              }
               closedAt
               reviews(first: 100) {
                 nodes {
+                  id
                   author {
                     login
                   }
                   state
                   submittedAt
-                  htmlUrl
+                  url
                 }
               }
             }
@@ -111,13 +115,15 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
             updatedAt: string;
             createdAt: string;
             mergedAt: string | null;
+            mergedBy: { login: string | null };
             closedAt: string | null;
             reviews: {
               nodes: Array<{
                 author: { login: string | null };
+                id: string;
                 state: string;
                 submittedAt: string | null;
-                htmlUrl: string | null;
+                url: string | null;
               }>;
             };
           }>;
@@ -152,12 +158,14 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
         updated_at: pr.updatedAt,
         created_at: pr.createdAt,
         merged_at: pr.mergedAt,
+        merged_by: pr.mergedBy?.login ?? null,
         closed_at: pr.closedAt,
         reviews: pr.reviews.nodes.map((review) => ({
+          id: review.id,
           author: review.author?.login ?? null,
           state: review.state,
           submitted_at: review.submittedAt,
-          html_url: review.htmlUrl,
+          html_url: review.url,
         })),
       });
     }
@@ -169,7 +177,7 @@ async function getRepoPullRequestsAndReviews(repo: string, since?: string) {
   return pullRequests;
 }
 
-async function getRepoComments(repo: string, since?: string) {
+async function getComments(repo: string, since?: string) {
   const comments = await octokit.paginate(
     "GET /repos/{owner}/{repo}/issues/comments",
     { owner: org, repo, since, sort: "updated", direction: "desc" },
@@ -194,7 +202,7 @@ async function getRepoComments(repo: string, since?: string) {
  * @param since - The date to start getting issues from based on the `updated_at` field (optional)
  * @returns An array of issues
  */
-export async function getRepoIssues(repo: string, since?: string) {
+export async function getIssues(repo: string, since?: string) {
   const issues = [];
 
   let hasNextPage = true;
@@ -412,7 +420,7 @@ export enum ActivityDefinition {
 }
 
 function getActivitiesFromIssues(
-  issues: Awaited<ReturnType<typeof getRepoIssues>>
+  issues: Awaited<ReturnType<typeof getIssues>>
 ) {
   const activities: Activity[] = [];
 
@@ -473,7 +481,7 @@ function getActivitiesFromIssues(
 }
 
 function getActivitiesFromComments(
-  comments: Awaited<ReturnType<typeof getRepoComments>>
+  comments: Awaited<ReturnType<typeof getComments>>
 ) {
   const activities: Activity[] = [];
   for (const comment of comments) {
@@ -481,6 +489,7 @@ function getActivitiesFromComments(
       continue;
     }
 
+    // Comment created
     activities.push({
       slug: `${ActivityDefinition.COMMENT_CREATED}_${comment.created_at}`,
       contributor: comment.author,
@@ -496,49 +505,99 @@ function getActivitiesFromComments(
   return activities;
 }
 
+function getActivitiesFromPullRequests(
+  pullRequests: Awaited<ReturnType<typeof getPRsAndReviews>>
+) {
+  const activities: Activity[] = [];
+
+  for (const pullRequest of pullRequests) {
+    if (!pullRequest.author) {
+      continue;
+    }
+
+    // PR opened
+    activities.push({
+      slug: `${ActivityDefinition.PR_OPENED}_${pullRequest.number}`,
+      contributor: pullRequest.author,
+      activity_definition: ActivityDefinition.PR_OPENED,
+      title: `Opened pull request #${pullRequest.number}`,
+      text: pullRequest.title,
+      occured_at: new Date(pullRequest.created_at),
+      link: pullRequest.url,
+      points: null,
+      meta: {},
+    });
+
+    // PR merged
+    if (pullRequest.merged_at && pullRequest.merged_by) {
+      activities.push({
+        slug: `${ActivityDefinition.PR_MERGED}_${pullRequest.number}`,
+        contributor: pullRequest.author,
+        activity_definition: ActivityDefinition.PR_MERGED,
+        title: `Merged pull request #${pullRequest.number}`,
+        text: pullRequest.title,
+        occured_at: new Date(pullRequest.merged_at),
+        link: pullRequest.url,
+        points: null,
+        meta: {},
+      });
+    }
+
+    // PR review events
+    for (const review of pullRequest.reviews) {
+      if (!review.author) {
+        continue;
+      }
+
+      const title = {
+        COMMENTED: `Reviewed PR #${pullRequest.number}`,
+        APPROVED: `Approved PR #${pullRequest.number}`,
+        CHANGES_REQUESTED: `Changes requested on PR #${pullRequest.number}`,
+      };
+
+      // Skip review events such as DISMISSED and PENDING.
+      if (!title[review.state as keyof typeof title]) {
+        continue;
+      }
+
+      activities.push({
+        slug: `${ActivityDefinition.PR_REVIEWED}_${pullRequest.number}_${review.state}_${review.id}`,
+        contributor: review.author,
+        activity_definition: ActivityDefinition.PR_REVIEWED,
+        title: title[review.state as keyof typeof title],
+        text: pullRequest.title,
+        occured_at: new Date(review.submitted_at!),
+        link: review.html_url,
+        points: null,
+        meta: {},
+      });
+    }
+  }
+
+  return activities;
+}
+
 async function main() {
   // const since = subYears(new Date(), 10).toISOString(); // TODO: make this configurable
   const since = subDays(new Date(), 1).toISOString(); // TODO: make this configurable
 
-  let activities: Activity[] = [];
+  const activities: Activity[] = [];
 
   const repositories = await getAllRepositories(org, since);
   console.log(`${repositories.length} repositories found`);
 
   for (const { name: repo } of repositories) {
     activities.push(
-      ...getActivitiesFromIssues(await getRepoIssues(repo, since)),
-      ...getActivitiesFromComments(await getRepoComments(repo, since))
+      // Issue Opened, Issue Assigned, Issue Closed
+      ...getActivitiesFromIssues(await getIssues(repo, since)),
+
+      // Comment Created
+      ...getActivitiesFromComments(await getComments(repo, since)),
+
+      // PR Opened, PR Merged, PR Reviewed
+      ...getActivitiesFromPullRequests(await getPRsAndReviews(repo, since))
     );
   }
-
-  // for (const { name: repo } of repositories) {
-  //   const pullRequests = await getRepoPullRequestsAndReviews(repo, since);
-  //   console.log(JSON.stringify(pullRequests, null, 2));
-  // }
-
-  // for (const { name: repo } of repositories) {
-  //   const comments = await getRepoComments(repo, since);
-  //   console.log(JSON.stringify(comments, null, 2));
-  // }
-  // for (const { name: repo } of repositories) {
-  //   const assignedIssues = await getAssignedIssues(repo, since);
-  //   console.log(JSON.stringify(assignedIssues, null, 2));
-  // }
-  // if (since) {
-  //   for (const { name: repo } of repositories) {
-  //     const commits = await getCommitsFromPushEvents(repo, since);
-  //     console.log(JSON.stringify(repo));
-  //     console.log(JSON.stringify(commits, null, 2));
-  //   }
-  // } else {
-  //   for (const { name: repo, defaultBranch } of repositories) {
-  //     if (!defaultBranch) continue; // When repo is freshly created, default branch is not set
-  //     const commits = await getBranchCommits(repo, defaultBranch);
-  //     console.log(JSON.stringify(repo));
-  //     console.log(JSON.stringify(commits, null, 2));
-  //   }
-  // }
 
   const contributors = new Set<string>();
   for (const activity of activities) {
@@ -546,25 +605,14 @@ async function main() {
       contributors.add(activity.contributor);
     }
   }
-  console.log(JSON.stringify(activities, null, 2));
-  console.log("Contributors:", contributors);
 
   await addContributors(Array.from(contributors) as string[]);
   await addActivities(activities);
 
-  const db = getDb();
-  const result = await db.query(`
-    SELECT * FROM contributor;
-  `);
-
-  console.log(JSON.stringify(result.rows, null, 2));
-
-  // build activity entries, each activity entry should have a unique slug (slug format: ${activity_definition}_${unique})
-  // update existing api functions to get id for certain entities
-  // cleanup api functions to return only and everything that's needed
-  // compute set of contributors from activity entries, and write to db
-  // insert or do nothing contributors
-  // upsert activities
+  // cleanup api functions to return only and everything that's neededb
+  // write commit activities to db
+  // test the above
+  // pr_collaborated
 
   // future plan for when username change
   // traverse all contributors, find all contributors with duplicate github_pk_id, and merge them into single one

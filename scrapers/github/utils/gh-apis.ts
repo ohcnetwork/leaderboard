@@ -1,6 +1,7 @@
 import { octokit } from "@/scrapers/github/utils/octokit";
 import { Activity } from "@/types/db";
 import { subDays } from "date-fns";
+import { addActivities, addContributors, getDb } from "./db";
 
 const org = process.env.GITHUB_ORG!;
 // const apiVersion = process.env.GITHUB_API_VERSION ?? "2022-11-28";
@@ -65,9 +66,9 @@ async function getRepoIssues(repo: string, since?: string) {
     (response) =>
       response.data.map((issue) => {
         return {
+          number: issue.number,
           title: issue.title,
           url: issue.html_url,
-          number: issue.number,
           author: issue.user?.login,
           closed_by: issue.closed_by?.login,
           closed_at: issue.closed_at,
@@ -549,20 +550,39 @@ async function main() {
   //   const assignedIssues = await getAssignedIssues(repo, since);
   //   console.log(JSON.stringify(assignedIssues, null, 2));
   // }
-  if (since) {
-    for (const { name: repo } of repositories) {
-      const commits = await getCommitsFromPushEvents(repo, since);
-      console.log(JSON.stringify(repo));
-      console.log(JSON.stringify(commits, null, 2));
-    }
-  } else {
-    for (const { name: repo, defaultBranch } of repositories) {
-      if (!defaultBranch) continue; // When repo is freshly created, default branch is not set
-      const commits = await getBranchCommits(repo, defaultBranch);
-      console.log(JSON.stringify(repo));
-      console.log(JSON.stringify(commits, null, 2));
+  // if (since) {
+  //   for (const { name: repo } of repositories) {
+  //     const commits = await getCommitsFromPushEvents(repo, since);
+  //     console.log(JSON.stringify(repo));
+  //     console.log(JSON.stringify(commits, null, 2));
+  //   }
+  // } else {
+  //   for (const { name: repo, defaultBranch } of repositories) {
+  //     if (!defaultBranch) continue; // When repo is freshly created, default branch is not set
+  //     const commits = await getBranchCommits(repo, defaultBranch);
+  //     console.log(JSON.stringify(repo));
+  //     console.log(JSON.stringify(commits, null, 2));
+  //   }
+  // }
+
+  const contributors = new Set<string>();
+  for (const activity of activities) {
+    if (activity.contributor) {
+      contributors.add(activity.contributor);
     }
   }
+  console.log(JSON.stringify(activities, null, 2));
+  console.log("Contributors:", contributors);
+
+  await addContributors(Array.from(contributors) as string[]);
+  await addActivities(activities);
+
+  const db = getDb();
+  const result = await db.query(`
+    SELECT * FROM contributor;
+  `);
+
+  console.log(JSON.stringify(result.rows, null, 2));
 
   // build activity entries, each activity entry should have a unique slug (slug format: ${activity_definition}_${unique})
   // update existing api functions to get id for certain entities

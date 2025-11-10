@@ -1,4 +1,4 @@
-import { ActivityDefinition, Contributor } from "@/types/db";
+import { Activity, ActivityDefinition, Contributor } from "@/types/db";
 import { PGlite } from "@electric-sql/pglite";
 
 let dbInstance: PGlite | null = null;
@@ -32,5 +32,31 @@ export async function upsertActivityDefinitions() {
       ('pr_collaborated', 'PR Collaborated', 'Collaborated on a Pull Request', 2),
       ('issue_closed', 'Issue Closed', 'Closed an Issue', 0)
     ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, points = EXCLUDED.points;
+  `);
+}
+
+export async function addContributors(contributors: string[]) {
+  const db = getDb();
+
+  await db.query(`
+    INSERT INTO contributor (username)
+    VALUES 
+      ${contributors.map((c) => `('${c}')`).join(",")}
+    ON CONFLICT (username) DO NOTHING;
+  `);
+}
+
+export async function addActivities(activities: Activity[]) {
+  const db = getDb();
+
+  await db.query(`
+    INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link)
+    VALUES ${activities
+      .map(
+        (a) =>
+          `('${a.slug}', '${a.contributor}', '${a.activity_definition}', '${a.title}', '${a.occured_at}', '${a.link}')`
+      )
+      .join(",")}
+    ON CONFLICT (slug) DO UPDATE SET contributor = EXCLUDED.contributor, activity_definition = EXCLUDED.activity_definition, title = EXCLUDED.title, occured_at = EXCLUDED.occured_at, link = EXCLUDED.link;
   `);
 }

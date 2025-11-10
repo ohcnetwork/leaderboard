@@ -4,8 +4,8 @@ import runGitHub from "@/scrapers/github/run";
 async function main() {
   await createTables();
 
-  const db = getDb();
-  runGitHub(db);
+  // const db = getDb();
+  // runGitHub(db);
 }
 
 main();

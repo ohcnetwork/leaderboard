@@ -48,38 +48,6 @@ async function getAllRepositories(org: string, since?: string) {
 }
 
 /**
- * Get all issues from a repository
- * If since is provided, only get issues updated since the date
- * @param repo - The repository to get issues from
- * @param since - The date to start getting issues from based on the `updated_at` field (optional)
- * @returns An array of issues
- */
-async function getRepoIssues(repo: string, since?: string) {
-  const issues = await octokit.paginate(
-    "GET /repos/{owner}/{repo}/issues",
-    {
-      owner: org,
-      repo,
-      state: "all",
-      since,
-    },
-    (response) =>
-      response.data.map((issue) => {
-        return {
-          number: issue.number,
-          title: issue.title,
-          url: issue.html_url,
-          author: issue.user?.login,
-          closed_by: issue.closed_by?.login,
-          closed_at: issue.closed_at,
-          created_at: issue.created_at,
-        };
-      })
-  );
-  return issues;
-}
-
-/**
  * Get all pull requests and their reviews from a repository using GraphQL
  * If since is provided, only get pull requests updated since the date
  * @param repo - The repository to get pull requests from
@@ -219,21 +187,15 @@ async function getRepoComments(repo: string, since?: string) {
   return comments;
 }
 
-export async function getAssignedIssues(repo: string, since?: string) {
-  const issues: {
-    number: number;
-    title: string;
-    url: string;
-    author: { login: string | null };
-    closedAt: string | null;
-    updatedAt: string;
-    createdAt: string;
-    assignedEvents: Array<{
-      createdAt: string;
-      actor: { login: string | null };
-      assignee: { login: string | null };
-    }>;
-  }[] = [];
+/**
+ * Get all issues and assign events from a repository
+ * If since is provided, only get issues updated since the date
+ * @param repo - The repository to get issues from
+ * @param since - The date to start getting issues from based on the `updated_at` field (optional)
+ * @returns An array of issues
+ */
+export async function getRepoIssues(repo: string, since?: string) {
+  const issues = [];
 
   let hasNextPage = true;
   let cursor: string | null = null;
@@ -254,8 +216,9 @@ export async function getAssignedIssues(repo: string, since?: string) {
               updatedAt
               author { login }
               closedAt
+              closedBy { login }
               createdAt
-              timelineItems(itemTypes: [ASSIGNED_EVENT], first: 10) {
+              timelineItems(itemTypes: [ASSIGNED_EVENT], first: 50) {
                 nodes {
                   ... on AssignedEvent {
                     createdAt
@@ -284,6 +247,7 @@ export async function getAssignedIssues(repo: string, since?: string) {
             author: { login: string | null };
             updatedAt: string;
             closedAt: string | null;
+            closedBy: { login: string | null };
             createdAt: string;
             timelineItems: {
               nodes: Array<{
@@ -299,11 +263,7 @@ export async function getAssignedIssues(repo: string, since?: string) {
           };
         };
       };
-    } = await octokit.graphql(query, {
-      owner: org,
-      repo,
-      cursor,
-    });
+    } = await octokit.graphql(query, { owner: org, repo, cursor });
 
     const allIssues = response.repository.issues.nodes;
 
@@ -320,14 +280,13 @@ export async function getAssignedIssues(repo: string, since?: string) {
         number: issue.number,
         title: issue.title,
         url: issue.url,
-        author: { login: issue.author?.login ?? null },
-        closedAt: issue.closedAt,
-        updatedAt: issue.updatedAt,
-        createdAt: issue.createdAt,
-        assignedEvents: assignedEvents.map((e) => ({
+        author: issue.author?.login,
+        closed_at: issue.closedAt,
+        closed_by: issue.closedBy?.login,
+        created_at: issue.createdAt,
+        assign_events: assignedEvents.map((e) => ({
           createdAt: e.createdAt,
-          actor: { login: e.actor?.login ?? null },
-          assignee: { login: e.assignee?.login ?? null },
+          assignee: e.assignee?.login,
         })),
       });
     }
@@ -452,7 +411,7 @@ export enum ActivityDefinition {
   COMMENT_CREATED = "comment_created",
 }
 
-async function getActivitiesFromIssues(
+function getActivitiesFromIssues(
   issues: Awaited<ReturnType<typeof getRepoIssues>>
 ) {
   const activities: Activity[] = [];
@@ -475,6 +434,25 @@ async function getActivitiesFromIssues(
       meta: {},
     });
 
+    // Issue assign events
+    for (const assignEvent of issue.assign_events) {
+      if (!assignEvent.assignee) {
+        continue;
+      }
+      activities.push({
+        // TODO: figure out how to make the slug not depend on assignee username (since username can change)
+        slug: `${ActivityDefinition.ISSUE_ASSIGNED}_${issue.number}_${assignEvent.assignee}`,
+        contributor: assignEvent.assignee,
+        activity_definition: ActivityDefinition.ISSUE_ASSIGNED,
+        title: `Issue #${issue.number} assigned`,
+        text: issue.title,
+        occured_at: new Date(assignEvent.createdAt),
+        link: issue.url,
+        points: null,
+        meta: {},
+      });
+    }
+
     // Issue closed
     if (issue.closed_at && issue.closed_by) {
       activities.push({
@@ -494,7 +472,7 @@ async function getActivitiesFromIssues(
   return activities;
 }
 
-async function getActivitiesFromComments(
+function getActivitiesFromComments(
   comments: Awaited<ReturnType<typeof getRepoComments>>
 ) {
   const activities: Activity[] = [];
@@ -528,13 +506,10 @@ async function main() {
   console.log(`${repositories.length} repositories found`);
 
   for (const { name: repo } of repositories) {
-    const issues = await getRepoIssues(repo, since);
-    const issueActivities = await getActivitiesFromIssues(issues);
-    activities.push(...issueActivities);
-
-    const comments = await getRepoComments(repo, since);
-    const commentActivities = await getActivitiesFromComments(comments);
-    activities.push(...commentActivities);
+    activities.push(
+      ...getActivitiesFromIssues(await getRepoIssues(repo, since)),
+      ...getActivitiesFromComments(await getRepoComments(repo, since))
+    );
   }
 
   // for (const { name: repo } of repositories) {

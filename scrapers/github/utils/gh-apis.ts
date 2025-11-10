@@ -206,6 +206,9 @@ async function getRepoComments(repo: string, since?: string) {
     { owner: org, repo, since, sort: "updated", direction: "desc" },
     (response) =>
       response.data.map((comment) => ({
+        id: comment.node_id,
+        issue_number: comment.issue_url.split("/").pop(),
+        body: comment.body,
         created_at: comment.created_at,
         updated_at: comment.updated_at,
         author: comment.user?.login,
@@ -490,6 +493,30 @@ async function getActivitiesFromIssues(
   return activities;
 }
 
+async function getActivitiesFromComments(
+  comments: Awaited<ReturnType<typeof getRepoComments>>
+) {
+  const activities: Activity[] = [];
+  for (const comment of comments) {
+    if (!comment.author) {
+      continue;
+    }
+
+    activities.push({
+      slug: `${ActivityDefinition.COMMENT_CREATED}_${comment.created_at}`,
+      contributor: comment.author,
+      activity_definition: ActivityDefinition.COMMENT_CREATED,
+      title: `Commented on #${comment.issue_number}`,
+      text: comment.body ?? null,
+      occured_at: new Date(comment.created_at),
+      link: comment.html_url,
+      points: null,
+      meta: {},
+    });
+  }
+  return activities;
+}
+
 async function main() {
   // const since = subYears(new Date(), 10).toISOString(); // TODO: make this configurable
   const since = subDays(new Date(), 1).toISOString(); // TODO: make this configurable
@@ -503,6 +530,10 @@ async function main() {
     const issues = await getRepoIssues(repo, since);
     const issueActivities = await getActivitiesFromIssues(issues);
     activities.push(...issueActivities);
+
+    const comments = await getRepoComments(repo, since);
+    const commentActivities = await getActivitiesFromComments(comments);
+    activities.push(...commentActivities);
   }
 
   // for (const { name: repo } of repositories) {

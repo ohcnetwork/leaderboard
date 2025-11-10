@@ -1,7 +1,12 @@
 import { octokit } from "@/scrapers/github/utils/octokit";
 import { Activity } from "@/types/db";
 import { subDays } from "date-fns";
-import { addActivities, addContributors, getDb } from "./db";
+import {
+  addActivities,
+  addContributors,
+  getDb,
+  upsertActivityDefinitions,
+} from "./db";
 
 const org = process.env.GITHUB_ORG!;
 // const apiVersion = process.env.GITHUB_API_VERSION ?? "2022-11-28";
@@ -23,6 +28,7 @@ async function getAllRepositories(org: string, since?: string) {
       sort: "pushed",
     }
   )) {
+    console.log(`Found ${response.data.length} repositories`);
     for (const repo of response.data) {
       // If since is provided and repo is older than since, stop pagination
       if (
@@ -59,6 +65,8 @@ async function getPRsAndReviews(repo: string, since?: string) {
 
   let hasNextPage = true;
   let cursor: string | null = null;
+
+  console.log(`Fetching pull requests from ${repo}...`);
 
   while (hasNextPage) {
     const query = `
@@ -141,6 +149,8 @@ async function getPRsAndReviews(repo: string, since?: string) {
 
     const prs = response.repository.pullRequests.nodes;
 
+    console.log(`Found ${prs.length} pull requests`);
+
     for (const pr of prs) {
       // If since is provided and PR is older than since, stop pagination
       if (since && pr.updatedAt && new Date(pr.updatedAt) < new Date(since)) {
@@ -178,6 +188,8 @@ async function getPRsAndReviews(repo: string, since?: string) {
 }
 
 async function getComments(repo: string, since?: string) {
+  console.log(`Fetching comments from ${repo}...`);
+
   const comments = await octokit.paginate(
     "GET /repos/{owner}/{repo}/issues/comments",
     { owner: org, repo, since, sort: "updated", direction: "desc" },
@@ -192,6 +204,9 @@ async function getComments(repo: string, since?: string) {
         html_url: comment.html_url,
       }))
   );
+
+  console.log(`Found ${comments.length} comments`);
+
   return comments;
 }
 
@@ -208,6 +223,8 @@ export async function getIssues(repo: string, since?: string) {
   let hasNextPage = true;
   let cursor: string | null = null;
 
+  console.log(`Fetching issues from ${repo}...`);
+
   while (hasNextPage) {
     const query = `
       query($owner: String!, $repo: String!, $cursor: String) {
@@ -223,10 +240,10 @@ export async function getIssues(repo: string, since?: string) {
               url
               updatedAt
               author { login }
+              closed
               closedAt
-              closedBy { login }
               createdAt
-              timelineItems(itemTypes: [ASSIGNED_EVENT], first: 50) {
+              timelineItems(itemTypes: [ASSIGNED_EVENT, CLOSED_EVENT], first: 50) {
                 nodes {
                   ... on AssignedEvent {
                     createdAt
@@ -236,6 +253,10 @@ export async function getIssues(repo: string, since?: string) {
                       ... on User { login }
                       ... on Mannequin { login }
                     }
+                  }
+                  ... on ClosedEvent {
+                    createdAt
+                    actor { login }
                   }
                 }
               }
@@ -255,14 +276,22 @@ export async function getIssues(repo: string, since?: string) {
             author: { login: string | null };
             updatedAt: string;
             closedAt: string | null;
-            closedBy: { login: string | null };
             createdAt: string;
+            closed: boolean;
             timelineItems: {
-              nodes: Array<{
-                createdAt: string;
-                actor: { login: string | null };
-                assignee: { login: string | null };
-              }>;
+              nodes: Array<
+                | {
+                    __typename?: "AssignedEvent";
+                    createdAt: string;
+                    actor: { login: string | null };
+                    assignee: { login: string | null };
+                  }
+                | {
+                    __typename?: "ClosedEvent";
+                    createdAt: string;
+                    actor: { login: string | null };
+                  }
+              >;
             };
           }>;
           pageInfo: {
@@ -282,7 +311,15 @@ export async function getIssues(repo: string, since?: string) {
       }
 
       const assignedEvents =
-        issue.timelineItems.nodes?.filter((e) => e.createdAt) ?? [];
+        issue.timelineItems.nodes?.filter(
+          (e): e is Extract<typeof e, { assignee: unknown }> =>
+            "assignee" in e && e.createdAt !== undefined
+        ) ?? [];
+
+      const closedEvent = issue.timelineItems.nodes?.find(
+        (e): e is Extract<typeof e, { __typename?: "ClosedEvent" }> =>
+          !("assignee" in e)
+      );
 
       issues.push({
         number: issue.number,
@@ -290,7 +327,8 @@ export async function getIssues(repo: string, since?: string) {
         url: issue.url,
         author: issue.author?.login,
         closed_at: issue.closedAt,
-        closed_by: issue.closedBy?.login,
+        closed: issue.closed,
+        closed_by: closedEvent?.actor?.login ?? null,
         created_at: issue.createdAt,
         assign_events: assignedEvents.map((e) => ({
           createdAt: e.createdAt,
@@ -462,7 +500,7 @@ function getActivitiesFromIssues(
     }
 
     // Issue closed
-    if (issue.closed_at && issue.closed_by) {
+    if (issue.closed && issue.closed_at && issue.closed_by) {
       activities.push({
         slug: `${ActivityDefinition.ISSUE_CLOSED}_${issue.number}`,
         contributor: issue.closed_by,
@@ -495,7 +533,7 @@ function getActivitiesFromComments(
       contributor: comment.author,
       activity_definition: ActivityDefinition.COMMENT_CREATED,
       title: `Commented on #${comment.issue_number}`,
-      text: comment.body ?? null,
+      text: null,
       occured_at: new Date(comment.created_at),
       link: comment.html_url,
       points: null,
@@ -599,12 +637,13 @@ async function main() {
     );
   }
 
-  const contributors = new Set<string>();
-  for (const activity of activities) {
-    if (activity.contributor) {
-      contributors.add(activity.contributor);
-    }
-  }
+  const contributors = Array.from(
+    new Set(activities.map((a) => a.contributor))
+  );
+
+  console.log(`Found ${contributors.length} contributors`);
+
+  await upsertActivityDefinitions();
 
   await addContributors(Array.from(contributors) as string[]);
   await addActivities(activities);

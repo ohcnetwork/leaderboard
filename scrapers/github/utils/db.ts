@@ -38,25 +38,42 @@ export async function upsertActivityDefinitions() {
 export async function addContributors(contributors: string[]) {
   const db = getDb();
 
-  await db.query(`
+  await db.query(
+    `
     INSERT INTO contributor (username)
-    VALUES 
-      ${contributors.map((c) => `('${c}')`).join(",")}
+    VALUES ${contributors.map((_, index) => `($${index + 1})`).join(", ")}
     ON CONFLICT (username) DO NOTHING;
-  `);
+  `,
+    [...contributors]
+  );
 }
 
 export async function addActivities(activities: Activity[]) {
   const db = getDb();
 
-  await db.query(`
-    INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link)
+  await db.query(
+    `
+    INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
     VALUES ${activities
       .map(
-        (a) =>
-          `('${a.slug}', '${a.contributor}', '${a.activity_definition}', '${a.title}', '${a.occured_at}', '${a.link}')`
+        (_, index) =>
+          `(${Array.from({ length: 9 }, (_, i) => `$${index * 9 + i + 1}`).join(
+            ", "
+          )})`
       )
-      .join(",")}
+      .join(", ")}
     ON CONFLICT (slug) DO UPDATE SET contributor = EXCLUDED.contributor, activity_definition = EXCLUDED.activity_definition, title = EXCLUDED.title, occured_at = EXCLUDED.occured_at, link = EXCLUDED.link;
-  `);
+  `,
+    activities.flatMap((a) => [
+      a.slug,
+      a.contributor,
+      a.activity_definition,
+      a.title,
+      a.occured_at.toISOString(),
+      a.link,
+      a.text,
+      a.points ?? null,
+      a.meta ? JSON.stringify(a.meta) : null,
+    ])
+  );
 }

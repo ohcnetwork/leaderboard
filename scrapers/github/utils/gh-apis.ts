@@ -1,4 +1,5 @@
 import { octokit } from "@/scrapers/github/utils/octokit";
+import { Activity } from "@/types/db";
 import { subDays } from "date-fns";
 
 const org = process.env.GITHUB_ORG!;
@@ -66,8 +67,8 @@ async function getRepoIssues(repo: string, since?: string) {
         return {
           title: issue.title,
           url: issue.html_url,
+          number: issue.number,
           author: issue.user?.login,
-          assignee: issue.assignees?.map((assignee) => assignee.login) ?? [],
           closed_by: issue.closed_by?.login,
           closed_at: issue.closed_at,
           created_at: issue.created_at,
@@ -435,40 +436,74 @@ export async function getBranchCommits(repo: string, branch: string) {
   return commits;
 }
 
-const activityDefinitions = [
-  "comment_created",
-  "issue_assigned",
-  "pr_reviewed",
-  "pr_reviewed",
-  "issue_opened",
-  "pr_opened",
-  "pr_merged",
-  "pr_collaborated",
-  "issue_closed",
-] as const;
+export enum ActivityDefinition {
+  ISSUE_OPENED = "issue_opened",
+  ISSUE_CLOSED = "issue_closed",
+  PR_OPENED = "pr_opened",
+  PR_CLOSED = "pr_closed",
+  PR_MERGED = "pr_merged",
+  PR_REVIEWED = "pr_reviewed",
+  PR_COLLABORATED = "pr_collaborated",
+  ISSUE_ASSIGNED = "issue_assigned",
+  COMMENT_CREATED = "comment_created",
+}
 
-const events: {
-  slug: string;
-  contributor: string;
-  activity_definition: (typeof activityDefinitions)[number];
-  title: string;
-  occured_at: string;
-  link: string;
-  text: string;
-  points?: number;
-}[] = [];
+async function getActivitiesFromIssues(
+  issues: Awaited<ReturnType<typeof getRepoIssues>>
+) {
+  const activities: Activity[] = [];
+
+  for (const issue of issues) {
+    if (!issue.author) {
+      continue;
+    }
+
+    // Issue opened
+    activities.push({
+      slug: `${ActivityDefinition.ISSUE_OPENED}_${issue.number}`,
+      contributor: issue.author,
+      activity_definition: ActivityDefinition.ISSUE_OPENED,
+      title: `Opened issue #${issue.number}`,
+      text: issue.title,
+      occured_at: new Date(issue.created_at),
+      link: issue.url,
+      points: null,
+      meta: {},
+    });
+
+    // Issue closed
+    if (issue.closed_at && issue.closed_by) {
+      activities.push({
+        slug: `${ActivityDefinition.ISSUE_CLOSED}_${issue.number}`,
+        contributor: issue.closed_by,
+        activity_definition: ActivityDefinition.ISSUE_CLOSED,
+        title: `Closed issue #${issue.number}`,
+        text: issue.title,
+        occured_at: new Date(issue.closed_at),
+        link: issue.url,
+        points: null,
+        meta: {},
+      });
+    }
+  }
+
+  return activities;
+}
 
 async function main() {
   // const since = subYears(new Date(), 10).toISOString(); // TODO: make this configurable
   const since = subDays(new Date(), 1).toISOString(); // TODO: make this configurable
 
+  let activities: Activity[] = [];
+
   const repositories = await getAllRepositories(org, since);
   console.log(`${repositories.length} repositories found`);
 
-  // for (const { name: repo } of repositories) {
-  //   const issues = await getRepoIssues(repo, since);
-  //   console.log(`${repo}: ${issues.length}`);
-  // }
+  for (const { name: repo } of repositories) {
+    const issues = await getRepoIssues(repo, since);
+    const issueActivities = await getActivitiesFromIssues(issues);
+    activities.push(...issueActivities);
+  }
 
   // for (const { name: repo } of repositories) {
   //   const pullRequests = await getRepoPullRequestsAndReviews(repo, since);

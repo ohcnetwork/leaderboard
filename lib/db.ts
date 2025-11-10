@@ -203,3 +203,183 @@ export async function listActivities() {
 
   return result.rows;
 }
+
+/**
+ * Activity with contributor details
+ */
+export interface ActivityWithContributor extends Activity {
+  contributor_name: string | null;
+  contributor_avatar_url: string | null;
+  contributor_role: string | null;
+}
+
+/**
+ * Activity group by activity definition
+ */
+export interface ActivityGroup {
+  activity_definition: string;
+  activity_name: string;
+  activity_description: string | null;
+  activity_points: number | null;
+  activities: ActivityWithContributor[];
+}
+
+/**
+ * Get recent activities grouped by activity type
+ * @param days - Number of days to look back
+ * @returns Activities grouped by activity definition
+ */
+export async function getRecentActivitiesGroupedByType(
+  days: number
+): Promise<ActivityGroup[]> {
+  const db = getDb();
+
+  const result = await db.query<
+    ActivityWithContributor & {
+      activity_name: string;
+      activity_description: string | null;
+      activity_points: number | null;
+    }
+  >(
+    `
+    SELECT 
+      a.slug,
+      a.contributor,
+      a.activity_definition,
+      a.title,
+      a.occured_at,
+      a.link,
+      a.text,
+      COALESCE(a.points, ad.points) as points,
+      a.meta,
+      c.name as contributor_name,
+      c.avatar_url as contributor_avatar_url,
+      c.role as contributor_role,
+      ad.name as activity_name,
+      ad.description as activity_description,
+      ad.points as activity_points
+    FROM activity a
+    JOIN contributor c ON a.contributor = c.username
+    JOIN activity_definition ad ON a.activity_definition = ad.slug
+    WHERE a.occured_at >= NOW() - INTERVAL '${days} days'
+    ORDER BY a.occured_at DESC;
+  `,
+    [],
+    {
+      parsers: {
+        [types.DATE]: (date: string) => new Date(date),
+      },
+    }
+  );
+
+  // Group activities by activity_definition
+  const grouped = result.rows.reduce((acc, row) => {
+    const key = row.activity_definition;
+    if (!acc[key]) {
+      acc[key] = {
+        activity_definition: row.activity_definition,
+        activity_name: row.activity_name,
+        activity_description: row.activity_description,
+        activity_points: row.activity_points,
+        activities: [],
+      };
+    }
+    acc[key].activities.push(row);
+    return acc;
+  }, {} as Record<string, ActivityGroup>);
+
+  return Object.values(grouped);
+}
+
+/**
+ * Leaderboard entry with contributor details and activity breakdown
+ */
+export interface LeaderboardEntry {
+  username: string;
+  name: string | null;
+  avatar_url: string | null;
+  role: string | null;
+  total_points: number;
+  activity_breakdown: Record<string, { count: number; points: number }>;
+}
+
+/**
+ * Get leaderboard for a specific date range
+ * @param startDate - Start date of the range
+ * @param endDate - End date of the range
+ * @returns Leaderboard entries sorted by total points
+ */
+export async function getLeaderboard(
+  startDate: Date,
+  endDate: Date
+): Promise<LeaderboardEntry[]> {
+  const db = getDb();
+
+  // Get all activities in the date range with contributor info
+  const result = await db.query<{
+    username: string;
+    name: string | null;
+    avatar_url: string | null;
+    role: string | null;
+    activity_definition: string;
+    activity_name: string;
+    points: number | null;
+  }>(
+    `
+    SELECT 
+      c.username,
+      c.name,
+      c.avatar_url,
+      c.role,
+      a.activity_definition,
+      ad.name as activity_name,
+      COALESCE(a.points, ad.points) as points
+    FROM activity a
+    JOIN contributor c ON a.contributor = c.username
+    JOIN activity_definition ad ON a.activity_definition = ad.slug
+    WHERE a.occured_at >= $1 AND a.occured_at <= $2
+    ORDER BY c.username;
+  `,
+    [startDate.toISOString(), endDate.toISOString()],
+    {
+      parsers: {
+        [types.DATE]: (date: string) => new Date(date),
+      },
+    }
+  );
+
+  // Group by contributor and calculate totals
+  const leaderboardMap = result.rows.reduce((acc, row) => {
+    const username = row.username;
+    if (!acc[username]) {
+      acc[username] = {
+        username: row.username,
+        name: row.name,
+        avatar_url: row.avatar_url,
+        role: row.role,
+        total_points: 0,
+        activity_breakdown: {},
+      };
+    }
+
+    const points = row.points || 0;
+    acc[username].total_points += points;
+
+    const activityKey = row.activity_name;
+    if (!acc[username].activity_breakdown[activityKey]) {
+      acc[username].activity_breakdown[activityKey] = {
+        count: 0,
+        points: 0,
+      };
+    }
+    acc[username].activity_breakdown[activityKey].count += 1;
+    acc[username].activity_breakdown[activityKey].points += points;
+
+    return acc;
+  }, {} as Record<string, LeaderboardEntry>);
+
+  // Filter contributors with points > 0 and sort by total points
+  return Object.values(leaderboardMap)
+    .filter((entry) => entry.total_points > 0)
+    .sort((a, b) => b.total_points - a.total_points);
+}

@@ -85,7 +85,7 @@ export function extractErrorPaths(errorMessage: string): string[] {
   for (const line of lines) {
     const match = line.match(/^\s*-\s*([^:]+):/);
     if (match) {
-      paths.push(match[1].trim());
+      paths.push(match[1]!.trim());
     }
   }
 

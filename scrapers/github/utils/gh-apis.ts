@@ -1,5 +1,7 @@
 import { octokit } from "@/scrapers/github/utils/octokit";
 import { subDays } from "date-fns";
+import { addActivities, addContributors, getDb } from "./db";
+import { Activity } from "@/types/db";
 
 const org = process.env.GITHUB_ORG!;
 // const apiVersion = process.env.GITHUB_API_VERSION ?? "2022-11-28";
@@ -64,6 +66,7 @@ async function getRepoIssues(repo: string, since?: string) {
     (response) =>
       response.data.map((issue) => {
         return {
+          number: issue.number,
           title: issue.title,
           url: issue.html_url,
           author: issue.user?.login,
@@ -205,6 +208,7 @@ async function getRepoComments(repo: string, since?: string) {
     { owner: org, repo, since, sort: "updated", direction: "desc" },
     (response) =>
       response.data.map((comment) => ({
+        id: comment.id,
         created_at: comment.created_at,
         updated_at: comment.updated_at,
         author: comment.user?.login,
@@ -465,10 +469,24 @@ async function main() {
   const repositories = await getAllRepositories(org, since);
   console.log(`${repositories.length} repositories found`);
 
-  // for (const { name: repo } of repositories) {
-  //   const issues = await getRepoIssues(repo, since);
-  //   console.log(`${repo}: ${issues.length}`);
-  // }
+  const activity_entries = [];
+
+  for (const { name: repo } of repositories) {
+    const issues = await getRepoIssues(repo, since);
+    console.log(`${repo}: ${issues.length}`);
+    activity_entries.push(
+      ...issues.map((issue) => {
+        return {
+          slug: `issue_opened_${issue.number}`,
+          contributor: issue.author ?? "",
+          activity_definition: "issue_opened",
+          title: issue.title,
+          occured_at: new Date(issue.created_at),
+          link: issue.url,
+        } as Activity;
+      })
+    );
+  }
 
   // for (const { name: repo } of repositories) {
   //   const pullRequests = await getRepoPullRequestsAndReviews(repo, since);
@@ -483,20 +501,39 @@ async function main() {
   //   const assignedIssues = await getAssignedIssues(repo, since);
   //   console.log(JSON.stringify(assignedIssues, null, 2));
   // }
-  if (since) {
-    for (const { name: repo } of repositories) {
-      const commits = await getCommitsFromPushEvents(repo, since);
-      console.log(JSON.stringify(repo));
-      console.log(JSON.stringify(commits, null, 2));
-    }
-  } else {
-    for (const { name: repo, defaultBranch } of repositories) {
-      if (!defaultBranch) continue; // When repo is freshly created, default branch is not set
-      const commits = await getBranchCommits(repo, defaultBranch);
-      console.log(JSON.stringify(repo));
-      console.log(JSON.stringify(commits, null, 2));
+  // if (since) {
+  //   for (const { name: repo } of repositories) {
+  //     const commits = await getCommitsFromPushEvents(repo, since);
+  //     console.log(JSON.stringify(repo));
+  //     console.log(JSON.stringify(commits, null, 2));
+  //   }
+  // } else {
+  //   for (const { name: repo, defaultBranch } of repositories) {
+  //     if (!defaultBranch) continue; // When repo is freshly created, default branch is not set
+  //     const commits = await getBranchCommits(repo, defaultBranch);
+  //     console.log(JSON.stringify(repo));
+  //     console.log(JSON.stringify(commits, null, 2));
+  //   }
+  // }
+
+  const contributors = new Set<string>();
+  for (const activity_entry of activity_entries) {
+    if (activity_entry.contributor) {
+      contributors.add(activity_entry.contributor);
     }
   }
+  console.log(JSON.stringify(activity_entries, null, 2));
+  console.log("Contributors:", contributors);
+
+  await addContributors(Array.from(contributors) as string[]);
+  await addActivities(activity_entries);
+
+  const db = getDb();
+  const result = await db.query(`
+    SELECT * FROM contributor;
+  `);
+
+  console.log(JSON.stringify(result.rows, null, 2));
 
   // build activity entries, each activity entry should have a unique slug (slug format: ${activity_definition}_${unique})
   // update existing api functions to get id for certain entities

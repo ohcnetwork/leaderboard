@@ -8,7 +8,12 @@ let dbInstance: PGlite | null = null;
  */
 export function getDb(dataPath: string = "./db-data"): PGlite {
   if (!dbInstance) {
-    dbInstance = new PGlite(dataPath);
+    try {
+      dbInstance = new PGlite(dataPath);
+    } catch (error) {
+      console.error("Failed to initialize PGlite:", error);
+      throw error;
+    }
   }
 
   return dbInstance;

@@ -55,12 +55,15 @@ function getSqlPositionalParamPlaceholders(length: number, cols: number) {
 
   // ($1, $2, $3), ($4, $5, $6), ($7, $8, $9), ...
   return batchArray(params, cols)
-    .map((p) => `(${p.join(", ")})`)
+    .map((p) => `\n        (${p.join(", ")})`)
     .join(", ");
 }
 
 export async function addContributors(contributors: string[]) {
   const db = getDb();
+
+  // Remove duplicates from the array
+  contributors = [...new Set(contributors)];
 
   for (const batch of batchArray(contributors, 1000)) {
     const result = await db.query(

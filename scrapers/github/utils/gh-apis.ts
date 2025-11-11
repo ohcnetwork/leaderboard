@@ -18,7 +18,7 @@ const org = process.env.GITHUB_ORG!;
  * @param since - The date to start getting repositories from based on the `updated_at` field (optional)
  * @returns An array of repositories
  */
-async function getAllRepositories(org: string, since?: string) {
+async function getRepositories(org: string, since?: string) {
   const repos = [];
 
   for await (const response of octokit.paginate.iterator(
@@ -657,20 +657,21 @@ async function main() {
 
   await upsertActivityDefinitions();
 
-  const repositories = await getAllRepositories(org, since);
-  console.log(`${repositories.length} repositories found`);
-
-  for (const { name: repo } of repositories) {
-    const activities: Activity[] = [
-      // Issue Opened, Issue Assigned, Issue Closed
-      ...activitiesFromIssues(await getIssues(repo, since), repo),
-
-      // Comment Created
-      ...activitiesFromComments(await getComments(repo, since), repo),
-
-      // PR Opened, PR Merged, PR Reviewed
-      ...activitiesFromPullRequests(await getPRsAndReviews(repo, since), repo),
-    ];
+  for (const { name: repository } of await getRepositories(org, since)) {
+    // Parallelize the fetching of activities from repository
+    // and then combine the activities into a single array
+    const activities = await Promise.all([
+      getIssues(repository, since),
+      getComments(repository, since),
+      getPRsAndReviews(repository, since),
+    ]).then(([issues, comments, pullRequests]) => [
+      // yields: Issue Opened, Issue Assigned, Issue Closed
+      ...activitiesFromIssues(issues, repository),
+      // yields: Comment Created
+      ...activitiesFromComments(comments, repository),
+      // yields: PR Opened, PR Merged, PR Reviewed
+      ...activitiesFromPullRequests(pullRequests, repository),
+    ]);
 
     findActivitiesWithDuplicateSlug(activities); // TODO: report to sentry if there are any activities with duplicate slugs
 

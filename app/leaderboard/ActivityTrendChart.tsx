@@ -7,6 +7,7 @@ interface ActivityTrendChartProps {
   startDate: Date;
   endDate: Date;
   mode: "points" | "count";
+  maxDataPoints?: number;
 }
 
 export default function ActivityTrendChart({
@@ -14,6 +15,7 @@ export default function ActivityTrendChart({
   startDate,
   endDate,
   mode,
+  maxDataPoints = 32,
 }: ActivityTrendChartProps) {
   // Generate all dates in the range
   const dateRange = useMemo(() => {
@@ -43,8 +45,6 @@ export default function ActivityTrendChart({
 
   // Downsample data to max 72 points for smoother visualization
   const activityData = useMemo(() => {
-    const maxDataPoints = 72;
-
     if (fullActivityData.length <= maxDataPoints) {
       return fullActivityData;
     }
@@ -61,7 +61,7 @@ export default function ActivityTrendChart({
     }
 
     return downsampled;
-  }, [fullActivityData]);
+  }, [fullActivityData, maxDataPoints]);
 
   // Calculate chart dimensions and scaling
   const maxValue = useMemo(() => Math.max(...activityData, 1), [activityData]);
@@ -187,13 +187,15 @@ export default function ActivityTrendChart({
         className="text-primary"
         style={{ overflow: "visible" }}
       >
-        {/* Area fill */}
-        <path
-          d={areaPathData}
-          fill="currentColor"
-          fillOpacity="0.1"
-          stroke="none"
-        />
+        {/* Define gradient */}
+        <defs>
+          <linearGradient id="trendGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="currentColor" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="currentColor" stopOpacity="0.05" />
+          </linearGradient>
+        </defs>
+        {/* Area fill with gradient */}
+        <path d={areaPathData} fill="url(#trendGradient)" stroke="none" />
         {/* Trend line */}
         <path
           d={pathData}

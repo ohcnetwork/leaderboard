@@ -84,19 +84,19 @@ export default function LeaderboardView({
     }
 
     const filtered: typeof topByActivity = {};
-    
+
     for (const [activityName, contributors] of Object.entries(topByActivity)) {
       const filteredContributors = contributors.filter((contributor) => {
         // Find the contributor in entries to get their role
         const entry = entries.find((e) => e.username === contributor.username);
         return entry?.role && selectedRoles.has(entry.role);
       });
-      
+
       if (filteredContributors.length > 0) {
         filtered[activityName] = filteredContributors;
       }
     }
-    
+
     return filtered;
   }, [topByActivity, selectedRoles, entries]);
 

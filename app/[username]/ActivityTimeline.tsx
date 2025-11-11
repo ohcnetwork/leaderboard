@@ -10,10 +10,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import RelativeTime from "@/components/RelativeTime";
 import { Filter, Calendar, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import ActivityTimelineItem from "./ActivityTimelineItem";
 
 interface ActivityTimelineProps {
   activities: ContributorActivity[];
@@ -210,49 +210,7 @@ export default function ActivityTimeline({
             </p>
           ) : (
             filteredActivities.map((activity) => (
-              <div
-                key={activity.slug}
-                className="flex gap-4 pb-4 border-b last:border-0"
-              >
-                <div className="shrink-0 w-2 h-2 mt-2 rounded-full bg-primary" />
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap mb-1">
-                    <span className="font-medium text-sm">
-                      {activity.activity_name}
-                    </span>
-                    <RelativeTime
-                      date={activity.occured_at}
-                      className="text-xs text-muted-foreground"
-                    />
-                    {activity.points !== null && activity.points > 0 && (
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                        +{activity.points}
-                      </span>
-                    )}
-                  </div>
-                  {activity.title && (
-                    <p className="text-sm mb-1">
-                      {activity.link ? (
-                        <a
-                          href={activity.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-primary hover:underline"
-                        >
-                          {activity.title}
-                        </a>
-                      ) : (
-                        activity.title
-                      )}
-                    </p>
-                  )}
-                  {activity.text && (
-                    <p className="text-sm text-muted-foreground line-clamp-3">
-                      {activity.text}
-                    </p>
-                  )}
-                </div>
-              </div>
+              <ActivityTimelineItem key={activity.slug} activity={activity} />
             ))
           )}
         </div>

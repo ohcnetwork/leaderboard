@@ -1,21 +1,8 @@
-- ui: setup shadcn based nextjs project
-- make styling configurable and extensible
-- configurables:
-  - favicon
-  - description
-
 - script to scrape github data to table
-  - opened an issue
-  - closed an issue
-  - pr review events
-  - issue assigned events
-  - issue/pr comments
-  - opened a pr
   - collaborated on a pr
-  - commit activity
-  - pr merged
   - pr merged (points derived from gh project board)
-- script to scrape slack data to table
+  - push events instead of commits --- optimize commit created to instead be tracking push events directly instead. (Pushed 3 commits to branch... instead of 3 separate commit created activities, points would be derived from number of commits pushed)
+  - exclude merge commits
 
 - build pages
   - home
@@ -26,11 +13,14 @@
   - issues
   - feed
 
+- aggregate metrics
+- eod bonus point as an event
+
+- setup footer
 - sitemap generation
 - open graph metadata for pages
 
 - update scraper to respect X-Poll-Interval
-- parallelize things that'd take so much time
 - setup pre-commit hooks and prettier configs
 - script to update github username of old user, or auto do it by: traverse all contributors, find all contributors with duplicate github_pk_id, and merge them into single one
 - setup sentry error reporting for scraper

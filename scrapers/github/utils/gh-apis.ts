@@ -765,11 +765,6 @@ async function main() {
   // Update all bot contributors' roles to 'bot'
   console.log(`Found ${botUsers.size} bot users`);
   await updateBotRoles(Array.from(botUsers));
-
-  // TODO: exclude merge commits
-  // TODO: setup footer
-  // TODO: add pr_collaborated activities
-  // TODO:  optimize commit created to instead be tracking push events directly instead. (Pushed 3 commits to branch... instead of 3 separate commit created activities, points would be derived from number of commits pushed)
 }
 
 main();

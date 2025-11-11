@@ -8,9 +8,18 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import ActivityTrendChart from "../leaderboard/ActivityTrendChart";
+import { useMemo } from "react";
 
 interface ActivityBreakdownProps {
   activityBreakdown: Record<string, { count: number; points: number }>;
+  activities: Array<{
+    activity_definition_name: string;
+    occured_at: Date;
+    points: number;
+  }>;
+  startDate?: Date;
+  endDate?: Date;
 }
 
 // Color palette for different activity types
@@ -29,6 +38,9 @@ const COLORS = [
 
 export default function ActivityBreakdown({
   activityBreakdown,
+  activities,
+  startDate,
+  endDate,
 }: ActivityBreakdownProps) {
   const entries = Object.entries(activityBreakdown).sort(
     (a, b) => b[1].count - a[1].count
@@ -39,6 +51,62 @@ export default function ActivityBreakdown({
     0
   );
   const totalPoints = entries.reduce((sum, [, data]) => sum + data.points, 0);
+
+  // Calculate date range if not provided (use all activities)
+  const dateRange = useMemo(() => {
+    if (startDate && endDate) {
+      return { startDate, endDate };
+    }
+
+    if (activities.length === 0) {
+      const now = new Date();
+      return {
+        startDate: new Date(now.getFullYear(), 0, 1),
+        endDate: now,
+      };
+    }
+
+    const dates = activities.map((a) => new Date(a.occured_at));
+    return {
+      startDate: new Date(Math.min(...dates.map((d) => d.getTime()))),
+      endDate: new Date(Math.max(...dates.map((d) => d.getTime()))),
+    };
+  }, [activities, startDate, endDate]);
+
+  // Group activities by type and date for trend charts
+  const activityTrendData = useMemo(() => {
+    const trendMap: Record<
+      string,
+      Array<{ date: string; count: number; points: number }>
+    > = {};
+
+    activities.forEach((activity) => {
+      const activityName = activity.activity_definition_name;
+      const dateKey = new Date(activity.occured_at).toISOString().split("T")[0];
+
+      if (!trendMap[activityName]) {
+        trendMap[activityName] = [];
+      }
+
+      const existingDay = trendMap[activityName].find(
+        (d) => d.date === dateKey
+      );
+      if (existingDay) {
+        existingDay.count += 1;
+        existingDay.points += activity.points;
+      } else {
+        if (dateKey) {
+          trendMap[activityName].push({
+            date: dateKey,
+            count: 1,
+            points: activity.points,
+          });
+        }
+      }
+    });
+
+    return trendMap;
+  }, [activities]);
 
   return (
     <Card className="mb-8">
@@ -80,10 +148,12 @@ export default function ActivityBreakdown({
             </div>
           </TooltipProvider>
 
-          {/* Legend */}
+          {/* Legend with Trend Charts */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {entries.map(([activityName, data], index) => {
               const percentage = (data.count / totalActivities) * 100;
+              const trendData = activityTrendData[activityName] || [];
+
               return (
                 <div
                   key={activityName}
@@ -112,6 +182,15 @@ export default function ActivityBreakdown({
                         </>
                       )}
                     </div>
+                  </div>
+                  {/* Activity Trend Chart */}
+                  <div className="shrink-0">
+                    <ActivityTrendChart
+                      dailyActivity={trendData}
+                      startDate={dateRange.startDate}
+                      endDate={dateRange.endDate}
+                      mode="count"
+                    />
                   </div>
                 </div>
               );

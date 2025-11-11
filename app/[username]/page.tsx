@@ -139,6 +139,13 @@ export default async function ContributorPage({
     return acc;
   }, {} as Record<string, { count: number; points: number }>);
 
+  // Prepare activities data for trend charts
+  const activitiesForTrend = activities.map((activity) => ({
+    activity_definition_name: activity.activity_name,
+    occured_at: activity.occured_at,
+    points: activity.points || 0,
+  }));
+
   // Structured data for SEO
   const structuredData = {
     "@context": "https://schema.org",
@@ -298,7 +305,10 @@ export default async function ContributorPage({
         </Card>
 
         {/* Activity Breakdown */}
-        <ActivityBreakdown activityBreakdown={activityBreakdown} />
+        <ActivityBreakdown
+          activityBreakdown={activityBreakdown}
+          activities={activitiesForTrend}
+        />
 
         {/* Activity Timeline */}
         <ActivityTimeline activities={activities} />

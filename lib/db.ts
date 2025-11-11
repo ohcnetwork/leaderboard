@@ -383,3 +383,105 @@ export async function getLeaderboard(
     .filter((entry) => entry.total_points > 0)
     .sort((a, b) => b.total_points - a.total_points);
 }
+
+/**
+ * Get all contributor usernames for static generation
+ * @returns List of all contributor usernames
+ */
+export async function getAllContributorUsernames(): Promise<string[]> {
+  const db = getDb();
+
+  const result = await db.query<{ username: string }>(
+    "SELECT username FROM contributor ORDER BY username;"
+  );
+
+  return result.rows.map((row) => row.username);
+}
+
+/**
+ * Activity with full details for timeline
+ */
+export interface ContributorActivity extends Activity {
+  activity_name: string;
+  activity_description: string | null;
+  activity_points: number | null;
+}
+
+/**
+ * Get contributor profile with all activities
+ * @param username - The username of the contributor
+ * @returns Contributor profile with activities
+ */
+export async function getContributorProfile(username: string): Promise<{
+  contributor: Contributor | null;
+  activities: ContributorActivity[];
+  totalPoints: number;
+  activityByDate: Record<string, number>; // For activity graph
+}> {
+  const db = getDb();
+
+  // Get contributor info
+  const contributor = await getContributor(username);
+
+  if (!contributor) {
+    return {
+      contributor: null,
+      activities: [],
+      totalPoints: 0,
+      activityByDate: {},
+    };
+  }
+
+  // Get all activities for this contributor
+  const activitiesResult = await db.query<ContributorActivity>(
+    `
+    SELECT 
+      a.slug,
+      a.contributor,
+      a.activity_definition,
+      a.title,
+      a.occured_at,
+      a.link,
+      a.text,
+      COALESCE(a.points, ad.points) as points,
+      a.meta,
+      ad.name as activity_name,
+      ad.description as activity_description,
+      ad.points as activity_points
+    FROM activity a
+    JOIN activity_definition ad ON a.activity_definition = ad.slug
+    WHERE a.contributor = $1
+    ORDER BY a.occured_at DESC;
+  `,
+    [username],
+    {
+      parsers: {
+        [types.DATE]: (date: string) => new Date(date),
+      },
+    }
+  );
+
+  const activities = activitiesResult.rows;
+
+  // Calculate total points
+  const totalPoints = activities.reduce(
+    (sum, activity) => sum + (activity.points || 0),
+    0
+  );
+
+  // Group activities by date for the activity graph
+  const activityByDate: Record<string, number> = {};
+  activities.forEach((activity) => {
+    const dateKey = activity.occured_at.toISOString().split("T")[0];
+    if (dateKey) {
+      activityByDate[dateKey] = (activityByDate[dateKey] || 0) + 1;
+    }
+  });
+
+  return {
+    contributor,
+    activities,
+    totalPoints,
+    activityByDate,
+  };
+}

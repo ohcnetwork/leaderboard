@@ -457,10 +457,15 @@ export enum ActivityDefinition {
   COMMENT_CREATED = "comment_created",
 }
 
-function getActivitiesFromIssues(
-  issues: Awaited<ReturnType<typeof getIssues>>
+function activitiesFromIssues(
+  issues: Awaited<ReturnType<typeof getIssues>>,
+  repo: string
 ) {
   const activities: Activity[] = [];
+
+  // Voluntarily making the slug the key to track the latest assign event for each issue
+  // We cannot have multiple duplicate activity entry with same slug in a DB insert statement even though we are doing ON CONFLICT DO UPDATE
+  const lastestIssueAssignEvents: Record<string, Omit<Activity, "slug">> = {};
 
   for (const issue of issues) {
     if (!issue.author) {
@@ -469,7 +474,7 @@ function getActivitiesFromIssues(
 
     // Issue opened
     activities.push({
-      slug: `${ActivityDefinition.ISSUE_OPENED}_${issue.number}`,
+      slug: `${ActivityDefinition.ISSUE_OPENED}_${repo}#${issue.number}`,
       contributor: issue.author,
       activity_definition: ActivityDefinition.ISSUE_OPENED,
       title: `Opened issue #${issue.number}`,
@@ -485,9 +490,20 @@ function getActivitiesFromIssues(
       if (!assignEvent.assignee) {
         continue;
       }
-      activities.push({
-        // TODO: figure out how to make the slug not depend on assignee username (since username can change)
-        slug: `${ActivityDefinition.ISSUE_ASSIGNED}_${issue.number}_${assignEvent.assignee}`,
+
+      // TODO: figure out how to make the slug not depend on assignee username (since username can change)
+      const slug = `${ActivityDefinition.ISSUE_ASSIGNED}_${repo}#${issue.number}_${assignEvent.assignee}`;
+
+      // Skip if the assign event is older than the latest assign event for this issue
+      if (
+        lastestIssueAssignEvents[slug] &&
+        lastestIssueAssignEvents[slug].occured_at >
+          new Date(assignEvent.createdAt)
+      ) {
+        continue;
+      }
+
+      lastestIssueAssignEvents[slug] = {
         contributor: assignEvent.assignee,
         activity_definition: ActivityDefinition.ISSUE_ASSIGNED,
         title: `Issue #${issue.number} assigned`,
@@ -496,13 +512,13 @@ function getActivitiesFromIssues(
         link: issue.url,
         points: null,
         meta: {},
-      });
+      };
     }
 
     // Issue closed
     if (issue.closed && issue.closed_at && issue.closed_by) {
       activities.push({
-        slug: `${ActivityDefinition.ISSUE_CLOSED}_${issue.number}`,
+        slug: `${ActivityDefinition.ISSUE_CLOSED}_${repo}#${issue.number}`,
         contributor: issue.closed_by,
         activity_definition: ActivityDefinition.ISSUE_CLOSED,
         title: `Closed issue #${issue.number}`,
@@ -515,11 +531,17 @@ function getActivitiesFromIssues(
     }
   }
 
+  // Append the latest assign events to activities
+  for (const [slug, activity] of Object.entries(lastestIssueAssignEvents)) {
+    activities.push({ slug, ...activity });
+  }
+
   return activities;
 }
 
-function getActivitiesFromComments(
-  comments: Awaited<ReturnType<typeof getComments>>
+function activitiesFromComments(
+  comments: Awaited<ReturnType<typeof getComments>>,
+  repo: string
 ) {
   const activities: Activity[] = [];
   for (const comment of comments) {
@@ -529,7 +551,7 @@ function getActivitiesFromComments(
 
     // Comment created
     activities.push({
-      slug: `${ActivityDefinition.COMMENT_CREATED}_${comment.created_at}`,
+      slug: `${ActivityDefinition.COMMENT_CREATED}_${repo}#${comment.issue_number}_${comment.id}`,
       contributor: comment.author,
       activity_definition: ActivityDefinition.COMMENT_CREATED,
       title: `Commented on #${comment.issue_number}`,
@@ -543,8 +565,9 @@ function getActivitiesFromComments(
   return activities;
 }
 
-function getActivitiesFromPullRequests(
-  pullRequests: Awaited<ReturnType<typeof getPRsAndReviews>>
+function activitiesFromPullRequests(
+  pullRequests: Awaited<ReturnType<typeof getPRsAndReviews>>,
+  repo: string
 ) {
   const activities: Activity[] = [];
 
@@ -555,7 +578,7 @@ function getActivitiesFromPullRequests(
 
     // PR opened
     activities.push({
-      slug: `${ActivityDefinition.PR_OPENED}_${pullRequest.number}`,
+      slug: `${ActivityDefinition.PR_OPENED}_${repo}#${pullRequest.number}`,
       contributor: pullRequest.author,
       activity_definition: ActivityDefinition.PR_OPENED,
       title: `Opened pull request #${pullRequest.number}`,
@@ -569,7 +592,7 @@ function getActivitiesFromPullRequests(
     // PR merged
     if (pullRequest.merged_at && pullRequest.merged_by) {
       activities.push({
-        slug: `${ActivityDefinition.PR_MERGED}_${pullRequest.number}`,
+        slug: `${ActivityDefinition.PR_MERGED}_${repo}#${pullRequest.number}`,
         contributor: pullRequest.author,
         activity_definition: ActivityDefinition.PR_MERGED,
         title: `Merged pull request #${pullRequest.number}`,
@@ -599,7 +622,7 @@ function getActivitiesFromPullRequests(
       }
 
       activities.push({
-        slug: `${ActivityDefinition.PR_REVIEWED}_${pullRequest.number}_${review.state}_${review.id}`,
+        slug: `${ActivityDefinition.PR_REVIEWED}_${repo}#${pullRequest.number}_${review.state}_${review.id}`,
         contributor: review.author,
         activity_definition: ActivityDefinition.PR_REVIEWED,
         title: title[review.state as keyof typeof title],
@@ -615,46 +638,48 @@ function getActivitiesFromPullRequests(
   return activities;
 }
 
+function findActivitiesWithDuplicateSlug(activities: Activity[]) {
+  const slugCount = new Map<string, number>();
+
+  for (const activity of activities) {
+    slugCount.set(activity.slug, (slugCount.get(activity.slug) ?? 0) + 1);
+
+    if (slugCount.get(activity.slug) && slugCount.get(activity.slug)! > 1) {
+      console.log(JSON.stringify(activity, null, 2));
+    }
+  }
+
+  // TODO: report to sentry if there are any activities with duplicate slugs
+}
+
 async function main() {
-  // const since = subYears(new Date(), 10).toISOString(); // TODO: make this configurable
   const since = subDays(new Date(), 7).toISOString(); // TODO: make this configurable
 
-  const activities: Activity[] = [];
+  await upsertActivityDefinitions();
 
   const repositories = await getAllRepositories(org, since);
   console.log(`${repositories.length} repositories found`);
 
   for (const { name: repo } of repositories) {
-    activities.push(
+    const activities: Activity[] = [
       // Issue Opened, Issue Assigned, Issue Closed
-      ...getActivitiesFromIssues(await getIssues(repo, since)),
+      ...activitiesFromIssues(await getIssues(repo, since), repo),
 
       // Comment Created
-      ...getActivitiesFromComments(await getComments(repo, since)),
+      ...activitiesFromComments(await getComments(repo, since), repo),
 
       // PR Opened, PR Merged, PR Reviewed
-      ...getActivitiesFromPullRequests(await getPRsAndReviews(repo, since))
-    );
+      ...activitiesFromPullRequests(await getPRsAndReviews(repo, since), repo),
+    ];
+
+    findActivitiesWithDuplicateSlug(activities); // TODO: report to sentry if there are any activities with duplicate slugs
+
+    await addContributors(activities.map((a) => a.contributor));
+    await addActivities(activities);
   }
 
-  const contributors = Array.from(
-    new Set(activities.map((a) => a.contributor))
-  );
-
-  console.log(`Found ${contributors.length} contributors`);
-
-  await upsertActivityDefinitions();
-
-  await addContributors(Array.from(contributors) as string[]);
-  await addActivities(activities);
-
-  // cleanup api functions to return only and everything that's neededb
-  // write commit activities to db
-  // test the above
-  // pr_collaborated
-
-  // future plan for when username change
-  // traverse all contributors, find all contributors with duplicate github_pk_id, and merge them into single one
+  // TODO: add pr_collaborated activities
+  // TODO: add commit activities
 }
 
 main();

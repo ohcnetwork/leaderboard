@@ -1,6 +1,6 @@
 import { LeaderboardEntry } from "@/lib/db";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Link from "next/link";
 import { Medal, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -16,11 +16,15 @@ export default function LeaderboardView({
 }: LeaderboardViewProps) {
   const getRankIcon = (rank: number) => {
     if (rank === 1)
-      return <Trophy className="h-6 w-6 text-yellow-500" aria-label="1st place" />;
+      return (
+        <Trophy className="h-6 w-6 text-yellow-500" aria-label="1st place" />
+      );
     if (rank === 2)
       return <Medal className="h-6 w-6 text-gray-400" aria-label="2nd place" />;
     if (rank === 3)
-      return <Medal className="h-6 w-6 text-amber-600" aria-label="3rd place" />;
+      return (
+        <Medal className="h-6 w-6 text-amber-600" aria-label="3rd place" />
+      );
     return null;
   };
 
@@ -112,32 +116,39 @@ export default function LeaderboardView({
                     </div>
 
                     {/* Avatar */}
-                    <Image
-                      src={
-                        entry.avatar_url ||
-                        `https://github.com/${entry.username}.png`
-                      }
-                      alt={entry.name || entry.username}
-                      width={56}
-                      height={56}
-                      className="rounded-full shrink-0"
-                    />
+                    <Avatar className="h-14 w-14 shrink-0">
+                      <AvatarImage
+                        src={entry.avatar_url || undefined}
+                        alt={entry.name || entry.username}
+                      />
+                      <AvatarFallback>
+                        {(entry.name || entry.username)
+                          .substring(0, 2)
+                          .toUpperCase()}
+                      </AvatarFallback>
+                    </Avatar>
 
                     {/* Contributor Info */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap mb-1">
-                        <h3 className="text-lg font-semibold">
-                          {entry.name || entry.username}
-                        </h3>
+                        <Link href={`/${entry.username}`}>
+                          <h3 className="text-lg font-semibold hover:text-primary transition-colors">
+                            {entry.name || entry.username}
+                          </h3>
+                        </Link>
                         {entry.role && (
                           <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
                             {entry.role}
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-muted-foreground mb-3">
+                      <Link
+                        href={`/${entry.username}`}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
                         @{entry.username}
-                      </p>
+                      </Link>
+                      <div className="mb-3" />
 
                       {/* Activity Breakdown */}
                       <div className="flex flex-wrap gap-3">
@@ -183,4 +194,3 @@ export default function LeaderboardView({
     </div>
   );
 }
-

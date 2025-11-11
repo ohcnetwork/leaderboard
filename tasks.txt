@@ -32,3 +32,5 @@
 - update scraper to respect X-Poll-Interval
 - parallelize things that'd take so much time
 - setup pre-commit hooks and prettier configs
+- script to update github username of old user, or auto do it by: traverse all contributors, find all contributors with duplicate github_pk_id, and merge them into single one
+- setup sentry error reporting for scraper

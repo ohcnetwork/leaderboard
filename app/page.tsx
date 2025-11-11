@@ -1,9 +1,9 @@
 import { getRecentActivitiesGroupedByType } from "@/lib/db";
 import { getConfig } from "@/lib/config";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { formatTimeAgo } from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image";
 import { Activity, Users, TrendingUp } from "lucide-react";
 
 export default async function Home() {
@@ -120,21 +120,27 @@ export default async function Home() {
                       key={activity.slug}
                       className="flex items-start gap-4 pb-4 border-b last:border-0 last:pb-0"
                     >
-                      <Image
-                        src={
-                          activity.contributor_avatar_url ||
-                          `https://github.com/${activity.contributor}.png`
-                        }
-                        alt={activity.contributor_name || activity.contributor}
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
+                      <Avatar className="h-10 w-10">
+                        <AvatarImage
+                          src={activity.contributor_avatar_url || undefined}
+                          alt={
+                            activity.contributor_name || activity.contributor
+                          }
+                        />
+                        <AvatarFallback>
+                          {(activity.contributor_name || activity.contributor)
+                            .substring(0, 2)
+                            .toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <span className="font-medium">
+                          <Link
+                            href={`/${activity.contributor}`}
+                            className="font-medium hover:text-primary transition-colors"
+                          >
                             {activity.contributor_name || activity.contributor}
-                          </span>
+                          </Link>
                           {activity.contributor_role && (
                             <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
                               {activity.contributor_role}

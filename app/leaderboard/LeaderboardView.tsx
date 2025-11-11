@@ -1,9 +1,19 @@
+"use client";
+
 import { LeaderboardEntry } from "@/lib/db";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import Link from "next/link";
-import { Medal, Trophy } from "lucide-react";
+import { Medal, Trophy, Filter, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useState, useMemo } from "react";
 
 interface LeaderboardViewProps {
   entries: LeaderboardEntry[];
@@ -14,6 +24,42 @@ export default function LeaderboardView({
   entries,
   period,
 }: LeaderboardViewProps) {
+  const [selectedRoles, setSelectedRoles] = useState<Set<string>>(new Set());
+
+  // Get unique roles from entries
+  const availableRoles = useMemo(() => {
+    const roles = new Set<string>();
+    entries.forEach((entry) => {
+      if (entry.role) {
+        roles.add(entry.role);
+      }
+    });
+    return Array.from(roles).sort();
+  }, [entries]);
+
+  // Filter entries by selected roles
+  const filteredEntries = useMemo(() => {
+    if (selectedRoles.size === 0) {
+      return entries;
+    }
+    return entries.filter(
+      (entry) => entry.role && selectedRoles.has(entry.role)
+    );
+  }, [entries, selectedRoles]);
+
+  const toggleRole = (role: string) => {
+    const newSelected = new Set(selectedRoles);
+    if (newSelected.has(role)) {
+      newSelected.delete(role);
+    } else {
+      newSelected.add(role);
+    }
+    setSelectedRoles(newSelected);
+  };
+
+  const clearFilters = () => {
+    setSelectedRoles(new Set());
+  };
   const getRankIcon = (rank: number) => {
     if (rank === 1)
       return (
@@ -38,12 +84,69 @@ export default function LeaderboardView({
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">
-          {periodLabels[period]} Leaderboard
-        </h1>
-        <p className="text-muted-foreground">
-          Top contributors ranked by their activity points
-        </p>
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h1 className="text-4xl font-bold mb-2">
+              {periodLabels[period]} Leaderboard
+            </h1>
+            <p className="text-muted-foreground">
+              {filteredEntries.length} of {entries.length} contributors
+              {selectedRoles.size > 0 && " (filtered)"}
+            </p>
+          </div>
+
+          {/* Role Filter */}
+          {availableRoles.length > 0 && (
+            <div className="flex items-center gap-2">
+              {selectedRoles.size > 0 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={clearFilters}
+                  className="h-9"
+                >
+                  <X className="h-4 w-4 mr-1" />
+                  Clear
+                </Button>
+              )}
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline" size="sm" className="h-9">
+                    <Filter className="h-4 w-4 mr-2" />
+                    Role
+                    {selectedRoles.size > 0 && (
+                      <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
+                        {selectedRoles.size}
+                      </span>
+                    )}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-64" align="end">
+                  <div className="space-y-4">
+                    <h4 className="font-medium text-sm">Filter by Role</h4>
+                    <div className="space-y-2 max-h-64 overflow-y-auto">
+                      {availableRoles.map((role) => (
+                        <div key={role} className="flex items-center space-x-2">
+                          <Checkbox
+                            id={role}
+                            checked={selectedRoles.has(role)}
+                            onCheckedChange={() => toggleRole(role)}
+                          />
+                          <label
+                            htmlFor={role}
+                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                          >
+                            {role}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Period Selector */}
@@ -84,15 +187,17 @@ export default function LeaderboardView({
       </div>
 
       {/* Leaderboard */}
-      {entries.length === 0 ? (
+      {filteredEntries.length === 0 ? (
         <Card>
           <CardContent className="py-12 text-center text-muted-foreground">
-            No contributors with points in this period
+            {entries.length === 0
+              ? "No contributors with points in this period"
+              : "No contributors match the selected filters"}
           </CardContent>
         </Card>
       ) : (
         <div className="space-y-4">
-          {entries.map((entry, index) => {
+          {filteredEntries.map((entry, index) => {
             const rank = index + 1;
             const isTopThree = rank <= 3;
 

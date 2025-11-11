@@ -677,7 +677,7 @@ function getActivitiesFromCommits(
 }
 
 async function main() {
-  const since = subDays(new Date(), 7).toISOString(); // TODO: make this configurable
+  const since = subDays(new Date(), 365).toISOString(); // TODO: make this configurable
 
   await upsertActivityDefinitions();
 
@@ -707,11 +707,8 @@ async function main() {
   }
 
   // TODO: slack scraper
-  // TODO: import role from existing data
   // TODO: leaderboard activity defintion type based leaderboard
-  // TODO: cleanup theme
   // TODO: exclude bots
-  // TODO: people page
   // TODO: pull entire history
   // TODO: exclude merge commits
   // TODO: setup footer

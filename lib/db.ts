@@ -404,6 +404,44 @@ export async function getAllContributorUsernames(): Promise<string[]> {
 }
 
 /**
+ * Get all contributors with avatars sorted by total points
+ * @returns List of contributors with avatar URLs and usernames
+ */
+export async function getAllContributorsWithAvatars(): Promise<
+  Array<{
+    username: string;
+    name: string | null;
+    avatar_url: string;
+    total_points: number;
+  }>
+> {
+  const db = getDb();
+
+  const result = await db.query<{
+    username: string;
+    name: string | null;
+    avatar_url: string;
+    total_points: number;
+  }>(
+    `
+    SELECT 
+      c.username,
+      c.name,
+      c.avatar_url,
+      COALESCE(SUM(COALESCE(a.points, ad.points)), 0) as total_points
+    FROM contributor c
+    LEFT JOIN activity a ON c.username = a.contributor
+    LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+    WHERE c.avatar_url IS NOT NULL
+    GROUP BY c.username, c.name, c.avatar_url
+    ORDER BY total_points DESC, c.username ASC;
+  `
+  );
+
+  return result.rows;
+}
+
+/**
  * Activity with full details for timeline
  */
 export interface ContributorActivity extends Activity {

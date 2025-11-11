@@ -1,18 +1,18 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface ActivityGraphProps {
   data: Array<{ date: string; count: number; level: number }>;
 }
 
 export default function ActivityGraph({ data }: ActivityGraphProps) {
-  const [hoveredDay, setHoveredDay] = useState<{
-    date: string;
-    count: number;
-  } | null>(null);
-
   // Group data by weeks (7 days each)
   const weeks: Array<Array<{ date: string; count: number; level: number }>> =
     [];
@@ -39,38 +39,35 @@ export default function ActivityGraph({ data }: ActivityGraphProps) {
 
   return (
     <div className="relative">
-      <div className="flex gap-1 overflow-x-auto pb-4">
-        {weeks.map((week, weekIndex) => (
-          <div key={weekIndex} className="flex flex-col gap-1">
-            {week.map((day, dayIndex) => (
-              <div
-                key={`${weekIndex}-${dayIndex}`}
-                className={cn(
-                  "w-3 h-3 rounded-sm transition-all cursor-pointer hover:ring-2 hover:ring-primary",
-                  getLevelColor(day.level)
-                )}
-                onMouseEnter={() =>
-                  setHoveredDay({ date: day.date, count: day.count })
-                }
-                onMouseLeave={() => setHoveredDay(null)}
-                title={`${day.date}: ${day.count} ${
-                  day.count === 1 ? "activity" : "activities"
-                }`}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
-
-      {/* Tooltip */}
-      {hoveredDay && (
-        <div className="absolute bottom-full left-0 mb-2 px-3 py-2 bg-popover text-popover-foreground text-sm rounded-md shadow-md border">
-          <div className="font-medium">{hoveredDay.date}</div>
-          <div className="text-muted-foreground">
-            {hoveredDay.count} {hoveredDay.count === 1 ? "activity" : "activities"}
-          </div>
+      <TooltipProvider>
+        <div className="flex gap-1 overflow-x-auto pb-4">
+          {weeks.map((week, weekIndex) => (
+            <div key={weekIndex} className="flex flex-col gap-1">
+              {week.map((day, dayIndex) => (
+                <Tooltip key={`${weekIndex}-${dayIndex}`} delayDuration={100}>
+                  <TooltipTrigger asChild>
+                    <div
+                      className={cn(
+                        "w-3 h-3 rounded-sm transition-all cursor-pointer hover:ring-2 hover:ring-primary",
+                        getLevelColor(day.level)
+                      )}
+                    />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <div className="text-xs">
+                      <div className="font-medium">{day.date}</div>
+                      <div className="text-muted-foreground">
+                        {day.count}{" "}
+                        {day.count === 1 ? "activity" : "activities"}
+                      </div>
+                    </div>
+                  </TooltipContent>
+                </Tooltip>
+              ))}
+            </div>
+          ))}
         </div>
-      )}
+      </TooltipProvider>
 
       {/* Legend */}
       <div className="flex items-center gap-2 text-xs text-muted-foreground mt-2">
@@ -88,4 +85,3 @@ export default function ActivityGraph({ data }: ActivityGraphProps) {
     </div>
   );
 }
-

@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { generateActivityGraphData } from "@/lib/utils";
 import { getConfig } from "@/lib/config";
 import ActivityGraph from "./ActivityGraph";
+import ActivityBreakdown from "./ActivityBreakdown";
 import ActivityTimeline from "./ActivityTimeline";
 import Link from "next/link";
 import {
@@ -190,33 +191,7 @@ export default async function ContributorPage({
       </Card>
 
       {/* Activity Breakdown */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle>Activity Breakdown</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {Object.entries(activityBreakdown)
-              .sort((a, b) => b[1].points - a[1].points)
-              .map(([activityName, data]) => (
-                <div
-                  key={activityName}
-                  className="p-4 rounded-lg border bg-card"
-                >
-                  <div className="font-medium mb-1">{activityName}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {data.count} {data.count === 1 ? "activity" : "activities"}
-                  </div>
-                  {data.points > 0 && (
-                    <div className="text-sm text-primary font-medium mt-1">
-                      {data.points} points
-                    </div>
-                  )}
-                </div>
-              ))}
-          </div>
-        </CardContent>
-      </Card>
+      <ActivityBreakdown activityBreakdown={activityBreakdown} />
 
       {/* Activity Timeline */}
       <ActivityTimeline activities={activities} />

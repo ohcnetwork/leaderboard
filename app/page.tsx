@@ -2,7 +2,7 @@ import { getRecentActivitiesGroupedByType } from "@/lib/db";
 import { getConfig } from "@/lib/config";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { formatTimeAgo } from "@/lib/utils";
+import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { Activity, Users, TrendingUp } from "lucide-react";
 
@@ -146,9 +146,10 @@ export default async function Home() {
                               {activity.contributor_role}
                             </span>
                           )}
-                          <span className="text-sm text-muted-foreground">
-                            {formatTimeAgo(activity.occured_at)}
-                          </span>
+                          <RelativeTime
+                            date={activity.occured_at}
+                            className="text-sm text-muted-foreground"
+                          />
                         </div>
                         {activity.title && (
                           <p className="text-sm mt-1 truncate">

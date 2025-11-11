@@ -10,7 +10,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { formatTimeAgo } from "@/lib/utils";
+import RelativeTime from "@/components/RelativeTime";
 import { Filter, Calendar, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -220,9 +220,10 @@ export default function ActivityTimeline({
                     <span className="font-medium text-sm">
                       {activity.activity_name}
                     </span>
-                    <span className="text-xs text-muted-foreground">
-                      {formatTimeAgo(activity.occured_at)}
-                    </span>
+                    <RelativeTime
+                      date={activity.occured_at}
+                      className="text-xs text-muted-foreground"
+                    />
                     {activity.points !== null && activity.points > 0 && (
                       <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
                         +{activity.points}

@@ -706,8 +706,16 @@ async function main() {
     await addActivities(activities);
   }
 
+  // TODO: slack scraper
+  // TODO: import role from existing data
+  // TODO: leaderboard activity defintion type based leaderboard
+  // TODO: cleanup theme
+  // TODO: exclude bots
+  // TODO: people page
+  // TODO: pull entire history
+  // TODO: exclude merge commits
+  // TODO: setup footer
   // TODO: add pr_collaborated activities
-  // TODO: add commit activities
 }
 
 main();

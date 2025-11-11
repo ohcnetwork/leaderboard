@@ -112,3 +112,35 @@ export async function addActivities(activities: Activity[]) {
     console.log(`Added ${result.affectedRows}/${batch.length} new activities`);
   }
 }
+
+/**
+ * Update the role of bot contributors to 'bot'
+ * @param botUsernames - Array of bot usernames to update
+ */
+export async function updateBotRoles(botUsernames: string[]) {
+  if (botUsernames.length === 0) {
+    console.log("No bot users to update");
+    return;
+  }
+
+  const db = getDb();
+
+  // Remove duplicates
+  const uniqueBotUsernames = [...new Set(botUsernames)];
+
+  for (const batch of batchArray(uniqueBotUsernames, 1000)) {
+    const placeholders = batch.map((_, i) => `$${i + 1}`).join(", ");
+    const result = await db.query(
+      `
+      UPDATE contributor
+      SET role = 'bot'
+      WHERE username IN (${placeholders});
+    `,
+      batch
+    );
+
+    console.log(
+      `Updated ${result.affectedRows}/${batch.length} bot contributors`
+    );
+  }
+}

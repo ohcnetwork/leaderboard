@@ -9,7 +9,7 @@ let dbInstance: PGlite | null = null;
 export function getDb(dataPath: string = "./db-data"): PGlite {
   if (!dbInstance) {
     try {
-    dbInstance = new PGlite(dataPath);
+      dbInstance = new PGlite(dataPath);
     } catch (error) {
       console.error("Failed to initialize PGlite:", error);
       throw error;
@@ -306,6 +306,7 @@ export interface LeaderboardEntry {
   role: string | null;
   total_points: number;
   activity_breakdown: Record<string, { count: number; points: number }>;
+  daily_activity: Array<{ date: string; count: number; points: number }>;
 }
 
 /**
@@ -329,6 +330,7 @@ export async function getLeaderboard(
     activity_definition: string;
     activity_name: string;
     points: number | null;
+    occured_at: Date;
   }>(
     `
     SELECT 
@@ -338,12 +340,13 @@ export async function getLeaderboard(
       c.role,
       a.activity_definition,
       ad.name as activity_name,
-      COALESCE(a.points, ad.points) as points
+      COALESCE(a.points, ad.points) as points,
+      a.occured_at
     FROM activity a
     JOIN contributor c ON a.contributor = c.username
     JOIN activity_definition ad ON a.activity_definition = ad.slug
     WHERE a.occured_at >= $1 AND a.occured_at <= $2
-    ORDER BY c.username;
+    ORDER BY c.username, a.occured_at;
   `,
     [startDate.toISOString(), endDate.toISOString()],
     {
@@ -364,6 +367,7 @@ export async function getLeaderboard(
         role: row.role,
         total_points: 0,
         activity_breakdown: {},
+        daily_activity: [],
       };
     }
 
@@ -380,6 +384,24 @@ export async function getLeaderboard(
     acc[username].activity_breakdown[activityKey].count += 1;
     acc[username].activity_breakdown[activityKey].points += points;
 
+    // Group by date for daily activity
+    const dateKey = row.occured_at.toISOString().split("T")[0];
+    if (dateKey) {
+      const existingDay = acc[username].daily_activity.find(
+        (d) => d.date === dateKey
+      );
+      if (existingDay) {
+        existingDay.count += 1;
+        existingDay.points += points;
+      } else {
+        acc[username].daily_activity.push({
+          date: dateKey,
+          count: 1,
+          points: points,
+        });
+      }
+    }
+
     return acc;
   }, {} as Record<string, LeaderboardEntry>);
 
@@ -387,6 +409,138 @@ export async function getLeaderboard(
   return Object.values(leaderboardMap)
     .filter((entry) => entry.total_points > 0)
     .sort((a, b) => b.total_points - a.total_points);
+}
+
+/**
+ * Get top contributors by activity type for a specific date range
+ * @param startDate - Start date of the range
+ * @param endDate - End date of the range
+ * @param activitySlugs - Optional array of activity definition slugs to filter by
+ * @returns Top contributors grouped by activity type
+ */
+export async function getTopContributorsByActivity(
+  startDate: Date,
+  endDate: Date,
+  activitySlugs?: string[]
+): Promise<
+  Record<
+    string,
+    Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      points: number;
+      count: number;
+    }>
+  >
+> {
+  const db = getDb();
+
+  // Build WHERE clause for activity slug filtering
+  const whereClause =
+    activitySlugs && activitySlugs.length > 0
+      ? `a.occured_at >= $1 AND a.occured_at <= $2 AND ad.slug = ANY($3)`
+      : `a.occured_at >= $1 AND a.occured_at <= $2`;
+
+  const queryParams =
+    activitySlugs && activitySlugs.length > 0
+      ? [startDate.toISOString(), endDate.toISOString(), activitySlugs]
+      : [startDate.toISOString(), endDate.toISOString()];
+
+  const result = await db.query<{
+    username: string;
+    name: string | null;
+    avatar_url: string | null;
+    activity_name: string;
+    activity_slug: string;
+    points: number;
+    count: number;
+  }>(
+    `
+    SELECT 
+      c.username,
+      c.name,
+      c.avatar_url,
+      ad.name as activity_name,
+      ad.slug as activity_slug,
+      SUM(COALESCE(a.points, ad.points)) as points,
+      COUNT(*) as count
+    FROM activity a
+    JOIN contributor c ON a.contributor = c.username
+    JOIN activity_definition ad ON a.activity_definition = ad.slug
+    WHERE ${whereClause}
+    GROUP BY c.username, c.name, c.avatar_url, ad.name, ad.slug
+    HAVING SUM(COALESCE(a.points, ad.points)) > 0
+    ORDER BY ad.name, points DESC;
+  `,
+    queryParams,
+    {
+      parsers: {
+        [types.DATE]: (date: string) => new Date(date),
+      },
+    }
+  );
+
+  // Group by activity type and take top 3 for each
+  const topByActivityMap: Record<
+    string,
+    Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      points: number;
+      count: number;
+    }>
+  > = {};
+
+  result.rows.forEach((row) => {
+    const activityName = row.activity_name;
+    if (!topByActivityMap[activityName]) {
+      topByActivityMap[activityName] = [];
+    }
+    if (topByActivityMap[activityName].length < 3) {
+      topByActivityMap[activityName].push({
+        username: row.username,
+        name: row.name,
+        avatar_url: row.avatar_url,
+        points: Number(row.points),
+        count: Number(row.count),
+      });
+    }
+  });
+
+  // If slugs are provided, return in the order specified in config
+  // Otherwise, return in alphabetical order by activity name
+  if (activitySlugs && activitySlugs.length > 0) {
+    const orderedResult: Record<
+      string,
+      Array<{
+        username: string;
+        name: string | null;
+        avatar_url: string | null;
+        points: number;
+        count: number;
+      }>
+    > = {};
+
+    // Create a map of slug to activity name from the results
+    const slugToName = new Map<string, string>();
+    result.rows.forEach((row) => {
+      slugToName.set(row.activity_slug, row.activity_name);
+    });
+
+    // Add activities in the order specified by activitySlugs
+    activitySlugs.forEach((slug) => {
+      const activityName = slugToName.get(slug);
+      if (activityName && topByActivityMap[activityName]) {
+        orderedResult[activityName] = topByActivityMap[activityName];
+      }
+    });
+
+    return orderedResult;
+  }
+
+  return topByActivityMap;
 }
 
 /**

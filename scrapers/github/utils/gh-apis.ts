@@ -707,7 +707,6 @@ async function main() {
   }
 
   // TODO: slack scraper
-  // TODO: leaderboard activity defintion type based leaderboard
   // TODO: exclude bots
   // TODO: pull entire history
   // TODO: exclude merge commits

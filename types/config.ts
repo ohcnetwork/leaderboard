@@ -29,6 +29,7 @@ export interface RoleConfig {
 export interface LeaderboardConfig {
   data_source: string;
   roles: Record<string, RoleConfig>;
+  top_contributors?: string[];
 }
 
 export interface ScraperInstanceConfig {

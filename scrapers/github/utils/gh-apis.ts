@@ -4,12 +4,15 @@ import { subDays } from "date-fns";
 import {
   addActivities,
   addContributors,
-  getDb,
+  updateBotRoles,
   upsertActivityDefinitions,
 } from "./db";
 
 const org = process.env.GITHUB_ORG!;
 // const apiVersion = process.env.GITHUB_API_VERSION ?? "2022-11-28";
+
+// Track all bot users across all repositories
+const botUsers = new Set<string>();
 
 /**
  * Get all repositories from a GitHub organization
@@ -86,18 +89,21 @@ async function getPRsAndReviews(repo: string, since?: string) {
               title
               url
               author {
+                __typename
                 login
               }
               updatedAt
               createdAt
               mergedAt
               mergedBy {
+                __typename
                 login
               }
               reviews(first: 100) {
                 nodes {
                   id
                   author {
+                    __typename
                     login
                   }
                   state
@@ -118,14 +124,14 @@ async function getPRsAndReviews(repo: string, since?: string) {
             number: number;
             title: string;
             url: string;
-            author: { login: string | null };
+            author: { login: string | null; __typename?: string };
             updatedAt: string;
             createdAt: string;
             mergedAt: string | null;
-            mergedBy: { login: string | null };
+            mergedBy: { login: string | null; __typename?: string };
             reviews: {
               nodes: Array<{
-                author: { login: string | null };
+                author: { login: string | null; __typename?: string };
                 id: string;
                 state: string;
                 submittedAt: string | null;
@@ -157,6 +163,19 @@ async function getPRsAndReviews(repo: string, since?: string) {
 
       // Skip PRs without required fields
       if (!pr.updatedAt) continue;
+
+      // Track bot users
+      if (pr.author?.login && pr.author.__typename === "Bot") {
+        botUsers.add(pr.author.login);
+      }
+      if (pr.mergedBy?.login && pr.mergedBy.__typename === "Bot") {
+        botUsers.add(pr.mergedBy.login);
+      }
+      for (const review of pr.reviews.nodes) {
+        if (review.author?.login && review.author.__typename === "Bot") {
+          botUsers.add(review.author.login);
+        }
+      }
 
       pullRequests.push({
         number: pr.number,
@@ -191,14 +210,21 @@ async function getComments(repo: string, since?: string) {
     "GET /repos/{owner}/{repo}/issues/comments",
     { owner: org, repo, since, sort: "updated", direction: "desc" },
     (response) =>
-      response.data.map((comment) => ({
-        id: comment.node_id,
-        issue_number: comment.issue_url.split("/").pop(),
-        body: comment.body,
-        created_at: comment.created_at,
-        author: comment.user?.login,
-        html_url: comment.html_url,
-      }))
+      response.data.map((comment) => {
+        // Track bot users
+        if (comment.user?.login && comment.user?.type === "Bot") {
+          botUsers.add(comment.user.login);
+        }
+
+        return {
+          id: comment.node_id,
+          issue_number: comment.issue_url.split("/").pop(),
+          body: comment.body,
+          created_at: comment.created_at,
+          author: comment.user?.login,
+          html_url: comment.html_url,
+        };
+      })
   );
 
   console.log(`Found ${comments.length} comments`);
@@ -235,7 +261,10 @@ export async function getIssues(repo: string, since?: string) {
               title
               url
               updatedAt
-              author { login }
+              author {
+                __typename
+                login
+              }
               closed
               closedAt
               createdAt
@@ -246,12 +275,16 @@ export async function getIssues(repo: string, since?: string) {
                     assignee {
                       __typename
                       ... on User { login }
+                      ... on Bot { login }
                       ... on Mannequin { login }
                     }
                   }
                   ... on ClosedEvent {
                     createdAt
-                    actor { login }
+                    actor {
+                      __typename
+                      login
+                    }
                   }
                 }
               }
@@ -268,7 +301,7 @@ export async function getIssues(repo: string, since?: string) {
             number: number;
             title: string;
             url: string;
-            author: { login: string | null };
+            author: { login: string | null; __typename?: string };
             updatedAt: string;
             closedAt: string | null;
             createdAt: string;
@@ -278,13 +311,13 @@ export async function getIssues(repo: string, since?: string) {
                 | {
                     __typename?: "AssignedEvent";
                     createdAt: string;
-                    actor: { login: string | null };
-                    assignee: { login: string | null };
+                    actor: { login: string | null; __typename?: string };
+                    assignee: { login: string | null; __typename?: string };
                   }
                 | {
                     __typename?: "ClosedEvent";
                     createdAt: string;
-                    actor: { login: string | null };
+                    actor: { login: string | null; __typename?: string };
                   }
               >;
             };
@@ -303,6 +336,24 @@ export async function getIssues(repo: string, since?: string) {
       // Optional stop if issue is older than `since`
       if (since && new Date(issue.updatedAt) < new Date(since)) {
         return issues;
+      }
+
+      // Track bot users
+      if (issue.author?.login && issue.author.__typename === "Bot") {
+        botUsers.add(issue.author.login);
+      }
+
+      for (const event of issue.timelineItems.nodes) {
+        if (
+          "assignee" in event &&
+          event.assignee?.login &&
+          event.assignee.__typename === "Bot"
+        ) {
+          botUsers.add(event.assignee.login);
+        }
+        if (event.actor?.login && event.actor.__typename === "Bot") {
+          botUsers.add(event.actor.login);
+        }
       }
 
       const assignedEvents =
@@ -402,6 +453,11 @@ export async function getCommitsFromPushEvents(
 
         // Extract and transform commits to match expected structure
         for (const commit of compareResponse.data.commits) {
+          // Track bot users
+          if (commit.author?.login && commit.author?.type === "Bot") {
+            botUsers.add(commit.author.login);
+          }
+
           commits.push({
             commitId: commit.sha,
             branchName,
@@ -706,12 +762,11 @@ async function main() {
     await addActivities(activities);
   }
 
+  // Update all bot contributors' roles to 'bot'
+  console.log(`Found ${botUsers.size} bot users`);
+  await updateBotRoles(Array.from(botUsers));
+
   // TODO: slack scraper
-  // TODO: import role from existing data
-  // TODO: leaderboard activity defintion type based leaderboard
-  // TODO: cleanup theme
-  // TODO: exclude bots
-  // TODO: people page
   // TODO: pull entire history
   // TODO: exclude merge commits
   // TODO: setup footer

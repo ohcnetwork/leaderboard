@@ -85,6 +85,12 @@ export default function RootLayout({
                     >
                       Leaderboard
                     </Link>
+                    <Link
+                      href="/people"
+                      className="text-sm font-medium hover:text-primary transition-colors"
+                    >
+                      People
+                    </Link>
                   </nav>
                 </div>
                 <ThemeSelector />

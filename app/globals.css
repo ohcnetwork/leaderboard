@@ -76,6 +76,20 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* People Page Avatar Grid Configuration */
+  /* Adjust these values based on org size:
+     - Large orgs (500+ contributors): 12-24 columns, smaller avatars
+     - Medium orgs (100-500): 8-16 columns
+     - Small orgs (<100): 4-8 columns, larger avatars
+  */
+  --people-grid-cols-mobile: 8; /* Mobile: smallest screens */
+  --people-grid-cols-sm: 10; /* Small: 640px+ */
+  --people-grid-cols-md: 12; /* Medium: 768px+ */
+  --people-grid-cols-lg: 16; /* Large: 1024px+ */
+  --people-grid-cols-xl: 20; /* XL: 1280px+ */
+  --people-grid-cols-2xl: 24; /* 2XL: 1536px+ */
+  --people-grid-gap: 0.375rem; /* Gap between avatars (1.5 = 6px) */
 }
 
 .dark {
@@ -118,6 +132,41 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* People Page Avatar Grid Responsive Styles */
+.people-avatar-grid {
+  grid-template-columns: repeat(var(--people-grid-cols-mobile), minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .people-avatar-grid {
+    grid-template-columns: repeat(var(--people-grid-cols-sm), minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .people-avatar-grid {
+    grid-template-columns: repeat(var(--people-grid-cols-md), minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .people-avatar-grid {
+    grid-template-columns: repeat(var(--people-grid-cols-lg), minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .people-avatar-grid {
+    grid-template-columns: repeat(var(--people-grid-cols-xl), minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1536px) {
+  .people-avatar-grid {
+    grid-template-columns: repeat(var(--people-grid-cols-2xl), minmax(0, 1fr));
   }
 }
 

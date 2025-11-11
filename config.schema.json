@@ -137,6 +137,14 @@
             }
           },
           "additionalProperties": false
+        },
+        "top_contributors": {
+          "type": "array",
+          "description": "List of activity definition slugs to show in the top contributors sidebar (optional - if not specified, all activity types are shown)",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
         }
       },
       "additionalProperties": false

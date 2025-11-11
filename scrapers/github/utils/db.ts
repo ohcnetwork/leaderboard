@@ -1,4 +1,4 @@
-import { Activity, ActivityDefinition, Contributor } from "@/types/db";
+import { Activity } from "@/types/db";
 import { PGlite } from "@electric-sql/pglite";
 
 let dbInstance: PGlite | null = null;
@@ -35,45 +35,76 @@ export async function upsertActivityDefinitions() {
   `);
 }
 
+/**
+ * Batch an array into smaller arrays of a given size
+ * @param array - The array to batch
+ * @param batchSize - The size of each batch
+ * @returns An array of arrays
+ */
+function batchArray<T>(array: T[], batchSize: number): T[][] {
+  const result = [];
+  for (let i = 0; i < array.length; i += batchSize) {
+    result.push(array.slice(i, i + batchSize));
+  }
+  return result;
+}
+
+function getSqlPositionalParamPlaceholders(length: number, cols: number) {
+  // $1, $2, $3, $4, $5, $6, $7, $8, $9, ...
+  const params = Array.from({ length: length * cols }, (_, i) => `$${i + 1}`);
+
+  // ($1, $2, $3), ($4, $5, $6), ($7, $8, $9), ...
+  return batchArray(params, cols)
+    .map((p) => `(${p.join(", ")})`)
+    .join(", ");
+}
+
 export async function addContributors(contributors: string[]) {
   const db = getDb();
 
-  await db.query(
-    `
-    INSERT INTO contributor (username)
-    VALUES ${contributors.map((_, index) => `($${index + 1})`).join(", ")}
-    ON CONFLICT (username) DO NOTHING;
-  `,
-    [...contributors]
-  );
+  for (const batch of batchArray(contributors, 1000)) {
+    const result = await db.query(
+      `
+      INSERT INTO contributor (username, avatar_url, profile_url)
+      VALUES ${getSqlPositionalParamPlaceholders(batch.length, 3)}
+      ON CONFLICT (username) DO NOTHING;
+    `,
+      batch.flatMap((c) => [
+        c,
+        `https://avatars.githubusercontent.com/${c}`,
+        `https://github.com/${c}`,
+      ])
+    );
+
+    console.log(
+      `Added ${result.affectedRows}/${batch.length} new contributors`
+    );
+  }
 }
 
 export async function addActivities(activities: Activity[]) {
   const db = getDb();
 
-  await db.query(
-    `
-    INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
-    VALUES ${activities
-      .map(
-        (_, index) =>
-          `(${Array.from({ length: 9 }, (_, i) => `$${index * 9 + i + 1}`).join(
-            ", "
-          )})`
-      )
-      .join(", ")}
-    ON CONFLICT (slug) DO UPDATE SET contributor = EXCLUDED.contributor, activity_definition = EXCLUDED.activity_definition, title = EXCLUDED.title, occured_at = EXCLUDED.occured_at, link = EXCLUDED.link;
-  `,
-    activities.flatMap((a) => [
-      a.slug,
-      a.contributor,
-      a.activity_definition,
-      a.title,
-      a.occured_at.toISOString(),
-      a.link,
-      a.text,
-      a.points ?? null,
-      a.meta ? JSON.stringify(a.meta) : null,
-    ])
-  );
+  for (const batch of batchArray(activities, 1000)) {
+    const result = await db.query(
+      `
+      INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
+      VALUES ${getSqlPositionalParamPlaceholders(batch.length, 9)}
+      ON CONFLICT (slug) DO UPDATE SET contributor = EXCLUDED.contributor, activity_definition = EXCLUDED.activity_definition, title = EXCLUDED.title, occured_at = EXCLUDED.occured_at, link = EXCLUDED.link;
+    `,
+      batch.flatMap((a) => [
+        a.slug,
+        a.contributor,
+        a.activity_definition,
+        a.title,
+        a.occured_at.toISOString(),
+        a.link,
+        a.text,
+        a.points ?? null,
+        a.meta ? JSON.stringify(a.meta) : null,
+      ])
+    );
+
+    console.log(`Added ${result.affectedRows}/${batch.length} new activities`);
+  }
 }

@@ -30,7 +30,8 @@ export async function upsertActivityDefinitions() {
       ('pr_opened', 'PR Opened', 'Opened a Pull Request', 1),
       ('pr_merged', 'PR Merged', 'Merged a Pull Request', 7),
       ('pr_collaborated', 'PR Collaborated', 'Collaborated on a Pull Request', 2),
-      ('issue_closed', 'Issue Closed', 'Closed an Issue', 0)
+      ('issue_closed', 'Issue Closed', 'Closed an Issue', 0),
+      ('commit_created', 'Commit Created', 'Pushed a commit', 0)
     ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, points = EXCLUDED.points;
   `);
 }

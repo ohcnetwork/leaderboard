@@ -94,7 +94,6 @@ async function getPRsAndReviews(repo: string, since?: string) {
               mergedBy {
                 login
               }
-              closedAt
               reviews(first: 100) {
                 nodes {
                   id
@@ -124,7 +123,6 @@ async function getPRsAndReviews(repo: string, since?: string) {
             createdAt: string;
             mergedAt: string | null;
             mergedBy: { login: string | null };
-            closedAt: string | null;
             reviews: {
               nodes: Array<{
                 author: { login: string | null };
@@ -169,7 +167,6 @@ async function getPRsAndReviews(repo: string, since?: string) {
         created_at: pr.createdAt,
         merged_at: pr.mergedAt,
         merged_by: pr.mergedBy?.login ?? null,
-        closed_at: pr.closedAt,
         reviews: pr.reviews.nodes.map((review) => ({
           id: review.id,
           author: review.author?.login ?? null,
@@ -199,7 +196,6 @@ async function getComments(repo: string, since?: string) {
         issue_number: comment.issue_url.split("/").pop(),
         body: comment.body,
         created_at: comment.created_at,
-        updated_at: comment.updated_at,
         author: comment.user?.login,
         html_url: comment.html_url,
       }))
@@ -247,7 +243,6 @@ export async function getIssues(repo: string, since?: string) {
                 nodes {
                   ... on AssignedEvent {
                     createdAt
-                    actor { login }
                     assignee {
                       __typename
                       ... on User { login }
@@ -408,6 +403,7 @@ export async function getCommitsFromPushEvents(
         // Extract and transform commits to match expected structure
         for (const commit of compareResponse.data.commits) {
           commits.push({
+            commitId: commit.sha,
             branchName,
             commitMessage: commit.commit.message?.split("\n")[0] ?? "", // Get headline (first line)
             committedDate: commit.commit.committer?.date ?? null,
@@ -435,6 +431,7 @@ export async function getBranchCommits(repo: string, branch: string) {
     { owner: org, repo, sha: branch },
     (response) =>
       response.data.map((commit) => ({
+        commitId: commit.sha,
         branchName: branch,
         commitMessage: commit.commit.message,
         committedDate: commit.commit.committer?.date ?? null,
@@ -455,6 +452,7 @@ export enum ActivityDefinition {
   PR_COLLABORATED = "pr_collaborated",
   ISSUE_ASSIGNED = "issue_assigned",
   COMMENT_CREATED = "comment_created",
+  COMMIT_CREATED = "commit_created",
 }
 
 function activitiesFromIssues(
@@ -652,6 +650,32 @@ function findActivitiesWithDuplicateSlug(activities: Activity[]) {
   // TODO: report to sentry if there are any activities with duplicate slugs
 }
 
+function getActivitiesFromCommits(
+  commits: Awaited<ReturnType<typeof getCommitsFromPushEvents>>
+) {
+  const activities: Activity[] = [];
+
+  for (const commit of commits) {
+    if (!commit.author || !commit.committedDate) {
+      continue;
+    }
+
+    activities.push({
+      slug: `${ActivityDefinition.COMMIT_CREATED}_${commit.branchName}_${commit.commitId}`,
+      contributor: commit.author,
+      activity_definition: ActivityDefinition.COMMIT_CREATED,
+      title: `Pushed commit to ${commit.branchName}`,
+      text: commit.commitMessage,
+      occured_at: new Date(commit.committedDate),
+      link: commit.url,
+      points: null,
+      meta: {},
+    });
+  }
+
+  return activities;
+}
+
 async function main() {
   const since = subDays(new Date(), 7).toISOString(); // TODO: make this configurable
 
@@ -664,13 +688,16 @@ async function main() {
       getIssues(repository, since),
       getComments(repository, since),
       getPRsAndReviews(repository, since),
-    ]).then(([issues, comments, pullRequests]) => [
+      getCommitsFromPushEvents(repository, since),
+    ]).then(([issues, comments, pullRequests, commits]) => [
       // yields: Issue Opened, Issue Assigned, Issue Closed
       ...activitiesFromIssues(issues, repository),
       // yields: Comment Created
       ...activitiesFromComments(comments, repository),
       // yields: PR Opened, PR Merged, PR Reviewed
       ...activitiesFromPullRequests(pullRequests, repository),
+      // yields: Commit Created
+      ...getActivitiesFromCommits(commits),
     ]);
 
     findActivitiesWithDuplicateSlug(activities); // TODO: report to sentry if there are any activities with duplicate slugs

@@ -766,8 +766,6 @@ async function main() {
   console.log(`Found ${botUsers.size} bot users`);
   await updateBotRoles(Array.from(botUsers));
 
-  // TODO: slack scraper
-  // TODO: pull entire history
   // TODO: exclude merge commits
   // TODO: setup footer
   // TODO: add pr_collaborated activities

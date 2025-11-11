@@ -1,13 +1,11 @@
-import {
-  getAllContributorUsernames,
-  getContributorProfile,
-} from "@/lib/db";
+import { getAllContributorUsernames, getContributorProfile } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { formatTimeAgo, generateActivityGraphData } from "@/lib/utils";
+import { generateActivityGraphData } from "@/lib/utils";
 import { getConfig } from "@/lib/config";
 import ActivityGraph from "./ActivityGraph";
+import ActivityTimeline from "./ActivityTimeline";
 import Link from "next/link";
 import {
   ExternalLink,
@@ -39,7 +37,9 @@ export async function generateMetadata({ params }: ContributorPageProps) {
 
   return {
     title: `${contributor.name || contributor.username} - ${config.meta.title}`,
-    description: contributor.bio || `Profile of ${contributor.name || contributor.username}`,
+    description:
+      contributor.bio ||
+      `Profile of ${contributor.name || contributor.username}`,
   };
 }
 
@@ -54,22 +54,18 @@ export default async function ContributorPage({
     notFound();
   }
 
-  const config = getConfig();
   const activityGraphData = generateActivityGraphData(activityByDate, 365);
 
   // Calculate stats
-  const activityBreakdown = activities.reduce(
-    (acc, activity) => {
-      const key = activity.activity_name;
-      if (!acc[key]) {
-        acc[key] = { count: 0, points: 0 };
-      }
-      acc[key].count += 1;
-      acc[key].points += activity.points || 0;
-      return acc;
-    },
-    {} as Record<string, { count: number; points: number }>
-  );
+  const activityBreakdown = activities.reduce((acc, activity) => {
+    const key = activity.activity_name;
+    if (!acc[key]) {
+      acc[key] = { count: 0, points: 0 };
+    }
+    acc[key].count += 1;
+    acc[key].points += activity.points || 0;
+    return acc;
+  }, {} as Record<string, { count: number; points: number }>);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -223,68 +219,7 @@ export default async function ContributorPage({
       </Card>
 
       {/* Activity Timeline */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Activity Timeline</CardTitle>
-          <p className="text-sm text-muted-foreground">
-            All activities from {contributor.name || contributor.username}
-          </p>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {activities.length === 0 ? (
-              <p className="text-center text-muted-foreground py-8">
-                No activities yet
-              </p>
-            ) : (
-              activities.map((activity) => (
-                <div
-                  key={activity.slug}
-                  className="flex gap-4 pb-4 border-b last:border-0"
-                >
-                  <div className="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-primary" />
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <span className="font-medium text-sm">
-                        {activity.activity_name}
-                      </span>
-                      <span className="text-xs text-muted-foreground">
-                        {formatTimeAgo(activity.occured_at)}
-                      </span>
-                      {activity.points !== null && activity.points > 0 && (
-                        <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                          +{activity.points}
-                        </span>
-                      )}
-                    </div>
-                    {activity.title && (
-                      <p className="text-sm mb-1">
-                        {activity.link ? (
-                          <a
-                            href={activity.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-primary hover:underline"
-                          >
-                            {activity.title}
-                          </a>
-                        ) : (
-                          activity.title
-                        )}
-                      </p>
-                    )}
-                    {activity.text && (
-                      <p className="text-sm text-muted-foreground line-clamp-3">
-                        {activity.text}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        </CardContent>
-      </Card>
+      <ActivityTimeline activities={activities} />
 
       {/* Back to Leaderboard */}
       <div className="mt-8 text-center">
@@ -298,4 +233,3 @@ export default async function ContributorPage({
     </div>
   );
 }
-

@@ -76,6 +76,30 @@ export default function LeaderboardView({
   const clearFilters = () => {
     setSelectedRoles(new Set());
   };
+
+  // Filter top contributors by selected roles
+  const filteredTopByActivity = useMemo(() => {
+    if (selectedRoles.size === 0) {
+      return topByActivity;
+    }
+
+    const filtered: typeof topByActivity = {};
+    
+    for (const [activityName, contributors] of Object.entries(topByActivity)) {
+      const filteredContributors = contributors.filter((contributor) => {
+        // Find the contributor in entries to get their role
+        const entry = entries.find((e) => e.username === contributor.username);
+        return entry?.role && selectedRoles.has(entry.role);
+      });
+      
+      if (filteredContributors.length > 0) {
+        filtered[activityName] = filteredContributors;
+      }
+    }
+    
+    return filtered;
+  }, [topByActivity, selectedRoles, entries]);
+
   const getRankIcon = (rank: number) => {
     if (rank === 1)
       return (
@@ -333,12 +357,12 @@ export default function LeaderboardView({
         </div>
 
         {/* Sidebar - Top Contributors by Activity */}
-        {Object.keys(topByActivity).length > 0 && (
+        {Object.keys(filteredTopByActivity).length > 0 && (
           <div className="hidden xl:block w-80 shrink-0">
             <div className="sticky top-8">
               <h2 className="text-xl font-bold mb-6">Top Contributors</h2>
               <div className="space-y-4">
-                {Object.entries(topByActivity).map(
+                {Object.entries(filteredTopByActivity).map(
                   ([activityName, contributors]) => (
                     <Card key={activityName} className="overflow-hidden p-0">
                       <CardContent className="p-0">

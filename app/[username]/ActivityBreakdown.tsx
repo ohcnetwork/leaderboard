@@ -9,10 +9,12 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import ActivityTrendChart from "../leaderboard/ActivityTrendChart";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
+import DateRangeFilter from "@/components/DateRangeFilter";
 
 interface ActivityBreakdownProps {
-  activityBreakdown: Record<string, { count: number; points: number }>;
   activities: Array<{
     activity_definition_name: string;
     occured_at: Date;
@@ -37,12 +39,52 @@ const COLORS = [
 ];
 
 export default function ActivityBreakdown({
-  activityBreakdown,
   activities,
-  startDate,
-  endDate,
+  startDate: initialStartDate,
+  endDate: initialEndDate,
 }: ActivityBreakdownProps) {
-  const entries = Object.entries(activityBreakdown).sort(
+  // Date range filter state
+  const [filterStartDate, setFilterStartDate] = useState<string>("");
+  const [filterEndDate, setFilterEndDate] = useState<string>("");
+
+  // Filter activities by date range
+  const filteredActivities = useMemo(() => {
+    if (!filterStartDate && !filterEndDate) {
+      return activities;
+    }
+
+    return activities.filter((activity) => {
+      const activityDate = new Date(activity.occured_at);
+
+      if (filterStartDate) {
+        const start = new Date(filterStartDate);
+        if (activityDate < start) return false;
+      }
+
+      if (filterEndDate) {
+        const end = new Date(filterEndDate);
+        end.setHours(23, 59, 59, 999);
+        if (activityDate > end) return false;
+      }
+
+      return true;
+    });
+  }, [activities, filterStartDate, filterEndDate]);
+
+  // Recalculate breakdown based on filtered activities
+  const filteredBreakdown = useMemo(() => {
+    return filteredActivities.reduce((acc, activity) => {
+      const key = activity.activity_definition_name;
+      if (!acc[key]) {
+        acc[key] = { count: 0, points: 0 };
+      }
+      acc[key].count += 1;
+      acc[key].points += activity.points;
+      return acc;
+    }, {} as Record<string, { count: number; points: number }>);
+  }, [filteredActivities]);
+
+  const entries = Object.entries(filteredBreakdown).sort(
     (a, b) => b[1].count - a[1].count
   );
 
@@ -52,13 +94,20 @@ export default function ActivityBreakdown({
   );
   const totalPoints = entries.reduce((sum, [, data]) => sum + data.points, 0);
 
-  // Calculate date range if not provided (use all activities)
+  const clearFilters = () => {
+    setFilterStartDate("");
+    setFilterEndDate("");
+  };
+
+  const hasActiveFilters = filterStartDate !== "" || filterEndDate !== "";
+
+  // Calculate date range if not provided (use filtered activities)
   const dateRange = useMemo(() => {
-    if (startDate && endDate) {
-      return { startDate, endDate };
+    if (initialStartDate && initialEndDate) {
+      return { startDate: initialStartDate, endDate: initialEndDate };
     }
 
-    if (activities.length === 0) {
+    if (filteredActivities.length === 0) {
       const now = new Date();
       return {
         startDate: new Date(now.getFullYear(), 0, 1),
@@ -66,21 +115,21 @@ export default function ActivityBreakdown({
       };
     }
 
-    const dates = activities.map((a) => new Date(a.occured_at));
+    const dates = filteredActivities.map((a) => new Date(a.occured_at));
     return {
       startDate: new Date(Math.min(...dates.map((d) => d.getTime()))),
       endDate: new Date(Math.max(...dates.map((d) => d.getTime()))),
     };
-  }, [activities, startDate, endDate]);
+  }, [filteredActivities, initialStartDate, initialEndDate]);
 
-  // Group activities by type and date for trend charts
+  // Group activities by type and date for trend charts (use filtered activities)
   const activityTrendData = useMemo(() => {
     const trendMap: Record<
       string,
       Array<{ date: string; count: number; points: number }>
     > = {};
 
-    activities.forEach((activity) => {
+    filteredActivities.forEach((activity) => {
       const activityName = activity.activity_definition_name;
       const dateKey = new Date(activity.occured_at).toISOString().split("T")[0];
 
@@ -106,15 +155,42 @@ export default function ActivityBreakdown({
     });
 
     return trendMap;
-  }, [activities]);
+  }, [filteredActivities]);
 
   return (
     <Card className="mb-8">
       <CardHeader>
-        <CardTitle>Activity Breakdown</CardTitle>
-        <p className="text-sm text-muted-foreground">
-          {totalActivities} total activities · {totalPoints} total points
-        </p>
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle>Activity Breakdown</CardTitle>
+            <p className="text-sm text-muted-foreground">
+              {totalActivities} total activities · {totalPoints} total points
+              {hasActiveFilters && " (filtered)"}
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            {hasActiveFilters && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={clearFilters}
+                className="h-8"
+              >
+                <X className="h-4 w-4 mr-1" />
+                Clear
+              </Button>
+            )}
+
+            {/* Date Range Filter */}
+            <DateRangeFilter
+              startDate={filterStartDate}
+              endDate={filterEndDate}
+              onStartDateChange={setFilterStartDate}
+              onEndDateChange={setFilterEndDate}
+              idPrefix="breakdown"
+            />
+          </div>
+        </div>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Proportional Bar Chart */}

@@ -8,7 +8,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { generateActivityGraphData } from "@/lib/utils";
 import { getConfig } from "@/lib/config";
-import ActivityGraph from "./ActivityGraph";
+import ActivityOverview from "./ActivityOverview";
 import ActivityBreakdown from "./ActivityBreakdown";
 import ActivityTimeline from "./ActivityTimeline";
 import Link from "next/link";
@@ -148,8 +148,8 @@ export default async function ContributorPage({
     return acc;
   }, {} as Record<string, { count: number; points: number }>);
 
-  // Prepare activities data for trend charts
-  const activitiesForTrend = activities.map((activity) => ({
+  // Prepare activities data for ActivityBreakdown component
+  const activitiesForBreakdown = activities.map((activity) => ({
     activity_definition_name: activity.activity_name,
     occured_at: activity.occured_at,
     points: activity.points || 0,
@@ -300,24 +300,19 @@ export default async function ContributorPage({
           </Card>
         </div>
 
-        {/* Activity Graph */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Activity Overview</CardTitle>
-            <p className="text-sm text-muted-foreground">
-              {activities.length} contributions in the last year
-            </p>
-          </CardHeader>
-          <CardContent>
-            <ActivityGraph data={activityGraphData} />
-          </CardContent>
-        </Card>
+        {/* Activity Overview */}
+        <ActivityOverview
+          data={activityGraphData}
+          activities={activities.map((a) => ({
+            activity_definition_name: a.activity_name,
+            occured_at: a.occured_at,
+          }))}
+          activityDefinitions={activityDefinitions}
+          totalActivities={activities.length}
+        />
 
         {/* Activity Breakdown */}
-        <ActivityBreakdown
-          activityBreakdown={activityBreakdown}
-          activities={activitiesForTrend}
-        />
+        <ActivityBreakdown activities={activitiesForBreakdown} />
 
         {/* Activity Timeline */}
         <ActivityTimeline

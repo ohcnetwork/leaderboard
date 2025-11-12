@@ -11,10 +11,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Filter, Calendar, X } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Filter, X } from "lucide-react";
 import ActivityTimelineItem from "./ActivityTimelineItem";
+import DateRangeFilter from "@/components/DateRangeFilter";
 
 const ACTIVITY_FILTER_STORAGE_KEY = "leaderboard_activity_type_filter";
 
@@ -149,50 +148,13 @@ export default function ActivityTimeline({
             )}
 
             {/* Date Range Filter */}
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" size="sm" className="h-8">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Date Range
-                  {(startDate || endDate) && (
-                    <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
-                      {startDate && endDate ? "2" : "1"}
-                    </span>
-                  )}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-80" align="end">
-                <div className="space-y-4">
-                  <h4 className="font-medium text-sm">Filter by Date Range</h4>
-                  <div className="space-y-3">
-                    <div className="space-y-2">
-                      <Label htmlFor="start-date" className="text-sm">
-                        Start Date
-                      </Label>
-                      <Input
-                        id="start-date"
-                        type="date"
-                        value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
-                        max={endDate || undefined}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="end-date" className="text-sm">
-                        End Date
-                      </Label>
-                      <Input
-                        id="end-date"
-                        type="date"
-                        value={endDate}
-                        onChange={(e) => setEndDate(e.target.value)}
-                        min={startDate || undefined}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </PopoverContent>
-            </Popover>
+            <DateRangeFilter
+              startDate={startDate}
+              endDate={endDate}
+              onStartDateChange={setStartDate}
+              onEndDateChange={setEndDate}
+              idPrefix="timeline"
+            />
 
             {/* Activity Type Filter */}
             <Popover>

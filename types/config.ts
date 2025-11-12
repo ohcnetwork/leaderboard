@@ -24,6 +24,7 @@ export interface MetaConfig {
 export interface RoleConfig {
   name: string;
   description?: string;
+  hidden?: boolean;
 }
 
 export interface LeaderboardConfig {

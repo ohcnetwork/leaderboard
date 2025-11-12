@@ -1,5 +1,10 @@
-import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { getConfig, clearConfigCache } from "@/lib/config";
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import {
+  getConfig,
+  clearConfigCache,
+  getHiddenRoles,
+  getVisibleRoles,
+} from "@/lib/config";
 import {
   validConfig,
   minimalValidConfig,
@@ -135,8 +140,58 @@ describe("Config Validation", () => {
       const config = getConfig();
 
       expect(Object.keys(config.leaderboard.roles)).toHaveLength(3);
-      expect(config.leaderboard.roles.admin.name).toBe("Admin");
-      expect(config.leaderboard.roles.contributor.description).toBeUndefined();
+      expect(config.leaderboard.roles.admin?.name).toBe("Admin");
+      expect(config.leaderboard.roles.contributor?.description).toBeUndefined();
+    });
+
+    it("should accept roles with hidden property", () => {
+      const configWithHiddenRoles = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          roles: {
+            admin: { name: "Admin", description: "Administrator" },
+            bot: { name: "Bot", description: "Bot account", hidden: true },
+            contributor: { name: "Contributor" },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithHiddenRoles);
+      const config = getConfig();
+
+      expect(config.leaderboard.roles.bot?.hidden).toBe(true);
+      expect(config.leaderboard.roles.admin?.hidden).toBeUndefined();
+      expect(config.leaderboard.roles.contributor?.hidden).toBeUndefined();
+    });
+
+    it("should correctly identify hidden roles", () => {
+      const configWithHiddenRoles = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          roles: {
+            admin: { name: "Admin" },
+            bot: { name: "Bot", hidden: true },
+            test: { name: "Test", hidden: true },
+            contributor: { name: "Contributor" },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithHiddenRoles);
+      const hiddenRoles = getHiddenRoles();
+      const visibleRoles = getVisibleRoles();
+
+      expect(hiddenRoles).toEqual(["Bot", "Test"]);
+      expect(visibleRoles).toEqual(["Admin", "Contributor"]);
+    });
+
+    it("should return empty array when no hidden roles exist", () => {
+      replaceConfigWith(minimalValidConfig);
+      const hiddenRoles = getHiddenRoles();
+
+      expect(hiddenRoles).toEqual([]);
     });
 
     it("should accept scrapers with only required source field", () => {
@@ -152,10 +207,10 @@ describe("Config Validation", () => {
       replaceConfigWith(configWithMinimalScraper);
       const config = getConfig();
 
-      expect(config.scrapers?.custom.source).toBe(
+      expect(config.scrapers?.custom?.source).toBe(
         "https://github.com/test/scraper"
       );
-      expect(config.scrapers?.custom.cron).toBeUndefined();
+      expect(config.scrapers?.custom?.cron).toBeUndefined();
     });
 
     it("should accept scrapers with cron expression", () => {
@@ -172,7 +227,7 @@ describe("Config Validation", () => {
       replaceConfigWith(configWithCron);
       const config = getConfig();
 
-      expect(config.scrapers?.scheduled.cron).toBe("0 0 * * *");
+      expect(config.scrapers?.scheduled?.cron).toBe("0 0 * * *");
     });
 
     it("should accept scrapers with custom attributes", () => {
@@ -191,9 +246,9 @@ describe("Config Validation", () => {
       replaceConfigWith(configWithCustomAttrs);
       const config = getConfig();
 
-      expect(config.scrapers?.github.org).toBe("testorg");
-      expect(config.scrapers?.github.token).toBe("${{ GITHUB_TOKEN }}");
-      expect(config.scrapers?.github.custom_field).toBe("custom_value");
+      expect(config.scrapers?.github?.org).toBe("testorg");
+      expect(config.scrapers?.github?.token).toBe("${{ GITHUB_TOKEN }}");
+      expect(config.scrapers?.github?.custom_field).toBe("custom_value");
     });
 
     it("should accept various valid cron expressions", () => {
@@ -535,7 +590,7 @@ describe("Config Validation", () => {
       replaceConfigWith(configWithGitSource);
       const config = getConfig();
 
-      expect(config.scrapers?.remote.source).toBe(
+      expect(config.scrapers?.remote?.source).toBe(
         "https://github.com/org/scraper"
       );
     });
@@ -553,7 +608,7 @@ describe("Config Validation", () => {
       replaceConfigWith(configWithLocalSource);
       const config = getConfig();
 
-      expect(config.scrapers?.local.source).toBe("./scrapers/custom");
+      expect(config.scrapers?.local?.source).toBe("./scrapers/custom");
     });
 
     it("should accept multiple scrapers with different configurations", () => {
@@ -582,9 +637,9 @@ describe("Config Validation", () => {
       const config = getConfig();
 
       expect(Object.keys(config.scrapers!)).toHaveLength(3);
-      expect(config.scrapers?.github.cron).toBe("0 0 * * *");
-      expect(config.scrapers?.slack.cron).toBeUndefined();
-      expect(config.scrapers?.custom.custom_attr1).toBe("value1");
+      expect(config.scrapers?.github?.cron).toBe("0 0 * * *");
+      expect(config.scrapers?.slack?.cron).toBeUndefined();
+      expect(config.scrapers?.custom?.custom_attr1).toBe("value1");
     });
 
     it("should validate scraper key format (lowercase with underscores)", () => {
@@ -635,7 +690,7 @@ describe("Config Validation", () => {
       replaceConfigWith(configWithEmptyDescription);
       const config = getConfig();
 
-      expect(config.leaderboard.roles.user.description).toBe("");
+      expect(config.leaderboard.roles.user?.description).toBe("");
     });
 
     it("should preserve special characters in string values", () => {

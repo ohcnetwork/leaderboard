@@ -559,22 +559,38 @@ export async function getAllContributorUsernames(): Promise<string[]> {
 
 /**
  * Get all contributors with avatars sorted by total points
+ * @param excludeRoles - Optional array of role names to exclude
  * @returns List of contributors with avatar URLs and usernames
  */
-export async function getAllContributorsWithAvatars(): Promise<
+export async function getAllContributorsWithAvatars(
+  excludeRoles?: string[]
+): Promise<
   Array<{
     username: string;
     name: string | null;
     avatar_url: string;
+    role: string | null;
     total_points: number;
   }>
 > {
   const db = getDb();
 
+  const whereConditions = ["c.avatar_url IS NOT NULL"];
+  const params: string[] = [];
+
+  if (excludeRoles && excludeRoles.length > 0) {
+    params.push(...excludeRoles);
+    const placeholders = excludeRoles.map((_, i) => `$${i + 1}`).join(", ");
+    whereConditions.push(`(c.role IS NULL OR c.role NOT IN (${placeholders}))`);
+  }
+
+  const whereClause = whereConditions.join(" AND ");
+
   const result = await db.query<{
     username: string;
     name: string | null;
     avatar_url: string;
+    role: string | null;
     total_points: number;
   }>(
     `
@@ -582,14 +598,16 @@ export async function getAllContributorsWithAvatars(): Promise<
       c.username,
       c.name,
       c.avatar_url,
+      c.role,
       COALESCE(SUM(COALESCE(a.points, ad.points)), 0) as total_points
     FROM contributor c
     LEFT JOIN activity a ON c.username = a.contributor
     LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
-    WHERE c.avatar_url IS NOT NULL
-    GROUP BY c.username, c.name, c.avatar_url
+    WHERE ${whereClause}
+    GROUP BY c.username, c.name, c.avatar_url, c.role
     ORDER BY total_points DESC, c.username ASC;
-  `
+  `,
+    params
   );
 
   return result.rows;

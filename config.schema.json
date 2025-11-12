@@ -131,6 +131,11 @@
                 "description": {
                   "type": "string",
                   "description": "Role description"
+                },
+                "hidden": {
+                  "type": "boolean",
+                  "description": "Whether this role should be hidden by default in leaderboard and excluded from people page (default: false)",
+                  "default": false
                 }
               },
               "additionalProperties": false

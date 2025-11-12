@@ -32,6 +32,7 @@ interface LeaderboardViewProps {
       count: number;
     }>
   >;
+  hiddenRoles: string[];
 }
 
 export default function LeaderboardView({
@@ -40,15 +41,27 @@ export default function LeaderboardView({
   startDate,
   endDate,
   topByActivity,
+  hiddenRoles,
 }: LeaderboardViewProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   // Get selected roles from query params
+  // If no roles are selected, default to all visible roles (excluding hidden ones)
   const selectedRoles = useMemo(() => {
-    const roles = searchParams.get("roles");
-    return roles ? new Set(roles.split(",")) : new Set<string>();
-  }, [searchParams]);
+    const rolesParam = searchParams.get("roles");
+    if (rolesParam) {
+      return new Set(rolesParam.split(","));
+    }
+    // Default: exclude hidden roles
+    const allRoles = new Set<string>();
+    entries.forEach((entry) => {
+      if (entry.role && !hiddenRoles.includes(entry.role)) {
+        allRoles.add(entry.role);
+      }
+    });
+    return allRoles;
+  }, [searchParams, entries, hiddenRoles]);
 
   // Get unique roles from entries
   const availableRoles = useMemo(() => {

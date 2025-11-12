@@ -87,3 +87,23 @@ export function getConfig(): Config {
 export function clearConfigCache(): void {
   cachedConfig = null;
 }
+
+/**
+ * Gets all role names that are marked as hidden
+ */
+export function getHiddenRoles(): string[] {
+  const config = getConfig();
+  return Object.entries(config.leaderboard.roles)
+    .filter(([, roleConfig]) => roleConfig.hidden === true)
+    .map(([slug]) => slug);
+}
+
+/**
+ * Gets all role names that are not hidden
+ */
+export function getVisibleRoles(): string[] {
+  const config = getConfig();
+  return Object.entries(config.leaderboard.roles)
+    .filter(([, roleConfig]) => roleConfig.hidden !== true)
+    .map(([slug]) => slug);
+}

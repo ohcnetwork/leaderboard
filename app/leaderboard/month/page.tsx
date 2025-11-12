@@ -1,6 +1,6 @@
 import { getLeaderboard, getTopContributorsByActivity } from "@/lib/db";
 import { getDateRange } from "@/lib/utils";
-import { getConfig } from "@/lib/config";
+import { getConfig, getHiddenRoles } from "@/lib/config";
 import LeaderboardView from "../LeaderboardView";
 
 export default async function MonthlyLeaderboardPage() {
@@ -8,7 +8,11 @@ export default async function MonthlyLeaderboardPage() {
   const { startDate, endDate } = getDateRange("month");
   const [entries, topByActivity] = await Promise.all([
     getLeaderboard(startDate, endDate),
-    getTopContributorsByActivity(startDate, endDate, config.leaderboard.top_contributors),
+    getTopContributorsByActivity(
+      startDate,
+      endDate,
+      config.leaderboard.top_contributors
+    ),
   ]);
 
   return (
@@ -18,7 +22,7 @@ export default async function MonthlyLeaderboardPage() {
       startDate={startDate}
       endDate={endDate}
       topByActivity={topByActivity}
+      hiddenRoles={getHiddenRoles()}
     />
   );
 }
-

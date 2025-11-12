@@ -45,6 +45,7 @@ leaderboard:
     bot:
       name: Bot
       description: Bot account
+      hidden: true ## optional - default: false - hides role by default in leaderboard and excludes from people page
 
   top_contributors: ## optional - activity definition slugs to show in top contributors sidebar
     - pr_merged

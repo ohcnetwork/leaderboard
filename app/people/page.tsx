@@ -1,12 +1,13 @@
 import { getAllContributorsWithAvatars } from "@/lib/db";
-import { getConfig } from "@/lib/config";
+import { getConfig, getHiddenRoles } from "@/lib/config";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
-  const contributors = await getAllContributorsWithAvatars();
+  const hiddenRoles = getHiddenRoles();
+  const contributors = await getAllContributorsWithAvatars(hiddenRoles);
 
   return {
     title: `People - ${config.meta.title}`,
@@ -23,7 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function PeoplePage() {
   const config = getConfig();
-  const contributors = await getAllContributorsWithAvatars();
+  const hiddenRoles = getHiddenRoles();
+  const contributors = await getAllContributorsWithAvatars(hiddenRoles);
 
   return (
     <div className="mx-auto px-4 py-8">

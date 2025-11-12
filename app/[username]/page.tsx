@@ -1,4 +1,8 @@
-import { getAllContributorUsernames, getContributorProfile } from "@/lib/db";
+import {
+  getAllContributorUsernames,
+  getContributorProfile,
+  listActivityDefinitions,
+} from "@/lib/db";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -118,8 +122,13 @@ export default async function ContributorPage({
   params,
 }: ContributorPageProps) {
   const { username } = await params;
-  const { contributor, activities, totalPoints, activityByDate } =
-    await getContributorProfile(username);
+  const [
+    { contributor, activities, totalPoints, activityByDate },
+    activityDefinitions,
+  ] = await Promise.all([
+    getContributorProfile(username),
+    listActivityDefinitions(),
+  ]);
 
   if (!contributor) {
     notFound();
@@ -311,7 +320,10 @@ export default async function ContributorPage({
         />
 
         {/* Activity Timeline */}
-        <ActivityTimeline activities={activities} />
+        <ActivityTimeline
+          activities={activities}
+          activityDefinitions={activityDefinitions}
+        />
 
         {/* Back to Leaderboard */}
         <div className="mt-8 text-center">

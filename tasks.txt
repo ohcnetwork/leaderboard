@@ -3,6 +3,7 @@
   - pr merged (points derived from gh project board)
   - push events instead of commits --- optimize commit created to instead be tracking push events directly instead. (Pushed 3 commits to branch... instead of 3 separate commit created activities, points would be derived from number of commits pushed)
   - exclude merge commits
+  - incorrect timestamp in slack messages
 
 - build pages
   - home
@@ -15,6 +16,7 @@
 
 - aggregate metrics
 - eod bonus point as an event
+- profile filter should also be applied for activity breakdown
 
 - setup footer
 - sitemap generation

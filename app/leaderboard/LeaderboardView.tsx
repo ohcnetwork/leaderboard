@@ -13,7 +13,8 @@ import {
 import Link from "next/link";
 import { Medal, Trophy, Filter, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import ActivityTrendChart from "./ActivityTrendChart";
 
 interface LeaderboardViewProps {
@@ -40,7 +41,14 @@ export default function LeaderboardView({
   endDate,
   topByActivity,
 }: LeaderboardViewProps) {
-  const [selectedRoles, setSelectedRoles] = useState<Set<string>>(new Set());
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Get selected roles from query params
+  const selectedRoles = useMemo(() => {
+    const roles = searchParams.get("roles");
+    return roles ? new Set(roles.split(",")) : new Set<string>();
+  }, [searchParams]);
 
   // Get unique roles from entries
   const availableRoles = useMemo(() => {
@@ -70,11 +78,21 @@ export default function LeaderboardView({
     } else {
       newSelected.add(role);
     }
-    setSelectedRoles(newSelected);
+    updateRolesParam(newSelected);
   };
 
   const clearFilters = () => {
-    setSelectedRoles(new Set());
+    updateRolesParam(new Set());
+  };
+
+  const updateRolesParam = (roles: Set<string>) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (roles.size > 0) {
+      params.set("roles", Array.from(roles).join(","));
+    } else {
+      params.delete("roles");
+    }
+    router.push(`?${params.toString()}`, { scroll: false });
   };
 
   // Filter top contributors by selected roles

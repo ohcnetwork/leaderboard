@@ -174,4 +174,8 @@ a {
   @apply text-primary hover:underline hover:text-primary/80;
 }
 
+.prose a {
+  @apply underline;
+}
+
 @import "./customCss.css";

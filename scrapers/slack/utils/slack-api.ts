@@ -208,7 +208,7 @@ export async function ingestEodUpdates() {
 }
 
 async function main() {
-  const since = subDays(new Date(), 7); // TODO: make this configurable
+  const since = subDays(new Date(), 30); // TODO: make this configurable
 
   console.log(`Preparing database...`);
   await prepare();

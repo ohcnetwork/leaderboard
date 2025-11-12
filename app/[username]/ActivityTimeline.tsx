@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { ContributorActivity } from "@/lib/db";
+import { ActivityDefinition } from "@/types/db";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -15,27 +16,66 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ActivityTimelineItem from "./ActivityTimelineItem";
 
+const ACTIVITY_FILTER_STORAGE_KEY = "leaderboard_activity_type_filter";
+
 interface ActivityTimelineProps {
   activities: ContributorActivity[];
+  activityDefinitions: ActivityDefinition[];
 }
 
 export default function ActivityTimeline({
   activities,
+  activityDefinitions,
 }: ActivityTimelineProps) {
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
+
+  // Initialize selectedActivityTypes from localStorage
   const [selectedActivityTypes, setSelectedActivityTypes] = useState<
     Set<string>
-  >(new Set());
+  >(() => {
+    if (typeof window === "undefined") return new Set();
 
-  // Get unique activity types
+    try {
+      const stored = localStorage.getItem(ACTIVITY_FILTER_STORAGE_KEY);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          return new Set(parsed);
+        }
+      }
+    } catch (error) {
+      console.error(
+        "Failed to load activity type filter from localStorage:",
+        error
+      );
+    }
+    return new Set();
+  });
+
+  // Save activity type filter to localStorage whenever it changes
+  useEffect(() => {
+    try {
+      if (selectedActivityTypes.size > 0) {
+        localStorage.setItem(
+          ACTIVITY_FILTER_STORAGE_KEY,
+          JSON.stringify(Array.from(selectedActivityTypes))
+        );
+      } else {
+        localStorage.removeItem(ACTIVITY_FILTER_STORAGE_KEY);
+      }
+    } catch (error) {
+      console.error(
+        "Failed to save activity type filter to localStorage:",
+        error
+      );
+    }
+  }, [selectedActivityTypes]);
+
+  // Get activity types from activity definitions (sorted by name)
   const activityTypes = useMemo(() => {
-    const types = new Set<string>();
-    activities.forEach((activity) => {
-      types.add(activity.activity_name);
-    });
-    return Array.from(types).sort();
-  }, [activities]);
+    return activityDefinitions.map((def) => def.name).sort();
+  }, [activityDefinitions]);
 
   // Filter activities
   const filteredActivities = useMemo(() => {

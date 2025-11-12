@@ -13,9 +13,11 @@ import {
 import Link from "next/link";
 import { Medal, Trophy, Filter, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import ActivityTrendChart from "./ActivityTrendChart";
+import { Input } from "@/components/ui/input";
+import { Search } from "lucide-react";
 
 interface LeaderboardViewProps {
   entries: LeaderboardEntry[];
@@ -46,6 +48,9 @@ export default function LeaderboardView({
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  // Search query state
+  const [searchQuery, setSearchQuery] = useState("");
+
   // Get selected roles from query params
   // If no roles are selected, default to all visible roles (excluding hidden ones)
   const selectedRoles = useMemo(() => {
@@ -74,15 +79,29 @@ export default function LeaderboardView({
     return Array.from(roles).sort();
   }, [entries]);
 
-  // Filter entries by selected roles
+  // Filter entries by selected roles and search query
   const filteredEntries = useMemo(() => {
-    if (selectedRoles.size === 0) {
-      return entries;
+    let filtered = entries;
+
+    // Filter by roles
+    if (selectedRoles.size > 0) {
+      filtered = filtered.filter(
+        (entry) => entry.role && selectedRoles.has(entry.role)
+      );
     }
-    return entries.filter(
-      (entry) => entry.role && selectedRoles.has(entry.role)
-    );
-  }, [entries, selectedRoles]);
+
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter((entry) => {
+        const name = (entry.name || entry.username).toLowerCase();
+        const username = entry.username.toLowerCase();
+        return name.includes(query) || username.includes(query);
+      });
+    }
+
+    return filtered;
+  }, [entries, selectedRoles, searchQuery]);
 
   const toggleRole = (role: string) => {
     const newSelected = new Set(selectedRoles);
@@ -95,7 +114,10 @@ export default function LeaderboardView({
   };
 
   const clearFilters = () => {
-    updateRolesParam(new Set());
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("roles");
+    router.push(`?${params.toString()}`, { scroll: false });
+    setSearchQuery("");
   };
 
   const updateRolesParam = (roles: Set<string>) => {
@@ -165,64 +187,81 @@ export default function LeaderboardView({
                 </h1>
                 <p className="text-muted-foreground">
                   {filteredEntries.length} of {entries.length} contributors
-                  {selectedRoles.size > 0 && " (filtered)"}
+                  {(selectedRoles.size > 0 || searchQuery) && " (filtered)"}
                 </p>
               </div>
 
-              {/* Role Filter */}
-              {availableRoles.length > 0 && (
-                <div className="flex items-center gap-2">
-                  {selectedRoles.size > 0 && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={clearFilters}
-                      className="h-9"
-                    >
-                      <X className="h-4 w-4 mr-1" />
-                      Clear
-                    </Button>
-                  )}
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button variant="outline" size="sm" className="h-9">
-                        <Filter className="h-4 w-4 mr-2" />
-                        Role
-                        {selectedRoles.size > 0 && (
-                          <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
-                            {selectedRoles.size}
-                          </span>
-                        )}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-64" align="end">
-                      <div className="space-y-4">
-                        <h4 className="font-medium text-sm">Filter by Role</h4>
-                        <div className="space-y-2 max-h-64 overflow-y-auto">
-                          {availableRoles.map((role) => (
-                            <div
-                              key={role}
-                              className="flex items-center space-x-2"
-                            >
-                              <Checkbox
-                                id={role}
-                                checked={selectedRoles.has(role)}
-                                onCheckedChange={() => toggleRole(role)}
-                              />
-                              <label
-                                htmlFor={role}
-                                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                              >
-                                {role}
-                              </label>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </PopoverContent>
-                  </Popover>
+              {/* Filters */}
+              <div className="flex items-center gap-2">
+                {/* Search Bar */}
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder="Search contributors..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-9 h-9 w-64"
+                  />
                 </div>
-              )}
+
+                {/* Role Filter */}
+                {availableRoles.length > 0 && (
+                  <>
+                    {(selectedRoles.size > 0 || searchQuery) && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={clearFilters}
+                        className="h-9"
+                      >
+                        <X className="h-4 w-4 mr-1" />
+                        Clear
+                      </Button>
+                    )}
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button variant="outline" size="sm" className="h-9">
+                          <Filter className="h-4 w-4 mr-2" />
+                          Role
+                          {selectedRoles.size > 0 && (
+                            <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
+                              {selectedRoles.size}
+                            </span>
+                          )}
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-64" align="end">
+                        <div className="space-y-4">
+                          <h4 className="font-medium text-sm">
+                            Filter by Role
+                          </h4>
+                          <div className="space-y-2 max-h-64 overflow-y-auto">
+                            {availableRoles.map((role) => (
+                              <div
+                                key={role}
+                                className="flex items-center space-x-2"
+                              >
+                                <Checkbox
+                                  id={role}
+                                  checked={selectedRoles.has(role)}
+                                  onCheckedChange={() => toggleRole(role)}
+                                />
+                                <label
+                                  htmlFor={role}
+                                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                                >
+                                  {role}
+                                </label>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </PopoverContent>
+                    </Popover>
+                  </>
+                )}
+              </div>
             </div>
           </div>
 

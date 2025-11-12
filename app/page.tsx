@@ -168,9 +168,10 @@ export default async function Home() {
                           </p>
                         )}
                         {activity.text && (
-                          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                            {activity.text}
-                          </p>
+                          <div
+                            className="text-sm text-muted-foreground mt-1 prose prose-sm max-w-none"
+                            dangerouslySetInnerHTML={{ __html: activity.text }}
+                          />
                         )}
                       </div>
                       {activity.points !== null && activity.points > 0 && (

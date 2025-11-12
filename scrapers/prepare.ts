@@ -1,11 +1,7 @@
-import { createTables, getDb } from "@/lib/db";
-import runGitHub from "@/scrapers/github/run";
+import { createTables } from "@/lib/db";
 
 async function main() {
   await createTables();
-
-  // const db = getDb();
-  // runGitHub(db);
 }
 
 main();

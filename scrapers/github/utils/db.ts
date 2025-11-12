@@ -21,18 +21,18 @@ export async function upsertActivityDefinitions() {
   const db = getDb();
 
   await db.query(`
-    INSERT INTO activity_definition (slug, name, description, points)
+    INSERT INTO activity_definition (slug, name, description, points, icon)
     VALUES 
-      ('comment_created', 'Commented', 'Commented on an Issue/PR', 0),
-      ('issue_assigned', 'Issue Assigned', 'Got an issue assigned', 1),
-      ('pr_reviewed', 'PR Reviewed', 'Reviewed a Pull Request', 2),
-      ('issue_opened', 'Issue Opened', 'Raised an Issue', 2),
-      ('pr_opened', 'PR Opened', 'Opened a Pull Request', 1),
-      ('pr_merged', 'PR Merged', 'Merged a Pull Request', 7),
-      ('pr_collaborated', 'PR Collaborated', 'Collaborated on a Pull Request', 2),
-      ('issue_closed', 'Issue Closed', 'Closed an Issue', 0),
-      ('commit_created', 'Commit Created', 'Pushed a commit', 0)
-    ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, points = EXCLUDED.points;
+      ('comment_created', 'Commented', 'Commented on an Issue/PR', 0, 'message-circle'),
+      ('issue_assigned', 'Issue Assigned', 'Got an issue assigned', 1, 'user-round-check'),
+      ('pr_reviewed', 'PR Reviewed', 'Reviewed a Pull Request', 2, 'eye'),
+      ('issue_opened', 'Issue Opened', 'Raised an Issue', 2, 'circle-dot'),
+      ('pr_opened', 'PR Opened', 'Opened a Pull Request', 1, 'git-pull-request-create-arrow'),
+      ('pr_merged', 'PR Merged', 'Merged a Pull Request', 7, 'git-merge'),
+      ('pr_collaborated', 'PR Collaborated', 'Collaborated on a Pull Request', 2, NULL),
+      ('issue_closed', 'Issue Closed', 'Closed an Issue', 0, NULL),
+      ('commit_created', 'Commit Created', 'Pushed a commit', 0, 'git-commit-horizontal')
+    ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, points = EXCLUDED.points, icon = EXCLUDED.icon;
   `);
 }
 

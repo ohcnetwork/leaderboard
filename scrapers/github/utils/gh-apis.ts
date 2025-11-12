@@ -733,7 +733,7 @@ function getActivitiesFromCommits(
 }
 
 async function main() {
-  const since = subDays(new Date(), 7).toISOString(); // TODO: make this configurable
+  const since = subDays(new Date(), 1).toISOString(); // TODO: make this configurable
 
   await upsertActivityDefinitions();
 

@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "update-roles": "tsx scrapers/update-roles.ts"
+    "prebuild": "tsx scripts/generate-icons.ts",
+    "db:exec": "tsx scripts/db-exec-stdin.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.3.12",

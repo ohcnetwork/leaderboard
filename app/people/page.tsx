@@ -3,6 +3,11 @@ import { getConfig, getHiddenRoles } from "@/lib/config";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Link from "next/link";
 import type { Metadata } from "next";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
@@ -41,24 +46,28 @@ export default async function PeoplePage() {
       {/* Avatar Grid */}
       <div className="people-avatar-grid grid gap-(--people-grid-gap)">
         {contributors.map((contributor) => (
-          <Link
-            key={contributor.username}
-            href={`/${contributor.username}`}
-            className="group block aspect-square"
-          >
-            <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-primary/50 hover:scale-105">
-              <AvatarImage
-                src={contributor.avatar_url}
-                alt={contributor.name || contributor.username}
-                className="object-cover"
-              />
-              <AvatarFallback className="rounded-md">
-                {(contributor.name || contributor.username)
-                  .substring(0, 2)
-                  .toUpperCase()}
-              </AvatarFallback>
-            </Avatar>
-          </Link>
+          <Tooltip key={contributor.username}>
+            <TooltipTrigger asChild>
+              <Link
+                href={`/${contributor.username}`}
+                className="group block aspect-square"
+              >
+                <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-primary/50 hover:scale-105">
+                  <AvatarImage
+                    src={contributor.avatar_url}
+                    alt={contributor.name || contributor.username}
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="rounded-md">
+                    {(contributor.name || contributor.username)
+                      .substring(0, 2)
+                      .toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>@{contributor.username}</TooltipContent>
+          </Tooltip>
         ))}
       </div>
 

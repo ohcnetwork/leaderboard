@@ -39,20 +39,21 @@ export async function createTables() {
 
     CREATE TABLE IF NOT EXISTS activity_definition (
         slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR,
-        description             TEXT,
-        points                  SMALLINT CHECK (points IS NULL OR points > -1)
+        name                    VARCHAR NOT NULL,
+        description             TEXT NOT NULL,
+        points                  SMALLINT,
+        icon                    VARCHAR
     );
 
     CREATE TABLE IF NOT EXISTS activity (
         slug                    VARCHAR PRIMARY KEY,
-        contributor             VARCHAR REFERENCES contributor(username),
-        activity_definition     VARCHAR REFERENCES activity_definition(slug),
+        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
+        activity_definition     VARCHAR REFERENCES activity_definition(slug) NOT NULL,
         title                   VARCHAR,
-        occured_at              TIMESTAMP,
+        occured_at              TIMESTAMP NOT NULL,
         link                    VARCHAR,
         text                    TEXT,
-        points                  SMALLINT CHECK (points IS NULL OR points > -1),
+        points                  SMALLINT,
         meta                    JSON
     );
 
@@ -72,14 +73,14 @@ export async function upsertActivityDefinitions(
   const db = getDb();
 
   await db.query(`
-    INSERT INTO activity_definition (slug, name, description, points)
+    INSERT INTO activity_definition (slug, name, description, points, icon)
     VALUES ${activityDefinitions
       .map(
         (ad) =>
-          `('${ad.slug}', '${ad.name}', '${ad.description}', ${ad.points})`
+          `('${ad.slug}', '${ad.name}', '${ad.description}', ${ad.points}, '${ad.icon}')`
       )
       .join(",")}
-    ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, points = EXCLUDED.points;
+    ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, points = EXCLUDED.points, icon = EXCLUDED.icon;
   `);
 }
 
@@ -620,6 +621,7 @@ export interface ContributorActivity extends Activity {
   activity_name: string;
   activity_description: string | null;
   activity_points: number | null;
+  activity_icon: string | null;
 }
 
 /**
@@ -662,7 +664,8 @@ export async function getContributorProfile(username: string): Promise<{
       a.meta,
       ad.name as activity_name,
       ad.description as activity_description,
-      ad.points as activity_points
+      ad.points as activity_points,
+      ad.icon as activity_icon
     FROM activity a
     JOIN activity_definition ad ON a.activity_definition = ad.slug
     WHERE a.contributor = $1

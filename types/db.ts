@@ -14,6 +14,7 @@ export interface ActivityDefinition {
   name: string;
   description: string | null;
   points: number | null;
+  icon: string | null;
 }
 
 export interface Activity {

@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Icon from "@/components/Icon";
 import { icons } from "@/app/icons.gen";
+import { marked } from "marked";
 
 interface ContributorPageProps {
   params: Promise<{ username: string }>;
@@ -138,6 +139,9 @@ export default async function ContributorPage({
   const config = getConfig();
   const activityGraphData = generateActivityGraphData(activityByDate, 365);
 
+  // Convert bio markdown to HTML
+  const bioHtml = contributor.bio ? await marked.parse(contributor.bio) : null;
+
   // Calculate stats
   const activityBreakdown = activities.reduce((acc, activity) => {
     const key = activity.activity_name;
@@ -214,8 +218,11 @@ export default async function ContributorPage({
                 @{contributor.username}
               </p>
 
-              {contributor.bio && (
-                <p className="text-muted-foreground mb-4">{contributor.bio}</p>
+              {bioHtml && (
+                <div
+                  className="text-muted-foreground mb-4 prose prose-sm dark:prose-invert max-w-none"
+                  dangerouslySetInnerHTML={{ __html: bioHtml }}
+                />
               )}
 
               <div className="flex flex-wrap gap-4 text-sm">

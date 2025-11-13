@@ -49,9 +49,10 @@ async function main() {
   // Check if contributors directory exists
   const contributorsDir = path.join(flatDataPath, "contributors");
   if (!existsSync(contributorsDir)) {
-    throw new Error(
-      `Contributors directory does not exist: ${contributorsDir}`
+    console.log(
+      `Contributors directory does not exist: ${contributorsDir}. Skipping import.`
     );
+    return;
   }
 
   // Read all markdown files from contributors directory

@@ -1,16 +1,26 @@
 import { getConfig } from "@/lib/config";
 import { writeFile } from "fs/promises";
 import { join } from "path";
+import { existsSync } from "fs";
 
 async function main() {
-  const outputPath = join(process.cwd(), "app", "overrides.css");
+  const outputPath = join(process.cwd(), "app", "overrides.gen.css");
 
   try {
     const config = getConfig();
     const themeUrl = config.leaderboard.theme;
 
     if (!themeUrl) {
-      console.log("No theme configured, creating empty overrides.css file.");
+      console.log("No theme configured.");
+
+      // Check if file already exists
+      if (existsSync(outputPath)) {
+        console.log(
+          `File already exists: ${outputPath}. Skipping theme download.`
+        );
+        return;
+      }
+
       await writeFile(outputPath, "", "utf8");
       return;
     }
@@ -32,7 +42,7 @@ async function main() {
     console.error("Error downloading theme:", error);
     // Don't fail the build if theme download fails
     console.warn(
-      "Creating empty overrides.css file to prevent build failure..."
+      "Creating empty overrides.gen.css file to prevent build failure..."
     );
     await writeFile(outputPath, "", "utf8");
   }

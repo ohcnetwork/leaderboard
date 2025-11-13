@@ -28,7 +28,7 @@ export default function DateRangeFilter({
   const applyPreset = (days: number) => {
     const end = new Date();
     const start = new Date();
-    
+
     if (days === 7) {
       start.setDate(start.getDate() - 7);
     } else if (days === 30) {
@@ -38,9 +38,9 @@ export default function DateRangeFilter({
     } else if (days === 365) {
       start.setFullYear(start.getFullYear() - 1);
     }
-    
-    onStartDateChange(start.toISOString().split("T")[0]);
-    onEndDateChange(end.toISOString().split("T")[0]);
+
+    onStartDateChange(start.toISOString().split("T")[0]!);
+    onEndDateChange(end.toISOString().split("T")[0]!);
   };
 
   return (
@@ -134,4 +134,3 @@ export default function DateRangeFilter({
     </Popover>
   );
 }
-

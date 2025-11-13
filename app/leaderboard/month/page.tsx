@@ -2,6 +2,7 @@ import { getLeaderboard, getTopContributorsByActivity } from "@/lib/db";
 import { getDateRange } from "@/lib/utils";
 import { getConfig, getHiddenRoles } from "@/lib/config";
 import LeaderboardView from "../LeaderboardView";
+import { Suspense } from "react";
 
 export default async function MonthlyLeaderboardPage() {
   const config = getConfig();
@@ -16,13 +17,15 @@ export default async function MonthlyLeaderboardPage() {
   ]);
 
   return (
-    <LeaderboardView
-      entries={entries}
-      period="month"
-      startDate={startDate}
-      endDate={endDate}
-      topByActivity={topByActivity}
-      hiddenRoles={getHiddenRoles()}
-    />
+    <Suspense fallback={<></>}>
+      <LeaderboardView
+        entries={entries}
+        period="month"
+        startDate={startDate}
+        endDate={endDate}
+        topByActivity={topByActivity}
+        hiddenRoles={getHiddenRoles()}
+      />
+    </Suspense>
   );
 }

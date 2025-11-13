@@ -1,17 +1,33 @@
 import { getDb } from "@/lib/db";
+import { getConfig } from "@/lib/config";
 import fs from "fs";
 import path from "path";
 
 // Output file path
 const outputPath = path.resolve("app/icons.gen.ts");
 
-// Get unique icon names from database
+// Get unique icon names from database and config
 async function getIconNames() {
   const db = getDb();
+  const config = getConfig();
+
+  // Get icons from activity definitions
   const result = await db.query<{ icon: string }>(`
         SELECT DISTINCT icon FROM activity_definition WHERE icon IS NOT NULL;
     `);
-  return result.rows.map((row) => row.icon);
+  const activityIcons = result.rows.map((row) => row.icon);
+
+  // Get icons from social profiles config
+  const socialProfileIcons = config.leaderboard.social_profiles
+    ? Object.values(config.leaderboard.social_profiles).map(
+        (profile) => profile.icon
+      )
+    : [];
+
+  // Combine and deduplicate
+  const allIcons = [...new Set([...activityIcons, ...socialProfileIcons])];
+
+  return allIcons;
 }
 
 // Convert kebab-case to PascalCase for Lucide exports

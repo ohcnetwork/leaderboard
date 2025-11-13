@@ -13,12 +13,13 @@ import ActivityBreakdown from "./ActivityBreakdown";
 import ActivityTimeline from "./ActivityTimeline";
 import Link from "next/link";
 import {
-  ExternalLink,
-  Mail,
   Calendar,
   Award,
   Activity as ActivityIcon,
+  Link as LinkIcon,
 } from "lucide-react";
+import Icon from "@/components/Icon";
+import { icons } from "@/app/icons.gen";
 
 interface ContributorPageProps {
   params: Promise<{ username: string }>;
@@ -226,17 +227,42 @@ export default async function ContributorPage({
                     </span>
                   </div>
                 )}
-                {contributor.avatar_url && (
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <ExternalLink className="h-4 w-4" />
-                    <a
-                      href={contributor.avatar_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary"
-                    >
-                      View Profile
-                    </a>
+                {contributor.social_profiles && (
+                  <div className="flex items-center gap-3">
+                    {Object.entries(contributor.social_profiles).map(
+                      ([key, url]) => {
+                        const socialProfileDef =
+                          config.leaderboard.social_profiles?.[key];
+                        const iconName = socialProfileDef?.icon;
+
+                        // Type guard to check if icon is a valid string key
+                        const isValidIconKey = (
+                          name: unknown
+                        ): name is keyof typeof icons => {
+                          return (
+                            typeof name === "string" &&
+                            Object.prototype.hasOwnProperty.call(icons, name)
+                          );
+                        };
+
+                        return (
+                          <a
+                            key={key}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                            title={key}
+                          >
+                            {isValidIconKey(iconName) ? (
+                              <Icon name={iconName} className="h-5 w-5" />
+                            ) : (
+                              <LinkIcon className="h-5 w-5" />
+                            )}
+                          </a>
+                        );
+                      }
+                    )}
                   </div>
                 )}
               </div>

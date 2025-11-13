@@ -150,6 +150,24 @@
             "type": "string"
           },
           "uniqueItems": true
+        },
+        "social_profiles": {
+          "type": "object",
+          "description": "Social profile icon mappings",
+          "patternProperties": {
+            "^[a-z_]+$": {
+              "type": "object",
+              "required": ["icon"],
+              "properties": {
+                "icon": {
+                  "type": "string",
+                  "description": "Lucide icon name for this social profile"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false

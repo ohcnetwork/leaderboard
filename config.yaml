@@ -53,6 +53,16 @@ leaderboard:
     - issue_opened
     - issue_assigned
 
+  social_profiles: ## optional - social profile icon mappings
+    github:
+      icon: github
+    linkedin:
+      icon: linkedin
+    twitter:
+      icon: twitter
+    email:
+      icon: mail
+
 # Scraper configurations
 scrapers: ## optional
   github:

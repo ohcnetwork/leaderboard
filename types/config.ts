@@ -27,10 +27,15 @@ export interface RoleConfig {
   hidden?: boolean;
 }
 
+export interface SocialProfileConfig {
+  icon: string;
+}
+
 export interface LeaderboardConfig {
   data_source: string;
   roles: Record<string, RoleConfig>;
   top_contributors?: string[];
+  social_profiles?: Record<string, SocialProfileConfig>;
 }
 
 export interface ScraperInstanceConfig {

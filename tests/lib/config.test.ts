@@ -659,6 +659,128 @@ describe("Config Validation", () => {
     });
   });
 
+  describe("Social Profiles Configuration Validation", () => {
+    it("should accept valid social profiles configuration", () => {
+      const configWithSocialProfiles = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          social_profiles: {
+            github: { icon: "github" },
+            linkedin: { icon: "linkedin" },
+            twitter: { icon: "twitter" },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithSocialProfiles);
+      const config = getConfig();
+
+      expect(config.leaderboard.social_profiles).toBeDefined();
+      expect(config.leaderboard.social_profiles?.github?.icon).toBe("github");
+      expect(config.leaderboard.social_profiles?.linkedin?.icon).toBe("linkedin");
+      expect(config.leaderboard.social_profiles?.twitter?.icon).toBe("twitter");
+    });
+
+    it("should accept empty social profiles object", () => {
+      const configWithEmptySocialProfiles = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          social_profiles: {},
+        },
+      };
+
+      replaceConfigWith(configWithEmptySocialProfiles);
+      const config = getConfig();
+
+      expect(config.leaderboard.social_profiles).toBeDefined();
+      expect(Object.keys(config.leaderboard.social_profiles!)).toHaveLength(0);
+    });
+
+    it("should accept social profiles with various icon names", () => {
+      const configWithVariousIcons = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          social_profiles: {
+            email: { icon: "mail" },
+            website: { icon: "globe" },
+            blog: { icon: "rss" },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithVariousIcons);
+      const config = getConfig();
+
+      expect(config.leaderboard.social_profiles?.email?.icon).toBe("mail");
+      expect(config.leaderboard.social_profiles?.website?.icon).toBe("globe");
+      expect(config.leaderboard.social_profiles?.blog?.icon).toBe("rss");
+    });
+
+    it("should reject social profile with missing icon field", () => {
+      const configWithMissingIcon = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          social_profiles: {
+            github: {},
+          },
+        },
+      };
+
+      replaceConfigWith(configWithMissingIcon);
+
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(
+          hasValidationError(message, "/leaderboard/social_profiles/github", "icon")
+        ).toBe(true);
+      }
+    });
+
+    it("should reject social profile with invalid key format", () => {
+      const configWithInvalidKey = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          social_profiles: {
+            "Invalid-Key": { icon: "link" },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithInvalidKey);
+
+      // This should fail because social profile keys must match ^[a-z_]+$
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+    });
+
+    it("should accept social profiles with underscores in keys", () => {
+      const configWithUnderscores = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          social_profiles: {
+            stack_overflow: { icon: "layers" },
+            dev_to: { icon: "code" },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithUnderscores);
+      const config = getConfig();
+
+      expect(config.leaderboard.social_profiles?.stack_overflow?.icon).toBe("layers");
+      expect(config.leaderboard.social_profiles?.dev_to?.icon).toBe("code");
+    });
+  });
+
   describe("Edge Cases", () => {
     it("should handle empty scrapers object", () => {
       const configWithEmptyScrapers = {

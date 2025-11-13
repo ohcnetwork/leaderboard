@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 
-export default async function Page() {
-  redirect("/leaderboard/last-week");
+export default function LeaderboardPage() {
+  redirect("/leaderboard/week");
 }
+

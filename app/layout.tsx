@@ -1,41 +1,112 @@
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import "./badges.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata } from "next";
+import { getConfig } from "@/lib/config";
+import Link from "next/link";
+import ThemeSelector from "./ThemeSelector";
+import Image from "next/image";
 
-import { Metadata } from "next";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/navbar/Navbar";
-import Provider from "@/app/provider";
-import { env } from "@/env.mjs";
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+// Get config for metadata
+const config = getConfig();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(env.NEXT_PUBLIC_META_URL),
-  title: env.NEXT_PUBLIC_PAGE_TITLE,
-  description: env.NEXT_PUBLIC_META_DESCRIPTION,
+  title: config.meta.title,
+  description: config.meta.description,
+  icons: {
+    icon: config.meta.favicon_url,
+  },
   openGraph: {
-    title: env.NEXT_PUBLIC_META_TITLE,
-    description: env.NEXT_PUBLIC_META_DESCRIPTION,
-    images: env.NEXT_PUBLIC_META_IMG,
-    type: "article",
+    title: config.meta.title,
+    description: config.meta.description,
+    images: [config.meta.image_url],
+    url: config.meta.site_url,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: config.meta.title,
+    description: config.meta.description,
+    images: [config.meta.image_url],
   },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
-      <body className="bg-background text-foreground">
-        <div className="flex min-h-screen flex-col justify-between">
-          <Provider>
-            <div>
-              <Navbar />
-              {children}
-            </div>
-            <Footer />
-          </Provider>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="min-h-screen flex flex-col">
+            <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
+              <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+                <div className="flex items-center gap-6">
+                  <Link href="/" className="flex items-center gap-3">
+                    <Image
+                      src={config.org.logo_url}
+                      alt={config.org.name}
+                      width={40}
+                      height={40}
+                      className="rounded"
+                    />
+                    <span className="font-semibold text-lg">
+                      {config.org.name}
+                    </span>
+                  </Link>
+                  <nav className="hidden md:flex items-center gap-6">
+                    <Link
+                      href="/"
+                      className="text-sm font-medium hover:text-primary transition-colors"
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      href="/leaderboard"
+                      className="text-sm font-medium hover:text-primary transition-colors"
+                    >
+                      Leaderboard
+                    </Link>
+                    <Link
+                      href="/people"
+                      className="text-sm font-medium hover:text-primary transition-colors"
+                    >
+                      People
+                    </Link>
+                  </nav>
+                </div>
+                <ThemeSelector />
+              </div>
+            </header>
+            <main className="flex-1">{children}</main>
+            <footer className="border-t py-6 mt-12">
+              <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
+                <p>
+                  © {new Date().getFullYear()} {config.org.name}. All rights
+                  reserved.
+                </p>
+              </div>
+            </footer>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

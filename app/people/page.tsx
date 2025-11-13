@@ -1,60 +1,80 @@
-import HoverCardWrapper from "@/app/people/_components/HoverCardWrapper";
-import { getContributors } from "@/lib/api";
-import Image from "next/image";
+import { getAllContributorsWithAvatars } from "@/lib/db";
+import { getConfig, getHiddenRoles } from "@/lib/config";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Link from "next/link";
-import { TbZoomQuestion } from "react-icons/tb";
-export default async function Page() {
-  const contributors = (await getContributors()).sort(
-    (a, b) => b.highlights.points - a.highlights.points,
-  );
+import type { Metadata } from "next";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const config = getConfig();
+  const hiddenRoles = getHiddenRoles();
+  const contributors = await getAllContributorsWithAvatars(hiddenRoles);
+
+  return {
+    title: `People - ${config.meta.title}`,
+    description: `Meet the ${contributors.length} contributors who make ${config.org.name} possible. View all community members and their contributions.`,
+    openGraph: {
+      title: `People - ${config.meta.title}`,
+      description: `Meet the ${contributors.length} contributors who make ${config.org.name} possible.`,
+      url: `${config.meta.site_url}/people`,
+      siteName: config.meta.title,
+      images: [config.meta.image_url],
+    },
+  };
+}
+
+export default async function PeoplePage() {
+  const config = getConfig();
+  const hiddenRoles = getHiddenRoles();
+  const contributors = await getAllContributorsWithAvatars(hiddenRoles);
 
   return (
-    <div className="mx-auto mb-20 flex max-w-full flex-col items-center justify-center gap-8 md:px-24">
-      {contributors.length ? (
-        <>
-          <h1 className="mt-2 text-center text-6xl leading-none drop-shadow-lg">
-            <p>{contributors.length}</p>
-            <p className="text-xl">contributors</p>
-          </h1>
-          <ul className="relative flex flex-wrap justify-center gap-1">
-            {contributors.map((c) => (
-              <li
-                key={c.github}
-                className="group transition-all duration-150 ease-in-out hover:scale-125 hover:shadow-xl hover:shadow-primary-500"
+    <div className="mx-auto px-4 py-8">
+      {/* Header */}
+      <div className="mb-12 text-center">
+        <h1 className="text-4xl font-bold mb-4">Our People</h1>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Meet the {contributors.length} amazing contributors who make{" "}
+          {config.org.name} possible
+        </p>
+      </div>
+
+      {/* Avatar Grid */}
+      <div className="people-avatar-grid grid gap-(--people-grid-gap)">
+        {contributors.map((contributor) => (
+          <Tooltip key={contributor.username}>
+            <TooltipTrigger asChild>
+              <Link
+                href={`/${contributor.username}`}
+                className="group block aspect-square"
               >
-                <HoverCardWrapper
-                  key={c.github}
-                  github={c.github}
-                  name={c.name}
-                  title={c.title}
-                  content={
-                    c.content && c.content.trim() !== "Still waiting for this"
-                      ? c.content
-                      : ""
-                  }
-                >
-                  <Link href={`/contributors/${c.github}`}>
-                    <Image
-                      height={48}
-                      width={48}
-                      className="h-12 w-12 rounded-lg hover:ring hover:ring-primary-500"
-                      src={`https://avatars.githubusercontent.com/${c.github}?s=128`}
-                      alt={c.github}
-                    />
-                  </Link>
-                </HoverCardWrapper>
-              </li>
-            ))}
-          </ul>
-        </>
-      ) : (
-        <div className="my-4 overflow-x-auto">
-          <div className="flex flex-row justify-center">
-            <TbZoomQuestion size={35} />{" "}
-            <span className="ml-4 text-xl">No results found</span>
-          </div>
-        </div>
-      )}
+                <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-primary/50 hover:scale-105">
+                  <AvatarImage
+                    src={contributor.avatar_url}
+                    alt={contributor.name || contributor.username}
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="rounded-md">
+                    {(contributor.name || contributor.username)
+                      .substring(0, 2)
+                      .toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>@{contributor.username}</TooltipContent>
+          </Tooltip>
+        ))}
+      </div>
+
+      {/* Stats */}
+      <div className="mt-12 text-center text-sm text-muted-foreground">
+        <p>Showing {contributors.length} contributors sorted by total points</p>
+      </div>
     </div>
   );
 }

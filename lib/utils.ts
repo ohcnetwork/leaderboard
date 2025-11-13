@@ -1,131 +1,77 @@
-import {
-  formatDuration as _formatDuration,
-  intervalToDuration,
-  format,
-  getISOWeek,
-  startOfISOWeek,
-  addDays,
-  getISOWeekYear,
-  subDays,
-  startOfMonth,
-  subMonths,
-  endOfMonth,
-  endOfYear,
-  startOfYear,
-  startOfDay,
-  endOfDay,
-  min,
-} from "date-fns";
-import { env } from "@/env.mjs";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { formatDistanceToNow } from "date-fns";
 
-export const formatDuration = (duration_in_ms: number) =>
-  _formatDuration(
-    intervalToDuration({
-      start: new Date(0),
-      end: new Date(duration_in_ms),
-    }),
-  )
-    .split(" ")
-    .splice(0, 4)
-    .join(" ");
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
-export const getWeekNumber = (date: Date) => {
-  let weekNumber = getISOWeek(date);
+/**
+ * Get date range for a specific period
+ * @param period - The time period (week, month, or year)
+ * @returns Object with startDate and endDate
+ */
+export function getDateRange(period: "week" | "month" | "year"): {
+  startDate: Date;
+  endDate: Date;
+} {
+  const endDate = new Date();
+  const startDate = new Date();
 
-  if (weekNumber === 1 && date.getMonth() === 11) {
-    const startOfWeek = startOfISOWeek(date);
-    if (startOfWeek.getFullYear() !== getISOWeekYear(date)) {
-      const lastDayOfLastWeekThisYear = addDays(startOfWeek, -1);
-      weekNumber = getISOWeek(lastDayOfLastWeekThisYear) + 1;
-    }
-  }
-  return weekNumber;
-};
-
-const now = new Date();
-
-export const LeaderboardFilterDurations = [
-  "last-week",
-  "last-fortnight",
-  "last-month",
-  "previous-month",
-  `year-${now.getFullYear()}`,
-  `year-${now.getFullYear() - 1}`,
-] as const;
-
-export const calcDateRange = (
-  duration: (typeof LeaderboardFilterDurations)[number],
-) => {
-  if (duration === "last-week") return parseDateRangeSearchParam(null, 7);
-  if (duration === "last-fortnight") return parseDateRangeSearchParam(null, 14);
-  if (duration === "last-month") return parseDateRangeSearchParam(null, 28);
-
-  if (duration === "previous-month") {
-    const start = startOfMonth(subMonths(now, 1));
-    const end = endOfMonth(subMonths(now, 1));
-    return [start, end] as const;
+  switch (period) {
+    case "week":
+      startDate.setDate(endDate.getDate() - 7);
+      break;
+    case "month":
+      startDate.setDate(endDate.getDate() - 30);
+      break;
+    case "year":
+      startDate.setDate(endDate.getDate() - 365);
+      break;
   }
 
-  if (duration.startsWith("year-")) {
-    const year = new Date(`${duration.replace("year-", "")}-01-01`);
-    return [startOfYear(year), min([endOfYear(year), now])] as const;
-  }
-};
+  return { startDate, endDate };
+}
 
-export const parseDateRangeSearchParam = (
-  range?: string | null,
-  relativeDaysBefore = 7,
-) => {
-  if (range) {
-    const [startStr, endStr] = range.split("...");
-    const start = startOfDay(new Date(startStr));
-    const end = endOfDay(new Date(endStr));
-    return [start, end] as const;
-  }
+/**
+ * Format a date as a human-readable "time ago" string
+ * @param date - The date to format
+ * @returns Human-readable time string (e.g., "2 hours ago")
+ */
+export function formatTimeAgo(date: Date): string {
+  return formatDistanceToNow(date, { addSuffix: true });
+}
 
-  // Last 7 days
-  const end = new Date();
-  const start = subDays(end, relativeDaysBefore);
-  return [startOfDay(start), endOfDay(end)] as const;
-};
+/**
+ * Generate activity graph data for the last N days
+ * @param activityByDate - Object with date keys and activity counts
+ * @param days - Number of days to include (default 365)
+ * @returns Array of objects with date and count for each day
+ */
+export function generateActivityGraphData(
+  activityByDate: Record<string, number>,
+  days: number = 365
+): Array<{ date: string; count: number; level: number }> {
+  const data: Array<{ date: string; count: number; level: number }> = [];
+  const today = new Date();
 
-export const parseIssueNumber = (url: string) => {
-  return url.replace(/^.*github\.com\/[\w-]+\/[\w-]+\/issues\//, "");
-};
+  for (let i = days - 1; i >= 0; i--) {
+    const date = new Date(today);
+    date.setDate(today.getDate() - i);
+    const dateKey = date.toISOString().split("T")[0];
+    if (!dateKey) continue;
 
-export const navLinks = [
-  { title: "Feed", path: "/feed" },
-  { title: "Leaderboard", path: "/leaderboard" },
-  { title: "People", path: "/people" },
-  { title: "Projects", path: "/projects" },
-  { title: "Releases", path: "/releases" },
-  { title: "Discussion", path: "/discussion" },
-];
+    const count = activityByDate[dateKey] || 0;
 
-export const formatDate = (date: Date) => {
-  return format(date, "MMM dd, yyyy");
-};
-type Features = "Projects" | "Releases" | "Discussions";
-export const featureIsEnabled = (feature: Features) => {
-  return env.NEXT_PUBLIC_FEATURES?.split(",").includes(feature);
-};
+    // Calculate level (0-4) for color intensity like GitHub
+    let level = 0;
+    if (count > 0) level = 1;
+    if (count >= 3) level = 2;
+    if (count >= 6) level = 3;
+    if (count >= 10) level = 4;
 
-export const parseOrgRepoFromURL = (
-  url: string,
-): { org: string; repo: string | null } => {
-  const parts = url.split("/");
-
-  let org: string, repo: string | null;
-
-  if (parts[3] === "orgs") {
-    // Handle the URL format: /orgs/{org}/discussions/{id}
-    org = parts[4];
-    repo = null;
-  } else {
-    // Handle the URL format: /{org}/{repo}/discussions/{id}
-    org = parts[3];
-    repo = parts[4] === org ? "" : parts[4];
+    data.push({ date: dateKey, count, level });
   }
 
-  return { org, repo };
-};
+  return data;
+}

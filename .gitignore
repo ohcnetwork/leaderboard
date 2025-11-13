@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# .env
+.env
+.env.*
+!.env.example
+
 # dependencies
 /node_modules
 /.yarn
@@ -49,3 +54,6 @@ yarn.lock
 data/views/
 
 .venv/
+
+# generated files
+*.gen.*

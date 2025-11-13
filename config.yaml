@@ -25,6 +25,7 @@ meta:
 # Leaderboard related configurations
 leaderboard:
   data_source: https://github.com/ohcnetwork/leaderboard-data ## required
+  # theme: https://cdn.ohc.network/assets/leaderboard/theme.css ## optional - URL to custom theme CSS file
   roles: ## required (minimum 1 role)
     core:
       name: Core ## required

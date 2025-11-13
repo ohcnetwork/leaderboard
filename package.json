@@ -4,16 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "pnpm prebuild && next dev",
+    "build": "pnpm prebuild && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "prebuild": "tsx scripts/generate-icons.ts",
-    "db:exec": "tsx scripts/db-exec-stdin.ts"
+    "prebuild": "tsx scripts/generate-icons.ts && tsx scripts/get-theme.ts",
+    "db:exec": "tsx scripts/db-exec-stdin.ts",
+    "db:prepare": "tsx scripts/db-prepare.ts",
+    "db:import": "tsx scripts/db-import.ts",
+    "db:export": "tsx scripts/db-export.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.3.12",

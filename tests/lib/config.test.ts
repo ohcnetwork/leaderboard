@@ -18,6 +18,7 @@ import {
   invalidCronConfig,
   roleMissingNameConfig,
   additionalPropertiesConfig,
+  invalidThemeConfig,
 } from "../fixtures/configs";
 import {
   backupConfig,
@@ -278,6 +279,28 @@ describe("Config Validation", () => {
         expect(() => getConfig()).not.toThrow();
       }
     });
+
+    it("should accept configuration with valid theme URL", () => {
+      const configWithTheme = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          theme: "https://cdn.example.com/theme.css",
+        },
+      };
+
+      replaceConfigWith(configWithTheme);
+      const config = getConfig();
+
+      expect(config.leaderboard.theme).toBe("https://cdn.example.com/theme.css");
+    });
+
+    it("should accept configuration without theme (optional field)", () => {
+      replaceConfigWith(minimalValidConfig);
+      const config = getConfig();
+
+      expect(config.leaderboard.theme).toBeUndefined();
+    });
   });
 
   describe("Invalid Configurations - Missing Required Fields", () => {
@@ -443,6 +466,21 @@ describe("Config Validation", () => {
         const message = (error as Error).message;
         expect(
           hasValidationError(message, "/scrapers/github/cron", "pattern")
+        ).toBe(true);
+      }
+    });
+
+    it("should reject configuration with invalid theme URL format", () => {
+      replaceConfigWith(invalidThemeConfig);
+
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(
+          hasValidationError(message, "/leaderboard/theme", "format")
         ).toBe(true);
       }
     });

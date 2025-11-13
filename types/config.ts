@@ -36,6 +36,7 @@ export interface LeaderboardConfig {
   roles: Record<string, RoleConfig>;
   top_contributors?: string[];
   social_profiles?: Record<string, SocialProfileConfig>;
+  theme?: string;
 }
 
 export interface ScraperInstanceConfig {

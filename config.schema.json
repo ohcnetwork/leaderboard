@@ -168,6 +168,11 @@
             }
           },
           "additionalProperties": false
+        },
+        "theme": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional URL to a custom theme CSS file"
         }
       },
       "additionalProperties": false

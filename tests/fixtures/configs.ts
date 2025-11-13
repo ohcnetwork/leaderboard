@@ -342,3 +342,29 @@ export const additionalPropertiesConfig = {
     },
   },
 };
+
+/**
+ * Configuration with invalid theme URL
+ */
+export const invalidThemeConfig = {
+  org: {
+    name: "Test",
+    description: "Test org",
+    url: "https://test.org",
+    logo_url: "https://test.org/logo.png",
+  },
+  meta: {
+    title: "Test",
+    description: "Test",
+    image_url: "https://test.org/image.png",
+    site_url: "https://test.org",
+    favicon_url: "https://test.org/favicon.ico",
+  },
+  leaderboard: {
+    data_source: "https://github.com/test/data",
+    roles: {
+      user: { name: "User" },
+    },
+    theme: "not-a-valid-url",
+  },
+};

@@ -189,66 +189,6 @@ export async function getContributor(username: string) {
 }
 
 /**
- * Upsert activity to the database
- * @param activity - The activity to upsert
- */
-export async function upsertActivity(...activities: Activity[]) {
-  const db = getDb();
-
-  await db.query(
-    `
-    INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
-    VALUES ${activities
-      .map(
-        (a) =>
-          `('${a.slug}', '${a.contributor}', '${a.activity_definition}', '${
-            a.title
-          }', '${a.occured_at}', '${a.link}', '${a.text}', ${
-            a.points
-          }, '${JSON.stringify(a.meta)}')`
-      )
-      .join(",")}
-    ON CONFLICT (slug) DO UPDATE SET contributor = EXCLUDED.contributor, activity_definition = EXCLUDED.activity_definition, title = EXCLUDED.title, occured_at = EXCLUDED.occured_at, link = EXCLUDED.link, text = EXCLUDED.text, points = EXCLUDED.points, meta = EXCLUDED.meta;
-  `,
-    [],
-    {
-      serializers: {
-        [types.DATE]: (date: Date) => date.toISOString(),
-      },
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
-      },
-    }
-  );
-}
-
-/**
- * List all activities from the database
- * @returns The list of all activities
- * @deprecated TODO: remove this as we'd never want all information about all activities when listing.
- */
-export async function listActivities() {
-  const db = getDb();
-
-  const result = await db.query<Activity>(
-    `
-    SELECT * FROM activity;
-  `,
-    [],
-    {
-      serializers: {
-        [types.DATE]: (date: Date) => date.toISOString(),
-      },
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
-      },
-    }
-  );
-
-  return result.rows;
-}
-
-/**
  * Activity with contributor details
  */
 export interface ActivityWithContributor extends Activity {

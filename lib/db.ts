@@ -35,10 +35,11 @@ export async function createTables() {
         username                VARCHAR PRIMARY KEY,
         name                    VARCHAR,
         role                    VARCHAR,
+        title                   VARCHAR,
         avatar_url              VARCHAR,
-        profile_url             VARCHAR,
-        email                   VARCHAR,
         bio                     TEXT,
+        social_profiles         JSON,
+        joining_date            DATE,
         meta                    JSON
     );
 
@@ -110,17 +111,49 @@ export async function listActivityDefinitions() {
 export async function upsertContributor(...contributors: Contributor[]) {
   const db = getDb();
 
+  // Helper function to escape single quotes in SQL strings
+  const escapeSql = (value: string | null | undefined): string => {
+    if (value === null || value === undefined) return "NULL";
+    return `'${String(value).replace(/'/g, "''")}'`;
+  };
+
+  // Helper function to format JSON for SQL
+  const formatJson = (
+    value: Record<string, string> | null | undefined
+  ): string => {
+    if (value === null || value === undefined) return "NULL";
+    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
+  };
+
+  // Helper function to format date for SQL
+  const formatDate = (value: Date | null | undefined): string => {
+    if (value === null || value === undefined) return "NULL";
+    return `'${value.toISOString().split("T")[0]}'`;
+  };
+
   await db.query(`
-    INSERT INTO contributor (username, name, role, avatar_url, profile_url, email, bio, meta)
+    INSERT INTO contributor (username, name, role, title, avatar_url, bio, social_profiles, joining_date, meta)
     VALUES ${contributors
       .map(
         (c) =>
-          `('${c.username}', '${c.name}', '${c.role}', '${c.avatar_url}', '${
-            c.profile_url
-          }', '${c.email}', '${c.bio}', '${JSON.stringify(c.meta)}')`
+          `(${escapeSql(c.username)}, ${escapeSql(c.name)}, ${escapeSql(
+            c.role
+          )}, ${escapeSql(c.title)}, ${escapeSql(c.avatar_url)}, ${escapeSql(
+            c.bio
+          )}, ${formatJson(c.social_profiles)}, ${formatDate(
+            c.joining_date
+          )}, ${formatJson(c.meta)})`
       )
       .join(",")}
-    ON CONFLICT (username) DO UPDATE SET name = EXCLUDED.name, role = EXCLUDED.role, avatar_url = EXCLUDED.avatar_url, profile_url = EXCLUDED.profile_url, email = EXCLUDED.email, bio = EXCLUDED.bio, meta = EXCLUDED.meta;
+    ON CONFLICT (username) DO UPDATE SET 
+      name = EXCLUDED.name, 
+      role = EXCLUDED.role, 
+      title = EXCLUDED.title,
+      avatar_url = EXCLUDED.avatar_url, 
+      bio = EXCLUDED.bio, 
+      social_profiles = EXCLUDED.social_profiles,
+      joining_date = EXCLUDED.joining_date,
+      meta = EXCLUDED.meta;
   `);
 }
 

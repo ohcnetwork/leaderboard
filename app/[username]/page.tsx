@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: ContributorPageProps) {
     authors: [
       {
         name: contributor.name || contributor.username,
-        url: contributor.profile_url || undefined,
+        url: contributor.avatar_url || undefined,
       },
     ],
     creator: contributor.name || contributor.username,
@@ -97,7 +97,7 @@ export async function generateMetadata({ params }: ContributorPageProps) {
       title,
       description,
       images: [`${profileUrl}/opengraph-image`],
-      creator: contributor.profile_url?.includes("twitter.com")
+      creator: contributor.avatar_url?.includes("twitter.com")
         ? `@${contributor.username}`
         : undefined,
     },
@@ -165,8 +165,7 @@ export default async function ContributorPage({
       alternateName: contributor.username,
       image: contributor.avatar_url,
       description: contributor.bio,
-      email: contributor.email,
-      url: contributor.profile_url,
+      url: contributor.avatar_url,
       memberOf: {
         "@type": "Organization",
         name: config.org.name,
@@ -227,22 +226,11 @@ export default async function ContributorPage({
                     </span>
                   </div>
                 )}
-                {contributor.email && (
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Mail className="h-4 w-4" />
-                    <a
-                      href={`mailto:${contributor.email}`}
-                      className="hover:text-primary"
-                    >
-                      {contributor.email}
-                    </a>
-                  </div>
-                )}
-                {contributor.profile_url && (
+                {contributor.avatar_url && (
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <ExternalLink className="h-4 w-4" />
                     <a
-                      href={contributor.profile_url}
+                      href={contributor.avatar_url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-primary"

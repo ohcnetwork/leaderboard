@@ -6,7 +6,11 @@ let dbInstance: PGlite | null = null;
 /**
  * Initialize and return PGlite database instance
  */
-export function getDb(dataPath: string = "./db-data"): PGlite {
+export function getDb(): PGlite {
+  const dataPath = process.env.DB_DATA_PATH || "../db-data";
+
+  // Initialize the database if it doesn't exist, otherwise return the existing instance.
+  // This is to avoid creating a new database instance for each call to getDb().
   if (!dbInstance) {
     dbInstance = new PGlite(dataPath);
   }

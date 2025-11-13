@@ -25,6 +25,7 @@
 - open graph metadata for pages
 
 - script to migrate old leaderboard eod data to new one
+- github scraper: exclude repos[] as env
 - script to migrate old profile data to new one
     - update config.yaml to support social_profiles to store svg_urls (also update tests and schema.json)
     - table: add col. social_profile (JSON), joining_date (DATE), title (VARCHAR), bio (TEXT)
@@ -34,9 +35,9 @@
       slack_user_id: U89999,
       profile_url: https://nikhila-c.com
       social_medias: {
-        linked_in: https://linkedin/nikhila
-        ohc-leaderboard: https://contributors.ohc.network/rithviknishad
-
+        github: git/rithviknishad
+        portfolio: https://rithviknishad.dve
+        tree-nation: https://lskfjdlfkgj.com
       }
     }
 
@@ -96,3 +97,13 @@ contributor_badge:
     contributor:       rithviknishad
     variant:           default
     achieved_on:       2025-11-12
+
+scraper run workflow
+
+before this, main leaderboard's db-import should be called to create tables and import contributors
+
+ - pnpm run import --db="../db-data"
+ - pnpm run scrape --db="../db-data"
+ - pnpm run export --db="../db-data"
+
+after this, main leaderboard's db-export should be called to dump leaderboard managed datas such as contributors

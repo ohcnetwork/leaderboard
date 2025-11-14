@@ -50,7 +50,7 @@ function generateWorkflow(): string {
           fetch-depth: 1`
       );
     })
-    .join("\n");
+    .join("\n\n");
 
   // Generate cache-dependency-path entries
   const cacheDependencyPaths = [
@@ -92,8 +92,11 @@ jobs:
       LEADERBOARD_PATH: \${{ github.workspace }}/leaderboard
       LEADERBOARD_DATA_PATH: \${{ github.workspace }}/leaderboard-data
       SCRAPER_PATHS: ${scraperPaths}
+
       SCRAPE_DAYS: \${{ inputs.days }}
+
 ${envVarsSection}
+
     steps:
       - name: 📥 Checkout Leaderboard
         uses: actions/checkout@v5
@@ -173,12 +176,15 @@ ${scraperCheckoutSteps}
         run: |
           cd \${{ env.LEADERBOARD_DATA_PATH }}
           git add -A
+
           # commit only if there are actual changes
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
+
           git commit -m "Update leaderboard data"
+
           # Ensure pushing to the correct branch (default = main)
           git push origin HEAD:main
 `;

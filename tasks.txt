@@ -24,29 +24,15 @@
 - sitemap generation
 - open graph metadata for pages
 
-- script to migrate old leaderboard eod data to new one
+- setup leaderboard github app for commiting
+- github scraper: discussions
+- rename DB_DATA_PATH and FLAT_DATA_PATH to PGLITE_PATH and LEADERBOARD_DATA_PATH
 - github scraper: exclude repos[] as env
-- script to migrate old profile data to new one
-    - update config.yaml to support social_profiles to store svg_urls (also update tests and schema.json)
-    - table: add col. social_profile (JSON), joining_date (DATE), title (VARCHAR), bio (TEXT)
-    - script to migrate from old leaderboard format to new one.
-
-    {
-      slack_user_id: U89999,
-      profile_url: https://nikhila-c.com
-      social_medias: {
-        github: git/rithviknishad
-        portfolio: https://rithviknishad.dve
-        tree-nation: https://lskfjdlfkgj.com
-      }
-    }
-
-
-- scraper db ingest, and dump scripts
 - update scraper to respect X-Poll-Interval
 - setup pre-commit hooks and prettier configs
 - script to update github username of old user, or auto do it by: traverse all contributors, find all contributors with duplicate github_pk_id, and merge them into single one
 - setup sentry error reporting for scraper
+- setup branch protection
 
 
 
@@ -97,13 +83,3 @@ contributor_badge:
     contributor:       rithviknishad
     variant:           default
     achieved_on:       2025-11-12
-
-scraper run workflow
-
-before this, main leaderboard's db-import should be called to create tables and import contributors
-
- - pnpm run import --db="../db-data"
- - pnpm run scrape --db="../db-data"
- - pnpm run export --db="../db-data"
-
-after this, main leaderboard's db-export should be called to dump leaderboard managed datas such as contributors

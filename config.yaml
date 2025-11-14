@@ -64,17 +64,17 @@ leaderboard:
     email:
       icon: mail
 
-# Scraper configurations
-scrapers: ## optional
-  github:
-    cron: 0 0 * * *
-    source: https://github.com/ohcnetwork/leaderboard-github-scraper ## required
-    ## attributes specifically defined by the github scraper (can be any number of unknown attributes)
-    org: ohcnetwork
-    token: ${{ GITHUB_TOKEN }}
-
-  slack:
-    cron: 0 0 * * * ## required
-    source: https://github.com/ohcnetwork/leaderboard-slack-scraper ## required
-    ## attributes specifically defined by the slack scraper (can be any number of unknown attributes)
-    api_key: ${{ SLACK_API_KEY }}
+# Scraper configuration for GitHub Actions workflow generation
+scraper: ## optional
+  schedule: 0 */12 * * * ## required - cron expression for scheduled execution
+  scrapers: ## required - list of scrapers to run
+    - name: GitHub Scraper
+      repository: ohcnetwork/leaderboard-github-scraper
+      envs:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ORG: ${{ github.repository_owner }}
+    - name: Slack Scraper
+      repository: ohcnetwork/leaderboard-slack-scraper
+      envs:
+        SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+        SLACK_CHANNEL: ${{ vars.SLACK_EOD_CHANNEL }}

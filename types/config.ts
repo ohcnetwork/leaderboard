@@ -39,17 +39,26 @@ export interface LeaderboardConfig {
   theme?: string;
 }
 
-export interface ScraperInstanceConfig {
-  source: string; // Git URL or relative local path
-  cron?: string; // Cron expression (optional - if not specified, manually triggered)
-  [key: string]: string | undefined; // Additional scraper-specific attributes
+export interface GitIdentityConfig {
+  "user.name"?: string;
+  "user.email"?: string;
 }
 
-export type ScraperConfig = Record<string, ScraperInstanceConfig>;
+export interface ScraperInstanceConfig {
+  name: string;
+  repository: string; // GitHub repository in format 'owner/repo'
+  envs: Record<string, string>; // Environment variables
+}
+
+export interface ScraperConfig {
+  schedule: string; // Cron expression
+  git?: GitIdentityConfig; // Optional git identity (defaults to github-actions[bot])
+  scrapers: ScraperInstanceConfig[]; // List of scrapers
+}
 
 export interface Config {
   org: OrgConfig;
   meta: MetaConfig;
   leaderboard: LeaderboardConfig;
-  scrapers?: ScraperConfig;
+  scraper?: ScraperConfig;
 }

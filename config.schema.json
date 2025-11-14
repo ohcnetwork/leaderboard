@@ -177,28 +177,57 @@
       },
       "additionalProperties": false
     },
-    "scrapers": {
+    "scraper": {
       "type": "object",
-      "description": "Scraper configurations - each key is a unique scraper identifier",
-      "patternProperties": {
-        "^[a-z_]+$": {
+      "description": "Scraper configuration for GitHub Actions workflow generation",
+      "required": ["schedule", "scrapers"],
+      "properties": {
+        "schedule": {
+          "type": "string",
+          "description": "Cron expression for scheduled execution",
+          "pattern": "^(@(annually|yearly|monthly|weekly|daily|hourly|reboot))|(@every (\\d+(ns|us|µs|ms|s|m|h))+)|((((\\d+,)+\\d+|(\\d+([/\\-])\\d+)|\\d+|\\*) ?){5,7})$"
+        },
+        "git": {
           "type": "object",
-          "description": "Individual scraper configuration",
-          "required": ["source"],
+          "description": "Git identity configuration for commits (optional - defaults to github-actions[bot])",
           "properties": {
-            "source": {
+            "user.name": {
               "type": "string",
-              "description": "Git URL or relative local path to the scraper"
+              "description": "Git user name for commits"
             },
-            "cron": {
+            "user.email": {
               "type": "string",
-              "description": "Cron expression for scheduled execution (optional - if not specified, scraper is manually triggered)",
-              "pattern": "^(@(annually|yearly|monthly|weekly|daily|hourly|reboot))|(@every (\\d+(ns|us|µs|ms|s|m|h))+)|((((\\d+,)+\\d+|(\\d+([/\\-])\\d+)|\\d+|\\*) ?){5,7})$"
+              "description": "Git user email for commits"
             }
           },
-          "additionalProperties": {
-            "type": "string",
-            "description": "Scraper-specific configuration attributes (supports template variables like ${{ VAR_NAME }})"
+          "additionalProperties": false
+        },
+        "scrapers": {
+          "type": "array",
+          "description": "List of scrapers to run",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["name", "repository", "envs"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Display name for the scraper"
+              },
+              "repository": {
+                "type": "string",
+                "description": "GitHub repository in format 'owner/repo'",
+                "pattern": "^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+$"
+              },
+              "envs": {
+                "type": "object",
+                "description": "Environment variables for the scraper (supports GitHub Actions expressions like ${{ secrets.TOKEN }})",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
           }
         }
       },

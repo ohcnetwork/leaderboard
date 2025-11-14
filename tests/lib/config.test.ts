@@ -14,8 +14,13 @@ import {
   invalidUrlsConfig,
   invalidEmailConfig,
   invalidDateConfig,
-  scraperMissingSourceConfig,
+  scraperMissingScheduleConfig,
+  scraperMissingScrapersConfig,
   invalidCronConfig,
+  scraperInstanceMissingNameConfig,
+  scraperInstanceMissingRepositoryConfig,
+  scraperInstanceMissingEnvsConfig,
+  invalidRepositoryFormatConfig,
   roleMissingNameConfig,
   additionalPropertiesConfig,
   invalidThemeConfig,
@@ -24,8 +29,6 @@ import {
   backupConfig,
   restoreConfig,
   replaceConfigWith,
-  setTestEnvVars,
-  clearTestEnvVars,
   hasValidationError,
   extractErrorPaths,
 } from "../utils/test-helpers";
@@ -56,7 +59,9 @@ describe("Config Validation", () => {
       expect(config.org.name).toBe("Test Organization");
       expect(config.meta.title).toBe("Test Leaderboard");
       expect(config.leaderboard.roles).toHaveProperty("admin");
-      expect(config.scrapers).toHaveProperty("github");
+      expect(config.scraper).toBeDefined();
+      expect(config.scraper?.schedule).toBe("0 0 * * *");
+      expect(config.scraper?.scrapers).toHaveLength(2);
     });
 
     it("should load a minimal valid configuration (only required fields)", () => {
@@ -66,7 +71,7 @@ describe("Config Validation", () => {
       expect(config).toBeDefined();
       expect(config.org.name).toBe("Minimal Org");
       expect(config.org.socials).toBeUndefined();
-      expect(config.scrapers).toBeUndefined();
+      expect(config.scraper).toBeUndefined();
     });
 
     it("should cache the configuration on subsequent calls", () => {
@@ -195,91 +200,6 @@ describe("Config Validation", () => {
       expect(hiddenRoles).toEqual([]);
     });
 
-    it("should accept scrapers with only required source field", () => {
-      const configWithMinimalScraper = {
-        ...minimalValidConfig,
-        scrapers: {
-          custom: {
-            source: "https://github.com/test/scraper",
-          },
-        },
-      };
-
-      replaceConfigWith(configWithMinimalScraper);
-      const config = getConfig();
-
-      expect(config.scrapers?.custom?.source).toBe(
-        "https://github.com/test/scraper"
-      );
-      expect(config.scrapers?.custom?.cron).toBeUndefined();
-    });
-
-    it("should accept scrapers with cron expression", () => {
-      const configWithCron = {
-        ...minimalValidConfig,
-        scrapers: {
-          scheduled: {
-            source: "./local/scraper",
-            cron: "0 0 * * *",
-          },
-        },
-      };
-
-      replaceConfigWith(configWithCron);
-      const config = getConfig();
-
-      expect(config.scrapers?.scheduled?.cron).toBe("0 0 * * *");
-    });
-
-    it("should accept scrapers with custom attributes", () => {
-      const configWithCustomAttrs = {
-        ...minimalValidConfig,
-        scrapers: {
-          github: {
-            source: "https://github.com/test/scraper",
-            org: "testorg",
-            token: "${{ GITHUB_TOKEN }}",
-            custom_field: "custom_value",
-          },
-        },
-      };
-
-      replaceConfigWith(configWithCustomAttrs);
-      const config = getConfig();
-
-      expect(config.scrapers?.github?.org).toBe("testorg");
-      expect(config.scrapers?.github?.token).toBe("${{ GITHUB_TOKEN }}");
-      expect(config.scrapers?.github?.custom_field).toBe("custom_value");
-    });
-
-    it("should accept various valid cron expressions", () => {
-      const validCronExpressions = [
-        "0 0 * * *", // Standard 5-field
-        "0 0 0 * * *", // 6-field with seconds
-        "*/5 * * * *", // Every 5 minutes
-        "0 0 1 * *", // First day of month
-        "@daily", // Named schedule
-        "@hourly", // Named schedule
-        "@weekly", // Named schedule
-      ];
-
-      for (const cron of validCronExpressions) {
-        clearConfigCache();
-        const configWithCron = {
-          ...minimalValidConfig,
-          scrapers: {
-            test: {
-              source: "./scraper",
-              cron,
-            },
-          },
-        };
-
-        replaceConfigWith(configWithCron);
-        expect(() => getConfig()).not.toThrow();
-      }
-    });
-
     it("should accept configuration with valid theme URL", () => {
       const configWithTheme = {
         ...minimalValidConfig,
@@ -367,21 +287,6 @@ describe("Config Validation", () => {
       }
     });
 
-    it("should reject configuration with scraper missing source field", () => {
-      replaceConfigWith(scraperMissingSourceConfig);
-
-      expect(() => getConfig()).toThrow(/Configuration validation failed/);
-
-      try {
-        getConfig();
-      } catch (error) {
-        const message = (error as Error).message;
-        expect(hasValidationError(message, "/scrapers/github", "source")).toBe(
-          true
-        );
-      }
-    });
-
     it("should reject configuration missing top-level required sections", () => {
       const missingTopLevel = {
         org: {
@@ -455,20 +360,6 @@ describe("Config Validation", () => {
       }
     });
 
-    it("should reject configuration with invalid cron expression", () => {
-      replaceConfigWith(invalidCronConfig);
-
-      expect(() => getConfig()).toThrow(/Configuration validation failed/);
-
-      try {
-        getConfig();
-      } catch (error) {
-        const message = (error as Error).message;
-        expect(
-          hasValidationError(message, "/scrapers/github/cron", "pattern")
-        ).toBe(true);
-      }
-    });
 
     it("should reject configuration with invalid theme URL format", () => {
       replaceConfigWith(invalidThemeConfig);
@@ -512,188 +403,189 @@ describe("Config Validation", () => {
     });
   });
 
-  describe("Environment Variable Substitution", () => {
-    it("should substitute environment variables in scraper config", () => {
-      setTestEnvVars({
-        GITHUB_TOKEN: "test-token-123",
-        SLACK_API_KEY: "test-key-456",
-      });
-
-      replaceConfigWith(validConfig);
-      const config = getConfig();
-
-      expect(config.scrapers?.github?.token).toBe("test-token-123");
-      expect(config.scrapers?.slack?.api_key).toBe("test-key-456");
-
-      clearTestEnvVars(["GITHUB_TOKEN", "SLACK_API_KEY"]);
-    });
-
-    it("should keep template variable if env var is not set", () => {
-      // Make sure env vars are not set
-      clearTestEnvVars(["GITHUB_TOKEN", "SLACK_API_KEY"]);
-
-      replaceConfigWith(validConfig);
-      const config = getConfig();
-
-      expect(config.scrapers?.github?.token).toBe("${{ GITHUB_TOKEN }}");
-      expect(config.scrapers?.slack?.api_key).toBe("${{ SLACK_API_KEY }}");
-    });
-
-    it("should substitute env vars recursively", () => {
-      setTestEnvVars({
-        TEST_VAR: "substituted-value",
-      });
-
-      const configWithEnvVar = {
-        ...minimalValidConfig,
-        scrapers: {
-          test: {
-            source: "./scraper",
-            value: "${{ TEST_VAR }}",
-          },
-        },
-      };
-
-      replaceConfigWith(configWithEnvVar);
-      const config = getConfig();
-
-      expect(config.scrapers?.test?.value).toBe("substituted-value");
-
-      clearTestEnvVars(["TEST_VAR"]);
-    });
-
-    it("should handle env vars with underscores and numbers", () => {
-      setTestEnvVars({
-        API_KEY_V2: "key-v2",
-        TOKEN_123: "token-123",
-      });
-
-      const configWithComplexEnvVars = {
-        ...minimalValidConfig,
-        scrapers: {
-          test_one: {
-            source: "./scraper",
-            key: "${{ API_KEY_V2 }}",
-          },
-          test_two: {
-            source: "./scraper",
-            token: "${{ TOKEN_123 }}",
-          },
-        },
-      };
-
-      replaceConfigWith(configWithComplexEnvVars);
-      const config = getConfig();
-
-      expect(config.scrapers?.test_one?.key).toBe("key-v2");
-      expect(config.scrapers?.test_two?.token).toBe("token-123");
-
-      clearTestEnvVars(["API_KEY_V2", "TOKEN_123"]);
-    });
-
-    it("should not substitute partial matches", () => {
-      const configWithPartialMatch = {
-        ...minimalValidConfig,
-        scrapers: {
-          test: {
-            source: "./scraper",
-            value1: "prefix ${{ VAR }} suffix",
-            value2: "${{VAR}}",
-            value3: "${{ VAR",
-          },
-        },
-      };
-
-      replaceConfigWith(configWithPartialMatch);
-      const config = getConfig();
-
-      // These should not be substituted as they don't match the exact pattern
-      expect(config.scrapers?.test?.value1).toBe("prefix ${{ VAR }} suffix");
-      expect(config.scrapers?.test?.value2).toBe("${{VAR}}");
-      expect(config.scrapers?.test?.value3).toBe("${{ VAR");
-    });
-  });
 
   describe("Scraper Configuration Validation", () => {
-    it("should accept scraper with git URL source", () => {
-      const configWithGitSource = {
-        ...minimalValidConfig,
-        scrapers: {
-          remote: {
-            source: "https://github.com/org/scraper",
-          },
-        },
-      };
-
-      replaceConfigWith(configWithGitSource);
+    it("should accept valid scraper configuration", () => {
+      replaceConfigWith(validConfig);
       const config = getConfig();
 
-      expect(config.scrapers?.remote?.source).toBe(
-        "https://github.com/org/scraper"
+      expect(config.scraper).toBeDefined();
+      expect(config.scraper?.schedule).toBe("0 0 * * *");
+      expect(config.scraper?.scrapers).toHaveLength(2);
+      expect(config.scraper?.scrapers[0]?.name).toBe("GitHub Scraper");
+      expect(config.scraper?.scrapers[0]?.repository).toBe(
+        "testorg/github-scraper"
       );
+      expect(config.scraper?.scrapers[0]?.envs).toHaveProperty("GITHUB_TOKEN");
     });
 
-    it("should accept scraper with local path source", () => {
-      const configWithLocalSource = {
+    it("should accept scraper with git identity configuration", () => {
+      const configWithGitIdentity = {
         ...minimalValidConfig,
-        scrapers: {
-          local: {
-            source: "./scrapers/custom",
+        scraper: {
+          schedule: "0 0 * * *",
+          git: {
+            "user.name": "Custom Bot",
+            "user.email": "bot@example.com",
           },
+          scrapers: [
+            {
+              name: "Test Scraper",
+              repository: "testorg/scraper",
+              envs: {
+                TOKEN: "${{ secrets.TOKEN }}",
+              },
+            },
+          ],
         },
       };
 
-      replaceConfigWith(configWithLocalSource);
+      replaceConfigWith(configWithGitIdentity);
       const config = getConfig();
 
-      expect(config.scrapers?.local?.source).toBe("./scrapers/custom");
+      expect(config.scraper?.git?.["user.name"]).toBe("Custom Bot");
+      expect(config.scraper?.git?.["user.email"]).toBe("bot@example.com");
     });
 
-    it("should accept multiple scrapers with different configurations", () => {
-      const configWithMultipleScrapers = {
-        ...minimalValidConfig,
-        scrapers: {
-          github: {
-            source: "https://github.com/org/github-scraper",
-            cron: "0 0 * * *",
-            org: "testorg",
-          },
-          slack: {
-            source: "./scrapers/slack",
-            api_key: "test-key",
-          },
-          custom: {
-            source: "https://github.com/org/custom",
-            cron: "@daily",
-            custom_attr1: "value1",
-            custom_attr2: "value2",
-          },
-        },
-      };
-
-      replaceConfigWith(configWithMultipleScrapers);
+    it("should accept multiple scrapers", () => {
+      replaceConfigWith(validConfig);
       const config = getConfig();
 
-      expect(Object.keys(config.scrapers!)).toHaveLength(3);
-      expect(config.scrapers?.github?.cron).toBe("0 0 * * *");
-      expect(config.scrapers?.slack?.cron).toBeUndefined();
-      expect(config.scrapers?.custom?.custom_attr1).toBe("value1");
+      expect(config.scraper?.scrapers).toHaveLength(2);
+      expect(config.scraper?.scrapers[0]?.name).toBe("GitHub Scraper");
+      expect(config.scraper?.scrapers[1]?.name).toBe("Slack Scraper");
     });
 
-    it("should validate scraper key format (lowercase with underscores)", () => {
-      const configWithInvalidKey = {
-        ...minimalValidConfig,
-        scrapers: {
-          "Invalid-Key": {
-            source: "./scraper",
+    it("should accept various valid cron expressions", () => {
+      const validCronExpressions = [
+        "0 0 * * *", // Standard 5-field
+        "0 0 0 * * *", // 6-field with seconds
+        "*/5 * * * *", // Every 5 minutes
+        "0 0 1 * *", // First day of month
+        "@daily", // Named schedule
+        "@hourly", // Named schedule
+        "@weekly", // Named schedule
+      ];
+
+      for (const cron of validCronExpressions) {
+        clearConfigCache();
+        const configWithCron = {
+          ...minimalValidConfig,
+          scraper: {
+            schedule: cron,
+            scrapers: [
+              {
+                name: "Test Scraper",
+                repository: "testorg/scraper",
+                envs: {
+                  TOKEN: "${{ secrets.TOKEN }}",
+                },
+              },
+            ],
           },
-        },
-      };
+        };
 
-      replaceConfigWith(configWithInvalidKey);
+        replaceConfigWith(configWithCron);
+        expect(() => getConfig()).not.toThrow();
+      }
+    });
 
-      // This should fail because scraper keys must match ^[a-z_]+$
+    it("should reject scraper missing required schedule field", () => {
+      replaceConfigWith(scraperMissingScheduleConfig);
+
       expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(message).toContain("/scraper");
+        expect(message).toContain("schedule");
+      }
+    });
+
+    it("should reject scraper missing required scrapers array", () => {
+      replaceConfigWith(scraperMissingScrapersConfig);
+
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(message).toContain("/scraper");
+        expect(message).toContain("scrapers");
+      }
+    });
+
+    it("should reject scraper instance missing required name field", () => {
+      replaceConfigWith(scraperInstanceMissingNameConfig);
+
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(message).toContain("/scraper/scrapers/0");
+        expect(message).toContain("name");
+      }
+    });
+
+    it("should reject scraper instance missing required repository field", () => {
+      replaceConfigWith(scraperInstanceMissingRepositoryConfig);
+
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(message).toContain("/scraper/scrapers/0");
+        expect(message).toContain("repository");
+      }
+    });
+
+    it("should reject scraper instance missing required envs field", () => {
+      replaceConfigWith(scraperInstanceMissingEnvsConfig);
+
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(message).toContain("/scraper/scrapers/0");
+        expect(message).toContain("envs");
+      }
+    });
+
+    it("should reject invalid repository format", () => {
+      replaceConfigWith(invalidRepositoryFormatConfig);
+
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(message).toContain("/scraper/scrapers/0/repository");
+        expect(message).toContain("pattern");
+      }
+    });
+
+    it("should reject invalid cron expression in schedule", () => {
+      replaceConfigWith(invalidCronConfig);
+
+      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+
+      try {
+        getConfig();
+      } catch (error) {
+        const message = (error as Error).message;
+        expect(message).toContain("/scraper/schedule");
+        expect(message).toContain("pattern");
+      }
     });
   });
 
@@ -820,17 +712,11 @@ describe("Config Validation", () => {
   });
 
   describe("Edge Cases", () => {
-    it("should handle empty scrapers object", () => {
-      const configWithEmptyScrapers = {
-        ...minimalValidConfig,
-        scrapers: {},
-      };
-
-      replaceConfigWith(configWithEmptyScrapers);
+    it("should handle configuration without scraper section", () => {
+      replaceConfigWith(minimalValidConfig);
       const config = getConfig();
 
-      expect(config.scrapers).toBeDefined();
-      expect(Object.keys(config.scrapers!)).toHaveLength(0);
+      expect(config.scraper).toBeUndefined();
     });
 
     it("should handle role with empty description", () => {

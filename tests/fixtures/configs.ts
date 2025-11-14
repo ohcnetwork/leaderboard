@@ -38,17 +38,25 @@ export const validConfig: Config = {
       },
     },
   },
-  scrapers: {
-    github: {
-      source: "https://github.com/testorg/github-scraper",
-      cron: "0 0 * * *",
-      org: "testorg",
-      token: "${{ GITHUB_TOKEN }}",
-    },
-    slack: {
-      source: "./scrapers/slack",
-      api_key: "${{ SLACK_API_KEY }}",
-    },
+  scraper: {
+    schedule: "0 0 * * *",
+    scrapers: [
+      {
+        name: "GitHub Scraper",
+        repository: "testorg/github-scraper",
+        envs: {
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}",
+          GITHUB_ORG: "${{ github.repository_owner }}",
+        },
+      },
+      {
+        name: "Slack Scraper",
+        repository: "testorg/slack-scraper",
+        envs: {
+          SLACK_API_KEY: "${{ secrets.SLACK_API_KEY }}",
+        },
+      },
+    ],
   },
 };
 
@@ -227,9 +235,9 @@ export const invalidDateConfig = {
 };
 
 /**
- * Configuration with scraper missing required source field
+ * Configuration with scraper missing required schedule field
  */
-export const scraperMissingSourceConfig = {
+export const scraperMissingScheduleConfig = {
   org: {
     name: "Test",
     description: "Test org",
@@ -249,17 +257,51 @@ export const scraperMissingSourceConfig = {
       user: { name: "User" },
     },
   },
-  scrapers: {
-    github: {
-      // Missing: source
-      cron: "0 0 * * *",
-      org: "testorg",
-    },
+  scraper: {
+    // Missing: schedule
+    scrapers: [
+      {
+        name: "Test Scraper",
+        repository: "testorg/scraper",
+        envs: {
+          TOKEN: "${{ secrets.TOKEN }}",
+        },
+      },
+    ],
   },
 };
 
 /**
- * Configuration with invalid cron expression
+ * Configuration with scraper missing required scrapers array
+ */
+export const scraperMissingScrapersConfig = {
+  org: {
+    name: "Test",
+    description: "Test org",
+    url: "https://test.org",
+    logo_url: "https://test.org/logo.png",
+  },
+  meta: {
+    title: "Test",
+    description: "Test",
+    image_url: "https://test.org/image.png",
+    site_url: "https://test.org",
+    favicon_url: "https://test.org/favicon.ico",
+  },
+  leaderboard: {
+    data_source: "https://github.com/test/data",
+    roles: {
+      user: { name: "User" },
+    },
+  },
+  scraper: {
+    schedule: "0 0 * * *",
+    // Missing: scrapers
+  },
+};
+
+/**
+ * Configuration with invalid cron expression in schedule
  */
 export const invalidCronConfig = {
   org: {
@@ -281,11 +323,163 @@ export const invalidCronConfig = {
       user: { name: "User" },
     },
   },
-  scrapers: {
-    github: {
-      source: "https://github.com/test/scraper",
-      cron: "invalid-cron",
+  scraper: {
+    schedule: "invalid-cron",
+    scrapers: [
+      {
+        name: "Test Scraper",
+        repository: "testorg/scraper",
+        envs: {
+          TOKEN: "${{ secrets.TOKEN }}",
+        },
+      },
+    ],
+  },
+};
+
+/**
+ * Configuration with scraper instance missing required name field
+ */
+export const scraperInstanceMissingNameConfig = {
+  org: {
+    name: "Test",
+    description: "Test org",
+    url: "https://test.org",
+    logo_url: "https://test.org/logo.png",
+  },
+  meta: {
+    title: "Test",
+    description: "Test",
+    image_url: "https://test.org/image.png",
+    site_url: "https://test.org",
+    favicon_url: "https://test.org/favicon.ico",
+  },
+  leaderboard: {
+    data_source: "https://github.com/test/data",
+    roles: {
+      user: { name: "User" },
     },
+  },
+  scraper: {
+    schedule: "0 0 * * *",
+    scrapers: [
+      {
+        // Missing: name
+        repository: "testorg/scraper",
+        envs: {
+          TOKEN: "${{ secrets.TOKEN }}",
+        },
+      },
+    ],
+  },
+};
+
+/**
+ * Configuration with scraper instance missing required repository field
+ */
+export const scraperInstanceMissingRepositoryConfig = {
+  org: {
+    name: "Test",
+    description: "Test org",
+    url: "https://test.org",
+    logo_url: "https://test.org/logo.png",
+  },
+  meta: {
+    title: "Test",
+    description: "Test",
+    image_url: "https://test.org/image.png",
+    site_url: "https://test.org",
+    favicon_url: "https://test.org/favicon.ico",
+  },
+  leaderboard: {
+    data_source: "https://github.com/test/data",
+    roles: {
+      user: { name: "User" },
+    },
+  },
+  scraper: {
+    schedule: "0 0 * * *",
+    scrapers: [
+      {
+        name: "Test Scraper",
+        // Missing: repository
+        envs: {
+          TOKEN: "${{ secrets.TOKEN }}",
+        },
+      },
+    ],
+  },
+};
+
+/**
+ * Configuration with scraper instance missing required envs field
+ */
+export const scraperInstanceMissingEnvsConfig = {
+  org: {
+    name: "Test",
+    description: "Test org",
+    url: "https://test.org",
+    logo_url: "https://test.org/logo.png",
+  },
+  meta: {
+    title: "Test",
+    description: "Test",
+    image_url: "https://test.org/image.png",
+    site_url: "https://test.org",
+    favicon_url: "https://test.org/favicon.ico",
+  },
+  leaderboard: {
+    data_source: "https://github.com/test/data",
+    roles: {
+      user: { name: "User" },
+    },
+  },
+  scraper: {
+    schedule: "0 0 * * *",
+    scrapers: [
+      {
+        name: "Test Scraper",
+        repository: "testorg/scraper",
+        // Missing: envs
+      },
+    ],
+  },
+};
+
+/**
+ * Configuration with invalid repository format (not owner/repo)
+ */
+export const invalidRepositoryFormatConfig = {
+  org: {
+    name: "Test",
+    description: "Test org",
+    url: "https://test.org",
+    logo_url: "https://test.org/logo.png",
+  },
+  meta: {
+    title: "Test",
+    description: "Test",
+    image_url: "https://test.org/image.png",
+    site_url: "https://test.org",
+    favicon_url: "https://test.org/favicon.ico",
+  },
+  leaderboard: {
+    data_source: "https://github.com/test/data",
+    roles: {
+      user: { name: "User" },
+    },
+  },
+  scraper: {
+    schedule: "0 0 * * *",
+    scrapers: [
+      {
+        name: "Test Scraper",
+        repository: "invalid-format-no-slash",
+        envs: {
+          TOKEN: "${{ secrets.TOKEN }}",
+        },
+      },
+    ],
   },
 };
 

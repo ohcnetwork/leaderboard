@@ -16,7 +16,8 @@
     "db:exec": "tsx scripts/db-exec-stdin.ts",
     "db:prepare": "tsx scripts/db-prepare.ts",
     "db:import": "tsx scripts/db-import.ts",
-    "db:export": "tsx scripts/db-export.ts"
+    "db:export": "tsx scripts/db-export.ts",
+    "generate:workflow": "tsx scripts/generate-github-workflow.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.3.12",

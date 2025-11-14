@@ -16,36 +16,7 @@ function getValidator() {
 }
 
 /**
- * Substitutes environment variables in the format ${{ VAR_NAME }}
- */
-function substituteEnvVars(obj: string | object): string | object {
-  if (typeof obj === "string") {
-    // Match ${{ VAR_NAME }} pattern (supports uppercase letters, numbers, and underscores)
-    const match = obj.match(/^\$\{\{\s*([A-Z0-9_]+)\s*\}\}$/);
-    if (match) {
-      const envVar = match[1]!;
-      return process.env[envVar] || obj;
-    }
-    return obj;
-  }
-
-  if (Array.isArray(obj)) {
-    return obj.map(substituteEnvVars);
-  }
-
-  if (obj !== null && typeof obj === "object") {
-    const result: Record<string, string | object> = {};
-    for (const [key, value] of Object.entries(obj)) {
-      result[key] = substituteEnvVars(value);
-    }
-    return result;
-  }
-
-  return obj;
-}
-
-/**
- * Loads and parses the config.yaml file with environment variable substitution
+ * Loads and parses the config.yaml file
  */
 export function getConfig(): Config {
   if (cachedConfig) {
@@ -75,8 +46,7 @@ export function getConfig(): Config {
     );
   }
 
-  // Substitute environment variables
-  cachedConfig = substituteEnvVars(rawConfig) as Config;
+  cachedConfig = rawConfig;
 
   return cachedConfig;
 }
@@ -95,7 +65,7 @@ export function getHiddenRoles(): string[] {
   const config = getConfig();
   return Object.entries(config.leaderboard.roles)
     .filter(([, roleConfig]) => roleConfig.hidden === true)
-    .map(([slug]) => slug);
+    .map(([, roleConfig]) => roleConfig.name);
 }
 
 /**
@@ -105,5 +75,5 @@ export function getVisibleRoles(): string[] {
   const config = getConfig();
   return Object.entries(config.leaderboard.roles)
     .filter(([, roleConfig]) => roleConfig.hidden !== true)
-    .map(([slug]) => slug);
+    .map(([, roleConfig]) => roleConfig.name);
 }

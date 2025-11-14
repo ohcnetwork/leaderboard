@@ -89,6 +89,7 @@ jobs:
     permissions:
       contents: write
     env:
+      PGLITE_DB_PATH: \${{ github.workspace }}/pglite-db
       LEADERBOARD_PATH: \${{ github.workspace }}/leaderboard
       LEADERBOARD_DATA_PATH: \${{ github.workspace }}/leaderboard-data
       SCRAPER_PATHS: ${scraperPaths}

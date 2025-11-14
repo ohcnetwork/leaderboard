@@ -40,10 +40,10 @@ function parseMarkdownWithFrontmatter(content: string): {
 }
 
 async function main() {
-  // Check for FLAT_DATA_PATH environment variable
-  const flatDataPath = process.env.FLAT_DATA_PATH;
+  // Check for LEADERBOARD_DATA_PATH environment variable
+  const flatDataPath = process.env.LEADERBOARD_DATA_PATH;
   if (!flatDataPath) {
-    throw new Error("FLAT_DATA_PATH environment variable is not set");
+    throw new Error("LEADERBOARD_DATA_PATH environment variable is not set");
   }
 
   // Check if contributors directory exists

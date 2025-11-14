@@ -8,10 +8,10 @@ import { mkdir, writeFile } from "fs/promises";
 async function main() {
   const db = getDb();
 
-  // Check for FLAT_DATA_PATH environment variable
-  const flatDataPath = process.env.FLAT_DATA_PATH;
+  // Check for LEADERBOARD_DATA_PATH environment variable
+  const flatDataPath = process.env.LEADERBOARD_DATA_PATH;
   if (!flatDataPath) {
-    throw new Error("FLAT_DATA_PATH environment variable is not set");
+    throw new Error("LEADERBOARD_DATA_PATH environment variable is not set");
   }
 
   // Create contributors directory

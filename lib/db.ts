@@ -7,11 +7,11 @@ let dbInstance: PGlite | null = null;
  * Initialize and return PGlite database instance
  */
 export function getDb(): PGlite {
-  const dataPath = process.env.DB_DATA_PATH;
+  const dataPath = process.env.PGLITE_DB_PATH;
 
   if (!dataPath) {
     throw Error(
-      "'DB_DATA_PATH' environment needs to be set with a path to the database data."
+      "'PGLITE_DB_PATH' environment needs to be set with a path to the database data."
     );
   }
 

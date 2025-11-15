@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function LeaderboardPage() {
-  redirect("/leaderboard/week");
+  permanentRedirect("/leaderboard/week");
 }
-

@@ -11,9 +11,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Filter, X } from "lucide-react";
+import { Filter, X, ChevronDown } from "lucide-react";
 import ActivityTimelineItem from "./ActivityTimelineItem";
 import DateRangeFilter from "@/components/DateRangeFilter";
+import {
+  groupActivitiesByMonth,
+  formatMonthHeader,
+  MonthKey,
+} from "@/lib/utils";
 
 const ACTIVITY_FILTER_STORAGE_KEY = "leaderboard_activity_type_filter";
 
@@ -28,6 +33,7 @@ export default function ActivityTimeline({
 }: ActivityTimelineProps) {
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
+  const [visibleMonths, setVisibleMonths] = useState<number>(1);
 
   // Initialize selectedActivityTypes from localStorage
   const [selectedActivityTypes, setSelectedActivityTypes] = useState<
@@ -104,6 +110,51 @@ export default function ActivityTimeline({
     });
   }, [activities, startDate, endDate, selectedActivityTypes]);
 
+  // Group filtered activities by month and paginate
+  const { visibleActivities, totalMonths, nextMonthName, shouldResetMonths } =
+    useMemo(() => {
+      const grouped = groupActivitiesByMonth(filteredActivities);
+      const monthKeys = Array.from(grouped.keys());
+
+      // Check if we need to reset visibleMonths (when filters reduce available months)
+      const needsReset =
+        visibleMonths > monthKeys.length && monthKeys.length > 0;
+
+      const visibleMonthKeys = monthKeys.slice(0, visibleMonths);
+
+      // Flatten visible months into a single array with month headers
+      const visible: Array<
+        | ContributorActivity
+        | { isMonthHeader: true; monthKey: MonthKey; count: number }
+      > = [];
+      visibleMonthKeys.forEach((monthKey) => {
+        const monthActivities = grouped.get(monthKey) || [];
+        visible.push({
+          isMonthHeader: true,
+          monthKey,
+          count: monthActivities.length,
+        });
+        visible.push(...monthActivities);
+      });
+
+      const nextMonth = monthKeys[visibleMonths];
+      const nextMonthFormatted = nextMonth
+        ? formatMonthHeader(nextMonth)
+        : null;
+
+      return {
+        visibleActivities: visible,
+        totalMonths: monthKeys.length,
+        nextMonthName: nextMonthFormatted,
+        shouldResetMonths: needsReset,
+      };
+    }, [filteredActivities, visibleMonths]);
+
+  // Reset visible months when filters significantly reduce available data
+  if (shouldResetMonths && visibleMonths !== 1) {
+    setVisibleMonths(1);
+  }
+
   const toggleActivityType = (activityType: string) => {
     const newSelected = new Set(selectedActivityTypes);
     if (newSelected.has(activityType)) {
@@ -118,10 +169,22 @@ export default function ActivityTimeline({
     setStartDate("");
     setEndDate("");
     setSelectedActivityTypes(new Set());
+    setVisibleMonths(1);
   };
 
   const hasActiveFilters =
     startDate !== "" || endDate !== "" || selectedActivityTypes.size > 0;
+
+  const loadMore = () => {
+    setVisibleMonths((prev) => prev + 1);
+  };
+
+  const hasMore = visibleMonths < totalMonths;
+
+  // Count visible activities (excluding month headers)
+  const visibleActivityCount = visibleActivities.filter(
+    (item) => !("isMonthHeader" in item)
+  ).length;
 
   return (
     <Card>
@@ -130,8 +193,14 @@ export default function ActivityTimeline({
           <div>
             <CardTitle>Activity Timeline</CardTitle>
             <p className="text-sm text-muted-foreground mt-1">
-              {filteredActivities.length} of {activities.length} activities
+              {visibleActivityCount} of {filteredActivities.length} activities
               {hasActiveFilters && " (filtered)"}
+              {totalMonths > 0 && (
+                <span className="ml-1">
+                  · {visibleMonths} of {totalMonths} month
+                  {totalMonths !== 1 ? "s" : ""}
+                </span>
+              )}
             </p>
           </div>
           <div className="flex items-center gap-2">
@@ -204,16 +273,45 @@ export default function ActivityTimeline({
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          {filteredActivities.length === 0 ? (
+          {visibleActivities.length === 0 ? (
             <p className="text-center text-muted-foreground py-8">
               {activities.length === 0
                 ? "No activities yet"
                 : "No activities match the selected filters"}
             </p>
           ) : (
-            filteredActivities.map((activity) => (
-              <ActivityTimelineItem key={activity.slug} activity={activity} />
-            ))
+            <>
+              {visibleActivities.map((item) => {
+                if ("isMonthHeader" in item) {
+                  return (
+                    <div
+                      key={`month-${item.monthKey}`}
+                      className="sticky top-0 z-10 -mx-6 px-6 py-3 bg-muted/50 backdrop-blur-sm border-y"
+                    >
+                      <h3 className="text-sm font-semibold">
+                        {formatMonthHeader(item.monthKey)}
+                        <span className="ml-2 text-xs font-normal text-muted-foreground">
+                          {item.count} activit{item.count !== 1 ? "ies" : "y"}
+                        </span>
+                      </h3>
+                    </div>
+                  );
+                }
+                return <ActivityTimelineItem key={item.slug} activity={item} />;
+              })}
+              {hasMore && (
+                <div className="pt-4 text-center">
+                  <Button
+                    variant="outline"
+                    onClick={loadMore}
+                    className="w-full sm:w-auto"
+                  >
+                    <ChevronDown className="h-4 w-4 mr-2" />
+                    Load More ({nextMonthName})
+                  </Button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </CardContent>

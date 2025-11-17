@@ -65,7 +65,7 @@ export function getHiddenRoles(): string[] {
   const config = getConfig();
   return Object.entries(config.leaderboard.roles)
     .filter(([, roleConfig]) => roleConfig.hidden === true)
-    .map(([, roleConfig]) => roleConfig.name);
+    .map(([slug]) => slug);
 }
 
 /**
@@ -75,5 +75,5 @@ export function getVisibleRoles(): string[] {
   const config = getConfig();
   return Object.entries(config.leaderboard.roles)
     .filter(([, roleConfig]) => roleConfig.hidden !== true)
-    .map(([, roleConfig]) => roleConfig.name);
+    .map(([slug]) => slug);
 }

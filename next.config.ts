@@ -13,6 +13,15 @@ const nextConfig: NextConfig = {
     // Limit worker threads to avoid PGlite concurrency issues
     cpus: 1,
   },
+  async redirects() {
+    return [
+      {
+        source: "/contributors/:username",
+        destination: "/:username",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -57,7 +57,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="min-h-screen flex flex-col">
-            <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
+            <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 z-50">
               <div className="container mx-auto px-4 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-6">
                   <Link href="/" className="flex items-center gap-3">

@@ -5,7 +5,7 @@ org:
   name: ohc.network ## required
   description: Open Healthcare Network(OHC) is an open-source platform that helps governments, hospitals, and innovators build connected healthcare systems faster, safer, and at national scale. ## required
   url: https://ohc.network ## required
-  logo_url: https://ohc.network/logo.png ## required
+  logo_url: https://raw.githubusercontent.com/ohcnetwork/branding/refs/heads/main/OHC/SVG/Open_Healthcrae_Network-color-logo-icon.svg ## required
   start_date: 2020-03-08 ## optional
   socials: ## optional
     github: https://github.com/ohcnetwork ## optional
@@ -25,7 +25,7 @@ meta:
 # Leaderboard related configurations
 leaderboard:
   data_source: https://github.com/ohcnetwork/leaderboard-data ## required
-  # theme: https://cdn.ohc.network/assets/leaderboard/theme.css ## optional - URL to custom theme CSS file
+  theme: https://raw.githubusercontent.com/ohcnetwork/leaderboard-data/refs/heads/main/leaderboard/theme.css ## optional - URL to custom theme CSS file
   roles: ## required (minimum 1 role)
     core:
       name: Core ## required

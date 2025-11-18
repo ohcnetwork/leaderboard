@@ -84,9 +84,9 @@ export default function ActivityBreakdown({
     }, {} as Record<string, { count: number; points: number }>);
   }, [filteredActivities]);
 
-  const entries = Object.entries(filteredBreakdown).sort(
-    (a, b) => b[1].count - a[1].count
-  );
+  const entries = Object.entries(filteredBreakdown)
+    .filter(([, data]) => data.points > 0)
+    .sort((a, b) => b[1].points - a[1].points);
 
   const totalActivities = entries.reduce(
     (sum, [, data]) => sum + data.count,
@@ -198,7 +198,7 @@ export default function ActivityBreakdown({
           <TooltipProvider>
             <div className="flex h-8 w-full overflow-hidden rounded-lg">
               {entries.map(([activityName, data], index) => {
-                const percentage = (data.count / totalActivities) * 100;
+                const percentage = (data.points / totalPoints) * 100;
                 return (
                   <Tooltip key={activityName} delayDuration={100}>
                     <TooltipTrigger asChild>

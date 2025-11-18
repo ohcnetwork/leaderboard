@@ -325,10 +325,10 @@ export default function LeaderboardView({
                       isTopThree && "border-primary/50"
                     )}
                   >
-                    <CardContent className="p-6">
+                    <CardContent>
                       <div className="flex items-center gap-6">
                         {/* Rank */}
-                        <div className="flex items-center justify-center w-12 h-12 shrink-0">
+                        <div className="flex items-center justify-center size-12 shrink-0">
                           {getRankIcon(rank) || (
                             <span className="text-2xl font-bold text-muted-foreground">
                               {rank}
@@ -337,7 +337,7 @@ export default function LeaderboardView({
                         </div>
 
                         {/* Avatar */}
-                        <Avatar className="h-14 w-14 shrink-0">
+                        <Avatar className="size-14 shrink-0">
                           <AvatarImage
                             src={entry.avatar_url || undefined}
                             alt={entry.name || entry.username}

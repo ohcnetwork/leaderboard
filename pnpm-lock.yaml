@@ -11,6 +11,9 @@ importers:
       '@electric-sql/pglite':
         specifier: ^0.3.14
         version: 0.3.14
+      '@electric-sql/pglite-tools':
+        specifier: ^0.2.19
+        version: 0.2.19(@electric-sql/pglite@0.3.14)
       '@radix-ui/react-avatar':
         specifier: ^1.1.11
         version: 1.1.11(@types/react-dom@19.2.3(@types/react@19.2.5))(@types/react@19.2.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -197,6 +200,11 @@ packages:
   '@bcoe/v8-coverage@1.0.2':
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
+
+  '@electric-sql/pglite-tools@0.2.19':
+    resolution: {integrity: sha512-Ls4ZcSymnFRlEHtDyO3k9qPXLg7awfRAE3YnXk4WLsint17JBsU4UEX8le9YE8SgPkWNnQC898SqbFGGU/5JUA==}
+    peerDependencies:
+      '@electric-sql/pglite': 0.3.14
 
   '@electric-sql/pglite@0.3.14':
     resolution: {integrity: sha512-3DB258dhqdsArOI1fIt7cb9RpUOgcDg5hXWVgVHAeqVQ/qxtFy605QKs4gx6mFq3jWsSPqDN8TgSEsqC3OfV9Q==}
@@ -3171,6 +3179,10 @@ snapshots:
       '@babel/helper-validator-identifier': 7.28.5
 
   '@bcoe/v8-coverage@1.0.2': {}
+
+  '@electric-sql/pglite-tools@0.2.19(@electric-sql/pglite@0.3.14)':
+    dependencies:
+      '@electric-sql/pglite': 0.3.14
 
   '@electric-sql/pglite@0.3.14': {}
 

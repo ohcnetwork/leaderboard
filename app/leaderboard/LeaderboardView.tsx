@@ -429,7 +429,7 @@ export default function LeaderboardView({
         {/* Sidebar - Top Contributors by Activity */}
         {Object.keys(filteredTopByActivity).length > 0 && (
           <div className="hidden xl:block w-80 shrink-0">
-            <div className="sticky top-8">
+            <div>
               <h2 className="text-xl font-bold mb-6">Top Contributors</h2>
               <div className="space-y-4">
                 {Object.entries(filteredTopByActivity).map(

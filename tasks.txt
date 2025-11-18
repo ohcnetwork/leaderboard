@@ -1,10 +1,3 @@
-- script to scrape github data to table
-  - collaborated on a pr
-  - pr merged (points derived from gh project board)
-  - push events instead of commits --- optimize commit created to instead be tracking push events directly instead. (Pushed 3 commits to branch... instead of 3 separate commit created activities, points would be derived from number of commits pushed)
-  - exclude merge commits
-  - incorrect timestamp in slack messages
-
 - build pages
   - home
   - people
@@ -16,21 +9,14 @@
 
 - aggregate metrics
 - badges, eod streak
-- profile filter should also be applied for activity breakdown
 - currently working on and stale prs...
-- eod_missed as an activity (only applicable for core,intern)
 
 - setup footer
-- sitemap generation
-- open graph metadata for pages
 
 - setup leaderboard github app for commiting
-- github scraper: discussions
-- github scraper: exclude repos[] as env
 - update scraper to respect X-Poll-Interval
 - setup pre-commit hooks and prettier configs
 - script to update github username of old user, or auto do it by: traverse all contributors, find all contributors with duplicate github_pk_id, and merge them into single one
-- setup sentry error reporting for scraper
 - setup branch protection
 
 

@@ -12,7 +12,7 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "prebuild": "tsx scripts/generate-icons.ts && tsx scripts/get-theme.ts",
+    "prebuild": "tsx scripts/import-config.ts && tsx scripts/generate-icons.ts && tsx scripts/get-theme.ts",
     "db:exec": "tsx scripts/db-exec-stdin.ts",
     "db:prepare": "tsx scripts/db-prepare.ts",
     "db:import": "tsx scripts/db-import.ts",

@@ -45,10 +45,16 @@ interface StringAggregateValue {
   value: string;
 }
 
+interface PercentageAggregateValue {
+  type: "percentage";
+  value: number; // Float between 0 and 1
+}
+
 export type AggregateValue =
   | DurationAggregateValue
   | NumberAggregateValue
-  | StringAggregateValue;
+  | StringAggregateValue
+  | PercentageAggregateValue;
 
 interface AggregateDefinitionBase {
   slug: string;

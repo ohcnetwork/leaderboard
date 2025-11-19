@@ -19,25 +19,6 @@
 - script to update github username of old user, or auto do it by: traverse all contributors, find all contributors with duplicate github_pk_id, and merge them into single one
 - setup branch protection
 
-
-
-## Aggregates
-
-aggregate_definition:
-  slug:              pr_turn_around_time                          primary key
-  name:              PR Avg. turn-around time                     varchar
-  desc:              The average duration between the P           text
-  value_type:        duration                                     enum(duration | number)
-
-contributor_aggregate:
-  - definition:        pr_turn_around_time
-    contributor:       NikhilA8606
-    value:             Duration(2d 14h)
-
-  - definition:        pr_turn_around_time
-    contributor:       rithviknishad
-    value:             Duration(2d 14h)
-
 ## Badges
 
 badge_definition:

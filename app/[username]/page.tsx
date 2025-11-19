@@ -2,11 +2,12 @@ import {
   getAllContributorUsernames,
   getContributorProfile,
   listActivityDefinitions,
+  getContributorAggregates,
 } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { generateActivityGraphData } from "@/lib/utils";
+import { generateActivityGraphData, formatAggregateValue } from "@/lib/utils";
 import { getConfig } from "@/lib/config";
 import ActivityOverview from "./ActivityOverview";
 import ActivityBreakdown from "./ActivityBreakdown";
@@ -17,10 +18,31 @@ import {
   Award,
   Activity as ActivityIcon,
   Link as LinkIcon,
+  LucideIcon,
+  TrendingUp,
 } from "lucide-react";
 import Icon from "@/components/Icon";
 import { icons } from "@/app/icons.gen";
 import { marked } from "marked";
+
+// Built-in aggregate definitions for profile page
+const BUILTIN_CONTRIBUTOR_AGGREGATES = {
+  total_points: {
+    name: "Total Points",
+    description: "All time",
+    icon: Award,
+  },
+  total_activities: {
+    name: "Total Activities",
+    description: "All time",
+    icon: ActivityIcon,
+  },
+  activity_types: {
+    name: "Activity Types",
+    description: "Different types",
+    icon: Calendar,
+  },
+};
 
 interface ContributorPageProps {
   params: Promise<{ username: string }>;
@@ -124,19 +146,37 @@ export default async function ContributorPage({
   params,
 }: ContributorPageProps) {
   const { username } = await params;
+  const config = getConfig();
+
+  // Get configured aggregates or use defaults
+  const configuredAggregates = config.leaderboard.aggregates?.contributor || [
+    "total_points",
+    "total_activities",
+    "activity_types",
+  ];
+
+  // Separate built-in and database aggregates
+  const builtinSlugs = configuredAggregates.filter(
+    (slug) => slug in BUILTIN_CONTRIBUTOR_AGGREGATES
+  );
+  const dbAggregatesSlugs = configuredAggregates.filter(
+    (slug) => !(slug in BUILTIN_CONTRIBUTOR_AGGREGATES)
+  );
+
   const [
     { contributor, activities, totalPoints, activityByDate },
     activityDefinitions,
+    dbAggregates,
   ] = await Promise.all([
     getContributorProfile(username),
     listActivityDefinitions(),
+    getContributorAggregates(username, dbAggregatesSlugs),
   ]);
 
   if (!contributor) {
     notFound();
   }
 
-  const config = getConfig();
   const activityGraphData = generateActivityGraphData(activityByDate, 365);
 
   // Convert bio markdown to HTML
@@ -152,6 +192,50 @@ export default async function ContributorPage({
     acc[key].points += activity.points || 0;
     return acc;
   }, {} as Record<string, { count: number; points: number }>);
+
+  // Build aggregate cards data
+  interface AggregateCard {
+    name: string;
+    value: string;
+    description: string;
+    icon: LucideIcon;
+  }
+
+  const aggregateCards: AggregateCard[] = [];
+
+  // Add built-in aggregates
+  for (const slug of builtinSlugs) {
+    const def =
+      BUILTIN_CONTRIBUTOR_AGGREGATES[
+        slug as keyof typeof BUILTIN_CONTRIBUTOR_AGGREGATES
+      ];
+    let value = "0";
+
+    if (slug === "total_points") {
+      value = totalPoints.toString();
+    } else if (slug === "total_activities") {
+      value = activities.length.toString();
+    } else if (slug === "activity_types") {
+      value = Object.keys(activityBreakdown).length.toString();
+    }
+
+    aggregateCards.push({
+      name: def.name,
+      value,
+      description: def.description,
+      icon: def.icon,
+    });
+  }
+
+  // Add database aggregates
+  for (const aggregate of dbAggregates) {
+    aggregateCards.push({
+      name: aggregate.aggregate,
+      value: formatAggregateValue(aggregate.value),
+      description: "",
+      icon: TrendingUp, // Default icon for DB aggregates
+    });
+  }
 
   // Prepare activities data for ActivityBreakdown component
   const activitiesForBreakdown = activities.map((activity) => ({
@@ -279,46 +363,27 @@ export default async function ContributorPage({
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Total Points
-              </CardTitle>
-              <Award className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{totalPoints}</div>
-              <p className="text-xs text-muted-foreground">All time</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Total Activities
-              </CardTitle>
-              <ActivityIcon className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{activities.length}</div>
-              <p className="text-xs text-muted-foreground">All time</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Activity Types
-              </CardTitle>
-              <Calendar className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">
-                {Object.keys(activityBreakdown).length}
-              </div>
-              <p className="text-xs text-muted-foreground">Different types</p>
-            </CardContent>
-          </Card>
+          {aggregateCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <Card key={index}>
+                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                  <CardTitle className="text-sm font-medium">
+                    {card.name}
+                  </CardTitle>
+                  <Icon className="h-4 w-4 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">{card.value}</div>
+                  {card.description && (
+                    <p className="text-xs text-muted-foreground">
+                      {card.description}
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* Activity Overview */}

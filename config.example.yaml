@@ -54,6 +54,16 @@ leaderboard:
     - issue_opened
     - issue_assigned
 
+  aggregates: ## optional - aggregates to display on pages
+    global: ## optional - global aggregates to show on home page (built-in: total_activities, count_contributors, activity_types)
+      - total_activities
+      - count_contributors
+      - pr_avg_tat
+    contributor: ## optional - contributor aggregates to show on profile page (built-in: total_points, total_activities, activity_types)
+      - total_points
+      - total_activities
+      - pr_avg_tat
+
   social_profiles: ## optional - social profile icon mappings
     github:
       icon: github
@@ -78,4 +88,3 @@ scraper: ## optional
       envs:
         SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
         SLACK_CHANNEL: ${{ vars.SLACK_EOD_CHANNEL }}
-

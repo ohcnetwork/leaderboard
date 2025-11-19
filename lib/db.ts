@@ -3,8 +3,8 @@ import {
   ActivityDefinition,
   Contributor,
   GlobalAggregate,
-  ContributorAggregateDefinition,
   ContributorAggregate,
+  ContributorAggregateDefinition,
 } from "@/types/db";
 import { PGlite, types } from "@electric-sql/pglite";
 
@@ -713,6 +713,50 @@ export async function getContributorProfile(username: string): Promise<{
 }
 
 /**
+ * Get global aggregates by slugs
+ * @param slugs - Array of aggregate slugs to fetch
+ * @returns Array of global aggregates
+ */
+export async function getGlobalAggregates(slugs: string[]) {
+  if (slugs.length === 0) {
+    return [];
+  }
+
+  const db = getDb();
+
+  const result = await db.query<GlobalAggregate>(
+    "SELECT * FROM global_aggregate WHERE slug = ANY($1);",
+    [slugs]
+  );
+
+  return result.rows;
+}
+
+/**
+ * Get contributor aggregates by username and slugs
+ * @param username - The username of the contributor
+ * @param slugs - Array of aggregate slugs to fetch
+ * @returns Array of contributor aggregates
+ */
+export async function getContributorAggregates(
+  username: string,
+  slugs: string[]
+) {
+  if (slugs.length === 0) {
+    return [];
+  }
+
+  const db = getDb();
+
+  const result = await db.query<ContributorAggregate>(
+    "SELECT * FROM contributor_aggregate WHERE contributor = $1 AND aggregate = ANY($2);",
+    [username, slugs]
+  );
+
+  return result.rows;
+}
+
+/**
  * Upsert global aggregates to the database
  * @param aggregates - The global aggregates to upsert
  */
@@ -855,22 +899,6 @@ export async function upsertContributorAggregates(
     ON CONFLICT (aggregate, contributor) DO UPDATE SET 
       value = EXCLUDED.value;
   `);
-}
-
-/**
- * Get all contributor aggregates for a specific contributor
- * @param username - The username of the contributor
- * @returns List of aggregates for the contributor
- */
-export async function getContributorAggregates(username: string) {
-  const db = getDb();
-
-  const result = await db.query<ContributorAggregate>(
-    "SELECT * FROM contributor_aggregate WHERE contributor = $1;",
-    [username]
-  );
-
-  return result.rows;
 }
 
 /**

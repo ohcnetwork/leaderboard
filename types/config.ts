@@ -37,6 +37,10 @@ export interface LeaderboardConfig {
   top_contributors?: string[];
   social_profiles?: Record<string, SocialProfileConfig>;
   theme?: string;
+  aggregates?: {
+    global?: string[];
+    contributor?: string[];
+  };
 }
 
 export interface ScraperInstanceConfig {

@@ -1,16 +1,39 @@
-import { getRecentActivitiesGroupedByType } from "@/lib/db";
+import {
+  getRecentActivitiesGroupedByType,
+  getGlobalAggregates,
+} from "@/lib/db";
 import { getConfig } from "@/lib/config";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
-import { Activity, Users, TrendingUp } from "lucide-react";
+import { Activity, Users, TrendingUp, LucideIcon } from "lucide-react";
+import { formatAggregateValue } from "@/lib/utils";
+
+// Built-in aggregate definitions for home page
+const BUILTIN_GLOBAL_AGGREGATES = {
+  total_activities: {
+    name: "Total Activities",
+    description: "Last 7 days",
+    icon: Activity,
+  },
+  count_contributors: {
+    name: "Active Contributors",
+    description: "Last 7 days",
+    icon: Users,
+  },
+  activity_types: {
+    name: "Activity Types",
+    description: "Different types",
+    icon: TrendingUp,
+  },
+};
 
 export default async function Home() {
   const config = getConfig();
   const activityGroups = await getRecentActivitiesGroupedByType(7);
 
-  // Calculate stats
+  // Calculate built-in stats
   const totalActivities = activityGroups.reduce(
     (sum, group) => sum + group.activities.length,
     0
@@ -21,6 +44,68 @@ export default async function Home() {
     )
   ).size;
   const totalActivityTypes = activityGroups.length;
+
+  // Get configured aggregates or use defaults
+  const configuredAggregates = config.leaderboard.aggregates?.global || [
+    "total_activities",
+    "count_contributors",
+    "activity_types",
+  ];
+
+  // Separate built-in and database aggregates
+  const builtinSlugs = configuredAggregates.filter(
+    (slug) => slug in BUILTIN_GLOBAL_AGGREGATES
+  );
+  const dbAggregatesSlugs = configuredAggregates.filter(
+    (slug) => !(slug in BUILTIN_GLOBAL_AGGREGATES)
+  );
+
+  // Fetch database aggregates
+  const dbAggregates = await getGlobalAggregates(dbAggregatesSlugs);
+
+  // Build aggregate cards data
+  interface AggregateCard {
+    name: string;
+    value: string;
+    description: string;
+    icon: LucideIcon;
+  }
+
+  const aggregateCards: AggregateCard[] = [];
+
+  // Add built-in aggregates
+  for (const slug of builtinSlugs) {
+    const def =
+      BUILTIN_GLOBAL_AGGREGATES[slug as keyof typeof BUILTIN_GLOBAL_AGGREGATES];
+    let value = "0";
+
+    if (slug === "total_activities") {
+      value = totalActivities.toString();
+    } else if (slug === "count_contributors") {
+      value = uniqueContributors.toString();
+    } else if (slug === "activity_types") {
+      value = totalActivityTypes.toString();
+    }
+
+    aggregateCards.push({
+      name: def.name,
+      value,
+      description: def.description,
+      icon: def.icon,
+    });
+  }
+
+  // Add database aggregates
+  for (const aggregate of dbAggregates) {
+    if (aggregate.value) {
+      aggregateCards.push({
+        name: aggregate.name,
+        value: formatAggregateValue(aggregate.value),
+        description: aggregate.description || "",
+        icon: TrendingUp, // Default icon for DB aggregates
+      });
+    }
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -34,44 +119,27 @@ export default async function Home() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">
-              Total Activities
-            </CardTitle>
-            <Activity className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{totalActivities}</div>
-            <p className="text-xs text-muted-foreground">Last 7 days</p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">
-              Active Contributors
-            </CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{uniqueContributors}</div>
-            <p className="text-xs text-muted-foreground">Last 7 days</p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">
-              Activity Types
-            </CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{totalActivityTypes}</div>
-            <p className="text-xs text-muted-foreground">Different types</p>
-          </CardContent>
-        </Card>
+        {aggregateCards.map((card, index) => {
+          const Icon = card.icon;
+          return (
+            <Card key={index}>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">
+                  {card.name}
+                </CardTitle>
+                <Icon className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{card.value}</div>
+                {card.description && (
+                  <p className="text-xs text-muted-foreground">
+                    {card.description}
+                  </p>
+                )}
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
 
       {/* Activity Feed Grouped by Type */}

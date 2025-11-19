@@ -187,21 +187,6 @@
           "description": "Cron expression for scheduled execution",
           "pattern": "^(@(annually|yearly|monthly|weekly|daily|hourly|reboot))|(@every (\\d+(ns|us|µs|ms|s|m|h))+)|((((\\d+,)+\\d+|(\\d+([/\\-])\\d+)|\\d+|\\*) ?){5,7})$"
         },
-        "git": {
-          "type": "object",
-          "description": "Git identity configuration for commits (optional - defaults to github-actions[bot])",
-          "properties": {
-            "user.name": {
-              "type": "string",
-              "description": "Git user name for commits"
-            },
-            "user.email": {
-              "type": "string",
-              "description": "Git user email for commits"
-            }
-          },
-          "additionalProperties": false
-        },
         "scrapers": {
           "type": "array",
           "description": "List of scrapers to run",

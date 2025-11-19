@@ -39,11 +39,6 @@ export interface LeaderboardConfig {
   theme?: string;
 }
 
-export interface GitIdentityConfig {
-  "user.name"?: string;
-  "user.email"?: string;
-}
-
 export interface ScraperInstanceConfig {
   name: string;
   repository: string; // GitHub repository in format 'owner/repo'
@@ -52,7 +47,6 @@ export interface ScraperInstanceConfig {
 
 export interface ScraperConfig {
   schedule: string; // Cron expression
-  git?: GitIdentityConfig; // Optional git identity (defaults to github-actions[bot])
   scrapers: ScraperInstanceConfig[]; // List of scrapers
 }
 

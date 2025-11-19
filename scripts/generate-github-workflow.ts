@@ -9,14 +9,7 @@ function generateWorkflow(): string {
     );
   }
 
-  const { schedule, git, scrapers } = config.scraper;
-
-  // Default git identity
-  const gitUserName = git ? git["user.name"] : undefined;
-  const gitUserEmail = git ? git["user.email"] : undefined;
-  const finalGitUserName = gitUserName || "github-actions[bot]";
-  const finalGitUserEmail =
-    gitUserEmail || "github-actions[bot]@users.noreply.github.com";
+  const { schedule, scrapers } = config.scraper;
 
   // Extract all environment variables from all scrapers
   const allEnvs: Record<string, string> = {};
@@ -99,6 +92,13 @@ jobs:
 ${envVarsSection}
 
     steps:
+      - name: Authenticate as leaderboard-bot[bot]
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: \${{ vars.LEADERBOARD_BOT_ID }}
+          private-key: \${{ secrets.LEADERBOARD_BOT_PRIVATE_KEY }}
+
       - name: 📥 Checkout Leaderboard
         uses: actions/checkout@v5
         with:
@@ -113,7 +113,8 @@ ${scraperCheckoutSteps}
         with:
           path: \${{ env.LEADERBOARD_DATA_PATH }}
           fetch-depth: 1
-          persist-credentials: true
+          persist-credentials: false
+          token: \${{ steps.app-token.outputs.token }}
 
       - name: 📦 Setup pnpm
         uses: pnpm/action-setup@v4
@@ -170,8 +171,8 @@ ${scraperCheckoutSteps}
 
       - name: Setup Git Identity
         run: |
-          git config --global user.name "${finalGitUserName}"
-          git config --global user.email "${finalGitUserEmail}"
+          git config --global user.name "leaderboard-bot[bot]"
+          git config --global user.email "\${{ vars.LEADERBOARD_BOT_ID }}+leaderboard-bot[bot]@users.noreply.github.com"
 
       - name: 📤 Commit and Push Changes to Leaderboard Data
         run: |
@@ -185,6 +186,9 @@ ${scraperCheckoutSteps}
           fi
 
           git commit -m "Update leaderboard data"
+          
+          # Configure remote with app token for authentication
+          git remote set-url origin https://x-access-token:\${{ steps.app-token.outputs.token }}@github.com/\${{ github.repository }}.git
 
           # Ensure pushing to the correct branch (default = main)
           git push origin HEAD:main

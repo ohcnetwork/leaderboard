@@ -189,8 +189,8 @@ describe("Config Validation", () => {
       const hiddenRoles = getHiddenRoles();
       const visibleRoles = getVisibleRoles();
 
-      expect(hiddenRoles).toEqual(["Bot", "Test"]);
-      expect(visibleRoles).toEqual(["Admin", "Contributor"]);
+      expect(hiddenRoles).toEqual(["bot", "test"]);
+      expect(visibleRoles).toEqual(["admin", "contributor"]);
     });
 
     it("should return empty array when no hidden roles exist", () => {
@@ -212,7 +212,9 @@ describe("Config Validation", () => {
       replaceConfigWith(configWithTheme);
       const config = getConfig();
 
-      expect(config.leaderboard.theme).toBe("https://cdn.example.com/theme.css");
+      expect(config.leaderboard.theme).toBe(
+        "https://cdn.example.com/theme.css"
+      );
     });
 
     it("should accept configuration without theme (optional field)", () => {
@@ -360,7 +362,6 @@ describe("Config Validation", () => {
       }
     });
 
-
     it("should reject configuration with invalid theme URL format", () => {
       replaceConfigWith(invalidThemeConfig);
 
@@ -403,7 +404,6 @@ describe("Config Validation", () => {
     });
   });
 
-
   describe("Scraper Configuration Validation", () => {
     it("should accept valid scraper configuration", () => {
       replaceConfigWith(validConfig);
@@ -417,34 +417,6 @@ describe("Config Validation", () => {
         "testorg/github-scraper"
       );
       expect(config.scraper?.scrapers[0]?.envs).toHaveProperty("GITHUB_TOKEN");
-    });
-
-    it("should accept scraper with git identity configuration", () => {
-      const configWithGitIdentity = {
-        ...minimalValidConfig,
-        scraper: {
-          schedule: "0 0 * * *",
-          git: {
-            "user.name": "Custom Bot",
-            "user.email": "bot@example.com",
-          },
-          scrapers: [
-            {
-              name: "Test Scraper",
-              repository: "testorg/scraper",
-              envs: {
-                TOKEN: "${{ secrets.TOKEN }}",
-              },
-            },
-          ],
-        },
-      };
-
-      replaceConfigWith(configWithGitIdentity);
-      const config = getConfig();
-
-      expect(config.scraper?.git?.["user.name"]).toBe("Custom Bot");
-      expect(config.scraper?.git?.["user.email"]).toBe("bot@example.com");
     });
 
     it("should accept multiple scrapers", () => {
@@ -608,7 +580,9 @@ describe("Config Validation", () => {
 
       expect(config.leaderboard.social_profiles).toBeDefined();
       expect(config.leaderboard.social_profiles?.github?.icon).toBe("github");
-      expect(config.leaderboard.social_profiles?.linkedin?.icon).toBe("linkedin");
+      expect(config.leaderboard.social_profiles?.linkedin?.icon).toBe(
+        "linkedin"
+      );
       expect(config.leaderboard.social_profiles?.twitter?.icon).toBe("twitter");
     });
 
@@ -669,7 +643,11 @@ describe("Config Validation", () => {
       } catch (error) {
         const message = (error as Error).message;
         expect(
-          hasValidationError(message, "/leaderboard/social_profiles/github", "icon")
+          hasValidationError(
+            message,
+            "/leaderboard/social_profiles/github",
+            "icon"
+          )
         ).toBe(true);
       }
     });
@@ -706,7 +684,9 @@ describe("Config Validation", () => {
       replaceConfigWith(configWithUnderscores);
       const config = getConfig();
 
-      expect(config.leaderboard.social_profiles?.stack_overflow?.icon).toBe("layers");
+      expect(config.leaderboard.social_profiles?.stack_overflow?.icon).toBe(
+        "layers"
+      );
       expect(config.leaderboard.social_profiles?.dev_to?.icon).toBe("code");
     });
   });

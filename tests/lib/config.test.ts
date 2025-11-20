@@ -32,6 +32,7 @@ import {
   hasValidationError,
   extractErrorPaths,
 } from "../utils/test-helpers";
+import { Config } from "@/types/config";
 
 describe("Config Validation", () => {
   let originalConfig: string | null;
@@ -750,5 +751,146 @@ describe("Config Validation", () => {
       expect(config.org.description).toBe(longDescription);
       expect(config.org.description.length).toBe(10000);
     });
+  });
+});
+
+describe("Aggregates Configuration", () => {
+  let originalConfig: string | null;
+
+  beforeEach(() => {
+    originalConfig = backupConfig();
+    clearConfigCache();
+  });
+
+  afterEach(() => {
+    restoreConfig(originalConfig);
+    clearConfigCache();
+  });
+
+  it("should accept valid aggregates configuration", () => {
+    const configWithAggregates: Config = {
+      ...minimalValidConfig,
+      leaderboard: {
+        ...minimalValidConfig.leaderboard,
+        aggregates: {
+          global: ["total_activities", "count_contributors", "pr_avg_tat"],
+          contributor: ["total_points", "total_activities", "eod_consistency"],
+        },
+      },
+    };
+
+    replaceConfigWith(configWithAggregates);
+    expect(() => getConfig()).not.toThrow();
+    const config = getConfig();
+    expect(config.leaderboard.aggregates).toBeDefined();
+    expect(config.leaderboard.aggregates?.global).toEqual([
+      "total_activities",
+      "count_contributors",
+      "pr_avg_tat",
+    ]);
+    expect(config.leaderboard.aggregates?.contributor).toEqual([
+      "total_points",
+      "total_activities",
+      "eod_consistency",
+    ]);
+  });
+
+  it("should accept config without aggregates (optional)", () => {
+    replaceConfigWith(minimalValidConfig);
+    expect(() => getConfig()).not.toThrow();
+    const config = getConfig();
+    expect(config.leaderboard.aggregates).toBeUndefined();
+  });
+
+  it("should accept empty aggregates arrays", () => {
+    const configWithEmptyAggregates: Config = {
+      ...minimalValidConfig,
+      leaderboard: {
+        ...minimalValidConfig.leaderboard,
+        aggregates: {
+          global: [],
+          contributor: [],
+        },
+      },
+    };
+
+    replaceConfigWith(configWithEmptyAggregates);
+    expect(() => getConfig()).not.toThrow();
+    const config = getConfig();
+    expect(config.leaderboard.aggregates?.global).toEqual([]);
+    expect(config.leaderboard.aggregates?.contributor).toEqual([]);
+  });
+
+  it("should enforce unique items in aggregate arrays", () => {
+    const configWithDuplicates = {
+      ...minimalValidConfig,
+      leaderboard: {
+        ...minimalValidConfig.leaderboard,
+        aggregates: {
+          global: ["total_activities", "total_activities", "pr_avg_tat"],
+          contributor: ["total_points", "total_points"],
+        },
+      },
+    };
+
+    replaceConfigWith(configWithDuplicates);
+    expect(() => getConfig()).toThrow();
+  });
+
+  it("should reject invalid aggregate types", () => {
+    const configWithInvalidType = {
+      ...minimalValidConfig,
+      leaderboard: {
+        ...minimalValidConfig.leaderboard,
+        aggregates: {
+          global: [123, "total_activities"], // number instead of string
+        },
+      },
+    };
+
+    replaceConfigWith(configWithInvalidType);
+    expect(() => getConfig()).toThrow();
+  });
+
+  it("should accept only global aggregates", () => {
+    const configWithOnlyGlobal: Config = {
+      ...minimalValidConfig,
+      leaderboard: {
+        ...minimalValidConfig.leaderboard,
+        aggregates: {
+          global: ["total_activities", "pr_avg_tat"],
+        },
+      },
+    };
+
+    replaceConfigWith(configWithOnlyGlobal);
+    expect(() => getConfig()).not.toThrow();
+    const config = getConfig();
+    expect(config.leaderboard.aggregates?.global).toEqual([
+      "total_activities",
+      "pr_avg_tat",
+    ]);
+    expect(config.leaderboard.aggregates?.contributor).toBeUndefined();
+  });
+
+  it("should accept only contributor aggregates", () => {
+    const configWithOnlyContributor: Config = {
+      ...minimalValidConfig,
+      leaderboard: {
+        ...minimalValidConfig.leaderboard,
+        aggregates: {
+          contributor: ["total_points", "eod_consistency"],
+        },
+      },
+    };
+
+    replaceConfigWith(configWithOnlyContributor);
+    expect(() => getConfig()).not.toThrow();
+    const config = getConfig();
+    expect(config.leaderboard.aggregates?.global).toBeUndefined();
+    expect(config.leaderboard.aggregates?.contributor).toEqual([
+      "total_points",
+      "eod_consistency",
+    ]);
   });
 });

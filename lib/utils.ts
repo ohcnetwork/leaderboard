@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { formatDistanceToNow } from "date-fns";
+import { AggregateValue } from "@/types/db";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -144,4 +145,36 @@ export function groupActivitiesByMonth<T extends { occured_at: Date }>(
   });
 
   return new Map(sortedEntries);
+}
+
+/**
+ * Format an aggregate value based on its type
+ * @param value - The aggregate value to format
+ * @returns Formatted string representation
+ */
+export function formatAggregateValue(value: AggregateValue): string {
+  switch (value.type) {
+    case "duration": {
+      const ms = value.value;
+      const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+
+      if (days > 0) {
+        return `${days}d ${hours}h`;
+      } else if (hours > 0) {
+        return `${hours}h ${minutes}m`;
+      } else {
+        return `${minutes}m`;
+      }
+    }
+    case "number":
+      return value.value.toLocaleString();
+    case "percentage":
+      return `${(value.value * 100).toFixed(1)}%`;
+    case "string":
+      return value.value;
+    default:
+      return String(value);
+  }
 }

@@ -1,4 +1,11 @@
-import { Activity, ActivityDefinition, Contributor } from "@/types/db";
+import {
+  Activity,
+  ActivityDefinition,
+  Contributor,
+  GlobalAggregate,
+  ContributorAggregate,
+  ContributorAggregateDefinition,
+} from "@/types/db";
 import { PGlite, types } from "@electric-sql/pglite";
 
 let dbInstance: PGlite | null = null;
@@ -66,6 +73,29 @@ export async function createTables() {
     CREATE INDEX IF NOT EXISTS idx_activity_occured_at ON activity(occured_at);
     CREATE INDEX IF NOT EXISTS idx_activity_contributor ON activity(contributor);
     CREATE INDEX IF NOT EXISTS idx_activity_definition ON activity(activity_definition);
+
+    CREATE TABLE IF NOT EXISTS global_aggregate (
+        slug                    VARCHAR PRIMARY KEY,
+        name                    VARCHAR NOT NULL,
+        description             TEXT,
+        value                   JSON
+    );
+
+    CREATE TABLE IF NOT EXISTS contributor_aggregate_definition (
+        slug                    VARCHAR PRIMARY KEY,
+        name                    VARCHAR NOT NULL,
+        description             TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS contributor_aggregate (
+        aggregate               VARCHAR REFERENCES contributor_aggregate_definition(slug) NOT NULL,
+        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
+        value                   JSON NOT NULL,
+        PRIMARY KEY (aggregate, contributor)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_contributor_aggregate_contributor ON contributor_aggregate(contributor);
+    CREATE INDEX IF NOT EXISTS idx_contributor_aggregate_aggregate ON contributor_aggregate(aggregate);
   `);
 }
 
@@ -680,4 +710,213 @@ export async function getContributorProfile(username: string): Promise<{
     totalPoints,
     activityByDate,
   };
+}
+
+/**
+ * Get global aggregates by slugs
+ * @param slugs - Array of aggregate slugs to fetch
+ * @returns Array of global aggregates
+ */
+export async function getGlobalAggregates(slugs: string[]) {
+  if (slugs.length === 0) {
+    return [];
+  }
+
+  const db = getDb();
+
+  const result = await db.query<GlobalAggregate>(
+    "SELECT * FROM global_aggregate WHERE slug = ANY($1);",
+    [slugs]
+  );
+
+  return result.rows;
+}
+
+/**
+ * Get contributor aggregates by username and slugs
+ * @param username - The username of the contributor
+ * @param slugs - Array of aggregate slugs to fetch
+ * @returns Array of contributor aggregates
+ */
+export async function getContributorAggregates(
+  username: string,
+  slugs: string[]
+) {
+  if (slugs.length === 0) {
+    return [];
+  }
+
+  const db = getDb();
+
+  const result = await db.query<ContributorAggregate>(
+    "SELECT * FROM contributor_aggregate WHERE contributor = $1 AND aggregate = ANY($2);",
+    [username, slugs]
+  );
+
+  return result.rows;
+}
+
+/**
+ * Upsert global aggregates to the database
+ * @param aggregates - The global aggregates to upsert
+ */
+export async function upsertGlobalAggregates(...aggregates: GlobalAggregate[]) {
+  const db = getDb();
+
+  // Helper function to escape single quotes in SQL strings
+  const escapeSql = (value: string | null | undefined): string => {
+    if (value === null || value === undefined) return "NULL";
+    return `'${String(value).replace(/'/g, "''")}'`;
+  };
+
+  // Helper function to format JSON for SQL
+  const formatJson = (value: unknown): string => {
+    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
+  };
+
+  await db.query(`
+    INSERT INTO global_aggregate (slug, name, description, value)
+    VALUES ${aggregates
+      .map(
+        (a) =>
+          `(${escapeSql(a.slug)}, ${escapeSql(a.name)}, ${escapeSql(
+            a.description
+          )}, ${formatJson(a.value)})`
+      )
+      .join(",")}
+    ON CONFLICT (slug) DO UPDATE SET 
+      name = EXCLUDED.name, 
+      description = EXCLUDED.description, 
+      value = EXCLUDED.value;
+  `);
+}
+
+/**
+ * List all global aggregates from the database
+ * @returns The list of all global aggregates
+ */
+export async function listGlobalAggregates() {
+  const db = getDb();
+
+  const result = await db.query<GlobalAggregate>(`
+    SELECT * FROM global_aggregate;
+  `);
+
+  return result.rows;
+}
+
+/**
+ * Get a global aggregate from the database
+ * @param slug - The slug of the global aggregate
+ * @returns The global aggregate or null if not found
+ */
+export async function getGlobalAggregate(slug: string) {
+  const db = getDb();
+
+  const result = await db.query<GlobalAggregate>(
+    "SELECT * FROM global_aggregate WHERE slug = $1;",
+    [slug]
+  );
+
+  return result.rows[0] ?? null;
+}
+
+/**
+ * Upsert contributor aggregate definitions to the database
+ * @param definitions - The contributor aggregate definitions to upsert
+ */
+export async function upsertContributorAggregateDefinitions(
+  ...definitions: ContributorAggregateDefinition[]
+) {
+  const db = getDb();
+
+  // Helper function to escape single quotes in SQL strings
+  const escapeSql = (value: string | null | undefined): string => {
+    if (value === null || value === undefined) return "NULL";
+    return `'${String(value).replace(/'/g, "''")}'`;
+  };
+
+  await db.query(`
+    INSERT INTO contributor_aggregate_definition (slug, name, description)
+    VALUES ${definitions
+      .map(
+        (d) =>
+          `(${escapeSql(d.slug)}, ${escapeSql(d.name)}, ${escapeSql(
+            d.description
+          )})`
+      )
+      .join(",")}
+    ON CONFLICT (slug) DO UPDATE SET 
+      name = EXCLUDED.name, 
+      description = EXCLUDED.description;
+  `);
+}
+
+/**
+ * List all contributor aggregate definitions from the database
+ * @returns The list of all contributor aggregate definitions
+ */
+export async function listContributorAggregateDefinitions() {
+  const db = getDb();
+
+  const result = await db.query<ContributorAggregateDefinition>(`
+    SELECT * FROM contributor_aggregate_definition;
+  `);
+
+  return result.rows;
+}
+
+/**
+ * Upsert contributor aggregates to the database
+ * @param aggregates - The contributor aggregates to upsert
+ */
+export async function upsertContributorAggregates(
+  ...aggregates: ContributorAggregate[]
+) {
+  const db = getDb();
+
+  // Helper function to escape single quotes in SQL strings
+  const escapeSql = (value: string | null | undefined): string => {
+    if (value === null || value === undefined) return "NULL";
+    return `'${String(value).replace(/'/g, "''")}'`;
+  };
+
+  // Helper function to format JSON for SQL
+  const formatJson = (value: unknown): string => {
+    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
+  };
+
+  await db.query(`
+    INSERT INTO contributor_aggregate (aggregate, contributor, value)
+    VALUES ${aggregates
+      .map(
+        (a) =>
+          `(${escapeSql(a.aggregate)}, ${escapeSql(
+            a.contributor
+          )}, ${formatJson(a.value)})`
+      )
+      .join(",")}
+    ON CONFLICT (aggregate, contributor) DO UPDATE SET 
+      value = EXCLUDED.value;
+  `);
+}
+
+/**
+ * Get a specific contributor aggregate
+ * @param username - The username of the contributor
+ * @param aggregateSlug - The slug of the aggregate definition
+ * @returns The contributor aggregate or null if not found
+ */
+export async function getContributorAggregate(
+  username: string,
+  aggregateSlug: string
+) {
+  const db = getDb();
+
+  const result = await db.query<ContributorAggregate>(
+    "SELECT * FROM contributor_aggregate WHERE contributor = $1 AND aggregate = $2;",
+    [username, aggregateSlug]
+  );
+
+  return result.rows[0] ?? null;
 }

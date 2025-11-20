@@ -173,6 +173,29 @@
           "type": "string",
           "format": "uri",
           "description": "Optional URL to a custom theme CSS file"
+        },
+        "aggregates": {
+          "type": "object",
+          "description": "Aggregates to display on pages",
+          "properties": {
+            "global": {
+              "type": "array",
+              "description": "Global aggregates to show on home page (built-in: total_activities, count_contributors, activity_types)",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "contributor": {
+              "type": "array",
+              "description": "Contributor aggregates to show on profile page (built-in: total_points, total_activities, activity_types)",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false

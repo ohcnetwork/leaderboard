@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { formatDistanceToNow } from "date-fns";
+import { format, formatDistanceToNow } from "date-fns";
 import { AggregateValue } from "@/types/db";
 
 export function cn(...inputs: ClassValue[]) {
@@ -59,7 +59,7 @@ export function generateActivityGraphData(
   for (let i = days - 1; i >= 0; i--) {
     const date = new Date(today);
     date.setDate(today.getDate() - i);
-    const dateKey = date.toISOString().split("T")[0];
+    const dateKey = format(date, "yyyy-MM-dd");
     if (!dateKey) continue;
 
     const count = activityByDate[dateKey] || 0;

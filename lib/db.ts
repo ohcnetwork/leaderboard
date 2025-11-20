@@ -5,8 +5,12 @@ import {
   GlobalAggregate,
   ContributorAggregate,
   ContributorAggregateDefinition,
+  BadgeDefinition,
+  ContributorBadge,
+  BadgeVariant,
 } from "@/types/db";
 import { PGlite, types } from "@electric-sql/pglite";
+import { format } from "date-fns";
 
 let dbInstance: PGlite | null = null;
 
@@ -96,6 +100,27 @@ export async function createTables() {
 
     CREATE INDEX IF NOT EXISTS idx_contributor_aggregate_contributor ON contributor_aggregate(contributor);
     CREATE INDEX IF NOT EXISTS idx_contributor_aggregate_aggregate ON contributor_aggregate(aggregate);
+
+    CREATE TABLE IF NOT EXISTS badge_definition (
+        slug                    VARCHAR PRIMARY KEY,
+        name                    VARCHAR NOT NULL,
+        description             TEXT NOT NULL,
+        variants                JSON NOT NULL,
+    );
+
+    CREATE TABLE IF NOT EXISTS contributor_badge (
+        slug                    VARCHAR PRIMARY KEY,
+        badge                   VARCHAR REFERENCES badge_definition(slug) NOT NULL,
+        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
+        variant                 VARCHAR NOT NULL,
+        achieved_on             DATE NOT NULL,
+        meta                    JSON,
+        UNIQUE(badge, contributor, variant)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_contributor_badge_contributor ON contributor_badge(contributor);
+    CREATE INDEX IF NOT EXISTS idx_contributor_badge_badge ON contributor_badge(badge);
+    CREATE INDEX IF NOT EXISTS idx_contributor_badge_achieved_on ON contributor_badge(achieved_on);
   `);
 }
 
@@ -158,7 +183,7 @@ export async function upsertContributor(...contributors: Contributor[]) {
   // Helper function to format date for SQL
   const formatDate = (value: Date | null | undefined): string => {
     if (value === null || value === undefined) return "NULL";
-    return `'${value.toISOString().split("T")[0]}'`;
+    return `'${format(value, "yyyy-MM-dd")}'`;
   };
 
   await db.query(`
@@ -394,7 +419,7 @@ export async function getLeaderboard(
     acc[username].activity_breakdown[activityKey].points += points;
 
     // Group by date for daily activity
-    const dateKey = row.occured_at.toISOString().split("T")[0];
+    const dateKey = format(row.occured_at, "yyyy-MM-dd");
     if (dateKey) {
       const existingDay = acc[username].daily_activity.find(
         (d) => d.date === dateKey
@@ -698,7 +723,7 @@ export async function getContributorProfile(username: string): Promise<{
   // Group activities by date for the activity graph
   const activityByDate: Record<string, number> = {};
   activities.forEach((activity) => {
-    const dateKey = activity.occured_at.toISOString().split("T")[0];
+    const dateKey = format(activity.occured_at, "yyyy-MM-dd");
     if (dateKey) {
       activityByDate[dateKey] = (activityByDate[dateKey] || 0) + 1;
     }
@@ -757,41 +782,6 @@ export async function getContributorAggregates(
 }
 
 /**
- * Upsert global aggregates to the database
- * @param aggregates - The global aggregates to upsert
- */
-export async function upsertGlobalAggregates(...aggregates: GlobalAggregate[]) {
-  const db = getDb();
-
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format JSON for SQL
-  const formatJson = (value: unknown): string => {
-    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
-  };
-
-  await db.query(`
-    INSERT INTO global_aggregate (slug, name, description, value)
-    VALUES ${aggregates
-      .map(
-        (a) =>
-          `(${escapeSql(a.slug)}, ${escapeSql(a.name)}, ${escapeSql(
-            a.description
-          )}, ${formatJson(a.value)})`
-      )
-      .join(",")}
-    ON CONFLICT (slug) DO UPDATE SET 
-      name = EXCLUDED.name, 
-      description = EXCLUDED.description, 
-      value = EXCLUDED.value;
-  `);
-}
-
-/**
  * List all global aggregates from the database
  * @returns The list of all global aggregates
  */
@@ -822,37 +812,6 @@ export async function getGlobalAggregate(slug: string) {
 }
 
 /**
- * Upsert contributor aggregate definitions to the database
- * @param definitions - The contributor aggregate definitions to upsert
- */
-export async function upsertContributorAggregateDefinitions(
-  ...definitions: ContributorAggregateDefinition[]
-) {
-  const db = getDb();
-
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  await db.query(`
-    INSERT INTO contributor_aggregate_definition (slug, name, description)
-    VALUES ${definitions
-      .map(
-        (d) =>
-          `(${escapeSql(d.slug)}, ${escapeSql(d.name)}, ${escapeSql(
-            d.description
-          )})`
-      )
-      .join(",")}
-    ON CONFLICT (slug) DO UPDATE SET 
-      name = EXCLUDED.name, 
-      description = EXCLUDED.description;
-  `);
-}
-
-/**
  * List all contributor aggregate definitions from the database
  * @returns The list of all contributor aggregate definitions
  */
@@ -864,41 +823,6 @@ export async function listContributorAggregateDefinitions() {
   `);
 
   return result.rows;
-}
-
-/**
- * Upsert contributor aggregates to the database
- * @param aggregates - The contributor aggregates to upsert
- */
-export async function upsertContributorAggregates(
-  ...aggregates: ContributorAggregate[]
-) {
-  const db = getDb();
-
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format JSON for SQL
-  const formatJson = (value: unknown): string => {
-    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
-  };
-
-  await db.query(`
-    INSERT INTO contributor_aggregate (aggregate, contributor, value)
-    VALUES ${aggregates
-      .map(
-        (a) =>
-          `(${escapeSql(a.aggregate)}, ${escapeSql(
-            a.contributor
-          )}, ${formatJson(a.value)})`
-      )
-      .join(",")}
-    ON CONFLICT (aggregate, contributor) DO UPDATE SET 
-      value = EXCLUDED.value;
-  `);
 }
 
 /**
@@ -919,4 +843,207 @@ export async function getContributorAggregate(
   );
 
   return result.rows[0] ?? null;
+}
+
+/**
+ * Get all badges for a contributor
+ * @param username - The username of the contributor
+ * @returns Array of contributor badges with badge definition details
+ */
+export async function getContributorBadges(username: string): Promise<
+  Array<
+    ContributorBadge & {
+      badge_name: string;
+      badge_description: string;
+      variants: Record<string, BadgeVariant>;
+    }
+  >
+> {
+  const db = getDb();
+
+  const result = await db.query<
+    ContributorBadge & {
+      badge_name: string;
+      badge_description: string;
+      variants: Record<string, BadgeVariant>;
+    }
+  >(
+    `
+    SELECT 
+      cb.slug,
+      cb.badge,
+      cb.contributor,
+      cb.variant,
+      cb.achieved_on,
+      cb.meta,
+      bd.name as badge_name,
+      bd.description as badge_description,
+      bd.variants as variants
+    FROM contributor_badge cb
+    JOIN badge_definition bd ON cb.badge = bd.slug
+    WHERE cb.contributor = $1
+    ORDER BY cb.achieved_on DESC;
+  `,
+    [username],
+    {
+      parsers: {
+        [types.DATE]: (date: string) => new Date(date),
+      },
+    }
+  );
+
+  return result.rows;
+}
+
+/**
+ * Get all contributors who have earned a specific badge
+ * @param badgeSlug - The slug of the badge
+ * @param variant - Optional variant to filter by
+ * @returns Array of contributor badges with contributor details
+ */
+export async function getBadgeHolders(
+  badgeSlug: string,
+  variant?: string
+): Promise<
+  Array<
+    ContributorBadge & {
+      contributor_name: string | null;
+      contributor_avatar_url: string | null;
+      contributor_role: string | null;
+    }
+  >
+> {
+  const db = getDb();
+
+  const whereClause = variant
+    ? "cb.badge = $1 AND cb.variant = $2"
+    : "cb.badge = $1";
+  const params = variant ? [badgeSlug, variant] : [badgeSlug];
+
+  const result = await db.query<
+    ContributorBadge & {
+      contributor_name: string | null;
+      contributor_avatar_url: string | null;
+      contributor_role: string | null;
+    }
+  >(
+    `
+    SELECT 
+      cb.slug,
+      cb.badge,
+      cb.contributor,
+      cb.variant,
+      cb.achieved_on,
+      cb.meta,
+      c.name as contributor_name,
+      c.avatar_url as contributor_avatar_url,
+      c.role as contributor_role
+    FROM contributor_badge cb
+    JOIN contributor c ON cb.contributor = c.username
+    WHERE ${whereClause}
+    ORDER BY cb.achieved_on ASC;
+  `,
+    params,
+    {
+      parsers: {
+        [types.DATE]: (date: string) => new Date(date),
+      },
+    }
+  );
+
+  return result.rows;
+}
+
+/**
+ * Get badge statistics - count of badges earned
+ * @returns Badge statistics
+ */
+export async function getBadgeStatistics(): Promise<
+  Array<{
+    badge_count: number;
+    total_earned: number;
+    unique_contributors: number;
+  }>
+> {
+  const db = getDb();
+
+  const result = await db.query<{
+    badge_count: number;
+    total_earned: number;
+    unique_contributors: number;
+  }>(`
+    SELECT 
+      COUNT(DISTINCT bd.slug) as badge_count,
+      COUNT(cb.slug) as total_earned,
+      COUNT(DISTINCT cb.contributor) as unique_contributors
+    FROM badge_definition bd
+    LEFT JOIN contributor_badge cb ON bd.slug = cb.badge
+    GROUP BY bd.slug
+    ORDER BY bd.slug;
+  `);
+
+  return result.rows;
+}
+
+/**
+ * Get recent badge achievements
+ * @param days - Number of days to look back
+ * @param limit - Maximum number of results to return
+ * @returns Recent badge achievements with contributor and badge details
+ */
+export async function getRecentBadgeAchievements(
+  days: number,
+  limit: number = 50
+): Promise<
+  Array<
+    ContributorBadge & {
+      contributor_name: string | null;
+      contributor_avatar_url: string | null;
+      contributor_role: string | null;
+      badge_name: string;
+      badge_description: string;
+    }
+  >
+> {
+  const db = getDb();
+
+  const result = await db.query<
+    ContributorBadge & {
+      contributor_name: string | null;
+      contributor_avatar_url: string | null;
+      contributor_role: string | null;
+      badge_name: string;
+      badge_description: string;
+    }
+  >(
+    `
+    SELECT 
+      cb.slug,
+      cb.badge,
+      cb.contributor,
+      cb.variant,
+      cb.achieved_on,
+      cb.meta,
+      c.name as contributor_name,
+      c.avatar_url as contributor_avatar_url,
+      c.role as contributor_role,
+      bd.name as badge_name,
+      bd.description as badge_description,
+      bd.variants
+    FROM contributor_badge cb
+    JOIN contributor c ON cb.contributor = c.username
+    JOIN badge_definition bd ON cb.badge = bd.slug
+    WHERE cb.achieved_on >= NOW() - INTERVAL '${days} days'
+    ORDER BY cb.achieved_on DESC
+    LIMIT $1;
+  `,
+    [limit],
+    {
+      parsers: {
+        [types.DATE]: (date: string) => new Date(date),
+      },
+    }
+  );
+
+  return result.rows;
 }

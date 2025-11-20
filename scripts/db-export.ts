@@ -4,6 +4,7 @@ import path from "path";
 import yaml from "js-yaml";
 import { existsSync } from "fs";
 import { mkdir, writeFile } from "fs/promises";
+import { format } from "date-fns";
 
 async function main() {
   const db = getDb();
@@ -41,7 +42,7 @@ async function main() {
       title: contributor.title ?? undefined,
       avatar_url: contributor.avatar_url ?? undefined,
       joining_date: contributor.joining_date
-        ? contributor.joining_date.toISOString().split("T")[0]
+        ? format(contributor.joining_date, "yyyy-MM-dd")
         : undefined,
     };
 

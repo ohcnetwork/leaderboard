@@ -13,6 +13,7 @@ import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import DateRangeFilter from "@/components/DateRangeFilter";
+import { format } from "date-fns";
 
 interface ActivityBreakdownProps {
   activities: Array<{
@@ -131,7 +132,7 @@ export default function ActivityBreakdown({
 
     filteredActivities.forEach((activity) => {
       const activityName = activity.activity_definition_name;
-      const dateKey = new Date(activity.occured_at).toISOString().split("T")[0];
+      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
 
       if (!trendMap[activityName]) {
         trendMap[activityName] = [];

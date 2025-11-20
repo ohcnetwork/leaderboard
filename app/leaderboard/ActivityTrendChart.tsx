@@ -1,5 +1,6 @@
 "use client";
 
+import { format } from "date-fns";
 import { useMemo } from "react";
 
 interface ActivityTrendChartProps {
@@ -24,7 +25,7 @@ export default function ActivityTrendChart({
     const end = new Date(endDate);
 
     while (current <= end) {
-      const dateStr = current.toISOString().split("T")[0];
+      const dateStr = format(current, "yyyy-MM-dd");
       if (dateStr) {
         dates.push(dateStr);
       }

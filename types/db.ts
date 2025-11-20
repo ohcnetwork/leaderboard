@@ -73,3 +73,25 @@ export interface ContributorAggregate {
   contributor: string; // FK to contributor.username
   value: AggregateValue;
 }
+
+export interface BadgeVariant {
+  description: string;
+  svg_url: string;
+  requirement?: string | null; // Optional description of what's needed to earn this variant
+}
+
+export interface BadgeDefinition {
+  slug: string;
+  name: string;
+  description: string;
+  variants: Record<string, BadgeVariant>;
+}
+
+export interface ContributorBadge {
+  slug: string; // Composite key: {badge}__{contributor}__{variant}
+  badge: string; // FK to badge_definition.slug
+  contributor: string; // FK to contributor.username
+  variant: string; // Key from badge_definition.variants
+  achieved_on: Date;
+  meta: Record<string, unknown> | null; // Optional metadata about how the badge was earned
+}

@@ -161,7 +161,7 @@ export default function ActivityGraph({
     const grouped: Record<string, Record<string, number>> = {};
 
     activities.forEach((activity) => {
-      const dateKey = new Date(activity.occured_at).toISOString().split("T")[0];
+      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
       if (dateKey) {
         if (!grouped[dateKey]) {
           grouped[dateKey] = {};
@@ -203,7 +203,7 @@ export default function ActivityGraph({
     const activityBreakdownByDate: Record<string, Record<string, number>> = {};
 
     filteredActivities.forEach((activity) => {
-      const dateKey = new Date(activity.occured_at).toISOString().split("T")[0];
+      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
       if (dateKey) {
         activityByDate[dateKey] = (activityByDate[dateKey] || 0) + 1;
 

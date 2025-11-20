@@ -10,6 +10,7 @@ import {
   BadgeVariant,
 } from "@/types/db";
 import { PGlite, types } from "@electric-sql/pglite";
+import { format } from "date-fns";
 
 let dbInstance: PGlite | null = null;
 
@@ -182,7 +183,7 @@ export async function upsertContributor(...contributors: Contributor[]) {
   // Helper function to format date for SQL
   const formatDate = (value: Date | null | undefined): string => {
     if (value === null || value === undefined) return "NULL";
-    return `'${value.toISOString().split("T")[0]}'`;
+    return `'${format(value, "yyyy-MM-dd")}'`;
   };
 
   await db.query(`
@@ -418,7 +419,7 @@ export async function getLeaderboard(
     acc[username].activity_breakdown[activityKey].points += points;
 
     // Group by date for daily activity
-    const dateKey = row.occured_at.toISOString().split("T")[0];
+    const dateKey = format(row.occured_at, "yyyy-MM-dd");
     if (dateKey) {
       const existingDay = acc[username].daily_activity.find(
         (d) => d.date === dateKey
@@ -722,7 +723,7 @@ export async function getContributorProfile(username: string): Promise<{
   // Group activities by date for the activity graph
   const activityByDate: Record<string, number> = {};
   activities.forEach((activity) => {
-    const dateKey = activity.occured_at.toISOString().split("T")[0];
+    const dateKey = format(activity.occured_at, "yyyy-MM-dd");
     if (dateKey) {
       activityByDate[dateKey] = (activityByDate[dateKey] || 0) + 1;
     }
@@ -781,41 +782,6 @@ export async function getContributorAggregates(
 }
 
 /**
- * Upsert global aggregates to the database
- * @param aggregates - The global aggregates to upsert
- */
-export async function upsertGlobalAggregates(...aggregates: GlobalAggregate[]) {
-  const db = getDb();
-
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format JSON for SQL
-  const formatJson = (value: unknown): string => {
-    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
-  };
-
-  await db.query(`
-    INSERT INTO global_aggregate (slug, name, description, value)
-    VALUES ${aggregates
-      .map(
-        (a) =>
-          `(${escapeSql(a.slug)}, ${escapeSql(a.name)}, ${escapeSql(
-            a.description
-          )}, ${formatJson(a.value)})`
-      )
-      .join(",")}
-    ON CONFLICT (slug) DO UPDATE SET 
-      name = EXCLUDED.name, 
-      description = EXCLUDED.description, 
-      value = EXCLUDED.value;
-  `);
-}
-
-/**
  * List all global aggregates from the database
  * @returns The list of all global aggregates
  */
@@ -846,37 +812,6 @@ export async function getGlobalAggregate(slug: string) {
 }
 
 /**
- * Upsert contributor aggregate definitions to the database
- * @param definitions - The contributor aggregate definitions to upsert
- */
-export async function upsertContributorAggregateDefinitions(
-  ...definitions: ContributorAggregateDefinition[]
-) {
-  const db = getDb();
-
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  await db.query(`
-    INSERT INTO contributor_aggregate_definition (slug, name, description)
-    VALUES ${definitions
-      .map(
-        (d) =>
-          `(${escapeSql(d.slug)}, ${escapeSql(d.name)}, ${escapeSql(
-            d.description
-          )})`
-      )
-      .join(",")}
-    ON CONFLICT (slug) DO UPDATE SET 
-      name = EXCLUDED.name, 
-      description = EXCLUDED.description;
-  `);
-}
-
-/**
  * List all contributor aggregate definitions from the database
  * @returns The list of all contributor aggregate definitions
  */
@@ -888,41 +823,6 @@ export async function listContributorAggregateDefinitions() {
   `);
 
   return result.rows;
-}
-
-/**
- * Upsert contributor aggregates to the database
- * @param aggregates - The contributor aggregates to upsert
- */
-export async function upsertContributorAggregates(
-  ...aggregates: ContributorAggregate[]
-) {
-  const db = getDb();
-
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format JSON for SQL
-  const formatJson = (value: unknown): string => {
-    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
-  };
-
-  await db.query(`
-    INSERT INTO contributor_aggregate (aggregate, contributor, value)
-    VALUES ${aggregates
-      .map(
-        (a) =>
-          `(${escapeSql(a.aggregate)}, ${escapeSql(
-            a.contributor
-          )}, ${formatJson(a.value)})`
-      )
-      .join(",")}
-    ON CONFLICT (aggregate, contributor) DO UPDATE SET 
-      value = EXCLUDED.value;
-  `);
 }
 
 /**

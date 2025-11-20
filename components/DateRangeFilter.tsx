@@ -8,6 +8,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { format } from "date-fns";
 import { Calendar } from "lucide-react";
 
 interface DateRangeFilterProps {
@@ -39,8 +40,8 @@ export default function DateRangeFilter({
       start.setFullYear(start.getFullYear() - 1);
     }
 
-    onStartDateChange(start.toISOString().split("T")[0]!);
-    onEndDateChange(end.toISOString().split("T")[0]!);
+    onStartDateChange(format(start, "yyyy-MM-dd"));
+    onEndDateChange(format(end, "yyyy-MM-dd"));
   };
 
   return (

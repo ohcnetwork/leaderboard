@@ -75,9 +75,9 @@ export default async function Image({ params }: Props) {
             marginBottom: "40px",
           }}
         >
-          {contributor.avatar_url ? (
+          {contributor.avatarUrl ? (
             <img
-              src={contributor.avatar_url}
+              src={contributor.avatarUrl}
               alt={contributor.name || contributor.username}
               width={180}
               height={180}

@@ -1,148 +1,52 @@
-import {
-  Activity,
-  ActivityDefinition,
-  Contributor,
-  GlobalAggregate,
-  ContributorAggregate,
-  ContributorAggregateDefinition,
-  BadgeDefinition,
-  ContributorBadge,
-  BadgeVariant,
-} from "@/types/db";
-import { PGlite, types } from "@electric-sql/pglite";
+import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";
 
-let dbInstance: PGlite | null = null;
+// Prisma Client singleton pattern
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined;
+};
 
-/**
- * Initialize and return PGlite database instance
- */
-export function getDb(): PGlite {
-  const dataPath = process.env.PGLITE_DB_PATH;
+export const prisma =
+  globalForPrisma.prisma ??
+  new PrismaClient({
+    log: process.env.NODE_ENV === "development" ? ["error", "warn"] : ["error"],
+  });
 
-  if (!dataPath) {
-    throw Error(
-      "'PGLITE_DB_PATH' environment needs to be set with a path to the database data."
-    );
-  }
-
-  // Initialize the database if it doesn't exist, otherwise return the existing instance.
-  // This is to avoid creating a new database instance for each call to getDb().
-  if (!dbInstance) {
-    dbInstance = new PGlite(dataPath);
-  }
-
-  return dbInstance;
-}
-
-/**
- * Create tables and indexes in the database if they don't exist
- */
-export async function createTables() {
-  const db = getDb();
-
-  await db.exec(`
-    CREATE TABLE IF NOT EXISTS contributor (
-        username                VARCHAR PRIMARY KEY,
-        name                    VARCHAR,
-        role                    VARCHAR,
-        title                   VARCHAR,
-        avatar_url              VARCHAR,
-        bio                     TEXT,
-        social_profiles         JSON,
-        joining_date            DATE,
-        meta                    JSON
-    );
-
-    CREATE TABLE IF NOT EXISTS activity_definition (
-        slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR NOT NULL,
-        description             TEXT NOT NULL,
-        points                  SMALLINT,
-        icon                    VARCHAR
-    );
-
-    CREATE TABLE IF NOT EXISTS activity (
-        slug                    VARCHAR PRIMARY KEY,
-        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
-        activity_definition     VARCHAR REFERENCES activity_definition(slug) NOT NULL,
-        title                   VARCHAR,
-        occured_at              TIMESTAMP NOT NULL,
-        link                    VARCHAR,
-        text                    TEXT,
-        points                  SMALLINT,
-        meta                    JSON
-    );
-
-    CREATE INDEX IF NOT EXISTS idx_activity_occured_at ON activity(occured_at);
-    CREATE INDEX IF NOT EXISTS idx_activity_contributor ON activity(contributor);
-    CREATE INDEX IF NOT EXISTS idx_activity_definition ON activity(activity_definition);
-
-    CREATE TABLE IF NOT EXISTS global_aggregate (
-        slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR NOT NULL,
-        description             TEXT,
-        value                   JSON
-    );
-
-    CREATE TABLE IF NOT EXISTS contributor_aggregate_definition (
-        slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR NOT NULL,
-        description             TEXT
-    );
-
-    CREATE TABLE IF NOT EXISTS contributor_aggregate (
-        aggregate               VARCHAR REFERENCES contributor_aggregate_definition(slug) NOT NULL,
-        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
-        value                   JSON NOT NULL,
-        PRIMARY KEY (aggregate, contributor)
-    );
-
-    CREATE INDEX IF NOT EXISTS idx_contributor_aggregate_contributor ON contributor_aggregate(contributor);
-    CREATE INDEX IF NOT EXISTS idx_contributor_aggregate_aggregate ON contributor_aggregate(aggregate);
-
-    CREATE TABLE IF NOT EXISTS badge_definition (
-        slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR NOT NULL,
-        description             TEXT NOT NULL,
-        variants                JSON NOT NULL,
-    );
-
-    CREATE TABLE IF NOT EXISTS contributor_badge (
-        slug                    VARCHAR PRIMARY KEY,
-        badge                   VARCHAR REFERENCES badge_definition(slug) NOT NULL,
-        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
-        variant                 VARCHAR NOT NULL,
-        achieved_on             DATE NOT NULL,
-        meta                    JSON,
-        UNIQUE(badge, contributor, variant)
-    );
-
-    CREATE INDEX IF NOT EXISTS idx_contributor_badge_contributor ON contributor_badge(contributor);
-    CREATE INDEX IF NOT EXISTS idx_contributor_badge_badge ON contributor_badge(badge);
-    CREATE INDEX IF NOT EXISTS idx_contributor_badge_achieved_on ON contributor_badge(achieved_on);
-  `);
-}
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 /**
  * Upsert activity definitions to the database
  * @param activityDefinitions - The activity definitions to upsert
  */
 export async function upsertActivityDefinitions(
-  ...activityDefinitions: ActivityDefinition[]
+  ...activityDefinitions: Array<{
+    slug: string;
+    name: string;
+    description: string | null;
+    points: number | null;
+    icon: string | null;
+  }>
 ) {
-  const db = getDb();
-
-  await db.query(`
-    INSERT INTO activity_definition (slug, name, description, points, icon)
-    VALUES ${activityDefinitions
-      .map(
-        (ad) =>
-          `('${ad.slug}', '${ad.name}', '${ad.description}', ${ad.points}, '${ad.icon}')`
-      )
-      .join(",")}
-    ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, points = EXCLUDED.points, icon = EXCLUDED.icon;
-  `);
+  await Promise.all(
+    activityDefinitions.map((ad) =>
+      prisma.activityDefinition.upsert({
+        where: { slug: ad.slug },
+        update: {
+          name: ad.name,
+          description: ad.description,
+          points: ad.points,
+          icon: ad.icon,
+        },
+        create: {
+          slug: ad.slug,
+          name: ad.name,
+          description: ad.description,
+          points: ad.points,
+          icon: ad.icon,
+        },
+      })
+    )
+  );
 }
 
 /**
@@ -150,66 +54,54 @@ export async function upsertActivityDefinitions(
  * @returns The list of all activity definitions
  */
 export async function listActivityDefinitions() {
-  const db = getDb();
-
-  const result = await db.query<ActivityDefinition>(`
-    SELECT * FROM activity_definition;
-  `);
-
-  return result.rows;
+  return await prisma.activityDefinition.findMany();
 }
 
 /**
  * Upsert contributors to the database
  * @param contributors - The contributors to upsert
  */
-export async function upsertContributor(...contributors: Contributor[]) {
-  const db = getDb();
-
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format JSON for SQL
-  const formatJson = (
-    value: Record<string, string> | null | undefined
-  ): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format date for SQL
-  const formatDate = (value: Date | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${format(value, "yyyy-MM-dd")}'`;
-  };
-
-  await db.query(`
-    INSERT INTO contributor (username, name, role, title, avatar_url, bio, social_profiles, joining_date, meta)
-    VALUES ${contributors
-      .map(
-        (c) =>
-          `(${escapeSql(c.username)}, ${escapeSql(c.name)}, ${escapeSql(
-            c.role
-          )}, ${escapeSql(c.title)}, ${escapeSql(c.avatar_url)}, ${escapeSql(
-            c.bio
-          )}, ${formatJson(c.social_profiles)}, ${formatDate(
-            c.joining_date
-          )}, ${formatJson(c.meta)})`
-      )
-      .join(",")}
-    ON CONFLICT (username) DO UPDATE SET 
-      name = EXCLUDED.name, 
-      role = EXCLUDED.role, 
-      title = EXCLUDED.title,
-      avatar_url = EXCLUDED.avatar_url, 
-      bio = EXCLUDED.bio, 
-      social_profiles = EXCLUDED.social_profiles,
-      joining_date = EXCLUDED.joining_date,
-      meta = EXCLUDED.meta;
-  `);
+export async function upsertContributor(
+  ...contributors: Array<{
+    username: string;
+    name: string | null;
+    role: string | null;
+    title: string | null;
+    avatarUrl: string | null;
+    bio: string | null;
+    socialProfiles: Record<string, string> | null;
+    joiningDate: Date | null;
+    meta: Record<string, string> | null;
+  }>
+) {
+  await Promise.all(
+    contributors.map((c) =>
+      prisma.contributor.upsert({
+        where: { username: c.username },
+        update: {
+          name: c.name,
+          role: c.role,
+          title: c.title,
+          avatarUrl: c.avatarUrl,
+          bio: c.bio,
+          socialProfiles: c.socialProfiles as any,
+          joiningDate: c.joiningDate,
+          meta: c.meta as any,
+        },
+        create: {
+          username: c.username,
+          name: c.name,
+          role: c.role,
+          title: c.title,
+          avatarUrl: c.avatarUrl,
+          bio: c.bio,
+          socialProfiles: c.socialProfiles as any,
+          joiningDate: c.joiningDate,
+          meta: c.meta as any,
+        },
+      })
+    )
+  );
 }
 
 /**
@@ -218,13 +110,7 @@ export async function upsertContributor(...contributors: Contributor[]) {
  * @deprecated TODO: remove this as we'd never want all information about all contributors when listing.
  */
 export async function listContributors() {
-  const db = getDb();
-
-  const result = await db.query<Contributor>(`
-    SELECT * FROM contributor;
-  `);
-
-  return result.rows;
+  return await prisma.contributor.findMany();
 }
 
 /**
@@ -233,33 +119,37 @@ export async function listContributors() {
  * @returns The contributor
  */
 export async function getContributor(username: string) {
-  const db = getDb();
-
-  const result = await db.query<Contributor>(
-    "SELECT * FROM contributor WHERE username = $1;",
-    [username]
-  );
-
-  return result.rows[0] ?? null;
+  return await prisma.contributor.findUnique({
+    where: { username },
+  });
 }
 
 /**
  * Activity with contributor details
  */
-export interface ActivityWithContributor extends Activity {
-  contributor_name: string | null;
-  contributor_avatar_url: string | null;
-  contributor_role: string | null;
+export interface ActivityWithContributor {
+  slug: string;
+  contributor: string;
+  activityDefinition: string;
+  title: string | null;
+  occuredAt: Date;
+  link: string | null;
+  text: string | null;
+  points: number | null;
+  meta: Record<string, unknown> | null;
+  contributorName: string | null;
+  contributorAvatarUrl: string | null;
+  contributorRole: string | null;
 }
 
 /**
  * Activity group by activity definition
  */
 export interface ActivityGroup {
-  activity_definition: string;
-  activity_name: string;
-  activity_description: string | null;
-  activity_points: number | null;
+  activityDefinition: string;
+  activityName: string;
+  activityDescription: string | null;
+  activityPoints: number | null;
   activities: ActivityWithContributor[];
 }
 
@@ -271,61 +161,66 @@ export interface ActivityGroup {
 export async function getRecentActivitiesGroupedByType(
   days: number
 ): Promise<ActivityGroup[]> {
-  const db = getDb();
+  const cutoffDate = new Date();
+  cutoffDate.setDate(cutoffDate.getDate() - days);
 
-  const result = await db.query<
-    ActivityWithContributor & {
-      activity_name: string;
-      activity_description: string | null;
-      activity_points: number | null;
-    }
-  >(
-    `
-    SELECT 
-      a.slug,
-      a.contributor,
-      a.activity_definition,
-      a.title,
-      a.occured_at,
-      a.link,
-      a.text,
-      COALESCE(a.points, ad.points) as points,
-      a.meta,
-      c.name as contributor_name,
-      c.avatar_url as contributor_avatar_url,
-      c.role as contributor_role,
-      ad.name as activity_name,
-      ad.description as activity_description,
-      ad.points as activity_points
-    FROM activity a
-    JOIN contributor c ON a.contributor = c.username
-    JOIN activity_definition ad ON a.activity_definition = ad.slug
-    WHERE a.occured_at >= NOW() - INTERVAL '${days} days'
-    ORDER BY a.occured_at DESC;
-  `,
-    [],
-    {
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
+  const activities = await prisma.activity.findMany({
+    where: {
+      occuredAt: {
+        gte: cutoffDate,
       },
-    }
-  );
+    },
+    include: {
+      contributorRel: {
+        select: {
+          name: true,
+          avatarUrl: true,
+          role: true,
+        },
+      },
+      activityDefinitionRel: {
+        select: {
+          name: true,
+          description: true,
+          points: true,
+        },
+      },
+    },
+    orderBy: {
+      occuredAt: "desc",
+    },
+  });
 
   // Group activities by activity_definition
-  const grouped = result.rows.reduce((acc, row) => {
-    const key = row.activity_definition;
-    if (!acc[key]) {
-      acc[key] = {
-        activity_definition: row.activity_definition,
-        activity_name: row.activity_name,
-        activity_description: row.activity_description,
-        activity_points: row.activity_points,
+  const grouped: Record<string, ActivityGroup> = {};
+
+  for (const activity of activities) {
+    const key = activity.activityDefinition;
+    if (!grouped[key]) {
+      grouped[key] = {
+        activityDefinition: activity.activityDefinition,
+        activityName: activity.activityDefinitionRel.name,
+        activityDescription: activity.activityDefinitionRel.description,
+        activityPoints: activity.activityDefinitionRel.points,
         activities: [],
       };
     }
-    acc[key].activities.push(row);
-    return acc;
-  }, {} as Record<string, ActivityGroup>);
+
+    grouped[key].activities.push({
+      slug: activity.slug,
+      contributor: activity.contributor,
+      activityDefinition: activity.activityDefinition,
+      title: activity.title,
+      occuredAt: activity.occuredAt,
+      link: activity.link,
+      text: activity.text,
+      points: activity.points ?? activity.activityDefinitionRel.points,
+      meta: activity.meta as Record<string, unknown> | null,
+      contributorName: activity.contributorRel.name,
+      contributorAvatarUrl: activity.contributorRel.avatarUrl,
+      contributorRole: activity.contributorRel.role,
+    });
+  }
 
   return Object.values(grouped);
 }
@@ -336,11 +231,11 @@ export async function getRecentActivitiesGroupedByType(
 export interface LeaderboardEntry {
   username: string;
   name: string | null;
-  avatar_url: string | null;
+  avatarUrl: string | null;
   role: string | null;
-  total_points: number;
-  activity_breakdown: Record<string, { count: number; points: number }>;
-  daily_activity: Array<{ date: string; count: number; points: number }>;
+  totalPoints: number;
+  activityBreakdown: Record<string, { count: number; points: number }>;
+  dailyActivity: Array<{ date: string; count: number; points: number }>;
 }
 
 /**
@@ -353,96 +248,84 @@ export async function getLeaderboard(
   startDate: Date,
   endDate: Date
 ): Promise<LeaderboardEntry[]> {
-  const db = getDb();
-
-  // Get all activities in the date range with contributor info
-  const result = await db.query<{
-    username: string;
-    name: string | null;
-    avatar_url: string | null;
-    role: string | null;
-    activity_definition: string;
-    activity_name: string;
-    points: number | null;
-    occured_at: Date;
-  }>(
-    `
-    SELECT 
-      c.username,
-      c.name,
-      c.avatar_url,
-      c.role,
-      a.activity_definition,
-      ad.name as activity_name,
-      COALESCE(a.points, ad.points) as points,
-      a.occured_at
-    FROM activity a
-    JOIN contributor c ON a.contributor = c.username
-    JOIN activity_definition ad ON a.activity_definition = ad.slug
-    WHERE a.occured_at >= $1 AND a.occured_at <= $2
-    ORDER BY c.username, a.occured_at;
-  `,
-    [startDate.toISOString(), endDate.toISOString()],
-    {
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
+  const activities = await prisma.activity.findMany({
+    where: {
+      occuredAt: {
+        gte: startDate,
+        lte: endDate,
       },
-    }
-  );
+    },
+    include: {
+      contributorRel: {
+        select: {
+          username: true,
+          name: true,
+          avatarUrl: true,
+          role: true,
+        },
+      },
+      activityDefinitionRel: {
+        select: {
+          name: true,
+          points: true,
+        },
+      },
+    },
+    orderBy: [{ contributor: "asc" }, { occuredAt: "asc" }],
+  });
 
   // Group by contributor and calculate totals
-  const leaderboardMap = result.rows.reduce((acc, row) => {
-    const username = row.username;
-    if (!acc[username]) {
-      acc[username] = {
-        username: row.username,
-        name: row.name,
-        avatar_url: row.avatar_url,
-        role: row.role,
-        total_points: 0,
-        activity_breakdown: {},
-        daily_activity: [],
+  const leaderboardMap: Record<string, LeaderboardEntry> = {};
+
+  for (const activity of activities) {
+    const username = activity.contributor;
+    if (!leaderboardMap[username]) {
+      leaderboardMap[username] = {
+        username: activity.contributorRel.username,
+        name: activity.contributorRel.name,
+        avatarUrl: activity.contributorRel.avatarUrl,
+        role: activity.contributorRel.role,
+        totalPoints: 0,
+        activityBreakdown: {},
+        dailyActivity: [],
       };
     }
 
-    const points = row.points || 0;
-    acc[username].total_points += points;
+    const points =
+      activity.points ?? activity.activityDefinitionRel.points ?? 0;
+    leaderboardMap[username].totalPoints += points;
 
-    const activityKey = row.activity_name;
-    if (!acc[username].activity_breakdown[activityKey]) {
-      acc[username].activity_breakdown[activityKey] = {
+    const activityKey = activity.activityDefinitionRel.name;
+    if (!leaderboardMap[username].activityBreakdown[activityKey]) {
+      leaderboardMap[username].activityBreakdown[activityKey] = {
         count: 0,
         points: 0,
       };
     }
-    acc[username].activity_breakdown[activityKey].count += 1;
-    acc[username].activity_breakdown[activityKey].points += points;
+    leaderboardMap[username].activityBreakdown[activityKey].count += 1;
+    leaderboardMap[username].activityBreakdown[activityKey].points += points;
 
     // Group by date for daily activity
-    const dateKey = format(row.occured_at, "yyyy-MM-dd");
-    if (dateKey) {
-      const existingDay = acc[username].daily_activity.find(
-        (d) => d.date === dateKey
-      );
-      if (existingDay) {
-        existingDay.count += 1;
-        existingDay.points += points;
-      } else {
-        acc[username].daily_activity.push({
-          date: dateKey,
-          count: 1,
-          points: points,
-        });
-      }
+    const dateKey = format(activity.occuredAt, "yyyy-MM-dd");
+    const existingDay = leaderboardMap[username].dailyActivity.find(
+      (d) => d.date === dateKey
+    );
+    if (existingDay) {
+      existingDay.count += 1;
+      existingDay.points += points;
+    } else {
+      leaderboardMap[username].dailyActivity.push({
+        date: dateKey,
+        count: 1,
+        points: points,
+      });
     }
-
-    return acc;
-  }, {} as Record<string, LeaderboardEntry>);
+  }
 
   // Filter contributors with points > 0 and sort by total points
   return Object.values(leaderboardMap)
-    .filter((entry) => entry.total_points > 0)
-    .sort((a, b) => b.total_points - a.total_points);
+    .filter((entry) => entry.totalPoints > 0)
+    .sort((a, b) => b.totalPoints - a.totalPoints);
 }
 
 /**
@@ -462,119 +345,140 @@ export async function getTopContributorsByActivity(
     Array<{
       username: string;
       name: string | null;
-      avatar_url: string | null;
+      avatarUrl: string | null;
       points: number;
       count: number;
     }>
   >
 > {
-  const db = getDb();
+  const whereClause: {
+    occuredAt: {
+      gte: Date;
+      lte: Date;
+    };
+    activityDefinition?: {
+      in: string[];
+    };
+  } = {
+    occuredAt: {
+      gte: startDate,
+      lte: endDate,
+    },
+  };
 
-  // Build WHERE clause for activity slug filtering
-  const whereClause =
-    activitySlugs && activitySlugs.length > 0
-      ? `a.occured_at >= $1 AND a.occured_at <= $2 AND ad.slug = ANY($3)`
-      : `a.occured_at >= $1 AND a.occured_at <= $2`;
+  if (activitySlugs && activitySlugs.length > 0) {
+    whereClause.activityDefinition = {
+      in: activitySlugs,
+    };
+  }
 
-  const queryParams =
-    activitySlugs && activitySlugs.length > 0
-      ? [startDate.toISOString(), endDate.toISOString(), activitySlugs]
-      : [startDate.toISOString(), endDate.toISOString()];
-
-  const result = await db.query<{
-    username: string;
-    name: string | null;
-    avatar_url: string | null;
-    activity_name: string;
-    activity_slug: string;
-    points: number;
-    count: number;
-  }>(
-    `
-    SELECT 
-      c.username,
-      c.name,
-      c.avatar_url,
-      ad.name as activity_name,
-      ad.slug as activity_slug,
-      SUM(COALESCE(a.points, ad.points)) as points,
-      COUNT(*) as count
-    FROM activity a
-    JOIN contributor c ON a.contributor = c.username
-    JOIN activity_definition ad ON a.activity_definition = ad.slug
-    WHERE ${whereClause}
-    GROUP BY c.username, c.name, c.avatar_url, ad.name, ad.slug
-    HAVING SUM(COALESCE(a.points, ad.points)) > 0
-    ORDER BY ad.name, points DESC;
-  `,
-    queryParams,
-    {
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
+  const activities = await prisma.activity.findMany({
+    where: whereClause,
+    include: {
+      contributorRel: {
+        select: {
+          username: true,
+          name: true,
+          avatarUrl: true,
+        },
       },
-    }
-  );
+      activityDefinitionRel: {
+        select: {
+          name: true,
+          slug: true,
+          points: true,
+        },
+      },
+    },
+  });
 
-  // Group by activity type and take top 3 for each
-  const topByActivityMap: Record<
+  // Group by activity type and contributor
+  const grouped: Record<
+    string,
+    Record<
+      string,
+      {
+        username: string;
+        name: string | null;
+        avatarUrl: string | null;
+        points: number;
+        count: number;
+      }
+    >
+  > = {};
+
+  for (const activity of activities) {
+    const activityName = activity.activityDefinitionRel.name;
+    const username = activity.contributor;
+    const points =
+      activity.points ?? activity.activityDefinitionRel.points ?? 0;
+
+    if (!grouped[activityName]) {
+      grouped[activityName] = {};
+    }
+
+    if (!grouped[activityName][username]) {
+      grouped[activityName][username] = {
+        username: activity.contributorRel.username,
+        name: activity.contributorRel.name,
+        avatarUrl: activity.contributorRel.avatarUrl,
+        points: 0,
+        count: 0,
+      };
+    }
+
+    grouped[activityName][username].points += points;
+    grouped[activityName][username].count += 1;
+  }
+
+  // Convert to result format and take top 3 for each activity
+  const result: Record<
     string,
     Array<{
       username: string;
       name: string | null;
-      avatar_url: string | null;
+      avatarUrl: string | null;
       points: number;
       count: number;
     }>
   > = {};
 
-  result.rows.forEach((row) => {
-    const activityName = row.activity_name;
-    if (!topByActivityMap[activityName]) {
-      topByActivityMap[activityName] = [];
+  for (const [activityName, contributors] of Object.entries(grouped)) {
+    const sorted = Object.values(contributors)
+      .filter((c) => c.points > 0)
+      .sort((a, b) => b.points - a.points)
+      .slice(0, 3);
+
+    if (sorted.length > 0) {
+      result[activityName] = sorted;
     }
-    if (topByActivityMap[activityName].length < 3) {
-      topByActivityMap[activityName].push({
-        username: row.username,
-        name: row.name,
-        avatar_url: row.avatar_url,
-        points: Number(row.points),
-        count: Number(row.count),
-      });
-    }
-  });
+  }
 
   // If slugs are provided, return in the order specified in config
-  // Otherwise, return in alphabetical order by activity name
   if (activitySlugs && activitySlugs.length > 0) {
-    const orderedResult: Record<
-      string,
-      Array<{
-        username: string;
-        name: string | null;
-        avatar_url: string | null;
-        points: number;
-        count: number;
-      }>
-    > = {};
+    const orderedResult: typeof result = {};
 
-    // Create a map of slug to activity name from the results
+    // Create a map of slug to activity name from the activities
     const slugToName = new Map<string, string>();
-    result.rows.forEach((row) => {
-      slugToName.set(row.activity_slug, row.activity_name);
-    });
+    for (const activity of activities) {
+      slugToName.set(
+        activity.activityDefinitionRel.slug,
+        activity.activityDefinitionRel.name
+      );
+    }
 
     // Add activities in the order specified by activitySlugs
-    activitySlugs.forEach((slug) => {
+    for (const slug of activitySlugs) {
       const activityName = slugToName.get(slug);
-      if (activityName && topByActivityMap[activityName]) {
-        orderedResult[activityName] = topByActivityMap[activityName];
+      if (activityName && result[activityName]) {
+        orderedResult[activityName] = result[activityName];
       }
-    });
+    }
 
     return orderedResult;
   }
 
-  return topByActivityMap;
+  return result;
 }
 
 /**
@@ -582,13 +486,12 @@ export async function getTopContributorsByActivity(
  * @returns List of all contributor usernames
  */
 export async function getAllContributorUsernames(): Promise<string[]> {
-  const db = getDb();
+  const contributors = await prisma.contributor.findMany({
+    select: { username: true },
+    orderBy: { username: "asc" },
+  });
 
-  const result = await db.query<{ username: string }>(
-    "SELECT username FROM contributor ORDER BY username;"
-  );
-
-  return result.rows.map((row) => row.username);
+  return contributors.map((c) => c.username);
 }
 
 /**
@@ -602,59 +505,84 @@ export async function getAllContributorsWithAvatars(
   Array<{
     username: string;
     name: string | null;
-    avatar_url: string;
+    avatarUrl: string;
     role: string | null;
-    total_points: number;
+    totalPoints: number;
   }>
 > {
-  const db = getDb();
-
-  const whereConditions = ["c.avatar_url IS NOT NULL"];
-  const params: string[] = [];
+  const whereClause: {
+    avatarUrl: {
+      not: null;
+    };
+    OR?: Array<{ role: null } | { role: { notIn: string[] } }>;
+  } = {
+    avatarUrl: {
+      not: null,
+    },
+  };
 
   if (excludeRoles && excludeRoles.length > 0) {
-    params.push(...excludeRoles);
-    const placeholders = excludeRoles.map((_, i) => `$${i + 1}`).join(", ");
-    whereConditions.push(`(c.role IS NULL OR c.role NOT IN (${placeholders}))`);
+    whereClause.OR = [{ role: null }, { role: { notIn: excludeRoles } }];
   }
 
-  const whereClause = whereConditions.join(" AND ");
+  const contributors = await prisma.contributor.findMany({
+    where: whereClause,
+    include: {
+      activities: {
+        include: {
+          activityDefinitionRel: {
+            select: {
+              points: true,
+            },
+          },
+        },
+      },
+    },
+  });
 
-  const result = await db.query<{
-    username: string;
-    name: string | null;
-    avatar_url: string;
-    role: string | null;
-    total_points: number;
-  }>(
-    `
-    SELECT 
-      c.username,
-      c.name,
-      c.avatar_url,
-      c.role,
-      COALESCE(SUM(COALESCE(a.points, ad.points)), 0) as total_points
-    FROM contributor c
-    LEFT JOIN activity a ON c.username = a.contributor
-    LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
-    WHERE ${whereClause}
-    GROUP BY c.username, c.name, c.avatar_url, c.role
-    ORDER BY total_points DESC, c.username ASC;
-  `,
-    params
-  );
+  // Calculate total points for each contributor
+  const result = contributors.map((c) => {
+    const totalPoints = c.activities.reduce((sum, activity) => {
+      const points =
+        activity.points ?? activity.activityDefinitionRel.points ?? 0;
+      return sum + points;
+    }, 0);
 
-  return result.rows;
+    return {
+      username: c.username,
+      name: c.name,
+      avatarUrl: c.avatarUrl!,
+      role: c.role,
+      totalPoints,
+    };
+  });
+
+  // Sort by total points descending, then by username ascending
+  return result.sort((a, b) => {
+    if (b.totalPoints !== a.totalPoints) {
+      return b.totalPoints - a.totalPoints;
+    }
+    return a.username.localeCompare(b.username);
+  });
 }
 
 /**
  * Activity with full details for timeline
  */
-export interface ContributorActivity extends Activity {
-  activity_name: string;
-  activity_description: string | null;
-  activity_points: number | null;
-  activity_icon: string | null;
+export interface ContributorActivity {
+  slug: string;
+  contributor: string;
+  activityDefinition: string;
+  title: string | null;
+  occuredAt: Date;
+  link: string | null;
+  text: string | null;
+  points: number | null;
+  meta: Record<string, unknown> | null;
+  activityName: string;
+  activityDescription: string | null;
+  activityPoints: number | null;
+  activityIcon: string | null;
 }
 
 /**
@@ -663,13 +591,11 @@ export interface ContributorActivity extends Activity {
  * @returns Contributor profile with activities
  */
 export async function getContributorProfile(username: string): Promise<{
-  contributor: Contributor | null;
+  contributor: Awaited<ReturnType<typeof getContributor>>;
   activities: ContributorActivity[];
   totalPoints: number;
   activityByDate: Record<string, number>; // For activity graph
 }> {
-  const db = getDb();
-
   // Get contributor info
   const contributor = await getContributor(username);
 
@@ -683,36 +609,38 @@ export async function getContributorProfile(username: string): Promise<{
   }
 
   // Get all activities for this contributor
-  const activitiesResult = await db.query<ContributorActivity>(
-    `
-    SELECT 
-      a.slug,
-      a.contributor,
-      a.activity_definition,
-      a.title,
-      a.occured_at,
-      a.link,
-      a.text,
-      COALESCE(a.points, ad.points) as points,
-      a.meta,
-      ad.name as activity_name,
-      ad.description as activity_description,
-      ad.points as activity_points,
-      ad.icon as activity_icon
-    FROM activity a
-    JOIN activity_definition ad ON a.activity_definition = ad.slug
-    WHERE a.contributor = $1
-    ORDER BY a.occured_at DESC;
-  `,
-    [username],
-    {
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
+  const activitiesData = await prisma.activity.findMany({
+    where: { contributor: username },
+    include: {
+      activityDefinitionRel: {
+        select: {
+          name: true,
+          description: true,
+          points: true,
+          icon: true,
+        },
       },
-    }
-  );
+    },
+    orderBy: {
+      occuredAt: "desc",
+    },
+  });
 
-  const activities = activitiesResult.rows;
+  const activities: ContributorActivity[] = activitiesData.map((a) => ({
+    slug: a.slug,
+    contributor: a.contributor,
+    activityDefinition: a.activityDefinition,
+    title: a.title,
+    occuredAt: a.occuredAt,
+    link: a.link,
+    text: a.text,
+    points: a.points ?? a.activityDefinitionRel.points,
+    meta: a.meta as Record<string, unknown> | null,
+    activityName: a.activityDefinitionRel.name,
+    activityDescription: a.activityDefinitionRel.description,
+    activityPoints: a.activityDefinitionRel.points,
+    activityIcon: a.activityDefinitionRel.icon,
+  }));
 
   // Calculate total points
   const totalPoints = activities.reduce(
@@ -722,12 +650,10 @@ export async function getContributorProfile(username: string): Promise<{
 
   // Group activities by date for the activity graph
   const activityByDate: Record<string, number> = {};
-  activities.forEach((activity) => {
-    const dateKey = format(activity.occured_at, "yyyy-MM-dd");
-    if (dateKey) {
-      activityByDate[dateKey] = (activityByDate[dateKey] || 0) + 1;
-    }
-  });
+  for (const activity of activities) {
+    const dateKey = format(activity.occuredAt, "yyyy-MM-dd");
+    activityByDate[dateKey] = (activityByDate[dateKey] || 0) + 1;
+  }
 
   return {
     contributor,
@@ -747,14 +673,13 @@ export async function getGlobalAggregates(slugs: string[]) {
     return [];
   }
 
-  const db = getDb();
-
-  const result = await db.query<GlobalAggregate>(
-    "SELECT * FROM global_aggregate WHERE slug = ANY($1);",
-    [slugs]
-  );
-
-  return result.rows;
+  return await prisma.globalAggregate.findMany({
+    where: {
+      slug: {
+        in: slugs,
+      },
+    },
+  });
 }
 
 /**
@@ -771,14 +696,14 @@ export async function getContributorAggregates(
     return [];
   }
 
-  const db = getDb();
-
-  const result = await db.query<ContributorAggregate>(
-    "SELECT * FROM contributor_aggregate WHERE contributor = $1 AND aggregate = ANY($2);",
-    [username, slugs]
-  );
-
-  return result.rows;
+  return await prisma.contributorAggregate.findMany({
+    where: {
+      contributor: username,
+      aggregate: {
+        in: slugs,
+      },
+    },
+  });
 }
 
 /**
@@ -786,13 +711,7 @@ export async function getContributorAggregates(
  * @returns The list of all global aggregates
  */
 export async function listGlobalAggregates() {
-  const db = getDb();
-
-  const result = await db.query<GlobalAggregate>(`
-    SELECT * FROM global_aggregate;
-  `);
-
-  return result.rows;
+  return await prisma.globalAggregate.findMany();
 }
 
 /**
@@ -801,14 +720,9 @@ export async function listGlobalAggregates() {
  * @returns The global aggregate or null if not found
  */
 export async function getGlobalAggregate(slug: string) {
-  const db = getDb();
-
-  const result = await db.query<GlobalAggregate>(
-    "SELECT * FROM global_aggregate WHERE slug = $1;",
-    [slug]
-  );
-
-  return result.rows[0] ?? null;
+  return await prisma.globalAggregate.findUnique({
+    where: { slug },
+  });
 }
 
 /**
@@ -816,13 +730,7 @@ export async function getGlobalAggregate(slug: string) {
  * @returns The list of all contributor aggregate definitions
  */
 export async function listContributorAggregateDefinitions() {
-  const db = getDb();
-
-  const result = await db.query<ContributorAggregateDefinition>(`
-    SELECT * FROM contributor_aggregate_definition;
-  `);
-
-  return result.rows;
+  return await prisma.contributorAggregateDefinition.findMany();
 }
 
 /**
@@ -835,14 +743,14 @@ export async function getContributorAggregate(
   username: string,
   aggregateSlug: string
 ) {
-  const db = getDb();
-
-  const result = await db.query<ContributorAggregate>(
-    "SELECT * FROM contributor_aggregate WHERE contributor = $1 AND aggregate = $2;",
-    [username, aggregateSlug]
-  );
-
-  return result.rows[0] ?? null;
+  return await prisma.contributorAggregate.findUnique({
+    where: {
+      aggregate_contributor: {
+        aggregate: aggregateSlug,
+        contributor: username,
+      },
+    },
+  });
 }
 
 /**
@@ -850,49 +758,34 @@ export async function getContributorAggregate(
  * @param username - The username of the contributor
  * @returns Array of contributor badges with badge definition details
  */
-export async function getContributorBadges(username: string): Promise<
-  Array<
-    ContributorBadge & {
-      badge_name: string;
-      badge_description: string;
-      variants: Record<string, BadgeVariant>;
-    }
-  >
-> {
-  const db = getDb();
-
-  const result = await db.query<
-    ContributorBadge & {
-      badge_name: string;
-      badge_description: string;
-      variants: Record<string, BadgeVariant>;
-    }
-  >(
-    `
-    SELECT 
-      cb.slug,
-      cb.badge,
-      cb.contributor,
-      cb.variant,
-      cb.achieved_on,
-      cb.meta,
-      bd.name as badge_name,
-      bd.description as badge_description,
-      bd.variants as variants
-    FROM contributor_badge cb
-    JOIN badge_definition bd ON cb.badge = bd.slug
-    WHERE cb.contributor = $1
-    ORDER BY cb.achieved_on DESC;
-  `,
-    [username],
-    {
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
+export async function getContributorBadges(username: string) {
+  const badges = await prisma.contributorBadge.findMany({
+    where: { contributor: username },
+    include: {
+      badgeRel: {
+        select: {
+          name: true,
+          description: true,
+          variants: true,
+        },
       },
-    }
-  );
+    },
+    orderBy: {
+      achievedOn: "desc",
+    },
+  });
 
-  return result.rows;
+  return badges.map((b) => ({
+    slug: b.slug,
+    badge: b.badge,
+    contributor: b.contributor,
+    variant: b.variant,
+    achievedOn: b.achievedOn,
+    meta: b.meta,
+    badgeName: b.badgeRel.name,
+    badgeDescription: b.badgeRel.description,
+    variants: b.badgeRel.variants,
+  }));
 }
 
 /**
@@ -901,88 +794,67 @@ export async function getContributorBadges(username: string): Promise<
  * @param variant - Optional variant to filter by
  * @returns Array of contributor badges with contributor details
  */
-export async function getBadgeHolders(
-  badgeSlug: string,
-  variant?: string
-): Promise<
-  Array<
-    ContributorBadge & {
-      contributor_name: string | null;
-      contributor_avatar_url: string | null;
-      contributor_role: string | null;
-    }
-  >
-> {
-  const db = getDb();
+export async function getBadgeHolders(badgeSlug: string, variant?: string) {
+  const whereClause: { badge: string; variant?: string } = { badge: badgeSlug };
+  if (variant) {
+    whereClause.variant = variant;
+  }
 
-  const whereClause = variant
-    ? "cb.badge = $1 AND cb.variant = $2"
-    : "cb.badge = $1";
-  const params = variant ? [badgeSlug, variant] : [badgeSlug];
-
-  const result = await db.query<
-    ContributorBadge & {
-      contributor_name: string | null;
-      contributor_avatar_url: string | null;
-      contributor_role: string | null;
-    }
-  >(
-    `
-    SELECT 
-      cb.slug,
-      cb.badge,
-      cb.contributor,
-      cb.variant,
-      cb.achieved_on,
-      cb.meta,
-      c.name as contributor_name,
-      c.avatar_url as contributor_avatar_url,
-      c.role as contributor_role
-    FROM contributor_badge cb
-    JOIN contributor c ON cb.contributor = c.username
-    WHERE ${whereClause}
-    ORDER BY cb.achieved_on ASC;
-  `,
-    params,
-    {
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
+  const badges = await prisma.contributorBadge.findMany({
+    where: whereClause,
+    include: {
+      contributorRel: {
+        select: {
+          name: true,
+          avatarUrl: true,
+          role: true,
+        },
       },
-    }
-  );
+    },
+    orderBy: {
+      achievedOn: "asc",
+    },
+  });
 
-  return result.rows;
+  return badges.map((b) => ({
+    slug: b.slug,
+    badge: b.badge,
+    contributor: b.contributor,
+    variant: b.variant,
+    achievedOn: b.achievedOn,
+    meta: b.meta,
+    contributorName: b.contributorRel.name,
+    contributorAvatarUrl: b.contributorRel.avatarUrl,
+    contributorRole: b.contributorRel.role,
+  }));
 }
 
 /**
  * Get badge statistics - count of badges earned
  * @returns Badge statistics
  */
-export async function getBadgeStatistics(): Promise<
-  Array<{
-    badge_count: number;
-    total_earned: number;
-    unique_contributors: number;
-  }>
-> {
-  const db = getDb();
+export async function getBadgeStatistics() {
+  const result = await prisma.badgeDefinition.findMany({
+    include: {
+      _count: {
+        select: {
+          contributorBadges: true,
+        },
+      },
+      contributorBadges: {
+        select: {
+          contributor: true,
+        },
+        distinct: ["contributor"],
+      },
+    },
+  });
 
-  const result = await db.query<{
-    badge_count: number;
-    total_earned: number;
-    unique_contributors: number;
-  }>(`
-    SELECT 
-      COUNT(DISTINCT bd.slug) as badge_count,
-      COUNT(cb.slug) as total_earned,
-      COUNT(DISTINCT cb.contributor) as unique_contributors
-    FROM badge_definition bd
-    LEFT JOIN contributor_badge cb ON bd.slug = cb.badge
-    GROUP BY bd.slug
-    ORDER BY bd.slug;
-  `);
-
-  return result.rows;
+  return result.map((badge) => ({
+    badge_count: 1,
+    total_earned: badge._count.contributorBadges,
+    unique_contributors: badge.contributorBadges.length,
+  }));
 }
 
 /**
@@ -994,56 +866,49 @@ export async function getBadgeStatistics(): Promise<
 export async function getRecentBadgeAchievements(
   days: number,
   limit: number = 50
-): Promise<
-  Array<
-    ContributorBadge & {
-      contributor_name: string | null;
-      contributor_avatar_url: string | null;
-      contributor_role: string | null;
-      badge_name: string;
-      badge_description: string;
-    }
-  >
-> {
-  const db = getDb();
+) {
+  const cutoffDate = new Date();
+  cutoffDate.setDate(cutoffDate.getDate() - days);
 
-  const result = await db.query<
-    ContributorBadge & {
-      contributor_name: string | null;
-      contributor_avatar_url: string | null;
-      contributor_role: string | null;
-      badge_name: string;
-      badge_description: string;
-    }
-  >(
-    `
-    SELECT 
-      cb.slug,
-      cb.badge,
-      cb.contributor,
-      cb.variant,
-      cb.achieved_on,
-      cb.meta,
-      c.name as contributor_name,
-      c.avatar_url as contributor_avatar_url,
-      c.role as contributor_role,
-      bd.name as badge_name,
-      bd.description as badge_description,
-      bd.variants
-    FROM contributor_badge cb
-    JOIN contributor c ON cb.contributor = c.username
-    JOIN badge_definition bd ON cb.badge = bd.slug
-    WHERE cb.achieved_on >= NOW() - INTERVAL '${days} days'
-    ORDER BY cb.achieved_on DESC
-    LIMIT $1;
-  `,
-    [limit],
-    {
-      parsers: {
-        [types.DATE]: (date: string) => new Date(date),
+  const badges = await prisma.contributorBadge.findMany({
+    where: {
+      achievedOn: {
+        gte: cutoffDate,
       },
-    }
-  );
+    },
+    include: {
+      contributorRel: {
+        select: {
+          name: true,
+          avatarUrl: true,
+          role: true,
+        },
+      },
+      badgeRel: {
+        select: {
+          name: true,
+          description: true,
+          variants: true,
+        },
+      },
+    },
+    orderBy: {
+      achievedOn: "desc",
+    },
+    take: limit,
+  });
 
-  return result.rows;
+  return badges.map((b) => ({
+    slug: b.slug,
+    badge: b.badge,
+    contributor: b.contributor,
+    variant: b.variant,
+    achievedOn: b.achievedOn,
+    meta: b.meta,
+    contributorName: b.contributorRel.name,
+    contributorAvatarUrl: b.contributorRel.avatarUrl,
+    contributorRole: b.contributorRel.role,
+    badgeName: b.badgeRel.name,
+    badgeDescription: b.badgeRel.description,
+  }));
 }

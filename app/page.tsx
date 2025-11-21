@@ -9,6 +9,7 @@ import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { Activity, Users, TrendingUp, LucideIcon } from "lucide-react";
 import { formatAggregateValue } from "@/lib/utils";
+import { AggregateValue } from "@/lib/types";
 
 // Built-in aggregate definitions for home page
 const BUILTIN_GLOBAL_AGGREGATES = {
@@ -100,7 +101,7 @@ export default async function Home() {
     if (aggregate.value) {
       aggregateCards.push({
         name: aggregate.name,
-        value: formatAggregateValue(aggregate.value),
+        value: formatAggregateValue(aggregate.value as unknown as AggregateValue),
         description: aggregate.description || "",
         icon: TrendingUp, // Default icon for DB aggregates
       });
@@ -162,16 +163,16 @@ export default async function Home() {
           </Card>
         ) : (
           activityGroups.map((group) => (
-            <Card key={group.activity_definition}>
+            <Card key={group.activityDefinition}>
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div>
                     <CardTitle className="text-xl">
-                      {group.activity_name}
+                      {group.activityName}
                     </CardTitle>
-                    {group.activity_description && (
+                    {group.activityDescription && (
                       <p className="text-sm text-muted-foreground mt-1">
-                        {group.activity_description}
+                        {group.activityDescription}
                       </p>
                     )}
                   </div>
@@ -190,13 +191,13 @@ export default async function Home() {
                     >
                       <Avatar className="h-10 w-10">
                         <AvatarImage
-                          src={activity.contributor_avatar_url || undefined}
+                          src={activity.contributorAvatarUrl || undefined}
                           alt={
-                            activity.contributor_name || activity.contributor
+                            activity.contributorName || activity.contributor
                           }
                         />
                         <AvatarFallback>
-                          {(activity.contributor_name || activity.contributor)
+                          {(activity.contributorName || activity.contributor)
                             .substring(0, 2)
                             .toUpperCase()}
                         </AvatarFallback>
@@ -207,15 +208,15 @@ export default async function Home() {
                             href={`/${activity.contributor}`}
                             className="font-medium hover:text-primary transition-colors"
                           >
-                            {activity.contributor_name || activity.contributor}
+                            {activity.contributorName || activity.contributor}
                           </Link>
-                          {activity.contributor_role && (
+                          {activity.contributorRole && (
                             <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                              {activity.contributor_role}
+                              {activity.contributorRole}
                             </span>
                           )}
                           <RelativeTime
-                            date={activity.occured_at}
+                            date={activity.occuredAt}
                             className="text-sm text-muted-foreground"
                           />
                         </div>

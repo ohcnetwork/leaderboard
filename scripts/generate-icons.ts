@@ -1,4 +1,4 @@
-import { getDb } from "@/lib/db";
+import { prisma } from "@/lib/db";
 import { getConfig } from "@/lib/config";
 import fs from "fs";
 import path from "path";
@@ -8,14 +8,23 @@ const outputPath = path.resolve("app/icons.gen.ts");
 
 // Get unique icon names from database and config
 async function getIconNames() {
-  const db = getDb();
   const config = getConfig();
 
   // Get icons from activity definitions
-  const result = await db.query<{ icon: string }>(`
-        SELECT DISTINCT icon FROM activity_definition WHERE icon IS NOT NULL;
-    `);
-  const activityIcons = result.rows.map((row) => row.icon);
+  const activityDefinitions = await prisma.activityDefinition.findMany({
+    where: {
+      icon: {
+        not: null,
+      },
+    },
+    select: {
+      icon: true,
+    },
+    distinct: ["icon"],
+  });
+  const activityIcons = activityDefinitions
+    .map((row) => row.icon)
+    .filter((icon): icon is string => icon !== null);
 
   // Get icons from social profiles config
   const socialProfileIcons = config.leaderboard.social_profiles
@@ -77,6 +86,13 @@ ${mapEntries}
       iconNames.length !== 1 ? "s" : ""
     } → app/icons.gen.ts`
   );
+
+  // Disconnect Prisma client
+  await prisma.$disconnect();
 }
 
-main();
+main().catch((error) => {
+  console.error("Fatal error:", error);
+  prisma.$disconnect();
+  process.exit(1);
+});

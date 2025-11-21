@@ -10,8 +10,8 @@ import { useState } from "react";
 interface ActivityOverviewProps {
   data: Array<{ date: string; count: number; level: number }>;
   activities: Array<{
-    activity_definition_name: string;
-    occured_at: Date;
+    activityDefinitionName: string;
+    occuredAt: Date;
   }>;
   activityDefinitions: Array<{
     name: string;

@@ -1,5 +1,4 @@
-import { upsertContributor } from "@/lib/db";
-import { Contributor } from "@/types/db";
+import { upsertContributor, prisma } from "@/lib/db";
 import path from "path";
 import yaml from "js-yaml";
 import { readdir, readFile } from "fs/promises";
@@ -61,7 +60,17 @@ async function main() {
 
   console.log(`Found ${markdownFiles.length} contributor files to import...`);
 
-  const contributors: Contributor[] = [];
+  const contributors: Array<{
+    username: string;
+    name: string | null;
+    role: string | null;
+    title: string | null;
+    avatarUrl: string | null;
+    bio: string | null;
+    socialProfiles: Record<string, string> | null;
+    joiningDate: Date | null;
+    meta: Record<string, string> | null;
+  }> = [];
 
   // Parse each markdown file
   for (const filename of markdownFiles) {
@@ -75,15 +84,15 @@ async function main() {
       const username = path.basename(filename, ".md");
 
       // Build contributor object
-      const contributor: Contributor = {
+      const contributor = {
         username,
         name: frontmatter.name ?? null,
         role: frontmatter.role ?? null,
         title: frontmatter.title ?? null,
-        avatar_url: frontmatter.avatar_url ?? null,
+        avatarUrl: frontmatter.avatar_url ?? null,
         bio: body || null,
-        social_profiles: frontmatter.social_profiles ?? null,
-        joining_date: frontmatter.joining_date
+        socialProfiles: frontmatter.social_profiles ?? null,
+        joiningDate: frontmatter.joining_date
           ? new Date(frontmatter.joining_date)
           : null,
         meta: frontmatter.meta ?? null,
@@ -102,6 +111,13 @@ async function main() {
   await upsertContributor(...contributors);
 
   console.log("Import complete!");
+  
+  // Disconnect Prisma client
+  await prisma.$disconnect();
 }
 
-main();
+main().catch((error) => {
+  console.error("Fatal error:", error);
+  prisma.$disconnect();
+  process.exit(1);
+});

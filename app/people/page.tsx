@@ -54,7 +54,7 @@ export default async function PeoplePage() {
               >
                 <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-primary/50 hover:scale-105">
                   <AvatarImage
-                    src={contributor.avatar_url}
+                    src={contributor.avatarUrl}
                     alt={contributor.name || contributor.username}
                     className="object-cover"
                   />

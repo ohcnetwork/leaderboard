@@ -1,4 +1,4 @@
-import { getDb, listContributors } from "@/lib/db";
+import { prisma, listContributors } from "@/lib/db";
 
 const CONTRIBUTOR_BASE_URL =
   "https://raw.githubusercontent.com/ohcnetwork/leaderboard-data/refs/heads/main/contributors";
@@ -81,31 +81,34 @@ async function updateContributor(
   role: string | null,
   slackUserId: string | null
 ): Promise<void> {
-  const db = getDb();
+  const contributor = await prisma.contributor.findUnique({
+    where: { username },
+  });
 
-  if (role && slackUserId) {
-    // Update both role and slack_user_id in meta
-    await db.query(
-      `UPDATE contributor 
-       SET role = $1, 
-           meta = COALESCE(meta, '{}'::json)::jsonb || $2::jsonb 
-       WHERE username = $3;`,
-      [role, JSON.stringify({ slack_user_id: slackUserId }), username]
-    );
-  } else if (role) {
-    // Update only role
-    await db.query(`UPDATE contributor SET role = $1 WHERE username = $2;`, [
-      role,
-      username,
-    ]);
-  } else if (slackUserId) {
-    // Update only slack_user_id in meta
-    await db.query(
-      `UPDATE contributor 
-       SET meta = COALESCE(meta, '{}'::json)::jsonb || $1::jsonb 
-       WHERE username = $2;`,
-      [JSON.stringify({ slack_user_id: slackUserId }), username]
-    );
+  if (!contributor) {
+    console.log(`  ⚠️  Contributor ${username} not found in database`);
+    return;
+  }
+
+  const updateData: any = {};
+
+  if (role) {
+    updateData.role = role;
+  }
+
+  if (slackUserId) {
+    const currentMeta = (contributor.meta as Record<string, any>) || {};
+    updateData.meta = {
+      ...currentMeta,
+      slack_user_id: slackUserId,
+    };
+  }
+
+  if (Object.keys(updateData).length > 0) {
+    await prisma.contributor.update({
+      where: { username },
+      data: updateData,
+    });
   }
 }
 
@@ -175,9 +178,12 @@ async function main() {
   console.log(`  ❌ Errors: ${errorCount}`);
   console.log(`  📊 Total processed: ${contributors.length}`);
   console.log("=".repeat(50));
+
+  await prisma.$disconnect();
 }
 
 main().catch((error) => {
   console.error("Fatal error:", error);
+  prisma.$disconnect();
   process.exit(1);
 });

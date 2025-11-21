@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { ContributorActivity } from "@/lib/db";
-import { ActivityDefinition } from "@/types/db";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -24,7 +23,13 @@ const ACTIVITY_FILTER_STORAGE_KEY = "leaderboard_activity_type_filter";
 
 interface ActivityTimelineProps {
   activities: ContributorActivity[];
-  activityDefinitions: ActivityDefinition[];
+  activityDefinitions: Array<{
+    slug: string;
+    name: string;
+    description: string | null;
+    points: number | null;
+    icon: string | null;
+  }>;
 }
 
 export default function ActivityTimeline({
@@ -87,12 +92,12 @@ export default function ActivityTimeline({
     return activities.filter((activity) => {
       // Filter by date range
       if (startDate) {
-        const activityDate = new Date(activity.occured_at);
+        const activityDate = new Date(activity.occuredAt);
         const start = new Date(startDate);
         if (activityDate < start) return false;
       }
       if (endDate) {
-        const activityDate = new Date(activity.occured_at);
+        const activityDate = new Date(activity.occuredAt);
         const end = new Date(endDate);
         end.setHours(23, 59, 59, 999); // Include the entire end date
         if (activityDate > end) return false;
@@ -101,7 +106,7 @@ export default function ActivityTimeline({
       // Filter by activity type
       if (
         selectedActivityTypes.size > 0 &&
-        !selectedActivityTypes.has(activity.activity_name)
+        !selectedActivityTypes.has(activity.activityName)
       ) {
         return false;
       }

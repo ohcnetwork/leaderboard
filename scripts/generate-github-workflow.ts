@@ -82,7 +82,7 @@ jobs:
     permissions:
       contents: write
     env:
-      PGLITE_DB_PATH: \${{ github.workspace }}/pglite-db
+      DATABASE_URL: \${{ secrets.DATABASE_URL }}
       LEADERBOARD_PATH: \${{ github.workspace }}/leaderboard
       LEADERBOARD_DATA_PATH: \${{ github.workspace }}/leaderboard-data
       SCRAPER_PATHS: ${scraperPaths}
@@ -137,13 +137,11 @@ ${scraperCheckoutSteps}
             pnpm install
           done
 
-      - name: 🚦 Prepare Database
+      - name: 🚦 Run Prisma Migrations
         run: |
-          for repo in \${{ env.LEADERBOARD_PATH }} \${{ env.SCRAPER_PATHS }}; do
-            cd $repo
-            pnpm db:prepare
-            echo "✅ DB prepare completed for $repo"
-          done;
+          cd \${{ env.LEADERBOARD_PATH }}
+          pnpm prisma:deploy
+          echo "✅ Prisma migrations completed"
 
       - name: 📥 Import from Flat Data to Database
         run: |

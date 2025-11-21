@@ -17,8 +17,8 @@ import { format } from "date-fns";
 
 interface ActivityBreakdownProps {
   activities: Array<{
-    activity_definition_name: string;
-    occured_at: Date;
+    activityDefinitionName: string;
+    occuredAt: Date;
     points: number;
   }>;
   startDate?: Date;
@@ -55,7 +55,7 @@ export default function ActivityBreakdown({
     }
 
     return activities.filter((activity) => {
-      const activityDate = new Date(activity.occured_at);
+      const activityDate = new Date(activity.occuredAt);
 
       if (filterStartDate) {
         const start = new Date(filterStartDate);
@@ -75,7 +75,7 @@ export default function ActivityBreakdown({
   // Recalculate breakdown based on filtered activities
   const filteredBreakdown = useMemo(() => {
     return filteredActivities.reduce((acc, activity) => {
-      const key = activity.activity_definition_name;
+      const key = activity.activityDefinitionName;
       if (!acc[key]) {
         acc[key] = { count: 0, points: 0 };
       }
@@ -116,7 +116,7 @@ export default function ActivityBreakdown({
       };
     }
 
-    const dates = filteredActivities.map((a) => new Date(a.occured_at));
+    const dates = filteredActivities.map((a) => new Date(a.occuredAt));
     return {
       startDate: new Date(Math.min(...dates.map((d) => d.getTime()))),
       endDate: new Date(Math.max(...dates.map((d) => d.getTime()))),
@@ -131,8 +131,8 @@ export default function ActivityBreakdown({
     > = {};
 
     filteredActivities.forEach((activity) => {
-      const activityName = activity.activity_definition_name;
-      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
+      const activityName = activity.activityDefinitionName;
+      const dateKey = format(activity.occuredAt, "yyyy-MM-dd");
 
       if (!trendMap[activityName]) {
         trendMap[activityName] = [];

@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { generateActivityGraphData, formatAggregateValue } from "@/lib/utils";
+import { AggregateValue } from "@/lib/types";
 import { getConfig } from "@/lib/config";
 import ActivityOverview from "./ActivityOverview";
 import ActivityBreakdown from "./ActivityBreakdown";
@@ -24,10 +25,11 @@ import {
 import Icon from "@/components/Icon";
 import { icons } from "@/app/icons.gen";
 import { marked } from "marked";
+import { Metadata } from "next";
 
 // Built-in aggregate definitions for profile page
 const BUILTIN_CONTRIBUTOR_AGGREGATES = {
-  total_points: {
+  totalPoints: {
     name: "Total Points",
     description: "All time",
     icon: Award,
@@ -44,16 +46,18 @@ const BUILTIN_CONTRIBUTOR_AGGREGATES = {
   },
 };
 
-interface ContributorPageProps {
-  params: Promise<{ username: string }>;
-}
-
 export async function generateStaticParams() {
   const usernames = await getAllContributorUsernames();
   return usernames.map((username) => ({ username }));
 }
 
-export async function generateMetadata({ params }: ContributorPageProps) {
+interface ContributorPageProps {
+  params: Promise<{ username: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ContributorPageProps): Promise<Metadata> {
   const { username } = await params;
   const { contributor, totalPoints, activities } = await getContributorProfile(
     username
@@ -93,11 +97,11 @@ export async function generateMetadata({ params }: ContributorPageProps) {
       "open source",
       "contributions",
       contributor.role,
-    ].filter(Boolean),
+    ].filter((k): k is string => Boolean(k)),
     authors: [
       {
         name: contributor.name || contributor.username,
-        url: contributor.avatar_url || undefined,
+        url: contributor.avatarUrl || undefined,
       },
     ],
     creator: contributor.name || contributor.username,
@@ -121,7 +125,7 @@ export async function generateMetadata({ params }: ContributorPageProps) {
       title,
       description,
       images: [`${profileUrl}/opengraph-image`],
-      creator: contributor.avatar_url?.includes("twitter.com")
+      creator: contributor.avatarUrl?.includes("twitter.com")
         ? `@${contributor.username}`
         : undefined,
     },
@@ -150,7 +154,7 @@ export default async function ContributorPage({
 
   // Get configured aggregates or use defaults
   const configuredAggregates = config.leaderboard.aggregates?.contributor || [
-    "total_points",
+    "totalPoints",
     "total_activities",
     "activity_types",
   ];
@@ -184,7 +188,7 @@ export default async function ContributorPage({
 
   // Calculate stats
   const activityBreakdown = activities.reduce((acc, activity) => {
-    const key = activity.activity_name;
+    const key = activity.activityName;
     if (!acc[key]) {
       acc[key] = { count: 0, points: 0 };
     }
@@ -211,7 +215,7 @@ export default async function ContributorPage({
       ];
     let value = "0";
 
-    if (slug === "total_points") {
+    if (slug === "totalPoints") {
       value = totalPoints.toString();
     } else if (slug === "total_activities") {
       value = activities.length.toString();
@@ -229,18 +233,22 @@ export default async function ContributorPage({
 
   // Add database aggregates
   for (const aggregate of dbAggregates) {
-    aggregateCards.push({
-      name: aggregate.aggregate,
-      value: formatAggregateValue(aggregate.value),
-      description: "",
-      icon: TrendingUp, // Default icon for DB aggregates
-    });
+    if (aggregate.value) {
+      aggregateCards.push({
+        name: aggregate.aggregate,
+        value: formatAggregateValue(
+          aggregate.value as unknown as AggregateValue
+        ),
+        description: "",
+        icon: TrendingUp, // Default icon for DB aggregates
+      });
+    }
   }
 
   // Prepare activities data for ActivityBreakdown component
   const activitiesForBreakdown = activities.map((activity) => ({
-    activity_definition_name: activity.activity_name,
-    occured_at: activity.occured_at,
+    activityDefinitionName: activity.activityName,
+    occuredAt: activity.occuredAt,
     points: activity.points || 0,
   }));
 
@@ -252,9 +260,9 @@ export default async function ContributorPage({
       "@type": "Person",
       name: contributor.name || contributor.username,
       alternateName: contributor.username,
-      image: contributor.avatar_url,
+      image: contributor.avatarUrl,
       description: contributor.bio,
-      url: contributor.avatar_url,
+      url: contributor.avatarUrl,
       memberOf: {
         "@type": "Organization",
         name: config.org.name,
@@ -284,7 +292,7 @@ export default async function ContributorPage({
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <Avatar className="h-32 w-32">
               <AvatarImage
-                src={contributor.avatar_url || undefined}
+                src={contributor.avatarUrl || undefined}
                 alt={contributor.name || contributor.username}
               />
               <AvatarFallback className="text-4xl">
@@ -318,9 +326,9 @@ export default async function ContributorPage({
                     </span>
                   </div>
                 )}
-                {contributor.social_profiles && (
+                {contributor.socialProfiles && (
                   <div className="flex items-center gap-3">
-                    {Object.entries(contributor.social_profiles).map(
+                    {Object.entries(contributor.socialProfiles).map(
                       ([key, url]) => {
                         const socialProfileDef =
                           config.leaderboard.social_profiles?.[key];
@@ -390,8 +398,8 @@ export default async function ContributorPage({
         <ActivityOverview
           data={activityGraphData}
           activities={activities.map((a) => ({
-            activity_definition_name: a.activity_name,
-            occured_at: a.occured_at,
+            activityDefinitionName: a.activityName,
+            occuredAt: a.occuredAt,
           }))}
           activityDefinitions={activityDefinitions}
           totalActivities={activities.length}

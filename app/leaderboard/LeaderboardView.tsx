@@ -29,7 +29,7 @@ interface LeaderboardViewProps {
     Array<{
       username: string;
       name: string | null;
-      avatar_url: string | null;
+      avatarUrl: string | null;
       points: number;
       count: number;
     }>
@@ -339,7 +339,7 @@ export default function LeaderboardView({
                         {/* Avatar */}
                         <Avatar className="size-14 shrink-0">
                           <AvatarImage
-                            src={entry.avatar_url || undefined}
+                            src={entry.avatarUrl || undefined}
                             alt={entry.name || entry.username}
                           />
                           <AvatarFallback>
@@ -373,7 +373,7 @@ export default function LeaderboardView({
 
                           {/* Activity Breakdown */}
                           <div className="flex flex-wrap gap-3">
-                            {Object.entries(entry.activity_breakdown)
+                            {Object.entries(entry.activityBreakdown)
                               .sort((a, b) => b[1].points - a[1].points)
                               .map(([activityName, data]) => (
                                 <div
@@ -399,10 +399,10 @@ export default function LeaderboardView({
                         {/* Total Points with Trend Chart */}
                         <div className="flex items-center gap-4 shrink-0">
                           {/* Activity Trend Chart */}
-                          {entry.daily_activity &&
-                            entry.daily_activity.length > 0 && (
+                          {entry.dailyActivity &&
+                            entry.dailyActivity.length > 0 && (
                               <ActivityTrendChart
-                                dailyActivity={entry.daily_activity}
+                                dailyActivity={entry.dailyActivity}
                                 startDate={startDate}
                                 endDate={endDate}
                                 mode="points"
@@ -410,7 +410,7 @@ export default function LeaderboardView({
                             )}
                           <div className="text-right">
                             <div className="text-3xl font-bold text-primary">
-                              {entry.total_points}
+                              {entry.totalPoints}
                             </div>
                             <div className="text-xs text-muted-foreground">
                               points
@@ -461,7 +461,7 @@ export default function LeaderboardView({
                               </div>
                               <Avatar className="h-9 w-9 shrink-0 border">
                                 <AvatarImage
-                                  src={contributor.avatar_url || undefined}
+                                  src={contributor.avatarUrl || undefined}
                                   alt={contributor.name || contributor.username}
                                 />
                                 <AvatarFallback className="text-xs">

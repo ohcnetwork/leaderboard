@@ -17,12 +17,12 @@ export default function ActivityTimelineItem({
       <div className="shrink-0 w-2 h-2 mt-2 rounded-full bg-primary" />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap mb-1">
-          {activity.activity_icon && (
-            <Icon name={activity.activity_icon} className="size-4" />
+          {activity.activityIcon && (
+            <Icon name={activity.activityIcon} className="size-4" />
           )}
-          <span className="font-medium text-sm">{activity.activity_name}</span>
+          <span className="font-medium text-sm">{activity.activityName}</span>
           <RelativeTime
-            date={activity.occured_at}
+            date={activity.occuredAt}
             className="text-xs text-muted-foreground"
           />
           {activity.points !== null && activity.points > 0 && (

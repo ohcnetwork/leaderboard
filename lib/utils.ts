@@ -1,7 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { format, formatDistanceToNow } from "date-fns";
-import { AggregateValue } from "@/types/db";
+import { AggregateValue } from "@/lib/types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -122,17 +122,17 @@ export function formatMonthHeader(monthKey: MonthKey): string {
 
 /**
  * Group activities by month with sorted month keys
- * @param activities - Array of activities with occured_at dates
+ * @param activities - Array of activities with occuredAt dates
  * @returns Map of month keys to arrays of activities, sorted newest to oldest
  */
-export function groupActivitiesByMonth<T extends { occured_at: Date }>(
+export function groupActivitiesByMonth<T extends { occuredAt: Date }>(
   activities: T[]
 ): Map<MonthKey, T[]> {
   const grouped = new Map<MonthKey, T[]>();
 
   // Group activities by month
   activities.forEach((activity) => {
-    const monthKey = getMonthKey(activity.occured_at);
+    const monthKey = getMonthKey(activity.occuredAt);
     if (!grouped.has(monthKey)) {
       grouped.set(monthKey, []);
     }

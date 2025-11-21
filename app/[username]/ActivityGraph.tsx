@@ -29,8 +29,8 @@ export interface ActivityGraphFilterProps {
 interface ActivityGraphProps {
   data: Array<{ date: string; count: number; level: number }>;
   activities: Array<{
-    activity_definition_name: string;
-    occured_at: Date;
+    activityDefinitionName: string;
+    occuredAt: Date;
   }>;
   activityDefinitions: Array<{
     name: string;
@@ -123,7 +123,7 @@ export default function ActivityGraph({
   const activeActivityTypes = useMemo(() => {
     const types = new Set<string>();
     activities.forEach((activity) => {
-      types.add(activity.activity_definition_name);
+      types.add(activity.activityDefinitionName);
     });
     return Array.from(types).sort();
   }, [activities]);
@@ -161,12 +161,12 @@ export default function ActivityGraph({
     const grouped: Record<string, Record<string, number>> = {};
 
     activities.forEach((activity) => {
-      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
+      const dateKey = format(activity.occuredAt, "yyyy-MM-dd");
       if (dateKey) {
         if (!grouped[dateKey]) {
           grouped[dateKey] = {};
         }
-        const typeName = activity.activity_definition_name;
+        const typeName = activity.activityDefinitionName;
         grouped[dateKey][typeName] = (grouped[dateKey][typeName] || 0) + 1;
       }
     });
@@ -195,7 +195,7 @@ export default function ActivityGraph({
 
     // Filter activities by included types
     const filteredActivities = activities.filter((activity) =>
-      typesToInclude.has(activity.activity_definition_name)
+      typesToInclude.has(activity.activityDefinitionName)
     );
 
     // Group by date
@@ -203,14 +203,14 @@ export default function ActivityGraph({
     const activityBreakdownByDate: Record<string, Record<string, number>> = {};
 
     filteredActivities.forEach((activity) => {
-      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
+      const dateKey = format(activity.occuredAt, "yyyy-MM-dd");
       if (dateKey) {
         activityByDate[dateKey] = (activityByDate[dateKey] || 0) + 1;
 
         if (!activityBreakdownByDate[dateKey]) {
           activityBreakdownByDate[dateKey] = {};
         }
-        const typeName = activity.activity_definition_name;
+        const typeName = activity.activityDefinitionName;
         activityBreakdownByDate[dateKey][typeName] =
           (activityBreakdownByDate[dateKey][typeName] || 0) + 1;
       }

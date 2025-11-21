@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Contributor {
+  username       String    @id @db.VarChar
+  name           String?   @db.VarChar
+  role           String?   @db.VarChar
+  title          String?   @db.VarChar
+  avatarUrl      String?   @db.VarChar
+  bio            String?   @db.Text
+  socialProfiles Json?
+  joiningDate    DateTime? @db.Date
+  meta           Json?
+
+  activities            Activity[]
+  contributorAggregates ContributorAggregate[]
+  contributorBadges     ContributorBadge[]
+}
+
+model ActivityDefinition {
+  slug        String  @id @db.VarChar
+  name        String  @db.VarChar
+  description String? @db.Text
+  points      Int?    @db.SmallInt
+  icon        String? @db.VarChar
+
+  activities Activity[]
+}
+
+model Activity {
+  slug               String   @id @db.VarChar
+  contributor        String   @db.VarChar
+  activityDefinition String   @db.VarChar
+  title              String?  @db.VarChar
+  occuredAt          DateTime @db.Timestamp(6)
+  link               String?  @db.VarChar
+  text               String?  @db.Text
+  points             Int?     @db.SmallInt
+  meta               Json?
+
+  contributorRel        Contributor        @relation(fields: [contributor], references: [username])
+  activityDefinitionRel ActivityDefinition @relation(fields: [activityDefinition], references: [slug])
+
+  @@index([occuredAt])
+  @@index([contributor])
+  @@index([activityDefinition])
+}
+
+model GlobalAggregate {
+  slug        String  @id @db.VarChar
+  name        String  @db.VarChar
+  description String? @db.Text
+  value       Json?
+}
+
+model ContributorAggregateDefinition {
+  slug        String  @id @db.VarChar
+  name        String  @db.VarChar
+  description String? @db.Text
+
+  contributorAggregates ContributorAggregate[]
+}
+
+model ContributorAggregate {
+  aggregate   String @db.VarChar
+  contributor String @db.VarChar
+  value       Json
+
+  aggregateRel   ContributorAggregateDefinition @relation(fields: [aggregate], references: [slug])
+  contributorRel Contributor                    @relation(fields: [contributor], references: [username])
+
+  @@id([aggregate, contributor])
+  @@index([contributor])
+  @@index([aggregate])
+}
+
+model BadgeDefinition {
+  slug        String @id @db.VarChar
+  name        String @db.VarChar
+  description String @db.Text
+  variants    Json
+
+  contributorBadges ContributorBadge[]
+}
+
+model ContributorBadge {
+  slug        String   @id @db.VarChar
+  badge       String   @db.VarChar
+  contributor String   @db.VarChar
+  variant     String   @db.VarChar
+  achievedOn  DateTime @db.Date
+  meta        Json?
+
+  badgeRel       BadgeDefinition @relation(fields: [badge], references: [slug])
+  contributorRel Contributor     @relation(fields: [contributor], references: [username])
+
+  @@unique([badge, contributor, variant])
+  @@index([contributor])
+  @@index([badge])
+  @@index([achievedOn])
+}
+

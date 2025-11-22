@@ -55,8 +55,11 @@ data/views/
 
 .venv/
 
-# generated files
+# Generated content
 *.gen.*
+*.tsbuildinfo
+next-env.d.ts
+.source
 
 # config
 config.yaml

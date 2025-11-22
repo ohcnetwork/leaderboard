@@ -91,6 +91,12 @@ export default function RootLayout({
                     >
                       People
                     </Link>
+                    <Link
+                      href="/docs"
+                      className="text-sm font-medium hover:text-primary transition-colors"
+                    >
+                      Docs
+                    </Link>
                   </nav>
                 </div>
                 <ThemeSelector />

@@ -1,26 +1,77 @@
 import type { MDXComponents } from "mdx/types";
+import { ReactNode } from "react";
+
+// Helper function to generate slug from text
+function slugify(text: ReactNode): string {
+  if (typeof text === "string") {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  }
+  if (Array.isArray(text)) {
+    return slugify(text.map((t) => (typeof t === "string" ? t : "")).join(" "));
+  }
+  return "";
+}
 
 const components: MDXComponents = {
-  h1: ({ children }) => (
-    <h1 className="text-4xl font-bold tracking-tight mb-6 mt-8 first:mt-0">
-      {children}
-    </h1>
-  ),
-  h2: ({ children }) => (
-    <h2 className="text-3xl font-semibold tracking-tight mb-4 mt-8 border-b pb-2">
-      {children}
-    </h2>
-  ),
-  h3: ({ children }) => (
-    <h3 className="text-2xl font-semibold tracking-tight mb-3 mt-6">
-      {children}
-    </h3>
-  ),
-  h4: ({ children }) => (
-    <h4 className="text-xl font-semibold tracking-tight mb-2 mt-4">
-      {children}
-    </h4>
-  ),
+  h1: ({ children }) => {
+    const id = slugify(children);
+    return (
+      <h1
+        id={id}
+        className="text-4xl font-bold tracking-tight mb-6 mt-8 first:mt-0 scroll-mt-20"
+      >
+        {children}
+      </h1>
+    );
+  },
+  h2: ({ children }) => {
+    const id = slugify(children);
+    return (
+      <h2
+        id={id}
+        className="text-3xl font-semibold tracking-tight mb-4 mt-8 border-b pb-2 scroll-mt-20"
+      >
+        <a
+          href={`#${id}`}
+          className="no-underline hover:underline"
+          aria-label={`Link to ${children}`}
+        >
+          {children}
+        </a>
+      </h2>
+    );
+  },
+  h3: ({ children }) => {
+    const id = slugify(children);
+    return (
+      <h3
+        id={id}
+        className="text-2xl font-semibold tracking-tight mb-3 mt-6 scroll-mt-20"
+      >
+        <a
+          href={`#${id}`}
+          className="no-underline hover:underline"
+          aria-label={`Link to ${children}`}
+        >
+          {children}
+        </a>
+      </h3>
+    );
+  },
+  h4: ({ children }) => {
+    const id = slugify(children);
+    return (
+      <h4
+        id={id}
+        className="text-xl font-semibold tracking-tight mb-2 mt-4 scroll-mt-20"
+      >
+        {children}
+      </h4>
+    );
+  },
   p: ({ children }) => <p className="mb-4 leading-7">{children}</p>,
   ul: ({ children }) => (
     <ul className="list-disc pl-6 mb-4 space-y-2">{children}</ul>

@@ -1,0 +1,397 @@
+---
+title: Contributing
+description: Contribute to the OHC Leaderboard
+---
+
+# Contributing
+
+We welcome contributions! Here's how you can help improve the OHC Leaderboard.
+
+## Getting Started
+
+### Fork and Clone
+
+1. Fork the repository on GitHub
+2. Clone your fork:
+   ```bash
+   git clone https://github.com/your-username/leaderboard.git
+   cd leaderboard
+   ```
+3. Add upstream remote:
+   ```bash
+   git remote add upstream https://github.com/ohcnetwork/leaderboard.git
+   ```
+
+### Install Dependencies
+
+```bash
+pnpm install
+```
+
+### Set Up Development Environment
+
+1. Copy the example configuration:
+   ```bash
+   cp config.example.yaml config.yaml
+   ```
+
+2. Set up the database:
+   ```bash
+   PGLITE_DB_PATH=../pglite-data pnpm db:prepare
+   ```
+
+3. Start the development server:
+   ```bash
+   PGLITE_DB_PATH=../pglite-data pnpm dev
+   ```
+
+## Making Changes
+
+### Create a Branch
+
+Create a feature branch for your changes:
+
+```bash
+git checkout -b feature/amazing-feature
+```
+
+Branch naming conventions:
+- `feature/` - New features
+- `fix/` - Bug fixes
+- `docs/` - Documentation changes
+- `refactor/` - Code refactoring
+- `test/` - Test additions/changes
+
+### Make Your Changes
+
+Follow the code style and best practices:
+- Use TypeScript for type safety
+- Follow existing code structure
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation
+
+### Test Your Changes
+
+Run tests before committing:
+
+```bash
+pnpm test
+```
+
+Check for linting errors:
+
+```bash
+pnpm lint
+```
+
+### Commit Your Changes
+
+Write clear, descriptive commit messages:
+
+```bash
+git commit -m 'Add amazing feature'
+```
+
+Commit message format:
+```
+<type>: <description>
+
+[optional body]
+
+[optional footer]
+```
+
+Types:
+- `feat:` - New feature
+- `fix:` - Bug fix
+- `docs:` - Documentation
+- `style:` - Formatting
+- `refactor:` - Code restructuring
+- `test:` - Tests
+- `chore:` - Maintenance
+
+Example:
+```
+feat: add dark mode toggle to navigation
+
+Added a theme toggle button in the header that allows users
+to switch between light, dark, and system themes.
+
+Closes #123
+```
+
+## Pull Requests
+
+### Before Submitting
+
+Ensure your PR:
+- [ ] Passes all tests
+- [ ] Has no linting errors
+- [ ] Includes tests for new features
+- [ ] Updates relevant documentation
+- [ ] Has a clear description
+
+### Submit Pull Request
+
+1. Push your branch:
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+
+2. Open a pull request on GitHub
+
+3. Fill out the PR template:
+   - Describe your changes
+   - Link related issues
+   - Add screenshots if applicable
+   - List breaking changes
+
+### PR Review Process
+
+1. **Automated Checks**: CI runs tests and linting
+2. **Code Review**: Maintainers review your code
+3. **Feedback**: Address review comments
+4. **Approval**: PR is approved by maintainers
+5. **Merge**: PR is merged into main branch
+
+### After Merge
+
+1. Delete your branch:
+   ```bash
+   git branch -d feature/amazing-feature
+   git push origin --delete feature/amazing-feature
+   ```
+
+2. Update your fork:
+   ```bash
+   git checkout main
+   git pull upstream main
+   git push origin main
+   ```
+
+## Code Style
+
+### TypeScript
+
+- Use TypeScript for all new code
+- Define proper types and interfaces
+- Avoid `any` type
+- Use strict mode
+
+Example:
+```typescript
+interface User {
+  id: string;
+  name: string;
+  role: string;
+}
+
+function getUser(id: string): User {
+  // Implementation
+}
+```
+
+### React Components
+
+- Use functional components
+- Use hooks for state management
+- Extract reusable logic to custom hooks
+- Keep components focused and small
+
+Example:
+```typescript
+interface ButtonProps {
+  label: string;
+  onClick: () => void;
+  variant?: 'primary' | 'secondary';
+}
+
+export function Button({ label, onClick, variant = 'primary' }: ButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      className={`btn btn-${variant}`}
+    >
+      {label}
+    </button>
+  );
+}
+```
+
+### Styling
+
+- Use Tailwind CSS classes
+- Follow existing patterns
+- Use CSS variables for colors
+- Ensure dark mode support
+
+### File Organization
+
+```
+component-name/
+├── ComponentName.tsx       # Component
+├── ComponentName.test.tsx  # Tests
+└── index.ts               # Exports
+```
+
+## Documentation
+
+### Code Comments
+
+- Comment complex logic
+- Explain why, not what
+- Keep comments up to date
+- Use JSDoc for functions
+
+Example:
+```typescript
+/**
+ * Calculates the total points for a contributor
+ * @param activities - Array of activities
+ * @returns Total points earned
+ */
+function calculatePoints(activities: Activity[]): number {
+  return activities.reduce((sum, activity) => sum + activity.points, 0);
+}
+```
+
+### Documentation Updates
+
+Update documentation when:
+- Adding new features
+- Changing configuration
+- Modifying APIs
+- Fixing bugs that affect usage
+
+## Testing
+
+### Writing Tests
+
+Write tests for:
+- New features
+- Bug fixes
+- Edge cases
+- Error handling
+
+Example:
+```typescript
+describe('calculatePoints', () => {
+  it('calculates total points correctly', () => {
+    const activities = [
+      { points: 10 },
+      { points: 20 },
+      { points: 30 },
+    ];
+    expect(calculatePoints(activities)).toBe(60);
+  });
+
+  it('returns 0 for empty array', () => {
+    expect(calculatePoints([])).toBe(0);
+  });
+});
+```
+
+### Test Coverage
+
+Maintain test coverage:
+- Run `pnpm test:coverage`
+- Aim for 80%+ coverage
+- Focus on critical paths
+
+## Reporting Issues
+
+### Bug Reports
+
+Include in bug reports:
+- Clear description
+- Steps to reproduce
+- Expected behavior
+- Actual behavior
+- Screenshots/logs
+- Environment details
+
+### Feature Requests
+
+Include in feature requests:
+- Use case description
+- Proposed solution
+- Alternative solutions
+- Additional context
+
+## Community
+
+### Code of Conduct
+
+Be respectful and inclusive:
+- Use welcoming language
+- Respect differing viewpoints
+- Accept constructive criticism
+- Focus on what's best for the community
+
+### Getting Help
+
+Need help?
+- Check documentation
+- Search existing issues
+- Ask in discussions
+- Join our Slack
+
+### Recognition
+
+Contributors are recognized:
+- In the leaderboard itself!
+- In release notes
+- In the README
+- On the website
+
+## Release Process
+
+### Versioning
+
+We use Semantic Versioning:
+- **Major** (1.0.0): Breaking changes
+- **Minor** (0.1.0): New features
+- **Patch** (0.0.1): Bug fixes
+
+### Release Schedule
+
+- Patch releases: As needed
+- Minor releases: Monthly
+- Major releases: Quarterly
+
+## Advanced Topics
+
+### Database Migrations
+
+When changing database schema:
+1. Create migration script
+2. Test with existing data
+3. Document changes
+4. Update types
+
+### Performance Optimization
+
+When optimizing:
+1. Measure first
+2. Optimize bottlenecks
+3. Test improvements
+4. Document changes
+
+### Security
+
+Report security issues:
+- Email: security@ohc.network
+- Do not open public issues
+- Allow time for fix before disclosure
+
+## Thank You!
+
+Thank you for contributing to the OHC Leaderboard! Your contributions help make open-source collaboration better for everyone.
+
+## Next Steps
+
+- [Run tests](/docs/testing)
+- [View troubleshooting guide](/docs/troubleshooting)
+- [Read API reference](/docs/api-reference)
+

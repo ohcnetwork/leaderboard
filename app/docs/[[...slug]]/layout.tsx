@@ -9,6 +9,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       nav={{
         enabled: false, // Disable Fumadocs nav since we have our own header
       }}
+      githubUrl="https://github.com/ohcnetwork/leaderboard"
     >
       {children}
     </DocsLayout>

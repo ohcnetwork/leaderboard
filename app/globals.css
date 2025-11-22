@@ -80,6 +80,9 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
+  /* Fumadocs: Set nav height to match our custom header */
+  --fd-nav-height: 4rem;
+
   /* People Page Avatar Grid Configuration */
   /* Adjust these values based on org size:
      - Large orgs (500+ contributors): 12-24 columns, smaller avatars

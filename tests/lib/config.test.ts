@@ -14,13 +14,8 @@ import {
   invalidUrlsConfig,
   invalidEmailConfig,
   invalidDateConfig,
-  scraperMissingScheduleConfig,
-  scraperMissingScrapersConfig,
-  invalidCronConfig,
-  scraperInstanceMissingNameConfig,
-  scraperInstanceMissingRepositoryConfig,
-  scraperInstanceMissingEnvsConfig,
-  invalidRepositoryFormatConfig,
+  scraperInstanceMissingSourceConfig,
+  invalidSourceFormatConfig,
   roleMissingNameConfig,
   additionalPropertiesConfig,
   invalidThemeConfig,
@@ -60,9 +55,10 @@ describe("Config Validation", () => {
       expect(config.org.name).toBe("Test Organization");
       expect(config.meta.title).toBe("Test Leaderboard");
       expect(config.leaderboard.roles).toHaveProperty("admin");
-      expect(config.scraper).toBeDefined();
-      expect(config.scraper?.schedule).toBe("0 0 * * *");
-      expect(config.scraper?.scrapers).toHaveLength(2);
+      expect(config.leaderboard.scrapers).toBeDefined();
+      expect(Object.keys(config.leaderboard.scrapers!)).toHaveLength(2);
+      expect(config.leaderboard.scrapers!.github).toBeDefined();
+      expect(config.leaderboard.scrapers!.slack).toBeDefined();
     });
 
     it("should load a minimal valid configuration (only required fields)", () => {
@@ -72,7 +68,7 @@ describe("Config Validation", () => {
       expect(config).toBeDefined();
       expect(config.org.name).toBe("Minimal Org");
       expect(config.org.socials).toBeUndefined();
-      expect(config.scraper).toBeUndefined();
+      expect(config.leaderboard.scrapers).toBeUndefined();
     });
 
     it("should cache the configuration on subsequent calls", () => {
@@ -410,61 +406,61 @@ describe("Config Validation", () => {
       replaceConfigWith(validConfig);
       const config = getConfig();
 
-      expect(config.scraper).toBeDefined();
-      expect(config.scraper?.schedule).toBe("0 0 * * *");
-      expect(config.scraper?.scrapers).toHaveLength(2);
-      expect(config.scraper?.scrapers[0]?.name).toBe("GitHub Scraper");
-      expect(config.scraper?.scrapers[0]?.repository).toBe(
+      expect(config.leaderboard.scrapers).toBeDefined();
+      expect(Object.keys(config.leaderboard.scrapers!)).toHaveLength(2);
+      expect(config.leaderboard.scrapers!.github?.name).toBe("GitHub Scraper");
+      expect(config.leaderboard.scrapers!.github?.source).toBe(
         "testorg/github-scraper"
       );
-      expect(config.scraper?.scrapers[0]?.envs).toHaveProperty("GITHUB_TOKEN");
+      expect(config.leaderboard.scrapers!.github?.config).toHaveProperty(
+        "GITHUB_TOKEN"
+      );
     });
 
     it("should accept multiple scrapers", () => {
       replaceConfigWith(validConfig);
       const config = getConfig();
 
-      expect(config.scraper?.scrapers).toHaveLength(2);
-      expect(config.scraper?.scrapers[0]?.name).toBe("GitHub Scraper");
-      expect(config.scraper?.scrapers[1]?.name).toBe("Slack Scraper");
+      expect(Object.keys(config.leaderboard.scrapers!)).toHaveLength(2);
+      expect(config.leaderboard.scrapers!.github?.name).toBe("GitHub Scraper");
+      expect(config.leaderboard.scrapers!.slack?.name).toBe("Slack Scraper");
     });
 
-    it("should accept various valid cron expressions", () => {
-      const validCronExpressions = [
-        "0 0 * * *", // Standard 5-field
-        "0 0 0 * * *", // 6-field with seconds
-        "*/5 * * * *", // Every 5 minutes
-        "0 0 1 * *", // First day of month
-        "@daily", // Named schedule
-        "@hourly", // Named schedule
-        "@weekly", // Named schedule
+    it("should accept various valid source formats", () => {
+      const validSources = [
+        "testorg/scraper", // GitHub org/repo
+        "https://github.com/testorg/scraper.git", // HTTPS git URL
+        "git://github.com/testorg/scraper.git", // Git protocol URL
+        "http://example.com/scraper.tar.gz", // HTTP tarball
+        "https://example.com/scraper.tgz", // HTTPS tarball
+        "file:///path/to/scraper", // File URL
       ];
 
-      for (const cron of validCronExpressions) {
+      for (const source of validSources) {
         clearConfigCache();
-        const configWithCron = {
+        const configWithSource = {
           ...minimalValidConfig,
-          scraper: {
-            schedule: cron,
-            scrapers: [
-              {
+          leaderboard: {
+            ...minimalValidConfig.leaderboard,
+            scrapers: {
+              test: {
                 name: "Test Scraper",
-                repository: "testorg/scraper",
-                envs: {
-                  TOKEN: "${{ secrets.TOKEN }}",
+                source: source,
+                config: {
+                  TOKEN: "${{ env.TOKEN }}",
                 },
               },
-            ],
+            },
           },
         };
 
-        replaceConfigWith(configWithCron);
+        replaceConfigWith(configWithSource);
         expect(() => getConfig()).not.toThrow();
       }
     });
 
-    it("should reject scraper missing required schedule field", () => {
-      replaceConfigWith(scraperMissingScheduleConfig);
+    it("should reject scraper instance missing required source field", () => {
+      replaceConfigWith(scraperInstanceMissingSourceConfig);
 
       expect(() => getConfig()).toThrow(/Configuration validation failed/);
 
@@ -472,13 +468,13 @@ describe("Config Validation", () => {
         getConfig();
       } catch (error) {
         const message = (error as Error).message;
-        expect(message).toContain("/scraper");
-        expect(message).toContain("schedule");
+        expect(message).toContain("/leaderboard/scrapers/test");
+        expect(message).toContain("source");
       }
     });
 
-    it("should reject scraper missing required scrapers array", () => {
-      replaceConfigWith(scraperMissingScrapersConfig);
+    it("should reject invalid source format", () => {
+      replaceConfigWith(invalidSourceFormatConfig);
 
       expect(() => getConfig()).toThrow(/Configuration validation failed/);
 
@@ -486,79 +482,51 @@ describe("Config Validation", () => {
         getConfig();
       } catch (error) {
         const message = (error as Error).message;
-        expect(message).toContain("/scraper");
-        expect(message).toContain("scrapers");
+        expect(message).toContain("/leaderboard/scrapers/test/source");
       }
     });
 
-    it("should reject scraper instance missing required name field", () => {
-      replaceConfigWith(scraperInstanceMissingNameConfig);
+    it("should accept scraper without name (optional field)", () => {
+      const configWithoutName = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          scrapers: {
+            test: {
+              source: "testorg/scraper",
+              config: {
+                TOKEN: "${{ env.TOKEN }}",
+              },
+            },
+          },
+        },
+      };
 
-      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+      replaceConfigWith(configWithoutName);
+      const config = getConfig();
 
-      try {
-        getConfig();
-      } catch (error) {
-        const message = (error as Error).message;
-        expect(message).toContain("/scraper/scrapers/0");
-        expect(message).toContain("name");
-      }
+      expect(config.leaderboard.scrapers?.test?.name).toBeUndefined();
+      expect(config.leaderboard.scrapers?.test?.source).toBe("testorg/scraper");
     });
 
-    it("should reject scraper instance missing required repository field", () => {
-      replaceConfigWith(scraperInstanceMissingRepositoryConfig);
+    it("should accept scraper without config (optional field)", () => {
+      const configWithoutConfig = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          scrapers: {
+            test: {
+              name: "Test Scraper",
+              source: "testorg/scraper",
+            },
+          },
+        },
+      };
 
-      expect(() => getConfig()).toThrow(/Configuration validation failed/);
+      replaceConfigWith(configWithoutConfig);
+      const config = getConfig();
 
-      try {
-        getConfig();
-      } catch (error) {
-        const message = (error as Error).message;
-        expect(message).toContain("/scraper/scrapers/0");
-        expect(message).toContain("repository");
-      }
-    });
-
-    it("should reject scraper instance missing required envs field", () => {
-      replaceConfigWith(scraperInstanceMissingEnvsConfig);
-
-      expect(() => getConfig()).toThrow(/Configuration validation failed/);
-
-      try {
-        getConfig();
-      } catch (error) {
-        const message = (error as Error).message;
-        expect(message).toContain("/scraper/scrapers/0");
-        expect(message).toContain("envs");
-      }
-    });
-
-    it("should reject invalid repository format", () => {
-      replaceConfigWith(invalidRepositoryFormatConfig);
-
-      expect(() => getConfig()).toThrow(/Configuration validation failed/);
-
-      try {
-        getConfig();
-      } catch (error) {
-        const message = (error as Error).message;
-        expect(message).toContain("/scraper/scrapers/0/repository");
-        expect(message).toContain("pattern");
-      }
-    });
-
-    it("should reject invalid cron expression in schedule", () => {
-      replaceConfigWith(invalidCronConfig);
-
-      expect(() => getConfig()).toThrow(/Configuration validation failed/);
-
-      try {
-        getConfig();
-      } catch (error) {
-        const message = (error as Error).message;
-        expect(message).toContain("/scraper/schedule");
-        expect(message).toContain("pattern");
-      }
+      expect(config.leaderboard.scrapers?.test?.config).toBeUndefined();
     });
   });
 
@@ -692,12 +660,169 @@ describe("Config Validation", () => {
     });
   });
 
+  describe("Environment Variable Substitution", () => {
+    it("should substitute environment variables in config", () => {
+      process.env.TEST_TOKEN = "test-token-value";
+      process.env.TEST_ORG = "test-org";
+
+      const configWithEnvVars = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          scrapers: {
+            test: {
+              name: "Test Scraper",
+              source: "testorg/scraper",
+              config: {
+                token: "${{ env.TEST_TOKEN }}",
+                org: "${{ env.TEST_ORG }}",
+              },
+            },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithEnvVars);
+      const config = getConfig();
+
+      expect(config.leaderboard.scrapers?.test?.config?.token).toBe(
+        "test-token-value"
+      );
+      expect(config.leaderboard.scrapers?.test?.config?.org).toBe("test-org");
+
+      delete process.env.TEST_TOKEN;
+      delete process.env.TEST_ORG;
+    });
+
+    it("should handle nested environment variable substitution", () => {
+      process.env.NESTED_VAR = "nested-value";
+
+      const configWithNestedEnvVars = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          scrapers: {
+            test: {
+              name: "Test Scraper",
+              source: "testorg/scraper",
+              config: {
+                nested: {
+                  deep: {
+                    value: "${{ env.NESTED_VAR }}",
+                  },
+                },
+              },
+            },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithNestedEnvVars);
+      const config = getConfig();
+
+      expect(
+        (config.leaderboard.scrapers?.test?.config?.nested as any)?.deep?.value
+      ).toBe("nested-value");
+
+      delete process.env.NESTED_VAR;
+    });
+
+    it("should handle environment variables in arrays", () => {
+      process.env.ARRAY_VAR = "array-value";
+
+      const configWithArrayEnvVars = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          scrapers: {
+            test: {
+              name: "Test Scraper",
+              source: "testorg/scraper",
+              config: {
+                items: ["static", "${{ env.ARRAY_VAR }}", "another"],
+              },
+            },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithArrayEnvVars);
+      const config = getConfig();
+
+      expect(config.leaderboard.scrapers?.test?.config?.items).toEqual([
+        "static",
+        "array-value",
+        "another",
+      ]);
+
+      delete process.env.ARRAY_VAR;
+    });
+
+    it("should keep placeholder when environment variable is not set", () => {
+      const configWithMissingEnvVar = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          scrapers: {
+            test: {
+              name: "Test Scraper",
+              source: "testorg/scraper",
+              config: {
+                token: "${{ env.MISSING_VAR }}",
+              },
+            },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithMissingEnvVar);
+      const config = getConfig();
+
+      expect(config.leaderboard.scrapers?.test?.config?.token).toBe(
+        "${{ env.MISSING_VAR }}"
+      );
+    });
+
+    it("should not modify non-env-var strings", () => {
+      const configWithoutEnvVars = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          scrapers: {
+            test: {
+              name: "Test Scraper",
+              source: "testorg/scraper",
+              config: {
+                normalString: "just a normal string",
+                withBraces: "{{ not an env var }}",
+                partial: "${{ secrets.TOKEN }}",
+              },
+            },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithoutEnvVars);
+      const config = getConfig();
+
+      expect(config.leaderboard.scrapers?.test?.config?.normalString).toBe(
+        "just a normal string"
+      );
+      expect(config.leaderboard.scrapers?.test?.config?.withBraces).toBe(
+        "{{ not an env var }}"
+      );
+      expect(config.leaderboard.scrapers?.test?.config?.partial).toBe(
+        "${{ secrets.TOKEN }}"
+      );
+    });
+  });
+
   describe("Edge Cases", () => {
     it("should handle configuration without scraper section", () => {
       replaceConfigWith(minimalValidConfig);
       const config = getConfig();
 
-      expect(config.scraper).toBeUndefined();
+      expect(config.leaderboard.scrapers).toBeUndefined();
     });
 
     it("should handle role with empty description", () => {

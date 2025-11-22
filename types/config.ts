@@ -31,6 +31,12 @@ export interface SocialProfileConfig {
   icon: string;
 }
 
+export interface ScraperInstanceConfig {
+  name?: string; // Optional display name
+  source: string; // Git URL, GitHub org/repo, file URL, or tarball URL
+  config?: Record<string, unknown>; // Optional scraper-specific config
+}
+
 export interface LeaderboardConfig {
   data_source: string;
   roles: Record<string, RoleConfig>;
@@ -41,22 +47,11 @@ export interface LeaderboardConfig {
     global?: string[];
     contributor?: string[];
   };
-}
-
-export interface ScraperInstanceConfig {
-  name: string;
-  repository: string; // GitHub repository in format 'owner/repo'
-  envs: Record<string, string>; // Environment variables
-}
-
-export interface ScraperConfig {
-  schedule: string; // Cron expression
-  scrapers: ScraperInstanceConfig[]; // List of scrapers
+  scrapers?: Record<string, ScraperInstanceConfig>;
 }
 
 export interface Config {
   org: OrgConfig;
   meta: MetaConfig;
   leaderboard: LeaderboardConfig;
-  scraper?: ScraperConfig;
 }

@@ -1,14 +1,33 @@
+/**
+ * @deprecated This script uses the old scraper configuration structure.
+ * The scraper configuration has been moved from top-level `scraper` to `leaderboard.scrapers`
+ * and changed from an array to an object with unique keys.
+ * This script is kept for backward compatibility but will be removed in a future version.
+ */
+
 import { getConfig } from "@/lib/config";
 
 function generateWorkflow(): string {
+  console.warn(
+    "WARNING: This script is deprecated and uses the old scraper configuration structure."
+  );
+  console.warn(
+    "The scraper config has been moved to leaderboard.scrapers with a new format."
+  );
+  console.warn("This script will be removed in a future version.\n");
+
   const config = getConfig();
 
+  // @ts-expect-error - Using old config structure for backward compatibility
   if (!config.scraper) {
     throw new Error(
-      "No scraper configuration found in config.yaml. Please add a scraper section to generate a workflow."
+      "No scraper configuration found in config.yaml. " +
+        "This script uses the old configuration format. " +
+        "Please use the new leaderboard.scrapers configuration or update this script."
     );
   }
 
+  // @ts-expect-error - Using old config structure for backward compatibility
   const { schedule, scrapers } = config.scraper;
 
   // Extract all environment variables from all scrapers

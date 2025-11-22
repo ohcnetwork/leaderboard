@@ -196,47 +196,51 @@
             }
           },
           "additionalProperties": false
-        }
-      },
-      "additionalProperties": false
-    },
-    "scraper": {
-      "type": "object",
-      "description": "Scraper configuration for GitHub Actions workflow generation",
-      "required": ["schedule", "scrapers"],
-      "properties": {
-        "schedule": {
-          "type": "string",
-          "description": "Cron expression for scheduled execution",
-          "pattern": "^(@(annually|yearly|monthly|weekly|daily|hourly|reboot))|(@every (\\d+(ns|us|µs|ms|s|m|h))+)|((((\\d+,)+\\d+|(\\d+([/\\-])\\d+)|\\d+|\\*) ?){5,7})$"
         },
         "scrapers": {
-          "type": "array",
-          "description": "List of scrapers to run",
-          "minItems": 1,
-          "items": {
-            "type": "object",
-            "required": ["name", "repository", "envs"],
-            "properties": {
-              "name": {
-                "type": "string",
-                "description": "Display name for the scraper"
-              },
-              "repository": {
-                "type": "string",
-                "description": "GitHub repository in format 'owner/repo'",
-                "pattern": "^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+$"
-              },
-              "envs": {
-                "type": "object",
-                "description": "Environment variables for the scraper (supports GitHub Actions expressions like ${{ secrets.TOKEN }})",
-                "additionalProperties": {
-                  "type": "string"
+          "type": "object",
+          "description": "Scraper configurations",
+          "patternProperties": {
+            "^[a-z_]+$": {
+              "type": "object",
+              "required": ["source"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Optional display name for the scraper"
+                },
+                "source": {
+                  "type": "string",
+                  "description": "Source of the scraper (GitHub org/repo, git URL, file URL, or tarball URL)",
+                  "oneOf": [
+                    {
+                      "pattern": "^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+$",
+                      "description": "GitHub repository in format 'owner/repo'"
+                    },
+                    {
+                      "pattern": "^(git|https?)://.*\\.git$",
+                      "description": "Git repository URL"
+                    },
+                    {
+                      "pattern": "^https?://.*\\.(tar\\.gz|tgz)$",
+                      "description": "Tarball URL"
+                    },
+                    {
+                      "pattern": "^file://.*$",
+                      "description": "File URL"
+                    }
+                  ]
+                },
+                "config": {
+                  "type": "object",
+                  "description": "Optional scraper-specific configuration (validated by the scraper itself)",
+                  "additionalProperties": true
                 }
-              }
-            },
-            "additionalProperties": false
-          }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false

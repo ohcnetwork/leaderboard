@@ -1,0 +1,433 @@
+---
+title: Troubleshooting
+description: Common issues and solutions
+---
+
+# Troubleshooting
+
+Common issues and solutions for the OHC Leaderboard.
+
+## Build Issues
+
+### Build Fails with PGlite Errors
+
+**Problem**: Build fails with PGlite-related errors.
+
+**Solution**: The project limits CPU usage to avoid PGlite concurrency issues. This is configured in `next.config.ts`:
+
+```typescript
+experimental: {
+  cpus: 1,
+}
+```
+
+Ensure you have the `PGLITE_DB_PATH` environment variable set:
+
+```bash
+PGLITE_DB_PATH=../pglite-data pnpm build
+```
+
+### Out of Memory Errors
+
+**Problem**: Build fails with "JavaScript heap out of memory".
+
+**Solution**: Increase Node.js memory limit:
+
+```bash
+NODE_OPTIONS="--max-old-space-size=4096" pnpm build
+```
+
+### Missing Dependencies
+
+**Problem**: Build fails with missing module errors.
+
+**Solution**: Reinstall dependencies:
+
+```bash
+rm -rf node_modules pnpm-lock.yaml
+pnpm install
+```
+
+## Development Issues
+
+### Dev Server Won't Start
+
+**Problem**: `pnpm dev` fails to start.
+
+**Solution**: Check for:
+1. Port 3000 already in use
+2. Missing environment variables
+3. Invalid configuration file
+4. Database not initialized
+
+Try:
+```bash
+# Kill process on port 3000
+lsof -ti:3000 | xargs kill -9
+
+# Set environment variables
+PGLITE_DB_PATH=../pglite-data pnpm dev
+```
+
+### Hot Reload Not Working
+
+**Problem**: Changes don't trigger page reload.
+
+**Solution**:
+1. Check file is saved
+2. Restart dev server
+3. Clear Next.js cache:
+   ```bash
+   rm -rf .next
+   pnpm dev
+   ```
+
+### TypeScript Errors
+
+**Problem**: TypeScript shows errors in IDE.
+
+**Solution**:
+1. Restart TypeScript server in IDE
+2. Check `tsconfig.json` is valid
+3. Ensure all dependencies are installed
+4. Run type check:
+   ```bash
+   pnpm tsc --noEmit
+   ```
+
+## Configuration Issues
+
+### Invalid Configuration
+
+**Problem**: Configuration validation fails.
+
+**Solution**: Validate against schema:
+1. Check `config.yaml` syntax
+2. Ensure required fields are present
+3. Verify data types match schema
+4. Add schema reference for IDE support:
+   ```yaml
+   # yaml-language-server: $schema=config.schema.json
+   ```
+
+### Theme Not Loading
+
+**Problem**: Custom theme CSS not applied.
+
+**Solution**:
+1. Verify theme URL is accessible
+2. Check CSS syntax is valid
+3. Ensure CORS headers allow loading
+4. Test theme URL in browser
+
+### Logo Not Displaying
+
+**Problem**: Organization logo doesn't show.
+
+**Solution**:
+1. Verify logo URL is accessible
+2. Check image format is supported
+3. Ensure CORS headers allow loading
+4. Try absolute URL instead of relative
+
+## Data Issues
+
+### Data Not Updating
+
+**Problem**: Leaderboard shows stale data.
+
+**Solution**: Check that:
+1. Data source repository is accessible
+2. GitHub Actions workflow is running
+3. Data format matches expected schema
+4. Import script completed successfully
+
+Run manual import:
+```bash
+PGLITE_DB_PATH=../pglite-data LEADERBOARD_DATA_PATH=../leaderboard-data pnpm db:import
+```
+
+### Missing Contributors
+
+**Problem**: Some contributors don't appear.
+
+**Solution**:
+1. Check data source includes them
+2. Verify role is not hidden
+3. Check username matches exactly
+4. Query database directly:
+   ```bash
+   echo "SELECT * FROM contributors WHERE username = 'johndoe';" | pnpm db:exec
+   ```
+
+### Incorrect Points
+
+**Problem**: Point totals seem wrong.
+
+**Solution**:
+1. Verify activity points in data source
+2. Check for duplicate activities
+3. Recalculate aggregates
+4. Review activity type definitions
+
+## Deployment Issues
+
+### Images Not Loading in Production
+
+**Problem**: Images don't load after deployment.
+
+**Solution**: Ensure `images.unoptimized: true` is set in `next.config.ts` for static exports:
+
+```typescript
+images: {
+  unoptimized: true,
+}
+```
+
+### 404 Errors
+
+**Problem**: Pages return 404 in production.
+
+**Solution**:
+1. Ensure `_redirects` file is included
+2. Configure hosting platform for SPA routing
+3. Check file paths are correct
+4. Verify build output includes all pages
+
+### Broken Links
+
+**Problem**: Internal links don't work.
+
+**Solution**:
+1. Use Next.js `Link` component
+2. Ensure `trailingSlash: true` in config
+3. Check link paths are correct
+4. Test with `next build && next start`
+
+## Performance Issues
+
+### Slow Page Load
+
+**Problem**: Pages load slowly.
+
+**Solution**:
+1. Optimize images (compress, WebP format)
+2. Enable CDN
+3. Check bundle size
+4. Use code splitting
+5. Implement caching
+
+### Slow Build Times
+
+**Problem**: Build takes too long.
+
+**Solution**:
+1. Cache dependencies in CI
+2. Use incremental builds
+3. Reduce data size
+4. Parallelize scraper runs
+5. Optimize images before build
+
+### High Memory Usage
+
+**Problem**: Build uses too much memory.
+
+**Solution**:
+1. Increase Node.js heap size
+2. Process data in chunks
+3. Clean up after processing
+4. Use streaming for large files
+
+## Database Issues
+
+### Database Locked
+
+**Problem**: "Database is locked" error.
+
+**Solution**:
+1. Ensure no other process is using database
+2. Close all connections
+3. Restart process
+4. Check file permissions
+
+### Corrupted Database
+
+**Problem**: Database appears corrupted.
+
+**Solution**:
+1. Stop all processes
+2. Delete database directory
+3. Reinitialize:
+   ```bash
+   PGLITE_DB_PATH=../pglite-data pnpm db:prepare
+   PGLITE_DB_PATH=../pglite-data pnpm db:import
+   ```
+
+### Query Timeout
+
+**Problem**: Database queries timeout.
+
+**Solution**:
+1. Add indexes to queried fields
+2. Optimize query
+3. Reduce data size
+4. Increase timeout limit
+
+## Scraper Issues
+
+### Scraper Fails
+
+**Problem**: Scraper fails to run.
+
+**Solution**:
+1. Check API tokens are valid
+2. Verify rate limits not exceeded
+3. Test API access manually
+4. Check network connectivity
+5. Review error logs
+
+### Missing Activities
+
+**Problem**: Some activities not scraped.
+
+**Solution**:
+1. Check date range
+2. Verify API permissions
+3. Test with smaller dataset
+4. Review scraper logs
+5. Check activity type mapping
+
+### Duplicate Activities
+
+**Problem**: Activities appear multiple times.
+
+**Solution**:
+1. Check ID generation is unique
+2. Verify deduplication logic
+3. Review merge strategy
+4. Clean up existing data
+
+## Browser Issues
+
+### Dark Mode Not Working
+
+**Problem**: Dark mode doesn't switch properly.
+
+**Solution**:
+1. Clear browser cache
+2. Check system theme settings
+3. Test in incognito mode
+4. Verify CSS variables are defined
+
+### Layout Broken
+
+**Problem**: Layout appears broken.
+
+**Solution**:
+1. Clear browser cache
+2. Check browser console for errors
+3. Test in different browser
+4. Verify Tailwind CSS is loaded
+
+### JavaScript Errors
+
+**Problem**: Console shows JavaScript errors.
+
+**Solution**:
+1. Check browser console for details
+2. Verify all dependencies loaded
+3. Test in different browser
+4. Check for conflicting scripts
+
+## Getting Help
+
+### Check Documentation
+
+1. Search this documentation
+2. Review configuration reference
+3. Check API reference
+4. Read related guides
+
+### Search Issues
+
+1. Search [GitHub Issues](https://github.com/ohcnetwork/leaderboard/issues)
+2. Check closed issues
+3. Look for similar problems
+4. Review discussions
+
+### Ask for Help
+
+If you can't find a solution:
+
+1. **GitHub Issues**: Report bugs or ask questions
+2. **Slack**: Join [slack.ohc.network](https://slack.ohc.network)
+3. **Email**: Contact support@ohc.network
+4. **Discussions**: Use GitHub Discussions
+
+### Provide Information
+
+When asking for help, include:
+- Clear description of the problem
+- Steps to reproduce
+- Expected vs actual behavior
+- Error messages and logs
+- Environment details (OS, Node version, etc.)
+- Configuration (sanitized)
+- Screenshots if applicable
+
+## Debugging Tips
+
+### Enable Debug Logging
+
+Set environment variable:
+```bash
+DEBUG=* pnpm dev
+```
+
+### Check Build Output
+
+Review build output for warnings:
+```bash
+pnpm build 2>&1 | tee build.log
+```
+
+### Inspect Database
+
+Query database directly:
+```bash
+echo "SELECT * FROM contributors LIMIT 10;" | PGLITE_DB_PATH=../pglite-data pnpm db:exec
+```
+
+### Test in Isolation
+
+Test components in isolation:
+1. Create minimal reproduction
+2. Remove unrelated code
+3. Test with sample data
+4. Isolate the issue
+
+## Prevention
+
+### Best Practices
+
+- Keep dependencies updated
+- Run tests before committing
+- Use version control
+- Backup data regularly
+- Monitor deployments
+- Document changes
+
+### Regular Maintenance
+
+- Update dependencies monthly
+- Review and close old issues
+- Archive old data
+- Clean up unused code
+- Update documentation
+
+## Next Steps
+
+- [View API reference](/docs/api-reference)
+- [Learn about contributing](/docs/contributing)
+- [Read testing guide](/docs/testing)
+

@@ -1,0 +1,244 @@
+---
+title: Data Management
+description: Manage data in the OHC Leaderboard
+---
+
+# Data Management
+
+Learn how to manage data in the OHC Leaderboard.
+
+## Database Overview
+
+The leaderboard uses PGlite for local data storage. PGlite is a lightweight PostgreSQL implementation that runs entirely in your build environment.
+
+## Database Scripts
+
+Several scripts are available for database management:
+
+### Initialize Database Schema
+
+```bash
+pnpm db:prepare
+```
+
+This command initializes the database schema with all required tables and indexes.
+
+### Import Data
+
+```bash
+pnpm db:import
+```
+
+Import data from your data source repository. This command:
+1. Fetches data from the configured data source
+2. Validates the data format
+3. Imports it into the local database
+
+Environment variables required:
+- `PGLITE_DB_PATH` - Path to the database directory
+- `LEADERBOARD_DATA_PATH` - Path to the data source repository
+
+### Export Data
+
+```bash
+pnpm db:export
+```
+
+Export the current database state to JSON files. Useful for:
+- Backing up your data
+- Migrating to a new instance
+- Debugging data issues
+
+### Execute SQL Commands
+
+```bash
+echo "SELECT * FROM contributors LIMIT 10;" | pnpm db:exec
+```
+
+Execute SQL commands directly via stdin. Useful for:
+- Querying data
+- Running custom reports
+- Debugging issues
+
+## Data Source Structure
+
+The leaderboard expects data in a specific format from your data source repository.
+
+### Required Files
+
+Your data source repository should contain:
+
+```
+leaderboard-data/
+├── contributors.json
+├── activities.json
+└── aggregates.json
+```
+
+### Contributors Data
+
+User profiles with roles and metadata:
+
+```json
+{
+  "username": "johndoe",
+  "name": "John Doe",
+  "avatar_url": "https://github.com/johndoe.png",
+  "role": "core",
+  "socials": {
+    "github": "https://github.com/johndoe",
+    "linkedin": "https://linkedin.com/in/johndoe"
+  }
+}
+```
+
+### Activities Data
+
+Timestamped contribution events:
+
+```json
+{
+  "id": "unique-activity-id",
+  "username": "johndoe",
+  "activity_type": "pr_merged",
+  "timestamp": "2025-01-15T10:30:00Z",
+  "points": 10,
+  "metadata": {
+    "repository": "ohcnetwork/care",
+    "pr_number": 123,
+    "title": "Add new feature"
+  }
+}
+```
+
+### Aggregates Data
+
+Pre-calculated statistics:
+
+```json
+{
+  "type": "global",
+  "key": "total_activities",
+  "value": 1234,
+  "updated_at": "2025-01-15T10:30:00Z"
+}
+```
+
+## Database Schema
+
+The database schema is defined in `lib/db.ts`. Key tables:
+
+### Contributors Table
+
+- `username` - Unique username
+- `name` - Display name
+- `avatar_url` - Profile picture URL
+- `role` - User role
+- `socials` - Social media links (JSON)
+- `created_at` - Account creation timestamp
+- `updated_at` - Last update timestamp
+
+### Activities Table
+
+- `id` - Unique activity ID
+- `username` - Contributor username
+- `activity_type` - Type of activity
+- `timestamp` - When the activity occurred
+- `points` - Points earned
+- `metadata` - Additional data (JSON)
+
+### Aggregates Table
+
+- `type` - Aggregate type (global/contributor)
+- `key` - Aggregate key
+- `value` - Aggregate value
+- `updated_at` - Last update timestamp
+
+### Roles Table
+
+- `id` - Role identifier
+- `name` - Display name
+- `description` - Role description
+- `hidden` - Whether to hide from leaderboard
+
+## Data Updates
+
+### Manual Updates
+
+To manually update data:
+
+1. Update your data source repository
+2. Run `pnpm db:import` to import the new data
+3. Rebuild the site with `pnpm build`
+
+### Automated Updates
+
+Use GitHub Actions to automate data updates:
+
+```bash
+pnpm generate:workflow
+```
+
+This creates `.github/workflows/update-data.yml` that:
+1. Runs scrapers on a schedule
+2. Imports new data
+3. Rebuilds and deploys the site
+
+## Best Practices
+
+### Data Validation
+
+Always validate your data before importing:
+- Check JSON syntax
+- Verify required fields
+- Ensure data types match schema
+- Test with a small dataset first
+
+### Performance
+
+For large datasets:
+- Use indexes on frequently queried fields
+- Pre-calculate aggregates
+- Paginate large result sets
+- Cache expensive queries
+
+### Backup
+
+Regularly backup your data:
+- Export data with `pnpm db:export`
+- Store exports in version control
+- Keep multiple backup versions
+- Test restore procedures
+
+## Troubleshooting
+
+### Import Fails
+
+If data import fails:
+1. Check data source accessibility
+2. Verify data format matches schema
+3. Look for validation errors in logs
+4. Try importing a smaller dataset
+
+### Missing Data
+
+If data is missing:
+1. Verify data source contains the data
+2. Check import logs for errors
+3. Query database directly with `pnpm db:exec`
+4. Re-run import with fresh data
+
+### Performance Issues
+
+If queries are slow:
+1. Check database size
+2. Add indexes to frequently queried fields
+3. Pre-calculate expensive aggregates
+4. Consider data archiving for old activities
+
+## Next Steps
+
+- [Learn about customization](/docs/customization)
+- [Deploy your leaderboard](/docs/deployment)
+- [Set up scrapers](/docs/scrapers)
+

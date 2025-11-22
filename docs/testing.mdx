@@ -1,0 +1,317 @@
+---
+title: Testing
+description: Test the OHC Leaderboard
+---
+
+# Testing
+
+Learn how to test the OHC Leaderboard.
+
+## Test Suite
+
+The leaderboard uses Vitest for testing. Tests ensure code quality and prevent regressions.
+
+## Running Tests
+
+### Run All Tests
+
+```bash
+pnpm test
+```
+
+This runs all tests once and exits.
+
+### Watch Mode
+
+Run tests in watch mode during development:
+
+```bash
+pnpm test:watch
+```
+
+Tests automatically re-run when files change.
+
+### Coverage
+
+Generate test coverage report:
+
+```bash
+pnpm test:coverage
+```
+
+Coverage reports are generated in the `coverage/` directory.
+
+### UI Mode
+
+Run tests with interactive UI:
+
+```bash
+pnpm test:ui
+```
+
+Opens a browser interface for running and debugging tests.
+
+## Test Structure
+
+Tests are located in the `tests/` directory:
+
+```
+tests/
+├── fixtures/          # Test data and fixtures
+├── lib/              # Library function tests
+├── utils/            # Utility function tests
+└── *.test.ts         # Test files
+```
+
+## Writing Tests
+
+### Basic Test
+
+```typescript
+import { describe, it, expect } from 'vitest';
+import { myFunction } from '@/lib/myFunction';
+
+describe('myFunction', () => {
+  it('should return expected value', () => {
+    const result = myFunction('input');
+    expect(result).toBe('expected');
+  });
+});
+```
+
+### Testing Components
+
+```typescript
+import { render, screen } from '@testing-library/react';
+import { MyComponent } from '@/components/MyComponent';
+
+describe('MyComponent', () => {
+  it('renders correctly', () => {
+    render(<MyComponent title="Test" />);
+    expect(screen.getByText('Test')).toBeInTheDocument();
+  });
+});
+```
+
+### Testing with Fixtures
+
+```typescript
+import { describe, it, expect } from 'vitest';
+import { processData } from '@/lib/data';
+import testData from './fixtures/test-data.json';
+
+describe('processData', () => {
+  it('processes test data correctly', () => {
+    const result = processData(testData);
+    expect(result).toHaveLength(10);
+  });
+});
+```
+
+## Test Coverage
+
+### Coverage Goals
+
+Aim for:
+- **80%+ overall coverage**
+- **90%+ for critical paths**
+- **100% for utility functions**
+
+### Viewing Coverage
+
+After running `pnpm test:coverage`:
+
+1. Open `coverage/index.html` in a browser
+2. Navigate through files
+3. See uncovered lines highlighted
+
+### Coverage Reports
+
+Coverage reports show:
+- **Statements**: Individual statements executed
+- **Branches**: Conditional branches taken
+- **Functions**: Functions called
+- **Lines**: Lines of code executed
+
+## Testing Best Practices
+
+### Test Organization
+
+- Group related tests with `describe`
+- Use descriptive test names
+- Test one thing per test
+- Keep tests independent
+
+### Assertions
+
+- Use specific assertions
+- Test both success and failure cases
+- Verify error messages
+- Check edge cases
+
+### Mocking
+
+Mock external dependencies:
+
+```typescript
+import { vi } from 'vitest';
+
+vi.mock('@/lib/api', () => ({
+  fetchData: vi.fn(() => Promise.resolve(mockData)),
+}));
+```
+
+### Async Testing
+
+Test async code properly:
+
+```typescript
+it('fetches data', async () => {
+  const data = await fetchData();
+  expect(data).toBeDefined();
+});
+```
+
+## Continuous Integration
+
+Tests run automatically on:
+- Pull requests
+- Pushes to main branch
+- Before deployment
+
+### GitHub Actions
+
+Tests are configured in `.github/workflows/test.yml`:
+
+```yaml
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm test
+```
+
+## Manual Testing
+
+### Local Testing
+
+Test locally before committing:
+
+1. Start dev server: `pnpm dev`
+2. Test all pages manually
+3. Check responsive design
+4. Test dark mode
+5. Verify navigation
+
+### Browser Testing
+
+Test in multiple browsers:
+- Chrome/Edge
+- Firefox
+- Safari
+- Mobile browsers
+
+### Accessibility Testing
+
+Use tools to check accessibility:
+- Lighthouse in Chrome DevTools
+- axe DevTools extension
+- Screen reader testing
+- Keyboard navigation
+
+## Performance Testing
+
+### Lighthouse
+
+Run Lighthouse audits:
+
+1. Open Chrome DevTools
+2. Go to Lighthouse tab
+3. Run audit
+4. Review scores and recommendations
+
+### Load Testing
+
+Test with realistic data:
+- Large contributor counts
+- Many activities
+- Long time periods
+- Multiple roles
+
+## Debugging Tests
+
+### Debug in VS Code
+
+Add breakpoints and run:
+
+```json
+{
+  "type": "node",
+  "request": "launch",
+  "name": "Vitest",
+  "runtimeExecutable": "pnpm",
+  "runtimeArgs": ["test:watch"],
+  "console": "integratedTerminal"
+}
+```
+
+### Debug in Browser
+
+Use test UI for debugging:
+
+```bash
+pnpm test:ui
+```
+
+### Verbose Output
+
+Run tests with verbose output:
+
+```bash
+pnpm test --reporter=verbose
+```
+
+## Common Issues
+
+### Tests Timeout
+
+Increase timeout for slow tests:
+
+```typescript
+it('slow test', async () => {
+  // ...
+}, 10000); // 10 second timeout
+```
+
+### Flaky Tests
+
+Fix flaky tests by:
+- Avoiding time-dependent tests
+- Using proper async/await
+- Cleaning up after tests
+- Mocking random values
+
+### Import Errors
+
+Ensure imports use correct paths:
+- Use `@/` for workspace imports
+- Check tsconfig.json paths
+- Verify file extensions
+
+## Next Steps
+
+- [Learn about contributing](/docs/contributing)
+- [View troubleshooting guide](/docs/troubleshooting)
+- [Read API reference](/docs/api-reference)
+

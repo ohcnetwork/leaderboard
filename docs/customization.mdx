@@ -1,0 +1,326 @@
+---
+title: Customization
+description: Customize the appearance and behavior of your leaderboard
+---
+
+# Customization
+
+Learn how to customize the appearance and behavior of your leaderboard.
+
+## Theming
+
+The leaderboard supports custom themes through CSS variables. You can customize the look and feel to match your organization's branding.
+
+### Built-in Themes
+
+The leaderboard includes built-in light and dark themes that automatically switch based on user preference.
+
+### CSS Variables
+
+Key theme variables you can customize in `app/globals.css`:
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  /* ... more variables */
+}
+```
+
+### Color System
+
+The leaderboard uses the OKLCH color space for better perceptual uniformity. Colors are defined as:
+
+```css
+oklch(lightness chroma hue)
+```
+
+- **Lightness**: 0 (black) to 1 (white)
+- **Chroma**: 0 (gray) to ~0.4 (vibrant)
+- **Hue**: 0-360 (color wheel degrees)
+
+### Remote Theme
+
+You can provide a remote theme CSS file:
+
+```yaml
+leaderboard:
+  theme: https://your-org.com/leaderboard-theme.css
+```
+
+This CSS file will be loaded and applied to the leaderboard. Use it to:
+- Override default colors
+- Add custom fonts
+- Modify spacing and layout
+- Add organization-specific styles
+
+## Custom Activity Types
+
+Define custom activity types in your data source to track organization-specific contributions.
+
+### Activity Type Structure
+
+Each activity type should have:
+
+```json
+{
+  "slug": "custom_activity",
+  "name": "Custom Activity",
+  "description": "Description of the activity",
+  "points": 5,
+  "icon": "star"
+}
+```
+
+### Example Custom Activities
+
+```json
+[
+  {
+    "slug": "blog_post",
+    "name": "Blog Post",
+    "description": "Published a blog post",
+    "points": 20,
+    "icon": "file-text"
+  },
+  {
+    "slug": "presentation",
+    "name": "Presentation",
+    "description": "Gave a presentation",
+    "points": 15,
+    "icon": "presentation"
+  },
+  {
+    "slug": "mentoring",
+    "name": "Mentoring Session",
+    "description": "Conducted a mentoring session",
+    "points": 10,
+    "icon": "users"
+  }
+]
+```
+
+## Avatar Grid Configuration
+
+Customize the people page avatar grid in `app/globals.css`:
+
+```css
+:root {
+  /* Adjust based on org size:
+     - Large orgs (500+): 12-24 columns, smaller avatars
+     - Medium orgs (100-500): 8-16 columns
+     - Small orgs (<100): 4-8 columns, larger avatars
+  */
+  --people-grid-cols-mobile: 8;
+  --people-grid-cols-sm: 10;
+  --people-grid-cols-md: 12;
+  --people-grid-cols-lg: 16;
+  --people-grid-cols-xl: 20;
+  --people-grid-cols-2xl: 24;
+  --people-grid-gap: 0.375rem;
+}
+```
+
+## Custom Fonts
+
+Add custom fonts to match your brand:
+
+### Using Google Fonts
+
+Update `app/layout.tsx`:
+
+```tsx
+import { Inter, JetBrains_Mono } from "next/font/google";
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+});
+```
+
+### Using Custom Fonts
+
+Add font files to `public/fonts/` and define them in `app/globals.css`:
+
+```css
+@font-face {
+  font-family: 'Your Custom Font';
+  src: url('/fonts/your-font.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --font-sans: 'Your Custom Font', sans-serif;
+}
+```
+
+## Logo and Branding
+
+Customize logos and branding elements:
+
+### Organization Logo
+
+Set in `config.yaml`:
+
+```yaml
+org:
+  logo_url: https://your-org.com/logo.svg
+```
+
+### Favicon
+
+Set in `config.yaml`:
+
+```yaml
+meta:
+  favicon_url: https://your-org.com/favicon.ico
+```
+
+### Social Media Preview
+
+Set the Open Graph image:
+
+```yaml
+meta:
+  image_url: https://your-org.com/og-image.png
+```
+
+Recommended size: 1200x630 pixels
+
+## Layout Customization
+
+### Container Width
+
+Modify container widths in component files or add to `app/globals.css`:
+
+```css
+.container {
+  max-width: 1400px; /* Default is 1280px */
+}
+```
+
+### Spacing
+
+Adjust global spacing:
+
+```css
+:root {
+  --spacing-unit: 0.25rem; /* 4px base unit */
+}
+```
+
+## Component Customization
+
+### Badge Styles
+
+Customize role badges by modifying the badge component or adding styles:
+
+```css
+.badge-core {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.badge-contributor {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+```
+
+### Card Styles
+
+Customize card appearance:
+
+```css
+.card {
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+```
+
+## Best Practices
+
+### Theme Consistency
+
+- Use CSS variables for all colors
+- Maintain consistent spacing
+- Test both light and dark modes
+- Ensure sufficient color contrast
+
+### Performance
+
+- Optimize custom fonts (subset, preload)
+- Minimize custom CSS
+- Use system fonts when possible
+- Compress images and assets
+
+### Accessibility
+
+- Maintain WCAG AA contrast ratios
+- Test with screen readers
+- Support keyboard navigation
+- Provide alternative text for images
+
+## Examples
+
+### Corporate Theme
+
+```css
+:root {
+  --primary: oklch(0.45 0.15 240); /* Corporate blue */
+  --font-sans: 'Corporate Font', system-ui, sans-serif;
+  --radius: 0.25rem; /* Sharper corners */
+}
+```
+
+### Vibrant Theme
+
+```css
+:root {
+  --primary: oklch(0.6 0.25 330); /* Vibrant pink */
+  --accent: oklch(0.7 0.2 120); /* Bright green */
+  --radius: 1rem; /* Rounded corners */
+}
+```
+
+### Minimal Theme
+
+```css
+:root {
+  --primary: oklch(0.2 0 0); /* Pure black */
+  --border: oklch(0.95 0 0); /* Light gray */
+  --radius: 0; /* No rounded corners */
+}
+```
+
+## Next Steps
+
+- [Deploy your customized leaderboard](/docs/deployment)
+- [Learn about data management](/docs/data-management)
+- [View configuration reference](/docs/configuration-reference)
+

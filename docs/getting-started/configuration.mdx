@@ -1,0 +1,166 @@
+---
+title: Configuration
+description: Configure the OHC Leaderboard for your organization
+---
+
+# Configuration
+
+Learn how to configure the OHC Leaderboard for your organization.
+
+## Configuration File
+
+The leaderboard uses a `config.yaml` file in the root directory. This file controls all aspects of your leaderboard's behavior and appearance.
+
+## Basic Structure
+
+```yaml
+org:
+  # Organization information
+  
+meta:
+  # SEO and metadata
+  
+leaderboard:
+  # Leaderboard settings
+```
+
+## Organization Configuration
+
+Configure your organization's basic information:
+
+```yaml
+org:
+  name: Your Organization
+  description: Brief description of your organization
+  url: https://your-org.com
+  logo_url: https://your-org.com/logo.svg
+  start_date: 2020-01-01  # Optional
+  socials:  # Optional
+    github: https://github.com/your-org
+    slack: https://slack.your-org.com
+    linkedin: https://linkedin.com/company/your-org
+    email: support@your-org.com
+```
+
+## Metadata Configuration
+
+Set up SEO and site metadata:
+
+```yaml
+meta:
+  title: Leaderboard - Your Organization
+  description: Track contributions across your organization
+  image_url: https://your-org.com/og-image.png
+  site_url: https://leaderboard.your-org.com
+  favicon_url: https://your-org.com/favicon.ico
+```
+
+## Leaderboard Settings
+
+Configure leaderboard behavior:
+
+```yaml
+leaderboard:
+  data_source: https://github.com/your-org/leaderboard-data
+  theme: https://your-org.com/theme.css  # Optional
+  
+  roles:
+    core:
+      name: Core Team
+      description: Core team members
+    contributor:
+      name: Contributor
+      description: Open source contributors
+    bot:
+      name: Bot
+      description: Bot accounts
+      hidden: true  # Hide from leaderboard
+  
+  top_contributors:  # Optional
+    - pr_merged
+    - pr_opened
+    - issue_opened
+  
+  aggregates:  # Optional
+    global:
+      - total_activities
+      - count_contributors
+    contributor:
+      - total_points
+      - total_activities
+```
+
+## Roles Configuration
+
+Define contributor roles with custom properties. Each role can have:
+
+- `name` - Display name for the role
+- `description` - Description of the role
+- `hidden` - Whether to hide this role from the leaderboard (default: false)
+
+Example:
+
+```yaml
+leaderboard:
+  roles:
+    core:
+      name: Core Team
+      description: Core team members
+    intern:
+      name: Intern
+      description: Intern at the organization
+    contributor:
+      name: Contributor
+      description: Open source contributor
+    bot:
+      name: Bot
+      description: Bot account
+      hidden: true
+```
+
+## Social Profiles
+
+Configure social profile icon mappings:
+
+```yaml
+leaderboard:
+  social_profiles:
+    github:
+      icon: github
+    linkedin:
+      icon: linkedin
+    twitter:
+      icon: twitter
+    email:
+      icon: mail
+```
+
+## Scraper Configuration
+
+Configure automated data collection (optional):
+
+```yaml
+scraper:
+  schedule: 0 */12 * * *  # Cron expression
+  scrapers:
+    - name: GitHub Scraper
+      repository: ohcnetwork/leaderboard-github-scraper
+      envs:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ORG: ${{ github.repository_owner }}
+```
+
+## Validation
+
+The configuration file is validated against a JSON schema (`config.schema.json`). Your IDE can provide autocomplete and validation if you add the schema reference:
+
+```yaml
+# yaml-language-server: $schema=config.schema.json
+```
+
+## Next Steps
+
+- [View complete configuration reference](/docs/configuration-reference)
+- [Set up data management](/docs/data-management)
+- [Customize your theme](/docs/customization)
+

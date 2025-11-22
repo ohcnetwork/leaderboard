@@ -24,6 +24,7 @@ import {
 import Icon from "@/components/Icon";
 import { icons } from "@/app/icons.gen";
 import { marked } from "marked";
+import { Metadata } from "next";
 
 // Built-in aggregate definitions for profile page
 const BUILTIN_CONTRIBUTOR_AGGREGATES = {
@@ -53,7 +54,9 @@ export async function generateStaticParams() {
   return usernames.map((username) => ({ username }));
 }
 
-export async function generateMetadata({ params }: ContributorPageProps) {
+export async function generateMetadata({
+  params,
+}: ContributorPageProps): Promise<Metadata> {
   const { username } = await params;
   const { contributor, totalPoints, activities } = await getContributorProfile(
     username
@@ -93,7 +96,7 @@ export async function generateMetadata({ params }: ContributorPageProps) {
       "open source",
       "contributions",
       contributor.role,
-    ].filter(Boolean),
+    ].filter((k): k is string => Boolean(k)),
     authors: [
       {
         name: contributor.name || contributor.username,

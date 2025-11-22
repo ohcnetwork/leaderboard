@@ -5,7 +5,6 @@ import {
   GlobalAggregate,
   ContributorAggregate,
   ContributorAggregateDefinition,
-  BadgeDefinition,
   ContributorBadge,
   BadgeVariant,
 } from "@/types/db";
@@ -105,7 +104,7 @@ export async function createTables() {
         slug                    VARCHAR PRIMARY KEY,
         name                    VARCHAR NOT NULL,
         description             TEXT NOT NULL,
-        variants                JSON NOT NULL,
+        variants                JSON NOT NULL
     );
 
     CREATE TABLE IF NOT EXISTS contributor_badge (

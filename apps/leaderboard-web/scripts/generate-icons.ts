@@ -1,4 +1,4 @@
-import { getDb } from "@/lib/db";
+import { getDb } from "@leaderboard/core";
 import { getConfig } from "@leaderboard/core";
 import fs from "fs";
 import path from "path";

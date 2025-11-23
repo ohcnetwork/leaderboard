@@ -101,27 +101,6 @@ export async function createTables() {
 }
 
 /**
- * Upsert activity definitions to the database
- * @param activityDefinitions - The activity definitions to upsert
- */
-export async function upsertActivityDefinitions(
-  ...activityDefinitions: ActivityDefinition[]
-) {
-  const db = getDb();
-
-  await db.query(`
-    INSERT INTO activity_definition (slug, name, description, points, icon)
-    VALUES ${activityDefinitions
-      .map(
-        (ad) =>
-          `('${ad.slug}', '${ad.name}', '${ad.description}', ${ad.points}, '${ad.icon}')`
-      )
-      .join(",")}
-    ON CONFLICT (slug) DO UPDATE SET name = EXCLUDED.name, description = EXCLUDED.description, points = EXCLUDED.points, icon = EXCLUDED.icon;
-  `);
-}
-
-/**
  * List all activity definitions from the database
  * @returns The list of all activity definitions
  */
@@ -133,59 +112,6 @@ export async function listActivityDefinitions() {
   `);
 
   return result.rows;
-}
-
-/**
- * Upsert contributors to the database
- * @param contributors - The contributors to upsert
- */
-export async function upsertContributor(...contributors: Contributor[]) {
-  const db = getDb();
-
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format JSON for SQL
-  const formatJson = (
-    value: Record<string, string> | null | undefined
-  ): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format date for SQL
-  const formatDate = (value: Date | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${format(value, "yyyy-MM-dd")}'`;
-  };
-
-  await db.query(`
-    INSERT INTO contributor (username, name, role, title, avatar_url, bio, social_profiles, joining_date, meta)
-    VALUES ${contributors
-      .map(
-        (c) =>
-          `(${escapeSql(c.username)}, ${escapeSql(c.name)}, ${escapeSql(
-            c.role
-          )}, ${escapeSql(c.title)}, ${escapeSql(c.avatar_url)}, ${escapeSql(
-            c.bio
-          )}, ${formatJson(c.social_profiles)}, ${formatDate(
-            c.joining_date
-          )}, ${formatJson(c.meta)})`
-      )
-      .join(",")}
-    ON CONFLICT (username) DO UPDATE SET 
-      name = EXCLUDED.name, 
-      role = EXCLUDED.role, 
-      title = EXCLUDED.title,
-      avatar_url = EXCLUDED.avatar_url, 
-      bio = EXCLUDED.bio, 
-      social_profiles = EXCLUDED.social_profiles,
-      joining_date = EXCLUDED.joining_date,
-      meta = EXCLUDED.meta;
-  `);
 }
 
 /**

@@ -1,4 +1,4 @@
-export { getDb } from "./src/get-db";
+export { getDb } from "./src/db";
 export {
   getConfig,
   clearConfigCache,
@@ -7,3 +7,4 @@ export {
 } from "./src/config";
 export type { Config } from "./src/types/config";
 export type { Contributor } from "./src/types/db";
+export { upsertContributor } from "./src/db";

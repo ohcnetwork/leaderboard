@@ -1,3 +1,5 @@
+import { getDb } from "@leaderboard/core";
+
 const getStdin = async () => {
   const chunks = [];
   for await (const chunk of process.stdin) {

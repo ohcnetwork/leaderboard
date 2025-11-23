@@ -1,3 +1,4 @@
+import { upsertContributor } from "@leaderboard/core";
 import path from "path";
 import yaml from "js-yaml";
 import { readdir, readFile } from "fs/promises";

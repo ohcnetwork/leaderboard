@@ -3,16 +3,17 @@
     "composite": true,
     "declaration": true,
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": "lib",
     "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
+    "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["lib/*"]
     }
   },
-  "include": ["src"]
+  "include": ["lib", "index.ts"]
 }

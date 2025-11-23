@@ -2,13 +2,21 @@
   "name": "@leaderboard/core",
   "version": "1.0.0",
   "description": "Core utilities for the Leaderboard and building scrapers",
-  "main": "index.js",
+  "type": "module",
+  "main": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
   "scripts": {},
   "keywords": [],
   "author": "Open Healthcare Network",
   "license": "MIT",
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
+    "@types/node": "^20.19.25",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.14"
   }
 }

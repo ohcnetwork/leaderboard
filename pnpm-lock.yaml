@@ -16,6 +16,9 @@ importers:
       '@electric-sql/pglite-tools':
         specifier: ^0.2.19
         version: 0.2.19(@electric-sql/pglite@0.3.14)
+      '@leaderboard/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@mdx-js/loader':
         specifier: ^3.1.1
         version: 3.1.1
@@ -148,7 +151,14 @@ importers:
         version: 4.0.13(@types/debug@4.1.12)(@types/node@20.19.25)(@vitest/ui@4.0.13)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)
 
   packages/core:
+    dependencies:
+      '@electric-sql/pglite':
+        specifier: ^0.3.14
+        version: 0.3.14
     devDependencies:
+      '@types/node':
+        specifier: ^20.19.25
+        version: 20.19.25
       typescript:
         specifier: ^5.9.3
         version: 5.9.3

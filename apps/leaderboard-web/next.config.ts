@@ -4,6 +4,7 @@ import { createMDX } from "fumadocs-mdx/next";
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
+  transpilePackages: ["@leaderboard/core"],
   serverExternalPackages: [
     "@electric-sql/pglite", // reference: https://github.com/electric-sql/pglite/issues/322#issuecomment-2372563526
   ],

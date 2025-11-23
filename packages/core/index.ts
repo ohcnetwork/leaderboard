@@ -1,1 +1,1 @@
-export * from "./lib/get-db";
+export * from "./src/get-db";

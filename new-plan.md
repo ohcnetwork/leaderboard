@@ -36,6 +36,16 @@ import createManifest from "@leaderboard/core";
 
 
 const manifest: LeaderboardScraperManifest = {
+  initialize: async (config: ScraperConfig, db: PGLite) => {
+      db.exec(`
+          CREATE TABLE IF NOT EXISTS github_pr_review (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              pr_number INTEGER NOT NULL,
+              reviewer TEXT NOT NULL
+          )
+      `)
+  },
+
   activityDefinitions: [
     {
       slug: 'pr_reviewed',
@@ -139,7 +149,7 @@ const manifest: LeaderboardScraperManifest = {
     },
   ],
 
-  prepare: async (config: ScraperConfig, db: PGLite) => {
+  initialize: async (config: ScraperConfig, db: PGLite) => {
       db.exec(`
           CREATE TABLE IF NOT EXISTS slack_eod_message (
               id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -151,7 +161,7 @@ const manifest: LeaderboardScraperManifest = {
   scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
   computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
 
-  import: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
+  import: async ({ config, db, scrapeDays, dataPath }) => {},
   export: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
 }
 

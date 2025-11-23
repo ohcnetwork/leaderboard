@@ -1,3 +1,10 @@
+import {
+  Activity,
+  AggregateValue,
+  ContributorAggregate,
+  ContributorBadge,
+  GlobalAggregate,
+} from "@/src/types/db";
 import { PGlite } from "@electric-sql/pglite";
 
 /**
@@ -17,12 +24,19 @@ export interface ScraperContext<TConfig extends Record<string, unknown>> {
    * The number of days to scrape data for.
    */
   scrapeDays: number;
+  /**
+   * The path to store or read data files. This is useful for import/export.
+   */
+  dataPath: string;
 }
 
 type GetRecordsFn<TConfig extends Record<string, unknown>, TRecord> = (
   ctx: ScraperContext<TConfig>
 ) => Promise<TRecord[]>;
 
+export interface ScraperConfig {
+  config: Record<string, any>;
+}
 /**
  * Activity definition type.
  */
@@ -80,7 +94,7 @@ interface ActivityDefinition<TConfig extends Record<string, unknown>> {
    *
    * @example
    * ```ts
-   * getRecords: async ({ db, config }) => {
+   * getActivities: async ({ db, config }) => {
    *   const activities = getIssuesOpened(config.githubToken);
    *
    *   return result.rows.map((i) => ({
@@ -97,7 +111,7 @@ interface ActivityDefinition<TConfig extends Record<string, unknown>> {
    * }
    * ```
    */
-  getRecords?: GetRecordsFn<TConfig, Activity>;
+  getActivities?: GetRecordsFn<TConfig, Activity>;
 }
 
 /**
@@ -105,7 +119,7 @@ interface ActivityDefinition<TConfig extends Record<string, unknown>> {
  */
 interface AggregateDefinition<
   TConfig extends Record<string, unknown>,
-  TRecord
+  TAggregateValue
 > {
   /**
    * Name of the aggregate type.
@@ -140,7 +154,7 @@ interface AggregateDefinition<
    * }
    * ```
    */
-  getRecords?: GetRecordsFn<TConfig, TRecord>;
+  getAggregates?: GetRecordsFn<TConfig, TAggregateValue>;
 }
 
 /**
@@ -187,14 +201,40 @@ interface BadgeDefinition<TConfig extends Record<string, unknown>> {
    * If not provided, the scraper will not award any badges for this badge type.
    * You can still award badges for this type in the `awardBadges` callback of
    * the scraper manifest instead.
+   *
+   * @example
+   * ```ts
+   * awardBadges: async ({ db }) => {
+   *   // compute logic goes here....
+   *
+   *   return [{
+   *     contributor: 'john_doe',
+   *     variant: 'bronze',
+   *     achieved_on: new Date(),
+   *   }]
+   * }
+   * ```
    */
-  getRecords?: GetRecordsFn<TConfig, Badge>;
+  awardBadges?: GetRecordsFn<TConfig, ContributorBadge>;
 }
 
 /**
  * Scraper manifest type.
  */
 export interface ScraperManifest<TConfig extends Record<string, unknown>> {
+  /**
+   * This function is called when the leaderboard is initialized.
+   *
+   * This is useful for performing validations for the scraper's config or
+   * setting up any required resources.
+   *
+   * You can even create ephermal tables in the database that can be used during
+   * the scraping process.
+   *
+   * @param ctx - The scraper context.
+   */
+  initialize?: (ctx: ScraperContext<TConfig>) => Promise<void>;
+
   /**
    * Activity definitions.
    *
@@ -214,10 +254,36 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    *     icon: github
    * ```
    */
-  activityDefinitions: Record<string, ActivityDefinition>;
+  activityDefinitions: Record<string, ActivityDefinition<TConfig>>;
 
   /**
-   * Aggregate definitions.
+   * Callback function to get activities.
+   *
+   * If not provided, the scraper will only scrape activities defined in the
+   * activity definitions.
+   *
+   * You can use this callback to scrape multiple activity types in one go.
+   * This can be useful for efficiently scraping data from external APIs.
+   *
+   * @example
+   * ```ts
+   * getActivities: async ({ db, config }) => {
+   *   const prsAndReviews = getPullRequestAndReviews(config.githubToken);
+   *
+   *   const activities: Activity[] = [];
+   *
+   *   for (const item of prsAndReviews) {
+   *     // custom logic to push activities
+   *   }
+   *
+   *   return activities;
+   * }
+   * ```
+   */
+  getActivities?: GetRecordsFn<TConfig, Activity>;
+
+  /**
+   * Global aggregate definitions.
    *
    * @example
    * ```yaml
@@ -227,7 +293,73 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    *     description: The number of pull requests merged
    * ```
    */
-  aggregateDefinitions: Record<string, AggregateDefinition>;
+  globalAggregateDefinitions: Record<
+    string,
+    AggregateDefinition<TConfig, AggregateValue>
+  >;
+
+  /**
+   * Contributor aggregate definitions.
+   *
+   * @example
+   * ```yaml
+   * contributorAggregateDefinitions:
+   *   pr_merged_count:
+   *     name: Pull Request Merged Count
+   *     description: The number of pull requests merged by the contributor
+   * ```
+   */
+  contributorAggregateDefinitions: Record<
+    string,
+    AggregateDefinition<TConfig, { contributor: string } & AggregateValue>
+  >;
+
+  /**
+   * Callback function to get global aggregates.
+   *
+   * If not provided, the scraper will only insert global aggregates defined in
+   * the aggregate definitions.
+   *
+   * You can use this callback to insert multiple global aggregate types in one
+   * go. This can be useful for efficiently computing aggregates or other
+   * reasons.
+   *
+   * @example
+   * ```ts
+   * getGlobalAggregates: async ({ db }) => {
+   *   return [{
+   *     aggregate: 'pr_merged_count',
+   *     value: 100,
+   *     type: 'number',
+   *   }]
+   * }
+   * ```
+   */
+  getGlobalAggregates?: GetRecordsFn<TConfig, GlobalAggregate>;
+
+  /**
+   * Callback function to get contributor aggregates.
+   *
+   * If not provided, the scraper will only insert contributor aggregates
+   * defined in the aggregate definitions.
+   *
+   * You can use this callback to insert multiple contributor aggregate types in
+   * one go. This can be useful for efficiently computing aggregates or other
+   * reasons.
+   *
+   * @example
+   * ```ts
+   * getContributorAggregates: async ({ db }) => {
+   *   return [{
+   *     aggregate: 'pr_merged_count',
+   *     contributor: 'john_doe',
+   *     value: 10,
+   *     type: 'number',
+   *   }]
+   * }
+   * ```
+   */
+  getContributorAggregates?: GetRecordsFn<TConfig, ContributorAggregate>;
 
   /**
    * Badge definitions.
@@ -250,17 +382,50 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    *         svg_url: https://example.com/gold.svg
    * ```
    */
-  badgeDefinitions: Record<string, BadgeDefinition>;
+  badgeDefinitions: Record<string, BadgeDefinition<TConfig>>;
 
-  scrape: (ctx: ScraperContext<TConfig>) => Promise<void>;
-  import?: (
-    config: ScraperConfig,
-    db: PGlite,
-    dataPath: string
-  ) => Promise<void>;
-  export?: (
-    config: ScraperConfig,
-    db: PGlite,
-    dataPath: string
-  ) => Promise<void>;
+  /**
+   * Callback function to award badges.
+   *
+   * If not provided, the scraper will only award badges defined in the badge
+   * definitions.
+   *
+   * You can use this callback to award multiple badge types in one go. This can
+   * be useful for efficiently computing badge awards or other reasons.
+   *
+   * @example
+   * ```ts
+   * awardBadges: async ({ db }) => {
+   *   // compute logic goes here....
+   *
+   *   return [{
+   *     badge: 'eod_streak',
+   *     contributor: 'john_doe',
+   *     variant: 'bronze',
+   *     achieved_on: new Date(),
+   *   }]
+   * }
+   * ```
+   */
+  awardBadges?: GetRecordsFn<TConfig, ContributorBadge>;
+
+  /**
+   * Callback function to import data. Activities will be imported by
+   * leaderboard automatically from the specified data path, but this can be used
+   * to import other data that has been exported by the custom exporter.
+   *
+   * For example, if the scraper has created ephermal tables during
+   * initialization or scraping, those tables can be imported here.
+   */
+  import?: (ctx: ScraperContext<TConfig>) => Promise<void>;
+
+  /**
+   * Callback function to export data. Activities will be exported by
+   * leaderboard automatically to the specified data path, but this can be used
+   * to export other data as needed.
+   *
+   * For example, if the scraper has created ephermal tables during
+   * initialization or scraping, those tables can be exported here.
+   */
+  export?: (ctx: ScraperContext<TConfig>) => Promise<void>;
 }

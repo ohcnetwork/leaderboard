@@ -1,4 +1,4 @@
-export interface OrgConfig {
+interface OrgConfig {
   name: string;
   description: string;
   url: string;
@@ -13,7 +13,7 @@ export interface OrgConfig {
   };
 }
 
-export interface MetaConfig {
+interface MetaConfig {
   title: string;
   description: string;
   image_url: string;
@@ -21,23 +21,23 @@ export interface MetaConfig {
   favicon_url: string;
 }
 
-export interface RoleConfig {
+interface RoleConfig {
   name: string;
   description?: string;
   hidden?: boolean;
 }
 
-export interface SocialProfileConfig {
+interface SocialProfileConfig {
   icon: string;
 }
 
-export interface ScraperInstanceConfig {
+interface ScraperInstanceConfig {
   name?: string; // Optional display name
   source: string; // npm package.json dependency format (e.g., 'owner/repo', 'git+https://...', 'https://...tar.gz', 'file:../path', version ranges, etc.)
   config?: Record<string, unknown>; // Optional scraper-specific config
 }
 
-export interface LeaderboardConfig {
+interface LeaderboardConfig {
   data_source: string;
   roles: Record<string, RoleConfig>;
   top_contributors?: string[];

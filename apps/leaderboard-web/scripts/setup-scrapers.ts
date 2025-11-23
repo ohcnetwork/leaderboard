@@ -1,5 +1,5 @@
 import { execSync } from "child_process";
-import { getConfig } from "@/lib/config";
+import { getConfig } from "@leaderboard/core";
 
 /**
  * Setup script to install all configured scrapers

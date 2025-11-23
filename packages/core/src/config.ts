@@ -3,8 +3,9 @@ import { join } from "path";
 import yaml from "js-yaml";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
-import { Config } from "@/types/config";
-import configSchema from "@/config.schema.json";
+import configSchema from "../config.schema.json";
+
+import type { Config } from "@/types/config";
 
 let cachedConfig: Config | null = null;
 
@@ -95,21 +96,23 @@ export function clearConfigCache(): void {
 }
 
 /**
- * Gets all role names that are marked as hidden
+ * Get list of hidden role keys from the configuration
+ * @returns Array of role keys that have hidden: true
  */
 export function getHiddenRoles(): string[] {
   const config = getConfig();
   return Object.entries(config.leaderboard.roles)
-    .filter(([, roleConfig]) => roleConfig.hidden === true)
-    .map(([slug]) => slug);
+    .filter(([_, role]) => role.hidden === true)
+    .map(([key]) => key);
 }
 
 /**
- * Gets all role names that are not hidden
+ * Get list of visible role keys from the configuration
+ * @returns Array of role keys that are not hidden
  */
 export function getVisibleRoles(): string[] {
   const config = getConfig();
   return Object.entries(config.leaderboard.roles)
-    .filter(([, roleConfig]) => roleConfig.hidden !== true)
-    .map(([slug]) => slug);
+    .filter(([_, role]) => role.hidden !== true)
+    .map(([key]) => key);
 }

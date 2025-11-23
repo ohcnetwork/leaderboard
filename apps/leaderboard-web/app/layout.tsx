@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
-import { getConfig } from "@/lib/config";
+import { getConfig } from "@leaderboard/core";
 import Link from "next/link";
 import ThemeSelector from "./ThemeSelector";
 import Image from "next/image";

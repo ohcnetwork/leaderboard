@@ -2,7 +2,7 @@ import {
   getRecentActivitiesGroupedByType,
   getGlobalAggregates,
 } from "@/lib/db";
-import { getConfig } from "@/lib/config";
+import { getConfig } from "@leaderboard/core";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import RelativeTime from "@/components/RelativeTime";

@@ -55,12 +55,6 @@ importers:
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
-      ajv:
-        specifier: ^8.17.1
-        version: 8.17.1
-      ajv-formats:
-        specifier: ^3.0.1
-        version: 3.0.1(ajv@8.17.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -79,9 +73,6 @@ importers:
       fumadocs-ui:
         specifier: ^16.1.0
         version: 16.1.0(@types/react-dom@19.2.3(@types/react@19.2.6))(@types/react@19.2.6)(lucide-react@0.552.0(react@19.2.0))(next@16.0.1(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.17)
-      js-yaml:
-        specifier: ^4.1.1
-        version: 4.1.1
       lucide-react:
         specifier: ^0.552.0
         version: 0.552.0(react@19.2.0)
@@ -110,9 +101,6 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.19
         version: 0.5.19(tailwindcss@4.1.17)
-      '@types/js-yaml':
-        specifier: ^4.0.9
-        version: 4.0.9
       '@types/node':
         specifier: ^20.19.25
         version: 20.19.25
@@ -122,12 +110,6 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.6)
-      '@vitest/coverage-v8':
-        specifier: ^4.0.9
-        version: 4.0.13(vitest@4.0.13)
-      '@vitest/ui':
-        specifier: ^4.0.9
-        version: 4.0.13(vitest@4.0.13)
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -146,22 +128,40 @@ importers:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
-      vitest:
-        specifier: ^4.0.9
-        version: 4.0.13(@types/debug@4.1.12)(@types/node@20.19.25)(@vitest/ui@4.0.13)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)
 
   packages/core:
     dependencies:
       '@electric-sql/pglite':
         specifier: ^0.3.14
         version: 0.3.14
+      ajv:
+        specifier: ^8.17.1
+        version: 8.17.1
+      ajv-formats:
+        specifier: ^3.0.1
+        version: 3.0.1(ajv@8.17.1)
+      js-yaml:
+        specifier: ^4.1.1
+        version: 4.1.1
     devDependencies:
+      '@types/js-yaml':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@types/node':
         specifier: ^20.19.25
         version: 20.19.25
+      '@vitest/coverage-v8':
+        specifier: ^4.0.9
+        version: 4.0.13(vitest@4.0.13)
+      '@vitest/ui':
+        specifier: ^4.0.9
+        version: 4.0.13(vitest@4.0.13)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
+      vitest:
+        specifier: ^4.0.9
+        version: 4.0.13(@types/debug@4.1.12)(@types/node@20.19.25)(@vitest/ui@4.0.13)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)
 
 packages:
 

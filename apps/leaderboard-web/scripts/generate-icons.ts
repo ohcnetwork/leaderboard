@@ -1,5 +1,5 @@
 import { getDb } from "@/lib/db";
-import { getConfig } from "@/lib/config";
+import { getConfig } from "@leaderboard/core";
 import fs from "fs";
 import path from "path";
 

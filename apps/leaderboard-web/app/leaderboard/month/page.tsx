@@ -1,6 +1,6 @@
 import { getLeaderboard, getTopContributorsByActivity } from "@/lib/db";
 import { getDateRange } from "@/lib/utils";
-import { getConfig, getHiddenRoles } from "@/lib/config";
+import { getConfig, getHiddenRoles } from "@leaderboard/core";
 import LeaderboardView from "../LeaderboardView";
 import { Suspense } from "react";
 

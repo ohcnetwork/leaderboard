@@ -4,7 +4,7 @@ import {
   clearConfigCache,
   getHiddenRoles,
   getVisibleRoles,
-} from "@/lib/config";
+} from "@/src/config";
 import {
   validConfig,
   minimalValidConfig,
@@ -18,15 +18,15 @@ import {
   roleMissingNameConfig,
   additionalPropertiesConfig,
   invalidThemeConfig,
-} from "../fixtures/configs";
+} from "./fixtures/configs";
 import {
   backupConfig,
   restoreConfig,
   replaceConfigWith,
   hasValidationError,
   extractErrorPaths,
-} from "../utils/test-helpers";
-import { Config } from "@/types/config";
+} from "./utils/test-helpers";
+import { Config } from "@/src/types/config";
 
 describe("Config Validation", () => {
   let originalConfig: string | null;

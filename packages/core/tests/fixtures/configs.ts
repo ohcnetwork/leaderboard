@@ -1,4 +1,4 @@
-import { Config } from "@/types/config";
+import type { Config } from "@/src/types/config";
 
 /**
  * Valid complete configuration
@@ -261,10 +261,9 @@ export const scraperInstanceMissingSourceConfig = {
           TOKEN: "${{ env.TOKEN }}",
         },
       },
-  },
+    },
   },
 };
-
 
 /**
  * Configuration with role missing required name field

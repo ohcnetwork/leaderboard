@@ -1,18 +1,15 @@
 import {
-  Activity,
-  ActivityDefinition,
-  Contributor,
-  GlobalAggregate,
-  ContributorAggregate,
-  ContributorAggregateDefinition,
-  ContributorBadge,
-  BadgeVariant,
+  type Activity,
+  type ActivityDefinition,
+  type Contributor,
+  type GlobalAggregate,
+  type ContributorAggregate,
+  type ContributorBadge,
+  type BadgeVariant,
 } from "@/types/db";
 import { types } from "@electric-sql/pglite";
 import { format } from "date-fns";
-import { getDb as getCoreDb } from "@leaderboard/core";
-
-export const getDb = getCoreDb;
+import { getDb } from "@leaderboard/core";
 
 /**
  * Create tables and indexes in the database if they don't exist
@@ -788,20 +785,6 @@ export async function getGlobalAggregate(slug: string) {
   );
 
   return result.rows[0] ?? null;
-}
-
-/**
- * List all contributor aggregate definitions from the database
- * @returns The list of all contributor aggregate definitions
- */
-export async function listContributorAggregateDefinitions() {
-  const db = getDb();
-
-  const result = await db.query<ContributorAggregateDefinition>(`
-    SELECT * FROM contributor_aggregate_definition;
-  `);
-
-  return result.rows;
 }
 
 /**

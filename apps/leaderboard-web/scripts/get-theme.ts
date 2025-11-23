@@ -1,4 +1,4 @@
-import { getConfig } from "@/lib/config";
+import { getConfig } from "@leaderboard/core";
 import { writeFile } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";

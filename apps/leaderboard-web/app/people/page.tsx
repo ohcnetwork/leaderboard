@@ -1,5 +1,5 @@
 import { getAllContributorsWithAvatars } from "@/lib/db";
-import { getConfig, getHiddenRoles } from "@/lib/config";
+import { getConfig, getHiddenRoles } from "@leaderboard/core";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Link from "next/link";
 import type { Metadata } from "next";

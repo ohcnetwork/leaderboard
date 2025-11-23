@@ -29,6 +29,13 @@
   "author": "Open Healthcare Network",
   "license": "MIT",
   "packageManager": "pnpm@10.20.0",
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.14",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "date-fns": "^4.1.0",
+    "js-yaml": "^4.1.1"
+  },
   "devDependencies": {
     "@electric-sql/pglite-tools": "^0.2.19",
     "@types/js-yaml": "^4.0.9",
@@ -38,12 +45,5 @@
     "tsc-alias": "^1.8.16",
     "typescript": "^5.9.3",
     "vitest": "^4.0.9"
-  },
-  "dependencies": {
-    "@electric-sql/pglite": "^0.3.14",
-    "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1",
-    "date-fns": "^4.1.0",
-    "js-yaml": "^4.1.1"
   }
 }

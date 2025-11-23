@@ -4,7 +4,7 @@ import {
   clearConfigCache,
   getHiddenRoles,
   getVisibleRoles,
-} from "@/config";
+} from "@/src/config";
 import {
   validConfig,
   minimalValidConfig,
@@ -26,7 +26,7 @@ import {
   hasValidationError,
   extractErrorPaths,
 } from "./utils/test-helpers";
-import type { Config } from "@/types/config";
+import type { Config } from "@/src/types/config";
 
 describe("Config Validation", () => {
   let originalConfig: string | null;

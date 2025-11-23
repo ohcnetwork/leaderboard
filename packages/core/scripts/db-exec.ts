@@ -1,5 +1,3 @@
-import { getDb } from "@/lib/db";
-
 const getStdin = async () => {
   const chunks = [];
   for await (const chunk of process.stdin) {

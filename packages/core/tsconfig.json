@@ -9,9 +9,9 @@
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     }
   },
-  "include": ["src/**/*", "index.ts", "tests/**/*", "config.schema.json"],
+  "include": ["**/*.ts", "tests/**/*", "config.schema.json"],
   "exclude": ["node_modules", "dist"]
 }

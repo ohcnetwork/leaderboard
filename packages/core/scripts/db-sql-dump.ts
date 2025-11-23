@@ -1,4 +1,3 @@
-import { getDb } from "@/lib/db";
 import { pgDump } from "@electric-sql/pglite-tools/pg_dump";
 
 async function main() {

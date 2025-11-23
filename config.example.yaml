@@ -77,13 +77,13 @@ leaderboard:
   scrapers: ## optional - scraper configurations
     github:
       name: GitHub Scraper ## optional
-      source: ohcnetwork/leaderboard-github-scraper ## required - can be GitHub org/repo, git URL, file URL, or tarball URL
+      source: ohcnetwork/leaderboard-github-scraper ## required - npm package.json dependency format (e.g., 'owner/repo', 'git+https://...', 'https://...tar.gz', 'file:../path', version ranges, etc.)
       config: ## optional - scraper-specific configuration
         githubToken: ${{ env.GITHUB_TOKEN }}
         githubOrg: ohcnetwork
     slack:
       name: Slack Scraper
-      source: ohcnetwork/leaderboard-slack-scraper
+      source: ohcnetwork/leaderboard-slack-scraper ## GitHub shorthand (owner/repo)
       config:
         slackApiToken: ${{ env.SLACK_API_TOKEN }}
         slackChannel: ${{ env.SLACK_EOD_CHANNEL }}

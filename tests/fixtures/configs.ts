@@ -261,43 +261,10 @@ export const scraperInstanceMissingSourceConfig = {
           TOKEN: "${{ env.TOKEN }}",
         },
       },
-    },
+  },
   },
 };
 
-/**
- * Configuration with invalid source format
- */
-export const invalidSourceFormatConfig = {
-  org: {
-    name: "Test",
-    description: "Test org",
-    url: "https://test.org",
-    logo_url: "https://test.org/logo.png",
-  },
-  meta: {
-    title: "Test",
-    description: "Test",
-    image_url: "https://test.org/image.png",
-    site_url: "https://test.org",
-    favicon_url: "https://test.org/favicon.ico",
-  },
-  leaderboard: {
-    data_source: "https://github.com/test/data",
-    roles: {
-      user: { name: "User" },
-    },
-    scrapers: {
-      test: {
-        name: "Test Scraper",
-        source: "invalid-format-no-slash-or-url",
-        config: {
-          TOKEN: "${{ env.TOKEN }}",
-        },
-      },
-    },
-  },
-};
 
 /**
  * Configuration with role missing required name field

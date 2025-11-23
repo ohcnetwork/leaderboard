@@ -33,7 +33,7 @@ export interface SocialProfileConfig {
 
 export interface ScraperInstanceConfig {
   name?: string; // Optional display name
-  source: string; // Git URL, GitHub org/repo, file URL, or tarball URL
+  source: string; // npm package.json dependency format (e.g., 'owner/repo', 'git+https://...', 'https://...tar.gz', 'file:../path', version ranges, etc.)
   config?: Record<string, unknown>; // Optional scraper-specific config
 }
 

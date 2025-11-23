@@ -15,7 +15,6 @@ import {
   invalidEmailConfig,
   invalidDateConfig,
   scraperInstanceMissingSourceConfig,
-  invalidSourceFormatConfig,
   roleMissingNameConfig,
   additionalPropertiesConfig,
   invalidThemeConfig,
@@ -426,14 +425,18 @@ describe("Config Validation", () => {
       expect(config.leaderboard.scrapers!.slack?.name).toBe("Slack Scraper");
     });
 
-    it("should accept various valid source formats", () => {
+    it("should accept various npm package.json dependency formats", () => {
       const validSources = [
-        "testorg/scraper", // GitHub org/repo
-        "https://github.com/testorg/scraper.git", // HTTPS git URL
-        "git://github.com/testorg/scraper.git", // Git protocol URL
-        "http://example.com/scraper.tar.gz", // HTTP tarball
-        "https://example.com/scraper.tgz", // HTTPS tarball
-        "file:///path/to/scraper", // File URL
+        "testorg/scraper", // GitHub shorthand (owner/repo)
+        "git+https://github.com/testorg/scraper.git", // Git URL with git+ prefix
+        "git+ssh://git@github.com:testorg/scraper.git", // Git SSH URL
+        "https://github.com/testorg/scraper/archive/v1.0.0.tar.gz", // Tarball URL
+        "file:../local-scraper", // File path (relative)
+        "file:/absolute/path/to/scraper", // File path (absolute)
+        "testorg/scraper#v1.0.0", // GitHub with tag
+        "testorg/scraper#feature-branch", // GitHub with branch
+        "^1.0.0", // Version range
+        "latest", // Version tag
       ];
 
       for (const source of validSources) {
@@ -473,8 +476,24 @@ describe("Config Validation", () => {
       }
     });
 
-    it("should reject invalid source format", () => {
-      replaceConfigWith(invalidSourceFormatConfig);
+    it("should reject empty source string", () => {
+      const configWithEmptySource = {
+        ...minimalValidConfig,
+        leaderboard: {
+          ...minimalValidConfig.leaderboard,
+          scrapers: {
+            test: {
+              name: "Test Scraper",
+              source: "", // Empty string
+              config: {
+                TOKEN: "${{ env.TOKEN }}",
+              },
+            },
+          },
+        },
+      };
+
+      replaceConfigWith(configWithEmptySource);
 
       expect(() => getConfig()).toThrow(/Configuration validation failed/);
 

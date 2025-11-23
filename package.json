@@ -13,6 +13,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "prebuild": "tsx scripts/import-config.ts && tsx scripts/generate-icons.ts && tsx scripts/get-theme.ts",
+    "setup": "tsx scripts/setup-scrapers.ts",
     "db:exec": "tsx scripts/db-exec-stdin.ts",
     "db:prepare": "tsx scripts/db-prepare.ts",
     "db:import": "tsx scripts/db-import.ts",

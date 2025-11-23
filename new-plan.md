@@ -32,91 +32,98 @@ example scraper's entrypoint file:
 
 ```tsx
 // github-scraper/main.ts
-export default defineScraper({
-    activityDefinitions: [
-      {
-        slug: 'pr_reviewed',
-        name: 'Pull Request Reviewed',
-        description: 'A pull request was reviewed',
-        points: 10,
-        icon: 'github'
-      },
-      {
-        slug: 'issue_opened',
-        name: 'Issue Opened',
-        description: 'An issue was opened',
-        points: 5,
-        icon: 'github'
-      },
-    ],
+import createManifest from "@leaderboard/core";
 
-    aggregateDefinitions: {
-      global: [
-        {
-          slug: 'pr_merged_count',
-          name: 'Pull Request Merged Count',
-          description: 'The number of pull requests merged',
-        },
-      ],
-      contributor: [
-        {
-          slug: 'pr_merged_count',
-          name: 'Pull Request Merged Count',
-          description: 'The number of pull requests merged',
-        },
-        {
-          slug: 'issue_opened_count',
-          name: 'Issue Opened Count',
-          description: 'The number of issues opened',
-        },
-      ],
+
+const manifest: LeaderboardScraperManifest = {
+  activityDefinitions: [
+    {
+      slug: 'pr_reviewed',
+      name: 'Pull Request Reviewed',
+      description: 'A pull request was reviewed',
+      points: 10,
+      icon: 'github'
     },
+    {
+      slug: 'issue_opened',
+      name: 'Issue Opened',
+      description: 'An issue was opened',
+      points: 5,
+      icon: 'github'
+    },
+  ],
 
-    badgeDefinitions: [
+  aggregateDefinitions: {
+    global: [
       {
-        slug: 'eod_streak',
-        name: 'EOD Streak',
-        description: 'The number of days in a row that the contributor has sent an EOD update',
-        variants: {
-          bronze: {
-            description: '10 days',
-            svg_url: 'https://example.com/bronze.svg',
-          },
-        },
-      }
+        slug: 'pr_merged_count',
+        name: 'Pull Request Merged Count',
+        description: 'The number of pull requests merged',
+      },
     ],
+    contributor: [
+      {
+        slug: 'pr_merged_count',
+        name: 'Pull Request Merged Count',
+        description: 'The number of pull requests merged',
+      },
+      {
+        slug: 'issue_opened_count',
+        name: 'Issue Opened Count',
+        description: 'The number of issues opened',
+      },
+    ],
+  },
 
-    computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
+  badgeDefinitions: [
+    {
+      slug: 'eod_streak',
+      name: 'EOD Streak',
+      description: 'The number of days in a row that the contributor has sent an EOD update',
+      variants: {
+        bronze: {
+          description: '10 days',
+          svg_url: 'https://example.com/bronze.svg',
+        },
+      },
+    }
+  ],
 
-    scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
-})
+  computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
+
+  scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
+}
+
+export default manifest;
 
 
 // slack-scraper/main.ts
-export default defineScraper({
-    activityDefinitions: [
-      {
-        slug: 'eod_update',
-        name: 'Slack Message',
-        description: 'A message was sent to a slack channel',
-        points: 10,
-        icon: 'slack'
-      },
-    ],
-
-    prepare: async (config: ScraperConfig, db: PGLite) => {
-        db.exec(`
-            CREATE TABLE IF NOT EXISTS slack_eod_message (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                value TEXT NOT NULL
-            )
-        `)
+const manifest: LeaderboardScraperManifest = {
+  activityDefinitions: [
+    {
+      slug: 'eod_update',
+      name: 'Slack Message',
+      description: 'A message was sent to a slack channel',
+      points: 10,
+      icon: 'slack'
     },
-    scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
-    computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
+  ],
 
-    import: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
-    export: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
-})
+  prepare: async (config: ScraperConfig, db: PGLite) => {
+      db.exec(`
+          CREATE TABLE IF NOT EXISTS slack_eod_message (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              name TEXT NOT NULL,
+              value TEXT NOT NULL
+          )
+      `)
+  },
+  scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
+  computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
+
+  import: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
+  export: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
+}
+
+export default manifest;
 ```

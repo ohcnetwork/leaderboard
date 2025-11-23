@@ -211,25 +211,8 @@
                 },
                 "source": {
                   "type": "string",
-                  "description": "Source of the scraper (GitHub org/repo, git URL, file URL, or tarball URL)",
-                  "oneOf": [
-                    {
-                      "pattern": "^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+$",
-                      "description": "GitHub repository in format 'owner/repo'"
-                    },
-                    {
-                      "pattern": "^(git|https?)://.*\\.git$",
-                      "description": "Git repository URL"
-                    },
-                    {
-                      "pattern": "^https?://.*\\.(tar\\.gz|tgz)$",
-                      "description": "Tarball URL"
-                    },
-                    {
-                      "pattern": "^file://.*$",
-                      "description": "File URL"
-                    }
-                  ]
+                  "description": "Source of the scraper in npm package.json dependency format (e.g., 'owner/repo', 'git+https://...', 'https://...tar.gz', 'file:../path', version ranges, etc.)",
+                  "minLength": 1
                 },
                 "config": {
                   "type": "object",

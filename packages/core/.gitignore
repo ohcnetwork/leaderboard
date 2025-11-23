@@ -39,8 +39,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-data-repo
-
 #IDE
 .idea
 .vscode
@@ -48,9 +46,8 @@ data-repo
 # Package Lock
 package-lock.json
 yarn.lock
-
-# Files placed by data-repo
-
-data/views/
-
 .venv/
+
+# Generated content
+*.gen.*
+*.tsbuildinfo

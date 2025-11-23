@@ -21,6 +21,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
+      "@leaderboard/core": ["../../packages/core/src"],
       "fumadocs-mdx:collections/*": [".source/*"]
     },
     "noUncheckedIndexedAccess": true,

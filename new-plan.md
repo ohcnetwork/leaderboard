@@ -59,6 +59,14 @@ const manifest: LeaderboardScraperManifest = {
         slug: 'pr_merged_count',
         name: 'Pull Request Merged Count',
         description: 'The number of pull requests merged',
+        compute: async (db: PGLite) => {
+          // compute logic goes here....
+
+          return {
+            value: 10,
+            type: 'number',
+          }
+        }
       },
     ],
     contributor: [
@@ -66,6 +74,30 @@ const manifest: LeaderboardScraperManifest = {
         slug: 'pr_merged_count',
         name: 'Pull Request Merged Count',
         description: 'The number of pull requests merged',
+        compute: async (db: PGLite) => {
+          // compute logic goes here....
+          
+          const result = await db.query(`
+            SELECT c.username, COUNT(*) as count
+            FROM contributor c
+            JOIN activity a ON c.username = a.contributor
+            WHERE a.activity_definition = 'pr_merged'
+            GROUP BY c.username
+          `, []);
+
+          return [
+            {
+              contributor: "nikhila",
+              value: 10,
+              type: 'number',
+            },
+            {
+              contributor: "nikhila",
+              value: 10,
+              type: 'number',
+            }
+          ]
+        }
       },
       {
         slug: 'issue_opened_count',
@@ -88,8 +120,6 @@ const manifest: LeaderboardScraperManifest = {
       },
     }
   ],
-
-  computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
 
   scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
 }

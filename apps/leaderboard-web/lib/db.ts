@@ -32,10 +32,7 @@ export async function createTables() {
 
     CREATE TABLE IF NOT EXISTS activity_definition (
         slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR NOT NULL,
-        description             TEXT NOT NULL,
-        points                  SMALLINT,
-        icon                    VARCHAR
+        points                  SMALLINT
     );
 
     CREATE TABLE IF NOT EXISTS activity (

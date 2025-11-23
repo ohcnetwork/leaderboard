@@ -32,40 +32,11 @@ export function getDb(): PGlite {
 export async function upsertContributor(...contributors: Contributor[]) {
   const db = getDb();
 
-  // Helper function to escape single quotes in SQL strings
-  const escapeSql = (value: string | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${String(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format JSON for SQL
-  const formatJson = (
-    value: Record<string, string> | null | undefined
-  ): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${JSON.stringify(value).replace(/'/g, "''")}'`;
-  };
-
-  // Helper function to format date for SQL
-  const formatDate = (value: Date | null | undefined): string => {
-    if (value === null || value === undefined) return "NULL";
-    return `'${format(value, "yyyy-MM-dd")}'`;
-  };
-
-  await db.query(`
+  for (const batch of batchArray(contributors, 1000)) {
+    await db.query(
+      `
       INSERT INTO contributor (username, name, role, title, avatar_url, bio, social_profiles, joining_date, meta)
-      VALUES ${contributors
-        .map(
-          (c) =>
-            `(${escapeSql(c.username)}, ${escapeSql(c.name)}, ${escapeSql(
-              c.role
-            )}, ${escapeSql(c.title)}, ${escapeSql(c.avatar_url)}, ${escapeSql(
-              c.bio
-            )}, ${formatJson(c.social_profiles)}, ${formatDate(
-              c.joining_date
-            )}, ${formatJson(c.meta)})`
-        )
-        .join(",")}
+      VALUES ${getSqlPositionalParamPlaceholders(batch.length, 9)}
       ON CONFLICT (username) DO UPDATE SET 
         name = EXCLUDED.name, 
         role = EXCLUDED.role, 
@@ -75,7 +46,20 @@ export async function upsertContributor(...contributors: Contributor[]) {
         social_profiles = EXCLUDED.social_profiles,
         joining_date = EXCLUDED.joining_date,
         meta = EXCLUDED.meta;
-    `);
+    `,
+      batch.flatMap((c) => [
+        c.username,
+        c.name ?? null,
+        c.role ?? null,
+        c.title ?? null,
+        c.avatar_url ?? null,
+        c.bio ?? null,
+        c.social_profiles ? JSON.stringify(c.social_profiles) : null,
+        c.joining_date ? format(c.joining_date, "yyyy-MM-dd") : null,
+        c.meta ? JSON.stringify(c.meta) : null,
+      ])
+    );
+  }
 }
 
 function batchArray<T>(array: T[], batchSize: number): T[][] {
@@ -94,32 +78,6 @@ function getSqlPositionalParamPlaceholders(length: number, cols: number) {
   return batchArray(params, cols)
     .map((p) => `\n        (${p.join(", ")})`)
     .join(", ");
-}
-
-export async function addContributors(contributors: string[]) {
-  const db = getDb();
-
-  // Remove duplicates from the array
-  contributors = [...new Set(contributors)];
-
-  for (const batch of batchArray(contributors, 1000)) {
-    const result = await db.query(
-      `
-      INSERT INTO contributor (username, avatar_url, social_profiles)
-      VALUES ${getSqlPositionalParamPlaceholders(batch.length, 3)}
-      ON CONFLICT (username) DO NOTHING;
-    `,
-      batch.flatMap((c) => [
-        c,
-        `https://avatars.githubusercontent.com/${c}`,
-        JSON.stringify({ github: `https://github.com/${c}` }),
-      ])
-    );
-
-    console.log(
-      `Added ${result.affectedRows}/${batch.length} new contributors`
-    );
-  }
 }
 
 export async function addActivities(activities: Activity[]) {

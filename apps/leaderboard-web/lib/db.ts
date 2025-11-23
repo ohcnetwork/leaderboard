@@ -1,15 +1,15 @@
 import {
-  type Activity,
-  type ActivityDefinition,
-  type Contributor,
-  type GlobalAggregate,
-  type ContributorAggregate,
-  type ContributorBadge,
-  type BadgeVariant,
+  Activity,
+  ActivityDefinition,
+  GlobalAggregate,
+  ContributorAggregate,
+  ContributorBadge,
+  BadgeVariant,
 } from "@/types/db";
 import { types } from "@electric-sql/pglite";
 import { format } from "date-fns";
 import { getDb } from "@leaderboard/core";
+import { Contributor } from "@leaderboard/core";
 
 /**
  * Create tables and indexes in the database if they don't exist

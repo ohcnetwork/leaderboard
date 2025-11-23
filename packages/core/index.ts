@@ -6,3 +6,4 @@ export {
   getVisibleRoles,
 } from "./src/config";
 export type { Config } from "./src/types/config";
+export type { Contributor } from "./src/types/db";

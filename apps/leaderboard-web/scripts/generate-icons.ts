@@ -1,34 +1,9 @@
-import { getDb } from "@leaderboard/core";
-import { getConfig } from "@leaderboard/core";
+import { getAdditionallyRequiredIconNames } from "@leaderboard/core";
 import fs from "fs";
 import path from "path";
 
 // Output file path
 const outputPath = path.resolve("app/icons.gen.ts");
-
-// Get unique icon names from database and config
-async function getIconNames() {
-  const db = getDb();
-  const config = getConfig();
-
-  // Get icons from activity definitions
-  const result = await db.query<{ icon: string }>(`
-        SELECT DISTINCT icon FROM activity_definition WHERE icon IS NOT NULL;
-    `);
-  const activityIcons = result.rows.map((row) => row.icon);
-
-  // Get icons from social profiles config
-  const socialProfileIcons = config.leaderboard.social_profiles
-    ? Object.values(config.leaderboard.social_profiles).map(
-        (profile) => profile.icon
-      )
-    : [];
-
-  // Combine and deduplicate
-  const allIcons = [...new Set([...activityIcons, ...socialProfileIcons])];
-
-  return allIcons;
-}
 
 // Convert kebab-case to PascalCase for Lucide exports
 const toPascalCase = (str: string) =>
@@ -38,7 +13,7 @@ const toPascalCase = (str: string) =>
     .join("");
 
 async function main() {
-  const iconNames = await getIconNames();
+  const iconNames = await getAdditionallyRequiredIconNames();
 
   // Generate import statements
   const imports = iconNames

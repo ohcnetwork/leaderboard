@@ -179,7 +179,7 @@ interface AggregateDefinition<TConfig extends object, TAggregateValue> {
  * Badge definition type.
  */
 interface BadgeDefinition<TConfig extends object>
-  extends ContributorBadgeDefinition {
+  extends Omit<ContributorBadgeDefinition, "slug"> {
   /**
    * Callback function to award badges for the badge type to contributors.
    *

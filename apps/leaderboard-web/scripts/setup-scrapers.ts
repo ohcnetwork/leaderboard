@@ -45,40 +45,15 @@ function setupScrapers(): void {
     console.log(`   Source: ${source}`);
 
     try {
-      // Parse the source to extract repo path and branch
-      // Expected format: git@github.com/owner/repo.git branch
-      const parts = source.split(/\s+/);
-      const gitUrl = parts[0];
-      const branch = parts[1];
-
-      if (!gitUrl) {
-        throw new Error(`Git URL not found in source: ${source}`);
-      }
-
-      // Extract owner/repo from git URL
-      // Supports formats like: git@github.com/owner/repo.git or git@github.com:owner/repo.git
-      const repoMatch = gitUrl.match(/github\.com[:/](.+?)(?:\.git)?$/);
-
-      if (!repoMatch) {
-        throw new Error(`Invalid GitHub URL format: ${gitUrl}`);
-      }
-
-      const repoPath = repoMatch[1];
-
-      if (!branch) {
-        throw new Error(`Branch not specified in source: ${source}`);
-      }
-
-      const url = `https://github.com/${repoPath}/archive/refs/heads/${branch}.tar.gz`;
       const output = `${key}.tar.gz`;
 
-      console.log(`Downloading tarball from: ${url}`);
+      console.log(`Downloading tarball from: ${source}`);
 
-      execSync(`curl -L ${url} -o ${output}`, { stdio: "inherit" });
+      execSync(`curl -L ${source} -o ${output}`, { stdio: "inherit" });
 
       console.log(`Extracting tarball...`);
 
-      execSync(`tar -xzf ${output} -C scrapers`, { stdio: "inherit" });
+      execSync(`tar -xzf ${output} -C ${scrapersDir}`, { stdio: "inherit" });
 
       // Clean up the tarball
       fs.unlinkSync(output);

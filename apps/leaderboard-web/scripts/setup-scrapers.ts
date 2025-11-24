@@ -1,9 +1,11 @@
 import { execSync } from "child_process";
-import { getConfig } from "@leaderboard/core";
+import { getConfig } from "../../../packages/core/src/config";
+import * as fs from "fs";
+import * as path from "path";
 
 /**
  * Setup script to install all configured scrapers
- * Installs scrapers using npm with --no-save flag
+ * Downloads scrapers from GitHub and extracts them to the scrapers folder
  */
 function setupScrapers(): void {
   const config = getConfig();
@@ -21,35 +23,45 @@ function setupScrapers(): void {
     return;
   }
 
+  // Create scrapers directory if it doesn't exist
+  const scrapersDir = path.join(import.meta.dirname, "../../../scrapers");
+  if (!fs.existsSync(scrapersDir)) {
+    fs.mkdirSync(scrapersDir, { recursive: true });
+    console.log(`Created scrapers directory: ${scrapersDir}\n`);
+  }
+
   console.log(`Found ${scraperKeys.length} scraper(s) to install:\n`);
 
   for (const key of scraperKeys) {
     const scraper = scrapers[key];
     if (!scraper) {
-      console.error(`❌ Scraper configuration for ${key} is missing.`);
+      console.error(`Scraper configuration for ${key} is missing.`);
       process.exit(1);
     }
     const displayName = scraper.name || key;
     const source = scraper.source;
 
-    console.log(`📦 Installing ${displayName}...`);
+    console.log(`Installing ${displayName}...`);
     console.log(`   Source: ${source}`);
 
     try {
-      // Install the scraper using npm with --no-save flag
-      // This installs the package without adding it to package.json
-      const command = `pnpm install ${source}`;
+      const output = `${key}.tar.gz`;
 
-      console.log(`   Running: ${command}`);
+      console.log(`Downloading tarball from: ${source}`);
 
-      execSync(command, {
-        stdio: "inherit",
-        cwd: process.cwd(),
-      });
+      execSync(`curl -L ${source} -o ${output}`, { stdio: "inherit" });
 
-      console.log(`✅ Successfully installed ${displayName}\n`);
+      console.log(`Extracting tarball...`);
+
+      execSync(`tar -xzf ${output} -C ${scrapersDir}`, { stdio: "inherit" });
+
+      // Clean up the tarball
+      fs.unlinkSync(output);
+      console.log(`Cleaned up ${output}`);
+
+      console.log(`Successfully installed ${displayName}\n`);
     } catch (error) {
-      console.error(`❌ Failed to install ${displayName}`);
+      console.error(`Failed to install ${displayName}`);
       console.error(
         `   Error: ${error instanceof Error ? error.message : error}\n`
       );
@@ -57,12 +69,12 @@ function setupScrapers(): void {
     }
   }
 
-  console.log("🎉 All scrapers installed successfully!");
+  console.log("All scrapers installed successfully!");
 }
 
 function main() {
   try {
-    console.log("🚀 Setting up scrapers...\n");
+    console.log("Setting up scrapers...\n");
     setupScrapers();
   } catch (error) {
     console.error(

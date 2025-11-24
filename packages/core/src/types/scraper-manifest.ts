@@ -1,17 +1,19 @@
 import {
   Activity,
   AggregateValue,
+  Config,
   ContributorAggregate,
   ContributorBadge,
+  ContributorBadgeDefinition,
   GlobalAggregate,
-} from "@/src/types/db";
+} from "@/src/types";
 import { PGlite } from "@electric-sql/pglite";
 
 /**
  * Scraper context type.
  * @template TConfig - The type of the scraper config.
  */
-export interface ScraperContext<TConfig extends Record<string, unknown>> {
+export interface ScraperContext<TConfig extends object> {
   /**
    * The database connection.
    */
@@ -19,20 +21,30 @@ export interface ScraperContext<TConfig extends Record<string, unknown>> {
   /**
    * The scraper config.
    */
-  config: TConfig;
+  scraperConfig: TConfig;
+  /**
+   * The leaderboard config. This is useful for accessing the leaderboard's
+   * config values.
+   */
+  leaderboardConfig: Config;
   /**
    * The number of days to scrape data for.
    */
-  scrapeDays: number;
+  scrapeDays?: number;
   /**
    * The path to store or read data files. This is useful for import/export.
    */
-  dataPath: string;
+  dataPath?: string;
+  /**
+   * The reason for the interacting with the scraper.
+   * It can be used to determine the behavior of the scraper.
+   *
+   * - `'scrape'` - *For scraping data.*
+   * - `'build'` - *For building the leaderboard site.*
+   * - `undefined` - *For unknown reason.*
+   */
+  reason?: "scrape" | "build";
 }
-
-type GetRecordsFn<TConfig extends Record<string, unknown>, TRecord> = (
-  ctx: ScraperContext<TConfig>
-) => Promise<TRecord[]>;
 
 export interface ScraperConfig {
   config: Record<string, any>;
@@ -40,7 +52,7 @@ export interface ScraperConfig {
 /**
  * Activity definition type.
  */
-interface ActivityDefinition<TConfig extends Record<string, unknown>> {
+interface ActivityDefinition<TConfig extends object> {
   /**
    * Name of the activity type.
    *
@@ -111,16 +123,13 @@ interface ActivityDefinition<TConfig extends Record<string, unknown>> {
    * }
    * ```
    */
-  getActivities?: GetRecordsFn<TConfig, Activity>;
+  getActivities?: (ctx: ScraperContext<TConfig>) => Promise<Activity[]>;
 }
 
 /**
  * Aggregate definition
  */
-interface AggregateDefinition<
-  TConfig extends Record<string, unknown>,
-  TAggregateValue
-> {
+interface AggregateDefinition<TConfig extends object, TAggregateValue> {
   /**
    * Name of the aggregate type.
    */
@@ -134,6 +143,15 @@ interface AggregateDefinition<
    * ```
    */
   description: string;
+  /**
+   * Icon of the aggregate type.
+   * Can be set to null if the aggregate type does not have an icon.
+   * @example
+   * ```yaml
+   * icon: github
+   * ```
+   */
+  icon: string | null;
   /**
    * Callback function to get aggregates for the aggregate type.
    *
@@ -154,45 +172,14 @@ interface AggregateDefinition<
    * }
    * ```
    */
-  getAggregates?: GetRecordsFn<TConfig, TAggregateValue>;
+  getAggregates?: (ctx: ScraperContext<TConfig>) => Promise<TAggregateValue[]>;
 }
 
 /**
  * Badge definition type.
  */
-interface BadgeDefinition<TConfig extends Record<string, unknown>> {
-  /**
-   * Name of the badge type.
-   *
-   * @example
-   * ```yaml
-   * name: EOD Streak
-   * ```
-   */
-  name: string;
-  /**
-   * Description of the badge type.
-   *
-   * @example
-   * ```yaml
-   * description: Contributor has consistently sent EOD updates for 10 days
-   * ```
-   */
-  description: string;
-  /**
-   * Variants of the badge type.
-   *
-   * @example
-   * ```yaml
-   * variants:
-   *   bronze:
-   *     description: 10 days
-   *     svg_url: https://example.com/bronze.svg
-   *   silver:
-   *     description: 20 days
-   *     svg_url: https://example.com/silver.svg
-   */
-  variants: Record<string, { description: string; svg_url: string }>;
+interface BadgeDefinition<TConfig extends object>
+  extends ContributorBadgeDefinition {
   /**
    * Callback function to award badges for the badge type to contributors.
    *
@@ -215,13 +202,47 @@ interface BadgeDefinition<TConfig extends Record<string, unknown>> {
    * }
    * ```
    */
-  awardBadges?: GetRecordsFn<TConfig, ContributorBadge>;
+  awardBadges?: (ctx: ScraperContext<TConfig>) => Promise<ContributorBadge[]>;
 }
 
 /**
  * Scraper manifest type.
  */
-export interface ScraperManifest<TConfig extends Record<string, unknown>> {
+export interface ScraperManifest<TConfig extends object> {
+  /**
+   * This function is called to validate the scraper's config.
+   * Scraper should throw an error if the config is invalid.
+   *
+   * You can also use this callback to inject additional config values into the
+   * scraper's config. This can be useful for example to inject a default value
+   * for a config value if it is not provided. All other callbacks will receive
+   * the validated config.
+   *
+   * @example
+   * ```ts
+   * async getValidatedConfig({ scraperConfig }) => {
+   *   const result = configSchema.safeParse(scraperConfig);
+   *   if (!result.success) {
+   *     throw new Error(result.error.message);
+   *   }
+   *
+   *   return {
+   *     ...scraperConfig,
+   *
+   *     octokit: new Octokit({
+   *       auth: scraperConfig.githubToken,
+   *       userAgent: 'Leaderboard GitHub Scraper/1.0',
+   *     }),
+   *   };
+   * }
+   * ```
+   *
+   * If not provided, the scraper will not validate the config.
+   *
+   * @param ctx - The scraper context.
+   */
+  getValidatedConfig?: (ctx: ScraperContext<TConfig>) => Promise<TConfig>;
+
   /**
    * This function is called when the leaderboard is initialized.
    *
@@ -254,7 +275,7 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    *     icon: github
    * ```
    */
-  activityDefinitions: Record<string, ActivityDefinition<TConfig>>;
+  activityDefinitions?: Record<string, ActivityDefinition<TConfig>>;
 
   /**
    * Callback function to get activities.
@@ -280,7 +301,7 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    * }
    * ```
    */
-  getActivities?: GetRecordsFn<TConfig, Activity>;
+  getActivities?: (ctx: ScraperContext<TConfig>) => Promise<Activity[]>;
 
   /**
    * Global aggregate definitions.
@@ -293,7 +314,7 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    *     description: The number of pull requests merged
    * ```
    */
-  globalAggregateDefinitions: Record<
+  globalAggregateDefinitions?: Record<
     string,
     AggregateDefinition<TConfig, AggregateValue>
   >;
@@ -309,7 +330,7 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    *     description: The number of pull requests merged by the contributor
    * ```
    */
-  contributorAggregateDefinitions: Record<
+  contributorAggregateDefinitions?: Record<
     string,
     AggregateDefinition<TConfig, { contributor: string } & AggregateValue>
   >;
@@ -335,7 +356,9 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    * }
    * ```
    */
-  getGlobalAggregates?: GetRecordsFn<TConfig, GlobalAggregate>;
+  getGlobalAggregates?: (
+    ctx: ScraperContext<TConfig>
+  ) => Promise<GlobalAggregate[]>;
 
   /**
    * Callback function to get contributor aggregates.
@@ -359,7 +382,9 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    * }
    * ```
    */
-  getContributorAggregates?: GetRecordsFn<TConfig, ContributorAggregate>;
+  getContributorAggregates?: (
+    ctx: ScraperContext<TConfig>
+  ) => Promise<ContributorAggregate[]>;
 
   /**
    * Badge definitions.
@@ -382,7 +407,7 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    *         svg_url: https://example.com/gold.svg
    * ```
    */
-  badgeDefinitions: Record<string, BadgeDefinition<TConfig>>;
+  badgeDefinitions?: Record<string, BadgeDefinition<TConfig>>;
 
   /**
    * Callback function to award badges.
@@ -407,7 +432,7 @@ export interface ScraperManifest<TConfig extends Record<string, unknown>> {
    * }
    * ```
    */
-  awardBadges?: GetRecordsFn<TConfig, ContributorBadge>;
+  awardBadges?: (ctx: ScraperContext<TConfig>) => Promise<ContributorBadge[]>;
 
   /**
    * Callback function to import data. Activities will be imported by

@@ -1,11 +1,10 @@
 import {
   Activity,
-  ActivityDefinition,
   GlobalAggregate,
   ContributorAggregate,
   ContributorBadge,
   BadgeVariant,
-} from "@/types/db";
+} from "@leaderboard/core";
 import { types } from "@electric-sql/pglite";
 import { format } from "date-fns";
 import { getDb } from "@leaderboard/core";
@@ -95,20 +94,6 @@ export async function createTables() {
     CREATE INDEX IF NOT EXISTS idx_contributor_badge_badge ON contributor_badge(badge);
     CREATE INDEX IF NOT EXISTS idx_contributor_badge_achieved_on ON contributor_badge(achieved_on);
   `);
-}
-
-/**
- * List all activity definitions from the database
- * @returns The list of all activity definitions
- */
-export async function listActivityDefinitions() {
-  const db = getDb();
-
-  const result = await db.query<ActivityDefinition>(`
-    SELECT * FROM activity_definition;
-  `);
-
-  return result.rows;
 }
 
 /**

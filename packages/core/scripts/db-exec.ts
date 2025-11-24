@@ -1,4 +1,4 @@
-import { getDb } from "@leaderboard/core";
+import { getDb } from "@/src/db";
 
 const getStdin = async () => {
   const chunks = [];

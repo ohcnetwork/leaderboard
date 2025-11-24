@@ -1,5 +1,5 @@
 import { PGlite } from "@electric-sql/pglite";
-import { Activity, Contributor } from "./types/db";
+import { Activity, Contributor } from "@/src/types";
 import { format } from "date-fns";
 
 let dbInstance: PGlite | null = null;

@@ -1,9 +1,10 @@
-import { getDb } from "@leaderboard/core";
 import path from "path";
 import yaml from "js-yaml";
 import { existsSync } from "fs";
 import { mkdir, writeFile } from "fs/promises";
 import { format } from "date-fns";
+import { getDb } from "@/src/db";
+import { Contributor } from "@/src/types";
 
 async function main() {
   const db = getDb();

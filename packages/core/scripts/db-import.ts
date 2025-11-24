@@ -1,9 +1,9 @@
-import { upsertContributor } from "@leaderboard/core";
 import path from "path";
 import yaml from "js-yaml";
 import { readdir, readFile } from "fs/promises";
 import { existsSync } from "fs";
-import { Contributor } from "@/src/types/db";
+import { upsertContributor } from "@/src/db";
+import { Contributor } from "@/src/types";
 
 interface FrontmatterData {
   name?: string | null;

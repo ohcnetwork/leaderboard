@@ -5,7 +5,7 @@ import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import configSchema from "../config.schema.json";
 
-import type { Config } from "@/types/config";
+import type { Config } from "@/src/types/config";
 
 let cachedConfig: Config | null = null;
 

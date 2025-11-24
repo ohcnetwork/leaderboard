@@ -1,4 +1,4 @@
-import type { Config } from "@/types/config";
+import type { Config } from "@/src/types/config";
 
 /**
  * Valid complete configuration

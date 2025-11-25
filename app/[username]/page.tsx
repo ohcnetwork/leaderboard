@@ -41,6 +41,9 @@ export async function generateMetadata({ params }: ContributorPageProps) {
   if (!contributor) {
     return {
       title: "Contributor Not Found",
+      icons: {
+        icon: config.meta.favicon_url,
+      },
     };
   }
 
@@ -116,6 +119,9 @@ export async function generateMetadata({ params }: ContributorPageProps) {
         "max-image-preview": "large",
         "max-snippet": -1,
       },
+    },
+    icons: {
+      icon: config.meta.favicon_url,
     },
   };
 }

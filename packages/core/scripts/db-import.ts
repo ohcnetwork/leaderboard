@@ -2,7 +2,7 @@ import path from "path";
 import yaml from "js-yaml";
 import { readdir, readFile } from "fs/promises";
 import { existsSync } from "fs";
-import { upsertContributor } from "@/src/db";
+import { upsertContributors } from "@/src/db";
 import { Contributor } from "@/src/types";
 
 interface FrontmatterData {
@@ -99,7 +99,7 @@ async function main() {
 
   // Upsert all contributors to database
   console.log(`Importing ${contributors.length} contributors to database...`);
-  await upsertContributor(...contributors);
+  await upsertContributors(contributors);
 
   console.log("Import complete!");
 }

@@ -2,10 +2,10 @@ import {
   Activity,
   AggregateDefinitionBase,
   AggregateValue,
+  Badge,
   BadgeDefinitionBase,
   Config,
   ContributorAggregate,
-  ContributorBadge,
 } from "@/src/types";
 import { PGlite } from "@electric-sql/pglite";
 
@@ -140,7 +140,7 @@ interface GlobalAggregate extends AggregateDefinitionBase {
    * slug: pr_merged_count
    * ```
    */
-  slug: string;
+  aggregate: string;
   /**
    * The value of the global aggregate.
    */
@@ -205,7 +205,7 @@ interface BadgeDefinition<TConfig extends object> extends BadgeDefinitionBase {
    */
   awardBadges?: (
     ctx: ScraperContext<TConfig>
-  ) => Promise<({ contributor: string } & ContributorBadge)[]>;
+  ) => Promise<Omit<Badge, "badge">[]>;
 }
 
 /**
@@ -419,9 +419,7 @@ export interface ScraperManifest<TConfig extends object> {
    * }
    * ```
    */
-  awardBadges?: (
-    ctx: ScraperContext<TConfig>
-  ) => Promise<({ contributor: string } & ContributorBadge)[]>;
+  awardBadges?: (ctx: ScraperContext<TConfig>) => Promise<Badge[]>;
 
   /**
    * Callback function to import data. Activities will be imported by

@@ -1,6 +1,12 @@
 import { getDb } from "@/src/db/pglite";
 import { batchArray, getSqlParamPlaceholders } from "@/src/db/utils";
-import { Activity, Contributor } from "@/src/types";
+import {
+  Activity,
+  AggregateValue,
+  Badge,
+  Contributor,
+  ContributorAggregate,
+} from "@/src/types";
 import { format } from "date-fns";
 
 // TODO: add logging to all functions
@@ -9,7 +15,7 @@ import { format } from "date-fns";
  * Upserts contributors into the database, uniquely identified by their username.
  * @param contributors - The contributors to upsert
  */
-export async function upsertContributor(...contributors: Contributor[]) {
+export async function upsertContributors(contributors: Contributor[]) {
   const pg = getDb();
 
   for (const batch of batchArray(contributors, 100)) {
@@ -71,8 +77,117 @@ ON CONFLICT (slug) DO UPDATE SET contributor         = EXCLUDED.contributor,
         a.link,
         a.text,
         a.points ?? null,
-        a.meta ? JSON.stringify(a.meta) : null,
+        a.meta,
       ])
     );
   }
+}
+
+/**
+ * Upserts activities for an activity definition.
+ * @param activityDefinition - The slug of the activity definition to upsert
+ * activities for.
+ * @param activities - The activities to upsert
+ */
+export async function upsertActivityDefinitionActivities(
+  activityDefinition: string,
+  activities: Omit<Activity, "activity_definition">[]
+) {
+  await upsertActivities(
+    activities.map((a) => ({ ...a, activity_definition: activityDefinition }))
+  );
+}
+
+/**
+ * Upserts global aggregates into the database.
+ * @param values - The values to upsert uniquely identified by their aggregate definition.
+ */
+export async function upsertGlobalAggregates(
+  values: { aggregate: string; value: AggregateValue }[]
+) {
+  const db = getDb();
+
+  for (const batch of batchArray(values, 1000)) {
+    await db.query(
+      `
+INSERT INTO global_aggregate (aggregate, value)
+VALUES ${getSqlParamPlaceholders(batch.length, 2)}
+ON CONFLICT (aggregate) DO UPDATE SET value = EXCLUDED.value;
+    `,
+      batch.flatMap((v) => [v.aggregate, v.value])
+    );
+  }
+}
+
+/**
+ * Upserts contributor aggregates into the database.
+ * @param values - The values to upsert uniquely identified by their contributor and aggregate definition.
+ */
+export async function upsertContributorAggregates(
+  values: ContributorAggregate[]
+) {
+  const db = getDb();
+
+  for (const batch of batchArray(values, 1000)) {
+    await db.query(
+      `
+INSERT INTO contributor_aggregate (contributor, aggregate, value)
+VALUES ${getSqlParamPlaceholders(batch.length, 3)}
+ON CONFLICT (contributor, aggregate) DO UPDATE SET value = EXCLUDED.value;
+    `,
+      batch.flatMap((v) => [v.contributor, v.aggregate, v.value])
+    );
+  }
+}
+
+/**
+ * Upserts contributor aggregates for an aggregate definition.
+ * @param definition - The slug of the aggregate definition to upsert
+ * contributor aggregates for.
+ * @param values - The values to upsert uniquely identified by their contributor.
+ */
+export async function upsertContributorAggregatesByDefinition(
+  definition: string,
+  values: Omit<ContributorAggregate, "aggregate">[]
+) {
+  await upsertContributorAggregates(
+    values.map((v) => ({ ...v, aggregate: definition }))
+  );
+}
+
+/**
+ * Upserts badges into the database.
+ * @param values - The values to upsert uniquely identified by their badge definition, contributor, and variant.
+ */
+export async function upsertBadges(values: Badge[]) {
+  const db = getDb();
+
+  for (const batch of batchArray(values, 1000)) {
+    await db.query(
+      `
+INSERT INTO contributor_badge (badge, contributor, variant, achieved_on, meta)
+VALUES ${getSqlParamPlaceholders(batch.length, 5)};
+    `,
+      batch.flatMap((v) => [
+        v.badge,
+        v.contributor,
+        v.variant,
+        v.achieved_on.toISOString(),
+        v.meta,
+      ])
+    );
+  }
+}
+
+/**
+ * Upserts badges for a badge definition.
+ * @param definition - The slug of the badge definition to upsert
+ * badges for.
+ * @param values - The values to upsert uniquely identified by their contributor.
+ */
+export async function upsertBadgesByDefinition(
+  definition: string,
+  values: Omit<Badge, "badge">[]
+) {
+  await upsertBadges(values.map((v) => ({ ...v, badge: definition })));
 }

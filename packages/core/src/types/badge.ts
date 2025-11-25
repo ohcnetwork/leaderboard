@@ -114,7 +114,7 @@ export interface BadgeVariant {
  *   github_id: 3434343
  * ```
  */
-export interface ContributorBadge {
+export interface Badge {
   /**
    * Slug referring to the badge definition.
    *

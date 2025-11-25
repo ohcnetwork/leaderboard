@@ -53,14 +53,14 @@ export async function upsertActivities(activities: Activity[]) {
       `
 INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
 VALUES ${getSqlParamPlaceholders(batch.length, 9)}
-ON CONFLICT (slug) DO UPDATE SET contributor = EXCLUDED.contributor, 
+ON CONFLICT (slug) DO UPDATE SET contributor         = EXCLUDED.contributor, 
                                  activity_definition = EXCLUDED.activity_definition, 
-                                 title = EXCLUDED.title, 
-                                 occured_at = EXCLUDED.occured_at, 
-                                 link = EXCLUDED.link,
-                                 text = EXCLUDED.text,
-                                 points = EXCLUDED.points,
-                                 meta = EXCLUDED.meta;
+                                 title               = EXCLUDED.title, 
+                                 occured_at          = EXCLUDED.occured_at, 
+                                 link                = EXCLUDED.link,
+                                 text                = EXCLUDED.text,
+                                 points              = EXCLUDED.points,
+                                 meta                = EXCLUDED.meta;
     `,
       batch.flatMap((a) => [
         a.slug,

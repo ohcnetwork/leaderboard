@@ -2,6 +2,9 @@ import { getDb } from "@/src/db/pglite";
 import { batchArray, getSqlParamPlaceholders } from "@/src/db/utils";
 import { Activity, Contributor } from "@/src/types";
 import { format } from "date-fns";
+
+// TODO: add logging to all functions
+
 /**
  * Upserts contributors into the database, uniquely identified by their username.
  * @param contributors - The contributors to upsert
@@ -46,7 +49,7 @@ export async function upsertActivities(activities: Activity[]) {
   const db = getDb();
 
   for (const batch of batchArray(activities, 1000)) {
-    const result = await db.query(
+    await db.query(
       `
 INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
 VALUES ${getSqlParamPlaceholders(batch.length, 9)}
@@ -71,7 +74,5 @@ ON CONFLICT (slug) DO UPDATE SET contributor = EXCLUDED.contributor,
         a.meta ? JSON.stringify(a.meta) : null,
       ])
     );
-
-    console.log(`Added ${result.affectedRows}/${batch.length} new activities`);
   }
 }

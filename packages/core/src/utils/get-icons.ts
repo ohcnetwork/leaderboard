@@ -1,10 +1,5 @@
 import { getConfig } from "@/src/config";
-import { ScraperManifest } from "@/src/types";
-
-async function getScraperManifests(): Promise<ScraperManifest<{}>[]> {
-  // TODO: implement this
-  return [];
-}
+import { getScraperManifests } from "@/src/utils/get-scraper-manifests";
 
 export async function getAdditionallyRequiredIconNames() {
   const config = getConfig();
@@ -28,9 +23,10 @@ export async function getAdditionallyRequiredIconNames() {
         ...Object.values(manifest.activityDefinitions ?? {}).map(
           (activity) => activity.icon
         ),
-        ...Object.values(manifest.globalAggregateDefinitions ?? {}).map(
-          (aggregate) => aggregate.icon
-        ),
+        // TODO: replace this with scanning from derived global aggregates
+        // ...Object.values(manifest.globalAggregateDefinitions ?? {}).map(
+        //   (aggregate) => aggregate.icon
+        // ),
       ].filter((k): k is string => k !== null)
     );
   }

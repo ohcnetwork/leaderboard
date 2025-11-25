@@ -1,4 +1,60 @@
 /**
+ * Defines a badge and it's variants.
+ *
+ * @example
+ * ```yaml
+ * name: EOD Streak
+ * description: The number of days in a row that the contributor has sent an EOD update
+ * variants:
+ *   bronze:
+ *     description: 10 days
+ *     svg_url: https://example.com/bronze.svg
+ *   silver:
+ *     description: 20 days
+ *     svg_url: https://example.com/silver.svg
+ *   gold:
+ *     description: 30 days
+ *     svg_url: https://example.com/gold.svg
+ */
+export interface BadgeDefinitionBase {
+  /**
+   * Name of the badge.
+   *
+   * @example
+   * ```yaml
+   * name: EOD Streak
+   * ```
+   */
+  name: string;
+  /**
+   * Description of the badge.
+   *
+   * @example
+   * ```yaml
+   * description: The number of days in a row that the contributor has sent an EOD update
+   * ```
+   */
+  description: string;
+  /**
+   * Variants of the badge.
+   *
+   * @example
+   * ```yaml
+   * variants:
+   *   bronze:
+   *     description: 10 days
+   *     svg_url: https://example.com/bronze.svg
+   *   silver:
+   *     description: 20 days
+   *     svg_url: https://example.com/silver.svg
+   *   gold:
+   *     description: 30 days
+   *     svg_url: https://example.com/gold.svg
+   */
+  variants: Record<string, BadgeVariant>;
+}
+
+/**
  * A badge can have multiple variants. Each variant can be earned by a
  * contributor by achieving a certain level of criteria.
  *
@@ -36,71 +92,6 @@ export interface BadgeVariant {
    * ```
    */
   requirement?: string | null;
-}
-
-/**
- * Defines a badge and it's variants.
- *
- * @example
- * ```yaml
- * name: EOD Streak
- * description: The number of days in a row that the contributor has sent an EOD update
- * variants:
- *   bronze:
- *     description: 10 days
- *     svg_url: https://example.com/bronze.svg
- *   silver:
- *     description: 20 days
- *     svg_url: https://example.com/silver.svg
- *   gold:
- *     description: 30 days
- *     svg_url: https://example.com/gold.svg
- */
-export interface ContributorBadgeDefinition {
-  /**
-   * Slug of the badge definition. Value must be unique.
-   *
-   * @example
-   * ```yaml
-   * slug: eod_streak
-   * ```
-   */
-  slug: string;
-  /**
-   * Name of the badge.
-   *
-   * @example
-   * ```yaml
-   * name: EOD Streak
-   * ```
-   */
-  name: string;
-  /**
-   * Description of the badge.
-   *
-   * @example
-   * ```yaml
-   * description: The number of days in a row that the contributor has sent an EOD update
-   * ```
-   */
-  description: string;
-  /**
-   * Variants of the badge.
-   *
-   * @example
-   * ```yaml
-   * variants:
-   *   bronze:
-   *     description: 10 days
-   *     svg_url: https://example.com/bronze.svg
-   *   silver:
-   *     description: 20 days
-   *     svg_url: https://example.com/silver.svg
-   *   gold:
-   *     description: 30 days
-   *     svg_url: https://example.com/gold.svg
-   */
-  variants: Record<string, BadgeVariant>;
 }
 
 /**

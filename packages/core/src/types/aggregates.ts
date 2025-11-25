@@ -1,4 +1,37 @@
 /**
+ * Base interface for aggregate definitions.
+ */
+export interface AggregateDefinitionBase {
+  /**
+   * Name of the aggregate definition.
+   *
+   * @example
+   * ```yaml
+   * name: Pull Request Merged Count
+   * ```
+   */
+  name: string;
+  /**
+   * Icon of the aggregate definition.
+   * Can be set to null if the aggregate definition does not have an icon.
+   * @example
+   * ```yaml
+   * icon: github
+   * ```
+   */
+  icon: string | null;
+  /**
+   * Description of the aggregate definition.
+   *
+   * @example
+   * ```yaml
+   * description: The number of pull requests merged
+   * ```
+   */
+  description: string | null;
+}
+
+/**
  * Number aggregate value type.
  */
 interface NumberAggregateValue {
@@ -181,133 +214,6 @@ export type AggregateValue =
   | DurationStatisticsAggregateValue
   | StringAggregateValue
   | PercentageAggregateValue;
-
-/**
- * Global aggregate definition type.
- *
- * @example
- * ```yaml
- * # Aggregate definition for the number of pull requests merged
- * slug: pr_merged_count
- * name: Pull Request Merged Count
- * description: The number of pull requests merged
- * icon: github
- * value:
- *   type: number
- *   value: 10
- * ```
- */
-export interface GlobalAggregate {
-  /**
-   * Slug to uniquely identify the aggregate definition.
-   *
-   * @example
-   * ```yaml
-   * slug: pr_merged_count
-   * ```
-   */
-  slug: string;
-  /**
-   * Name of the aggregate definition.
-   *
-   * @example
-   * ```yaml
-   * name: Pull Request Merged Count
-   * ```
-   */
-  name: string;
-  /**
-   * Icon of the aggregate definition.
-   * Can be set to null if the aggregate definition does not have an icon.
-   * @example
-   * ```yaml
-   * icon: github
-   * ```
-   */
-  icon: string | null;
-  /**
-   * Description of the aggregate definition.
-   *
-   * @example
-   * ```yaml
-   * description: The number of pull requests merged
-   * ```
-   */
-  description: string | null;
-  /**
-   * Value of the aggregate definition.
-   *
-   * @example
-   * ```yaml
-   * value: 10
-   *   type: number
-   *   value: 10
-   *
-   * value:
-   *   type: duration
-   *   value: 10000
-   *
-   * value:
-   *   type: string
-   *   value: "Hello, world!"
-   * ```
-   * value:
-   *   type: percentage
-   *   value: 0.5
-   */
-  value: AggregateValue | null;
-}
-
-/**
- * Contributor aggregate definition type.
- *
- * @example
- * ```yaml
- * # Aggregate definition for the number of pull requests merged
- * slug: pr_merged_count
-   name: Pull Request Merged Count
- * description: The number of pull requests merged
- * icon: github
- * ```
- */
-export interface ContributorAggregateDefinition {
-  /**
-   * Slug to uniquely identify the aggregate definition.
-   *
-   * @example
-   * ```yaml
-   * slug: pr_merged_count
-   * ```
-   */
-  slug: string;
-  /**
-   * Name of the aggregate definition.
-   *
-   * @example
-   * ```yaml
-   * name: Pull Request Merged Count
-   * ```
-   */
-  name: string;
-  /**
-   * Description of the aggregate definition.
-   *
-   * @example
-   * ```yaml
-   * description: The number of pull requests merged
-   * ```
-   */
-  description: string | null;
-  /**
-   * Icon of the aggregate definition.
-   * Can be set to null if the aggregate definition does not have an icon.
-   * @example
-   * ```yaml
-   * icon: github
-   * ```
-   */
-  icon: string | null;
-}
 
 /**
  * Aggregate result value for a contributor.

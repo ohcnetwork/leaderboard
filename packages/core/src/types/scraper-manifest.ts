@@ -1,11 +1,11 @@
 import {
   Activity,
+  AggregateDefinitionBase,
   AggregateValue,
+  BadgeDefinitionBase,
   Config,
   ContributorAggregate,
   ContributorBadge,
-  ContributorBadgeDefinition,
-  GlobalAggregate,
 } from "@/src/types";
 import { PGlite } from "@electric-sql/pglite";
 
@@ -123,35 +123,35 @@ interface ActivityDefinition<TConfig extends object> {
    * }
    * ```
    */
-  getActivities?: (ctx: ScraperContext<TConfig>) => Promise<Activity[]>;
+  getActivities?: (
+    ctx: ScraperContext<TConfig>
+  ) => Promise<Omit<Activity, "activity_definition">[]>;
 }
 
 /**
- * Aggregate definition
+ * Global aggregate definition type.
  */
-interface AggregateDefinition<TConfig extends object, TAggregateValue> {
+interface GlobalAggregate extends AggregateDefinitionBase {
   /**
-   * Name of the aggregate type.
-   */
-  name: string;
-  /**
-   * Description of the aggregate type.
+   * Slug of the global aggregate.
    *
    * @example
    * ```yaml
-   * description: The number of pull requests merged
+   * slug: pr_merged_count
    * ```
    */
-  description: string;
+  slug: string;
   /**
-   * Icon of the aggregate type.
-   * Can be set to null if the aggregate type does not have an icon.
-   * @example
-   * ```yaml
-   * icon: github
-   * ```
+   * The value of the global aggregate.
    */
-  icon: string | null;
+  value: AggregateValue;
+}
+
+/**
+ * Contributor aggregate definition type.
+ */
+interface ContributorAggregateDefinition<TConfig extends object>
+  extends AggregateDefinitionBase {
   /**
    * Callback function to get aggregates for the aggregate type.
    *
@@ -172,14 +172,15 @@ interface AggregateDefinition<TConfig extends object, TAggregateValue> {
    * }
    * ```
    */
-  getAggregates?: (ctx: ScraperContext<TConfig>) => Promise<TAggregateValue[]>;
+  getAggregates?: (
+    ctx: ScraperContext<TConfig>
+  ) => Promise<({ contributor: string } & AggregateValue)[]>;
 }
 
 /**
  * Badge definition type.
  */
-interface BadgeDefinition<TConfig extends object>
-  extends Omit<ContributorBadgeDefinition, "slug"> {
+interface BadgeDefinition<TConfig extends object> extends BadgeDefinitionBase {
   /**
    * Callback function to award badges for the badge type to contributors.
    *
@@ -202,7 +203,9 @@ interface BadgeDefinition<TConfig extends object>
    * }
    * ```
    */
-  awardBadges?: (ctx: ScraperContext<TConfig>) => Promise<ContributorBadge[]>;
+  awardBadges?: (
+    ctx: ScraperContext<TConfig>
+  ) => Promise<({ contributor: string } & ContributorBadge)[]>;
 }
 
 /**
@@ -304,38 +307,6 @@ export interface ScraperManifest<TConfig extends object> {
   getActivities?: (ctx: ScraperContext<TConfig>) => Promise<Activity[]>;
 
   /**
-   * Global aggregate definitions.
-   *
-   * @example
-   * ```yaml
-   * aggregateDefinitions:
-   *   pr_merged_count:
-   *     name: Pull Request Merged Count
-   *     description: The number of pull requests merged
-   * ```
-   */
-  globalAggregateDefinitions?: Record<
-    string,
-    AggregateDefinition<TConfig, AggregateValue>
-  >;
-
-  /**
-   * Contributor aggregate definitions.
-   *
-   * @example
-   * ```yaml
-   * contributorAggregateDefinitions:
-   *   pr_merged_count:
-   *     name: Pull Request Merged Count
-   *     description: The number of pull requests merged by the contributor
-   * ```
-   */
-  contributorAggregateDefinitions?: Record<
-    string,
-    AggregateDefinition<TConfig, { contributor: string } & AggregateValue>
-  >;
-
-  /**
    * Callback function to get global aggregates.
    *
    * If not provided, the scraper will only insert global aggregates defined in
@@ -359,6 +330,22 @@ export interface ScraperManifest<TConfig extends object> {
   getGlobalAggregates?: (
     ctx: ScraperContext<TConfig>
   ) => Promise<GlobalAggregate[]>;
+
+  /**
+   * Contributor aggregate definitions.
+   *
+   * @example
+   * ```yaml
+   * contributorAggregateDefinitions:
+   *   pr_merged_count:
+   *     name: Pull Request Merged Count
+   *     description: The number of pull requests merged by the contributor
+   * ```
+   */
+  contributorAggregateDefinitions?: Record<
+    string,
+    ContributorAggregateDefinition<TConfig>
+  >;
 
   /**
    * Callback function to get contributor aggregates.
@@ -432,7 +419,9 @@ export interface ScraperManifest<TConfig extends object> {
    * }
    * ```
    */
-  awardBadges?: (ctx: ScraperContext<TConfig>) => Promise<ContributorBadge[]>;
+  awardBadges?: (
+    ctx: ScraperContext<TConfig>
+  ) => Promise<({ contributor: string } & ContributorBadge)[]>;
 
   /**
    * Callback function to import data. Activities will be imported by

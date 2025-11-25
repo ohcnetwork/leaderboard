@@ -123,7 +123,9 @@ interface ActivityDefinition<TConfig extends object> {
    * }
    * ```
    */
-  getActivities?: (ctx: ScraperContext<TConfig>) => Promise<Activity[]>;
+  getActivities?: (
+    ctx: ScraperContext<TConfig>
+  ) => Promise<Omit<Activity, "activity_definition">[]>;
 }
 
 /**

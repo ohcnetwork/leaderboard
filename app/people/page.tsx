@@ -1,25 +1,24 @@
-import { getAllContributorsWithAvatars } from "@/lib/db";
-import { getConfig, getHiddenRoles } from "@/lib/config";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import Image from "next/image";
 import Link from "next/link";
+import { getConfig } from "@/lib/config";
 import type { Metadata } from "next";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
+async function fetchPeople() {
+  const base = process.env.NEXT_PUBLIC_BASE_URL ?? "";
+  const res = await fetch(`${base}/api/people`, { cache: "no-store" });
+  if (!res.ok) return { updatedAt: Date.now(), people: [] as any[] };
+  return res.json() as Promise<{ updatedAt: number; people: any[] }>;
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
-  const hiddenRoles = getHiddenRoles();
-  const contributors = await getAllContributorsWithAvatars(hiddenRoles);
-
+  const { people } = await fetchPeople();
   return {
     title: `People - ${config.meta.title}`,
-    description: `Meet the ${contributors.length} contributors who make ${config.org.name} possible. View all community members and their contributions.`,
+    description: `Meet the ${people.length} contributors who make ${config.org.name} possible.`,
     openGraph: {
       title: `People - ${config.meta.title}`,
-      description: `Meet the ${contributors.length} contributors who make ${config.org.name} possible.`,
+      description: `Meet the ${people.length} contributors who make ${config.org.name} possible.`,
       url: `${config.meta.site_url}/people`,
       siteName: config.meta.title,
       images: [config.meta.image_url],
@@ -29,52 +28,39 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function PeoplePage() {
   const config = getConfig();
-  const hiddenRoles = getHiddenRoles();
-  const contributors = await getAllContributorsWithAvatars(hiddenRoles);
+  const { updatedAt, people } = await fetchPeople();
 
   return (
     <div className="mx-auto px-4 py-8">
-      {/* Header */}
       <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-4">Our People</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Meet the {contributors.length} amazing contributors who make{" "}
-          {config.org.name} possible
+        <h1 className="text-4xl font-bold mb-2">Our People</h1>
+        <p className="text-lg text-muted-foreground">
+          Meet the {people.length} amazing contributors who make {config.org.name} possible
+        </p>
+        <p className="text-xs text-muted-foreground mt-2">
+          Updated: {new Date(updatedAt).toLocaleString()}
         </p>
       </div>
 
-      {/* Avatar Grid */}
-      <div className="people-avatar-grid grid gap-(--people-grid-gap)">
-        {contributors.map((contributor) => (
-          <Tooltip key={contributor.username}>
-            <TooltipTrigger asChild>
-              <Link
-                href={`/${contributor.username}`}
-                className="group block aspect-square"
-              >
-                <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-primary/50 hover:scale-105">
-                  <AvatarImage
-                    src={contributor.avatar_url}
-                    alt={contributor.name || contributor.username}
-                    className="object-cover"
-                  />
-                  <AvatarFallback className="rounded-md">
-                    {(contributor.name || contributor.username)
-                      .substring(0, 2)
-                      .toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent>@{contributor.username}</TooltipContent>
-          </Tooltip>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4">
+        {people.map((p) => (
+          <Link key={p.username} href={`https://github.com/${p.username}`} target="_blank" className="group block">
+            <div className="flex flex-col items-center gap-2">
+              <Image src={p.avatar_url} alt={p.name ?? p.username} width={96} height={96} className="rounded-md" />
+              <div className="text-sm text-center">
+                <div className="font-medium">{p.name ?? p.username}</div>
+                <div className="text-xs opacity-70">@{p.username}</div>
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
 
-      {/* Stats */}
-      <div className="mt-12 text-center text-sm text-muted-foreground">
-        <p>Showing {contributors.length} contributors sorted by total points</p>
-      </div>
+      {people.length === 0 && (
+        <p className="text-center text-sm text-muted-foreground mt-8">
+          No contributors found yet. Try again in a bit.
+        </p>
+      )}
     </div>
   );
 }

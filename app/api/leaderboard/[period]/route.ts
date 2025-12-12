@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
+import { Redis } from "@upstash/redis";
 
 export const dynamic = "force-dynamic";
-export const runtime = "nodejs"; // 👈 force Node runtime (more stable locally on Windows)
+export const runtime = "nodejs"; // stable on Windows
 
 type Period = "week" | "month" | "year";
 type Entry = {
@@ -14,7 +15,12 @@ type Entry = {
 
 const ORG = process.env.GITHUB_ORG ?? "CircuitVerse";
 const TOKEN = process.env.GITHUB_TOKEN ?? "";
+
+// freshness & staleness windows (set .env / Vercel):
+// CACHE_TTL_SECONDS=3600  (1h fresh)
+// STALE_TTL_SECONDS=86400 (24h serve-stale)
 const TTL = Number(process.env.CACHE_TTL_SECONDS ?? 900);
+const STALE_TTL = Number(process.env.STALE_TTL_SECONDS ?? 21600);
 
 const scores = { prOpened: 2, prMerged: 5, issueOpened: 1, review: 1 };
 
@@ -25,14 +31,22 @@ const MAX_REPO_PAGES = 1;
 const MAX_REVIEW_PR_PAGES = 1;
 const REPOS_CAP = 5;
 
-let cache: Record<string, { at: number; data: Entry[] }> = {};
-let inflight: Record<string, Promise<any>> = {};
+// ---------- Upstash Redis (global cache) ----------
+function getRedis(): Redis | null {
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return null;
+  return new Redis({ url, token });
+}
+
+// ---------- in-memory fallback (local dev) ----------
+let memCache: Record<string, { at: number; data: Entry[] }> = Object.create(null);
+let inflight: Record<string, Promise<any>> = Object.create(null);
 
 export async function GET(
   req: Request,
   ctx: { params: Promise<{ period: string }> }
 ) {
-  // quick signal that the route is executing
   const startedAt = Date.now();
   const { period: raw } = await ctx.params;
 
@@ -40,7 +54,6 @@ export async function GET(
   if (url.searchParams.get("ping") === "1") {
     return NextResponse.json({ ok: true, msg: "route alive", startedAt, ORG, tokenLoaded: !!TOKEN });
   }
-
   if (url.searchParams.get("probe") === "1") {
     try {
       const result = await probeGithub();
@@ -54,26 +67,127 @@ export async function GET(
   if (!period) return NextResponse.json({ error: "invalid period" }, { status: 400 });
 
   const debug = url.searchParams.get("debug") === "1";
+  const headOnly = url.searchParams.get("head") === "1"; // lightweight status check
   const now = Date.now();
-  const hit = cache[period];
-  if (!debug && hit && now - hit.at < TTL * 1000) {
-    return NextResponse.json({ period, updatedAt: hit.at, entries: hit.data, cache: "hit" });
+  const key = `lb:${period}`;
+
+  // ---------- Redis path (preferred) ----------
+  const redis = getRedis();
+  if (redis) {
+    const cached = (await redis.get<{ at: number; data: Entry[] }>(key)) ?? null;
+
+    // HEAD-style: only report timestamps / status; never rebuild
+    if (headOnly) {
+      const at = cached?.at ?? 0;
+      const isFresh = at ? now - at < TTL * 1000 : false;
+      const nextRefreshAt = at ? at + TTL * 1000 : 0;
+      const staleUntil = at ? at + STALE_TTL * 1000 : 0;
+      return NextResponse.json({
+        period,
+        updatedAt: at,
+        cache: isFresh ? "fresh" : at ? "stale" : "miss",
+        nextRefreshAt,
+        staleUntil,
+        store: "upstash",
+      });
+    }
+
+    if (cached) {
+      const isFresh = now - cached.at < TTL * 1000;
+      const tooOld  = now - cached.at > STALE_TTL * 1000;
+      const nextRefreshAt = cached.at + TTL * 1000;
+      const staleUntil    = cached.at + STALE_TTL * 1000;
+
+      // Serve immediately; kick background refresh if stale but not too old
+      let refreshing = false;
+      if (!isFresh && !tooOld) {
+        refreshing = true;
+        (async () => {
+          const out = await buildLeaderboard(period, { debug: false });
+          await redis.set(key, { at: Date.now(), data: out.entries });
+        })();
+      }
+
+      return NextResponse.json({
+        period,
+        updatedAt: cached.at,
+        ...(debug ? { entries: cached.data, cache: isFresh ? "fresh" : "stale", store: "upstash" }
+                  : { entries: cached.data }),
+        nextRefreshAt,
+        staleUntil,
+        refreshing,
+      });
+    }
+
+    // Cold start: build once (may take ~1–2 min on first run), then cache
+    const out = await buildLeaderboard(period, { debug });
+    const nowAt = Date.now();
+    await redis.set(key, { at: nowAt, data: out.entries });
+    return NextResponse.json({
+      period,
+      updatedAt: nowAt,
+      ...(debug ? { ...out, cache: "miss", store: "upstash" } : { entries: out.entries }),
+      nextRefreshAt: nowAt + TTL * 1000,
+      staleUntil:    nowAt + STALE_TTL * 1000,
+      refreshing:    false,
+    });
   }
 
+  // ---------- Fallback: in-memory (local dev) ----------
+  const hit = memCache[period];
+  if (hit && now - hit.at < STALE_TTL * 1000) {
+    const isFresh = now - hit.at < TTL * 1000;
+    const nextRefreshAt = hit.at + TTL * 1000;
+    const staleUntil    = hit.at + STALE_TTL * 1000;
+
+    let refreshing = false;
+    if (!isFresh && !inflight[period]) {
+      refreshing = true;
+      inflight[period] = (async () => {
+        const out = await buildLeaderboard(period, { debug: false });
+        memCache[period] = { at: Date.now(), data: out.entries };
+        return out.entries;
+      })().finally(() => { delete inflight[period]; });
+    }
+
+    return NextResponse.json({
+      period,
+      updatedAt: hit.at,
+      ...(debug ? { entries: hit.data, cache: isFresh ? "fresh" : "stale", store: "memory" }
+                : { entries: hit.data }),
+      nextRefreshAt,
+      staleUntil,
+      refreshing,
+    });
+  }
+
+  // Cold start (memory)
   if (inflight[period]) {
     const out = await inflight[period];
-    return NextResponse.json({ period, updatedAt: cache[period]?.at ?? now, ...(debug ? out : { entries: out.entries ?? out }) });
+    const at = memCache[period]?.at ?? now;
+    return NextResponse.json({
+      period,
+      updatedAt: at,
+      ...(debug ? { entries: out, cache: "miss", store: "memory" } : { entries: out }),
+      nextRefreshAt: at + TTL * 1000,
+      staleUntil:    at + STALE_TTL * 1000,
+      refreshing:    false,
+    });
   }
 
-  inflight[period] = buildLeaderboard(period, { debug })
-    .catch((e) => ({ error: e?.message ?? "unknown", entries: [], stats: {} }))
-    .finally(() => { /* ensure finally runs in caller */ });
-
+  inflight[period] = buildLeaderboard(period, { debug }).then(r => r.entries).finally(() => {});
   try {
-    const out = await inflight[period];
-    const entries: Entry[] = out.entries ?? out ?? [];
-    cache[period] = { at: Date.now(), data: entries };
-    return NextResponse.json({ period, updatedAt: cache[period].at, ...(debug ? out : { entries }) });
+    const entries: Entry[] = await inflight[period];
+    const at = Date.now();
+    memCache[period] = { at, data: entries };
+    return NextResponse.json({
+      period,
+      updatedAt: at,
+      ...(debug ? { entries, cache: "miss", store: "memory" } : { entries }),
+      nextRefreshAt: at + TTL * 1000,
+      staleUntil:    at + STALE_TTL * 1000,
+      refreshing:    false,
+    });
   } finally {
     delete inflight[period];
   }

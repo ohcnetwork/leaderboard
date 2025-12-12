@@ -1,0 +1,7 @@
+{
+  "crons": [
+    { "path": "/api/leaderboard/week",  "schedule": "0 * * * *" },
+    { "path": "/api/leaderboard/month", "schedule": "0 */6 * * *" },
+    { "path": "/api/leaderboard/year",  "schedule": "0 */12 * * *" }
+  ]
+}

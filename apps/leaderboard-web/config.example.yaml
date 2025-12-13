@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=config.schema.json
+# yaml-language-server: $schema=../../packages/core/config.schema.json
 
 # Organization Info
 org:
@@ -77,13 +77,13 @@ leaderboard:
   scrapers: ## optional - scraper configurations
     github:
       name: GitHub Scraper ## optional
-      source: ohcnetwork/leaderboard-github-scraper ## required - npm package.json dependency format (e.g., 'owner/repo', 'git+https://...', 'https://...tar.gz', 'file:../path', version ranges, etc.)
+      source: https://raw.githubusercontent.com/ohcnetwork/leaderboard-github-scraper/refs/heads/main/manifest.js ## required - URL to manifest.js file (curl compatible, including file:// URLs)
       config: ## optional - scraper-specific configuration
         githubToken: ${{ env.GITHUB_TOKEN }}
         githubOrg: ohcnetwork
     slack:
       name: Slack Scraper
-      source: ohcnetwork/leaderboard-slack-scraper ## GitHub shorthand (owner/repo)
+      source: https://raw.githubusercontent.com/ohcnetwork/leaderboard-slack-scraper/refs/heads/main/manifest.js ## URL to manifest.js file
       config:
         slackApiToken: ${{ env.SLACK_API_TOKEN }}
         slackChannel: ${{ env.SLACK_EOD_CHANNEL }}

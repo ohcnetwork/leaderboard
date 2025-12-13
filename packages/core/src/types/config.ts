@@ -33,7 +33,7 @@ interface SocialProfileConfig {
 
 interface ScraperInstanceConfig {
   name?: string; // Optional display name
-  source: string; // npm package.json dependency format (e.g., 'owner/repo', 'git+https://...', 'https://...tar.gz', 'file:../path', version ranges, etc.)
+  source: string; // URL to the scraper's manifest.js file (e.g., 'https://...manifest.js', 'file:///absolute/path/manifest.js')
   config?: Record<string, unknown>; // Optional scraper-specific config
 }
 

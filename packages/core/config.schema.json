@@ -211,7 +211,7 @@
                 },
                 "source": {
                   "type": "string",
-                  "description": "Source of the scraper in npm package.json dependency format (e.g., 'owner/repo', 'git+https://...', 'https://...tar.gz', 'file:../path', version ranges, etc.)",
+                  "description": "URL to the scraper's manifest.js file (e.g., 'https://...manifest.js', 'file:///absolute/path/manifest.js'). Must be a valid URL compatible with curl.",
                   "minLength": 1
                 },
                 "config": {

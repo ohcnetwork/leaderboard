@@ -40,7 +40,8 @@ export const validConfig: Config = {
     scrapers: {
       github: {
         name: "GitHub Scraper",
-        source: "testorg/github-scraper",
+        source:
+          "https://raw.githubusercontent.com/testorg/github-scraper/main/manifest.js",
         config: {
           GITHUB_TOKEN: "${{ env.GITHUB_TOKEN }}",
           GITHUB_ORG: "testorg",
@@ -48,7 +49,8 @@ export const validConfig: Config = {
       },
       slack: {
         name: "Slack Scraper",
-        source: "testorg/slack-scraper",
+        source:
+          "https://raw.githubusercontent.com/testorg/slack-scraper/main/manifest.js",
         config: {
           SLACK_API_KEY: "${{ env.SLACK_API_KEY }}",
         },

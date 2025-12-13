@@ -409,7 +409,7 @@ describe("Config Validation", () => {
       expect(Object.keys(config.leaderboard.scrapers!)).toHaveLength(2);
       expect(config.leaderboard.scrapers!.github?.name).toBe("GitHub Scraper");
       expect(config.leaderboard.scrapers!.github?.source).toBe(
-        "testorg/github-scraper"
+        "https://raw.githubusercontent.com/testorg/github-scraper/main/manifest.js"
       );
       expect(config.leaderboard.scrapers!.github?.config).toHaveProperty(
         "GITHUB_TOKEN"
@@ -425,18 +425,14 @@ describe("Config Validation", () => {
       expect(config.leaderboard.scrapers!.slack?.name).toBe("Slack Scraper");
     });
 
-    it("should accept various npm package.json dependency formats", () => {
+    it("should accept various URL formats for manifest.js", () => {
       const validSources = [
-        "testorg/scraper", // GitHub shorthand (owner/repo)
-        "git+https://github.com/testorg/scraper.git", // Git URL with git+ prefix
-        "git+ssh://git@github.com:testorg/scraper.git", // Git SSH URL
-        "https://github.com/testorg/scraper/archive/v1.0.0.tar.gz", // Tarball URL
-        "file:../local-scraper", // File path (relative)
-        "file:/absolute/path/to/scraper", // File path (absolute)
-        "testorg/scraper#v1.0.0", // GitHub with tag
-        "testorg/scraper#feature-branch", // GitHub with branch
-        "^1.0.0", // Version range
-        "latest", // Version tag
+        "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js", // HTTPS URL
+        "https://cdn.example.com/scrapers/manifest.js", // CDN URL
+        "file:///absolute/path/to/manifest.js", // File path (absolute)
+        "file:///home/user/scrapers/manifest.js", // File path (Unix)
+        "file:///C:/Users/user/scrapers/manifest.js", // File path (Windows)
+        "https://example.com/scraper/v1.0.0/manifest.js", // Versioned URL
       ];
 
       for (const source of validSources) {
@@ -512,7 +508,8 @@ describe("Config Validation", () => {
           ...minimalValidConfig.leaderboard,
           scrapers: {
             test: {
-              source: "testorg/scraper",
+              source:
+                "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js",
               config: {
                 TOKEN: "${{ env.TOKEN }}",
               },
@@ -525,7 +522,9 @@ describe("Config Validation", () => {
       const config = getConfig();
 
       expect(config.leaderboard.scrapers?.test?.name).toBeUndefined();
-      expect(config.leaderboard.scrapers?.test?.source).toBe("testorg/scraper");
+      expect(config.leaderboard.scrapers?.test?.source).toBe(
+        "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js"
+      );
     });
 
     it("should accept scraper without config (optional field)", () => {
@@ -536,7 +535,8 @@ describe("Config Validation", () => {
           scrapers: {
             test: {
               name: "Test Scraper",
-              source: "testorg/scraper",
+              source:
+                "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js",
             },
           },
         },
@@ -691,7 +691,8 @@ describe("Config Validation", () => {
           scrapers: {
             test: {
               name: "Test Scraper",
-              source: "testorg/scraper",
+              source:
+                "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js",
               config: {
                 token: "${{ env.TEST_TOKEN }}",
                 org: "${{ env.TEST_ORG }}",
@@ -723,7 +724,8 @@ describe("Config Validation", () => {
           scrapers: {
             test: {
               name: "Test Scraper",
-              source: "testorg/scraper",
+              source:
+                "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js",
               config: {
                 nested: {
                   deep: {
@@ -756,7 +758,8 @@ describe("Config Validation", () => {
           scrapers: {
             test: {
               name: "Test Scraper",
-              source: "testorg/scraper",
+              source:
+                "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js",
               config: {
                 items: ["static", "${{ env.ARRAY_VAR }}", "another"],
               },
@@ -785,7 +788,8 @@ describe("Config Validation", () => {
           scrapers: {
             test: {
               name: "Test Scraper",
-              source: "testorg/scraper",
+              source:
+                "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js",
               config: {
                 token: "${{ env.MISSING_VAR }}",
               },
@@ -810,7 +814,8 @@ describe("Config Validation", () => {
           scrapers: {
             test: {
               name: "Test Scraper",
-              source: "testorg/scraper",
+              source:
+                "https://raw.githubusercontent.com/testorg/scraper/main/manifest.js",
               config: {
                 normalString: "just a normal string",
                 withBraces: "{{ not an env var }}",

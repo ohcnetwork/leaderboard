@@ -1,115 +1,13 @@
 import {
   Activity,
-  GlobalAggregate,
   ContributorAggregate,
-  ContributorBadge,
   BadgeVariant,
 } from "@leaderboard/core";
 import { types } from "@electric-sql/pglite";
 import { format } from "date-fns";
 import { getDb } from "@leaderboard/core";
 import { Contributor } from "@leaderboard/core";
-
-/**
- * Create tables and indexes in the database if they don't exist
- */
-export async function createTables() {
-  const db = getDb();
-
-  await db.exec(`
-    CREATE TABLE IF NOT EXISTS contributor (
-        username                VARCHAR PRIMARY KEY,
-        name                    VARCHAR,
-        role                    VARCHAR,
-        title                   VARCHAR,
-        avatar_url              VARCHAR,
-        bio                     TEXT,
-        social_profiles         JSON,
-        joining_date            DATE,
-        meta                    JSON
-    );
-
-    CREATE TABLE IF NOT EXISTS activity_definition (
-        slug                    VARCHAR PRIMARY KEY,
-        points                  SMALLINT
-    );
-
-    CREATE TABLE IF NOT EXISTS activity (
-        slug                    VARCHAR PRIMARY KEY,
-        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
-        activity_definition     VARCHAR REFERENCES activity_definition(slug) NOT NULL,
-        title                   VARCHAR,
-        occured_at              TIMESTAMP NOT NULL,
-        link                    VARCHAR,
-        text                    TEXT,
-        points                  SMALLINT,
-        meta                    JSON
-    );
-
-    CREATE INDEX IF NOT EXISTS idx_activity_occured_at ON activity(occured_at);
-    CREATE INDEX IF NOT EXISTS idx_activity_contributor ON activity(contributor);
-    CREATE INDEX IF NOT EXISTS idx_activity_definition ON activity(activity_definition);
-
-    CREATE TABLE IF NOT EXISTS global_aggregate (
-        slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR NOT NULL,
-        description             TEXT,
-        value                   JSON
-    );
-
-    CREATE TABLE IF NOT EXISTS contributor_aggregate_definition (
-        slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR NOT NULL,
-        description             TEXT
-    );
-
-    CREATE TABLE IF NOT EXISTS contributor_aggregate (
-        aggregate               VARCHAR REFERENCES contributor_aggregate_definition(slug) NOT NULL,
-        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
-        value                   JSON NOT NULL,
-        PRIMARY KEY (aggregate, contributor)
-    );
-
-    CREATE INDEX IF NOT EXISTS idx_contributor_aggregate_contributor ON contributor_aggregate(contributor);
-    CREATE INDEX IF NOT EXISTS idx_contributor_aggregate_aggregate ON contributor_aggregate(aggregate);
-
-    CREATE TABLE IF NOT EXISTS badge_definition (
-        slug                    VARCHAR PRIMARY KEY,
-        name                    VARCHAR NOT NULL,
-        description             TEXT NOT NULL,
-        variants                JSON NOT NULL
-    );
-
-    CREATE TABLE IF NOT EXISTS contributor_badge (
-        slug                    VARCHAR PRIMARY KEY,
-        badge                   VARCHAR REFERENCES badge_definition(slug) NOT NULL,
-        contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
-        variant                 VARCHAR NOT NULL,
-        achieved_on             DATE NOT NULL,
-        meta                    JSON,
-        UNIQUE(badge, contributor, variant)
-    );
-
-    CREATE INDEX IF NOT EXISTS idx_contributor_badge_contributor ON contributor_badge(contributor);
-    CREATE INDEX IF NOT EXISTS idx_contributor_badge_badge ON contributor_badge(badge);
-    CREATE INDEX IF NOT EXISTS idx_contributor_badge_achieved_on ON contributor_badge(achieved_on);
-  `);
-}
-
-/**
- * List all contributors from the database
- * @returns The list of all contributors
- * @deprecated TODO: remove this as we'd never want all information about all contributors when listing.
- */
-export async function listContributors() {
-  const db = getDb();
-
-  const result = await db.query<Contributor>(`
-    SELECT * FROM contributor;
-  `);
-
-  return result.rows;
-}
+import { notFound } from "next/navigation";
 
 /**
  * Get a contributor from the database
@@ -558,12 +456,7 @@ export async function getContributorProfile(username: string): Promise<{
   const contributor = await getContributor(username);
 
   if (!contributor) {
-    return {
-      contributor: null,
-      activities: [],
-      totalPoints: 0,
-      activityByDate: {},
-    };
+    notFound();
   }
 
   // Get all activities for this contributor

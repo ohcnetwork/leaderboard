@@ -23,7 +23,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test-get-scraper-manifests": "tsx src/utils/get-scraper-manifests.ts"
   },
   "keywords": [],
   "author": "Open Healthcare Network",

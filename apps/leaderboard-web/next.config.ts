@@ -11,10 +11,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  experimental: {
-    // Limit worker threads to avoid PGlite concurrency issues
-    cpus: 1,
-  },
   async redirects() {
     return [
       {

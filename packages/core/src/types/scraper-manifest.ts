@@ -4,7 +4,6 @@ import {
   AggregateValue,
   Badge,
   BadgeDefinitionBase,
-  Config,
   ContributorAggregate,
 } from "@/src/types";
 import { PGlite } from "@electric-sql/pglite";
@@ -22,11 +21,6 @@ export interface ScraperContext<TConfig extends object> {
    * The scraper config.
    */
   scraperConfig: TConfig;
-  /**
-   * The leaderboard config. This is useful for accessing the leaderboard's
-   * config values.
-   */
-  leaderboardConfig: Config;
   /**
    * The number of days to scrape data for.
    */

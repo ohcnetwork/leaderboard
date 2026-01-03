@@ -1,20 +1,9 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 import yaml from "js-yaml";
-import Ajv from "ajv";
-import addFormats from "ajv-formats";
-import configSchema from "../config.schema.json";
-
-import type { Config } from "@/src/types/config";
+import { Config, ConfigSchema } from "@/lib/config/schema";
 
 let cachedConfig: Config | null = null;
-
-// Load and compile schema
-function getValidator() {
-  const ajv = new Ajv({ allErrors: true, strict: false });
-  addFormats(ajv);
-  return ajv.compile(configSchema);
-}
 
 /**
  * Substitutes environment variables in the format ${{ env.VAR_NAME }}
@@ -66,15 +55,14 @@ export function getConfig(): Config {
   // Substitute environment variables before validation
   rawConfig = substituteEnvVars(rawConfig) as Config;
 
-  const validate = getValidator();
+  // Validate with Zod
+  const result = ConfigSchema.safeParse(rawConfig);
 
-  // Validate against JSON schema
-  const isValid = validate(rawConfig);
-  if (!isValid) {
-    const errors = validate.errors
-      ?.map((err) => {
-        const path = err.instancePath || "root";
-        const message = err.message || "validation failed";
+  if (!result.success) {
+    const errors = result.error.issues
+      .map((err) => {
+        const path = err.path.join(".") || "root";
+        const message = err.message;
         return `  - ${path}: ${message}`;
       })
       .join("\n");
@@ -83,7 +71,7 @@ export function getConfig(): Config {
     );
   }
 
-  cachedConfig = rawConfig;
+  cachedConfig = result.data;
 
   return cachedConfig;
 }
@@ -93,26 +81,4 @@ export function getConfig(): Config {
  */
 export function clearConfigCache(): void {
   cachedConfig = null;
-}
-
-/**
- * Get list of hidden role keys from the configuration
- * @returns Array of role keys that have hidden: true
- */
-export function getHiddenRoles(): string[] {
-  const config = getConfig();
-  return Object.entries(config.leaderboard.roles)
-    .filter(([_, role]) => role.hidden === true)
-    .map(([key]) => key);
-}
-
-/**
- * Get list of visible role keys from the configuration
- * @returns Array of role keys that are not hidden
- */
-export function getVisibleRoles(): string[] {
-  const config = getConfig();
-  return Object.entries(config.leaderboard.roles)
-    .filter(([_, role]) => role.hidden !== true)
-    .map(([key]) => key);
 }

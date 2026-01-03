@@ -3,33 +3,41 @@ import { getScraperManifests } from "@/src/utils/get-scraper-manifests";
 
 export async function getAdditionallyRequiredIconNames() {
   const config = getConfig();
-  const manifests = await getScraperManifests();
 
-  const iconNames = [];
+  const iconNames = new Set<string>();
 
   // Get icons from social profiles config
   if (config.leaderboard.social_profiles) {
-    iconNames.push(
-      ...Object.values(config.leaderboard.social_profiles).map(
-        (profile) => profile.icon
-      )
-    );
+    for (const profile of Object.values(config.leaderboard.social_profiles)) {
+      iconNames.add(profile.icon);
+    }
   }
 
   // Get icons from manifests of each scraper
-  for (const manifest of manifests) {
-    iconNames.push(
-      ...[
-        ...Object.values(manifest.activityDefinitions ?? {}).map(
-          (activity) => activity.icon
-        ),
-        // TODO: replace this with scanning from derived global aggregates
-        // ...Object.values(manifest.globalAggregateDefinitions ?? {}).map(
-        //   (aggregate) => aggregate.icon
-        // ),
-      ].filter((k): k is string => k !== null)
-    );
+  for (const manifest of await getScraperManifests()) {
+    // Get icons from activity definitions
+    if (manifest.activityDefinitions) {
+      for (const definition of Object.values(manifest.activityDefinitions)) {
+        if (definition.icon) {
+          iconNames.add(definition.icon);
+        }
+      }
+    }
+
+    // Get icons from contributor aggregate definitions
+    if (manifest.contributorAggregateDefinitions) {
+      for (const definition of Object.values(
+        manifest.contributorAggregateDefinitions
+      )) {
+        if (definition.icon) {
+          iconNames.add(definition.icon);
+        }
+      }
+    }
+
+    // Get icons from global aggregate definitions
+    // TODO: get from db
   }
 
-  return Array.from(new Set(iconNames));
+  return Array.from(iconNames);
 }

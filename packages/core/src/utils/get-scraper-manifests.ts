@@ -5,7 +5,13 @@ import os from "node:os";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 
+let manifestsCache: ScraperManifest<{}>[] | null = null;
+
 export async function getScraperManifests() {
+  if (manifestsCache) {
+    return manifestsCache;
+  }
+
   const scrapers = getConfig().leaderboard.scrapers;
 
   if (!scrapers) {
@@ -17,11 +23,12 @@ export async function getScraperManifests() {
   const tempDir = os.tmpdir();
 
   for (const [name, { source }] of Object.entries(scrapers)) {
-    const filePath = join(tempDir, `${name}.mjs`);
-    execFileSync("curl", ["-fsSL", source, "-o", filePath]);
-    const manifest = await import(pathToFileURL(filePath).toString());
-    manifests.push(manifest);
+    const path = join(tempDir, `${name}.mjs`);
+    execFileSync("curl", ["-fsSL", source, "-o", path]);
+    manifests.push(await import(pathToFileURL(path).toString()));
   }
+
+  manifestsCache = manifests;
 
   return manifests;
 }

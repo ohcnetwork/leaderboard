@@ -39,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/ohcnetwork/leaderboard/issues"
   },
-  "homepage": "https://github.com/ohcnetwork/leaderboard#readme"
+  "homepage": "https://github.com/ohcnetwork/leaderboard#readme",
+  "dependencies": {
+    "create-leaderboard-plugin": "link:packages/create-plugin"
+  }
 }

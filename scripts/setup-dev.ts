@@ -208,6 +208,45 @@ async function buildDummyPlugin(): Promise<void> {
 }
 
 /**
+ * Create theme.css placeholder
+ */
+async function createThemeFile(): Promise<void> {
+  console.log("🎨 Creating theme.css placeholder...");
+
+  const themePath = path.join(DATA_DIR, "theme.css");
+  const themeContent = `/* Custom theme overrides for your leaderboard */
+/* This file is optional - you can customize colors, fonts, and styles here */
+
+/* Example: Customize colors */
+/*
+:root {
+  --primary: oklch(0.5 0.2 250);
+  --accent: oklch(0.7 0.15 180);
+}
+*/
+
+/* Example: Customize fonts */
+/*
+body {
+  font-family: 'Your Custom Font', sans-serif;
+}
+*/
+
+/* Example: Customize the people grid */
+/*
+:root {
+  --people-grid-cols-mobile: 6;
+  --people-grid-cols-md: 10;
+  --people-grid-cols-lg: 14;
+}
+*/
+`;
+
+  await fs.writeFile(themePath, themeContent, "utf-8");
+  console.log("   ✓ Created theme.css\n");
+}
+
+/**
  * Run plugin runner to generate data
  */
 async function runPluginRunner(): Promise<void> {
@@ -224,6 +263,26 @@ async function runPluginRunner(): Promise<void> {
     });
   } catch (error) {
     console.error("\n❌ Failed to run plugin runner");
+    throw error;
+  }
+}
+
+/**
+ * Copy theme to Next.js app
+ */
+async function copyTheme(): Promise<void> {
+  console.log("\n🎨 Copying theme to Next.js app...");
+
+  try {
+    execSync("pnpm theme:copy", {
+      stdio: "inherit",
+      env: {
+        ...process.env,
+        LEADERBOARD_DATA_DIR: DATA_DIR,
+      },
+    });
+  } catch (error) {
+    console.error("\n❌ Failed to copy theme");
     throw error;
   }
 }
@@ -295,11 +354,17 @@ async function main() {
     // Generate config
     await generateConfig(options);
 
+    // Create empty theme.css as placeholder
+    await createThemeFile();
+
     // Build plugin
     await buildDummyPlugin();
 
     // Run plugin runner
     await runPluginRunner();
+
+    // Copy theme to overrides
+    await copyTheme();
 
     // Display success message
     displaySuccess(options);

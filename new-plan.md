@@ -32,91 +32,138 @@ example scraper's entrypoint file:
 
 ```tsx
 // github-scraper/main.ts
-export default defineScraper({
-    activityDefinitions: [
-      {
-        slug: 'pr_reviewed',
-        name: 'Pull Request Reviewed',
-        description: 'A pull request was reviewed',
-        points: 10,
-        icon: 'github'
-      },
-      {
-        slug: 'issue_opened',
-        name: 'Issue Opened',
-        description: 'An issue was opened',
-        points: 5,
-        icon: 'github'
-      },
-    ],
+import createManifest from "@leaderboard/core";
 
-    aggregateDefinitions: {
-      global: [
-        {
-          slug: 'pr_merged_count',
-          name: 'Pull Request Merged Count',
-          description: 'The number of pull requests merged',
-        },
-      ],
-      contributor: [
-        {
-          slug: 'pr_merged_count',
-          name: 'Pull Request Merged Count',
-          description: 'The number of pull requests merged',
-        },
-        {
-          slug: 'issue_opened_count',
-          name: 'Issue Opened Count',
-          description: 'The number of issues opened',
-        },
-      ],
+
+const manifest: LeaderboardScraperManifest = {
+  initialize: async (config: ScraperConfig, db: PGLite) => {
+      db.exec(`
+          CREATE TABLE IF NOT EXISTS github_pr_review (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              pr_number INTEGER NOT NULL,
+              reviewer TEXT NOT NULL
+          )
+      `)
+  },
+
+  activityDefinitions: [
+    {
+      slug: 'pr_reviewed',
+      name: 'Pull Request Reviewed',
+      description: 'A pull request was reviewed',
+      points: 10,
+      icon: 'github'
     },
+    {
+      slug: 'issue_opened',
+      name: 'Issue Opened',
+      description: 'An issue was opened',
+      points: 5,
+      icon: 'github'
+    },
+  ],
 
-    badgeDefinitions: [
+  aggregateDefinitions: {
+    global: [
       {
-        slug: 'eod_streak',
-        name: 'EOD Streak',
-        description: 'The number of days in a row that the contributor has sent an EOD update',
-        variants: {
-          bronze: {
-            description: '10 days',
-            svg_url: 'https://example.com/bronze.svg',
-          },
-        },
-      }
+        slug: 'pr_merged_count',
+        name: 'Pull Request Merged Count',
+        description: 'The number of pull requests merged',
+        compute: async (db: PGLite) => {
+          // compute logic goes here....
+
+          return {
+            value: 10,
+            type: 'number',
+          }
+        }
+      },
     ],
+    contributor: [
+      {
+        slug: 'pr_merged_count',
+        name: 'Pull Request Merged Count',
+        description: 'The number of pull requests merged',
+        compute: async (db: PGLite) => {
+          // compute logic goes here....
+          
+          const result = await db.query(`
+            SELECT c.username, COUNT(*) as count
+            FROM contributor c
+            JOIN activity a ON c.username = a.contributor
+            WHERE a.activity_definition = 'pr_merged'
+            GROUP BY c.username
+          `, []);
 
-    computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
+          return [
+            {
+              contributor: "nikhila",
+              value: 10,
+              type: 'number',
+            },
+            {
+              contributor: "nikhila",
+              value: 10,
+              type: 'number',
+            }
+          ]
+        }
+      },
+      {
+        slug: 'issue_opened_count',
+        name: 'Issue Opened Count',
+        description: 'The number of issues opened',
+      },
+    ],
+  },
 
-    scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
-})
+  badgeDefinitions: [
+    {
+      slug: 'eod_streak',
+      name: 'EOD Streak',
+      description: 'The number of days in a row that the contributor has sent an EOD update',
+      variants: {
+        bronze: {
+          description: '10 days',
+          svg_url: 'https://example.com/bronze.svg',
+        },
+      },
+    }
+  ],
+
+  scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
+}
+
+export default manifest;
 
 
 // slack-scraper/main.ts
-export default defineScraper({
-    activityDefinitions: [
-      {
-        slug: 'eod_update',
-        name: 'Slack Message',
-        description: 'A message was sent to a slack channel',
-        points: 10,
-        icon: 'slack'
-      },
-    ],
-
-    prepare: async (config: ScraperConfig, db: PGLite) => {
-        db.exec(`
-            CREATE TABLE IF NOT EXISTS slack_eod_message (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                value TEXT NOT NULL
-            )
-        `)
+const manifest: LeaderboardScraperManifest = {
+  activityDefinitions: [
+    {
+      slug: 'eod_update',
+      name: 'Slack Message',
+      description: 'A message was sent to a slack channel',
+      points: 10,
+      icon: 'slack'
     },
-    scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
-    computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
+  ],
 
-    import: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
-    export: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
-})
+  initialize: async (config: ScraperConfig, db: PGLite) => {
+      db.exec(`
+          CREATE TABLE IF NOT EXISTS slack_eod_message (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              name TEXT NOT NULL,
+              value TEXT NOT NULL
+          )
+      `)
+  },
+  scrape: async (config: ScraperConfig, db: PGLite, scrapeDays: number) => {},
+  computeAggregates: async (config: ScraperConfig, db: PGLite) => {},
+
+  import: async ({ config, db, scrapeDays, dataPath }) => {},
+  export: async (config: ScraperConfig, db: PGLite, dataPath: string) => { },
+}
+
+export default manifest;
 ```

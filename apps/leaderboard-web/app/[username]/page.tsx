@@ -3,12 +3,12 @@ import {
   getContributorProfile,
   listActivityDefinitions,
   getContributorAggregates,
-} from "@/lib/db";
+} from "@/lib/data/loader";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { generateActivityGraphData, formatAggregateValue } from "@/lib/utils";
-import { getConfig } from "@leaderboard/core";
+import { getConfig } from "@/lib/config/get-config";
 import ActivityOverview from "./ActivityOverview";
 import ActivityBreakdown from "./ActivityBreakdown";
 import ActivityTimeline from "./ActivityTimeline";

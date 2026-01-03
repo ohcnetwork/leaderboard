@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
-import { getContributorProfile, getAllContributorUsernames } from "@/lib/db";
-import { getConfig } from "@leaderboard/core";
+import { getContributorProfile, getAllContributorUsernames } from "@/lib/data/loader";
+import { getConfig } from "@/lib/config/get-config";
 
 export const runtime = "nodejs";
 export const dynamic = "force-static";

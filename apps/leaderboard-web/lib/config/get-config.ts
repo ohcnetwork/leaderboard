@@ -46,7 +46,9 @@ export function getConfig(): Config {
     return cachedConfig;
   }
 
-  const configPath = join(process.cwd(), "config.yaml");
+  // Default to ../../data (relative to apps/leaderboard-web) for development
+  const dataDir = process.env.LEADERBOARD_DATA_DIR || "../../data";
+  const configPath = join(process.cwd(), dataDir, "config.yaml");
   const fileContents = readFileSync(configPath, "utf8");
   let rawConfig = yaml.load(fileContents, {
     schema: yaml.JSON_SCHEMA,

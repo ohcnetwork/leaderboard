@@ -18,7 +18,7 @@ import { format } from "date-fns";
 interface ActivityBreakdownProps {
   activities: Array<{
     activity_definition_name: string;
-    occured_at: Date;
+    occured_at: Date | string;
     points: number;
   }>;
   startDate?: Date;

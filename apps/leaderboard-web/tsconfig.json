@@ -15,7 +15,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@leaderboard/core": ["../../packages/core"],
       "fumadocs-mdx:collections/*": [".source/*"]
     },
     "noUncheckedIndexedAccess": true
@@ -28,5 +27,8 @@
     "**/*.mts"
   ],
   "exclude": ["node_modules"],
-  "references": [{ "path": "../../packages/core" }]
+  "references": [
+    { "path": "../../packages/plugin-api" },
+    { "path": "../../packages/db" }
+  ]
 }

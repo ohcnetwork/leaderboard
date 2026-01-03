@@ -22,7 +22,7 @@ export const MetaConfigSchema = z.object({
   description: z.string(),
   image_url: z.url(),
   site_url: z.url(),
-  favicon_url: z.url(),
+  favicon_url: z.string(), // Can be relative path or URL
 });
 
 export const RoleConfigSchema = z.object({
@@ -35,14 +35,15 @@ export const SocialProfileConfigSchema = z.object({
   icon: z.string(),
 });
 
-export const ScraperInstanceConfigSchema = z.object({
+export const PluginInstanceConfigSchema = z.object({
   name: z.string().optional(),
   source: z.string(),
   config: z.record(z.string(), z.unknown()).optional(),
 });
 
 export const LeaderboardConfigSchema = z.object({
-  data_source: z.string(),
+  data_source: z.string().optional(),
+  data_dir: z.string().optional(),
   roles: z.record(z.string(), RoleConfigSchema),
   top_contributors: z.array(z.string()).optional(),
   social_profiles: z.record(z.string(), SocialProfileConfigSchema).optional(),
@@ -53,7 +54,7 @@ export const LeaderboardConfigSchema = z.object({
       contributor: z.array(z.string()).optional(),
     })
     .optional(),
-  scrapers: z.record(z.string(), ScraperInstanceConfigSchema).optional(),
+  plugins: z.record(z.string(), PluginInstanceConfigSchema).optional(),
 });
 
 export const ConfigSchema = z.object({
@@ -67,6 +68,6 @@ export type OrgConfig = z.infer<typeof OrgConfigSchema>;
 export type MetaConfig = z.infer<typeof MetaConfigSchema>;
 export type RoleConfig = z.infer<typeof RoleConfigSchema>;
 export type SocialProfileConfig = z.infer<typeof SocialProfileConfigSchema>;
-export type ScraperInstanceConfig = z.infer<typeof ScraperInstanceConfigSchema>;
+export type PluginInstanceConfig = z.infer<typeof PluginInstanceConfigSchema>;
 export type LeaderboardConfig = z.infer<typeof LeaderboardConfigSchema>;
 export type Config = z.infer<typeof ConfigSchema>;

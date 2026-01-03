@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
-import { getConfig } from "@leaderboard/core";
+import { getConfig } from "@/lib/config/get-config";
 import Link from "next/link";
 import ThemeSelector from "./ThemeSelector";
 import Image from "next/image";
@@ -45,7 +45,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): React.ReactElement {
   return (
     <html lang="en" suppressHydrationWarning>
       <body

@@ -1,0 +1,413 @@
+---
+title: Creating Plugins
+description: Step-by-step guide to building your first plugin
+---
+
+# Creating Your First Plugin
+
+This guide walks you through creating a custom plugin for the Leaderboard system.
+
+## Prerequisites
+
+- Understanding of JavaScript/TypeScript
+- Access to the data source API
+- Node.js development environment
+
+## Step 1: Set Up Your Project
+
+Create a new directory for your plugin:
+
+```bash
+mkdir leaderboard-custom-plugin
+cd leaderboard-custom-plugin
+npm init -y
+```
+
+Install the plugin API types:
+
+```bash
+npm install --save-dev @leaderboard/plugin-api
+```
+
+## Step 2: Create the Plugin File
+
+Create `plugin.js`:
+
+```javascript
+/**
+ * Custom Plugin for Leaderboard
+ * 
+ * Fetches data from [Your Data Source] and tracks activities.
+ */
+
+export default {
+  name: 'custom-plugin',
+  version: '1.0.0',
+  
+  /**
+   * Setup method: Define activity types
+   */
+  async setup(ctx) {
+    ctx.logger.info('Setting up custom plugin');
+    
+    // Define your activity types
+    await ctx.db.execute(`
+      INSERT OR IGNORE INTO activity_definition 
+      (slug, name, description, points, icon)
+      VALUES 
+      (?, ?, ?, ?, ?),
+      (?, ?, ?, ?, ?)
+    `, [
+      'custom_event_1', 'Event Type 1', 'Description of event 1', 10, 'star',
+      'custom_event_2', 'Event Type 2', 'Description of event 2', 5, 'heart',
+    ]);
+    
+    ctx.logger.info('Activity definitions created');
+  },
+  
+  /**
+   * Scrape method: Fetch and store activities
+   */
+  async scrape(ctx) {
+    ctx.logger.info('Starting scrape');
+    
+    // Get configuration
+    const { apiKey, apiUrl } = ctx.config;
+    
+    if (!apiKey) {
+      throw new Error('apiKey is required in plugin configuration');
+    }
+    
+    // Fetch data from your API
+    const response = await fetch(apiUrl || 'https://api.example.com/events', {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.statusText}`);
+    }
+    
+    const events = await response.json();
+    ctx.logger.info(`Fetched ${events.length} events`);
+    
+    // Process and store activities
+    for (const event of events) {
+      try {
+        await ctx.db.execute(`
+          INSERT OR IGNORE INTO activity 
+          (slug, contributor, activity_definition, title, occured_at, link, points, meta)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        `, [
+          `custom-${event.id}`,                    // Unique slug
+          event.user.username,                      // Contributor username
+          event.type,                               // Activity definition slug
+          event.title,                              // Activity title
+          event.timestamp,                          // ISO 8601 timestamp
+          event.url,                                // Link to event
+          event.points || 10,                       // Points awarded
+          JSON.stringify(event.metadata || null),   // Additional metadata
+        ]);
+      } catch (error) {
+        ctx.logger.warn(`Failed to insert activity ${event.id}`, { error: error.message });
+      }
+    }
+    
+    ctx.logger.info('Scrape complete');
+  },
+};
+```
+
+## Step 3: Add TypeScript Types (Optional)
+
+For better developer experience, create `plugin.ts`:
+
+```typescript
+import type { Plugin, PluginContext } from '@leaderboard/plugin-api';
+
+const plugin: Plugin = {
+  name: 'custom-plugin',
+  version: '1.0.0',
+  
+  async setup(ctx: PluginContext): Promise<void> {
+    // Setup implementation
+  },
+  
+  async scrape(ctx: PluginContext): Promise<void> {
+    // Scrape implementation
+  },
+};
+
+export default plugin;
+```
+
+Build to JavaScript:
+
+```bash
+tsc plugin.ts --module esnext --target es2022
+```
+
+## Step 4: Test Locally
+
+Create a test configuration in your data repo:
+
+```yaml
+# config.yaml
+leaderboard:
+  plugins:
+    custom:
+      source: file:///absolute/path/to/leaderboard-custom-plugin/plugin.js
+      config:
+        apiKey: test_key
+        apiUrl: https://api.example.com/events
+```
+
+Run the plugin runner:
+
+```bash
+plugin-runner --data-dir=./data --debug
+```
+
+## Step 5: Deploy the Plugin
+
+### Option 1: GitHub Repository
+
+1. Push your plugin to GitHub:
+   ```bash
+   git init
+   git add plugin.js
+   git commit -m "Initial plugin"
+   git remote add origin https://github.com/yourorg/leaderboard-custom-plugin.git
+   git push -u origin main
+   ```
+
+2. Use the raw GitHub URL in config:
+   ```yaml
+   plugins:
+     custom:
+       source: https://raw.githubusercontent.com/yourorg/leaderboard-custom-plugin/main/plugin.js
+   ```
+
+### Option 2: NPM Package
+
+1. Publish to NPM:
+   ```bash
+   npm publish
+   ```
+
+2. Use via CDN:
+   ```yaml
+   plugins:
+     custom:
+       source: https://cdn.jsdelivr.net/npm/your-plugin@1.0.0/plugin.js
+   ```
+
+### Option 3: Self-Hosted
+
+1. Upload to your server
+2. Use the direct URL:
+   ```yaml
+   plugins:
+     custom:
+       source: https://your-domain.com/plugins/custom.js
+   ```
+
+## Advanced Patterns
+
+### Pagination
+
+Handle paginated APIs:
+
+```javascript
+async scrape(ctx) {
+  let page = 1;
+  let hasMore = true;
+  
+  while (hasMore) {
+    const response = await fetch(`${apiUrl}?page=${page}`);
+    const data = await response.json();
+    
+    // Process data
+    for (const item of data.items) {
+      await storeActivity(ctx, item);
+    }
+    
+    hasMore = data.hasMore;
+    page++;
+    
+    ctx.logger.debug(`Processed page ${page}`);
+  }
+}
+```
+
+### Rate Limiting
+
+Respect API rate limits:
+
+```javascript
+async function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async scrape(ctx) {
+  for (const item of items) {
+    await processItem(ctx, item);
+    await sleep(100); // 100ms delay between requests
+  }
+}
+```
+
+### Batch Inserts
+
+For better performance with many records:
+
+```javascript
+async scrape(ctx) {
+  const activities = await fetchActivities(ctx);
+  
+  const statements = activities.map(activity => ({
+    sql: `INSERT OR IGNORE INTO activity (...) VALUES (...)`,
+    params: [/* activity fields */],
+  }));
+  
+  await ctx.db.batch(statements);
+  ctx.logger.info(`Inserted ${statements.length} activities`);
+}
+```
+
+### Error Recovery
+
+Handle transient errors:
+
+```javascript
+async function fetchWithRetry(url, options, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await fetch(url, options);
+    } catch (error) {
+      if (i === retries - 1) throw error;
+      await sleep(1000 * Math.pow(2, i)); // Exponential backoff
+    }
+  }
+}
+```
+
+### Incremental Updates
+
+Track last sync time to only fetch new data:
+
+```javascript
+async scrape(ctx) {
+  // Get last sync time from meta
+  const lastSync = await getLastSyncTime(ctx);
+  
+  // Fetch only new events
+  const events = await fetchEventsSince(ctx, lastSync);
+  
+  // Store activities
+  await storeActivities(ctx, events);
+  
+  // Update last sync time
+  await setLastSyncTime(ctx, new Date());
+}
+```
+
+You can store metadata in the activity `meta` field or as a separate tracking mechanism.
+
+## Testing Your Plugin
+
+Create a test script:
+
+```javascript
+// test.js
+import plugin from './plugin.js';
+
+const mockContext = {
+  db: {
+    async execute(sql, params) {
+      console.log('SQL:', sql);
+      console.log('Params:', params);
+      return { rows: [], rowsAffected: 1 };
+    },
+    async batch(statements) {
+      console.log('Batch:', statements.length, 'statements');
+      return statements.map(() => ({ rows: [], rowsAffected: 1 }));
+    },
+  },
+  config: {
+    apiKey: 'test_key',
+    apiUrl: 'https://api.example.com/events',
+  },
+  orgConfig: {
+    name: 'Test Org',
+  },
+  logger: {
+    debug: console.log,
+    info: console.log,
+    warn: console.warn,
+    error: console.error,
+  },
+};
+
+// Test setup
+await plugin.setup(mockContext);
+
+// Test scrape
+await plugin.scrape(mockContext);
+
+console.log('Plugin test complete');
+```
+
+Run the test:
+
+```bash
+node test.js
+```
+
+## Publishing Your Plugin
+
+### Documentation
+
+Create a README.md:
+
+```markdown
+# Custom Plugin for Leaderboard
+
+Tracks activities from [Your Source].
+
+## Configuration
+
+\`\`\`yaml
+plugins:
+  custom:
+    source: https://example.com/plugin.js
+    config:
+      apiKey: your_api_key
+      apiUrl: https://api.example.com/events
+\`\`\`
+
+## Activity Types
+
+- `custom_event_1` - Description (10 points)
+- `custom_event_2` - Description (5 points)
+
+## License
+
+MIT
+```
+
+### Versioning
+
+Follow semantic versioning:
+- `1.0.0` - Initial release
+- `1.0.1` - Bug fixes
+- `1.1.0` - New features (backwards compatible)
+- `2.0.0` - Breaking changes
+
+## Next Steps
+
+- [Plugin API Reference](/docs/plugins/api-reference)
+- [Plugin Examples](https://github.com/ohcnetwork/leaderboard-plugins)
+- [Deployment Guide](/docs/deployment)
+

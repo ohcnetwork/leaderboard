@@ -10,20 +10,22 @@ import {
 import { format } from "date-fns";
 
 interface RelativeTimeProps {
-  date: Date;
+  date: Date | string;
   className?: string;
 }
 
 export default function RelativeTime({ date, className }: RelativeTimeProps) {
+  const dateObj = typeof date === "string" ? new Date(date) : date;
+  
   // Format absolute time like: "Monday, November 11, 2025 at 2:30 PM"
-  const absoluteTime = format(date, "EEEE, MMMM d, yyyy 'at' h:mm a");
+  const absoluteTime = format(dateObj, "EEEE, MMMM d, yyyy 'at' h:mm a");
 
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <time dateTime={date.toISOString()} className={className}>
-            {formatTimeAgo(date)}
+          <time dateTime={dateObj.toISOString()} className={className}>
+            {formatTimeAgo(dateObj)}
           </time>
         </TooltipTrigger>
         <TooltipContent>

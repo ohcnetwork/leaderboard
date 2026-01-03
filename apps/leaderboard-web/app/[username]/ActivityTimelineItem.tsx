@@ -1,6 +1,6 @@
 "use client";
 
-import { ContributorActivity } from "@/lib/db";
+import { ContributorActivity } from "@/lib/data/types";
 import RelativeTime from "@/components/RelativeTime";
 import { ExternalLinkIcon } from "lucide-react";
 import Icon from "@/components/Icon";

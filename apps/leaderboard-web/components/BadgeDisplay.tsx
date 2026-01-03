@@ -1,5 +1,18 @@
 import React from "react";
-import type { BadgeDefinition, BadgeVariant } from "@/types/db";
+
+type BadgeVariant = {
+  description: string;
+  requirement?: string;
+};
+
+type BadgeDefinition = {
+  slug: string;
+  name: string;
+  description: string;
+  category: string | null;
+  icon: string | null;
+  variants: Record<string, BadgeVariant>;
+};
 
 interface BadgeDisplayProps {
   badge: {

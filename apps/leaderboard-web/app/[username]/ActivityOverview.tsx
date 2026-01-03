@@ -11,7 +11,7 @@ interface ActivityOverviewProps {
   data: Array<{ date: string; count: number; level: number }>;
   activities: Array<{
     activity_definition_name: string;
-    occured_at: Date;
+    occured_at: Date | string;
   }>;
   activityDefinitions: Array<{
     name: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import { LeaderboardEntry } from "@/lib/db";
+import { LeaderboardEntry } from "@/lib/data/types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -373,7 +373,7 @@ export default function LeaderboardView({
 
                           {/* Activity Breakdown */}
                           <div className="flex flex-wrap gap-3">
-                            {Object.entries(entry.activity_breakdown)
+                            {entry.activity_breakdown && Object.entries(entry.activity_breakdown)
                               .sort((a, b) => b[1].points - a[1].points)
                               .map(([activityName, data]) => (
                                 <div

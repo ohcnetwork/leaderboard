@@ -74,16 +74,16 @@ leaderboard:
     email:
       icon: mail
 
-  scrapers: ## optional - scraper configurations
+  plugins: ## optional - plugin configurations
     github:
-      name: GitHub Scraper ## optional
-      source: https://raw.githubusercontent.com/ohcnetwork/leaderboard-github-scraper/refs/heads/main/manifest.js ## required - URL to manifest.js file (curl compatible, including file:// URLs)
-      config: ## optional - scraper-specific configuration
+      name: GitHub Plugin ## optional
+      source: https://raw.githubusercontent.com/ohcnetwork/leaderboard-github-plugin/refs/heads/main/manifest.js ## required - URL to manifest.js file (curl compatible, including file:// URLs)
+      config: ## optional - plugin-specific configuration
         githubToken: ${{ env.GITHUB_TOKEN }}
         githubOrg: ohcnetwork
     slack:
-      name: Slack Scraper
-      source: https://raw.githubusercontent.com/ohcnetwork/leaderboard-slack-scraper/refs/heads/main/manifest.js ## URL to manifest.js file
+      name: Slack Plugin
+      source: https://raw.githubusercontent.com/ohcnetwork/leaderboard-slack-plugin/refs/heads/main/manifest.js ## URL to manifest.js file
       config:
         slackApiToken: ${{ env.SLACK_API_TOKEN }}
         slackChannel: ${{ env.SLACK_EOD_CHANNEL }}

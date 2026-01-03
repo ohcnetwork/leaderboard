@@ -1,5 +1,6 @@
-import { getAllContributorsWithAvatars } from "@/lib/db";
-import { getConfig, getHiddenRoles } from "@leaderboard/core";
+import { getAllContributorsWithAvatars } from "@/lib/data/loader";
+import { getConfig } from "@/lib/config/get-config";
+import { getHiddenRoles } from "@/lib/config/helpers";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -54,7 +55,7 @@ export default async function PeoplePage() {
               >
                 <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-primary/50 hover:scale-105">
                   <AvatarImage
-                    src={contributor.avatar_url}
+                    src={contributor.avatar_url || undefined}
                     alt={contributor.name || contributor.username}
                     className="object-cover"
                   />

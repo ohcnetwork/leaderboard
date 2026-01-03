@@ -1,0 +1,44 @@
+{
+  "name": "@leaderboard/db",
+  "version": "0.1.0",
+  "description": "Database schema, queries, and utilities for the leaderboard system",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "leaderboard-seed": "./dist/seed.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "seed": "tsx src/seed.ts"
+  },
+  "keywords": [
+    "leaderboard",
+    "database",
+    "libsql"
+  ],
+  "author": "Open Healthcare Network",
+  "license": "MIT",
+  "dependencies": {
+    "@leaderboard/plugin-api": "workspace:*",
+    "@libsql/client": "^0.14.0",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.25",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
+

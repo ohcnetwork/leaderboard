@@ -4,19 +4,29 @@
 
 export function generateTsConfig(): string {
   return `{
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "composite": true,
-    "outDir": "dist",
-    "rootDir": "src"
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "incremental": true,
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "noUncheckedIndexedAccess": true,
+    "strictNullChecks": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"],
-  "references": [
-    { "path": "../plugin-api" },
-    { "path": "../db" }
-  ]
-}
-`;
+  "include": ["**/*.ts", "**/*.mts"],
+  "exclude": ["node_modules"]
 }
 
+`;
+}

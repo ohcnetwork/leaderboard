@@ -14,7 +14,7 @@
     "data:export": "cd packages/plugin-runner && tsx src/index.ts --data-dir \"$PWD/../../data\" --skip-import --skip-scrape",
     "db:seed": "pnpm --filter @leaderboard/api seed",
     "theme:copy": "tsx scripts/copy-theme.ts",
-    "build:packages": "pnpm --filter @leaderboard/api build && pnpm --filter @leaderboard/plugin-runner build && pnpm --filter @leaderboard/plugin-dummy build",
+    "build:packages": "pnpm --filter @leaderboard/api build && pnpm --filter @leaderboard/plugin-runner build && pnpm --filter @leaderboard/plugin-dummy build && pnpm --filter create-leaderboard-plugin build",
     "build:data": "pnpm data:scrape",
     "build:web": "pnpm theme:copy && pnpm --filter leaderboard-web build",
     "build": "pnpm build:packages && pnpm build:data && pnpm build:web",

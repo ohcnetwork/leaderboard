@@ -3,8 +3,8 @@
  * Reads from the persisted database file during build time
  */
 
-import { createDatabase, getDatabaseUrl } from "@leaderboard/db";
-import type { Database } from "@leaderboard/plugin-api";
+import { createDatabase, getDatabaseUrl } from "@leaderboard/api";
+import type { Database } from "@leaderboard/api";
 
 let cachedDb: Database | null = null;
 

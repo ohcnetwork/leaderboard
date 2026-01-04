@@ -4,8 +4,8 @@
 
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { faker } from "@faker-js/faker";
-import { createDatabase, initializeSchema } from "@leaderboard/db";
-import type { Database } from "@leaderboard/plugin-api";
+import { createDatabase, initializeSchema } from "@leaderboard/api";
+import type { Database } from "@leaderboard/api";
 import { generateContributor, generateContributors } from "../contributors.js";
 import {
   generateActivity,

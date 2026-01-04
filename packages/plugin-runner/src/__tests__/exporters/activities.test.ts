@@ -5,12 +5,12 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { readFile, mkdir, rm } from "fs/promises";
 import { join } from "path";
-import { createDatabase } from "@leaderboard/db";
-import { initializeSchema } from "@leaderboard/db";
-import { contributorQueries, activityDefinitionQueries, activityQueries } from "@leaderboard/db";
+import { createDatabase } from "@leaderboard/api";
+import { initializeSchema } from "@leaderboard/api";
+import { contributorQueries, activityDefinitionQueries, activityQueries } from "@leaderboard/api";
 import { exportActivities } from "../../exporters/activities.js";
 import { createLogger } from "../../logger.js";
-import type { Database } from "@leaderboard/plugin-api";
+import type { Database } from "@leaderboard/api";
 
 const TEST_DATA_DIR = "./test-data-export-activities";
 const logger = createLogger(false);

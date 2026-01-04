@@ -3,8 +3,8 @@
  * Fetches and validates plugin manifests from URLs
  */
 
-import type { Plugin, PluginManifest } from "@leaderboard/plugin-api";
-import type { Logger } from "@leaderboard/plugin-api";
+import type { Plugin, PluginManifest } from "@leaderboard/api";
+import type { Logger } from "@leaderboard/api";
 import { readFile } from "fs/promises";
 import { pathToFileURL } from "url";
 

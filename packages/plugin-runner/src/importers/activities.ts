@@ -4,9 +4,9 @@
 
 import { readdir, readFile } from "fs/promises";
 import { join } from "path";
-import type { Database, Activity } from "@leaderboard/plugin-api";
-import { activityQueries } from "@leaderboard/db";
-import type { Logger } from "@leaderboard/plugin-api";
+import type { Database, Activity } from "@leaderboard/api";
+import { activityQueries } from "@leaderboard/api";
+import type { Logger } from "@leaderboard/api";
 
 /**
  * Import all activities from JSONL files

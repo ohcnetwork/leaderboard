@@ -2,7 +2,7 @@
  * Database schema definitions and initialization
  */
 
-import type { Database } from "@leaderboard/plugin-api";
+import type { Database } from "./types.js";
 
 /**
  * SQL schema for the leaderboard database

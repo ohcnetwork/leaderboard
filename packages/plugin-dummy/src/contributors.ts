@@ -3,7 +3,7 @@
  */
 
 import { faker } from "@faker-js/faker";
-import type { Contributor } from "@leaderboard/db";
+import type { Contributor } from "@leaderboard/api";
 
 const ROLES = ["maintainer", "contributor", "intern", "bot", null] as const;
 const ROLE_WEIGHTS = [0.1, 0.7, 0.15, 0.03, 0.02]; // Probabilities for each role

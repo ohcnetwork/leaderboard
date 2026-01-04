@@ -3,7 +3,7 @@
  */
 
 import { faker } from "@faker-js/faker";
-import type { Activity } from "@leaderboard/db";
+import type { Activity } from "@leaderboard/api";
 
 /**
  * Activity type definitions with GitHub-like attributes

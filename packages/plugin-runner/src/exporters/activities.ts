@@ -4,9 +4,9 @@
 
 import { mkdir, writeFile } from "fs/promises";
 import { join } from "path";
-import type { Database } from "@leaderboard/plugin-api";
-import { activityQueries, contributorQueries } from "@leaderboard/db";
-import type { Logger } from "@leaderboard/plugin-api";
+import type { Database } from "@leaderboard/api";
+import { activityQueries, contributorQueries } from "@leaderboard/api";
+import type { Logger } from "@leaderboard/api";
 
 /**
  * Export all activities to sharded JSONL files (one per contributor)

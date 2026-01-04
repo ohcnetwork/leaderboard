@@ -5,9 +5,9 @@
 import { readdir, readFile } from "fs/promises";
 import { join } from "path";
 import matter from "gray-matter";
-import type { Database, Contributor } from "@leaderboard/plugin-api";
-import { contributorQueries } from "@leaderboard/db";
-import type { Logger } from "@leaderboard/plugin-api";
+import type { Database, Contributor } from "@leaderboard/api";
+import { contributorQueries } from "@leaderboard/api";
+import type { Logger } from "@leaderboard/api";
 
 /**
  * Import all contributors from markdown files

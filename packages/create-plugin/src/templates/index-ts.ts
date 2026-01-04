@@ -9,7 +9,7 @@ export function generateIndexTs(options: PluginOptions): string {
  * ${options.description}
  */
 
-import type { Plugin, PluginContext } from "@leaderboard/plugin-api";
+import type { Plugin, PluginContext } from "@leaderboard/api";
 
 const plugin: Plugin = {
   name: "${options.packageName}",

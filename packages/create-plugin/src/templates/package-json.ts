@@ -20,8 +20,7 @@ export function generatePackageJson(options: PluginOptions): string {
     },
     keywords: ["leaderboard", "plugin"],
     dependencies: {
-      "@leaderboard/plugin-api": "workspace:*",
-      "@leaderboard/db": "workspace:*",
+      "@leaderboard/api": "workspace:*",
     },
     devDependencies: {
       "@types/node": "^20.19.27",

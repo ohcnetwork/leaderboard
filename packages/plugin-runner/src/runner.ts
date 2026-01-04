@@ -2,7 +2,7 @@
  * Plugin execution orchestrator
  */
 
-import type { Plugin, PluginContext, Database, Logger } from "@leaderboard/plugin-api";
+import type { Plugin, PluginContext, Database, Logger } from "@leaderboard/api";
 import type { Config } from "./config.js";
 import { loadPlugin } from "./loader.js";
 

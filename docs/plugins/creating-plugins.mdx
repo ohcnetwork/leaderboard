@@ -26,7 +26,7 @@ npm init -y
 Install the plugin API types:
 
 ```bash
-npm install --save-dev @leaderboard/plugin-api
+npm install --save-dev @leaderboard/api
 ```
 
 ## Step 2: Create the Plugin File
@@ -124,7 +124,7 @@ export default {
 For better developer experience, create `plugin.ts`:
 
 ```typescript
-import type { Plugin, PluginContext } from '@leaderboard/plugin-api';
+import type { Plugin, PluginContext } from '@leaderboard/api';
 
 const plugin: Plugin = {
   name: 'custom-plugin',

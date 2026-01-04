@@ -2,7 +2,7 @@
  * Structured logging implementation
  */
 
-import type { Logger } from "@leaderboard/plugin-api";
+import type { Logger } from "@leaderboard/api";
 
 enum LogLevel {
   DEBUG = 0,

@@ -7,7 +7,7 @@ import type {
   Contributor,
   ActivityDefinition,
   Activity,
-} from "@leaderboard/plugin-api";
+} from "./types.js";
 
 /**
  * Contributor queries
@@ -337,3 +337,4 @@ export const activityQueries = {
     }>;
   },
 };
+

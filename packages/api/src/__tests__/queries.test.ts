@@ -6,7 +6,7 @@ import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { createDatabase } from "../client.js";
 import { initializeSchema, clearAllData } from "../schema.js";
 import { contributorQueries, activityDefinitionQueries, activityQueries } from "../queries.js";
-import type { Database, Contributor, ActivityDefinition, Activity } from "@leaderboard/plugin-api";
+import type { Database, Contributor, ActivityDefinition, Activity } from "../types.js";
 
 describe("Database Queries", () => {
   let db: Database;

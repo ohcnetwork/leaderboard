@@ -65,9 +65,9 @@ graph TB
 plugin-runner --data-dir=/path/to/data
 ```
 
-### 2. Database Layer (`@leaderboard/db`)
+### 2. API Layer (`@leaderboard/api`)
 
-**Purpose**: Efficient data storage and querying
+**Purpose**: Unified database utilities and plugin type definitions
 
 **Technology**: LibSQL (SQLite-compatible)
 
@@ -81,18 +81,16 @@ plugin-runner --data-dir=/path/to/data
 - Persists `activity_definition` table across runs
 - Temporary storage for `contributor` and `activity` tables
 
-### 3. Plugin API (`@leaderboard/plugin-api`)
-
-**Purpose**: Stable interface for plugin developers
-
 **Provides**:
+- Database abstraction layer
+- Query builders and helpers
 - TypeScript type definitions
 - Plugin interface specification
 - Context object structure
 
 **Example Plugin**:
 ```typescript
-import type { Plugin } from '@leaderboard/plugin-api';
+import type { Plugin } from '@leaderboard/api';
 
 export default {
   name: 'my-plugin',

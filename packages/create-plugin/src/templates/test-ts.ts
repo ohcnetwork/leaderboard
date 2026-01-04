@@ -10,8 +10,8 @@ export function generateTestTs(options: PluginOptions): string {
  */
 
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { createDatabase, initializeSchema } from "@leaderboard/db";
-import type { Database } from "@leaderboard/plugin-api";
+import { createDatabase, initializeSchema } from "@leaderboard/api";
+import type { Database } from "@leaderboard/api";
 import plugin from "../index.js";
 
 describe("${options.pluginName.charAt(0).toUpperCase() + options.pluginName.slice(1)} Plugin", () => {

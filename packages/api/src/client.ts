@@ -8,7 +8,7 @@ import type {
   ExecuteResult,
   BatchStatement,
   BatchResult,
-} from "@leaderboard/plugin-api";
+} from "./types.js";
 import type { Client, ResultSet } from "@libsql/client";
 
 /**
@@ -93,3 +93,4 @@ export function getDatabaseUrl(dataDir?: string): string {
   // Fallback to in-memory
   return ":memory:";
 }
+

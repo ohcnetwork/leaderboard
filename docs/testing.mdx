@@ -32,7 +32,7 @@ The project uses **Vitest** for all testing:
 pnpm test
 
 # Run tests in specific package
-pnpm --filter @leaderboard/db test
+pnpm --filter @leaderboard/api test
 
 # Watch mode
 pnpm test:watch
@@ -84,8 +84,8 @@ packages/plugin-runner/
 
 ```typescript
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { createDatabase, initializeSchema } from '@leaderboard/db';
-import type { Database } from '@leaderboard/plugin-api';
+import { createDatabase, initializeSchema } from '@leaderboard/api';
+import type { Database } from '@leaderboard/api';
 
 describe('Database Tests', () => {
   let db: Database;
@@ -110,7 +110,7 @@ describe('Database Tests', () => {
 Test database query helpers:
 
 ```typescript
-import { contributorQueries } from '@leaderboard/db';
+import { contributorQueries } from '@leaderboard/api';
 
 it('should get contributor by username', async () => {
   await contributorQueries.upsert(db, {

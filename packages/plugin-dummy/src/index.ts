@@ -7,8 +7,8 @@
  */
 
 import { faker } from "@faker-js/faker";
-import type { Plugin, PluginContext } from "@leaderboard/plugin-api";
-import { activityDefinitionQueries, contributorQueries, activityQueries } from "@leaderboard/db";
+import type { Plugin, PluginContext } from "@leaderboard/api";
+import { activityDefinitionQueries, contributorQueries, activityQueries } from "@leaderboard/api";
 import { generateContributors } from "./contributors.js";
 import { generateActivities, ACTIVITY_TYPES } from "./activities.js";
 import { mergeConfig, type DummyPluginConfig } from "./config.js";

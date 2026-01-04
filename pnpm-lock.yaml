@@ -27,12 +27,9 @@ importers:
 
   apps/leaderboard-web:
     dependencies:
-      '@leaderboard/db':
+      '@leaderboard/api':
         specifier: workspace:*
-        version: link:../../packages/db
-      '@leaderboard/plugin-api':
-        specifier: workspace:*
-        version: link:../../packages/plugin-api
+        version: link:../../packages/api
       '@libsql/client':
         specifier: ^0.14.0
         version: 0.14.0
@@ -163,27 +160,8 @@ importers:
         specifier: ^4.1.12
         version: 4.3.4
 
-  packages/create-plugin:
+  packages/api:
     dependencies:
-      prompts:
-        specifier: ^2.4.2
-        version: 2.4.2
-    devDependencies:
-      '@types/node':
-        specifier: ^20.19.27
-        version: 20.19.27
-      '@types/prompts':
-        specifier: ^2.4.9
-        version: 2.4.9
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-
-  packages/db:
-    dependencies:
-      '@leaderboard/plugin-api':
-        specifier: workspace:*
-        version: link:../plugin-api
       '@libsql/client':
         specifier: ^0.14.0
         version: 0.14.0
@@ -201,10 +179,20 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/plugin-api:
+  packages/create-plugin:
+    dependencies:
+      prompts:
+        specifier: ^2.4.2
+        version: 2.4.2
     devDependencies:
+      '@types/node':
+        specifier: ^20.19.27
+        version: 20.19.27
+      '@types/prompts':
+        specifier: ^2.4.9
+        version: 2.4.9
       typescript:
-        specifier: ^5.9.3
+        specifier: ^5.7.3
         version: 5.9.3
 
   packages/plugin-dummy:
@@ -212,12 +200,9 @@ importers:
       '@faker-js/faker':
         specifier: ^9.3.0
         version: 9.9.0
-      '@leaderboard/db':
+      '@leaderboard/api':
         specifier: workspace:*
-        version: link:../db
-      '@leaderboard/plugin-api':
-        specifier: workspace:*
-        version: link:../plugin-api
+        version: link:../api
     devDependencies:
       '@types/node':
         specifier: ^20.19.27
@@ -231,12 +216,9 @@ importers:
 
   packages/plugin-runner:
     dependencies:
-      '@leaderboard/db':
+      '@leaderboard/api':
         specifier: workspace:*
-        version: link:../db
-      '@leaderboard/plugin-api':
-        specifier: workspace:*
-        version: link:../plugin-api
+        version: link:../api
       '@libsql/client':
         specifier: ^0.14.0
         version: 0.14.0

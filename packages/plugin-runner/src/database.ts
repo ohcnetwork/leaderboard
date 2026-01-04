@@ -2,8 +2,8 @@
  * Database initialization for plugin runner
  */
 
-import { createDatabase, getDatabaseUrl, initializeSchema } from "@leaderboard/db";
-import type { Database } from "@leaderboard/plugin-api";
+import { createDatabase, getDatabaseUrl, initializeSchema } from "@leaderboard/api";
+import type { Database } from "@leaderboard/api";
 
 /**
  * Initialize database with schema

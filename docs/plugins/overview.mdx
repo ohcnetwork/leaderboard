@@ -15,6 +15,16 @@ A plugin is a JavaScript module that:
 2. Fetches data from an external source (API, database, etc.)
 3. Stores activities in the leaderboard database
 
+## Quick Start
+
+Create a new plugin using the CLI tool:
+
+```bash
+pnpm create-leaderboard-plugin my-plugin
+```
+
+This generates a complete plugin project with TypeScript, tests, and documentation.
+
 ## Plugin Lifecycle
 
 ```mermaid
@@ -78,7 +88,25 @@ interface PluginContext {
 
 ### Database (`ctx.db`)
 
-Execute SQL queries:
+Use query helpers for type-safe database operations:
+
+```typescript
+import { activityQueries } from '@leaderboard/api';
+
+await activityQueries.upsert(ctx.db, {
+  slug: 'activity-123',
+  contributor: 'username',
+  activity_definition: 'pr_merged',
+  title: 'Fixed bug',
+  occured_at: new Date().toISOString(),
+  link: 'https://github.com/...',
+  text: null,
+  points: null,
+  meta: null,
+});
+```
+
+Or execute raw SQL if needed:
 
 ```typescript
 await ctx.db.execute('INSERT INTO activity (...) VALUES (...)', [params]);
@@ -155,26 +183,47 @@ export default {
 ### Activity Definition Plugin
 
 ```javascript
+import {
+  activityDefinitionQueries,
+  activityQueries,
+  contributorQueries,
+} from '@leaderboard/api';
+
 export default {
   name: 'github-activities',
   version: '1.0.0',
   
   async setup(ctx) {
-    // Define activity types
-    await ctx.db.execute(`
-      INSERT OR IGNORE INTO activity_definition 
-      (slug, name, description, points, icon)
-      VALUES 
-      ('pr_opened', 'PR Opened', 'Opened a pull request', 5, 'git-pull-request'),
-      ('pr_merged', 'PR Merged', 'Pull request merged', 10, 'git-merge'),
-      ('issue_opened', 'Issue Opened', 'Opened an issue', 2, 'circle-dot')
-    `);
+    // Define activity types using query helpers
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'pr_opened',
+      name: 'PR Opened',
+      description: 'Opened a pull request',
+      points: 5,
+      icon: 'git-pull-request',
+    });
+    
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'pr_merged',
+      name: 'PR Merged',
+      description: 'Pull request merged',
+      points: 10,
+      icon: 'git-merge',
+    });
+    
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'issue_opened',
+      name: 'Issue Opened',
+      description: 'Opened an issue',
+      points: 2,
+      icon: 'circle-dot',
+    });
   },
   
   async scrape(ctx) {
     const { token, org } = ctx.config;
     
-    // Fetch pull requests
+    // Fetch repositories
     const response = await fetch(
       `https://api.github.com/orgs/${org}/repos`,
       {
@@ -185,21 +234,33 @@ export default {
     const repos = await response.json();
     ctx.logger.info(`Found ${repos.length} repositories`);
     
-    // Store activities (simplified)
+    // Store activities using query helpers
     for (const repo of repos) {
-      await ctx.db.execute(`
-        INSERT OR IGNORE INTO activity
-        (slug, contributor, activity_definition, title, occured_at, link, points)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-      `, [
-        `pr-${repo.id}`,
-        repo.owner.login,
-        'pr_merged',
-        repo.name,
-        new Date().toISOString(),
-        repo.html_url,
-        10,
-      ]);
+      // Ensure contributor exists
+      await contributorQueries.upsert(ctx.db, {
+        username: repo.owner.login,
+        name: repo.owner.name || null,
+        role: null,
+        title: null,
+        avatar_url: repo.owner.avatar_url,
+        bio: null,
+        social_profiles: null,
+        joining_date: null,
+        meta: null,
+      });
+      
+      // Insert activity
+      await activityQueries.upsert(ctx.db, {
+        slug: `pr-${repo.id}`,
+        contributor: repo.owner.login,
+        activity_definition: 'pr_merged',
+        title: repo.name,
+        occured_at: new Date().toISOString(),
+        link: repo.html_url,
+        text: null,
+        points: null, // Uses default from activity_definition
+        meta: null,
+      });
     }
   },
 };
@@ -207,11 +268,17 @@ export default {
 
 ## Plugin Best Practices
 
-### 1. Use INSERT OR IGNORE
+### 1. Use Query Helpers
 
-Prevent duplicate activities:
+Use the provided query helpers for type safety and convenience:
 
 ```typescript
+import { activityQueries, activityDefinitionQueries, contributorQueries } from '@leaderboard/api';
+
+// Insert or update (prevents duplicates automatically)
+await activityQueries.upsert(ctx.db, activity);
+
+// Or use raw SQL if needed
 await ctx.db.execute(`
   INSERT OR IGNORE INTO activity (slug, ...) VALUES (?, ...)
 `, [uniqueSlug, ...]);

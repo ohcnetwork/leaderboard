@@ -7,7 +7,7 @@
 
 import { readFile } from "fs/promises";
 import { join, resolve } from "path";
-import { existsSync, mkdirSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, writeFileSync, readdirSync } from "fs";
 import prompts from "prompts";
 import { generatePackageJson } from "./templates/package-json.js";
 import { generateTsConfig } from "./templates/tsconfig.js";
@@ -166,34 +166,55 @@ function generateFiles(pluginDir: string, options: PluginOptions): void {
 async function main(): Promise<void> {
   console.log("Create Leaderboard Plugin\n");
 
+  // Show usage if help flag is provided
+  if (process.argv.includes("--help") || process.argv.includes("-h")) {
+    console.log("Usage: pnpm create-leaderboard-plugin [target-directory]");
+    console.log("\nArguments:");
+    console.log("  target-directory  Directory where the plugin will be created (default: current directory)");
+    console.log("\nExamples:");
+    console.log("  pnpm create-leaderboard-plugin .");
+    console.log("  pnpm create-leaderboard-plugin ../../plugins/slack");
+    console.log("  pnpm create-leaderboard-plugin my-plugin");
+    process.exit(0);
+  }
+
+  // Get target directory from command line args (default to current directory)
+  const targetArg = process.argv[2] || ".";
+  const targetDir = resolve(process.cwd(), targetArg);
+
+  // Check if target directory exists and is not empty
+  if (existsSync(targetDir)) {
+    const files = readdirSync(targetDir);
+    if (files.length > 0) {
+      console.error(`Error: Directory "${targetArg}" is not empty.`);
+      console.error("Please specify an empty directory or a new directory path.");
+      process.exit(1);
+    }
+  }
+
   // Prompt for information
   const options = await promptUser();
 
-  // Determine plugin directory (current working directory)
-  const pluginDir = resolve(process.cwd(), options.pluginName);
-
-  // Check if directory already exists
-  if (existsSync(pluginDir)) {
-    console.error(`Error: Directory "${options.pluginName}" already exists.`);
-    process.exit(1);
-  }
-
   try {
     // Create directory structure
-    console.log(`Creating plugin directory: ${pluginDir}`);
-    createDirectoryStructure(pluginDir);
+    console.log(`Creating plugin in: ${targetDir}`);
+    createDirectoryStructure(targetDir);
 
     // Generate files
     console.log("Generating plugin files...");
-    generateFiles(pluginDir, options);
+    generateFiles(targetDir, options);
 
     console.log(`\n✓ Plugin "${options.packageName}" created successfully!`);
     console.log(`\nNext steps:`);
-    console.log(`  1. cd ${options.pluginName}`);
-    console.log(`  2. pnpm install`);
-    console.log(`  3. Implement your plugin logic in src/index.ts`);
-    console.log(`  4. pnpm build`);
-    console.log(`  5. Add the plugin to your config.yaml`);
+    if (targetArg !== ".") {
+      console.log(`  1. cd ${targetArg}`);
+      console.log(`  2. pnpm install`);
+    } else {
+      console.log(`  1. pnpm install`);
+    }
+    console.log(`  ${targetArg !== "." ? "3" : "2"}. Implement your plugin logic in src/index.ts`);
+    console.log(`  ${targetArg !== "." ? "4" : "3"}. pnpm build`);
+    console.log(`  ${targetArg !== "." ? "5" : "4"}. Add the plugin to your config.yaml`);
   } catch (error) {
     console.error("Error creating plugin:", error);
     process.exit(1);

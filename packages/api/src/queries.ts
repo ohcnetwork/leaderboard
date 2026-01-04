@@ -7,7 +7,7 @@ import type {
   Contributor,
   ActivityDefinition,
   Activity,
-} from "./types.js";
+} from "./types";
 
 /**
  * Contributor queries
@@ -337,4 +337,3 @@ export const activityQueries = {
     }>;
   },
 };
-

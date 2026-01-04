@@ -15,7 +15,37 @@ This guide walks you through creating a custom plugin for the Leaderboard system
 
 ## Step 1: Set Up Your Project
 
-Create a new directory for your plugin:
+### Option 1: Use the CLI Tool (Recommended)
+
+The fastest way to create a new plugin is using the `create-leaderboard-plugin` CLI tool:
+
+```bash
+# Create plugin in current directory
+pnpm create-leaderboard-plugin .
+
+# Create plugin in a new directory
+pnpm create-leaderboard-plugin my-plugin
+
+# Create plugin in a relative path
+pnpm create-leaderboard-plugin ../../plugins/slack
+```
+
+The CLI will prompt you for:
+- Plugin name (e.g., 'github', 'slack')
+- Plugin description
+- Author name
+
+It automatically generates:
+- `package.json` with correct dependencies
+- `tsconfig.json` with proper configuration
+- `vitest.config.ts` for testing
+- `src/index.ts` with plugin template
+- `src/__tests__/plugin.test.ts` with test examples
+- `README.md` with documentation
+
+### Option 2: Manual Setup
+
+If you prefer to set up manually:
 
 ```bash
 mkdir leaderboard-custom-plugin
@@ -40,6 +70,12 @@ Create `plugin.js`:
  * Fetches data from [Your Data Source] and tracks activities.
  */
 
+import {
+  activityDefinitionQueries,
+  activityQueries,
+  contributorQueries,
+} from '@leaderboard/api';
+
 export default {
   name: 'custom-plugin',
   version: '1.0.0',
@@ -50,17 +86,22 @@ export default {
   async setup(ctx) {
     ctx.logger.info('Setting up custom plugin');
     
-    // Define your activity types
-    await ctx.db.execute(`
-      INSERT OR IGNORE INTO activity_definition 
-      (slug, name, description, points, icon)
-      VALUES 
-      (?, ?, ?, ?, ?),
-      (?, ?, ?, ?, ?)
-    `, [
-      'custom_event_1', 'Event Type 1', 'Description of event 1', 10, 'star',
-      'custom_event_2', 'Event Type 2', 'Description of event 2', 5, 'heart',
-    ]);
+    // Define your activity types using the query helpers
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'custom_event_1',
+      name: 'Event Type 1',
+      description: 'Description of event 1',
+      points: 10,
+      icon: 'star',
+    });
+    
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'custom_event_2',
+      name: 'Event Type 2',
+      description: 'Description of event 2',
+      points: 5,
+      icon: 'heart',
+    });
     
     ctx.logger.info('Activity definitions created');
   },
@@ -95,20 +136,31 @@ export default {
     // Process and store activities
     for (const event of events) {
       try {
-        await ctx.db.execute(`
-          INSERT OR IGNORE INTO activity 
-          (slug, contributor, activity_definition, title, occured_at, link, points, meta)
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        `, [
-          `custom-${event.id}`,                    // Unique slug
-          event.user.username,                      // Contributor username
-          event.type,                               // Activity definition slug
-          event.title,                              // Activity title
-          event.timestamp,                          // ISO 8601 timestamp
-          event.url,                                // Link to event
-          event.points || 10,                       // Points awarded
-          JSON.stringify(event.metadata || null),   // Additional metadata
-        ]);
+        // Ensure contributor exists
+        await contributorQueries.upsert(ctx.db, {
+          username: event.user.username,
+          name: event.user.name,
+          role: null,
+          title: null,
+          avatar_url: event.user.avatar_url,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+        
+        // Insert or update activity
+        await activityQueries.upsert(ctx.db, {
+          slug: `custom-${event.id}`,
+          contributor: event.user.username,
+          activity_definition: event.type,
+          title: event.title,
+          occured_at: new Date(event.timestamp).toISOString(),
+          link: event.url,
+          text: event.description || null,
+          points: null, // Uses default from activity_definition
+          meta: event.metadata || null,
+        });
       } catch (error) {
         ctx.logger.warn(`Failed to insert activity ${event.id}`, { error: error.message });
       }
@@ -124,18 +176,83 @@ export default {
 For better developer experience, create `plugin.ts`:
 
 ```typescript
-import type { Plugin, PluginContext } from '@leaderboard/api';
+import {
+  activityDefinitionQueries,
+  activityQueries,
+  contributorQueries,
+  type Plugin,
+  type PluginContext,
+} from '@leaderboard/api';
 
 const plugin: Plugin = {
   name: 'custom-plugin',
   version: '1.0.0',
   
   async setup(ctx: PluginContext): Promise<void> {
-    // Setup implementation
+    ctx.logger.info('Setting up custom plugin');
+    
+    // Define your activity types using the query helpers
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'custom_event_1',
+      name: 'Event Type 1',
+      description: 'Description of event 1',
+      points: 10,
+      icon: 'star',
+    });
   },
   
   async scrape(ctx: PluginContext): Promise<void> {
-    // Scrape implementation
+    ctx.logger.info('Starting scrape');
+    
+    // Get configuration with type safety
+    const { apiKey, apiUrl } = ctx.config as {
+      apiKey: string;
+      apiUrl?: string;
+    };
+    
+    // Fetch and process data
+    const response = await fetch(apiUrl || 'https://api.example.com/events', {
+      headers: { 'Authorization': `Bearer ${apiKey}` },
+    });
+    
+    const events = await response.json() as Array<{
+      id: string;
+      user: { username: string; name: string; avatar_url: string };
+      type: string;
+      title: string;
+      timestamp: string;
+      url: string;
+      description?: string;
+      metadata?: Record<string, unknown>;
+    }>;
+    
+    for (const event of events) {
+      // Ensure contributor exists
+      await contributorQueries.upsert(ctx.db, {
+        username: event.user.username,
+        name: event.user.name,
+        role: null,
+        title: null,
+        avatar_url: event.user.avatar_url,
+        bio: null,
+        social_profiles: null,
+        joining_date: null,
+        meta: null,
+      });
+      
+      // Insert activity
+      await activityQueries.upsert(ctx.db, {
+        slug: `custom-${event.id}`,
+        contributor: event.user.username,
+        activity_definition: event.type,
+        title: event.title,
+        occured_at: new Date(event.timestamp).toISOString(),
+        link: event.url,
+        text: event.description || null,
+        points: null,
+        meta: event.metadata || null,
+      });
+    }
   },
 };
 
@@ -147,6 +264,8 @@ Build to JavaScript:
 ```bash
 tsc plugin.ts --module esnext --target es2022
 ```
+
+> **Note:** If you used `pnpm create-leaderboard-plugin`, TypeScript is already configured and you can simply run `pnpm build`.
 
 ## Step 4: Test Locally
 
@@ -213,6 +332,45 @@ plugin-runner --data-dir=./data --debug
        source: https://your-domain.com/plugins/custom.js
    ```
 
+## Working with Query Helpers
+
+The `@leaderboard/api` package provides query helpers to make database operations easier:
+
+### Available Query Helpers
+
+```typescript
+import {
+  contributorQueries,
+  activityDefinitionQueries,
+  activityQueries,
+} from '@leaderboard/api';
+```
+
+**Contributor Queries:**
+- `contributorQueries.upsert(db, contributor)` - Insert or update a contributor
+- `contributorQueries.getByUsername(db, username)` - Get contributor by username
+- `contributorQueries.getAll(db)` - Get all contributors
+- `contributorQueries.getByRole(db, role)` - Get contributors by role
+- `contributorQueries.count(db)` - Count total contributors
+
+**Activity Definition Queries:**
+- `activityDefinitionQueries.insertOrIgnore(db, definition)` - Insert activity type (used in setup)
+- `activityDefinitionQueries.getBySlug(db, slug)` - Get activity definition
+- `activityDefinitionQueries.getAll(db)` - Get all activity definitions
+
+**Activity Queries:**
+- `activityQueries.upsert(db, activity)` - Insert or update an activity
+- `activityQueries.getByContributor(db, username)` - Get activities by contributor
+- `activityQueries.getByDateRange(db, start, end)` - Get activities in date range
+- `activityQueries.getLeaderboard(db, limit)` - Get leaderboard rankings
+
+### Benefits of Query Helpers
+
+1. **Type Safety**: Full TypeScript support with autocomplete
+2. **Consistency**: Standard way to interact with the database
+3. **Less Boilerplate**: No need to write SQL queries manually
+4. **JSON Handling**: Automatically handles JSON serialization for meta fields
+
 ## Advanced Patterns
 
 ### Pagination
@@ -228,9 +386,19 @@ async scrape(ctx) {
     const response = await fetch(`${apiUrl}?page=${page}`);
     const data = await response.json();
     
-    // Process data
+    // Process data using query helpers
     for (const item of data.items) {
-      await storeActivity(ctx, item);
+      await activityQueries.upsert(ctx.db, {
+        slug: `item-${item.id}`,
+        contributor: item.username,
+        activity_definition: 'custom_event_1',
+        title: item.title,
+        occured_at: item.timestamp,
+        link: item.url,
+        text: null,
+        points: null,
+        meta: null,
+      });
     }
     
     hasMore = data.hasMore;
@@ -260,15 +428,51 @@ async scrape(ctx) {
 
 ### Batch Inserts
 
-For better performance with many records:
+For better performance with many records, use individual upserts within a loop or batch raw SQL if needed:
 
 ```javascript
 async scrape(ctx) {
   const activities = await fetchActivities(ctx);
   
+  // Option 1: Using query helpers (recommended)
+  for (const activity of activities) {
+    await activityQueries.upsert(ctx.db, {
+      slug: activity.slug,
+      contributor: activity.contributor,
+      activity_definition: activity.type,
+      title: activity.title,
+      occured_at: activity.timestamp,
+      link: activity.url,
+      text: null,
+      points: null,
+      meta: null,
+    });
+  }
+  
+  // Option 2: Raw batch for maximum performance
   const statements = activities.map(activity => ({
-    sql: `INSERT OR IGNORE INTO activity (...) VALUES (...)`,
-    params: [/* activity fields */],
+    sql: `INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+          ON CONFLICT(slug) DO UPDATE SET
+            contributor = excluded.contributor,
+            activity_definition = excluded.activity_definition,
+            title = excluded.title,
+            occured_at = excluded.occured_at,
+            link = excluded.link,
+            text = excluded.text,
+            points = excluded.points,
+            meta = excluded.meta`,
+    params: [
+      activity.slug,
+      activity.contributor,
+      activity.type,
+      activity.title,
+      activity.timestamp,
+      activity.url,
+      null,
+      null,
+      null,
+    ],
   }));
   
   await ctx.db.batch(statements);
@@ -317,6 +521,10 @@ You can store metadata in the activity `meta` field or as a separate tracking me
 
 ## Testing Your Plugin
 
+If you used `pnpm create-leaderboard-plugin`, a test file is already generated at `src/__tests__/plugin.test.ts`.
+
+### Manual Test Script
+
 Create a test script:
 
 ```javascript
@@ -334,6 +542,9 @@ const mockContext = {
       console.log('Batch:', statements.length, 'statements');
       return statements.map(() => ({ rows: [], rowsAffected: 1 }));
     },
+    async close() {
+      // No-op for testing
+    },
   },
   config: {
     apiKey: 'test_key',
@@ -341,6 +552,9 @@ const mockContext = {
   },
   orgConfig: {
     name: 'Test Org',
+    description: 'Test Organization',
+    url: 'https://example.com',
+    logo_url: 'https://example.com/logo.png',
   },
   logger: {
     debug: console.log,
@@ -363,6 +577,14 @@ Run the test:
 
 ```bash
 node test.js
+```
+
+### Using Vitest
+
+If you used the CLI tool, you can run tests with:
+
+```bash
+pnpm test
 ```
 
 ## Publishing Your Plugin

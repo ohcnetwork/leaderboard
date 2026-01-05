@@ -2,7 +2,7 @@
  * Generate package.json template
  */
 
-import type { PluginOptions } from "../types.js";
+import type { PluginOptions } from "../types";
 
 export function generatePackageJson(options: PluginOptions): string {
   // Use JSON.stringify to safely escape strings

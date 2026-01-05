@@ -22,14 +22,23 @@ export type {
   Contributor,
   ActivityDefinition,
   Activity,
-} from "./types.js";
+  NumberAggregateValue,
+  NumberStatisticsAggregateValue,
+  StringAggregateValue,
+  AggregateValue,
+  GlobalAggregate,
+  ContributorAggregateDefinition,
+  ContributorAggregate,
+  BadgeVariant,
+  BadgeDefinition,
+  ContributorBadge,
+} from "./types";
 
 // Export database client utilities
-export * from "./client.js";
+export * from "./client";
 
 // Export schema utilities
-export * from "./schema.js";
+export * from "./schema";
 
 // Export query helpers
-export * from "./queries.js";
-
+export * from "./queries";

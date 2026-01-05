@@ -7,9 +7,13 @@ import { mkdir, writeFile, rm } from "fs/promises";
 import { join } from "path";
 import { createDatabase } from "@leaderboard/api";
 import { initializeSchema } from "@leaderboard/api";
-import { contributorQueries, activityDefinitionQueries, activityQueries } from "@leaderboard/api";
-import { importActivities } from "../../importers/activities.js";
-import { createLogger } from "../../logger.js";
+import {
+  contributorQueries,
+  activityDefinitionQueries,
+  activityQueries,
+} from "@leaderboard/api";
+import { importActivities } from "../../importers/activities";
+import { createLogger } from "../../logger";
 import type { Database } from "@leaderboard/api";
 
 const TEST_DATA_DIR = "./test-data-activities";
@@ -76,7 +80,11 @@ describe("Activity Importer", () => {
       }),
     ].join("\n");
 
-    await writeFile(join(TEST_DATA_DIR, "activities", "alice.jsonl"), activities + "\n", "utf-8");
+    await writeFile(
+      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      activities + "\n",
+      "utf-8"
+    );
 
     const count = await importActivities(db, TEST_DATA_DIR, logger);
     expect(count).toBe(2);
@@ -127,8 +135,16 @@ describe("Activity Importer", () => {
       }),
     ].join("\n");
 
-    await writeFile(join(TEST_DATA_DIR, "activities", "alice.jsonl"), aliceActivities + "\n", "utf-8");
-    await writeFile(join(TEST_DATA_DIR, "activities", "bob.jsonl"), bobActivities + "\n", "utf-8");
+    await writeFile(
+      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      aliceActivities + "\n",
+      "utf-8"
+    );
+    await writeFile(
+      join(TEST_DATA_DIR, "activities", "bob.jsonl"),
+      bobActivities + "\n",
+      "utf-8"
+    );
 
     const count = await importActivities(db, TEST_DATA_DIR, logger);
     expect(count).toBe(2);
@@ -174,10 +190,13 @@ describe("Activity Importer", () => {
       }),
     ].join("\n");
 
-    await writeFile(join(TEST_DATA_DIR, "activities", "alice.jsonl"), content + "\n", "utf-8");
+    await writeFile(
+      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      content + "\n",
+      "utf-8"
+    );
 
     const count = await importActivities(db, TEST_DATA_DIR, logger);
     expect(count).toBe(2); // Only valid lines imported
   });
 });
-

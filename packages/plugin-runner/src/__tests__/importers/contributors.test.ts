@@ -9,8 +9,8 @@ import matter from "gray-matter";
 import { createDatabase } from "@leaderboard/api";
 import { initializeSchema } from "@leaderboard/api";
 import { contributorQueries } from "@leaderboard/api";
-import { importContributors } from "../../importers/contributors.js";
-import { createLogger } from "../../logger.js";
+import { importContributors } from "../../importers/contributors";
+import { createLogger } from "../../logger";
 import type { Database } from "@leaderboard/api";
 
 const TEST_DATA_DIR = "./test-data-contributors";
@@ -43,7 +43,11 @@ describe("Contributor Importer", () => {
       joining_date: "2020-01-01",
     });
 
-    await writeFile(join(TEST_DATA_DIR, "contributors", "alice.md"), contributor, "utf-8");
+    await writeFile(
+      join(TEST_DATA_DIR, "contributors", "alice.md"),
+      contributor,
+      "utf-8"
+    );
 
     const count = await importContributors(db, TEST_DATA_DIR, logger);
     expect(count).toBe(1);
@@ -67,8 +71,16 @@ describe("Contributor Importer", () => {
       role: "intern",
     });
 
-    await writeFile(join(TEST_DATA_DIR, "contributors", "alice.md"), alice, "utf-8");
-    await writeFile(join(TEST_DATA_DIR, "contributors", "bob.md"), bob, "utf-8");
+    await writeFile(
+      join(TEST_DATA_DIR, "contributors", "alice.md"),
+      alice,
+      "utf-8"
+    );
+    await writeFile(
+      join(TEST_DATA_DIR, "contributors", "bob.md"),
+      bob,
+      "utf-8"
+    );
 
     const count = await importContributors(db, TEST_DATA_DIR, logger);
     expect(count).toBe(2);
@@ -95,11 +107,18 @@ describe("Contributor Importer", () => {
 
     const invalid = "---\nno username\n---\nBio";
 
-    await writeFile(join(TEST_DATA_DIR, "contributors", "alice.md"), valid, "utf-8");
-    await writeFile(join(TEST_DATA_DIR, "contributors", "invalid.md"), invalid, "utf-8");
+    await writeFile(
+      join(TEST_DATA_DIR, "contributors", "alice.md"),
+      valid,
+      "utf-8"
+    );
+    await writeFile(
+      join(TEST_DATA_DIR, "contributors", "invalid.md"),
+      invalid,
+      "utf-8"
+    );
 
     const count = await importContributors(db, TEST_DATA_DIR, logger);
     expect(count).toBe(1); // Only valid one imported
   });
 });
-

@@ -49,6 +49,30 @@ export const contributorQueries = {
   },
 
   /**
+   * Insert or ignore contributor (used by plugins)
+   */
+  async insertOrIgnore(db: Database, contributor: Contributor): Promise<void> {
+    await db.execute(
+      `INSERT OR IGNORE INTO contributor (
+        username, name, role, title, avatar_url, bio, social_profiles, joining_date, meta
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        contributor.username,
+        contributor.name,
+        contributor.role,
+        contributor.title,
+        contributor.avatar_url,
+        contributor.bio,
+        contributor.social_profiles
+          ? JSON.stringify(contributor.social_profiles)
+          : null,
+        contributor.joining_date,
+        contributor.meta ? JSON.stringify(contributor.meta) : null,
+      ]
+    );
+  },
+
+  /**
    * Insert or update contributor
    */
   async upsert(db: Database, contributor: Contributor): Promise<void> {

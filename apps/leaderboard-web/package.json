@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm prepare && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "icons:generate": "tsx scripts/generate-icons.ts",
+    "theme:copy": "tsx scripts/copy-theme.ts",
+    "prepare": "pnpm icons:generate && pnpm theme:copy"
   },
   "dependencies": {
     "@leaderboard/api": "workspace:*",

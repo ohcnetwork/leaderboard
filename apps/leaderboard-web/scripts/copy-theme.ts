@@ -18,16 +18,10 @@ async function fileExists(path: string): Promise<boolean> {
 
 async function main() {
   // Get data directory from env or use default
-  // If running from root, use ./data; if from apps/leaderboard-web, use ../../data
-  const defaultDataDir = process.cwd().endsWith("leaderboard-web")
-    ? "../../data"
-    : "./data";
-  const dataDir = process.env.LEADERBOARD_DATA_DIR || defaultDataDir;
-  const themePath = resolve(process.cwd(), dataDir, "theme.css");
-  const outputPath = resolve(
-    process.cwd(),
-    "apps/leaderboard-web/app/overrides.gen.css"
-  );
+  // Script is in apps/leaderboard-web/scripts, so data is at ../../../data
+  const dataDir = process.env.LEADERBOARD_DATA_DIR || "../../../data";
+  const themePath = resolve(import.meta.dirname, dataDir, "theme.css");
+  const outputPath = resolve(import.meta.dirname, "../app/overrides.gen.css");
 
   console.log("🎨 Copying theme customizations...");
   console.log(`   Data directory: ${dataDir}`);

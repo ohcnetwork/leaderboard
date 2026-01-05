@@ -19,6 +19,10 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["*.ts"],
+  "include": [
+    "*.ts",
+    "../apps/leaderboard-web/scripts/generate-icons.ts",
+    "../apps/leaderboard-web/scripts/copy-theme.ts"
+  ],
   "exclude": ["node_modules"]
 }

@@ -176,6 +176,8 @@ export default async function ContributorPage({
     getContributorAggregates(username, dbAggregatesSlugs),
   ]);
 
+  console.log("contributor", contributor);
+
   if (!contributor) {
     notFound();
   }

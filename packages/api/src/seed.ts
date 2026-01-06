@@ -6,37 +6,154 @@
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 import matter from "gray-matter";
-import type { Contributor, ActivityDefinition, Activity } from "./types.js";
+import type { Contributor, ActivityDefinition, Activity } from "./types";
 
 const FIRST_NAMES = [
-  "Alice", "Bob", "Charlie", "Diana", "Eve", "Frank", "Grace", "Henry",
-  "Iris", "Jack", "Kate", "Liam", "Maya", "Noah", "Olivia", "Peter",
-  "Quinn", "Rachel", "Sam", "Tara", "Uma", "Victor", "Wendy", "Xander",
-  "Yara", "Zane"
+  "Alice",
+  "Bob",
+  "Charlie",
+  "Diana",
+  "Eve",
+  "Frank",
+  "Grace",
+  "Henry",
+  "Iris",
+  "Jack",
+  "Kate",
+  "Liam",
+  "Maya",
+  "Noah",
+  "Olivia",
+  "Peter",
+  "Quinn",
+  "Rachel",
+  "Sam",
+  "Tara",
+  "Uma",
+  "Victor",
+  "Wendy",
+  "Xander",
+  "Yara",
+  "Zane",
 ];
 
 const LAST_NAMES = [
-  "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller",
-  "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez",
-  "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin"
+  "Smith",
+  "Johnson",
+  "Williams",
+  "Brown",
+  "Jones",
+  "Garcia",
+  "Miller",
+  "Davis",
+  "Rodriguez",
+  "Martinez",
+  "Hernandez",
+  "Lopez",
+  "Gonzalez",
+  "Wilson",
+  "Anderson",
+  "Thomas",
+  "Taylor",
+  "Moore",
+  "Jackson",
+  "Martin",
 ];
 
 const ROLES = ["core", "intern", "operations", "contributor"];
 
 const ACTIVITY_DEFS: ActivityDefinition[] = [
-  { slug: "pr_opened", name: "PR Opened", description: "Opened a pull request", points: 5, icon: "git-pull-request" },
-  { slug: "pr_merged", name: "PR Merged", description: "Pull request was merged", points: 10, icon: "git-merge" },
-  { slug: "pr_reviewed", name: "PR Reviewed", description: "Reviewed a pull request", points: 3, icon: "eye" },
-  { slug: "issue_opened", name: "Issue Opened", description: "Opened an issue", points: 2, icon: "circle-dot" },
-  { slug: "issue_closed", name: "Issue Closed", description: "Closed an issue", points: 3, icon: "check-circle" },
-  { slug: "issue_assigned", name: "Issue Assigned", description: "Was assigned to an issue", points: 1, icon: "user-check" },
-  { slug: "commit_pushed", name: "Commit Pushed", description: "Pushed commits", points: 1, icon: "git-commit" },
-  { slug: "release_published", name: "Release Published", description: "Published a release", points: 15, icon: "tag" },
-  { slug: "doc_updated", name: "Documentation Updated", description: "Updated documentation", points: 5, icon: "book" },
-  { slug: "bug_fixed", name: "Bug Fixed", description: "Fixed a bug", points: 8, icon: "bug" },
-  { slug: "feature_added", name: "Feature Added", description: "Added a new feature", points: 12, icon: "sparkles" },
-  { slug: "test_added", name: "Test Added", description: "Added test coverage", points: 4, icon: "check-square" },
-  { slug: "refactor", name: "Code Refactored", description: "Refactored code", points: 6, icon: "refresh-cw" },
+  {
+    slug: "pr_opened",
+    name: "PR Opened",
+    description: "Opened a pull request",
+    points: 5,
+    icon: "git-pull-request",
+  },
+  {
+    slug: "pr_merged",
+    name: "PR Merged",
+    description: "Pull request was merged",
+    points: 10,
+    icon: "git-merge",
+  },
+  {
+    slug: "pr_reviewed",
+    name: "PR Reviewed",
+    description: "Reviewed a pull request",
+    points: 3,
+    icon: "eye",
+  },
+  {
+    slug: "issue_opened",
+    name: "Issue Opened",
+    description: "Opened an issue",
+    points: 2,
+    icon: "circle-dot",
+  },
+  {
+    slug: "issue_closed",
+    name: "Issue Closed",
+    description: "Closed an issue",
+    points: 3,
+    icon: "check-circle",
+  },
+  {
+    slug: "issue_assigned",
+    name: "Issue Assigned",
+    description: "Was assigned to an issue",
+    points: 1,
+    icon: "user-check",
+  },
+  {
+    slug: "commit_pushed",
+    name: "Commit Pushed",
+    description: "Pushed commits",
+    points: 1,
+    icon: "git-commit",
+  },
+  {
+    slug: "release_published",
+    name: "Release Published",
+    description: "Published a release",
+    points: 15,
+    icon: "tag",
+  },
+  {
+    slug: "doc_updated",
+    name: "Documentation Updated",
+    description: "Updated documentation",
+    points: 5,
+    icon: "book",
+  },
+  {
+    slug: "bug_fixed",
+    name: "Bug Fixed",
+    description: "Fixed a bug",
+    points: 8,
+    icon: "bug",
+  },
+  {
+    slug: "feature_added",
+    name: "Feature Added",
+    description: "Added a new feature",
+    points: 12,
+    icon: "sparkles",
+  },
+  {
+    slug: "test_added",
+    name: "Test Added",
+    description: "Added test coverage",
+    points: 4,
+    icon: "check-square",
+  },
+  {
+    slug: "refactor",
+    name: "Code Refactored",
+    description: "Refactored code",
+    points: 6,
+    icon: "refresh-cw",
+  },
 ];
 
 const BIO_TEMPLATES = [
@@ -48,9 +165,22 @@ const BIO_TEMPLATES = [
 ];
 
 const TECH_STACK = [
-  "TypeScript", "Python", "Go", "Rust", "Kubernetes", "PostgreSQL", 
-  "React", "Node.js", "Docker", "AWS", "GraphQL", "Redis",
-  "MongoDB", "Next.js", "TailwindCSS", "WebAssembly"
+  "TypeScript",
+  "Python",
+  "Go",
+  "Rust",
+  "Kubernetes",
+  "PostgreSQL",
+  "React",
+  "Node.js",
+  "Docker",
+  "AWS",
+  "GraphQL",
+  "Redis",
+  "MongoDB",
+  "Next.js",
+  "TailwindCSS",
+  "WebAssembly",
 ];
 
 function randomElement<T>(arr: T[]): T {
@@ -62,7 +192,10 @@ function randomInt(min: number, max: number): number {
 }
 
 function generateUsername(firstName: string, lastName: string): string {
-  return `${firstName.toLowerCase()}${lastName.toLowerCase()[0]}${randomInt(1, 99)}`;
+  return `${firstName.toLowerCase()}${lastName.toLowerCase()[0]}${randomInt(
+    1,
+    99
+  )}`;
 }
 
 function generateBio(name: string): string {
@@ -70,8 +203,11 @@ function generateBio(name: string): string {
   const tech1 = randomElement(TECH_STACK);
   const tech2 = randomElement(TECH_STACK.filter((t) => t !== tech1));
   const years = randomInt(2, 10);
-  
-  return `${name} ${template.replace("{tech1}", tech1).replace("{tech2}", tech2).replace("{years}", years.toString())}`;
+
+  return `${name} ${template
+    .replace("{tech1}", tech1)
+    .replace("{tech2}", tech2)
+    .replace("{years}", years.toString())}`;
 }
 
 function generateContributor(): Contributor {
@@ -80,15 +216,15 @@ function generateContributor(): Contributor {
   const username = generateUsername(firstName, lastName);
   const name = `${firstName} ${lastName}`;
   const role = randomElement(ROLES);
-  
+
   const socialProfiles: Record<string, string> = {
     github: `https://github.com/${username}`,
   };
-  
+
   if (Math.random() > 0.5) {
     socialProfiles.linkedin = `https://linkedin.com/in/${username}`;
   }
-  
+
   if (Math.random() > 0.7) {
     socialProfiles.twitter = `https://twitter.com/${username}`;
   }
@@ -103,7 +239,15 @@ function generateContributor(): Contributor {
     username,
     name,
     role,
-    title: Math.random() > 0.3 ? randomElement(["Engineer", "Senior Engineer", "Tech Lead", "Architect"]) : null,
+    title:
+      Math.random() > 0.3
+        ? randomElement([
+            "Engineer",
+            "Senior Engineer",
+            "Tech Lead",
+            "Architect",
+          ])
+        : null,
     avatar_url: `https://github.com/${username}.png`,
     bio: generateBio(name),
     social_profiles: socialProfiles,
@@ -122,7 +266,7 @@ function generateActivity(
 ): Activity {
   const daysAgo = randomInt(0, 180);
   const occurredAt = new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000);
-  
+
   return {
     slug: `${contributor}-${activityDef.slug}-${index}`,
     contributor,
@@ -143,12 +287,12 @@ async function writeContributorMarkdown(
   contributor: Contributor
 ): Promise<void> {
   const { username, bio, ...frontmatter } = contributor;
-  
+
   const content = matter.stringify(bio || "", {
     ...frontmatter,
     username,
   });
-  
+
   const filePath = join(outputDir, "contributors", `${username}.md`);
   await writeFile(filePath, content, "utf8");
 }
@@ -165,53 +309,57 @@ async function writeActivitiesJsonl(
 
 async function main() {
   const args = process.argv.slice(2);
-  const outputDir = args.find((arg) => arg.startsWith("--output="))?.split("=")[1] || "./test-data";
-  
+  const outputDir =
+    args.find((arg) => arg.startsWith("--output="))?.split("=")[1] ||
+    "./test-data";
+
   console.log(`Generating seed data to: ${outputDir}`);
-  
+
   // Create directories
   await mkdir(join(outputDir, "contributors"), { recursive: true });
   await mkdir(join(outputDir, "activities"), { recursive: true });
-  
+
   // Generate contributors
   const numContributors = randomInt(15, 30);
   const contributors: Contributor[] = [];
-  
+
   for (let i = 0; i < numContributors; i++) {
     const contributor = generateContributor();
     contributors.push(contributor);
     await writeContributorMarkdown(outputDir, contributor);
   }
-  
+
   console.log(`✓ Generated ${contributors.length} contributors`);
-  
+
   // Generate activities for each contributor
   let totalActivities = 0;
-  
+
   for (const contributor of contributors) {
     const numActivities = randomInt(5, 50);
     const activities: Activity[] = [];
-    
+
     for (let i = 0; i < numActivities; i++) {
       const activityDef = randomElement(ACTIVITY_DEFS);
       const activity = generateActivity(contributor.username, activityDef, i);
       activities.push(activity);
     }
-    
+
     // Sort by date
     activities.sort((a, b) => a.occured_at.localeCompare(b.occured_at));
-    
+
     await writeActivitiesJsonl(outputDir, contributor.username, activities);
     totalActivities += activities.length;
   }
-  
+
   console.log(`✓ Generated ${totalActivities} activities`);
-  
+
   // Write activity definitions info (for reference only)
   const defsPath = join(outputDir, "activity_definitions.json");
   await writeFile(defsPath, JSON.stringify(ACTIVITY_DEFS, null, 2), "utf8");
-  console.log(`✓ Wrote ${ACTIVITY_DEFS.length} activity definitions to ${defsPath}`);
-  
+  console.log(
+    `✓ Wrote ${ACTIVITY_DEFS.length} activity definitions to ${defsPath}`
+  );
+
   console.log("\n✅ Seed data generation complete!");
   console.log(`\nTo use this data:`);
   console.log(`  1. Set LEADERBOARD_DATA_DIR=${outputDir}`);
@@ -222,4 +370,3 @@ main().catch((error) => {
   console.error("Error generating seed data:", error);
   process.exit(1);
 });
-

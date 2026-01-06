@@ -3,8 +3,8 @@
  */
 
 import type { Plugin, PluginContext, Database, Logger } from "@leaderboard/api";
-import type { Config } from "./config.js";
-import { loadPlugin } from "./loader.js";
+import type { Config } from "./config";
+import { loadPlugin } from "./loader";
 
 /**
  * Run all plugins
@@ -25,7 +25,11 @@ export async function runPlugins(
   logger.info(`Running ${pluginEntries.length} plugins`);
 
   // Load all plugins
-  const loadedPlugins: Array<{ id: string; plugin: Plugin; config: Record<string, unknown> }> = [];
+  const loadedPlugins: Array<{
+    id: string;
+    plugin: Plugin;
+    config: Record<string, unknown>;
+  }> = [];
 
   for (const [pluginId, pluginConfig] of pluginEntries) {
     try {
@@ -85,4 +89,3 @@ export async function runPlugins(
 
   logger.info("All plugins completed successfully");
 }
-

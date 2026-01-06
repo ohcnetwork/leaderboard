@@ -2,11 +2,37 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { format, formatDistanceToNow } from "date-fns";
 
-type AggregateValue = 
-  | { type: "duration"; value: number }
-  | { type: "number"; value: number }
-  | { type: "percentage"; value: number }
-  | { type: "string"; value: string };
+type NumberAggregateValue = {
+  type: "number";
+  value: number;
+  unit?: string;
+  format?: "integer" | "decimal" | "percentage" | "duration" | "bytes" | "currency";
+  decimals?: number;
+};
+
+type NumberStatisticsAggregateValue = {
+  type: "statistics/number";
+  min?: number;
+  max?: number;
+  mean?: number;
+  median?: number;
+  variance?: number;
+  sum?: number;
+  count?: number;
+  unit?: string;
+  format?: string;
+  highlightMetric?: "min" | "max" | "mean" | "median" | "variance" | "sum" | "count";
+};
+
+type StringAggregateValue = {
+  type: "string";
+  value: string;
+};
+
+type AggregateValue =
+  | NumberAggregateValue
+  | NumberStatisticsAggregateValue
+  | StringAggregateValue;
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -156,33 +182,93 @@ export function groupActivitiesByMonth<T extends { occured_at: Date | string }>(
 }
 
 /**
+ * Format bytes to human readable string
+ */
+function formatBytes(bytes: number): string {
+  if (bytes === 0) return "0 B";
+  const k = 1024;
+  const sizes = ["B", "KB", "MB", "GB", "TB"];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return `${(bytes / Math.pow(k, i)).toFixed(2)} ${sizes[i]}`;
+}
+
+/**
+ * Format duration in milliseconds to human readable string
+ */
+function formatDuration(ms: number): string {
+  const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+
+  if (days > 0) {
+    return `${days}d ${hours}h`;
+  } else if (hours > 0) {
+    return `${hours}h ${minutes}m`;
+  } else if (minutes > 0) {
+    return `${minutes}m ${seconds}s`;
+  } else {
+    return `${seconds}s`;
+  }
+}
+
+/**
  * Format an aggregate value based on its type
  * @param value - The aggregate value to format
  * @returns Formatted string representation
  */
 export function formatAggregateValue(value: AggregateValue): string {
-  switch (value.type) {
-    case "duration": {
-      const ms = value.value;
-      const days = Math.floor(ms / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-
-      if (days > 0) {
-        return `${days}d ${hours}h`;
-      } else if (hours > 0) {
-        return `${hours}h ${minutes}m`;
-      } else {
-        return `${minutes}m`;
-      }
-    }
-    case "number":
-      return value.value.toLocaleString();
-    case "percentage":
-      return `${(value.value * 100).toFixed(1)}%`;
-    case "string":
-      return value.value;
-    default:
-      return String(value);
+  if (value.type === "string") {
+    return value.value;
   }
+
+  if (value.type === "statistics/number") {
+    // For statistics, show the highlight metric or mean
+    const metricKey = value.highlightMetric || "mean";
+    const metricValue = value[metricKey];
+    
+    if (metricValue === undefined) {
+      return "N/A";
+    }
+
+    // Format the metric value
+    let formatted = metricValue.toLocaleString();
+    
+    if (value.unit) {
+      formatted += ` ${value.unit}`;
+    }
+
+    return formatted;
+  }
+
+  if (value.type === "number") {
+    const { value: numValue, format, unit, decimals = 2 } = value;
+
+    switch (format) {
+      case "percentage":
+        return `${(numValue * 100).toFixed(decimals)}%`;
+      
+      case "duration":
+        return formatDuration(numValue);
+      
+      case "bytes":
+        return formatBytes(numValue);
+      
+      case "currency":
+        return new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: unit || "USD",
+        }).format(numValue);
+      
+      case "decimal":
+        return numValue.toFixed(decimals) + (unit ? ` ${unit}` : "");
+      
+      case "integer":
+      default:
+        const formatted = Math.round(numValue).toLocaleString();
+        return unit ? `${formatted} ${unit}` : formatted;
+    }
+  }
+
+  return String(value);
 }

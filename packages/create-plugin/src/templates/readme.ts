@@ -2,7 +2,7 @@
  * Generate README.md template
  */
 
-import type { PluginOptions } from "../types.js";
+import type { PluginOptions } from "../types";
 
 export function generateReadme(options: PluginOptions): string {
   const displayName = options.pluginName
@@ -61,4 +61,3 @@ pnpm test:watch
 MIT
 `;
 }
-

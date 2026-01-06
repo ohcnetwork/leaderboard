@@ -2,7 +2,7 @@
  * Generate src/__tests__/plugin.test.ts template
  */
 
-import type { PluginOptions } from "../types.js";
+import type { PluginOptions } from "../types";
 
 export function generateTestTs(options: PluginOptions): string {
   return `/**
@@ -12,9 +12,11 @@ export function generateTestTs(options: PluginOptions): string {
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { createDatabase, initializeSchema } from "@leaderboard/api";
 import type { Database } from "@leaderboard/api";
-import plugin from "../index.js";
+import plugin from "../index";
 
-describe("${options.pluginName.charAt(0).toUpperCase() + options.pluginName.slice(1)} Plugin", () => {
+describe("${
+    options.pluginName.charAt(0).toUpperCase() + options.pluginName.slice(1)
+  } Plugin", () => {
   let db: Database;
 
   beforeEach(async () => {
@@ -98,4 +100,3 @@ describe("${options.pluginName.charAt(0).toUpperCase() + options.pluginName.slic
 });
 `;
 }
-

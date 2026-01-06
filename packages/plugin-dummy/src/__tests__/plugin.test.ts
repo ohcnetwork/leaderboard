@@ -6,15 +6,15 @@ import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { faker } from "@faker-js/faker";
 import { createDatabase, initializeSchema } from "@leaderboard/api";
 import type { Database } from "@leaderboard/api";
-import { generateContributor, generateContributors } from "../contributors.js";
+import { generateContributor, generateContributors } from "../contributors";
 import {
   generateActivity,
   generateActivitiesForContributor,
   generateActivities,
   ACTIVITY_TYPES,
-} from "../activities.js";
-import { mergeConfig, DEFAULT_CONFIG } from "../config.js";
-import plugin from "../index.js";
+} from "../activities";
+import { mergeConfig, DEFAULT_CONFIG } from "../config";
+import plugin from "../index";
 
 describe("Dummy Plugin", () => {
   describe("Configuration", () => {
@@ -29,14 +29,18 @@ describe("Dummy Plugin", () => {
       expect(config.contributors.minActivitiesPerContributor).toBe(
         DEFAULT_CONFIG.contributors.minActivitiesPerContributor
       );
-      expect(config.activities.daysBack).toBe(DEFAULT_CONFIG.activities.daysBack);
+      expect(config.activities.daysBack).toBe(
+        DEFAULT_CONFIG.activities.daysBack
+      );
     });
 
     it("should handle empty config", () => {
       const config = mergeConfig();
 
       expect(config.contributors.count).toBe(DEFAULT_CONFIG.contributors.count);
-      expect(config.activities.daysBack).toBe(DEFAULT_CONFIG.activities.daysBack);
+      expect(config.activities.daysBack).toBe(
+        DEFAULT_CONFIG.activities.daysBack
+      );
     });
 
     it("should handle seed configuration", () => {
@@ -147,7 +151,9 @@ describe("Dummy Plugin", () => {
 
       for (const activity of activities) {
         const activityDate = new Date(activity.occured_at);
-        expect(activityDate.getTime()).toBeGreaterThanOrEqual(startDate.getTime());
+        expect(activityDate.getTime()).toBeGreaterThanOrEqual(
+          startDate.getTime()
+        );
         expect(activityDate.getTime()).toBeLessThanOrEqual(now.getTime());
       }
     });
@@ -332,10 +338,10 @@ describe("Dummy Plugin", () => {
       const activitiesResult = await db.execute(
         "SELECT COUNT(*) as count FROM activity"
       );
-      const activityCount = (activitiesResult.rows[0] as { count: number }).count;
+      const activityCount = (activitiesResult.rows[0] as { count: number })
+        .count;
       expect(activityCount).toBeGreaterThanOrEqual(50); // 10 * 5 minimum
       expect(activityCount).toBeLessThanOrEqual(150); // 10 * 15 maximum
     });
   });
 });
-

@@ -2,7 +2,7 @@
  * Generate src/index.ts template
  */
 
-import type { PluginOptions } from "../types.js";
+import type { PluginOptions } from "../types";
 
 export function generateIndexTs(options: PluginOptions): string {
   return `/**
@@ -13,6 +13,10 @@ import {
   activityDefinitionQueries,
   activityQueries,
   contributorQueries,
+  contributorAggregateDefinitionQueries,
+  contributorAggregateQueries,
+  badgeDefinitionQueries,
+  contributorBadgeQueries,
   type Plugin,
   type PluginContext,
 } from "@leaderboard/api";
@@ -32,6 +36,36 @@ const plugin: Plugin = {
     //   description: "Activity description",
     //   points: 10,
     //   icon: "icon-name",
+    // });
+    
+    // TODO: Define contributor aggregate definitions (optional)
+    // Example:
+    // await contributorAggregateDefinitionQueries.upsert(ctx.db, {
+    //   slug: "custom_metric",
+    //   name: "Custom Metric",
+    //   description: "Example custom metric",
+    // });
+    
+    // TODO: Define badge definitions (optional)
+    // Example:
+    // await badgeDefinitionQueries.upsert(ctx.db, {
+    //   slug: "example_badge",
+    //   name: "Example Badge",
+    //   description: "Achievement badge for custom criteria",
+    //   variants: {
+    //     bronze: {
+    //       description: "Level 1",
+    //       svg_url: "https://example.com/bronze.svg",
+    //     },
+    //     silver: {
+    //       description: "Level 2",
+    //       svg_url: "https://example.com/silver.svg",
+    //     },
+    //     gold: {
+    //       description: "Level 3",
+    //       svg_url: "https://example.com/gold.svg",
+    //     },
+    //   },
     // });
     
     ctx.logger.info("Setup complete");
@@ -72,6 +106,31 @@ const plugin: Plugin = {
     //   });
     // }
     
+    // TODO: Set custom aggregates (optional)
+    // Example:
+    // await contributorAggregateQueries.upsert(ctx.db, {
+    //   aggregate: "custom_metric",
+    //   contributor: "username",
+    //   value: {
+    //     type: "number",
+    //     value: 42,
+    //     unit: "items",
+    //     format: "integer",
+    //   },
+    //   meta: { source: "external_api" },
+    // });
+    
+    // TODO: Award custom badges (optional)
+    // Example:
+    // await contributorBadgeQueries.award(ctx.db, {
+    //   slug: \`example_badge__username__bronze\`,
+    //   badge: "example_badge",
+    //   contributor: "username",
+    //   variant: "bronze",
+    //   achieved_on: new Date().toISOString().split("T")[0],
+    //   meta: { reason: "Custom criteria met" },
+    // });
+    
     ctx.logger.info("Scraping complete");
   },
 };
@@ -79,4 +138,3 @@ const plugin: Plugin = {
 export default plugin;
 `;
 }
-

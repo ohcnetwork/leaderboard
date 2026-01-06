@@ -167,3 +167,155 @@ export interface Activity {
   meta: Record<string, unknown> | null;
 }
 
+/**
+ * Aggregate value types - generic, unit-aware metrics
+ */
+
+/**
+ * Number aggregate value type with optional unit and format.
+ *
+ * @example
+ * ```typescript
+ * {
+ *   type: "number",
+ *   value: 42,
+ *   unit: "items",
+ *   format: "integer"
+ * }
+ * ```
+ */
+export interface NumberAggregateValue {
+  type: "number";
+  value: number;
+  unit?: string; // "ms", "%", "bytes", "days", etc.
+  format?:
+    | "integer"
+    | "decimal"
+    | "percentage"
+    | "duration"
+    | "bytes"
+    | "currency";
+  decimals?: number; // precision for display
+}
+
+/**
+ * Number statistics aggregate value type.
+ * Provides detailed statistical metrics.
+ *
+ * @example
+ * ```typescript
+ * {
+ *   type: "statistics/number",
+ *   min: 1,
+ *   max: 100,
+ *   mean: 42.5,
+ *   count: 50,
+ *   highlightMetric: "mean"
+ * }
+ * ```
+ */
+export interface NumberStatisticsAggregateValue {
+  type: "statistics/number";
+  min?: number;
+  max?: number;
+  mean?: number;
+  median?: number;
+  variance?: number;
+  sum?: number;
+  count?: number;
+  unit?: string;
+  format?: string;
+  highlightMetric?:
+    | "min"
+    | "max"
+    | "mean"
+    | "median"
+    | "variance"
+    | "sum"
+    | "count";
+}
+
+/**
+ * String aggregate value type.
+ *
+ * @example
+ * ```typescript
+ * {
+ *   type: "string",
+ *   value: "Active"
+ * }
+ * ```
+ */
+export interface StringAggregateValue {
+  type: "string";
+  value: string;
+}
+
+/**
+ * Aggregate value union type.
+ */
+export type AggregateValue =
+  | NumberAggregateValue
+  | NumberStatisticsAggregateValue
+  | StringAggregateValue;
+
+/**
+ * Global aggregate (org-level metric)
+ */
+export interface GlobalAggregate {
+  slug: string;
+  name: string;
+  description: string | null;
+  value: AggregateValue;
+  meta: Record<string, unknown> | null;
+}
+
+/**
+ * Contributor aggregate definition
+ */
+export interface ContributorAggregateDefinition {
+  slug: string;
+  name: string;
+  description: string | null;
+}
+
+/**
+ * Contributor aggregate (per-contributor metric)
+ */
+export interface ContributorAggregate {
+  aggregate: string;
+  contributor: string;
+  value: AggregateValue;
+  meta: Record<string, unknown> | null;
+}
+
+/**
+ * Badge variant configuration
+ */
+export interface BadgeVariant {
+  description: string;
+  svg_url: string;
+  order?: number;
+}
+
+/**
+ * Badge definition with variants
+ */
+export interface BadgeDefinition {
+  slug: string;
+  name: string;
+  description: string;
+  variants: Record<string, BadgeVariant>;
+}
+
+/**
+ * Contributor badge (achievement earned by a contributor)
+ */
+export interface ContributorBadge {
+  slug: string;
+  badge: string;
+  contributor: string;
+  variant: string;
+  achieved_on: string;
+  meta: Record<string, unknown> | null;
+}

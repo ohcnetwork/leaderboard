@@ -5,14 +5,20 @@
 
 import { parseArgs } from "util";
 import { join, resolve, isAbsolute } from "path";
-import { createLogger } from "./logger.js";
-import { initDatabase } from "./database.js";
-import { loadConfig } from "./config.js";
-import { importContributors } from "./importers/contributors.js";
-import { importActivities } from "./importers/activities.js";
-import { exportContributors } from "./exporters/contributors.js";
-import { exportActivities } from "./exporters/activities.js";
-import { runPlugins } from "./runner.js";
+import { createLogger } from "./logger";
+import { initDatabase } from "./database";
+import { loadConfig } from "./config";
+import { importContributors } from "./importers/contributors";
+import { importActivities } from "./importers/activities";
+import { importAggregates } from "./importers/aggregates";
+import { importBadges } from "./importers/badges";
+import { exportContributors } from "./exporters/contributors";
+import { exportActivities } from "./exporters/activities";
+import { exportAggregates } from "./exporters/aggregates";
+import { exportBadges } from "./exporters/badges";
+import { runPlugins } from "./runner";
+import { runAggregation } from "./aggregator";
+import { evaluateBadgeRules } from "./rules/evaluator";
 
 async function main() {
   const { values } = parseArgs({
@@ -43,16 +49,14 @@ async function main() {
   });
 
   const logger = createLogger(values.debug);
-  
+
   // Determine data directory and resolve to absolute path
   const rawDataDir =
-    values["data-dir"] ||
-    process.env.LEADERBOARD_DATA_DIR ||
-    "./data";
-  
+    values["data-dir"] || process.env.LEADERBOARD_DATA_DIR || "./data";
+
   // Resolve relative paths from the current working directory (where the command was run)
-  const dataDir = isAbsolute(rawDataDir) 
-    ? rawDataDir 
+  const dataDir = isAbsolute(rawDataDir)
+    ? rawDataDir
     : resolve(process.cwd(), rawDataDir);
 
   logger.info("Plugin Runner starting", { dataDir });
@@ -73,6 +77,8 @@ async function main() {
       logger.info("Importing existing data");
       await importContributors(db, dataDir, logger);
       await importActivities(db, dataDir, logger);
+      await importAggregates(db, dataDir, logger);
+      await importBadges(db, dataDir, logger);
       logger.info("Import complete");
     }
 
@@ -81,6 +87,16 @@ async function main() {
       logger.info("Running plugins");
       await runPlugins(config, db, logger);
       logger.info("Plugins complete");
+
+      // Run aggregation phase
+      logger.info("Running aggregation phase");
+      await runAggregation(db, logger);
+      logger.info("Aggregation complete");
+
+      // Evaluate badge rules
+      logger.info("Evaluating badge rules");
+      await evaluateBadgeRules(db, logger);
+      logger.info("Badge evaluation complete");
     }
 
     // Export data
@@ -88,12 +104,14 @@ async function main() {
       logger.info("Exporting data");
       await exportContributors(db, dataDir, logger);
       await exportActivities(db, join(dataDir, "data"), logger);
+      await exportAggregates(db, dataDir, logger);
+      await exportBadges(db, dataDir, logger);
       logger.info("Export complete");
     }
 
     // Close database
     await db.close();
-    
+
     logger.info("✅ Plugin runner completed successfully");
     process.exit(0);
   } catch (error) {
@@ -103,4 +121,3 @@ async function main() {
 }
 
 main();
-

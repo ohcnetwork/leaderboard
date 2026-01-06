@@ -13,8 +13,9 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "setup:icons": "tsx scripts/setup-icons.ts",
-    "predev": "pnpm setup:icons",
-    "prebuild": "pnpm setup:icons"
+    "setup:theme": "tsx scripts/setup-theme.ts",
+    "predev": "pnpm setup:icons && pnpm setup:theme",
+    "prebuild": "pnpm setup:icons && pnpm setup:theme"
   },
   "dependencies": {
     "@leaderboard/api": "workspace:*",

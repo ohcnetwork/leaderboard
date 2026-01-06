@@ -2,6 +2,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import yaml from "js-yaml";
 import { Config, ConfigSchema } from "@/lib/config/schema";
+import { dataDir } from "@leaderboard/api";
 
 let cachedConfig: Config | null = null;
 
@@ -46,9 +47,7 @@ export function getConfig(): Config {
     return cachedConfig;
   }
 
-  // Default to ../../data (relative to apps/leaderboard-web) for development
-  const dataDir = process.env.LEADERBOARD_DATA_DIR || "../../data";
-  const configPath = join(process.cwd(), dataDir, "config.yaml");
+  const configPath = join(dataDir, "config.yaml");
   const fileContents = readFileSync(configPath, "utf8");
   let rawConfig = yaml.load(fileContents, {
     schema: yaml.JSON_SCHEMA,

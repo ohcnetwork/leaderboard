@@ -19,6 +19,7 @@ import { exportBadges } from "./exporters/badges";
 import { runPlugins } from "./runner";
 import { runAggregation } from "./aggregator";
 import { evaluateBadgeRules } from "./rules/evaluator";
+import { getDataDir } from "@leaderboard/api";
 
 async function main() {
   const { values } = parseArgs({
@@ -50,14 +51,8 @@ async function main() {
 
   const logger = createLogger(values.debug);
 
-  // Determine data directory and resolve to absolute path
-  const rawDataDir =
-    values["data-dir"] || process.env.LEADERBOARD_DATA_DIR || "./data";
-
   // Resolve relative paths from the current working directory (where the command was run)
-  const dataDir = isAbsolute(rawDataDir)
-    ? rawDataDir
-    : resolve(process.cwd(), rawDataDir);
+  const dataDir = getDataDir(values["data-dir"]);
 
   logger.info("Plugin Runner starting", { dataDir });
 

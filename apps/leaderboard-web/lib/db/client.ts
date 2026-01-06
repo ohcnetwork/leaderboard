@@ -3,6 +3,7 @@
  * Reads from the persisted database file during build time
  */
 
+import { dataDir } from "@leaderboard/api";
 import { createDatabase, getDatabaseUrl } from "@leaderboard/api";
 import type { Database } from "@leaderboard/api";
 
@@ -17,7 +18,6 @@ export function getDatabase(): Database {
     return cachedDb;
   }
 
-  const dataDir = process.env.LEADERBOARD_DATA_DIR || "../../data";
   const dbUrl = getDatabaseUrl(dataDir);
 
   cachedDb = createDatabase(dbUrl);

@@ -268,26 +268,6 @@ async function runPluginRunner(): Promise<void> {
 }
 
 /**
- * Copy theme to Next.js app
- */
-async function copyTheme(): Promise<void> {
-  console.log("\n🎨 Copying theme to Next.js app...");
-
-  try {
-    execSync("pnpm theme:copy", {
-      stdio: "inherit",
-      env: {
-        ...process.env,
-        LEADERBOARD_DATA_DIR: DATA_DIR,
-      },
-    });
-  } catch (error) {
-    console.error("\n❌ Failed to copy theme");
-    throw error;
-  }
-}
-
-/**
  * Display success message
  */
 function displaySuccess(options: SetupOptions): void {
@@ -362,9 +342,6 @@ async function main() {
 
     // Run plugin runner
     await runPluginRunner();
-
-    // Copy theme to overrides
-    await copyTheme();
 
     // Display success message
     displaySuccess(options);

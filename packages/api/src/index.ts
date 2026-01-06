@@ -42,3 +42,6 @@ export * from "./schema";
 
 // Export query helpers
 export * from "./queries";
+
+// Export utility functions
+export * from "./utils";

@@ -11,7 +11,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "setup:icons": "tsx scripts/setup-icons.ts",
+    "predev": "pnpm setup:icons",
+    "prebuild": "pnpm setup:icons"
   },
   "dependencies": {
     "@leaderboard/api": "workspace:*",

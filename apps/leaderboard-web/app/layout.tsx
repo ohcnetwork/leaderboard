@@ -94,6 +94,12 @@ export default function RootLayout({
                         People
                       </Link>
                       <Link
+                        href="/badges"
+                        className="text-sm font-medium hover:text-primary transition-colors"
+                      >
+                        Badges
+                      </Link>
+                      <Link
                         href="/docs"
                         className="text-sm font-medium hover:text-primary transition-colors"
                       >

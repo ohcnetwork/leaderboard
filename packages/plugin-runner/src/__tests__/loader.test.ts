@@ -3,7 +3,7 @@
  */
 
 import { describe, it, expect, vi } from "vitest";
-import { createLogger } from "../logger.js";
+import { createLogger } from "../logger";
 
 // Mock logger for tests
 const logger = createLogger(false);
@@ -60,4 +60,3 @@ describe("Plugin Loader", () => {
     expect(invalidPlugin).not.toHaveProperty("scrape");
   });
 });
-

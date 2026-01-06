@@ -3,6 +3,7 @@ import {
   getContributorProfile,
   listActivityDefinitions,
   getContributorAggregates,
+  getContributorBadges,
 } from "@/lib/data/loader";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -170,10 +171,12 @@ export default async function ContributorPage({
     { contributor, activities, totalPoints, activityByDate },
     activityDefinitions,
     dbAggregates,
+    badges,
   ] = await Promise.all([
     getContributorProfile(username),
     listActivityDefinitions(),
     getContributorAggregates(username, dbAggregatesSlugs),
+    getContributorBadges(username),
   ]);
 
   console.log("contributor", contributor);
@@ -401,6 +404,48 @@ export default async function ContributorPage({
           activityDefinitions={activityDefinitions}
           totalActivities={activities.length}
         />
+
+        {/* Badges Section */}
+        {badges.length > 0 && (
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Award className="h-5 w-5" />
+                Achievements
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4">
+                {badges.map((badge) => (
+                  <div
+                    key={badge.slug}
+                    className="flex flex-col items-center gap-2"
+                  >
+                    <div
+                      className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer relative group"
+                      title={`${badge.badge} - ${badge.variant}`}
+                    >
+                      {badge.variant !== "bronze" && (
+                        <span className="absolute -bottom-1 -right-1 bg-white text-amber-700 text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-amber-600 capitalize">
+                          {badge.variant.charAt(0)}
+                        </span>
+                      )}
+                      <div className="absolute bottom-full mb-2 hidden group-hover:block z-10 w-48 p-2 bg-gray-900 text-white text-xs rounded shadow-lg">
+                        <div className="font-bold">{badge.badge}</div>
+                        <div className="text-gray-300 mt-1 capitalize">
+                          {badge.variant}
+                        </div>
+                        <div className="text-gray-400 mt-1 text-xs">
+                          Earned: {new Date(badge.achieved_on).toLocaleDateString()}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Activity Breakdown */}
         <ActivityBreakdown activities={activitiesForBreakdown} />

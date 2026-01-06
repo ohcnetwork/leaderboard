@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Create Leaderboard Plugin CLI Tool
- * 
+ *
  * Generates a new leaderboard plugin project structure
  */
 
@@ -9,13 +9,13 @@ import { readFile } from "fs/promises";
 import { join, resolve } from "path";
 import { existsSync, mkdirSync, writeFileSync, readdirSync } from "fs";
 import prompts from "prompts";
-import { generatePackageJson } from "./templates/package-json.js";
-import { generateTsConfig } from "./templates/tsconfig.js";
-import { generateVitestConfig } from "./templates/vitest-config.js";
-import { generateIndexTs } from "./templates/index-ts.js";
-import { generateTestTs } from "./templates/test-ts.js";
-import { generateReadme } from "./templates/readme.js";
-import type { PluginOptions } from "./types.js";
+import { generatePackageJson } from "./templates/package-json";
+import { generateTsConfig } from "./templates/tsconfig";
+import { generateVitestConfig } from "./templates/vitest-config";
+import { generateIndexTs } from "./templates/index-ts";
+import { generateTestTs } from "./templates/test-ts";
+import { generateReadme } from "./templates/readme";
+import type { PluginOptions } from "./types";
 
 /**
  * Validate plugin name format (alphanumeric + hyphens, no spaces)
@@ -125,11 +125,7 @@ function generateFiles(pluginDir: string, options: PluginOptions): void {
   );
 
   // tsconfig.json
-  writeFileSync(
-    join(pluginDir, "tsconfig.json"),
-    generateTsConfig(),
-    "utf-8"
-  );
+  writeFileSync(join(pluginDir, "tsconfig.json"), generateTsConfig(), "utf-8");
 
   // vitest.config.ts
   writeFileSync(
@@ -153,11 +149,7 @@ function generateFiles(pluginDir: string, options: PluginOptions): void {
   );
 
   // README.md
-  writeFileSync(
-    join(pluginDir, "README.md"),
-    generateReadme(options),
-    "utf-8"
-  );
+  writeFileSync(join(pluginDir, "README.md"), generateReadme(options), "utf-8");
 }
 
 /**
@@ -170,7 +162,9 @@ async function main(): Promise<void> {
   if (process.argv.includes("--help") || process.argv.includes("-h")) {
     console.log("Usage: pnpm create-leaderboard-plugin [target-directory]");
     console.log("\nArguments:");
-    console.log("  target-directory  Directory where the plugin will be created (default: current directory)");
+    console.log(
+      "  target-directory  Directory where the plugin will be created (default: current directory)"
+    );
     console.log("\nExamples:");
     console.log("  pnpm create-leaderboard-plugin .");
     console.log("  pnpm create-leaderboard-plugin ../../plugins/slack");
@@ -187,7 +181,9 @@ async function main(): Promise<void> {
     const files = readdirSync(targetDir);
     if (files.length > 0) {
       console.error(`Error: Directory "${targetArg}" is not empty.`);
-      console.error("Please specify an empty directory or a new directory path.");
+      console.error(
+        "Please specify an empty directory or a new directory path."
+      );
       process.exit(1);
     }
   }
@@ -212,9 +208,15 @@ async function main(): Promise<void> {
     } else {
       console.log(`  1. pnpm install`);
     }
-    console.log(`  ${targetArg !== "." ? "3" : "2"}. Implement your plugin logic in src/index.ts`);
+    console.log(
+      `  ${
+        targetArg !== "." ? "3" : "2"
+      }. Implement your plugin logic in src/index.ts`
+    );
     console.log(`  ${targetArg !== "." ? "4" : "3"}. pnpm build`);
-    console.log(`  ${targetArg !== "." ? "5" : "4"}. Add the plugin to your config.yaml`);
+    console.log(
+      `  ${targetArg !== "." ? "5" : "4"}. Add the plugin to your config.yaml`
+    );
   } catch (error) {
     console.error("Error creating plugin:", error);
     process.exit(1);
@@ -226,4 +228,3 @@ main().catch((error) => {
   console.error("Unhandled error:", error);
   process.exit(1);
 });
-

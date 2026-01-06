@@ -1,16 +1,16 @@
 import React from "react";
+import Image from "next/image";
 
 type BadgeVariant = {
   description: string;
-  requirement?: string;
+  svg_url: string;
+  order?: number;
 };
 
 type BadgeDefinition = {
   slug: string;
   name: string;
   description: string;
-  category: string | null;
-  icon: string | null;
   variants: Record<string, BadgeVariant>;
 };
 
@@ -20,11 +20,11 @@ interface BadgeDisplayProps {
     badge: string;
     contributor: string;
     variant: string;
-    achieved_on: Date;
+    achieved_on: string | Date;
     meta: Record<string, unknown> | null;
-    badge_name: string;
-    badge_description: string;
-    variants?: Record<string, BadgeVariant>;
+    badge_name?: string;
+    badge_description?: string;
+    badge_variants?: Record<string, BadgeVariant>;
   };
   size?: "sm" | "md" | "lg";
   showDetails?: boolean;
@@ -44,30 +44,45 @@ export function BadgeDisplay({
     lg: "w-24 h-24 text-base",
   };
 
-  const variant = badge.variants?.[badge.variant];
+  const variant = badge.badge_variants?.[badge.variant];
+  const achievedDate = typeof badge.achieved_on === "string" 
+    ? new Date(badge.achieved_on) 
+    : badge.achieved_on;
 
   return (
     <div className="flex flex-col items-center gap-2">
       <div
-        className={`${sizeClasses[size]} rounded-full bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer relative group`}
-        title={`${badge.badge_name} - ${variant?.description || badge.variant}`}
+        className={`${sizeClasses[size]} rounded-full overflow-hidden flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer relative group`}
+        title={`${badge.badge_name || badge.badge} - ${variant?.description || badge.variant}`}
       >
+        {/* Badge SVG Image */}
+        {variant?.svg_url ? (
+          <img
+            src={variant.svg_url}
+            alt={`${badge.badge_name || badge.badge} - ${badge.variant}`}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          /* Fallback gradient */
+          <div className="w-full h-full bg-gradient-to-br from-amber-400 to-amber-600" />
+        )}
+
         {/* Variant indicator */}
-        {badge.variant !== "default" && (
-          <span className="absolute -bottom-1 -right-1 bg-white text-amber-700 text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-amber-600">
-            {badge.variant}
+        {badge.variant !== "bronze" && badge.variant !== "default" && (
+          <span className="absolute -bottom-1 -right-1 bg-white text-amber-700 text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-amber-600 capitalize">
+            {badge.variant.charAt(0).toUpperCase()}
           </span>
         )}
 
         {/* Tooltip on hover */}
         {showDetails && (
           <div className="absolute bottom-full mb-2 hidden group-hover:block z-10 w-48 p-2 bg-gray-900 text-white text-xs rounded shadow-lg">
-            <div className="font-bold">{badge.badge_name}</div>
-            <div className="text-gray-300 mt-1">
-              {variant?.description || badge.badge_description}
+            <div className="font-bold">{badge.badge_name || badge.badge}</div>
+            <div className="text-gray-300 mt-1 capitalize">
+              {variant?.description || badge.variant}
             </div>
             <div className="text-gray-400 mt-1 text-xs">
-              Earned: {badge.achieved_on.toLocaleDateString()}
+              Earned: {achievedDate.toLocaleDateString()}
             </div>
           </div>
         )}
@@ -75,9 +90,9 @@ export function BadgeDisplay({
 
       {showDetails && (
         <div className="text-center">
-          <div className="font-medium text-sm">{badge.badge_name}</div>
+          <div className="font-medium text-sm">{badge.badge_name || badge.badge}</div>
           {badge.variant !== "default" && (
-            <div className="text-xs text-gray-500">{badge.variant}</div>
+            <div className="text-xs text-gray-500 capitalize">{badge.variant}</div>
           )}
         </div>
       )}
@@ -91,13 +106,11 @@ interface BadgeGridProps {
     badge: string;
     contributor: string;
     variant: string;
-    achieved_on: Date;
+    achieved_on: string | Date;
     meta: Record<string, unknown> | null;
-    badge_name: string;
-    badge_description: string;
-    badge_category: string | null;
-    badge_icon: string | null;
-    variants?: Record<string, BadgeVariant>;
+    badge_name?: string;
+    badge_description?: string;
+    badge_variants?: Record<string, BadgeVariant>;
   }>;
   size?: "sm" | "md" | "lg";
   showDetails?: boolean;
@@ -137,9 +150,9 @@ export function BadgeGrid({
     );
   }
 
-  // Group badges by category
+  // Group badges by badge type (badge slug)
   const grouped = badges.reduce((acc, badge) => {
-    const category = badge.badge_category || "Other";
+    const category = badge.badge_name || badge.badge;
     if (!acc[category]) {
       acc[category] = [];
     }
@@ -218,11 +231,6 @@ export function BadgeProgress({
               </div>
               <div className="flex-1">
                 <div className="text-sm font-medium">{variant.description}</div>
-                {variant.requirement && (
-                  <div className="text-xs text-gray-500">
-                    {variant.requirement}
-                  </div>
-                )}
                 {isNext && currentProgress && (
                   <div className="mt-1">
                     <div className="flex items-center gap-2 text-xs">
@@ -260,11 +268,11 @@ interface RecentBadgeAchievementProps {
     badge: string;
     contributor: string;
     variant: string;
-    achieved_on: Date;
+    achieved_on: string | Date;
     contributor_name: string | null;
     contributor_avatar_url: string | null;
     badge_name: string;
-    badge_icon: string | null;
+    badge_variants: Record<string, BadgeVariant>;
   };
 }
 
@@ -274,6 +282,11 @@ interface RecentBadgeAchievementProps {
 export function RecentBadgeAchievement({
   achievement,
 }: RecentBadgeAchievementProps) {
+  const achievedDate = typeof achievement.achieved_on === "string" 
+    ? new Date(achievement.achieved_on) 
+    : achievement.achieved_on;
+  const variant = achievement.badge_variants[achievement.variant];
+
   return (
     <div className="flex items-center gap-3 p-3 rounded-lg border hover:bg-gray-50 transition-colors">
       {achievement.contributor_avatar_url ? (
@@ -288,20 +301,33 @@ export function RecentBadgeAchievement({
         </div>
       )}
 
+      {/* Badge Icon */}
+      <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+        {variant?.svg_url ? (
+          <img
+            src={variant.svg_url}
+            alt={achievement.badge_name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-amber-400 to-amber-600" />
+        )}
+      </div>
+
       <div className="flex-1 min-w-0">
         <div className="text-sm font-medium truncate">
           {achievement.contributor_name || achievement.contributor}
         </div>
         <div className="text-xs text-gray-500">
           earned{" "}
-          <span className="font-medium">
-            {achievement.badge_icon} {achievement.badge_name}
+          <span className="font-medium capitalize">
+            {achievement.badge_name} ({achievement.variant})
           </span>
         </div>
       </div>
 
       <div className="text-xs text-gray-400">
-        {achievement.achieved_on.toLocaleDateString()}
+        {achievedDate.toLocaleDateString()}
       </div>
     </div>
   );

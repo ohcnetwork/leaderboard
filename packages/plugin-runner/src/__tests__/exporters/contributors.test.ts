@@ -9,8 +9,8 @@ import matter from "gray-matter";
 import { createDatabase } from "@leaderboard/api";
 import { initializeSchema } from "@leaderboard/api";
 import { contributorQueries } from "@leaderboard/api";
-import { exportContributors } from "../../exporters/contributors.js";
-import { createLogger } from "../../logger.js";
+import { exportContributors } from "../../exporters/contributors";
+import { createLogger } from "../../logger";
 import type { Database } from "@leaderboard/api";
 
 const TEST_DATA_DIR = "./test-data-export-contributors";
@@ -46,7 +46,10 @@ describe("Contributor Exporter", () => {
     const count = await exportContributors(db, TEST_DATA_DIR, logger);
     expect(count).toBe(1);
 
-    const content = await readFile(join(TEST_DATA_DIR, "contributors", "alice.md"), "utf-8");
+    const content = await readFile(
+      join(TEST_DATA_DIR, "contributors", "alice.md"),
+      "utf-8"
+    );
     const parsed = matter(content);
 
     expect(parsed.data.username).toBe("alice");
@@ -83,8 +86,14 @@ describe("Contributor Exporter", () => {
     expect(count).toBe(2);
 
     // Check both files exist
-    const aliceContent = await readFile(join(TEST_DATA_DIR, "contributors", "alice.md"), "utf-8");
-    const bobContent = await readFile(join(TEST_DATA_DIR, "contributors", "bob.md"), "utf-8");
+    const aliceContent = await readFile(
+      join(TEST_DATA_DIR, "contributors", "alice.md"),
+      "utf-8"
+    );
+    const bobContent = await readFile(
+      join(TEST_DATA_DIR, "contributors", "bob.md"),
+      "utf-8"
+    );
 
     expect(aliceContent).toBeTruthy();
     expect(bobContent).toBeTruthy();
@@ -106,10 +115,12 @@ describe("Contributor Exporter", () => {
     const count = await exportContributors(db, TEST_DATA_DIR, logger);
     expect(count).toBe(1);
 
-    const content = await readFile(join(TEST_DATA_DIR, "contributors", "alice.md"), "utf-8");
+    const content = await readFile(
+      join(TEST_DATA_DIR, "contributors", "alice.md"),
+      "utf-8"
+    );
     const parsed = matter(content);
 
     expect(parsed.content.trim()).toBe("");
   });
 });
-

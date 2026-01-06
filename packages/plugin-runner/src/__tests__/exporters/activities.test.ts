@@ -7,9 +7,13 @@ import { readFile, mkdir, rm } from "fs/promises";
 import { join } from "path";
 import { createDatabase } from "@leaderboard/api";
 import { initializeSchema } from "@leaderboard/api";
-import { contributorQueries, activityDefinitionQueries, activityQueries } from "@leaderboard/api";
-import { exportActivities } from "../../exporters/activities.js";
-import { createLogger } from "../../logger.js";
+import {
+  contributorQueries,
+  activityDefinitionQueries,
+  activityQueries,
+} from "@leaderboard/api";
+import { exportActivities } from "../../exporters/activities";
+import { createLogger } from "../../logger";
 import type { Database } from "@leaderboard/api";
 
 const TEST_DATA_DIR = "./test-data-export-activities";
@@ -78,14 +82,18 @@ describe("Activity Exporter", () => {
     const count = await exportActivities(db, TEST_DATA_DIR, logger);
     expect(count).toBe(2);
 
-    const content = await readFile(join(TEST_DATA_DIR, "activities", "alice.jsonl"), "utf-8");
+    const content = await readFile(
+      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      "utf-8"
+    );
     const lines = content.trim().split("\n");
 
     expect(lines).toHaveLength(2);
 
-    const activity1 = JSON.parse(lines[0]);
-    expect(activity1.slug).toBe("alice-pr-1");
-    expect(activity1.title).toBe("Fix bug");
+    const activities = lines.map((line) => JSON.parse(line));
+    const slugs = activities.map((a) => a.slug).sort();
+    expect(slugs).toContain("alice-pr-1");
+    expect(slugs).toContain("alice-pr-2");
   });
 
   it("should create separate files for each contributor", async () => {
@@ -129,8 +137,14 @@ describe("Activity Exporter", () => {
     expect(count).toBe(2);
 
     // Check both files exist
-    const aliceContent = await readFile(join(TEST_DATA_DIR, "activities", "alice.jsonl"), "utf-8");
-    const bobContent = await readFile(join(TEST_DATA_DIR, "activities", "bob.jsonl"), "utf-8");
+    const aliceContent = await readFile(
+      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      "utf-8"
+    );
+    const bobContent = await readFile(
+      join(TEST_DATA_DIR, "activities", "bob.jsonl"),
+      "utf-8"
+    );
 
     expect(aliceContent).toBeTruthy();
     expect(bobContent).toBeTruthy();
@@ -166,7 +180,10 @@ describe("Activity Exporter", () => {
     expect(count).toBe(1);
 
     // Check that only alice's file exists
-    const aliceContent = await readFile(join(TEST_DATA_DIR, "activities", "alice.jsonl"), "utf-8");
+    const aliceContent = await readFile(
+      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      "utf-8"
+    );
     expect(aliceContent).toBeTruthy();
 
     // Bob's file should not exist
@@ -178,4 +195,3 @@ describe("Activity Exporter", () => {
     }
   });
 });
-

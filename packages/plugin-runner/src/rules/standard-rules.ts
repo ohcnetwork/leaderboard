@@ -50,4 +50,32 @@ export const STANDARD_BADGE_RULES: BadgeRuleDefinition[] = [
       { variant: "platinum", days: 90 },
     ],
   },
+
+  // Pull request streak (only PR activities)
+  {
+    type: "streak",
+    badgeSlug: "pr_consistency",
+    enabled: false, // Disabled by default, enable in custom config
+    streakType: "daily",
+    activityDefinitions: ["pull_request_.*"], // Regex pattern
+    thresholds: [
+      { variant: "bronze", days: 5 },
+      { variant: "silver", days: 10 },
+      { variant: "gold", days: 21 },
+    ],
+  },
+
+  // Code review streak
+  {
+    type: "streak",
+    badgeSlug: "review_champion",
+    enabled: false, // Disabled by default, enable in custom config
+    streakType: "weekly",
+    activityDefinitions: ["pull_request_reviewed"], // Exact match
+    thresholds: [
+      { variant: "bronze", days: 4 },
+      { variant: "silver", days: 8 },
+      { variant: "gold", days: 12 },
+    ],
+  },
 ];

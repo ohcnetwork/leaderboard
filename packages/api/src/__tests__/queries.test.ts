@@ -55,6 +55,19 @@ describe("Database Queries", () => {
       expect(retrieved).not.toBeNull();
       expect(retrieved?.username).toBe("alice");
       expect(retrieved?.name).toBe("Alice Smith");
+      expect(retrieved?.role).toBe("core");
+      expect(retrieved?.title).toBe("Engineer");
+      expect(retrieved?.avatar_url).toBe("https://example.com/alice.png");
+      expect(retrieved?.bio).toBe("Alice is a software engineer");
+      expect(retrieved?.joining_date).toBe("2020-01-01");
+
+      // Verify JSON fields are parsed as objects
+      expect(retrieved?.social_profiles).toEqual({
+        github: "https://github.com/alice",
+      });
+      expect(typeof retrieved?.social_profiles).toBe("object");
+      expect(retrieved?.meta).toEqual({ team: "backend" });
+      expect(typeof retrieved?.meta).toBe("object");
     });
 
     it("should get contributors by role", async () => {
@@ -85,6 +98,14 @@ describe("Database Queries", () => {
       const coreMembers = await contributorQueries.getByRole(db, "core");
       expect(coreMembers).toHaveLength(1);
       expect(coreMembers[0].username).toBe("alice");
+      expect(coreMembers[0].name).toBe("Alice");
+      expect(coreMembers[0].role).toBe("core");
+      expect(coreMembers[0].title).toBeNull();
+      expect(coreMembers[0].avatar_url).toBeNull();
+      expect(coreMembers[0].bio).toBeNull();
+      expect(coreMembers[0].social_profiles).toBeNull();
+      expect(coreMembers[0].joining_date).toBeNull();
+      expect(coreMembers[0].meta).toBeNull();
     });
 
     it("should count contributors", async () => {
@@ -104,6 +125,56 @@ describe("Database Queries", () => {
       expect(count).toBe(1);
     });
 
+    it("should parse JSON fields correctly when getting all contributors", async () => {
+      await contributorQueries.upsert(db, {
+        username: "alice",
+        name: "Alice",
+        role: "core",
+        title: "Developer",
+        avatar_url: "https://example.com/alice.png",
+        bio: "Core developer",
+        social_profiles: { github: "alice", linkedin: "alice-dev" },
+        joining_date: "2023-01-01",
+        meta: { skills: ["typescript", "react"], experience: 5 },
+      });
+
+      await contributorQueries.upsert(db, {
+        username: "bob",
+        name: "Bob",
+        role: "contributor",
+        title: "Designer",
+        avatar_url: null,
+        bio: null,
+        social_profiles: { twitter: "@bob" },
+        joining_date: "2023-06-01",
+        meta: { department: "design" },
+      });
+
+      const all = await contributorQueries.getAll(db);
+
+      expect(all).toHaveLength(2);
+
+      // Check first contributor
+      expect(all[0].username).toBe("alice");
+      expect(all[0].social_profiles).toEqual({
+        github: "alice",
+        linkedin: "alice-dev",
+      });
+      expect(typeof all[0].social_profiles).toBe("object");
+      expect(all[0].meta).toEqual({
+        skills: ["typescript", "react"],
+        experience: 5,
+      });
+      expect(typeof all[0].meta).toBe("object");
+
+      // Check second contributor
+      expect(all[1].username).toBe("bob");
+      expect(all[1].social_profiles).toEqual({ twitter: "@bob" });
+      expect(typeof all[1].social_profiles).toBe("object");
+      expect(all[1].meta).toEqual({ department: "design" });
+      expect(typeof all[1].meta).toBe("object");
+    });
+
     it("should update existing contributor", async () => {
       const contributor: Contributor = {
         username: "alice",
@@ -119,14 +190,29 @@ describe("Database Queries", () => {
 
       await contributorQueries.upsert(db, contributor);
 
-      // Update
+      // Update with new data including JSON fields
       await contributorQueries.upsert(db, {
         ...contributor,
         title: "Senior Engineer",
+        social_profiles: {
+          github: "https://github.com/alice",
+          twitter: "@alice",
+        },
+        meta: { team: "frontend", level: "senior" },
       });
 
       const updated = await contributorQueries.getByUsername(db, "alice");
+      expect(updated?.username).toBe("alice");
+      expect(updated?.name).toBe("Alice Smith");
+      expect(updated?.role).toBe("core");
       expect(updated?.title).toBe("Senior Engineer");
+      expect(updated?.social_profiles).toEqual({
+        github: "https://github.com/alice",
+        twitter: "@alice",
+      });
+      expect(typeof updated?.social_profiles).toBe("object");
+      expect(updated?.meta).toEqual({ team: "frontend", level: "senior" });
+      expect(typeof updated?.meta).toBe("object");
     });
   });
 
@@ -209,16 +295,27 @@ describe("Database Queries", () => {
         title: "Fix bug",
         occured_at: "2024-01-01T10:00:00Z",
         link: "https://github.com/org/repo/pull/1",
-        text: null,
+        text: "Fixed critical bug in authentication",
         points: 10,
-        meta: null,
+        meta: { pr_number: 123, lines_changed: 50 },
       };
 
       await activityQueries.upsert(db, activity);
       const activities = await activityQueries.getByContributor(db, "alice");
 
       expect(activities).toHaveLength(1);
+      expect(activities[0].slug).toBe("alice-pr-1");
+      expect(activities[0].contributor).toBe("alice");
+      expect(activities[0].activity_definition).toBe("pr_merged");
       expect(activities[0].title).toBe("Fix bug");
+      expect(activities[0].occured_at).toBe("2024-01-01T10:00:00Z");
+      expect(activities[0].link).toBe("https://github.com/org/repo/pull/1");
+      expect(activities[0].text).toBe("Fixed critical bug in authentication");
+      expect(activities[0].points).toBe(10);
+
+      // Verify meta is parsed as object
+      expect(activities[0].meta).toEqual({ pr_number: 123, lines_changed: 50 });
+      expect(typeof activities[0].meta).toBe("object");
     });
 
     it("should get activities by date range", async () => {
@@ -231,7 +328,7 @@ describe("Database Queries", () => {
         link: null,
         text: null,
         points: 10,
-        meta: null,
+        meta: { month: "january" },
       });
 
       await activityQueries.upsert(db, {
@@ -243,7 +340,7 @@ describe("Database Queries", () => {
         link: null,
         text: null,
         points: 10,
-        meta: null,
+        meta: { month: "february" },
       });
 
       const activities = await activityQueries.getByDateRange(
@@ -253,7 +350,12 @@ describe("Database Queries", () => {
       );
 
       expect(activities).toHaveLength(1);
+      expect(activities[0].slug).toBe("alice-pr-1");
       expect(activities[0].title).toBe("Activity 1");
+      expect(activities[0].occured_at).toBe("2024-01-15T10:00:00Z");
+      expect(activities[0].points).toBe(10);
+      expect(activities[0].meta).toEqual({ month: "january" });
+      expect(typeof activities[0].meta).toBe("object");
     });
 
     it("should calculate total points for contributor", async () => {
@@ -792,6 +894,204 @@ describe("Database Queries", () => {
         "alice"
       );
       expect(badges).toHaveLength(1);
+    });
+  });
+});
+
+describe("activityQueries", () => {
+  let db: Database;
+
+  beforeEach(async () => {
+    db = createDatabase(":memory:");
+    await initializeSchema(db);
+
+    // Set up test data
+    await contributorQueries.upsert(db, {
+      username: "test_user",
+      name: "Test User",
+      title: null,
+      joining_date: "2025-01-01",
+      avatar_url: null,
+      role: null,
+      bio: null,
+      social_profiles: null,
+      meta: null,
+    });
+
+    await activityDefinitionQueries.insertOrIgnore(db, {
+      slug: "pull_request_opened",
+      name: "PR Opened",
+      description: "Opened a pull request",
+      icon: "git-pull-request",
+      points: 10,
+    });
+
+    await activityDefinitionQueries.insertOrIgnore(db, {
+      slug: "pull_request_merged",
+      name: "PR Merged",
+      description: "Merged a pull request",
+      icon: "git-merge",
+      points: 20,
+    });
+
+    await activityDefinitionQueries.insertOrIgnore(db, {
+      slug: "issue_created",
+      name: "Issue Created",
+      description: "Created an issue",
+      icon: "circle-dot",
+      points: 5,
+    });
+  });
+
+  afterEach(async () => {
+    await db.close();
+  });
+
+  describe("getByDefinitions", () => {
+    it("should filter by multiple activity definitions", async () => {
+      await activityQueries.upsert(db, {
+        slug: "activity_1",
+        contributor: "test_user",
+        activity_definition: "pull_request_opened",
+        title: "PR 1",
+        occured_at: "2025-01-01",
+        link: null,
+        text: null,
+        points: 10,
+        meta: null,
+      });
+
+      await activityQueries.upsert(db, {
+        slug: "activity_2",
+        contributor: "test_user",
+        activity_definition: "pull_request_merged",
+        title: "PR 2",
+        occured_at: "2025-01-02",
+        link: null,
+        text: null,
+        points: 20,
+        meta: null,
+      });
+
+      await activityQueries.upsert(db, {
+        slug: "activity_3",
+        contributor: "test_user",
+        activity_definition: "issue_created",
+        title: "Issue 1",
+        occured_at: "2025-01-03",
+        link: null,
+        text: null,
+        points: 5,
+        meta: null,
+      });
+
+      const result = await activityQueries.getByDefinitions(db, [
+        "pull_request_opened",
+        "pull_request_merged",
+      ]);
+
+      expect(result).toHaveLength(2);
+      expect(result.map((a) => a.activity_definition)).toContain(
+        "pull_request_opened"
+      );
+      expect(result.map((a) => a.activity_definition)).toContain(
+        "pull_request_merged"
+      );
+      expect(result.map((a) => a.activity_definition)).not.toContain(
+        "issue_created"
+      );
+    });
+
+    it("should return all when empty array", async () => {
+      await activityQueries.upsert(db, {
+        slug: "activity_1",
+        contributor: "test_user",
+        activity_definition: "pull_request_opened",
+        title: "PR 1",
+        occured_at: "2025-01-01",
+        link: null,
+        text: null,
+        points: 10,
+        meta: null,
+      });
+
+      await activityQueries.upsert(db, {
+        slug: "activity_2",
+        contributor: "test_user",
+        activity_definition: "issue_created",
+        title: "Issue 1",
+        occured_at: "2025-01-02",
+        link: null,
+        text: null,
+        points: 5,
+        meta: null,
+      });
+
+      const result = await activityQueries.getByDefinitions(db, []);
+
+      expect(result.length).toBeGreaterThanOrEqual(2);
+    });
+  });
+
+  describe("getByContributorAndDefinitions", () => {
+    it("should filter by contributor and definitions", async () => {
+      await contributorQueries.upsert(db, {
+        username: "user2",
+        name: "User 2",
+        joining_date: "2025-01-01",
+        title: null,
+        avatar_url: null,
+        role: null,
+        bio: null,
+        social_profiles: null,
+        meta: null,
+      });
+
+      await activityQueries.upsert(db, {
+        slug: "activity_1",
+        contributor: "test_user",
+        activity_definition: "pull_request_opened",
+        title: "PR 1",
+        occured_at: "2025-01-01",
+        link: null,
+        text: null,
+        points: 10,
+        meta: null,
+      });
+
+      await activityQueries.upsert(db, {
+        slug: "activity_2",
+        contributor: "test_user",
+        activity_definition: "issue_created",
+        title: "Issue 1",
+        occured_at: "2025-01-02",
+        link: null,
+        text: null,
+        points: 5,
+        meta: null,
+      });
+
+      await activityQueries.upsert(db, {
+        slug: "activity_3",
+        contributor: "user2",
+        activity_definition: "pull_request_opened",
+        title: "PR 2",
+        occured_at: "2025-01-03",
+        link: null,
+        text: null,
+        points: 10,
+        meta: null,
+      });
+
+      const result = await activityQueries.getByContributorAndDefinitions(
+        db,
+        "test_user",
+        ["pull_request_opened"]
+      );
+
+      expect(result).toHaveLength(1);
+      expect(result[0].contributor).toBe("test_user");
+      expect(result[0].activity_definition).toBe("pull_request_opened");
     });
   });
 });

@@ -17,6 +17,19 @@ import type {
 } from "./types";
 
 /**
+ * Helper to parse contributor JSON fields
+ */
+function parseContributor(row: any): Contributor {
+  return {
+    ...row,
+    social_profiles: row.social_profiles
+      ? JSON.parse(row.social_profiles as string)
+      : null,
+    meta: row.meta ? JSON.parse(row.meta as string) : null,
+  } as Contributor;
+}
+
+/**
  * Contributor queries
  */
 export const contributorQueries = {
@@ -27,7 +40,7 @@ export const contributorQueries = {
     const result = await db.execute(
       "SELECT * FROM contributor ORDER BY username"
     );
-    return result.rows as unknown as Contributor[];
+    return result.rows.map(parseContributor);
   },
 
   /**
@@ -41,7 +54,7 @@ export const contributorQueries = {
       "SELECT * FROM contributor WHERE username = ?",
       [username]
     );
-    return (result.rows[0] as unknown as Contributor) || null;
+    return result.rows[0] ? parseContributor(result.rows[0]) : null;
   },
 
   /**
@@ -52,7 +65,7 @@ export const contributorQueries = {
       "SELECT * FROM contributor WHERE role = ? ORDER BY username",
       [role]
     );
-    return result.rows as unknown as Contributor[];
+    return result.rows.map(parseContributor);
   },
 
   /**
@@ -190,6 +203,16 @@ export const activityDefinitionQueries = {
 };
 
 /**
+ * Helper to parse activity JSON fields
+ */
+function parseActivity(row: any): Activity {
+  return {
+    ...row,
+    meta: row.meta ? JSON.parse(row.meta as string) : null,
+  } as Activity;
+}
+
+/**
  * Activity queries
  */
 export const activityQueries = {
@@ -215,7 +238,7 @@ export const activityQueries = {
     }
 
     const result = await db.execute(sql, params);
-    return result.rows as unknown as Activity[];
+    return result.rows.map(parseActivity);
   },
 
   /**
@@ -236,7 +259,7 @@ export const activityQueries = {
     }
 
     const result = await db.execute(sql, params);
-    return result.rows as unknown as Activity[];
+    return result.rows.map(parseActivity);
   },
 
   /**
@@ -251,7 +274,7 @@ export const activityQueries = {
       "SELECT * FROM activity WHERE occured_at >= ? AND occured_at <= ? ORDER BY occured_at DESC",
       [startDate, endDate]
     );
-    return result.rows as unknown as Activity[];
+    return result.rows.map(parseActivity);
   },
 
   /**
@@ -265,7 +288,55 @@ export const activityQueries = {
       "SELECT * FROM activity WHERE activity_definition = ? ORDER BY occured_at DESC",
       [definitionSlug]
     );
-    return result.rows as unknown as Activity[];
+    return result.rows.map(parseActivity);
+  },
+
+  /**
+   * Get activities filtered by multiple activity definitions
+   * Optimized for streak calculation
+   */
+  async getByDefinitions(
+    db: Database,
+    activityDefinitionSlugs: string[]
+  ): Promise<Activity[]> {
+    if (activityDefinitionSlugs.length === 0) {
+      return this.getAll(db);
+    }
+
+    const placeholders = activityDefinitionSlugs.map(() => "?").join(",");
+    const result = await db.execute(
+      `SELECT * FROM activity 
+       WHERE activity_definition IN (${placeholders})
+       ORDER BY occured_at ASC`,
+      activityDefinitionSlugs
+    );
+
+    return result.rows.map(parseActivity);
+  },
+
+  /**
+   * Get activities by contributor and activity definitions
+   * Optimized for streak rule evaluation
+   */
+  async getByContributorAndDefinitions(
+    db: Database,
+    contributor: string,
+    activityDefinitionSlugs: string[]
+  ): Promise<Activity[]> {
+    if (activityDefinitionSlugs.length === 0) {
+      return this.getByContributor(db, contributor);
+    }
+
+    const placeholders = activityDefinitionSlugs.map(() => "?").join(",");
+    const result = await db.execute(
+      `SELECT * FROM activity 
+       WHERE contributor = ? 
+         AND activity_definition IN (${placeholders})
+       ORDER BY occured_at ASC`,
+      [contributor, ...activityDefinitionSlugs]
+    );
+
+    return result.rows.map(parseActivity);
   },
 
   /**
@@ -594,6 +665,51 @@ export const contributorAggregateQueries = {
       "DELETE FROM contributor_aggregate WHERE contributor = ?",
       [username]
     );
+  },
+
+  /**
+   * Get contributors where aggregate value meets threshold
+   * Optimized for threshold-based badge rules
+   */
+  async getContributorsAboveThreshold(
+    db: Database,
+    aggregateSlug: string,
+    minValue: number
+  ): Promise<Array<{ contributor: string; value: number }>> {
+    const result = await db.execute(
+      `SELECT contributor, value
+       FROM contributor_aggregate
+       WHERE aggregate = ? 
+         AND json_extract(value, '$.value') >= ?
+         AND json_extract(value, '$.type') = 'number'
+       ORDER BY json_extract(value, '$.value') DESC`,
+      [aggregateSlug, minValue]
+    );
+
+    return result.rows.map((row: any) => ({
+      contributor: row.contributor as string,
+      value: JSON.parse(row.value as string).value as number,
+    }));
+  },
+
+  /**
+   * Get contributors with specific aggregate (for composite rules)
+   */
+  async getContributorsWithAggregate(
+    db: Database,
+    aggregateSlug: string
+  ): Promise<Array<{ contributor: string; value: AggregateValue }>> {
+    const result = await db.execute(
+      `SELECT contributor, value
+       FROM contributor_aggregate
+       WHERE aggregate = ?`,
+      [aggregateSlug]
+    );
+
+    return result.rows.map((row: any) => ({
+      contributor: row.contributor as string,
+      value: JSON.parse(row.value as string) as AggregateValue,
+    }));
   },
 };
 

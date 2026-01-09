@@ -5,6 +5,7 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { mkdir, writeFile, rm } from "fs/promises";
 import { join } from "path";
+import { tmpdir } from "os";
 import matter from "gray-matter";
 import { createDatabase } from "@leaderboard/api";
 import { initializeSchema } from "@leaderboard/api";
@@ -90,7 +91,7 @@ describe("Contributor Importer", () => {
   });
 
   it("should handle missing contributors directory", async () => {
-    const emptyDir = "./test-data-empty";
+    const emptyDir = join(tmpdir(), `test-data-empty-${Date.now()}`);
     await mkdir(emptyDir, { recursive: true });
 
     const count = await importContributors(db, emptyDir, logger);

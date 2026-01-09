@@ -67,7 +67,12 @@ const plugin: Plugin = {
     );
 
     // Define badge definitions
-    const badgeDefinitions = [
+    const badgeDefinitions: Array<{
+      slug: string;
+      name: string;
+      description: string;
+      variants: Record<string, { description: string; svg_url: string }>;
+    }> = [
       {
         slug: "activity_milestone",
         name: "Activity Milestone",
@@ -144,6 +149,51 @@ const plugin: Plugin = {
             description: "90 day streak",
             svg_url:
               "https://api.dicebear.com/7.x/shapes/svg?seed=platinum-streak",
+          },
+        },
+      },
+      {
+        slug: "pr_consistency",
+        name: "PR Consistency",
+        description:
+          "Awarded for maintaining a consistent pull request contribution streak",
+        variants: {
+          bronze: {
+            description: "5 day PR streak",
+            svg_url:
+              "https://api.dicebear.com/7.x/shapes/svg?seed=bronze-pr-streak",
+          },
+          silver: {
+            description: "10 day PR streak",
+            svg_url:
+              "https://api.dicebear.com/7.x/shapes/svg?seed=silver-pr-streak",
+          },
+          gold: {
+            description: "21 day PR streak",
+            svg_url:
+              "https://api.dicebear.com/7.x/shapes/svg?seed=gold-pr-streak",
+          },
+        },
+      },
+      {
+        slug: "review_champion",
+        name: "Review Champion",
+        description: "Awarded for consistent code review participation",
+        variants: {
+          bronze: {
+            description: "4 weeks of reviews",
+            svg_url:
+              "https://api.dicebear.com/7.x/shapes/svg?seed=bronze-review",
+          },
+          silver: {
+            description: "8 weeks of reviews",
+            svg_url:
+              "https://api.dicebear.com/7.x/shapes/svg?seed=silver-review",
+          },
+          gold: {
+            description: "12 weeks of reviews",
+            svg_url:
+              "https://api.dicebear.com/7.x/shapes/svg?seed=gold-review",
           },
         },
       },

@@ -8,10 +8,12 @@ import type {
   Contributor,
   Activity,
   AggregateValue,
+  ActivityDefinition,
 } from "@leaderboard/api";
 import {
   contributorQueries,
   activityQueries,
+  activityDefinitionQueries,
   contributorAggregateQueries,
   badgeDefinitionQueries,
   contributorBadgeQueries,
@@ -25,6 +27,28 @@ import type {
   RuleEvaluationResult,
 } from "./types";
 import { STANDARD_BADGE_RULES } from "./standard-rules";
+
+/**
+ * Match activity definitions using regex patterns
+ * @param patterns Array of regex patterns (e.g., ["pull_request_.*", "issue_.*"])
+ * @param definitions All activity definitions
+ * @returns Matched activity definition slugs
+ */
+function matchActivityDefinitions(
+  patterns: string[] | undefined,
+  definitions: ActivityDefinition[]
+): string[] {
+  // Empty/undefined = all definitions
+  if (!patterns || patterns.length === 0) {
+    return definitions.map((d) => d.slug);
+  }
+
+  const regexes = patterns.map((p) => new RegExp(p));
+
+  return definitions
+    .filter((def) => regexes.some((regex) => regex.test(def.slug)))
+    .map((d) => d.slug);
+}
 
 /**
  * Evaluate badge rules and award badges to contributors
@@ -42,32 +66,22 @@ export async function evaluateBadgeRules(
   // Load badge definitions
   const badgeDefinitions = await badgeDefinitionQueries.getAll(db);
 
+  // Load all activity definitions (for streak rule filtering)
+  const activityDefinitions = await activityDefinitionQueries.getAll(db);
+
   let awardsGiven = 0;
   let upgradesGiven = 0;
 
   for (const contributor of contributors) {
-    // Load contributor's aggregates
-    const aggregates = await contributorAggregateQueries.getByContributor(
-      db,
-      contributor.username
-    );
-    const aggregateMap = new Map(aggregates.map((a) => [a.aggregate, a.value]));
-
-    // Load contributor's activities (for streak calculation)
-    const activities = await activityQueries.getByContributor(
-      db,
-      contributor.username
-    );
-
     // Evaluate each rule
     for (const rule of rules) {
       if (!rule.enabled) continue;
 
       const result = await evaluateRule(
+        db,
         rule,
-        contributor,
-        aggregateMap,
-        activities
+        contributor.username,
+        activityDefinitions
       );
 
       if (!result) continue;
@@ -152,36 +166,53 @@ export async function evaluateBadgeRules(
  * Evaluate a single rule for a contributor
  */
 async function evaluateRule(
+  db: Database,
   rule: BadgeRuleDefinition,
-  contributor: Contributor,
-  aggregates: Map<string, AggregateValue>,
-  activities: Activity[]
+  contributor: string,
+  activityDefinitions: ActivityDefinition[]
 ): Promise<RuleEvaluationResult | null> {
   switch (rule.type) {
     case "threshold":
-      return evaluateThresholdRule(rule, aggregates);
+      return evaluateThresholdRule(db, rule, contributor);
     case "streak":
-      return evaluateStreakRule(rule, activities);
-    case "growth":
-      return evaluateGrowthRule(rule, aggregates);
+      return evaluateStreakRule(db, rule, contributor, activityDefinitions);
     case "composite":
-      return evaluateCompositeRule(rule, aggregates);
+      return evaluateCompositeRule(db, rule, contributor);
+    case "growth":
+      return evaluateGrowthRule(db, rule, contributor);
     case "custom":
-      return rule.evaluator(contributor, aggregates, activities);
+      // For custom rules, load data and call evaluator
+      const [aggregates, activities, contributorData] = await Promise.all([
+        contributorAggregateQueries.getByContributor(db, contributor),
+        activityQueries.getByContributor(db, contributor),
+        contributorQueries.getByUsername(db, contributor),
+      ]);
+      if (!contributorData) return null;
+      const aggregateMap = new Map(aggregates.map((a) => [a.aggregate, a.value]));
+      return rule.evaluator(contributorData, aggregateMap, activities);
     default:
       return null;
   }
 }
 
 /**
- * Evaluate threshold-based rule
+ * Evaluate threshold-based rule using SQL filtering
  */
-function evaluateThresholdRule(
+async function evaluateThresholdRule(
+  db: Database,
   rule: ThresholdBadgeRule,
-  aggregates: Map<string, AggregateValue>
-): RuleEvaluationResult | null {
-  const aggregate = aggregates.get(rule.aggregateSlug);
-  if (!aggregate || aggregate.type !== "number") return null;
+  contributor: string
+): Promise<RuleEvaluationResult | null> {
+  // Get contributor's aggregate value using SQL
+  const contributors = await contributorAggregateQueries.getContributorsAboveThreshold(
+    db,
+    rule.aggregateSlug,
+    Math.min(...rule.thresholds.map((t) => t.value)) // Minimum threshold
+  );
+
+  // Find this contributor
+  const contributorData = contributors.find((c) => c.contributor === contributor);
+  if (!contributorData) return null;
 
   // Sort thresholds by value descending to get highest eligible variant
   const sortedThresholds = [...rule.thresholds].sort(
@@ -189,11 +220,14 @@ function evaluateThresholdRule(
   );
 
   for (const threshold of sortedThresholds) {
-    if (aggregate.value >= threshold.value) {
+    if (contributorData.value >= threshold.value) {
       return {
         shouldAward: true,
         variant: threshold.variant,
-        meta: { threshold: threshold.value, actualValue: aggregate.value },
+        meta: {
+          threshold: threshold.value,
+          actualValue: contributorData.value,
+        },
       };
     }
   }
@@ -202,25 +236,33 @@ function evaluateThresholdRule(
 }
 
 /**
- * Evaluate streak-based rule
+ * Evaluate streak-based rule with activity definition filtering
  */
-function evaluateStreakRule(
+async function evaluateStreakRule(
+  db: Database,
   rule: StreakBadgeRule,
-  activities: Activity[]
-): RuleEvaluationResult | null {
+  contributor: string,
+  allActivityDefinitions: ActivityDefinition[]
+): Promise<RuleEvaluationResult | null> {
+  // Match activity definitions using regex patterns
+  const matchedSlugs = matchActivityDefinitions(
+    rule.activityDefinitions,
+    allActivityDefinitions
+  );
+
+  if (matchedSlugs.length === 0) return null;
+
+  // Fetch filtered activities using SQL
+  const activities = await activityQueries.getByContributorAndDefinitions(
+    db,
+    contributor,
+    matchedSlugs
+  );
+
   if (activities.length === 0) return null;
 
-  // Sort activities by date
-  const sortedActivities = [...activities].sort(
-    (a, b) =>
-      new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime()
-  );
-
-  // Calculate longest streak
-  const longestStreak = calculateLongestStreak(
-    sortedActivities,
-    rule.streakType
-  );
+  // Calculate longest streak (union of all matched activities)
+  const longestStreak = calculateLongestStreak(activities, rule.streakType);
 
   // Sort thresholds by days descending
   const sortedThresholds = [...rule.thresholds].sort((a, b) => b.days - a.days);
@@ -230,7 +272,11 @@ function evaluateStreakRule(
       return {
         shouldAward: true,
         variant: threshold.variant,
-        meta: { streakDays: longestStreak, requiredDays: threshold.days },
+        meta: {
+          streakDays: longestStreak,
+          requiredDays: threshold.days,
+          activityDefinitions: matchedSlugs,
+        },
       };
     }
   }
@@ -307,50 +353,61 @@ function calculateLongestStreak(
  * Note: This is a simplified implementation
  * A full implementation would require historical aggregate data
  */
-function evaluateGrowthRule(
+async function evaluateGrowthRule(
+  db: Database,
   rule: GrowthBadgeRule,
-  aggregates: Map<string, AggregateValue>
-): RuleEvaluationResult | null {
+  contributor: string
+): Promise<RuleEvaluationResult | null> {
   // For now, return null as we don't have historical data
   // This would require storing aggregate values over time
   return null;
 }
 
 /**
- * Evaluate composite rule (multiple conditions)
+ * Evaluate composite rule (multiple conditions) using SQL queries
  */
-function evaluateCompositeRule(
+async function evaluateCompositeRule(
+  db: Database,
   rule: CompositeBadgeRule,
-  aggregates: Map<string, AggregateValue>
-): RuleEvaluationResult | null {
+  contributor: string
+): Promise<RuleEvaluationResult | null> {
   const results: boolean[] = [];
 
   for (const condition of rule.conditions) {
-    const aggregate = aggregates.get(condition.aggregateSlug);
-    if (!aggregate || aggregate.type !== "number") {
+    // Fetch aggregate from DB
+    const aggregates = await contributorAggregateQueries.getContributorsWithAggregate(
+      db,
+      condition.aggregateSlug
+    );
+
+    const contributorAggregate = aggregates.find((a) => a.contributor === contributor);
+    if (!contributorAggregate || contributorAggregate.value.type !== "number") {
       results.push(false);
       continue;
     }
 
+    // Evaluate condition
     let conditionMet = false;
+    const value = contributorAggregate.value.value;
+
     switch (condition.operator) {
       case ">":
-        conditionMet = aggregate.value > condition.value;
+        conditionMet = value > condition.value;
         break;
       case "<":
-        conditionMet = aggregate.value < condition.value;
+        conditionMet = value < condition.value;
         break;
       case ">=":
-        conditionMet = aggregate.value >= condition.value;
+        conditionMet = value >= condition.value;
         break;
       case "<=":
-        conditionMet = aggregate.value <= condition.value;
+        conditionMet = value <= condition.value;
         break;
       case "==":
-        conditionMet = aggregate.value === condition.value;
+        conditionMet = value === condition.value;
         break;
       case "!=":
-        conditionMet = aggregate.value !== condition.value;
+        conditionMet = value !== condition.value;
         break;
     }
 
@@ -358,20 +415,10 @@ function evaluateCompositeRule(
   }
 
   // Evaluate based on operator
-  let shouldAward = false;
-  if (rule.operator === "AND") {
-    shouldAward = results.every((r) => r);
-  } else if (rule.operator === "OR") {
-    shouldAward = results.some((r) => r);
-  }
+  const shouldAward =
+    rule.operator === "AND" ? results.every((r) => r) : results.some((r) => r);
 
-  if (shouldAward) {
-    return {
-      shouldAward: true,
-      variant: rule.variant,
-      meta: { conditions: rule.conditions },
-    };
-  }
-
-  return null;
+  return shouldAward
+    ? { shouldAward: true, variant: rule.variant, meta: { conditions: rule.conditions } }
+    : null;
 }

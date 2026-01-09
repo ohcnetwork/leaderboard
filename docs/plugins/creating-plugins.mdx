@@ -627,9 +627,87 @@ Follow semantic versioning:
 - `1.1.0` - New features (backwards compatible)
 - `2.0.0` - Breaking changes
 
+## Defining Custom Badge Rules
+
+Plugins can define custom badge rules with activity filtering patterns.
+
+### Streak Badges with Activity Filtering
+
+You can create streak badges that only count specific activity types:
+
+```typescript
+import { STANDARD_BADGE_RULES } from "@leaderboard/plugin-runner";
+
+export const customRules = [
+  ...STANDARD_BADGE_RULES,
+  {
+    type: "streak",
+    badgeSlug: "documentation_champion",
+    enabled: true,
+    streakType: "weekly",
+    activityDefinitions: ["docs_.*", "readme_update"], // Regex patterns
+    thresholds: [
+      { variant: "bronze", days: 4 },
+      { variant: "silver", days: 8 },
+      { variant: "gold", days: 12 },
+    ],
+  },
+];
+```
+
+### Pattern Matching Examples
+
+- `["pull_request_opened", "pull_request_merged"]` - Exact activity slug matches
+- `["issue_.*"]` - All issue-related activities
+- `[".*_reviewed"]` - All review activities (PR review, code review, etc.)
+- `["^(?!bot_).*"]` - Exclude bot activities (negative lookahead)
+- `[]` or `undefined` - All activities (default)
+
+The system:
+
+1. Loads all activity definitions from the database
+2. Matches them against your regex patterns
+3. Fetches only matching activities using optimized SQL queries
+4. Calculates streak across the union of all matched activities
+
+### Example: Code Review Badge
+
+```typescript
+{
+  type: "streak",
+  badgeSlug: "review_expert",
+  enabled: true,
+  streakType: "daily",
+  activityDefinitions: ["pull_request_reviewed", "code_review_.*"],
+  thresholds: [
+    { variant: "bronze", days: 5 },
+    { variant: "silver", days: 10 },
+    { variant: "gold", days: 21 },
+  ],
+}
+```
+
+### Example: Pull Request Badge
+
+```typescript
+{
+  type: "streak",
+  badgeSlug: "pr_machine",
+  enabled: true,
+  streakType: "daily",
+  activityDefinitions: ["pull_request_.*"], // All PR activities
+  thresholds: [
+    { variant: "bronze", days: 7 },
+    { variant: "silver", days: 14 },
+    { variant: "gold", days: 30 },
+  ],
+}
+```
+
 ## Next Steps
 
 - [Plugin API Reference](/docs/plugins/api-reference)
 - [Plugin Examples](https://github.com/ohcnetwork/leaderboard-plugins)
 - [Deployment Guide](/docs/deployment)
+- [Badges Documentation](/docs/badges) - Learn more about badge rules
 

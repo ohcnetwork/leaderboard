@@ -35,6 +35,7 @@ export interface ThresholdBadgeRule extends BadgeRule {
 export interface StreakBadgeRule extends BadgeRule {
   type: "streak";
   streakType: "daily" | "weekly" | "monthly";
+  activityDefinitions?: string[]; // Optional regex patterns to filter activity types
   thresholds: {
     variant: string;
     days: number; // consecutive days required

@@ -4,7 +4,7 @@
  */
 
 import { parseArgs } from "util";
-import { join, resolve, isAbsolute } from "path";
+import { join } from "path";
 import { createLogger } from "./logger";
 import { initDatabase } from "./database";
 import { loadConfig } from "./config";

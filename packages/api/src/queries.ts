@@ -13,7 +13,6 @@ import type {
   BadgeDefinition,
   ContributorBadge,
   AggregateValue,
-  BadgeVariant,
 } from "./types";
 
 /**
@@ -140,6 +139,65 @@ export const contributorQueries = {
       "SELECT COUNT(*) as count FROM contributor"
     );
     return (result.rows[0] as { count: number }).count;
+  },
+
+  /**
+   * Get all contributor usernames (optimized - returns only usernames)
+   */
+  async getAllUsernames(db: Database): Promise<string[]> {
+    const result = await db.execute(
+      "SELECT username FROM contributor ORDER BY username"
+    );
+    return result.rows.map((row: any) => row.username as string);
+  },
+
+  /**
+   * Get contributors with total points, filtered by excluded roles
+   * Optimized with JOIN and GROUP BY to avoid N+1 queries
+   */
+  async getLeaderboardWithPoints(
+    db: Database,
+    excludedRoles: string[] = []
+  ): Promise<
+    Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      role: string | null;
+      totalPoints: number;
+    }>
+  > {
+    let sql = `
+      SELECT 
+        c.username,
+        c.name,
+        c.avatar_url,
+        c.role,
+        COALESCE(SUM(a.points), 0) as totalPoints
+      FROM contributor c
+      LEFT JOIN activity a ON c.username = a.contributor
+    `;
+    const params: unknown[] = [];
+
+    if (excludedRoles.length > 0) {
+      const placeholders = excludedRoles.map(() => "?").join(",");
+      sql += ` WHERE (c.role IS NULL OR c.role NOT IN (${placeholders}))`;
+      params.push(...excludedRoles);
+    }
+
+    sql += `
+      GROUP BY c.username
+      ORDER BY totalPoints DESC
+    `;
+
+    const result = await db.execute(sql, params);
+    return result.rows as unknown as Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      role: string | null;
+      totalPoints: number;
+    }>;
   },
 };
 
@@ -438,6 +496,201 @@ export const activityQueries = {
       activity_count: number;
     }>;
   },
+
+  /**
+   * Get leaderboard with contributor details (optimized with JOIN)
+   */
+  async getLeaderboardEnriched(
+    db: Database,
+    limit?: number,
+    startDate?: string,
+    endDate?: string
+  ): Promise<
+    Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      role: string | null;
+      total_points: number;
+      activity_count: number;
+    }>
+  > {
+    let sql = `
+      SELECT 
+        a.contributor as username,
+        c.name,
+        c.avatar_url,
+        c.role,
+        COALESCE(SUM(a.points), 0) as total_points,
+        COUNT(*) as activity_count
+      FROM activity a
+      LEFT JOIN contributor c ON a.contributor = c.username
+    `;
+    const params: unknown[] = [];
+
+    if (startDate && endDate) {
+      sql += " WHERE a.occured_at >= ? AND a.occured_at <= ?";
+      params.push(startDate, endDate);
+    }
+
+    sql += " GROUP BY a.contributor ORDER BY total_points DESC";
+
+    if (limit !== undefined) {
+      sql += " LIMIT ?";
+      params.push(limit);
+    }
+
+    const result = await db.execute(sql, params);
+    return result.rows as unknown as Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      role: string | null;
+      total_points: number;
+      activity_count: number;
+    }>;
+  },
+
+  /**
+   * Get recent activities with enriched contributor and definition details
+   * Optimized with JOINs to avoid separate queries
+   */
+  async getRecentActivitiesEnriched(
+    db: Database,
+    startDate: string,
+    endDate: string
+  ): Promise<
+    Array<{
+      slug: string;
+      contributor: string;
+      contributor_name: string | null;
+      contributor_avatar_url: string | null;
+      contributor_role: string | null;
+      activity_definition: string;
+      activity_name: string;
+      activity_description: string | null;
+      title: string | null;
+      occured_at: string;
+      link: string | null;
+      text: string | null;
+      points: number | null;
+    }>
+  > {
+    const sql = `
+      SELECT 
+        a.slug,
+        a.contributor,
+        c.name as contributor_name,
+        c.avatar_url as contributor_avatar_url,
+        c.role as contributor_role,
+        a.activity_definition,
+        ad.name as activity_name,
+        ad.description as activity_description,
+        a.title,
+        a.occured_at,
+        a.link,
+        a.text,
+        a.points
+      FROM activity a
+      JOIN activity_definition ad ON a.activity_definition = ad.slug
+      LEFT JOIN contributor c ON a.contributor = c.username
+      WHERE a.occured_at >= ? AND a.occured_at <= ?
+      ORDER BY a.activity_definition, a.occured_at DESC
+    `;
+
+    const result = await db.execute(sql, [startDate, endDate]);
+    return result.rows as unknown as Array<{
+      slug: string;
+      contributor: string;
+      contributor_name: string | null;
+      contributor_avatar_url: string | null;
+      contributor_role: string | null;
+      activity_definition: string;
+      activity_name: string;
+      activity_description: string | null;
+      title: string | null;
+      occured_at: string;
+      link: string | null;
+      text: string | null;
+      points: number | null;
+    }>;
+  },
+
+  /**
+   * Get top contributors by specific activity type
+   * Optimized with JOIN and GROUP BY
+   */
+  async getTopByActivityEnriched(
+    db: Database,
+    activitySlug: string,
+    startDate?: string,
+    endDate?: string,
+    limit: number = 10
+  ): Promise<
+    Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      points: number;
+      count: number;
+    }>
+  > {
+    let sql = `
+      SELECT 
+        a.contributor as username,
+        c.name,
+        c.avatar_url,
+        COALESCE(SUM(a.points), 0) as points,
+        COUNT(*) as count
+      FROM activity a
+      LEFT JOIN contributor c ON a.contributor = c.username
+      WHERE a.activity_definition = ?
+    `;
+    const params: unknown[] = [activitySlug];
+
+    if (startDate && endDate) {
+      sql += " AND a.occured_at >= ? AND a.occured_at <= ?";
+      params.push(startDate, endDate);
+    }
+
+    sql += `
+      GROUP BY a.contributor
+      ORDER BY points DESC
+      LIMIT ?
+    `;
+    params.push(limit);
+
+    const result = await db.execute(sql, params);
+    return result.rows as unknown as Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      points: number;
+      count: number;
+    }>;
+  },
+
+  /**
+   * Get activity count grouped by date for a contributor
+   * Optimized with SQL GROUP BY
+   */
+  async getActivityCountByDate(
+    db: Database,
+    username: string
+  ): Promise<Array<{ date: string; count: number }>> {
+    const sql = `
+      SELECT 
+        DATE(occured_at) as date,
+        COUNT(*) as count
+      FROM activity
+      WHERE contributor = ?
+      GROUP BY DATE(occured_at)
+      ORDER BY date
+    `;
+
+    const result = await db.execute(sql, [username]);
+    return result.rows as unknown as Array<{ date: string; count: number }>;
+  },
 };
 
 /**
@@ -480,21 +733,37 @@ export const globalAggregateQueries = {
    */
   async upsert(db: Database, aggregate: GlobalAggregate): Promise<void> {
     await db.execute(
-      `INSERT INTO global_aggregate (slug, name, description, value, meta)
-       VALUES (?, ?, ?, ?, ?)
+      `INSERT INTO global_aggregate (slug, name, description, value, hidden, meta)
+       VALUES (?, ?, ?, ?, ?, ?)
        ON CONFLICT(slug) DO UPDATE SET
          name = excluded.name,
          description = excluded.description,
          value = excluded.value,
+         hidden = excluded.hidden,
          meta = excluded.meta`,
       [
         aggregate.slug,
         aggregate.name,
         aggregate.description,
         JSON.stringify(aggregate.value),
+        aggregate.hidden ?? false,
         aggregate.meta ? JSON.stringify(aggregate.meta) : null,
       ]
     );
+  },
+
+  /**
+   * Get all visible global aggregates (not hidden)
+   */
+  async getAllVisible(db: Database): Promise<GlobalAggregate[]> {
+    const result = await db.execute(
+      "SELECT * FROM global_aggregate WHERE hidden = FALSE OR hidden IS NULL ORDER BY slug"
+    );
+    return result.rows.map((row: any) => ({
+      ...row,
+      value: JSON.parse(row.value as string),
+      meta: row.meta ? JSON.parse(row.meta as string) : null,
+    })) as GlobalAggregate[];
   },
 
   /**
@@ -502,6 +771,38 @@ export const globalAggregateQueries = {
    */
   async delete(db: Database, slug: string): Promise<void> {
     await db.execute("DELETE FROM global_aggregate WHERE slug = ?", [slug]);
+  },
+
+  /**
+   * Get global aggregates by slugs with visibility filtering
+   * Optimized with WHERE IN clause
+   */
+  async getBySlugs(
+    db: Database,
+    slugs: string[]
+  ): Promise<
+    Array<Pick<GlobalAggregate, "slug" | "name" | "value" | "description">>
+  > {
+    if (slugs.length === 0) {
+      return [];
+    }
+
+    const placeholders = slugs.map(() => "?").join(",");
+    const sql = `
+      SELECT slug, name, value, description
+      FROM global_aggregate
+      WHERE slug IN (${placeholders}) 
+        AND (hidden = FALSE OR hidden IS NULL)
+      ORDER BY slug
+    `;
+
+    const result = await db.execute(sql, slugs);
+    return result.rows.map((row: any) => ({
+      slug: row.slug,
+      name: row.name,
+      value: JSON.parse(row.value as string),
+      description: row.description || null,
+    }));
   },
 };
 
@@ -543,9 +844,14 @@ export const contributorAggregateDefinitionQueries = {
     definition: ContributorAggregateDefinition
   ): Promise<void> {
     await db.execute(
-      `INSERT OR IGNORE INTO contributor_aggregate_definition (slug, name, description)
-       VALUES (?, ?, ?)`,
-      [definition.slug, definition.name, definition.description]
+      `INSERT OR IGNORE INTO contributor_aggregate_definition (slug, name, description, hidden)
+       VALUES (?, ?, ?, ?)`,
+      [
+        definition.slug,
+        definition.name,
+        definition.description,
+        definition.hidden ?? false,
+      ]
     );
   },
 
@@ -557,13 +863,29 @@ export const contributorAggregateDefinitionQueries = {
     definition: ContributorAggregateDefinition
   ): Promise<void> {
     await db.execute(
-      `INSERT INTO contributor_aggregate_definition (slug, name, description)
-       VALUES (?, ?, ?)
+      `INSERT INTO contributor_aggregate_definition (slug, name, description, hidden)
+       VALUES (?, ?, ?, ?)
        ON CONFLICT(slug) DO UPDATE SET
          name = excluded.name,
-         description = excluded.description`,
-      [definition.slug, definition.name, definition.description]
+         description = excluded.description,
+         hidden = excluded.hidden`,
+      [
+        definition.slug,
+        definition.name,
+        definition.description,
+        definition.hidden ?? false,
+      ]
     );
+  },
+
+  /**
+   * Get all visible contributor aggregate definitions (not hidden)
+   */
+  async getAllVisible(db: Database): Promise<ContributorAggregateDefinition[]> {
+    const result = await db.execute(
+      "SELECT * FROM contributor_aggregate_definition WHERE hidden = FALSE OR hidden IS NULL ORDER BY slug"
+    );
+    return result.rows as unknown as ContributorAggregateDefinition[];
   },
 };
 
@@ -709,6 +1031,50 @@ export const contributorAggregateQueries = {
     return result.rows.map((row: any) => ({
       contributor: row.contributor as string,
       value: JSON.parse(row.value as string) as AggregateValue,
+    }));
+  },
+
+  /**
+   * Get contributor aggregates enriched with definition details
+   * Optimized with JOIN and filtering
+   */
+  async getByContributorEnriched(
+    db: Database,
+    username: string,
+    slugs: string[]
+  ): Promise<
+    Array<{
+      aggregate: string;
+      name: string;
+      value: AggregateValue;
+      description: string | null;
+    }>
+  > {
+    if (slugs.length === 0) {
+      return [];
+    }
+
+    const placeholders = slugs.map(() => "?").join(",");
+    const sql = `
+      SELECT 
+        ca.aggregate,
+        cad.name,
+        ca.value,
+        cad.description
+      FROM contributor_aggregate ca
+      JOIN contributor_aggregate_definition cad ON ca.aggregate = cad.slug
+      WHERE ca.contributor = ?
+        AND ca.aggregate IN (${placeholders})
+        AND (cad.hidden = FALSE OR cad.hidden IS NULL)
+      ORDER BY ca.aggregate
+    `;
+
+    const result = await db.execute(sql, [username, ...slugs]);
+    return result.rows.map((row: any) => ({
+      aggregate: row.aggregate,
+      name: row.name,
+      value: JSON.parse(row.value as string),
+      description: row.description || null,
     }));
   },
 };
@@ -907,5 +1273,100 @@ export const contributorBadgeQueries = {
     await db.execute("DELETE FROM contributor_badge WHERE contributor = ?", [
       username,
     ]);
+  },
+
+  /**
+   * Get recent badge achievements with enriched details
+   * Optimized with JOINs to avoid N+1 queries
+   */
+  async getRecentEnriched(
+    db: Database,
+    limit: number = 20
+  ): Promise<
+    Array<{
+      slug: string;
+      badge: string;
+      contributor: string;
+      variant: string;
+      achieved_on: string;
+      meta: Record<string, unknown> | null;
+      contributor_name: string | null;
+      contributor_avatar_url: string | null;
+      badge_name: string;
+      badge_description: string;
+      badge_variants: Record<string, { description: string; svg_url: string }>;
+    }>
+  > {
+    const sql = `
+      SELECT 
+        cb.slug,
+        cb.badge,
+        cb.contributor,
+        cb.variant,
+        cb.achieved_on,
+        cb.meta,
+        c.name as contributor_name,
+        c.avatar_url as contributor_avatar_url,
+        bd.name as badge_name,
+        bd.description as badge_description,
+        bd.variants as badge_variants
+      FROM contributor_badge cb
+      JOIN contributor c ON cb.contributor = c.username
+      JOIN badge_definition bd ON cb.badge = bd.slug
+      ORDER BY cb.achieved_on DESC
+      LIMIT ?
+    `;
+
+    const result = await db.execute(sql, [limit]);
+    return result.rows.map((row: any) => ({
+      slug: row.slug,
+      badge: row.badge,
+      contributor: row.contributor,
+      variant: row.variant,
+      achieved_on: row.achieved_on,
+      meta: row.meta ? JSON.parse(row.meta as string) : null,
+      contributor_name: row.contributor_name,
+      contributor_avatar_url: row.contributor_avatar_url,
+      badge_name: row.badge_name,
+      badge_description: row.badge_description,
+      badge_variants: JSON.parse(row.badge_variants as string),
+    }));
+  },
+
+  /**
+   * Get top badge earners with enriched contributor details
+   * Optimized with GROUP BY and JOIN
+   */
+  async getTopEarnersEnriched(
+    db: Database,
+    limit: number = 10
+  ): Promise<
+    Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      badge_count: number;
+    }>
+  > {
+    const sql = `
+      SELECT 
+        c.username,
+        c.name,
+        c.avatar_url,
+        COUNT(cb.slug) as badge_count
+      FROM contributor c
+      JOIN contributor_badge cb ON c.username = cb.contributor
+      GROUP BY c.username
+      ORDER BY badge_count DESC
+      LIMIT ?
+    `;
+
+    const result = await db.execute(sql, [limit]);
+    return result.rows as unknown as Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      badge_count: number;
+    }>;
   },
 };

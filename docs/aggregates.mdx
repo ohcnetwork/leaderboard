@@ -127,6 +127,85 @@ async setup(ctx: PluginContext) {
 }
 ```
 
+## Hidden Aggregates
+
+Aggregates can be marked as hidden to prevent them from appearing in the UI while still being available for badge rule evaluation and internal calculations.
+
+### When to Use Hidden Aggregates
+
+- **Intermediate Calculations** - Metrics needed only for badge rules or other computed values
+- **Internal Metrics** - Diagnostic or debugging aggregates not relevant to end users
+- **Sensitive Data** - Metrics that shouldn't be publicly displayed
+
+### Setting an Aggregate as Hidden
+
+**For Contributor Aggregate Definitions:**
+
+```typescript
+await contributorAggregateDefinitionQueries.upsert(ctx.db, {
+  slug: "internal_score",
+  name: "Internal Scoring Metric",
+  description: "Used for badge calculation only",
+  hidden: true, // Won't show in UI
+});
+```
+
+**For Global Aggregates:**
+
+```typescript
+await globalAggregateQueries.upsert(ctx.db, {
+  slug: "debug_metric",
+  name: "Debug Metric",
+  description: "Internal diagnostic value",
+  value: {
+    type: "number",
+    value: 42,
+    format: "integer",
+  },
+  hidden: true, // Won't show on homepage
+  meta: { calculated_at: new Date().toISOString() },
+});
+```
+
+### Default Behavior
+
+- **Default Value:** `false` (visible in UI)
+- Hidden aggregates are still:
+  - Calculated during aggregation phase
+  - Available for badge rule evaluation
+  - Exported to data files
+  - Queryable via API
+
+### Example Use Case
+
+```typescript
+// Define a hidden aggregate for badge logic
+await contributorAggregateDefinitionQueries.upsert(ctx.db, {
+  slug: "pr_review_velocity",
+  name: "PR Review Velocity Score",
+  description: "Internal metric for review champion badge",
+  hidden: true,
+});
+
+// Set values for contributors
+await contributorAggregateQueries.upsert(ctx.db, {
+  aggregate: "pr_review_velocity",
+  contributor: "johndoe",
+  value: { type: "number", value: 42, format: "integer" },
+});
+
+// Use in badge rules without displaying to users
+const rule: ThresholdBadgeRule = {
+  type: "threshold",
+  aggregateSlug: "pr_review_velocity",
+  thresholds: [
+    { variant: "gold", threshold: 50 },
+    { variant: "silver", threshold: 30 },
+    { variant: "bronze", threshold: 15 },
+  ],
+};
+```
+
 ## Setting Aggregate Values
 
 Plugins can set custom aggregate values during the `scrape()` phase.

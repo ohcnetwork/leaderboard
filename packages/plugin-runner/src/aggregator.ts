@@ -69,6 +69,7 @@ async function calculateGlobalAggregates(
       value: totalContributors,
       format: "integer",
     },
+    hidden: false,
     meta: {
       calculated_at: new Date().toISOString(),
     },
@@ -86,6 +87,7 @@ async function calculateGlobalAggregates(
       value: totalActivities,
       format: "integer",
     },
+    hidden: false,
     meta: {
       calculated_at: new Date().toISOString(),
     },
@@ -103,9 +105,8 @@ async function calculateGlobalAggregates(
     thirtyDaysAgoStr,
     today
   );
-  const activeContributors = new Set(
-    recentActivities.map((a) => a.contributor)
-  ).size;
+  const activeContributors = new Set(recentActivities.map((a) => a.contributor))
+    .size;
 
   await globalAggregateQueries.upsert(db, {
     slug: "active_contributors_last_30d",
@@ -116,6 +117,7 @@ async function calculateGlobalAggregates(
       value: activeContributors,
       format: "integer",
     },
+    hidden: false,
     meta: {
       calculated_at: new Date().toISOString(),
       period_start: thirtyDaysAgoStr,
@@ -146,31 +148,37 @@ async function calculateContributorAggregates(
       slug: "total_activity_points",
       name: "Total Activity Points",
       description: "Sum of all activity points for the contributor",
+      hidden: false,
     },
     {
       slug: "activity_count",
       name: "Activity Count",
       description: "Total number of activities by the contributor",
+      hidden: false,
     },
     {
       slug: "first_activity_date",
       name: "First Activity Date",
       description: "Date of the contributor's first activity",
+      hidden: false,
     },
     {
       slug: "last_activity_date",
       name: "Last Activity Date",
       description: "Date of the contributor's most recent activity",
+      hidden: false,
     },
     {
       slug: "active_days",
       name: "Active Days",
       description: "Number of unique days with activity",
+      hidden: false,
     },
     {
       slug: "avg_points_per_activity",
       name: "Average Points Per Activity",
       description: "Average points earned per activity",
+      hidden: false,
     },
   ];
 
@@ -197,10 +205,7 @@ async function calculateContributorAggregates(
     }
 
     // Calculate total points
-    const totalPoints = activities.reduce(
-      (sum, a) => sum + (a.points || 0),
-      0
-    );
+    const totalPoints = activities.reduce((sum, a) => sum + (a.points || 0), 0);
     await contributorAggregateQueries.upsert(db, {
       aggregate: "total_activity_points",
       contributor: contributor.username,
@@ -305,4 +310,3 @@ async function calculateContributorAggregates(
     contributors_processed: processedCount,
   });
 }
-

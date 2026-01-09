@@ -10,6 +10,8 @@ import {
   activityDefinitionQueries,
   badgeDefinitionQueries,
   contributorBadgeQueries,
+  globalAggregateQueries,
+  contributorAggregateQueries,
   type Contributor,
   type Activity,
   type ActivityDefinition,
@@ -21,7 +23,7 @@ import { LeaderboardEntry } from "./types";
 /**
  * Get all contributors
  */
-export async function getAllContributors(): Promise<Contributor[]> {
+export async function getAllContributors() {
   const db = getDatabase();
   return await contributorQueries.getAll(db);
 }
@@ -29,9 +31,7 @@ export async function getAllContributors(): Promise<Contributor[]> {
 /**
  * Get contributor by username
  */
-export async function getContributor(
-  username: string
-): Promise<Contributor | null> {
+export async function getContributor(username: string) {
   const db = getDatabase();
   return await contributorQueries.getByUsername(db, username);
 }
@@ -39,9 +39,7 @@ export async function getContributor(
 /**
  * Get contributors by role
  */
-export async function getContributorsByRole(
-  role: string
-): Promise<Contributor[]> {
+export async function getContributorsByRole(role: string) {
   const db = getDatabase();
   return await contributorQueries.getByRole(db, role);
 }
@@ -49,9 +47,7 @@ export async function getContributorsByRole(
 /**
  * Get all activity definitions
  */
-export async function getAllActivityDefinitions(): Promise<
-  ActivityDefinition[]
-> {
+export async function getAllActivityDefinitions() {
   const db = getDatabase();
   return await activityDefinitionQueries.getAll(db);
 }
@@ -59,9 +55,7 @@ export async function getAllActivityDefinitions(): Promise<
 /**
  * Get activity definition by slug
  */
-export async function getActivityDefinition(
-  slug: string
-): Promise<ActivityDefinition | null> {
+export async function getActivityDefinition(slug: string) {
   const db = getDatabase();
   return await activityDefinitionQueries.getBySlug(db, slug);
 }
@@ -78,7 +72,7 @@ export async function getActivities(
     endDate?: string;
     definition?: string;
   } = {}
-): Promise<Activity[]> {
+) {
   const db = getDatabase();
 
   if (options.contributor) {
@@ -105,23 +99,9 @@ export async function getActivities(
 }
 
 /**
- * Get total points for a contributor
- */
-export async function getContributorTotalPoints(
-  username: string
-): Promise<number> {
-  const db = getDatabase();
-  return await activityQueries.getTotalPointsByContributor(db, username);
-}
-
-/**
  * Get contributor stats
  */
-export async function getContributorStats(username: string): Promise<{
-  totalPoints: number;
-  activityCount: number;
-  activities: Activity[];
-}> {
+export async function getContributorStats(username: string) {
   const db = getDatabase();
 
   const totalPoints = await activityQueries.getTotalPointsByContributor(
@@ -138,30 +118,6 @@ export async function getContributorStats(username: string): Promise<{
 }
 
 /**
- * Get aggregate statistics
- */
-export async function getAggregateStats(): Promise<{
-  totalContributors: number;
-  totalActivities: number;
-  totalActivityDefinitions: number;
-}> {
-  const db = getDatabase();
-
-  const [totalContributors, totalActivities, totalActivityDefinitions] =
-    await Promise.all([
-      contributorQueries.count(db),
-      activityQueries.count(db),
-      activityDefinitionQueries.count(db),
-    ]);
-
-  return {
-    totalContributors,
-    totalActivities,
-    totalActivityDefinitions,
-  };
-}
-
-/**
  * Get recent activities grouped by type
  */
 export async function getRecentActivitiesGroupedByType(days: number = 7) {
@@ -170,20 +126,14 @@ export async function getRecentActivitiesGroupedByType(days: number = 7) {
   const startDate = new Date(endDate);
   startDate.setDate(startDate.getDate() - days);
 
-  const activities = await activityQueries.getByDateRange(
+  // Use optimized query with JOINs to get enriched activities
+  const activities = await activityQueries.getRecentActivitiesEnriched(
     db,
     startDate.toISOString(),
     endDate.toISOString()
   );
 
-  const activityDefinitions = await activityDefinitionQueries.getAll(db);
-  const contributors = await contributorQueries.getAll(db);
-
-  // Create maps for quick lookup
-  const defMap = new Map(activityDefinitions.map((d) => [d.slug, d]));
-  const contribMap = new Map(contributors.map((c) => [c.username, c]));
-
-  // Group activities by definition
+  // Group activities by definition (still need JS grouping for nested structure)
   const grouped = new Map<
     string,
     {
@@ -206,16 +156,11 @@ export async function getRecentActivitiesGroupedByType(days: number = 7) {
   >();
 
   for (const activity of activities) {
-    const def = defMap.get(activity.activity_definition);
-    const contrib = contribMap.get(activity.contributor);
-
-    if (!def) continue;
-
     if (!grouped.has(activity.activity_definition)) {
       grouped.set(activity.activity_definition, {
         activity_definition: activity.activity_definition,
-        activity_name: def.name,
-        activity_description: def.description,
+        activity_name: activity.activity_name,
+        activity_description: activity.activity_description,
         activities: [],
       });
     }
@@ -223,9 +168,9 @@ export async function getRecentActivitiesGroupedByType(days: number = 7) {
     grouped.get(activity.activity_definition)!.activities.push({
       slug: activity.slug,
       contributor: activity.contributor,
-      contributor_name: contrib?.name || null,
-      contributor_avatar_url: contrib?.avatar_url || null,
-      contributor_role: contrib?.role || null,
+      contributor_name: activity.contributor_name,
+      contributor_avatar_url: activity.contributor_avatar_url,
+      contributor_role: activity.contributor_role,
       title: activity.title,
       occured_at: activity.occured_at,
       link: activity.link,
@@ -238,26 +183,22 @@ export async function getRecentActivitiesGroupedByType(days: number = 7) {
 }
 
 /**
- * Get global aggregates (stub for custom aggregates)
+ * Get global aggregates filtered by slugs and visibility
  */
-export async function getGlobalAggregates(
-  slugs: string[]
-): Promise<
-  Array<{ slug: string; name: string; value: any; description: string | null }>
-> {
-  // This is a placeholder for custom aggregates
-  // In a real implementation, these would be computed by plugins
-  // or stored in a separate aggregates table
-  return [];
+export async function getGlobalAggregates(slugs: string[]) {
+  const db = getDatabase();
+
+  // Use optimized query with WHERE IN clause and hidden filtering
+  return await globalAggregateQueries.getBySlugs(db, slugs);
 }
 
 /**
  * Get all contributor usernames
  */
-export async function getAllContributorUsernames(): Promise<string[]> {
+export async function getAllContributorUsernames() {
   const db = getDatabase();
-  const contributors = await contributorQueries.getAll(db);
-  return contributors.map((c) => c.username);
+  // Use optimized query that only selects username column
+  return await contributorQueries.getAllUsernames(db);
 }
 
 /**
@@ -285,13 +226,14 @@ export async function getContributorProfile(username: string) {
   const activityDefinitions = await activityDefinitionQueries.getAll(db);
   const defMap = new Map(activityDefinitions.map((d) => [d.slug, d]));
 
-  // Group activities by date
+  // Use optimized query to group activities by date
+  const activityCountsByDate = await activityQueries.getActivityCountByDate(
+    db,
+    username
+  );
   const activityByDate: Record<string, number> = {};
-  for (const activity of activities) {
-    const date = activity.occured_at.split("T")[0];
-    if (date) {
-      activityByDate[date] = (activityByDate[date] || 0) + 1;
-    }
+  for (const { date, count } of activityCountsByDate) {
+    activityByDate[date] = count;
   }
 
   // Enrich activities with definition names
@@ -322,15 +264,20 @@ export async function listActivityDefinitions() {
 }
 
 /**
- * Get contributor aggregates (stub for custom aggregates)
+ * Get contributor aggregates filtered by slugs and visibility
  */
 export async function getContributorAggregates(
   username: string,
   slugs: string[]
-): Promise<Array<{ aggregate: string; value: any }>> {
-  // This is a placeholder for custom aggregates
-  // In a real implementation, these would be computed by plugins
-  return [];
+) {
+  const db = getDatabase();
+
+  // Use optimized query with JOIN and filtering
+  return await contributorAggregateQueries.getByContributorEnriched(
+    db,
+    username,
+    slugs
+  );
 }
 
 /**
@@ -338,32 +285,10 @@ export async function getContributorAggregates(
  */
 export async function getAllContributorsWithAvatars(hiddenRoles: string[]) {
   const db = getDatabase();
-  const allContributors = await contributorQueries.getAll(db);
 
-  // Filter out hidden roles
-  const visibleContributors = allContributors.filter(
-    (c) => !c.role || !hiddenRoles.includes(c.role)
-  );
-
-  // Get total points for each contributor
-  const contributorsWithPoints = await Promise.all(
-    visibleContributors.map(async (contributor) => {
-      const totalPoints = await activityQueries.getTotalPointsByContributor(
-        db,
-        contributor.username
-      );
-      return {
-        username: contributor.username,
-        name: contributor.name,
-        avatar_url: contributor.avatar_url,
-        role: contributor.role,
-        totalPoints,
-      };
-    })
-  );
-
-  // Sort by total points descending
-  contributorsWithPoints.sort((a, b) => b.totalPoints - a.totalPoints);
+  // Use optimized query with single JOIN to get points
+  const contributorsWithPoints =
+    await contributorQueries.getLeaderboardWithPoints(db, hiddenRoles);
 
   return contributorsWithPoints;
 }
@@ -374,7 +299,7 @@ export async function getAllContributorsWithAvatars(hiddenRoles: string[]) {
 export async function getLeaderboard(
   startDate?: string | Date,
   endDate?: string | Date
-): Promise<LeaderboardEntry[]> {
+) {
   const db = getDatabase();
 
   // Convert Date to string if needed
@@ -382,27 +307,13 @@ export async function getLeaderboard(
     startDate instanceof Date ? startDate.toISOString() : startDate;
   const endDateStr = endDate instanceof Date ? endDate.toISOString() : endDate;
 
-  const leaderboardData = await activityQueries.getLeaderboard(
+  // Use optimized query with JOIN to get enriched leaderboard
+  return await activityQueries.getLeaderboardEnriched(
     db,
     undefined,
     startDateStr,
     endDateStr
   );
-
-  const contributors = await contributorQueries.getAll(db);
-  const contribMap = new Map(contributors.map((c) => [c.username, c]));
-
-  return leaderboardData.map((entry) => {
-    const contrib = contribMap.get(entry.contributor);
-    return {
-      username: entry.contributor,
-      name: contrib?.name || null,
-      avatar_url: contrib?.avatar_url || null,
-      role: contrib?.role || null,
-      total_points: entry.total_points,
-      activity_count: entry.activity_count,
-    };
-  });
 }
 
 /**
@@ -412,8 +323,13 @@ export async function getTopContributorsByActivity(
   startDate?: string | Date,
   endDate?: string | Date,
   activitySlugs?: string[]
-): Promise<
-  Record<
+) {
+  if (!activitySlugs || activitySlugs.length === 0) {
+    return {};
+  }
+
+  const db = getDatabase();
+  const result: Record<
     string,
     Array<{
       username: string;
@@ -422,67 +338,22 @@ export async function getTopContributorsByActivity(
       points: number;
       count: number;
     }>
-  >
-> {
-  if (!activitySlugs || activitySlugs.length === 0) {
-    return {};
-  }
-
-  const db = getDatabase();
-  const result: Record<string, any[]> = {};
+  > = {};
 
   // Convert Date to string if needed
   const startDateStr =
     startDate instanceof Date ? startDate.toISOString() : startDate;
   const endDateStr = endDate instanceof Date ? endDate.toISOString() : endDate;
 
-  const contributors = await contributorQueries.getAll(db);
-  const contribMap = new Map(contributors.map((c) => [c.username, c]));
-
+  // Use optimized query for each activity slug
   for (const activitySlug of activitySlugs) {
-    const activities = await activityQueries.getByDateRange(
+    const topContributors = await activityQueries.getTopByActivityEnriched(
       db,
-      startDateStr || "",
-      endDateStr || ""
+      activitySlug,
+      startDateStr,
+      endDateStr,
+      10 // Top 10
     );
-
-    // Filter by activity definition
-    const filtered = activities.filter(
-      (a) => a.activity_definition === activitySlug
-    );
-
-    // Group by contributor and calculate totals
-    const grouped = new Map<
-      string,
-      { total_points: number; activity_count: number }
-    >();
-
-    for (const activity of filtered) {
-      if (!grouped.has(activity.contributor)) {
-        grouped.set(activity.contributor, {
-          total_points: 0,
-          activity_count: 0,
-        });
-      }
-      const entry = grouped.get(activity.contributor)!;
-      entry.total_points += activity.points || 0;
-      entry.activity_count += 1;
-    }
-
-    // Convert to array and add contributor info
-    const topContributors = Array.from(grouped.entries())
-      .map(([username, data]) => {
-        const contrib = contribMap.get(username);
-        return {
-          username: username,
-          name: contrib?.name || null,
-          avatar_url: contrib?.avatar_url || null,
-          points: data.total_points,
-          count: data.activity_count,
-        };
-      })
-      .sort((a, b) => b.points - a.points)
-      .slice(0, 10); // Top 10
 
     result[activitySlug] = topContributors;
   }
@@ -493,19 +364,9 @@ export async function getTopContributorsByActivity(
 /**
  * Get all badge definitions
  */
-export async function getAllBadgeDefinitions(): Promise<BadgeDefinition[]> {
+export async function getAllBadgeDefinitions() {
   const db = getDatabase();
   return await badgeDefinitionQueries.getAll(db);
-}
-
-/**
- * Get a specific badge definition by slug
- */
-export async function getBadgeDefinition(
-  slug: string
-): Promise<BadgeDefinition | null> {
-  const db = getDatabase();
-  return await badgeDefinitionQueries.getBySlug(db, slug);
 }
 
 /**
@@ -535,38 +396,10 @@ export async function getRecentBadgeAchievements(limit: number = 20): Promise<
 > {
   const db = getDatabase();
 
-  // Get all badges sorted by achieved_on date
-  const allBadges = await contributorBadgeQueries.getAll(db);
-
-  // Sort by achieved_on descending and take limit
-  const recentBadges = allBadges
-    .sort(
-      (a, b) =>
-        new Date(b.achieved_on).getTime() - new Date(a.achieved_on).getTime()
-    )
-    .slice(0, limit);
-
-  // Enrich with contributor and badge definition data
-  const enrichedBadges = await Promise.all(
-    recentBadges.map(async (badge) => {
-      const contributor = await contributorQueries.getByUsername(
-        db,
-        badge.contributor
-      );
-      const badgeDefinition = await badgeDefinitionQueries.getBySlug(
-        db,
-        badge.badge
-      );
-
-      return {
-        ...badge,
-        contributor_name: contributor?.name || null,
-        contributor_avatar_url: contributor?.avatar_url || null,
-        badge_name: badgeDefinition?.name || badge.badge,
-        badge_description: badgeDefinition?.description || "",
-        badge_variants: badgeDefinition?.variants || {},
-      };
-    })
+  // Use optimized query with JOINs to get all data in one query
+  const enrichedBadges = await contributorBadgeQueries.getRecentEnriched(
+    db,
+    limit
   );
 
   return enrichedBadges;
@@ -585,31 +418,9 @@ export async function getTopBadgeEarners(limit: number = 10): Promise<
 > {
   const db = getDatabase();
 
-  const allBadges = await contributorBadgeQueries.getAll(db);
-
-  // Count badges per contributor
-  const badgeCounts = allBadges.reduce((acc, badge) => {
-    acc[badge.contributor] = (acc[badge.contributor] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
-
-  // Get top contributors
-  const topContributors = Object.entries(badgeCounts)
-    .sort(([, a], [, b]) => b - a)
-    .slice(0, limit);
-
-  // Enrich with contributor data
-  const enrichedTopContributors = await Promise.all(
-    topContributors.map(async ([username, badge_count]) => {
-      const contributor = await contributorQueries.getByUsername(db, username);
-      return {
-        username,
-        name: contributor?.name || null,
-        avatar_url: contributor?.avatar_url || null,
-        badge_count,
-      };
-    })
-  );
+  // Use optimized query with GROUP BY and JOIN
+  const enrichedTopContributors =
+    await contributorBadgeQueries.getTopEarnersEnriched(db, limit);
 
   return enrichedTopContributors;
 }

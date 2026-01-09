@@ -49,11 +49,13 @@ const plugin: Plugin = {
         slug: "pr_merged_count",
         name: "PRs Merged",
         description: "Number of pull requests merged",
+        hidden: null,
       },
       {
         slug: "code_review_participation",
         name: "Code Review Participation",
         description: "Percentage of PRs reviewed vs created",
+        hidden: null,
       },
     ];
 

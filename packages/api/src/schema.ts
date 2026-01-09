@@ -54,6 +54,7 @@ CREATE TABLE IF NOT EXISTS global_aggregate (
     name                    VARCHAR NOT NULL,
     description             TEXT,
     value                   JSON NOT NULL,
+    hidden                  BOOLEAN DEFAULT FALSE,
     meta                    JSON
 );
 
@@ -61,7 +62,8 @@ CREATE TABLE IF NOT EXISTS global_aggregate (
 CREATE TABLE IF NOT EXISTS contributor_aggregate_definition (
     slug                    VARCHAR PRIMARY KEY,
     name                    VARCHAR NOT NULL,
-    description             TEXT
+    description             TEXT,
+    hidden                  BOOLEAN DEFAULT FALSE
 );
 
 -- Contributor aggregates table (per-contributor metrics)

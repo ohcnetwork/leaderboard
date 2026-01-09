@@ -548,6 +548,100 @@ describe("Database Queries", () => {
       expect(stringAgg?.value.type).toBe("string");
       expect(statsAgg?.value.type).toBe("statistics/number");
     });
+
+    it("should create aggregates with hidden field", async () => {
+      // Create visible aggregate
+      await globalAggregateQueries.upsert(db, {
+        slug: "visible_metric",
+        name: "Visible Metric",
+        description: null,
+        value: { type: "number", value: 10, format: "integer" },
+        hidden: false,
+        meta: null,
+      });
+
+      // Create hidden aggregate
+      await globalAggregateQueries.upsert(db, {
+        slug: "hidden_metric",
+        name: "Hidden Metric",
+        description: null,
+        value: { type: "number", value: 20, format: "integer" },
+        hidden: true,
+        meta: null,
+      });
+
+      const visible = await globalAggregateQueries.getBySlug(
+        db,
+        "visible_metric"
+      );
+      const hidden = await globalAggregateQueries.getBySlug(
+        db,
+        "hidden_metric"
+      );
+
+      // SQLite returns 0/1 for boolean values
+      expect(visible?.hidden).toBeFalsy();
+      expect(hidden?.hidden).toBeTruthy();
+    });
+
+    it("should filter hidden aggregates with getAllVisible", async () => {
+      // Create visible aggregate
+      await globalAggregateQueries.upsert(db, {
+        slug: "visible1",
+        name: "Visible 1",
+        description: null,
+        value: { type: "number", value: 10, format: "integer" },
+        hidden: false,
+        meta: null,
+      });
+
+      // Create hidden aggregate
+      await globalAggregateQueries.upsert(db, {
+        slug: "hidden1",
+        name: "Hidden 1",
+        description: null,
+        value: { type: "number", value: 20, format: "integer" },
+        hidden: true,
+        meta: null,
+      });
+
+      // Create another visible aggregate (default hidden = false)
+      await globalAggregateQueries.upsert(db, {
+        slug: "visible2",
+        name: "Visible 2",
+        description: null,
+        value: { type: "number", value: 30, format: "integer" },
+        hidden: null,
+        meta: null,
+      });
+
+      const allAggregates = await globalAggregateQueries.getAll(db);
+      const visibleAggregates = await globalAggregateQueries.getAllVisible(db);
+
+      expect(allAggregates).toHaveLength(3);
+      expect(visibleAggregates).toHaveLength(2);
+      expect(visibleAggregates.map((a) => a.slug)).toEqual(
+        expect.arrayContaining(["visible1", "visible2"])
+      );
+    });
+
+    it("should default hidden to false when not specified", async () => {
+      await globalAggregateQueries.upsert(db, {
+        slug: "default_aggregate",
+        name: "Default Aggregate",
+        description: null,
+        value: { type: "number", value: 42, format: "integer" },
+        hidden: null,
+        meta: null,
+      });
+
+      const aggregate = await globalAggregateQueries.getBySlug(
+        db,
+        "default_aggregate"
+      );
+      // Default should be falsy (0, false, or null - all treated as visible)
+      expect(aggregate?.hidden).toBeFalsy();
+    });
   });
 
   describe("contributorAggregateDefinitionQueries", () => {
@@ -584,6 +678,91 @@ describe("Database Queries", () => {
         db
       );
       expect(definitions).toHaveLength(2);
+    });
+
+    it("should create definitions with hidden field", async () => {
+      // Create visible definition
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "visible_def",
+        name: "Visible Definition",
+        description: null,
+        hidden: false,
+      });
+
+      // Create hidden definition
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "hidden_def",
+        name: "Hidden Definition",
+        description: null,
+        hidden: true,
+      });
+
+      const visible = await contributorAggregateDefinitionQueries.getBySlug(
+        db,
+        "visible_def"
+      );
+      const hidden = await contributorAggregateDefinitionQueries.getBySlug(
+        db,
+        "hidden_def"
+      );
+
+      // SQLite returns 0/1 for boolean values
+      expect(visible?.hidden).toBeFalsy();
+      expect(hidden?.hidden).toBeTruthy();
+    });
+
+    it("should filter hidden definitions with getAllVisible", async () => {
+      // Create visible definition
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "visible1",
+        name: "Visible 1",
+        description: null,
+        hidden: false,
+      });
+
+      // Create hidden definition
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "hidden1",
+        name: "Hidden 1",
+        description: null,
+        hidden: true,
+      });
+
+      // Create another visible definition (default)
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "visible2",
+        name: "Visible 2",
+        description: null,
+        hidden: null,
+      });
+
+      const allDefinitions = await contributorAggregateDefinitionQueries.getAll(
+        db
+      );
+      const visibleDefinitions =
+        await contributorAggregateDefinitionQueries.getAllVisible(db);
+
+      expect(allDefinitions).toHaveLength(3);
+      expect(visibleDefinitions).toHaveLength(2);
+      expect(visibleDefinitions.map((d) => d.slug)).toEqual(
+        expect.arrayContaining(["visible1", "visible2"])
+      );
+    });
+
+    it("should default hidden to false when not specified", async () => {
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "default_def",
+        name: "Default Definition",
+        description: null,
+        hidden: null,
+      });
+
+      const definition = await contributorAggregateDefinitionQueries.getBySlug(
+        db,
+        "default_def"
+      );
+      // Default should be falsy (0, false, or null - all treated as visible)
+      expect(definition?.hidden).toBeFalsy();
     });
   });
 
@@ -1092,6 +1271,920 @@ describe("activityQueries", () => {
       expect(result).toHaveLength(1);
       expect(result[0].contributor).toBe("test_user");
       expect(result[0].activity_definition).toBe("pull_request_opened");
+    });
+  });
+
+  describe("Optimized Query Methods", () => {
+    describe("contributorQueries.getAllUsernames", () => {
+      it("should return only usernames", async () => {
+        await contributorQueries.upsert(db, {
+          username: "alice_username",
+          name: "Alice Smith",
+          role: "core",
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "bob_username",
+          name: "Bob Jones",
+          role: "intern",
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        const usernames = await contributorQueries.getAllUsernames(db);
+
+        expect(usernames.length).toBeGreaterThanOrEqual(2);
+        expect(usernames).toContain("alice_username");
+        expect(usernames).toContain("bob_username");
+        expect(typeof usernames[0]).toBe("string");
+      });
+
+      it("should return sorted usernames", async () => {
+        await contributorQueries.upsert(db, {
+          username: "zebra",
+          name: "Zebra",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "alpha",
+          name: "Alpha",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        const usernames = await contributorQueries.getAllUsernames(db);
+
+        const alphaIndex = usernames.indexOf("alpha");
+        const zebraIndex = usernames.indexOf("zebra");
+        expect(alphaIndex).toBeLessThan(zebraIndex);
+      });
+    });
+
+    describe("contributorQueries.getLeaderboardWithPoints", () => {
+      beforeEach(async () => {
+        await activityDefinitionQueries.insertOrIgnore(db, {
+          slug: "test_activity",
+          name: "Test Activity",
+          description: "Test",
+          points: 10,
+          icon: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "alice",
+          name: "Alice",
+          role: "core",
+          title: null,
+          avatar_url: "https://example.com/alice.png",
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "bob",
+          name: "Bob",
+          role: "intern",
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "charlie",
+          name: "Charlie",
+          role: "bot",
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act1",
+          contributor: "alice",
+          activity_definition: "test_activity",
+          title: "Activity 1",
+          occured_at: "2025-01-01",
+          link: null,
+          text: null,
+          points: 100,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act2",
+          contributor: "bob",
+          activity_definition: "test_activity",
+          title: "Activity 2",
+          occured_at: "2025-01-02",
+          link: null,
+          text: null,
+          points: 50,
+          meta: null,
+        });
+      });
+
+      it("should return contributors with total points", async () => {
+        const result = await contributorQueries.getLeaderboardWithPoints(db);
+
+        expect(result.length).toBeGreaterThanOrEqual(3);
+
+        const alice = result.find((r) => r.username === "alice");
+        const bob = result.find((r) => r.username === "bob");
+        const charlie = result.find((r) => r.username === "charlie");
+
+        expect(alice?.totalPoints).toBe(100);
+        expect(bob?.totalPoints).toBe(50);
+        expect(charlie?.totalPoints).toBe(0);
+      });
+
+      it("should exclude specified roles", async () => {
+        const result = await contributorQueries.getLeaderboardWithPoints(db, [
+          "bot",
+          "intern",
+        ]);
+
+        expect(result.length).toBeGreaterThanOrEqual(1);
+        const alice = result.find((r) => r.username === "alice");
+        expect(alice).toBeDefined();
+        expect(alice?.username).toBe("alice");
+
+        const bob = result.find((r) => r.username === "bob");
+        const charlie = result.find((r) => r.username === "charlie");
+        expect(bob).toBeUndefined();
+        expect(charlie).toBeUndefined();
+      });
+
+      it("should include contributor details", async () => {
+        const result = await contributorQueries.getLeaderboardWithPoints(db);
+
+        expect(result[0].name).toBe("Alice");
+        expect(result[0].avatar_url).toBe("https://example.com/alice.png");
+        expect(result[0].role).toBe("core");
+      });
+    });
+
+    describe("activityQueries.getLeaderboardEnriched", () => {
+      beforeEach(async () => {
+        await activityDefinitionQueries.insertOrIgnore(db, {
+          slug: "test_activity",
+          name: "Test Activity",
+          description: "Test",
+          points: 10,
+          icon: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "alice",
+          name: "Alice Smith",
+          role: "core",
+          title: null,
+          avatar_url: "https://example.com/alice.png",
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act1",
+          contributor: "alice",
+          activity_definition: "test_activity",
+          title: "Activity 1",
+          occured_at: "2025-01-01T10:00:00Z",
+          link: null,
+          text: null,
+          points: 100,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act2",
+          contributor: "alice",
+          activity_definition: "test_activity",
+          title: "Activity 2",
+          occured_at: "2025-01-05T10:00:00Z",
+          link: null,
+          text: null,
+          points: 50,
+          meta: null,
+        });
+      });
+
+      it("should return leaderboard with contributor details", async () => {
+        const result = await activityQueries.getLeaderboardEnriched(db);
+
+        expect(result).toHaveLength(1);
+        expect(result[0].username).toBe("alice");
+        expect(result[0].name).toBe("Alice Smith");
+        expect(result[0].avatar_url).toBe("https://example.com/alice.png");
+        expect(result[0].role).toBe("core");
+        expect(result[0].total_points).toBe(150);
+        expect(result[0].activity_count).toBe(2);
+      });
+
+      it("should filter by date range", async () => {
+        const result = await activityQueries.getLeaderboardEnriched(
+          db,
+          undefined,
+          "2025-01-04T00:00:00Z",
+          "2025-01-06T00:00:00Z"
+        );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].total_points).toBe(50);
+        expect(result[0].activity_count).toBe(1);
+      });
+
+      it("should respect limit", async () => {
+        await contributorQueries.upsert(db, {
+          username: "bob",
+          name: "Bob",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act3",
+          contributor: "bob",
+          activity_definition: "test_activity",
+          title: "Activity 3",
+          occured_at: "2025-01-02T10:00:00Z",
+          link: null,
+          text: null,
+          points: 75,
+          meta: null,
+        });
+
+        const result = await activityQueries.getLeaderboardEnriched(db, 1);
+
+        expect(result).toHaveLength(1);
+        expect(result[0].username).toBe("alice");
+      });
+    });
+
+    describe("activityQueries.getRecentActivitiesEnriched", () => {
+      beforeEach(async () => {
+        await activityDefinitionQueries.insertOrIgnore(db, {
+          slug: "pr_opened",
+          name: "PR Opened",
+          description: "Opened a pull request",
+          points: 10,
+          icon: null,
+        });
+
+        await activityDefinitionQueries.insertOrIgnore(db, {
+          slug: "issue_created",
+          name: "Issue Created",
+          description: "Created an issue",
+          points: 5,
+          icon: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "alice",
+          name: "Alice Smith",
+          role: "core",
+          title: null,
+          avatar_url: "https://example.com/alice.png",
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act1",
+          contributor: "alice",
+          activity_definition: "pr_opened",
+          title: "PR #1",
+          occured_at: "2025-01-02T10:00:00Z",
+          link: "https://github.com/pr/1",
+          text: null,
+          points: 10,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act2",
+          contributor: "alice",
+          activity_definition: "issue_created",
+          title: "Issue #1",
+          occured_at: "2025-01-03T10:00:00Z",
+          link: null,
+          text: null,
+          points: 5,
+          meta: null,
+        });
+      });
+
+      it("should return enriched activities", async () => {
+        const result = await activityQueries.getRecentActivitiesEnriched(
+          db,
+          "2025-01-01T00:00:00Z",
+          "2025-01-05T00:00:00Z"
+        );
+
+        expect(result).toHaveLength(2);
+        expect(result[0].activity_name).toBe("Issue Created");
+        expect(result[0].contributor_name).toBe("Alice Smith");
+        expect(result[0].contributor_avatar_url).toBe(
+          "https://example.com/alice.png"
+        );
+        expect(result[1].activity_name).toBe("PR Opened");
+      });
+
+      it("should filter by date range", async () => {
+        const result = await activityQueries.getRecentActivitiesEnriched(
+          db,
+          "2025-01-03T00:00:00Z",
+          "2025-01-04T00:00:00Z"
+        );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].activity_definition).toBe("issue_created");
+      });
+    });
+
+    describe("activityQueries.getTopByActivityEnriched", () => {
+      beforeEach(async () => {
+        await activityDefinitionQueries.insertOrIgnore(db, {
+          slug: "pr_opened",
+          name: "PR Opened",
+          description: "Opened a pull request",
+          points: 10,
+          icon: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "alice",
+          name: "Alice",
+          role: null,
+          title: null,
+          avatar_url: "https://example.com/alice.png",
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "bob",
+          name: "Bob",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act1",
+          contributor: "alice",
+          activity_definition: "pr_opened",
+          title: "PR #1",
+          occured_at: "2025-01-02T10:00:00Z",
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act2",
+          contributor: "alice",
+          activity_definition: "pr_opened",
+          title: "PR #2",
+          occured_at: "2025-01-03T10:00:00Z",
+          link: null,
+          text: null,
+          points: 15,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act3",
+          contributor: "bob",
+          activity_definition: "pr_opened",
+          title: "PR #3",
+          occured_at: "2025-01-04T10:00:00Z",
+          link: null,
+          text: null,
+          points: 20,
+          meta: null,
+        });
+      });
+
+      it("should return top contributors for activity", async () => {
+        const result = await activityQueries.getTopByActivityEnriched(
+          db,
+          "pr_opened"
+        );
+
+        expect(result).toHaveLength(2);
+        expect(result[0].username).toBe("alice");
+        expect(result[0].points).toBe(25);
+        expect(result[0].count).toBe(2);
+        expect(result[1].username).toBe("bob");
+        expect(result[1].points).toBe(20);
+        expect(result[1].count).toBe(1);
+      });
+
+      it("should filter by date range", async () => {
+        const result = await activityQueries.getTopByActivityEnriched(
+          db,
+          "pr_opened",
+          "2025-01-03T00:00:00Z",
+          "2025-01-05T00:00:00Z"
+        );
+
+        expect(result).toHaveLength(2);
+        expect(result[0].username).toBe("bob");
+        expect(result[0].points).toBe(20);
+        expect(result[1].username).toBe("alice");
+        expect(result[1].points).toBe(15);
+      });
+
+      it("should respect limit", async () => {
+        const result = await activityQueries.getTopByActivityEnriched(
+          db,
+          "pr_opened",
+          undefined,
+          undefined,
+          1
+        );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].username).toBe("alice");
+      });
+    });
+
+    describe("activityQueries.getActivityCountByDate", () => {
+      beforeEach(async () => {
+        await activityDefinitionQueries.insertOrIgnore(db, {
+          slug: "test_activity",
+          name: "Test Activity",
+          description: "Test",
+          points: 10,
+          icon: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "alice",
+          name: "Alice",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act1",
+          contributor: "alice",
+          activity_definition: "test_activity",
+          title: "Activity 1",
+          occured_at: "2025-01-01T10:00:00Z",
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act2",
+          contributor: "alice",
+          activity_definition: "test_activity",
+          title: "Activity 2",
+          occured_at: "2025-01-01T14:00:00Z",
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+
+        await activityQueries.upsert(db, {
+          slug: "act3",
+          contributor: "alice",
+          activity_definition: "test_activity",
+          title: "Activity 3",
+          occured_at: "2025-01-02T10:00:00Z",
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+      });
+
+      it("should group activities by date", async () => {
+        const result = await activityQueries.getActivityCountByDate(
+          db,
+          "alice"
+        );
+
+        expect(result).toHaveLength(2);
+        expect(result[0].date).toBe("2025-01-01");
+        expect(result[0].count).toBe(2);
+        expect(result[1].date).toBe("2025-01-02");
+        expect(result[1].count).toBe(1);
+      });
+
+      it("should return empty array for contributor with no activities", async () => {
+        await contributorQueries.upsert(db, {
+          username: "bob",
+          name: "Bob",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        const result = await activityQueries.getActivityCountByDate(db, "bob");
+
+        expect(result).toHaveLength(0);
+      });
+    });
+
+    describe("globalAggregateQueries.getBySlugs", () => {
+      beforeEach(async () => {
+        await globalAggregateQueries.upsert(db, {
+          slug: "total_prs",
+          name: "Total PRs",
+          description: "Total pull requests",
+          value: { type: "number", value: 100 },
+          hidden: false,
+          meta: null,
+        });
+
+        await globalAggregateQueries.upsert(db, {
+          slug: "total_issues",
+          name: "Total Issues",
+          description: "Total issues",
+          value: { type: "number", value: 50 },
+          hidden: false,
+          meta: null,
+        });
+
+        await globalAggregateQueries.upsert(db, {
+          slug: "hidden_metric",
+          name: "Hidden Metric",
+          description: "Should not appear",
+          value: { type: "number", value: 999 },
+          hidden: true,
+          meta: null,
+        });
+      });
+
+      it("should return aggregates by slugs", async () => {
+        const result = await globalAggregateQueries.getBySlugs(db, [
+          "total_prs",
+          "total_issues",
+        ]);
+
+        expect(result).toHaveLength(2);
+        expect(result[0].slug).toBe("total_issues");
+        expect(result[0].value).toEqual({ type: "number", value: 50 });
+        expect(result[1].slug).toBe("total_prs");
+      });
+
+      it("should filter out hidden aggregates", async () => {
+        const result = await globalAggregateQueries.getBySlugs(db, [
+          "total_prs",
+          "hidden_metric",
+        ]);
+
+        expect(result).toHaveLength(1);
+        expect(result[0].slug).toBe("total_prs");
+      });
+
+      it("should return empty array for empty slugs", async () => {
+        const result = await globalAggregateQueries.getBySlugs(db, []);
+
+        expect(result).toHaveLength(0);
+      });
+    });
+
+    describe("contributorAggregateQueries.getByContributorEnriched", () => {
+      beforeEach(async () => {
+        await contributorQueries.upsert(db, {
+          username: "alice",
+          name: "Alice",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await contributorAggregateDefinitionQueries.upsert(db, {
+          slug: "pr_count",
+          name: "PR Count",
+          description: "Number of PRs",
+          hidden: false,
+        });
+
+        await contributorAggregateDefinitionQueries.upsert(db, {
+          slug: "issue_count",
+          name: "Issue Count",
+          description: "Number of issues",
+          hidden: false,
+        });
+
+        await contributorAggregateDefinitionQueries.upsert(db, {
+          slug: "hidden_stat",
+          name: "Hidden Stat",
+          description: "Should not appear",
+          hidden: true,
+        });
+
+        await contributorAggregateQueries.upsert(db, {
+          aggregate: "pr_count",
+          contributor: "alice",
+          value: { type: "number", value: 10 },
+          meta: null,
+        });
+
+        await contributorAggregateQueries.upsert(db, {
+          aggregate: "issue_count",
+          contributor: "alice",
+          value: { type: "number", value: 5 },
+          meta: null,
+        });
+
+        await contributorAggregateQueries.upsert(db, {
+          aggregate: "hidden_stat",
+          contributor: "alice",
+          value: { type: "number", value: 999 },
+          meta: null,
+        });
+      });
+
+      it("should return enriched aggregates", async () => {
+        const result =
+          await contributorAggregateQueries.getByContributorEnriched(
+            db,
+            "alice",
+            ["pr_count", "issue_count"]
+          );
+
+        expect(result).toHaveLength(2);
+        expect(result[0].aggregate).toBe("issue_count");
+        expect(result[0].name).toBe("Issue Count");
+        expect(result[0].value).toEqual({ type: "number", value: 5 });
+        expect(result[1].aggregate).toBe("pr_count");
+      });
+
+      it("should filter out hidden aggregates", async () => {
+        const result =
+          await contributorAggregateQueries.getByContributorEnriched(
+            db,
+            "alice",
+            ["pr_count", "hidden_stat"]
+          );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].aggregate).toBe("pr_count");
+      });
+
+      it("should return empty array for empty slugs", async () => {
+        const result =
+          await contributorAggregateQueries.getByContributorEnriched(
+            db,
+            "alice",
+            []
+          );
+
+        expect(result).toHaveLength(0);
+      });
+    });
+
+    describe("contributorBadgeQueries.getRecentEnriched", () => {
+      beforeEach(async () => {
+        await contributorQueries.upsert(db, {
+          username: "alice",
+          name: "Alice Smith",
+          role: null,
+          title: null,
+          avatar_url: "https://example.com/alice.png",
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "bob",
+          name: "Bob Jones",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await badgeDefinitionQueries.upsert(db, {
+          slug: "contributor",
+          name: "Contributor Badge",
+          description: "First contribution",
+          variants: {
+            bronze: { description: "Bronze", svg_url: "/bronze.svg" },
+            silver: { description: "Silver", svg_url: "/silver.svg" },
+          },
+        });
+
+        await contributorBadgeQueries.award(db, {
+          slug: "badge1",
+          badge: "contributor",
+          contributor: "alice",
+          variant: "bronze",
+          achieved_on: "2025-01-01",
+          meta: null,
+        });
+
+        await contributorBadgeQueries.award(db, {
+          slug: "badge2",
+          badge: "contributor",
+          contributor: "bob",
+          variant: "silver",
+          achieved_on: "2025-01-02",
+          meta: null,
+        });
+      });
+
+      it("should return enriched badges", async () => {
+        const result = await contributorBadgeQueries.getRecentEnriched(db, 10);
+
+        expect(result).toHaveLength(2);
+        expect(result[0].contributor).toBe("bob");
+        expect(result[0].contributor_name).toBe("Bob Jones");
+        expect(result[0].badge_name).toBe("Contributor Badge");
+        expect(result[0].badge_variants).toHaveProperty("bronze");
+        expect(result[1].contributor).toBe("alice");
+        expect(result[1].contributor_avatar_url).toBe(
+          "https://example.com/alice.png"
+        );
+      });
+
+      it("should respect limit", async () => {
+        const result = await contributorBadgeQueries.getRecentEnriched(db, 1);
+
+        expect(result).toHaveLength(1);
+        expect(result[0].contributor).toBe("bob");
+      });
+
+      it("should sort by achieved_on descending", async () => {
+        const result = await contributorBadgeQueries.getRecentEnriched(db);
+
+        expect(
+          new Date(result[0].achieved_on).getTime()
+        ).toBeGreaterThanOrEqual(new Date(result[1].achieved_on).getTime());
+      });
+    });
+
+    describe("contributorBadgeQueries.getTopEarnersEnriched", () => {
+      beforeEach(async () => {
+        await contributorQueries.upsert(db, {
+          username: "alice",
+          name: "Alice Smith",
+          role: null,
+          title: null,
+          avatar_url: "https://example.com/alice.png",
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await contributorQueries.upsert(db, {
+          username: "bob",
+          name: "Bob Jones",
+          role: null,
+          title: null,
+          avatar_url: null,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+
+        await badgeDefinitionQueries.upsert(db, {
+          slug: "badge1",
+          name: "Badge 1",
+          description: "First badge",
+          variants: { default: { description: "Default", svg_url: "/1.svg" } },
+        });
+
+        await badgeDefinitionQueries.upsert(db, {
+          slug: "badge2",
+          name: "Badge 2",
+          description: "Second badge",
+          variants: { default: { description: "Default", svg_url: "/2.svg" } },
+        });
+
+        await contributorBadgeQueries.award(db, {
+          slug: "b1",
+          badge: "badge1",
+          contributor: "alice",
+          variant: "default",
+          achieved_on: "2025-01-01",
+          meta: null,
+        });
+
+        await contributorBadgeQueries.award(db, {
+          slug: "b2",
+          badge: "badge2",
+          contributor: "alice",
+          variant: "default",
+          achieved_on: "2025-01-02",
+          meta: null,
+        });
+
+        await contributorBadgeQueries.award(db, {
+          slug: "b3",
+          badge: "badge1",
+          contributor: "bob",
+          variant: "default",
+          achieved_on: "2025-01-03",
+          meta: null,
+        });
+      });
+
+      it("should return top earners with badge count", async () => {
+        const result = await contributorBadgeQueries.getTopEarnersEnriched(
+          db,
+          10
+        );
+
+        expect(result).toHaveLength(2);
+        expect(result[0].username).toBe("alice");
+        expect(result[0].badge_count).toBe(2);
+        expect(result[0].name).toBe("Alice Smith");
+        expect(result[1].username).toBe("bob");
+        expect(result[1].badge_count).toBe(1);
+      });
+
+      it("should respect limit", async () => {
+        const result = await contributorBadgeQueries.getTopEarnersEnriched(
+          db,
+          1
+        );
+
+        expect(result).toHaveLength(1);
+        expect(result[0].username).toBe("alice");
+      });
+
+      it("should sort by badge count descending", async () => {
+        const result = await contributorBadgeQueries.getTopEarnersEnriched(db);
+
+        expect(result[0].badge_count).toBeGreaterThanOrEqual(
+          result[1].badge_count
+        );
+      });
     });
   });
 });

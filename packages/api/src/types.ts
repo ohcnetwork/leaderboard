@@ -267,6 +267,7 @@ export interface GlobalAggregate {
   name: string;
   description: string | null;
   value: AggregateValue;
+  hidden?: boolean | null;
   meta: Record<string, unknown> | null;
 }
 
@@ -277,6 +278,7 @@ export interface ContributorAggregateDefinition {
   slug: string;
   name: string;
   description: string | null;
+  hidden?: boolean | null;
 }
 
 /**

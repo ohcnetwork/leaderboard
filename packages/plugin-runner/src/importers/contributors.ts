@@ -18,29 +18,34 @@ export async function importContributors(
   logger: Logger
 ): Promise<number> {
   const contributorsDir = join(dataDir, "contributors");
-  
+
   try {
     const files = await readdir(contributorsDir);
     const markdownFiles = files.filter((f) => f.endsWith(".md"));
-    
+
     logger.info(`Found ${markdownFiles.length} contributor files`);
-    
+
     let imported = 0;
-    
+
     for (const file of markdownFiles) {
       try {
         const filePath = join(contributorsDir, file);
         const content = await readFile(filePath, "utf-8");
-        const contributor = parseContributorMarkdown(content);
-        
+        const contributor = {
+          username: file.replace(".md", ""),
+          ...parseContributorMarkdown(content),
+        };
+
         await contributorQueries.upsert(db, contributor);
         imported++;
         logger.debug(`Imported contributor: ${contributor.username}`);
       } catch (error) {
-        logger.warn(`Failed to import contributor from ${file}`, { error: (error as Error).message });
+        logger.warn(`Failed to import contributor from ${file}`, {
+          error: (error as Error).message,
+        });
       }
     }
-    
+
     logger.info(`Imported ${imported} contributors`);
     return imported;
   } catch (error) {
@@ -55,15 +60,10 @@ export async function importContributors(
 /**
  * Parse contributor markdown file with frontmatter
  */
-function parseContributorMarkdown(content: string): Contributor {
+function parseContributorMarkdown(content: string) {
   const { data, content: bio } = matter(content);
-  
-  if (!data.username) {
-    throw new Error("Contributor must have a username in frontmatter");
-  }
-  
+
   return {
-    username: data.username,
     name: data.name || null,
     role: data.role || null,
     title: data.title || null,
@@ -74,4 +74,3 @@ function parseContributorMarkdown(content: string): Contributor {
     meta: data.meta || null,
   };
 }
-

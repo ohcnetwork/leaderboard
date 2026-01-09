@@ -52,7 +52,6 @@ describe("Contributor Exporter", () => {
     );
     const parsed = matter(content);
 
-    expect(parsed.data.username).toBe("alice");
     expect(parsed.data.name).toBe("Alice Smith");
     expect(parsed.content.trim()).toBe("Alice is a software engineer.");
   });

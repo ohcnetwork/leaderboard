@@ -65,7 +65,7 @@ pnpm setup:dev
 
 ```yaml
 leaderboard:
-  data_dir: ./data
+  data_source: https://github.com/example-org/leaderboard-data
   plugins:
     dummy:
       source: "@leaderboard/plugin-dummy"

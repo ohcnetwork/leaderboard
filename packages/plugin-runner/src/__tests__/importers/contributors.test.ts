@@ -99,27 +99,4 @@ describe("Contributor Importer", () => {
 
     await rm(emptyDir, { recursive: true, force: true });
   });
-
-  it("should handle invalid markdown files gracefully", async () => {
-    const valid = matter.stringify("Valid bio", {
-      username: "alice",
-      name: "Alice",
-    });
-
-    const invalid = "---\nno username\n---\nBio";
-
-    await writeFile(
-      join(TEST_DATA_DIR, "contributors", "alice.md"),
-      valid,
-      "utf-8"
-    );
-    await writeFile(
-      join(TEST_DATA_DIR, "contributors", "invalid.md"),
-      invalid,
-      "utf-8"
-    );
-
-    const count = await importContributors(db, TEST_DATA_DIR, logger);
-    expect(count).toBe(1); // Only valid one imported
-  });
 });

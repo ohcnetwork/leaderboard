@@ -80,7 +80,7 @@ describe("ConfigSchema", () => {
         favicon_url: "https://example.com/favicon.ico",
       },
       leaderboard: {
-        data_dir: "./data",
+        data_source: "https://github.com/example-org/leaderboard-data",
         roles: {
           core: { name: "Core" },
         },
@@ -121,7 +121,9 @@ describe("LeaderboardConfigSchema", () => {
     const result = LeaderboardConfigSchema.safeParse(config);
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.data.plugins?.github.source).toBe("https://example.com/manifest.js");
+      expect(result.data.plugins?.github.source).toBe(
+        "https://example.com/manifest.js"
+      );
     }
   });
 
@@ -159,4 +161,3 @@ describe("LeaderboardConfigSchema", () => {
     }
   });
 });
-

@@ -29,7 +29,7 @@ const ConfigSchema = z.object({
     socials: z.record(z.string(), z.string()).optional(),
   }),
   leaderboard: z.object({
-    data_dir: z.string().optional(),
+    data_source: z.string().optional(),
     plugins: z.record(z.string(), PluginConfigSchema).optional(),
   }),
 });
@@ -76,7 +76,7 @@ export async function loadConfig(dataDir: string): Promise<Config> {
   const absoluteDataDir = resolve(dataDir);
   const configPath = join(absoluteDataDir, "config.yaml");
   const fileContents = await readFile(configPath, "utf8");
-  
+
   let rawConfig = yaml.load(fileContents, {
     schema: yaml.JSON_SCHEMA,
   }) as unknown;
@@ -102,4 +102,3 @@ export async function loadConfig(dataDir: string): Promise<Config> {
 
   return result.data;
 }
-

@@ -122,7 +122,7 @@ meta:
   favicon_url: "/favicon.ico"
 
 leaderboard:
-  data_dir: "./data"
+  data_source: "https://github.com/example-org/leaderboard-data"
   
   # Dummy plugin configuration
   plugins:

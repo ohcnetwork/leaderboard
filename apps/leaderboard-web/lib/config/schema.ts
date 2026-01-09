@@ -43,7 +43,6 @@ export const PluginInstanceConfigSchema = z.object({
 
 export const LeaderboardConfigSchema = z.object({
   data_source: z.string().optional(),
-  data_dir: z.string().optional(),
   roles: z.record(z.string(), RoleConfigSchema),
   top_contributors: z.array(z.string()).optional(),
   social_profiles: z.record(z.string(), SocialProfileConfigSchema).optional(),

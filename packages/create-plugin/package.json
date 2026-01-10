@@ -4,6 +4,7 @@
   "description": "CLI tool to generate leaderboard plugin projects",
   "type": "module",
   "main": "dist/index.js",
+  "private": false,
   "bin": {
     "create-leaderboard-plugin": "./dist/index.js"
   },
@@ -32,4 +33,3 @@
     "typescript": "^5.7.3"
   }
 }
-

@@ -4,6 +4,7 @@
   "description": "Dummy data generator plugin for leaderboard development",
   "type": "module",
   "main": "dist/index.js",
+  "private": true,
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",

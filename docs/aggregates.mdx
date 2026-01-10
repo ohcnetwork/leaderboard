@@ -115,7 +115,7 @@ Plugins can define custom aggregate definitions during the `setup()` phase.
 ### In Plugin Setup
 
 ```typescript
-import { contributorAggregateDefinitionQueries } from "@leaderboard/api";
+import { contributorAggregateDefinitionQueries } from "@ohcnetwork/leaderboard-api";
 
 async setup(ctx: PluginContext) {
   // Define a custom aggregate
@@ -213,7 +213,7 @@ Plugins can set custom aggregate values during the `scrape()` phase.
 ### Simple Number Aggregate
 
 ```typescript
-import { contributorAggregateQueries } from "@leaderboard/api";
+import { contributorAggregateQueries } from "@ohcnetwork/leaderboard-api";
 
 async scrape(ctx: PluginContext) {
   await contributorAggregateQueries.upsert(ctx.db, {
@@ -307,7 +307,7 @@ graph LR
 ### Get All Global Aggregates
 
 ```typescript
-import { globalAggregateQueries } from "@leaderboard/api";
+import { globalAggregateQueries } from "@ohcnetwork/leaderboard-api";
 
 const aggregates = await globalAggregateQueries.getAll(db);
 ```
@@ -315,7 +315,7 @@ const aggregates = await globalAggregateQueries.getAll(db);
 ### Get Contributor Aggregates
 
 ```typescript
-import { contributorAggregateQueries } from "@leaderboard/api";
+import { contributorAggregateQueries } from "@ohcnetwork/leaderboard-api";
 
 const aggregates = await contributorAggregateQueries.getByContributor(
   db,

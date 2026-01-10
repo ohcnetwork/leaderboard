@@ -6,7 +6,7 @@ import type {
   Contributor,
   Activity,
   AggregateValue,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 
 /**
  * Base rule interface
@@ -103,4 +103,3 @@ export interface RuleEvaluationResult {
   variant: string;
   meta?: Record<string, unknown>;
 }
-

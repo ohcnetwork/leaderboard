@@ -2,7 +2,7 @@
  * Structured logging implementation
  */
 
-import type { Logger } from "@leaderboard/api";
+import type { Logger } from "@ohcnetwork/leaderboard-api";
 
 enum LogLevel {
   DEBUG = 0,
@@ -18,7 +18,12 @@ export class ConsoleLogger implements Logger {
     this.minLevel = minLevel;
   }
 
-  private log(level: LogLevel, levelName: string, message: string, meta?: Record<string, unknown>): void {
+  private log(
+    level: LogLevel,
+    levelName: string,
+    message: string,
+    meta?: Record<string, unknown>
+  ): void {
     if (level < this.minLevel) {
       return;
     }
@@ -41,7 +46,9 @@ export class ConsoleLogger implements Logger {
   }
 
   error(message: string, error?: Error, meta?: Record<string, unknown>): void {
-    const errorMeta = error ? { error: error.message, stack: error.stack, ...meta } : meta;
+    const errorMeta = error
+      ? { error: error.message, stack: error.stack, ...meta }
+      : meta;
     this.log(LogLevel.ERROR, "ERROR", message, errorMeta);
   }
 }
@@ -49,4 +56,3 @@ export class ConsoleLogger implements Logger {
 export function createLogger(debug = false): Logger {
   return new ConsoleLogger(debug ? LogLevel.DEBUG : LogLevel.INFO);
 }
-

@@ -2,7 +2,12 @@
  * Plugin execution orchestrator
  */
 
-import type { Plugin, PluginContext, Database, Logger } from "@leaderboard/api";
+import type {
+  Plugin,
+  PluginContext,
+  Database,
+  Logger,
+} from "@ohcnetwork/leaderboard-api";
 import type { Config } from "./config";
 import { loadPlugin } from "./loader";
 

@@ -125,7 +125,7 @@ Data Sources → Plugin Runner → LibSQL Database → Next.js Build → Static 
 ### Components
 
 1. **Plugin Runner** (`@leaderboard/plugin-runner`): CLI tool that orchestrates data collection
-2. **API Layer** (`@leaderboard/api`): Unified package with database utilities and plugin type definitions
+2. **API Layer** (`@ohcnetwork/leaderboard-api`): Unified package with database utilities and plugin type definitions
 3. **Next.js App** (`apps/leaderboard-web`): Static site generator
 
 ## Data Storage

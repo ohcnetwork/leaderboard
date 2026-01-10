@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import yaml from "js-yaml";
 import { Config, ConfigSchema } from "@/lib/config/schema";
-import { dataDir } from "@leaderboard/api";
+import { dataDir } from "@ohcnetwork/leaderboard-api";
 
 let cachedConfig: Config | null = null;
 

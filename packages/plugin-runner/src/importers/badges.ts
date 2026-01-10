@@ -4,11 +4,11 @@
 
 import { readFile, readdir } from "fs/promises";
 import { join } from "path";
-import type { Database, Logger } from "@leaderboard/api";
+import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
   badgeDefinitionQueries,
   contributorBadgeQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 
 /**
  * Import badge definitions from badges/definitions.json
@@ -75,7 +75,9 @@ export async function importContributorBadges(
       }
     }
 
-    logger.info(`Imported ${totalImported} contributor badges from ${jsonlFiles.length} files`);
+    logger.info(
+      `Imported ${totalImported} contributor badges from ${jsonlFiles.length} files`
+    );
   } catch (error: any) {
     if (error.code === "ENOENT") {
       logger.debug("No contributor badges directory found, skipping");
@@ -97,4 +99,3 @@ export async function importBadges(
   await importBadgeDefinitions(db, dataDir, logger);
   await importContributorBadges(db, dataDir, logger);
 }
-

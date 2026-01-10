@@ -3,9 +3,9 @@
  * Reads from the persisted database file during build time
  */
 
-import { dataDir } from "@leaderboard/api";
-import { createDatabase, getDatabaseUrl } from "@leaderboard/api";
-import type { Database } from "@leaderboard/api";
+import { dataDir } from "@ohcnetwork/leaderboard-api";
+import { createDatabase, getDatabaseUrl } from "@ohcnetwork/leaderboard-api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 
 let cachedDb: Database | null = null;
 

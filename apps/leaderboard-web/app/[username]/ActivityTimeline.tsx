@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { ContributorActivity } from "@/lib/data/types";
-import { ActivityDefinition } from "@leaderboard/api";
+import { ActivityDefinition } from "@ohcnetwork/leaderboard-api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";

@@ -4,11 +4,11 @@
 
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
-import type { Database, Logger } from "@leaderboard/api";
+import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
   badgeDefinitionQueries,
   contributorBadgeQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 
 /**
  * Export badge definitions to badges/definitions.json
@@ -77,4 +77,3 @@ export async function exportBadges(
   await exportBadgeDefinitions(db, dataDir, logger);
   await exportContributorBadges(db, dataDir, logger);
 }
-

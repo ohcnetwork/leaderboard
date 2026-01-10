@@ -176,7 +176,7 @@ The database is accessed by:
 ### Connection
 
 ```typescript
-import { createDatabase } from '@leaderboard/api';
+import { createDatabase } from '@ohcnetwork/leaderboard-api';
 
 const db = createDatabase('file:./data/.leaderboard.db');
 ```
@@ -293,7 +293,7 @@ If migrating from a different system:
 
 ```javascript
 // migration.js
-import { createDatabase, contributorQueries } from '@leaderboard/api';
+import { createDatabase, contributorQueries } from '@ohcnetwork/leaderboard-api';
 import { exportContributors } from '@leaderboard/plugin-runner';
 
 const db = createDatabase(':memory:');

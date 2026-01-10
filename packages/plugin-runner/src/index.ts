@@ -19,7 +19,7 @@ import { exportBadges } from "./exporters/badges";
 import { runPlugins } from "./runner";
 import { runAggregation } from "./aggregator";
 import { evaluateBadgeRules } from "./rules/evaluator";
-import { getDataDir } from "@leaderboard/api";
+import { getDataDir } from "@ohcnetwork/leaderboard-api";
 
 async function main() {
   const { values } = parseArgs({

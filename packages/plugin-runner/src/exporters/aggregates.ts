@@ -4,12 +4,12 @@
 
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
-import type { Database, Logger } from "@leaderboard/api";
+import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
   globalAggregateQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 
 /**
  * Export global aggregates to aggregates/global.json
@@ -44,7 +44,9 @@ export async function exportContributorAggregateDefinitions(
   const content = JSON.stringify(definitions, null, 2);
 
   await writeFile(join(aggregatesDir, "definitions.json"), content, "utf-8");
-  logger.info(`Exported ${definitions.length} contributor aggregate definitions`);
+  logger.info(
+    `Exported ${definitions.length} contributor aggregate definitions`
+  );
 }
 
 /**
@@ -71,7 +73,9 @@ export async function exportContributorAggregates(
 
   // Write one file per contributor
   for (const [username, contributorAggregates] of byContributor) {
-    const lines = contributorAggregates.map((a) => JSON.stringify(a)).join("\n");
+    const lines = contributorAggregates
+      .map((a) => JSON.stringify(a))
+      .join("\n");
     await writeFile(
       join(contributorsDir, `${username}.jsonl`),
       lines + "\n",
@@ -97,4 +101,3 @@ export async function exportAggregates(
   await exportContributorAggregateDefinitions(db, dataDir, logger);
   await exportContributorAggregates(db, dataDir, logger);
 }
-

@@ -17,7 +17,7 @@ import {
   type ActivityDefinition,
   type BadgeDefinition,
   type ContributorBadge,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 import { LeaderboardEntry } from "./types";
 
 /**

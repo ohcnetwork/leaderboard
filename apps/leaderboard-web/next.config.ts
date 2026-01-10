@@ -4,7 +4,7 @@ import { createMDX } from "fumadocs-mdx/next";
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
-  transpilePackages: ["@leaderboard/api"],
+  transpilePackages: ["@ohcnetwork/leaderboard-api"],
   serverExternalPackages: ["@libsql/client"],
   images: {
     unoptimized: true, // Required for static export

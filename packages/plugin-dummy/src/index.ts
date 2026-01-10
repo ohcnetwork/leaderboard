@@ -7,14 +7,14 @@
  */
 
 import { faker } from "@faker-js/faker";
-import type { Plugin, PluginContext } from "@leaderboard/api";
+import type { Plugin, PluginContext } from "@ohcnetwork/leaderboard-api";
 import {
   activityDefinitionQueries,
   contributorQueries,
   activityQueries,
   badgeDefinitionQueries,
   contributorAggregateDefinitionQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 import { generateContributors } from "./contributors";
 import { generateActivities, ACTIVITY_TYPES } from "./activities";
 import { mergeConfig, type DummyPluginConfig } from "./config";
@@ -194,8 +194,7 @@ const plugin: Plugin = {
           },
           gold: {
             description: "12 weeks of reviews",
-            svg_url:
-              "https://api.dicebear.com/7.x/shapes/svg?seed=gold-review",
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=gold-review",
           },
         },
       },

@@ -20,7 +20,7 @@ export function generatePackageJson(options: PluginOptions): string {
     },
     keywords: ["leaderboard", "plugin"],
     dependencies: {
-      "@leaderboard/api": "^0.1.0",
+      "@ohcnetwork/leaderboard-api": "^0.1.0",
     },
     devDependencies: {
       "@types/node": "^20.19.27",

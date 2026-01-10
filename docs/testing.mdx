@@ -32,7 +32,7 @@ The project uses **Vitest** for all testing:
 pnpm test
 
 # Run tests in specific package
-pnpm --filter @leaderboard/api test
+pnpm --filter @ohcnetwork/leaderboard-api test
 
 # Watch mode
 pnpm test:watch
@@ -84,8 +84,8 @@ packages/plugin-runner/
 
 ```typescript
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { createDatabase, initializeSchema } from '@leaderboard/api';
-import type { Database } from '@leaderboard/api';
+import { createDatabase, initializeSchema } from '@ohcnetwork/leaderboard-api';
+import type { Database } from '@ohcnetwork/leaderboard-api';
 
 describe('Database Tests', () => {
   let db: Database;
@@ -110,7 +110,7 @@ describe('Database Tests', () => {
 Test database query helpers:
 
 ```typescript
-import { contributorQueries } from '@leaderboard/api';
+import { contributorQueries } from '@ohcnetwork/leaderboard-api';
 
 it('should get contributor by username', async () => {
   await contributorQueries.upsert(db, {

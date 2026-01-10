@@ -5,20 +5,20 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { writeFile, mkdir, rm } from "fs/promises";
 import { join } from "path";
-import { createDatabase } from "@leaderboard/api";
-import { initializeSchema } from "@leaderboard/api";
+import { createDatabase } from "@ohcnetwork/leaderboard-api";
+import { initializeSchema } from "@ohcnetwork/leaderboard-api";
 import {
   badgeDefinitionQueries,
   contributorBadgeQueries,
   contributorQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 import {
   importBadgeDefinitions,
   importContributorBadges,
   importBadges,
 } from "../../importers/badges";
 import { createLogger } from "../../logger";
-import type { Database } from "@leaderboard/api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-import-badges";
 const logger = createLogger(false);
@@ -340,4 +340,3 @@ describe("Badge Importers", () => {
     });
   });
 });
-

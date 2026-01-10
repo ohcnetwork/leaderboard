@@ -10,7 +10,7 @@ import {
   activityDefinitionQueries,
   activityQueries,
   type Database,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 
 import {
   getAllContributors,

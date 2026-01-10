@@ -56,7 +56,7 @@ npm init -y
 Install the plugin API types:
 
 ```bash
-npm install --save-dev @leaderboard/api
+npm install --save-dev @ohcnetwork/leaderboard-api
 ```
 
 ## Step 2: Create the Plugin File
@@ -74,7 +74,7 @@ import {
   activityDefinitionQueries,
   activityQueries,
   contributorQueries,
-} from '@leaderboard/api';
+} from '@ohcnetwork/leaderboard-api';
 
 export default {
   name: 'custom-plugin',
@@ -182,7 +182,7 @@ import {
   contributorQueries,
   type Plugin,
   type PluginContext,
-} from '@leaderboard/api';
+} from '@ohcnetwork/leaderboard-api';
 
 const plugin: Plugin = {
   name: 'custom-plugin',
@@ -334,7 +334,7 @@ plugin-runner --data-dir=./data --debug
 
 ## Working with Query Helpers
 
-The `@leaderboard/api` package provides query helpers to make database operations easier:
+The `@ohcnetwork/leaderboard-api` package provides query helpers to make database operations easier:
 
 ### Available Query Helpers
 
@@ -343,7 +343,7 @@ import {
   contributorQueries,
   activityDefinitionQueries,
   activityQueries,
-} from '@leaderboard/api';
+} from '@ohcnetwork/leaderboard-api';
 ```
 
 **Contributor Queries:**

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { evaluateBadgeRules } from "../../rules/evaluator";
-import { createDatabase, initializeSchema } from "@leaderboard/api";
-import type { Database } from "@leaderboard/api";
+import { createDatabase, initializeSchema } from "@ohcnetwork/leaderboard-api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
   contributorQueries,
   activityDefinitionQueries,
@@ -10,7 +10,7 @@ import {
   contributorAggregateQueries,
   badgeDefinitionQueries,
   contributorBadgeQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 import type { BadgeRuleDefinition } from "../../rules/types";
 
 describe("Badge Rule Evaluator", () => {

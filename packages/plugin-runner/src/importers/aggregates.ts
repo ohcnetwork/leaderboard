@@ -4,12 +4,12 @@
 
 import { readFile, readdir } from "fs/promises";
 import { join } from "path";
-import type { Database, Logger } from "@leaderboard/api";
+import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
   globalAggregateQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 
 /**
  * Import global aggregates from aggregates/global.json
@@ -72,9 +72,7 @@ export async function importContributorAggregateDefinitions(
     );
   } catch (error: any) {
     if (error.code === "ENOENT") {
-      logger.debug(
-        "No contributor aggregate definitions file found, skipping"
-      );
+      logger.debug("No contributor aggregate definitions file found, skipping");
     } else {
       logger.error("Failed to import contributor aggregate definitions", error);
     }
@@ -113,7 +111,9 @@ export async function importContributorAggregates(
       }
     }
 
-    logger.info(`Imported ${totalImported} contributor aggregates from ${jsonlFiles.length} files`);
+    logger.info(
+      `Imported ${totalImported} contributor aggregates from ${jsonlFiles.length} files`
+    );
   } catch (error: any) {
     if (error.code === "ENOENT") {
       logger.debug("No contributor aggregates directory found, skipping");
@@ -136,4 +136,3 @@ export async function importAggregates(
   await importContributorAggregateDefinitions(db, dataDir, logger);
   await importContributorAggregates(db, dataDir, logger);
 }
-

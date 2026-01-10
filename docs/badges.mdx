@@ -242,7 +242,7 @@ Plugins can define custom badge definitions during the `setup()` phase.
 ### Basic Badge Definition
 
 ```typescript
-import { badgeDefinitionQueries } from "@leaderboard/api";
+import { badgeDefinitionQueries } from "@ohcnetwork/leaderboard-api";
 
 async setup(ctx: PluginContext) {
   await badgeDefinitionQueries.upsert(ctx.db, {
@@ -290,7 +290,7 @@ Plugins can award badges directly during the `scrape()` phase.
 ### Award a Badge
 
 ```typescript
-import { contributorBadgeQueries } from "@leaderboard/api";
+import { contributorBadgeQueries } from "@ohcnetwork/leaderboard-api";
 
 async scrape(ctx: PluginContext) {
   await contributorBadgeQueries.award(ctx.db, {
@@ -327,7 +327,7 @@ if (!exists) {
 ### Get All Badges for a Contributor
 
 ```typescript
-import { contributorBadgeQueries } from "@leaderboard/api";
+import { contributorBadgeQueries } from "@ohcnetwork/leaderboard-api";
 
 const badges = await contributorBadgeQueries.getByContributor(db, "alice");
 
@@ -339,7 +339,7 @@ for (const badge of badges) {
 ### Get All Badge Definitions
 
 ```typescript
-import { badgeDefinitionQueries } from "@leaderboard/api";
+import { badgeDefinitionQueries } from "@ohcnetwork/leaderboard-api";
 
 const definitions = await badgeDefinitionQueries.getAll(db);
 ```

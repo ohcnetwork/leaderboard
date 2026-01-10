@@ -91,7 +91,7 @@ interface PluginContext {
 Use query helpers for type-safe database operations:
 
 ```typescript
-import { activityQueries } from '@leaderboard/api';
+import { activityQueries } from '@ohcnetwork/leaderboard-api';
 
 await activityQueries.upsert(ctx.db, {
   slug: 'activity-123',
@@ -187,7 +187,7 @@ import {
   activityDefinitionQueries,
   activityQueries,
   contributorQueries,
-} from '@leaderboard/api';
+} from '@ohcnetwork/leaderboard-api';
 
 export default {
   name: 'github-activities',
@@ -273,7 +273,7 @@ export default {
 Use the provided query helpers for type safety and convenience:
 
 ```typescript
-import { activityQueries, activityDefinitionQueries, contributorQueries } from '@leaderboard/api';
+import { activityQueries, activityDefinitionQueries, contributorQueries } from '@ohcnetwork/leaderboard-api';
 
 // Insert or update (prevents duplicates automatically)
 await activityQueries.upsert(ctx.db, activity);
@@ -336,7 +336,7 @@ async scrape(ctx) {
 
 The plugin runner validates:
 - Plugin structure (required fields)
-- TypeScript types (via `@leaderboard/api`)
+- TypeScript types (via `@ohcnetwork/leaderboard-api`)
 
 ### Sandboxing
 

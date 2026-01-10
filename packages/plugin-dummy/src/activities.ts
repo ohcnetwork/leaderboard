@@ -3,7 +3,7 @@
  */
 
 import { faker } from "@faker-js/faker";
-import type { Activity } from "@leaderboard/api";
+import type { Activity } from "@ohcnetwork/leaderboard-api";
 
 /**
  * Activity type definitions with GitHub-like attributes
@@ -81,7 +81,7 @@ function generatePRTitle(): string {
     () => `Add tests for ${faker.hacker.noun()} feature`,
     () => `Update dependencies for ${faker.hacker.noun()}`,
   ];
-  
+
   return faker.helpers.arrayElement(templates)();
 }
 
@@ -91,7 +91,8 @@ function generatePRTitle(): string {
 function generateIssueTitle(): string {
   const templates = [
     () => `Bug: ${faker.hacker.noun()} not ${faker.hacker.ingverb()} correctly`,
-    () => `Feature Request: Add ${faker.hacker.adjective()} ${faker.hacker.noun()}`,
+    () =>
+      `Feature Request: Add ${faker.hacker.adjective()} ${faker.hacker.noun()}`,
     () => `${faker.hacker.noun()} ${faker.hacker.verb()} throws error`,
     () => `Improve ${faker.hacker.noun()} ${faker.hacker.verb()} performance`,
     () => `Question: How to ${faker.hacker.verb()} ${faker.hacker.noun()}?`,
@@ -99,7 +100,7 @@ function generateIssueTitle(): string {
     () => `${faker.hacker.adjective()} ${faker.hacker.noun()} causes crash`,
     () => `Memory leak in ${faker.hacker.noun()} module`,
   ];
-  
+
   return faker.helpers.arrayElement(templates)();
 }
 
@@ -111,7 +112,7 @@ function generateCommitMessage(): string {
   const type = faker.helpers.arrayElement(types);
   const scope = faker.hacker.noun();
   const message = faker.hacker.phrase();
-  
+
   return `${type}(${scope}): ${message}`;
 }
 
@@ -122,7 +123,7 @@ function generateReleaseTitle(): string {
   const major = faker.number.int({ min: 0, max: 5 });
   const minor = faker.number.int({ min: 0, max: 20 });
   const patch = faker.number.int({ min: 0, max: 50 });
-  
+
   return `v${major}.${minor}.${patch}`;
 }
 
@@ -137,7 +138,7 @@ function generateDocsTitle(): string {
     () => `Improve ${faker.hacker.noun()} tutorial`,
     () => `Add API reference for ${faker.hacker.noun()}`,
   ];
-  
+
   return faker.helpers.arrayElement(templates)();
 }
 
@@ -175,7 +176,7 @@ function generateActivityLink(
   id: number
 ): string {
   const baseUrl = `https://github.com/${orgName}/${repoName}`;
-  
+
   switch (type) {
     case "pr_opened":
     case "pr_merged":
@@ -206,12 +207,9 @@ function generateActivityMeta(
   const meta: Record<string, unknown> = {
     repo: repoName,
   };
-  
+
   // Add labels for issues and PRs
-  if (
-    type.startsWith("issue_") ||
-    type.startsWith("pr_")
-  ) {
+  if (type.startsWith("issue_") || type.startsWith("pr_")) {
     const labelOptions = [
       ["bug"],
       ["enhancement"],
@@ -222,19 +220,19 @@ function generateActivityMeta(
     ];
     meta.labels = faker.helpers.arrayElement(labelOptions);
   }
-  
+
   // Add commit count for PRs
   if (type === "pr_merged" || type === "pr_opened") {
     meta.commits = faker.number.int({ min: 1, max: 25 });
     meta.additions = faker.number.int({ min: 10, max: 500 });
     meta.deletions = faker.number.int({ min: 5, max: 200 });
   }
-  
+
   // Add release type
   if (type === "release_published") {
     meta.releaseType = faker.helpers.arrayElement(["major", "minor", "patch"]);
   }
-  
+
   return meta;
 }
 
@@ -252,10 +250,12 @@ export function generateActivity(
   const title = generateActivityTitle(type);
   const link = generateActivityLink(type, orgName, repoName, id);
   const meta = generateActivityMeta(type, repoName);
-  
+
   // Generate slug
-  const slug = `${contributor}-${type}-${date.getTime()}-${faker.string.alphanumeric(6)}`;
-  
+  const slug = `${contributor}-${type}-${date.getTime()}-${faker.string.alphanumeric(
+    6
+  )}`;
+
   return {
     slug,
     contributor,
@@ -283,30 +283,41 @@ export function generateActivitiesForContributor(
   const now = new Date();
   const startDate = new Date(now);
   startDate.setDate(startDate.getDate() - daysBack);
-  
+
   // Generate activity distribution (more recent = more likely)
-  const activityTypes = Object.keys(ACTIVITY_TYPES) as Array<keyof typeof ACTIVITY_TYPES>;
-  
+  const activityTypes = Object.keys(ACTIVITY_TYPES) as Array<
+    keyof typeof ACTIVITY_TYPES
+  >;
+
   for (let i = 0; i < count; i++) {
     // Generate date with bias towards recent dates
     const randomFactor = Math.pow(Math.random(), 0.7); // Bias towards 1 (recent)
     const timeRange = now.getTime() - startDate.getTime();
     const activityTime = startDate.getTime() + timeRange * randomFactor;
     const date = new Date(activityTime);
-    
+
     // Select random activity type
     const type = faker.helpers.arrayElement(activityTypes);
-    
+
     // Select random repo
     const repoName = faker.helpers.arrayElement(repoNames);
-    
-    const activity = generateActivity(contributor, type, orgName, repoName, date);
+
+    const activity = generateActivity(
+      contributor,
+      type,
+      orgName,
+      repoName,
+      date
+    );
     activities.push(activity);
   }
-  
+
   // Sort by date
-  activities.sort((a, b) => new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime());
-  
+  activities.sort(
+    (a, b) =>
+      new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime()
+  );
+
   return activities;
 }
 
@@ -322,13 +333,13 @@ export function generateActivities(
   repoNames: string[]
 ): Map<string, Activity[]> {
   const activitiesByContributor = new Map<string, Activity[]>();
-  
+
   for (const contributor of contributors) {
     const activityCount = faker.number.int({
       min: minActivitiesPerContributor,
       max: maxActivitiesPerContributor,
     });
-    
+
     const activities = generateActivitiesForContributor(
       contributor,
       activityCount,
@@ -336,10 +347,9 @@ export function generateActivities(
       orgName,
       repoNames
     );
-    
+
     activitiesByContributor.set(contributor, activities);
   }
-  
+
   return activitiesByContributor;
 }
-

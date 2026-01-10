@@ -9,7 +9,7 @@ import type {
   Activity,
   AggregateValue,
   ActivityDefinition,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 import {
   contributorQueries,
   activityQueries,
@@ -17,7 +17,7 @@ import {
   contributorAggregateQueries,
   badgeDefinitionQueries,
   contributorBadgeQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 import type {
   BadgeRuleDefinition,
   ThresholdBadgeRule,
@@ -188,7 +188,9 @@ async function evaluateRule(
         contributorQueries.getByUsername(db, contributor),
       ]);
       if (!contributorData) return null;
-      const aggregateMap = new Map(aggregates.map((a) => [a.aggregate, a.value]));
+      const aggregateMap = new Map(
+        aggregates.map((a) => [a.aggregate, a.value])
+      );
       return rule.evaluator(contributorData, aggregateMap, activities);
     default:
       return null;
@@ -204,14 +206,17 @@ async function evaluateThresholdRule(
   contributor: string
 ): Promise<RuleEvaluationResult | null> {
   // Get contributor's aggregate value using SQL
-  const contributors = await contributorAggregateQueries.getContributorsAboveThreshold(
-    db,
-    rule.aggregateSlug,
-    Math.min(...rule.thresholds.map((t) => t.value)) // Minimum threshold
-  );
+  const contributors =
+    await contributorAggregateQueries.getContributorsAboveThreshold(
+      db,
+      rule.aggregateSlug,
+      Math.min(...rule.thresholds.map((t) => t.value)) // Minimum threshold
+    );
 
   // Find this contributor
-  const contributorData = contributors.find((c) => c.contributor === contributor);
+  const contributorData = contributors.find(
+    (c) => c.contributor === contributor
+  );
   if (!contributorData) return null;
 
   // Sort thresholds by value descending to get highest eligible variant
@@ -375,12 +380,15 @@ async function evaluateCompositeRule(
 
   for (const condition of rule.conditions) {
     // Fetch aggregate from DB
-    const aggregates = await contributorAggregateQueries.getContributorsWithAggregate(
-      db,
-      condition.aggregateSlug
-    );
+    const aggregates =
+      await contributorAggregateQueries.getContributorsWithAggregate(
+        db,
+        condition.aggregateSlug
+      );
 
-    const contributorAggregate = aggregates.find((a) => a.contributor === contributor);
+    const contributorAggregate = aggregates.find(
+      (a) => a.contributor === contributor
+    );
     if (!contributorAggregate || contributorAggregate.value.type !== "number") {
       results.push(false);
       continue;
@@ -419,6 +427,10 @@ async function evaluateCompositeRule(
     rule.operator === "AND" ? results.every((r) => r) : results.some((r) => r);
 
   return shouldAward
-    ? { shouldAward: true, variant: rule.variant, meta: { conditions: rule.conditions } }
+    ? {
+        shouldAward: true,
+        variant: rule.variant,
+        meta: { conditions: rule.conditions },
+      }
     : null;
 }

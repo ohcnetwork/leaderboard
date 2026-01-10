@@ -8,7 +8,7 @@ The database client reads from the persisted `.leaderboard.db` file in the data-
 
 ```typescript
 import { getDatabase } from '@/lib/db/client';
-import { contributorQueries } from '@leaderboard/api';
+import { contributorQueries } from '@ohcnetwork/leaderboard-api';
 
 // In a Next.js page or component during SSG
 export async function generateStaticParams() {

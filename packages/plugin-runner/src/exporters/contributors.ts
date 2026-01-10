@@ -5,9 +5,9 @@
 import { mkdir, writeFile } from "fs/promises";
 import { join } from "path";
 import matter from "gray-matter";
-import type { Database } from "@leaderboard/api";
-import { contributorQueries } from "@leaderboard/api";
-import type { Logger } from "@leaderboard/api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
+import { contributorQueries } from "@ohcnetwork/leaderboard-api";
+import type { Logger } from "@ohcnetwork/leaderboard-api";
 import { format } from "date-fns";
 
 /**

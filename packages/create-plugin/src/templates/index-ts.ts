@@ -19,7 +19,7 @@ import {
   contributorBadgeQueries,
   type Plugin,
   type PluginContext,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 
 const plugin: Plugin = {
   name: "${options.packageName}",

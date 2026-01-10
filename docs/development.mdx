@@ -190,7 +190,7 @@ pnpm --filter @leaderboard/plugin-dummy test
 pnpm build
 
 # Build specific package
-pnpm --filter @leaderboard/api build
+pnpm --filter @ohcnetwork/leaderboard-api build
 ```
 
 ### 4. Check for errors
@@ -251,7 +251,7 @@ See [Writing Plugins](/docs/plugins/writing-plugins) for a detailed guide.
 ### Quick Example
 
 ```typescript
-import type { Plugin } from "@leaderboard/api";
+import type { Plugin } from "@ohcnetwork/leaderboard-api";
 
 const myPlugin: Plugin = {
   name: "my-plugin",

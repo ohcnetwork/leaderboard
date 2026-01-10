@@ -7,12 +7,12 @@ import { mkdir, writeFile, rm } from "fs/promises";
 import { join } from "path";
 import { tmpdir } from "os";
 import matter from "gray-matter";
-import { createDatabase } from "@leaderboard/api";
-import { initializeSchema } from "@leaderboard/api";
-import { contributorQueries } from "@leaderboard/api";
+import { createDatabase } from "@ohcnetwork/leaderboard-api";
+import { initializeSchema } from "@ohcnetwork/leaderboard-api";
+import { contributorQueries } from "@ohcnetwork/leaderboard-api";
 import { importContributors } from "../../importers/contributors";
 import { createLogger } from "../../logger";
-import type { Database } from "@leaderboard/api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-contributors";
 const logger = createLogger(false);

@@ -2,14 +2,14 @@
  * Aggregation phase - calculates standard metrics after scraping
  */
 
-import type { Database, Logger } from "@leaderboard/api";
+import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
   contributorQueries,
   activityQueries,
   globalAggregateQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
-} from "@leaderboard/api";
+} from "@ohcnetwork/leaderboard-api";
 
 /**
  * Run the aggregation phase

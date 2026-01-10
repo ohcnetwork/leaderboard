@@ -1,11 +1,11 @@
-# @leaderboard/api
+# @ohcnetwork/leaderboard-api
 
 Unified API package combining database utilities, schema definitions, query helpers, and plugin type definitions for the leaderboard system.
 
 ## Installation
 
 ```bash
-npm install @leaderboard/api
+npm install @ohcnetwork/leaderboard-api
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install @leaderboard/api
 ### Plugin Development
 
 ```typescript
-import type { Plugin, PluginContext } from '@leaderboard/api';
+import type { Plugin, PluginContext } from '@ohcnetwork/leaderboard-api';
 
 const myPlugin: Plugin = {
   name: 'my-plugin',
@@ -40,7 +40,7 @@ export default myPlugin;
 ### Database Usage
 
 ```typescript
-import { createDatabase, initializeSchema } from '@leaderboard/api';
+import { createDatabase, initializeSchema } from '@ohcnetwork/leaderboard-api';
 
 const db = createDatabase('file:./leaderboard.db');
 await initializeSchema(db);
@@ -49,7 +49,7 @@ await initializeSchema(db);
 ### Query Helpers
 
 ```typescript
-import { contributorQueries, activityQueries } from '@leaderboard/api';
+import { contributorQueries, activityQueries } from '@ohcnetwork/leaderboard-api';
 
 // Get all contributors
 const contributors = await contributorQueries.getAll(db);

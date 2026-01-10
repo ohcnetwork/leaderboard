@@ -1,5 +1,5 @@
 /**
- * @leaderboard/api
+ * @ohcnetwork/leaderboard-api
  *
  * Unified API package combining database utilities and plugin type definitions
  * for the leaderboard system.

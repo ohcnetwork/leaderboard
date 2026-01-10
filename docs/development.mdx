@@ -1,0 +1,392 @@
+---
+title: Development Guide
+description: Complete guide to setting up and developing the leaderboard application
+---
+
+# Development Guide
+
+This guide will help you get started with developing the leaderboard application.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** v20 or higher
+- **pnpm** v10 or higher
+- **Git**
+
+## Quick Setup
+
+The fastest way to get started is using our development setup script:
+
+```bash
+# Clone the repository
+git clone https://github.com/ohcnetwork/leaderboard.git
+cd leaderboard
+
+# Install dependencies
+pnpm install
+
+# Build all packages
+pnpm build
+
+# Setup development environment
+pnpm setup:dev
+
+# Start development server
+pnpm dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to see your leaderboard!
+
+## Development Setup Script
+
+The `setup:dev` script creates a complete development environment with realistic dummy data.
+
+### What it does
+
+1. **Creates directory structure**:
+   ```
+   data/
+   ├── config.yaml              # Pre-configured settings
+   ├── .leaderboard.db           # SQLite database
+   ├── contributors/             # Contributor markdown files
+   │   ├── alice-smith.md
+   │   └── ...
+   └── data/
+       └── activities/           # Activity JSONL files
+           ├── alice-smith.jsonl
+           └── ...
+   ```
+
+2. **Generates dummy data**:
+   - Realistic contributor profiles
+   - GitHub-like activities (PRs, issues, commits, etc.)
+   - Distributed over a time period
+
+3. **Initializes database**:
+   - Activity definitions
+   - Point values
+   - Icons and descriptions
+
+### Configuration Options
+
+```bash
+# Custom number of contributors (default: 30)
+pnpm setup:dev --contributors 50
+
+# Custom time period in days (default: 90)
+pnpm setup:dev --days 60
+
+# Reproducible data with seed
+pnpm setup:dev --seed 12345
+
+# Force overwrite existing data
+pnpm setup:dev --force
+```
+
+### Example: Minimal Dataset
+
+For quick testing with less data:
+
+```bash
+pnpm setup:dev --contributors 10 --days 30
+```
+
+### Example: Large Dataset
+
+For testing performance with more data:
+
+```bash
+pnpm setup:dev --contributors 100 --days 365
+```
+
+## Dummy Plugin
+
+The development environment uses the `@leaderboard/plugin-dummy` package to generate realistic data.
+
+### Generated Data
+
+#### Contributors
+
+- **Usernames**: GitHub-style (e.g., `john-doe`, `alice123`)
+- **Names**: Realistic full names
+- **Roles**: Weighted distribution
+  - 70% contributors
+  - 10% maintainers
+  - 15% interns
+  - 3% bots
+  - 2% no role
+- **Avatars**: Generated via DiceBear API
+- **Bios**: Realistic developer bios
+- **Social Profiles**: GitHub, Twitter/X, LinkedIn, websites
+- **Joining Dates**: Distributed over past 2 years
+
+#### Activities
+
+The plugin generates 9 types of activities:
+
+| Activity | Points | Description |
+|----------|--------|-------------|
+| PR Opened | 5 | Opened a pull request |
+| PR Merged | 10 | Pull request merged |
+| PR Reviewed | 3 | Reviewed a pull request |
+| Issue Opened | 5 | Created an issue |
+| Issue Closed | 8 | Resolved an issue |
+| Issue Commented | 1 | Commented on issue |
+| Commit Pushed | 2 | Pushed commits |
+| Release Published | 20 | Published a release |
+| Docs Updated | 5 | Updated documentation |
+
+Activities include:
+- Realistic titles and descriptions
+- GitHub-style URLs
+- Metadata (repo names, labels, commit counts)
+- Timestamps with recency bias (more recent = more likely)
+
+## Project Structure
+
+```
+leaderboard/
+├── apps/
+│   └── leaderboard-web/        # Next.js frontend
+│       ├── app/                # Next.js App Router pages
+│       ├── components/         # React components
+│       ├── lib/                # Utilities and data loaders
+│       └── public/             # Static assets
+├── packages/
+│   ├── plugin-api/             # Plugin interface types
+│   ├── plugin-dummy/           # Dummy data generator
+│   ├── plugin-runner/          # Plugin execution engine
+│   └── db/                     # Database layer
+├── scripts/
+│   └── setup-dev.ts            # Development setup script
+└── docs/                       # Documentation (this site)
+```
+
+## Development Workflow
+
+### 1. Make changes
+
+Edit files in `apps/leaderboard-web/` or `packages/`
+
+### 2. Test your changes
+
+```bash
+# Run tests
+pnpm test
+
+# Run tests in watch mode
+pnpm test:watch
+
+# Run specific package tests
+pnpm --filter @leaderboard/plugin-dummy test
+```
+
+### 3. Build
+
+```bash
+# Build all packages
+pnpm build
+
+# Build specific package
+pnpm --filter @ohcnetwork/leaderboard-api build
+```
+
+### 4. Check for errors
+
+```bash
+# Type check
+cd apps/leaderboard-web
+pnpm run type-check
+
+# Lint
+pnpm run lint
+```
+
+## Working with Data
+
+### Regenerate Data
+
+```bash
+# Clean and regenerate
+pnpm reset:dev
+
+# Or manually
+pnpm clean:dev
+pnpm setup:dev
+```
+
+### Import/Export Data
+
+```bash
+# Import from data directory to database
+pnpm data:import
+
+# Run scrapers
+pnpm data:scrape
+
+# Export from database to data directory
+pnpm data:export
+```
+
+### Inspect Database
+
+The development database is at `data/.leaderboard.db`. You can inspect it with any SQLite tool:
+
+```bash
+# Using sqlite3 CLI
+sqlite3 data/.leaderboard.db
+
+# Query examples
+SELECT * FROM contributor LIMIT 5;
+SELECT COUNT(*) FROM activity;
+SELECT * FROM activity_definition;
+```
+
+## Creating Custom Plugins
+
+See [Writing Plugins](/docs/plugins/writing-plugins) for a detailed guide.
+
+### Quick Example
+
+```typescript
+import type { Plugin } from "@ohcnetwork/leaderboard-api";
+
+const myPlugin: Plugin = {
+  name: "my-plugin",
+  version: "1.0.0",
+  
+  async setup(ctx) {
+    // Register activity definitions
+    await ctx.db.execute(`
+      INSERT OR IGNORE INTO activity_definition 
+      (slug, name, description, points, icon)
+      VALUES (?, ?, ?, ?, ?)
+    `, ["my_activity", "My Activity", "Description", 10, "star"]);
+  },
+  
+  async scrape(ctx) {
+    // Fetch and store activities
+    const activities = await fetchMyData();
+    
+    for (const activity of activities) {
+      await ctx.db.execute(`
+        INSERT OR REPLACE INTO activity 
+        (slug, contributor, activity_definition, title, occured_at, points)
+        VALUES (?, ?, ?, ?, ?, ?)
+      `, [
+        activity.id,
+        activity.username,
+        "my_activity",
+        activity.title,
+        activity.timestamp,
+        10
+      ]);
+    }
+  }
+};
+
+export default myPlugin;
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory:
+
+```bash
+# Data directory
+LEADERBOARD_DATA_DIR=./data
+
+# Database (optional, defaults to file-based)
+# LIBSQL_DB_URL=file:./data/.leaderboard.db
+# LIBSQL_DB_TOKEN=your-token-here
+
+# Plugin-specific variables
+# GITHUB_TOKEN=ghp_your_token
+```
+
+See [`.env.example`](/.env.example) for all available options.
+
+## Troubleshooting
+
+### "Data directory already exists"
+
+Use `--force` to overwrite:
+
+```bash
+pnpm setup:dev --force
+```
+
+Or clean first:
+
+```bash
+pnpm clean:dev && pnpm setup:dev
+```
+
+### "Module not found" errors
+
+Rebuild the packages:
+
+```bash
+pnpm build
+```
+
+### Changes not reflecting
+
+1. Clear Next.js cache:
+   ```bash
+   rm -rf apps/leaderboard-web/.next
+   ```
+
+2. Rebuild data:
+   ```bash
+   pnpm reset:dev
+   ```
+
+3. Restart dev server
+
+### Port 3000 already in use
+
+Change the port:
+
+```bash
+PORT=3001 pnpm dev
+```
+
+## Useful Commands
+
+```bash
+# Development
+pnpm dev                # Start dev server
+pnpm build              # Build all packages
+pnpm test               # Run all tests
+pnpm test:watch         # Run tests in watch mode
+
+# Data Management
+pnpm setup:dev          # Setup dev environment
+pnpm clean:dev          # Remove data directory
+pnpm reset:dev          # Clean and regenerate
+pnpm data:scrape        # Run plugins
+pnpm data:import        # Import data to DB
+pnpm data:export        # Export DB to files
+
+# Package Management
+pnpm install            # Install dependencies
+pnpm build              # Build all packages
+pnpm clean              # Clean build outputs
+```
+
+## Next Steps
+
+- [Write Your First Plugin](/docs/plugins/writing-plugins)
+- [Configuration Guide](/docs/configuration)
+- [Deployment](/docs/deployment)
+- [API Reference](/docs/api)
+
+## Getting Help
+
+- 📖 [Documentation](http://localhost:3000/docs)
+- 🐛 [Report Issues](https://github.com/ohcnetwork/leaderboard/issues)
+- 💬 [Discussions](https://github.com/ohcnetwork/leaderboard/discussions)
+

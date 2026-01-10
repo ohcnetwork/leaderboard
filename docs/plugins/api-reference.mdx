@@ -1,0 +1,416 @@
+---
+title: Plugin API Reference
+description: Complete API reference for plugin developers
+---
+
+# Plugin API Reference
+
+Complete reference for the `@ohcnetwork/leaderboard-api` package.
+
+## Plugin Interface
+
+```typescript
+interface Plugin {
+  name: string;
+  version: string;
+  setup?: (ctx: PluginContext) => Promise<void>;
+  scrape: (ctx: PluginContext) => Promise<void>;
+}
+```
+
+### Properties
+
+#### `name` (required)
+
+- **Type**: `string`
+- **Description**: Unique identifier for the plugin
+- **Example**: `'github-scraper'`
+
+#### `version` (required)
+
+- **Type**: `string`
+- **Description**: Semantic version of the plugin
+- **Example**: `'1.0.0'`
+
+### Methods
+
+#### `setup(ctx)` (optional)
+
+Initialize the plugin and define activity types.
+
+**Parameters**:
+- `ctx` ([PluginContext](#plugincontext)): Plugin context
+
+**Returns**: `Promise<void>`
+
+**Example**:
+```typescript
+async setup(ctx) {
+  await ctx.db.execute(`
+    INSERT OR IGNORE INTO activity_definition 
+    (slug, name, description, points, icon)
+    VALUES (?, ?, ?, ?, ?)
+  `, ['pr_merged', 'PR Merged', 'Pull request merged', 10, 'git-merge']);
+}
+```
+
+#### `scrape(ctx)` (required)
+
+Fetch data and store activities.
+
+**Parameters**:
+- `ctx` ([PluginContext](#plugincontext)): Plugin context
+
+**Returns**: `Promise<void>`
+
+**Example**:
+```typescript
+async scrape(ctx) {
+  const data = await fetchFromAPI(ctx.config.apiKey);
+  
+  for (const item of data) {
+    await ctx.db.execute(`
+      INSERT OR IGNORE INTO activity (...)
+      VALUES (...)
+    `, [...]);
+  }
+}
+```
+
+## PluginContext
+
+Context object passed to plugin methods.
+
+```typescript
+interface PluginContext {
+  db: Database;
+  config: PluginConfig;
+  orgConfig: OrgConfig;
+  logger: Logger;
+}
+```
+
+### `ctx.db`
+
+Database instance for storing data.
+
+**Type**: [Database](#database)
+
+**Methods**:
+- `execute(sql, params)` - Execute single SQL statement
+- `batch(statements)` - Execute multiple statements in transaction
+- `close()` - Close database connection
+
+### `ctx.config`
+
+Plugin-specific configuration from `config.yaml`.
+
+**Type**: `Record<string, unknown>`
+
+**Example**:
+```yaml
+plugins:
+  github:
+    config:
+      token: xxx
+      org: myorg
+```
+
+```typescript
+const { token, org } = ctx.config;
+```
+
+### `ctx.orgConfig`
+
+Organization information.
+
+**Type**: [OrgConfig](#orgconfig)
+
+**Properties**:
+- `name` - Organization name
+- `description` - Organization description
+- `url` - Organization website
+- `logo_url` - Logo URL
+- `socials` - Social media links
+
+### `ctx.logger`
+
+Structured logger instance.
+
+**Type**: [Logger](#logger)
+
+**Methods**:
+- `debug(message, meta?)` - Debug logs
+- `info(message, meta?)` - Info logs
+- `warn(message, meta?)` - Warning logs
+- `error(message, error?, meta?)` - Error logs
+
+## Database
+
+Database interface for executing SQL queries.
+
+```typescript
+interface Database {
+  execute(sql: string, params?: unknown[]): Promise<ExecuteResult>;
+  batch(statements: BatchStatement[]): Promise<BatchResult[]>;
+  close(): Promise<void>;
+}
+```
+
+### `execute(sql, params?)`
+
+Execute a single SQL statement.
+
+**Parameters**:
+- `sql` (`string`): SQL query
+- `params` (`unknown[]`, optional): Query parameters
+
+**Returns**: `Promise<ExecuteResult>`
+
+**Example**:
+```typescript
+const result = await ctx.db.execute(
+  'SELECT * FROM contributor WHERE username = ?',
+  ['alice']
+);
+
+console.log(result.rows); // Array of rows
+console.log(result.rowsAffected); // Number of affected rows
+```
+
+### `batch(statements)`
+
+Execute multiple SQL statements in a transaction.
+
+**Parameters**:
+- `statements` (`BatchStatement[]`): Array of SQL statements
+
+**Returns**: `Promise<BatchResult[]>`
+
+**Example**:
+```typescript
+await ctx.db.batch([
+  {
+    sql: 'INSERT INTO activity (...) VALUES (...)',
+    params: [...]
+  },
+  {
+    sql: 'INSERT INTO activity (...) VALUES (...)',
+    params: [...]
+  }
+]);
+```
+
+## Logger
+
+Structured logging interface.
+
+```typescript
+interface Logger {
+  debug(message: string, meta?: Record<string, unknown>): void;
+  info(message: string, meta?: Record<string, unknown>): void;
+  warn(message: string, meta?: Record<string, unknown>): void;
+  error(message: string, error?: Error, meta?: Record<string, unknown>): void;
+}
+```
+
+### Methods
+
+#### `debug(message, meta?)`
+
+Log debug information.
+
+**Example**:
+```typescript
+ctx.logger.debug('Processing item', { id: item.id, type: item.type });
+```
+
+#### `info(message, meta?)`
+
+Log informational messages.
+
+**Example**:
+```typescript
+ctx.logger.info('Fetched data', { count: items.length });
+```
+
+#### `warn(message, meta?)`
+
+Log warnings.
+
+**Example**:
+```typescript
+ctx.logger.warn('API rate limit approaching', { remaining: 10 });
+```
+
+#### `error(message, error?, meta?)`
+
+Log errors.
+
+**Example**:
+```typescript
+try {
+  await fetchData();
+} catch (error) {
+  ctx.logger.error('Failed to fetch data', error, { retries: 3 });
+}
+```
+
+## Database Schema
+
+### contributor
+
+Contributor profiles.
+
+```sql
+CREATE TABLE contributor (
+    username         VARCHAR PRIMARY KEY,
+    name             VARCHAR,
+    role             VARCHAR,
+    title            VARCHAR,
+    avatar_url       VARCHAR,
+    bio              TEXT,
+    social_profiles  JSON,
+    joining_date     DATE,
+    meta             JSON
+);
+```
+
+### activity_definition
+
+Activity types defined by plugins.
+
+```sql
+CREATE TABLE activity_definition (
+    slug         VARCHAR PRIMARY KEY,
+    name         VARCHAR NOT NULL,
+    description  TEXT NOT NULL,
+    points       SMALLINT,
+    icon         VARCHAR
+);
+```
+
+### activity
+
+Individual activity records.
+
+```sql
+CREATE TABLE activity (
+    slug                VARCHAR PRIMARY KEY,
+    contributor         VARCHAR REFERENCES contributor(username) NOT NULL,
+    activity_definition VARCHAR REFERENCES activity_definition(slug) NOT NULL,
+    title               VARCHAR,
+    occured_at          TIMESTAMP NOT NULL,
+    link                VARCHAR,
+    text                TEXT,
+    points              SMALLINT,
+    meta                JSON
+);
+```
+
+**Indexes**:
+- `idx_activity_occured_at` on `occured_at`
+- `idx_activity_contributor` on `contributor`
+- `idx_activity_definition` on `activity_definition`
+
+## Type Definitions
+
+### OrgConfig
+
+```typescript
+interface OrgConfig {
+  name: string;
+  description: string;
+  url: string;
+  logo_url: string;
+  start_date?: string;
+  socials?: {
+    github?: string;
+    slack?: string;
+    linkedin?: string;
+    youtube?: string;
+    email?: string;
+    [key: string]: string | undefined;
+  };
+}
+```
+
+### Contributor
+
+```typescript
+interface Contributor {
+  username: string;
+  name: string | null;
+  role: string | null;
+  title: string | null;
+  avatar_url: string | null;
+  bio: string | null;
+  social_profiles: Record<string, string> | null;
+  joining_date: string | null;
+  meta: Record<string, unknown> | null;
+}
+```
+
+### ActivityDefinition
+
+```typescript
+interface ActivityDefinition {
+  slug: string;
+  name: string;
+  description: string;
+  points: number | null;
+  icon: string | null;
+}
+```
+
+### Activity
+
+```typescript
+interface Activity {
+  slug: string;
+  contributor: string;
+  activity_definition: string;
+  title: string | null;
+  occured_at: string;
+  link: string | null;
+  text: string | null;
+  points: number | null;
+  meta: Record<string, unknown> | null;
+}
+```
+
+## Error Handling
+
+Plugins should throw errors for unrecoverable failures:
+
+```typescript
+async scrape(ctx) {
+  if (!ctx.config.apiKey) {
+    throw new Error('apiKey is required');
+  }
+  
+  try {
+    await fetchData(ctx);
+  } catch (error) {
+    ctx.logger.error('Scrape failed', error);
+    throw error; // Re-throw to fail the plugin run
+  }
+}
+```
+
+The plugin runner will catch and log the error, then exit with a non-zero code.
+
+## Best Practices
+
+1. **Always use parameterized queries** to prevent SQL injection
+2. **Use `INSERT OR IGNORE`** to prevent duplicate activities
+3. **Log progress** to help with debugging
+4. **Validate configuration** before making API calls
+5. **Handle rate limits** appropriately
+6. **Use batch inserts** for better performance
+7. **Store unique slugs** to identify activities
+
+## Examples
+
+See the [Creating Plugins](/docs/plugins/creating-plugins) guide for complete examples.
+

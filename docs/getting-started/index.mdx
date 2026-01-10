@@ -1,0 +1,177 @@
+---
+title: Getting Started
+description: Installation and setup guide
+---
+
+# Getting Started
+
+## Prerequisites
+
+- **Node.js**: v20 or higher
+- **pnpm**: v10 or higher
+- **Git**: For cloning repositories
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ohcnetwork/leaderboard.git
+cd leaderboard
+```
+
+### 2. Install Dependencies
+
+```bash
+pnpm install
+```
+
+This will install all dependencies for the monorepo, including:
+- `@ohcnetwork/leaderboard-api` - Database utilities and plugin type definitions
+- `@leaderboard/plugin-runner` - CLI tool
+- `apps/leaderboard-web` - Next.js application
+
+### 3. Set Up Data Repository
+
+Create a separate repository for your data:
+
+```bash
+mkdir ../leaderboard-data
+cd ../leaderboard-data
+git init
+```
+
+Create the basic structure:
+
+```bash
+mkdir -p contributors activities
+touch config.yaml
+```
+
+### 4. Configure
+
+Create `config.yaml` in your data repository:
+
+```yaml
+org:
+  name: My Organization
+  description: A great organization
+  url: https://example.com
+  logo_url: https://example.com/logo.png
+
+meta:
+  title: My Leaderboard
+  description: Track our amazing contributors
+  image_url: https://example.com/og-image.png
+  site_url: https://leaderboard.example.com
+  favicon_url: https://example.com/favicon.ico
+
+leaderboard:
+  roles:
+    core:
+      name: Core Team
+      description: Core team members
+    contributor:
+      name: Contributor
+      description: Community contributors
+```
+
+### 5. Add Plugins (Optional)
+
+If you want to scrape data from sources like GitHub:
+
+```yaml
+leaderboard:
+  plugins:
+    github:
+      source: https://example.com/plugins/github.js
+      config:
+        githubToken: ${{ env.GITHUB_TOKEN }}
+        githubOrg: your-org
+```
+
+### 6. Set Environment Variables
+
+```bash
+export LEADERBOARD_DATA_DIR=../leaderboard-data
+export GITHUB_TOKEN=your_github_token  # if using GitHub plugin
+```
+
+## Development Workflow
+
+### Generate Seed Data
+
+For testing, generate dummy data:
+
+```bash
+pnpm db:seed --output=$LEADERBOARD_DATA_DIR
+```
+
+This creates:
+- 15-30 contributors in `contributors/*.md`
+- 100-1000 activities in `activities/*.jsonl`
+- Sample activity definitions
+
+### Run Plugin Runner
+
+```bash
+pnpm data:scrape
+```
+
+This will:
+1. Import existing data
+2. Run plugin setup methods
+3. Run plugin scrape methods
+4. Export updated data
+
+### Build the Site
+
+```bash
+pnpm build
+```
+
+### Start Development Server
+
+```bash
+cd apps/leaderboard-web
+pnpm dev
+```
+
+Visit `http://localhost:3000` to see your leaderboard.
+
+## Project Structure
+
+```
+leaderboard/
+├── apps/
+│   └── leaderboard-web/          # Next.js application
+│       ├── app/                  # App router pages
+│       ├── components/           # React components
+│       ├── lib/                  # Utilities
+│       └── config.yaml           # Local config (copied from data-repo)
+├── packages/
+│   ├── plugin-api/               # Plugin type definitions
+│   ├── db/                       # Database utilities
+│   └── plugin-runner/            # CLI tool
+├── docs/                         # Documentation (this site)
+└── package.json                  # Root package.json
+
+leaderboard-data/ (separate repo)
+├── config.yaml                   # Configuration
+├── theme.css                     # Custom theme (optional)
+├── .leaderboard.db              # Persisted database
+├── contributors/                 # Contributor profiles
+│   ├── alice.md
+│   └── bob.md
+└── activities/                   # Activity records
+    ├── alice.jsonl
+    └── bob.jsonl
+```
+
+## Next Steps
+
+- [Configuration Reference](/docs/getting-started/configuration)
+- [Creating Plugins](/docs/plugins/creating-plugins)
+- [Data Management](/docs/data-management)
+- [Deployment](/docs/deployment)
+

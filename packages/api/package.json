@@ -1,0 +1,49 @@
+{
+  "name": "@ohcnetwork/leaderboard-api",
+  "version": "0.1.0",
+  "description": "Unified API package with database utilities and plugin types for the leaderboard system",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "private": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "leaderboard-seed": "./dist/seed.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "seed": "tsx src/seed.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "leaderboard",
+    "database",
+    "plugin",
+    "api",
+    "types",
+    "libsql"
+  ],
+  "author": "Open Healthcare Network",
+  "license": "MIT",
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.25",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  }
+}

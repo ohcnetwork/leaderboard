@@ -1,0 +1,713 @@
+---
+title: Creating Plugins
+description: Step-by-step guide to building your first plugin
+---
+
+# Creating Your First Plugin
+
+This guide walks you through creating a custom plugin for the Leaderboard system.
+
+## Prerequisites
+
+- Understanding of JavaScript/TypeScript
+- Access to the data source API
+- Node.js development environment
+
+## Step 1: Set Up Your Project
+
+### Option 1: Use the CLI Tool (Recommended)
+
+The fastest way to create a new plugin is using the `create-leaderboard-plugin` CLI tool:
+
+```bash
+# Create plugin in current directory
+pnpm create-leaderboard-plugin .
+
+# Create plugin in a new directory
+pnpm create-leaderboard-plugin my-plugin
+
+# Create plugin in a relative path
+pnpm create-leaderboard-plugin ../../plugins/slack
+```
+
+The CLI will prompt you for:
+- Plugin name (e.g., 'github', 'slack')
+- Plugin description
+- Author name
+
+It automatically generates:
+- `package.json` with correct dependencies
+- `tsconfig.json` with proper configuration
+- `vitest.config.ts` for testing
+- `src/index.ts` with plugin template
+- `src/__tests__/plugin.test.ts` with test examples
+- `README.md` with documentation
+
+### Option 2: Manual Setup
+
+If you prefer to set up manually:
+
+```bash
+mkdir leaderboard-custom-plugin
+cd leaderboard-custom-plugin
+npm init -y
+```
+
+Install the plugin API types:
+
+```bash
+npm install --save-dev @ohcnetwork/leaderboard-api
+```
+
+## Step 2: Create the Plugin File
+
+Create `plugin.js`:
+
+```javascript
+/**
+ * Custom Plugin for Leaderboard
+ * 
+ * Fetches data from [Your Data Source] and tracks activities.
+ */
+
+import {
+  activityDefinitionQueries,
+  activityQueries,
+  contributorQueries,
+} from '@ohcnetwork/leaderboard-api';
+
+export default {
+  name: 'custom-plugin',
+  version: '1.0.0',
+  
+  /**
+   * Setup method: Define activity types
+   */
+  async setup(ctx) {
+    ctx.logger.info('Setting up custom plugin');
+    
+    // Define your activity types using the query helpers
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'custom_event_1',
+      name: 'Event Type 1',
+      description: 'Description of event 1',
+      points: 10,
+      icon: 'star',
+    });
+    
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'custom_event_2',
+      name: 'Event Type 2',
+      description: 'Description of event 2',
+      points: 5,
+      icon: 'heart',
+    });
+    
+    ctx.logger.info('Activity definitions created');
+  },
+  
+  /**
+   * Scrape method: Fetch and store activities
+   */
+  async scrape(ctx) {
+    ctx.logger.info('Starting scrape');
+    
+    // Get configuration
+    const { apiKey, apiUrl } = ctx.config;
+    
+    if (!apiKey) {
+      throw new Error('apiKey is required in plugin configuration');
+    }
+    
+    // Fetch data from your API
+    const response = await fetch(apiUrl || 'https://api.example.com/events', {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.statusText}`);
+    }
+    
+    const events = await response.json();
+    ctx.logger.info(`Fetched ${events.length} events`);
+    
+    // Process and store activities
+    for (const event of events) {
+      try {
+        // Ensure contributor exists
+        await contributorQueries.upsert(ctx.db, {
+          username: event.user.username,
+          name: event.user.name,
+          role: null,
+          title: null,
+          avatar_url: event.user.avatar_url,
+          bio: null,
+          social_profiles: null,
+          joining_date: null,
+          meta: null,
+        });
+        
+        // Insert or update activity
+        await activityQueries.upsert(ctx.db, {
+          slug: `custom-${event.id}`,
+          contributor: event.user.username,
+          activity_definition: event.type,
+          title: event.title,
+          occured_at: new Date(event.timestamp).toISOString(),
+          link: event.url,
+          text: event.description || null,
+          points: null, // Uses default from activity_definition
+          meta: event.metadata || null,
+        });
+      } catch (error) {
+        ctx.logger.warn(`Failed to insert activity ${event.id}`, { error: error.message });
+      }
+    }
+    
+    ctx.logger.info('Scrape complete');
+  },
+};
+```
+
+## Step 3: Add TypeScript Types (Optional)
+
+For better developer experience, create `plugin.ts`:
+
+```typescript
+import {
+  activityDefinitionQueries,
+  activityQueries,
+  contributorQueries,
+  type Plugin,
+  type PluginContext,
+} from '@ohcnetwork/leaderboard-api';
+
+const plugin: Plugin = {
+  name: 'custom-plugin',
+  version: '1.0.0',
+  
+  async setup(ctx: PluginContext): Promise<void> {
+    ctx.logger.info('Setting up custom plugin');
+    
+    // Define your activity types using the query helpers
+    await activityDefinitionQueries.insertOrIgnore(ctx.db, {
+      slug: 'custom_event_1',
+      name: 'Event Type 1',
+      description: 'Description of event 1',
+      points: 10,
+      icon: 'star',
+    });
+  },
+  
+  async scrape(ctx: PluginContext): Promise<void> {
+    ctx.logger.info('Starting scrape');
+    
+    // Get configuration with type safety
+    const { apiKey, apiUrl } = ctx.config as {
+      apiKey: string;
+      apiUrl?: string;
+    };
+    
+    // Fetch and process data
+    const response = await fetch(apiUrl || 'https://api.example.com/events', {
+      headers: { 'Authorization': `Bearer ${apiKey}` },
+    });
+    
+    const events = await response.json() as Array<{
+      id: string;
+      user: { username: string; name: string; avatar_url: string };
+      type: string;
+      title: string;
+      timestamp: string;
+      url: string;
+      description?: string;
+      metadata?: Record<string, unknown>;
+    }>;
+    
+    for (const event of events) {
+      // Ensure contributor exists
+      await contributorQueries.upsert(ctx.db, {
+        username: event.user.username,
+        name: event.user.name,
+        role: null,
+        title: null,
+        avatar_url: event.user.avatar_url,
+        bio: null,
+        social_profiles: null,
+        joining_date: null,
+        meta: null,
+      });
+      
+      // Insert activity
+      await activityQueries.upsert(ctx.db, {
+        slug: `custom-${event.id}`,
+        contributor: event.user.username,
+        activity_definition: event.type,
+        title: event.title,
+        occured_at: new Date(event.timestamp).toISOString(),
+        link: event.url,
+        text: event.description || null,
+        points: null,
+        meta: event.metadata || null,
+      });
+    }
+  },
+};
+
+export default plugin;
+```
+
+Build to JavaScript:
+
+```bash
+tsc plugin.ts --module esnext --target es2022
+```
+
+> **Note:** If you used `pnpm create-leaderboard-plugin`, TypeScript is already configured and you can simply run `pnpm build`.
+
+## Step 4: Test Locally
+
+Create a test configuration in your data repo:
+
+```yaml
+# config.yaml
+leaderboard:
+  plugins:
+    custom:
+      source: file:///absolute/path/to/leaderboard-custom-plugin/plugin.js
+      config:
+        apiKey: test_key
+        apiUrl: https://api.example.com/events
+```
+
+Run the plugin runner:
+
+```bash
+plugin-runner --data-dir=./data --debug
+```
+
+## Step 5: Deploy the Plugin
+
+### Option 1: GitHub Repository
+
+1. Push your plugin to GitHub:
+   ```bash
+   git init
+   git add plugin.js
+   git commit -m "Initial plugin"
+   git remote add origin https://github.com/yourorg/leaderboard-custom-plugin.git
+   git push -u origin main
+   ```
+
+2. Use the raw GitHub URL in config:
+   ```yaml
+   plugins:
+     custom:
+       source: https://raw.githubusercontent.com/yourorg/leaderboard-custom-plugin/main/plugin.js
+   ```
+
+### Option 2: NPM Package
+
+1. Publish to NPM:
+   ```bash
+   npm publish
+   ```
+
+2. Use via CDN:
+   ```yaml
+   plugins:
+     custom:
+       source: https://cdn.jsdelivr.net/npm/your-plugin@1.0.0/plugin.js
+   ```
+
+### Option 3: Self-Hosted
+
+1. Upload to your server
+2. Use the direct URL:
+   ```yaml
+   plugins:
+     custom:
+       source: https://your-domain.com/plugins/custom.js
+   ```
+
+## Working with Query Helpers
+
+The `@ohcnetwork/leaderboard-api` package provides query helpers to make database operations easier:
+
+### Available Query Helpers
+
+```typescript
+import {
+  contributorQueries,
+  activityDefinitionQueries,
+  activityQueries,
+} from '@ohcnetwork/leaderboard-api';
+```
+
+**Contributor Queries:**
+- `contributorQueries.upsert(db, contributor)` - Insert or update a contributor
+- `contributorQueries.getByUsername(db, username)` - Get contributor by username
+- `contributorQueries.getAll(db)` - Get all contributors
+- `contributorQueries.getByRole(db, role)` - Get contributors by role
+- `contributorQueries.count(db)` - Count total contributors
+
+**Activity Definition Queries:**
+- `activityDefinitionQueries.insertOrIgnore(db, definition)` - Insert activity type (used in setup)
+- `activityDefinitionQueries.getBySlug(db, slug)` - Get activity definition
+- `activityDefinitionQueries.getAll(db)` - Get all activity definitions
+
+**Activity Queries:**
+- `activityQueries.upsert(db, activity)` - Insert or update an activity
+- `activityQueries.getByContributor(db, username)` - Get activities by contributor
+- `activityQueries.getByDateRange(db, start, end)` - Get activities in date range
+- `activityQueries.getLeaderboard(db, limit)` - Get leaderboard rankings
+
+### Benefits of Query Helpers
+
+1. **Type Safety**: Full TypeScript support with autocomplete
+2. **Consistency**: Standard way to interact with the database
+3. **Less Boilerplate**: No need to write SQL queries manually
+4. **JSON Handling**: Automatically handles JSON serialization for meta fields
+
+## Advanced Patterns
+
+### Pagination
+
+Handle paginated APIs:
+
+```javascript
+async scrape(ctx) {
+  let page = 1;
+  let hasMore = true;
+  
+  while (hasMore) {
+    const response = await fetch(`${apiUrl}?page=${page}`);
+    const data = await response.json();
+    
+    // Process data using query helpers
+    for (const item of data.items) {
+      await activityQueries.upsert(ctx.db, {
+        slug: `item-${item.id}`,
+        contributor: item.username,
+        activity_definition: 'custom_event_1',
+        title: item.title,
+        occured_at: item.timestamp,
+        link: item.url,
+        text: null,
+        points: null,
+        meta: null,
+      });
+    }
+    
+    hasMore = data.hasMore;
+    page++;
+    
+    ctx.logger.debug(`Processed page ${page}`);
+  }
+}
+```
+
+### Rate Limiting
+
+Respect API rate limits:
+
+```javascript
+async function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async scrape(ctx) {
+  for (const item of items) {
+    await processItem(ctx, item);
+    await sleep(100); // 100ms delay between requests
+  }
+}
+```
+
+### Batch Inserts
+
+For better performance with many records, use individual upserts within a loop or batch raw SQL if needed:
+
+```javascript
+async scrape(ctx) {
+  const activities = await fetchActivities(ctx);
+  
+  // Option 1: Using query helpers (recommended)
+  for (const activity of activities) {
+    await activityQueries.upsert(ctx.db, {
+      slug: activity.slug,
+      contributor: activity.contributor,
+      activity_definition: activity.type,
+      title: activity.title,
+      occured_at: activity.timestamp,
+      link: activity.url,
+      text: null,
+      points: null,
+      meta: null,
+    });
+  }
+  
+  // Option 2: Raw batch for maximum performance
+  const statements = activities.map(activity => ({
+    sql: `INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+          ON CONFLICT(slug) DO UPDATE SET
+            contributor = excluded.contributor,
+            activity_definition = excluded.activity_definition,
+            title = excluded.title,
+            occured_at = excluded.occured_at,
+            link = excluded.link,
+            text = excluded.text,
+            points = excluded.points,
+            meta = excluded.meta`,
+    params: [
+      activity.slug,
+      activity.contributor,
+      activity.type,
+      activity.title,
+      activity.timestamp,
+      activity.url,
+      null,
+      null,
+      null,
+    ],
+  }));
+  
+  await ctx.db.batch(statements);
+  ctx.logger.info(`Inserted ${statements.length} activities`);
+}
+```
+
+### Error Recovery
+
+Handle transient errors:
+
+```javascript
+async function fetchWithRetry(url, options, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await fetch(url, options);
+    } catch (error) {
+      if (i === retries - 1) throw error;
+      await sleep(1000 * Math.pow(2, i)); // Exponential backoff
+    }
+  }
+}
+```
+
+### Incremental Updates
+
+Track last sync time to only fetch new data:
+
+```javascript
+async scrape(ctx) {
+  // Get last sync time from meta
+  const lastSync = await getLastSyncTime(ctx);
+  
+  // Fetch only new events
+  const events = await fetchEventsSince(ctx, lastSync);
+  
+  // Store activities
+  await storeActivities(ctx, events);
+  
+  // Update last sync time
+  await setLastSyncTime(ctx, new Date());
+}
+```
+
+You can store metadata in the activity `meta` field or as a separate tracking mechanism.
+
+## Testing Your Plugin
+
+If you used `pnpm create-leaderboard-plugin`, a test file is already generated at `src/__tests__/plugin.test.ts`.
+
+### Manual Test Script
+
+Create a test script:
+
+```javascript
+// test.js
+import plugin from './plugin.js';
+
+const mockContext = {
+  db: {
+    async execute(sql, params) {
+      console.log('SQL:', sql);
+      console.log('Params:', params);
+      return { rows: [], rowsAffected: 1 };
+    },
+    async batch(statements) {
+      console.log('Batch:', statements.length, 'statements');
+      return statements.map(() => ({ rows: [], rowsAffected: 1 }));
+    },
+    async close() {
+      // No-op for testing
+    },
+  },
+  config: {
+    apiKey: 'test_key',
+    apiUrl: 'https://api.example.com/events',
+  },
+  orgConfig: {
+    name: 'Test Org',
+    description: 'Test Organization',
+    url: 'https://example.com',
+    logo_url: 'https://example.com/logo.png',
+  },
+  logger: {
+    debug: console.log,
+    info: console.log,
+    warn: console.warn,
+    error: console.error,
+  },
+};
+
+// Test setup
+await plugin.setup(mockContext);
+
+// Test scrape
+await plugin.scrape(mockContext);
+
+console.log('Plugin test complete');
+```
+
+Run the test:
+
+```bash
+node test.js
+```
+
+### Using Vitest
+
+If you used the CLI tool, you can run tests with:
+
+```bash
+pnpm test
+```
+
+## Publishing Your Plugin
+
+### Documentation
+
+Create a README.md:
+
+```markdown
+# Custom Plugin for Leaderboard
+
+Tracks activities from [Your Source].
+
+## Configuration
+
+\`\`\`yaml
+plugins:
+  custom:
+    source: https://example.com/plugin.js
+    config:
+      apiKey: your_api_key
+      apiUrl: https://api.example.com/events
+\`\`\`
+
+## Activity Types
+
+- `custom_event_1` - Description (10 points)
+- `custom_event_2` - Description (5 points)
+
+## License
+
+MIT
+```
+
+### Versioning
+
+Follow semantic versioning:
+- `1.0.0` - Initial release
+- `1.0.1` - Bug fixes
+- `1.1.0` - New features (backwards compatible)
+- `2.0.0` - Breaking changes
+
+## Defining Custom Badge Rules
+
+Plugins can define custom badge rules with activity filtering patterns.
+
+### Streak Badges with Activity Filtering
+
+You can create streak badges that only count specific activity types:
+
+```typescript
+import { STANDARD_BADGE_RULES } from "@leaderboard/plugin-runner";
+
+export const customRules = [
+  ...STANDARD_BADGE_RULES,
+  {
+    type: "streak",
+    badgeSlug: "documentation_champion",
+    enabled: true,
+    streakType: "weekly",
+    activityDefinitions: ["docs_.*", "readme_update"], // Regex patterns
+    thresholds: [
+      { variant: "bronze", days: 4 },
+      { variant: "silver", days: 8 },
+      { variant: "gold", days: 12 },
+    ],
+  },
+];
+```
+
+### Pattern Matching Examples
+
+- `["pull_request_opened", "pull_request_merged"]` - Exact activity slug matches
+- `["issue_.*"]` - All issue-related activities
+- `[".*_reviewed"]` - All review activities (PR review, code review, etc.)
+- `["^(?!bot_).*"]` - Exclude bot activities (negative lookahead)
+- `[]` or `undefined` - All activities (default)
+
+The system:
+
+1. Loads all activity definitions from the database
+2. Matches them against your regex patterns
+3. Fetches only matching activities using optimized SQL queries
+4. Calculates streak across the union of all matched activities
+
+### Example: Code Review Badge
+
+```typescript
+{
+  type: "streak",
+  badgeSlug: "review_expert",
+  enabled: true,
+  streakType: "daily",
+  activityDefinitions: ["pull_request_reviewed", "code_review_.*"],
+  thresholds: [
+    { variant: "bronze", days: 5 },
+    { variant: "silver", days: 10 },
+    { variant: "gold", days: 21 },
+  ],
+}
+```
+
+### Example: Pull Request Badge
+
+```typescript
+{
+  type: "streak",
+  badgeSlug: "pr_machine",
+  enabled: true,
+  streakType: "daily",
+  activityDefinitions: ["pull_request_.*"], // All PR activities
+  thresholds: [
+    { variant: "bronze", days: 7 },
+    { variant: "silver", days: 14 },
+    { variant: "gold", days: 30 },
+  ],
+}
+```
+
+## Next Steps
+
+- [Plugin API Reference](/docs/plugins/api-reference)
+- [Plugin Examples](https://github.com/ohcnetwork/leaderboard-plugins)
+- [Deployment Guide](/docs/deployment)
+- [Badges Documentation](/docs/badges) - Learn more about badge rules
+

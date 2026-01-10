@@ -1,0 +1,89 @@
+---
+title: Introduction
+description: Welcome to the Leaderboard system documentation
+---
+
+# Leaderboard System
+
+A flexible, plugin-based leaderboard system for tracking and visualizing contributor activities across multiple data sources.
+
+## Overview
+
+The Leaderboard system is designed to:
+
+- **Track Activities**: Automatically collect and track contributor activities from various sources (GitHub, Slack, etc.)
+- **Plugin Architecture**: Extensible plugin system for adding new data sources
+- **Static Site Generation**: Fast, static websites built with Next.js
+- **Data Transparency**: All data stored in human-readable formats (Markdown, JSONL)
+- **Self-Hosted**: Complete control over your data and infrastructure
+
+## Key Features
+
+### 🔌 Plugin System
+Add new data sources by creating simple JavaScript plugins. No need to modify core code.
+
+### 📊 Multiple Views
+- Overall leaderboard rankings
+- Individual contributor profiles
+- Activity timelines and breakdowns
+- Custom aggregates and metrics
+
+### 🎨 Customizable Themes
+Override the default theme with your organization's branding using a simple CSS file.
+
+### 📝 Human-Editable Data
+Contributor profiles stored as Markdown files with YAML frontmatter—easy to edit by hand.
+
+### 🚀 Static Export
+No server required. Deploy to any static hosting service (Netlify, Vercel, GitHub Pages, etc.).
+
+## Architecture
+
+The system consists of three main components:
+
+1. **Plugin Runner**: Node.js CLI tool that fetches data from various sources
+2. **Database**: LibSQL database for efficient querying during build
+3. **Next.js App**: Static site generator that creates the frontend
+
+```
+Data Sources → Plugin Runner → LibSQL Database → Next.js Build → Static Site
+```
+
+## Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/ohcnetwork/leaderboard.git
+cd leaderboard
+
+# Install dependencies
+pnpm install
+
+# Generate seed data (for testing)
+pnpm db:seed --output=./data
+
+# Run plugin runner
+pnpm data:scrape
+
+# Build the site
+pnpm build
+
+# Start local preview
+cd apps/leaderboard-web
+pnpm start
+```
+
+## Use Cases
+
+- **Open Source Organizations**: Track contributor engagement across repositories
+- **Development Teams**: Visualize team member contributions and activities
+- **Community Building**: Recognize and celebrate active community members
+- **Gamification**: Add points and badges to encourage participation
+
+## Next Steps
+
+- [Installation & Setup](/docs/getting-started)
+- [Configuration Guide](/docs/getting-started/configuration)
+- [Creating Plugins](/docs/plugins/creating-plugins)
+- [Deployment](/docs/deployment)
+

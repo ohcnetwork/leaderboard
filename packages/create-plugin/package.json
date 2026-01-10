@@ -1,0 +1,35 @@
+{
+  "name": "create-leaderboard-plugin",
+  "version": "0.1.0",
+  "description": "CLI tool to generate leaderboard plugin projects",
+  "type": "module",
+  "main": "dist/index.js",
+  "private": false,
+  "bin": {
+    "create-leaderboard-plugin": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "leaderboard",
+    "plugin",
+    "generator",
+    "cli"
+  ],
+  "author": "Open Healthcare Network",
+  "license": "MIT",
+  "dependencies": {
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.27",
+    "@types/prompts": "^2.4.9",
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,325 @@
+---
+title: Configuration
+description: Complete configuration reference
+---
+
+# Configuration Reference
+
+The `config.yaml` file controls all aspects of your leaderboard system.
+
+## Configuration Schema
+
+### Organization (`org`)
+
+Basic information about your organization.
+
+```yaml
+org:
+  name: string                    # required - Organization name
+  description: string             # required - Short description
+  url: string (URL)              # required - Organization website
+  logo_url: string (URL)         # required - Logo image URL
+  start_date: string (date)      # optional - Organization founding date
+  socials:                       # optional - Social media links
+    github: string (URL)
+    slack: string (URL)
+    linkedin: string (URL)
+    youtube: string (URL)
+    email: string (email)
+```
+
+**Example**:
+```yaml
+org:
+  name: Open Healthcare Network
+  description: Building connected healthcare systems
+  url: https://ohc.network
+  logo_url: https://ohc.network/logo.svg
+  start_date: 2020-03-08
+  socials:
+    github: https://github.com/ohcnetwork
+    slack: https://slack.ohc.network
+```
+
+### Meta (`meta`)
+
+SEO and site metadata.
+
+```yaml
+meta:
+  title: string                   # required - Site title
+  description: string             # required - Site description
+  image_url: string (URL)         # required - OpenGraph image
+  site_url: string (URL)          # required - Canonical site URL
+  favicon_url: string (URL)       # required - Favicon URL
+```
+
+**Example**:
+```yaml
+meta:
+  title: OHC Contributors
+  description: Track contributions across OHC projects
+  image_url: https://ohc.network/og-image.png
+  site_url: https://contributors.ohc.network
+  favicon_url: https://ohc.network/favicon.ico
+```
+
+### Leaderboard (`leaderboard`)
+
+Leaderboard-specific configuration.
+
+```yaml
+leaderboard:
+  data_source: string             # optional - Data source URL
+  theme: string (URL)             # optional - Custom theme CSS URL
+  roles:                          # required - Role definitions
+    [role_id]:
+      name: string               # required - Display name
+      description: string        # optional - Role description
+      hidden: boolean            # optional - Hide from leaderboard
+  
+  top_contributors:               # optional - Activity slugs to highlight
+    - string
+  
+  social_profiles:                # optional - Social icon mappings
+    [platform]:
+      icon: string               # Lucide icon name
+  
+  aggregates:                     # optional - Custom aggregates
+    global:                       # Show on home page
+      - string
+    contributor:                  # Show on profile pages
+      - string
+  
+  plugins:                        # optional - Plugin configurations
+    [plugin_id]:
+      name: string               # optional - Display name
+      source: string (URL)       # required - Plugin manifest URL
+      config:                    # optional - Plugin-specific config
+        [key]: any
+```
+
+## Role Configuration
+
+Roles categorize contributors and can be filtered in the leaderboard.
+
+**Example**:
+```yaml
+leaderboard:
+  roles:
+    core:
+      name: Core Team
+      description: Full-time team members
+    
+    intern:
+      name: Intern
+      description: Internship participants
+    
+    contributor:
+      name: Open Source Contributor
+      description: Community contributors
+    
+    bot:
+      name: Bot Account
+      description: Automated accounts
+      hidden: true              # Exclude from leaderboard
+```
+
+## Plugin Configuration
+
+Plugins extend the system with new data sources.
+
+**Basic Plugin**:
+```yaml
+leaderboard:
+  plugins:
+    github:
+      name: GitHub Activity Tracker
+      source: https://example.com/plugins/github.js
+      config:
+        githubToken: ${{ env.GITHUB_TOKEN }}
+        githubOrg: myorg
+        repositories:
+          - repo1
+          - repo2
+```
+
+**Local Plugin**:
+```yaml
+leaderboard:
+  plugins:
+    custom:
+      source: file:///absolute/path/to/plugin.js
+      config:
+        apiKey: ${{ env.API_KEY }}
+```
+
+## Environment Variables
+
+### In Config
+
+Use environment variables in `config.yaml`:
+
+```yaml
+leaderboard:
+  plugins:
+    github:
+      config:
+        token: ${{ env.GITHUB_TOKEN }}
+        org: ${{ env.GITHUB_ORG }}
+```
+
+### System Variables
+
+Set these in your environment:
+
+```bash
+# Data directory location
+export LEADERBOARD_DATA_DIR=/path/to/data-repo
+
+# Database URL (optional)
+export LIBSQL_DB_URL=file:/path/to/custom.db
+
+# Plugin-specific variables
+export GITHUB_TOKEN=ghp_xxx
+export SLACK_API_TOKEN=xoxb-xxx
+```
+
+## Social Profiles
+
+Map social platform identifiers to Lucide icons:
+
+```yaml
+leaderboard:
+  social_profiles:
+    github:
+      icon: github
+    linkedin:
+      icon: linkedin
+    twitter:
+      icon: twitter
+    email:
+      icon: mail
+    website:
+      icon: globe
+```
+
+Then in contributor profiles:
+
+```markdown
+---
+username: alice
+social_profiles:
+  github: https://github.com/alice
+  linkedin: https://linkedin.com/in/alice
+---
+```
+
+## Top Contributors
+
+Highlight specific activity types in the sidebar:
+
+```yaml
+leaderboard:
+  top_contributors:
+    - pr_merged
+    - issue_opened
+    - release_published
+```
+
+## Custom Aggregates
+
+Define custom statistics to display:
+
+```yaml
+leaderboard:
+  aggregates:
+    global:                       # Home page stats
+      - total_activities
+      - count_contributors
+      - pr_avg_tat               # Custom aggregate
+    
+    contributor:                  # Profile page stats
+      - total_points
+      - total_activities
+      - streak_days              # Custom aggregate
+```
+
+Aggregates must be computed by plugins or in the Next.js app.
+
+## Theme Customization
+
+Override the default theme:
+
+```yaml
+leaderboard:
+  theme: https://raw.githubusercontent.com/myorg/data/main/theme.css
+```
+
+The theme CSS file can override any CSS variables or classes.
+
+## Validation
+
+Config is validated at runtime using Zod schemas. Invalid configurations will fail with detailed error messages:
+
+```
+Configuration validation failed:
+  - org.url: Invalid url
+  - leaderboard.roles: Required
+  - leaderboard.plugins.github.source: Invalid url
+```
+
+## Complete Example
+
+```yaml
+org:
+  name: Acme Corp
+  description: Building amazing products
+  url: https://acme.com
+  logo_url: https://acme.com/logo.svg
+  socials:
+    github: https://github.com/acme
+
+meta:
+  title: Acme Contributors
+  description: Recognizing our amazing contributors
+  image_url: https://acme.com/og.png
+  site_url: https://contributors.acme.com
+  favicon_url: https://acme.com/favicon.ico
+
+leaderboard:
+  roles:
+    employee:
+      name: Employee
+    contractor:
+      name: Contractor
+    contributor:
+      name: Open Source Contributor
+  
+  top_contributors:
+    - pr_merged
+    - release_published
+  
+  social_profiles:
+    github:
+      icon: github
+    linkedin:
+      icon: linkedin
+  
+  plugins:
+    github:
+      source: https://cdn.acme.com/plugins/github.js
+      config:
+        token: ${{ env.GITHUB_TOKEN }}
+        org: acme
+        repos:
+          - frontend
+          - backend
+    
+    slack:
+      source: https://cdn.acme.com/plugins/slack.js
+      config:
+        token: ${{ env.SLACK_TOKEN }}
+        channel: ${{ env.SLACK_CHANNEL }}
+```
+

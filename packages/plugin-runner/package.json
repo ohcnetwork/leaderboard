@@ -1,0 +1,47 @@
+{
+  "name": "@leaderboard/plugin-runner",
+  "version": "0.1.0",
+  "description": "Plugin runner CLI for the leaderboard system",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "private": true,
+  "bin": {
+    "plugin-runner": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "leaderboard",
+    "plugin",
+    "runner",
+    "cli"
+  ],
+  "author": "Open Healthcare Network",
+  "license": "MIT",
+  "dependencies": {
+    "@ohcnetwork/leaderboard-api": "workspace:*",
+    "@libsql/client": "^0.14.0",
+    "date-fns": "^4.1.0",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.1",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.19.25",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  }
+}

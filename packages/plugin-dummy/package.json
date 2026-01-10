@@ -1,0 +1,30 @@
+{
+  "name": "@leaderboard/plugin-dummy",
+  "version": "0.1.0",
+  "description": "Dummy data generator plugin for leaderboard development",
+  "type": "module",
+  "main": "dist/index.js",
+  "private": true,
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "leaderboard",
+    "plugin",
+    "dummy",
+    "faker",
+    "development"
+  ],
+  "dependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "@ohcnetwork/leaderboard-api": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.27",
+    "typescript": "^5.7.3",
+    "vitest": "^4.0.16"
+  }
+}

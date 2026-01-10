@@ -1,0 +1,542 @@
+---
+title: Testing
+description: Testing strategy and examples
+---
+
+# Testing
+
+Comprehensive testing strategy for the Leaderboard system.
+
+## Testing Philosophy
+
+- **Unit tests**: Test individual functions and components
+- **Integration tests**: Test interactions between modules
+- **No UI tests**: Focus on logic and data handling
+- **Fast execution**: Use in-memory databases
+
+## Test Framework
+
+The project uses **Vitest** for all testing:
+
+- Fast execution
+- TypeScript support
+- Compatible with Jest syntax
+- Built-in coverage
+
+## Running Tests
+
+### All Tests
+
+```bash
+# Run all tests
+pnpm test
+
+# Run tests in specific package
+pnpm --filter @ohcnetwork/leaderboard-api test
+
+# Watch mode
+pnpm test:watch
+
+# Coverage report
+pnpm test:coverage
+```
+
+### Package-Specific Tests
+
+```bash
+# Test database package
+cd packages/db
+pnpm test
+
+# Test plugin-runner
+cd packages/plugin-runner
+pnpm test
+
+# Test Next.js app
+cd apps/leaderboard-web
+pnpm test
+```
+
+## Test Organization
+
+```
+packages/db/
+└── src/
+    ├── queries.ts
+    └── __tests__/
+        └── queries.test.ts
+
+packages/plugin-runner/
+└── src/
+    ├── importers/
+    │   ├── contributors.ts
+    │   └── __tests__/
+    │       └── contributors.test.ts
+    └── exporters/
+        ├── activities.ts
+        └── __tests__/
+            └── activities.test.ts
+```
+
+## Database Tests
+
+### Testing with In-Memory Database
+
+```typescript
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { createDatabase, initializeSchema } from '@ohcnetwork/leaderboard-api';
+import type { Database } from '@ohcnetwork/leaderboard-api';
+
+describe('Database Tests', () => {
+  let db: Database;
+
+  beforeEach(async () => {
+    db = createDatabase(':memory:');
+    await initializeSchema(db);
+  });
+
+  afterEach(async () => {
+    await db.close();
+  });
+
+  it('should insert and retrieve data', async () => {
+    // Test implementation
+  });
+});
+```
+
+### Query Tests
+
+Test database query helpers:
+
+```typescript
+import { contributorQueries } from '@ohcnetwork/leaderboard-api';
+
+it('should get contributor by username', async () => {
+  await contributorQueries.upsert(db, {
+    username: 'alice',
+    name: 'Alice Smith',
+    // ... other fields
+  });
+
+  const contributor = await contributorQueries.getByUsername(db, 'alice');
+  
+  expect(contributor).not.toBeNull();
+  expect(contributor?.name).toBe('Alice Smith');
+});
+```
+
+### Schema Tests
+
+Verify database schema:
+
+```typescript
+it('should create all tables', async () => {
+  const result = await db.execute(`
+    SELECT name FROM sqlite_master 
+    WHERE type='table'
+    ORDER BY name
+  `);
+
+  const tables = result.rows.map(r => r.name);
+  expect(tables).toContain('contributor');
+  expect(tables).toContain('activity');
+  expect(tables).toContain('activity_definition');
+});
+```
+
+## Plugin Runner Tests
+
+### Import Tests
+
+Test data import functionality:
+
+```typescript
+import { importContributors } from '../importers/contributors';
+import { mkdir, writeFile, rm } from 'fs/promises';
+import matter from 'gray-matter';
+
+const TEST_DIR = './test-data';
+
+beforeEach(async () => {
+  await mkdir(join(TEST_DIR, 'contributors'), { recursive: true });
+});
+
+afterEach(async () => {
+  await rm(TEST_DIR, { recursive: true, force: true });
+});
+
+it('should import contributors from markdown', async () => {
+  const markdown = matter.stringify('Bio content', {
+    username: 'alice',
+    name: 'Alice',
+  });
+
+  await writeFile(
+    join(TEST_DIR, 'contributors', 'alice.md'),
+    markdown,
+    'utf-8'
+  );
+
+  const count = await importContributors(db, TEST_DIR, logger);
+  expect(count).toBe(1);
+});
+```
+
+### Export Tests
+
+Test data export functionality:
+
+```typescript
+import { exportActivities } from '../exporters/activities';
+import { readFile } from 'fs/promises';
+
+it('should export activities to JSONL', async () => {
+  // Insert test data
+  await activityQueries.upsert(db, {
+    slug: 'alice-pr-1',
+    contributor: 'alice',
+    activity_definition: 'pr_merged',
+    title: 'Fix bug',
+    occured_at: '2024-01-01T10:00:00Z',
+    // ... other fields
+  });
+
+  await exportActivities(db, TEST_DIR, logger);
+
+  const content = await readFile(
+    join(TEST_DIR, 'activities', 'alice.jsonl'),
+    'utf-8'
+  );
+
+  const lines = content.trim().split('\n');
+  expect(lines).toHaveLength(1);
+
+  const activity = JSON.parse(lines[0]);
+  expect(activity.slug).toBe('alice-pr-1');
+});
+```
+
+### Plugin Loader Tests
+
+Test plugin validation:
+
+```typescript
+it('should reject plugin without name', () => {
+  const invalidPlugin = {
+    version: '1.0.0',
+    scrape: async () => {},
+  };
+
+  expect(() => validatePlugin(invalidPlugin)).toThrow('name');
+});
+```
+
+## Configuration Tests
+
+### Schema Validation
+
+Test config validation:
+
+```typescript
+import { ConfigSchema } from '../schema';
+
+it('should validate correct config', () => {
+  const config = {
+    org: {
+      name: 'Test Org',
+      description: 'Test',
+      url: 'https://example.com',
+      logo_url: 'https://example.com/logo.png',
+    },
+    meta: {
+      // ... required fields
+    },
+    leaderboard: {
+      roles: {
+        core: { name: 'Core' },
+      },
+    },
+  };
+
+  const result = ConfigSchema.safeParse(config);
+  expect(result.success).toBe(true);
+});
+
+it('should reject invalid URL', () => {
+  const config = {
+    org: {
+      url: 'not-a-url',
+      // ... other fields
+    },
+  };
+
+  const result = ConfigSchema.safeParse(config);
+  expect(result.success).toBe(false);
+});
+```
+
+### Environment Variable Substitution
+
+```typescript
+it('should substitute environment variables', () => {
+  process.env.TEST_TOKEN = 'secret';
+
+  const config = {
+    plugins: {
+      test: {
+        config: {
+          token: '${{ env.TEST_TOKEN }}',
+        },
+      },
+    },
+  };
+
+  const result = substituteEnvVars(config);
+  expect(result.plugins.test.config.token).toBe('secret');
+});
+```
+
+## Data Loading Tests
+
+Test Next.js data loading utilities:
+
+```typescript
+import { getAllContributors, getLeaderboard } from '../loader';
+
+beforeEach(async () => {
+  // Set up test database with data
+  const db = getDatabase();
+  await contributorQueries.upsert(db, testContributor);
+});
+
+it('should load all contributors', async () => {
+  const contributors = await getAllContributors();
+  expect(contributors).toHaveLength(1);
+});
+
+it('should load leaderboard rankings', async () => {
+  const leaderboard = await getLeaderboard(10);
+  expect(leaderboard.length).toBeLessThanOrEqual(10);
+  expect(leaderboard[0]).toHaveProperty('total_points');
+});
+```
+
+## Mocking
+
+### Mock Logger
+
+```typescript
+const mockLogger = {
+  debug: vi.fn(),
+  info: vi.fn(),
+  warn: vi.fn(),
+  error: vi.fn(),
+};
+```
+
+### Mock Database
+
+```typescript
+const mockDb = {
+  execute: vi.fn().mockResolvedValue({
+    rows: [],
+    rowsAffected: 0,
+  }),
+  batch: vi.fn().mockResolvedValue([]),
+  close: vi.fn().mockResolvedValue(undefined),
+};
+```
+
+### Mock Plugin Context
+
+```typescript
+const mockContext = {
+  db: mockDb,
+  config: { apiKey: 'test' },
+  orgConfig: { name: 'Test Org' },
+  logger: mockLogger,
+};
+```
+
+## Test Coverage
+
+### Coverage Reports
+
+```bash
+pnpm test:coverage
+```
+
+Generates reports in `coverage/` directory.
+
+### Coverage Thresholds
+
+Set in `vitest.config.ts`:
+
+```typescript
+export default defineConfig({
+  test: {
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html', 'json'],
+      thresholds: {
+        lines: 80,
+        functions: 80,
+        branches: 80,
+        statements: 80,
+      },
+    },
+  },
+});
+```
+
+## Continuous Integration
+
+### GitHub Actions
+
+```yaml
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 10
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      
+      - run: pnpm install
+      
+      - run: pnpm test
+      
+      - run: pnpm test:coverage
+      
+      - uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/coverage-final.json
+```
+
+## Best Practices
+
+### 1. Test Isolation
+
+Each test should be independent:
+
+```typescript
+beforeEach(async () => {
+  db = createDatabase(':memory:');
+  await initializeSchema(db);
+});
+
+afterEach(async () => {
+  await db.close();
+});
+```
+
+### 2. Descriptive Names
+
+Use clear test descriptions:
+
+```typescript
+it('should import 10 contributors from markdown files', async () => {
+  // Test implementation
+});
+```
+
+### 3. Arrange-Act-Assert
+
+Structure tests clearly:
+
+```typescript
+it('should calculate total points', async () => {
+  // Arrange
+  await activityQueries.upsert(db, activity1);
+  await activityQueries.upsert(db, activity2);
+
+  // Act
+  const total = await activityQueries.getTotalPoints(db, 'alice');
+
+  // Assert
+  expect(total).toBe(25);
+});
+```
+
+### 4. Test Edge Cases
+
+Don't just test the happy path:
+
+```typescript
+it('should handle empty activity list', async () => {
+  const activities = await activityQueries.getByContributor(db, 'nonexistent');
+  expect(activities).toHaveLength(0);
+});
+
+it('should handle malformed JSON in JSONL file', async () => {
+  // Test invalid data handling
+});
+```
+
+### 5. Use Test Fixtures
+
+Create reusable test data:
+
+```typescript
+const testContributor = {
+  username: 'alice',
+  name: 'Alice Smith',
+  role: 'core',
+  // ... other fields
+};
+
+const testActivity = {
+  slug: 'test-activity-1',
+  contributor: 'alice',
+  // ... other fields
+};
+```
+
+## Performance Testing
+
+### Benchmark Tests
+
+```typescript
+import { bench } from 'vitest';
+
+bench('import 1000 activities', async () => {
+  await importActivities(db, testDataDir, logger);
+});
+```
+
+### Load Testing
+
+Test with realistic data volumes:
+
+```typescript
+it('should handle 10000 activities', async () => {
+  const activities = generateActivities(10000);
+  
+  for (const activity of activities) {
+    await activityQueries.upsert(db, activity);
+  }
+  
+  const count = await activityQueries.count(db);
+  expect(count).toBe(10000);
+});
+```
+
+## Next Steps
+
+- [Architecture](/docs/architecture)
+- [Data Management](/docs/data-management)
+- [Deployment](/docs/deployment)
+

@@ -1,0 +1,6 @@
+packages:
+  - apps/*
+  - packages/*
+
+overrides:
+  create-leaderboard-plugin: link:packages/create-plugin

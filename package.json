@@ -1,66 +1,33 @@
 {
   "name": "leaderboard",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "pnpm prebuild && next dev",
-    "build": "pnpm prebuild && next build",
-    "start": "next start",
-    "lint": "eslint",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage",
-    "prebuild": "tsx scripts/import-config.ts && tsx scripts/generate-icons.ts && tsx scripts/get-theme.ts",
-    "db:exec": "tsx scripts/db-exec-stdin.ts",
-    "db:prepare": "tsx scripts/db-prepare.ts",
-    "db:import": "tsx scripts/db-import.ts",
-    "db:export": "tsx scripts/db-export.ts",
-    "generate:workflow": "tsx scripts/generate-github-workflow.ts"
-  },
-  "dependencies": {
-    "@electric-sql/pglite": "^0.3.14",
-    "@electric-sql/pglite-tools": "^0.2.19",
-    "@radix-ui/react-avatar": "^1.1.11",
-    "@radix-ui/react-checkbox": "^1.3.3",
-    "@radix-ui/react-dropdown-menu": "^2.1.16",
-    "@radix-ui/react-label": "^2.1.8",
-    "@radix-ui/react-popover": "^1.1.15",
-    "@radix-ui/react-select": "^2.2.6",
-    "@radix-ui/react-slot": "^1.2.4",
-    "@radix-ui/react-tooltip": "^1.2.8",
-    "ajv": "^8.17.1",
-    "ajv-formats": "^3.0.1",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
-    "js-yaml": "^4.1.1",
-    "lucide-react": "^0.552.0",
-    "marked": "^17.0.0",
-    "next": "16.0.7",
-    "next-themes": "^0.4.6",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "tailwind-merge": "^3.4.0"
-  },
+  "description": "",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.17",
-    "@tailwindcss/typography": "^0.5.19",
-    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.19.25",
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
-    "@vitest/coverage-v8": "^4.0.9",
-    "@vitest/ui": "^4.0.9",
-    "eslint": "^9.39.1",
-    "eslint-config-next": "16.0.1",
-    "tailwindcss": "^4.1.17",
     "tsx": "^4.20.6",
-    "tw-animate-css": "^1.4.0",
-    "typescript": "^5.9.3",
-    "vitest": "^4.0.9"
+    "typescript": "^5.9.3"
   },
+  "scripts": {
+    "data:import": "cd packages/plugin-runner && tsx src/index.ts --data-dir \"$PWD/../../data\" --skip-scrape --skip-export",
+    "data:scrape": "cd packages/plugin-runner && tsx src/index.ts --data-dir \"$PWD/../../data\"",
+    "data:export": "cd packages/plugin-runner && tsx src/index.ts --data-dir \"$PWD/../../data\" --skip-import --skip-scrape",
+    "db:seed": "pnpm --filter @ohcnetwork/leaderboard-api seed",
+    "build:packages": "pnpm --filter @ohcnetwork/leaderboard-api build && pnpm --filter @leaderboard/plugin-runner build && pnpm --filter @leaderboard/plugin-dummy build && pnpm --filter create-leaderboard-plugin build",
+    "build:data": "pnpm data:scrape",
+    "build:web": "pnpm --filter leaderboard-web build",
+    "build": "pnpm build:packages && pnpm build:data && pnpm build:web",
+    "clean": "pnpm -r clean",
+    "test": "pnpm -r test",
+    "test:watch": "pnpm -r test:watch",
+    "test:coverage": "pnpm -r test:coverage",
+    "setup:dev": "tsx scripts/setup-dev.ts",
+    "clean:dev": "rm -rf data/",
+    "reset:dev": "pnpm clean:dev && pnpm setup:dev",
+    "dev": "pnpm --filter leaderboard-web dev"
+  },
+  "keywords": [],
+  "packageManager": "pnpm@10.20.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ohcnetwork/leaderboard.git"
@@ -70,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/ohcnetwork/leaderboard/issues"
   },
-  "homepage": "https://github.com/ohcnetwork/leaderboard#readme"
+  "homepage": "https://github.com/ohcnetwork/leaderboard#readme",
+  "dependencies": {
+    "create-leaderboard-plugin": "link:packages/create-plugin"
+  }
 }

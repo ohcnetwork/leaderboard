@@ -116,6 +116,28 @@ export async function runPlugins(
   logger.info("All plugins completed successfully");
 }
 
+/**
+ * Resolve a valid execution order for plugins based on their declared dependencies.
+ *
+ * Each entry in {@link pluginEntries} is a tuple of the plugin identifier and its
+ * configuration object. The configuration may declare a `depends_on` property,
+ * which, when present and an array, lists the identifiers of other plugins that
+ * must run before the current plugin.
+ *
+ * The function validates that all declared dependencies refer to known plugins,
+ * that no plugin depends on itself, and that there are no circular dependency
+ * chains. If validation passes, it returns the list of plugin identifiers in an
+ * order that satisfies all dependency constraints.
+ *
+ * @param pluginEntries - Array of `[pluginId, pluginConfig]` tuples where
+ *   `pluginConfig.depends_on` (if present) is expected to be an array of plugin
+ *   identifiers that the plugin depends on.
+ * @returns An array of plugin identifiers ordered so that each plugin appears
+ *   after all of the plugins it depends on.
+ * @throws {Error} If a plugin declares a dependency on an unknown plugin.
+ * @throws {Error} If a plugin declares a dependency on itself.
+ * @throws {Error} If a circular dependency between plugins is detected.
+ */
 export function resolvePluginOrder(
   pluginEntries: Array<[string, { depends_on?: unknown }]>
 ): string[] {

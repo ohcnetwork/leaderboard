@@ -206,9 +206,7 @@ export function resolvePluginOrder(
     indegree.set(id, 0);
   }
   for (const [id, depList] of deps.entries()) {
-    for (const depId of depList) {
-      indegree.set(depId, (indegree.get(depId) || 0) + 1);
-    }
+    indegree.set(id, (indegree.get(id) || 0) + depList.length);
   }
 
   const queue: string[] = pluginIds.filter((id) => (indegree.get(id) || 0) === 0);

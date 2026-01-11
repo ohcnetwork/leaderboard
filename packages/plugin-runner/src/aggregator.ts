@@ -284,8 +284,7 @@ async function calculateContributorAggregates(
       });
 
       // Average points per activity
-      const avgPoints =
-        activities.length > 0 ? totalPoints / activities.length : 0;
+      const avgPoints = totalPoints / activities.length;
       await contributorAggregateQueries.upsert(db, {
         aggregate: "avg_points_per_activity",
         contributor: contributor.username,

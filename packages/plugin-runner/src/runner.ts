@@ -207,7 +207,7 @@ export function resolvePluginOrder(
   }
   for (const [id, depList] of deps.entries()) {
     for (const depId of depList) {
-      indegree.set(id, (indegree.get(id) || 0) + 1);
+      indegree.set(depId, (indegree.get(depId) || 0) + 1);
     }
   }
 

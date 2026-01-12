@@ -33,24 +33,42 @@ This will install all dependencies for the monorepo, including:
 
 ### 3. Set Up Data Repository
 
-Create a separate repository for your data:
+#### Option A: Use the CLI Tool (Recommended)
+
+The easiest way to create a data repository is using the interactive CLI tool:
+
+```bash
+pnpm create-data-repo ../leaderboard-data
+```
+
+This will:
+- Interactively prompt you for organization details
+- Generate a properly structured data repository
+- Create `config.yaml` with all necessary fields
+- Initialize git repository automatically
+- Include README and .gitignore
+
+You can also create it in the current directory:
+
+```bash
+pnpm create-data-repo .
+```
+
+#### Option B: Manual Setup
+
+Alternatively, create the structure manually:
 
 ```bash
 mkdir ../leaderboard-data
 cd ../leaderboard-data
 git init
-```
-
-Create the basic structure:
-
-```bash
 mkdir -p contributors activities
 touch config.yaml
 ```
 
 ### 4. Configure
 
-Create `config.yaml` in your data repository:
+If you used the CLI tool, your `config.yaml` is already configured! Otherwise, create it manually:
 
 ```yaml
 org:
@@ -166,6 +184,31 @@ leaderboard-data/ (separate repo)
 └── activities/                   # Activity records
     ├── alice.jsonl
     └── bob.jsonl
+```
+
+## CLI Tools
+
+### Create Data Repository
+
+Generate a new data repository with interactive prompts:
+
+```bash
+# Create in a new directory
+pnpm create-data-repo ../my-org-data
+
+# Create in current directory
+pnpm create-data-repo .
+
+# Get help
+pnpm create-data-repo --help
+```
+
+### Create Plugin
+
+Generate a new plugin project:
+
+```bash
+pnpm create-leaderboard-plugin ../my-plugin
 ```
 
 ## Next Steps

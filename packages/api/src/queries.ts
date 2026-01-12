@@ -521,10 +521,11 @@ export const activityQueries = {
         c.name,
         c.avatar_url,
         c.role,
-        COALESCE(SUM(a.points), 0) as total_points,
+        COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as total_points,
         COUNT(*) as activity_count
       FROM activity a
       LEFT JOIN contributor c ON a.contributor = c.username
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
     `;
     const params: unknown[] = [];
 

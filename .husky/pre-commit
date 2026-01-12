@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# Check if config.ts is being committed
+if git diff --cached --name-only | grep -q "packages/plugin-runner/src/config.ts"; then
+  echo "📝 Config schema changed, regenerating config.schema.json..."
+  
+  # Generate config schema
+  pnpm generate:schema
+  
+  # Check if config.schema.json was modified
+  if ! git diff --quiet config.schema.json 2>/dev/null; then
+    echo "⚠️  config.schema.json was updated."
+    echo "   Adding it to the commit..."
+    git add config.schema.json
+  fi
+fi

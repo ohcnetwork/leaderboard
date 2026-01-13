@@ -330,9 +330,31 @@ describe("Database Queries", () => {
         meta: null,
       });
 
+      // Test with both activity points and definition points null
+      await activityDefinitionQueries.insertOrIgnore(db, {
+        slug: "issue_closed",
+        name: "Issue Closed", 
+        description: "Closed an issue",
+        points: null,
+        icon: null,
+      });
+
+      await activityQueries.upsert(db, {
+        slug: "alice-zero-points",
+        contributor: "alice",
+        activity_definition: "issue_closed",
+        title: "Issue Closed",
+        occured_at: "2024-01-03T10:00:00Z",
+        link: null,
+        text: null,
+        points: null,
+        meta: null,
+      });
+
       activities = await activityQueries.getByContributor(db, "alice");
-      expect(activities).toHaveLength(2);
-      expect(activities[0].points).toBe(10);
+      expect(activities).toHaveLength(3);
+      expect(activities[0].points).toBe(0); 
+      expect(activities[1].points).toBe(10); 
     });
 
     it("should get activities by date range", async () => {

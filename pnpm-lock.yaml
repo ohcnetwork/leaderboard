@@ -24,6 +24,9 @@ importers:
       '@types/node':
         specifier: ^20.19.25
         version: 20.19.27
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
       tsx:
         specifier: ^4.20.6
         version: 4.21.0
@@ -2834,6 +2837,11 @@ packages:
 
   human-id@4.1.3:
     resolution: {integrity: sha512-tsYlhAYpjCKa//8rXZ9DqKEawhPoSytweBC2eNvcaDK+57RZLHGqNs3PZTQO6yekLFSuvA6AlnAfrw1uBvtb+Q==}
+    hasBin: true
+
+  husky@9.1.7:
+    resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
+    engines: {node: '>=18'}
     hasBin: true
 
   iconv-lite@0.7.2:
@@ -7163,6 +7171,8 @@ snapshots:
   html-void-elements@3.0.0: {}
 
   human-id@4.1.3: {}
+
+  husky@9.1.7: {}
 
   iconv-lite@0.7.2:
     dependencies:

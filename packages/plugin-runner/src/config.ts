@@ -19,7 +19,7 @@ const PluginConfigSchema = z.object({
 /**
  * Config schema
  */
-const ConfigSchema = z.object({
+export const ConfigSchema = z.object({
   org: z.object({
     name: z.string(),
     description: z.string(),

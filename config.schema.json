@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Leaderboard Configuration Schema",
+  "description": "JSON Schema for leaderboard config.yaml file",
+  "type": "object",
+  "properties": {
+    "org": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "logo_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "socials": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "description",
+        "url",
+        "logo_url"
+      ],
+      "additionalProperties": false
+    },
+    "leaderboard": {
+      "type": "object",
+      "properties": {
+        "data_source": {
+          "type": "string"
+        },
+        "plugins": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "config": {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              }
+            },
+            "required": [
+              "source"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "org",
+    "leaderboard"
+  ],
+  "additionalProperties": false
+}

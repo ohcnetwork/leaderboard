@@ -6,6 +6,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
     "@types/node": "^20.19.25",
+    "husky": "^9.1.7",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
@@ -27,6 +28,8 @@
     "reset:dev": "pnpm clean:dev && pnpm setup:dev",
     "dev": "pnpm --filter leaderboard-web dev",
     "create-data-repo": "pnpm --filter create-leaderboard-data-repo build && node packages/create-data-repo/dist/index.js",
+    "generate:schema": "tsx scripts/generate-config-schema.ts",
+    "prepare": "husky",
     "changeset": "changeset",
     "version": "changeset version",
     "publish": "pnpm build:packages && changeset publish"

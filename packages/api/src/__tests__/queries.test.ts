@@ -296,12 +296,12 @@ describe("Database Queries", () => {
         occured_at: "2024-01-01T10:00:00Z",
         link: "https://github.com/org/repo/pull/1",
         text: "Fixed critical bug in authentication",
-        points: 10,
+        points: 20,
         meta: { pr_number: 123, lines_changed: 50 },
       };
 
       await activityQueries.upsert(db, activity);
-      const activities = await activityQueries.getByContributor(db, "alice");
+      let activities = await activityQueries.getByContributor(db, "alice");
 
       expect(activities).toHaveLength(1);
       expect(activities[0].slug).toBe("alice-pr-1");
@@ -311,11 +311,28 @@ describe("Database Queries", () => {
       expect(activities[0].occured_at).toBe("2024-01-01T10:00:00Z");
       expect(activities[0].link).toBe("https://github.com/org/repo/pull/1");
       expect(activities[0].text).toBe("Fixed critical bug in authentication");
-      expect(activities[0].points).toBe(10);
+      expect(activities[0].points).toBe(20);
 
       // Verify meta is parsed as object
       expect(activities[0].meta).toEqual({ pr_number: 123, lines_changed: 50 });
       expect(typeof activities[0].meta).toBe("object");
+
+      // Test with null points
+      await activityQueries.upsert(db, {
+        slug: "alice-pr-2",
+        contributor: "alice",
+        activity_definition: "pr_merged",
+        title: "Another PR",
+        occured_at: "2024-01-02T10:00:00Z",
+        link: null,
+        text: null,
+        points: null,
+        meta: null,
+      });
+
+      activities = await activityQueries.getByContributor(db, "alice");
+      expect(activities).toHaveLength(2);
+      expect(activities[0].points).toBe(10);
     });
 
     it("should get activities by date range", async () => {
@@ -367,7 +384,7 @@ describe("Database Queries", () => {
         occured_at: "2024-01-01T10:00:00Z",
         link: null,
         text: null,
-        points: 10,
+        points: 25,
         meta: null,
       });
 
@@ -379,7 +396,7 @@ describe("Database Queries", () => {
         occured_at: "2024-01-02T10:00:00Z",
         link: null,
         text: null,
-        points: 15,
+        points: null,
         meta: null,
       });
 
@@ -387,7 +404,7 @@ describe("Database Queries", () => {
         db,
         "alice"
       );
-      expect(totalPoints).toBe(25);
+      expect(totalPoints).toBe(35);
     });
 
     it("should generate leaderboard", async () => {

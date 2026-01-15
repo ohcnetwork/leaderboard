@@ -369,7 +369,7 @@ export default async function ContributorPage({
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className={`grid grid-cols-1 gap-6 mb-8 ${aggregateCards.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}>
           {aggregateCards.map((card, index) => {
             const Icon = card.icon;
             return (

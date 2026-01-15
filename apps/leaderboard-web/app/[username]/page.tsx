@@ -157,6 +157,7 @@ export default async function ContributorPage({
     "total_points",
     "total_activities",
     "activity_types",
+    "pr_avg_tat",
   ];
 
   // Separate built-in and database aggregates
@@ -236,9 +237,9 @@ export default async function ContributorPage({
   // Add database aggregates
   for (const aggregate of dbAggregates) {
     aggregateCards.push({
-      name: aggregate.aggregate,
+      name: aggregate.name,
       value: formatAggregateValue(aggregate.value),
-      description: "",
+      description: aggregate.description || "",
       icon: TrendingUp, // Default icon for DB aggregates
     });
   }
@@ -368,7 +369,7 @@ export default async function ContributorPage({
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           {aggregateCards.map((card, index) => {
             const Icon = card.icon;
             return (

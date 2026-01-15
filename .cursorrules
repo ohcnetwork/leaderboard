@@ -70,15 +70,6 @@ leaderboard/
 ### TypeScript
 - **Strict Mode**: Always enabled
 - **Module System**: ESNext with ESM
-- **Import Extensions**: MUST use `.js` extensions for local imports (ESM requirement)
-  ```typescript
-  // ✅ Good
-  import { helper } from "./utils.js";
-  import type { Config } from "./types.js";
-  
-  // ❌ Bad
-  import { helper } from "./utils";
-  ```
 - **Type Safety**: Avoid `any` unless absolutely necessary; use `unknown` instead
 - **Interfaces vs Types**: Use `interface` for object shapes, `type` for unions/intersections
 

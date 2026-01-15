@@ -3,7 +3,7 @@
  */
 
 import prompts from "prompts";
-import type { DataRepoConfig, RoleConfig } from "./types.js";
+import type { DataRepoConfig, RoleConfig } from "./types";
 import {
   validateUrl,
   validateOptionalUrl,
@@ -11,8 +11,8 @@ import {
   validateSlug,
   validateEmail,
   validateRequired,
-} from "./validation.js";
-import { suggestDataSource } from "./utils.js";
+} from "./validation";
+import { suggestDataSource } from "./utils";
 
 /**
  * Collect complete configuration through interactive prompts

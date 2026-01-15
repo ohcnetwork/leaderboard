@@ -8,10 +8,10 @@
 import { resolve } from "path";
 import { existsSync, mkdirSync, writeFileSync, readdirSync } from "fs";
 import { execSync } from "child_process";
-import { collectConfig } from "./prompts.js";
-import { generateConfigYaml } from "./generators/config.js";
-import { generateReadme } from "./generators/readme.js";
-import { generateGitignore } from "./generators/gitignore.js";
+import { collectConfig } from "./prompts";
+import { generateConfigYaml } from "./generators/config";
+import { generateReadme } from "./generators/readme";
+import { generateGitignore } from "./generators/gitignore";
 
 /**
  * Main CLI function
@@ -26,7 +26,9 @@ async function main(): Promise<void> {
     console.log(
       "  target-directory  Directory where the data repo will be created"
     );
-    console.log("                    Default: ../data (relative to current directory)");
+    console.log(
+      "                    Default: ../data (relative to current directory)"
+    );
     console.log("\nExamples:");
     console.log("  pnpm create-data-repo");
     console.log("  pnpm create-data-repo .");
@@ -36,7 +38,9 @@ async function main(): Promise<void> {
     console.log("  - config.yaml         Configuration file");
     console.log("  - README.md           Repository documentation");
     console.log("  - .gitignore          Git ignore rules");
-    console.log("  - contributors/       Contributor profiles directory (empty)");
+    console.log(
+      "  - contributors/       Contributor profiles directory (empty)"
+    );
     console.log("  - activities/         Activity records directory (empty)");
     console.log("  - Git repository      Initialized with initial commit");
     process.exit(0);
@@ -101,7 +105,9 @@ async function main(): Promise<void> {
         }
       );
     } catch (error) {
-      console.warn("⚠️  Warning: Git initialization failed. You may need to initialize git manually.");
+      console.warn(
+        "⚠️  Warning: Git initialization failed. You may need to initialize git manually."
+      );
       console.warn("   Make sure git is installed and configured.");
     }
 
@@ -111,14 +117,18 @@ async function main(): Promise<void> {
     if (targetArg !== "." && targetArg !== "../data") {
       console.log(`  1. cd ${targetArg}`);
       console.log(`  2. Review and edit config.yaml`);
-      console.log(`  3. Configure plugin settings (uncomment and set API tokens)`);
+      console.log(
+        `  3. Configure plugin settings (uncomment and set API tokens)`
+      );
       console.log(
         `  4. Run: pnpm --filter @leaderboard/plugin-runner scrape --data-dir .`
       );
       console.log(`  5. Commit and push your changes\n`);
     } else {
       console.log(`  1. Review and edit config.yaml`);
-      console.log(`  2. Configure plugin settings (uncomment and set API tokens)`);
+      console.log(
+        `  2. Configure plugin settings (uncomment and set API tokens)`
+      );
       console.log(
         `  3. Run: pnpm --filter @leaderboard/plugin-runner scrape --data-dir ${targetArg}`
       );

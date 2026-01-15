@@ -3,8 +3,8 @@
  */
 
 import yaml from "js-yaml";
-import type { DataRepoConfig } from "../types.js";
-import { hasSocials } from "../utils.js";
+import type { DataRepoConfig } from "../types";
+import { hasSocials } from "../utils";
 
 /**
  * Generate config.yaml content
@@ -43,8 +43,7 @@ export function generateConfigYaml(config: DataRepoConfig): string {
     if (config.linkedinUrl)
       yamlConfig.org.socials.linkedin = config.linkedinUrl;
     if (config.youtubeUrl) yamlConfig.org.socials.youtube = config.youtubeUrl;
-    if (config.emailContact)
-      yamlConfig.org.socials.email = config.emailContact;
+    if (config.emailContact) yamlConfig.org.socials.email = config.emailContact;
   }
 
   // Add optional theme
@@ -74,7 +73,8 @@ export function generateConfigYaml(config: DataRepoConfig): string {
   });
 
   // Add commented-out plugin examples
-  yamlString += "\n  # Example plugin configurations (uncomment and configure as needed):\n";
+  yamlString +=
+    "\n  # Example plugin configurations (uncomment and configure as needed):\n";
   yamlString += "  # plugins:\n";
   yamlString += "  #   github:\n";
   yamlString += "  #     name: GitHub Plugin\n";

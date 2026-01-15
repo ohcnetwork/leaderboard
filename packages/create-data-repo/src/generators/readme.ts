@@ -2,7 +2,7 @@
  * Generate README.md for the data repository
  */
 
-import type { DataRepoConfig } from "../types.js";
+import type { DataRepoConfig } from "../types";
 
 /**
  * Generate README content
@@ -10,7 +10,9 @@ import type { DataRepoConfig } from "../types.js";
 export function generateReadme(config: DataRepoConfig): string {
   return `# ${config.orgName} Leaderboard Data
 
-This repository contains contributor and activity data for the ${config.orgName} leaderboard.
+This repository contains contributor and activity data for the ${
+    config.orgName
+  } leaderboard.
 
 ## Repository Structure
 
@@ -116,7 +118,14 @@ The \`config.yaml\` file contains all leaderboard configuration:
 
 Current roles configured:
 
-${config.roles.map((role) => `- **${role.name}** (\`${role.slug}\`)${role.description ? `: ${role.description}` : ""}${role.hidden ? " _(hidden)_" : ""}`).join("\n")}
+${config.roles
+  .map(
+    (role) =>
+      `- **${role.name}** (\`${role.slug}\`)${
+        role.description ? `: ${role.description}` : ""
+      }${role.hidden ? " _(hidden)_" : ""}`
+  )
+  .join("\n")}
 
 ## Documentation
 

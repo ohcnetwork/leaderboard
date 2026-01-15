@@ -110,7 +110,7 @@ This document provides specialized workflows for different types of tasks in the
    ```typescript
    import { describe, it, expect, beforeEach, afterEach } from "vitest";
    import { createDatabase, initializeSchema } from "@ohcnetwork/leaderboard-api";
-   import plugin from "../index.js";
+   import plugin from "../index";
    
    describe("My Plugin", () => {
      let db: Database;
@@ -843,7 +843,7 @@ This document provides specialized workflows for different types of tasks in the
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { createDatabase, initializeSchema } from "@ohcnetwork/leaderboard-api";
 import type { Database } from "@ohcnetwork/leaderboard-api";
-import { createLogger } from "../logger.js";
+import { createLogger } from "../logger";
 
 describe("Feature Name", () => {
   let db: Database;

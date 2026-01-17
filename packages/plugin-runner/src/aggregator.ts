@@ -199,12 +199,7 @@ async function calculateContributorAggregates(
       contributor.username
     );
 
-    if (activities.length === 0) {
-      // Skip contributors with no activities
-      continue;
-    }
-
-    // Calculate total points
+    // Calculate total points (0 if no activities)
     const totalPoints = activities.reduce((sum, a) => sum + (a.points || 0), 0);
     await contributorAggregateQueries.upsert(db, {
       aggregate: "total_activity_points",
@@ -233,75 +228,77 @@ async function calculateContributorAggregates(
       },
     });
 
-    // Sort activities by date
-    const sortedActivities = [...activities].sort(
-      (a, b) =>
-        new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime()
-    );
+    // If contributor has activities, calculate activity-based metrics
+    if (activities.length > 0) {
+      // Sort activities by date
+      const sortedActivities = [...activities].sort(
+        (a, b) =>
+          new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime()
+      );
 
-    // First activity date
-    const firstActivityDate = sortedActivities[0].occured_at.split("T")[0];
-    await contributorAggregateQueries.upsert(db, {
-      aggregate: "first_activity_date",
-      contributor: contributor.username,
-      value: {
-        type: "string",
-        value: firstActivityDate,
-      },
-      meta: {
-        calculated_at: new Date().toISOString(),
-      },
-    });
+      // First activity date
+      const firstActivityDate = sortedActivities[0].occured_at.split("T")[0];
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "first_activity_date",
+        contributor: contributor.username,
+        value: {
+          type: "string",
+          value: firstActivityDate,
+        },
+        meta: {
+          calculated_at: new Date().toISOString(),
+        },
+      });
 
-    // Last activity date
-    const lastActivityDate =
-      sortedActivities[sortedActivities.length - 1].occured_at.split("T")[0];
-    await contributorAggregateQueries.upsert(db, {
-      aggregate: "last_activity_date",
-      contributor: contributor.username,
-      value: {
-        type: "string",
-        value: lastActivityDate,
-      },
-      meta: {
-        calculated_at: new Date().toISOString(),
-      },
-    });
+      // Last activity date
+      const lastActivityDate =
+        sortedActivities[sortedActivities.length - 1].occured_at.split("T")[0];
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "last_activity_date",
+        contributor: contributor.username,
+        value: {
+          type: "string",
+          value: lastActivityDate,
+        },
+        meta: {
+          calculated_at: new Date().toISOString(),
+        },
+      });
 
-    // Active days (unique dates)
-    const uniqueDates = new Set(
-      activities.map((a) => a.occured_at.split("T")[0])
-    );
-    await contributorAggregateQueries.upsert(db, {
-      aggregate: "active_days",
-      contributor: contributor.username,
-      value: {
-        type: "number",
-        value: uniqueDates.size,
-        format: "integer",
-        unit: "days",
-      },
-      meta: {
-        calculated_at: new Date().toISOString(),
-      },
-    });
+      // Active days (unique dates)
+      const uniqueDates = new Set(
+        activities.map((a) => a.occured_at.split("T")[0])
+      );
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "active_days",
+        contributor: contributor.username,
+        value: {
+          type: "number",
+          value: uniqueDates.size,
+          format: "integer",
+          unit: "days",
+        },
+        meta: {
+          calculated_at: new Date().toISOString(),
+        },
+      });
 
-    // Average points per activity
-    const avgPoints =
-      activities.length > 0 ? totalPoints / activities.length : 0;
-    await contributorAggregateQueries.upsert(db, {
-      aggregate: "avg_points_per_activity",
-      contributor: contributor.username,
-      value: {
-        type: "number",
-        value: Math.round(avgPoints * 100) / 100, // Round to 2 decimals
-        format: "decimal",
-        decimals: 2,
-      },
-      meta: {
-        calculated_at: new Date().toISOString(),
-      },
-    });
+      // Average points per activity
+      const avgPoints = totalPoints / activities.length;
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "avg_points_per_activity",
+        contributor: contributor.username,
+        value: {
+          type: "number",
+          value: Math.round(avgPoints * 100) / 100, // Round to 2 decimals
+          format: "decimal",
+          decimals: 2,
+        },
+        meta: {
+          calculated_at: new Date().toISOString(),
+        },
+      });
+    }
 
     processedCount++;
   }

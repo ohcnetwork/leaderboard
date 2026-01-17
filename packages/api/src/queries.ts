@@ -499,6 +499,7 @@ export const activityQueries = {
 
   /**
    * Get leaderboard with contributor details (optimized with JOIN)
+   * Includes all contributors (with and without activities) sorted by activity points
    */
   async getLeaderboardEnriched(
     db: Database,
@@ -517,14 +518,14 @@ export const activityQueries = {
   > {
     let sql = `
       SELECT 
-        a.contributor as username,
+        c.username,
         c.name,
         c.avatar_url,
         c.role,
         COALESCE(SUM(a.points), 0) as total_points,
-        COUNT(*) as activity_count
-      FROM activity a
-      LEFT JOIN contributor c ON a.contributor = c.username
+        COALESCE(COUNT(a.slug), 0) as activity_count
+      FROM contributor c
+      LEFT JOIN activity a ON c.username = a.contributor
     `;
     const params: unknown[] = [];
 
@@ -533,7 +534,7 @@ export const activityQueries = {
       params.push(startDate, endDate);
     }
 
-    sql += " GROUP BY a.contributor ORDER BY total_points DESC";
+    sql += " GROUP BY c.username ORDER BY total_points DESC, c.username ASC";
 
     if (limit !== undefined) {
       sql += " LIMIT ?";

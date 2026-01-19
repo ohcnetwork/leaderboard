@@ -157,7 +157,7 @@ export default async function ContributorPage({
     "total_points",
     "total_activities",
     "activity_types",
-    "pr_avg_tat",
+    "avg_tat",
   ];
 
   // Separate built-in and database aggregates

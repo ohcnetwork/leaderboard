@@ -14,6 +14,8 @@ const PluginConfigSchema = z.object({
   name: z.string().optional(),
   source: z.string(), // Can be URL, file://, or package name like @leaderboard/plugin-dummy
   config: z.record(z.string(), z.unknown()).optional(),
+  // Plugin IDs here refer to the keys in the plugins map (not package names)
+  depends_on: z.array(z.string()).optional(),
 });
 
 /**

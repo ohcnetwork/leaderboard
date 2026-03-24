@@ -173,9 +173,10 @@ export const contributorQueries = {
         c.name,
         c.avatar_url,
         c.role,
-        COALESCE(SUM(a.points), 0) as totalPoints
+        COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as totalPoints
       FROM contributor c
       LEFT JOIN activity a ON c.username = a.contributor
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
     `;
     const params: unknown[] = [];
 
@@ -282,7 +283,14 @@ export const activityQueries = {
     limit?: number,
     offset?: number
   ): Promise<Activity[]> {
-    let sql = "SELECT * FROM activity ORDER BY occured_at DESC";
+    let sql = `
+      SELECT 
+        a.*,
+        COALESCE(a.points, ad.points, 0) as points
+      FROM activity a
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+      ORDER BY a.occured_at DESC
+    `;
     const params: unknown[] = [];
 
     if (limit !== undefined) {
@@ -307,8 +315,15 @@ export const activityQueries = {
     username: string,
     limit?: number
   ): Promise<Activity[]> {
-    let sql =
-      "SELECT * FROM activity WHERE contributor = ? ORDER BY occured_at DESC";
+    let sql = `
+      SELECT 
+        a.*,
+        COALESCE(a.points, ad.points, 0) as points
+      FROM activity a
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+      WHERE a.contributor = ?
+      ORDER BY a.occured_at DESC
+    `;
     const params: unknown[] = [username];
 
     if (limit !== undefined) {
@@ -329,7 +344,13 @@ export const activityQueries = {
     endDate: string
   ): Promise<Activity[]> {
     const result = await db.execute(
-      "SELECT * FROM activity WHERE occured_at >= ? AND occured_at <= ? ORDER BY occured_at DESC",
+      `SELECT 
+        a.*,
+        COALESCE(a.points, ad.points, 0) as points
+      FROM activity a
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+      WHERE a.occured_at >= ? AND a.occured_at <= ?
+      ORDER BY a.occured_at DESC`,
       [startDate, endDate]
     );
     return result.rows.map(parseActivity);
@@ -343,7 +364,13 @@ export const activityQueries = {
     definitionSlug: string
   ): Promise<Activity[]> {
     const result = await db.execute(
-      "SELECT * FROM activity WHERE activity_definition = ? ORDER BY occured_at DESC",
+      `SELECT 
+        a.*,
+        COALESCE(a.points, ad.points, 0) as points
+      FROM activity a
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+      WHERE a.activity_definition = ?
+      ORDER BY a.occured_at DESC`,
       [definitionSlug]
     );
     return result.rows.map(parseActivity);
@@ -363,9 +390,13 @@ export const activityQueries = {
 
     const placeholders = activityDefinitionSlugs.map(() => "?").join(",");
     const result = await db.execute(
-      `SELECT * FROM activity 
-       WHERE activity_definition IN (${placeholders})
-       ORDER BY occured_at ASC`,
+      `SELECT 
+        a.*,
+        COALESCE(a.points, ad.points, 0) as points
+      FROM activity a
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+      WHERE a.activity_definition IN (${placeholders})
+      ORDER BY a.occured_at ASC`,
       activityDefinitionSlugs
     );
 
@@ -387,10 +418,14 @@ export const activityQueries = {
 
     const placeholders = activityDefinitionSlugs.map(() => "?").join(",");
     const result = await db.execute(
-      `SELECT * FROM activity 
-       WHERE contributor = ? 
-         AND activity_definition IN (${placeholders})
-       ORDER BY occured_at ASC`,
+      `SELECT 
+        a.*,
+        COALESCE(a.points, ad.points, 0) as points
+      FROM activity a
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+      WHERE a.contributor = ? 
+        AND a.activity_definition IN (${placeholders})
+      ORDER BY a.occured_at ASC`,
       [contributor, ...activityDefinitionSlugs]
     );
 
@@ -451,7 +486,10 @@ export const activityQueries = {
     username: string
   ): Promise<number> {
     const result = await db.execute(
-      "SELECT COALESCE(SUM(points), 0) as total FROM activity WHERE contributor = ?",
+      `SELECT COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as total 
+       FROM activity a
+       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+       WHERE a.contributor = ?`,
       [username]
     );
     return (result.rows[0] as { total: number }).total;
@@ -470,19 +508,20 @@ export const activityQueries = {
   > {
     let sql = `
       SELECT 
-        contributor,
-        COALESCE(SUM(points), 0) as total_points,
+        a.contributor,
+        COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as total_points,
         COUNT(*) as activity_count
-      FROM activity
+      FROM activity a
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
     `;
     const params: unknown[] = [];
 
     if (startDate && endDate) {
-      sql += " WHERE occured_at >= ? AND occured_at <= ?";
+      sql += " WHERE a.occured_at >= ? AND a.occured_at <= ?";
       params.push(startDate, endDate);
     }
 
-    sql += " GROUP BY contributor ORDER BY total_points DESC";
+    sql += " GROUP BY a.contributor ORDER BY total_points DESC";
 
     if (limit !== undefined) {
       sql += " LIMIT ?";
@@ -521,10 +560,11 @@ export const activityQueries = {
         c.name,
         c.avatar_url,
         c.role,
-        COALESCE(SUM(a.points), 0) as total_points,
+        COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as total_points,
         COUNT(*) as activity_count
       FROM activity a
       LEFT JOIN contributor c ON a.contributor = c.username
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
     `;
     const params: unknown[] = [];
 
@@ -640,10 +680,11 @@ export const activityQueries = {
         a.contributor as username,
         c.name,
         c.avatar_url,
-        COALESCE(SUM(a.points), 0) as points,
+        COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as points,
         COUNT(*) as count
       FROM activity a
       LEFT JOIN contributor c ON a.contributor = c.username
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
       WHERE a.activity_definition = ?
     `;
     const params: unknown[] = [activitySlug];

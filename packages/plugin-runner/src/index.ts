@@ -98,7 +98,7 @@ async function main() {
     if (!values["skip-export"]) {
       logger.info("Exporting data");
       await exportContributors(db, dataDir, logger);
-      await exportActivities(db, join(dataDir, "data"), logger);
+      await exportActivities(db, dataDir, logger);
       await exportAggregates(db, dataDir, logger);
       await exportBadges(db, dataDir, logger);
       logger.info("Export complete");

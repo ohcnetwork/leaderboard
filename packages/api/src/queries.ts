@@ -37,7 +37,7 @@ export const contributorQueries = {
    */
   async getAll(db: Database): Promise<Contributor[]> {
     const result = await db.execute(
-      "SELECT * FROM contributor ORDER BY username"
+      "SELECT * FROM contributor ORDER BY username",
     );
     return result.rows.map(parseContributor);
   },
@@ -47,11 +47,11 @@ export const contributorQueries = {
    */
   async getByUsername(
     db: Database,
-    username: string
+    username: string,
   ): Promise<Contributor | null> {
     const result = await db.execute(
       "SELECT * FROM contributor WHERE username = ?",
-      [username]
+      [username],
     );
     return result.rows[0] ? parseContributor(result.rows[0]) : null;
   },
@@ -62,7 +62,7 @@ export const contributorQueries = {
   async getByRole(db: Database, role: string): Promise<Contributor[]> {
     const result = await db.execute(
       "SELECT * FROM contributor WHERE role = ? ORDER BY username",
-      [role]
+      [role],
     );
     return result.rows.map(parseContributor);
   },
@@ -87,7 +87,7 @@ export const contributorQueries = {
           : null,
         contributor.joining_date,
         contributor.meta ? JSON.stringify(contributor.meta) : null,
-      ]
+      ],
     );
   },
 
@@ -120,7 +120,7 @@ export const contributorQueries = {
           : null,
         contributor.joining_date,
         contributor.meta ? JSON.stringify(contributor.meta) : null,
-      ]
+      ],
     );
   },
 
@@ -136,7 +136,7 @@ export const contributorQueries = {
    */
   async count(db: Database): Promise<number> {
     const result = await db.execute(
-      "SELECT COUNT(*) as count FROM contributor"
+      "SELECT COUNT(*) as count FROM contributor",
     );
     return (result.rows[0] as { count: number }).count;
   },
@@ -146,7 +146,7 @@ export const contributorQueries = {
    */
   async getAllUsernames(db: Database): Promise<string[]> {
     const result = await db.execute(
-      "SELECT username FROM contributor ORDER BY username"
+      "SELECT username FROM contributor ORDER BY username",
     );
     return result.rows.map((row: any) => row.username as string);
   },
@@ -157,7 +157,7 @@ export const contributorQueries = {
    */
   async getLeaderboardWithPoints(
     db: Database,
-    excludedRoles: string[] = []
+    excludedRoles: string[] = [],
   ): Promise<
     Array<{
       username: string;
@@ -211,7 +211,7 @@ export const activityDefinitionQueries = {
    */
   async getAll(db: Database): Promise<ActivityDefinition[]> {
     const result = await db.execute(
-      "SELECT * FROM activity_definition ORDER BY slug"
+      "SELECT * FROM activity_definition ORDER BY slug",
     );
     return result.rows as unknown as ActivityDefinition[];
   },
@@ -221,11 +221,11 @@ export const activityDefinitionQueries = {
    */
   async getBySlug(
     db: Database,
-    slug: string
+    slug: string,
   ): Promise<ActivityDefinition | null> {
     const result = await db.execute(
       "SELECT * FROM activity_definition WHERE slug = ?",
-      [slug]
+      [slug],
     );
     return (result.rows[0] as unknown as ActivityDefinition) || null;
   },
@@ -235,7 +235,7 @@ export const activityDefinitionQueries = {
    */
   async insertOrIgnore(
     db: Database,
-    definition: ActivityDefinition
+    definition: ActivityDefinition,
   ): Promise<void> {
     await db.execute(
       `INSERT OR IGNORE INTO activity_definition (slug, name, description, points, icon)
@@ -246,17 +246,14 @@ export const activityDefinitionQueries = {
         definition.description,
         definition.points,
         definition.icon,
-      ]
+      ],
     );
   },
 
   /**
    * Insert or update activity definition
    */
-  async upsert(
-    db: Database,
-    definition: ActivityDefinition
-  ): Promise<void> {
+  async upsert(db: Database, definition: ActivityDefinition): Promise<void> {
     await db.execute(
       `INSERT INTO activity_definition (slug, name, description, points, icon)
        VALUES (?, ?, ?, ?, ?)
@@ -271,7 +268,7 @@ export const activityDefinitionQueries = {
         definition.description,
         definition.points,
         definition.icon,
-      ]
+      ],
     );
   },
 
@@ -280,7 +277,7 @@ export const activityDefinitionQueries = {
    */
   async count(db: Database): Promise<number> {
     const result = await db.execute(
-      "SELECT COUNT(*) as count FROM activity_definition"
+      "SELECT COUNT(*) as count FROM activity_definition",
     );
     return (result.rows[0] as { count: number }).count;
   },
@@ -306,7 +303,7 @@ export const activityQueries = {
   async getAll(
     db: Database,
     limit?: number,
-    offset?: number
+    offset?: number,
   ): Promise<Activity[]> {
     let sql = `
       SELECT 
@@ -338,7 +335,7 @@ export const activityQueries = {
   async getByContributor(
     db: Database,
     username: string,
-    limit?: number
+    limit?: number,
   ): Promise<Activity[]> {
     let sql = `
       SELECT 
@@ -366,7 +363,7 @@ export const activityQueries = {
   async getByDateRange(
     db: Database,
     startDate: string,
-    endDate: string
+    endDate: string,
   ): Promise<Activity[]> {
     const result = await db.execute(
       `SELECT 
@@ -376,7 +373,7 @@ export const activityQueries = {
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
       WHERE a.occured_at >= ? AND a.occured_at <= ?
       ORDER BY a.occured_at DESC`,
-      [startDate, endDate]
+      [startDate, endDate],
     );
     return result.rows.map(parseActivity);
   },
@@ -386,7 +383,7 @@ export const activityQueries = {
    */
   async getByDefinition(
     db: Database,
-    definitionSlug: string
+    definitionSlug: string,
   ): Promise<Activity[]> {
     const result = await db.execute(
       `SELECT 
@@ -396,7 +393,7 @@ export const activityQueries = {
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
       WHERE a.activity_definition = ?
       ORDER BY a.occured_at DESC`,
-      [definitionSlug]
+      [definitionSlug],
     );
     return result.rows.map(parseActivity);
   },
@@ -407,7 +404,7 @@ export const activityQueries = {
    */
   async getByDefinitions(
     db: Database,
-    activityDefinitionSlugs: string[]
+    activityDefinitionSlugs: string[],
   ): Promise<Activity[]> {
     if (activityDefinitionSlugs.length === 0) {
       return this.getAll(db);
@@ -422,7 +419,7 @@ export const activityQueries = {
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
       WHERE a.activity_definition IN (${placeholders})
       ORDER BY a.occured_at ASC`,
-      activityDefinitionSlugs
+      activityDefinitionSlugs,
     );
 
     return result.rows.map(parseActivity);
@@ -435,7 +432,7 @@ export const activityQueries = {
   async getByContributorAndDefinitions(
     db: Database,
     contributor: string,
-    activityDefinitionSlugs: string[]
+    activityDefinitionSlugs: string[],
   ): Promise<Activity[]> {
     if (activityDefinitionSlugs.length === 0) {
       return this.getByContributor(db, contributor);
@@ -451,7 +448,7 @@ export const activityQueries = {
       WHERE a.contributor = ? 
         AND a.activity_definition IN (${placeholders})
       ORDER BY a.occured_at ASC`,
-      [contributor, ...activityDefinitionSlugs]
+      [contributor, ...activityDefinitionSlugs],
     );
 
     return result.rows.map(parseActivity);
@@ -484,7 +481,40 @@ export const activityQueries = {
         activity.text,
         activity.points,
         activity.meta ? JSON.stringify(activity.meta) : null,
-      ]
+      ],
+    );
+  },
+
+  /**
+   * Insert or update multiple activities
+   */
+  async upsertMany(db: Database, activities: Activity[]): Promise<void> {
+    await db.batch(
+      activities.map((activity) => ({
+        sql: `INSERT INTO activity (
+        slug, contributor, activity_definition, title, occured_at, link, text, points, meta
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      ON CONFLICT(slug) DO UPDATE SET
+        contributor = excluded.contributor,
+        activity_definition = excluded.activity_definition,
+        title = excluded.title,
+        occured_at = excluded.occured_at,
+        link = excluded.link,
+        text = excluded.text,
+        points = excluded.points,
+        meta = excluded.meta`,
+        params: [
+          activity.slug,
+          activity.contributor,
+          activity.activity_definition,
+          activity.title,
+          activity.occured_at,
+          activity.link,
+          activity.text,
+          activity.points,
+          activity.meta ? JSON.stringify(activity.meta) : null,
+        ],
+      })),
     );
   },
 
@@ -508,14 +538,14 @@ export const activityQueries = {
    */
   async getTotalPointsByContributor(
     db: Database,
-    username: string
+    username: string,
   ): Promise<number> {
     const result = await db.execute(
       `SELECT COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as total 
        FROM activity a
        LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
        WHERE a.contributor = ?`,
-      [username]
+      [username],
     );
     return (result.rows[0] as { total: number }).total;
   },
@@ -527,7 +557,7 @@ export const activityQueries = {
     db: Database,
     limit?: number,
     startDate?: string,
-    endDate?: string
+    endDate?: string,
   ): Promise<
     Array<{ contributor: string; total_points: number; activity_count: number }>
   > {
@@ -568,7 +598,7 @@ export const activityQueries = {
     db: Database,
     limit?: number,
     startDate?: string,
-    endDate?: string
+    endDate?: string,
   ): Promise<
     Array<{
       username: string;
@@ -623,7 +653,7 @@ export const activityQueries = {
   async getRecentActivitiesEnriched(
     db: Database,
     startDate: string,
-    endDate: string
+    endDate: string,
   ): Promise<
     Array<{
       slug: string;
@@ -690,7 +720,7 @@ export const activityQueries = {
     activitySlug: string,
     startDate?: string,
     endDate?: string,
-    limit: number = 10
+    limit: number = 10,
   ): Promise<
     Array<{
       username: string;
@@ -742,7 +772,7 @@ export const activityQueries = {
    */
   async getActivityCountByDate(
     db: Database,
-    username: string
+    username: string,
   ): Promise<Array<{ date: string; count: number }>> {
     const sql = `
       SELECT 
@@ -768,7 +798,7 @@ export const globalAggregateQueries = {
    */
   async getAll(db: Database): Promise<GlobalAggregate[]> {
     const result = await db.execute(
-      "SELECT * FROM global_aggregate ORDER BY slug"
+      "SELECT * FROM global_aggregate ORDER BY slug",
     );
     return result.rows.map((row: any) => ({
       ...row,
@@ -783,7 +813,7 @@ export const globalAggregateQueries = {
   async getBySlug(db: Database, slug: string): Promise<GlobalAggregate | null> {
     const result = await db.execute(
       "SELECT * FROM global_aggregate WHERE slug = ?",
-      [slug]
+      [slug],
     );
     if (result.rows.length === 0) return null;
     const row: any = result.rows[0];
@@ -814,7 +844,7 @@ export const globalAggregateQueries = {
         JSON.stringify(aggregate.value),
         aggregate.hidden ?? false,
         aggregate.meta ? JSON.stringify(aggregate.meta) : null,
-      ]
+      ],
     );
   },
 
@@ -823,7 +853,7 @@ export const globalAggregateQueries = {
    */
   async getAllVisible(db: Database): Promise<GlobalAggregate[]> {
     const result = await db.execute(
-      "SELECT * FROM global_aggregate WHERE hidden = FALSE OR hidden IS NULL ORDER BY slug"
+      "SELECT * FROM global_aggregate WHERE hidden = FALSE OR hidden IS NULL ORDER BY slug",
     );
     return result.rows.map((row: any) => ({
       ...row,
@@ -845,7 +875,7 @@ export const globalAggregateQueries = {
    */
   async getBySlugs(
     db: Database,
-    slugs: string[]
+    slugs: string[],
   ): Promise<
     Array<Pick<GlobalAggregate, "slug" | "name" | "value" | "description">>
   > {
@@ -881,7 +911,7 @@ export const contributorAggregateDefinitionQueries = {
    */
   async getAll(db: Database): Promise<ContributorAggregateDefinition[]> {
     const result = await db.execute(
-      "SELECT * FROM contributor_aggregate_definition ORDER BY slug"
+      "SELECT * FROM contributor_aggregate_definition ORDER BY slug",
     );
     return result.rows as unknown as ContributorAggregateDefinition[];
   },
@@ -891,11 +921,11 @@ export const contributorAggregateDefinitionQueries = {
    */
   async getBySlug(
     db: Database,
-    slug: string
+    slug: string,
   ): Promise<ContributorAggregateDefinition | null> {
     const result = await db.execute(
       "SELECT * FROM contributor_aggregate_definition WHERE slug = ?",
-      [slug]
+      [slug],
     );
     return (
       (result.rows[0] as unknown as ContributorAggregateDefinition) || null
@@ -907,7 +937,7 @@ export const contributorAggregateDefinitionQueries = {
    */
   async insertOrIgnore(
     db: Database,
-    definition: ContributorAggregateDefinition
+    definition: ContributorAggregateDefinition,
   ): Promise<void> {
     await db.execute(
       `INSERT OR IGNORE INTO contributor_aggregate_definition (slug, name, description, hidden)
@@ -917,7 +947,7 @@ export const contributorAggregateDefinitionQueries = {
         definition.name,
         definition.description,
         definition.hidden ?? false,
-      ]
+      ],
     );
   },
 
@@ -926,7 +956,7 @@ export const contributorAggregateDefinitionQueries = {
    */
   async upsert(
     db: Database,
-    definition: ContributorAggregateDefinition
+    definition: ContributorAggregateDefinition,
   ): Promise<void> {
     await db.execute(
       `INSERT INTO contributor_aggregate_definition (slug, name, description, hidden)
@@ -940,7 +970,7 @@ export const contributorAggregateDefinitionQueries = {
         definition.name,
         definition.description,
         definition.hidden ?? false,
-      ]
+      ],
     );
   },
 
@@ -949,7 +979,7 @@ export const contributorAggregateDefinitionQueries = {
    */
   async getAllVisible(db: Database): Promise<ContributorAggregateDefinition[]> {
     const result = await db.execute(
-      "SELECT * FROM contributor_aggregate_definition WHERE hidden = FALSE OR hidden IS NULL ORDER BY slug"
+      "SELECT * FROM contributor_aggregate_definition WHERE hidden = FALSE OR hidden IS NULL ORDER BY slug",
     );
     return result.rows as unknown as ContributorAggregateDefinition[];
   },
@@ -964,7 +994,7 @@ export const contributorAggregateQueries = {
    */
   async getAll(db: Database): Promise<ContributorAggregate[]> {
     const result = await db.execute(
-      "SELECT * FROM contributor_aggregate ORDER BY contributor, aggregate"
+      "SELECT * FROM contributor_aggregate ORDER BY contributor, aggregate",
     );
     return result.rows.map((row: any) => ({
       ...row,
@@ -978,11 +1008,11 @@ export const contributorAggregateQueries = {
    */
   async getByContributor(
     db: Database,
-    username: string
+    username: string,
   ): Promise<ContributorAggregate[]> {
     const result = await db.execute(
       "SELECT * FROM contributor_aggregate WHERE contributor = ? ORDER BY aggregate",
-      [username]
+      [username],
     );
     return result.rows.map((row: any) => ({
       ...row,
@@ -997,11 +1027,11 @@ export const contributorAggregateQueries = {
   async getByContributorAndAggregate(
     db: Database,
     username: string,
-    aggregateSlug: string
+    aggregateSlug: string,
   ): Promise<ContributorAggregate | null> {
     const result = await db.execute(
       "SELECT * FROM contributor_aggregate WHERE contributor = ? AND aggregate = ?",
-      [username, aggregateSlug]
+      [username, aggregateSlug],
     );
     if (result.rows.length === 0) return null;
     const row: any = result.rows[0];
@@ -1027,7 +1057,7 @@ export const contributorAggregateQueries = {
         aggregate.contributor,
         JSON.stringify(aggregate.value),
         aggregate.meta ? JSON.stringify(aggregate.meta) : null,
-      ]
+      ],
     );
   },
 
@@ -1037,11 +1067,11 @@ export const contributorAggregateQueries = {
   async delete(
     db: Database,
     username: string,
-    aggregateSlug: string
+    aggregateSlug: string,
   ): Promise<void> {
     await db.execute(
       "DELETE FROM contributor_aggregate WHERE contributor = ? AND aggregate = ?",
-      [username, aggregateSlug]
+      [username, aggregateSlug],
     );
   },
 
@@ -1051,7 +1081,7 @@ export const contributorAggregateQueries = {
   async deleteByContributor(db: Database, username: string): Promise<void> {
     await db.execute(
       "DELETE FROM contributor_aggregate WHERE contributor = ?",
-      [username]
+      [username],
     );
   },
 
@@ -1062,7 +1092,7 @@ export const contributorAggregateQueries = {
   async getContributorsAboveThreshold(
     db: Database,
     aggregateSlug: string,
-    minValue: number
+    minValue: number,
   ): Promise<Array<{ contributor: string; value: number }>> {
     const result = await db.execute(
       `SELECT contributor, value
@@ -1071,7 +1101,7 @@ export const contributorAggregateQueries = {
          AND json_extract(value, '$.value') >= ?
          AND json_extract(value, '$.type') = 'number'
        ORDER BY json_extract(value, '$.value') DESC`,
-      [aggregateSlug, minValue]
+      [aggregateSlug, minValue],
     );
 
     return result.rows.map((row: any) => ({
@@ -1085,13 +1115,13 @@ export const contributorAggregateQueries = {
    */
   async getContributorsWithAggregate(
     db: Database,
-    aggregateSlug: string
+    aggregateSlug: string,
   ): Promise<Array<{ contributor: string; value: AggregateValue }>> {
     const result = await db.execute(
       `SELECT contributor, value
        FROM contributor_aggregate
        WHERE aggregate = ?`,
-      [aggregateSlug]
+      [aggregateSlug],
     );
 
     return result.rows.map((row: any) => ({
@@ -1107,7 +1137,7 @@ export const contributorAggregateQueries = {
   async getByContributorEnriched(
     db: Database,
     username: string,
-    slugs: string[]
+    slugs: string[],
   ): Promise<
     Array<{
       aggregate: string;
@@ -1154,7 +1184,7 @@ export const badgeDefinitionQueries = {
    */
   async getAll(db: Database): Promise<BadgeDefinition[]> {
     const result = await db.execute(
-      "SELECT * FROM badge_definition ORDER BY slug"
+      "SELECT * FROM badge_definition ORDER BY slug",
     );
     return result.rows.map((row: any) => ({
       ...row,
@@ -1168,7 +1198,7 @@ export const badgeDefinitionQueries = {
   async getBySlug(db: Database, slug: string): Promise<BadgeDefinition | null> {
     const result = await db.execute(
       "SELECT * FROM badge_definition WHERE slug = ?",
-      [slug]
+      [slug],
     );
     if (result.rows.length === 0) return null;
     const row: any = result.rows[0];
@@ -1190,7 +1220,7 @@ export const badgeDefinitionQueries = {
         badge.name,
         badge.description,
         JSON.stringify(badge.variants),
-      ]
+      ],
     );
   },
 
@@ -1210,7 +1240,7 @@ export const badgeDefinitionQueries = {
         badge.name,
         badge.description,
         JSON.stringify(badge.variants),
-      ]
+      ],
     );
   },
 };
@@ -1224,7 +1254,7 @@ export const contributorBadgeQueries = {
    */
   async getAll(db: Database): Promise<ContributorBadge[]> {
     const result = await db.execute(
-      "SELECT * FROM contributor_badge ORDER BY achieved_on DESC"
+      "SELECT * FROM contributor_badge ORDER BY achieved_on DESC",
     );
     return result.rows.map((row: any) => ({
       ...row,
@@ -1237,11 +1267,11 @@ export const contributorBadgeQueries = {
    */
   async getByContributor(
     db: Database,
-    username: string
+    username: string,
   ): Promise<ContributorBadge[]> {
     const result = await db.execute(
       "SELECT * FROM contributor_badge WHERE contributor = ? ORDER BY achieved_on DESC",
-      [username]
+      [username],
     );
     return result.rows.map((row: any) => ({
       ...row,
@@ -1255,11 +1285,11 @@ export const contributorBadgeQueries = {
   async getByContributorAndBadge(
     db: Database,
     username: string,
-    badgeSlug: string
+    badgeSlug: string,
   ): Promise<ContributorBadge | null> {
     const result = await db.execute(
       "SELECT * FROM contributor_badge WHERE contributor = ? AND badge = ?",
-      [username, badgeSlug]
+      [username, badgeSlug],
     );
     if (result.rows.length === 0) return null;
     const row: any = result.rows[0];
@@ -1276,11 +1306,11 @@ export const contributorBadgeQueries = {
     db: Database,
     username: string,
     badgeSlug: string,
-    variant: string
+    variant: string,
   ): Promise<boolean> {
     const result = await db.execute(
       "SELECT COUNT(*) as count FROM contributor_badge WHERE contributor = ? AND badge = ? AND variant = ?",
-      [username, badgeSlug, variant]
+      [username, badgeSlug, variant],
     );
     return (result.rows[0] as { count: number }).count > 0;
   },
@@ -1299,7 +1329,7 @@ export const contributorBadgeQueries = {
         badge.variant,
         badge.achieved_on,
         badge.meta ? JSON.stringify(badge.meta) : null,
-      ]
+      ],
     );
   },
 
@@ -1310,7 +1340,7 @@ export const contributorBadgeQueries = {
     db: Database,
     slug: string,
     newVariant: string,
-    meta?: Record<string, unknown>
+    meta?: Record<string, unknown>,
   ): Promise<void> {
     await db.execute(
       `UPDATE contributor_badge 
@@ -1321,7 +1351,7 @@ export const contributorBadgeQueries = {
         new Date().toISOString().split("T")[0],
         meta ? JSON.stringify(meta) : null,
         slug,
-      ]
+      ],
     );
   },
 
@@ -1347,7 +1377,7 @@ export const contributorBadgeQueries = {
    */
   async getRecentEnriched(
     db: Database,
-    limit: number = 20
+    limit: number = 20,
   ): Promise<
     Array<{
       slug: string;
@@ -1405,7 +1435,7 @@ export const contributorBadgeQueries = {
    */
   async getTopEarnersEnriched(
     db: Database,
-    limit: number = 10
+    limit: number = 10,
   ): Promise<
     Array<{
       username: string;

@@ -29,8 +29,9 @@ export async function importActivities(
     for (const file of jsonlFiles) {
       try {
         const filePath = join(activitiesDir, file);
-        const count = await importActivitiesFromFile(db, filePath, logger);
-        imported += count;
+        const activities = await importActivitiesFromFile(filePath);
+        await activityQueries.upsertMany(db, activities);
+        imported += activities.length;
       } catch (error) {
         logger.warn(`Failed to import activities from ${file}`, {
           error: (error as Error).message,
@@ -42,7 +43,9 @@ export async function importActivities(
     return imported;
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") {
-      logger.warn("Activities contributors directory not found, skipping import");
+      logger.warn(
+        "Activities contributors directory not found, skipping import",
+      );
       return 0;
     }
     throw error;
@@ -50,32 +53,13 @@ export async function importActivities(
 }
 
 /**
- * Import activities from a single JSONL file
+ * Get activities from a single JSONL file
  */
-async function importActivitiesFromFile(
-  db: Database,
-  filePath: string,
-  logger: Logger,
-): Promise<number> {
+async function importActivitiesFromFile(filePath: string): Promise<Activity[]> {
   const content = await readFile(filePath, "utf-8");
-  const lines = content.split("\n").filter((line) => line.trim());
-
-  let imported = 0;
-
-  for (const line of lines) {
-    try {
-      const activity = JSON.parse(line) as Activity;
-      await activityQueries.upsert(db, activity);
-      imported++;
-    } catch (error) {
-      logger.error(
-        `Failed to import activity from ${filePath}`,
-        error as Error,
-        { activity: line },
-      );
-    }
-  }
-
-  logger.debug(`Imported ${imported} activities from ${filePath}`);
-  return imported;
+  const activities = content
+    .split("\n")
+    .filter((line) => line.trim())
+    .map((line) => JSON.parse(line) as Activity);
+  return activities;
 }

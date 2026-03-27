@@ -35,7 +35,7 @@
     "publish": "pnpm build:packages && changeset publish"
   },
   "keywords": [],
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.33.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ohcnetwork/leaderboard.git"
@@ -47,7 +47,7 @@
   },
   "homepage": "https://github.com/ohcnetwork/leaderboard#readme",
   "dependencies": {
-    "create-leaderboard-plugin": "link:packages/create-plugin",
-    "create-leaderboard-data-repo": "link:packages/create-data-repo"
+    "create-leaderboard-data-repo": "link:packages/create-data-repo",
+    "create-leaderboard-plugin": "link:packages/create-plugin"
   }
 }

@@ -251,6 +251,31 @@ export const activityDefinitionQueries = {
   },
 
   /**
+   * Insert or update activity definition
+   */
+  async upsert(
+    db: Database,
+    definition: ActivityDefinition
+  ): Promise<void> {
+    await db.execute(
+      `INSERT INTO activity_definition (slug, name, description, points, icon)
+       VALUES (?, ?, ?, ?, ?)
+       ON CONFLICT(slug) DO UPDATE SET
+         name = excluded.name,
+         description = excluded.description,
+         points = excluded.points,
+         icon = excluded.icon`,
+      [
+        definition.slug,
+        definition.name,
+        definition.description,
+        definition.points,
+        definition.icon,
+      ]
+    );
+  },
+
+  /**
    * Count total activity definitions
    */
   async count(db: Database): Promise<number> {

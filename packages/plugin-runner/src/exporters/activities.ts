@@ -19,7 +19,7 @@ export async function exportActivities(
   dataDir: string,
   logger: Logger
 ): Promise<number> {
-  const activitiesDir = join(dataDir, "activities");
+  const activitiesDir = join(dataDir, "activities", "contributors");
   await mkdir(activitiesDir, { recursive: true });
 
   const contributors = await contributorQueries.getAll(db);

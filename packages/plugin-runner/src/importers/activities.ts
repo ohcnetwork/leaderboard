@@ -14,9 +14,9 @@ import type { Logger } from "@ohcnetwork/leaderboard-api";
 export async function importActivities(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<number> {
-  const activitiesDir = join(dataDir, "activities");
+  const activitiesDir = join(dataDir, "activities", "contributors");
 
   try {
     const files = await readdir(activitiesDir);
@@ -42,7 +42,7 @@ export async function importActivities(
     return imported;
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === "ENOENT") {
-      logger.warn("Activities directory not found, skipping import");
+      logger.warn("Activities contributors directory not found, skipping import");
       return 0;
     }
     throw error;
@@ -55,7 +55,7 @@ export async function importActivities(
 async function importActivitiesFromFile(
   db: Database,
   filePath: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<number> {
   const content = await readFile(filePath, "utf-8");
   const lines = content.split("\n").filter((line) => line.trim());
@@ -68,9 +68,11 @@ async function importActivitiesFromFile(
       await activityQueries.upsert(db, activity);
       imported++;
     } catch (error) {
-      logger.debug(`Failed to parse activity line in ${filePath}`, {
-        error: (error as Error).message,
-      });
+      logger.error(
+        `Failed to import activity from ${filePath}`,
+        error as Error,
+        { activity: line },
+      );
     }
   }
 

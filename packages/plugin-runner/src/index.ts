@@ -9,10 +9,12 @@ import { createLogger } from "./logger";
 import { initDatabase } from "./database";
 import { loadConfig } from "./config";
 import { importContributors } from "./importers/contributors";
+import { importActivityDefinitions } from "./importers/activity-definitions";
 import { importActivities } from "./importers/activities";
 import { importAggregates } from "./importers/aggregates";
 import { importBadges } from "./importers/badges";
 import { exportContributors } from "./exporters/contributors";
+import { exportActivityDefinitions } from "./exporters/activity-definitions";
 import { exportActivities } from "./exporters/activities";
 import { exportAggregates } from "./exporters/aggregates";
 import { exportBadges } from "./exporters/badges";
@@ -71,6 +73,7 @@ async function main() {
     if (!values["skip-import"]) {
       logger.info("Importing existing data");
       await importContributors(db, dataDir, logger);
+      await importActivityDefinitions(db, dataDir, logger);
       await importActivities(db, dataDir, logger);
       await importAggregates(db, dataDir, logger);
       await importBadges(db, dataDir, logger);
@@ -98,6 +101,7 @@ async function main() {
     if (!values["skip-export"]) {
       logger.info("Exporting data");
       await exportContributors(db, dataDir, logger);
+      await exportActivityDefinitions(db, dataDir, logger);
       await exportActivities(db, dataDir, logger);
       await exportAggregates(db, dataDir, logger);
       await exportBadges(db, dataDir, logger);

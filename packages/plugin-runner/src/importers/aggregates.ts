@@ -17,7 +17,7 @@ import {
 export async function importGlobalAggregates(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const globalPath = join(dataDir, "aggregates", "global.json");
 
@@ -50,7 +50,7 @@ export async function importGlobalAggregates(
 export async function importContributorAggregateDefinitions(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const definitionsPath = join(dataDir, "aggregates", "definitions.json");
 
@@ -68,7 +68,7 @@ export async function importContributorAggregateDefinitions(
     }
 
     logger.info(
-      `Imported ${definitions.length} contributor aggregate definitions`
+      `Imported ${definitions.length} contributor aggregate definitions`,
     );
   } catch (error: any) {
     if (error.code === "ENOENT") {
@@ -85,7 +85,7 @@ export async function importContributorAggregateDefinitions(
 export async function importContributorAggregates(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const contributorsDir = join(dataDir, "aggregates", "contributors");
 
@@ -106,13 +106,16 @@ export async function importContributorAggregates(
           await contributorAggregateQueries.upsert(db, aggregate);
           totalImported++;
         } catch (error) {
-          logger.warn(`Failed to parse aggregate line in ${file}`, { error });
+          logger.error(
+            `Failed to import contributor aggregate from ${file}`,
+            error as Error,
+          );
         }
       }
     }
 
     logger.info(
-      `Imported ${totalImported} contributor aggregates from ${jsonlFiles.length} files`
+      `Imported ${totalImported} contributor aggregates from ${jsonlFiles.length} files`,
     );
   } catch (error: any) {
     if (error.code === "ENOENT") {
@@ -129,7 +132,7 @@ export async function importContributorAggregates(
 export async function importAggregates(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   logger.info("Importing aggregates");
   await importGlobalAggregates(db, dataDir, logger);

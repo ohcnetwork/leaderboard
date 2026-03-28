@@ -175,6 +175,69 @@ describe("Database Queries", () => {
       expect(typeof all[1].meta).toBe("object");
     });
 
+    it("should merge case-variant username on upsert", async () => {
+      await contributorQueries.upsert(db, {
+        username: "alice",
+        name: "Alice",
+        role: "core",
+        title: null,
+        avatar_url: null,
+        bio: null,
+        social_profiles: null,
+        joining_date: null,
+        meta: null,
+      });
+
+      await contributorQueries.upsert(db, {
+        username: "Alice",
+        name: "Alice Uppercase",
+        role: "contributor",
+        title: null,
+        avatar_url: null,
+        bio: null,
+        social_profiles: null,
+        joining_date: null,
+        meta: null,
+      });
+
+      const all = await contributorQueries.getAll(db);
+      expect(all).toHaveLength(1);
+      expect(all[0].username).toBe("alice");
+      expect(all[0].name).toBe("Alice Uppercase");
+      expect(all[0].role).toBe("contributor");
+    });
+
+    it("should silently ignore case-variant username on insertOrIgnore", async () => {
+      await contributorQueries.insertOrIgnore(db, {
+        username: "bob",
+        name: "Bob",
+        role: "core",
+        title: null,
+        avatar_url: null,
+        bio: null,
+        social_profiles: null,
+        joining_date: null,
+        meta: null,
+      });
+
+      await contributorQueries.insertOrIgnore(db, {
+        username: "BOB",
+        name: "Bob Uppercase",
+        role: "contributor",
+        title: null,
+        avatar_url: null,
+        bio: null,
+        social_profiles: null,
+        joining_date: null,
+        meta: null,
+      });
+
+      const all = await contributorQueries.getAll(db);
+      expect(all).toHaveLength(1);
+      expect(all[0].username).toBe("bob");
+      expect(all[0].name).toBe("Bob");
+    });
+
     it("should update existing contributor", async () => {
       const contributor: Contributor = {
         username: "alice",

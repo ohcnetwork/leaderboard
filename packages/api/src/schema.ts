@@ -43,6 +43,9 @@ CREATE TABLE IF NOT EXISTS activity (
     meta                    JSON
 );
 
+-- Case-insensitive uniqueness for contributor username
+CREATE UNIQUE INDEX IF NOT EXISTS idx_contributor_username_ci ON contributor(LOWER(username));
+
 -- Indexes for performance
 CREATE INDEX IF NOT EXISTS idx_activity_occured_at ON activity(occured_at);
 CREATE INDEX IF NOT EXISTS idx_activity_contributor ON activity(contributor);

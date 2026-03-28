@@ -10,7 +10,7 @@ import type { Database } from "./types";
 export const SCHEMA = `
 -- Contributors table
 CREATE TABLE IF NOT EXISTS contributor (
-    username                VARCHAR PRIMARY KEY,
+    username                VARCHAR PRIMARY KEY COLLATE NOCASE,
     name                    VARCHAR,
     role                    VARCHAR,
     title                   VARCHAR,

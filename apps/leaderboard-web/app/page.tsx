@@ -235,7 +235,7 @@ export default async function Home() {
                         )}
                         {activity.text && (
                           <div
-                            className="text-sm text-muted-foreground mt-1 prose prose-sm max-w-none"
+                            className="text-sm text-muted-foreground mt-1 prose prose-sm max-w-none truncate"
                             dangerouslySetInnerHTML={{ __html: activity.text }}
                           />
                         )}

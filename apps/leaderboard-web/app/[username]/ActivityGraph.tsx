@@ -195,7 +195,7 @@ export default function ActivityGraph({
 
     // Filter activities by included types
     const filteredActivities = activities.filter((activity) =>
-      typesToInclude.has(activity.activity_definition_name)
+      typesToInclude.has(activity.activity_definition_name),
     );
 
     // Group by date
@@ -272,7 +272,7 @@ export default function ActivityGraph({
   const hasActiveFilters = selectedActivityTypes.size > 0;
 
   // Notify parent component of filter state changes
-  useMemo(() => {
+  useEffect(() => {
     if (onFilterChange) {
       onFilterChange({
         selectedActivityTypes,
@@ -315,7 +315,7 @@ export default function ActivityGraph({
                       className={cn(
                         "w-3 h-3 rounded-sm cursor-pointer hover:ring-2 hover:ring-primary",
                         "transition-all duration-300 ease-in-out",
-                        getLevelColor(day.level)
+                        getLevelColor(day.level),
                       )}
                       style={{
                         opacity: day.level === 0 || !isAnimating ? 1 : 0,

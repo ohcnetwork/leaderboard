@@ -11,13 +11,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Link from "next/link";
-import { Medal, Trophy, Filter, X } from "lucide-react";
+import { Trophy, Filter, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import ActivityTrendChart from "./ActivityTrendChart";
+import TopContributorsChart from "./TopContributorsChart";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { format } from "date-fns";
 
 interface LeaderboardViewProps {
   entries: LeaderboardEntry[];
@@ -155,114 +157,111 @@ export default function LeaderboardView({
         <Trophy className="h-6 w-6 text-yellow-500" aria-label="1st place" />
       );
     if (rank === 2)
-      return <Medal className="h-6 w-6 text-gray-400" aria-label="2nd place" />;
+      return (
+        <Trophy className="h-6 w-6 text-gray-400" aria-label="2nd place" />
+      );
     if (rank === 3)
       return (
-        <Medal className="h-6 w-6 text-amber-600" aria-label="3rd place" />
+        <Trophy className="h-6 w-6 text-amber-600" aria-label="3rd place" />
       );
     return null;
   };
 
-  const periodLabels = {
-    week: "Weekly",
-    month: "Monthly",
-    year: "Yearly",
-  };
+  const formattedStartDate = format(startDate, "MMMM d, yyyy");
+  const formattedEndDate = format(endDate, "MMMM d, yyyy");
 
   return (
     <div className="container mx-auto px-4 py-8">
+      {/* Header */}
+      <div className="mb-8">
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h1 className="text-2xl font-bold mb-2">
+              {formattedStartDate} – {formattedEndDate}
+            </h1>
+            <p className="text-muted-foreground">
+              {filteredEntries.length} of {entries.length} contributors
+              {(selectedRoles.size > 0 || searchQuery) && " (filtered)"}
+            </p>
+          </div>
+
+          {/* Filters */}
+          <div className="flex items-center gap-2">
+            {/* Search Bar */}
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search contributors..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-9 h-9 w-64"
+              />
+            </div>
+
+            {/* Role Filter */}
+            {availableRoles.length > 0 && (
+              <>
+                {(selectedRoles.size > 0 || searchQuery) && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={clearFilters}
+                    className="h-9"
+                  >
+                    <X className="h-4 w-4 mr-1" />
+                    Clear
+                  </Button>
+                )}
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button variant="outline" size="sm" className="h-9">
+                      <Filter className="h-4 w-4 mr-2" />
+                      Role
+                      {selectedRoles.size > 0 && (
+                        <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
+                          {selectedRoles.size}
+                        </span>
+                      )}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-64" align="end">
+                    <div className="space-y-4">
+                      <h4 className="font-medium text-sm">Filter by Role</h4>
+                      <div className="space-y-2 max-h-64 overflow-y-auto">
+                        {availableRoles.map((role) => (
+                          <div
+                            key={role}
+                            className="flex items-center space-x-2"
+                          >
+                            <Checkbox
+                              id={role}
+                              checked={selectedRoles.has(role)}
+                              onCheckedChange={() => toggleRole(role)}
+                            />
+                            <label
+                              htmlFor={role}
+                              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                            >
+                              {role}
+                            </label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+
       <div className="flex gap-8">
         {/* Main Content */}
         <div className="flex-1 min-w-0">
-          {/* Header */}
-          <div className="mb-8">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h1 className="text-4xl font-bold mb-2">
-                  {periodLabels[period]} Leaderboard
-                </h1>
-                <p className="text-muted-foreground">
-                  {filteredEntries.length} of {entries.length} contributors
-                  {(selectedRoles.size > 0 || searchQuery) && " (filtered)"}
-                </p>
-              </div>
-
-              {/* Filters */}
-              <div className="flex items-center gap-2">
-                {/* Search Bar */}
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    type="text"
-                    placeholder="Search contributors..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-9 h-9 w-64"
-                  />
-                </div>
-
-                {/* Role Filter */}
-                {availableRoles.length > 0 && (
-                  <>
-                    {(selectedRoles.size > 0 || searchQuery) && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={clearFilters}
-                        className="h-9"
-                      >
-                        <X className="h-4 w-4 mr-1" />
-                        Clear
-                      </Button>
-                    )}
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" size="sm" className="h-9">
-                          <Filter className="h-4 w-4 mr-2" />
-                          Role
-                          {selectedRoles.size > 0 && (
-                            <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
-                              {selectedRoles.size}
-                            </span>
-                          )}
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-64" align="end">
-                        <div className="space-y-4">
-                          <h4 className="font-medium text-sm">
-                            Filter by Role
-                          </h4>
-                          <div className="space-y-2 max-h-64 overflow-y-auto">
-                            {availableRoles.map((role) => (
-                              <div
-                                key={role}
-                                className="flex items-center space-x-2"
-                              >
-                                <Checkbox
-                                  id={role}
-                                  checked={selectedRoles.has(role)}
-                                  onCheckedChange={() => toggleRole(role)}
-                                />
-                                <label
-                                  htmlFor={role}
-                                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-                                >
-                                  {role}
-                                </label>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </PopoverContent>
-                    </Popover>
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
-
           {/* Period Selector */}
-          <div className="flex gap-2 mb-8 border-b">
+          <div className="flex gap-2 mb-4 border-b">
             <Link
               href="/leaderboard/week"
               className={cn(
@@ -425,62 +424,17 @@ export default function LeaderboardView({
         {Object.keys(filteredTopByActivity).length > 0 && (
           <div className="hidden xl:block w-80 shrink-0">
             <div>
-              <h2 className="text-xl font-bold mb-6">Top Contributors</h2>
-              <div className="space-y-4">
+              <h2 className="text-xl font-bold border-b pb-2 pt-1.5 mb-4">
+                Top Contributors
+              </h2>
+              <div className="space-y-6">
                 {Object.entries(filteredTopByActivity).map(
                   ([activityName, contributors]) => (
-                    <Card key={activityName} className="overflow-hidden p-0">
-                      <CardContent className="p-0">
-                        <div className="bg-muted/50 px-4 py-2.5 border-b">
-                          <h3 className="font-semibold text-sm text-foreground">
-                            {activityName}
-                          </h3>
-                        </div>
-                        <div className="p-3 space-y-2">
-                          {contributors.map((contributor, index) => (
-                            <Link
-                              key={contributor.username}
-                              href={`/${contributor.username}`}
-                              className="flex items-center gap-2.5 p-2 rounded-md hover:bg-accent transition-colors group"
-                            >
-                              <div className="flex items-center justify-center w-5 h-5 shrink-0">
-                                {index === 0 && (
-                                  <Trophy className="h-4 w-4 text-yellow-500" />
-                                )}
-                                {index === 1 && (
-                                  <Medal className="h-4 w-4 text-gray-400" />
-                                )}
-                                {index === 2 && (
-                                  <Medal className="h-4 w-4 text-amber-600" />
-                                )}
-                              </div>
-                              <Avatar className="h-9 w-9 shrink-0 border">
-                                <AvatarImage
-                                  src={contributor.avatar_url || undefined}
-                                  alt={contributor.name || contributor.username}
-                                />
-                                <AvatarFallback className="text-xs">
-                                  {(contributor.name || contributor.username)
-                                    .substring(0, 2)
-                                    .toUpperCase()}
-                                </AvatarFallback>
-                              </Avatar>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium truncate group-hover:text-primary transition-colors leading-tight">
-                                  {contributor.name || contributor.username}
-                                </p>
-                                <p className="text-xs text-muted-foreground mt-0.5">
-                                  {contributor.count}{" "}
-                                  {contributor.count === 1
-                                    ? "activity"
-                                    : "activities"}{" "}
-                                  · {contributor.points} pts
-                                </p>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </CardContent>
+                    <Card key={activityName} className="p-4">
+                      <TopContributorsChart
+                        activityName={activityName}
+                        contributors={contributors}
+                      />
                     </Card>
                   ),
                 )}

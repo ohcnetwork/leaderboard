@@ -32,7 +32,7 @@ export default function ActivityTimelineItem({
           )}
         </div>
         {activity.title && (
-          <p className="text-sm mb-1">
+          <div className="text-sm mb-1">
             {activity.link ? (
               <div className="flex items-center gap-1">
                 <a
@@ -48,7 +48,7 @@ export default function ActivityTimelineItem({
             ) : (
               activity.title
             )}
-          </p>
+          </div>
         )}
         {activity.text && (
           <div

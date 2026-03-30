@@ -355,7 +355,13 @@ export async function getTopContributorsByActivity(
       10, // Top 10
     );
 
-    result[activitySlug] = topContributors;
+    const definition = await activityDefinitionQueries.getBySlug(
+      db,
+      activitySlug,
+    );
+    const displayName = definition?.name || activitySlug;
+
+    result[displayName] = topContributors;
   }
 
   return result;

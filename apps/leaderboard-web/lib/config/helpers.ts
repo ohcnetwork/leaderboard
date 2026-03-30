@@ -21,3 +21,21 @@ export function getVisibleRoles(): string[] {
     .filter(([, role]) => role.hidden !== true)
     .map(([key]) => key);
 }
+
+/**
+ * Get visible roles with full metadata, preserving config.yaml insertion order
+ */
+export function getVisibleRolesOrdered(): Array<{
+  key: string;
+  name: string;
+  description?: string;
+}> {
+  const config = getConfig();
+  return Object.entries(config.leaderboard.roles)
+    .filter(([, role]) => role.hidden !== true)
+    .map(([key, role]) => ({
+      key,
+      name: role.name,
+      description: role.description,
+    }));
+}

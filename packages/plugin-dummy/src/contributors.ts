@@ -5,7 +5,7 @@
 import { faker } from "@faker-js/faker";
 import type { Contributor } from "@ohcnetwork/leaderboard-api";
 
-const ROLES = ["maintainer", "contributor", "intern", "bot", null] as const;
+const ROLES = ["maintainer", "contributor", "intern", "bot"] as const;
 const ROLE_WEIGHTS = [0.1, 0.7, 0.15, 0.03, 0.02]; // Probabilities for each role
 
 /**
@@ -53,7 +53,7 @@ function generateBio(): string {
 /**
  * Select a role based on weights
  */
-function selectRole(): string | null {
+function selectRole(): string {
   const random = Math.random();
   let sum = 0;
 

@@ -12,7 +12,7 @@ export const SCHEMA = `
 CREATE TABLE IF NOT EXISTS contributor (
     username                VARCHAR PRIMARY KEY COLLATE NOCASE,
     name                    VARCHAR,
-    role                    VARCHAR,
+    role                    VARCHAR NOT NULL,
     title                   VARCHAR,
     avatar_url              VARCHAR,
     bio                     TEXT,

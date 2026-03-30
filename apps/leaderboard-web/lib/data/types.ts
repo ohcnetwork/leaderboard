@@ -6,7 +6,7 @@ export interface LeaderboardEntry {
   username: string;
   name: string | null;
   avatar_url: string | null;
-  role: string | null;
+  role: string;
   total_points: number;
   activity_count: number;
   activity_breakdown?: Record<string, { count: number; points: number }>;
@@ -27,4 +27,3 @@ export interface ContributorActivity {
   points: number | null;
   meta: Record<string, unknown> | null;
 }
-

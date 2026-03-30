@@ -310,7 +310,7 @@ export default function LeaderboardView({
             <div className="space-y-4">
               {filteredEntries.map((entry, index) => {
                 const rank = index + 1;
-                const isTopThree = rank <= 3;
+                const isTopThree = rank <= 3 && !searchQuery.trim();
 
                 return (
                   <Card
@@ -324,7 +324,7 @@ export default function LeaderboardView({
                       <div className="flex items-center gap-6">
                         {/* Rank */}
                         <div className="flex items-center justify-center size-12 shrink-0">
-                          {getRankIcon(rank) || (
+                          {(!searchQuery.trim() && getRankIcon(rank)) || (
                             <span className="text-2xl font-bold text-muted-foreground">
                               {rank}
                             </span>

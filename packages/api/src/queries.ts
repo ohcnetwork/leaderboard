@@ -163,7 +163,7 @@ export const contributorQueries = {
       username: string;
       name: string | null;
       avatar_url: string | null;
-      role: string | null;
+      role: string;
       totalPoints: number;
     }>
   > {
@@ -196,7 +196,7 @@ export const contributorQueries = {
       username: string;
       name: string | null;
       avatar_url: string | null;
-      role: string | null;
+      role: string;
       totalPoints: number;
     }>;
   },
@@ -604,7 +604,7 @@ export const activityQueries = {
       username: string;
       name: string | null;
       avatar_url: string | null;
-      role: string | null;
+      role: string;
       total_points: number;
       activity_count: number;
     }>
@@ -640,7 +640,7 @@ export const activityQueries = {
       username: string;
       name: string | null;
       avatar_url: string | null;
-      role: string | null;
+      role: string;
       total_points: number;
       activity_count: number;
     }>;
@@ -660,7 +660,7 @@ export const activityQueries = {
       contributor: string;
       contributor_name: string | null;
       contributor_avatar_url: string | null;
-      contributor_role: string | null;
+      contributor_role: string;
       activity_definition: string;
       activity_name: string;
       activity_description: string | null;
@@ -699,7 +699,7 @@ export const activityQueries = {
       contributor: string;
       contributor_name: string | null;
       contributor_avatar_url: string | null;
-      contributor_role: string | null;
+      contributor_role: string;
       activity_definition: string;
       activity_name: string;
       activity_description: string | null;

@@ -71,7 +71,7 @@ export async function getActivities(
     startDate?: string;
     endDate?: string;
     definition?: string;
-  } = {}
+  } = {},
 ) {
   const db = getDatabase();
 
@@ -79,7 +79,7 @@ export async function getActivities(
     return await activityQueries.getByContributor(
       db,
       options.contributor,
-      options.limit
+      options.limit,
     );
   }
 
@@ -87,7 +87,7 @@ export async function getActivities(
     return await activityQueries.getByDateRange(
       db,
       options.startDate,
-      options.endDate
+      options.endDate,
     );
   }
 
@@ -106,7 +106,7 @@ export async function getContributorStats(username: string) {
 
   const totalPoints = await activityQueries.getTotalPointsByContributor(
     db,
-    username
+    username,
   );
   const activities = await activityQueries.getByContributor(db, username);
 
@@ -130,7 +130,7 @@ export async function getRecentActivitiesGroupedByType(days: number = 7) {
   const activities = await activityQueries.getRecentActivitiesEnriched(
     db,
     startDate.toISOString(),
-    endDate.toISOString()
+    endDate.toISOString(),
   );
 
   // Group activities by definition (still need JS grouping for nested structure)
@@ -145,7 +145,7 @@ export async function getRecentActivitiesGroupedByType(days: number = 7) {
         contributor: string;
         contributor_name: string | null;
         contributor_avatar_url: string | null;
-        contributor_role: string | null;
+        contributor_role: string;
         title: string | null;
         occured_at: string;
         link: string | null;
@@ -220,7 +220,7 @@ export async function getContributorProfile(username: string) {
   const activities = await activityQueries.getByContributor(db, username);
   const totalPoints = await activityQueries.getTotalPointsByContributor(
     db,
-    username
+    username,
   );
 
   const activityDefinitions = await activityDefinitionQueries.getAll(db);
@@ -229,7 +229,7 @@ export async function getContributorProfile(username: string) {
   // Use optimized query to group activities by date
   const activityCountsByDate = await activityQueries.getActivityCountByDate(
     db,
-    username
+    username,
   );
   const activityByDate: Record<string, number> = {};
   for (const { date, count } of activityCountsByDate) {
@@ -268,7 +268,7 @@ export async function listActivityDefinitions() {
  */
 export async function getContributorAggregates(
   username: string,
-  slugs: string[]
+  slugs: string[],
 ) {
   const db = getDatabase();
 
@@ -276,7 +276,7 @@ export async function getContributorAggregates(
   return await contributorAggregateQueries.getByContributorEnriched(
     db,
     username,
-    slugs
+    slugs,
   );
 }
 
@@ -298,7 +298,7 @@ export async function getAllContributorsWithAvatars(hiddenRoles: string[]) {
  */
 export async function getLeaderboard(
   startDate?: string | Date,
-  endDate?: string | Date
+  endDate?: string | Date,
 ) {
   const db = getDatabase();
 
@@ -312,7 +312,7 @@ export async function getLeaderboard(
     db,
     undefined,
     startDateStr,
-    endDateStr
+    endDateStr,
   );
 }
 
@@ -322,7 +322,7 @@ export async function getLeaderboard(
 export async function getTopContributorsByActivity(
   startDate?: string | Date,
   endDate?: string | Date,
-  activitySlugs?: string[]
+  activitySlugs?: string[],
 ) {
   if (!activitySlugs || activitySlugs.length === 0) {
     return {};
@@ -352,7 +352,7 @@ export async function getTopContributorsByActivity(
       activitySlug,
       startDateStr,
       endDateStr,
-      10 // Top 10
+      10, // Top 10
     );
 
     result[activitySlug] = topContributors;
@@ -373,7 +373,7 @@ export async function getAllBadgeDefinitions() {
  * Get all badges earned by a contributor
  */
 export async function getContributorBadges(
-  username: string
+  username: string,
 ): Promise<ContributorBadge[]> {
   const db = getDatabase();
   return await contributorBadgeQueries.getByContributor(db, username);
@@ -399,7 +399,7 @@ export async function getRecentBadgeAchievements(limit: number = 20): Promise<
   // Use optimized query with JOINs to get all data in one query
   const enrichedBadges = await contributorBadgeQueries.getRecentEnriched(
     db,
-    limit
+    limit,
   );
 
   return enrichedBadges;

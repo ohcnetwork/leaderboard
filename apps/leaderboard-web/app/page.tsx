@@ -36,12 +36,12 @@ export default async function Home() {
   // Calculate built-in stats
   const totalActivities = activityGroups.reduce(
     (sum, group) => sum + group.activities.length,
-    0
+    0,
   );
   const uniqueContributors = new Set(
     activityGroups.flatMap((group) =>
-      group.activities.map((a) => a.contributor)
-    )
+      group.activities.map((a) => a.contributor),
+    ),
   ).size;
   const totalActivityTypes = activityGroups.length;
 
@@ -54,10 +54,10 @@ export default async function Home() {
 
   // Separate built-in and database aggregates
   const builtinSlugs = configuredAggregates.filter(
-    (slug) => slug in BUILTIN_GLOBAL_AGGREGATES
+    (slug) => slug in BUILTIN_GLOBAL_AGGREGATES,
   );
   const dbAggregatesSlugs = configuredAggregates.filter(
-    (slug) => !(slug in BUILTIN_GLOBAL_AGGREGATES)
+    (slug) => !(slug in BUILTIN_GLOBAL_AGGREGATES),
   );
 
   // Fetch database aggregates
@@ -209,11 +209,9 @@ export default async function Home() {
                           >
                             {activity.contributor_name || activity.contributor}
                           </Link>
-                          {activity.contributor_role && (
-                            <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                              {activity.contributor_role}
-                            </span>
-                          )}
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                            {activity.contributor_role}
+                          </span>
                           <RelativeTime
                             date={activity.occured_at}
                             className="text-sm text-muted-foreground"

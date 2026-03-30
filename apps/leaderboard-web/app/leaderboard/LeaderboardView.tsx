@@ -61,7 +61,7 @@ export default function LeaderboardView({
     // Default: exclude hidden roles
     const allRoles = new Set<string>();
     entries.forEach((entry) => {
-      if (entry.role && !hiddenRoles.includes(entry.role)) {
+      if (!hiddenRoles.includes(entry.role)) {
         allRoles.add(entry.role);
       }
     });
@@ -72,9 +72,7 @@ export default function LeaderboardView({
   const availableRoles = useMemo(() => {
     const roles = new Set<string>();
     entries.forEach((entry) => {
-      if (entry.role) {
-        roles.add(entry.role);
-      }
+      roles.add(entry.role);
     });
     return Array.from(roles).sort();
   }, [entries]);
@@ -85,9 +83,7 @@ export default function LeaderboardView({
 
     // Filter by roles
     if (selectedRoles.size > 0) {
-      filtered = filtered.filter(
-        (entry) => entry.role && selectedRoles.has(entry.role)
-      );
+      filtered = filtered.filter((entry) => selectedRoles.has(entry.role));
     }
 
     // Filter by search query
@@ -142,7 +138,7 @@ export default function LeaderboardView({
       const filteredContributors = contributors.filter((contributor) => {
         // Find the contributor in entries to get their role
         const entry = entries.find((e) => e.username === contributor.username);
-        return entry?.role && selectedRoles.has(entry.role);
+        return entry && selectedRoles.has(entry.role);
       });
 
       if (filteredContributors.length > 0) {
@@ -273,7 +269,7 @@ export default function LeaderboardView({
                 "px-4 py-2 font-medium transition-colors border-b-2",
                 period === "week"
                   ? "border-primary text-primary"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
+                  : "border-transparent text-muted-foreground hover:text-foreground",
               )}
             >
               Week
@@ -284,7 +280,7 @@ export default function LeaderboardView({
                 "px-4 py-2 font-medium transition-colors border-b-2",
                 period === "month"
                   ? "border-primary text-primary"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
+                  : "border-transparent text-muted-foreground hover:text-foreground",
               )}
             >
               Month
@@ -295,7 +291,7 @@ export default function LeaderboardView({
                 "px-4 py-2 font-medium transition-colors border-b-2",
                 period === "year"
                   ? "border-primary text-primary"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
+                  : "border-transparent text-muted-foreground hover:text-foreground",
               )}
             >
               Year
@@ -322,7 +318,7 @@ export default function LeaderboardView({
                     key={entry.username}
                     className={cn(
                       "transition-all hover:shadow-md",
-                      isTopThree && "border-primary/50"
+                      isTopThree && "border-primary/50",
                     )}
                   >
                     <CardContent>
@@ -357,11 +353,9 @@ export default function LeaderboardView({
                                 {entry.name || entry.username}
                               </h3>
                             </Link>
-                            {entry.role && (
-                              <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
-                                {entry.role}
-                              </span>
-                            )}
+                            <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
+                              {entry.role}
+                            </span>
                           </div>
                           <Link
                             href={`/${entry.username}`}
@@ -373,26 +367,27 @@ export default function LeaderboardView({
 
                           {/* Activity Breakdown */}
                           <div className="flex flex-wrap gap-3">
-                            {entry.activity_breakdown && Object.entries(entry.activity_breakdown)
-                              .sort((a, b) => b[1].points - a[1].points)
-                              .map(([activityName, data]) => (
-                                <div
-                                  key={activityName}
-                                  className="text-xs bg-muted px-3 py-1 rounded-full"
-                                >
-                                  <span className="font-medium">
-                                    {activityName}:
-                                  </span>{" "}
-                                  <span className="text-muted-foreground">
-                                    {data.count}
-                                  </span>
-                                  {data.points > 0 && (
-                                    <span className="text-primary ml-1">
-                                      (+{data.points})
+                            {entry.activity_breakdown &&
+                              Object.entries(entry.activity_breakdown)
+                                .sort((a, b) => b[1].points - a[1].points)
+                                .map(([activityName, data]) => (
+                                  <div
+                                    key={activityName}
+                                    className="text-xs bg-muted px-3 py-1 rounded-full"
+                                  >
+                                    <span className="font-medium">
+                                      {activityName}:
+                                    </span>{" "}
+                                    <span className="text-muted-foreground">
+                                      {data.count}
                                     </span>
-                                  )}
-                                </div>
-                              ))}
+                                    {data.points > 0 && (
+                                      <span className="text-primary ml-1">
+                                        (+{data.points})
+                                      </span>
+                                    )}
+                                  </div>
+                                ))}
                           </div>
                         </div>
 
@@ -487,7 +482,7 @@ export default function LeaderboardView({
                         </div>
                       </CardContent>
                     </Card>
-                  )
+                  ),
                 )}
               </div>
             </div>

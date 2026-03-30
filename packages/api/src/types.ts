@@ -138,7 +138,7 @@ export interface PluginManifest {
 export interface Contributor {
   username: string;
   name: string | null;
-  role: string | null;
+  role: string;
   title: string | null;
   avatar_url: string | null;
   bio: string | null;

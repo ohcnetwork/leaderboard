@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { getAllContributorsWithAvatars } from "@/lib/data/loader";
 import { getConfig } from "@/lib/config/get-config";
 import { getHiddenRoles, getVisibleRolesOrdered } from "@/lib/config/helpers";
@@ -29,10 +30,12 @@ export default async function PeoplePage() {
   const roles = getVisibleRolesOrdered();
 
   return (
-    <PeopleView
-      contributors={contributors}
-      roles={roles}
-      orgName={config.org.name}
-    />
+    <Suspense>
+      <PeopleView
+        contributors={contributors}
+        roles={roles}
+        orgName={config.org.name}
+      />
+    </Suspense>
   );
 }

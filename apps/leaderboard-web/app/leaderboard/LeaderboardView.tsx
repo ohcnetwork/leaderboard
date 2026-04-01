@@ -181,7 +181,7 @@ export default function LeaderboardView({
             </h1>
             <p className="text-sm text-muted-foreground">
               {filteredEntries.length} of {entries.length} contributors
-              {(selectedRoles.size > 0 || searchQuery) && " (filtered)"}
+              {(searchParams.get("roles") || searchQuery) && " (filtered)"}
             </p>
           </div>
 
@@ -202,7 +202,7 @@ export default function LeaderboardView({
             {/* Role Filter */}
             {availableRoles.length > 0 && (
               <>
-                {(selectedRoles.size > 0 || searchQuery) && (
+                {(searchParams.get("roles") || searchQuery) && (
                   <Button
                     variant="ghost"
                     size="sm"

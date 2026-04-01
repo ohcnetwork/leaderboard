@@ -174,28 +174,28 @@ export default function LeaderboardView({
     <div className="container mx-auto px-4 py-8">
       {/* Header */}
       <div className="mb-8">
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between mb-4">
           <div>
-            <h1 className="text-2xl font-bold mb-2">
+            <h1 className="text-xl sm:text-2xl font-bold mb-2">
               {formattedStartDate} – {formattedEndDate}
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               {filteredEntries.length} of {entries.length} contributors
               {(selectedRoles.size > 0 || searchQuery) && " (filtered)"}
             </p>
           </div>
 
           {/* Filters */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-full sm:w-auto">
             {/* Search Bar */}
-            <div className="relative">
+            <div className="relative flex-1 sm:flex-none">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
                 type="text"
                 placeholder="Search contributors..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 h-9 w-64"
+                className="pl-9 h-9 w-full sm:w-64"
               />
             </div>
 
@@ -217,7 +217,7 @@ export default function LeaderboardView({
                   <PopoverTrigger asChild>
                     <Button variant="outline" size="sm" className="h-9">
                       <Filter className="h-4 w-4 mr-2" />
-                      Role
+                      <span className="hidden sm:block">Role</span>
                       {selectedRoles.size > 0 && (
                         <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
                           {selectedRoles.size}
@@ -261,7 +261,7 @@ export default function LeaderboardView({
         {/* Main Content */}
         <div className="flex-1 min-w-0">
           {/* Period Selector */}
-          <div className="flex gap-2 mb-4 border-b">
+          <div className="flex gap-2 mb-4 border-b justify-evenly sm:justify-start">
             <Link
               href="/leaderboard/week"
               className={cn(

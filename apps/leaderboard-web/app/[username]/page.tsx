@@ -420,20 +420,20 @@ export default async function ContributorPage({
                     className="flex flex-col items-center gap-2"
                   >
                     <div
-                      className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer relative group"
+                      className="w-16 h-16 rounded-full bg-linear-to-br from-badge-accent to-badge-accent/70 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer relative group"
                       title={`${badge.badge} - ${badge.variant}`}
                     >
                       {badge.variant !== "bronze" && (
-                        <span className="absolute -bottom-1 -right-1 bg-white text-amber-700 text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-amber-600 capitalize">
+                        <span className="absolute -bottom-1 -right-1 bg-card text-badge-accent text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-badge-accent capitalize">
                           {badge.variant.charAt(0)}
                         </span>
                       )}
-                      <div className="absolute bottom-full mb-2 hidden group-hover:block z-10 w-48 p-2 bg-gray-900 text-white text-xs rounded shadow-lg">
+                      <div className="absolute bottom-full mb-2 hidden group-hover:block z-10 w-48 p-2 bg-popover text-popover-foreground text-xs rounded shadow-lg border border-border">
                         <div className="font-bold">{badge.badge}</div>
-                        <div className="text-gray-300 mt-1 capitalize">
+                        <div className="text-muted-foreground mt-1 capitalize">
                           {badge.variant}
                         </div>
-                        <div className="text-gray-400 mt-1 text-xs">
+                        <div className="text-muted-foreground/70 mt-1 text-xs">
                           Earned: {new Date(badge.achieved_on).toLocaleDateString()}
                         </div>
                       </div>

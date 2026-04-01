@@ -67,7 +67,7 @@ export default function NavHeader({
   return (
     <>
       {/* Mobile Top Bar - logo + actions only */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 border-b border-zinc-200/60 dark:border-white/10 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md">
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="px-4 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <Image
@@ -113,7 +113,7 @@ export default function NavHeader({
         {/* Expanded full navbar */}
         <div
           className={cn(
-            "rounded-full border border-zinc-200/60 dark:border-white/10 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md shadow-md transition-all duration-500 ease-in-out overflow-hidden",
+            "rounded-full border border-border bg-background/40 backdrop-blur-md shadow-md transition-all duration-500 ease-in-out overflow-hidden",
             isCollapsed
               ? "opacity-0 scale-95 h-0 pointer-events-none"
               : "opacity-100 scale-100 h-14",
@@ -133,7 +133,7 @@ export default function NavHeader({
             </Link>
 
             {/* Nav Links - centered pill container */}
-            <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1 bg-white/30 dark:bg-zinc-950/30 backdrop-blur-md">
+            <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1 bg-background/30 backdrop-blur-md">
               {navItems.map((item) => {
                 const active = isActive(item.href);
                 return (
@@ -180,7 +180,7 @@ export default function NavHeader({
         {/* Collapsed pill navbar */}
         <div
           className={cn(
-            "flex items-center gap-1 rounded-full border border-zinc-200 dark:border-white/10 bg-background/90 backdrop-blur-xl shadow-xl p-1 transition-all duration-500 ease-in-out justify-evenly",
+            "flex items-center gap-1 rounded-full border border-border bg-background/90 backdrop-blur-xl shadow-xl p-1 transition-all duration-500 ease-in-out justify-evenly",
             isCollapsed
               ? "opacity-100 scale-100"
               : "opacity-0 scale-95 pointer-events-none h-0 overflow-hidden p-0 border-0",
@@ -197,7 +197,7 @@ export default function NavHeader({
                   "flex items-center justify-center px-3 py-2 rounded-full transition-all",
                   active
                     ? "bg-primary/20 text-primary dark:text-primary"
-                    : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100",
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 <Icon className="h-5 w-5" />
@@ -209,7 +209,7 @@ export default function NavHeader({
 
       {/* Mobile Bottom Navbar - always visible */}
       <nav className="lg:hidden fixed left-1/2 -translate-x-1/2 z-50 bottom-1">
-        <div className="flex items-center gap-2 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl px-3 py-2">
+        <div className="flex items-center gap-2 rounded-2xl bg-card border border-border shadow-2xl px-3 py-2">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.href);
@@ -221,7 +221,7 @@ export default function NavHeader({
                   "flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-xl transition-all min-w-12",
                   active
                     ? "bg-primary/15 text-primary"
-                    : "text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200",
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 <Icon className={cn("h-5 w-5", active && "stroke-[2.5]")} />

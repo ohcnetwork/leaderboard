@@ -154,15 +154,15 @@ export default function LeaderboardView({
   const getRankIcon = (rank: number) => {
     if (rank === 1)
       return (
-        <Trophy className="h-6 w-6 text-yellow-500" aria-label="1st place" />
+        <Trophy className="h-6 w-6 text-medal-gold" aria-label="1st place" />
       );
     if (rank === 2)
       return (
-        <Trophy className="h-6 w-6 text-gray-400" aria-label="2nd place" />
+        <Trophy className="h-6 w-6 text-medal-silver" aria-label="2nd place" />
       );
     if (rank === 3)
       return (
-        <Trophy className="h-6 w-6 text-amber-600" aria-label="3rd place" />
+        <Trophy className="h-6 w-6 text-medal-bronze" aria-label="3rd place" />
       );
     return null;
   };

@@ -40,8 +40,8 @@ export default async function BadgesPage() {
     <div className="container mx-auto px-4 py-8">
       {/* Hero Section */}
       <div className="mb-12 text-center">
-        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 mb-4">
-          <Trophy className="h-10 w-10 text-white" />
+        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-linear-to-br from-badge-accent to-badge-accent/70 mb-4">
+          <Trophy className="h-10 w-10 text-badge-accent-foreground" />
         </div>
         <h1 className="text-4xl font-bold mb-4">Achievement Badges</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -128,9 +128,9 @@ export default async function BadgesPage() {
                       .map(([variantKey, variant]) => (
                         <div
                           key={variantKey}
-                          className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 dark:bg-gray-800"
+                          className="flex items-center gap-3 p-3 rounded-lg bg-muted/50"
                         >
-                          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                          <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
                             {variant.svg_url ? (
                               <img
                                 src={variant.svg_url}
@@ -138,7 +138,7 @@ export default async function BadgesPage() {
                                 className="w-full h-full object-cover"
                               />
                             ) : (
-                              <div className="w-full h-full bg-gradient-to-br from-amber-400 to-amber-600" />
+                              <div className="w-full h-full bg-linear-to-br from-badge-accent to-badge-accent/70" />
                             )}
                           </div>
                           <div className="flex-1">
@@ -191,7 +191,7 @@ export default async function BadgesPage() {
                   <Link
                     key={earner.username}
                     href={`/${earner.username}`}
-                    className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    className="flex items-center gap-4 p-3 rounded-lg hover:bg-accent/50 transition-colors"
                   >
                     <div className="text-2xl font-bold text-muted-foreground w-8">
                       #{index + 1}
@@ -216,7 +216,7 @@ export default async function BadgesPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Trophy className="h-5 w-5 text-amber-500" />
+                      <Trophy className="h-5 w-5 text-medal-gold" />
                       <span className="text-lg font-bold">
                         {earner.badge_count}
                       </span>

@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, PT_Serif, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { RootProvider } from "fumadocs-ui/provider/next";
@@ -6,15 +6,32 @@ import type { Metadata } from "next";
 import { getConfig } from "@/lib/config/get-config";
 import NavHeader from "./NavHeader";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = Space_Grotesk({
   subsets: ["latin"],
+  variable: "--font-sans",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontSerif = PT_Serif({
   subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400", "700"],
 });
+
+const fontMono = Space_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "700"],
+});
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 // Get config for metadata
 const config = getConfig();
@@ -47,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"

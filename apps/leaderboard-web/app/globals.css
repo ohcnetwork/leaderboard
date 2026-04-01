@@ -40,6 +40,22 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-medal-gold: var(--medal-gold);
+  --color-medal-silver: var(--medal-silver);
+  --color-medal-bronze: var(--medal-bronze);
+
+  --color-badge-accent: var(--badge-accent);
+  --color-badge-accent-foreground: var(--badge-accent-foreground);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-chart-9: var(--chart-9);
+  --color-chart-10: var(--chart-10);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -79,6 +95,26 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Medal colors for leaderboard rankings */
+  --medal-gold: oklch(0.795 0.184 86.047);
+  --medal-silver: oklch(0.704 0 0);
+  --medal-bronze: oklch(0.666 0.123 49.769);
+
+  /* Badge accent — used for badge fallback gradients, badge indicators */
+  --badge-accent: oklch(0.795 0.184 86.047);
+  --badge-accent-foreground: oklch(0.985 0 0);
+
+  /* Semantic status colors for progress/state */
+  --success: oklch(0.723 0.191 149.579);
+  --success-foreground: oklch(0.985 0 0);
+
+  /* Extended chart palette beyond chart-1..chart-5 */
+  --chart-6: oklch(0.645 0.246 16.439);
+  --chart-7: oklch(0.627 0.265 303.9);
+  --chart-8: oklch(0.769 0.188 70.08);
+  --chart-9: oklch(0.696 0.17 162.48);
+  --chart-10: oklch(0.488 0.243 264.376);
 
   /* Fumadocs: Set nav height to match our custom header */
   --fd-nav-height: 4rem;
@@ -130,6 +166,22 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --medal-gold: oklch(0.795 0.184 86.047);
+  --medal-silver: oklch(0.704 0 0);
+  --medal-bronze: oklch(0.666 0.123 49.769);
+
+  --badge-accent: oklch(0.795 0.184 86.047);
+  --badge-accent-foreground: oklch(0.985 0 0);
+
+  --success: oklch(0.723 0.191 149.579);
+  --success-foreground: oklch(0.985 0 0);
+
+  --chart-6: oklch(0.769 0.188 70.08);
+  --chart-7: oklch(0.627 0.265 303.9);
+  --chart-8: oklch(0.645 0.246 16.439);
+  --chart-9: oklch(0.696 0.17 162.48);
+  --chart-10: oklch(0.488 0.243 264.376);
 }
 
 @layer base {

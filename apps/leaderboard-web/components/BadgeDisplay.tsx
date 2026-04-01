@@ -64,24 +64,24 @@ export function BadgeDisplay({
           />
         ) : (
           /* Fallback gradient */
-          <div className="w-full h-full bg-gradient-to-br from-amber-400 to-amber-600" />
+          <div className="w-full h-full bg-linear-to-br from-badge-accent to-badge-accent/70" />
         )}
 
         {/* Variant indicator */}
         {badge.variant !== "bronze" && badge.variant !== "default" && (
-          <span className="absolute -bottom-1 -right-1 bg-white text-amber-700 text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-amber-600 capitalize">
+          <span className="absolute -bottom-1 -right-1 bg-card text-badge-accent text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-badge-accent capitalize">
             {badge.variant.charAt(0).toUpperCase()}
           </span>
         )}
 
         {/* Tooltip on hover */}
         {showDetails && (
-          <div className="absolute bottom-full mb-2 hidden group-hover:block z-10 w-48 p-2 bg-gray-900 text-white text-xs rounded shadow-lg">
+          <div className="absolute bottom-full mb-2 hidden group-hover:block z-10 w-48 p-2 bg-popover text-popover-foreground text-xs rounded shadow-lg border border-border">
             <div className="font-bold">{badge.badge_name || badge.badge}</div>
-            <div className="text-gray-300 mt-1 capitalize">
+            <div className="text-muted-foreground mt-1 capitalize">
               {variant?.description || badge.variant}
             </div>
-            <div className="text-gray-400 mt-1 text-xs">
+            <div className="text-muted-foreground/70 mt-1 text-xs">
               Earned: {achievedDate.toLocaleDateString()}
             </div>
           </div>
@@ -92,7 +92,7 @@ export function BadgeDisplay({
         <div className="text-center">
           <div className="font-medium text-sm">{badge.badge_name || badge.badge}</div>
           {badge.variant !== "default" && (
-            <div className="text-xs text-gray-500 capitalize">{badge.variant}</div>
+            <div className="text-xs text-muted-foreground capitalize">{badge.variant}</div>
           )}
         </div>
       )}
@@ -128,7 +128,7 @@ export function BadgeGrid({
 }: BadgeGridProps) {
   if (badges.length === 0) {
     return (
-      <div className="text-center py-8 text-gray-500">
+      <div className="text-center py-8 text-muted-foreground">
         <div className="text-4xl mb-2">🏆</div>
         <div>No badges earned yet</div>
       </div>
@@ -206,7 +206,7 @@ export function BadgeProgress({
       <div className="flex items-center gap-3">
         <div>
           <h4 className="font-semibold">{badgeDefinition.name}</h4>
-          <p className="text-sm text-gray-600">{badgeDefinition.description}</p>
+          <p className="text-sm text-muted-foreground">{badgeDefinition.description}</p>
         </div>
       </div>
 
@@ -220,13 +220,13 @@ export function BadgeProgress({
               key={variantKey}
               className={`flex items-center gap-3 p-2 rounded ${
                 isEarned
-                  ? "bg-green-50 border border-green-200"
+                  ? "bg-success/10 border border-success/30"
                   : isNext
-                  ? "bg-blue-50 border border-blue-200"
-                  : "bg-gray-50 border border-gray-200"
+                  ? "bg-primary/10 border border-primary/30"
+                  : "bg-muted/50 border border-border"
               }`}
             >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-sm">
+              <div className="w-8 h-8 rounded-full bg-linear-to-br from-badge-accent to-badge-accent/70 flex items-center justify-center text-sm text-badge-accent-foreground">
                 {isEarned ? "✓" : variantKey}
               </div>
               <div className="flex-1">
@@ -234,9 +234,9 @@ export function BadgeProgress({
                 {isNext && currentProgress && (
                   <div className="mt-1">
                     <div className="flex items-center gap-2 text-xs">
-                      <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div className="flex-1 bg-muted rounded-full h-2">
                         <div
-                          className="bg-blue-600 h-2 rounded-full transition-all"
+                          className="bg-primary h-2 rounded-full transition-all"
                           style={{
                             width: `${Math.min(
                               100,
@@ -247,7 +247,7 @@ export function BadgeProgress({
                           }}
                         />
                       </div>
-                      <span className="text-gray-600">
+                      <span className="text-muted-foreground">
                         {currentProgress.current} / {currentProgress.required}
                       </span>
                     </div>
@@ -288,7 +288,7 @@ export function RecentBadgeAchievement({
   const variant = achievement.badge_variants[achievement.variant];
 
   return (
-    <div className="flex items-center gap-3 p-3 rounded-lg border hover:bg-gray-50 transition-colors">
+    <div className="flex items-center gap-3 p-3 rounded-lg border hover:bg-accent/50 transition-colors">
       {achievement.contributor_avatar_url ? (
         <img
           src={achievement.contributor_avatar_url}
@@ -296,13 +296,13 @@ export function RecentBadgeAchievement({
           className="w-10 h-10 rounded-full"
         />
       ) : (
-        <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
+        <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
           <span className="text-lg">👤</span>
         </div>
       )}
 
       {/* Badge Icon */}
-      <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+      <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
         {variant?.svg_url ? (
           <img
             src={variant.svg_url}
@@ -310,7 +310,7 @@ export function RecentBadgeAchievement({
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-amber-400 to-amber-600" />
+          <div className="w-full h-full bg-linear-to-br from-badge-accent to-badge-accent/70" />
         )}
       </div>
 
@@ -318,7 +318,7 @@ export function RecentBadgeAchievement({
         <div className="text-sm font-medium truncate">
           {achievement.contributor_name || achievement.contributor}
         </div>
-        <div className="text-xs text-gray-500">
+        <div className="text-xs text-muted-foreground">
           earned{" "}
           <span className="font-medium capitalize">
             {achievement.badge_name} ({achievement.variant})
@@ -326,7 +326,7 @@ export function RecentBadgeAchievement({
         </div>
       </div>
 
-      <div className="text-xs text-gray-400">
+      <div className="text-xs text-muted-foreground/70">
         {achievedDate.toLocaleDateString()}
       </div>
     </div>

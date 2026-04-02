@@ -73,15 +73,18 @@ export default function ActivityBreakdown({
 
   // Recalculate breakdown based on filtered activities
   const filteredBreakdown = useMemo(() => {
-    return filteredActivities.reduce((acc, activity) => {
-      const key = activity.activity_definition_name;
-      if (!acc[key]) {
-        acc[key] = { count: 0, points: 0 };
-      }
-      acc[key].count += 1;
-      acc[key].points += activity.points;
-      return acc;
-    }, {} as Record<string, { count: number; points: number }>);
+    return filteredActivities.reduce(
+      (acc, activity) => {
+        const key = activity.activity_definition_name;
+        if (!acc[key]) {
+          acc[key] = { count: 0, points: 0 };
+        }
+        acc[key].count += 1;
+        acc[key].points += activity.points;
+        return acc;
+      },
+      {} as Record<string, { count: number; points: number }>,
+    );
   }, [filteredActivities]);
 
   const entries = Object.entries(filteredBreakdown)
@@ -90,7 +93,7 @@ export default function ActivityBreakdown({
 
   const totalActivities = entries.reduce(
     (sum, [, data]) => sum + data.count,
-    0
+    0,
   );
   const totalPoints = entries.reduce((sum, [, data]) => sum + data.points, 0);
 
@@ -138,7 +141,7 @@ export default function ActivityBreakdown({
       }
 
       const existingDay = trendMap[activityName].find(
-        (d) => d.date === dateKey
+        (d) => d.date === dateKey,
       );
       if (existingDay) {
         existingDay.count += 1;
@@ -205,7 +208,7 @@ export default function ActivityBreakdown({
                       <div
                         className={cn(
                           "transition-all hover:opacity-80 cursor-pointer",
-                          COLORS[index % COLORS.length]
+                          COLORS[index % COLORS.length],
                         )}
                         style={{ width: `${percentage}%` }}
                       />
@@ -233,12 +236,12 @@ export default function ActivityBreakdown({
               return (
                 <div
                   key={activityName}
-                  className="flex items-center gap-3 p-3 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-lg border bg-card hover:bg-secondary/50 transition-colors"
                 >
                   <div
                     className={cn(
                       "w-4 h-4 rounded shrink-0",
-                      COLORS[index % COLORS.length]
+                      COLORS[index % COLORS.length],
                     )}
                   />
                   <div className="flex-1 min-w-0">

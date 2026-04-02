@@ -358,6 +358,20 @@ export const activityQueries = {
   },
 
   /**
+   * Get raw activities by contributor. No points coalescing.
+   */
+  async getRawByContributor(
+    db: Database,
+    username: string,
+  ): Promise<Activity[]> {
+    const result = await db.execute(
+      `SELECT * FROM activity WHERE contributor = ?`,
+      [username],
+    );
+    return result.rows.map(parseActivity);
+  },
+
+  /**
    * Get activities by date range
    */
   async getByDateRange(

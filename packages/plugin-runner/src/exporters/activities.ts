@@ -17,7 +17,7 @@ import type { Logger } from "@ohcnetwork/leaderboard-api";
 export async function exportActivities(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<number> {
   const activitiesDir = join(dataDir, "activities", "contributors");
   await mkdir(activitiesDir, { recursive: true });
@@ -28,9 +28,9 @@ export async function exportActivities(
   let totalExported = 0;
 
   for (const contributor of contributors) {
-    const activities = await activityQueries.getByContributor(
+    const activities = await activityQueries.getRawByContributor(
       db,
-      contributor.username
+      contributor.username,
     );
 
     if (activities.length === 0) {
@@ -43,7 +43,7 @@ export async function exportActivities(
     await writeFile(filePath, content, "utf-8");
 
     logger.debug(
-      `Exported ${activities.length} activities for ${contributor.username}`
+      `Exported ${activities.length} activities for ${contributor.username}`,
     );
     totalExported += activities.length;
   }

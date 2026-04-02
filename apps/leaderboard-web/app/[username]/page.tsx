@@ -8,7 +8,7 @@ import {
 import { notFound } from "next/navigation";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { generateActivityGraphData, formatAggregateValue } from "@/lib/utils";
+import { formatAggregateValue } from "@/lib/utils";
 import { getConfig } from "@/lib/config/get-config";
 import ActivityOverview from "./ActivityOverview";
 import ActivityBreakdown from "./ActivityBreakdown";
@@ -168,7 +168,7 @@ export default async function ContributorPage({
   );
 
   const [
-    { contributor, activities, totalPoints, activityByDate },
+    { contributor, activities, totalPoints },
     activityDefinitions,
     dbAggregates,
     badges,
@@ -182,8 +182,6 @@ export default async function ContributorPage({
   if (!contributor) {
     notFound();
   }
-
-  const activityGraphData = generateActivityGraphData(activityByDate, 365);
 
   // Convert bio markdown to HTML
   const bioHtml = contributor.bio ? await marked.parse(contributor.bio) : null;
@@ -397,13 +395,11 @@ export default async function ContributorPage({
 
         {/* Activity Overview */}
         <ActivityOverview
-          data={activityGraphData}
           activities={activities.map((a) => ({
             activity_definition_name: a.activity_name,
             occured_at: a.occured_at,
           }))}
           activityDefinitions={activityDefinitions}
-          totalActivities={activities.length}
         />
 
         {/* Badges Section */}

@@ -23,12 +23,15 @@ export function getVisibleRoles(): string[] {
 }
 
 /**
- * Get a mapping of role slugs to their display names
+ * Get a mapping of role slugs to their display name and description
  */
-export function getRoleNames(): Record<string, string> {
+export function getRoles(): Record<string, { name: string; description?: string }> {
   const config = getConfig();
   return Object.fromEntries(
-    Object.entries(config.leaderboard.roles).map(([key, role]) => [key, role.name]),
+    Object.entries(config.leaderboard.roles).map(([key, role]) => [
+      key,
+      { name: role.name, description: role.description },
+    ]),
   );
 }
 

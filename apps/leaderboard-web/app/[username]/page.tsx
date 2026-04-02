@@ -14,7 +14,7 @@ import ActivityOverview from "./ActivityOverview";
 import ActivityBreakdown from "./ActivityBreakdown";
 import ActivityTimeline from "./ActivityTimeline";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
+import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import {
   Calendar,
   Award,
@@ -321,9 +321,11 @@ export default async function ContributorPage({
               <div className="flex flex-wrap gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <Award className="h-4 w-4" />
-                  <Badge variant="secondary" data-contributor-role={contributor.role}>
-                    {config.leaderboard.roles[contributor.role]?.name ?? contributor.role}
-                  </Badge>
+                  <ContributorRoleBadge
+                    role={contributor.role}
+                    roleName={config.leaderboard.roles[contributor.role]?.name}
+                    roleDescription={config.leaderboard.roles[contributor.role]?.description}
+                  />
                 </div>
                 {contributor.social_profiles && (
                   <div className="flex items-center gap-3">

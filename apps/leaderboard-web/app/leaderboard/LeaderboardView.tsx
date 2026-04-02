@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/popover";
 import Link from "next/link";
 import { Trophy, Filter, X } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import { cn } from "@/lib/utils";
 import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -38,7 +38,7 @@ interface LeaderboardViewProps {
     }>
   >;
   hiddenRoles: string[];
-  roleNames: Record<string, string>;
+  roles: Record<string, { name: string; description?: string }>;
 }
 
 export default function LeaderboardView({
@@ -48,7 +48,7 @@ export default function LeaderboardView({
   endDate,
   topByActivity,
   hiddenRoles,
-  roleNames,
+  roles,
 }: LeaderboardViewProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -246,7 +246,7 @@ export default function LeaderboardView({
                               htmlFor={role}
                               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
                             >
-                              {roleNames[role] ?? role}
+                              {roles[role]?.name ?? role}
                             </label>
                           </div>
                         ))}
@@ -355,9 +355,11 @@ export default function LeaderboardView({
                                 {entry.name || entry.username}
                               </h3>
                             </Link>
-                            <Badge variant="secondary" data-contributor-role={entry.role}>
-                              {roleNames[entry.role] ?? entry.role}
-                            </Badge>
+                            <ContributorRoleBadge
+                              role={entry.role}
+                              roleName={roles[entry.role]?.name}
+                              roleDescription={roles[entry.role]?.description}
+                            />
                           </div>
                           <Link
                             href={`/${entry.username}`}

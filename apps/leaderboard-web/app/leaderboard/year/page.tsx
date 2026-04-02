@@ -4,7 +4,7 @@ import {
 } from "@/lib/data/loader";
 import { getDateRange } from "@/lib/utils";
 import { getConfig } from "@/lib/config/get-config";
-import { getHiddenRoles, getRoleNames } from "@/lib/config/helpers";
+import { getHiddenRoles, getRoles } from "@/lib/config/helpers";
 import LeaderboardView from "../LeaderboardView";
 import { Suspense } from "react";
 
@@ -29,7 +29,7 @@ export default async function YearlyLeaderboardPage() {
         endDate={endDate}
         topByActivity={topByActivity}
         hiddenRoles={getHiddenRoles()}
-        roleNames={getRoleNames()}
+        roles={getRoles()}
       />
     </Suspense>
   );

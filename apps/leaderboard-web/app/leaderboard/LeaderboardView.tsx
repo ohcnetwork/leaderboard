@@ -82,27 +82,39 @@ export default function LeaderboardView({
     return Array.from(roles).sort();
   }, [entries]);
 
-  // Filter entries by selected roles and search query
-  const filteredEntries = useMemo(() => {
+  // Filter entries by selected roles (determines rank)
+  const roleFilteredEntries = useMemo(() => {
     let filtered = entries;
 
-    // Filter by roles
     if (selectedRoles.size > 0) {
       filtered = filtered.filter((entry) => selectedRoles.has(entry.role));
     }
 
-    // Filter by search query
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter((entry) => {
-        const name = (entry.name || entry.username).toLowerCase();
-        const username = entry.username.toLowerCase();
-        return name.includes(query) || username.includes(query);
-      });
+    return filtered;
+  }, [entries, selectedRoles]);
+
+  // Build a rank map from role-filtered entries so ranks are preserved during search
+  const rankMap = useMemo(() => {
+    const map = new Map<string, number>();
+    roleFilteredEntries.forEach((entry, index) => {
+      map.set(entry.username, index + 1);
+    });
+    return map;
+  }, [roleFilteredEntries]);
+
+  // Further filter by search query
+  const filteredEntries = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return roleFilteredEntries;
     }
 
-    return filtered;
-  }, [entries, selectedRoles, searchQuery]);
+    const query = searchQuery.toLowerCase();
+    return roleFilteredEntries.filter((entry) => {
+      const name = (entry.name || entry.username).toLowerCase();
+      const username = entry.username.toLowerCase();
+      return name.includes(query) || username.includes(query);
+    });
+  }, [roleFilteredEntries, searchQuery]);
 
   const toggleRole = (role: string) => {
     const newSelected = new Set(selectedRoles);
@@ -311,8 +323,8 @@ export default function LeaderboardView({
             </Card>
           ) : (
             <div className="space-y-4">
-              {filteredEntries.map((entry, index) => {
-                const rank = index + 1;
+              {filteredEntries.map((entry) => {
+                const rank = rankMap.get(entry.username) ?? 0;
                 const isTopThree = rank <= 3 && !searchQuery.trim();
 
                 return (

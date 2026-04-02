@@ -258,6 +258,32 @@ leaderboard:
 
 The theme CSS file can override any CSS variables or classes.
 
+### Role Badge Colors
+
+Role badges render with a `data-contributor-role` attribute set to the role key (e.g., `core`, `intern`, `contributor`). You can customize badge colors per role in your `theme.css`:
+
+```css
+/* Style badges for the "core" role */
+[data-contributor-role="core"] {
+  background-color: oklch(0.65 0.18 145);
+  color: white;
+}
+
+/* Style badges for the "intern" role */
+[data-contributor-role="intern"] {
+  background-color: oklch(0.70 0.15 250);
+  color: white;
+}
+
+/* Style badges for the "contributor" role */
+[data-contributor-role="contributor"] {
+  background-color: oklch(0.75 0.12 60);
+  color: black;
+}
+```
+
+Use any valid CSS for styling — `background-color`, `color`, `border`, etc. The attribute selector `[data-contributor-role="<role_key>"]` matches the role keys defined in your `config.yaml` under `leaderboard.roles`.
+
 ## Validation
 
 Config is validated at runtime using Zod schemas. Invalid configurations will fail with detailed error messages:

@@ -15,7 +15,7 @@ import type { Logger } from "@ohcnetwork/leaderboard-api";
 export async function importContributors(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<number> {
   const contributorsDir = join(dataDir, "contributors");
 
@@ -65,7 +65,7 @@ function parseContributorMarkdown(content: string) {
 
   return {
     name: data.name || null,
-    role: data.role || null,
+    role: data.role,
     title: data.title || null,
     avatar_url: data.avatar_url || null,
     bio: bio.trim() || null,

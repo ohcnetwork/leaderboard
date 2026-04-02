@@ -9,6 +9,7 @@ import RelativeTime from "@/components/RelativeTime";
 import Link from "next/link";
 import { Activity, Users, TrendingUp, LucideIcon } from "lucide-react";
 import { formatAggregateValue } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 // Built-in aggregate definitions for home page
 const BUILTIN_GLOBAL_AGGREGATES = {
@@ -209,9 +210,12 @@ export default async function Home() {
                           >
                             {activity.contributor_name || activity.contributor}
                           </Link>
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                            {activity.contributor_role}
-                          </span>
+                          <Badge
+                            variant="secondary"
+                            data-contributor-role={activity.contributor_role}
+                          >
+                            {config.leaderboard.roles[activity.contributor_role]?.name ?? activity.contributor_role}
+                          </Badge>
                           <RelativeTime
                             date={activity.occured_at}
                             className="text-sm text-muted-foreground"

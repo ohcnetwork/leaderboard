@@ -1,13 +1,12 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -16,34 +15,91 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Filter, X } from "lucide-react";
-import { format } from "date-fns";
+import { format, addDays } from "date-fns";
+import React from "react";
 
 export interface ActivityGraphFilterProps {
   selectedActivityTypes: Set<string>;
   activityTypes: string[];
   toggleActivityType: (type: string) => void;
-  clearFilters: () => void;
+  selectAllTypes: () => void;
+  clearAllTypes: () => void;
   hasActiveFilters: boolean;
 }
 
 interface ActivityGraphProps {
-  data: Array<{ date: string; count: number; level: number }>;
   activities: Array<{
     activity_definition_name: string;
     occured_at: Date | string;
   }>;
-  activityDefinitions: Array<{
-    name: string;
-  }>;
+  activityDefinitions: Array<{ name: string }>;
+  startDate: Date;
+  endDate: Date;
   onFilterChange?: (filterProps: ActivityGraphFilterProps) => void;
 }
 
-// Export the filter button component
+const LEVEL_CSS_VARS = [
+  "var(--activity-graph-0)",
+  "var(--activity-graph-1)",
+  "var(--activity-graph-2)",
+  "var(--activity-graph-3)",
+  "var(--activity-graph-4)",
+] as const;
+
+const DAY_LABELS: Record<number, string> = { 1: "Mon", 3: "Wed", 5: "Fri" };
+const MONTH_NAMES = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+function computeLevel(count: number): number {
+  if (count === 0) return 0;
+  if (count >= 10) return 4;
+  if (count >= 6) return 3;
+  if (count >= 3) return 2;
+  return 1;
+}
+
+function getPreviousSunday(date: Date): Date {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  const day = d.getDay();
+  if (day !== 0) d.setDate(d.getDate() - day);
+  return d;
+}
+
+function getNextSaturday(date: Date): Date {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  const day = d.getDay();
+  if (day !== 6) d.setDate(d.getDate() + (6 - day));
+  return d;
+}
+
+interface DayCell {
+  date: string;
+  count: number;
+  level: number;
+  breakdown: Record<string, number>;
+  isOutOfRange: boolean;
+}
+
 export function ActivityGraphFilterButton({
   selectedActivityTypes,
   activityTypes,
   toggleActivityType,
-  clearFilters,
+  selectAllTypes,
+  clearAllTypes,
   hasActiveFilters,
 }: ActivityGraphFilterProps) {
   return (
@@ -52,7 +108,7 @@ export function ActivityGraphFilterButton({
         <Button
           variant="ghost"
           size="sm"
-          onClick={clearFilters}
+          onClick={selectAllTypes}
           className="h-8"
         >
           <X className="h-4 w-4 mr-1" />
@@ -65,7 +121,7 @@ export function ActivityGraphFilterButton({
           <Button variant="outline" size="sm" className="h-8">
             <Filter className="h-4 w-4 mr-2" />
             Activity Type
-            {selectedActivityTypes.size > 0 && (
+            {hasActiveFilters && (
               <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
                 {selectedActivityTypes.size}
               </span>
@@ -74,7 +130,27 @@ export function ActivityGraphFilterButton({
         </PopoverTrigger>
         <PopoverContent className="w-64" align="end">
           <div className="space-y-4">
-            <h4 className="font-medium text-sm">Filter by Activity Type</h4>
+            <div className="flex items-center justify-between">
+              <h4 className="font-medium text-sm">Filter by Activity Type</h4>
+              <div className="flex gap-1">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 text-xs px-2"
+                  onClick={selectAllTypes}
+                >
+                  All
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-6 text-xs px-2"
+                  onClick={clearAllTypes}
+                >
+                  None
+                </Button>
+              </div>
+            </div>
             <div className="space-y-2 max-h-64 overflow-y-auto">
               {activityTypes.map((activityType) => (
                 <div key={activityType} className="flex items-center space-x-2">
@@ -100,273 +176,284 @@ export function ActivityGraphFilterButton({
 }
 
 export default function ActivityGraph({
-  data,
   activities,
   activityDefinitions,
+  startDate,
+  endDate,
   onFilterChange,
 }: ActivityGraphProps) {
-  // Activity type filter state
-  const [selectedActivityTypes, setSelectedActivityTypes] = useState<
-    Set<string>
-  >(new Set());
+  const activityTypes = useMemo(
+    () => activityDefinitions.map((def) => def.name).sort(),
+    [activityDefinitions],
+  );
 
-  // Animation state
-  const [isAnimating, setIsAnimating] = useState(true);
-  const [animatedTypes, setAnimatedTypes] = useState<Set<string>>(new Set());
+  const [deselectedTypes, setDeselectedTypes] = useState<Set<string>>(
+    () => new Set(),
+  );
 
-  // Get activity types from activity definitions (sorted by name)
-  const activityTypes = useMemo(() => {
-    return activityDefinitions.map((def) => def.name).sort();
-  }, [activityDefinitions]);
+  const selectedActivityTypes = useMemo(
+    () => new Set(activityTypes.filter((t) => !deselectedTypes.has(t))),
+    [activityTypes, deselectedTypes],
+  );
 
-  // Get unique activity types that actually have data
-  const activeActivityTypes = useMemo(() => {
-    const types = new Set<string>();
-    activities.forEach((activity) => {
-      types.add(activity.activity_definition_name);
+  const hasActiveFilters = deselectedTypes.size > 0;
+
+  const toggleActivityType = useCallback((type: string) => {
+    setDeselectedTypes((prev) => {
+      const next = new Set(prev);
+      if (next.has(type)) next.delete(type);
+      else next.add(type);
+      return next;
     });
-    return Array.from(types).sort();
-  }, [activities]);
+  }, []);
 
-  // Animate activity types on mount
+  const selectAllTypes = useCallback(() => {
+    setDeselectedTypes(new Set());
+  }, []);
+
+  const clearAllTypes = useCallback(() => {
+    setDeselectedTypes((prev) => {
+      const all = new Set(prev);
+      activityTypes.forEach((t) => all.add(t));
+      return all;
+    });
+  }, [activityTypes]);
+
   useEffect(() => {
-    if (activeActivityTypes.length === 0) {
-      setIsAnimating(false);
-      return;
-    }
-
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex < activeActivityTypes.length) {
-        const activityType = activeActivityTypes[currentIndex];
-        if (activityType) {
-          setAnimatedTypes((prev) => {
-            const newSet = new Set(prev);
-            newSet.add(activityType);
-            return newSet;
-          });
-        }
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-        setIsAnimating(false);
-      }
-    }, 50); // 50ms delay between each activity type
-
-    return () => clearInterval(interval);
-  }, [activeActivityTypes]);
-
-  // Group activities by date and type for tooltip display
-  const activityByDateAndType = useMemo(() => {
-    const grouped: Record<string, Record<string, number>> = {};
-
-    activities.forEach((activity) => {
-      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
-      if (dateKey) {
-        if (!grouped[dateKey]) {
-          grouped[dateKey] = {};
-        }
-        const typeName = activity.activity_definition_name;
-        grouped[dateKey][typeName] = (grouped[dateKey][typeName] || 0) + 1;
-      }
-    });
-
-    return grouped;
-  }, [activities]);
-
-  // Filter activities by type and recalculate graph data
-  const filteredData = useMemo(() => {
-    // Determine which types to include
-    let typesToInclude: Set<string>;
-
-    if (selectedActivityTypes.size > 0) {
-      // User has manually selected types
-      typesToInclude = selectedActivityTypes;
-    } else if (isAnimating) {
-      // During animation, only show animated types
-      typesToInclude = animatedTypes;
-    } else {
-      // Animation complete and no filters, show all
-      return data.map((day) => ({
-        ...day,
-        activityBreakdown: activityByDateAndType[day.date] || {},
-      }));
-    }
-
-    // Filter activities by included types
-    const filteredActivities = activities.filter((activity) =>
-      typesToInclude.has(activity.activity_definition_name),
-    );
-
-    // Group by date
-    const activityByDate: Record<string, number> = {};
-    const activityBreakdownByDate: Record<string, Record<string, number>> = {};
-
-    filteredActivities.forEach((activity) => {
-      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
-      if (dateKey) {
-        activityByDate[dateKey] = (activityByDate[dateKey] || 0) + 1;
-
-        if (!activityBreakdownByDate[dateKey]) {
-          activityBreakdownByDate[dateKey] = {};
-        }
-        const typeName = activity.activity_definition_name;
-        activityBreakdownByDate[dateKey][typeName] =
-          (activityBreakdownByDate[dateKey][typeName] || 0) + 1;
-      }
-    });
-
-    // Recalculate levels for each day in the data
-    return data.map((day) => {
-      const count = activityByDate[day.date] || 0;
-      let level = 0;
-      if (count > 0) {
-        if (count >= 10) level = 4;
-        else if (count >= 7) level = 3;
-        else if (count >= 4) level = 2;
-        else level = 1;
-      }
-      return {
-        ...day,
-        count,
-        level,
-        activityBreakdown: activityBreakdownByDate[day.date] || {},
-      };
+    onFilterChange?.({
+      selectedActivityTypes,
+      activityTypes,
+      toggleActivityType,
+      selectAllTypes,
+      clearAllTypes,
+      hasActiveFilters,
     });
   }, [
-    data,
-    activities,
     selectedActivityTypes,
-    isAnimating,
-    animatedTypes,
-    activityByDateAndType,
+    activityTypes,
+    toggleActivityType,
+    selectAllTypes,
+    clearAllTypes,
+    hasActiveFilters,
+    onFilterChange,
   ]);
 
-  // Group data by weeks (7 days each)
-  const weeks: Array<
-    Array<{
-      date: string;
-      count: number;
-      level: number;
-      activityBreakdown: Record<string, number>;
-    }>
-  > = [];
-  for (let i = 0; i < filteredData.length; i += 7) {
-    weeks.push(filteredData.slice(i, i + 7));
-  }
+  const gridStartDate = getPreviousSunday(startDate);
+  const gridEndDate = getNextSaturday(endDate);
 
-  const toggleActivityType = (activityType: string) => {
-    const newSelected = new Set(selectedActivityTypes);
-    if (newSelected.has(activityType)) {
-      newSelected.delete(activityType);
-    } else {
-      newSelected.add(activityType);
+  const { weeks, monthLabels } = useMemo(() => {
+    const activityByDate: Record<string, Record<string, number>> = {};
+    for (const a of activities) {
+      if (!selectedActivityTypes.has(a.activity_definition_name)) continue;
+      const dateKey = format(a.occured_at, "yyyy-MM-dd");
+      if (!activityByDate[dateKey]) activityByDate[dateKey] = {};
+      activityByDate[dateKey][a.activity_definition_name] =
+        (activityByDate[dateKey][a.activity_definition_name] || 0) + 1;
     }
-    setSelectedActivityTypes(newSelected);
-  };
 
-  const clearFilters = () => {
-    setSelectedActivityTypes(new Set());
-  };
+    const weeks: DayCell[][] = [];
+    let currentWeek: DayCell[] = [];
+    let cursor = new Date(gridStartDate);
+    const rangeStart = new Date(startDate);
+    rangeStart.setHours(0, 0, 0, 0);
+    const rangeEnd = new Date(endDate);
+    rangeEnd.setHours(23, 59, 59, 999);
 
-  const hasActiveFilters = selectedActivityTypes.size > 0;
+    while (cursor <= gridEndDate) {
+      const dateKey = format(cursor, "yyyy-MM-dd");
+      const breakdown = activityByDate[dateKey] || {};
+      const count = Object.values(breakdown).reduce((s, n) => s + n, 0);
+      const isOutOfRange = cursor < rangeStart || cursor > rangeEnd;
 
-  // Notify parent component of filter state changes
-  useEffect(() => {
-    if (onFilterChange) {
-      onFilterChange({
-        selectedActivityTypes,
-        activityTypes,
-        toggleActivityType,
-        clearFilters,
-        hasActiveFilters,
+      currentWeek.push({
+        date: dateKey,
+        count: isOutOfRange ? 0 : count,
+        level: isOutOfRange ? 0 : computeLevel(count),
+        breakdown: isOutOfRange ? {} : breakdown,
+        isOutOfRange,
       });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedActivityTypes, activityTypes, hasActiveFilters, onFilterChange]);
 
-  const getLevelColor = (level: number) => {
-    switch (level) {
-      case 0:
-        return "bg-muted";
-      case 1:
-        return "bg-primary/20";
-      case 2:
-        return "bg-primary/40";
-      case 3:
-        return "bg-primary/60";
-      case 4:
-        return "bg-primary/80";
-      default:
-        return "bg-muted";
+      if (currentWeek.length === 7) {
+        weeks.push(currentWeek);
+        currentWeek = [];
+      }
+      cursor = addDays(cursor, 1);
     }
-  };
+    if (currentWeek.length > 0) {
+      weeks.push(currentWeek);
+    }
+
+    const monthLabels: { label: string; colStart: number; colSpan: number }[] =
+      [];
+    let prevMonth = -1;
+    let currentLabel: (typeof monthLabels)[0] | null = null;
+
+    for (let w = 0; w < weeks.length; w++) {
+      const week = weeks[w];
+      if (!week) continue;
+      const representativeDay = week.find((d) => !d.isOutOfRange) ?? week[0];
+      if (!representativeDay) continue;
+      const d = new Date(representativeDay.date);
+      const month = d.getMonth();
+
+      if (month !== prevMonth) {
+        if (currentLabel) monthLabels.push(currentLabel);
+        currentLabel = {
+          label: MONTH_NAMES[month] ?? "",
+          colStart: w,
+          colSpan: 1,
+        };
+        prevMonth = month;
+      } else if (currentLabel) {
+        currentLabel.colSpan++;
+      }
+    }
+    if (currentLabel) monthLabels.push(currentLabel);
+
+    return { weeks, monthLabels };
+  }, [
+    activities,
+    selectedActivityTypes,
+    gridStartDate,
+    gridEndDate,
+    startDate,
+    endDate,
+  ]);
 
   return (
     <div className="relative">
       <TooltipProvider>
-        <div className="flex gap-1 overflow-x-auto pb-4">
-          {weeks.map((week, weekIndex) => (
-            <div key={weekIndex} className="flex flex-col gap-1">
-              {week.map((day, dayIndex) => (
-                <Tooltip key={`${weekIndex}-${dayIndex}`} delayDuration={100}>
-                  <TooltipTrigger asChild>
+        <div className="overflow-x-auto">
+          <div
+            className="inline-grid gap-1"
+            style={{
+              gridTemplateColumns: `auto repeat(${weeks.length}, 11px)`,
+              gridTemplateRows: "auto repeat(7, 11px)",
+            }}
+          >
+            {/* Top-left empty corner */}
+            <div />
+
+            {/* Month labels row */}
+            {(() => {
+              const cells: React.ReactNode[] = [];
+              let col = 0;
+              for (const ml of monthLabels) {
+                if (ml.colStart > col) {
+                  cells.push(
                     <div
-                      className={cn(
-                        "w-3 h-3 rounded-sm cursor-pointer hover:ring-2 hover:ring-primary",
-                        "transition-all duration-300 ease-in-out",
-                        getLevelColor(day.level),
-                      )}
-                      style={{
-                        opacity: day.level === 0 || !isAnimating ? 1 : 0,
-                        animation:
-                          day.level > 0 && isAnimating
-                            ? "fadeIn 300ms ease-in-out forwards"
-                            : undefined,
-                      }}
-                    />
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <div className="text-xs space-y-1">
-                      <div className="font-medium">
-                        {format(new Date(day.date), "EEE, d MMM yyyy")}
-                      </div>
-                      {Object.keys(day.activityBreakdown).length > 0 ? (
-                        <div className="space-y-0.5">
-                          {Object.entries(day.activityBreakdown)
-                            .sort((a, b) => b[1] - a[1])
-                            .map(([type, count]) => (
-                              <div
-                                key={type}
-                                className="flex items-center justify-between gap-3 text-muted"
-                              >
-                                <span className="truncate max-w-38">
-                                  {type}
-                                </span>
-                                <span className="font-medium">{count}</span>
+                      key={`gap-${col}`}
+                      style={{ gridColumn: `span ${ml.colStart - col}` }}
+                    />,
+                  );
+                }
+                cells.push(
+                  <div
+                    key={`month-${ml.colStart}`}
+                    className="text-xs text-muted-foreground px-0.5 whitespace-nowrap"
+                    style={{ gridColumn: `span ${ml.colSpan}` }}
+                  >
+                    {ml.label}
+                  </div>,
+                );
+                col = ml.colStart + ml.colSpan;
+              }
+              if (col < weeks.length) {
+                cells.push(
+                  <div
+                    key={`gap-end`}
+                    style={{ gridColumn: `span ${weeks.length - col}` }}
+                  />,
+                );
+              }
+              return cells;
+            })()}
+
+            {/* Day rows (0=Sun, 1=Mon, ..., 6=Sat) */}
+            {Array.from({ length: 7 }, (_, dayIndex) => (
+              <React.Fragment key={dayIndex}>
+                <div
+                  className="text-xs text-muted-foreground pr-2 flex items-center justify-end"
+                  style={{ gridRow: dayIndex + 2, gridColumn: 1 }}
+                >
+                  {DAY_LABELS[dayIndex] || ""}
+                </div>
+
+                {weeks.map((week, weekIndex) => {
+                  const day = week[dayIndex];
+                  if (!day) return null;
+
+                  return (
+                    <Tooltip
+                      key={`${weekIndex}-${dayIndex}`}
+                      delayDuration={100}
+                    >
+                      <TooltipTrigger asChild>
+                        <div
+                          className="w-[11px] h-[11px] outline-1 -outline-offset-1 outline-transparent hover:outline-foreground/50 transition-colors"
+                          style={{
+                            gridRow: dayIndex + 2,
+                            gridColumn: weekIndex + 2,
+                            borderRadius: "var(--activity-graph-radius)",
+                            backgroundColor: day.isOutOfRange
+                              ? "transparent"
+                              : LEVEL_CSS_VARS[day.level],
+                          }}
+                        />
+                      </TooltipTrigger>
+                      {!day.isOutOfRange && (
+                        <TooltipContent>
+                          <div className="text-xs space-y-1">
+                            <div className="font-medium">
+                              {format(new Date(day.date), "EEE, d MMM yyyy")}
+                            </div>
+                            {Object.keys(day.breakdown).length > 0 ? (
+                              <div className="space-y-0.5">
+                                {Object.entries(day.breakdown)
+                                  .sort((a, b) => b[1] - a[1])
+                                  .map(([type, count]) => (
+                                    <div
+                                      key={type}
+                                      className="flex items-center justify-between gap-3 text-accent-foreground"
+                                    >
+                                      <span className="truncate max-w-38">
+                                        {type}
+                                      </span>
+                                      <span className="font-medium">
+                                        {count}
+                                      </span>
+                                    </div>
+                                  ))}
                               </div>
-                            ))}
-                        </div>
-                      ) : (
-                        <div className="text-muted">No activities</div>
+                            ) : (
+                              <div className="text-accent-foreground">
+                                No activities
+                              </div>
+                            )}
+                          </div>
+                        </TooltipContent>
                       )}
-                    </div>
-                  </TooltipContent>
-                </Tooltip>
-              ))}
-            </div>
-          ))}
+                    </Tooltip>
+                  );
+                })}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </TooltipProvider>
 
       {/* Legend */}
-      <div className="flex items-center gap-2 text-xs text-muted-foreground mt-2">
+      <div className="flex items-center gap-2 text-xs text-muted-foreground mt-3">
         <span>Less</span>
         <div className="flex gap-1">
-          {[0, 1, 2, 3, 4].map((level) => (
+          {LEVEL_CSS_VARS.map((color, i) => (
             <div
-              key={level}
-              className={cn("w-3 h-3 rounded-sm", getLevelColor(level))}
+              key={i}
+              className="w-[11px] h-[11px]"
+              style={{
+                borderRadius: "var(--activity-graph-radius)",
+                backgroundColor: color,
+              }}
             />
           ))}
         </div>

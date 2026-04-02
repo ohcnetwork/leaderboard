@@ -351,7 +351,7 @@ export default function LeaderboardView({
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap mb-1">
                             <Link href={`/${entry.username}`}>
-                              <h3 className="text-lg font-semibold hover:text-primary transition-colors">
+                              <h3 className="text-lg font-semibold hover:underline transition-colors">
                                 {entry.name || entry.username}
                               </h3>
                             </Link>
@@ -363,7 +363,7 @@ export default function LeaderboardView({
                           </div>
                           <Link
                             href={`/${entry.username}`}
-                            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                           >
                             @{entry.username}
                           </Link>

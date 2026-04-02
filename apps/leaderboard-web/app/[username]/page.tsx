@@ -351,7 +351,7 @@ export default async function ContributorPage({
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
                             title={key}
                           >
                             {isValidIconKey(iconName) ? (
@@ -462,7 +462,7 @@ export default async function ContributorPage({
         <div className="mt-8 text-center">
           <Link
             href="/leaderboard"
-            className="text-sm text-primary hover:underline"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             ← Back to Leaderboard
           </Link>

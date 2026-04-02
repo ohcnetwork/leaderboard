@@ -144,7 +144,7 @@ function NormalView({
                 <Link
                   key={contributor.username}
                   href={`/${contributor.username}`}
-                  className="group flex flex-col items-center gap-2 rounded-xl border bg-card p-4 transition-all hover:shadow-md hover:border-primary/50"
+                  className="group flex flex-col items-center gap-2 rounded-xl border bg-card p-4 transition-all hover:shadow-md hover:border-foreground/20"
                 >
                   <Avatar className="size-16 transition-transform group-hover:scale-105">
                     <AvatarImage
@@ -159,7 +159,7 @@ function NormalView({
                     </AvatarFallback>
                   </Avatar>
                   <div className="text-center min-w-0 w-full">
-                    <p className="font-medium truncate text-sm group-hover:text-primary transition-colors">
+                    <p className="font-medium truncate text-sm group-hover:text-foreground transition-colors">
                       {contributor.name || contributor.username}
                     </p>
                     <p className="text-xs text-muted-foreground truncate">
@@ -191,7 +191,7 @@ function GalleryView({ contributors }: { contributors: Contributor[] }) {
               href={`/${contributor.username}`}
               className="group block aspect-square"
             >
-              <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-primary/50 hover:scale-105">
+              <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-foreground/20 hover:scale-105">
                 <AvatarImage
                   src={contributor.avatar_url || undefined}
                   alt={contributor.name || contributor.username}

@@ -231,7 +231,7 @@ export default async function BadgesPage() {
 
       {/* Back to Home */}
       <div className="text-center">
-        <Link href="/" className="text-sm text-primary hover:underline">
+        <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
           ← Back to Home
         </Link>
       </div>

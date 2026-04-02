@@ -39,7 +39,7 @@ export default function ActivityTimelineItem({
                   href={activity.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary hover:underline"
+                  className="hover:underline"
                 >
                   {activity.title}
                 </a>
@@ -52,7 +52,7 @@ export default function ActivityTimelineItem({
         )}
         {activity.text && (
           <div
-            className="text-sm text-muted-foreground prose prose-sm max-w-none hover:text-primary transition-colors"
+            className="text-sm text-muted-foreground prose prose-sm max-w-none"
             dangerouslySetInnerHTML={{ __html: activity.text }}
           />
         )}

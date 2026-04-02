@@ -129,7 +129,9 @@ export default function NavHeader({
                 height={32}
                 className="rounded-md"
               />
-              <span className="font-semibold text-lg">{orgName}</span>
+              <span className="font-semibold text-lg text-foreground">
+                {orgName}
+              </span>
             </Link>
 
             {/* Nav Links - centered pill container */}
@@ -144,7 +146,7 @@ export default function NavHeader({
                       "px-4 py-1.5 text-sm font-medium rounded-full transition-all",
                       active
                         ? "bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary"
-                        : "text-muted-foreground hover:text-primary",
+                        : "text-muted-foreground hover:text-foreground",
                     )}
                   >
                     {item.name}

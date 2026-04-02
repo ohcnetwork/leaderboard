@@ -149,7 +149,7 @@ export default async function Home() {
           <h2 className="text-2xl font-bold">Recent Activities</h2>
           <Link
             href="/leaderboard"
-            className="text-sm text-primary hover:underline"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             View Leaderboard →
           </Link>
@@ -206,7 +206,7 @@ export default async function Home() {
                         <div className="flex items-center gap-2 flex-wrap">
                           <Link
                             href={`/${activity.contributor}`}
-                            className="font-medium hover:text-primary transition-colors"
+                            className="font-medium hover:underline transition-colors"
                           >
                             {activity.contributor_name || activity.contributor}
                           </Link>
@@ -227,7 +227,7 @@ export default async function Home() {
                                 href={activity.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-primary hover:underline"
+                                className="hover:underline"
                               >
                                 {activity.title}
                               </a>

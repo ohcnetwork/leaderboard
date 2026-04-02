@@ -14,6 +14,7 @@ import ActivityOverview from "./ActivityOverview";
 import ActivityBreakdown from "./ActivityBreakdown";
 import ActivityTimeline from "./ActivityTimeline";
 import Link from "next/link";
+import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import {
   Calendar,
   Award,
@@ -59,9 +60,8 @@ export async function generateMetadata({
   params,
 }: ContributorPageProps): Promise<Metadata> {
   const { username } = await params;
-  const { contributor, totalPoints, activities } = await getContributorProfile(
-    username
-  );
+  const { contributor, totalPoints, activities } =
+    await getContributorProfile(username);
   const config = getConfig();
 
   if (!contributor) {
@@ -161,10 +161,10 @@ export default async function ContributorPage({
 
   // Separate built-in and database aggregates
   const builtinSlugs = configuredAggregates.filter(
-    (slug) => slug in BUILTIN_CONTRIBUTOR_AGGREGATES
+    (slug) => slug in BUILTIN_CONTRIBUTOR_AGGREGATES,
   );
   const dbAggregatesSlugs = configuredAggregates.filter(
-    (slug) => !(slug in BUILTIN_CONTRIBUTOR_AGGREGATES)
+    (slug) => !(slug in BUILTIN_CONTRIBUTOR_AGGREGATES),
   );
 
   const [
@@ -189,15 +189,18 @@ export default async function ContributorPage({
   const bioHtml = contributor.bio ? await marked.parse(contributor.bio) : null;
 
   // Calculate stats
-  const activityBreakdown = activities.reduce((acc, activity) => {
-    const key = activity.activity_name;
-    if (!acc[key]) {
-      acc[key] = { count: 0, points: 0 };
-    }
-    acc[key].count += 1;
-    acc[key].points += activity.points || 0;
-    return acc;
-  }, {} as Record<string, { count: number; points: number }>);
+  const activityBreakdown = activities.reduce(
+    (acc, activity) => {
+      const key = activity.activity_name;
+      if (!acc[key]) {
+        acc[key] = { count: 0, points: 0 };
+      }
+      acc[key].count += 1;
+      acc[key].points += activity.points || 0;
+      return acc;
+    },
+    {} as Record<string, { count: number; points: number }>,
+  );
 
   // Build aggregate cards data
   interface AggregateCard {
@@ -316,14 +319,14 @@ export default async function ContributorPage({
               )}
 
               <div className="flex flex-wrap gap-4 text-sm">
-                {contributor.role && (
-                  <div className="flex items-center gap-2">
-                    <Award className="h-4 w-4" />
-                    <span className="px-2 py-1 rounded-full bg-primary/10 text-primary">
-                      {contributor.role}
-                    </span>
-                  </div>
-                )}
+                <div className="flex items-center gap-2">
+                  <Award className="h-4 w-4" />
+                  <ContributorRoleBadge
+                    role={contributor.role}
+                    roleName={config.leaderboard.roles[contributor.role]?.name}
+                    roleDescription={config.leaderboard.roles[contributor.role]?.description}
+                  />
+                </div>
                 {contributor.social_profiles && (
                   <div className="flex items-center gap-3">
                     {Object.entries(contributor.social_profiles).map(
@@ -334,7 +337,7 @@ export default async function ContributorPage({
 
                         // Type guard to check if icon is a valid string key
                         const isValidIconKey = (
-                          name: unknown
+                          name: unknown,
                         ): name is keyof typeof icons => {
                           return (
                             typeof name === "string" &&
@@ -358,7 +361,7 @@ export default async function ContributorPage({
                             )}
                           </a>
                         );
-                      }
+                      },
                     )}
                   </div>
                 )}
@@ -434,7 +437,8 @@ export default async function ContributorPage({
                           {badge.variant}
                         </div>
                         <div className="text-muted-foreground/70 mt-1 text-xs">
-                          Earned: {new Date(badge.achieved_on).toLocaleDateString()}
+                          Earned:{" "}
+                          {new Date(badge.achieved_on).toLocaleDateString()}
                         </div>
                       </div>
                     </div>

@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/popover";
 import Link from "next/link";
 import { Trophy, Filter, X } from "lucide-react";
+import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import { cn } from "@/lib/utils";
 import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -37,6 +38,7 @@ interface LeaderboardViewProps {
     }>
   >;
   hiddenRoles: string[];
+  roles: Record<string, { name: string; description?: string }>;
 }
 
 export default function LeaderboardView({
@@ -46,6 +48,7 @@ export default function LeaderboardView({
   endDate,
   topByActivity,
   hiddenRoles,
+  roles,
 }: LeaderboardViewProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -243,7 +246,7 @@ export default function LeaderboardView({
                               htmlFor={role}
                               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
                             >
-                              {role}
+                              {roles[role]?.name ?? role}
                             </label>
                           </div>
                         ))}
@@ -352,9 +355,11 @@ export default function LeaderboardView({
                                 {entry.name || entry.username}
                               </h3>
                             </Link>
-                            <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
-                              {entry.role}
-                            </span>
+                            <ContributorRoleBadge
+                              role={entry.role}
+                              roleName={roles[entry.role]?.name}
+                              roleDescription={roles[entry.role]?.description}
+                            />
                           </div>
                           <Link
                             href={`/${entry.username}`}

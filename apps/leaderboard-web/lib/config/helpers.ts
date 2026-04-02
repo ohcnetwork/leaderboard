@@ -23,6 +23,19 @@ export function getVisibleRoles(): string[] {
 }
 
 /**
+ * Get a mapping of role slugs to their display name and description
+ */
+export function getRoles(): Record<string, { name: string; description?: string }> {
+  const config = getConfig();
+  return Object.fromEntries(
+    Object.entries(config.leaderboard.roles).map(([key, role]) => [
+      key,
+      { name: role.name, description: role.description },
+    ]),
+  );
+}
+
+/**
  * Get visible roles with full metadata, preserving config.yaml insertion order
  */
 export function getVisibleRolesOrdered(): Array<{

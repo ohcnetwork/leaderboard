@@ -4,7 +4,7 @@ import {
 } from "@/lib/data/loader";
 import { getDateRange } from "@/lib/utils";
 import { getConfig } from "@/lib/config/get-config";
-import { getHiddenRoles } from "@/lib/config/helpers";
+import { getHiddenRoles, getRoles } from "@/lib/config/helpers";
 import LeaderboardView from "../LeaderboardView";
 import { Suspense } from "react";
 
@@ -29,6 +29,7 @@ export default async function WeeklyLeaderboardPage() {
         endDate={endDate}
         topByActivity={topByActivity}
         hiddenRoles={getHiddenRoles()}
+        roles={getRoles()}
       />
     </Suspense>
   );

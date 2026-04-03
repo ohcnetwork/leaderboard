@@ -23,8 +23,6 @@ import { cn } from "@/lib/utils";
 import type { ActivityDefinition } from "@ohcnetwork/leaderboard-api";
 import { format, formatDistanceToNow } from "date-fns";
 import {
-  ArrowDown,
-  ArrowUp,
   ChevronDown,
   ChevronUp,
   Filter,
@@ -660,8 +658,8 @@ export default function LeaderboardView({
                             <div className="mt-0.5">
                               <PointsDeltaBadge
                                 delta={pointsDelta}
+                                currentPoints={entry.total_points}
                                 periodNoun={periodNoun}
-                                compact
                               />
                             </div>
                           )}
@@ -753,8 +751,8 @@ export default function LeaderboardView({
                           {pointsDelta !== null && pointsDelta !== 0 && (
                             <PointsDeltaBadge
                               delta={pointsDelta}
+                              currentPoints={entry.total_points}
                               periodNoun={periodNoun}
-                              compact
                             />
                           )}
                         </div>
@@ -1007,8 +1005,8 @@ function PodiumEntry({
             {pointsDelta !== null && pointsDelta !== 0 && (
               <PointsDeltaBadge
                 delta={pointsDelta}
+                currentPoints={entry.total_points}
                 periodNoun={periodNoun}
-                compact
               />
             )}
             <RankChangeBadge change={rankChange} compact />
@@ -1270,14 +1268,18 @@ function RankChangeBadge({
 
 function PointsDeltaBadge({
   delta,
+  currentPoints,
   periodNoun,
-  compact,
 }: {
   delta: number;
+  currentPoints: number;
   periodNoun: string;
-  compact?: boolean;
 }) {
   const isPositive = delta > 0;
+  const previousPoints = currentPoints - delta;
+  const percentageChange =
+    previousPoints > 0 ? Math.abs((delta / previousPoints) * 100) : 100;
+
   const tooltipText = isPositive
     ? `Earned ${Math.abs(delta)} more points than ${periodNoun}`
     : `Earned ${Math.abs(delta)} fewer points than ${periodNoun}`;
@@ -1295,11 +1297,11 @@ function PointsDeltaBadge({
             )}
           >
             {isPositive ? (
-              <ArrowUp className="h-3 w-3" />
+              <TrendingUp className="h-3 w-3" />
             ) : (
-              <ArrowDown className="h-3 w-3" />
+              <TrendingDown className="h-3 w-3" />
             )}
-            {compact ? Math.abs(delta) : `${isPositive ? "+" : ""}${delta} pts`}
+            {percentageChange.toFixed(0)}%
           </span>
         </TooltipTrigger>
         <TooltipContent side="top" className="text-xs">

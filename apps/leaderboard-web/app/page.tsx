@@ -16,6 +16,7 @@ import {
   Activity,
   ArrowRight,
   Award,
+  ExternalLink,
   LucideIcon,
   TrendingDown,
   TrendingUp,
@@ -652,9 +653,10 @@ export default async function Home() {
                               href={a.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-xs truncate text-muted-foreground hover:text-foreground"
+                              className="text-xs truncate text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
                             >
                               {a.title}
+                              <ExternalLink className="h-3 w-3 shrink-0" />
                             </a>
                           ) : (
                             <span className="text-xs truncate text-muted-foreground">
@@ -662,6 +664,16 @@ export default async function Home() {
                             </span>
                           )}
                         </>
+                      )}
+                      {!a.title && a.link && (
+                        <a
+                          href={a.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground/60 hover:text-foreground"
+                        >
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
                       )}
                     </div>
                     {a.points !== null && a.points > 0 && (

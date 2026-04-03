@@ -2,14 +2,14 @@
  * LibSQL client wrapper
  */
 
+import type { Client, ResultSet } from "@libsql/client";
 import { createClient } from "@libsql/client";
 import type {
+  BatchResult,
+  BatchStatement,
   Database,
   ExecuteResult,
-  BatchStatement,
-  BatchResult,
 } from "./types";
-import type { Client, ResultSet } from "@libsql/client";
 
 /**
  * Convert LibSQL ResultSet to our ExecuteResult format
@@ -51,7 +51,7 @@ export class LibSQLDatabase implements Database {
       statements.map((stmt) => ({
         sql: stmt.sql,
         args: (stmt.params || []) as any,
-      }))
+      })),
     );
 
     return results.map(convertResult);

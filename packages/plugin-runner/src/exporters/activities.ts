@@ -2,14 +2,13 @@
  * Export activities to sharded JSONL files
  */
 
-import { mkdir, writeFile } from "fs/promises";
-import { join } from "path";
-import type { Database } from "@ohcnetwork/leaderboard-api";
+import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
   activityQueries,
   contributorQueries,
 } from "@ohcnetwork/leaderboard-api";
-import type { Logger } from "@ohcnetwork/leaderboard-api";
+import { mkdir, writeFile } from "fs/promises";
+import { join } from "path";
 
 /**
  * Export all activities to sharded JSONL files (one per contributor)

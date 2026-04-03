@@ -1,6 +1,9 @@
-import { ImageResponse } from "next/og";
-import { getContributorProfile, getAllContributorUsernames } from "@/lib/data/loader";
 import { getConfig } from "@/lib/config/get-config";
+import {
+  getAllContributorUsernames,
+  getContributorProfile,
+} from "@/lib/data/loader";
+import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
 export const dynamic = "force-static";
@@ -28,199 +31,195 @@ export default async function Image({ params }: Props) {
 
   if (!contributor) {
     return new ImageResponse(
-      (
-        <div
-          style={{
-            fontSize: 40,
-            background: "white",
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          Contributor not found
-        </div>
-      ),
-      { ...size }
+      <div
+        style={{
+          fontSize: 40,
+          background: "white",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        Contributor not found
+      </div>,
+      { ...size },
     );
   }
 
   // Calculate activity breakdown
   const activities = Object.values(activityByDate).reduce(
     (sum, count) => sum + count,
-    0
+    0,
   );
 
   return new ImageResponse(
-    (
+    <div
+      style={{
+        background: "linear-gradient(to bottom right, #1e293b, #0f172a)",
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "60px",
+        fontFamily: "system-ui, sans-serif",
+      }}
+    >
+      {/* Avatar Container */}
       <div
         style={{
-          background: "linear-gradient(to bottom right, #1e293b, #0f172a)",
-          width: "100%",
-          height: "100%",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "60px",
-          fontFamily: "system-ui, sans-serif",
+          marginBottom: "40px",
         }}
       >
-        {/* Avatar Container */}
-        <div
-          style={{
-            display: "flex",
-            marginBottom: "40px",
-          }}
-        >
-          {contributor.avatar_url ? (
-            <img
-              src={contributor.avatar_url}
-              alt={contributor.name || contributor.username}
-              width={180}
-              height={180}
-              style={{
-                borderRadius: "50%",
-                border: "6px solid #3b82f6",
-              }}
-            />
-          ) : (
-            <div
-              style={{
-                width: "180px",
-                height: "180px",
-                borderRadius: "50%",
-                background: "#3b82f6",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "72px",
-                fontWeight: "bold",
-                color: "white",
-                border: "6px solid #60a5fa",
-              }}
-            >
-              {(contributor.name || contributor.username)
-                .substring(0, 2)
-                .toUpperCase()}
-            </div>
-          )}
-        </div>
+        {contributor.avatar_url ? (
+          <img
+            src={contributor.avatar_url}
+            alt={contributor.name || contributor.username}
+            width={180}
+            height={180}
+            style={{
+              borderRadius: "50%",
+              border: "6px solid #3b82f6",
+            }}
+          />
+        ) : (
+          <div
+            style={{
+              width: "180px",
+              height: "180px",
+              borderRadius: "50%",
+              background: "#3b82f6",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "72px",
+              fontWeight: "bold",
+              color: "white",
+              border: "6px solid #60a5fa",
+            }}
+          >
+            {(contributor.name || contributor.username)
+              .substring(0, 2)
+              .toUpperCase()}
+          </div>
+        )}
+      </div>
 
-        {/* Name */}
-        <div
-          style={{
-            fontSize: "56px",
-            fontWeight: "bold",
-            color: "white",
-            marginBottom: "16px",
-            textAlign: "center",
-            display: "flex",
-          }}
-        >
-          {contributor.name || contributor.username}
-        </div>
+      {/* Name */}
+      <div
+        style={{
+          fontSize: "56px",
+          fontWeight: "bold",
+          color: "white",
+          marginBottom: "16px",
+          textAlign: "center",
+          display: "flex",
+        }}
+      >
+        {contributor.name || contributor.username}
+      </div>
 
-        {/* Username */}
-        <div
-          style={{
-            fontSize: "32px",
-            color: "#94a3b8",
-            marginBottom: "48px",
-            display: "flex",
-          }}
-        >
-          @{contributor.username}
-        </div>
+      {/* Username */}
+      <div
+        style={{
+          fontSize: "32px",
+          color: "#94a3b8",
+          marginBottom: "48px",
+          display: "flex",
+        }}
+      >
+        @{contributor.username}
+      </div>
 
-        {/* Stats */}
+      {/* Stats */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "60px",
+          marginBottom: "40px",
+        }}
+      >
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
-            gap: "60px",
-            marginBottom: "40px",
+            flexDirection: "column",
           }}
         >
           <div
             style={{
+              fontSize: "48px",
+              fontWeight: "bold",
+              color: "#3b82f6",
+              textAlign: "center",
               display: "flex",
-              flexDirection: "column",
             }}
           >
-            <div
-              style={{
-                fontSize: "48px",
-                fontWeight: "bold",
-                color: "#3b82f6",
-                textAlign: "center",
-                display: "flex",
-              }}
-            >
-              {totalPoints}
-            </div>
-            <div
-              style={{
-                fontSize: "20px",
-                color: "#94a3b8",
-                textAlign: "center",
-                display: "flex",
-              }}
-            >
-              Total Points
-            </div>
+            {totalPoints}
           </div>
-
           <div
             style={{
+              fontSize: "20px",
+              color: "#94a3b8",
+              textAlign: "center",
               display: "flex",
-              flexDirection: "column",
             }}
           >
-            <div
-              style={{
-                fontSize: "48px",
-                fontWeight: "bold",
-                color: "#3b82f6",
-                textAlign: "center",
-                display: "flex",
-              }}
-            >
-              {activities}
-            </div>
-            <div
-              style={{
-                fontSize: "20px",
-                color: "#94a3b8",
-                textAlign: "center",
-                display: "flex",
-              }}
-            >
-              Activities
-            </div>
+            Total Points
           </div>
         </div>
 
-        {/* Organization */}
         <div
           style={{
-            fontSize: "24px",
-            color: "#64748b",
             display: "flex",
-            flexDirection: "row",
-            gap: "12px",
+            flexDirection: "column",
           }}
         >
-          <span>{config.org.name}</span>
-          <span>•</span>
-          <span>Contributor Leaderboard</span>
+          <div
+            style={{
+              fontSize: "48px",
+              fontWeight: "bold",
+              color: "#3b82f6",
+              textAlign: "center",
+              display: "flex",
+            }}
+          >
+            {activities}
+          </div>
+          <div
+            style={{
+              fontSize: "20px",
+              color: "#94a3b8",
+              textAlign: "center",
+              display: "flex",
+            }}
+          >
+            Activities
+          </div>
         </div>
       </div>
-    ),
+
+      {/* Organization */}
+      <div
+        style={{
+          fontSize: "24px",
+          color: "#64748b",
+          display: "flex",
+          flexDirection: "row",
+          gap: "12px",
+        }}
+      >
+        <span>{config.org.name}</span>
+        <span>•</span>
+        <span>Contributor Leaderboard</span>
+      </div>
+    </div>,
     {
       ...size,
-    }
+    },
   );
 }

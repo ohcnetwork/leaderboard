@@ -1,12 +1,12 @@
+import { getConfig } from "@/lib/config/get-config";
+import { getHiddenRoles, getRoles } from "@/lib/config/helpers";
 import {
   getLeaderboard,
   getTopContributorsByActivity,
 } from "@/lib/data/loader";
 import { getDateRange } from "@/lib/utils";
-import { getConfig } from "@/lib/config/get-config";
-import { getHiddenRoles, getRoles } from "@/lib/config/helpers";
-import LeaderboardView from "../LeaderboardView";
 import { Suspense } from "react";
+import LeaderboardView from "../LeaderboardView";
 
 export default async function YearlyLeaderboardPage() {
   const config = getConfig();
@@ -16,7 +16,7 @@ export default async function YearlyLeaderboardPage() {
     getTopContributorsByActivity(
       startDate,
       endDate,
-      config.leaderboard.top_contributors
+      config.leaderboard.top_contributors,
     ),
   ]);
 

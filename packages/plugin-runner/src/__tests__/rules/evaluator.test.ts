@@ -1,16 +1,17 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import { evaluateBadgeRules } from "../../rules/evaluator";
-import { createDatabase, initializeSchema } from "@ohcnetwork/leaderboard-api";
 import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
-  contributorQueries,
   activityDefinitionQueries,
   activityQueries,
+  badgeDefinitionQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
-  badgeDefinitionQueries,
   contributorBadgeQueries,
+  contributorQueries,
+  createDatabase,
+  initializeSchema,
 } from "@ohcnetwork/leaderboard-api";
+import { beforeEach, describe, expect, it } from "vitest";
+import { evaluateBadgeRules } from "../../rules/evaluator";
 import type { BadgeRuleDefinition } from "../../rules/types";
 
 describe("Badge Rule Evaluator", () => {
@@ -134,7 +135,7 @@ describe("Badge Rule Evaluator", () => {
       // Check that silver badge was awarded
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "test_user"
+        "test_user",
       );
       expect(badges).toHaveLength(1);
       expect(badges[0].badge).toBe("activity_milestone");
@@ -197,7 +198,7 @@ describe("Badge Rule Evaluator", () => {
 
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "test_user"
+        "test_user",
       );
       expect(badges).toHaveLength(1);
       expect(badges[0].variant).toBe("gold");
@@ -266,7 +267,7 @@ describe("Badge Rule Evaluator", () => {
 
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "test_user"
+        "test_user",
       );
       expect(badges).toHaveLength(1);
       expect(badges[0].badge).toBe("consistency_champion");
@@ -321,7 +322,7 @@ describe("Badge Rule Evaluator", () => {
 
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "test_user"
+        "test_user",
       );
       // PR activities are on days 0, 3, 6, 9 - not consecutive
       // So either no badge or bronze if we have at least 2
@@ -338,8 +339,8 @@ describe("Badge Rule Evaluator", () => {
           i % 3 === 0
             ? "pull_request_opened"
             : i % 3 === 1
-            ? "pull_request_reviewed"
-            : "issue_created";
+              ? "pull_request_reviewed"
+              : "issue_created";
         await activityQueries.upsert(db, {
           slug: `activity_${i}`,
           contributor: "test_user",
@@ -381,7 +382,7 @@ describe("Badge Rule Evaluator", () => {
 
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "test_user"
+        "test_user",
       );
       expect(badges.length).toBeGreaterThanOrEqual(0);
     });
@@ -433,7 +434,7 @@ describe("Badge Rule Evaluator", () => {
 
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "test_user"
+        "test_user",
       );
       expect(badges).toHaveLength(1);
       expect(badges[0].badge).toBe("review_champion");
@@ -500,7 +501,7 @@ describe("Badge Rule Evaluator", () => {
 
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "test_user"
+        "test_user",
       );
       expect(badges).toHaveLength(1);
       expect(badges[0].badge).toBe("super_contributor");

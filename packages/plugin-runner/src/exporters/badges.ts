@@ -2,13 +2,13 @@
  * Export badges to data directory
  */
 
-import { writeFile, mkdir } from "fs/promises";
-import { join } from "path";
 import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
   badgeDefinitionQueries,
   contributorBadgeQueries,
 } from "@ohcnetwork/leaderboard-api";
+import { mkdir, writeFile } from "fs/promises";
+import { join } from "path";
 
 /**
  * Export badge definitions to badges/definitions.json
@@ -16,7 +16,7 @@ import {
 export async function exportBadgeDefinitions(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const badgesDir = join(dataDir, "badges");
   await mkdir(badgesDir, { recursive: true });
@@ -34,7 +34,7 @@ export async function exportBadgeDefinitions(
 export async function exportContributorBadges(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const contributorsDir = join(dataDir, "badges", "contributors");
   await mkdir(contributorsDir, { recursive: true });
@@ -56,12 +56,12 @@ export async function exportContributorBadges(
     await writeFile(
       join(contributorsDir, `${username}.jsonl`),
       lines + "\n",
-      "utf-8"
+      "utf-8",
     );
   }
 
   logger.info(
-    `Exported ${badges.length} contributor badges for ${byContributor.size} contributors`
+    `Exported ${badges.length} contributor badges for ${byContributor.size} contributors`,
   );
 }
 
@@ -71,7 +71,7 @@ export async function exportContributorBadges(
 export async function exportBadges(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   logger.info("Exporting badges");
   await exportBadgeDefinitions(db, dataDir, logger);

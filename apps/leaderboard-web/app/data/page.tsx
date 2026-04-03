@@ -1,8 +1,8 @@
-import { Metadata } from "next";
 import { getConfig } from "@/lib/config/get-config";
 import { getDatabase } from "@/lib/db/client";
-import SqlRepl from "./SqlRepl";
+import { Metadata } from "next";
 import type { TableSchema } from "./SqlRepl";
+import SqlRepl from "./SqlRepl";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
@@ -26,7 +26,7 @@ async function getSchema(): Promise<TableSchema[]> {
   const db = getDatabase();
 
   const tablesResult = await db.execute(
-    "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name;"
+    "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name;",
   );
 
   const schema: TableSchema[] = [];
@@ -34,7 +34,7 @@ async function getSchema(): Promise<TableSchema[]> {
   for (const row of tablesResult.rows) {
     const tableName = row.name as string;
     const columnsResult = await db.execute(
-      `PRAGMA table_info('${tableName}');`
+      `PRAGMA table_info('${tableName}');`,
     );
 
     schema.push({
@@ -57,8 +57,8 @@ export default async function DataPage() {
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-1">Data Explorer</h1>
         <p className="text-sm text-muted-foreground">
-          Query the leaderboard database with SQL. The database is loaded
-          in your browser via WebAssembly &mdash; all queries run locally.
+          Query the leaderboard database with SQL. The database is loaded in
+          your browser via WebAssembly &mdash; all queries run locally.
         </p>
       </div>
 

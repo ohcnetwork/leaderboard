@@ -2,17 +2,19 @@
  * Contributor importer tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdir, writeFile, rm } from "fs/promises";
-import { join } from "path";
-import { tmpdir } from "os";
+import type { Database } from "@ohcnetwork/leaderboard-api";
+import {
+  contributorQueries,
+  createDatabase,
+  initializeSchema,
+} from "@ohcnetwork/leaderboard-api";
+import { mkdir, rm, writeFile } from "fs/promises";
 import matter from "gray-matter";
-import { createDatabase } from "@ohcnetwork/leaderboard-api";
-import { initializeSchema } from "@ohcnetwork/leaderboard-api";
-import { contributorQueries } from "@ohcnetwork/leaderboard-api";
+import { tmpdir } from "os";
+import { join } from "path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { importContributors } from "../../importers/contributors";
 import { createLogger } from "../../logger";
-import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-contributors";
 const logger = createLogger(false);
@@ -47,7 +49,7 @@ describe("Contributor Importer", () => {
     await writeFile(
       join(TEST_DATA_DIR, "contributors", "alice.md"),
       contributor,
-      "utf-8"
+      "utf-8",
     );
 
     const count = await importContributors(db, TEST_DATA_DIR, logger);
@@ -75,12 +77,12 @@ describe("Contributor Importer", () => {
     await writeFile(
       join(TEST_DATA_DIR, "contributors", "alice.md"),
       alice,
-      "utf-8"
+      "utf-8",
     );
     await writeFile(
       join(TEST_DATA_DIR, "contributors", "bob.md"),
       bob,
-      "utf-8"
+      "utf-8",
     );
 
     const count = await importContributors(db, TEST_DATA_DIR, logger);

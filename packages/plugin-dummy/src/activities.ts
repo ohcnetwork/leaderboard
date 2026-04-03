@@ -173,7 +173,7 @@ function generateActivityLink(
   type: string,
   orgName: string,
   repoName: string,
-  id: number
+  id: number,
 ): string {
   const baseUrl = `https://github.com/${orgName}/${repoName}`;
 
@@ -202,7 +202,7 @@ function generateActivityLink(
  */
 function generateActivityMeta(
   type: string,
-  repoName: string
+  repoName: string,
 ): Record<string, unknown> | null {
   const meta: Record<string, unknown> = {
     repo: repoName,
@@ -244,7 +244,7 @@ export function generateActivity(
   type: keyof typeof ACTIVITY_TYPES,
   orgName: string,
   repoName: string,
-  date: Date
+  date: Date,
 ): Activity {
   const id = faker.number.int({ min: 1, max: 9999 });
   const title = generateActivityTitle(type);
@@ -253,7 +253,7 @@ export function generateActivity(
 
   // Generate slug
   const slug = `${contributor}-${type}-${date.getTime()}-${faker.string.alphanumeric(
-    6
+    6,
   )}`;
 
   return {
@@ -277,7 +277,7 @@ export function generateActivitiesForContributor(
   count: number,
   daysBack: number,
   orgName: string,
-  repoNames: string[]
+  repoNames: string[],
 ): Activity[] {
   const activities: Activity[] = [];
   const now = new Date();
@@ -307,7 +307,7 @@ export function generateActivitiesForContributor(
       type,
       orgName,
       repoName,
-      date
+      date,
     );
     activities.push(activity);
   }
@@ -315,7 +315,7 @@ export function generateActivitiesForContributor(
   // Sort by date
   activities.sort(
     (a, b) =>
-      new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime()
+      new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime(),
   );
 
   return activities;
@@ -330,7 +330,7 @@ export function generateActivities(
   maxActivitiesPerContributor: number,
   daysBack: number,
   orgName: string,
-  repoNames: string[]
+  repoNames: string[],
 ): Map<string, Activity[]> {
   const activitiesByContributor = new Map<string, Activity[]>();
 
@@ -345,7 +345,7 @@ export function generateActivities(
       activityCount,
       daysBack,
       orgName,
-      repoNames
+      repoNames,
     );
 
     activitiesByContributor.set(contributor, activities);

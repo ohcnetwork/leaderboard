@@ -3,9 +3,9 @@
  */
 
 import type {
-  Contributor,
   Activity,
   AggregateValue,
+  Contributor,
 } from "@ohcnetwork/leaderboard-api";
 
 /**
@@ -77,7 +77,7 @@ export interface CustomBadgeRule extends BadgeRule {
   evaluator: (
     contributor: Contributor,
     aggregates: Map<string, AggregateValue>,
-    activities: Activity[]
+    activities: Activity[],
   ) => {
     shouldAward: boolean;
     variant: string;

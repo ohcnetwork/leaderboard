@@ -2,7 +2,7 @@
  * Config schema validation tests
  */
 
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { ConfigSchema, LeaderboardConfigSchema } from "../schema";
 
 describe("ConfigSchema", () => {
@@ -122,7 +122,7 @@ describe("LeaderboardConfigSchema", () => {
     expect(result.success).toBe(true);
     if (result.success) {
       expect(result.data.plugins?.github.source).toBe(
-        "https://example.com/manifest.js"
+        "https://example.com/manifest.js",
       );
     }
   });

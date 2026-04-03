@@ -15,12 +15,12 @@ Basic information about your organization.
 
 ```yaml
 org:
-  name: string                    # required - Organization name
-  description: string             # required - Short description
-  url: string (URL)              # required - Organization website
-  logo_url: string (URL)         # required - Logo image URL
-  start_date: string (date)      # optional - Organization founding date
-  socials:                       # optional - Social media links
+  name: string # required - Organization name
+  description: string # required - Short description
+  url: string (URL) # required - Organization website
+  logo_url: string (URL) # required - Logo image URL
+  start_date: string (date) # optional - Organization founding date
+  socials: # optional - Social media links
     github: string (URL)
     slack: string (URL)
     linkedin: string (URL)
@@ -29,6 +29,7 @@ org:
 ```
 
 **Example**:
+
 ```yaml
 org:
   name: Open Healthcare Network
@@ -47,14 +48,15 @@ SEO and site metadata.
 
 ```yaml
 meta:
-  title: string                   # required - Site title
-  description: string             # required - Site description
-  image_url: string (URL)         # required - OpenGraph image
-  site_url: string (URL)          # required - Canonical site URL
-  favicon_url: string (URL)       # required - Favicon URL
+  title: string # required - Site title
+  description: string # required - Site description
+  image_url: string (URL) # required - OpenGraph image
+  site_url: string (URL) # required - Canonical site URL
+  favicon_url: string (URL) # required - Favicon URL
 ```
 
 **Example**:
+
 ```yaml
 meta:
   title: OHC Contributors
@@ -70,32 +72,32 @@ Leaderboard-specific configuration.
 
 ```yaml
 leaderboard:
-  data_source: string             # optional - Data source URL
-  theme: string (URL)             # optional - Custom theme CSS URL
-  roles:                          # required - Role definitions
+  data_source: string # optional - Data source URL
+  theme: string (URL) # optional - Custom theme CSS URL
+  roles: # required - Role definitions
     [role_id]:
-      name: string               # required - Display name
-      description: string        # optional - Role description
-      hidden: boolean            # optional - Hide from leaderboard
-  
-  top_contributors:               # optional - Activity slugs to highlight
+      name: string # required - Display name
+      description: string # optional - Role description
+      hidden: boolean # optional - Hide from leaderboard
+
+  top_contributors: # optional - Activity slugs to highlight
     - string
-  
-  social_profiles:                # optional - Social icon mappings
+
+  social_profiles: # optional - Social icon mappings
     [platform]:
-      icon: string               # Lucide icon name
-  
-  aggregates:                     # optional - Custom aggregates
-    global:                       # Show on home page
+      icon: string # Lucide icon name
+
+  aggregates: # optional - Custom aggregates
+    global: # Show on home page
       - string
-    contributor:                  # Show on profile pages
+    contributor: # Show on profile pages
       - string
-  
-  plugins:                        # optional - Plugin configurations
+
+  plugins: # optional - Plugin configurations
     [plugin_id]:
-      name: string               # optional - Display name
-      source: string (URL)       # required - Plugin manifest URL
-      config:                    # optional - Plugin-specific config
+      name: string # optional - Display name
+      source: string (URL) # required - Plugin manifest URL
+      config: # optional - Plugin-specific config
         [key]: any
 ```
 
@@ -104,25 +106,26 @@ leaderboard:
 Roles categorize contributors and can be filtered in the leaderboard.
 
 **Example**:
+
 ```yaml
 leaderboard:
   roles:
     core:
       name: Core Team
       description: Full-time team members
-    
+
     intern:
       name: Intern
       description: Internship participants
-    
+
     contributor:
       name: Open Source Contributor
       description: Community contributors
-    
+
     bot:
       name: Bot Account
       description: Automated accounts
-      hidden: true              # Exclude from leaderboard
+      hidden: true # Exclude from leaderboard
 ```
 
 ## Plugin Configuration
@@ -130,6 +133,7 @@ leaderboard:
 Plugins extend the system with new data sources.
 
 **Basic Plugin**:
+
 ```yaml
 leaderboard:
   plugins:
@@ -145,6 +149,7 @@ leaderboard:
 ```
 
 **Local Plugin**:
+
 ```yaml
 leaderboard:
   plugins:
@@ -234,15 +239,15 @@ Define custom statistics to display:
 ```yaml
 leaderboard:
   aggregates:
-    global:                       # Home page stats
+    global: # Home page stats
       - total_activities
       - count_contributors
-      - pr_avg_tat               # Custom aggregate
-    
-    contributor:                  # Profile page stats
+      - pr_avg_tat # Custom aggregate
+
+    contributor: # Profile page stats
       - total_points
       - total_activities
-      - streak_days              # Custom aggregate
+      - streak_days # Custom aggregate
 ```
 
 Aggregates must be computed by plugins or in the Next.js app.
@@ -271,7 +276,7 @@ Role badges render with a `data-contributor-role` attribute set to the role key 
 
 /* Style badges for the "intern" role */
 [data-contributor-role="intern"] {
-  background-color: oklch(0.70 0.15 250);
+  background-color: oklch(0.7 0.15 250);
   color: white;
 }
 
@@ -321,17 +326,17 @@ leaderboard:
       name: Contractor
     contributor:
       name: Open Source Contributor
-  
+
   top_contributors:
     - pr_merged
     - release_published
-  
+
   social_profiles:
     github:
       icon: github
     linkedin:
       icon: linkedin
-  
+
   plugins:
     github:
       source: https://cdn.acme.com/plugins/github.js
@@ -341,11 +346,10 @@ leaderboard:
         repos:
           - frontend
           - backend
-    
+
     slack:
       source: https://cdn.acme.com/plugins/slack.js
       config:
         token: ${{ env.SLACK_TOKEN }}
         channel: ${{ env.SLACK_CHANNEL }}
 ```
-

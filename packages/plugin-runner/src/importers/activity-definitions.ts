@@ -2,10 +2,10 @@
  * Import activity definitions from data directory
  */
 
-import { readFile } from "fs/promises";
-import { join } from "path";
 import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import { activityDefinitionQueries } from "@ohcnetwork/leaderboard-api";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
 /**
  * Import activity definitions from activities/definitions.json
@@ -13,7 +13,7 @@ import { activityDefinitionQueries } from "@ohcnetwork/leaderboard-api";
 export async function importActivityDefinitions(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const definitionsPath = join(dataDir, "activities", "definitions.json");
 

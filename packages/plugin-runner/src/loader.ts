@@ -3,17 +3,18 @@
  * Fetches and validates plugin manifests from URLs
  */
 
-import type { Plugin, PluginManifest } from "@ohcnetwork/leaderboard-api";
-import type { Logger } from "@ohcnetwork/leaderboard-api";
-import { readFile } from "fs/promises";
-import { pathToFileURL } from "url";
+import type {
+  Logger,
+  Plugin,
+  PluginManifest,
+} from "@ohcnetwork/leaderboard-api";
 
 /**
  * Load plugin from URL (http://, https://, file://), or package name
  */
 export async function loadPlugin(
   source: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<Plugin> {
   logger.debug(`Loading plugin from: ${source}`);
 
@@ -57,7 +58,7 @@ export async function loadPlugin(
       const response = await fetch(source);
       if (!response.ok) {
         throw new Error(
-          `Failed to fetch plugin: ${response.status} ${response.statusText}`
+          `Failed to fetch plugin: ${response.status} ${response.statusText}`,
         );
       }
       const code = await response.text();
@@ -82,7 +83,7 @@ export async function loadPlugin(
  */
 async function evaluatePluginCode(
   code: string,
-  sourceUrl: string
+  sourceUrl: string,
 ): Promise<Plugin> {
   // Create a dynamic module from the code
   // Using data URL import is safer than eval
@@ -98,7 +99,7 @@ async function evaluatePluginCode(
     return module.default;
   } catch (error) {
     throw new Error(
-      `Failed to evaluate plugin code: ${(error as Error).message}`
+      `Failed to evaluate plugin code: ${(error as Error).message}`,
     );
   }
 }

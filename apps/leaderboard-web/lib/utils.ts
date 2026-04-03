@@ -1,12 +1,18 @@
 import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
 import { format, formatDistanceToNow } from "date-fns";
+import { twMerge } from "tailwind-merge";
 
 type NumberAggregateValue = {
   type: "number";
   value: number;
   unit?: string;
-  format?: "integer" | "decimal" | "percentage" | "duration" | "bytes" | "currency";
+  format?:
+    | "integer"
+    | "decimal"
+    | "percentage"
+    | "duration"
+    | "bytes"
+    | "currency";
   decimals?: number;
 };
 
@@ -21,7 +27,14 @@ type NumberStatisticsAggregateValue = {
   count?: number;
   unit?: string;
   format?: string;
-  highlightMetric?: "min" | "max" | "mean" | "median" | "variance" | "sum" | "count";
+  highlightMetric?:
+    | "min"
+    | "max"
+    | "mean"
+    | "median"
+    | "variance"
+    | "sum"
+    | "count";
 };
 
 type StringAggregateValue = {
@@ -82,7 +95,7 @@ export function formatTimeAgo(date: Date): string {
  */
 export function generateActivityGraphData(
   activityByDate: Record<string, number>,
-  days: number = 365
+  days: number = 365,
 ): Array<{ date: string; count: number; level: number }> {
   const data: Array<{ date: string; count: number; level: number }> = [];
   const today = new Date();
@@ -122,7 +135,7 @@ export function getMonthBoundaries(date: Date): { start: Date; end: Date } {
     23,
     59,
     59,
-    999
+    999,
   );
   return { start, end };
 }
@@ -157,15 +170,16 @@ export function formatMonthHeader(monthKey: MonthKey): string {
  * @returns Map of month keys to arrays of activities, sorted newest to oldest
  */
 export function groupActivitiesByMonth<T extends { occured_at: Date | string }>(
-  activities: T[]
+  activities: T[],
 ): Map<MonthKey, T[]> {
   const grouped = new Map<MonthKey, T[]>();
 
   // Group activities by month
   activities.forEach((activity) => {
-    const date = activity.occured_at instanceof Date 
-      ? activity.occured_at 
-      : new Date(activity.occured_at);
+    const date =
+      activity.occured_at instanceof Date
+        ? activity.occured_at
+        : new Date(activity.occured_at);
     const monthKey = getMonthKey(date);
     if (!grouped.has(monthKey)) {
       grouped.set(monthKey, []);
@@ -226,14 +240,14 @@ export function formatAggregateValue(value: AggregateValue): string {
     // For statistics, show the highlight metric or mean
     const metricKey = value.highlightMetric || "mean";
     const metricValue = value[metricKey];
-    
+
     if (metricValue === undefined) {
       return "N/A";
     }
 
     // Format the metric value
     let formatted = metricValue.toLocaleString();
-    
+
     if (value.unit) {
       formatted += ` ${value.unit}`;
     }
@@ -247,22 +261,22 @@ export function formatAggregateValue(value: AggregateValue): string {
     switch (format) {
       case "percentage":
         return `${(numValue * 100).toFixed(decimals)}%`;
-      
+
       case "duration":
         return formatDuration(numValue);
-      
+
       case "bytes":
         return formatBytes(numValue);
-      
+
       case "currency":
         return new Intl.NumberFormat("en-US", {
           style: "currency",
           currency: unit || "USD",
         }).format(numValue);
-      
+
       case "decimal":
         return numValue.toFixed(decimals) + (unit ? ` ${unit}` : "");
-      
+
       case "integer":
       default:
         const formatted = Math.round(numValue).toLocaleString();

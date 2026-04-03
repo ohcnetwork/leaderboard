@@ -2,19 +2,19 @@
  * Activity exporter tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { readFile, mkdir, rm } from "fs/promises";
-import { join } from "path";
-import { createDatabase } from "@ohcnetwork/leaderboard-api";
-import { initializeSchema } from "@ohcnetwork/leaderboard-api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
-  contributorQueries,
   activityDefinitionQueries,
   activityQueries,
+  contributorQueries,
+  createDatabase,
+  initializeSchema,
 } from "@ohcnetwork/leaderboard-api";
+import { mkdir, readFile, rm } from "fs/promises";
+import { join } from "path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { exportActivities } from "../../exporters/activities";
 import { createLogger } from "../../logger";
-import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-export-activities";
 const logger = createLogger(false);
@@ -84,7 +84,7 @@ describe("Activity Exporter", () => {
 
     const content = await readFile(
       join(TEST_DATA_DIR, "activities", "alice.jsonl"),
-      "utf-8"
+      "utf-8",
     );
     const lines = content.trim().split("\n");
 
@@ -139,11 +139,11 @@ describe("Activity Exporter", () => {
     // Check both files exist
     const aliceContent = await readFile(
       join(TEST_DATA_DIR, "activities", "alice.jsonl"),
-      "utf-8"
+      "utf-8",
     );
     const bobContent = await readFile(
       join(TEST_DATA_DIR, "activities", "bob.jsonl"),
-      "utf-8"
+      "utf-8",
     );
 
     expect(aliceContent).toBeTruthy();
@@ -182,7 +182,7 @@ describe("Activity Exporter", () => {
     // Check that only alice's file exists
     const aliceContent = await readFile(
       join(TEST_DATA_DIR, "activities", "alice.jsonl"),
-      "utf-8"
+      "utf-8",
     );
     expect(aliceContent).toBeTruthy();
 

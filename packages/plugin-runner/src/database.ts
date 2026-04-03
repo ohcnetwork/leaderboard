@@ -2,12 +2,12 @@
  * Database initialization for plugin runner
  */
 
+import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
   createDatabase,
   getDatabaseUrl,
   initializeSchema,
 } from "@ohcnetwork/leaderboard-api";
-import type { Database } from "@ohcnetwork/leaderboard-api";
 
 /**
  * Initialize database with schema

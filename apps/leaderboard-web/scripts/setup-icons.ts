@@ -18,13 +18,13 @@ async function getIconNames() {
 
   // Get icons from activity definitions
   const result = await db.execute(
-    "SELECT DISTINCT icon FROM activity_definition WHERE icon IS NOT NULL;"
+    "SELECT DISTINCT icon FROM activity_definition WHERE icon IS NOT NULL;",
   );
   result.rows.forEach((row) => allIcons.add(row.icon as string));
 
   // Get icons from social profiles config
   Object.values(config.leaderboard.social_profiles ?? []).forEach(({ icon }) =>
-    allIcons.add(icon)
+    allIcons.add(icon),
   );
 
   return allIcons;

@@ -1,9 +1,9 @@
 "use client";
 
-import { ContributorActivity } from "@/lib/data/types";
-import RelativeTime from "@/components/RelativeTime";
-import { ExternalLinkIcon } from "lucide-react";
 import Icon from "@/components/Icon";
+import RelativeTime from "@/components/RelativeTime";
+import { ContributorActivity } from "@/lib/data/types";
+import { ExternalLinkIcon } from "lucide-react";
 
 interface ActivityTimelineItemProps {
   activity: ContributorActivity;

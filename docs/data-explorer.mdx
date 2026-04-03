@@ -37,14 +37,14 @@ Write any read-only SQL query against the leaderboard database. The editor suppo
 
 Click any of the preset query buttons to load a starter query:
 
-| Query | Description |
-|-------|-------------|
-| All contributors | Lists every contributor with username, name, role, and title |
-| Top 10 by points | Ranks contributors by total activity points |
-| Activity types | Shows all activity definitions and their point values |
-| Recent activity | Displays the 20 most recent activities with details |
-| Activity per contributor | Aggregates activity count and points per contributor |
-| Badge holders | Lists recent badge achievements with variant info |
+| Query                    | Description                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| All contributors         | Lists every contributor with username, name, role, and title |
+| Top 10 by points         | Ranks contributors by total activity points                  |
+| Activity types           | Shows all activity definitions and their point values        |
+| Recent activity          | Displays the 20 most recent activities with details          |
+| Activity per contributor | Aggregates activity count and points per contributor         |
+| Badge holders            | Lists recent badge achievements with variant info            |
 
 ### Schema Browser
 
@@ -64,90 +64,90 @@ The following tables are available for querying:
 
 ### `contributor`
 
-| Column | Type |
-|--------|------|
-| username | VARCHAR (PK) |
-| name | VARCHAR |
-| role | VARCHAR |
-| title | VARCHAR |
-| avatar_url | VARCHAR |
-| bio | TEXT |
-| social_profiles | JSON |
-| joining_date | DATE |
-| meta | JSON |
+| Column          | Type         |
+| --------------- | ------------ |
+| username        | VARCHAR (PK) |
+| name            | VARCHAR      |
+| role            | VARCHAR      |
+| title           | VARCHAR      |
+| avatar_url      | VARCHAR      |
+| bio             | TEXT         |
+| social_profiles | JSON         |
+| joining_date    | DATE         |
+| meta            | JSON         |
 
 ### `activity`
 
-| Column | Type |
-|--------|------|
-| slug | VARCHAR (PK) |
-| contributor | VARCHAR (FK → contributor) |
+| Column              | Type                               |
+| ------------------- | ---------------------------------- |
+| slug                | VARCHAR (PK)                       |
+| contributor         | VARCHAR (FK → contributor)         |
 | activity_definition | VARCHAR (FK → activity_definition) |
-| title | VARCHAR |
-| occured_at | TIMESTAMP |
-| link | VARCHAR |
-| text | TEXT |
-| points | SMALLINT |
-| meta | JSON |
+| title               | VARCHAR                            |
+| occured_at          | TIMESTAMP                          |
+| link                | VARCHAR                            |
+| text                | TEXT                               |
+| points              | SMALLINT                           |
+| meta                | JSON                               |
 
 ### `activity_definition`
 
-| Column | Type |
-|--------|------|
-| slug | VARCHAR (PK) |
-| name | VARCHAR |
-| description | TEXT |
-| points | SMALLINT |
-| icon | VARCHAR |
+| Column      | Type         |
+| ----------- | ------------ |
+| slug        | VARCHAR (PK) |
+| name        | VARCHAR      |
+| description | TEXT         |
+| points      | SMALLINT     |
+| icon        | VARCHAR      |
 
 ### `badge_definition`
 
-| Column | Type |
-|--------|------|
-| slug | VARCHAR (PK) |
-| name | VARCHAR |
-| description | TEXT |
-| variants | JSON |
+| Column      | Type         |
+| ----------- | ------------ |
+| slug        | VARCHAR (PK) |
+| name        | VARCHAR      |
+| description | TEXT         |
+| variants    | JSON         |
 
 ### `contributor_badge`
 
-| Column | Type |
-|--------|------|
-| slug | VARCHAR (PK) |
-| badge | VARCHAR (FK → badge_definition) |
-| contributor | VARCHAR (FK → contributor) |
-| variant | VARCHAR |
-| achieved_on | DATE |
-| meta | JSON |
+| Column      | Type                            |
+| ----------- | ------------------------------- |
+| slug        | VARCHAR (PK)                    |
+| badge       | VARCHAR (FK → badge_definition) |
+| contributor | VARCHAR (FK → contributor)      |
+| variant     | VARCHAR                         |
+| achieved_on | DATE                            |
+| meta        | JSON                            |
 
 ### `global_aggregate`
 
-| Column | Type |
-|--------|------|
-| slug | VARCHAR (PK) |
-| name | VARCHAR |
-| description | TEXT |
-| value | JSON |
-| hidden | BOOLEAN |
-| meta | JSON |
+| Column      | Type         |
+| ----------- | ------------ |
+| slug        | VARCHAR (PK) |
+| name        | VARCHAR      |
+| description | TEXT         |
+| value       | JSON         |
+| hidden      | BOOLEAN      |
+| meta        | JSON         |
 
 ### `contributor_aggregate_definition`
 
-| Column | Type |
-|--------|------|
-| slug | VARCHAR (PK) |
-| name | VARCHAR |
-| description | TEXT |
-| hidden | BOOLEAN |
+| Column      | Type         |
+| ----------- | ------------ |
+| slug        | VARCHAR (PK) |
+| name        | VARCHAR      |
+| description | TEXT         |
+| hidden      | BOOLEAN      |
 
 ### `contributor_aggregate`
 
-| Column | Type |
-|--------|------|
-| aggregate | VARCHAR (FK → contributor_aggregate_definition) |
-| contributor | VARCHAR (FK → contributor) |
-| value | JSON |
-| meta | JSON |
+| Column      | Type                                            |
+| ----------- | ----------------------------------------------- |
+| aggregate   | VARCHAR (FK → contributor_aggregate_definition) |
+| contributor | VARCHAR (FK → contributor)                      |
+| value       | JSON                                            |
+| meta        | JSON                                            |
 
 ## Useful Query Examples
 

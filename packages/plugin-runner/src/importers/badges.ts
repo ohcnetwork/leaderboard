@@ -2,13 +2,13 @@
  * Import badges from data directory
  */
 
-import { readFile, readdir } from "fs/promises";
-import { join } from "path";
 import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
   badgeDefinitionQueries,
   contributorBadgeQueries,
 } from "@ohcnetwork/leaderboard-api";
+import { readFile, readdir } from "fs/promises";
+import { join } from "path";
 
 /**
  * Import badge definitions from badges/definitions.json
@@ -16,7 +16,7 @@ import {
 export async function importBadgeDefinitions(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const definitionsPath = join(dataDir, "badges", "definitions.json");
 
@@ -49,7 +49,7 @@ export async function importBadgeDefinitions(
 export async function importContributorBadges(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const contributorsDir = join(dataDir, "badges", "contributors");
 
@@ -76,7 +76,7 @@ export async function importContributorBadges(
     }
 
     logger.info(
-      `Imported ${totalImported} contributor badges from ${jsonlFiles.length} files`
+      `Imported ${totalImported} contributor badges from ${jsonlFiles.length} files`,
     );
   } catch (error: any) {
     if (error.code === "ENOENT") {
@@ -93,7 +93,7 @@ export async function importContributorBadges(
 export async function importBadges(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   logger.info("Importing badges");
   await importBadgeDefinitions(db, dataDir, logger);

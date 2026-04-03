@@ -2,23 +2,23 @@
  * Badge importer tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { writeFile, mkdir, rm } from "fs/promises";
-import { join } from "path";
-import { createDatabase } from "@ohcnetwork/leaderboard-api";
-import { initializeSchema } from "@ohcnetwork/leaderboard-api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
   badgeDefinitionQueries,
   contributorBadgeQueries,
   contributorQueries,
+  createDatabase,
+  initializeSchema,
 } from "@ohcnetwork/leaderboard-api";
+import { mkdir, rm, writeFile } from "fs/promises";
+import { join } from "path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   importBadgeDefinitions,
-  importContributorBadges,
   importBadges,
+  importContributorBadges,
 } from "../../importers/badges";
 import { createLogger } from "../../logger";
-import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-import-badges";
 const logger = createLogger(false);
@@ -65,7 +65,7 @@ describe("Badge Importers", () => {
       await writeFile(
         join(TEST_DATA_DIR, "badges", "definitions.json"),
         JSON.stringify(definitions),
-        "utf-8"
+        "utf-8",
       );
 
       await importBadgeDefinitions(db, TEST_DATA_DIR, logger);
@@ -96,7 +96,7 @@ describe("Badge Importers", () => {
       await writeFile(
         join(TEST_DATA_DIR, "badges", "definitions.json"),
         JSON.stringify(definitions),
-        "utf-8"
+        "utf-8",
       );
 
       await importBadgeDefinitions(db, TEST_DATA_DIR, logger);
@@ -172,14 +172,14 @@ describe("Badge Importers", () => {
       await writeFile(
         join(TEST_DATA_DIR, "badges", "contributors", "alice.jsonl"),
         badges.map((b) => JSON.stringify(b)).join("\n") + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await importContributorBadges(db, TEST_DATA_DIR, logger);
 
       const imported = await contributorBadgeQueries.getByContributor(
         db,
-        "alice"
+        "alice",
       );
       expect(imported).toHaveLength(2);
     });
@@ -211,7 +211,7 @@ describe("Badge Importers", () => {
           achieved_on: "2025-01-05",
           meta: null,
         }) + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await writeFile(
@@ -224,18 +224,18 @@ describe("Badge Importers", () => {
           achieved_on: "2025-01-05",
           meta: null,
         }) + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await importContributorBadges(db, TEST_DATA_DIR, logger);
 
       const aliceBadges = await contributorBadgeQueries.getByContributor(
         db,
-        "alice"
+        "alice",
       );
       const bobBadges = await contributorBadgeQueries.getByContributor(
         db,
-        "bob"
+        "bob",
       );
 
       expect(aliceBadges).toHaveLength(1);
@@ -260,7 +260,7 @@ describe("Badge Importers", () => {
             actualValue: 42,
           },
         }) + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await importContributorBadges(db, TEST_DATA_DIR, logger);
@@ -268,7 +268,7 @@ describe("Badge Importers", () => {
       const badge = await contributorBadgeQueries.getByContributorAndBadge(
         db,
         "alice",
-        "activity_milestone"
+        "activity_milestone",
       );
 
       expect(badge?.meta).toBeDefined();
@@ -313,7 +313,7 @@ describe("Badge Importers", () => {
             variants: { bronze: { description: "10+", svg_url: "url" } },
           },
         ]),
-        "utf-8"
+        "utf-8",
       );
 
       // Contributor badges
@@ -327,7 +327,7 @@ describe("Badge Importers", () => {
           achieved_on: "2025-01-05",
           meta: null,
         }) + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await importBadges(db, TEST_DATA_DIR, logger);

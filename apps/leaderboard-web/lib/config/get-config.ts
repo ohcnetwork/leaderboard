@@ -1,8 +1,8 @@
-import { readFileSync } from "fs";
-import { join } from "path";
-import yaml from "js-yaml";
 import { Config, ConfigSchema } from "@/lib/config/schema";
 import { dataDir } from "@ohcnetwork/leaderboard-api";
+import { readFileSync } from "fs";
+import yaml from "js-yaml";
+import { join } from "path";
 
 let cachedConfig: Config | null = null;
 
@@ -68,7 +68,7 @@ export function getConfig(): Config {
       })
       .join("\n");
     throw new Error(
-      `Configuration validation failed:\n${errors}\n\nPlease check your config.yaml file.`
+      `Configuration validation failed:\n${errors}\n\nPlease check your config.yaml file.`,
     );
   }
 

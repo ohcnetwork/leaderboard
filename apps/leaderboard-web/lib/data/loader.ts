@@ -5,20 +5,15 @@
 
 import { getDatabase } from "@/lib/db/client";
 import {
-  contributorQueries,
-  activityQueries,
   activityDefinitionQueries,
+  activityQueries,
   badgeDefinitionQueries,
-  contributorBadgeQueries,
-  globalAggregateQueries,
   contributorAggregateQueries,
-  type Contributor,
-  type Activity,
-  type ActivityDefinition,
-  type BadgeDefinition,
+  contributorBadgeQueries,
+  contributorQueries,
+  globalAggregateQueries,
   type ContributorBadge,
 } from "@ohcnetwork/leaderboard-api";
-import { LeaderboardEntry } from "./types";
 
 /**
  * Get all contributors

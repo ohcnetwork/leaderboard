@@ -1,6 +1,3 @@
-import React from "react";
-import Image from "next/image";
-
 type BadgeVariant = {
   description: string;
   svg_url: string;
@@ -45,9 +42,10 @@ export function BadgeDisplay({
   };
 
   const variant = badge.badge_variants?.[badge.variant];
-  const achievedDate = typeof badge.achieved_on === "string" 
-    ? new Date(badge.achieved_on) 
-    : badge.achieved_on;
+  const achievedDate =
+    typeof badge.achieved_on === "string"
+      ? new Date(badge.achieved_on)
+      : badge.achieved_on;
 
   return (
     <div className="flex flex-col items-center gap-2">
@@ -90,9 +88,13 @@ export function BadgeDisplay({
 
       {showDetails && (
         <div className="text-center">
-          <div className="font-medium text-sm">{badge.badge_name || badge.badge}</div>
+          <div className="font-medium text-sm">
+            {badge.badge_name || badge.badge}
+          </div>
           {badge.variant !== "default" && (
-            <div className="text-xs text-muted-foreground capitalize">{badge.variant}</div>
+            <div className="text-xs text-muted-foreground capitalize">
+              {badge.variant}
+            </div>
           )}
         </div>
       )}
@@ -151,14 +153,17 @@ export function BadgeGrid({
   }
 
   // Group badges by badge type (badge slug)
-  const grouped = badges.reduce((acc, badge) => {
-    const category = badge.badge_name || badge.badge;
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push(badge);
-    return acc;
-  }, {} as Record<string, typeof badges>);
+  const grouped = badges.reduce(
+    (acc, badge) => {
+      const category = badge.badge_name || badge.badge;
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+      acc[category].push(badge);
+      return acc;
+    },
+    {} as Record<string, typeof badges>,
+  );
 
   return (
     <div className="space-y-8">
@@ -206,7 +211,9 @@ export function BadgeProgress({
       <div className="flex items-center gap-3">
         <div>
           <h4 className="font-semibold">{badgeDefinition.name}</h4>
-          <p className="text-sm text-muted-foreground">{badgeDefinition.description}</p>
+          <p className="text-sm text-muted-foreground">
+            {badgeDefinition.description}
+          </p>
         </div>
       </div>
 
@@ -222,8 +229,8 @@ export function BadgeProgress({
                 isEarned
                   ? "bg-success/10 border border-success/30"
                   : isNext
-                  ? "bg-primary/10 border border-primary/30"
-                  : "bg-muted/50 border border-border"
+                    ? "bg-primary/10 border border-primary/30"
+                    : "bg-muted/50 border border-border"
               }`}
             >
               <div className="w-8 h-8 rounded-full bg-linear-to-br from-badge-accent to-badge-accent/70 flex items-center justify-center text-sm text-badge-accent-foreground">
@@ -242,7 +249,7 @@ export function BadgeProgress({
                               100,
                               (currentProgress.current /
                                 currentProgress.required) *
-                                100
+                                100,
                             )}%`,
                           }}
                         />
@@ -282,9 +289,10 @@ interface RecentBadgeAchievementProps {
 export function RecentBadgeAchievement({
   achievement,
 }: RecentBadgeAchievementProps) {
-  const achievedDate = typeof achievement.achieved_on === "string" 
-    ? new Date(achievement.achieved_on) 
-    : achievement.achieved_on;
+  const achievedDate =
+    typeof achievement.achieved_on === "string"
+      ? new Date(achievement.achieved_on)
+      : achievement.achieved_on;
   const variant = achievement.badge_variants[achievement.variant];
 
   return (

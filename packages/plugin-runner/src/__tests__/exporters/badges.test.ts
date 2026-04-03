@@ -2,23 +2,23 @@
  * Badge exporter tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { readFile, mkdir, rm, readdir } from "fs/promises";
-import { join } from "path";
-import { createDatabase } from "@ohcnetwork/leaderboard-api";
-import { initializeSchema } from "@ohcnetwork/leaderboard-api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
   badgeDefinitionQueries,
   contributorBadgeQueries,
   contributorQueries,
+  createDatabase,
+  initializeSchema,
 } from "@ohcnetwork/leaderboard-api";
+import { mkdir, readdir, readFile, rm } from "fs/promises";
+import { join } from "path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   exportBadgeDefinitions,
-  exportContributorBadges,
   exportBadges,
+  exportContributorBadges,
 } from "../../exporters/badges";
 import { createLogger } from "../../logger";
-import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-export-badges";
 const logger = createLogger(false);
@@ -63,7 +63,7 @@ describe("Badge Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "badges", "definitions.json"),
-        "utf-8"
+        "utf-8",
       );
       const definitions = JSON.parse(content);
 
@@ -93,7 +93,7 @@ describe("Badge Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "badges", "definitions.json"),
-        "utf-8"
+        "utf-8",
       );
       const definitions = JSON.parse(content);
 
@@ -105,7 +105,7 @@ describe("Badge Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "badges", "definitions.json"),
-        "utf-8"
+        "utf-8",
       );
       const definitions = JSON.parse(content);
 
@@ -182,7 +182,7 @@ describe("Badge Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "badges", "contributors", "alice.jsonl"),
-        "utf-8"
+        "utf-8",
       );
       const lines = content.trim().split("\n");
 
@@ -216,7 +216,7 @@ describe("Badge Exporters", () => {
       await exportContributorBadges(db, TEST_DATA_DIR, logger);
 
       const files = await readdir(
-        join(TEST_DATA_DIR, "badges", "contributors")
+        join(TEST_DATA_DIR, "badges", "contributors"),
       );
       expect(files).toContain("alice.jsonl");
       expect(files).toContain("bob.jsonl");
@@ -240,7 +240,7 @@ describe("Badge Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "badges", "contributors", "alice.jsonl"),
-        "utf-8"
+        "utf-8",
       );
       const badge = JSON.parse(content.trim());
 
@@ -253,7 +253,7 @@ describe("Badge Exporters", () => {
       await exportContributorBadges(db, TEST_DATA_DIR, logger);
 
       const files = await readdir(
-        join(TEST_DATA_DIR, "badges", "contributors")
+        join(TEST_DATA_DIR, "badges", "contributors"),
       );
       expect(files).toHaveLength(0);
     });
@@ -294,11 +294,11 @@ describe("Badge Exporters", () => {
       // Verify all files were created
       const definitionsContent = await readFile(
         join(TEST_DATA_DIR, "badges", "definitions.json"),
-        "utf-8"
+        "utf-8",
       );
       const contributorContent = await readFile(
         join(TEST_DATA_DIR, "badges", "contributors", "alice.jsonl"),
-        "utf-8"
+        "utf-8",
       );
 
       expect(JSON.parse(definitionsContent)).toHaveLength(1);

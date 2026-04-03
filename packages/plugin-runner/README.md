@@ -42,4 +42,3 @@ pnpm plugin-runner --debug
 ## License
 
 MIT
-

@@ -4,11 +4,11 @@
 
 import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
-  contributorQueries,
   activityQueries,
-  globalAggregateQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
+  contributorQueries,
+  globalAggregateQueries,
 } from "@ohcnetwork/leaderboard-api";
 
 /**
@@ -17,7 +17,7 @@ import {
  */
 export async function runAggregation(
   db: Database,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   logger.info("Starting aggregation phase");
 
@@ -35,7 +35,7 @@ export async function runAggregation(
  */
 async function calculateGlobalAggregates(
   db: Database,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   logger.info("Calculating global aggregates");
 
@@ -103,7 +103,7 @@ async function calculateGlobalAggregates(
   const recentActivities = await activityQueries.getByDateRange(
     db,
     thirtyDaysAgoStr,
-    today
+    today,
   );
   const activeContributors = new Set(recentActivities.map((a) => a.contributor))
     .size;
@@ -138,7 +138,7 @@ async function calculateGlobalAggregates(
  */
 async function calculateContributorAggregates(
   db: Database,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   logger.info("Calculating contributor aggregates");
 
@@ -196,7 +196,7 @@ async function calculateContributorAggregates(
   for (const contributor of contributors) {
     const activities = await activityQueries.getByContributor(
       db,
-      contributor.username
+      contributor.username,
     );
 
     if (activities.length === 0) {
@@ -236,7 +236,7 @@ async function calculateContributorAggregates(
     // Sort activities by date
     const sortedActivities = [...activities].sort(
       (a, b) =>
-        new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime()
+        new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime(),
     );
 
     // First activity date
@@ -270,7 +270,7 @@ async function calculateContributorAggregates(
 
     // Active days (unique dates)
     const uniqueDates = new Set(
-      activities.map((a) => a.occured_at.split("T")[0])
+      activities.map((a) => a.occured_at.split("T")[0]),
     );
     await contributorAggregateQueries.upsert(db, {
       aggregate: "active_days",

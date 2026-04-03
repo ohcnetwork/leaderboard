@@ -26,7 +26,7 @@ async function generateSchema() {
     await writeFile(
       outputPath,
       JSON.stringify(schemaWithMeta, null, 2) + "\n",
-      "utf8"
+      "utf8",
     );
 
     console.log("✓ Generated config.schema.json");

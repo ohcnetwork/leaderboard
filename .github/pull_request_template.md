@@ -3,17 +3,21 @@
 <!-- Provide a clear and concise description of your changes -->
 
 ### What
+
 <!-- What changes are you making? -->
 
 ### Why
+
 <!-- Why are these changes needed? What problem does this solve? -->
 
 - Resolves #issue-number
 
 ### How
+
 <!-- How did you implement these changes? What approach did you take? -->
 
 ### Related Issues
+
 <!-- Link to related issues. Use "Closes #123" or "Fixes #456" to automatically close issues when merged -->
 
 ---
@@ -67,7 +71,7 @@
 
 - [ ] **Tests added/updated**: All new code has corresponding tests
   - [ ] Unit tests for business logic
-  - [ ] Integration tests where applicable  
+  - [ ] Integration tests where applicable
   - [ ] Edge cases and error scenarios covered
 - [ ] **All tests passing**: `pnpm test` runs successfully
 - [ ] **Test coverage maintained or improved**: Run `pnpm test:coverage` to verify
@@ -106,21 +110,23 @@
 
 ## Screenshots / Videos
 
-<!-- 
+<!--
 For UI changes: Include before/after screenshots
 For new features: Demo video or GIF is highly encouraged
 For bug fixes: Screenshot showing the fix in action
 -->
 
 ### Before
+
 <!-- Screenshot or description of the bug/old behavior -->
 
 ### After
+
 <!-- Screenshot or description of the new behavior -->
 
 ---
 
-<!-- 
+<!--
 Thank you for contributing to the Leaderboard project! 🎉
 
 Before submitting:

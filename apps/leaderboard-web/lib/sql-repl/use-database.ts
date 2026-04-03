@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
-import type { WorkerHttpvfs } from "sql.js-httpvfs";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { QueryExecResult } from "sql.js";
+import type { WorkerHttpvfs } from "sql.js-httpvfs";
 
 export type DatabaseStatus = "idle" | "loading" | "ready" | "error";
 

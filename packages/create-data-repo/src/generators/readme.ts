@@ -123,7 +123,7 @@ ${config.roles
     (role) =>
       `- **${role.name}** (\`${role.slug}\`)${
         role.description ? `: ${role.description}` : ""
-      }${role.hidden ? " _(hidden)_" : ""}`
+      }${role.hidden ? " _(hidden)_" : ""}`,
   )
   .join("\n")}
 

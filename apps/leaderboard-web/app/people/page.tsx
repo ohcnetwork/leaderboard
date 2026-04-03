@@ -1,8 +1,8 @@
-import { Suspense } from "react";
-import { getAllContributorsWithAvatars } from "@/lib/data/loader";
 import { getConfig } from "@/lib/config/get-config";
 import { getHiddenRoles, getVisibleRolesOrdered } from "@/lib/config/helpers";
+import { getAllContributorsWithAvatars } from "@/lib/data/loader";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import PeopleView from "./PeopleView";
 
 export async function generateMetadata(): Promise<Metadata> {

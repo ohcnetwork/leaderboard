@@ -3,10 +3,10 @@
  * Seed script for generating dummy data
  */
 
-import { writeFile, mkdir } from "fs/promises";
-import { join } from "path";
+import { mkdir, writeFile } from "fs/promises";
 import matter from "gray-matter";
-import type { Contributor, ActivityDefinition, Activity } from "./types";
+import { join } from "path";
+import type { Activity, ActivityDefinition, Contributor } from "./types";
 
 const FIRST_NAMES = [
   "Alice",
@@ -194,7 +194,7 @@ function randomInt(min: number, max: number): number {
 function generateUsername(firstName: string, lastName: string): string {
   return `${firstName.toLowerCase()}${lastName.toLowerCase()[0]}${randomInt(
     1,
-    99
+    99,
   )}`;
 }
 
@@ -230,7 +230,7 @@ function generateContributor(): Contributor {
   }
 
   const joiningDate = new Date(
-    Date.now() - randomInt(30, 365 * 3) * 24 * 60 * 60 * 1000
+    Date.now() - randomInt(30, 365 * 3) * 24 * 60 * 60 * 1000,
   )
     .toISOString()
     .split("T")[0];
@@ -262,7 +262,7 @@ function generateContributor(): Contributor {
 function generateActivity(
   contributor: string,
   activityDef: ActivityDefinition,
-  index: number
+  index: number,
 ): Activity {
   const daysAgo = randomInt(0, 180);
   const occurredAt = new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000);
@@ -284,7 +284,7 @@ function generateActivity(
 
 async function writeContributorMarkdown(
   outputDir: string,
-  contributor: Contributor
+  contributor: Contributor,
 ): Promise<void> {
   const { username, bio, ...frontmatter } = contributor;
 
@@ -300,7 +300,7 @@ async function writeContributorMarkdown(
 async function writeActivitiesJsonl(
   outputDir: string,
   username: string,
-  activities: Activity[]
+  activities: Activity[],
 ): Promise<void> {
   const content = activities.map((a) => JSON.stringify(a)).join("\n");
   const filePath = join(outputDir, "activities", `${username}.jsonl`);
@@ -357,7 +357,7 @@ async function main() {
   const defsPath = join(outputDir, "activity_definitions.json");
   await writeFile(defsPath, JSON.stringify(ACTIVITY_DEFS, null, 2), "utf8");
   console.log(
-    `✓ Wrote ${ACTIVITY_DEFS.length} activity definitions to ${defsPath}`
+    `✓ Wrote ${ACTIVITY_DEFS.length} activity definitions to ${defsPath}`,
   );
 
   console.log("\n✅ Seed data generation complete!");

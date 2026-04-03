@@ -9,7 +9,8 @@ import {
 import type { VariantProps } from "class-variance-authority";
 
 export interface ContributorRoleBadgeProps
-  extends Omit<React.ComponentProps<"span">, "children">,
+  extends
+    Omit<React.ComponentProps<"span">, "children">,
     VariantProps<typeof badgeVariants> {
   role: string;
   roleName?: string;

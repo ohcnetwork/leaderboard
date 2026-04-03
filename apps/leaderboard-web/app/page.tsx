@@ -1,15 +1,15 @@
-import {
-  getRecentActivitiesGroupedByType,
-  getGlobalAggregates,
-} from "@/lib/data/loader";
-import { getConfig } from "@/lib/config/get-config";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import RelativeTime from "@/components/RelativeTime";
-import Link from "next/link";
-import { Activity, Users, TrendingUp, LucideIcon } from "lucide-react";
-import { formatAggregateValue } from "@/lib/utils";
 import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
+import RelativeTime from "@/components/RelativeTime";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getConfig } from "@/lib/config/get-config";
+import {
+  getGlobalAggregates,
+  getRecentActivitiesGroupedByType,
+} from "@/lib/data/loader";
+import { formatAggregateValue } from "@/lib/utils";
+import { Activity, LucideIcon, TrendingUp, Users } from "lucide-react";
+import Link from "next/link";
 
 // Built-in aggregate definitions for home page
 const BUILTIN_GLOBAL_AGGREGATES = {
@@ -212,8 +212,16 @@ export default async function Home() {
                           </Link>
                           <ContributorRoleBadge
                             role={activity.contributor_role}
-                            roleName={config.leaderboard.roles[activity.contributor_role]?.name}
-                            roleDescription={config.leaderboard.roles[activity.contributor_role]?.description}
+                            roleName={
+                              config.leaderboard.roles[
+                                activity.contributor_role
+                              ]?.name
+                            }
+                            roleDescription={
+                              config.leaderboard.roles[
+                                activity.contributor_role
+                              ]?.description
+                            }
                           />
                           <RelativeTime
                             date={activity.occured_at}

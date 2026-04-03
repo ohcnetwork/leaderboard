@@ -5,16 +5,16 @@
  * Generates a new leaderboard plugin project structure
  */
 
+import { existsSync, mkdirSync, readdirSync, writeFileSync } from "fs";
 import { readFile } from "fs/promises";
 import { join, resolve } from "path";
-import { existsSync, mkdirSync, writeFileSync, readdirSync } from "fs";
 import prompts from "prompts";
+import { generateIndexTs } from "./templates/index-ts";
 import { generatePackageJson } from "./templates/package-json";
+import { generateReadme } from "./templates/readme";
+import { generateTestTs } from "./templates/test-ts";
 import { generateTsConfig } from "./templates/tsconfig";
 import { generateVitestConfig } from "./templates/vitest-config";
-import { generateIndexTs } from "./templates/index-ts";
-import { generateTestTs } from "./templates/test-ts";
-import { generateReadme } from "./templates/readme";
 import type { PluginOptions } from "./types";
 
 /**
@@ -121,7 +121,7 @@ function generateFiles(pluginDir: string, options: PluginOptions): void {
   writeFileSync(
     join(pluginDir, "package.json"),
     generatePackageJson(options),
-    "utf-8"
+    "utf-8",
   );
 
   // tsconfig.json
@@ -131,21 +131,21 @@ function generateFiles(pluginDir: string, options: PluginOptions): void {
   writeFileSync(
     join(pluginDir, "vitest.config.ts"),
     generateVitestConfig(),
-    "utf-8"
+    "utf-8",
   );
 
   // src/index.ts
   writeFileSync(
     join(pluginDir, "src", "index.ts"),
     generateIndexTs(options),
-    "utf-8"
+    "utf-8",
   );
 
   // src/__tests__/plugin.test.ts
   writeFileSync(
     join(pluginDir, "src", "__tests__", "plugin.test.ts"),
     generateTestTs(options),
-    "utf-8"
+    "utf-8",
   );
 
   // README.md
@@ -163,7 +163,7 @@ async function main(): Promise<void> {
     console.log("Usage: pnpm create-leaderboard-plugin [target-directory]");
     console.log("\nArguments:");
     console.log(
-      "  target-directory  Directory where the plugin will be created (default: current directory)"
+      "  target-directory  Directory where the plugin will be created (default: current directory)",
     );
     console.log("\nExamples:");
     console.log("  pnpm create-leaderboard-plugin .");
@@ -182,7 +182,7 @@ async function main(): Promise<void> {
     if (files.length > 0) {
       console.error(`Error: Directory "${targetArg}" is not empty.`);
       console.error(
-        "Please specify an empty directory or a new directory path."
+        "Please specify an empty directory or a new directory path.",
       );
       process.exit(1);
     }
@@ -211,11 +211,11 @@ async function main(): Promise<void> {
     console.log(
       `  ${
         targetArg !== "." ? "3" : "2"
-      }. Implement your plugin logic in src/index.ts`
+      }. Implement your plugin logic in src/index.ts`,
     );
     console.log(`  ${targetArg !== "." ? "4" : "3"}. pnpm build`);
     console.log(
-      `  ${targetArg !== "." ? "5" : "4"}. Add the plugin to your config.yaml`
+      `  ${targetArg !== "." ? "5" : "4"}. Add the plugin to your config.yaml`,
     );
   } catch (error) {
     console.error("Error creating plugin:", error);

@@ -2,24 +2,24 @@
  * Database query tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { createDatabase } from "../client";
-import { initializeSchema, clearAllData } from "../schema";
 import {
-  contributorQueries,
   activityDefinitionQueries,
   activityQueries,
-  globalAggregateQueries,
+  badgeDefinitionQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
-  badgeDefinitionQueries,
   contributorBadgeQueries,
+  contributorQueries,
+  globalAggregateQueries,
 } from "../queries";
+import { initializeSchema } from "../schema";
 import type {
-  Database,
-  Contributor,
-  ActivityDefinition,
   Activity,
+  ActivityDefinition,
+  Contributor,
+  Database,
 } from "../types";
 
 describe("Database Queries", () => {
@@ -292,7 +292,7 @@ describe("Database Queries", () => {
       await activityDefinitionQueries.insertOrIgnore(db, def);
       const retrieved = await activityDefinitionQueries.getBySlug(
         db,
-        "pr_merged"
+        "pr_merged",
       );
 
       expect(retrieved).not.toBeNull();
@@ -320,7 +320,7 @@ describe("Database Queries", () => {
 
       const retrieved = await activityDefinitionQueries.getBySlug(
         db,
-        "pr_merged"
+        "pr_merged",
       );
       expect(retrieved?.points).toBe(10); // Should keep original
     });
@@ -396,7 +396,7 @@ describe("Database Queries", () => {
       // Test with both activity points and definition points null
       await activityDefinitionQueries.insertOrIgnore(db, {
         slug: "issue_closed",
-        name: "Issue Closed", 
+        name: "Issue Closed",
         description: "Closed an issue",
         points: null,
         icon: null,
@@ -416,8 +416,8 @@ describe("Database Queries", () => {
 
       activities = await activityQueries.getByContributor(db, "alice");
       expect(activities).toHaveLength(3);
-      expect(activities[0].points).toBe(0); 
-      expect(activities[1].points).toBe(10); 
+      expect(activities[0].points).toBe(0);
+      expect(activities[1].points).toBe(10);
     });
 
     it("should get activities by date range", async () => {
@@ -448,7 +448,7 @@ describe("Database Queries", () => {
       const activities = await activityQueries.getByDateRange(
         db,
         "2024-01-01T00:00:00Z",
-        "2024-01-31T23:59:59Z"
+        "2024-01-31T23:59:59Z",
       );
 
       expect(activities).toHaveLength(1);
@@ -487,7 +487,7 @@ describe("Database Queries", () => {
 
       const totalPoints = await activityQueries.getTotalPointsByContributor(
         db,
-        "alice"
+        "alice",
       );
       expect(totalPoints).toBe(35);
     });
@@ -557,7 +557,7 @@ describe("Database Queries", () => {
 
       const aggregate = await globalAggregateQueries.getBySlug(
         db,
-        "total_contributors"
+        "total_contributors",
       );
 
       expect(aggregate).not.toBeNull();
@@ -608,7 +608,7 @@ describe("Database Queries", () => {
 
       const aggregate = await globalAggregateQueries.getBySlug(
         db,
-        "total_contributors"
+        "total_contributors",
       );
       if (aggregate?.value.type === "number") {
         expect(aggregate.value.value).toBe(50);
@@ -644,7 +644,7 @@ describe("Database Queries", () => {
       const stringAgg = await globalAggregateQueries.getBySlug(db, "status");
       const statsAgg = await globalAggregateQueries.getBySlug(
         db,
-        "activity_stats"
+        "activity_stats",
       );
 
       expect(stringAgg?.value.type).toBe("string");
@@ -674,11 +674,11 @@ describe("Database Queries", () => {
 
       const visible = await globalAggregateQueries.getBySlug(
         db,
-        "visible_metric"
+        "visible_metric",
       );
       const hidden = await globalAggregateQueries.getBySlug(
         db,
-        "hidden_metric"
+        "hidden_metric",
       );
 
       // SQLite returns 0/1 for boolean values
@@ -723,7 +723,7 @@ describe("Database Queries", () => {
       expect(allAggregates).toHaveLength(3);
       expect(visibleAggregates).toHaveLength(2);
       expect(visibleAggregates.map((a) => a.slug)).toEqual(
-        expect.arrayContaining(["visible1", "visible2"])
+        expect.arrayContaining(["visible1", "visible2"]),
       );
     });
 
@@ -739,7 +739,7 @@ describe("Database Queries", () => {
 
       const aggregate = await globalAggregateQueries.getBySlug(
         db,
-        "default_aggregate"
+        "default_aggregate",
       );
       // Default should be falsy (0, false, or null - all treated as visible)
       expect(aggregate?.hidden).toBeFalsy();
@@ -756,7 +756,7 @@ describe("Database Queries", () => {
 
       const definition = await contributorAggregateDefinitionQueries.getBySlug(
         db,
-        "pr_merged_count"
+        "pr_merged_count",
       );
 
       expect(definition).not.toBeNull();
@@ -776,9 +776,8 @@ describe("Database Queries", () => {
         description: null,
       });
 
-      const definitions = await contributorAggregateDefinitionQueries.getAll(
-        db
-      );
+      const definitions =
+        await contributorAggregateDefinitionQueries.getAll(db);
       expect(definitions).toHaveLength(2);
     });
 
@@ -801,11 +800,11 @@ describe("Database Queries", () => {
 
       const visible = await contributorAggregateDefinitionQueries.getBySlug(
         db,
-        "visible_def"
+        "visible_def",
       );
       const hidden = await contributorAggregateDefinitionQueries.getBySlug(
         db,
-        "hidden_def"
+        "hidden_def",
       );
 
       // SQLite returns 0/1 for boolean values
@@ -838,16 +837,15 @@ describe("Database Queries", () => {
         hidden: null,
       });
 
-      const allDefinitions = await contributorAggregateDefinitionQueries.getAll(
-        db
-      );
+      const allDefinitions =
+        await contributorAggregateDefinitionQueries.getAll(db);
       const visibleDefinitions =
         await contributorAggregateDefinitionQueries.getAllVisible(db);
 
       expect(allDefinitions).toHaveLength(3);
       expect(visibleDefinitions).toHaveLength(2);
       expect(visibleDefinitions.map((d) => d.slug)).toEqual(
-        expect.arrayContaining(["visible1", "visible2"])
+        expect.arrayContaining(["visible1", "visible2"]),
       );
     });
 
@@ -861,7 +859,7 @@ describe("Database Queries", () => {
 
       const definition = await contributorAggregateDefinitionQueries.getBySlug(
         db,
-        "default_def"
+        "default_def",
       );
       // Default should be falsy (0, false, or null - all treated as visible)
       expect(definition?.hidden).toBeFalsy();
@@ -902,7 +900,7 @@ describe("Database Queries", () => {
         await contributorAggregateQueries.getByContributorAndAggregate(
           db,
           "alice",
-          "activity_count"
+          "activity_count",
         );
 
       expect(aggregate).not.toBeNull();
@@ -934,7 +932,7 @@ describe("Database Queries", () => {
 
       const aggregates = await contributorAggregateQueries.getByContributor(
         db,
-        "alice"
+        "alice",
       );
       expect(aggregates).toHaveLength(2);
     });
@@ -956,7 +954,7 @@ describe("Database Queries", () => {
         await contributorAggregateQueries.getByContributorAndAggregate(
           db,
           "alice",
-          "activity_count"
+          "activity_count",
         );
 
       if (aggregate?.value.type === "number") {
@@ -986,7 +984,7 @@ describe("Database Queries", () => {
 
       const badge = await badgeDefinitionQueries.getBySlug(
         db,
-        "activity_milestone"
+        "activity_milestone",
       );
 
       expect(badge).not.toBeNull();
@@ -1055,7 +1053,7 @@ describe("Database Queries", () => {
       const badge = await contributorBadgeQueries.getByContributorAndBadge(
         db,
         "alice",
-        "activity_milestone"
+        "activity_milestone",
       );
 
       expect(badge).not.toBeNull();
@@ -1091,7 +1089,7 @@ describe("Database Queries", () => {
 
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "alice"
+        "alice",
       );
       expect(badges).toHaveLength(2);
     });
@@ -1110,7 +1108,7 @@ describe("Database Queries", () => {
         db,
         "alice",
         "activity_milestone",
-        "bronze"
+        "bronze",
       );
       expect(exists).toBe(true);
 
@@ -1118,7 +1116,7 @@ describe("Database Queries", () => {
         db,
         "alice",
         "activity_milestone",
-        "gold"
+        "gold",
       );
       expect(notExists).toBe(false);
     });
@@ -1137,13 +1135,13 @@ describe("Database Queries", () => {
         db,
         "activity_milestone__alice__bronze",
         "silver",
-        { upgraded: true }
+        { upgraded: true },
       );
 
       const badge = await contributorBadgeQueries.getByContributorAndBadge(
         db,
         "alice",
-        "activity_milestone"
+        "activity_milestone",
       );
 
       expect(badge?.variant).toBe("silver");
@@ -1172,7 +1170,7 @@ describe("Database Queries", () => {
 
       const badges = await contributorBadgeQueries.getByContributor(
         db,
-        "alice"
+        "alice",
       );
       expect(badges).toHaveLength(1);
     });
@@ -1273,13 +1271,13 @@ describe("activityQueries", () => {
 
       expect(result).toHaveLength(2);
       expect(result.map((a) => a.activity_definition)).toContain(
-        "pull_request_opened"
+        "pull_request_opened",
       );
       expect(result.map((a) => a.activity_definition)).toContain(
-        "pull_request_merged"
+        "pull_request_merged",
       );
       expect(result.map((a) => a.activity_definition)).not.toContain(
-        "issue_created"
+        "issue_created",
       );
     });
 
@@ -1367,7 +1365,7 @@ describe("activityQueries", () => {
       const result = await activityQueries.getByContributorAndDefinitions(
         db,
         "test_user",
-        ["pull_request_opened"]
+        ["pull_request_opened"],
       );
 
       expect(result).toHaveLength(1);
@@ -1619,7 +1617,7 @@ describe("activityQueries", () => {
           db,
           undefined,
           "2025-01-04T00:00:00Z",
-          "2025-01-06T00:00:00Z"
+          "2025-01-06T00:00:00Z",
         );
 
         expect(result).toHaveLength(1);
@@ -1718,14 +1716,14 @@ describe("activityQueries", () => {
         const result = await activityQueries.getRecentActivitiesEnriched(
           db,
           "2025-01-01T00:00:00Z",
-          "2025-01-05T00:00:00Z"
+          "2025-01-05T00:00:00Z",
         );
 
         expect(result).toHaveLength(2);
         expect(result[0].activity_name).toBe("Issue Created");
         expect(result[0].contributor_name).toBe("Alice Smith");
         expect(result[0].contributor_avatar_url).toBe(
-          "https://example.com/alice.png"
+          "https://example.com/alice.png",
         );
         expect(result[1].activity_name).toBe("PR Opened");
       });
@@ -1734,7 +1732,7 @@ describe("activityQueries", () => {
         const result = await activityQueries.getRecentActivitiesEnriched(
           db,
           "2025-01-03T00:00:00Z",
-          "2025-01-04T00:00:00Z"
+          "2025-01-04T00:00:00Z",
         );
 
         expect(result).toHaveLength(1);
@@ -1816,7 +1814,7 @@ describe("activityQueries", () => {
       it("should return top contributors for activity", async () => {
         const result = await activityQueries.getTopByActivityEnriched(
           db,
-          "pr_opened"
+          "pr_opened",
         );
 
         expect(result).toHaveLength(2);
@@ -1833,7 +1831,7 @@ describe("activityQueries", () => {
           db,
           "pr_opened",
           "2025-01-03T00:00:00Z",
-          "2025-01-05T00:00:00Z"
+          "2025-01-05T00:00:00Z",
         );
 
         expect(result).toHaveLength(2);
@@ -1849,7 +1847,7 @@ describe("activityQueries", () => {
           "pr_opened",
           undefined,
           undefined,
-          1
+          1,
         );
 
         expect(result).toHaveLength(1);
@@ -1919,7 +1917,7 @@ describe("activityQueries", () => {
       it("should group activities by date", async () => {
         const result = await activityQueries.getActivityCountByDate(
           db,
-          "alice"
+          "alice",
         );
 
         expect(result).toHaveLength(2);
@@ -2069,7 +2067,7 @@ describe("activityQueries", () => {
           await contributorAggregateQueries.getByContributorEnriched(
             db,
             "alice",
-            ["pr_count", "issue_count"]
+            ["pr_count", "issue_count"],
           );
 
         expect(result).toHaveLength(2);
@@ -2084,7 +2082,7 @@ describe("activityQueries", () => {
           await contributorAggregateQueries.getByContributorEnriched(
             db,
             "alice",
-            ["pr_count", "hidden_stat"]
+            ["pr_count", "hidden_stat"],
           );
 
         expect(result).toHaveLength(1);
@@ -2096,7 +2094,7 @@ describe("activityQueries", () => {
           await contributorAggregateQueries.getByContributorEnriched(
             db,
             "alice",
-            []
+            [],
           );
 
         expect(result).toHaveLength(0);
@@ -2168,7 +2166,7 @@ describe("activityQueries", () => {
         expect(result[0].badge_variants).toHaveProperty("bronze");
         expect(result[1].contributor).toBe("alice");
         expect(result[1].contributor_avatar_url).toBe(
-          "https://example.com/alice.png"
+          "https://example.com/alice.png",
         );
       });
 
@@ -2183,7 +2181,7 @@ describe("activityQueries", () => {
         const result = await contributorBadgeQueries.getRecentEnriched(db);
 
         expect(
-          new Date(result[0].achieved_on).getTime()
+          new Date(result[0].achieved_on).getTime(),
         ).toBeGreaterThanOrEqual(new Date(result[1].achieved_on).getTime());
       });
     });
@@ -2259,7 +2257,7 @@ describe("activityQueries", () => {
       it("should return top earners with badge count", async () => {
         const result = await contributorBadgeQueries.getTopEarnersEnriched(
           db,
-          10
+          10,
         );
 
         expect(result).toHaveLength(2);
@@ -2273,7 +2271,7 @@ describe("activityQueries", () => {
       it("should respect limit", async () => {
         const result = await contributorBadgeQueries.getTopEarnersEnriched(
           db,
-          1
+          1,
         );
 
         expect(result).toHaveLength(1);
@@ -2284,7 +2282,7 @@ describe("activityQueries", () => {
         const result = await contributorBadgeQueries.getTopEarnersEnriched(db);
 
         expect(result[0].badge_count).toBeGreaterThanOrEqual(
-          result[1].badge_count
+          result[1].badge_count,
         );
       });
     });

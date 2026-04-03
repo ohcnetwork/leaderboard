@@ -1,10 +1,19 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
-import { Play, AlertCircle, Clock, HardDrive, ChevronRight, ChevronDown, Table2, Columns3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { useDatabase, type QueryResult } from "@/lib/sql-repl/use-database";
+import { cn } from "@/lib/utils";
+import {
+  AlertCircle,
+  ChevronDown,
+  ChevronRight,
+  Clock,
+  Columns3,
+  HardDrive,
+  Play,
+  Table2,
+} from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import LoadingAnimation from "./LoadingAnimation";
 import ResultsTable from "./ResultsTable";
 
@@ -113,7 +122,7 @@ export default function SqlRepl({ schema }: SqlReplProps) {
         runQuery();
       }
     },
-    [runQuery]
+    [runQuery],
   );
 
   const toggleTable = (name: string) => {
@@ -193,7 +202,7 @@ export default function SqlRepl({ schema }: SqlReplProps) {
                 "text-xs px-2.5 py-1 rounded-full border transition-colors",
                 query === example.sql
                   ? "bg-primary/10 border-primary/30 text-primary"
-                  : "bg-muted/50 border-transparent text-muted-foreground hover:text-foreground hover:bg-muted"
+                  : "bg-muted/50 border-transparent text-muted-foreground hover:text-foreground hover:bg-muted",
               )}
             >
               {example.label}

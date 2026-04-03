@@ -4,9 +4,9 @@
  * Creates a data directory with dummy data for local development
  */
 
+import { execSync } from "child_process";
 import fs from "fs/promises";
 import path from "path";
-import { execSync } from "child_process";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -135,8 +135,10 @@ leaderboard:
           maxActivitiesPerContributor: 100
         activities:
           daysBack: ${options.days || 90}${
-    options.seed !== undefined ? `\n          seed: ${options.seed}` : ""
-  }
+            options.seed !== undefined
+              ? `\n          seed: ${options.seed}`
+              : ""
+          }
         organization:
           name: "example-org"
           repoNames:

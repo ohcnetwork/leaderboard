@@ -2,11 +2,10 @@
  * Import activities from sharded JSONL files
  */
 
+import type { Activity, Database, Logger } from "@ohcnetwork/leaderboard-api";
+import { activityQueries } from "@ohcnetwork/leaderboard-api";
 import { readdir, readFile } from "fs/promises";
 import { join } from "path";
-import type { Database, Activity } from "@ohcnetwork/leaderboard-api";
-import { activityQueries } from "@ohcnetwork/leaderboard-api";
-import type { Logger } from "@ohcnetwork/leaderboard-api";
 
 /**
  * Import all activities from JSONL files

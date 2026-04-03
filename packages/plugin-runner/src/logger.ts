@@ -22,7 +22,7 @@ export class ConsoleLogger implements Logger {
     level: LogLevel,
     levelName: string,
     message: string,
-    meta?: Record<string, unknown>
+    meta?: Record<string, unknown>,
   ): void {
     if (level < this.minLevel) {
       return;

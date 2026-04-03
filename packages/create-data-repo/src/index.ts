@@ -5,13 +5,13 @@
  * Generates a new leaderboard data repository structure
  */
 
-import { resolve } from "path";
-import { existsSync, mkdirSync, writeFileSync, readdirSync } from "fs";
 import { execSync } from "child_process";
-import { collectConfig } from "./prompts";
+import { existsSync, mkdirSync, readdirSync, writeFileSync } from "fs";
+import { resolve } from "path";
 import { generateConfigYaml } from "./generators/config";
-import { generateReadme } from "./generators/readme";
 import { generateGitignore } from "./generators/gitignore";
+import { generateReadme } from "./generators/readme";
+import { collectConfig } from "./prompts";
 
 /**
  * Main CLI function
@@ -24,10 +24,10 @@ async function main(): Promise<void> {
     console.log("Usage: pnpm create-data-repo [target-directory]");
     console.log("\nArguments:");
     console.log(
-      "  target-directory  Directory where the data repo will be created"
+      "  target-directory  Directory where the data repo will be created",
     );
     console.log(
-      "                    Default: ../data (relative to current directory)"
+      "                    Default: ../data (relative to current directory)",
     );
     console.log("\nExamples:");
     console.log("  pnpm create-data-repo");
@@ -39,7 +39,7 @@ async function main(): Promise<void> {
     console.log("  - README.md           Repository documentation");
     console.log("  - .gitignore          Git ignore rules");
     console.log(
-      "  - contributors/       Contributor profiles directory (empty)"
+      "  - contributors/       Contributor profiles directory (empty)",
     );
     console.log("  - activities/         Activity records directory (empty)");
     console.log("  - Git repository      Initialized with initial commit");
@@ -77,19 +77,19 @@ async function main(): Promise<void> {
     writeFileSync(
       resolve(targetDir, "config.yaml"),
       generateConfigYaml(config),
-      "utf-8"
+      "utf-8",
     );
 
     writeFileSync(
       resolve(targetDir, "README.md"),
       generateReadme(config),
-      "utf-8"
+      "utf-8",
     );
 
     writeFileSync(
       resolve(targetDir, ".gitignore"),
       generateGitignore(),
-      "utf-8"
+      "utf-8",
     );
 
     // Initialize git repository
@@ -102,11 +102,11 @@ async function main(): Promise<void> {
         {
           cwd: targetDir,
           stdio: "ignore",
-        }
+        },
       );
     } catch (error) {
       console.warn(
-        "⚠️  Warning: Git initialization failed. You may need to initialize git manually."
+        "⚠️  Warning: Git initialization failed. You may need to initialize git manually.",
       );
       console.warn("   Make sure git is installed and configured.");
     }
@@ -118,19 +118,19 @@ async function main(): Promise<void> {
       console.log(`  1. cd ${targetArg}`);
       console.log(`  2. Review and edit config.yaml`);
       console.log(
-        `  3. Configure plugin settings (uncomment and set API tokens)`
+        `  3. Configure plugin settings (uncomment and set API tokens)`,
       );
       console.log(
-        `  4. Run: pnpm --filter @leaderboard/plugin-runner scrape --data-dir .`
+        `  4. Run: pnpm --filter @leaderboard/plugin-runner scrape --data-dir .`,
       );
       console.log(`  5. Commit and push your changes\n`);
     } else {
       console.log(`  1. Review and edit config.yaml`);
       console.log(
-        `  2. Configure plugin settings (uncomment and set API tokens)`
+        `  2. Configure plugin settings (uncomment and set API tokens)`,
       );
       console.log(
-        `  3. Run: pnpm --filter @leaderboard/plugin-runner scrape --data-dir ${targetArg}`
+        `  3. Run: pnpm --filter @leaderboard/plugin-runner scrape --data-dir ${targetArg}`,
       );
       console.log(`  4. Commit and push your changes\n`);
     }

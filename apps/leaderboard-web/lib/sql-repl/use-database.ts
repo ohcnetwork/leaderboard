@@ -38,7 +38,7 @@ export function useDatabase() {
             },
           ],
           "/sqlite.worker.js",
-          "/sql-wasm.wasm"
+          "/sql-wasm.wasm",
         );
 
         if (cancelled) return;
@@ -59,19 +59,16 @@ export function useDatabase() {
     };
   }, []);
 
-  const exec = useCallback(
-    async (sql: string): Promise<QueryResult> => {
-      const worker = workerRef.current;
-      if (!worker) throw new Error("Database not initialized");
+  const exec = useCallback(async (sql: string): Promise<QueryResult> => {
+    const worker = workerRef.current;
+    if (!worker) throw new Error("Database not initialized");
 
-      const start = performance.now();
-      const results = await worker.db.exec(sql);
-      const duration = performance.now() - start;
+    const start = performance.now();
+    const results = await worker.db.exec(sql);
+    const duration = performance.now() - start;
 
-      return { results, duration };
-    },
-    []
-  );
+    return { results, duration };
+  }, []);
 
   const getStats = useCallback(async () => {
     const worker = workerRef.current;

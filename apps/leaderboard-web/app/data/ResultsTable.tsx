@@ -38,10 +38,7 @@ export default function ResultsTable({ result }: ResultsTableProps) {
           </thead>
           <tbody className="divide-y divide-border/50">
             {values.map((row, rowIdx) => (
-              <tr
-                key={rowIdx}
-                className="hover:bg-muted/30 transition-colors"
-              >
+              <tr key={rowIdx} className="hover:bg-muted/30 transition-colors">
                 <td className="px-3 py-1.5 text-xs text-muted-foreground tabular-nums">
                   {rowIdx + 1}
                 </td>
@@ -56,9 +53,7 @@ export default function ResultsTable({ result }: ResultsTableProps) {
                         NULL
                       </span>
                     ) : typeof cell === "number" ? (
-                      <span className="text-primary tabular-nums">
-                        {cell}
-                      </span>
+                      <span className="text-primary tabular-nums">{cell}</span>
                     ) : (
                       String(cell)
                     )}

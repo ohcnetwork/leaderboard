@@ -1,3 +1,4 @@
+import AvatarMosaic from "@/components/AvatarMosaic";
 import RelativeTime from "@/components/RelativeTime";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -211,15 +212,11 @@ export default async function Home() {
 
   // --- Avatar mosaic ---
   const mosaicContributors = activeContributors30d.slice(0, 30);
-  const extraCount = Math.max(
-    0,
-    allUsernames.length - mosaicContributors.length,
-  );
 
   return (
-    <div className="container mx-auto px-4 py-8 space-y-10">
+    <div className="container mx-auto px-4 py-6 sm:py-8 space-y-6 sm:space-y-10 pb-24 lg:pb-8">
       {/* ========== Hero ========== */}
-      <section className="relative overflow-hidden rounded-2xl bg-linear-to-br from-primary/5 via-background to-primary/10 border border-border/50 px-6 py-10 sm:px-10 sm:py-14">
+      <section className="relative overflow-hidden rounded-2xl bg-linear-to-br from-primary/5 via-background to-primary/10 border border-border/50 px-4 py-8 sm:px-10 sm:py-14">
         <div className="relative z-10 flex flex-col items-center text-center gap-4 max-w-3xl mx-auto">
           <Image
             src={config.org.logo_url}
@@ -228,23 +225,23 @@ export default async function Home() {
             height={56}
             className="rounded-xl shadow-md"
           />
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h1 className="text-2xl sm:text-4xl font-bold tracking-tight">
             {config.org.name}
           </h1>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-xl leading-relaxed">
+          <p className="text-muted-foreground text-sm sm:text-lg max-w-xl leading-relaxed">
             {config.org.description}
           </p>
-          <div className="flex gap-3 mt-2">
+          <div className="flex flex-col sm:flex-row gap-3 mt-2 w-full sm:w-auto">
             <Link
               href="/leaderboard"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors no-underline"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors no-underline"
             >
               <Trophy className="h-4 w-4" />
               View Leaderboard
             </Link>
             <Link
               href="/people"
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium hover:bg-secondary transition-colors no-underline"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium hover:bg-secondary transition-colors no-underline"
             >
               <Users className="h-4 w-4" />
               Meet the Team
@@ -256,19 +253,19 @@ export default async function Home() {
       </section>
 
       {/* ========== KPI Stats with Trend Indicators ========== */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {aggregateCards.map((card, i) => {
           const Icon = card.icon;
           return (
             <Card key={i} className="relative overflow-hidden">
-              <CardContent className="pt-5 pb-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+              <CardContent className="pt-4 pb-3 sm:pt-5 sm:pb-4">
+                <div className="flex items-center justify-between mb-1 sm:mb-2">
+                  <span className="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide">
                     {card.name}
                   </span>
-                  <Icon className="h-4 w-4 text-muted-foreground/60" />
+                  <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-muted-foreground/60" />
                 </div>
-                <div className="text-3xl font-bold tracking-tight">
+                <div className="text-2xl sm:text-3xl font-bold tracking-tight">
                   {card.value}
                 </div>
                 <div className="flex items-center gap-2 mt-1">
@@ -301,7 +298,7 @@ export default async function Home() {
       </section>
 
       {/* ========== Charts Row ========== */}
-      <section className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <section className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
         <Card className="lg:col-span-3">
           <CardHeader className="pb-2">
             <CardTitle className="text-base font-semibold">
@@ -336,7 +333,7 @@ export default async function Home() {
       </section>
 
       {/* ========== Top Contributors Podium + Recent Badges ========== */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Top Contributors with Podium */}
         <Card>
           <CardHeader className="pb-3">
@@ -364,7 +361,7 @@ export default async function Home() {
               <div className="space-y-4">
                 {/* Podium: top 3 */}
                 {topContributors.length >= 3 && (
-                  <div className="flex items-end justify-center gap-3 pt-4 pb-2">
+                  <div className="flex items-end justify-center gap-2 sm:gap-3 pt-4 pb-2">
                     {/* 2nd place - left */}
                     <PodiumEntry
                       entry={topContributors[1]!}
@@ -544,9 +541,9 @@ export default async function Home() {
         <section>
           <Link
             href="/people"
-            className="group block rounded-xl border border-border hover:border-primary/30 p-5 transition-all no-underline"
+            className="group block rounded-xl border border-border hover:border-primary/30 p-4 sm:p-5 transition-all no-underline"
           >
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
               <div>
                 <h3 className="text-sm font-semibold">Our Community</h3>
                 <p className="text-xs text-muted-foreground">
@@ -559,34 +556,10 @@ export default async function Home() {
                 <ArrowRight className="h-3 w-3" />
               </span>
             </div>
-            <div className="flex items-center">
-              {mosaicContributors.map((c, i) => (
-                <Avatar
-                  key={c.username}
-                  className="h-9 w-9 border-2 border-card shrink-0"
-                  style={{
-                    marginLeft: i === 0 ? 0 : "-0.5rem",
-                    zIndex: 30 - i,
-                  }}
-                >
-                  <AvatarImage
-                    src={c.avatar_url || undefined}
-                    alt={c.name || c.username}
-                  />
-                  <AvatarFallback className="text-[10px]">
-                    {(c.name || c.username).substring(0, 2).toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
-              ))}
-              {extraCount > 0 && (
-                <div
-                  className="h-9 w-9 rounded-full bg-secondary border-2 border-card flex items-center justify-center shrink-0 text-xs font-medium text-muted-foreground"
-                  style={{ marginLeft: "-0.5rem", zIndex: 0 }}
-                >
-                  +{extraCount}
-                </div>
-              )}
-            </div>
+            <AvatarMosaic
+              contributors={mosaicContributors}
+              totalCount={allUsernames.length}
+            />
           </Link>
         </section>
       )}
@@ -618,9 +591,12 @@ export default async function Home() {
                 {recentActivities.map((a) => (
                   <div
                     key={a.slug}
-                    className="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0"
+                    className="flex items-start sm:items-center gap-3 py-2.5 first:pt-0 last:pb-0"
                   >
-                    <Link href={`/${a.contributor}`} className="shrink-0">
+                    <Link
+                      href={`/${a.contributor}`}
+                      className="shrink-0 mt-0.5 sm:mt-0"
+                    >
                       <Avatar className="h-7 w-7">
                         <AvatarImage
                           src={a.contributor_avatar_url || undefined}
@@ -633,7 +609,7 @@ export default async function Home() {
                         </AvatarFallback>
                       </Avatar>
                     </Link>
-                    <div className="flex-1 min-w-0 flex items-center gap-1.5 flex-wrap">
+                    <div className="flex-1 min-w-0 flex items-center gap-1.5 flex-wrap overflow-hidden">
                       <Link
                         href={`/${a.contributor}`}
                         className="text-sm font-medium hover:underline shrink-0"
@@ -694,10 +670,10 @@ export default async function Home() {
       </section>
 
       {/* ========== Quick Navigation ========== */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
         <Link
           href="/leaderboard"
-          className="group rounded-xl border border-border p-5 hover:border-primary/30 hover:bg-primary/5 transition-all no-underline"
+          className="group rounded-xl border border-border p-4 sm:p-5 hover:border-primary/30 hover:bg-primary/5 transition-all no-underline"
         >
           <div className="flex items-center gap-3 mb-2">
             <Trophy className="h-5 w-5 text-primary" />
@@ -709,7 +685,7 @@ export default async function Home() {
         </Link>
         <Link
           href="/people"
-          className="group rounded-xl border border-border p-5 hover:border-primary/30 hover:bg-primary/5 transition-all no-underline"
+          className="group rounded-xl border border-border p-4 sm:p-5 hover:border-primary/30 hover:bg-primary/5 transition-all no-underline"
         >
           <div className="flex items-center gap-3 mb-2">
             <Users className="h-5 w-5 text-primary" />
@@ -721,7 +697,7 @@ export default async function Home() {
         </Link>
         <Link
           href="/badges"
-          className="group rounded-xl border border-border p-5 hover:border-primary/30 hover:bg-primary/5 transition-all no-underline"
+          className="group rounded-xl border border-border p-4 sm:p-5 hover:border-primary/30 hover:bg-primary/5 transition-all no-underline"
         >
           <div className="flex items-center gap-3 mb-2">
             <Award className="h-5 w-5 text-primary" />
@@ -760,7 +736,7 @@ function PodiumEntry({ entry, rank, height, avatarSize }: PodiumEntryProps) {
   return (
     <Link
       href={`/${entry.username}`}
-      className="flex flex-col items-center gap-1.5 group no-underline w-28"
+      className="flex flex-col items-center gap-1.5 group no-underline w-24 sm:w-28"
     >
       <Avatar className={`${avatarSize} ring-2 ring-card shadow-md`}>
         <AvatarImage

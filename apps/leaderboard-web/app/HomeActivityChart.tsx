@@ -152,16 +152,16 @@ export default function HomeActivityChart({
 
   return (
     <div className="w-full">
-      <div className="flex items-baseline justify-between mb-3">
-        <div className="flex items-baseline gap-4">
-          <span className="text-2xl font-bold">
+      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3 gap-1">
+        <div className="flex items-baseline gap-2 sm:gap-4">
+          <span className="text-xl sm:text-2xl font-bold">
             {totalCount.toLocaleString()}
           </span>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-xs sm:text-sm text-muted-foreground">
             activities in the last {fullData.length} days
           </span>
         </div>
-        <div className="text-sm text-muted-foreground">
+        <div className="text-xs sm:text-sm text-muted-foreground">
           {totalPoints.toLocaleString()} total points
         </div>
       </div>

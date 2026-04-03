@@ -232,7 +232,11 @@ pnpm data:export
 
 ### Inspect Database
 
-The development database is at `data/.leaderboard.db`. You can inspect it with any SQLite tool:
+You can inspect the database in two ways:
+
+**Browser-based (recommended)**: Visit [/data](http://localhost:3000/data) in the dev server to use the built-in [Data Explorer](/docs/data-explorer). It loads the database via WebAssembly and supports arbitrary SQL queries with a schema browser, example queries, and results table.
+
+**CLI**: The database file is at `data/.leaderboard.db` and can be queried with any SQLite tool:
 
 ```bash
 # Using sqlite3 CLI

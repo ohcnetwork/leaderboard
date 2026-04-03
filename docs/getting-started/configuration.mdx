@@ -93,6 +93,10 @@ leaderboard:
     contributor: # Show on profile pages
       - string
 
+  data_explorer: # optional - Data Explorer configuration
+    enabled: boolean # optional - Enable/disable (default: true)
+    source: string # optional - Database URL or path (default: "/data.db")
+
   plugins: # optional - Plugin configurations
     [plugin_id]:
       name: string # optional - Display name
@@ -100,6 +104,41 @@ leaderboard:
       config: # optional - Plugin-specific config
         [key]: any
 ```
+
+## Data Explorer (`data_explorer`)
+
+The Data Explorer provides an in-browser SQL REPL powered by WebAssembly. It can be toggled on or off, and the database source can point to a local or external URL.
+
+```yaml
+leaderboard:
+  data_explorer:
+    enabled: boolean # optional - Enable the Data Explorer (default: true)
+    source: string # optional - URL or path to the database file (default: "/data.db")
+```
+
+**Defaults**: When the `data_explorer` key is omitted, the feature is enabled and uses `/data.db` (shipped as a static asset alongside the site).
+
+### Examples
+
+**Disable the Data Explorer entirely**:
+
+```yaml
+leaderboard:
+  data_explorer:
+    enabled: false
+```
+
+**Host the database externally** (e.g., on GitHub Pages to work around Cloudflare Pages' 25 MiB file size limit):
+
+```yaml
+leaderboard:
+  data_explorer:
+    source: https://yourorg.github.io/leaderboard-data/data.db
+```
+
+When `source` is set to an external URL, the prebuild step skips copying the `.db` file into `public/`, keeping the deployed bundle small. The browser fetches the database directly from the external host using HTTP Range Requests.
+
+See the [Data Explorer documentation](/docs/data-explorer) for detailed instructions on hosting the database on GitHub Pages.
 
 ## Role Configuration
 
@@ -336,6 +375,9 @@ leaderboard:
       icon: github
     linkedin:
       icon: linkedin
+
+  data_explorer:
+    source: https://acme.github.io/leaderboard-data/data.db
 
   plugins:
     github:

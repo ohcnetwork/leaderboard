@@ -7,6 +7,39 @@ description: Query the leaderboard database directly from your browser with the 
 
 The Data Explorer is a browser-based SQL REPL that lets you query the leaderboard database directly from the web interface. The database runs entirely in the browser via WebAssembly — no server required.
 
+## Configuration
+
+The Data Explorer is enabled by default. You can configure it in `config.yaml` under the `leaderboard` section:
+
+```yaml
+leaderboard:
+  data_explorer:
+    enabled: true # optional, default: true
+    source: /data.db # optional, default: "/data.db"
+```
+
+### Disabling the Data Explorer
+
+Set `enabled: false` to hide the Data Explorer from the navigation and return a 404 for `/data`:
+
+```yaml
+leaderboard:
+  data_explorer:
+    enabled: false
+```
+
+### Using an External Database Source
+
+If your database file exceeds the static hosting provider's file size limit (e.g., Cloudflare Pages has a 25 MiB per-file limit), you can host the `.db` file separately and point to it with the `source` option:
+
+```yaml
+leaderboard:
+  data_explorer:
+    source: https://yourorg.github.io/leaderboard-data/data.db
+```
+
+When `source` is an external URL (`http://` or `https://`), the prebuild step skips copying the `.db` file into `public/`, keeping the deployment bundle small. The WebAssembly worker and WASM files are still shipped locally since they are small and always required.
+
 ## How It Works
 
 ```mermaid
@@ -192,6 +225,102 @@ JOIN contributor c ON cb.contributor = c.username
 WHERE cb.badge = 'prolific_contributor'
 ORDER BY cb.achieved_on;
 ```
+
+## Hosting the Database on GitHub Pages
+
+If your deployment target has a per-file size limit (e.g., Cloudflare Pages at 25 MiB), or you simply want to decouple the database from the application build, you can serve the `.db` file from GitHub Pages using a GitHub Actions workflow — without ever committing the database file to git.
+
+### Why GitHub Pages?
+
+- **No per-file size limit** — GitHub Pages has a 1 GB total site size limit but no individual file size restriction
+- **Supports HTTP Range Requests** — required by `sql.js-httpvfs` for lazy loading
+- **Free for public repositories** — ideal for open-source leaderboards
+- **No bloated git history** — the workflow uploads the database as a Pages deployment artifact, so the `.db` file never enters version control
+
+### GitHub Actions Workflow
+
+Create `.github/workflows/publish-db.yml` in your leaderboard repository (or data repository):
+
+```yaml
+name: Publish Leaderboard Database
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # Every 6 hours
+  workflow_dispatch: # Manual trigger
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install
+
+      - name: Build database
+        run: pnpm data:scrape
+        env:
+          LEADERBOARD_DATA_DIR: ./data
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site
+          cp data/.leaderboard.db _site/data.db
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+This workflow:
+
+1. Runs the plugin runner to build a fresh database
+2. Copies the `.db` file into a `_site/` directory
+3. Uploads it as a GitHub Pages artifact (no git commit)
+4. Deploys the artifact to GitHub Pages
+
+### Enable GitHub Pages
+
+In your repository, go to **Settings → Pages** and set the source to **GitHub Actions** (not "Deploy from a branch").
+
+### Configure `config.yaml`
+
+Point the Data Explorer to the published URL:
+
+```yaml
+leaderboard:
+  data_explorer:
+    source: https://yourorg.github.io/your-repo/data.db
+```
+
+The prebuild step will skip copying `data.db` locally and the browser will fetch it directly from GitHub Pages.
 
 ## Technical Details
 

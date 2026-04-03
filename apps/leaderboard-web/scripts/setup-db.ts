@@ -1,4 +1,5 @@
-import { access, copyFile, mkdir } from "fs/promises";
+import { access, copyFile, mkdir, readFile } from "fs/promises";
+import yaml from "js-yaml";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -9,6 +10,7 @@ const dataDir = process.env.LEADERBOARD_DATA_DIR || "./data";
 
 const publicDir = path.resolve(__dirname, "../public");
 const dbSource = path.resolve(workspaceRoot, dataDir, ".leaderboard.db");
+const configPath = path.resolve(workspaceRoot, dataDir, "config.yaml");
 
 const httpvfsDist = path.resolve(
   __dirname,
@@ -24,25 +26,60 @@ async function fileExists(filePath: string): Promise<boolean> {
   }
 }
 
+interface DataExplorerConfig {
+  enabled?: boolean;
+  source?: string;
+}
+
+async function readDataExplorerConfig(): Promise<DataExplorerConfig> {
+  try {
+    const raw = await readFile(configPath, "utf-8");
+    const config = yaml.load(raw) as {
+      leaderboard?: { data_explorer?: DataExplorerConfig };
+    };
+    return config?.leaderboard?.data_explorer ?? {};
+  } catch {
+    return {};
+  }
+}
+
+function isExternalUrl(source: string): boolean {
+  return source.startsWith("http://") || source.startsWith("https://");
+}
+
 async function main() {
   console.log("🗄️  Setting up SQL REPL assets...");
   console.log(`   Data directory: ${dataDir}`);
-  console.log(`   Database source: ${dbSource}`);
 
-  await mkdir(publicDir, { recursive: true });
+  const explorerConfig = await readDataExplorerConfig();
+  const enabled = explorerConfig.enabled !== false;
 
-  // Copy the database file
-  if (await fileExists(dbSource)) {
-    await copyFile(dbSource, path.join(publicDir, "data.db"));
-    console.log("   ✓ Copied database → public/data.db");
-  } else {
-    console.warn(
-      "   ⚠ No .leaderboard.db found — SQL REPL will be unavailable",
-    );
+  if (!enabled) {
+    console.log("   ℹ Data Explorer is disabled in config.yaml — skipping");
     return;
   }
 
-  // Copy sql.js-httpvfs worker and WASM
+  await mkdir(publicDir, { recursive: true });
+
+  const externalSource =
+    explorerConfig.source && isExternalUrl(explorerConfig.source);
+
+  if (externalSource) {
+    console.log(`   ℹ External database source: ${explorerConfig.source}`);
+    console.log("   ↳ Skipping local data.db copy");
+  } else {
+    if (await fileExists(dbSource)) {
+      await copyFile(dbSource, path.join(publicDir, "data.db"));
+      console.log("   ✓ Copied database → public/data.db");
+    } else {
+      console.warn(
+        "   ⚠ No .leaderboard.db found — SQL REPL will be unavailable",
+      );
+      return;
+    }
+  }
+
+  // Worker and WASM are always needed locally
   const assets = [
     { src: "sqlite.worker.js", dest: "sqlite.worker.js" },
     { src: "sql-wasm.wasm", dest: "sql-wasm.wasm" },

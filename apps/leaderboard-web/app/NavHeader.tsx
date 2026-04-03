@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Award, Database, Github, Home, Trophy, Users } from "lucide-react";
+import { Award, Github, Home, Trophy, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -40,7 +40,6 @@ const navItems = [
   { name: "Leaderboard", href: "/leaderboard", icon: Trophy },
   { name: "People", href: "/people", icon: Users },
   { name: "Badges", href: "/badges", icon: Award },
-  { name: "Data", href: "/data", icon: Database },
 ];
 
 interface NavHeaderProps {

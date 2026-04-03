@@ -68,10 +68,11 @@ LIMIT 20;`,
 
 interface SqlReplProps {
   schema: TableSchema[];
+  source?: string;
 }
 
-export default function SqlRepl({ schema }: SqlReplProps) {
-  const { status, error: dbError, exec, getStats } = useDatabase();
+export default function SqlRepl({ schema, source }: SqlReplProps) {
+  const { status, error: dbError, exec, getStats } = useDatabase(source);
   const [query, setQuery] = useState(EXAMPLE_QUERIES[0]?.sql ?? "");
   const [result, setResult] = useState<QueryResult | null>(null);
   const [queryError, setQueryError] = useState<string | null>(null);

@@ -41,6 +41,11 @@ export const PluginInstanceConfigSchema = z.object({
   config: z.record(z.string(), z.unknown()).optional(),
 });
 
+export const DataExplorerConfigSchema = z.object({
+  enabled: z.boolean().optional().default(true),
+  source: z.string().optional(),
+});
+
 export const LeaderboardConfigSchema = z.object({
   data_source: z.string().optional(),
   roles: z.record(z.string(), RoleConfigSchema),
@@ -54,6 +59,7 @@ export const LeaderboardConfigSchema = z.object({
     })
     .optional(),
   plugins: z.record(z.string(), PluginInstanceConfigSchema).optional(),
+  data_explorer: DataExplorerConfigSchema.optional(),
 });
 
 export const ConfigSchema = z.object({
@@ -67,6 +73,7 @@ export type OrgConfig = z.infer<typeof OrgConfigSchema>;
 export type MetaConfig = z.infer<typeof MetaConfigSchema>;
 export type RoleConfig = z.infer<typeof RoleConfigSchema>;
 export type SocialProfileConfig = z.infer<typeof SocialProfileConfigSchema>;
+export type DataExplorerConfig = z.infer<typeof DataExplorerConfigSchema>;
 export type PluginInstanceConfig = z.infer<typeof PluginInstanceConfigSchema>;
 export type LeaderboardConfig = z.infer<typeof LeaderboardConfigSchema>;
 export type Config = z.infer<typeof ConfigSchema>;

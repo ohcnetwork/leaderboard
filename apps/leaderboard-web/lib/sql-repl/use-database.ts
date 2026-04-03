@@ -11,7 +11,7 @@ export interface QueryResult {
   duration: number;
 }
 
-export function useDatabase() {
+export function useDatabase(source: string = "/data.db") {
   const [status, setStatus] = useState<DatabaseStatus>("idle");
   const [error, setError] = useState<string | null>(null);
   const workerRef = useRef<WorkerHttpvfs | null>(null);
@@ -33,7 +33,7 @@ export function useDatabase() {
               config: {
                 serverMode: "full",
                 requestChunkSize: 4096,
-                url: "/data.db",
+                url: source,
               },
             },
           ],
@@ -57,7 +57,7 @@ export function useDatabase() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [source]);
 
   const exec = useCallback(async (sql: string): Promise<QueryResult> => {
     const worker = workerRef.current;

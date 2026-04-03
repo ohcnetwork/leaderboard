@@ -1,11 +1,16 @@
 import { getConfig } from "@/lib/config/get-config";
 import { getDatabase } from "@/lib/db/client";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import type { TableSchema } from "./SqlRepl";
 import SqlRepl from "./SqlRepl";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
+
+  if (config.leaderboard.data_explorer?.enabled === false) {
+    return {};
+  }
 
   return {
     title: `Data Explorer - ${config.org.name}`,
@@ -50,6 +55,13 @@ async function getSchema(): Promise<TableSchema[]> {
 }
 
 export default async function DataPage() {
+  const config = getConfig();
+
+  if (config.leaderboard.data_explorer?.enabled === false) {
+    notFound();
+  }
+
+  const source = config.leaderboard.data_explorer?.source ?? "/data.db";
   const schema = await getSchema();
 
   return (
@@ -62,7 +74,7 @@ export default async function DataPage() {
         </p>
       </div>
 
-      <SqlRepl schema={schema} />
+      <SqlRepl schema={schema} source={source} />
     </div>
   );
 }

@@ -250,7 +250,7 @@ jobs:
 
 ### Cloudflare Pages
 
-> **25 MiB file size limit**: Cloudflare Pages only supports individual files up to 25 MiB. If your leaderboard database exceeds this, host it externally (e.g., on GitHub Pages) and configure `data_explorer.source` in `config.yaml` to point to the external URL. See the [Data Explorer docs](/docs/data-explorer#hosting-the-database-on-github-pages) for step-by-step instructions.
+> **25 MiB file size limit**: Cloudflare Pages only supports individual files up to 25 MiB. If your leaderboard database exceeds this, host it on [Cloudflare R2](/docs/data-explorer#hosting-the-database-on-cloudflare-r2) (recommended) and configure `data_explorer.source` in `config.yaml` to point to the R2 URL. See the [Data Explorer docs](/docs/data-explorer#using-an-external-database-source) for all hosting options.
 
 #### Deploy via CLI
 

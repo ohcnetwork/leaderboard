@@ -269,4 +269,50 @@ a {
   }
 }
 
+/* Podium rise-in animation */
+@keyframes podiumRise {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Podium idle float animation */
+@keyframes podiumFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Vertical marquee scroll animations */
+@keyframes marqueeScrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marqueeScrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @import "./overrides.gen.css";

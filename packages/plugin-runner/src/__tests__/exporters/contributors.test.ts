@@ -2,16 +2,18 @@
  * Contributor exporter tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { readFile, mkdir, rm } from "fs/promises";
-import { join } from "path";
+import type { Database } from "@ohcnetwork/leaderboard-api";
+import {
+  contributorQueries,
+  createDatabase,
+  initializeSchema,
+} from "@ohcnetwork/leaderboard-api";
+import { mkdir, readFile, rm } from "fs/promises";
 import matter from "gray-matter";
-import { createDatabase } from "@ohcnetwork/leaderboard-api";
-import { initializeSchema } from "@ohcnetwork/leaderboard-api";
-import { contributorQueries } from "@ohcnetwork/leaderboard-api";
+import { join } from "path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { exportContributors } from "../../exporters/contributors";
 import { createLogger } from "../../logger";
-import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-export-contributors";
 const logger = createLogger(false);
@@ -48,7 +50,7 @@ describe("Contributor Exporter", () => {
 
     const content = await readFile(
       join(TEST_DATA_DIR, "contributors", "alice.md"),
-      "utf-8"
+      "utf-8",
     );
     const parsed = matter(content);
 
@@ -87,11 +89,11 @@ describe("Contributor Exporter", () => {
     // Check both files exist
     const aliceContent = await readFile(
       join(TEST_DATA_DIR, "contributors", "alice.md"),
-      "utf-8"
+      "utf-8",
     );
     const bobContent = await readFile(
       join(TEST_DATA_DIR, "contributors", "bob.md"),
-      "utf-8"
+      "utf-8",
     );
 
     expect(aliceContent).toBeTruthy();
@@ -116,7 +118,7 @@ describe("Contributor Exporter", () => {
 
     const content = await readFile(
       join(TEST_DATA_DIR, "contributors", "alice.md"),
-      "utf-8"
+      "utf-8",
     );
     const parsed = matter(content);
 

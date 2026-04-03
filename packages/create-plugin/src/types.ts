@@ -8,4 +8,3 @@ export interface PluginOptions {
   author: string;
   packageName: string;
 }
-

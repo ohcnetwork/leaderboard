@@ -2,18 +2,18 @@
  * Tests for dummy plugin
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { faker } from "@faker-js/faker";
-import { createDatabase, initializeSchema } from "@ohcnetwork/leaderboard-api";
 import type { Database } from "@ohcnetwork/leaderboard-api";
-import { generateContributor, generateContributors } from "../contributors";
+import { createDatabase, initializeSchema } from "@ohcnetwork/leaderboard-api";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
-  generateActivity,
-  generateActivitiesForContributor,
-  generateActivities,
   ACTIVITY_TYPES,
+  generateActivities,
+  generateActivitiesForContributor,
+  generateActivity,
 } from "../activities";
-import { mergeConfig, DEFAULT_CONFIG } from "../config";
+import { DEFAULT_CONFIG, mergeConfig } from "../config";
+import { generateContributor, generateContributors } from "../contributors";
 import plugin from "../index";
 
 describe("Dummy Plugin", () => {
@@ -27,10 +27,10 @@ describe("Dummy Plugin", () => {
 
       expect(config.contributors.count).toBe(20);
       expect(config.contributors.minActivitiesPerContributor).toBe(
-        DEFAULT_CONFIG.contributors.minActivitiesPerContributor
+        DEFAULT_CONFIG.contributors.minActivitiesPerContributor,
       );
       expect(config.activities.daysBack).toBe(
-        DEFAULT_CONFIG.activities.daysBack
+        DEFAULT_CONFIG.activities.daysBack,
       );
     });
 
@@ -39,7 +39,7 @@ describe("Dummy Plugin", () => {
 
       expect(config.contributors.count).toBe(DEFAULT_CONFIG.contributors.count);
       expect(config.activities.daysBack).toBe(
-        DEFAULT_CONFIG.activities.daysBack
+        DEFAULT_CONFIG.activities.daysBack,
       );
     });
 
@@ -111,7 +111,7 @@ describe("Dummy Plugin", () => {
         "pr_merged",
         "test-org",
         "test-repo",
-        new Date()
+        new Date(),
       );
 
       expect(activity).toBeDefined();
@@ -128,7 +128,7 @@ describe("Dummy Plugin", () => {
         10,
         30,
         "test-org",
-        ["repo1", "repo2"]
+        ["repo1", "repo2"],
       );
 
       expect(activities).toHaveLength(10);
@@ -143,7 +143,7 @@ describe("Dummy Plugin", () => {
         20,
         daysBack,
         "test-org",
-        ["repo1"]
+        ["repo1"],
       );
 
       const startDate = new Date(now);
@@ -152,7 +152,7 @@ describe("Dummy Plugin", () => {
       for (const activity of activities) {
         const activityDate = new Date(activity.occured_at);
         expect(activityDate.getTime()).toBeGreaterThanOrEqual(
-          startDate.getTime()
+          startDate.getTime(),
         );
         expect(activityDate.getTime()).toBeLessThanOrEqual(now.getTime());
       }
@@ -164,7 +164,7 @@ describe("Dummy Plugin", () => {
         15,
         60,
         "test-org",
-        ["repo1"]
+        ["repo1"],
       );
 
       for (let i = 1; i < activities.length; i++) {
@@ -182,7 +182,7 @@ describe("Dummy Plugin", () => {
         10,
         30,
         "test-org",
-        ["repo1", "repo2"]
+        ["repo1", "repo2"],
       );
 
       expect(activitiesMap.size).toBe(3);
@@ -204,7 +204,7 @@ describe("Dummy Plugin", () => {
         100,
         90,
         "test-org",
-        ["repo1"]
+        ["repo1"],
       );
 
       const activities = activitiesMap.get("user1")!;
@@ -218,12 +218,12 @@ describe("Dummy Plugin", () => {
       // Test that using the same seed produces the same activity type
       faker.seed(12345);
       const type1 = faker.helpers.arrayElement(
-        Object.keys(ACTIVITY_TYPES) as Array<keyof typeof ACTIVITY_TYPES>
+        Object.keys(ACTIVITY_TYPES) as Array<keyof typeof ACTIVITY_TYPES>,
       );
 
       faker.seed(12345);
       const type2 = faker.helpers.arrayElement(
-        Object.keys(ACTIVITY_TYPES) as Array<keyof typeof ACTIVITY_TYPES>
+        Object.keys(ACTIVITY_TYPES) as Array<keyof typeof ACTIVITY_TYPES>,
       );
 
       expect(type1).toBe(type2);
@@ -271,7 +271,7 @@ describe("Dummy Plugin", () => {
 
       // Check that activity definitions were created
       const result = await db.execute(
-        "SELECT COUNT(*) as count FROM activity_definition"
+        "SELECT COUNT(*) as count FROM activity_definition",
       );
       const count = (result.rows[0] as { count: number }).count;
 
@@ -328,7 +328,7 @@ describe("Dummy Plugin", () => {
 
       // Check contributors
       const contributorsResult = await db.execute(
-        "SELECT COUNT(*) as count FROM contributor"
+        "SELECT COUNT(*) as count FROM contributor",
       );
       const contributorCount = (contributorsResult.rows[0] as { count: number })
         .count;
@@ -336,7 +336,7 @@ describe("Dummy Plugin", () => {
 
       // Check activities
       const activitiesResult = await db.execute(
-        "SELECT COUNT(*) as count FROM activity"
+        "SELECT COUNT(*) as count FROM activity",
       );
       const activityCount = (activitiesResult.rows[0] as { count: number })
         .count;

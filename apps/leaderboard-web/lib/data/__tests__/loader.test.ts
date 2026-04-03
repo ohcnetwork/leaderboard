@@ -2,28 +2,28 @@
  * Data loader tests
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import {
-  createDatabase,
-  initializeSchema,
-  contributorQueries,
   activityDefinitionQueries,
   activityQueries,
+  contributorQueries,
+  createDatabase,
+  initializeSchema,
   type Database,
 } from "@ohcnetwork/leaderboard-api";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
-  getAllContributors,
-  getContributor,
-  getAllActivityDefinitions,
   getActivities,
-  getContributorStats,
-  getRecentActivitiesGroupedByType,
-  getAllContributorUsernames,
-  getContributorProfile,
-  listActivityDefinitions,
+  getAllActivityDefinitions,
+  getAllContributors,
   getAllContributorsWithAvatars,
+  getAllContributorUsernames,
+  getContributor,
+  getContributorProfile,
+  getContributorStats,
   getLeaderboard,
+  getRecentActivitiesGroupedByType,
+  listActivityDefinitions,
 } from "../loader";
 
 // Mock the database client
@@ -214,7 +214,7 @@ describe("Data Loader", () => {
 
       const leaderboard = await getLeaderboard(
         weekAgo.toISOString(),
-        now.toISOString()
+        now.toISOString(),
       );
 
       expect(leaderboard.length).toBeGreaterThan(0);
@@ -242,7 +242,7 @@ describe("Data Loader", () => {
       expect(grouped.length).toBeGreaterThan(0);
 
       const prGroup = grouped.find(
-        (g) => g.activity_definition === "pr_merged"
+        (g) => g.activity_definition === "pr_merged",
       );
       expect(prGroup).toBeDefined();
       expect(prGroup?.activity_name).toBe("PR Merged");
@@ -255,7 +255,7 @@ describe("Data Loader", () => {
       // Should only have activities from today
       const totalActivities = grouped.reduce(
         (sum, g) => sum + g.activities.length,
-        0
+        0,
       );
       expect(totalActivities).toBeLessThan(4); // Less than all 4 activities
     });
@@ -327,7 +327,7 @@ describe("Data Loader", () => {
 
       expect(contributors[0].username).toBe("alice"); // Alice has most points
       expect(contributors[0].totalPoints).toBeGreaterThan(
-        contributors[1].totalPoints
+        contributors[1].totalPoints,
       );
     });
   });

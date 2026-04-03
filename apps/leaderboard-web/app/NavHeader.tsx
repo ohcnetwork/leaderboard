@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Award, Database, Github, Home, Trophy, Users } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Home, Trophy, Users, Award, Database, Github } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import ThemeSelector from "./ThemeSelector";
 
 const SCROLL_THRESHOLD = 50;

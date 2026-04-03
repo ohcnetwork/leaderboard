@@ -1,24 +1,24 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
-import { ContributorActivity } from "@/lib/data/types";
-import { ActivityDefinition } from "@ohcnetwork/leaderboard-api";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import DateRangeFilter from "@/components/DateRangeFilter";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Filter, X, ChevronDown } from "lucide-react";
-import ActivityTimelineItem from "./ActivityTimelineItem";
-import DateRangeFilter from "@/components/DateRangeFilter";
+import { ContributorActivity } from "@/lib/data/types";
 import {
-  groupActivitiesByMonth,
   formatMonthHeader,
+  groupActivitiesByMonth,
   MonthKey,
 } from "@/lib/utils";
+import { ActivityDefinition } from "@ohcnetwork/leaderboard-api";
+import { ChevronDown, Filter, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import ActivityTimelineItem from "./ActivityTimelineItem";
 
 const ACTIVITY_FILTER_STORAGE_KEY = "leaderboard_activity_type_filter";
 
@@ -52,7 +52,7 @@ export default function ActivityTimeline({
     } catch (error) {
       console.error(
         "Failed to load activity type filter from localStorage:",
-        error
+        error,
       );
     }
     return new Set();
@@ -64,7 +64,7 @@ export default function ActivityTimeline({
       if (selectedActivityTypes.size > 0) {
         localStorage.setItem(
           ACTIVITY_FILTER_STORAGE_KEY,
-          JSON.stringify(Array.from(selectedActivityTypes))
+          JSON.stringify(Array.from(selectedActivityTypes)),
         );
       } else {
         localStorage.removeItem(ACTIVITY_FILTER_STORAGE_KEY);
@@ -72,7 +72,7 @@ export default function ActivityTimeline({
     } catch (error) {
       console.error(
         "Failed to save activity type filter to localStorage:",
-        error
+        error,
       );
     }
   }, [selectedActivityTypes]);
@@ -183,7 +183,7 @@ export default function ActivityTimeline({
 
   // Count visible activities (excluding month headers)
   const visibleActivityCount = visibleActivities.filter(
-    (item) => !("isMonthHeader" in item)
+    (item) => !("isMonthHeader" in item),
   ).length;
 
   return (

@@ -2,25 +2,25 @@
  * Aggregate exporter tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { readFile, mkdir, rm, readdir } from "fs/promises";
-import { join } from "path";
-import { createDatabase } from "@ohcnetwork/leaderboard-api";
-import { initializeSchema } from "@ohcnetwork/leaderboard-api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
-  globalAggregateQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
   contributorQueries,
+  createDatabase,
+  globalAggregateQueries,
+  initializeSchema,
 } from "@ohcnetwork/leaderboard-api";
+import { mkdir, readdir, readFile, rm } from "fs/promises";
+import { join } from "path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
-  exportGlobalAggregates,
+  exportAggregates,
   exportContributorAggregateDefinitions,
   exportContributorAggregates,
-  exportAggregates,
+  exportGlobalAggregates,
 } from "../../exporters/aggregates";
 import { createLogger } from "../../logger";
-import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-export-aggregates";
 const logger = createLogger(false);
@@ -61,7 +61,7 @@ describe("Aggregate Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "aggregates", "global.json"),
-        "utf-8"
+        "utf-8",
       );
       const aggregates = JSON.parse(content);
 
@@ -75,7 +75,7 @@ describe("Aggregate Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "aggregates", "global.json"),
-        "utf-8"
+        "utf-8",
       );
       const aggregates = JSON.parse(content);
 
@@ -102,7 +102,7 @@ describe("Aggregate Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "aggregates", "global.json"),
-        "utf-8"
+        "utf-8",
       );
       const aggregates = JSON.parse(content);
 
@@ -129,7 +129,7 @@ describe("Aggregate Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "aggregates", "definitions.json"),
-        "utf-8"
+        "utf-8",
       );
       const definitions = JSON.parse(content);
 
@@ -198,7 +198,7 @@ describe("Aggregate Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "aggregates", "contributors", "alice.jsonl"),
-        "utf-8"
+        "utf-8",
       );
       const lines = content.trim().split("\n");
 
@@ -227,7 +227,7 @@ describe("Aggregate Exporters", () => {
       await exportContributorAggregates(db, TEST_DATA_DIR, logger);
 
       const files = await readdir(
-        join(TEST_DATA_DIR, "aggregates", "contributors")
+        join(TEST_DATA_DIR, "aggregates", "contributors"),
       );
       expect(files).toContain("alice.jsonl");
       expect(files).toContain("bob.jsonl");
@@ -250,7 +250,7 @@ describe("Aggregate Exporters", () => {
 
       const content = await readFile(
         join(TEST_DATA_DIR, "aggregates", "contributors", "alice.jsonl"),
-        "utf-8"
+        "utf-8",
       );
       const aggregate = JSON.parse(content.trim());
 
@@ -299,15 +299,15 @@ describe("Aggregate Exporters", () => {
       // Verify all files were created
       const globalContent = await readFile(
         join(TEST_DATA_DIR, "aggregates", "global.json"),
-        "utf-8"
+        "utf-8",
       );
       const definitionsContent = await readFile(
         join(TEST_DATA_DIR, "aggregates", "definitions.json"),
-        "utf-8"
+        "utf-8",
       );
       const contributorContent = await readFile(
         join(TEST_DATA_DIR, "aggregates", "contributors", "alice.jsonl"),
-        "utf-8"
+        "utf-8",
       );
 
       expect(JSON.parse(globalContent)).toHaveLength(1);

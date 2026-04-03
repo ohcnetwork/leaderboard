@@ -3,16 +3,16 @@
  */
 
 import type {
-  Database,
-  Contributor,
-  ActivityDefinition,
   Activity,
-  GlobalAggregate,
-  ContributorAggregateDefinition,
-  ContributorAggregate,
-  BadgeDefinition,
-  ContributorBadge,
+  ActivityDefinition,
   AggregateValue,
+  BadgeDefinition,
+  Contributor,
+  ContributorAggregate,
+  ContributorAggregateDefinition,
+  ContributorBadge,
+  Database,
+  GlobalAggregate,
 } from "./types";
 
 /**

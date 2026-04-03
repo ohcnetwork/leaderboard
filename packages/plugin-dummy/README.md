@@ -14,17 +14,17 @@ Dummy data generator plugin for leaderboard development. This plugin generates r
 
 The plugin generates the following activity types:
 
-| Activity | Points | Description |
-|----------|--------|-------------|
-| `pr_opened` | 5 | Opened a pull request |
-| `pr_merged` | 10 | Pull request was merged |
-| `pr_reviewed` | 3 | Reviewed a pull request |
-| `issue_opened` | 5 | Opened an issue |
-| `issue_closed` | 8 | Closed an issue |
-| `issue_commented` | 1 | Commented on an issue |
-| `commit_pushed` | 2 | Pushed commits |
-| `release_published` | 20 | Published a release |
-| `docs_updated` | 5 | Updated documentation |
+| Activity            | Points | Description             |
+| ------------------- | ------ | ----------------------- |
+| `pr_opened`         | 5      | Opened a pull request   |
+| `pr_merged`         | 10     | Pull request was merged |
+| `pr_reviewed`       | 3      | Reviewed a pull request |
+| `issue_opened`      | 5      | Opened an issue         |
+| `issue_closed`      | 8      | Closed an issue         |
+| `issue_commented`   | 1      | Commented on an issue   |
+| `commit_pushed`     | 2      | Pushed commits          |
+| `release_published` | 20     | Published a release     |
+| `docs_updated`      | 5      | Updated documentation   |
 
 ## Configuration
 
@@ -35,14 +35,14 @@ leaderboard:
       source: "@leaderboard/plugin-dummy"
       config:
         contributors:
-          count: 50                           # Number of contributors
-          minActivitiesPerContributor: 5      # Minimum activities per person
-          maxActivitiesPerContributor: 100    # Maximum activities per person
+          count: 50 # Number of contributors
+          minActivitiesPerContributor: 5 # Minimum activities per person
+          maxActivitiesPerContributor: 100 # Maximum activities per person
         activities:
-          daysBack: 90                        # Generate activities for last N days
-          seed: 12345                         # Optional: for reproducible data
+          daysBack: 90 # Generate activities for last N days
+          seed: 12345 # Optional: for reproducible data
         organization:
-          name: "Example Org"                 # Organization name for GitHub URLs
+          name: "Example Org" # Organization name for GitHub URLs
           repoNames:
             - "main-app"
             - "docs"
@@ -136,7 +136,7 @@ leaderboard:
       source: "@leaderboard/plugin-dummy"
       config:
         activities:
-          seed: 42  # Same seed = same data every time
+          seed: 42 # Same seed = same data every time
 ```
 
 ### Small Test Dataset
@@ -158,4 +158,3 @@ leaderboard:
 ## License
 
 MIT
-

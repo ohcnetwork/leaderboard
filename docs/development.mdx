@@ -46,6 +46,7 @@ The `setup:dev` script creates a complete development environment with realistic
 ### What it does
 
 1. **Creates directory structure**:
+
    ```
    data/
    ├── config.yaml              # Pre-configured settings
@@ -126,19 +127,20 @@ The development environment uses the `@leaderboard/plugin-dummy` package to gene
 
 The plugin generates 9 types of activities:
 
-| Activity | Points | Description |
-|----------|--------|-------------|
-| PR Opened | 5 | Opened a pull request |
-| PR Merged | 10 | Pull request merged |
-| PR Reviewed | 3 | Reviewed a pull request |
-| Issue Opened | 5 | Created an issue |
-| Issue Closed | 8 | Resolved an issue |
-| Issue Commented | 1 | Commented on issue |
-| Commit Pushed | 2 | Pushed commits |
-| Release Published | 20 | Published a release |
-| Docs Updated | 5 | Updated documentation |
+| Activity          | Points | Description             |
+| ----------------- | ------ | ----------------------- |
+| PR Opened         | 5      | Opened a pull request   |
+| PR Merged         | 10     | Pull request merged     |
+| PR Reviewed       | 3      | Reviewed a pull request |
+| Issue Opened      | 5      | Created an issue        |
+| Issue Closed      | 8      | Resolved an issue       |
+| Issue Commented   | 1      | Commented on issue      |
+| Commit Pushed     | 2      | Pushed commits          |
+| Release Published | 20     | Published a release     |
+| Docs Updated      | 5      | Updated documentation   |
 
 Activities include:
+
 - Realistic titles and descriptions
 - GitHub-style URLs
 - Metadata (repo names, labels, commit counts)
@@ -260,35 +262,41 @@ import type { Plugin } from "@ohcnetwork/leaderboard-api";
 const myPlugin: Plugin = {
   name: "my-plugin",
   version: "1.0.0",
-  
+
   async setup(ctx) {
     // Register activity definitions
-    await ctx.db.execute(`
+    await ctx.db.execute(
+      `
       INSERT OR IGNORE INTO activity_definition 
       (slug, name, description, points, icon)
       VALUES (?, ?, ?, ?, ?)
-    `, ["my_activity", "My Activity", "Description", 10, "star"]);
+    `,
+      ["my_activity", "My Activity", "Description", 10, "star"],
+    );
   },
-  
+
   async scrape(ctx) {
     // Fetch and store activities
     const activities = await fetchMyData();
-    
+
     for (const activity of activities) {
-      await ctx.db.execute(`
+      await ctx.db.execute(
+        `
         INSERT OR REPLACE INTO activity 
         (slug, contributor, activity_definition, title, occured_at, points)
         VALUES (?, ?, ?, ?, ?, ?)
-      `, [
-        activity.id,
-        activity.username,
-        "my_activity",
-        activity.title,
-        activity.timestamp,
-        10
-      ]);
+      `,
+        [
+          activity.id,
+          activity.username,
+          "my_activity",
+          activity.title,
+          activity.timestamp,
+          10,
+        ],
+      );
     }
-  }
+  },
 };
 
 export default myPlugin;
@@ -339,11 +347,13 @@ pnpm build
 ### Changes not reflecting
 
 1. Clear Next.js cache:
+
    ```bash
    rm -rf apps/leaderboard-web/.next
    ```
 
 2. Rebuild data:
+
    ```bash
    pnpm reset:dev
    ```
@@ -393,4 +403,3 @@ pnpm clean              # Clean build outputs
 - 📖 [Documentation](http://localhost:3000/docs)
 - 🐛 [Report Issues](https://github.com/ohcnetwork/leaderboard/issues)
 - 💬 [Discussions](https://github.com/ohcnetwork/leaderboard/discussions)
-

@@ -7,7 +7,9 @@
   "bin": {
     "create-leaderboard-data-repo": "./dist/index.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",

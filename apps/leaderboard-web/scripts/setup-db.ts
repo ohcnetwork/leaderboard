@@ -12,7 +12,7 @@ const dbSource = path.resolve(workspaceRoot, dataDir, ".leaderboard.db");
 
 const httpvfsDist = path.resolve(
   __dirname,
-  "../node_modules/sql.js-httpvfs/dist"
+  "../node_modules/sql.js-httpvfs/dist",
 );
 
 async function fileExists(filePath: string): Promise<boolean> {
@@ -37,7 +37,7 @@ async function main() {
     console.log("   ✓ Copied database → public/data.db");
   } else {
     console.warn(
-      "   ⚠ No .leaderboard.db found — SQL REPL will be unavailable"
+      "   ⚠ No .leaderboard.db found — SQL REPL will be unavailable",
     );
     return;
   }

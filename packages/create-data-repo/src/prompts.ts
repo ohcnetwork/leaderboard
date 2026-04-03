@@ -4,15 +4,15 @@
 
 import prompts from "prompts";
 import type { DataRepoConfig, RoleConfig } from "./types";
-import {
-  validateUrl,
-  validateOptionalUrl,
-  validateOptionalDate,
-  validateSlug,
-  validateEmail,
-  validateRequired,
-} from "./validation";
 import { suggestDataSource } from "./utils";
+import {
+  validateEmail,
+  validateOptionalDate,
+  validateOptionalUrl,
+  validateRequired,
+  validateSlug,
+  validateUrl,
+} from "./validation";
 
 /**
  * Collect complete configuration through interactive prompts
@@ -238,7 +238,7 @@ async function collectRoles(): Promise<RoleConfig[]> {
         name: "Contributor",
         description: "Open source contributor",
         hidden: false,
-      }
+      },
     );
     console.log("✓ Added default roles: core, contributor\n");
 

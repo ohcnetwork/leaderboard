@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+out/
+.next/
+build/
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Generated files
+*.tsbuildinfo
+pnpm-lock.yaml
+config.schema.json
+
+# Data directory
+/data
+data-repo/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Misc
+.cache/
+*.log

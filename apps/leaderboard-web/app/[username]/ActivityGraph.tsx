@@ -1,12 +1,5 @@
 "use client";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { useState, useMemo, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -14,9 +7,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { addDays, format } from "date-fns";
 import { Filter, X } from "lucide-react";
-import { format, addDays } from "date-fns";
-import React from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 export interface ActivityGraphFilterProps {
   selectedActivityTypes: Set<string>;

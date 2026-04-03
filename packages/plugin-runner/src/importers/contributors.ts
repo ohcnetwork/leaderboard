@@ -2,12 +2,11 @@
  * Import contributors from markdown files
  */
 
-import { readdir, readFile } from "fs/promises";
-import { join } from "path";
-import matter from "gray-matter";
-import type { Database, Contributor } from "@ohcnetwork/leaderboard-api";
+import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import { contributorQueries } from "@ohcnetwork/leaderboard-api";
-import type { Logger } from "@ohcnetwork/leaderboard-api";
+import { readdir, readFile } from "fs/promises";
+import matter from "gray-matter";
+import { join } from "path";
 
 /**
  * Import all contributors from markdown files

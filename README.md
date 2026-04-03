@@ -38,6 +38,7 @@ Visit `http://localhost:3000` to see your leaderboard with realistic dummy data!
 ### What does `setup:dev` do?
 
 The setup script:
+
 1. Creates a `data/` directory with example configuration
 2. Generates 30 contributors with realistic profiles
 3. Creates activities for the last 90 days
@@ -132,11 +133,11 @@ Data Sources → Plugin Runner → LibSQL Database → Next.js Build → Static 
 
 The system uses a hybrid storage approach:
 
-| Data Type | Format | Rationale |
-|-----------|--------|-----------|
-| Contributors | Markdown + YAML frontmatter | Human-editable profiles |
-| Activity Definitions | Database only | Managed by plugins |
-| Activities | Sharded JSONL | Efficient for large datasets |
+| Data Type            | Format                      | Rationale                    |
+| -------------------- | --------------------------- | ---------------------------- |
+| Contributors         | Markdown + YAML frontmatter | Human-editable profiles      |
+| Activity Definitions | Database only               | Managed by plugins           |
+| Activities           | Sharded JSONL               | Efficient for large datasets |
 
 ## Configuration
 
@@ -162,7 +163,7 @@ leaderboard:
       name: Core Team
     contributor:
       name: Contributor
-  
+
   plugins:
     github:
       source: https://example.com/plugins/github.js
@@ -216,20 +217,20 @@ Plugins are JavaScript modules that fetch data from external sources:
 export default {
   name: 'my-plugin',
   version: '1.0.0',
-  
+
   async setup(ctx) {
     // Define activity types
     await ctx.db.execute(`
-      INSERT OR IGNORE INTO activity_definition 
+      INSERT OR IGNORE INTO activity_definition
       (slug, name, description, points)
       VALUES ('my_activity', 'My Activity', 'Description', 10)
     `);
   },
-  
+
   async scrape(ctx) {
     // Fetch and store activities
     const data = await fetchFromAPI(ctx.config.apiKey);
-    
+
     for (const item of data) {
       await ctx.db.execute(`
         INSERT OR IGNORE INTO activity (...) VALUES (...)
@@ -304,9 +305,9 @@ MIT © [Open Healthcare Network](https://ohc.network)
 ## Acknowledgments
 
 Built with:
+
 - [Next.js](https://nextjs.org/) - React framework
 - [LibSQL](https://github.com/tursodatabase/libsql) - SQLite-compatible database
 - [Fumadocs](https://fumadocs.vercel.app/) - Documentation framework
 - [shadcn/ui](https://ui.shadcn.com/) - UI components
 - [Tailwind CSS](https://tailwindcss.com/) - Styling
-

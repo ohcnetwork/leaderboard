@@ -40,6 +40,7 @@ A badge definition describes an achievement with multiple variants (levels).
 Variants represent different levels of achievement for the same badge. They are ordered from lowest to highest based on their position in the variants object.
 
 **Common variant names:**
+
 - `bronze` - Entry level
 - `silver` - Intermediate level
 - `gold` - Advanced level
@@ -73,33 +74,33 @@ The system includes these standard badges that are automatically evaluated:
 
 Awarded for reaching activity count milestones.
 
-| Variant | Requirement |
-|---------|-------------|
-| Bronze | 10+ activities |
-| Silver | 50+ activities |
-| Gold | 100+ activities |
+| Variant  | Requirement     |
+| -------- | --------------- |
+| Bronze   | 10+ activities  |
+| Silver   | 50+ activities  |
+| Gold     | 100+ activities |
 | Platinum | 500+ activities |
 
 ### Points Milestone
 
 Awarded for reaching points milestones.
 
-| Variant | Requirement |
-|---------|-------------|
-| Bronze | 100+ points |
-| Silver | 500+ points |
-| Gold | 1,000+ points |
+| Variant  | Requirement   |
+| -------- | ------------- |
+| Bronze   | 100+ points   |
+| Silver   | 500+ points   |
+| Gold     | 1,000+ points |
 | Platinum | 5,000+ points |
 
 ### Consistency Champion
 
 Awarded for maintaining activity streaks.
 
-| Variant | Requirement |
-|---------|-------------|
-| Bronze | 7 day streak |
-| Silver | 14 day streak |
-| Gold | 30 day streak |
+| Variant  | Requirement   |
+| -------- | ------------- |
+| Bronze   | 7 day streak  |
+| Silver   | 14 day streak |
+| Gold     | 30 day streak |
 | Platinum | 90 day streak |
 
 ## Badge Auto-Award System
@@ -127,6 +128,7 @@ Award badges when an aggregate value exceeds a threshold.
 ```
 
 **How it works:**
+
 - Checks the specified aggregate value
 - Awards the highest variant where the value meets the threshold
 - Automatically upgrades to higher variants as thresholds are met
@@ -150,6 +152,7 @@ Award badges for consecutive days of activity.
 ```
 
 **Streak types:**
+
 - `daily` - Consecutive calendar days with activity
 - `weekly` - Consecutive weeks with activity
 - `monthly` - Consecutive months with activity
@@ -173,10 +176,12 @@ Award badges when multiple conditions are met.
 ```
 
 **Operators:**
+
 - `AND` - All conditions must be true
 - `OR` - At least one condition must be true
 
 **Condition operators:**
+
 - `>`, `<`, `>=`, `<=`, `==`, `!=`
 
 #### 4. Custom Rules
@@ -191,7 +196,7 @@ Define custom logic for badge awarding.
   evaluator: (contributor, aggregates, activities) => {
     const prCount = aggregates.get("pr_merged_count");
     const reviewCount = aggregates.get("code_reviews_given");
-    
+
     if (prCount?.type === "number" && reviewCount?.type === "number") {
       const ratio = reviewCount.value / prCount.value;
       if (ratio >= 2.0) {
@@ -202,7 +207,7 @@ Define custom logic for badge awarding.
         };
       }
     }
-    
+
     return null;
   }
 }
@@ -230,6 +235,7 @@ graph TD
 ### Badge Upgrades
 
 When a contributor qualifies for a higher variant:
+
 1. The system checks existing badges
 2. Compares variant order (bronze < silver < gold < platinum)
 3. Upgrades to the higher variant if qualified
@@ -314,7 +320,7 @@ const exists = await contributorBadgeQueries.exists(
   ctx.db,
   "alice",
   "code_reviewer",
-  "bronze"
+  "bronze",
 );
 
 if (!exists) {
@@ -350,7 +356,7 @@ const definitions = await badgeDefinitionQueries.getAll(db);
 const badge = await contributorBadgeQueries.getByContributorAndBadge(
   db,
   "alice",
-  "activity_milestone"
+  "activity_milestone",
 );
 
 if (badge) {
@@ -375,6 +381,7 @@ data/
 ### File Formats
 
 **definitions.json:**
+
 ```json
 [
   {
@@ -396,6 +403,7 @@ data/
 ```
 
 **contributors/username.jsonl:**
+
 ```jsonl
 {"slug":"activity_milestone__alice__gold","badge":"activity_milestone","contributor":"alice","variant":"gold","achieved_on":"2025-01-05","meta":{"rule_type":"threshold","auto_awarded":true}}
 {"slug":"consistency_champion__alice__silver","badge":"consistency_champion","contributor":"alice","variant":"silver","achieved_on":"2025-01-03","meta":{"rule_type":"streak","auto_awarded":true}}
@@ -407,12 +415,12 @@ data/
 
 ```typescript
 // Good
-slug: "code_reviewer"
-name: "Code Reviewer"
+slug: "code_reviewer";
+name: "Code Reviewer";
 
 // Bad
-slug: "badge1"
-name: "Badge"
+slug: "badge1";
+name: "Badge";
 ```
 
 ### 2. Provide Clear Descriptions
@@ -475,14 +483,15 @@ leaderboard:
         bronze: 10
         silver: 50
         gold: 100
-    
+
     custom_badge:
-      enabled: false  # Disable specific badges
+      enabled: false # Disable specific badges
 ```
 
 ### Badge Priority
 
 When multiple rules could award the same badge:
+
 1. All rules are evaluated
 2. The highest qualifying variant is selected
 3. Existing badges are only upgraded, never downgraded
@@ -499,4 +508,3 @@ When multiple rules could award the same badge:
 - [Aggregates](/docs/aggregates) - Metrics used by badge rules
 - [Plugin API Reference](/docs/plugins/api-reference) - Full API documentation
 - [Development Guide](/docs/development) - Testing badges locally
-

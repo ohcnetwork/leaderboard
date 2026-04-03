@@ -1,15 +1,15 @@
+import { RecentBadgeAchievement } from "@/components/BadgeDisplay";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getConfig } from "@/lib/config/get-config";
 import {
   getAllBadgeDefinitions,
   getRecentBadgeAchievements,
   getTopBadgeEarners,
 } from "@/lib/data/loader";
-import { getConfig } from "@/lib/config/get-config";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Award, Trophy, TrendingUp } from "lucide-react";
-import Link from "next/link";
-import { RecentBadgeAchievement, BadgeProgress } from "@/components/BadgeDisplay";
+import { Award, TrendingUp, Trophy } from "lucide-react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
@@ -76,12 +76,10 @@ export default async function BadgesPage() {
             <div className="text-2xl font-bold">
               {badgeDefinitions.reduce(
                 (sum, badge) => sum + Object.keys(badge.variants).length,
-                0
+                0,
               )}
             </div>
-            <p className="text-xs text-muted-foreground">
-              Achievement levels
-            </p>
+            <p className="text-xs text-muted-foreground">Achievement levels</p>
           </CardContent>
         </Card>
 
@@ -93,7 +91,9 @@ export default async function BadgesPage() {
             <Trophy className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{recentAchievements.length}</div>
+            <div className="text-2xl font-bold">
+              {recentAchievements.length}
+            </div>
             <p className="text-xs text-muted-foreground">In the last 30 days</p>
           </CardContent>
         </Card>
@@ -231,11 +231,13 @@ export default async function BadgesPage() {
 
       {/* Back to Home */}
       <div className="text-center">
-        <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
+        <Link
+          href="/"
+          className="text-sm text-muted-foreground hover:text-foreground"
+        >
           ← Back to Home
         </Link>
       </div>
     </div>
   );
 }
-

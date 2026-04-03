@@ -1,12 +1,12 @@
 "use client";
 
-import { formatTimeAgo } from "@/lib/utils";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { formatTimeAgo } from "@/lib/utils";
 import { format } from "date-fns";
 
 interface RelativeTimeProps {
@@ -16,7 +16,7 @@ interface RelativeTimeProps {
 
 export default function RelativeTime({ date, className }: RelativeTimeProps) {
   const dateObj = typeof date === "string" ? new Date(date) : date;
-  
+
   // Format absolute time like: "Monday, November 11, 2025 at 2:30 PM"
   const absoluteTime = format(dateObj, "EEEE, MMMM d, yyyy 'at' h:mm a");
 

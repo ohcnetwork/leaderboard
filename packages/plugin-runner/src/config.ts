@@ -3,8 +3,8 @@
  */
 
 import { readFile } from "fs/promises";
-import { join, resolve } from "path";
 import yaml from "js-yaml";
+import { join, resolve } from "path";
 import { z } from "zod";
 
 /**
@@ -96,7 +96,7 @@ export async function loadConfig(dataDir: string): Promise<Config> {
       })
       .join("\n");
     throw new Error(
-      `Configuration validation failed:\n${errors}\n\nPlease check your config.yaml file.`
+      `Configuration validation failed:\n${errors}\n\nPlease check your config.yaml file.`,
     );
   }
 

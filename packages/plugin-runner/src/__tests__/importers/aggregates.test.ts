@@ -2,25 +2,25 @@
  * Aggregate importer tests
  */
 
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { writeFile, mkdir, rm } from "fs/promises";
-import { join } from "path";
-import { createDatabase } from "@ohcnetwork/leaderboard-api";
-import { initializeSchema } from "@ohcnetwork/leaderboard-api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
-  globalAggregateQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
   contributorQueries,
+  createDatabase,
+  globalAggregateQueries,
+  initializeSchema,
 } from "@ohcnetwork/leaderboard-api";
+import { mkdir, rm, writeFile } from "fs/promises";
+import { join } from "path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
-  importGlobalAggregates,
+  importAggregates,
   importContributorAggregateDefinitions,
   importContributorAggregates,
-  importAggregates,
+  importGlobalAggregates,
 } from "../../importers/aggregates";
 import { createLogger } from "../../logger";
-import type { Database } from "@ohcnetwork/leaderboard-api";
 
 const TEST_DATA_DIR = "./test-data-import-aggregates";
 const logger = createLogger(false);
@@ -62,7 +62,7 @@ describe("Aggregate Importers", () => {
       await writeFile(
         join(TEST_DATA_DIR, "aggregates", "global.json"),
         JSON.stringify(aggregates),
-        "utf-8"
+        "utf-8",
       );
 
       await importGlobalAggregates(db, TEST_DATA_DIR, logger);
@@ -109,7 +109,7 @@ describe("Aggregate Importers", () => {
       await writeFile(
         join(TEST_DATA_DIR, "aggregates", "global.json"),
         JSON.stringify(aggregates),
-        "utf-8"
+        "utf-8",
       );
 
       await importGlobalAggregates(db, TEST_DATA_DIR, logger);
@@ -141,7 +141,7 @@ describe("Aggregate Importers", () => {
       await writeFile(
         join(TEST_DATA_DIR, "aggregates", "definitions.json"),
         JSON.stringify(definitions),
-        "utf-8"
+        "utf-8",
       );
 
       await importContributorAggregateDefinitions(db, TEST_DATA_DIR, logger);
@@ -211,14 +211,14 @@ describe("Aggregate Importers", () => {
       await writeFile(
         join(TEST_DATA_DIR, "aggregates", "contributors", "alice.jsonl"),
         aggregates.map((a) => JSON.stringify(a)).join("\n") + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await importContributorAggregates(db, TEST_DATA_DIR, logger);
 
       const imported = await contributorAggregateQueries.getByContributor(
         db,
-        "alice"
+        "alice",
       );
       expect(imported).toHaveLength(2);
     });
@@ -248,7 +248,7 @@ describe("Aggregate Importers", () => {
           value: { type: "number", value: 42, format: "integer" },
           meta: null,
         }) + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await writeFile(
@@ -259,18 +259,18 @@ describe("Aggregate Importers", () => {
           value: { type: "number", value: 30, format: "integer" },
           meta: null,
         }) + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await importContributorAggregates(db, TEST_DATA_DIR, logger);
 
       const aliceAggs = await contributorAggregateQueries.getByContributor(
         db,
-        "alice"
+        "alice",
       );
       const bobAggs = await contributorAggregateQueries.getByContributor(
         db,
-        "bob"
+        "bob",
       );
 
       expect(aliceAggs).toHaveLength(1);
@@ -294,7 +294,7 @@ describe("Aggregate Importers", () => {
           },
           meta: null,
         }) + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await importContributorAggregates(db, TEST_DATA_DIR, logger);
@@ -303,7 +303,7 @@ describe("Aggregate Importers", () => {
         await contributorAggregateQueries.getByContributorAndAggregate(
           db,
           "alice",
-          "activity_count"
+          "activity_count",
         );
 
       if (aggregate?.value.type === "number") {
@@ -350,7 +350,7 @@ describe("Aggregate Importers", () => {
             meta: null,
           },
         ]),
-        "utf-8"
+        "utf-8",
       );
 
       // Definitions
@@ -363,7 +363,7 @@ describe("Aggregate Importers", () => {
             description: null,
           },
         ]),
-        "utf-8"
+        "utf-8",
       );
 
       // Contributor aggregates
@@ -375,15 +375,14 @@ describe("Aggregate Importers", () => {
           value: { type: "number", value: 42, format: "integer" },
           meta: null,
         }) + "\n",
-        "utf-8"
+        "utf-8",
       );
 
       await importAggregates(db, TEST_DATA_DIR, logger);
 
       const globalAggs = await globalAggregateQueries.getAll(db);
-      const definitions = await contributorAggregateDefinitionQueries.getAll(
-        db
-      );
+      const definitions =
+        await contributorAggregateDefinitionQueries.getAll(db);
       const contributorAggs = await contributorAggregateQueries.getAll(db);
 
       expect(globalAggs).toHaveLength(1);

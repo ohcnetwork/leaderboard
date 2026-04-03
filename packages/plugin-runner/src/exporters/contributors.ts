@@ -2,13 +2,12 @@
  * Export contributors to markdown files
  */
 
-import { mkdir, writeFile } from "fs/promises";
-import { join } from "path";
-import matter from "gray-matter";
-import type { Database } from "@ohcnetwork/leaderboard-api";
+import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import { contributorQueries } from "@ohcnetwork/leaderboard-api";
-import type { Logger } from "@ohcnetwork/leaderboard-api";
 import { format } from "date-fns";
+import { mkdir, writeFile } from "fs/promises";
+import matter from "gray-matter";
+import { join } from "path";
 
 /**
  * Export all contributors to markdown files
@@ -16,7 +15,7 @@ import { format } from "date-fns";
 export async function exportContributors(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<number> {
   const contributorsDir = join(dataDir, "contributors");
   await mkdir(contributorsDir, { recursive: true });

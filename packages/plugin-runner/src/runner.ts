@@ -3,10 +3,10 @@
  */
 
 import type {
-  Plugin,
-  PluginContext,
   Database,
   Logger,
+  Plugin,
+  PluginContext,
 } from "@ohcnetwork/leaderboard-api";
 import type { Config } from "./config";
 import { loadPlugin } from "./loader";
@@ -17,7 +17,7 @@ import { loadPlugin } from "./loader";
 export async function runPlugins(
   config: Config,
   db: Database,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const plugins = config.leaderboard.plugins || {};
   const pluginEntries = Object.entries(plugins);

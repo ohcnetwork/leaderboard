@@ -7,6 +7,9 @@
     "@changesets/cli": "^2.29.8",
     "@types/node": "^20.19.25",
     "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-organize-imports": "^4.3.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
@@ -29,6 +32,8 @@
     "dev": "pnpm --filter leaderboard-web dev",
     "create-data-repo": "tsx packages/create-data-repo/src/index.ts",
     "generate:schema": "tsx scripts/generate-config-schema.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky",
     "changeset": "changeset",
     "version": "changeset version",
@@ -46,6 +51,10 @@
     "url": "https://github.com/ohcnetwork/leaderboard/issues"
   },
   "homepage": "https://github.com/ohcnetwork/leaderboard#readme",
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mjs,cjs}": "prettier --write",
+    "*.{json,yaml,yml,md,mdx,css,html}": "prettier --write"
+  },
   "dependencies": {
     "create-leaderboard-data-repo": "link:packages/create-data-repo",
     "create-leaderboard-plugin": "link:packages/create-plugin"

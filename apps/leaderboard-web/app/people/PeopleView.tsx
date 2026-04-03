@@ -1,16 +1,16 @@
 "use client";
 
-import { useMemo } from "react";
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { LayoutGrid, List } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { LayoutGrid, List } from "lucide-react";
+import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 
 interface Contributor {
   username: string;

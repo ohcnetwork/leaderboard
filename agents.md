@@ -11,16 +11,17 @@ This document provides specialized workflows for different types of tasks in the
 ### Workflow
 
 1. **Scaffold Plugin Project**
+
    ```bash
    pnpm create-leaderboard-plugin <path>
    # Example: pnpm create-leaderboard-plugin ../leaderboard-github-plugin
    ```
-   
+
    The CLI will prompt for:
    - Plugin name (e.g., 'github', 'slack', 'jira')
    - Plugin description
    - Author name
-   
+
    This generates a complete project structure with:
    - `package.json` with correct dependencies
    - `tsconfig.json` with proper configuration
@@ -30,11 +31,12 @@ This document provides specialized workflows for different types of tasks in the
    - `README.md` with documentation
 
 2. **Implement Setup Method**
-   
+
    Define activity types in the `setup()` method:
+
    ```typescript
    import { activityDefinitionQueries } from "@ohcnetwork/leaderboard-api";
-   
+
    async setup(ctx: PluginContext): Promise<void> {
      // Define all activity types your plugin will track
      await activityDefinitionQueries.upsert(ctx.db, {
@@ -44,7 +46,7 @@ This document provides specialized workflows for different types of tasks in the
        points: 5,
        meta: { icon: "git-pull-request" },
      });
-     
+
      await activityDefinitionQueries.upsert(ctx.db, {
        slug: "pr_merged",
        name: "Pull Request Merged",
@@ -56,17 +58,18 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 3. **Implement Scrape Method**
-   
+
    Fetch and store activities:
+
    ```typescript
    import { activityQueries, contributorQueries } from "@ohcnetwork/leaderboard-api";
-   
+
    async scrape(ctx: PluginContext): Promise<void> {
      const { apiToken, organization } = ctx.config;
-     
+
      // Fetch data from external API
      const prs = await fetchPullRequests(apiToken, organization);
-     
+
      for (const pr of prs) {
        // Ensure contributor exists
        await contributorQueries.upsert(ctx.db, {
@@ -75,7 +78,7 @@ This document provides specialized workflows for different types of tasks in the
          role: "contributor", // or determine from your logic
          avatar_url: pr.author.avatar_url,
        });
-       
+
        // Store activity
        await activityQueries.create(ctx.db, {
          slug: `pr-${pr.id}`,
@@ -92,62 +95,69 @@ This document provides specialized workflows for different types of tasks in the
          },
        });
      }
-     
+
      ctx.logger.info(`Processed ${prs.length} pull requests`);
    }
    ```
 
 4. **Use Query Builders**
-   
+
    Always use provided query builders from the API package:
    - `contributorQueries`: create, upsert, getByUsername, getAll, etc.
    - `activityQueries`: create, getByContributor, getByDateRange, etc.
    - `activityDefinitionQueries`: upsert, getBySlug, getAll, etc.
 
 5. **Write Tests**
-   
+
    Create comprehensive tests in `src/__tests__/plugin.test.ts`:
+
    ```typescript
    import { describe, it, expect, beforeEach, afterEach } from "vitest";
-   import { createDatabase, initializeSchema } from "@ohcnetwork/leaderboard-api";
+   import {
+     createDatabase,
+     initializeSchema,
+   } from "@ohcnetwork/leaderboard-api";
    import plugin from "../index";
-   
+
    describe("My Plugin", () => {
      let db: Database;
-     
+
      beforeEach(async () => {
        db = createDatabase(":memory:");
        await initializeSchema(db);
      });
-     
+
      afterEach(async () => {
        await db.close();
      });
-     
+
      it("should define activity types in setup", async () => {
        const ctx = {
          db,
          config: {},
-         orgConfig: { /* mock org config */ },
+         orgConfig: {
+           /* mock org config */
+         },
          logger: createLogger(false),
        };
-       
+
        await plugin.setup(ctx);
-       
+
        const definitions = await activityDefinitionQueries.getAll(db);
        expect(definitions.length).toBeGreaterThan(0);
      });
-     
+
      // More tests...
    });
    ```
 
 6. **Export as ES Module**
-   
+
    Ensure your plugin exports correctly:
+
    ```typescript
    import type { Plugin } from "@ohcnetwork/leaderboard-api";
-   
+
    export default {
      name: "my-plugin",
      version: "1.0.0",
@@ -157,12 +167,13 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 7. **Test with Plugin Runner**
-   
+
    Build and test your plugin:
+
    ```bash
    pnpm build
    pnpm test
-   
+
    # Test with actual plugin runner
    cd /path/to/leaderboard-monorepo
    # Update config.yaml to point to your plugin
@@ -170,7 +181,6 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 8. **Deploy and Configure**
-   
    - Build your plugin: `pnpm build`
    - Deploy `dist/index.js` to a accessible URL (GitHub raw, CDN, etc.)
    - Configure in data repository's `config.yaml`:
@@ -186,12 +196,14 @@ This document provides specialized workflows for different types of tasks in the
      ```
 
 ### Key Files
+
 - [`docs/plugins/creating-plugins.mdx`](docs/plugins/creating-plugins.mdx) - Complete plugin development guide
 - [`packages/plugin-dummy/src/index.ts`](packages/plugin-dummy/src/index.ts) - Reference implementation
 - [`packages/api/src/types.ts`](packages/api/src/types.ts) - Plugin interface and types
 - [`packages/api/src/queries.ts`](packages/api/src/queries.ts) - Available query builders
 
 ### Tips
+
 - Keep plugins focused on one data source
 - Use bulk operations for better performance
 - Log progress for debugging
@@ -209,11 +221,12 @@ This document provides specialized workflows for different types of tasks in the
 ### Workflow
 
 1. **Initialize Data Repository**
+
    ```bash
    pnpm create-data-repo <path>
    # Example: pnpm create-data-repo ../my-org-leaderboard-data
    ```
-   
+
    Interactive prompts will collect:
    - Organization name, description, URL, logo
    - Social media links (GitHub, Slack, LinkedIn, YouTube, email)
@@ -223,6 +236,7 @@ This document provides specialized workflows for different types of tasks in the
    - Roles (with option for defaults: core, contributor)
 
 2. **Review Generated Structure**
+
    ```
    my-org-leaderboard-data/
    ├── config.yaml           # Organization configuration
@@ -233,8 +247,9 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 3. **Configure Plugins**
-   
+
    Edit `config.yaml` to uncomment and configure plugins:
+
    ```yaml
    leaderboard:
      plugins:
@@ -247,7 +262,7 @@ This document provides specialized workflows for different types of tasks in the
            repositories:
              - repo1
              - repo2
-       
+
        slack:
          name: Slack Plugin
          source: https://raw.githubusercontent.com/org/plugin/main/manifest.js
@@ -257,6 +272,7 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 4. **Set Environment Variables**
+
    ```bash
    export GITHUB_TOKEN=ghp_xxxxxxxxxxxxx
    export SLACK_API_TOKEN=xoxb-xxxxxxxxxxxxx
@@ -264,8 +280,9 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 5. **Add Contributor Profiles (Optional)**
-   
+
    Manually create contributor Markdown files if needed:
+
    ```bash
    cd contributors
    cat > alice.md << 'EOF'
@@ -280,17 +297,18 @@ This document provides specialized workflows for different types of tasks in the
      linkedin: https://linkedin.com/in/alice-smith
    joining_date: 2020-01-15
    ---
-   
+
    Alice is a senior engineer specializing in backend systems.
    EOF
    ```
 
 6. **Run Data Collection**
+
    ```bash
    cd /path/to/leaderboard-monorepo
    pnpm data:scrape
    ```
-   
+
    This will:
    - Import existing contributors and activities
    - Run plugin setup methods
@@ -300,6 +318,7 @@ This document provides specialized workflows for different types of tasks in the
    - Export updated data back to files
 
 7. **Commit and Push**
+
    ```bash
    cd /path/to/my-org-leaderboard-data
    git add contributors/ activities/ aggregates/ badges/
@@ -308,8 +327,9 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 8. **Configure Aggregates (Optional)**
-   
+
    Create `aggregates/definitions.json` for custom metrics:
+
    ```json
    {
      "definitions": [
@@ -325,8 +345,9 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 9. **Configure Badges (Optional)**
-   
+
    Create `badges/definitions.json` for achievements:
+
    ```json
    {
      "badges": [
@@ -348,12 +369,14 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 ### Key Files
+
 - [`docs/getting-started/index.mdx`](docs/getting-started/index.mdx) - Setup guide
 - [`docs/data-management.mdx`](docs/data-management.mdx) - Data management patterns
 - [`docs/getting-started/configuration.mdx`](docs/getting-started/configuration.mdx) - Config reference
 - [`apps/leaderboard-web/config.example.yaml`](apps/leaderboard-web/config.example.yaml) - Example configuration
 
 ### Tips
+
 - Use environment variables for all secrets
 - Keep data repository separate from code repository
 - Commit contributor and activity files to git
@@ -371,34 +394,41 @@ This document provides specialized workflows for different types of tasks in the
 ### Workflow
 
 1. **Identify Slow Queries**
-   
+
    Enable debug logging to see query execution:
+
    ```bash
    DEBUG=true pnpm data:scrape
    ```
-   
+
    Look for log messages showing query duration.
 
 2. **Use Query Builders First**
-   
+
    Start with provided query builders from [`packages/api/src/queries.ts`](packages/api/src/queries.ts):
+
    ```typescript
-   import { contributorQueries, activityQueries } from "@ohcnetwork/leaderboard-api";
-   
+   import {
+     contributorQueries,
+     activityQueries,
+   } from "@ohcnetwork/leaderboard-api";
+
    // Optimized queries with proper indexes
    const activities = await activityQueries.getByContributor(db, "alice");
    const recentActivities = await activityQueries.getByDateRange(
      db,
      new Date("2024-01-01"),
-     new Date("2024-12-31")
+     new Date("2024-12-31"),
    );
    ```
 
 3. **Write Custom SQL for Complex Queries**
-   
+
    For complex aggregations not covered by query builders:
+
    ```typescript
-   const result = await db.execute(`
+   const result = await db.execute(
+     `
      SELECT 
        c.username,
        c.name,
@@ -413,31 +443,36 @@ This document provides specialized workflows for different types of tasks in the
      GROUP BY c.username, c.name
      ORDER BY total_points DESC
      LIMIT 100
-   `, ["core", "2024-01-01"]);
+   `,
+     ["core", "2024-01-01"],
+   );
    ```
 
 4. **Add Indexes for Performance**
-   
+
    If modifying schema, add indexes for frequently queried columns:
+
    ```sql
-   CREATE INDEX IF NOT EXISTS idx_activity_contributor 
+   CREATE INDEX IF NOT EXISTS idx_activity_contributor
      ON activity(contributor);
-   
-   CREATE INDEX IF NOT EXISTS idx_activity_occurred_at 
+
+   CREATE INDEX IF NOT EXISTS idx_activity_occurred_at
      ON activity(occured_at);
-   
-   CREATE INDEX IF NOT EXISTS idx_activity_definition 
+
+   CREATE INDEX IF NOT EXISTS idx_activity_definition
      ON activity(activity_definition);
    ```
 
 5. **Test with Realistic Data**
-   
+
    Generate large datasets for testing:
+
    ```bash
    pnpm setup:dev --contributors 100 --days 365
    ```
-   
+
    Measure query performance:
+
    ```typescript
    const start = Date.now();
    const result = await expensiveQuery(db);
@@ -445,24 +480,28 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 6. **Add Tests**
-   
+
    Add performance tests in [`packages/api/src/__tests__/queries.test.ts`](packages/api/src/__tests__/queries.test.ts):
+
    ```typescript
    it("should query large datasets efficiently", async () => {
      // Insert 10k activities
      for (let i = 0; i < 10000; i++) {
-       await activityQueries.create(db, { /* ... */ });
+       await activityQueries.create(db, {
+         /* ... */
+       });
      }
-     
+
      const start = Date.now();
      const result = await activityQueries.getByContributor(db, "alice");
      const duration = Date.now() - start;
-     
+
      expect(duration).toBeLessThan(100); // Should complete in <100ms
    });
    ```
 
 ### Considerations
+
 - **Database**: SQLite (LibSQL) - optimized for reads
 - **Workload**: Read-heavy at build time, not runtime
 - **Optimize for**: Static site generation speed
@@ -471,11 +510,13 @@ This document provides specialized workflows for different types of tasks in the
 - **Memory**: Consider memory usage with large result sets
 
 ### Key Files
+
 - [`packages/api/src/queries.ts`](packages/api/src/queries.ts) - Query builders
 - [`packages/api/src/schema.ts`](packages/api/src/schema.ts) - Database schema
 - [`packages/api/src/__tests__/queries.test.ts`](packages/api/src/__tests__/queries.test.ts) - Query tests
 
 ### Tips
+
 - Use `EXPLAIN QUERY PLAN` to understand query execution
 - Limit result sets with proper WHERE clauses
 - Use pagination for large lists
@@ -492,8 +533,9 @@ This document provides specialized workflows for different types of tasks in the
 ### Workflow
 
 1. **Define Badge in Definitions**
-   
+
    Create or edit `badges/definitions.json` in your data repository:
+
    ```json
    {
      "badges": [
@@ -534,6 +576,7 @@ This document provides specialized workflows for different types of tasks in the
 2. **Understand Rule Types**
 
    **Count Rule**: Number of activities matching filters
+
    ```json
    {
      "slug": "pr_expert",
@@ -552,6 +595,7 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
    **Total Points Rule**: Sum of points from matching activities
+
    ```json
    {
      "slug": "top_scorer",
@@ -567,6 +611,7 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
    **Streak Rule**: Consecutive days with activity
+
    ```json
    {
      "slug": "daily_contributor",
@@ -575,7 +620,7 @@ This document provides specialized workflows for different types of tasks in the
        "type": "streak",
        "min": 7,
        "filter": {
-         "activity_definitions": ["*"],  // All activities
+         "activity_definitions": ["*"], // All activities
          "date_from": "2024-01-01"
        }
      }
@@ -583,6 +628,7 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
    **Per-Activity-Definition Streak**: Streak for specific activity types
+
    ```json
    {
      "slug": "pr_streak",
@@ -591,13 +637,14 @@ This document provides specialized workflows for different types of tasks in the
        "type": "streak",
        "min": 5,
        "filter": {
-         "activity_definitions": ["pr_merged"],  // Only merged PRs
+         "activity_definitions": ["pr_merged"] // Only merged PRs
        }
      }
    }
    ```
 
    **Multiple Activity Definition Streak**: Combined streak
+
    ```json
    {
      "slug": "code_review_streak",
@@ -613,6 +660,7 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
    **Regex Pattern Matching**: Match activity definitions with regex
+
    ```json
    {
      "slug": "github_all_star",
@@ -621,14 +669,14 @@ This document provides specialized workflows for different types of tasks in the
        "type": "count",
        "min": 100,
        "filter": {
-         "activity_definitions": ["^github_.*"]  // All GitHub activities
+         "activity_definitions": ["^github_.*"] // All GitHub activities
        }
      }
    }
    ```
 
 3. **Configure Filters**
-   
+
    Available filters:
    - `activity_definitions`: Array of activity slugs or regex patterns (`["*"]` for all)
    - `role`: Filter by contributor role
@@ -636,13 +684,15 @@ This document provides specialized workflows for different types of tasks in the
    - `date_to`: ISO date string (YYYY-MM-DD)
 
 4. **Test Badge Evaluation**
-   
+
    Run badge evaluation:
+
    ```bash
    pnpm data:scrape  # Includes badge evaluation
    ```
-   
+
    Check results in `badges/contributors/{username}.json`:
+
    ```json
    {
      "username": "alice",
@@ -657,28 +707,31 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 5. **Debug Badge Rules**
-   
+
    Enable debug logging:
+
    ```bash
    DEBUG=true pnpm data:scrape
    ```
-   
+
    Review logs for badge evaluation details.
 
 ### Rule Types Reference
 
-| Type | Description | Value Meaning |
-|------|-------------|---------------|
-| `count` | Number of matching activities | Activity count |
-| `total_points` | Sum of points from activities | Total points |
-| `streak` | Consecutive days with activity | Streak length (days) |
+| Type           | Description                    | Value Meaning        |
+| -------------- | ------------------------------ | -------------------- |
+| `count`        | Number of matching activities  | Activity count       |
+| `total_points` | Sum of points from activities  | Total points         |
+| `streak`       | Consecutive days with activity | Streak length (days) |
 
 ### Key Files
+
 - [`docs/badges.mdx`](docs/badges.mdx) - Badge system documentation
 - [`packages/plugin-runner/src/rules/evaluator.ts`](packages/plugin-runner/src/rules/evaluator.ts) - Badge evaluation logic
 - [`packages/plugin-runner/src/rules/__tests__/evaluator.test.ts`](packages/plugin-runner/src/rules/__tests__/evaluator.test.ts) - Badge tests
 
 ### Tips
+
 - Start with simple rules, add complexity as needed
 - Test with various contributor profiles
 - Use date filters for time-bound badges
@@ -703,16 +756,17 @@ This document provides specialized workflows for different types of tasks in the
    - **Data from Database**: All data from LibSQL at build time
 
 2. **Page Structure**
-   
+
    All pages in [`apps/leaderboard-web/app/`](apps/leaderboard-web/app/):
+
    ```typescript
    // app/leaderboard/page.tsx
    import { getAllContributors } from "@/lib/data/loader";
-   
+
    export default async function LeaderboardPage() {
      // Data loaded at build time (SSG)
      const contributors = await getAllContributors();
-     
+
      return (
        <div>
          {contributors.map(c => (
@@ -724,8 +778,9 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 3. **Data Loading**
-   
+
    Use data loaders from [`apps/leaderboard-web/lib/data/loader.ts`](apps/leaderboard-web/lib/data/loader.ts):
+
    ```typescript
    import {
      getAllContributors,
@@ -737,17 +792,24 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 4. **Components**
-   
+
    Use shadcn/ui components from [`apps/leaderboard-web/components/ui/`](apps/leaderboard-web/components/ui/):
+
    ```typescript
    import { Button } from "@/components/ui/button";
-   import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+   import {
+     Card,
+     CardHeader,
+     CardTitle,
+     CardContent,
+   } from "@/components/ui/card";
    import { Badge } from "@/components/ui/badge";
    ```
 
 5. **Styling**
-   
+
    Use Tailwind CSS classes:
+
    ```tsx
    <div className="container mx-auto px-4 py-8">
      <h1 className="text-4xl font-bold mb-6">Leaderboard</h1>
@@ -758,8 +820,9 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 6. **Theme Customization**
-   
+
    Users can override styles via `data/theme.css`:
+
    ```css
    :root {
      --primary: 220 90% 56%;
@@ -769,19 +832,20 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 7. **Dynamic Routes**
-   
+
    Generate static paths at build time:
+
    ```typescript
    // app/[username]/page.tsx
    import { getAllContributors, getContributorByUsername } from "@/lib/data/loader";
-   
+
    export async function generateStaticParams() {
      const contributors = await getAllContributors();
      return contributors.map(c => ({
        username: c.username,
      }));
    }
-   
+
    export default async function ContributorPage({
      params,
    }: {
@@ -793,10 +857,11 @@ This document provides specialized workflows for different types of tasks in the
    ```
 
 8. **Documentation Pages**
-   
+
    Documentation uses Fumadocs, defined in MDX files in [`docs/`](docs/).
 
 ### Constraints Summary
+
 - ✅ Server Components (for SSG)
 - ✅ Client Components (with 'use client')
 - ✅ Static generation (generateStaticParams)
@@ -807,6 +872,7 @@ This document provides specialized workflows for different types of tasks in the
 - ❌ Dynamic data at runtime
 
 ### Key Files
+
 - [`apps/leaderboard-web/app/`](apps/leaderboard-web/app/) - Pages and layouts
 - [`apps/leaderboard-web/components/`](apps/leaderboard-web/components/) - React components
 - [`apps/leaderboard-web/lib/data/loader.ts`](apps/leaderboard-web/lib/data/loader.ts) - Data loading
@@ -814,6 +880,7 @@ This document provides specialized workflows for different types of tasks in the
 - [`apps/leaderboard-web/next.config.ts`](apps/leaderboard-web/next.config.ts) - Next.js config
 
 ### Tips
+
 - All data must be available at build time
 - Use client components sparingly (only for interactivity)
 - Optimize bundle size (tree shaking, code splitting)
@@ -848,46 +915,44 @@ import { createLogger } from "../logger";
 describe("Feature Name", () => {
   let db: Database;
   const logger = createLogger(false); // Disable logging in tests
-  
+
   beforeEach(async () => {
     // Setup: Create fresh database
     db = createDatabase(":memory:");
     await initializeSchema(db);
-    
+
     // Additional setup (seed data, etc.)
   });
-  
+
   afterEach(async () => {
     // Cleanup: Close database
     await db.close();
-    
+
     // Remove test files if created
     // await rm(testDir, { recursive: true, force: true });
   });
-  
+
   it("should handle happy path", async () => {
     // Arrange: Set up test data
     const input = { username: "alice", name: "Alice" };
-    
+
     // Act: Execute the function
     const result = await functionUnderTest(db, input);
-    
+
     // Assert: Verify results
     expect(result).toBeDefined();
     expect(result.username).toBe("alice");
   });
-  
+
   it("should handle empty input", async () => {
     const result = await functionUnderTest(db, []);
     expect(result).toHaveLength(0);
   });
-  
+
   it("should handle errors gracefully", async () => {
-    await expect(
-      functionUnderTest(db, null)
-    ).rejects.toThrow("Invalid input");
+    await expect(functionUnderTest(db, null)).rejects.toThrow("Invalid input");
   });
-  
+
   it("should validate constraints", async () => {
     // Test database constraints, validations, etc.
   });
@@ -897,14 +962,15 @@ describe("Feature Name", () => {
 ### Test Categories
 
 **Unit Tests**: Test individual functions in isolation
+
 ```typescript
 describe("contributorQueries.getByUsername", () => {
   it("should return contributor by username", async () => {
-    await contributorQueries.create(db, { username: "alice", /* ... */ });
+    await contributorQueries.create(db, { username: "alice" /* ... */ });
     const result = await contributorQueries.getByUsername(db, "alice");
     expect(result).not.toBeNull();
   });
-  
+
   it("should return null for non-existent username", async () => {
     const result = await contributorQueries.getByUsername(db, "nonexistent");
     expect(result).toBeNull();
@@ -913,19 +979,20 @@ describe("contributorQueries.getByUsername", () => {
 ```
 
 **Integration Tests**: Test multiple components together
+
 ```typescript
 describe("Plugin Integration", () => {
   it("should import, scrape, and export data", async () => {
     // Import existing data
     await importContributors(db, dataDir, logger);
-    
+
     // Run plugin
     await plugin.setup(ctx);
     await plugin.scrape(ctx);
-    
+
     // Export data
     await exportActivities(db, dataDir, logger);
-    
+
     // Verify exported files
     const exported = await readdir(join(dataDir, "activities"));
     expect(exported.length).toBeGreaterThan(0);
@@ -934,6 +1001,7 @@ describe("Plugin Integration", () => {
 ```
 
 **Edge Cases**: Test boundary conditions
+
 ```typescript
 describe("Edge Cases", () => {
   it("should handle very long usernames", async () => {
@@ -942,11 +1010,11 @@ describe("Edge Cases", () => {
     const result = await contributorQueries.getByUsername(db, longUsername);
     expect(result?.username).toBe(longUsername);
   });
-  
+
   it("should handle special characters in slugs", async () => {
     // Test with special characters
   });
-  
+
   it("should handle large datasets efficiently", async () => {
     // Insert 10k records and verify performance
   });
@@ -964,13 +1032,13 @@ describe("Plugin with API calls", () => {
     const mockFetch = vi.fn().mockResolvedValue({
       json: () => Promise.resolve([{ id: 1, title: "Test" }]),
     });
-    
+
     global.fetch = mockFetch;
-    
+
     await plugin.scrape(ctx);
-    
+
     expect(mockFetch).toHaveBeenCalledWith(
-      expect.stringContaining("api.example.com")
+      expect.stringContaining("api.example.com"),
     );
   });
 });
@@ -984,22 +1052,22 @@ import { join } from "path";
 
 describe("File Operations", () => {
   const testDir = "./test-data-temp";
-  
+
   beforeEach(async () => {
     await mkdir(testDir, { recursive: true });
   });
-  
+
   afterEach(async () => {
     await rm(testDir, { recursive: true, force: true });
   });
-  
+
   it("should read and parse markdown files", async () => {
     await writeFile(
       join(testDir, "test.md"),
       "---\nusername: alice\n---\nContent",
-      "utf-8"
+      "utf-8",
     );
-    
+
     const result = await importFromMarkdown(testDir);
     expect(result).toHaveLength(1);
   });
@@ -1023,6 +1091,7 @@ pnpm test:coverage
 ```
 
 ### Tips
+
 - Test one thing per test case
 - Use descriptive test names
 - Arrange-Act-Assert pattern
@@ -1073,7 +1142,9 @@ High-level explanation of the feature.
 ## Quick Start
 
 \`\`\`bash
+
 # Quick example to get started
+
 pnpm install
 pnpm build
 \`\`\`
@@ -1111,9 +1182,11 @@ const result = await feature.doSomething();
 Description of what the function does.
 
 **Parameters:**
+
 - `param` - Description of parameter
 
 **Returns:**
+
 - Description of return value
 
 **Example:**
@@ -1125,8 +1198,8 @@ const result = functionName("value");
 
 \`\`\`mermaid
 graph LR
-    A[Input] --> B[Process]
-    B --> C[Output]
+A[Input] --> B[Process]
+B --> C[Output]
 \`\`\`
 
 ## Best Practices
@@ -1165,7 +1238,7 @@ sequenceDiagram
     participant CLI
     participant Plugin
     participant Database
-    
+
     User->>CLI: Run scrape command
     CLI->>Plugin: Load plugin
     Plugin->>Database: Setup activity definitions
@@ -1175,14 +1248,14 @@ sequenceDiagram
 
 ### JSDoc Style
 
-```typescript
+````typescript
 /**
  * Fetch all contributors from the database
- * 
+ *
  * @param db - Database instance
  * @param filter - Optional filter criteria
  * @returns Array of contributors
- * 
+ *
  * @example
  * ```typescript
  * const contributors = await getAllContributors(db);
@@ -1191,11 +1264,11 @@ sequenceDiagram
  */
 export async function getAllContributors(
   db: Database,
-  filter?: ContributorFilter
+  filter?: ContributorFilter,
 ): Promise<Contributor[]> {
   // Implementation
 }
-```
+````
 
 ### Documentation Checklist
 
@@ -1212,6 +1285,7 @@ export async function getAllContributors(
 - [ ] Proper formatting and structure
 
 ### Tips
+
 - Write for different audiences (beginners, advanced users)
 - Include working code examples
 - Use diagrams to explain complex concepts

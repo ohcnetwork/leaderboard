@@ -33,7 +33,7 @@ sequenceDiagram
     participant Plugin as Plugin
     participant DB as Database
     participant API as External API
-    
+
     Runner->>Plugin: Load from URL
     Runner->>Plugin: Validate structure
     Runner->>Plugin: setup(ctx)
@@ -50,13 +50,13 @@ Every plugin exports a default object implementing the `Plugin` interface:
 
 ```typescript
 export default {
-  name: 'my-plugin',
-  version: '1.0.0',
-  
+  name: "my-plugin",
+  version: "1.0.0",
+
   async setup(ctx) {
     // Optional: Initialize activity definitions
   },
-  
+
   async scrape(ctx) {
     // Required: Fetch and store activities
   },
@@ -79,10 +79,10 @@ Plugins receive a context object with useful utilities:
 
 ```typescript
 interface PluginContext {
-  db: Database;              // Database for storing data
-  config: PluginConfig;      // Plugin-specific configuration
-  orgConfig: OrgConfig;      // Organization information
-  logger: Logger;            // Structured logging
+  db: Database; // Database for storing data
+  config: PluginConfig; // Plugin-specific configuration
+  orgConfig: OrgConfig; // Organization information
+  logger: Logger; // Structured logging
 }
 ```
 
@@ -91,15 +91,15 @@ interface PluginContext {
 Use query helpers for type-safe database operations:
 
 ```typescript
-import { activityQueries } from '@ohcnetwork/leaderboard-api';
+import { activityQueries } from "@ohcnetwork/leaderboard-api";
 
 await activityQueries.upsert(ctx.db, {
-  slug: 'activity-123',
-  contributor: 'username',
-  activity_definition: 'pr_merged',
-  title: 'Fixed bug',
+  slug: "activity-123",
+  contributor: "username",
+  activity_definition: "pr_merged",
+  title: "Fixed bug",
   occured_at: new Date().toISOString(),
-  link: 'https://github.com/...',
+  link: "https://github.com/...",
   text: null,
   points: null,
   meta: null,
@@ -109,7 +109,7 @@ await activityQueries.upsert(ctx.db, {
 Or execute raw SQL if needed:
 
 ```typescript
-await ctx.db.execute('INSERT INTO activity (...) VALUES (...)', [params]);
+await ctx.db.execute("INSERT INTO activity (...) VALUES (...)", [params]);
 ```
 
 ### Configuration (`ctx.config`)
@@ -133,8 +133,8 @@ const { token, org } = ctx.config;
 Structured logging:
 
 ```typescript
-ctx.logger.info('Fetching data', { source: 'github' });
-ctx.logger.error('Failed to fetch', error, { retries: 3 });
+ctx.logger.info("Fetching data", { source: "github" });
+ctx.logger.error("Failed to fetch", error, { retries: 3 });
 ```
 
 ## Plugin Distribution
@@ -171,11 +171,11 @@ Common hosting options:
 
 ```javascript
 export default {
-  name: 'hello-world',
-  version: '1.0.0',
-  
+  name: "hello-world",
+  version: "1.0.0",
+
   async scrape(ctx) {
-    ctx.logger.info('Hello from plugin!');
+    ctx.logger.info("Hello from plugin!");
   },
 };
 ```
@@ -187,53 +187,50 @@ import {
   activityDefinitionQueries,
   activityQueries,
   contributorQueries,
-} from '@ohcnetwork/leaderboard-api';
+} from "@ohcnetwork/leaderboard-api";
 
 export default {
-  name: 'github-activities',
-  version: '1.0.0',
-  
+  name: "github-activities",
+  version: "1.0.0",
+
   async setup(ctx) {
     // Define activity types using query helpers
     await activityDefinitionQueries.insertOrIgnore(ctx.db, {
-      slug: 'pr_opened',
-      name: 'PR Opened',
-      description: 'Opened a pull request',
+      slug: "pr_opened",
+      name: "PR Opened",
+      description: "Opened a pull request",
       points: 5,
-      icon: 'git-pull-request',
+      icon: "git-pull-request",
     });
-    
+
     await activityDefinitionQueries.insertOrIgnore(ctx.db, {
-      slug: 'pr_merged',
-      name: 'PR Merged',
-      description: 'Pull request merged',
+      slug: "pr_merged",
+      name: "PR Merged",
+      description: "Pull request merged",
       points: 10,
-      icon: 'git-merge',
+      icon: "git-merge",
     });
-    
+
     await activityDefinitionQueries.insertOrIgnore(ctx.db, {
-      slug: 'issue_opened',
-      name: 'Issue Opened',
-      description: 'Opened an issue',
+      slug: "issue_opened",
+      name: "Issue Opened",
+      description: "Opened an issue",
       points: 2,
-      icon: 'circle-dot',
+      icon: "circle-dot",
     });
   },
-  
+
   async scrape(ctx) {
     const { token, org } = ctx.config;
-    
+
     // Fetch repositories
-    const response = await fetch(
-      `https://api.github.com/orgs/${org}/repos`,
-      {
-        headers: { Authorization: `token ${token}` },
-      }
-    );
-    
+    const response = await fetch(`https://api.github.com/orgs/${org}/repos`, {
+      headers: { Authorization: `token ${token}` },
+    });
+
     const repos = await response.json();
     ctx.logger.info(`Found ${repos.length} repositories`);
-    
+
     // Store activities using query helpers
     for (const repo of repos) {
       // Ensure contributor exists
@@ -248,12 +245,12 @@ export default {
         joining_date: null,
         meta: null,
       });
-      
+
       // Insert activity
       await activityQueries.upsert(ctx.db, {
         slug: `pr-${repo.id}`,
         contributor: repo.owner.login,
-        activity_definition: 'pr_merged',
+        activity_definition: "pr_merged",
         title: repo.name,
         occured_at: new Date().toISOString(),
         link: repo.html_url,
@@ -290,8 +287,8 @@ Help users debug issues:
 
 ```typescript
 ctx.logger.info(`Processing ${items.length} items`);
-ctx.logger.debug('Item details', { item });
-ctx.logger.error('Failed to process', error);
+ctx.logger.debug("Item details", { item });
+ctx.logger.error("Failed to process", error);
 ```
 
 ### 3. Handle Errors Gracefully
@@ -300,7 +297,7 @@ ctx.logger.error('Failed to process', error);
 try {
   await fetchData();
 } catch (error) {
-  ctx.logger.error('Failed to fetch', error);
+  ctx.logger.error("Failed to fetch", error);
   throw error; // Re-throw to fail the plugin
 }
 ```
@@ -325,7 +322,7 @@ async scrape(ctx) {
   if (!ctx.config.apiKey) {
     throw new Error('apiKey is required in plugin configuration');
   }
-  
+
   // Proceed with scraping
 }
 ```
@@ -335,6 +332,7 @@ async scrape(ctx) {
 ### Validation
 
 The plugin runner validates:
+
 - Plugin structure (required fields)
 - TypeScript types (via `@ohcnetwork/leaderboard-api`)
 
@@ -345,6 +343,7 @@ Currently, plugins run with full Node.js access. Future versions may add sandbox
 ### Trust
 
 Only use plugins from trusted sources. Consider:
+
 - Hosting your own plugins
 - Code review before using third-party plugins
 - Using signed/verified plugins (future feature)
@@ -354,4 +353,3 @@ Only use plugins from trusted sources. Consider:
 - [Creating Your First Plugin](/docs/plugins/creating-plugins)
 - [Plugin API Reference](/docs/plugins/api-reference)
 - [Example Plugins](https://github.com/ohcnetwork/leaderboard-plugins)
-

@@ -14,6 +14,7 @@ Aggregates are metrics derived from activities and other data sources. They prov
 Global aggregates are organization-level metrics that provide insights across all contributors.
 
 **Examples:**
+
 - Total number of contributors
 - Total activities
 - Active contributors in the last 30 days
@@ -23,6 +24,7 @@ Global aggregates are organization-level metrics that provide insights across al
 Contributor aggregates are per-contributor metrics that provide insights about individual performance.
 
 **Examples:**
+
 - Total activity points
 - Activity count
 - First/last activity date
@@ -48,6 +50,7 @@ Simple numeric values with optional units and formatting.
 ```
 
 **Format options:**
+
 - `integer` - Whole numbers
 - `decimal` - Decimal numbers
 - `percentage` - Percentage values (0-100)
@@ -91,22 +94,22 @@ The system automatically calculates these aggregates during the aggregation phas
 
 ### Global Aggregates
 
-| Slug | Name | Description |
-|------|------|-------------|
-| `total_contributors` | Total Contributors | Total number of contributors |
-| `total_activities` | Total Activities | Total number of activities |
+| Slug                           | Name                               | Description                                    |
+| ------------------------------ | ---------------------------------- | ---------------------------------------------- |
+| `total_contributors`           | Total Contributors                 | Total number of contributors                   |
+| `total_activities`             | Total Activities                   | Total number of activities                     |
 | `active_contributors_last_30d` | Active Contributors (Last 30 Days) | Contributors with activity in the last 30 days |
 
 ### Contributor Aggregates
 
-| Slug | Name | Description |
-|------|------|-------------|
-| `total_activity_points` | Total Activity Points | Sum of all activity points |
-| `activity_count` | Activity Count | Total number of activities |
-| `first_activity_date` | First Activity Date | Date of first activity |
-| `last_activity_date` | Last Activity Date | Date of most recent activity |
-| `active_days` | Active Days | Number of unique days with activity |
-| `avg_points_per_activity` | Average Points Per Activity | Average points earned per activity |
+| Slug                      | Name                        | Description                         |
+| ------------------------- | --------------------------- | ----------------------------------- |
+| `total_activity_points`   | Total Activity Points       | Sum of all activity points          |
+| `activity_count`          | Activity Count              | Total number of activities          |
+| `first_activity_date`     | First Activity Date         | Date of first activity              |
+| `last_activity_date`      | Last Activity Date          | Date of most recent activity        |
+| `active_days`             | Active Days                 | Number of unique days with activity |
+| `avg_points_per_activity` | Average Points Per Activity | Average points earned per activity  |
 
 ## Defining Custom Aggregates
 
@@ -319,18 +322,19 @@ import { contributorAggregateQueries } from "@ohcnetwork/leaderboard-api";
 
 const aggregates = await contributorAggregateQueries.getByContributor(
   db,
-  "username"
+  "username",
 );
 ```
 
 ### Get Specific Aggregate
 
 ```typescript
-const aggregate = await contributorAggregateQueries.getByContributorAndAggregate(
-  db,
-  "username",
-  "total_activity_points"
-);
+const aggregate =
+  await contributorAggregateQueries.getByContributorAndAggregate(
+    db,
+    "username",
+    "total_activity_points",
+  );
 
 if (aggregate && aggregate.value.type === "number") {
   console.log(`Points: ${aggregate.value.value}`);
@@ -355,6 +359,7 @@ data/
 ### File Formats
 
 **global.json:**
+
 ```json
 [
   {
@@ -374,6 +379,7 @@ data/
 ```
 
 **contributors/username.jsonl:**
+
 ```jsonl
 {"aggregate":"total_activity_points","contributor":"alice","value":{"type":"number","value":1250,"format":"integer"},"meta":{"calculated_at":"2025-01-05T12:00:00Z"}}
 {"aggregate":"activity_count","contributor":"alice","value":{"type":"number","value":42,"format":"integer"},"meta":{"calculated_at":"2025-01-05T12:00:00Z"}}
@@ -385,12 +391,12 @@ data/
 
 ```typescript
 // Good
-slug: "pr_merged_count"
-slug: "avg_review_time_hours"
+slug: "pr_merged_count";
+slug: "avg_review_time_hours";
 
 // Bad
-slug: "metric1"
-slug: "data"
+slug: "metric1";
+slug: "data";
 ```
 
 ### 2. Include Units
@@ -425,11 +431,12 @@ meta: {
 
 ```typescript
 // Check if aggregate exists before using
-const aggregate = await contributorAggregateQueries.getByContributorAndAggregate(
-  db,
-  username,
-  "custom_metric"
-);
+const aggregate =
+  await contributorAggregateQueries.getByContributorAndAggregate(
+    db,
+    username,
+    "custom_metric",
+  );
 
 if (!aggregate) {
   // Handle missing aggregate
@@ -449,4 +456,3 @@ if (!aggregate) {
 - [Badges](/docs/badges) - Achievement system using aggregates
 - [Plugin API Reference](/docs/plugins/api-reference) - Full API documentation
 - [Data Management](/docs/data-management) - Data storage and lifecycle
-

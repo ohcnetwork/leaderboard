@@ -2,10 +2,10 @@
  * Export activity definitions to data directory
  */
 
-import { writeFile, mkdir } from "fs/promises";
-import { join } from "path";
 import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import { activityDefinitionQueries } from "@ohcnetwork/leaderboard-api";
+import { mkdir, writeFile } from "fs/promises";
+import { join } from "path";
 
 /**
  * Export activity definitions to activities/definitions.json
@@ -13,7 +13,7 @@ import { activityDefinitionQueries } from "@ohcnetwork/leaderboard-api";
 export async function exportActivityDefinitions(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const activitiesDir = join(dataDir, "activities");
   await mkdir(activitiesDir, { recursive: true });

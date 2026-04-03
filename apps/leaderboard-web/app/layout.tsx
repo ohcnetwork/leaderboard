@@ -1,9 +1,9 @@
-import { Space_Grotesk, PT_Serif, Space_Mono } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { getConfig } from "@/lib/config/get-config";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
-import { getConfig } from "@/lib/config/get-config";
+import { PT_Serif, Space_Grotesk, Space_Mono } from "next/font/google";
+import "./globals.css";
 import NavHeader from "./NavHeader";
 
 const fontSans = Space_Grotesk({

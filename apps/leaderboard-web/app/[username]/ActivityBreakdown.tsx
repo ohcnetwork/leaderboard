@@ -1,5 +1,7 @@
 "use client";
 
+import DateRangeFilter from "@/components/DateRangeFilter";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Tooltip,
@@ -8,12 +10,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import ActivityTrendChart from "../leaderboard/ActivityTrendChart";
-import { useMemo, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
-import DateRangeFilter from "@/components/DateRangeFilter";
 import { format } from "date-fns";
+import { X } from "lucide-react";
+import { useMemo, useState } from "react";
+import ActivityTrendChart from "../leaderboard/ActivityTrendChart";
 
 interface ActivityBreakdownProps {
   activities: Array<{

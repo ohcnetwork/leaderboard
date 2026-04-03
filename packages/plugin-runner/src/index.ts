@@ -3,25 +3,24 @@
  * Plugin runner CLI entry point
  */
 
+import { getDataDir } from "@ohcnetwork/leaderboard-api";
 import { parseArgs } from "util";
-import { join } from "path";
-import { createLogger } from "./logger";
-import { initDatabase } from "./database";
+import { runAggregation } from "./aggregator";
 import { loadConfig } from "./config";
-import { importContributors } from "./importers/contributors";
-import { importActivityDefinitions } from "./importers/activity-definitions";
-import { importActivities } from "./importers/activities";
-import { importAggregates } from "./importers/aggregates";
-import { importBadges } from "./importers/badges";
-import { exportContributors } from "./exporters/contributors";
-import { exportActivityDefinitions } from "./exporters/activity-definitions";
+import { initDatabase } from "./database";
 import { exportActivities } from "./exporters/activities";
+import { exportActivityDefinitions } from "./exporters/activity-definitions";
 import { exportAggregates } from "./exporters/aggregates";
 import { exportBadges } from "./exporters/badges";
-import { runPlugins } from "./runner";
-import { runAggregation } from "./aggregator";
+import { exportContributors } from "./exporters/contributors";
+import { importActivities } from "./importers/activities";
+import { importActivityDefinitions } from "./importers/activity-definitions";
+import { importAggregates } from "./importers/aggregates";
+import { importBadges } from "./importers/badges";
+import { importContributors } from "./importers/contributors";
+import { createLogger } from "./logger";
 import { evaluateBadgeRules } from "./rules/evaluator";
-import { getDataDir } from "@ohcnetwork/leaderboard-api";
+import { runPlugins } from "./runner";
 
 async function main() {
   const { values } = parseArgs({

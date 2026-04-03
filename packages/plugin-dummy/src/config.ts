@@ -50,4 +50,3 @@ export function mergeConfig(config?: Partial<DummyPluginConfig>) {
     },
   };
 }
-

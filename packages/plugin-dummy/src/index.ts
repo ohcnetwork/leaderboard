@@ -10,14 +10,14 @@ import { faker } from "@faker-js/faker";
 import type { Plugin, PluginContext } from "@ohcnetwork/leaderboard-api";
 import {
   activityDefinitionQueries,
-  contributorQueries,
   activityQueries,
   badgeDefinitionQueries,
   contributorAggregateDefinitionQueries,
+  contributorQueries,
 } from "@ohcnetwork/leaderboard-api";
-import { generateContributors } from "./contributors";
-import { generateActivities, ACTIVITY_TYPES } from "./activities";
+import { ACTIVITY_TYPES, generateActivities } from "./activities";
 import { mergeConfig, type DummyPluginConfig } from "./config";
+import { generateContributors } from "./contributors";
 
 const plugin: Plugin = {
   name: "@leaderboard/plugin-dummy",
@@ -40,7 +40,7 @@ const plugin: Plugin = {
     }
 
     ctx.logger.info(
-      `Registered ${Object.keys(ACTIVITY_TYPES).length} activity types`
+      `Registered ${Object.keys(ACTIVITY_TYPES).length} activity types`,
     );
 
     // Define contributor aggregate definitions
@@ -65,7 +65,7 @@ const plugin: Plugin = {
     }
 
     ctx.logger.info(
-      `Registered ${aggregateDefinitions.length} aggregate definitions`
+      `Registered ${aggregateDefinitions.length} aggregate definitions`,
     );
 
     // Define badge definitions
@@ -244,7 +244,7 @@ const plugin: Plugin = {
       config.contributors.maxActivitiesPerContributor,
       config.activities.daysBack,
       config.organization.name,
-      config.organization.repoNames
+      config.organization.repoNames,
     );
 
     let totalActivities = 0;

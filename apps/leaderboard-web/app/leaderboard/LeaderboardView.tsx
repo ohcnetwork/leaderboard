@@ -1,26 +1,25 @@
 "use client";
 
-import { LeaderboardEntry } from "@/lib/data/types";
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import Link from "next/link";
-import { Trophy, Filter, X } from "lucide-react";
-import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
+import { LeaderboardEntry } from "@/lib/data/types";
 import { cn } from "@/lib/utils";
-import { useMemo, useState } from "react";
+import { format } from "date-fns";
+import { Filter, Search, Trophy, X } from "lucide-react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useMemo, useState } from "react";
 import ActivityTrendChart from "./ActivityTrendChart";
 import TopContributorsChart from "./TopContributorsChart";
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-import { format } from "date-fns";
 
 interface LeaderboardViewProps {
   entries: LeaderboardEntry[];

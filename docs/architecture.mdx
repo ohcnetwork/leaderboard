@@ -14,35 +14,35 @@ graph TB
     GitHubAPI[GitHub API]
     SlackAPI[Slack API]
     OtherSources[Other Sources]
-    
+
     GitHubPlugin[GitHub Plugin]
     SlackPlugin[Slack Plugin]
     CustomPlugin[Custom Plugin]
-    
+
     PluginRunner[Plugin Runner]
     LibSQL[(LibSQL Database)]
-    
+
     ContributorsMD[contributors/*.md]
     ActivitiesJSONL[activities/*.jsonl]
-    
+
     NextBuild[Next.js Build]
     StaticSite[Static Site]
-    
+
     GitHubAPI --> GitHubPlugin
     SlackAPI --> SlackPlugin
     OtherSources --> CustomPlugin
-    
+
     GitHubPlugin --> PluginRunner
     SlackPlugin --> PluginRunner
     CustomPlugin --> PluginRunner
-    
+
     ContributorsMD --> PluginRunner
     ActivitiesJSONL --> PluginRunner
-    
+
     PluginRunner --> LibSQL
     PluginRunner --> ContributorsMD
     PluginRunner --> ActivitiesJSONL
-    
+
     LibSQL --> NextBuild
     NextBuild --> StaticSite
 ```
@@ -54,6 +54,7 @@ graph TB
 **Purpose**: Orchestrate data collection and management
 
 **Responsibilities**:
+
 - Load configuration from `config.yaml`
 - Fetch and validate plugins from URLs
 - Import existing data from data-repo
@@ -61,6 +62,7 @@ graph TB
 - Export updated data back to data-repo
 
 **CLI Commands**:
+
 ```bash
 plugin-runner --data-dir=/path/to/data
 ```
@@ -72,16 +74,19 @@ plugin-runner --data-dir=/path/to/data
 **Technology**: LibSQL (SQLite-compatible)
 
 **Schema**:
+
 - `contributor` - User profiles and metadata
 - `activity_definition` - Activity types defined by plugins
 - `activity` - Individual activity records
 
 **Storage**:
+
 - Default location: `${DATA_DIR}/.leaderboard.db`
 - Persists `activity_definition` table across runs
 - Temporary storage for `contributor` and `activity` tables
 
 **Provides**:
+
 - Database abstraction layer
 - Query builders and helpers
 - TypeScript type definitions
@@ -89,12 +94,13 @@ plugin-runner --data-dir=/path/to/data
 - Context object structure
 
 **Example Plugin**:
+
 ```typescript
-import type { Plugin } from '@ohcnetwork/leaderboard-api';
+import type { Plugin } from "@ohcnetwork/leaderboard-api";
 
 export default {
-  name: 'my-plugin',
-  version: '1.0.0',
+  name: "my-plugin",
+  version: "1.0.0",
   async setup(ctx) {
     // Define activity types
   },
@@ -109,12 +115,14 @@ export default {
 **Purpose**: Generate static website
 
 **Features**:
+
 - Server-Side Generation (SSG) at build time
 - Reads data directly from LibSQL database
 - Markdown documentation via Fumadocs
 - Customizable themes via CSS
 
 **Pages**:
+
 - `/` - Home page with overview
 - `/leaderboard` - Rankings and leaderboards
 - `/people` - All contributors
@@ -128,12 +136,14 @@ export default {
 ### Build Process
 
 1. **Import Phase**
+
    ```
    data-repo/contributors/*.md → LibSQL
    data-repo/activities/*.jsonl → LibSQL
    ```
 
 2. **Setup Phase**
+
    ```
    For each plugin:
      Execute plugin.setup(ctx)
@@ -141,6 +151,7 @@ export default {
    ```
 
 3. **Scrape Phase**
+
    ```
    For each plugin:
      Execute plugin.scrape(ctx)
@@ -149,6 +160,7 @@ export default {
    ```
 
 4. **Export Phase**
+
    ```
    LibSQL → data-repo/contributors/*.md
    LibSQL → data-repo/activities/*.jsonl
@@ -180,6 +192,7 @@ graph LR
 **Format**: Markdown with YAML frontmatter
 
 **Rationale**:
+
 - Human-editable profiles
 - Supports rich bio content
 - Version control friendly
@@ -191,6 +204,7 @@ graph LR
 **Format**: JSON Lines, one file per contributor
 
 **Rationale**:
+
 - Efficient for large datasets
 - Easy per-user updates
 - Fast import/export
@@ -202,6 +216,7 @@ graph LR
 **Format**: SQLite table
 
 **Rationale**:
+
 - Managed by plugins
 - No manual editing needed
 - Avoids sync issues
@@ -217,7 +232,7 @@ graph LR
     BuildServer[Build Server]
     CDN[Static CDN]
     Users[Users]
-    
+
     DataRepo -->|Clone| CI
     CI -->|Run Plugin Runner| BuildServer
     BuildServer -->|Next.js Build| BuildServer
@@ -226,6 +241,7 @@ graph LR
 ```
 
 **Steps**:
+
 1. CI/CD clones data repository
 2. Runs plugin-runner to update data
 3. Builds Next.js static site
@@ -252,17 +268,19 @@ The system follows [12-Factor App](https://12factor.net/) principles:
 ## Security Considerations
 
 ### Plugin Execution
+
 - Plugins fetched from configurable URLs
 - Basic validation of plugin structure
 - Consider using signed plugins in production
 
 ### Data Privacy
+
 - All data stored in your infrastructure
 - No external data transmission (except plugin API calls)
 - Contributor data fully under your control
 
 ### Static Site
+
 - No server-side code execution
 - No authentication required
 - Can be deployed behind authentication if needed
-

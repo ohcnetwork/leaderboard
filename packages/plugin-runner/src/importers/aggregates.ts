@@ -2,14 +2,14 @@
  * Import aggregates from data directory
  */
 
-import { readFile, readdir } from "fs/promises";
-import { join } from "path";
 import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
-  globalAggregateQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
+  globalAggregateQueries,
 } from "@ohcnetwork/leaderboard-api";
+import { readFile, readdir } from "fs/promises";
+import { join } from "path";
 
 /**
  * Import global aggregates from aggregates/global.json

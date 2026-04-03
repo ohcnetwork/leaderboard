@@ -3,30 +3,28 @@
  */
 
 import type {
+  Activity,
+  ActivityDefinition,
   Database,
   Logger,
-  Contributor,
-  Activity,
-  AggregateValue,
-  ActivityDefinition,
 } from "@ohcnetwork/leaderboard-api";
 import {
-  contributorQueries,
-  activityQueries,
   activityDefinitionQueries,
-  contributorAggregateQueries,
+  activityQueries,
   badgeDefinitionQueries,
+  contributorAggregateQueries,
   contributorBadgeQueries,
+  contributorQueries,
 } from "@ohcnetwork/leaderboard-api";
+import { STANDARD_BADGE_RULES } from "./standard-rules";
 import type {
   BadgeRuleDefinition,
-  ThresholdBadgeRule,
-  StreakBadgeRule,
-  GrowthBadgeRule,
   CompositeBadgeRule,
+  GrowthBadgeRule,
   RuleEvaluationResult,
+  StreakBadgeRule,
+  ThresholdBadgeRule,
 } from "./types";
-import { STANDARD_BADGE_RULES } from "./standard-rules";
 
 /**
  * Match activity definitions using regex patterns
@@ -36,7 +34,7 @@ import { STANDARD_BADGE_RULES } from "./standard-rules";
  */
 function matchActivityDefinitions(
   patterns: string[] | undefined,
-  definitions: ActivityDefinition[]
+  definitions: ActivityDefinition[],
 ): string[] {
   // Empty/undefined = all definitions
   if (!patterns || patterns.length === 0) {
@@ -56,7 +54,7 @@ function matchActivityDefinitions(
 export async function evaluateBadgeRules(
   db: Database,
   logger: Logger,
-  rules: BadgeRuleDefinition[] = STANDARD_BADGE_RULES
+  rules: BadgeRuleDefinition[] = STANDARD_BADGE_RULES,
 ): Promise<void> {
   logger.info("Evaluating badge rules", { ruleCount: rules.length });
 
@@ -81,7 +79,7 @@ export async function evaluateBadgeRules(
         db,
         rule,
         contributor.username,
-        activityDefinitions
+        activityDefinitions,
       );
 
       if (!result) continue;
@@ -108,7 +106,7 @@ export async function evaluateBadgeRules(
         await contributorBadgeQueries.getByContributorAndBadge(
           db,
           contributor.username,
-          rule.badgeSlug
+          rule.badgeSlug,
         );
 
       if (!existingBadge) {
@@ -123,13 +121,13 @@ export async function evaluateBadgeRules(
         });
         awardsGiven++;
         logger.debug(
-          `Awarded ${rule.badgeSlug} (${variant}) to ${contributor.username}`
+          `Awarded ${rule.badgeSlug} (${variant}) to ${contributor.username}`,
         );
       } else {
         // Check if we should upgrade
         const variantOrder = Object.keys(badgeDef.variants);
         const existingVariantIndex = variantOrder.indexOf(
-          existingBadge.variant
+          existingBadge.variant,
         );
         const newVariantIndex = variantOrder.indexOf(variant);
 
@@ -144,11 +142,11 @@ export async function evaluateBadgeRules(
               rule_type: rule.type,
               auto_awarded: true,
               upgraded: true,
-            }
+            },
           );
           upgradesGiven++;
           logger.debug(
-            `Upgraded ${rule.badgeSlug} for ${contributor.username}: ${existingBadge.variant} → ${variant}`
+            `Upgraded ${rule.badgeSlug} for ${contributor.username}: ${existingBadge.variant} → ${variant}`,
           );
         }
       }
@@ -169,7 +167,7 @@ async function evaluateRule(
   db: Database,
   rule: BadgeRuleDefinition,
   contributor: string,
-  activityDefinitions: ActivityDefinition[]
+  activityDefinitions: ActivityDefinition[],
 ): Promise<RuleEvaluationResult | null> {
   switch (rule.type) {
     case "threshold":
@@ -189,7 +187,7 @@ async function evaluateRule(
       ]);
       if (!contributorData) return null;
       const aggregateMap = new Map(
-        aggregates.map((a) => [a.aggregate, a.value])
+        aggregates.map((a) => [a.aggregate, a.value]),
       );
       return rule.evaluator(contributorData, aggregateMap, activities);
     default:
@@ -203,25 +201,25 @@ async function evaluateRule(
 async function evaluateThresholdRule(
   db: Database,
   rule: ThresholdBadgeRule,
-  contributor: string
+  contributor: string,
 ): Promise<RuleEvaluationResult | null> {
   // Get contributor's aggregate value using SQL
   const contributors =
     await contributorAggregateQueries.getContributorsAboveThreshold(
       db,
       rule.aggregateSlug,
-      Math.min(...rule.thresholds.map((t) => t.value)) // Minimum threshold
+      Math.min(...rule.thresholds.map((t) => t.value)), // Minimum threshold
     );
 
   // Find this contributor
   const contributorData = contributors.find(
-    (c) => c.contributor === contributor
+    (c) => c.contributor === contributor,
   );
   if (!contributorData) return null;
 
   // Sort thresholds by value descending to get highest eligible variant
   const sortedThresholds = [...rule.thresholds].sort(
-    (a, b) => b.value - a.value
+    (a, b) => b.value - a.value,
   );
 
   for (const threshold of sortedThresholds) {
@@ -247,12 +245,12 @@ async function evaluateStreakRule(
   db: Database,
   rule: StreakBadgeRule,
   contributor: string,
-  allActivityDefinitions: ActivityDefinition[]
+  allActivityDefinitions: ActivityDefinition[],
 ): Promise<RuleEvaluationResult | null> {
   // Match activity definitions using regex patterns
   const matchedSlugs = matchActivityDefinitions(
     rule.activityDefinitions,
-    allActivityDefinitions
+    allActivityDefinitions,
   );
 
   if (matchedSlugs.length === 0) return null;
@@ -261,7 +259,7 @@ async function evaluateStreakRule(
   const activities = await activityQueries.getByContributorAndDefinitions(
     db,
     contributor,
-    matchedSlugs
+    matchedSlugs,
   );
 
   if (activities.length === 0) return null;
@@ -294,13 +292,13 @@ async function evaluateStreakRule(
  */
 function calculateLongestStreak(
   activities: Activity[],
-  streakType: "daily" | "weekly" | "monthly"
+  streakType: "daily" | "weekly" | "monthly",
 ): number {
   if (activities.length === 0) return 0;
 
   // Get unique dates
   const uniqueDates = Array.from(
-    new Set(activities.map((a) => a.occured_at.split("T")[0]))
+    new Set(activities.map((a) => a.occured_at.split("T")[0])),
   ).sort();
 
   if (uniqueDates.length === 0) return 0;
@@ -361,7 +359,7 @@ function calculateLongestStreak(
 async function evaluateGrowthRule(
   db: Database,
   rule: GrowthBadgeRule,
-  contributor: string
+  contributor: string,
 ): Promise<RuleEvaluationResult | null> {
   // For now, return null as we don't have historical data
   // This would require storing aggregate values over time
@@ -374,7 +372,7 @@ async function evaluateGrowthRule(
 async function evaluateCompositeRule(
   db: Database,
   rule: CompositeBadgeRule,
-  contributor: string
+  contributor: string,
 ): Promise<RuleEvaluationResult | null> {
   const results: boolean[] = [];
 
@@ -383,11 +381,11 @@ async function evaluateCompositeRule(
     const aggregates =
       await contributorAggregateQueries.getContributorsWithAggregate(
         db,
-        condition.aggregateSlug
+        condition.aggregateSlug,
       );
 
     const contributorAggregate = aggregates.find(
-      (a) => a.contributor === contributor
+      (a) => a.contributor === contributor,
     );
     if (!contributorAggregate || contributorAggregate.value.type !== "number") {
       results.push(false);

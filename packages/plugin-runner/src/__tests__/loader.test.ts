@@ -2,7 +2,7 @@
  * Plugin loader tests
  */
 
-import { describe, it, expect, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { createLogger } from "../logger";
 
 // Mock logger for tests

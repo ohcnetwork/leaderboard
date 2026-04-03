@@ -83,15 +83,15 @@ packages/plugin-runner/
 ### Testing with In-Memory Database
 
 ```typescript
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { createDatabase, initializeSchema } from '@ohcnetwork/leaderboard-api';
-import type { Database } from '@ohcnetwork/leaderboard-api';
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { createDatabase, initializeSchema } from "@ohcnetwork/leaderboard-api";
+import type { Database } from "@ohcnetwork/leaderboard-api";
 
-describe('Database Tests', () => {
+describe("Database Tests", () => {
   let db: Database;
 
   beforeEach(async () => {
-    db = createDatabase(':memory:');
+    db = createDatabase(":memory:");
     await initializeSchema(db);
   });
 
@@ -99,7 +99,7 @@ describe('Database Tests', () => {
     await db.close();
   });
 
-  it('should insert and retrieve data', async () => {
+  it("should insert and retrieve data", async () => {
     // Test implementation
   });
 });
@@ -110,19 +110,19 @@ describe('Database Tests', () => {
 Test database query helpers:
 
 ```typescript
-import { contributorQueries } from '@ohcnetwork/leaderboard-api';
+import { contributorQueries } from "@ohcnetwork/leaderboard-api";
 
-it('should get contributor by username', async () => {
+it("should get contributor by username", async () => {
   await contributorQueries.upsert(db, {
-    username: 'alice',
-    name: 'Alice Smith',
+    username: "alice",
+    name: "Alice Smith",
     // ... other fields
   });
 
-  const contributor = await contributorQueries.getByUsername(db, 'alice');
-  
+  const contributor = await contributorQueries.getByUsername(db, "alice");
+
   expect(contributor).not.toBeNull();
-  expect(contributor?.name).toBe('Alice Smith');
+  expect(contributor?.name).toBe("Alice Smith");
 });
 ```
 
@@ -131,17 +131,17 @@ it('should get contributor by username', async () => {
 Verify database schema:
 
 ```typescript
-it('should create all tables', async () => {
+it("should create all tables", async () => {
   const result = await db.execute(`
     SELECT name FROM sqlite_master 
     WHERE type='table'
     ORDER BY name
   `);
 
-  const tables = result.rows.map(r => r.name);
-  expect(tables).toContain('contributor');
-  expect(tables).toContain('activity');
-  expect(tables).toContain('activity_definition');
+  const tables = result.rows.map((r) => r.name);
+  expect(tables).toContain("contributor");
+  expect(tables).toContain("activity");
+  expect(tables).toContain("activity_definition");
 });
 ```
 
@@ -152,30 +152,30 @@ it('should create all tables', async () => {
 Test data import functionality:
 
 ```typescript
-import { importContributors } from '../importers/contributors';
-import { mkdir, writeFile, rm } from 'fs/promises';
-import matter from 'gray-matter';
+import { importContributors } from "../importers/contributors";
+import { mkdir, writeFile, rm } from "fs/promises";
+import matter from "gray-matter";
 
-const TEST_DIR = './test-data';
+const TEST_DIR = "./test-data";
 
 beforeEach(async () => {
-  await mkdir(join(TEST_DIR, 'contributors'), { recursive: true });
+  await mkdir(join(TEST_DIR, "contributors"), { recursive: true });
 });
 
 afterEach(async () => {
   await rm(TEST_DIR, { recursive: true, force: true });
 });
 
-it('should import contributors from markdown', async () => {
-  const markdown = matter.stringify('Bio content', {
-    username: 'alice',
-    name: 'Alice',
+it("should import contributors from markdown", async () => {
+  const markdown = matter.stringify("Bio content", {
+    username: "alice",
+    name: "Alice",
   });
 
   await writeFile(
-    join(TEST_DIR, 'contributors', 'alice.md'),
+    join(TEST_DIR, "contributors", "alice.md"),
     markdown,
-    'utf-8'
+    "utf-8",
   );
 
   const count = await importContributors(db, TEST_DIR, logger);
@@ -188,32 +188,32 @@ it('should import contributors from markdown', async () => {
 Test data export functionality:
 
 ```typescript
-import { exportActivities } from '../exporters/activities';
-import { readFile } from 'fs/promises';
+import { exportActivities } from "../exporters/activities";
+import { readFile } from "fs/promises";
 
-it('should export activities to JSONL', async () => {
+it("should export activities to JSONL", async () => {
   // Insert test data
   await activityQueries.upsert(db, {
-    slug: 'alice-pr-1',
-    contributor: 'alice',
-    activity_definition: 'pr_merged',
-    title: 'Fix bug',
-    occured_at: '2024-01-01T10:00:00Z',
+    slug: "alice-pr-1",
+    contributor: "alice",
+    activity_definition: "pr_merged",
+    title: "Fix bug",
+    occured_at: "2024-01-01T10:00:00Z",
     // ... other fields
   });
 
   await exportActivities(db, TEST_DIR, logger);
 
   const content = await readFile(
-    join(TEST_DIR, 'activities', 'alice.jsonl'),
-    'utf-8'
+    join(TEST_DIR, "activities", "alice.jsonl"),
+    "utf-8",
   );
 
-  const lines = content.trim().split('\n');
+  const lines = content.trim().split("\n");
   expect(lines).toHaveLength(1);
 
   const activity = JSON.parse(lines[0]);
-  expect(activity.slug).toBe('alice-pr-1');
+  expect(activity.slug).toBe("alice-pr-1");
 });
 ```
 
@@ -222,13 +222,13 @@ it('should export activities to JSONL', async () => {
 Test plugin validation:
 
 ```typescript
-it('should reject plugin without name', () => {
+it("should reject plugin without name", () => {
   const invalidPlugin = {
-    version: '1.0.0',
+    version: "1.0.0",
     scrape: async () => {},
   };
 
-  expect(() => validatePlugin(invalidPlugin)).toThrow('name');
+  expect(() => validatePlugin(invalidPlugin)).toThrow("name");
 });
 ```
 
@@ -239,22 +239,22 @@ it('should reject plugin without name', () => {
 Test config validation:
 
 ```typescript
-import { ConfigSchema } from '../schema';
+import { ConfigSchema } from "../schema";
 
-it('should validate correct config', () => {
+it("should validate correct config", () => {
   const config = {
     org: {
-      name: 'Test Org',
-      description: 'Test',
-      url: 'https://example.com',
-      logo_url: 'https://example.com/logo.png',
+      name: "Test Org",
+      description: "Test",
+      url: "https://example.com",
+      logo_url: "https://example.com/logo.png",
     },
     meta: {
       // ... required fields
     },
     leaderboard: {
       roles: {
-        core: { name: 'Core' },
+        core: { name: "Core" },
       },
     },
   };
@@ -263,10 +263,10 @@ it('should validate correct config', () => {
   expect(result.success).toBe(true);
 });
 
-it('should reject invalid URL', () => {
+it("should reject invalid URL", () => {
   const config = {
     org: {
-      url: 'not-a-url',
+      url: "not-a-url",
       // ... other fields
     },
   };
@@ -279,21 +279,21 @@ it('should reject invalid URL', () => {
 ### Environment Variable Substitution
 
 ```typescript
-it('should substitute environment variables', () => {
-  process.env.TEST_TOKEN = 'secret';
+it("should substitute environment variables", () => {
+  process.env.TEST_TOKEN = "secret";
 
   const config = {
     plugins: {
       test: {
         config: {
-          token: '${{ env.TEST_TOKEN }}',
+          token: "${{ env.TEST_TOKEN }}",
         },
       },
     },
   };
 
   const result = substituteEnvVars(config);
-  expect(result.plugins.test.config.token).toBe('secret');
+  expect(result.plugins.test.config.token).toBe("secret");
 });
 ```
 
@@ -302,7 +302,7 @@ it('should substitute environment variables', () => {
 Test Next.js data loading utilities:
 
 ```typescript
-import { getAllContributors, getLeaderboard } from '../loader';
+import { getAllContributors, getLeaderboard } from "../loader";
 
 beforeEach(async () => {
   // Set up test database with data
@@ -310,15 +310,15 @@ beforeEach(async () => {
   await contributorQueries.upsert(db, testContributor);
 });
 
-it('should load all contributors', async () => {
+it("should load all contributors", async () => {
   const contributors = await getAllContributors();
   expect(contributors).toHaveLength(1);
 });
 
-it('should load leaderboard rankings', async () => {
+it("should load leaderboard rankings", async () => {
   const leaderboard = await getLeaderboard(10);
   expect(leaderboard.length).toBeLessThanOrEqual(10);
-  expect(leaderboard[0]).toHaveProperty('total_points');
+  expect(leaderboard[0]).toHaveProperty("total_points");
 });
 ```
 
@@ -353,8 +353,8 @@ const mockDb = {
 ```typescript
 const mockContext = {
   db: mockDb,
-  config: { apiKey: 'test' },
-  orgConfig: { name: 'Test Org' },
+  config: { apiKey: "test" },
+  orgConfig: { name: "Test Org" },
   logger: mockLogger,
 };
 ```
@@ -377,8 +377,8 @@ Set in `vitest.config.ts`:
 export default defineConfig({
   test: {
     coverage: {
-      provider: 'v8',
-      reporter: ['text', 'html', 'json'],
+      provider: "v8",
+      reporter: ["text", "html", "json"],
       thresholds: {
         lines: 80,
         functions: 80,
@@ -402,25 +402,25 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: pnpm/action-setup@v2
         with:
           version: 10
-      
+
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
-      
+          node-version: "20"
+          cache: "pnpm"
+
       - run: pnpm install
-      
+
       - run: pnpm test
-      
+
       - run: pnpm test:coverage
-      
+
       - uses: codecov/codecov-action@v3
         with:
           files: ./coverage/coverage-final.json
@@ -434,7 +434,7 @@ Each test should be independent:
 
 ```typescript
 beforeEach(async () => {
-  db = createDatabase(':memory:');
+  db = createDatabase(":memory:");
   await initializeSchema(db);
 });
 
@@ -448,7 +448,7 @@ afterEach(async () => {
 Use clear test descriptions:
 
 ```typescript
-it('should import 10 contributors from markdown files', async () => {
+it("should import 10 contributors from markdown files", async () => {
   // Test implementation
 });
 ```
@@ -458,13 +458,13 @@ it('should import 10 contributors from markdown files', async () => {
 Structure tests clearly:
 
 ```typescript
-it('should calculate total points', async () => {
+it("should calculate total points", async () => {
   // Arrange
   await activityQueries.upsert(db, activity1);
   await activityQueries.upsert(db, activity2);
 
   // Act
-  const total = await activityQueries.getTotalPoints(db, 'alice');
+  const total = await activityQueries.getTotalPoints(db, "alice");
 
   // Assert
   expect(total).toBe(25);
@@ -476,12 +476,12 @@ it('should calculate total points', async () => {
 Don't just test the happy path:
 
 ```typescript
-it('should handle empty activity list', async () => {
-  const activities = await activityQueries.getByContributor(db, 'nonexistent');
+it("should handle empty activity list", async () => {
+  const activities = await activityQueries.getByContributor(db, "nonexistent");
   expect(activities).toHaveLength(0);
 });
 
-it('should handle malformed JSON in JSONL file', async () => {
+it("should handle malformed JSON in JSONL file", async () => {
   // Test invalid data handling
 });
 ```
@@ -492,15 +492,15 @@ Create reusable test data:
 
 ```typescript
 const testContributor = {
-  username: 'alice',
-  name: 'Alice Smith',
-  role: 'core',
+  username: "alice",
+  name: "Alice Smith",
+  role: "core",
   // ... other fields
 };
 
 const testActivity = {
-  slug: 'test-activity-1',
-  contributor: 'alice',
+  slug: "test-activity-1",
+  contributor: "alice",
   // ... other fields
 };
 ```
@@ -510,9 +510,9 @@ const testActivity = {
 ### Benchmark Tests
 
 ```typescript
-import { bench } from 'vitest';
+import { bench } from "vitest";
 
-bench('import 1000 activities', async () => {
+bench("import 1000 activities", async () => {
   await importActivities(db, testDataDir, logger);
 });
 ```
@@ -522,13 +522,13 @@ bench('import 1000 activities', async () => {
 Test with realistic data volumes:
 
 ```typescript
-it('should handle 10000 activities', async () => {
+it("should handle 10000 activities", async () => {
   const activities = generateActivities(10000);
-  
+
   for (const activity of activities) {
     await activityQueries.upsert(db, activity);
   }
-  
+
   const count = await activityQueries.count(db);
   expect(count).toBe(10000);
 });
@@ -539,4 +539,3 @@ it('should handle 10000 activities', async () => {
 - [Architecture](/docs/architecture)
 - [Data Management](/docs/data-management)
 - [Deployment](/docs/deployment)
-

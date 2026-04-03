@@ -31,11 +31,13 @@ pnpm create-leaderboard-plugin ../../plugins/slack
 ```
 
 The CLI will prompt you for:
+
 - Plugin name (e.g., 'github', 'slack')
 - Plugin description
 - Author name
 
 It automatically generates:
+
 - `package.json` with correct dependencies
 - `tsconfig.json` with proper configuration
 - `vitest.config.ts` for testing
@@ -66,7 +68,7 @@ Create `plugin.js`:
 ```javascript
 /**
  * Custom Plugin for Leaderboard
- * 
+ *
  * Fetches data from [Your Data Source] and tracks activities.
  */
 
@@ -74,65 +76,65 @@ import {
   activityDefinitionQueries,
   activityQueries,
   contributorQueries,
-} from '@ohcnetwork/leaderboard-api';
+} from "@ohcnetwork/leaderboard-api";
 
 export default {
-  name: 'custom-plugin',
-  version: '1.0.0',
-  
+  name: "custom-plugin",
+  version: "1.0.0",
+
   /**
    * Setup method: Define activity types
    */
   async setup(ctx) {
-    ctx.logger.info('Setting up custom plugin');
-    
+    ctx.logger.info("Setting up custom plugin");
+
     // Define your activity types using the query helpers
     await activityDefinitionQueries.insertOrIgnore(ctx.db, {
-      slug: 'custom_event_1',
-      name: 'Event Type 1',
-      description: 'Description of event 1',
+      slug: "custom_event_1",
+      name: "Event Type 1",
+      description: "Description of event 1",
       points: 10,
-      icon: 'star',
+      icon: "star",
     });
-    
+
     await activityDefinitionQueries.insertOrIgnore(ctx.db, {
-      slug: 'custom_event_2',
-      name: 'Event Type 2',
-      description: 'Description of event 2',
+      slug: "custom_event_2",
+      name: "Event Type 2",
+      description: "Description of event 2",
       points: 5,
-      icon: 'heart',
+      icon: "heart",
     });
-    
-    ctx.logger.info('Activity definitions created');
+
+    ctx.logger.info("Activity definitions created");
   },
-  
+
   /**
    * Scrape method: Fetch and store activities
    */
   async scrape(ctx) {
-    ctx.logger.info('Starting scrape');
-    
+    ctx.logger.info("Starting scrape");
+
     // Get configuration
     const { apiKey, apiUrl } = ctx.config;
-    
+
     if (!apiKey) {
-      throw new Error('apiKey is required in plugin configuration');
+      throw new Error("apiKey is required in plugin configuration");
     }
-    
+
     // Fetch data from your API
-    const response = await fetch(apiUrl || 'https://api.example.com/events', {
+    const response = await fetch(apiUrl || "https://api.example.com/events", {
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
       },
     });
-    
+
     if (!response.ok) {
       throw new Error(`API request failed: ${response.statusText}`);
     }
-    
+
     const events = await response.json();
     ctx.logger.info(`Fetched ${events.length} events`);
-    
+
     // Process and store activities
     for (const event of events) {
       try {
@@ -148,7 +150,7 @@ export default {
           joining_date: null,
           meta: null,
         });
-        
+
         // Insert or update activity
         await activityQueries.upsert(ctx.db, {
           slug: `custom-${event.id}`,
@@ -162,11 +164,13 @@ export default {
           meta: event.metadata || null,
         });
       } catch (error) {
-        ctx.logger.warn(`Failed to insert activity ${event.id}`, { error: error.message });
+        ctx.logger.warn(`Failed to insert activity ${event.id}`, {
+          error: error.message,
+        });
       }
     }
-    
-    ctx.logger.info('Scrape complete');
+
+    ctx.logger.info("Scrape complete");
   },
 };
 ```
@@ -182,40 +186,40 @@ import {
   contributorQueries,
   type Plugin,
   type PluginContext,
-} from '@ohcnetwork/leaderboard-api';
+} from "@ohcnetwork/leaderboard-api";
 
 const plugin: Plugin = {
-  name: 'custom-plugin',
-  version: '1.0.0',
-  
+  name: "custom-plugin",
+  version: "1.0.0",
+
   async setup(ctx: PluginContext): Promise<void> {
-    ctx.logger.info('Setting up custom plugin');
-    
+    ctx.logger.info("Setting up custom plugin");
+
     // Define your activity types using the query helpers
     await activityDefinitionQueries.insertOrIgnore(ctx.db, {
-      slug: 'custom_event_1',
-      name: 'Event Type 1',
-      description: 'Description of event 1',
+      slug: "custom_event_1",
+      name: "Event Type 1",
+      description: "Description of event 1",
       points: 10,
-      icon: 'star',
+      icon: "star",
     });
   },
-  
+
   async scrape(ctx: PluginContext): Promise<void> {
-    ctx.logger.info('Starting scrape');
-    
+    ctx.logger.info("Starting scrape");
+
     // Get configuration with type safety
     const { apiKey, apiUrl } = ctx.config as {
       apiKey: string;
       apiUrl?: string;
     };
-    
+
     // Fetch and process data
-    const response = await fetch(apiUrl || 'https://api.example.com/events', {
-      headers: { 'Authorization': `Bearer ${apiKey}` },
+    const response = await fetch(apiUrl || "https://api.example.com/events", {
+      headers: { Authorization: `Bearer ${apiKey}` },
     });
-    
-    const events = await response.json() as Array<{
+
+    const events = (await response.json()) as Array<{
       id: string;
       user: { username: string; name: string; avatar_url: string };
       type: string;
@@ -225,7 +229,7 @@ const plugin: Plugin = {
       description?: string;
       metadata?: Record<string, unknown>;
     }>;
-    
+
     for (const event of events) {
       // Ensure contributor exists
       await contributorQueries.upsert(ctx.db, {
@@ -239,7 +243,7 @@ const plugin: Plugin = {
         joining_date: null,
         meta: null,
       });
-      
+
       // Insert activity
       await activityQueries.upsert(ctx.db, {
         slug: `custom-${event.id}`,
@@ -293,6 +297,7 @@ plugin-runner --data-dir=./data --debug
 ### Option 1: GitHub Repository
 
 1. Push your plugin to GitHub:
+
    ```bash
    git init
    git add plugin.js
@@ -311,6 +316,7 @@ plugin-runner --data-dir=./data --debug
 ### Option 2: NPM Package
 
 1. Publish to NPM:
+
    ```bash
    npm publish
    ```
@@ -343,10 +349,11 @@ import {
   contributorQueries,
   activityDefinitionQueries,
   activityQueries,
-} from '@ohcnetwork/leaderboard-api';
+} from "@ohcnetwork/leaderboard-api";
 ```
 
 **Contributor Queries:**
+
 - `contributorQueries.upsert(db, contributor)` - Insert or update a contributor
 - `contributorQueries.getByUsername(db, username)` - Get contributor by username
 - `contributorQueries.getAll(db)` - Get all contributors
@@ -354,11 +361,13 @@ import {
 - `contributorQueries.count(db)` - Count total contributors
 
 **Activity Definition Queries:**
+
 - `activityDefinitionQueries.insertOrIgnore(db, definition)` - Insert activity type (used in setup)
 - `activityDefinitionQueries.getBySlug(db, slug)` - Get activity definition
 - `activityDefinitionQueries.getAll(db)` - Get all activity definitions
 
 **Activity Queries:**
+
 - `activityQueries.upsert(db, activity)` - Insert or update an activity
 - `activityQueries.getByContributor(db, username)` - Get activities by contributor
 - `activityQueries.getByDateRange(db, start, end)` - Get activities in date range
@@ -381,11 +390,11 @@ Handle paginated APIs:
 async scrape(ctx) {
   let page = 1;
   let hasMore = true;
-  
+
   while (hasMore) {
     const response = await fetch(`${apiUrl}?page=${page}`);
     const data = await response.json();
-    
+
     // Process data using query helpers
     for (const item of data.items) {
       await activityQueries.upsert(ctx.db, {
@@ -400,10 +409,10 @@ async scrape(ctx) {
         meta: null,
       });
     }
-    
+
     hasMore = data.hasMore;
     page++;
-    
+
     ctx.logger.debug(`Processed page ${page}`);
   }
 }
@@ -433,7 +442,7 @@ For better performance with many records, use individual upserts within a loop o
 ```javascript
 async scrape(ctx) {
   const activities = await fetchActivities(ctx);
-  
+
   // Option 1: Using query helpers (recommended)
   for (const activity of activities) {
     await activityQueries.upsert(ctx.db, {
@@ -448,7 +457,7 @@ async scrape(ctx) {
       meta: null,
     });
   }
-  
+
   // Option 2: Raw batch for maximum performance
   const statements = activities.map(activity => ({
     sql: `INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
@@ -474,7 +483,7 @@ async scrape(ctx) {
       null,
     ],
   }));
-  
+
   await ctx.db.batch(statements);
   ctx.logger.info(`Inserted ${statements.length} activities`);
 }
@@ -505,13 +514,13 @@ Track last sync time to only fetch new data:
 async scrape(ctx) {
   // Get last sync time from meta
   const lastSync = await getLastSyncTime(ctx);
-  
+
   // Fetch only new events
   const events = await fetchEventsSince(ctx, lastSync);
-  
+
   // Store activities
   await storeActivities(ctx, events);
-  
+
   // Update last sync time
   await setLastSyncTime(ctx, new Date());
 }
@@ -529,17 +538,17 @@ Create a test script:
 
 ```javascript
 // test.js
-import plugin from './plugin.js';
+import plugin from "./plugin.js";
 
 const mockContext = {
   db: {
     async execute(sql, params) {
-      console.log('SQL:', sql);
-      console.log('Params:', params);
+      console.log("SQL:", sql);
+      console.log("Params:", params);
       return { rows: [], rowsAffected: 1 };
     },
     async batch(statements) {
-      console.log('Batch:', statements.length, 'statements');
+      console.log("Batch:", statements.length, "statements");
       return statements.map(() => ({ rows: [], rowsAffected: 1 }));
     },
     async close() {
@@ -547,14 +556,14 @@ const mockContext = {
     },
   },
   config: {
-    apiKey: 'test_key',
-    apiUrl: 'https://api.example.com/events',
+    apiKey: "test_key",
+    apiUrl: "https://api.example.com/events",
   },
   orgConfig: {
-    name: 'Test Org',
-    description: 'Test Organization',
-    url: 'https://example.com',
-    logo_url: 'https://example.com/logo.png',
+    name: "Test Org",
+    description: "Test Organization",
+    url: "https://example.com",
+    logo_url: "https://example.com/logo.png",
   },
   logger: {
     debug: console.log,
@@ -570,7 +579,7 @@ await plugin.setup(mockContext);
 // Test scrape
 await plugin.scrape(mockContext);
 
-console.log('Plugin test complete');
+console.log("Plugin test complete");
 ```
 
 Run the test:
@@ -602,11 +611,11 @@ Tracks activities from [Your Source].
 
 \`\`\`yaml
 plugins:
-  custom:
-    source: https://example.com/plugin.js
-    config:
-      apiKey: your_api_key
-      apiUrl: https://api.example.com/events
+custom:
+source: https://example.com/plugin.js
+config:
+apiKey: your_api_key
+apiUrl: https://api.example.com/events
 \`\`\`
 
 ## Activity Types
@@ -622,6 +631,7 @@ MIT
 ### Versioning
 
 Follow semantic versioning:
+
 - `1.0.0` - Initial release
 - `1.0.1` - Bug fixes
 - `1.1.0` - New features (backwards compatible)
@@ -710,4 +720,3 @@ The system:
 - [Plugin Examples](https://github.com/ohcnetwork/leaderboard-plugins)
 - [Deployment Guide](/docs/deployment)
 - [Badges Documentation](/docs/badges) - Learn more about badge rules
-

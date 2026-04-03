@@ -81,6 +81,7 @@ pnpm data:scrape
 ```
 
 This will:
+
 1. Import existing contributors and activities
 2. Run plugin setup methods
 3. Run plugin scrape methods
@@ -133,6 +134,7 @@ netlify deploy --prod
 #### Environment Variables
 
 Set in Netlify dashboard:
+
 - `LEADERBOARD_DATA_DIR` → `/opt/build/repo/../leaderboard-data`
 - `GITHUB_TOKEN` → (your token)
 - Other plugin-specific variables
@@ -193,47 +195,47 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout main repo
         uses: actions/checkout@v4
-      
+
       - name: Checkout data repo
         uses: actions/checkout@v4
         with:
           repository: yourorg/leaderboard-data
           token: ${{ secrets.DATA_REPO_TOKEN }}
           path: data
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      
+          node-version: "20"
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 10
-      
+
       - name: Install dependencies
         run: pnpm install
-      
+
       - name: Run plugin runner
         env:
           LEADERBOARD_DATA_DIR: ./data
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm data:scrape
-      
+
       - name: Build site
         env:
           LEADERBOARD_DATA_DIR: ./data
         run: pnpm build
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: apps/leaderboard-web/out
-  
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -282,14 +284,14 @@ pnpm data:scrape && pnpm build
 server {
     listen 80;
     server_name leaderboard.example.com;
-    
+
     root /var/www/leaderboard;
     index index.html;
-    
+
     location / {
         try_files $uri $uri/ $uri.html /index.html;
     }
-    
+
     # Cache static assets
     location ~* \.(js|css|png|jpg|jpeg|gif|svg|ico)$ {
         expires 1y;
@@ -328,7 +330,7 @@ name: Scheduled Build
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight
+    - cron: "0 0 * * *" # Daily at midnight
 
 jobs:
   build-and-deploy:
@@ -365,6 +367,7 @@ curl -X POST \
 ### Build Performance
 
 **Cache dependencies**:
+
 ```yaml
 - name: Cache pnpm store
   uses: actions/cache@v3
@@ -374,6 +377,7 @@ curl -X POST \
 ```
 
 **Cache database**:
+
 ```yaml
 - name: Cache database
   uses: actions/cache@v3
@@ -385,21 +389,25 @@ curl -X POST \
 ### Static Asset Optimization
 
 **Image optimization**:
+
 - Use WebP format
 - Set appropriate sizes
 - Enable lazy loading
 
 **Code splitting**:
+
 - Next.js automatic code splitting
 - Dynamic imports for heavy components
 
 **Compression**:
+
 - Enable gzip/brotli in hosting platform
 - Pre-compress during build
 
 ### CDN Configuration
 
 **Cache headers**:
+
 ```
 # Static assets
 /*.js         max-age=31536000
@@ -433,6 +441,7 @@ Track build success/failure:
 ### Performance Monitoring
 
 Use tools like:
+
 - **Lighthouse CI**: Performance audits
 - **Web Vitals**: Core Web Vitals tracking
 - **Sentry**: Error tracking
@@ -451,6 +460,7 @@ git push origin v1.0.0
 ### Deployment History
 
 Most platforms keep deployment history:
+
 - **Netlify**: Rollback via dashboard
 - **Vercel**: `vercel rollback`
 - **GitHub Pages**: Revert commit and redeploy
@@ -482,6 +492,7 @@ Most platforms keep deployment history:
 ### Build Fails
 
 **Check logs**:
+
 ```bash
 # Local build
 pnpm data:scrape --debug
@@ -489,6 +500,7 @@ pnpm build
 ```
 
 **Common issues**:
+
 - Missing environment variables
 - Invalid configuration
 - Plugin API failures
@@ -513,4 +525,3 @@ pnpm build
 - [Configuration Reference](/docs/getting-started/configuration)
 - [Data Management](/docs/data-management)
 - [Testing](/docs/testing)
-

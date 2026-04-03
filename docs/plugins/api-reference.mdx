@@ -39,15 +39,17 @@ interface Plugin {
 Initialize the plugin and define activity types.
 
 **Parameters**:
+
 - `ctx` ([PluginContext](#plugincontext)): Plugin context
 
 **Returns**: `Promise<void>`
 
 **Example**:
+
 ```typescript
 async setup(ctx) {
   await ctx.db.execute(`
-    INSERT OR IGNORE INTO activity_definition 
+    INSERT OR IGNORE INTO activity_definition
     (slug, name, description, points, icon)
     VALUES (?, ?, ?, ?, ?)
   `, ['pr_merged', 'PR Merged', 'Pull request merged', 10, 'git-merge']);
@@ -59,15 +61,17 @@ async setup(ctx) {
 Fetch data and store activities.
 
 **Parameters**:
+
 - `ctx` ([PluginContext](#plugincontext)): Plugin context
 
 **Returns**: `Promise<void>`
 
 **Example**:
+
 ```typescript
 async scrape(ctx) {
   const data = await fetchFromAPI(ctx.config.apiKey);
-  
+
   for (const item of data) {
     await ctx.db.execute(`
       INSERT OR IGNORE INTO activity (...)
@@ -97,6 +101,7 @@ Database instance for storing data.
 **Type**: [Database](#database)
 
 **Methods**:
+
 - `execute(sql, params)` - Execute single SQL statement
 - `batch(statements)` - Execute multiple statements in transaction
 - `close()` - Close database connection
@@ -108,6 +113,7 @@ Plugin-specific configuration from `config.yaml`.
 **Type**: `Record<string, unknown>`
 
 **Example**:
+
 ```yaml
 plugins:
   github:
@@ -127,6 +133,7 @@ Organization information.
 **Type**: [OrgConfig](#orgconfig)
 
 **Properties**:
+
 - `name` - Organization name
 - `description` - Organization description
 - `url` - Organization website
@@ -140,6 +147,7 @@ Structured logger instance.
 **Type**: [Logger](#logger)
 
 **Methods**:
+
 - `debug(message, meta?)` - Debug logs
 - `info(message, meta?)` - Info logs
 - `warn(message, meta?)` - Warning logs
@@ -162,16 +170,18 @@ interface Database {
 Execute a single SQL statement.
 
 **Parameters**:
+
 - `sql` (`string`): SQL query
 - `params` (`unknown[]`, optional): Query parameters
 
 **Returns**: `Promise<ExecuteResult>`
 
 **Example**:
+
 ```typescript
 const result = await ctx.db.execute(
-  'SELECT * FROM contributor WHERE username = ?',
-  ['alice']
+  "SELECT * FROM contributor WHERE username = ?",
+  ["alice"],
 );
 
 console.log(result.rows); // Array of rows
@@ -183,11 +193,13 @@ console.log(result.rowsAffected); // Number of affected rows
 Execute multiple SQL statements in a transaction.
 
 **Parameters**:
+
 - `statements` (`BatchStatement[]`): Array of SQL statements
 
 **Returns**: `Promise<BatchResult[]>`
 
 **Example**:
+
 ```typescript
 await ctx.db.batch([
   {
@@ -221,8 +233,9 @@ interface Logger {
 Log debug information.
 
 **Example**:
+
 ```typescript
-ctx.logger.debug('Processing item', { id: item.id, type: item.type });
+ctx.logger.debug("Processing item", { id: item.id, type: item.type });
 ```
 
 #### `info(message, meta?)`
@@ -230,8 +243,9 @@ ctx.logger.debug('Processing item', { id: item.id, type: item.type });
 Log informational messages.
 
 **Example**:
+
 ```typescript
-ctx.logger.info('Fetched data', { count: items.length });
+ctx.logger.info("Fetched data", { count: items.length });
 ```
 
 #### `warn(message, meta?)`
@@ -239,8 +253,9 @@ ctx.logger.info('Fetched data', { count: items.length });
 Log warnings.
 
 **Example**:
+
 ```typescript
-ctx.logger.warn('API rate limit approaching', { remaining: 10 });
+ctx.logger.warn("API rate limit approaching", { remaining: 10 });
 ```
 
 #### `error(message, error?, meta?)`
@@ -248,11 +263,12 @@ ctx.logger.warn('API rate limit approaching', { remaining: 10 });
 Log errors.
 
 **Example**:
+
 ```typescript
 try {
   await fetchData();
 } catch (error) {
-  ctx.logger.error('Failed to fetch data', error, { retries: 3 });
+  ctx.logger.error("Failed to fetch data", error, { retries: 3 });
 }
 ```
 
@@ -309,6 +325,7 @@ CREATE TABLE activity (
 ```
 
 **Indexes**:
+
 - `idx_activity_occured_at` on `occured_at`
 - `idx_activity_contributor` on `contributor`
 - `idx_activity_definition` on `activity_definition`
@@ -388,7 +405,7 @@ async scrape(ctx) {
   if (!ctx.config.apiKey) {
     throw new Error('apiKey is required');
   }
-  
+
   try {
     await fetchData(ctx);
   } catch (error) {
@@ -413,4 +430,3 @@ The plugin runner will catch and log the error, then exit with a non-zero code.
 ## Examples
 
 See the [Creating Plugins](/docs/plugins/creating-plugins) guide for complete examples.
-

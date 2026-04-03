@@ -38,7 +38,10 @@ export default function ActivityTrendChart({
   // Map daily activity to full date range
   const fullActivityData = useMemo(() => {
     const activityMap = new Map(
-      dailyActivity.map((d) => [d.date, mode === "points" ? d.points : d.count])
+      dailyActivity.map((d) => [
+        d.date,
+        mode === "points" ? d.points : d.count,
+      ]),
     );
 
     return dateRange.map((date) => activityMap.get(date) || 0);
@@ -158,7 +161,7 @@ export default function ActivityTrendChart({
 
   const totalValue = useMemo(
     () => activityData.reduce((sum, val) => sum + val, 0),
-    [activityData]
+    [activityData],
   );
 
   if (totalValue === 0) {

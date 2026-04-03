@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+# Run prettier + organize imports on staged files
+pnpm lint-staged
+
 # Check if config.ts is being committed
 if git diff --cached --name-only | grep -q "packages/plugin-runner/src/config.ts"; then
   echo "📝 Config schema changed, regenerating config.schema.json..."

@@ -1,32 +1,32 @@
+import { icons } from "@/app/icons.gen";
+import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
+import Icon from "@/components/Icon";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getConfig } from "@/lib/config/get-config";
 import {
   getAllContributorUsernames,
-  getContributorProfile,
-  listActivityDefinitions,
   getContributorAggregates,
   getContributorBadges,
+  getContributorProfile,
+  listActivityDefinitions,
 } from "@/lib/data/loader";
-import { notFound } from "next/navigation";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatAggregateValue } from "@/lib/utils";
-import { getConfig } from "@/lib/config/get-config";
-import ActivityOverview from "./ActivityOverview";
-import ActivityBreakdown from "./ActivityBreakdown";
-import ActivityTimeline from "./ActivityTimeline";
-import Link from "next/link";
-import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import {
-  Calendar,
-  Award,
   Activity as ActivityIcon,
+  Award,
+  Calendar,
   Link as LinkIcon,
   LucideIcon,
   TrendingUp,
 } from "lucide-react";
-import Icon from "@/components/Icon";
-import { icons } from "@/app/icons.gen";
 import { marked } from "marked";
 import { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import ActivityBreakdown from "./ActivityBreakdown";
+import ActivityOverview from "./ActivityOverview";
+import ActivityTimeline from "./ActivityTimeline";
 
 // Built-in aggregate definitions for profile page
 const BUILTIN_CONTRIBUTOR_AGGREGATES = {
@@ -322,7 +322,9 @@ export default async function ContributorPage({
                   <ContributorRoleBadge
                     role={contributor.role}
                     roleName={config.leaderboard.roles[contributor.role]?.name}
-                    roleDescription={config.leaderboard.roles[contributor.role]?.description}
+                    roleDescription={
+                      config.leaderboard.roles[contributor.role]?.description
+                    }
                   />
                 </div>
                 {contributor.social_profiles && (

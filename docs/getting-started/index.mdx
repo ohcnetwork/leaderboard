@@ -27,6 +27,7 @@ pnpm install
 ```
 
 This will install all dependencies for the monorepo, including:
+
 - `@ohcnetwork/leaderboard-api` - Database utilities and plugin type definitions
 - `@leaderboard/plugin-runner` - CLI tool
 - `apps/leaderboard-web` - Next.js application
@@ -42,6 +43,7 @@ pnpm create-data-repo ../leaderboard-data
 ```
 
 This will:
+
 - Interactively prompt you for organization details
 - Generate a properly structured data repository
 - Create `config.yaml` with all necessary fields
@@ -126,6 +128,7 @@ pnpm db:seed --output=$LEADERBOARD_DATA_DIR
 ```
 
 This creates:
+
 - 15-30 contributors in `contributors/*.md`
 - 100-1000 activities in `activities/*.jsonl`
 - Sample activity definitions
@@ -137,6 +140,7 @@ pnpm data:scrape
 ```
 
 This will:
+
 1. Import existing data
 2. Run plugin setup methods
 3. Run plugin scrape methods
@@ -217,4 +221,3 @@ pnpm create-leaderboard-plugin ../my-plugin
 - [Creating Plugins](/docs/plugins/creating-plugins)
 - [Data Management](/docs/data-management)
 - [Deployment](/docs/deployment)
-

@@ -2,14 +2,14 @@
  * Export aggregates to data directory
  */
 
-import { writeFile, mkdir } from "fs/promises";
-import { join } from "path";
 import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
-  globalAggregateQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
+  globalAggregateQueries,
 } from "@ohcnetwork/leaderboard-api";
+import { mkdir, writeFile } from "fs/promises";
+import { join } from "path";
 
 /**
  * Export global aggregates to aggregates/global.json
@@ -17,7 +17,7 @@ import {
 export async function exportGlobalAggregates(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const aggregatesDir = join(dataDir, "aggregates");
   await mkdir(aggregatesDir, { recursive: true });
@@ -35,7 +35,7 @@ export async function exportGlobalAggregates(
 export async function exportContributorAggregateDefinitions(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const aggregatesDir = join(dataDir, "aggregates");
   await mkdir(aggregatesDir, { recursive: true });
@@ -45,7 +45,7 @@ export async function exportContributorAggregateDefinitions(
 
   await writeFile(join(aggregatesDir, "definitions.json"), content, "utf-8");
   logger.info(
-    `Exported ${definitions.length} contributor aggregate definitions`
+    `Exported ${definitions.length} contributor aggregate definitions`,
   );
 }
 
@@ -55,7 +55,7 @@ export async function exportContributorAggregateDefinitions(
 export async function exportContributorAggregates(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   const contributorsDir = join(dataDir, "aggregates", "contributors");
   await mkdir(contributorsDir, { recursive: true });
@@ -79,12 +79,12 @@ export async function exportContributorAggregates(
     await writeFile(
       join(contributorsDir, `${username}.jsonl`),
       lines + "\n",
-      "utf-8"
+      "utf-8",
     );
   }
 
   logger.info(
-    `Exported ${aggregates.length} contributor aggregates for ${byContributor.size} contributors`
+    `Exported ${aggregates.length} contributor aggregates for ${byContributor.size} contributors`,
   );
 }
 
@@ -94,7 +94,7 @@ export async function exportContributorAggregates(
 export async function exportAggregates(
   db: Database,
   dataDir: string,
-  logger: Logger
+  logger: Logger,
 ): Promise<void> {
   logger.info("Exporting aggregates");
   await exportGlobalAggregates(db, dataDir, logger);

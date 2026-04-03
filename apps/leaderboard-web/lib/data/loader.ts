@@ -321,18 +321,98 @@ export async function getLeaderboard(
 ) {
   const db = getDatabase();
 
-  // Convert Date to string if needed
   const startDateStr =
     startDate instanceof Date ? startDate.toISOString() : startDate;
   const endDateStr = endDate instanceof Date ? endDate.toISOString() : endDate;
 
-  // Use optimized query with JOIN to get enriched leaderboard
-  return await activityQueries.getLeaderboardEnriched(
+  const entries = await activityQueries.getLeaderboardEnriched(
     db,
     undefined,
     startDateStr,
     endDateStr,
   );
+
+  if (!startDateStr || !endDateStr || entries.length === 0) {
+    return entries;
+  }
+
+  const usernames = entries.map((e) => e.username);
+  const placeholders = usernames.map(() => "?").join(",");
+
+  const [dailyResult, breakdownResult] = await Promise.all([
+    db.execute(
+      `SELECT
+         a.contributor as username,
+         DATE(a.occured_at) as date,
+         COUNT(*) as count,
+         COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as points
+       FROM activity a
+       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+       WHERE a.occured_at >= ? AND a.occured_at <= ?
+         AND a.contributor IN (${placeholders})
+       GROUP BY a.contributor, DATE(a.occured_at)
+       ORDER BY date`,
+      [startDateStr, endDateStr, ...usernames],
+    ),
+    db.execute(
+      `SELECT
+         a.contributor as username,
+         a.activity_definition,
+         COUNT(*) as count,
+         COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as points
+       FROM activity a
+       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+       WHERE a.occured_at >= ? AND a.occured_at <= ?
+         AND a.contributor IN (${placeholders})
+       GROUP BY a.contributor, a.activity_definition`,
+      [startDateStr, endDateStr, ...usernames],
+    ),
+  ]);
+
+  const dailyMap = new Map<
+    string,
+    Array<{ date: string; count: number; points: number }>
+  >();
+  for (const row of dailyResult.rows as unknown as Array<{
+    username: string;
+    date: string;
+    count: number;
+    points: number;
+  }>) {
+    if (!dailyMap.has(row.username)) {
+      dailyMap.set(row.username, []);
+    }
+    dailyMap.get(row.username)!.push({
+      date: row.date,
+      count: Number(row.count),
+      points: Number(row.points),
+    });
+  }
+
+  const breakdownMap = new Map<
+    string,
+    Record<string, { count: number; points: number }>
+  >();
+  for (const row of breakdownResult.rows as unknown as Array<{
+    username: string;
+    activity_definition: string;
+    count: number;
+    points: number;
+  }>) {
+    if (!breakdownMap.has(row.username)) {
+      breakdownMap.set(row.username, {});
+    }
+    breakdownMap.get(row.username)![row.activity_definition] = {
+      count: Number(row.count),
+      points: Number(row.points),
+    };
+  }
+
+  return entries.map((entry) => ({
+    ...entry,
+    daily_activity: dailyMap.get(entry.username) ?? [],
+    activity_breakdown: breakdownMap.get(entry.username) ?? {},
+  }));
 }
 
 /**

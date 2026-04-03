@@ -79,6 +79,22 @@ export function getDateRange(period: "week" | "month" | "year"): {
 }
 
 /**
+ * Get the previous equivalent date range for trend comparison.
+ * E.g. if current period is the last 7 days, returns the 7 days before that.
+ */
+export function getPreviousDateRange(period: "week" | "month" | "year"): {
+  startDate: Date;
+  endDate: Date;
+} {
+  const current = getDateRange(period);
+  const duration = current.endDate.getTime() - current.startDate.getTime();
+  return {
+    startDate: new Date(current.startDate.getTime() - duration),
+    endDate: new Date(current.endDate.getTime() - duration),
+  };
+}
+
+/**
  * Format a date as a human-readable "time ago" string
  * @param date - The date to format
  * @returns Human-readable time string (e.g., "2 hours ago")

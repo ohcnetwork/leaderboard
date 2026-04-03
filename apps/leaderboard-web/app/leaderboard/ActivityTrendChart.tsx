@@ -178,7 +178,6 @@ export default function ActivityTrendChart({
             strokeDasharray="2,2"
           />
         </svg>
-        <span>No activity in this period</span>
       </div>
     );
   }

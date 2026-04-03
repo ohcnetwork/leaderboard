@@ -200,6 +200,56 @@ export const contributorQueries = {
       totalPoints: number;
     }>;
   },
+
+  /**
+   * Get contributors who were active within a date range, excluding certain roles.
+   * Returns them sorted by points earned in that period.
+   */
+  async getActiveContributors(
+    db: Database,
+    startDate: string,
+    endDate: string,
+    excludeRoles: string[] = [],
+  ): Promise<
+    Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      total_points: number;
+    }>
+  > {
+    let sql = `
+      SELECT
+        c.username,
+        c.name,
+        c.avatar_url,
+        COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as total_points
+      FROM activity a
+      JOIN contributor c ON a.contributor = c.username
+      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+      WHERE a.occured_at >= ? AND a.occured_at <= ?
+    `;
+    const params: unknown[] = [startDate, endDate];
+
+    if (excludeRoles.length > 0) {
+      const placeholders = excludeRoles.map(() => "?").join(",");
+      sql += ` AND (c.role IS NULL OR c.role NOT IN (${placeholders}))`;
+      params.push(...excludeRoles);
+    }
+
+    sql += `
+      GROUP BY c.username
+      ORDER BY total_points DESC
+    `;
+
+    const result = await db.execute(sql, params);
+    return result.rows as unknown as Array<{
+      username: string;
+      name: string | null;
+      avatar_url: string | null;
+      total_points: number;
+    }>;
+  },
 };
 
 /**
@@ -668,6 +718,7 @@ export const activityQueries = {
     db: Database,
     startDate: string,
     endDate: string,
+    excludeRoles: string[] = [],
   ): Promise<
     Array<{
       slug: string;
@@ -685,7 +736,7 @@ export const activityQueries = {
       points: number | null;
     }>
   > {
-    const sql = `
+    let sql = `
       SELECT 
         a.slug,
         a.contributor,
@@ -704,10 +755,18 @@ export const activityQueries = {
       JOIN activity_definition ad ON a.activity_definition = ad.slug
       LEFT JOIN contributor c ON a.contributor = c.username
       WHERE a.occured_at >= ? AND a.occured_at <= ?
-      ORDER BY a.activity_definition, a.occured_at DESC
     `;
+    const params: unknown[] = [startDate, endDate];
 
-    const result = await db.execute(sql, [startDate, endDate]);
+    if (excludeRoles.length > 0) {
+      const placeholders = excludeRoles.map(() => "?").join(",");
+      sql += ` AND (c.role IS NULL OR c.role NOT IN (${placeholders}))`;
+      params.push(...excludeRoles);
+    }
+
+    sql += ` ORDER BY a.activity_definition, a.occured_at DESC`;
+
+    const result = await db.execute(sql, params);
     return result.rows as unknown as Array<{
       slug: string;
       contributor: string;

@@ -115,17 +115,20 @@ export async function getContributorStats(username: string) {
 /**
  * Get recent activities grouped by type
  */
-export async function getRecentActivitiesGroupedByType(days: number = 7) {
+export async function getRecentActivitiesGroupedByType(
+  days: number = 7,
+  excludeRoles: string[] = [],
+) {
   const db = getDatabase();
   const endDate = new Date();
   const startDate = new Date(endDate);
   startDate.setDate(startDate.getDate() - days);
 
-  // Use optimized query with JOINs to get enriched activities
   const activities = await activityQueries.getRecentActivitiesEnriched(
     db,
     startDate.toISOString(),
     endDate.toISOString(),
+    excludeRoles,
   );
 
   // Group activities by definition (still need JS grouping for nested structure)
@@ -286,6 +289,27 @@ export async function getAllContributorsWithAvatars(hiddenRoles: string[]) {
     await contributorQueries.getLeaderboardWithPoints(db, hiddenRoles);
 
   return contributorsWithPoints;
+}
+
+/**
+ * Get contributors who were active within a recent period, excluding hidden roles.
+ * Sorted by points earned in that period.
+ */
+export async function getActiveContributors(
+  days: number,
+  excludeRoles: string[] = [],
+) {
+  const db = getDatabase();
+  const endDate = new Date();
+  const startDate = new Date(endDate);
+  startDate.setDate(startDate.getDate() - days);
+
+  return await contributorQueries.getActiveContributors(
+    db,
+    startDate.toISOString(),
+    endDate.toISOString(),
+    excludeRoles,
+  );
 }
 
 /**

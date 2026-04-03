@@ -1,11 +1,10 @@
-import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import RelativeTime from "@/components/RelativeTime";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getConfig } from "@/lib/config/get-config";
 import {
-  getAllActivityDefinitions,
-  getAllContributorsWithAvatars,
+  getActiveContributors,
+  getAllContributorUsernames,
   getGlobalAggregates,
   getLeaderboard,
   getRecentActivitiesGroupedByType,
@@ -42,11 +41,6 @@ const BUILTIN_GLOBAL_AGGREGATES: Record<
     description: "Last 30 days",
     icon: Users,
   },
-  activity_types: {
-    name: "Activity Types",
-    description: "Tracked categories",
-    icon: TrendingUp,
-  },
 };
 
 export default async function Home() {
@@ -63,14 +57,14 @@ export default async function Home() {
     activityGroups90d,
     weeklyLeaderboard,
     recentBadges,
-    activityDefinitions,
-    allContributors,
+    activeContributors30d,
+    allUsernames,
   ] = await Promise.all([
-    getRecentActivitiesGroupedByType(90),
+    getRecentActivitiesGroupedByType(90, hiddenRoles),
     getLeaderboard(weekStart, weekEnd),
     getRecentBadgeAchievements(6),
-    getAllActivityDefinitions(),
-    getAllContributorsWithAvatars(hiddenRoles),
+    getActiveContributors(30, hiddenRoles),
+    getAllContributorUsernames(),
   ]);
 
   // --- Split 90 days into current 30 days and previous 30 days for trend comparison ---
@@ -107,12 +101,9 @@ export default async function Home() {
     previousPeriodActivities.map((a) => a.contributor),
   ).size;
 
-  const totalActivityTypes = activityDefinitions.length;
-
   const configuredAggregates = config.leaderboard.aggregates?.global || [
     "total_activities",
     "count_contributors",
-    "activity_types",
   ];
 
   const builtinSlugs = configuredAggregates.filter(
@@ -156,8 +147,6 @@ export default async function Home() {
     } else if (slug === "count_contributors") {
       value = uniqueContributors30d.toString();
       trend = computeTrend(uniqueContributors30d, uniqueContributorsPrev);
-    } else if (slug === "activity_types") {
-      value = totalActivityTypes.toString();
     }
     aggregateCards.push({ ...def, value, trend });
   }
@@ -213,7 +202,6 @@ export default async function Home() {
 
   // --- Recent flat activity list (max 12) ---
   const recentActivities = allActivitiesFlat
-    .filter((a) => !hiddenRoles.includes(a.contributor_role))
     .sort(
       (a, b) =>
         new Date(b.occured_at).getTime() - new Date(a.occured_at).getTime(),
@@ -221,8 +209,11 @@ export default async function Home() {
     .slice(0, 12);
 
   // --- Avatar mosaic ---
-  const mosaicContributors = allContributors.slice(0, 30);
-  const extraCount = Math.max(0, allContributors.length - 30);
+  const mosaicContributors = activeContributors30d.slice(0, 30);
+  const extraCount = Math.max(
+    0,
+    allUsernames.length - mosaicContributors.length,
+  );
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-10">
@@ -438,19 +429,9 @@ export default async function Home() {
                         </AvatarFallback>
                       </Avatar>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm font-medium truncate group-hover:underline">
-                            {entry.name || entry.username}
-                          </span>
-                          {!hiddenRoles.includes(entry.role) && (
-                            <ContributorRoleBadge
-                              role={entry.role}
-                              roleName={
-                                config.leaderboard.roles[entry.role]?.name
-                              }
-                            />
-                          )}
-                        </div>
+                        <span className="text-sm font-medium truncate group-hover:underline block">
+                          {entry.name || entry.username}
+                        </span>
                         <span className="text-xs text-muted-foreground">
                           {entry.activity_count}{" "}
                           {entry.activity_count === 1
@@ -568,7 +549,8 @@ export default async function Home() {
               <div>
                 <h3 className="text-sm font-semibold">Our Community</h3>
                 <p className="text-xs text-muted-foreground">
-                  {allContributors.length} contributors building together
+                  {allUsernames.length.toLocaleString()} contributors building
+                  together
                 </p>
               </div>
               <span className="text-xs text-muted-foreground group-hover:text-foreground flex items-center gap-1">

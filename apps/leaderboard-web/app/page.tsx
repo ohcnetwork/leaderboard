@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getConfig } from "@/lib/config/get-config";
 import {
   getAllActivityDefinitions,
+  getAllContributorsWithAvatars,
   getGlobalAggregates,
   getLeaderboard,
   getRecentActivitiesGroupedByType,
@@ -17,6 +18,7 @@ import {
   ArrowRight,
   Award,
   LucideIcon,
+  TrendingDown,
   TrendingUp,
   Trophy,
   Users,
@@ -53,26 +55,58 @@ export default async function Home() {
   const { startDate: weekStart, endDate: weekEnd } = getDateRange("week");
   const { startDate: monthStart, endDate: monthEnd } = getDateRange("month");
 
+  const hiddenRoles = Object.entries(config.leaderboard.roles)
+    .filter(([, v]) => v.hidden)
+    .map(([k]) => k);
+
   const [
-    activityGroups30d,
+    activityGroups90d,
     weeklyLeaderboard,
     recentBadges,
     activityDefinitions,
+    allContributors,
   ] = await Promise.all([
-    getRecentActivitiesGroupedByType(30),
+    getRecentActivitiesGroupedByType(90),
     getLeaderboard(weekStart, weekEnd),
     getRecentBadgeAchievements(6),
     getAllActivityDefinitions(),
+    getAllContributorsWithAvatars(hiddenRoles),
   ]);
 
-  // --- KPI stats ---
-  const totalActivities30d = activityGroups30d.reduce(
-    (sum, g) => sum + g.activities.length,
-    0,
+  // --- Split 90 days into current 30 days and previous 30 days for trend comparison ---
+  const now = new Date();
+  const thirtyDaysAgo = new Date(now);
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  const sixtyDaysAgo = new Date(now);
+  sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60);
+
+  const allActivitiesFlat = activityGroups90d.flatMap((g) =>
+    g.activities.map((a) => ({
+      ...a,
+      activity_name: g.activity_name,
+    })),
   );
+
+  const currentPeriodActivities = allActivitiesFlat.filter(
+    (a) => new Date(a.occured_at) >= thirtyDaysAgo,
+  );
+  const previousPeriodActivities = allActivitiesFlat.filter(
+    (a) =>
+      new Date(a.occured_at) >= sixtyDaysAgo &&
+      new Date(a.occured_at) < thirtyDaysAgo,
+  );
+
+  // --- KPI stats with trends ---
+  const totalActivities30d = currentPeriodActivities.length;
+  const totalActivitiesPrev = previousPeriodActivities.length;
+
   const uniqueContributors30d = new Set(
-    activityGroups30d.flatMap((g) => g.activities.map((a) => a.contributor)),
+    currentPeriodActivities.map((a) => a.contributor),
   ).size;
+  const uniqueContributorsPrev = new Set(
+    previousPeriodActivities.map((a) => a.contributor),
+  ).size;
+
   const totalActivityTypes = activityDefinitions.length;
 
   const configuredAggregates = config.leaderboard.aggregates?.global || [
@@ -89,22 +123,43 @@ export default async function Home() {
   );
   const dbAggregates = await getGlobalAggregates(dbSlugs);
 
+  function computeTrend(
+    current: number,
+    previous: number,
+  ): { percentage: number; direction: "up" | "down" | "flat" } | null {
+    if (previous === 0 && current === 0) return null;
+    if (previous === 0)
+      return { percentage: 100, direction: current > 0 ? "up" : "flat" };
+    const change = ((current - previous) / previous) * 100;
+    return {
+      percentage: Math.abs(Math.round(change)),
+      direction: change > 0 ? "up" : change < 0 ? "down" : "flat",
+    };
+  }
+
   interface AggregateCard {
     name: string;
     value: string;
     description: string;
     icon: LucideIcon;
+    trend: { percentage: number; direction: "up" | "down" | "flat" } | null;
   }
   const aggregateCards: AggregateCard[] = [];
 
   for (const slug of builtinSlugs) {
     const def = BUILTIN_GLOBAL_AGGREGATES[slug]!;
     let value = "0";
-    if (slug === "total_activities") value = totalActivities30d.toString();
-    else if (slug === "count_contributors")
+    let trend: AggregateCard["trend"] = null;
+    if (slug === "total_activities") {
+      value = totalActivities30d.toLocaleString();
+      trend = computeTrend(totalActivities30d, totalActivitiesPrev);
+    } else if (slug === "count_contributors") {
       value = uniqueContributors30d.toString();
-    else if (slug === "activity_types") value = totalActivityTypes.toString();
-    aggregateCards.push({ ...def, value });
+      trend = computeTrend(uniqueContributors30d, uniqueContributorsPrev);
+    } else if (slug === "activity_types") {
+      value = totalActivityTypes.toString();
+    }
+    aggregateCards.push({ ...def, value, trend });
   }
 
   for (const agg of dbAggregates) {
@@ -114,53 +169,60 @@ export default async function Home() {
         value: formatAggregateValue(agg.value),
         description: agg.description || "",
         icon: TrendingUp,
+        trend: null,
       });
     }
   }
 
   // --- Chart data: daily activity for last 30 days ---
   const dailyMap = new Map<string, { count: number; points: number }>();
-  for (const group of activityGroups30d) {
-    for (const a of group.activities) {
-      const dateKey = format(new Date(a.occured_at), "yyyy-MM-dd");
-      const existing = dailyMap.get(dateKey) || { count: 0, points: 0 };
-      existing.count += 1;
-      existing.points += a.points ?? 0;
-      dailyMap.set(dateKey, existing);
-    }
+  for (const a of currentPeriodActivities) {
+    const dateKey = format(new Date(a.occured_at), "yyyy-MM-dd");
+    const existing = dailyMap.get(dateKey) || { count: 0, points: 0 };
+    existing.count += 1;
+    existing.points += a.points ?? 0;
+    dailyMap.set(dateKey, existing);
   }
   const dailyActivity = Array.from(dailyMap.entries())
     .map(([date, data]) => ({ date, ...data }))
     .sort((a, b) => a.date.localeCompare(b.date));
 
-  // --- Donut data: activity types ---
-  const activityTypeData = activityGroups30d.map((g) => ({
-    name: g.activity_name,
-    count: g.activities.length,
-    points: g.activities.reduce((s, a) => s + (a.points ?? 0), 0),
-  }));
+  // --- Donut data: activity types (30 days) ---
+  const activityTypeMap = new Map<
+    string,
+    { name: string; count: number; points: number }
+  >();
+  for (const g of activityGroups90d) {
+    const current = g.activities.filter(
+      (a) => new Date(a.occured_at) >= thirtyDaysAgo,
+    );
+    if (current.length > 0) {
+      activityTypeMap.set(g.activity_name, {
+        name: g.activity_name,
+        count: current.length,
+        points: current.reduce((s, a) => s + (a.points ?? 0), 0),
+      });
+    }
+  }
+  const activityTypeData = Array.from(activityTypeMap.values());
 
-  // --- Top 5 contributors this week ---
-  const topContributors = weeklyLeaderboard.slice(0, 5);
+  // --- Top 5 contributors this week (excluding hidden roles) ---
+  const topContributors = weeklyLeaderboard
+    .filter((e) => !hiddenRoles.includes(e.role))
+    .slice(0, 5);
 
-  const hiddenRoles = Object.entries(config.leaderboard.roles)
-    .filter(([, v]) => v.hidden)
-    .map(([k]) => k);
-
-  // --- Recent flat activity list (last 7 days, max 12) ---
-  const recentActivities = activityGroups30d
-    .flatMap((g) =>
-      g.activities.map((a) => ({
-        ...a,
-        activity_name: g.activity_name,
-      })),
-    )
+  // --- Recent flat activity list (max 12) ---
+  const recentActivities = allActivitiesFlat
     .filter((a) => !hiddenRoles.includes(a.contributor_role))
     .sort(
       (a, b) =>
         new Date(b.occured_at).getTime() - new Date(a.occured_at).getTime(),
     )
     .slice(0, 12);
+
+  // --- Avatar mosaic ---
+  const mosaicContributors = allContributors.slice(0, 30);
+  const extraCount = Math.max(0, allContributors.length - 30);
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-10">
@@ -197,12 +259,11 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-        {/* Decorative circles */}
         <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-primary/5 blur-3xl" />
       </section>
 
-      {/* ========== KPI Stats ========== */}
+      {/* ========== KPI Stats with Trend Indicators ========== */}
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {aggregateCards.map((card, i) => {
           const Icon = card.icon;
@@ -218,11 +279,29 @@ export default async function Home() {
                 <div className="text-3xl font-bold tracking-tight">
                   {card.value}
                 </div>
-                {card.description && (
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {card.description}
-                  </p>
-                )}
+                <div className="flex items-center gap-2 mt-1">
+                  {card.trend && card.trend.direction !== "flat" ? (
+                    <span
+                      className={`inline-flex items-center gap-0.5 text-xs font-medium ${
+                        card.trend.direction === "up"
+                          ? "text-emerald-600 dark:text-emerald-400"
+                          : "text-red-600 dark:text-red-400"
+                      }`}
+                    >
+                      {card.trend.direction === "up" ? (
+                        <TrendingUp className="h-3 w-3" />
+                      ) : (
+                        <TrendingDown className="h-3 w-3" />
+                      )}
+                      {card.trend.percentage}%
+                    </span>
+                  ) : null}
+                  {card.description && (
+                    <p className="text-xs text-muted-foreground">
+                      {card.description}
+                    </p>
+                  )}
+                </div>
               </CardContent>
             </Card>
           );
@@ -231,7 +310,6 @@ export default async function Home() {
 
       {/* ========== Charts Row ========== */}
       <section className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-        {/* Activity Trend -- wider */}
         <Card className="lg:col-span-3">
           <CardHeader className="pb-2">
             <CardTitle className="text-base font-semibold">
@@ -250,7 +328,6 @@ export default async function Home() {
           </CardContent>
         </Card>
 
-        {/* Activity Breakdown Donut */}
         <Card className="lg:col-span-2">
           <CardHeader className="pb-2">
             <CardTitle className="text-base font-semibold">
@@ -266,9 +343,9 @@ export default async function Home() {
         </Card>
       </section>
 
-      {/* ========== Top Contributors + Recent Badges ========== */}
+      {/* ========== Top Contributors Podium + Recent Badges ========== */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Top Contributors */}
+        {/* Top Contributors with Podium */}
         <Card>
           <CardHeader className="pb-3">
             <div className="flex items-center justify-between">
@@ -286,78 +363,113 @@ export default async function Home() {
             </div>
             <p className="text-xs text-muted-foreground">This week</p>
           </CardHeader>
-          <CardContent className="space-y-1">
+          <CardContent>
             {topContributors.length === 0 ? (
               <p className="text-sm text-muted-foreground py-4 text-center">
                 No activity this week yet
               </p>
             ) : (
-              topContributors.map((entry, index) => {
-                const rank = index + 1;
-                return (
-                  <Link
-                    key={entry.username}
-                    href={`/${entry.username}`}
-                    className="flex items-center gap-3 py-2.5 px-2 rounded-lg hover:bg-secondary/50 transition-colors group no-underline"
-                  >
-                    <div className="flex items-center justify-center w-6 shrink-0">
-                      {rank <= 3 ? (
-                        <Trophy
-                          className={`h-4 w-4 ${
-                            rank === 1
-                              ? "text-medal-gold"
-                              : rank === 2
-                                ? "text-medal-silver"
-                                : "text-medal-bronze"
-                          }`}
-                        />
-                      ) : (
-                        <span className="text-sm font-semibold text-muted-foreground">
-                          {rank}
-                        </span>
-                      )}
-                    </div>
-                    <Avatar className="h-8 w-8 shrink-0">
-                      <AvatarImage
-                        src={entry.avatar_url || undefined}
-                        alt={entry.name || entry.username}
-                      />
-                      <AvatarFallback className="text-xs">
-                        {(entry.name || entry.username)
-                          .substring(0, 2)
-                          .toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-medium truncate group-hover:underline">
-                          {entry.name || entry.username}
-                        </span>
-                        {!hiddenRoles.includes(entry.role) && (
-                          <ContributorRoleBadge
-                            role={entry.role}
-                            roleName={
-                              config.leaderboard.roles[entry.role]?.name
-                            }
+              <div className="space-y-4">
+                {/* Podium: top 3 */}
+                {topContributors.length >= 3 && (
+                  <div className="flex items-end justify-center gap-3 pt-4 pb-2">
+                    {/* 2nd place - left */}
+                    <PodiumEntry
+                      entry={topContributors[1]!}
+                      rank={2}
+                      height="h-24"
+                      avatarSize="h-12 w-12"
+                    />
+                    {/* 1st place - center */}
+                    <PodiumEntry
+                      entry={topContributors[0]!}
+                      rank={1}
+                      height="h-32"
+                      avatarSize="h-14 w-14"
+                    />
+                    {/* 3rd place - right */}
+                    <PodiumEntry
+                      entry={topContributors[2]!}
+                      rank={3}
+                      height="h-20"
+                      avatarSize="h-11 w-11"
+                    />
+                  </div>
+                )}
+
+                {/* Positions 4-5 (or all if < 3 total) */}
+                {(topContributors.length < 3
+                  ? topContributors
+                  : topContributors.slice(3)
+                ).map((entry, i) => {
+                  const rank = topContributors.length < 3 ? i + 1 : i + 4;
+                  return (
+                    <Link
+                      key={entry.username}
+                      href={`/${entry.username}`}
+                      className="flex items-center gap-3 py-2.5 px-2 rounded-lg hover:bg-secondary/50 transition-colors group no-underline"
+                    >
+                      <div className="flex items-center justify-center w-6 shrink-0">
+                        {rank <= 3 ? (
+                          <Trophy
+                            className={`h-4 w-4 ${
+                              rank === 1
+                                ? "text-medal-gold"
+                                : rank === 2
+                                  ? "text-medal-silver"
+                                  : "text-medal-bronze"
+                            }`}
                           />
+                        ) : (
+                          <span className="text-sm font-semibold text-muted-foreground">
+                            {rank}
+                          </span>
                         )}
                       </div>
-                      <span className="text-xs text-muted-foreground">
-                        {entry.activity_count}{" "}
-                        {entry.activity_count === 1 ? "activity" : "activities"}
-                      </span>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <span className="text-lg font-bold text-primary">
-                        {entry.total_points}
-                      </span>
-                      <span className="text-xs text-muted-foreground block">
-                        pts
-                      </span>
-                    </div>
-                  </Link>
-                );
-              })
+                      <Avatar className="h-8 w-8 shrink-0">
+                        <AvatarImage
+                          src={entry.avatar_url || undefined}
+                          alt={entry.name || entry.username}
+                        />
+                        <AvatarFallback className="text-xs">
+                          {(entry.name || entry.username)
+                            .substring(0, 2)
+                            .toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-medium truncate group-hover:underline">
+                            {entry.name || entry.username}
+                          </span>
+                          {!hiddenRoles.includes(entry.role) && (
+                            <ContributorRoleBadge
+                              role={entry.role}
+                              roleName={
+                                config.leaderboard.roles[entry.role]?.name
+                              }
+                            />
+                          )}
+                        </div>
+                        <span className="text-xs text-muted-foreground">
+                          {entry.activity_count}{" "}
+                          {entry.activity_count === 1
+                            ? "activity"
+                            : "activities"}
+                        </span>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <span className="text-lg font-bold text-primary">
+                          {entry.total_points}
+                        </span>
+                        <span className="text-xs text-muted-foreground block">
+                          pts
+                        </span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
             )}
           </CardContent>
         </Card>
@@ -396,7 +508,6 @@ export default async function Home() {
                     href={`/${badge.contributor}`}
                     className="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-secondary/50 transition-colors no-underline"
                   >
-                    {/* Badge icon */}
                     <div className="w-9 h-9 rounded-full overflow-hidden shrink-0 shadow-sm">
                       {variant?.svg_url ? (
                         <img
@@ -408,7 +519,6 @@ export default async function Home() {
                         <div className="w-full h-full bg-linear-to-br from-badge-accent to-badge-accent/70" />
                       )}
                     </div>
-                    {/* Contributor avatar */}
                     <Avatar className="h-7 w-7 shrink-0 -ml-5 ring-2 ring-card">
                       <AvatarImage
                         src={badge.contributor_avatar_url || undefined}
@@ -446,6 +556,57 @@ export default async function Home() {
           </CardContent>
         </Card>
       </section>
+
+      {/* ========== Contributor Avatar Mosaic ========== */}
+      {mosaicContributors.length > 0 && (
+        <section>
+          <Link
+            href="/people"
+            className="group block rounded-xl border border-border hover:border-primary/30 p-5 transition-all no-underline"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-sm font-semibold">Our Community</h3>
+                <p className="text-xs text-muted-foreground">
+                  {allContributors.length} contributors building together
+                </p>
+              </div>
+              <span className="text-xs text-muted-foreground group-hover:text-foreground flex items-center gap-1">
+                Meet everyone
+                <ArrowRight className="h-3 w-3" />
+              </span>
+            </div>
+            <div className="flex items-center">
+              {mosaicContributors.map((c, i) => (
+                <Avatar
+                  key={c.username}
+                  className="h-9 w-9 border-2 border-card shrink-0"
+                  style={{
+                    marginLeft: i === 0 ? 0 : "-0.5rem",
+                    zIndex: 30 - i,
+                  }}
+                >
+                  <AvatarImage
+                    src={c.avatar_url || undefined}
+                    alt={c.name || c.username}
+                  />
+                  <AvatarFallback className="text-[10px]">
+                    {(c.name || c.username).substring(0, 2).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+              ))}
+              {extraCount > 0 && (
+                <div
+                  className="h-9 w-9 rounded-full bg-secondary border-2 border-card flex items-center justify-center shrink-0 text-xs font-medium text-muted-foreground"
+                  style={{ marginLeft: "-0.5rem", zIndex: 0 }}
+                >
+                  +{extraCount}
+                </div>
+              )}
+            </div>
+          </Link>
+        </section>
+      )}
 
       {/* ========== Recent Activity Feed ========== */}
       <section>
@@ -578,5 +739,55 @@ export default async function Home() {
         </Link>
       </section>
     </div>
+  );
+}
+
+// --- Podium Entry Sub-component ---
+interface PodiumEntryProps {
+  entry: {
+    username: string;
+    name: string | null;
+    avatar_url: string | null;
+    total_points: number;
+  };
+  rank: number;
+  height: string;
+  avatarSize: string;
+}
+
+function PodiumEntry({ entry, rank, height, avatarSize }: PodiumEntryProps) {
+  const pedestal =
+    rank === 1
+      ? "bg-medal-gold/10 border-medal-gold/30"
+      : rank === 2
+        ? "bg-medal-silver/10 border-medal-silver/30"
+        : "bg-medal-bronze/10 border-medal-bronze/30";
+
+  return (
+    <Link
+      href={`/${entry.username}`}
+      className="flex flex-col items-center gap-1.5 group no-underline w-28"
+    >
+      <Avatar className={`${avatarSize} ring-2 ring-card shadow-md`}>
+        <AvatarImage
+          src={entry.avatar_url || undefined}
+          alt={entry.name || entry.username}
+        />
+        <AvatarFallback className="text-sm font-medium">
+          {(entry.name || entry.username).substring(0, 2).toUpperCase()}
+        </AvatarFallback>
+      </Avatar>
+      <span className="text-xs font-medium text-center truncate w-full group-hover:underline">
+        {entry.name || entry.username}
+      </span>
+      <div
+        className={`w-full ${height} rounded-t-lg border ${pedestal} flex flex-col items-center justify-center`}
+      >
+        <span className="text-lg font-bold text-primary">
+          {entry.total_points}
+        </span>
+        <span className="text-[10px] text-muted-foreground">pts</span>
+      </div>
+    </Link>
   );
 }

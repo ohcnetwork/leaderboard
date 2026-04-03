@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   transpilePackages: ["@ohcnetwork/leaderboard-api"],
   serverExternalPackages: ["@libsql/client"],
+  env: {
+    NEXT_PUBLIC_BUILD_TIMESTAMP: new Date().toISOString(),
+  },
   images: {
     unoptimized: true, // Required for static export
   },

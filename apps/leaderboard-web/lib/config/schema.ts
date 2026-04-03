@@ -48,6 +48,7 @@ export const DataExplorerConfigSchema = z.object({
 
 export const LeaderboardConfigSchema = z.object({
   data_source: z.string().optional(),
+  data_update_frequency: z.string().optional(),
   roles: z.record(z.string(), RoleConfigSchema),
   top_contributors: z.array(z.string()).optional(),
   social_profiles: z.record(z.string(), SocialProfileConfigSchema).optional(),

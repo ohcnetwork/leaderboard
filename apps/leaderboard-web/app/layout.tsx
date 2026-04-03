@@ -3,6 +3,7 @@ import { getConfig } from "@/lib/config/get-config";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import type { Metadata } from "next";
 import { PT_Serif, Space_Grotesk, Space_Mono } from "next/font/google";
+import Footer from "./Footer";
 import "./globals.css";
 import NavHeader from "./NavHeader";
 
@@ -80,14 +81,7 @@ export default function RootLayout({
                 githubUrl={config.org.socials?.github}
               />
               <main className="flex-1 pt-24">{children}</main>
-              <footer className="border-t py-6 pb-24 lg:pb-6 mt-12">
-                <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-                  <p>
-                    © {new Date().getFullYear()} {config.org.name}. All rights
-                    reserved.
-                  </p>
-                </div>
-              </footer>
+              <Footer config={config} />
             </div>
           </RootProvider>
         </ThemeProvider>

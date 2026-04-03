@@ -4,7 +4,7 @@
 
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { createDatabase } from "../client";
-import { initializeSchema, clearAllData } from "../schema";
+import { initializeSchema } from "../schema";
 import {
   contributorQueries,
   activityDefinitionQueries,

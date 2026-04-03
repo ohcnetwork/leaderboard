@@ -72,7 +72,7 @@ interface SqlReplProps {
 
 export default function SqlRepl({ schema }: SqlReplProps) {
   const { status, error: dbError, exec, getStats } = useDatabase();
-  const [query, setQuery] = useState(EXAMPLE_QUERIES[0].sql);
+  const [query, setQuery] = useState(EXAMPLE_QUERIES[0]?.sql ?? "");
   const [result, setResult] = useState<QueryResult | null>(null);
   const [queryError, setQueryError] = useState<string | null>(null);
   const [running, setRunning] = useState(false);

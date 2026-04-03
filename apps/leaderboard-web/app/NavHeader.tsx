@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Home, Trophy, Users, Award, Github } from "lucide-react";
+import { Home, Trophy, Users, Award, Database, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import ThemeSelector from "./ThemeSelector";
@@ -40,6 +40,7 @@ const navItems = [
   { name: "Leaderboard", href: "/leaderboard", icon: Trophy },
   { name: "People", href: "/people", icon: Users },
   { name: "Badges", href: "/badges", icon: Award },
+  { name: "Data", href: "/data", icon: Database },
 ];
 
 interface NavHeaderProps {
@@ -107,13 +108,13 @@ export default function NavHeader({
       <header
         className={cn(
           "hidden lg:block fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out",
-          isCollapsed ? "top-4 w-auto" : "top-4 w-[95%] max-w-5xl",
+          isCollapsed ? "top-4 w-auto" : "top-4 w-[95%] max-w-7xl",
         )}
       >
         {/* Expanded full navbar */}
         <div
           className={cn(
-            "rounded-full border border-border bg-background/40 backdrop-blur-md shadow-md transition-all duration-500 ease-in-out overflow-hidden",
+            "rounded-full overflow-hidden",
             isCollapsed
               ? "opacity-0 scale-95 h-0 pointer-events-none"
               : "opacity-100 scale-100 h-14",

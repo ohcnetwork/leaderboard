@@ -14,8 +14,9 @@
     "test:coverage": "vitest run --coverage",
     "setup:icons": "tsx scripts/setup-icons.ts",
     "setup:theme": "tsx scripts/setup-theme.ts",
-    "predev": "pnpm setup:icons && pnpm setup:theme",
-    "prebuild": "pnpm setup:icons && pnpm setup:theme"
+    "setup:db": "tsx scripts/setup-db.ts",
+    "predev": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db",
+    "prebuild": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",
@@ -56,6 +57,7 @@
     "radix-ui": "^1.4.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "sql.js-httpvfs": "^0.8.12",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",
     "tsx": "^4.20.6",

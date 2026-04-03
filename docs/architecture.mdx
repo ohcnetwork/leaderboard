@@ -119,6 +119,8 @@ export default {
 - `/leaderboard` - Rankings and leaderboards
 - `/people` - All contributors
 - `/[username]` - Individual contributor profiles
+- `/badges` - Badge definitions and achievements
+- `/data` - [Data Explorer](/docs/data-explorer) (browser-based SQL REPL)
 - `/docs` - Documentation
 
 ## Data Flow
@@ -156,8 +158,20 @@ export default {
    ```
    Next.js reads LibSQL
    → Generate static pages
+   → Copy .leaderboard.db to public/data.db
    → Output static site
    ```
+
+### Client-Side Data Explorer
+
+In addition to the pre-rendered static pages, the database file is shipped as a static asset (`public/data.db`). The [Data Explorer](/docs/data-explorer) page loads this database in the browser via [sql.js-httpvfs](https://github.com/phiresky/sql.js-httpvfs) (SQLite compiled to WebAssembly). A Web Worker makes HTTP range requests to fetch only the database pages needed for each query, enabling ad-hoc SQL queries without any backend.
+
+```mermaid
+graph LR
+    CDN["Static CDN\n(data.db)"] -->|"HTTP Range Requests"| Worker["Web Worker\n(sql.js WASM)"]
+    Worker -->|"Query Results"| UI["Data Explorer UI"]
+    UI -->|"SQL Query"| Worker
+```
 
 ## Data Storage Strategies
 

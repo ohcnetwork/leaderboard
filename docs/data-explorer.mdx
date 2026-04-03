@@ -35,10 +35,12 @@ If your database file exceeds the static hosting provider's file size limit (e.g
 ```yaml
 leaderboard:
   data_explorer:
-    source: https://yourorg.github.io/leaderboard-data/data.db
+    source: https://data.leaderboard.yourorg.com/data.db
 ```
 
 When `source` is an external URL (`http://` or `https://`), the prebuild step skips copying the `.db` file into `public/`, keeping the deployment bundle small. The WebAssembly worker and WASM files are still shipped locally since they are small and always required.
+
+> **Cross-origin hosting requires proper CORS headers.** The external host must expose `Accept-Ranges`, `Content-Range`, and `Content-Length` response headers for range requests to work. [Cloudflare R2](#hosting-the-database-on-cloudflare-r2) is the recommended option. See the [GitHub Pages CORS limitation](#cors-limitation) for details on why some hosts don't work cross-origin.
 
 ## How It Works
 
@@ -321,6 +323,132 @@ leaderboard:
 ```
 
 The prebuild step will skip copying `data.db` locally and the browser will fetch it directly from GitHub Pages.
+
+### CORS Limitation
+
+> **Important**: GitHub Pages does not set the `Access-Control-Expose-Headers` response header. When the Data Explorer is hosted on a different origin than the database (cross-origin), the browser strips the `Accept-Ranges` and `Content-Range` headers from responses. This prevents `sql.js-httpvfs` from performing range requests correctly, resulting in a **"database disk image is malformed"** error.
+>
+> GitHub Pages works only when the leaderboard site and the database are served from the **same origin**. For cross-origin hosting, use [Cloudflare R2](#hosting-the-database-on-cloudflare-r2) or another storage provider that supports configurable CORS headers.
+
+## Hosting the Database on Cloudflare R2
+
+[Cloudflare R2](https://developers.cloudflare.com/r2/) is an object storage service with a generous free tier. It supports configurable CORS policies — making it the recommended option for hosting the database externally, especially when deploying the leaderboard to Cloudflare Pages.
+
+### Why Cloudflare R2?
+
+- **Configurable CORS headers** — you can expose `Accept-Ranges`, `Content-Range`, and `Content-Length`, which are required for cross-origin range requests
+- **No per-file size limit** — R2 supports objects up to 5 TB
+- **Free tier** — 10 GB storage, 10 million reads/month, 1 million writes/month
+- **Native Cloudflare integration** — pairs naturally with Cloudflare Pages deployments
+- **Global edge network** — low-latency access worldwide
+
+### Step 1: Create an R2 Bucket
+
+1. Go to the [Cloudflare dashboard](https://dash.cloudflare.com/) → **R2 Object Storage** → **Create bucket**
+2. Name it (e.g., `leaderboard-data`)
+3. Choose a location hint closest to your users
+
+### Step 2: Enable Public Access
+
+1. Open your bucket → **Settings** → **Public access**
+2. Under **Custom Domains**, add a domain (e.g., `data.leaderboard.yourorg.com`) — or use the default R2 public URL by enabling **R2.dev subdomain**
+
+### Step 3: Configure CORS Policy
+
+In your bucket settings, go to **CORS policy** and add the following, replacing the origin with your leaderboard deployment URL:
+
+```json
+[
+  {
+    "AllowedOrigins": ["https://contributors.yourorg.com"],
+    "AllowedMethods": ["GET", "HEAD"],
+    "AllowedHeaders": ["Range"],
+    "ExposeHeaders": [
+      "Accept-Ranges",
+      "Content-Range",
+      "Content-Length"
+    ],
+    "MaxAgeSeconds": 86400
+  }
+]
+```
+
+This ensures only your leaderboard site can make cross-origin requests to the database. Requests from any other origin will be blocked by the browser.
+
+> **CORS is not full access control.** CORS only prevents other *websites* from loading the database via JavaScript (`fetch`, `XMLHttpRequest`). It does not prevent direct downloads — anyone with the URL can still access the file via `curl`, a browser address bar, or any non-browser client. If you need to restrict direct access, see [Securing Access with a Cloudflare Worker](#securing-access-with-a-cloudflare-worker) below.
+
+### Step 4: Upload the Database
+
+You can upload manually via the dashboard, or use `wrangler` in CI:
+
+```bash
+npx wrangler r2 object put leaderboard-data/data.db \
+  --file data/.leaderboard.db \
+  --content-type application/octet-stream
+```
+
+### Step 5: Configure `config.yaml`
+
+Point the Data Explorer to your R2 URL:
+
+```yaml
+leaderboard:
+  data_explorer:
+    source: https://data.leaderboard.yourorg.com/data.db
+```
+
+If using the R2.dev subdomain instead of a custom domain:
+
+```yaml
+leaderboard:
+  data_explorer:
+    source: https://leaderboard-data.<account-id>.r2.dev/data.db
+```
+
+### Automating with GitHub Actions
+
+Create `.github/workflows/publish-db.yml` to rebuild and upload the database on a schedule:
+
+```yaml
+name: Publish Leaderboard Database to R2
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # Every 6 hours
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install
+
+      - name: Build database
+        run: pnpm data:scrape
+        env:
+          LEADERBOARD_DATA_DIR: ./data
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload to R2
+        run: npx wrangler r2 object put leaderboard-data/data.db --file data/.leaderboard.db --content-type application/octet-stream
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+```
+
+Add these secrets to your repository:
+
+- `CLOUDFLARE_API_TOKEN` — create an API token with **R2 write** permissions in the [Cloudflare dashboard](https://dash.cloudflare.com/profile/api-tokens)
+- `CLOUDFLARE_ACCOUNT_ID` — found on the R2 overview page
 
 ## Technical Details
 

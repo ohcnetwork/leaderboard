@@ -699,7 +699,7 @@ export const activityQueries = {
         a.occured_at,
         a.link,
         a.text,
-        a.points
+        COALESCE(a.points, ad.points, 0) as points
       FROM activity a
       JOIN activity_definition ad ON a.activity_definition = ad.slug
       LEFT JOIN contributor c ON a.contributor = c.username

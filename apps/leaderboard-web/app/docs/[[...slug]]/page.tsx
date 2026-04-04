@@ -1,4 +1,6 @@
+import { Mermaid } from "@/components/mdx/mermaid";
 import { source } from "@/lib/source";
+import defaultMdxComponents from "fumadocs-ui/mdx";
 import { DocsBody, DocsPage } from "fumadocs-ui/page";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -17,7 +19,7 @@ export default async function Page(props: {
     <DocsPage toc={pageData.toc} full={pageData.full}>
       <DocsBody>
         <h1>{pageData.title}</h1>
-        <MDX />
+        <MDX components={{ ...defaultMdxComponents, Mermaid }} />
       </DocsBody>
     </DocsPage>
   );

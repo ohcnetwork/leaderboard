@@ -261,7 +261,7 @@ export function generateActivity(
     contributor,
     activity_definition: type,
     title,
-    occured_at: date.toISOString(),
+    occurred_at: date.toISOString(),
     link,
     text: null, // Could add descriptions for some activities
     points: ACTIVITY_TYPES[type].points,
@@ -315,7 +315,7 @@ export function generateActivitiesForContributor(
   // Sort by date
   activities.sort(
     (a, b) =>
-      new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime(),
+      new Date(a.occurred_at).getTime() - new Date(b.occurred_at).getTime(),
   );
 
   return activities;

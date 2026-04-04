@@ -119,7 +119,7 @@ The following tables are available for querying:
 | contributor         | VARCHAR (FK → contributor)         |
 | activity_definition | VARCHAR (FK → activity_definition) |
 | title               | VARCHAR                            |
-| occured_at          | TIMESTAMP                          |
+| occurred_at         | TIMESTAMP                          |
 | link                | VARCHAR                            |
 | text                | TEXT                               |
 | points              | SMALLINT                           |
@@ -210,7 +210,7 @@ ORDER BY total_points DESC;
 ### Monthly activity trend
 
 ```sql
-SELECT strftime('%Y-%m', occured_at) AS month,
+SELECT strftime('%Y-%m', occurred_at) AS month,
        COUNT(*) AS activities,
        SUM(points) AS points
 FROM activity
@@ -363,11 +363,7 @@ In your bucket settings, go to **CORS policy** and add the following, replacing 
     "AllowedOrigins": ["https://contributors.yourorg.com"],
     "AllowedMethods": ["GET", "HEAD"],
     "AllowedHeaders": ["Range"],
-    "ExposeHeaders": [
-      "Accept-Ranges",
-      "Content-Range",
-      "Content-Length"
-    ],
+    "ExposeHeaders": ["Accept-Ranges", "Content-Range", "Content-Length"],
     "MaxAgeSeconds": 86400
   }
 ]
@@ -375,7 +371,7 @@ In your bucket settings, go to **CORS policy** and add the following, replacing 
 
 This ensures only your leaderboard site can make cross-origin requests to the database. Requests from any other origin will be blocked by the browser.
 
-> **CORS is not full access control.** CORS only prevents other *websites* from loading the database via JavaScript (`fetch`, `XMLHttpRequest`). It does not prevent direct downloads — anyone with the URL can still access the file via `curl`, a browser address bar, or any non-browser client. If you need to restrict direct access, see [Securing Access with a Cloudflare Worker](#securing-access-with-a-cloudflare-worker) below.
+> **CORS is not full access control.** CORS only prevents other _websites_ from loading the database via JavaScript (`fetch`, `XMLHttpRequest`). It does not prevent direct downloads — anyone with the URL can still access the file via `curl`, a browser address bar, or any non-browser client. If you need to restrict direct access, see [Securing Access with a Cloudflare Worker](#securing-access-with-a-cloudflare-worker) below.
 
 ### Step 4: Upload the Database
 
@@ -476,7 +472,7 @@ The `useDatabase()` hook in `lib/sql-repl/use-database.ts`:
 
 - **Lazy loading**: Only database pages touched by a query are fetched
 - **Worker thread**: Queries run in a Web Worker, keeping the UI responsive
-- **Indexed queries**: Queries using indexed columns (`contributor`, `occured_at`, `activity_definition`) are fast even on large databases
+- **Indexed queries**: Queries using indexed columns (`contributor`, `occurred_at`, `activity_definition`) are fast even on large databases
 - **Full table scans**: Queries like `SELECT * FROM activity` will fetch the entire table — use `LIMIT` for large tables
 
 ### Limitations

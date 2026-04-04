@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS activity (
     contributor             VARCHAR REFERENCES contributor(username) NOT NULL,
     activity_definition     VARCHAR REFERENCES activity_definition(slug) NOT NULL,
     title                   VARCHAR,
-    occured_at              TIMESTAMP NOT NULL,
+    occurred_at              TIMESTAMP NOT NULL,
     link                    VARCHAR,
     text                    TEXT,
     points                  SMALLINT,
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS activity (
 );
 
 -- Indexes for performance
-CREATE INDEX IF NOT EXISTS idx_activity_occured_at ON activity(occured_at);
+CREATE INDEX IF NOT EXISTS idx_activity_occurred_at ON activity(occurred_at);
 CREATE INDEX IF NOT EXISTS idx_activity_contributor ON activity(contributor);
 CREATE INDEX IF NOT EXISTS idx_activity_definition ON activity(activity_definition);
 

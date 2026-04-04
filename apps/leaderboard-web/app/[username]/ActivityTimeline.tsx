@@ -87,12 +87,12 @@ export default function ActivityTimeline({
     return activities.filter((activity) => {
       // Filter by date range
       if (startDate) {
-        const activityDate = new Date(activity.occured_at);
+        const activityDate = new Date(activity.occurred_at);
         const start = new Date(startDate);
         if (activityDate < start) return false;
       }
       if (endDate) {
-        const activityDate = new Date(activity.occured_at);
+        const activityDate = new Date(activity.occurred_at);
         const end = new Date(endDate);
         end.setHours(23, 59, 59, 999); // Include the entire end date
         if (activityDate > end) return false;

@@ -96,8 +96,8 @@ Contributors can be added or edited manually:
 JSON Lines (JSONL), one file per contributor:
 
 ```jsonl
-{"slug":"alice-pr-123","contributor":"alice","activity_definition":"pr_merged","title":"Fix auth bug","occured_at":"2024-01-15T10:30:00Z","link":"https://github.com/org/repo/pull/123","points":10}
-{"slug":"alice-issue-45","contributor":"alice","activity_definition":"issue_opened","title":"Add rate limiting","occured_at":"2024-01-16T14:20:00Z","link":"https://github.com/org/repo/issues/45","points":5}
+{"slug":"alice-pr-123","contributor":"alice","activity_definition":"pr_merged","title":"Fix auth bug","occurred_at":"2024-01-15T10:30:00Z","link":"https://github.com/org/repo/pull/123","points":10}
+{"slug":"alice-issue-45","contributor":"alice","activity_definition":"issue_opened","title":"Add rate limiting","occurred_at":"2024-01-16T14:20:00Z","link":"https://github.com/org/repo/issues/45","points":5}
 ```
 
 ### Schema
@@ -108,7 +108,7 @@ Each line is a JSON object with:
 - `contributor` (string, required) - Username
 - `activity_definition` (string, required) - Activity type slug
 - `title` (string) - Activity title
-- `occured_at` (string, required) - ISO 8601 timestamp
+- `occurred_at` (string, required) - ISO 8601 timestamp
 - `link` (string) - URL to activity
 - `text` (string) - Additional text/description
 - `points` (number) - Points awarded

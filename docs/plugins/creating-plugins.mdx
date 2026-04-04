@@ -157,7 +157,7 @@ export default {
           contributor: event.user.username,
           activity_definition: event.type,
           title: event.title,
-          occured_at: new Date(event.timestamp).toISOString(),
+          occurred_at: new Date(event.timestamp).toISOString(),
           link: event.url,
           text: event.description || null,
           points: null, // Uses default from activity_definition
@@ -250,7 +250,7 @@ const plugin: Plugin = {
         contributor: event.user.username,
         activity_definition: event.type,
         title: event.title,
-        occured_at: new Date(event.timestamp).toISOString(),
+        occurred_at: new Date(event.timestamp).toISOString(),
         link: event.url,
         text: event.description || null,
         points: null,
@@ -402,7 +402,7 @@ async scrape(ctx) {
         contributor: item.username,
         activity_definition: 'custom_event_1',
         title: item.title,
-        occured_at: item.timestamp,
+        occurred_at: item.timestamp,
         link: item.url,
         text: null,
         points: null,
@@ -450,7 +450,7 @@ async scrape(ctx) {
       contributor: activity.contributor,
       activity_definition: activity.type,
       title: activity.title,
-      occured_at: activity.timestamp,
+      occurred_at: activity.timestamp,
       link: activity.url,
       text: null,
       points: null,
@@ -460,13 +460,13 @@ async scrape(ctx) {
 
   // Option 2: Raw batch for maximum performance
   const statements = activities.map(activity => ({
-    sql: `INSERT INTO activity (slug, contributor, activity_definition, title, occured_at, link, text, points, meta)
+    sql: `INSERT INTO activity (slug, contributor, activity_definition, title, occurred_at, link, text, points, meta)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
           ON CONFLICT(slug) DO UPDATE SET
             contributor = excluded.contributor,
             activity_definition = excluded.activity_definition,
             title = excluded.title,
-            occured_at = excluded.occured_at,
+            occurred_at = excluded.occurred_at,
             link = excluded.link,
             text = excluded.text,
             points = excluded.points,

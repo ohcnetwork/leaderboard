@@ -87,8 +87,8 @@ Alice is a core contributor specializing in backend development...
 Activities are stored as JSONL (JSON Lines) files in the \`activities/\` directory, one file per contributor:
 
 \`\`\`jsonl
-{"slug":"alice-pr-1","contributor":"alice","activity_definition":"pr_merged","title":"Fix authentication bug","occured_at":"2024-01-15T10:00:00Z","link":"https://github.com/org/repo/pull/123","points":10}
-{"slug":"alice-issue-1","contributor":"alice","activity_definition":"issue_opened","title":"Add rate limiting","occured_at":"2024-01-16T14:20:00Z","link":"https://github.com/org/repo/issues/45","points":5}
+{"slug":"alice-pr-1","contributor":"alice","activity_definition":"pr_merged","title":"Fix authentication bug","occurred_at":"2024-01-15T10:00:00Z","link":"https://github.com/org/repo/pull/123","points":10}
+{"slug":"alice-issue-1","contributor":"alice","activity_definition":"issue_opened","title":"Add rate limiting","occurred_at":"2024-01-16T14:20:00Z","link":"https://github.com/org/repo/issues/45","points":5}
 \`\`\`
 
 ### Activity Fields
@@ -97,7 +97,7 @@ Activities are stored as JSONL (JSON Lines) files in the \`activities/\` directo
 - \`contributor\` (required) - Username
 - \`activity_definition\` (required) - Activity type slug
 - \`title\` - Activity title
-- \`occured_at\` (required) - ISO 8601 timestamp
+- \`occurred_at\` (required) - ISO 8601 timestamp
 - \`link\` - URL to activity
 - \`text\` - Additional text/description
 - \`points\` - Points awarded

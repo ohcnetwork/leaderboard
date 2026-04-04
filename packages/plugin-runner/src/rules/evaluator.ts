@@ -298,7 +298,7 @@ function calculateLongestStreak(
 
   // Get unique dates
   const uniqueDates = Array.from(
-    new Set(activities.map((a) => a.occured_at.split("T")[0])),
+    new Set(activities.map((a) => a.occurred_at.split("T")[0])),
   ).sort();
 
   if (uniqueDates.length === 0) return 0;

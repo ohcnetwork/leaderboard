@@ -11,7 +11,7 @@ import ActivityGraph, {
 interface ActivityOverviewProps {
   activities: Array<{
     activity_definition_name: string;
-    occured_at: Date | string;
+    occurred_at: Date | string;
   }>;
   activityDefinitions: Array<{ name: string }>;
 }
@@ -29,7 +29,7 @@ export default function ActivityOverview({
   const availableYears = useMemo(() => {
     const years = new Set<number>();
     for (const a of activities) {
-      const d = new Date(a.occured_at);
+      const d = new Date(a.occurred_at);
       if (!isNaN(d.getTime())) years.add(d.getFullYear());
     }
     return Array.from(years).sort((a, b) => b - a);
@@ -55,7 +55,7 @@ export default function ActivityOverview({
     const start = startDate.getTime();
     const end = endDate.getTime();
     return activities.filter((a) => {
-      const t = new Date(a.occured_at).getTime();
+      const t = new Date(a.occurred_at).getTime();
       return t >= start && t <= end;
     });
   }, [activities, startDate, endDate]);

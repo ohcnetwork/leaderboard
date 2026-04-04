@@ -248,7 +248,7 @@ export default async function ContributorPage({
   // Prepare activities data for ActivityBreakdown component
   const activitiesForBreakdown = activities.map((activity) => ({
     activity_definition_name: activity.activity_name,
-    occured_at: activity.occured_at,
+    occurred_at: activity.occurred_at,
     points: activity.points || 0,
   }));
 
@@ -400,7 +400,7 @@ export default async function ContributorPage({
         <ActivityOverview
           activities={activities.map((a) => ({
             activity_definition_name: a.activity_name,
-            occured_at: a.occured_at,
+            occurred_at: a.occurred_at,
           }))}
           activityDefinitions={activityDefinitions}
         />

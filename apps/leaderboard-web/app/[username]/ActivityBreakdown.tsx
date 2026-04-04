@@ -18,7 +18,7 @@ import ActivityTrendChart from "../leaderboard/ActivityTrendChart";
 interface ActivityBreakdownProps {
   activities: Array<{
     activity_definition_name: string;
-    occured_at: Date | string;
+    occurred_at: Date | string;
     points: number;
   }>;
   startDate?: Date;
@@ -54,7 +54,7 @@ export default function ActivityBreakdown({
     }
 
     return activities.filter((activity) => {
-      const activityDate = new Date(activity.occured_at);
+      const activityDate = new Date(activity.occurred_at);
 
       if (filterStartDate) {
         const start = new Date(filterStartDate);
@@ -118,7 +118,7 @@ export default function ActivityBreakdown({
       };
     }
 
-    const dates = filteredActivities.map((a) => new Date(a.occured_at));
+    const dates = filteredActivities.map((a) => new Date(a.occurred_at));
     return {
       startDate: new Date(Math.min(...dates.map((d) => d.getTime()))),
       endDate: new Date(Math.max(...dates.map((d) => d.getTime()))),
@@ -134,7 +134,7 @@ export default function ActivityBreakdown({
 
     filteredActivities.forEach((activity) => {
       const activityName = activity.activity_definition_name;
-      const dateKey = format(activity.occured_at, "yyyy-MM-dd");
+      const dateKey = format(activity.occurred_at, "yyyy-MM-dd");
 
       if (!trendMap[activityName]) {
         trendMap[activityName] = [];

@@ -21,7 +21,7 @@ export interface ContributorActivity {
   activity_description: string | null;
   activity_icon: string | null;
   title: string | null;
-  occured_at: string;
+  occurred_at: string;
   link: string | null;
   text: string | null;
   points: number | null;

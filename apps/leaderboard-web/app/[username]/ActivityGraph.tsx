@@ -29,7 +29,7 @@ export interface ActivityGraphFilterProps {
 interface ActivityGraphProps {
   activities: Array<{
     activity_definition_name: string;
-    occured_at: Date | string;
+    occurred_at: Date | string;
   }>;
   activityDefinitions: Array<{ name: string }>;
   startDate: Date;
@@ -244,7 +244,7 @@ export default function ActivityGraph({
     const activityByDate: Record<string, Record<string, number>> = {};
     for (const a of activities) {
       if (!selectedActivityTypes.has(a.activity_definition_name)) continue;
-      const dateKey = format(a.occured_at, "yyyy-MM-dd");
+      const dateKey = format(a.occurred_at, "yyyy-MM-dd");
       if (!activityByDate[dateKey]) activityByDate[dateKey] = {};
       activityByDate[dateKey][a.activity_definition_name] =
         (activityByDate[dateKey][a.activity_definition_name] || 0) + 1;

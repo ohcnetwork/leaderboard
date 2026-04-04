@@ -173,20 +173,20 @@ export function formatMonthHeader(monthKey: MonthKey): string {
 
 /**
  * Group activities by month with sorted month keys
- * @param activities - Array of activities with occured_at dates
+ * @param activities - Array of activities with occurred_at dates
  * @returns Map of month keys to arrays of activities, sorted newest to oldest
  */
-export function groupActivitiesByMonth<T extends { occured_at: Date | string }>(
-  activities: T[],
-): Map<MonthKey, T[]> {
+export function groupActivitiesByMonth<
+  T extends { occurred_at: Date | string },
+>(activities: T[]): Map<MonthKey, T[]> {
   const grouped = new Map<MonthKey, T[]>();
 
   // Group activities by month
   activities.forEach((activity) => {
     const date =
-      activity.occured_at instanceof Date
-        ? activity.occured_at
-        : new Date(activity.occured_at);
+      activity.occurred_at instanceof Date
+        ? activity.occurred_at
+        : new Date(activity.occurred_at);
     const monthKey = getMonthKey(date);
     if (!grouped.has(monthKey)) {
       grouped.set(monthKey, []);

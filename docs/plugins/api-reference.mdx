@@ -316,7 +316,7 @@ CREATE TABLE activity (
     contributor         VARCHAR REFERENCES contributor(username) NOT NULL,
     activity_definition VARCHAR REFERENCES activity_definition(slug) NOT NULL,
     title               VARCHAR,
-    occured_at          TIMESTAMP NOT NULL,
+    occurred_at          TIMESTAMP NOT NULL,
     link                VARCHAR,
     text                TEXT,
     points              SMALLINT,
@@ -326,7 +326,7 @@ CREATE TABLE activity (
 
 **Indexes**:
 
-- `idx_activity_occured_at` on `occured_at`
+- `idx_activity_occurred_at` on `occurred_at`
 - `idx_activity_contributor` on `contributor`
 - `idx_activity_definition` on `activity_definition`
 
@@ -388,7 +388,7 @@ interface Activity {
   contributor: string;
   activity_definition: string;
   title: string | null;
-  occured_at: string;
+  occurred_at: string;
   link: string | null;
   text: string | null;
   points: number | null;

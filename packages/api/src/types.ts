@@ -160,7 +160,7 @@ export interface Activity {
   contributor: string;
   activity_definition: string;
   title: string | null;
-  occured_at: string;
+  occurred_at: string;
   link: string | null;
   text: string | null;
   points: number | null;

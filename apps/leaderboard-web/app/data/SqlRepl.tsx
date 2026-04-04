@@ -42,10 +42,10 @@ LIMIT 10;`,
   },
   {
     label: "Recent activity",
-    sql: `SELECT a.title, a.contributor, ad.name AS type, a.points, a.occured_at
+    sql: `SELECT a.title, a.contributor, ad.name AS type, a.points, a.occurred_at
 FROM activity a
 JOIN activity_definition ad ON a.activity_definition = ad.slug
-ORDER BY a.occured_at DESC
+ORDER BY a.occurred_at DESC
 LIMIT 20;`,
   },
   {

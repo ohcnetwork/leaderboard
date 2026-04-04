@@ -85,12 +85,12 @@ export default async function Home() {
   );
 
   const currentPeriodActivities = allActivitiesFlat.filter(
-    (a) => new Date(a.occured_at) >= thirtyDaysAgo,
+    (a) => new Date(a.occurred_at) >= thirtyDaysAgo,
   );
   const previousPeriodActivities = allActivitiesFlat.filter(
     (a) =>
-      new Date(a.occured_at) >= sixtyDaysAgo &&
-      new Date(a.occured_at) < thirtyDaysAgo,
+      new Date(a.occurred_at) >= sixtyDaysAgo &&
+      new Date(a.occurred_at) < thirtyDaysAgo,
   );
 
   // --- KPI stats with trends ---
@@ -169,7 +169,7 @@ export default async function Home() {
   // --- Chart data: daily activity for last 30 days ---
   const dailyMap = new Map<string, { count: number; points: number }>();
   for (const a of currentPeriodActivities) {
-    const dateKey = format(new Date(a.occured_at), "yyyy-MM-dd");
+    const dateKey = format(new Date(a.occurred_at), "yyyy-MM-dd");
     const existing = dailyMap.get(dateKey) || { count: 0, points: 0 };
     existing.count += 1;
     existing.points += a.points ?? 0;
@@ -186,7 +186,7 @@ export default async function Home() {
   >();
   for (const g of activityGroups90d) {
     const current = g.activities.filter(
-      (a) => new Date(a.occured_at) >= thirtyDaysAgo,
+      (a) => new Date(a.occurred_at) >= thirtyDaysAgo,
     );
     if (current.length > 0) {
       activityTypeMap.set(g.activity_name, {
@@ -207,7 +207,7 @@ export default async function Home() {
   const recentActivities = allActivitiesFlat
     .sort(
       (a, b) =>
-        new Date(b.occured_at).getTime() - new Date(a.occured_at).getTime(),
+        new Date(b.occurred_at).getTime() - new Date(a.occurred_at).getTime(),
     )
     .slice(0, 12);
 
@@ -659,7 +659,7 @@ export default async function Home() {
                       </span>
                     )}
                     <RelativeTime
-                      date={a.occured_at}
+                      date={a.occurred_at}
                       className="text-xs text-muted-foreground/70 shrink-0"
                     />
                   </div>

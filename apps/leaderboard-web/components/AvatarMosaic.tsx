@@ -80,7 +80,7 @@ export default function AvatarMosaic({
   const extraCount = totalCount - visible.length;
 
   return (
-    <div ref={containerRef} className="flex items-center justify-between">
+    <div ref={containerRef} className="flex items-center">
       {visible.map((c, i) => (
         <Avatar
           key={c.username}

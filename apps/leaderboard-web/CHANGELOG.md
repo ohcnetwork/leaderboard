@@ -1,5 +1,11 @@
 # leaderboard-web
 
+## 0.3.1
+
+### Patch Changes
+
+- 85b124c: fix docs ui and adds support for rendering mermaid charts
+
 ## 0.3.0
 
 ### Minor Changes

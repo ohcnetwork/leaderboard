@@ -46,6 +46,14 @@ export const DataExplorerConfigSchema = z.object({
   source: z.string().optional(),
 });
 
+export const AllContributorsConfigSchema = z.object({
+  activity_definitions: z.array(z.string()).optional(),
+});
+
+export const LeaderboardDisplayConfigSchema = z.object({
+  all_contributors: AllContributorsConfigSchema.optional(),
+});
+
 export const LeaderboardConfigSchema = z.object({
   data_source: z.string().optional(),
   data_update_frequency: z.string().optional(),
@@ -61,6 +69,7 @@ export const LeaderboardConfigSchema = z.object({
     .optional(),
   plugins: z.record(z.string(), PluginInstanceConfigSchema).optional(),
   data_explorer: DataExplorerConfigSchema.optional(),
+  leaderboard: LeaderboardDisplayConfigSchema.optional(),
 });
 
 export const ConfigSchema = z.object({
@@ -76,5 +85,9 @@ export type RoleConfig = z.infer<typeof RoleConfigSchema>;
 export type SocialProfileConfig = z.infer<typeof SocialProfileConfigSchema>;
 export type DataExplorerConfig = z.infer<typeof DataExplorerConfigSchema>;
 export type PluginInstanceConfig = z.infer<typeof PluginInstanceConfigSchema>;
+export type AllContributorsConfig = z.infer<typeof AllContributorsConfigSchema>;
+export type LeaderboardDisplayConfig = z.infer<
+  typeof LeaderboardDisplayConfigSchema
+>;
 export type LeaderboardConfig = z.infer<typeof LeaderboardConfigSchema>;
 export type Config = z.infer<typeof ConfigSchema>;

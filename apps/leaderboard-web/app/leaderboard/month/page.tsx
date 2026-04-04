@@ -1,5 +1,9 @@
 import { getConfig } from "@/lib/config/get-config";
-import { getHiddenRoles, getRoles } from "@/lib/config/helpers";
+import {
+  getHiddenRoles,
+  getLeaderboardActivityDefinitions,
+  getRoles,
+} from "@/lib/config/helpers";
 import {
   getActivities,
   getAllActivityDefinitions,
@@ -40,6 +44,12 @@ export default async function MonthlyLeaderboardPage() {
   ]);
 
   const hiddenRoles = getHiddenRoles();
+  const configuredActivityDefs = getLeaderboardActivityDefinitions();
+  const filteredActivityDefinitions = configuredActivityDefs
+    ? configuredActivityDefs
+        .map((slug) => activityDefinitions.find((d) => d.slug === slug))
+        .filter((d) => d != null)
+    : [];
   const hiddenRoleSet = new Set(hiddenRoles);
   const visibleEntries = entries.filter((e) => !hiddenRoleSet.has(e.role));
   const top3Usernames = new Set(
@@ -70,7 +80,7 @@ export default async function MonthlyLeaderboardPage() {
         startDate={startDate}
         endDate={endDate}
         topByActivity={topByActivity}
-        activityDefinitions={activityDefinitions}
+        activityDefinitions={filteredActivityDefinitions}
         podiumActivities={podiumActivities}
         hiddenRoles={hiddenRoles}
         roles={getRoles()}

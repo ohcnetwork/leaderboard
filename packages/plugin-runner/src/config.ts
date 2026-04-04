@@ -31,6 +31,15 @@ export const ConfigSchema = z.object({
   leaderboard: z.object({
     data_source: z.string().optional(),
     plugins: z.record(z.string(), PluginConfigSchema).optional(),
+    leaderboard: z
+      .object({
+        all_contributors: z
+          .object({
+            activity_definitions: z.array(z.string()).optional(),
+          })
+          .optional(),
+      })
+      .optional(),
   }),
 });
 

@@ -75,6 +75,24 @@
             ],
             "additionalProperties": false
           }
+        },
+        "leaderboard": {
+          "type": "object",
+          "properties": {
+            "all_contributors": {
+              "type": "object",
+              "properties": {
+                "activity_definitions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false

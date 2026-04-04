@@ -314,6 +314,7 @@ export default function LeaderboardView({
   }, [activityDefinitions]);
 
   const periodNoun = PERIOD_NOUN[period]!;
+  const hasActivityBreakdown = activityDefinitions.length > 0;
 
   return (
     <div className="container mx-auto px-4 py-6">
@@ -512,10 +513,19 @@ export default function LeaderboardView({
           ) : (
             <div className="border rounded-lg overflow-hidden">
               {/* Table Header (desktop) */}
-              <div className="hidden md:grid md:grid-cols-[3.5rem_1fr_auto_6rem_8rem] gap-x-4 bg-muted/50 px-4 py-2 text-xs font-medium text-muted-foreground border-b">
+              <div
+                className={cn(
+                  "hidden md:grid gap-x-4 bg-muted/50 px-4 py-2 text-xs font-medium text-muted-foreground border-b",
+                  hasActivityBreakdown
+                    ? "md:grid-cols-[3.5rem_1fr_auto_6rem_8rem]"
+                    : "md:grid-cols-[3.5rem_1fr_6rem_8rem]",
+                )}
+              >
                 <span>Rank</span>
                 <span>Contributor</span>
-                <span className="text-right">Activities</span>
+                {hasActivityBreakdown && (
+                  <span className="text-right">Activities</span>
+                )}
                 <span className="text-right">Points</span>
                 <span className="text-right">Trend</span>
               </div>
@@ -536,7 +546,14 @@ export default function LeaderboardView({
                       )}
                     >
                       {/* Desktop Row */}
-                      <div className="hidden md:grid md:grid-cols-[3.5rem_1fr_auto_6rem_8rem] gap-x-4 items-center px-4 py-3">
+                      <div
+                        className={cn(
+                          "hidden md:grid gap-x-4 items-center px-4 py-3",
+                          hasActivityBreakdown
+                            ? "md:grid-cols-[3.5rem_1fr_auto_6rem_8rem]"
+                            : "md:grid-cols-[3.5rem_1fr_6rem_8rem]",
+                        )}
+                      >
                         {/* Rank */}
                         <div className="flex items-center gap-1">
                           {isTopThree ? (
@@ -592,62 +609,64 @@ export default function LeaderboardView({
                         </Link>
 
                         {/* Activity Breakdown */}
-                        <div className="flex items-center justify-end gap-2">
-                          {activityDefinitions.map((def) => {
-                            const data = entry.activity_breakdown?.[def.slug];
-                            const count = data?.count ?? 0;
-                            const colorClass =
-                              count > 0
-                                ? "text-foreground"
-                                : "text-muted-foreground/30";
-                            return (
-                              <TooltipProvider key={def.slug}>
-                                <Tooltip>
-                                  <TooltipTrigger asChild>
-                                    <span
-                                      className={cn(
-                                        "inline-flex flex-col items-center justify-center w-6 text-xs tabular-nums gap-0.5 space-y-1",
-                                        colorClass,
-                                      )}
-                                    >
-                                      <span>{count}</span>
-                                      {def.icon ? (
-                                        <Icon
-                                          name={def.icon}
-                                          className="size-3"
-                                        />
+                        {hasActivityBreakdown && (
+                          <div className="flex items-center justify-end gap-2">
+                            {activityDefinitions.map((def) => {
+                              const data = entry.activity_breakdown?.[def.slug];
+                              const count = data?.count ?? 0;
+                              const colorClass =
+                                count > 0
+                                  ? "text-foreground"
+                                  : "text-muted-foreground/30";
+                              return (
+                                <TooltipProvider key={def.slug}>
+                                  <Tooltip>
+                                    <TooltipTrigger asChild>
+                                      <span
+                                        className={cn(
+                                          "inline-flex flex-col items-center justify-center w-6 text-xs tabular-nums gap-0.5 space-y-1",
+                                          colorClass,
+                                        )}
+                                      >
+                                        <span>{count}</span>
+                                        {def.icon ? (
+                                          <Icon
+                                            name={def.icon}
+                                            className="size-3"
+                                          />
+                                        ) : (
+                                          <Star className="size-3" />
+                                        )}
+                                      </span>
+                                    </TooltipTrigger>
+                                    <TooltipContent side="top">
+                                      <p className="font-medium">{def.name}</p>
+                                      {count > 0 ? (
+                                        <p className="text-xs text-muted-foreground">
+                                          {count}{" "}
+                                          {count === 1
+                                            ? "activity"
+                                            : "activities"}
+                                          {" \u00b7 "}
+                                          {data!.points} pts
+                                        </p>
                                       ) : (
-                                        <Star className="size-3" />
+                                        <p className="text-xs text-muted-foreground">
+                                          No activity this period
+                                        </p>
                                       )}
-                                    </span>
-                                  </TooltipTrigger>
-                                  <TooltipContent side="top">
-                                    <p className="font-medium">{def.name}</p>
-                                    {count > 0 ? (
-                                      <p className="text-xs text-muted-foreground">
-                                        {count}{" "}
-                                        {count === 1
-                                          ? "activity"
-                                          : "activities"}
-                                        {" \u00b7 "}
-                                        {data!.points} pts
-                                      </p>
-                                    ) : (
-                                      <p className="text-xs text-muted-foreground">
-                                        No activity this period
-                                      </p>
-                                    )}
-                                    {def.description && (
-                                      <p className="text-xs text-muted-foreground/70 mt-1 max-w-48">
-                                        {def.description}
-                                      </p>
-                                    )}
-                                  </TooltipContent>
-                                </Tooltip>
-                              </TooltipProvider>
-                            );
-                          })}
-                        </div>
+                                      {def.description && (
+                                        <p className="text-xs text-muted-foreground/70 mt-1 max-w-48">
+                                          {def.description}
+                                        </p>
+                                      )}
+                                    </TooltipContent>
+                                  </Tooltip>
+                                </TooltipProvider>
+                              );
+                            })}
+                          </div>
+                        )}
 
                         {/* Points */}
                         <div className="text-right">
@@ -722,27 +741,32 @@ export default function LeaderboardView({
                             </span>
                             <RankChangeBadge change={rankChange} compact />
                           </div>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                            {activityDefinitions.map((def) => {
-                              const count =
-                                entry.activity_breakdown?.[def.slug]?.count ??
-                                0;
-                              if (count === 0) return null;
-                              return (
-                                <span
-                                  key={def.slug}
-                                  className="inline-flex items-center gap-0.5"
-                                >
-                                  {def.icon ? (
-                                    <Icon name={def.icon} className="size-3" />
-                                  ) : (
-                                    <Star className="size-3" />
-                                  )}
-                                  {count}
-                                </span>
-                              );
-                            })}
-                          </div>
+                          {hasActivityBreakdown && (
+                            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                              {activityDefinitions.map((def) => {
+                                const count =
+                                  entry.activity_breakdown?.[def.slug]?.count ??
+                                  0;
+                                if (count === 0) return null;
+                                return (
+                                  <span
+                                    key={def.slug}
+                                    className="inline-flex items-center gap-0.5"
+                                  >
+                                    {def.icon ? (
+                                      <Icon
+                                        name={def.icon}
+                                        className="size-3"
+                                      />
+                                    ) : (
+                                      <Star className="size-3" />
+                                    )}
+                                    {count}
+                                  </span>
+                                );
+                              })}
+                            </div>
+                          )}
                         </div>
                         <div className="text-right shrink-0">
                           <div className="text-sm font-semibold text-primary tabular-nums">

@@ -39,6 +39,15 @@ export function getRoles(): Record<
 }
 
 /**
+ * Get the list of activity definition slugs to display in the All Contributors table.
+ * Returns undefined if not configured (columns should be hidden).
+ */
+export function getLeaderboardActivityDefinitions(): string[] | undefined {
+  const config = getConfig();
+  return config.leaderboard.leaderboard?.all_contributors?.activity_definitions;
+}
+
+/**
  * Get visible roles with full metadata, preserving config.yaml insertion order
  */
 export function getVisibleRolesOrdered(): Array<{

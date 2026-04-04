@@ -425,7 +425,7 @@ export default function LeaderboardView({
       )}
 
       {/* Full Ranked List + Activity Type Sidebar */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_22rem] gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_22rem] gap-6">
         {/* All Contributors */}
         <div>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">

@@ -67,7 +67,7 @@ export default function PeopleView({
   }, [contributors, roles]);
 
   return (
-    <div className="px-4 py-8">
+    <div className="px-4 py-8 my-16">
       {/* Header */}
       <div className="mb-12 text-center">
         <h1 className="text-4xl font-bold mb-4">Our People</h1>

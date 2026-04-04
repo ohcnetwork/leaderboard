@@ -286,7 +286,7 @@ export default async function ContributorPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container my-16 mx-auto px-4 py-8">
         {/* Profile Header */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row gap-6 items-start">

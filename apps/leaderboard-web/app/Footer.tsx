@@ -116,7 +116,7 @@ export default function Footer({ config }: FooterProps) {
     : pageLinks;
 
   return (
-    <footer className="border-t mt-16 pb-24 lg:pb-0">
+    <footer className="border-t pb-24 lg:pb-0">
       <div className="container mx-auto px-6 py-12 lg:py-16">
         {/* Top: Org identity + Link columns */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">

@@ -37,7 +37,7 @@ export default async function BadgesPage() {
   ]);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container my-16 mx-auto px-4 py-8">
       {/* Hero Section */}
       <div className="mb-12 text-center">
         <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-linear-to-br from-badge-accent to-badge-accent/70 mb-4">

@@ -215,7 +215,7 @@ export default async function Home() {
   const mosaicContributors = activeContributors30d.slice(0, 30);
 
   return (
-    <div className="container mx-auto px-4 py-6 sm:py-8 space-y-6 sm:space-y-10 pb-24 lg:pb-8">
+    <div className="container my-16 mx-auto px-4 py-6 sm:py-8 space-y-6 sm:space-y-10 pb-24 lg:pb-8">
       {/* ========== Hero ========== */}
       <section className="relative overflow-hidden rounded-2xl bg-linear-to-br from-primary/5 via-background to-primary/10 border border-border/50 px-4 py-8 sm:px-10 sm:py-14">
         <div className="relative z-10 flex flex-col items-center text-center gap-4 max-w-3xl mx-auto">

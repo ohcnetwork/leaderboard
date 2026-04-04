@@ -12,15 +12,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  async redirects() {
-    return [
-      {
-        source: "/contributors/:username",
-        destination: "/:username",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 const withMDX = createMDX({

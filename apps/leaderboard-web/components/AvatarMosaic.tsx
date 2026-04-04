@@ -4,6 +4,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Plus } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+const AVATAR_OVERLAP_PX = 6.4;
+const BADGE_PADDING_ESTIMATE = 16;
+const BADGE_BORDER_WIDTH_PX = 4;
+
 interface Contributor {
   username: string;
   name: string | null;
@@ -31,13 +35,13 @@ export default function AvatarMosaic({
       const containerWidth = container.offsetWidth;
       const isSm = window.matchMedia("(min-width: 640px)").matches;
       const avatarSize = isSm ? 36 : 32;
-      const overlap = 6.4;
+      const overlap = AVATAR_OVERLAP_PX;
 
       // Measure the actual badge width, or estimate it
       const badgeEl = badgeRef.current;
       const badgeWidth = badgeEl
-        ? badgeEl.scrollWidth + 4 // border
-        : avatarSize + 16; // fallback estimate for pill
+        ? badgeEl.scrollWidth + BADGE_BORDER_WIDTH_PX // border
+        : avatarSize + BADGE_PADDING_ESTIMATE; // fallback estimate for pill
 
       const firstAvatarWidth = avatarSize;
       const subsequentWidth = avatarSize - overlap;
@@ -68,12 +72,17 @@ export default function AvatarMosaic({
 
     calculateVisible();
 
-    const observer = new ResizeObserver(calculateVisible);
+    let observer: ResizeObserver | null = null;
     if (containerRef.current) {
+      observer = new ResizeObserver(calculateVisible);
       observer.observe(containerRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
   }, [contributors.length, totalCount]);
 
   const visible = contributors.slice(0, visibleCount);
@@ -86,7 +95,7 @@ export default function AvatarMosaic({
           key={c.username}
           className="size-8 sm:size-9 border-2 border-card shrink-0"
           style={{
-            marginLeft: i === 0 ? 0 : "-0.4rem",
+            marginLeft: i === 0 ? 0 : `-${AVATAR_OVERLAP_PX / 16}rem`,
             zIndex: visible.length - i + 1,
           }}
         >

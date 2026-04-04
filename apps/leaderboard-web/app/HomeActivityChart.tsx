@@ -6,8 +6,25 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { format } from "date-fns";
 import { useMemo, useState } from "react";
+
+const shortDateFormat = new Intl.DateTimeFormat(undefined, {
+  month: "short",
+  day: "numeric",
+});
+
+const tooltipDateFormat = new Intl.DateTimeFormat(undefined, {
+  weekday: "short",
+  month: "short",
+  day: "numeric",
+});
+
+function formatDateKey(date: Date): string {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
 
 interface DailyData {
   date: string;
@@ -79,7 +96,7 @@ export default function HomeActivityChart({
     const current = new Date(startDate);
     const end = new Date(endDate);
     while (current <= end) {
-      dates.push(format(current, "yyyy-MM-dd"));
+      dates.push(formatDateKey(current));
       current.setDate(current.getDate() + 1);
     }
     return dates;
@@ -131,7 +148,7 @@ export default function HomeActivityChart({
       const d = fullData[i]!;
       labels.push({
         x: PADDING.left + (i / Math.max(fullData.length - 1, 1)) * CHART_W,
-        label: format(new Date(d.date), "MMM d"),
+        label: shortDateFormat.format(new Date(d.date)),
       });
     }
     return labels;
@@ -256,7 +273,7 @@ export default function HomeActivityChart({
                 </TooltipTrigger>
                 <TooltipContent side="top" className="text-xs">
                   <p className="font-medium">
-                    {format(new Date(d.date), "EEE, MMM d")}
+                    {tooltipDateFormat.format(new Date(d.date))}
                   </p>
                   <p className="text-muted-foreground">
                     {d.count} {d.count === 1 ? "activity" : "activities"}{" "}

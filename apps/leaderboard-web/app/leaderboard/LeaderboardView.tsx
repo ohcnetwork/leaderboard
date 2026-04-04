@@ -2,6 +2,7 @@
 
 import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import Icon from "@/components/Icon";
+import Time from "@/components/Time";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,7 +22,6 @@ import {
 import { LeaderboardEntry } from "@/lib/data/types";
 import { cn } from "@/lib/utils";
 import type { ActivityDefinition } from "@ohcnetwork/leaderboard-api";
-import { format, formatDistanceToNow } from "date-fns";
 import {
   ChevronDown,
   ChevronUp,
@@ -297,8 +297,16 @@ export default function LeaderboardView({
     prevNewContributorsCount,
   );
 
-  const formattedStartDate = format(startDate, "MMM d, yyyy");
-  const formattedEndDate = format(endDate, "MMM d, yyyy");
+  const formattedStartDate = new Intl.DateTimeFormat(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(startDate);
+  const formattedEndDate = new Intl.DateTimeFormat(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(endDate);
 
   const visibleEntries = useMemo(
     () => entries.filter((e) => !hiddenRoles.includes(e.role)),
@@ -1109,9 +1117,7 @@ function PodiumActivityFeed({
         <span className="text-[10px] text-muted-foreground/50">
           {activity.contributor_name || activity.contributor}
           {" \u00b7 "}
-          {formatDistanceToNow(new Date(activity.occured_at), {
-            addSuffix: true,
-          })}
+          <Time date={activity.occured_at} variant="relative" />
         </span>
       </div>
     </div>

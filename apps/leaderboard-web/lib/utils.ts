@@ -1,5 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
-import { format, formatDistanceToNow } from "date-fns";
+import { format } from "date-fns";
 import { twMerge } from "tailwind-merge";
 
 type NumberAggregateValue = {
@@ -95,15 +95,6 @@ export function getPreviousDateRange(period: "week" | "month" | "year"): {
 }
 
 /**
- * Format a date as a human-readable "time ago" string
- * @param date - The date to format
- * @returns Human-readable time string (e.g., "2 hours ago")
- */
-export function formatTimeAgo(date: Date): string {
-  return formatDistanceToNow(date, { addSuffix: true });
-}
-
-/**
  * Generate activity graph data for the last N days
  * @param activityByDate - Object with date keys and activity counts
  * @param days - Number of days to include (default 365)
@@ -177,7 +168,7 @@ export function getMonthKey(date: Date): MonthKey {
 export function formatMonthHeader(monthKey: MonthKey): string {
   const [year, month] = monthKey.split("-");
   const date = new Date(parseInt(year!), parseInt(month!) - 1, 1);
-  return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  return date.toLocaleDateString(undefined, { month: "long", year: "numeric" });
 }
 
 /**

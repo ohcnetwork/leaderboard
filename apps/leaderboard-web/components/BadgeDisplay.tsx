@@ -1,3 +1,5 @@
+import Time from "@/components/Time";
+
 type BadgeVariant = {
   description: string;
   svg_url: string;
@@ -80,7 +82,7 @@ export function BadgeDisplay({
               {variant?.description || badge.variant}
             </div>
             <div className="text-muted-foreground/70 mt-1 text-xs">
-              Earned: {achievedDate.toLocaleDateString()}
+              Earned: <Time date={achievedDate} variant="date" />
             </div>
           </div>
         )}
@@ -335,7 +337,7 @@ export function RecentBadgeAchievement({
       </div>
 
       <div className="text-xs text-muted-foreground/70">
-        {achievedDate.toLocaleDateString()}
+        <Time date={achievedDate} variant="date" />
       </div>
     </div>
   );

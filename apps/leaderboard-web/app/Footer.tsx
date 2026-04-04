@@ -1,6 +1,7 @@
+import RelativeTime from "@/components/RelativeTime";
 import type { Config } from "@/lib/config/schema";
+import { CronExpressionParser } from "cron-parser";
 import cronstrue from "cronstrue";
-import { format, formatDistanceToNow } from "date-fns";
 import {
   Calendar,
   Clock,
@@ -43,15 +44,6 @@ const leaderboardLinks = [
   { name: "This Year", href: "/leaderboard/year" },
 ];
 
-function getBuildingSinceText(startDate: string): string {
-  try {
-    const start = new Date(startDate);
-    return `Building since ${formatDistanceToNow(start, { addSuffix: false })}`;
-  } catch {
-    return "";
-  }
-}
-
 function getCronDescription(cronExpression: string): string | null {
   try {
     return cronstrue.toString(cronExpression, { use24HourTimeFormat: false });
@@ -60,11 +52,22 @@ function getCronDescription(cronExpression: string): string | null {
   }
 }
 
-function getFormattedBuildTime(): string | null {
+function getNextUpdateTime(cronExpression: string): string | null {
+  try {
+    const expr = CronExpressionParser.parse(cronExpression);
+    return expr.next().toISOString();
+  } catch {
+    return null;
+  }
+}
+
+function getBuildTimestamp(): string | null {
   const timestamp = process.env.NEXT_PUBLIC_BUILD_TIMESTAMP;
   if (!timestamp) return null;
   try {
-    return format(new Date(timestamp), "MMM d, yyyy 'at' h:mm a");
+    // Validate it's a parseable date
+    new Date(timestamp).toISOString();
+    return timestamp;
   } catch {
     return null;
   }
@@ -94,12 +97,12 @@ export default function Footer({ config }: FooterProps) {
     ([, url]) => url != null && url.length > 0,
   );
 
-  const buildTime = getFormattedBuildTime();
+  const buildTimestamp = getBuildTimestamp();
   const cronDescription = leaderboard.data_update_frequency
     ? getCronDescription(leaderboard.data_update_frequency)
     : null;
-  const buildingSince = org.start_date
-    ? getBuildingSinceText(org.start_date)
+  const nextUpdateTime = leaderboard.data_update_frequency
+    ? getNextUpdateTime(leaderboard.data_update_frequency)
     : null;
 
   const showDataExplorer = leaderboard.data_explorer?.enabled !== false;
@@ -136,10 +139,12 @@ export default function Footer({ config }: FooterProps) {
               {org.description}
             </p>
 
-            {buildingSince && (
+            {org.start_date && (
               <p className="text-sm text-muted-foreground/80 flex items-center gap-2">
                 <Calendar className="h-3.5 w-3.5" />
-                {buildingSince}
+                <span>
+                  Building since <RelativeTime date={org.start_date} />
+                </span>
               </p>
             )}
 
@@ -207,22 +212,28 @@ export default function Footer({ config }: FooterProps) {
           {/* Status + Open Source column */}
           <div className="lg:col-span-3 space-y-6">
             {/* Status */}
-            {(buildTime || cronDescription || leaderboard.data_source) && (
+            {(buildTimestamp || cronDescription || leaderboard.data_source) && (
               <div>
                 <h3 className="text-sm font-semibold text-foreground mb-3">
                   Status
                 </h3>
                 <ul className="space-y-2">
-                  {buildTime && (
+                  {buildTimestamp && (
                     <li className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Clock className="h-3.5 w-3.5 mt-0.5 shrink-0" />
-                      <span>Built {buildTime}</span>
-                    </li>
-                  )}
-                  {cronDescription && (
-                    <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-3.5 w-3.5 mt-0.5 shrink-0" />
-                      <span>Updates {cronDescription.toLowerCase()}</span>
+                      <span>
+                        Updated <RelativeTime date={buildTimestamp} />
+                        {cronDescription && (
+                          <p className="text-xs text-muted-foreground/50">
+                            updates {cronDescription.toLowerCase()}
+                          </p>
+                        )}
+                        {nextUpdateTime && (
+                          <p className="text-xs text-muted-foreground/50">
+                            next update <RelativeTime date={nextUpdateTime} />
+                          </p>
+                        )}
+                      </span>
                     </li>
                   )}
                   {leaderboard.data_source && (

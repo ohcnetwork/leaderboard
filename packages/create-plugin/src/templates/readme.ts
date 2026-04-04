@@ -5,11 +5,6 @@
 import type { PluginOptions } from "../types";
 
 export function generateReadme(options: PluginOptions): string {
-  const displayName = options.pluginName
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-
   return `# ${options.packageName}
 
 ${options.description}

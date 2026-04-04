@@ -190,7 +190,7 @@ describe("Dummy Plugin", () => {
       expect(activitiesMap.has("user2")).toBe(true);
       expect(activitiesMap.has("user3")).toBe(true);
 
-      for (const [username, activities] of activitiesMap) {
+      for (const [, activities] of activitiesMap) {
         expect(activities.length).toBeGreaterThanOrEqual(5);
         expect(activities.length).toBeLessThanOrEqual(10);
       }

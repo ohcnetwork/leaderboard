@@ -39,25 +39,6 @@ async function calculateGlobalAggregates(
 ): Promise<void> {
   logger.info("Calculating global aggregates");
 
-  // Define standard global aggregate definitions
-  const definitions = [
-    {
-      slug: "total_contributors",
-      name: "Total Contributors",
-      description: "Total number of contributors",
-    },
-    {
-      slug: "total_activities",
-      name: "Total Activities",
-      description: "Total number of activities",
-    },
-    {
-      slug: "active_contributors_last_30d",
-      name: "Active Contributors (Last 30 Days)",
-      description: "Number of contributors with activity in the last 30 days",
-    },
-  ];
-
   // Calculate total contributors
   const totalContributors = await contributorQueries.count(db);
   await globalAggregateQueries.upsert(db, {

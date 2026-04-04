@@ -3,10 +3,6 @@
  */
 
 import { describe, expect, it } from "vitest";
-import { createLogger } from "../logger";
-
-// Mock logger for tests
-const logger = createLogger(false);
 
 describe("Plugin Loader", () => {
   it("should validate plugin structure", () => {

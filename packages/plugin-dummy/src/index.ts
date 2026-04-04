@@ -249,7 +249,7 @@ const plugin: Plugin = {
 
     let totalActivities = 0;
 
-    for (const [username, activities] of activitiesByContributor.entries()) {
+    for (const [, activities] of activitiesByContributor.entries()) {
       for (const activity of activities) {
         await activityQueries.upsert(ctx.db, activity);
         totalActivities++;

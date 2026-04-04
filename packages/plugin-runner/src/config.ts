@@ -52,10 +52,15 @@ export type PluginConfig = z.infer<typeof PluginConfigSchema>;
 function substituteEnvVars(value: unknown): unknown {
   if (typeof value === "string") {
     // Match pattern: ${{ env.VAR_NAME }}
-    const envPattern = /\$\{\{\s*env\.([A-Z_][A-Z0-9_]*)\s*\}\}/g;
+    const envPattern = /\$\{\{\s*env\.([A-Za-z_][A-Za-z0-9_]*)\s*\}\}/g;
     return value.replace(envPattern, (match, varName) => {
       const envValue = process.env[varName];
       if (envValue === undefined) {
+        console.warn(
+          `Warning: Environment variable "${String(
+            varName,
+          )}" is not set; leaving placeholder "${match}" unchanged.`,
+        );
         return match;
       }
       return envValue;

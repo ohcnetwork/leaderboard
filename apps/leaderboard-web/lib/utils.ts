@@ -68,10 +68,10 @@ export function getDateRange(period: "week" | "month" | "year"): {
       startDate.setDate(endDate.getDate() - 7);
       break;
     case "month":
-      startDate.setDate(endDate.getDate() - 30);
+      startDate.setMonth(endDate.getMonth() - 1);
       break;
     case "year":
-      startDate.setDate(endDate.getDate() - 365);
+      startDate.setFullYear(endDate.getFullYear() - 1);
       break;
   }
 
@@ -111,7 +111,6 @@ export function generateActivityGraphData(
     const date = new Date(today);
     date.setDate(today.getDate() - i);
     const dateKey = format(date, "yyyy-MM-dd");
-    if (!dateKey) continue;
 
     const count = activityByDate[dateKey] || 0;
 
@@ -166,8 +165,15 @@ export function getMonthKey(date: Date): MonthKey {
  * @returns Formatted month string
  */
 export function formatMonthHeader(monthKey: MonthKey): string {
-  const [year, month] = monthKey.split("-");
-  const date = new Date(parseInt(year!), parseInt(month!) - 1, 1);
+  // Validate and parse the monthKey to avoid relying on non-null assertions
+  const match = monthKey.match(/^(\d{4})-(\d{2})$/);
+  if (!match) {
+    // Fallback: return the original key if it does not match the expected format
+    return monthKey;
+  }
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const date = new Date(year, month - 1, 1);
   return date.toLocaleDateString(undefined, { month: "long", year: "numeric" });
 }
 

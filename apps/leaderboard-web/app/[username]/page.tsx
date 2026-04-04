@@ -1,6 +1,7 @@
 import { icons } from "@/app/icons.gen";
 import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import Icon from "@/components/Icon";
+import Time from "@/components/Time";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getConfig } from "@/lib/config/get-config";
@@ -436,7 +437,7 @@ export default async function ContributorPage({
                         </div>
                         <div className="text-muted-foreground/70 mt-1 text-xs">
                           Earned:{" "}
-                          {new Date(badge.achieved_on).toLocaleDateString()}
+                          <Time date={badge.achieved_on} variant="date" />
                         </div>
                       </div>
                     </div>

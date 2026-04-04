@@ -1,5 +1,6 @@
 import AvatarMosaic from "@/components/AvatarMosaic";
 import RelativeTime from "@/components/RelativeTime";
+import Time from "@/components/Time";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getConfig } from "@/lib/config/get-config";
@@ -526,7 +527,7 @@ export default async function Home() {
                       </span>
                     </div>
                     <span className="text-xs text-muted-foreground/70 shrink-0">
-                      {format(new Date(badge.achieved_on), "MMM d")}
+                      <Time date={badge.achieved_on} variant="date" />
                     </span>
                   </Link>
                 );

@@ -351,31 +351,6 @@ export default function LeaderboardView({
         </p>
       </div>
 
-      {/* KPI Summary Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-        <KPICard
-          label="Active Contributors"
-          value={activeContributors.toString()}
-          trend={contributorsTrend}
-          periodLabel={PREV_PERIOD_LABELS[period]!}
-          icon={<Users className="h-4 w-4" />}
-        />
-        <KPICard
-          label="Total Activities"
-          value={totalActivities.toLocaleString()}
-          trend={activitiesTrend}
-          periodLabel={PREV_PERIOD_LABELS[period]!}
-          icon={<Star className="h-4 w-4" />}
-        />
-        <KPICard
-          label="New Contributors"
-          value={newContributorsCount.toString()}
-          trend={newContributorsTrend}
-          periodLabel={PREV_PERIOD_LABELS[period]!}
-          icon={<UserPlus className="h-4 w-4" />}
-        />
-      </div>
-
       {/* Top 3 Podium with Activity Feed */}
       {hasTop3 && (
         <div className="mb-10">
@@ -431,6 +406,31 @@ export default function LeaderboardView({
           </div>
         </div>
       )}
+
+      {/* KPI Summary Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <KPICard
+          label="Active Contributors"
+          value={activeContributors.toString()}
+          trend={contributorsTrend}
+          periodLabel={PREV_PERIOD_LABELS[period]!}
+          icon={<Users className="h-4 w-4" />}
+        />
+        <KPICard
+          label="Total Activities"
+          value={totalActivities.toLocaleString()}
+          trend={activitiesTrend}
+          periodLabel={PREV_PERIOD_LABELS[period]!}
+          icon={<Star className="h-4 w-4" />}
+        />
+        <KPICard
+          label="New Contributors"
+          value={newContributorsCount.toString()}
+          trend={newContributorsTrend}
+          periodLabel={PREV_PERIOD_LABELS[period]!}
+          icon={<UserPlus className="h-4 w-4" />}
+        />
+      </div>
 
       {/* Full Ranked List + Activity Type Sidebar */}
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_22rem] gap-6">
@@ -942,14 +942,16 @@ function PodiumEntry({
     >
       <Link
         href={`/${entry.username}`}
-        className="flex flex-col items-center group no-underline animate-[podiumFloat_ease-in-out_infinite_both]"
-        style={{
-          animationDuration: floatDuration,
-          animationDelay: floatDelay,
-        }}
+        className="flex flex-col items-center group no-underline"
       >
         {/* Avatar with medal ring + glow */}
-        <div className="relative mb-3">
+        <div
+          className="relative mb-3 animate-[podiumFloat_ease-in-out_infinite_both]"
+          style={{
+            animationDuration: floatDuration,
+            animationDelay: floatDelay,
+          }}
+        >
           <div
             className={cn(
               "absolute inset-0 rounded-full blur-xl opacity-40 animate-[pulse_3s_ease-in-out_infinite]",

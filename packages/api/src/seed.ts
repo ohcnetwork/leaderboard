@@ -272,7 +272,7 @@ function generateActivity(
     contributor,
     activity_definition: activityDef.slug,
     title: `${activityDef.name} #${index}`,
-    occured_at: occurredAt.toISOString(),
+    occurred_at: occurredAt.toISOString(),
     link: `https://github.com/org/repo/pull/${randomInt(1, 9999)}`,
     text: null,
     points: activityDef.points,
@@ -345,7 +345,7 @@ async function main() {
     }
 
     // Sort by date
-    activities.sort((a, b) => a.occured_at.localeCompare(b.occured_at));
+    activities.sort((a, b) => a.occurred_at.localeCompare(b.occurred_at));
 
     await writeActivitiesJsonl(outputDir, contributor.username, activities);
     totalActivities += activities.length;

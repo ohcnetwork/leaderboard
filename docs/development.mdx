@@ -283,7 +283,7 @@ const myPlugin: Plugin = {
       await ctx.db.execute(
         `
         INSERT OR REPLACE INTO activity 
-        (slug, contributor, activity_definition, title, occured_at, points)
+        (slug, contributor, activity_definition, title, occurred_at, points)
         VALUES (?, ?, ?, ?, ?, ?)
       `,
         [

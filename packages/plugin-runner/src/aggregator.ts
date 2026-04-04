@@ -217,11 +217,11 @@ async function calculateContributorAggregates(
     // Sort activities by date
     const sortedActivities = [...activities].sort(
       (a, b) =>
-        new Date(a.occured_at).getTime() - new Date(b.occured_at).getTime(),
+        new Date(a.occurred_at).getTime() - new Date(b.occurred_at).getTime(),
     );
 
     // First activity date
-    const firstActivityDate = sortedActivities[0].occured_at.split("T")[0];
+    const firstActivityDate = sortedActivities[0].occurred_at.split("T")[0];
     await contributorAggregateQueries.upsert(db, {
       aggregate: "first_activity_date",
       contributor: contributor.username,
@@ -236,7 +236,7 @@ async function calculateContributorAggregates(
 
     // Last activity date
     const lastActivityDate =
-      sortedActivities[sortedActivities.length - 1].occured_at.split("T")[0];
+      sortedActivities[sortedActivities.length - 1].occurred_at.split("T")[0];
     await contributorAggregateQueries.upsert(db, {
       aggregate: "last_activity_date",
       contributor: contributor.username,
@@ -251,7 +251,7 @@ async function calculateContributorAggregates(
 
     // Active days (unique dates)
     const uniqueDates = new Set(
-      activities.map((a) => a.occured_at.split("T")[0]),
+      activities.map((a) => a.occurred_at.split("T")[0]),
     );
     await contributorAggregateQueries.upsert(db, {
       aggregate: "active_days",

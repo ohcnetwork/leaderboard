@@ -150,7 +150,7 @@ describe("Dummy Plugin", () => {
       startDate.setDate(startDate.getDate() - daysBack);
 
       for (const activity of activities) {
-        const activityDate = new Date(activity.occured_at);
+        const activityDate = new Date(activity.occurred_at);
         expect(activityDate.getTime()).toBeGreaterThanOrEqual(
           startDate.getTime(),
         );
@@ -168,8 +168,8 @@ describe("Dummy Plugin", () => {
       );
 
       for (let i = 1; i < activities.length; i++) {
-        const prevDate = new Date(activities[i - 1].occured_at);
-        const currDate = new Date(activities[i].occured_at);
+        const prevDate = new Date(activities[i - 1].occurred_at);
+        const currDate = new Date(activities[i].occurred_at);
         expect(currDate.getTime()).toBeGreaterThanOrEqual(prevDate.getTime());
       }
     });

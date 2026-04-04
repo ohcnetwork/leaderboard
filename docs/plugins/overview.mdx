@@ -98,7 +98,7 @@ await activityQueries.upsert(ctx.db, {
   contributor: "username",
   activity_definition: "pr_merged",
   title: "Fixed bug",
-  occured_at: new Date().toISOString(),
+  occurred_at: new Date().toISOString(),
   link: "https://github.com/...",
   text: null,
   points: null,
@@ -252,7 +252,7 @@ export default {
         contributor: repo.owner.login,
         activity_definition: "pr_merged",
         title: repo.name,
-        occured_at: new Date().toISOString(),
+        occurred_at: new Date().toISOString(),
         link: repo.html_url,
         text: null,
         points: null, // Uses default from activity_definition

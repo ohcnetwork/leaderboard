@@ -227,7 +227,7 @@ export const contributorQueries = {
       FROM activity a
       JOIN contributor c ON a.contributor = c.username
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
-      WHERE a.occured_at >= ? AND a.occured_at <= ?
+      WHERE a.occurred_at >= ? AND a.occurred_at <= ?
     `;
     const params: unknown[] = [startDate, endDate];
 
@@ -361,7 +361,7 @@ export const activityQueries = {
         COALESCE(a.points, ad.points, 0) as points
       FROM activity a
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
-      ORDER BY a.occured_at DESC
+      ORDER BY a.occurred_at DESC
     `;
     const params: unknown[] = [];
 
@@ -394,7 +394,7 @@ export const activityQueries = {
       FROM activity a
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
       WHERE a.contributor = ?
-      ORDER BY a.occured_at DESC
+      ORDER BY a.occurred_at DESC
     `;
     const params: unknown[] = [username];
 
@@ -435,8 +435,8 @@ export const activityQueries = {
         COALESCE(a.points, ad.points, 0) as points
       FROM activity a
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
-      WHERE a.occured_at >= ? AND a.occured_at <= ?
-      ORDER BY a.occured_at DESC`,
+      WHERE a.occurred_at >= ? AND a.occurred_at <= ?
+      ORDER BY a.occurred_at DESC`,
       [startDate, endDate],
     );
     return result.rows.map(parseActivity);
@@ -456,7 +456,7 @@ export const activityQueries = {
       FROM activity a
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
       WHERE a.activity_definition = ?
-      ORDER BY a.occured_at DESC`,
+      ORDER BY a.occurred_at DESC`,
       [definitionSlug],
     );
     return result.rows.map(parseActivity);
@@ -482,7 +482,7 @@ export const activityQueries = {
       FROM activity a
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
       WHERE a.activity_definition IN (${placeholders})
-      ORDER BY a.occured_at ASC`,
+      ORDER BY a.occurred_at ASC`,
       activityDefinitionSlugs,
     );
 
@@ -511,7 +511,7 @@ export const activityQueries = {
       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
       WHERE a.contributor = ? 
         AND a.activity_definition IN (${placeholders})
-      ORDER BY a.occured_at ASC`,
+      ORDER BY a.occurred_at ASC`,
       [contributor, ...activityDefinitionSlugs],
     );
 
@@ -524,13 +524,13 @@ export const activityQueries = {
   async upsert(db: Database, activity: Activity): Promise<void> {
     await db.execute(
       `INSERT INTO activity (
-        slug, contributor, activity_definition, title, occured_at, link, text, points, meta
+        slug, contributor, activity_definition, title, occurred_at, link, text, points, meta
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(slug) DO UPDATE SET
         contributor = excluded.contributor,
         activity_definition = excluded.activity_definition,
         title = excluded.title,
-        occured_at = excluded.occured_at,
+        occurred_at = excluded.occurred_at,
         link = excluded.link,
         text = excluded.text,
         points = excluded.points,
@@ -540,7 +540,7 @@ export const activityQueries = {
         activity.contributor,
         activity.activity_definition,
         activity.title,
-        activity.occured_at,
+        activity.occurred_at,
         activity.link,
         activity.text,
         activity.points,
@@ -556,13 +556,13 @@ export const activityQueries = {
     await db.batch(
       activities.map((activity) => ({
         sql: `INSERT INTO activity (
-        slug, contributor, activity_definition, title, occured_at, link, text, points, meta
+        slug, contributor, activity_definition, title, occurred_at, link, text, points, meta
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
       ON CONFLICT(slug) DO UPDATE SET
         contributor = excluded.contributor,
         activity_definition = excluded.activity_definition,
         title = excluded.title,
-        occured_at = excluded.occured_at,
+        occurred_at = excluded.occurred_at,
         link = excluded.link,
         text = excluded.text,
         points = excluded.points,
@@ -572,7 +572,7 @@ export const activityQueries = {
           activity.contributor,
           activity.activity_definition,
           activity.title,
-          activity.occured_at,
+          activity.occurred_at,
           activity.link,
           activity.text,
           activity.points,
@@ -636,7 +636,7 @@ export const activityQueries = {
     const params: unknown[] = [];
 
     if (startDate && endDate) {
-      sql += " WHERE a.occured_at >= ? AND a.occured_at <= ?";
+      sql += " WHERE a.occurred_at >= ? AND a.occurred_at <= ?";
       params.push(startDate, endDate);
     }
 
@@ -688,7 +688,7 @@ export const activityQueries = {
     const params: unknown[] = [];
 
     if (startDate && endDate) {
-      sql += " WHERE a.occured_at >= ? AND a.occured_at <= ?";
+      sql += " WHERE a.occurred_at >= ? AND a.occurred_at <= ?";
       params.push(startDate, endDate);
     }
 
@@ -730,7 +730,7 @@ export const activityQueries = {
       activity_name: string;
       activity_description: string | null;
       title: string | null;
-      occured_at: string;
+      occurred_at: string;
       link: string | null;
       text: string | null;
       points: number | null;
@@ -747,14 +747,14 @@ export const activityQueries = {
         ad.name as activity_name,
         ad.description as activity_description,
         a.title,
-        a.occured_at,
+        a.occurred_at,
         a.link,
         a.text,
         COALESCE(a.points, ad.points, 0) as points
       FROM activity a
       JOIN activity_definition ad ON a.activity_definition = ad.slug
       LEFT JOIN contributor c ON a.contributor = c.username
-      WHERE a.occured_at >= ? AND a.occured_at <= ?
+      WHERE a.occurred_at >= ? AND a.occurred_at <= ?
     `;
     const params: unknown[] = [startDate, endDate];
 
@@ -764,7 +764,7 @@ export const activityQueries = {
       params.push(...excludeRoles);
     }
 
-    sql += ` ORDER BY a.activity_definition, a.occured_at DESC`;
+    sql += ` ORDER BY a.activity_definition, a.occurred_at DESC`;
 
     const result = await db.execute(sql, params);
     return result.rows as unknown as Array<{
@@ -777,7 +777,7 @@ export const activityQueries = {
       activity_name: string;
       activity_description: string | null;
       title: string | null;
-      occured_at: string;
+      occurred_at: string;
       link: string | null;
       text: string | null;
       points: number | null;
@@ -818,7 +818,7 @@ export const activityQueries = {
     const params: unknown[] = [activitySlug];
 
     if (startDate && endDate) {
-      sql += " AND a.occured_at >= ? AND a.occured_at <= ?";
+      sql += " AND a.occurred_at >= ? AND a.occurred_at <= ?";
       params.push(startDate, endDate);
     }
 
@@ -849,11 +849,11 @@ export const activityQueries = {
   ): Promise<Array<{ date: string; count: number }>> {
     const sql = `
       SELECT 
-        DATE(occured_at) as date,
+        DATE(occurred_at) as date,
         COUNT(*) as count
       FROM activity
       WHERE contributor = ?
-      GROUP BY DATE(occured_at)
+      GROUP BY DATE(occurred_at)
       ORDER BY date
     `;
 

@@ -145,7 +145,7 @@ export async function getRecentActivitiesGroupedByType(
         contributor_avatar_url: string | null;
         contributor_role: string;
         title: string | null;
-        occured_at: string;
+        occurred_at: string;
         link: string | null;
         text: string | null;
         points: number | null;
@@ -170,7 +170,7 @@ export async function getRecentActivitiesGroupedByType(
       contributor_avatar_url: activity.contributor_avatar_url,
       contributor_role: activity.contributor_role,
       title: activity.title,
-      occured_at: activity.occured_at,
+      occurred_at: activity.occurred_at,
       link: activity.link,
       text: activity.text,
       points: activity.points,
@@ -343,14 +343,14 @@ export async function getLeaderboard(
     db.execute(
       `SELECT
          a.contributor as username,
-         DATE(a.occured_at) as date,
+         DATE(a.occurred_at) as date,
          COUNT(*) as count,
          COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as points
        FROM activity a
        LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
-       WHERE a.occured_at >= ? AND a.occured_at <= ?
+       WHERE a.occurred_at >= ? AND a.occurred_at <= ?
          AND a.contributor IN (${placeholders})
-       GROUP BY a.contributor, DATE(a.occured_at)
+       GROUP BY a.contributor, DATE(a.occurred_at)
        ORDER BY date`,
       [startDateStr, endDateStr, ...usernames],
     ),
@@ -362,7 +362,7 @@ export async function getLeaderboard(
          COALESCE(SUM(COALESCE(a.points, ad.points, 0)), 0) as points
        FROM activity a
        LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
-       WHERE a.occured_at >= ? AND a.occured_at <= ?
+       WHERE a.occurred_at >= ? AND a.occurred_at <= ?
          AND a.contributor IN (${placeholders})
        GROUP BY a.contributor, a.activity_definition`,
       [startDateStr, endDateStr, ...usernames],

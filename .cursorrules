@@ -191,7 +191,7 @@ export default {
         slug: activity.id,
         contributor: activity.username,
         activity_definition: "my_activity",
-        occured_at: activity.timestamp,
+        occurred_at: activity.timestamp,
         // ... other fields
       });
     }
@@ -398,7 +398,7 @@ await activityQueries.create(db, {
   contributor: "alice",
   activity_definition: "pr_merged",
   title: "Fix bug in auth",
-  occured_at: new Date().toISOString(),
+  occurred_at: new Date().toISOString(),
   points: 10,
   link: "https://github.com/org/repo/pull/123",
   // ... other fields

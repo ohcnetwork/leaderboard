@@ -98,7 +98,7 @@ const plugin: Plugin = {
     //     contributor: item.user.username,
     //     activity_definition: "activity_slug",
     //     title: item.title,
-    //     occured_at: new Date(item.timestamp).toISOString(),
+    //     occurred_at: new Date(item.timestamp).toISOString(),
     //     link: item.url,
     //     text: item.description,
     //     points: null, // Uses default from activity_definition

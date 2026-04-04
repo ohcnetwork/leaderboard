@@ -73,7 +73,7 @@ interface PodiumActivity {
   activity_name: string;
   activity_icon: string | null;
   title: string | null;
-  occured_at: string;
+  occurred_at: string;
   link: string | null;
   points: number | null;
 }
@@ -1117,7 +1117,7 @@ function PodiumActivityFeed({
         <span className="text-[10px] text-muted-foreground/50">
           {activity.contributor_name || activity.contributor}
           {" \u00b7 "}
-          <Time date={activity.occured_at} variant="relative" />
+          <Time date={activity.occurred_at} variant="relative" />
         </span>
       </div>
     </div>

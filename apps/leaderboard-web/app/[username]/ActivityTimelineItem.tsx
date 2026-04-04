@@ -22,7 +22,7 @@ export default function ActivityTimelineItem({
           )}
           <span className="font-medium text-sm">{activity.activity_name}</span>
           <RelativeTime
-            date={activity.occured_at}
+            date={activity.occurred_at}
             className="text-xs text-muted-foreground"
           />
           {activity.points !== null && activity.points > 0 && (

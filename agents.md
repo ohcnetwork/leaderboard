@@ -85,7 +85,7 @@ This document provides specialized workflows for different types of tasks in the
          contributor: pr.author.login,
          activity_definition: pr.merged ? "pr_merged" : "pr_opened",
          title: pr.title,
-         occured_at: pr.created_at,
+         occurred_at: pr.created_at,
          link: pr.html_url,
          points: pr.merged ? 10 : 5,
          meta: {
@@ -434,12 +434,12 @@ This document provides specialized workflows for different types of tasks in the
        c.name,
        COUNT(a.id) as activity_count,
        SUM(ad.points) as total_points,
-       MAX(a.occured_at) as last_activity
+       MAX(a.occurred_at) as last_activity
      FROM contributor c
      LEFT JOIN activity a ON c.username = a.contributor
      LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
      WHERE c.role = ?
-       AND a.occured_at >= ?
+       AND a.occurred_at >= ?
      GROUP BY c.username, c.name
      ORDER BY total_points DESC
      LIMIT 100
@@ -457,7 +457,7 @@ This document provides specialized workflows for different types of tasks in the
      ON activity(contributor);
 
    CREATE INDEX IF NOT EXISTS idx_activity_occurred_at
-     ON activity(occured_at);
+     ON activity(occurred_at);
 
    CREATE INDEX IF NOT EXISTS idx_activity_definition
      ON activity(activity_definition);

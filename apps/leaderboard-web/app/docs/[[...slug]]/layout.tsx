@@ -9,6 +9,8 @@ export default function Layout({ children }: { children: ReactNode }) {
       nav={{
         enabled: false, // Disable Fumadocs nav since we have our own header
       }}
+      containerProps={{ className: "my-16" }}
+      sidebar={{ className: "w-fit -my-16 pt-1" }}
       githubUrl="https://github.com/ohcnetwork/leaderboard"
     >
       {children}

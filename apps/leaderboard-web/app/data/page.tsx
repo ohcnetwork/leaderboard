@@ -65,7 +65,7 @@ export default async function DataPage() {
   const schema = await getSchema();
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container my-16 mx-auto px-4 py-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-1">Data Explorer</h1>
         <p className="text-sm text-muted-foreground">

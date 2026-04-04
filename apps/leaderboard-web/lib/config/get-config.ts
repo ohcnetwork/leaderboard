@@ -14,13 +14,16 @@ function substituteEnvVars(value: unknown): unknown {
   if (typeof value === "string") {
     // Match pattern: ${{ env.VAR_NAME }}
     const envPattern = /\$\{\{\s*env\.([A-Z_][A-Z0-9_]*)\s*\}\}/g;
-    return value.replace(envPattern, (match, varName) => {
-      const envValue = process.env[varName];
-      if (envValue === undefined) {
-        // Keep the original placeholder if env var is not set
-        return match;
-      }
-      return envValue;
+
+    // If the entire string is a single env var reference, return undefined if not set
+    const fullMatchPattern = /^\$\{\{\s*env\.([A-Z_][A-Z0-9_]*)\s*\}\}$/;
+    const fullMatch = value.match(fullMatchPattern);
+    if (fullMatch?.[1]) {
+      return process.env[fullMatch[1]];
+    }
+
+    return value.replace(envPattern, (_match, varName) => {
+      return process.env[varName] ?? "";
     });
   }
 

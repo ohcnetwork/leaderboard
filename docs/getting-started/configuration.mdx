@@ -103,6 +103,11 @@ leaderboard:
       source: string (URL) # required - Plugin manifest URL
       config: # optional - Plugin-specific config
         [key]: any
+
+  leaderboard: # optional - Leaderboard display settings
+    all_contributors: # optional - All Contributors table options
+      activity_definitions: # optional - Activity definition slugs to show as columns
+        - string
 ```
 
 ## Data Explorer (`data_explorer`)
@@ -139,6 +144,28 @@ leaderboard:
 When `source` is set to an external URL, the prebuild step skips copying the `.db` file into `public/`, keeping the deployed bundle small. The browser fetches the database directly from the external host using HTTP Range Requests.
 
 See the [Data Explorer documentation](/docs/data-explorer) for detailed instructions on hosting the database on GitHub Pages.
+
+## Leaderboard Display (`leaderboard.leaderboard`)
+
+Control what is shown in the leaderboard's "All Contributors" table.
+
+### Activity Definition Columns
+
+By default, the All Contributors table does not show per-activity-type breakdown columns. To display specific activity types as individual columns, list their slugs:
+
+```yaml
+leaderboard:
+  leaderboard:
+    all_contributors:
+      activity_definitions:
+        - pr_merged
+        - pr_opened
+        - commit_authored
+```
+
+Each listed slug corresponds to an activity definition created by your plugins. Only matching definitions will appear as columns in the table, showing per-contributor counts and icons.
+
+When this configuration is omitted, no per-activity breakdown columns are shown — contributors are listed with their total points and trend only.
 
 ## Role Configuration
 
@@ -369,6 +396,13 @@ leaderboard:
   top_contributors:
     - pr_merged
     - release_published
+
+  leaderboard:
+    all_contributors:
+      activity_definitions:
+        - pr_merged
+        - pr_opened
+        - commit_authored
 
   social_profiles:
     github:

@@ -325,7 +325,7 @@ export default function LeaderboardView({
   const hasActivityBreakdown = activityDefinitions.length > 0;
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="max-w-7xl container mx-auto px-4 py-6">
       {/* Period Tabs */}
       <div className="flex gap-2 mb-6 border-b justify-evenly sm:justify-start">
         {(["week", "month", "year"] as const).map((p) => (

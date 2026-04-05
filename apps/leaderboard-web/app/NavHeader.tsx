@@ -92,7 +92,7 @@ export default function NavHeader({
                 asChild
                 size="icon"
                 variant="outline"
-                className="size-9 rounded-xl"
+                className="size-9 rounded-xl dark:text-muted-foreground dark:hover:text-foreground"
               >
                 <Link
                   href={githubUrl}
@@ -162,7 +162,7 @@ export default function NavHeader({
                   asChild
                   size="icon"
                   variant="outline"
-                  className="size-10 rounded-xl"
+                  className="size-10 rounded-xl dark:text-muted-foreground dark:hover:text-foreground"
                 >
                   <Link
                     href={githubUrl}
@@ -190,16 +190,6 @@ export default function NavHeader({
         )}
       >
         <div className="flex items-center gap-1 rounded-full border border-border bg-background/90 backdrop-blur-xl shadow-xl p-1 justify-evenly">
-          <Link href="/">
-            <Image
-              src={logoUrl}
-              alt={orgName}
-              width={32}
-              height={32}
-              className="rounded-md ml-3"
-            />
-          </Link>
-          <div className="w-px h-5 bg-border mx-2" />
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.href);
@@ -261,7 +251,7 @@ export default function NavHeader({
         onClick={scrollToTop}
         aria-label="Scroll to top"
         className={cn(
-          "fixed right-4 z-50 flex items-center justify-center size-10 rounded-full bg-card border border-border shadow-2xl transition-opacity ease-in-out lg:bottom-4 cursor-pointer",
+          "fixed right-4 z-50 flex items-center justify-center size-10 rounded-full bg-card border border-border shadow-2xl transition-opacity ease-in-out lg:bottom-4 cursor-pointer dark:text-muted-foreground dark:hover:text-foreground",
           isPastThreshold
             ? "bottom-2 opacity-100"
             : "bottom-0 opacity-0 pointer-events-none",

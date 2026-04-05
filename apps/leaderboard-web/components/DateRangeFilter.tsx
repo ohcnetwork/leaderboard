@@ -48,8 +48,8 @@ export default function DateRangeFilter({
     <Popover>
       <PopoverTrigger asChild>
         <Button variant="outline" size="sm" className="h-8">
-          <Calendar className="h-4 w-4 mr-2" />
-          Date Range
+          <Calendar className="h-4 w-4 sm:mr-2" />
+          <span className="hidden sm:inline">Date Range</span>
           {(startDate || endDate) && (
             <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
               {startDate && endDate ? "2" : "1"}

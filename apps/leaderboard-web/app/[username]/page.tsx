@@ -286,27 +286,27 @@ export default async function ContributorPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 sm:py-8">
         {/* Profile Header */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <Avatar className="h-32 w-32">
+            <Avatar className="size-20 sm:size-32 shrink-0">
               <AvatarImage
                 src={contributor.avatar_url || undefined}
                 alt={contributor.name || contributor.username}
               />
-              <AvatarFallback className="text-4xl">
+              <AvatarFallback className="text-2xl sm:text-4xl">
                 {(contributor.name || contributor.username)
                   .substring(0, 2)
                   .toUpperCase()}
               </AvatarFallback>
             </Avatar>
 
-            <div className="flex-1">
-              <h1 className="text-4xl font-bold mb-2">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-2xl sm:text-4xl font-bold mb-2 wrap-break-word">
                 {contributor.name || contributor.username}
               </h1>
-              <p className="text-xl text-muted-foreground mb-4">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-4 truncate">
                 @{contributor.username}
               </p>
 
@@ -372,7 +372,7 @@ export default async function ContributorPage({
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8">
           {aggregateCards.map((card, index) => {
             const Icon = card.icon;
             return (

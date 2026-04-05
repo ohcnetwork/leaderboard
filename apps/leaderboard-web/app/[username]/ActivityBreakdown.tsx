@@ -171,7 +171,7 @@ export default function ActivityBreakdown({
               {hasActiveFilters && " (filtered)"}
             </p>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             {hasActiveFilters && (
               <Button
                 variant="ghost"
@@ -179,8 +179,8 @@ export default function ActivityBreakdown({
                 onClick={clearFilters}
                 className="h-8"
               >
-                <X className="h-4 w-4 mr-1" />
-                Clear
+                <X className="h-4 w-4 sm:mr-1" />
+                <span className="hidden sm:inline">Clear</span>
               </Button>
             )}
 

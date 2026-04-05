@@ -183,10 +183,10 @@ export default function NavHeader({
       {/* Desktop Collapsed pill navbar */}
       <header
         className={cn(
-          "hidden lg:block fixed left-1/2 -translate-x-1/2 z-50 bottom-4 transition-all duration-500 ease-in-out w-2/7 max-w-4xl",
+          "hidden lg:block fixed left-1/2 -translate-x-1/2 z-50 top-4 transition-all duration-500 ease-in-out w-2/7 max-w-4xl",
           isCollapsed
             ? "opacity-100"
-            : "translate-y-20 opacity-0 pointer-events-none",
+            : "-translate-y-20 opacity-0 pointer-events-none",
         )}
       >
         <div className="flex items-center gap-1 rounded-full border border-border bg-background/90 backdrop-blur-xl shadow-xl p-1 justify-evenly">

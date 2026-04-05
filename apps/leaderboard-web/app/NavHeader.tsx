@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Award, Github, Home, Trophy, Users } from "lucide-react";
+import { ArrowUp, Award, Github, Home, Trophy, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -54,10 +54,16 @@ export default function NavHeader({
   githubUrl,
 }: NavHeaderProps) {
   const pathname = usePathname();
-  const { isPastThreshold } = useScrollState();
+  const { isPastThreshold, direction } = useScrollState();
 
   // Desktop: collapse to pill when scrolled past threshold
   const isCollapsed = isPastThreshold;
+
+  const isScrollingDown = direction === "down" && isPastThreshold;
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -85,17 +91,17 @@ export default function NavHeader({
               <Button
                 asChild
                 size="icon"
-                variant="ghost"
-                className="h-9 w-9 p-0 rounded-lg"
+                variant="outline"
+                className="size-9 rounded-xl"
               >
-                <a
+                <Link
                   href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
-                  <Github className="h-4 w-4" />
-                </a>
+                  <Github className="size-4.25" />
+                </Link>
               </Button>
             )}
             <ThemeSelector />
@@ -103,22 +109,16 @@ export default function NavHeader({
         </div>
       </header>
 
-      {/* Desktop Navbar */}
+      {/* Desktop Expanded Navbar */}
       <header
         className={cn(
-          "hidden lg:block fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out",
-          isCollapsed ? "top-4 w-auto" : "top-4 w-[95%] max-w-7xl",
+          "hidden lg:block fixed left-1/2 -translate-x-1/2 z-50 top-4 w-[95%] max-w-7xl transition-all duration-500 ease-in-out",
+          isCollapsed
+            ? "opacity-0 pointer-events-none -translate-y-20"
+            : "opacity-100 translate-y-0",
         )}
       >
-        {/* Expanded full navbar */}
-        <div
-          className={cn(
-            "rounded-full overflow-hidden",
-            isCollapsed
-              ? "opacity-0 scale-95 h-0 pointer-events-none"
-              : "opacity-100 scale-100 h-14",
-          )}
-        >
+        <div className="rounded-full">
           <div className="px-4 h-14 flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
@@ -164,30 +164,42 @@ export default function NavHeader({
                   variant="outline"
                   className="size-10 rounded-xl"
                 >
-                  <a
+                  <Link
                     href={githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
                   >
-                    <Github className="h-4.25 w-4.25" />
-                  </a>
+                    <Github className="size-4.25" />
+                  </Link>
                 </Button>
               )}
               <ThemeSelector />
             </div>
           </div>
         </div>
+      </header>
 
-        {/* Collapsed pill navbar */}
-        <div
-          className={cn(
-            "flex items-center gap-1 rounded-full border border-border bg-background/90 backdrop-blur-xl shadow-xl p-1 transition-all duration-500 ease-in-out justify-evenly",
-            isCollapsed
-              ? "opacity-100 scale-100"
-              : "opacity-0 scale-95 pointer-events-none h-0 overflow-hidden p-0 border-0",
-          )}
-        >
+      {/* Desktop Collapsed pill navbar */}
+      <header
+        className={cn(
+          "hidden lg:block fixed left-1/2 -translate-x-1/2 z-50 bottom-4 transition-all duration-500 ease-in-out w-2/7 max-w-4xl",
+          isCollapsed
+            ? "opacity-100"
+            : "translate-y-20 opacity-0 pointer-events-none",
+        )}
+      >
+        <div className="flex items-center gap-1 rounded-full border border-border bg-background/90 backdrop-blur-xl shadow-xl p-1 justify-evenly">
+          <Link href="/">
+            <Image
+              src={logoUrl}
+              alt={orgName}
+              width={32}
+              height={32}
+              className="rounded-md ml-3"
+            />
+          </Link>
+          <div className="w-px h-5 bg-border mx-2" />
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.href);
@@ -209,9 +221,16 @@ export default function NavHeader({
         </div>
       </header>
 
-      {/* Mobile Bottom Navbar - always visible */}
-      <nav className="lg:hidden fixed left-1/2 -translate-x-1/2 z-50 bottom-1">
-        <div className="flex items-center gap-2 rounded-2xl bg-card border border-border shadow-2xl px-3 py-2">
+      {/* Mobile Bottom Navbar */}
+      <nav
+        className={cn(
+          "lg:hidden fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out",
+          isScrollingDown
+            ? "bottom-0 translate-y-full opacity-0 pointer-events-none"
+            : "bottom-1 translate-y-0 opacity-100",
+        )}
+      >
+        <div className="flex items-center gap-2 rounded-xl bg-card border border-border shadow-2xl px-3 py-2">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = isActive(item.href);
@@ -220,7 +239,7 @@ export default function NavHeader({
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-xl transition-all min-w-12",
+                  "flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-lg transition-all min-w-12",
                   active
                     ? "bg-primary/15 text-primary"
                     : "text-muted-foreground hover:text-foreground",
@@ -235,6 +254,22 @@ export default function NavHeader({
           })}
         </div>
       </nav>
+
+      {/* Scroll to Top Button */}
+      <Button
+        variant="outline"
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+        className={cn(
+          "fixed right-4 z-50 flex items-center justify-center size-10 rounded-full bg-card border border-border shadow-2xl transition-opacity ease-in-out lg:bottom-4 cursor-pointer",
+          isPastThreshold
+            ? "bottom-2 opacity-100"
+            : "bottom-0 opacity-0 pointer-events-none",
+          !isScrollingDown && "bottom-16",
+        )}
+      >
+        <ArrowUp className="size-5" />
+      </Button>
     </>
   );
 }

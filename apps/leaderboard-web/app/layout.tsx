@@ -38,6 +38,7 @@ const fontMono = Space_Mono({
 const config = getConfig();
 
 export const metadata: Metadata = {
+  metadataBase: new URL(config.meta.site_url),
   title: config.meta.title,
   description: config.meta.description,
   icons: {

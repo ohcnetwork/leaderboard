@@ -165,8 +165,6 @@ export default function HomeActivityChart({
     );
   }
 
-  const hoveredData = hoveredIndex !== null ? fullData[hoveredIndex] : null;
-
   return (
     <div className="w-full">
       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-3 gap-1">
@@ -235,6 +233,7 @@ export default function HomeActivityChart({
               textAnchor="middle"
               fill="var(--muted-foreground)"
               fontSize="11"
+              suppressHydrationWarning
             >
               {l.label}
             </text>

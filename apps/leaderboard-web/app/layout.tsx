@@ -80,7 +80,7 @@ export default function RootLayout({
                 logoUrl={config.org.logo_url}
                 githubUrl={config.org.socials?.github}
               />
-              <main className="flex-1 pt-24">{children}</main>
+              <main className="flex-1 pt-16 sm:pt-24">{children}</main>
               <Footer config={config} />
             </div>
           </RootProvider>

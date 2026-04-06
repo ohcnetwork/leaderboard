@@ -116,7 +116,7 @@ export default function Footer({ config }: FooterProps) {
     : pageLinks;
 
   return (
-    <footer className="border-t mt-16 pb-24 lg:pb-0">
+    <footer className="border-t mt-16 pb-10 lg:pb-0">
       <div className="container mx-auto px-6 py-12 lg:py-16">
         {/* Top: Org identity + Link columns */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
@@ -171,42 +171,45 @@ export default function Footer({ config }: FooterProps) {
             )}
           </div>
 
-          {/* Pages column */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm font-semibold text-foreground mb-3">
-              Pages
-            </h3>
-            <ul className="space-y-2">
-              {allPageLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Link columns — side-by-side on mobile, separate cols on lg */}
+          <div className="grid grid-cols-2 gap-8 lg:contents">
+            {/* Pages column */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-semibold text-foreground mb-3">
+                Pages
+              </h3>
+              <ul className="space-y-2">
+                {allPageLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Leaderboard column */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm font-semibold text-foreground mb-3">
-              Leaderboard
-            </h3>
-            <ul className="space-y-2">
-              {leaderboardLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Leaderboard column */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-semibold text-foreground mb-3">
+                Leaderboard
+              </h3>
+              <ul className="space-y-2">
+                {leaderboardLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Status + Open Source column */}
@@ -278,8 +281,8 @@ export default function Footer({ config }: FooterProps) {
 
         {/* Divider */}
         <div className="border-t mt-10 pt-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p>
+          <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground sm:flex-row sm:justify-between">
+            <p className="text-center sm:text-left">
               &copy; {new Date().getFullYear()} {org.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-4">

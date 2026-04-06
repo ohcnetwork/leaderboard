@@ -316,3 +316,8 @@ a {
 }
 
 @import "./overrides.gen.css";
+
+/* Docs: Fumadocs layout already separates content from the site footer */
+main:has(.lb-docs-page) + footer {
+  margin-top: 0;
+}

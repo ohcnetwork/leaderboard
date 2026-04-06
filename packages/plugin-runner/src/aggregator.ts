@@ -4,6 +4,7 @@
 
 import type { Database, Logger } from "@ohcnetwork/leaderboard-api";
 import {
+  activityDefinitionQueries,
   activityQueries,
   contributorAggregateDefinitionQueries,
   contributorAggregateQueries,
@@ -112,6 +113,38 @@ async function calculateGlobalAggregates(
     total_activities: totalActivities,
     active_contributors_last_30d: activeContributors,
   });
+
+  // Calculate per-activity-definition global counts
+  const activityDefinitions = await activityDefinitionQueries.getAll(db);
+  const allActivities = await activityQueries.getAll(db);
+
+  const countsByDefinition = new Map<string, number>();
+  for (const activity of allActivities) {
+    const count = countsByDefinition.get(activity.activity_definition) || 0;
+    countsByDefinition.set(activity.activity_definition, count + 1);
+  }
+
+  for (const def of activityDefinitions) {
+    const count = countsByDefinition.get(def.slug) || 0;
+    await globalAggregateQueries.upsert(db, {
+      slug: `activity_count:${def.slug}`,
+      name: `${def.name} Count`,
+      description: `Total number of ${def.name} activities`,
+      value: {
+        type: "number",
+        value: count,
+        format: "integer",
+      },
+      hidden: false,
+      meta: {
+        activity_definition: def.slug,
+        calculated_at: new Date().toISOString(),
+      },
+    });
+  }
+  logger.debug(
+    `Per-activity-definition global counts calculated for ${activityDefinitions.length} definitions`,
+  );
 }
 
 /**
@@ -166,6 +199,17 @@ async function calculateContributorAggregates(
   // Upsert definitions
   for (const def of definitions) {
     await contributorAggregateDefinitionQueries.upsert(db, def);
+  }
+
+  // Register per-activity-definition count aggregate definitions
+  const activityDefinitions = await activityDefinitionQueries.getAll(db);
+  for (const def of activityDefinitions) {
+    await contributorAggregateDefinitionQueries.upsert(db, {
+      slug: `activity_count:${def.slug}`,
+      name: `${def.name} Count`,
+      description: `Number of ${def.name} activities by the contributor`,
+      hidden: false,
+    });
   }
 
   // Get all contributors
@@ -283,6 +327,31 @@ async function calculateContributorAggregates(
         calculated_at: new Date().toISOString(),
       },
     });
+
+    // Per-activity-definition counts
+    const countsByDef = new Map<string, number>();
+    for (const activity of activities) {
+      const count = countsByDef.get(activity.activity_definition) || 0;
+      countsByDef.set(activity.activity_definition, count + 1);
+    }
+    for (const def of activityDefinitions) {
+      const count = countsByDef.get(def.slug) || 0;
+      if (count > 0) {
+        await contributorAggregateQueries.upsert(db, {
+          aggregate: `activity_count:${def.slug}`,
+          contributor: contributor.username,
+          value: {
+            type: "number",
+            value: count,
+            format: "integer",
+          },
+          meta: {
+            activity_definition: def.slug,
+            calculated_at: new Date().toISOString(),
+          },
+        });
+      }
+    }
 
     processedCount++;
   }

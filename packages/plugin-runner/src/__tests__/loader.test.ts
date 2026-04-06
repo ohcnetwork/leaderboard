@@ -29,6 +29,32 @@ describe("Plugin Loader", () => {
     expect(typeof plugin.scrape).toBe("function");
   });
 
+  it("should validate plugin with aggregate method", () => {
+    const plugin = {
+      name: "test-plugin",
+      version: "1.0.0",
+      scrape: async () => {},
+      aggregate: async () => {},
+    };
+
+    expect(typeof plugin.scrape).toBe("function");
+    expect(typeof plugin.aggregate).toBe("function");
+  });
+
+  it("should validate plugin with all optional methods", () => {
+    const plugin = {
+      name: "test-plugin",
+      version: "1.0.0",
+      setup: async () => {},
+      scrape: async () => {},
+      aggregate: async () => {},
+    };
+
+    expect(typeof plugin.setup).toBe("function");
+    expect(typeof plugin.scrape).toBe("function");
+    expect(typeof plugin.aggregate).toBe("function");
+  });
+
   it("should reject plugin without name", () => {
     const invalidPlugin = {
       version: "1.0.0",

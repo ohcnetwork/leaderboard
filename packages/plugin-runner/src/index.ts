@@ -20,7 +20,7 @@ import { importBadges } from "./importers/badges";
 import { importContributors } from "./importers/contributors";
 import { createLogger } from "./logger";
 import { evaluateBadgeRules } from "./rules/evaluator";
-import { runPlugins } from "./runner";
+import { aggregatePlugins, runPlugins } from "./runner";
 
 async function main() {
   const { values } = parseArgs({
@@ -82,13 +82,18 @@ async function main() {
     // Run plugins
     if (!values["skip-scrape"]) {
       logger.info("Running plugins");
-      await runPlugins(config, db, logger);
+      const loadedPlugins = await runPlugins(config, db, logger);
       logger.info("Plugins complete");
 
       // Run aggregation phase
       logger.info("Running aggregation phase");
       await runAggregation(db, logger);
       logger.info("Aggregation complete");
+
+      // Run plugin aggregate phase (after main aggregation)
+      logger.info("Running plugin aggregation phase");
+      await aggregatePlugins(loadedPlugins, config, db, logger);
+      logger.info("Plugin aggregation complete");
 
       // Evaluate badge rules
       logger.info("Evaluating badge rules");

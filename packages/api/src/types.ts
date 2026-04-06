@@ -123,6 +123,14 @@ export interface Plugin {
    * Main scrape method that fetches and stores activity data
    */
   scrape: (ctx: PluginContext) => Promise<void>;
+
+  /**
+   * Optional aggregate method called after all plugins have scraped
+   * and the main leaderboard aggregation has completed.
+   * Used for computing plugin-specific aggregates that may depend
+   * on the standard aggregates.
+   */
+  aggregate?: (ctx: PluginContext) => Promise<void>;
 }
 
 /**

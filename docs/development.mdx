@@ -297,6 +297,11 @@ const myPlugin: Plugin = {
       );
     }
   },
+
+  async aggregate(ctx) {
+    // Optional: Compute plugin-specific aggregates
+    // Runs after main leaderboard aggregation
+  },
 };
 
 export default myPlugin;

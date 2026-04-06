@@ -37,7 +37,10 @@ pnpm plugin-runner --debug
 1. **Import Phase**: Load existing contributors and activities from data-repo
 2. **Setup Phase**: Run `setup()` method for all plugins (populates activity definitions)
 3. **Scrape Phase**: Run `scrape()` method for all plugins (fetches new activities)
-4. **Export Phase**: Export updated contributors and activities back to data-repo
+4. **Aggregation Phase**: Calculate standard global and contributor aggregates
+5. **Plugin Aggregation Phase**: Run `aggregate()` method for plugins that define it (computes plugin-specific aggregates)
+6. **Badge Evaluation**: Evaluate badge rules based on aggregates
+7. **Export Phase**: Export updated contributors and activities back to data-repo
 
 ## License
 

@@ -282,7 +282,7 @@ export default function Footer({ config }: FooterProps) {
         {/* Divider */}
         <div className="border-t mt-10 pt-6">
           <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground sm:flex-row sm:justify-between">
-            <p className="text-center sm:text-left">
+            <p className="text-center sm:text-left" suppressHydrationWarning>
               &copy; {new Date().getFullYear()} {org.name}. All rights reserved.
             </p>
             <div className="flex items-center gap-4">

@@ -317,6 +317,11 @@ a {
 
 @import "./overrides.gen.css";
 
+/* Docs: account for custom nav header height in Fumadocs layout */
+.lb-docs-page {
+  --fd-banner-height: 4rem;
+}
+
 /* Docs: Fumadocs layout already separates content from the site footer */
 main:has(.lb-docs-page) + footer {
   margin-top: 0;

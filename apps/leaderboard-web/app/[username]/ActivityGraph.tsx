@@ -102,7 +102,7 @@ export function ActivityGraphFilterButton({
   hasActiveFilters,
 }: ActivityGraphFilterProps) {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 shrink-0">
       {hasActiveFilters && (
         <Button
           variant="ghost"
@@ -110,16 +110,16 @@ export function ActivityGraphFilterButton({
           onClick={selectAllTypes}
           className="h-8"
         >
-          <X className="h-4 w-4 mr-1" />
-          Clear
+          <X className="h-4 w-4 sm:mr-1" />
+          <span className="hidden sm:inline">Clear</span>
         </Button>
       )}
 
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" size="sm" className="h-8">
-            <Filter className="h-4 w-4 mr-2" />
-            Activity Type
+            <Filter className="h-4 w-4 sm:mr-2" />
+            <span className="hidden sm:inline">Activity Type</span>
             {hasActiveFilters && (
               <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
                 {selectedActivityTypes.size}

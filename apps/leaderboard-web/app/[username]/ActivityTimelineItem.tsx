@@ -52,7 +52,7 @@ export default function ActivityTimelineItem({
         )}
         {activity.text && (
           <div
-            className="text-sm text-muted-foreground prose prose-sm max-w-none"
+            className="text-sm text-muted-foreground prose prose-sm max-w-none wrap-anywhere"
             dangerouslySetInnerHTML={{ __html: activity.text }}
           />
         )}

@@ -60,7 +60,9 @@ jobs:
     needs: build
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    environment: preview
+    environment:
+      name: preview
+      url: ${{ steps.deploy.outputs.deployment-url }}
 
     steps:
       - name: Download build artifact
@@ -70,6 +72,7 @@ jobs:
           path: out/
 
       - name: Deploy to Cloudflare Pages
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

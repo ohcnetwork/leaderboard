@@ -73,6 +73,7 @@ interface PodiumActivity {
   activity_name: string;
   activity_icon: string | null;
   title: string | null;
+  text: string | null;
   occurred_at: string;
   link: string | null;
   points: number | null;
@@ -1103,7 +1104,7 @@ function PodiumActivityFeed({
             />
           )}
           <span className="font-medium text-muted-foreground truncate">
-            {activity.activity_name}
+            {activity.title || activity.activity_name}
           </span>
           {activity.points !== null && activity.points > 0 && (
             <span className="text-[10px] text-primary shrink-0">
@@ -1111,9 +1112,9 @@ function PodiumActivityFeed({
             </span>
           )}
         </div>
-        {activity.title && (
+        {activity.text && (
           <p className="text-muted-foreground/70 truncate leading-tight text-wrap">
-            {activity.title}
+            {activity.text}
           </p>
         )}
         <span className="text-[10px] text-muted-foreground/50">

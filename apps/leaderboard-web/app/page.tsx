@@ -617,40 +617,54 @@ export default async function Home() {
                       >
                         {a.contributor_name || a.contributor}
                       </Link>
-                      <span className="text-xs text-muted-foreground shrink-0">
-                        {a.activity_name}
-                      </span>
-                      {a.title && (
-                        <>
-                          <span className="text-muted-foreground/40">
-                            &middot;
+                      {a.title ? (
+                        a.link ? (
+                          <a
+                            href={a.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs truncate text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
+                          >
+                            {a.title}
+                            {a.text && (
+                              <>
+                                <span className="text-muted-foreground/40">
+                                  &middot;
+                                </span>
+                                {a.text}
+                              </>
+                            )}
+                            <ExternalLink className="h-3 w-3 shrink-0" />
+                          </a>
+                        ) : (
+                          <span className="text-xs truncate text-muted-foreground inline-flex items-center gap-1">
+                            {a.title}
+                            {a.text && (
+                              <>
+                                <span className="text-muted-foreground/40">
+                                  &middot;
+                                </span>
+                                {a.text}
+                              </>
+                            )}
                           </span>
-                          {a.link ? (
+                        )
+                      ) : (
+                        <>
+                          <span className="text-xs text-muted-foreground shrink-0">
+                            {a.activity_name}
+                          </span>
+                          {a.link && (
                             <a
                               href={a.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-xs truncate text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
+                              className="text-muted-foreground/60 hover:text-foreground"
                             >
-                              {a.title}
-                              <ExternalLink className="h-3 w-3 shrink-0" />
+                              <ExternalLink className="h-3 w-3" />
                             </a>
-                          ) : (
-                            <span className="text-xs truncate text-muted-foreground">
-                              {a.title}
-                            </span>
                           )}
                         </>
-                      )}
-                      {!a.title && a.link && (
-                        <a
-                          href={a.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground/60 hover:text-foreground"
-                        >
-                          <ExternalLink className="h-3 w-3" />
-                        </a>
                       )}
                     </div>
                     {a.points !== null && a.points > 0 && (

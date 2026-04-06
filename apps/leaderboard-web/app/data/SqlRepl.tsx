@@ -13,9 +13,10 @@ import {
   Play,
   Table2,
 } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import LoadingAnimation from "./LoadingAnimation";
 import ResultsTable from "./ResultsTable";
+import SqlEditor from "./SqlEditor";
 
 export interface TableSchema {
   name: string;
@@ -81,16 +82,7 @@ export default function SqlRepl({ schema, source }: SqlReplProps) {
     totalFetchedBytes: number;
     totalRequests: number;
   } | null>(null);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [expandedTables, setExpandedTables] = useState<Set<string>>(new Set());
-
-  // Auto-resize textarea
-  useEffect(() => {
-    const el = textareaRef.current;
-    if (!el) return;
-    el.style.height = "auto";
-    el.style.height = Math.max(120, el.scrollHeight) + "px";
-  }, [query]);
 
   const runQuery = useCallback(async () => {
     if (status !== "ready" || running) return;
@@ -115,16 +107,6 @@ export default function SqlRepl({ schema, source }: SqlReplProps) {
       setRunning(false);
     }
   }, [query, status, running, exec, getStats]);
-
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
-        e.preventDefault();
-        runQuery();
-      }
-    },
-    [runQuery],
-  );
 
   const toggleTable = (name: string) => {
     setExpandedTables((prev) => {
@@ -182,14 +164,11 @@ export default function SqlRepl({ schema, source }: SqlReplProps) {
               </Button>
             </div>
           </div>
-          <textarea
-            ref={textareaRef}
+          <SqlEditor
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={handleKeyDown}
-            spellCheck={false}
-            className="w-full px-4 py-3 font-mono text-sm bg-transparent resize-none focus:outline-none min-h-[120px] text-foreground placeholder:text-muted-foreground/50"
-            placeholder="SELECT * FROM contributor LIMIT 10;"
+            onChange={setQuery}
+            onRun={runQuery}
+            schema={schema}
           />
         </div>
 

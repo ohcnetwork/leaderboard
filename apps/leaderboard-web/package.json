@@ -19,6 +19,7 @@
     "prebuild": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db"
   },
   "dependencies": {
+    "@codemirror/lang-sql": "^6.10.0",
     "@libsql/client": "^0.14.0",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
@@ -39,6 +40,7 @@
     "@types/node": "^20.19.25",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
+    "@uiw/react-codemirror": "^4.25.9",
     "@vitest/coverage-v8": "^4.0.16",
     "@vitest/ui": "^4.0.16",
     "class-variance-authority": "^0.7.1",

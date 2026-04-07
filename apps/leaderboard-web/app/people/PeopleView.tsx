@@ -67,18 +67,20 @@ export default function PeopleView({
   }, [contributors, roles]);
 
   return (
-    <div className="px-4 py-8">
+    <div className="px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-4">Our People</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <div className="mb-8 sm:mb-12 text-center">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+          Our People
+        </h1>
+        <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
           Meet the <strong>{contributors.length}</strong> amazing contributors
           who make {orgName} possible
         </p>
       </div>
 
       {/* View Switcher */}
-      <div className="flex justify-end mb-6 max-w-7xl mx-auto">
+      <div className="flex justify-center sm:justify-end mb-6 max-w-7xl mx-auto px-2 sm:px-0">
         <div className="flex gap-1 border rounded-md p-0.5">
           <Button
             variant={view === "normal" ? "secondary" : "ghost"}
@@ -108,7 +110,7 @@ export default function PeopleView({
       )}
 
       {/* Stats */}
-      <div className="mt-12 text-center text-sm text-muted-foreground">
+      <div className="mt-8 sm:mt-12 text-center text-xs sm:text-sm text-muted-foreground px-2">
         <p>
           Showing {contributors.length} contributors across {roles.length} roles
         </p>
@@ -125,28 +127,30 @@ function NormalView({
   contributorsByRole: Map<string, Contributor[]>;
 }) {
   return (
-    <div className="space-y-12">
+    <div className="space-y-8 sm:space-y-12">
       {roles.map((role) => {
         const members = contributorsByRole.get(role.key);
         if (!members || members.length === 0) return null;
 
         return (
           <section key={role.key}>
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold">{role.name}</h2>
+            <div className="mb-4 sm:mb-6 px-2 sm:px-0">
+              <h2 className="text-xl sm:text-2xl font-bold">{role.name}</h2>
               {role.description && (
-                <p className="text-muted-foreground mt-1">{role.description}</p>
+                <p className="text-sm sm:text-base text-muted-foreground mt-1">
+                  {role.description}
+                </p>
               )}
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
               {members.map((contributor) => (
                 <Link
                   key={contributor.username}
                   href={`/${contributor.username}`}
-                  className="group flex flex-col items-center gap-2 rounded-xl border bg-card p-4 transition-all hover:shadow-md hover:border-foreground/20"
+                  className="group flex flex-col items-center gap-2 rounded-xl border bg-card p-3 sm:p-4 transition-all hover:shadow-md hover:border-foreground/20"
                 >
-                  <Avatar className="size-16 transition-transform group-hover:scale-105">
+                  <Avatar className="size-14 sm:size-16 transition-transform group-hover:scale-105">
                     <AvatarImage
                       src={contributor.avatar_url || undefined}
                       alt={contributor.name || contributor.username}
@@ -159,14 +163,14 @@ function NormalView({
                     </AvatarFallback>
                   </Avatar>
                   <div className="text-center min-w-0 w-full">
-                    <p className="font-medium truncate text-sm group-hover:text-foreground transition-colors">
+                    <p className="font-medium truncate text-xs sm:text-sm group-hover:text-foreground transition-colors">
                       {contributor.name || contributor.username}
                     </p>
-                    <p className="text-xs text-muted-foreground truncate">
+                    <p className="text-[10px] sm:text-xs text-muted-foreground truncate">
                       @{contributor.username}
                     </p>
                     {contributor.totalPoints > 0 && (
-                      <p className="text-xs text-muted-foreground mt-1">
+                      <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">
                         {contributor.totalPoints.toLocaleString()} pts
                       </p>
                     )}
@@ -183,7 +187,7 @@ function NormalView({
 
 function GalleryView({ contributors }: { contributors: Contributor[] }) {
   return (
-    <div className="people-avatar-grid grid gap-(--people-grid-gap)">
+    <div className="people-avatar-grid grid gap-(--people-grid-gap) px-2 sm:px-0 max-w-7xl mx-auto">
       {contributors.map((contributor) => (
         <Tooltip key={contributor.username}>
           <TooltipTrigger asChild>

@@ -872,7 +872,7 @@ describe("Database Queries", () => {
       await contributorQueries.upsert(db, {
         username: "alice",
         name: "Alice",
-        role: null,
+        role: "contributor",
         title: null,
         avatar_url: null,
         bio: null,
@@ -1019,7 +1019,7 @@ describe("Database Queries", () => {
       await contributorQueries.upsert(db, {
         username: "alice",
         name: "Alice",
-        role: null,
+        role: "contributor",
         title: null,
         avatar_url: null,
         bio: null,
@@ -1191,7 +1191,7 @@ describe("activityQueries", () => {
       title: null,
       joining_date: "2025-01-01",
       avatar_url: null,
-      role: null,
+      role: "contributor",
       bio: null,
       social_profiles: null,
       meta: null,
@@ -1320,7 +1320,7 @@ describe("activityQueries", () => {
         joining_date: "2025-01-01",
         title: null,
         avatar_url: null,
-        role: null,
+        role: "contributor",
         bio: null,
         social_profiles: null,
         meta: null,
@@ -1413,7 +1413,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "zebra",
           name: "Zebra",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,
@@ -1425,7 +1425,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "alpha",
           name: "Alpha",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,
@@ -1629,7 +1629,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "bob",
           name: "Bob",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,
@@ -1753,7 +1753,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "alice",
           name: "Alice",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: "https://example.com/alice.png",
           bio: null,
@@ -1765,7 +1765,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "bob",
           name: "Bob",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,
@@ -1868,7 +1868,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "alice",
           name: "Alice",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,
@@ -1931,7 +1931,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "bob",
           name: "Bob",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,
@@ -2010,7 +2010,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "alice",
           name: "Alice",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,
@@ -2106,7 +2106,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "alice",
           name: "Alice Smith",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: "https://example.com/alice.png",
           bio: null,
@@ -2118,7 +2118,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "bob",
           name: "Bob Jones",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,
@@ -2191,7 +2191,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "alice",
           name: "Alice Smith",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: "https://example.com/alice.png",
           bio: null,
@@ -2203,7 +2203,7 @@ describe("activityQueries", () => {
         await contributorQueries.upsert(db, {
           username: "bob",
           name: "Bob Jones",
-          role: null,
+          role: "contributor",
           title: null,
           avatar_url: null,
           bio: null,

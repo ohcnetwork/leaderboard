@@ -205,7 +205,7 @@ This document provides specialized workflows for different types of tasks in the
    # Test with actual plugin runner
    cd /path/to/leaderboard-monorepo
    # Update config.yaml to point to your plugin
-   pnpm data:scrape
+   pnpm build:data
    ```
 
 9. **Deploy and Configure**
@@ -334,7 +334,7 @@ This document provides specialized workflows for different types of tasks in the
 
    ```bash
    cd /path/to/leaderboard-monorepo
-   pnpm data:scrape
+   pnpm build:data
    ```
 
    This will:
@@ -426,7 +426,7 @@ This document provides specialized workflows for different types of tasks in the
    Enable debug logging to see query execution:
 
    ```bash
-   DEBUG=true pnpm data:scrape
+   DEBUG=true pnpm build:data
    ```
 
    Look for log messages showing query duration.
@@ -716,7 +716,7 @@ This document provides specialized workflows for different types of tasks in the
    Run badge evaluation:
 
    ```bash
-   pnpm data:scrape  # Includes badge evaluation
+   pnpm build:data  # Includes badge evaluation
    ```
 
    Check results in `badges/contributors/{username}.json`:
@@ -739,7 +739,7 @@ This document provides specialized workflows for different types of tasks in the
    Enable debug logging:
 
    ```bash
-   DEBUG=true pnpm data:scrape
+   DEBUG=true pnpm build:data
    ```
 
    Review logs for badge evaluation details.

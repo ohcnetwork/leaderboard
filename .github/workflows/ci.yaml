@@ -39,14 +39,14 @@ jobs:
       - name: Build packages
         run: pnpm build:packages
 
+      - name: Run tests
+        run: pnpm test
+
       - name: Setup dev data
         run: pnpm setup:dev --seed 42
 
       - name: Build web
         run: pnpm build:web
-
-      # - name: Run tests
-      #   run: pnpm test
 
       - name: Upload build artifact
         if: github.event_name == 'pull_request'

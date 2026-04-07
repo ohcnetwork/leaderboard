@@ -363,7 +363,7 @@ SLACK_API_TOKEN             # Slack API token
 2. Answer interactive prompts for organization info
 3. Edit generated `config.yaml` to add plugin configurations
 4. Set environment variables for plugin API tokens
-5. Run `pnpm data:scrape` to populate activities
+5. Run `pnpm build:data` to populate activities
 6. Commit contributors and activities to git
 7. Deploy leaderboard web app pointing to data repository
 

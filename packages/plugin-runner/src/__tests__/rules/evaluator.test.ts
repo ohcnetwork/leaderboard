@@ -33,7 +33,7 @@ describe("Badge Rule Evaluator", () => {
       name: "Test User",
       joining_date: "2025-01-01",
       avatar_url: null,
-      role: null,
+      role: "contributor",
       title: null,
       bio: null,
       social_profiles: null,

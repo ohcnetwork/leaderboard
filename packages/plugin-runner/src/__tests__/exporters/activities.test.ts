@@ -83,7 +83,7 @@ describe("Activity Exporter", () => {
     expect(count).toBe(2);
 
     const content = await readFile(
-      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      join(TEST_DATA_DIR, "activities", "contributors", "alice.jsonl"),
       "utf-8",
     );
     const lines = content.trim().split("\n");
@@ -138,11 +138,11 @@ describe("Activity Exporter", () => {
 
     // Check both files exist
     const aliceContent = await readFile(
-      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      join(TEST_DATA_DIR, "activities", "contributors", "alice.jsonl"),
       "utf-8",
     );
     const bobContent = await readFile(
-      join(TEST_DATA_DIR, "activities", "bob.jsonl"),
+      join(TEST_DATA_DIR, "activities", "contributors", "bob.jsonl"),
       "utf-8",
     );
 
@@ -181,14 +181,17 @@ describe("Activity Exporter", () => {
 
     // Check that only alice's file exists
     const aliceContent = await readFile(
-      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      join(TEST_DATA_DIR, "activities", "contributors", "alice.jsonl"),
       "utf-8",
     );
     expect(aliceContent).toBeTruthy();
 
     // Bob's file should not exist
     try {
-      await readFile(join(TEST_DATA_DIR, "activities", "bob.jsonl"), "utf-8");
+      await readFile(
+        join(TEST_DATA_DIR, "activities", "contributors", "bob.jsonl"),
+        "utf-8",
+      );
       expect.fail("Bob's file should not exist");
     } catch (error) {
       expect((error as NodeJS.ErrnoException).code).toBe("ENOENT");

@@ -256,7 +256,7 @@ async function runPluginRunner(): Promise<void> {
   console.log("──────────────────────────────────────\n");
 
   try {
-    execSync("pnpm data:scrape", {
+    execSync("pnpm build:data", {
       stdio: "inherit",
       env: {
         ...process.env,

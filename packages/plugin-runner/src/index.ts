@@ -20,11 +20,19 @@ import { importBadges } from "./importers/badges";
 import { importContributors } from "./importers/contributors";
 import { createLogger } from "./logger";
 import { evaluateBadgeRules } from "./rules/evaluator";
-import { aggregatePlugins, runPlugins } from "./runner";
+import {
+  aggregatePlugins,
+  loadAllPlugins,
+  scrapePlugins,
+  setupPlugins,
+} from "./runner";
+
+const PHASES = ["import", "setup", "scrape", "aggregate", "export"] as const;
+type Phase = (typeof PHASES)[number];
 
 async function main() {
-  const { values } = parseArgs({
-    allowPositionals: false,
+  const { values, positionals } = parseArgs({
+    allowPositionals: true,
     strict: true,
     options: {
       "data-dir": {
@@ -35,27 +43,30 @@ async function main() {
         type: "boolean",
         default: false,
       },
-      "skip-import": {
-        type: "boolean",
-        default: false,
-      },
-      "skip-scrape": {
-        type: "boolean",
-        default: false,
-      },
-      "skip-export": {
-        type: "boolean",
-        default: false,
-      },
     },
   });
 
   const logger = createLogger(values.debug);
 
+  // Determine which phase to run
+  const requestedPhase = positionals[0] as Phase | undefined;
+  if (requestedPhase && !PHASES.includes(requestedPhase)) {
+    logger.error(
+      `Unknown phase: ${requestedPhase}. Valid phases: ${PHASES.join(", ")}`,
+    );
+    process.exit(1);
+  }
+
+  const runAll = !requestedPhase;
+  const shouldRun = (phase: Phase) => runAll || requestedPhase === phase;
+
   // Resolve relative paths from the current working directory (where the command was run)
   const dataDir = getDataDir(values["data-dir"]);
 
-  logger.info("Plugin Runner starting", { dataDir });
+  logger.info("Plugin Runner starting", {
+    dataDir,
+    phase: requestedPhase || "all",
+  });
 
   try {
     // Load configuration
@@ -68,8 +79,8 @@ async function main() {
     const db = await initDatabase(dataDir);
     logger.info("Database initialized");
 
-    // Import existing data
-    if (!values["skip-import"]) {
+    // Import phase
+    if (shouldRun("import")) {
       logger.info("Importing existing data");
       await importContributors(db, dataDir, logger);
       await importActivityDefinitions(db, dataDir, logger);
@@ -79,30 +90,42 @@ async function main() {
       logger.info("Import complete");
     }
 
-    // Run plugins
-    if (!values["skip-scrape"]) {
-      logger.info("Running plugins");
-      const loadedPlugins = await runPlugins(config, db, logger);
-      logger.info("Plugins complete");
+    // Load plugins if any plugin phase is needed
+    if (shouldRun("setup") || shouldRun("scrape") || shouldRun("aggregate")) {
+      const loadedPlugins = await loadAllPlugins(config, logger);
 
-      // Run aggregation phase
-      logger.info("Running aggregation phase");
-      await runAggregation(db, logger);
-      logger.info("Aggregation complete");
+      // Setup phase
+      if (shouldRun("setup")) {
+        logger.info("Running plugin setup");
+        await setupPlugins(loadedPlugins, config, db, logger);
+        logger.info("Setup complete");
+      }
 
-      // Run plugin aggregate phase (after main aggregation)
-      logger.info("Running plugin aggregation phase");
-      await aggregatePlugins(loadedPlugins, config, db, logger);
-      logger.info("Plugin aggregation complete");
+      // Scrape phase
+      if (shouldRun("scrape")) {
+        logger.info("Running plugin scrape");
+        await scrapePlugins(loadedPlugins, config, db, logger);
+        logger.info("Scrape complete");
+      }
 
-      // Evaluate badge rules
-      logger.info("Evaluating badge rules");
-      await evaluateBadgeRules(db, logger);
-      logger.info("Badge evaluation complete");
+      // Aggregate phase
+      if (shouldRun("aggregate")) {
+        logger.info("Running aggregation phase");
+        await runAggregation(db, logger);
+        logger.info("Aggregation complete");
+
+        logger.info("Running plugin aggregation phase");
+        await aggregatePlugins(loadedPlugins, config, db, logger);
+        logger.info("Plugin aggregation complete");
+
+        logger.info("Evaluating badge rules");
+        await evaluateBadgeRules(db, logger);
+        logger.info("Badge evaluation complete");
+      }
     }
 
-    // Export data
-    if (!values["skip-export"]) {
+    // Export phase
+    if (shouldRun("export")) {
       logger.info("Exporting data");
       await exportContributors(db, dataDir, logger);
       await exportActivityDefinitions(db, dataDir, logger);

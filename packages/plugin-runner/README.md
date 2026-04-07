@@ -11,20 +11,20 @@ npm install @leaderboard/plugin-runner
 ## Usage
 
 ```bash
-# Run with default data directory (./data)
+# Run all phases (import → setup → scrape → aggregate → export)
 pnpm plugin-runner
 
-# Specify custom data directory
-pnpm plugin-runner --data-dir=/path/to/data-repo
+# Run individual phases
+pnpm plugin-runner import       # Load existing data from data-repo into database
+pnpm plugin-runner setup        # Run plugin setup() methods (activity definitions)
+pnpm plugin-runner scrape       # Run plugin scrape() methods (fetch new activities)
+pnpm plugin-runner aggregate    # Run aggregation + plugin aggregation + badge evaluation
+pnpm plugin-runner export       # Export data from database back to data-repo
 
-# Skip import phase (useful for fresh scrapes)
-pnpm plugin-runner --skip-import
-
-# Skip scraping (useful for export-only)
-pnpm plugin-runner --skip-scrape
-
-# Enable debug logging
-pnpm plugin-runner --debug
+# Options
+pnpm plugin-runner --data-dir=/path/to/data-repo   # Specify data directory
+pnpm plugin-runner --debug                          # Enable debug logging
+pnpm plugin-runner scrape --debug                   # Combine phase with options
 ```
 
 ## Environment Variables
@@ -34,13 +34,15 @@ pnpm plugin-runner --debug
 
 ## Workflow
 
-1. **Import Phase**: Load existing contributors and activities from data-repo
-2. **Setup Phase**: Run `setup()` method for all plugins (populates activity definitions)
-3. **Scrape Phase**: Run `scrape()` method for all plugins (fetches new activities)
-4. **Aggregation Phase**: Calculate standard global and contributor aggregates
-5. **Plugin Aggregation Phase**: Run `aggregate()` method for plugins that define it (computes plugin-specific aggregates)
-6. **Badge Evaluation**: Evaluate badge rules based on aggregates
-7. **Export Phase**: Export updated contributors and activities back to data-repo
+When run without a phase argument, all phases execute in order:
+
+1. **Import**: Load existing contributors, activities, aggregates, and badges from data-repo
+2. **Setup**: Run `setup()` method for all plugins (populates activity definitions)
+3. **Scrape**: Run `scrape()` method for all plugins (fetches new activities)
+4. **Aggregate**: Calculate standard aggregates, run plugin `aggregate()` methods, evaluate badge rules
+5. **Export**: Export updated data back to data-repo
+
+Each phase can be run independently via `pnpm plugin-runner <phase>`.
 
 ## License
 

@@ -65,7 +65,13 @@ graph TB
 **CLI Commands**:
 
 ```bash
-plugin-runner --data-dir=/path/to/data
+plugin-runner                          # Run all phases
+plugin-runner import                   # Import data only
+plugin-runner setup                    # Plugin setup only
+plugin-runner scrape                   # Plugin scrape only
+plugin-runner aggregate                # Aggregation only
+plugin-runner export                   # Export data only
+plugin-runner --data-dir=/path/to/data # Custom data directory
 ```
 
 ### 2. API Layer (`@ohcnetwork/leaderboard-api`)

@@ -79,7 +79,7 @@ leaderboard:
 2. Run the plugin runner:
 
 ```bash
-pnpm data:scrape
+pnpm build:data
 ```
 
 ## Development

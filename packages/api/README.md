@@ -35,6 +35,11 @@ const myPlugin: Plugin = {
     const data = await fetchData(ctx.config);
     // Insert activities into database
   },
+
+  async aggregate(ctx: PluginContext) {
+    // Optional: Compute plugin-specific aggregates
+    // Runs after main leaderboard aggregation
+  },
 };
 
 export default myPlugin;

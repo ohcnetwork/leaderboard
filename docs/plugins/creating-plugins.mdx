@@ -172,6 +172,37 @@ export default {
 
     ctx.logger.info("Scrape complete");
   },
+
+  /**
+   * Aggregate method: Compute plugin-specific aggregates (optional)
+   * Runs after main leaderboard aggregation, so standard aggregates are available.
+   */
+  async aggregate(ctx) {
+    ctx.logger.info("Computing aggregates");
+
+    const contributors = await contributorQueries.getAll(ctx.db);
+
+    for (const contributor of contributors) {
+      const activities = await activityQueries.getByContributor(
+        ctx.db,
+        contributor.username,
+      );
+
+      // Example: count specific activity types
+      const eventCount = activities.filter(
+        (a) => a.activity_definition === "custom_event_1",
+      ).length;
+
+      await contributorAggregateQueries.upsert(ctx.db, {
+        aggregate: "custom_event_count",
+        contributor: contributor.username,
+        value: { type: "number", value: eventCount, format: "integer" },
+        meta: { calculated_at: new Date().toISOString() },
+      });
+    }
+
+    ctx.logger.info("Aggregates computed");
+  },
 };
 ```
 
@@ -184,6 +215,7 @@ import {
   activityDefinitionQueries,
   activityQueries,
   contributorQueries,
+  contributorAggregateQueries,
   type Plugin,
   type PluginContext,
 } from "@ohcnetwork/leaderboard-api";
@@ -255,6 +287,34 @@ const plugin: Plugin = {
         text: event.description || null,
         points: null,
         meta: event.metadata || null,
+      });
+    }
+  },
+
+  // Optional: Compute aggregates after main leaderboard aggregation
+  async aggregate(ctx: PluginContext): Promise<void> {
+    ctx.logger.info("Computing custom aggregates");
+
+    const contributors = await contributorQueries.getAll(ctx.db);
+
+    for (const contributor of contributors) {
+      const activities = await activityQueries.getByContributor(
+        ctx.db,
+        contributor.username,
+      );
+      const customEvents = activities.filter(
+        (a) => a.activity_definition === "custom_event_1",
+      );
+
+      await contributorAggregateQueries.upsert(ctx.db, {
+        aggregate: "custom_event_count",
+        contributor: contributor.username,
+        value: {
+          type: "number",
+          value: customEvents.length,
+          format: "integer",
+        },
+        meta: { calculated_at: new Date().toISOString() },
       });
     }
   },
@@ -578,6 +638,11 @@ await plugin.setup(mockContext);
 
 // Test scrape
 await plugin.scrape(mockContext);
+
+// Test aggregate (if defined)
+if (plugin.aggregate) {
+  await plugin.aggregate(mockContext);
+}
 
 console.log("Plugin test complete");
 ```

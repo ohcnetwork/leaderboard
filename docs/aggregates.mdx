@@ -211,7 +211,63 @@ const rule: ThresholdBadgeRule = {
 
 ## Setting Aggregate Values
 
-Plugins can set custom aggregate values during the `scrape()` phase.
+Plugins can set custom aggregate values during the `aggregate()` phase. This phase runs after the main leaderboard aggregation, so standard aggregates (like `total_activity_points` and `activity_count`) are already available when your plugin computes its own.
+
+> **Note:** You can also set aggregate values during `scrape()`, but the `aggregate()` method is preferred because it runs after all data has been collected and standard aggregates have been calculated.
+
+### Using the Plugin Aggregate Method
+
+Implement the optional `aggregate()` method in your plugin to compute custom aggregates:
+
+```typescript
+import {
+  activityQueries,
+  contributorQueries,
+  contributorAggregateQueries,
+  contributorAggregateDefinitionQueries,
+} from "@ohcnetwork/leaderboard-api";
+
+export default {
+  name: "my-plugin",
+  version: "1.0.0",
+
+  async setup(ctx) {
+    // Define custom aggregate definitions
+    await contributorAggregateDefinitionQueries.upsert(ctx.db, {
+      slug: "pr_merged_count",
+      name: "PRs Merged",
+      description: "Number of pull requests merged",
+      hidden: false,
+    });
+  },
+
+  async scrape(ctx) {
+    // Fetch and store activities...
+  },
+
+  async aggregate(ctx) {
+    // Compute custom aggregates after main aggregation
+    const contributors = await contributorQueries.getAll(ctx.db);
+
+    for (const contributor of contributors) {
+      const activities = await activityQueries.getByContributor(
+        ctx.db,
+        contributor.username,
+      );
+      const mergedPRs = activities.filter(
+        (a) => a.activity_definition === "pr_merged",
+      );
+
+      await contributorAggregateQueries.upsert(ctx.db, {
+        aggregate: "pr_merged_count",
+        contributor: contributor.username,
+        value: { type: "number", value: mergedPRs.length, format: "integer" },
+        meta: { calculated_at: new Date().toISOString() },
+      });
+    }
+  },
+};
+```
 
 ### Simple Number Aggregate
 
@@ -301,7 +357,8 @@ The aggregation phase runs automatically after plugins complete scraping:
 graph LR
     Import[Import Phase] --> Scrape[Plugin Scrape]
     Scrape --> Aggregate[Aggregation Phase]
-    Aggregate --> Badges[Badge Evaluation]
+    Aggregate --> PluginAgg[Plugin Aggregation]
+    PluginAgg --> Badges[Badge Evaluation]
     Badges --> Export[Export Phase]
 ```
 

@@ -217,6 +217,9 @@ graph LR
     Plugin --> Scrape[scrape]
     Scrape --> API[External API]
     API --> Activity[activity table]
+    Activity --> MainAgg[Main Aggregation]
+    MainAgg --> PluginAgg[plugin aggregate]
+    PluginAgg --> Aggregates[aggregate tables]
 ```
 
 **Process**:
@@ -226,6 +229,9 @@ graph LR
 3. Execute `scrape()` for all plugins
 4. Plugins fetch data from APIs
 5. Plugins insert into `activity` table
+6. Main leaderboard aggregation runs (standard aggregates)
+7. Execute `aggregate()` for plugins that define it
+8. Plugins compute custom aggregates
 
 ### Export Phase
 

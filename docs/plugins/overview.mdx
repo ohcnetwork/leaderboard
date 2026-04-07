@@ -42,6 +42,9 @@ sequenceDiagram
     Plugin->>API: Fetch data
     API->>Plugin: Return data
     Plugin->>DB: Store activities
+    Note over Runner,DB: Main leaderboard aggregation runs
+    Runner->>Plugin: aggregate(ctx)
+    Plugin->>DB: Compute plugin-specific aggregates
 ```
 
 ## Plugin Structure
@@ -60,6 +63,10 @@ export default {
   async scrape(ctx) {
     // Required: Fetch and store activities
   },
+
+  async aggregate(ctx) {
+    // Optional: Compute plugin-specific aggregates
+  },
 };
 ```
 
@@ -72,6 +79,7 @@ export default {
 ### Optional Fields
 
 - **setup** (`function`): Initialization and activity definition
+- **aggregate** (`function`): Plugin-specific aggregate computation (runs after main aggregation)
 
 ## Plugin Context
 

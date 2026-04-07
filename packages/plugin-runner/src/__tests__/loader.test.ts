@@ -2,19 +2,47 @@
  * Plugin loader tests
  */
 
+import type { Plugin } from "@ohcnetwork/leaderboard-api";
 import { describe, expect, it } from "vitest";
 
+// Re-create validatePlugin logic for testing since it's not exported
+function validatePlugin(plugin: unknown): asserts plugin is Plugin {
+  if (typeof plugin !== "object" || plugin === null) {
+    throw new Error("Plugin must be an object");
+  }
+
+  const p = plugin as Record<string, unknown>;
+
+  if (typeof p.name !== "string" || !p.name) {
+    throw new Error("Plugin must have a 'name' string property");
+  }
+
+  if (typeof p.version !== "string" || !p.version) {
+    throw new Error("Plugin must have a 'version' string property");
+  }
+
+  if (typeof p.scrape !== "function") {
+    throw new Error("Plugin must have a 'scrape' function");
+  }
+
+  if (p.setup !== undefined && typeof p.setup !== "function") {
+    throw new Error("Plugin 'setup' must be a function if provided");
+  }
+
+  if (p.aggregate !== undefined && typeof p.aggregate !== "function") {
+    throw new Error("Plugin 'aggregate' must be a function if provided");
+  }
+}
+
 describe("Plugin Loader", () => {
-  it("should validate plugin structure", () => {
+  it("should validate a minimal plugin structure", () => {
     const validPlugin = {
       name: "test-plugin",
       version: "1.0.0",
       scrape: async () => {},
     };
 
-    expect(validPlugin.name).toBe("test-plugin");
-    expect(validPlugin.version).toBe("1.0.0");
-    expect(typeof validPlugin.scrape).toBe("function");
+    expect(() => validatePlugin(validPlugin)).not.toThrow();
   });
 
   it("should validate plugin with setup method", () => {
@@ -25,8 +53,30 @@ describe("Plugin Loader", () => {
       scrape: async () => {},
     };
 
-    expect(typeof plugin.setup).toBe("function");
-    expect(typeof plugin.scrape).toBe("function");
+    expect(() => validatePlugin(plugin)).not.toThrow();
+  });
+
+  it("should validate plugin with aggregate method", () => {
+    const plugin = {
+      name: "test-plugin",
+      version: "1.0.0",
+      scrape: async () => {},
+      aggregate: async () => {},
+    };
+
+    expect(() => validatePlugin(plugin)).not.toThrow();
+  });
+
+  it("should validate plugin with all optional methods", () => {
+    const plugin = {
+      name: "test-plugin",
+      version: "1.0.0",
+      setup: async () => {},
+      scrape: async () => {},
+      aggregate: async () => {},
+    };
+
+    expect(() => validatePlugin(plugin)).not.toThrow();
   });
 
   it("should reject plugin without name", () => {
@@ -35,7 +85,9 @@ describe("Plugin Loader", () => {
       scrape: async () => {},
     };
 
-    expect(invalidPlugin).not.toHaveProperty("name");
+    expect(() => validatePlugin(invalidPlugin)).toThrow(
+      "Plugin must have a 'name' string property",
+    );
   });
 
   it("should reject plugin without version", () => {
@@ -44,7 +96,9 @@ describe("Plugin Loader", () => {
       scrape: async () => {},
     };
 
-    expect(invalidPlugin).not.toHaveProperty("version");
+    expect(() => validatePlugin(invalidPlugin)).toThrow(
+      "Plugin must have a 'version' string property",
+    );
   });
 
   it("should reject plugin without scrape method", () => {
@@ -53,6 +107,40 @@ describe("Plugin Loader", () => {
       version: "1.0.0",
     };
 
-    expect(invalidPlugin).not.toHaveProperty("scrape");
+    expect(() => validatePlugin(invalidPlugin)).toThrow(
+      "Plugin must have a 'scrape' function",
+    );
+  });
+
+  it("should reject non-object plugin", () => {
+    expect(() => validatePlugin(null)).toThrow("Plugin must be an object");
+    expect(() => validatePlugin("string")).toThrow("Plugin must be an object");
+    expect(() => validatePlugin(42)).toThrow("Plugin must be an object");
+  });
+
+  it("should reject plugin with non-function setup", () => {
+    const invalidPlugin = {
+      name: "test",
+      version: "1.0.0",
+      scrape: async () => {},
+      setup: "not-a-function",
+    };
+
+    expect(() => validatePlugin(invalidPlugin)).toThrow(
+      "Plugin 'setup' must be a function if provided",
+    );
+  });
+
+  it("should reject plugin with non-function aggregate", () => {
+    const invalidPlugin = {
+      name: "test",
+      version: "1.0.0",
+      scrape: async () => {},
+      aggregate: "not-a-function",
+    };
+
+    expect(() => validatePlugin(invalidPlugin)).toThrow(
+      "Plugin 'aggregate' must be a function if provided",
+    );
   });
 });

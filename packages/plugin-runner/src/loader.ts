@@ -129,4 +129,8 @@ function validatePlugin(plugin: unknown): asserts plugin is Plugin {
   if (p.setup !== undefined && typeof p.setup !== "function") {
     throw new Error("Plugin 'setup' must be a function if provided");
   }
+
+  if (p.aggregate !== undefined && typeof p.aggregate !== "function") {
+    throw new Error("Plugin 'aggregate' must be a function if provided");
+  }
 }

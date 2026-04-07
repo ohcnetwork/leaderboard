@@ -226,7 +226,7 @@ pnpm setup:dev
 pnpm data:import
 
 # Run scrapers
-pnpm data:scrape
+pnpm build:web
 
 # Export from database to data directory
 pnpm data:export
@@ -296,6 +296,11 @@ const myPlugin: Plugin = {
         ],
       );
     }
+  },
+
+  async aggregate(ctx) {
+    // Optional: Compute plugin-specific aggregates
+    // Runs after main leaderboard aggregation
   },
 };
 

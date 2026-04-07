@@ -230,6 +230,17 @@ it("should reject plugin without name", () => {
 
   expect(() => validatePlugin(invalidPlugin)).toThrow("name");
 });
+
+it("should validate plugin with aggregate method", () => {
+  const plugin = {
+    name: "test-plugin",
+    version: "1.0.0",
+    scrape: async () => {},
+    aggregate: async () => {},
+  };
+
+  expect(typeof plugin.aggregate).toBe("function");
+});
 ```
 
 ## Configuration Tests

@@ -276,7 +276,7 @@ jobs:
       - run: pnpm install
 
       - name: Build database
-        run: pnpm data:scrape
+        run: pnpm build:data
         env:
           LEADERBOARD_DATA_DIR: ./data
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -429,7 +429,7 @@ jobs:
       - run: pnpm install
 
       - name: Build database
-        run: pnpm data:scrape
+        run: pnpm build:data
         env:
           LEADERBOARD_DATA_DIR: ./data
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

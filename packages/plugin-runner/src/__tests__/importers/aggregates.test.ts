@@ -167,7 +167,7 @@ describe("Aggregate Importers", () => {
       await contributorQueries.upsert(db, {
         username: "alice",
         name: "Alice",
-        role: null,
+        role: "contributor",
         title: null,
         avatar_url: null,
         bio: null,
@@ -227,7 +227,7 @@ describe("Aggregate Importers", () => {
       await contributorQueries.upsert(db, {
         username: "bob",
         name: "Bob",
-        role: null,
+        role: "contributor",
         title: null,
         avatar_url: null,
         bio: null,
@@ -325,7 +325,7 @@ describe("Aggregate Importers", () => {
       await contributorQueries.upsert(db, {
         username: "alice",
         name: "Alice",
-        role: null,
+        role: "contributor",
         title: null,
         avatar_url: null,
         bio: null,

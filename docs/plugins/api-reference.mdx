@@ -15,6 +15,7 @@ interface Plugin {
   version: string;
   setup?: (ctx: PluginContext) => Promise<void>;
   scrape: (ctx: PluginContext) => Promise<void>;
+  aggregate?: (ctx: PluginContext) => Promise<void>;
 }
 ```
 
@@ -77,6 +78,36 @@ async scrape(ctx) {
       INSERT OR IGNORE INTO activity (...)
       VALUES (...)
     `, [...]);
+  }
+}
+```
+
+#### `aggregate(ctx)` (optional)
+
+Compute plugin-specific aggregates. Called after all plugins have scraped and the main leaderboard aggregation has completed, so plugins can build on top of standard aggregates.
+
+**Parameters**:
+
+- `ctx` ([PluginContext](#plugincontext)): Plugin context
+
+**Returns**: `Promise<void>`
+
+**Example**:
+
+```typescript
+async aggregate(ctx) {
+  const contributors = await contributorQueries.getAll(ctx.db);
+
+  for (const contributor of contributors) {
+    const activities = await activityQueries.getByContributor(ctx.db, contributor.username);
+    const mergedPRs = activities.filter(a => a.activity_definition === 'pr_merged');
+
+    await contributorAggregateQueries.upsert(ctx.db, {
+      aggregate: 'pr_merged_count',
+      contributor: contributor.username,
+      value: { type: 'number', value: mergedPRs.length, format: 'integer' },
+      meta: { calculated_at: new Date().toISOString() },
+    });
   }
 }
 ```

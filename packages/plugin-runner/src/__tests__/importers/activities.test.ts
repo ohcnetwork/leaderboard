@@ -25,7 +25,9 @@ describe("Activity Importer", () => {
   beforeEach(async () => {
     db = createDatabase(":memory:");
     await initializeSchema(db);
-    await mkdir(join(TEST_DATA_DIR, "activities"), { recursive: true });
+    await mkdir(join(TEST_DATA_DIR, "activities", "contributors"), {
+      recursive: true,
+    });
 
     // Set up test data
     await contributorQueries.upsert(db, {
@@ -81,7 +83,7 @@ describe("Activity Importer", () => {
     ].join("\n");
 
     await writeFile(
-      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      join(TEST_DATA_DIR, "activities", "contributors", "alice.jsonl"),
       activities + "\n",
       "utf-8",
     );
@@ -136,12 +138,12 @@ describe("Activity Importer", () => {
     ].join("\n");
 
     await writeFile(
-      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      join(TEST_DATA_DIR, "activities", "contributors", "alice.jsonl"),
       aliceActivities + "\n",
       "utf-8",
     );
     await writeFile(
-      join(TEST_DATA_DIR, "activities", "bob.jsonl"),
+      join(TEST_DATA_DIR, "activities", "contributors", "bob.jsonl"),
       bobActivities + "\n",
       "utf-8",
     );
@@ -163,7 +165,7 @@ describe("Activity Importer", () => {
     await rm(emptyDir, { recursive: true, force: true });
   });
 
-  it("should skip invalid JSON lines", async () => {
+  it("should skip files with invalid JSON lines", async () => {
     const content = [
       JSON.stringify({
         slug: "alice-pr-1",
@@ -191,12 +193,12 @@ describe("Activity Importer", () => {
     ].join("\n");
 
     await writeFile(
-      join(TEST_DATA_DIR, "activities", "alice.jsonl"),
+      join(TEST_DATA_DIR, "activities", "contributors", "alice.jsonl"),
       content + "\n",
       "utf-8",
     );
 
     const count = await importActivities(db, TEST_DATA_DIR, logger);
-    expect(count).toBe(2); // Only valid lines imported
+    expect(count).toBe(0); // Entire file skipped due to invalid JSON
   });
 });

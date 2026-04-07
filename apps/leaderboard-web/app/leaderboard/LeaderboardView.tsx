@@ -1113,7 +1113,7 @@ function PodiumActivityFeed({
           )}
         </div>
         {activity.text && (
-          <p className="text-muted-foreground/70 truncate leading-tight text-wrap">
+          <p className="text-muted-foreground/70 leading-tight text-wrap break-words">
             {activity.text}
           </p>
         )}

@@ -1103,7 +1103,7 @@ function PodiumActivityFeed({
               className="size-3 text-muted-foreground shrink-0"
             />
           )}
-          <span className="font-medium text-muted-foreground truncate">
+          <span className="font-medium text-muted-foreground text-wrap break-words">
             {activity.title || activity.activity_name}
           </span>
           {activity.points !== null && activity.points > 0 && (
@@ -1113,7 +1113,7 @@ function PodiumActivityFeed({
           )}
         </div>
         {activity.text && (
-          <p className="text-muted-foreground/70 truncate leading-tight text-wrap">
+          <p className="text-muted-foreground/70 leading-tight text-wrap break-words">
             {activity.text}
           </p>
         )}

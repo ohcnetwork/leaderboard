@@ -78,7 +78,7 @@ export default function PeopleView({
       </div>
 
       {/* View Switcher */}
-      <div className="flex justify-end mb-6 max-w-7xl mx-auto">
+      <div className="container flex justify-end mb-6 mx-auto">
         <div className="flex gap-1 border rounded-md p-0.5">
           <Button
             variant={view === "normal" ? "secondary" : "ghost"}
@@ -100,7 +100,7 @@ export default function PeopleView({
       </div>
 
       {view === "normal" ? (
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto">
           <NormalView roles={roles} contributorsByRole={contributorsByRole} />
         </div>
       ) : (
@@ -139,7 +139,7 @@ function NormalView({
               )}
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-4">
               {members.map((contributor) => (
                 <Link
                   key={contributor.username}

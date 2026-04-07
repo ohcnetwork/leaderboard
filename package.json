@@ -14,8 +14,8 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "data:import": "cd packages/plugin-runner && tsx src/index.ts import",
     "data:setup": "cd packages/plugin-runner && tsx src/index.ts setup",
+    "data:import": "cd packages/plugin-runner && tsx src/index.ts import",
     "data:scrape": "cd packages/plugin-runner && tsx src/index.ts scrape",
     "data:aggregate": "cd packages/plugin-runner && tsx src/index.ts aggregate",
     "data:export": "cd packages/plugin-runner && tsx src/index.ts export",

@@ -712,13 +712,13 @@ export default function LeaderboardView({
                       {/* Mobile Row */}
                       <Link
                         href={`/${entry.username}`}
-                        className="flex md:hidden items-center gap-3 px-4 py-3"
+                        className="flex md:hidden items-start gap-2 sm:gap-3 px-3 sm:px-4 py-3"
                       >
-                        <div className="flex items-center justify-center w-8 shrink-0">
+                        <div className="flex items-center justify-center w-7 sm:w-8 shrink-0 pt-0.5">
                           {isTopThree ? (
                             <Trophy
                               className={cn(
-                                "h-4 w-4",
+                                "h-3.5 w-3.5 sm:h-4 sm:w-4",
                                 rank === 1
                                   ? "text-medal-gold"
                                   : rank === 2
@@ -727,12 +727,12 @@ export default function LeaderboardView({
                               )}
                             />
                           ) : (
-                            <span className="text-sm font-medium text-muted-foreground tabular-nums">
+                            <span className="text-xs sm:text-sm font-medium text-muted-foreground tabular-nums">
                               {rank}
                             </span>
                           )}
                         </div>
-                        <Avatar className="size-9 shrink-0">
+                        <Avatar className="size-8 sm:size-9 shrink-0">
                           <AvatarImage
                             src={entry.avatar_url || undefined}
                             alt={entry.name || entry.username}
@@ -744,14 +744,16 @@ export default function LeaderboardView({
                           </AvatarFallback>
                         </Avatar>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-1.5">
-                            <span className="text-sm font-medium truncate">
+                          <div className="flex items-center gap-1 min-w-0">
+                            <span className="text-xs sm:text-sm font-medium truncate">
                               {entry.name || entry.username}
                             </span>
-                            <RankChangeBadge change={rankChange} compact />
+                            <div className="shrink-0">
+                              <RankChangeBadge change={rankChange} compact />
+                            </div>
                           </div>
                           {hasActivityBreakdown && (
-                            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                            <div className="flex items-center flex-wrap gap-1 sm:gap-1.5 text-xs text-muted-foreground mt-0.5">
                               {activityDefinitions.map((def) => {
                                 const count =
                                   entry.activity_breakdown?.[def.slug]?.count ??
@@ -760,7 +762,7 @@ export default function LeaderboardView({
                                 return (
                                   <span
                                     key={def.slug}
-                                    className="inline-flex items-center gap-0.5"
+                                    className="inline-flex items-center gap-0.5 shrink-0"
                                   >
                                     {def.icon ? (
                                       <Icon
@@ -778,7 +780,7 @@ export default function LeaderboardView({
                           )}
                         </div>
                         <div className="text-right shrink-0">
-                          <div className="text-sm font-semibold text-primary tabular-nums">
+                          <div className="text-xs sm:text-sm font-semibold text-primary tabular-nums">
                             {entry.total_points}
                           </div>
                           {pointsDelta !== null && pointsDelta !== 0 && (

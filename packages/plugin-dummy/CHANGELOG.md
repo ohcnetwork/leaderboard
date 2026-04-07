@@ -1,5 +1,12 @@
 # @leaderboard/plugin-dummy
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [afadc3d]
+  - @ohcnetwork/leaderboard-api@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes

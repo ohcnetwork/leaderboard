@@ -1,5 +1,16 @@
 # @leaderboard/plugin-runner
 
+## 0.2.0
+
+### Minor Changes
+
+- afadc3d: Support aggregates in plugin manifest; Improve how runner runs phases of plugin
+
+### Patch Changes
+
+- Updated dependencies [afadc3d]
+  - @ohcnetwork/leaderboard-api@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes

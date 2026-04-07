@@ -1,5 +1,15 @@
 # leaderboard-web
 
+## 0.3.1
+
+### Patch Changes
+
+- 2fb0602: Show activity's text in relevant places (leaderboard podium and home page recent activities)
+- 85b124c: fix docs ui and adds support for rendering mermaid charts
+- 31fdd1b: Improve SQL REPL editor to use CodeMirror and auto completions
+- Updated dependencies [afadc3d]
+  - @ohcnetwork/leaderboard-api@0.2.0
+
 ## 0.3.0
 
 ### Minor Changes

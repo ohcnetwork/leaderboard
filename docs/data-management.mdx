@@ -214,17 +214,21 @@ graph LR
 graph LR
     Plugin[Plugin] --> Setup[setup]
     Setup --> AD[activity_definition]
+    Setup --> BD[badge_definition]
     Plugin --> Scrape[scrape]
     Scrape --> API[External API]
     API --> Activity[activity table]
     Activity --> MainAgg[Main Aggregation]
     MainAgg --> PluginAgg[plugin aggregate]
     PluginAgg --> Aggregates[aggregate tables]
+    Aggregates --> StdBadge[Config Badge Eval]
+    StdBadge --> PluginBadge[Plugin Badge Eval]
+    PluginBadge --> BadgeTables[badge tables]
 ```
 
 **Process**:
 
-1. Execute `setup()` for all plugins
+1. Execute `setup()` for all plugins (inserts config + plugin badge definitions)
 2. Plugins populate `activity_definition` table
 3. Execute `scrape()` for all plugins
 4. Plugins fetch data from APIs
@@ -232,6 +236,8 @@ graph LR
 6. Main leaderboard aggregation runs (standard aggregates)
 7. Execute `aggregate()` for plugins that define it
 8. Plugins compute custom aggregates
+9. Evaluate config badge rules
+10. Evaluate plugin badge rules
 
 ### Export Phase
 

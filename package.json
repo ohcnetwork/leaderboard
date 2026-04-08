@@ -18,6 +18,7 @@
     "data:import": "cd packages/plugin-runner && tsx src/index.ts import",
     "data:scrape": "cd packages/plugin-runner && tsx src/index.ts scrape",
     "data:aggregate": "cd packages/plugin-runner && tsx src/index.ts aggregate",
+    "data:evaluate": "cd packages/plugin-runner && tsx src/index.ts evaluate",
     "data:export": "cd packages/plugin-runner && tsx src/index.ts export",
     "db:seed": "pnpm --filter @ohcnetwork/leaderboard-api seed",
     "build:packages": "pnpm --filter @ohcnetwork/leaderboard-api build && pnpm --filter @leaderboard/plugin-runner build && pnpm --filter @leaderboard/plugin-dummy build && pnpm --filter create-leaderboard-plugin build && pnpm --filter create-leaderboard-data-repo build",

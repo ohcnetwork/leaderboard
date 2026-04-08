@@ -318,6 +318,123 @@ leaderboard:
 
 Aggregates must be computed by plugins or in the Next.js app.
 
+## Badge Configuration
+
+Define badge definitions and evaluation rules under `leaderboard.badges`:
+
+### Badge Definitions
+
+Each badge has a slug, display name, description, and one or more variants (tiers):
+
+```yaml
+leaderboard:
+  badges:
+    definitions:
+      - slug: activity_milestone
+        name: Activity Milestone
+        description: Awarded for completing activities
+        variants:
+          bronze:
+            description: Completed 256 activities
+            svg_url: https://example.com/badges/activity-bronze.svg
+          silver:
+            description: Completed 1024 activities
+            svg_url: https://example.com/badges/activity-silver.svg
+            order: 1
+          gold:
+            description: Completed 4096 activities
+            svg_url: https://example.com/badges/activity-gold.svg
+            order: 2
+```
+
+Each variant has:
+
+- `description` — What it means to earn this tier
+- `svg_url` — URL to the badge SVG image
+- `order` (optional) — Display order (higher = more prestigious)
+
+### Badge Rules
+
+Rules define how badges are evaluated and awarded. Four rule types are supported:
+
+#### Threshold Rules
+
+Award badge variants when an aggregate value exceeds thresholds:
+
+```yaml
+rules:
+  - type: threshold
+    badge_slug: activity_milestone
+    aggregate_slug: activity_count
+    thresholds:
+      - variant: bronze
+        value: 256
+      - variant: silver
+        value: 1024
+      - variant: gold
+        value: 4096
+```
+
+#### Streak Rules
+
+Award badges for consecutive days (or weeks/months) with activity:
+
+```yaml
+- type: streak
+  badge_slug: consistency_champion
+  streak_type: daily # daily | weekly | monthly
+  activity_definitions: # optional — all activities if omitted
+    - pr_merged
+    - pr_opened
+  thresholds:
+    - variant: bronze
+      days: 7
+    - variant: silver
+      days: 14
+    - variant: gold
+      days: 30
+```
+
+#### Growth Rules
+
+Award badges for percentage increases in aggregate values over a period:
+
+```yaml
+- type: growth
+  badge_slug: rising_star
+  aggregate_slug: total_activity_points
+  period: month # week | month | year
+  thresholds:
+    - variant: bronze
+      percentage_increase: 25
+    - variant: silver
+      percentage_increase: 50
+    - variant: gold
+      percentage_increase: 100
+```
+
+#### Composite Rules
+
+Award a single variant when multiple aggregate conditions are met:
+
+```yaml
+- type: composite
+  badge_slug: well_rounded
+  operator: AND # AND | OR
+  variant: gold
+  conditions:
+    - aggregate_slug: activity_count
+      operator: ">="
+      value: 100
+    - aggregate_slug: total_activity_points
+      operator: ">="
+      value: 500
+```
+
+All rules support an optional `enabled: false` flag to temporarily disable evaluation without removing the rule.
+
+Plugins can also provide additional badge definitions and rules via their manifest. See the [plugin API reference](/docs/plugins/api-reference) for details.
+
 ## Theme Customization
 
 Override the default theme:
@@ -412,6 +529,28 @@ leaderboard:
 
   data_explorer:
     source: https://acme.github.io/leaderboard-data/data.db
+
+  badges:
+    definitions:
+      - slug: activity_milestone
+        name: Activity Milestone
+        description: Awarded for completing activities
+        variants:
+          bronze:
+            description: Completed 100 activities
+            svg_url: https://acme.com/badges/activity-bronze.svg
+          gold:
+            description: Completed 1000 activities
+            svg_url: https://acme.com/badges/activity-gold.svg
+    rules:
+      - type: threshold
+        badge_slug: activity_milestone
+        aggregate_slug: activity_count
+        thresholds:
+          - variant: bronze
+            value: 100
+          - variant: gold
+            value: 1000
 
   plugins:
     github:

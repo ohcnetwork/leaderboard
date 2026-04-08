@@ -16,6 +16,8 @@ interface Plugin {
   setup?: (ctx: PluginContext) => Promise<void>;
   scrape: (ctx: PluginContext) => Promise<void>;
   aggregate?: (ctx: PluginContext) => Promise<void>;
+  badgeDefinitions?: BadgeDefinition[];
+  badgeRules?: BadgeRuleDefinition[];
 }
 ```
 
@@ -32,6 +34,16 @@ interface Plugin {
 - **Type**: `string`
 - **Description**: Semantic version of the plugin
 - **Example**: `'1.0.0'`
+
+#### `badgeDefinitions` (optional)
+
+- **Type**: `BadgeDefinition[]`
+- **Description**: Badge definitions that this plugin provides. Inserted into the database during the setup phase alongside config badge definitions.
+
+#### `badgeRules` (optional)
+
+- **Type**: `BadgeRuleDefinition[]`
+- **Description**: Badge rules that this plugin provides. Evaluated during the evaluate phase, after config badge rules. Each rule's `badgeSlug` must match a badge definition (either from config or from `badgeDefinitions`).
 
 ### Methods
 

@@ -13,9 +13,11 @@ export type {
   ActivityDefinition,
   AggregateValue,
   BadgeDefinition,
+  BadgeRuleDefinition,
   BadgeVariant,
   BatchResult,
   BatchStatement,
+  CompositeBadgeRule,
   Contributor,
   ContributorAggregate,
   ContributorAggregateDefinition,
@@ -23,6 +25,7 @@ export type {
   Database,
   ExecuteResult,
   GlobalAggregate,
+  GrowthBadgeRule,
   Logger,
   NumberAggregateValue,
   NumberStatisticsAggregateValue,
@@ -31,7 +34,9 @@ export type {
   PluginConfig,
   PluginContext,
   PluginManifest,
+  StreakBadgeRule,
   StringAggregateValue,
+  ThresholdBadgeRule,
 } from "./types";
 
 // Export database client utilities

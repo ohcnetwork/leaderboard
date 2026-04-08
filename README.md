@@ -8,6 +8,7 @@ A flexible, plugin-based leaderboard system for tracking and visualizing contrib
 - 📊 **Multiple Views**: Leaderboards, profiles, timelines, and custom metrics
 - 🎨 **Customizable**: Theme overrides and configurable roles
 - 📝 **Human-Editable**: Contributor profiles in Markdown format
+- 🖼️ **Custom Assets**: Serve logos, images, and other assets from your data repository
 - 🚀 **Static Export**: Deploy to any static hosting service
 - 🔒 **Self-Hosted**: Complete control over your data
 

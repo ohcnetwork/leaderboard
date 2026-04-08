@@ -18,7 +18,7 @@ org:
   name: string # required - Organization name
   description: string # required - Short description
   url: string (URL) # required - Organization website
-  logo_url: string (URL) # required - Logo image URL
+  logo_url: string (URL) # required - Logo image URL (can use /assets/* for local assets)
   start_date: string (date) # optional - Organization founding date
   socials: # optional - Social media links
     github: string (URL)
@@ -35,7 +35,7 @@ org:
   name: Open Healthcare Network
   description: Building connected healthcare systems
   url: https://ohc.network
-  logo_url: https://ohc.network/logo.svg
+  logo_url: /assets/logo.svg  # Local asset from data/assets/
   start_date: 2020-03-08
   socials:
     github: https://github.com/ohcnetwork
@@ -50,9 +50,9 @@ SEO and site metadata.
 meta:
   title: string # required - Site title
   description: string # required - Site description
-  image_url: string (URL) # required - OpenGraph image
+  image_url: string (URL) # required - OpenGraph image (can use /assets/* for local assets)
   site_url: string (URL) # required - Canonical site URL
-  favicon_url: string (URL) # required - Favicon URL
+  favicon_url: string (URL) # required - Favicon URL (can use /assets/* for local assets)
 ```
 
 **Example**:
@@ -61,9 +61,9 @@ meta:
 meta:
   title: OHC Contributors
   description: Track contributions across OHC projects
-  image_url: https://ohc.network/og-image.png
+  image_url: /assets/og-image.png  # Local asset from data/assets/
   site_url: https://contributors.ohc.network
-  favicon_url: https://ohc.network/favicon.ico
+  favicon_url: /assets/favicon.ico  # Local asset from data/assets/
 ```
 
 ### Leaderboard (`leaderboard`)

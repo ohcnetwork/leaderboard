@@ -1,0 +1,355 @@
+---
+title: MCP Server
+description: Query leaderboard data with AI assistants using Model Context Protocol
+---
+
+# MCP Server
+
+The Leaderboard MCP (Model Context Protocol) Server enables AI assistants like Claude to query your leaderboard data using natural language.
+
+## What is MCP?
+
+The Model Context Protocol (MCP) is an open protocol created by Anthropic that standardizes how AI assistants connect to data sources and tools. The leaderboard MCP server implements this protocol to make your contributor data, activities, badges, and metrics easily accessible to AI assistants.
+
+## Features
+
+- 🎯 **20+ Query Tools**: Comprehensive coverage of all leaderboard data
+- 🔌 **Dual Transport**: STDIO (local) and HTTP (remote) support
+- 📦 **Batch Operations**: Efficient multi-query requests
+- ✅ **Type Safety**: Zod validation for all inputs
+- 🔒 **Read-Only**: Secure by default, no write operations
+- 🎛️ **CLI**: Flexible command-line configuration
+
+## Quick Start
+
+### Installation
+
+```bash
+# Build the MCP server package
+pnpm --filter @leaderboard/mcp-server build
+```
+
+### Run the Server
+
+```bash
+# STDIO transport (for Claude Desktop)
+leaderboard-mcp --data-dir ./data
+
+# HTTP transport (for remote access)
+leaderboard-mcp --transport http --port 3001
+```
+
+## Claude Desktop Integration
+
+### 1. Configure Claude Desktop
+
+Edit your Claude Desktop configuration file:
+
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+
+Add this configuration:
+
+```json
+{
+  "mcpServers": {
+    "leaderboard": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/leaderboard/packages/mcp-server/dist/index.js",
+        "--data-dir",
+        "/absolute/path/to/leaderboard/data"
+      ]
+    }
+  }
+}
+```
+
+**Important**: Use absolute paths, not relative paths.
+
+### 2. Restart Claude Desktop
+
+After saving the configuration, restart Claude Desktop for the changes to take effect.
+
+### 3. Verify Connection
+
+Open Claude Desktop and try a query:
+
+> "Show me the top 10 contributors this month"
+
+If configured correctly, Claude will use the MCP server to query your leaderboard data.
+
+## Available Tools
+
+### Contributor Tools
+
+#### query_contributors
+Query contributors with optional filtering.
+
+**Parameters:**
+- `role` (optional): Filter by contributor role
+- `limit` (optional): Maximum results (1-1000, default: 50)
+- `offset` (optional): Pagination offset
+
+**Example queries:**
+- "Show me all core team members"
+- "List the first 20 contributors"
+
+#### get_contributor
+Get detailed information about a specific contributor.
+
+**Parameters:**
+- `username` (required): Contributor username
+
+**Example queries:**
+- "Get details for contributor alice"
+- "Show me bob's profile"
+
+#### get_contributor_stats
+Get comprehensive statistics for a contributor.
+
+**Parameters:**
+- `username` (required): Contributor username
+
+**Example queries:**
+- "Show me detailed stats for alice"
+- "What are bob's contribution metrics?"
+
+#### batch_get_contributors
+Get multiple contributors in a single request.
+
+**Parameters:**
+- `usernames` (required): Array of usernames
+
+**Example queries:**
+- "Get information for alice, bob, and charlie"
+- "Compare alice and bob"
+
+### Activity Tools
+
+#### query_activities
+Query activities with flexible filtering.
+
+**Parameters:**
+- `contributor` (optional): Filter by username
+- `activity_type` (optional): Filter by activity definition slug
+- `start_date` (optional): Start date (YYYY-MM-DD)
+- `end_date` (optional): End date (YYYY-MM-DD)
+- `limit` (optional): Maximum results (1-1000)
+
+**Example queries:**
+- "What activities did alice complete last week?"
+- "Show all pull requests from January"
+
+#### get_activity_timeline
+Get activity timeline grouped by time period.
+
+**Parameters:**
+- `username` (required): Contributor username
+- `group_by` (optional): 'day', 'week', or 'month'
+
+**Example queries:**
+- "Show alice's activity timeline grouped by month"
+- "What's bob's contribution pattern over time?"
+
+#### search_activities
+Search activities by title or text.
+
+**Parameters:**
+- `query` (required): Search query
+- `limit` (optional): Maximum results
+
+**Example queries:**
+- "Find all activities mentioning authentication"
+- "Search for bug fix activities"
+
+### Leaderboard Tools
+
+#### get_leaderboard
+Get current leaderboard rankings.
+
+**Parameters:**
+- `exclude_roles` (optional): Roles to exclude
+- `start_date` (optional): Filter by date range
+- `end_date` (optional): Filter by date range
+- `limit` (optional): Maximum results
+
+**Example queries:**
+- "Show me the top 10 contributors"
+- "What's the leaderboard for this month?"
+- "Show top contributors excluding bots"
+
+#### get_contributor_ranking
+Get a contributor's rank and percentile.
+
+**Parameters:**
+- `username` (required): Contributor username
+- `exclude_roles` (optional): Roles to exclude
+
+**Example queries:**
+- "What's alice's current ranking?"
+- "Where does bob rank on the leaderboard?"
+
+#### get_top_by_activity
+Get top contributors for a specific activity type.
+
+**Parameters:**
+- `activity_type` (required): Activity definition slug
+- `limit` (optional): Maximum results
+- `start_date` (optional): Filter by date range
+- `end_date` (optional): Filter by date range
+
+**Example queries:**
+- "Who opened the most pull requests?"
+- "Top code reviewers this quarter"
+
+### Badge Tools
+
+#### get_badges
+Get badge definitions or contributor badges.
+
+**Parameters:**
+- `username` (optional): Get badges for specific contributor
+- `badge_slug` (optional): Get specific badge definition
+
+**Example queries:**
+- "What badges has alice earned?"
+- "Show all available badges"
+
+#### get_recent_badges
+Get recently awarded badges.
+
+**Parameters:**
+- `limit` (optional): Maximum results (1-100)
+
+**Example queries:**
+- "Show recently awarded badges"
+- "What badges were earned this week?"
+
+### Aggregate Tools
+
+#### get_global_aggregates
+Get organization-level metrics.
+
+**Parameters:**
+- `slugs` (optional): Filter by specific aggregate slugs
+
+**Example queries:**
+- "What are the organization-level metrics?"
+- "Show me global statistics"
+
+#### get_contributor_aggregates
+Get aggregates for a specific contributor.
+
+**Parameters:**
+- `username` (required): Contributor username
+- `slugs` (optional): Filter by specific aggregate slugs
+
+**Example queries:**
+- "Show alice's aggregate statistics"
+- "What's bob's current streak?"
+
+## Example Queries
+
+Once the MCP server is configured with Claude Desktop, you can ask questions in natural language:
+
+### Leaderboard Queries
+- "Show me the top 10 contributors this month"
+- "What's the current leaderboard?"
+- "Who are the top 5 contributors excluding maintainers?"
+
+### Contributor Analysis
+- "Get detailed stats for alice"
+- "What activities did john_doe complete last week?"
+- "Compare the contributions of alice, bob, and charlie"
+- "Show me alice's contribution timeline for the last 6 months"
+
+### Activity Insights
+- "Find all pull requests merged in January 2024"
+- "What activities mention bug fixes?"
+- "Show recent code reviews"
+- "Who's been most active this quarter?"
+
+### Badge Achievements
+- "What badges has alice earned?"
+- "Show me recently awarded badges"
+- "Who has the most badges?"
+
+### Metrics & Analytics
+- "What's our total contribution count?"
+- "Show organization-level statistics"
+- "What's alice's current streak?"
+
+## Configuration Options
+
+### Command Line
+
+```bash
+leaderboard-mcp [options]
+```
+
+**Options:**
+- `--transport <type>`: Transport type: stdio (default) or http
+- `--port <number>`: HTTP port (default: 3001, only for HTTP transport)
+- `--data-dir <path>`: Path to leaderboard data directory
+- `--db-url <url>`: Database URL (overrides data-dir)
+- `--help, -h`: Show help message
+
+### Environment Variables
+
+- `LEADERBOARD_DATA_DIR`: Default data directory (default: `./data`)
+- `LIBSQL_DB_URL`: Database URL
+
+## HTTP Transport
+
+For remote access, use HTTP transport:
+
+```bash
+leaderboard-mcp --transport http --port 3001
+```
+
+The server will listen on `http://localhost:3001` and expose the MCP protocol over HTTP.
+
+## Security
+
+- **Read-Only**: All operations are read-only. No write, update, or delete operations.
+- **Input Validation**: All inputs validated using Zod schemas.
+- **Trusted Environment**: Designed for use in trusted environments. No authentication required.
+- **Error Handling**: Comprehensive error handling with structured error messages.
+
+## Troubleshooting
+
+### Server not appearing in Claude
+
+1. Check config file path is correct for your OS
+2. Verify JSON syntax in `claude_desktop_config.json`
+3. Use absolute paths, not relative paths
+4. Restart Claude Desktop
+5. Check Claude Desktop logs for errors
+
+### Empty results
+
+1. Verify database has data: `sqlite3 data/.leaderboard.db "SELECT COUNT(*) FROM contributor"`
+2. Check data directory path is correct
+3. Try querying without filters first
+4. Verify contributor/activity exists
+
+### Performance issues
+
+1. Use pagination for large result sets
+2. Apply filters to reduce data volume
+3. Use batch operations for multiple queries
+4. Check database has proper indexes
+
+## Further Reading
+
+- [MCP Server Source Code](https://github.com/ohcnetwork/leaderboard/tree/main/packages/mcp-server)
+- [Model Context Protocol Documentation](https://modelcontextprotocol.io)
+- [Claude Desktop](https://claude.ai/desktop)
+
+## Next Steps
+
+- [Architecture](/docs/architecture) - System architecture overview
+- [API Reference](/docs/plugins/api-reference) - Database schema and queries
+- [Development Guide](/docs/development) - Local development setup

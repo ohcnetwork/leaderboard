@@ -72,6 +72,7 @@ describe("setup-assets script", () => {
       env: {
         ...process.env,
         LEADERBOARD_DATA_DIR: testDataDir,
+        LEADERBOARD_PUBLIC_DIR: testPublicDir,
       },
     });
 
@@ -84,7 +85,9 @@ describe("setup-assets script", () => {
       await fileExists(path.join(testAssetsDestination, "banner.jpg")),
     ).toBe(true);
     expect(
-      await fileExists(path.join(testAssetsDestination, "icons", "favicon.ico")),
+      await fileExists(
+        path.join(testAssetsDestination, "icons", "favicon.ico"),
+      ),
     ).toBe(true);
   });
 
@@ -100,6 +103,7 @@ describe("setup-assets script", () => {
       env: {
         ...process.env,
         LEADERBOARD_DATA_DIR: testDataDir,
+        LEADERBOARD_PUBLIC_DIR: testPublicDir,
       },
     });
 
@@ -132,6 +136,7 @@ describe("setup-assets script", () => {
       env: {
         ...process.env,
         LEADERBOARD_DATA_DIR: testDataDir,
+        LEADERBOARD_PUBLIC_DIR: testPublicDir,
       },
     });
 
@@ -160,6 +165,7 @@ describe("setup-assets script", () => {
       env: {
         ...process.env,
         LEADERBOARD_DATA_DIR: customDataDir,
+        LEADERBOARD_PUBLIC_DIR: testPublicDir,
       },
     });
 

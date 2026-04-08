@@ -6,9 +6,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const workspaceRoot = path.resolve(__dirname, "../../..");
 const dataDir = process.env.LEADERBOARD_DATA_DIR || "./data";
+const publicDir =
+  process.env.LEADERBOARD_PUBLIC_DIR || path.resolve(__dirname, "../public");
 
 const assetsSource = path.resolve(workspaceRoot, dataDir, "assets");
-const assetsDestination = path.resolve(__dirname, "../public/assets");
+const assetsDestination = path.resolve(publicDir, "assets");
 
 async function directoryExists(dirPath: string): Promise<boolean> {
   try {

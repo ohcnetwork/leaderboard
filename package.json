@@ -62,5 +62,10 @@
   "dependencies": {
     "create-leaderboard-data-repo": "link:packages/create-data-repo",
     "create-leaderboard-plugin": "link:packages/create-plugin"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "7.3.2"
+    }
   }
 }

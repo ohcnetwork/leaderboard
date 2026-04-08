@@ -1217,7 +1217,7 @@ function RankChangeBadge({
           <TooltipTrigger asChild>
             <span
               className={cn(
-                "inline-flex items-center text-xs font-medium text-blue-600 dark:text-blue-400 pl-1.5",
+                "inline-flex items-center text-xs font-medium text-blue-600 dark:text-blue-400 pl-1.5 hover:cursor-default",
                 className,
               )}
             >
@@ -1239,7 +1239,7 @@ function RankChangeBadge({
           <TooltipTrigger asChild>
             <span
               className={cn(
-                "inline-flex items-center text-xs font-medium text-muted-foreground pl-1",
+                "inline-flex items-center text-xs font-medium text-muted-foreground pl-1 hover:cursor-default",
                 className,
               )}
             >
@@ -1261,7 +1261,7 @@ function RankChangeBadge({
           <TooltipTrigger asChild>
             <span
               className={cn(
-                "inline-flex items-center gap-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 pl-3",
+                "inline-flex items-center gap-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 pl-3 hover:cursor-default",
                 className,
               )}
             >
@@ -1283,7 +1283,7 @@ function RankChangeBadge({
         <TooltipTrigger asChild>
           <span
             className={cn(
-              "inline-flex items-center gap-0.5 text-xs font-medium text-red-600 dark:text-red-400 pl-3",
+              "inline-flex items-center gap-0.5 text-xs font-medium text-red-600 dark:text-red-400 pl-3 hover:cursor-default",
               className,
             )}
           >

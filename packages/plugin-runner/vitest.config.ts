@@ -6,5 +6,6 @@ export default defineConfig({
     environment: "node",
     pool: "forks", // Use forks instead of threads to avoid stack overflow
     singleFork: true, // Run tests in a single fork to avoid issues (moved from poolOptions in Vitest 4)
+    exclude: ["dist/**", "node_modules/**"],
   },
 });

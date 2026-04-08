@@ -15,8 +15,9 @@
     "setup:icons": "tsx scripts/setup-icons.ts",
     "setup:theme": "tsx scripts/setup-theme.ts",
     "setup:db": "tsx scripts/setup-db.ts",
-    "predev": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db",
-    "prebuild": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db"
+    "setup:assets": "tsx scripts/setup-assets.ts",
+    "predev": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db && pnpm setup:assets",
+    "prebuild": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db && pnpm setup:assets"
   },
   "dependencies": {
     "@codemirror/lang-sql": "^6.10.0",

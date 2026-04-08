@@ -85,6 +85,10 @@ plugin-runner --data-dir=/path/to/data # Custom data directory
 - `contributor` - User profiles and metadata
 - `activity_definition` - Activity types defined by plugins
 - `activity` - Individual activity records
+- `global_aggregate` - Organization-level metrics
+- `contributor_aggregate` - Per-contributor metrics
+- `badge_definition` - Badge types and variants
+- `contributor_badge` - Badges earned by contributors
 
 **Storage**:
 
@@ -119,6 +123,44 @@ export default {
   },
 } satisfies Plugin;
 ```
+
+### 3. MCP Server (`@leaderboard/mcp-server`)
+
+**Purpose**: Enable AI assistants to query leaderboard data via Model Context Protocol
+
+**Features**:
+
+- 20+ query tools for comprehensive data access
+- Dual transport support (STDIO and HTTP)
+- Read-only operations for security
+- Batch query operations
+- Input validation with Zod schemas
+
+**Tools Categories**:
+
+- **Contributor Tools**: Query contributors, get stats, batch operations
+- **Activity Tools**: Query activities, search, timeline analysis
+- **Leaderboard Tools**: Rankings, top contributors, active users
+- **Badge Tools**: Badge definitions, awards, top earners
+- **Aggregate Tools**: Global and contributor-level metrics
+
+**Usage**:
+
+```bash
+# STDIO transport (for Claude Desktop)
+leaderboard-mcp --data-dir ./data
+
+# HTTP transport
+leaderboard-mcp --transport http --port 3001
+```
+
+**Integration**:
+
+- Claude Desktop configuration
+- MCP-compatible AI clients
+- Natural language queries
+
+See [MCP Server Documentation](/docs/mcp-server) for detailed usage.
 
 ### 4. Next.js Application (`apps/leaderboard-web`)
 

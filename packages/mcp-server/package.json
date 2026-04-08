@@ -1,13 +1,13 @@
 {
-  "name": "@leaderboard/plugin-runner",
-  "version": "0.2.0",
-  "description": "Plugin runner CLI for the leaderboard system",
+  "name": "@leaderboard/mcp-server",
+  "version": "0.1.0",
+  "description": "Model Context Protocol (MCP) server for querying leaderboard data",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "private": true,
+  "private": false,
   "bin": {
-    "plugin-runner": "./dist/index.js"
+    "leaderboard-mcp": "./dist/index.js"
   },
   "files": [
     "dist"
@@ -17,28 +17,28 @@
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit",
     "dev": "tsx src/index.ts",
+    "dev:http": "tsx src/index.ts --transport http",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
   },
   "keywords": [
+    "mcp",
+    "model-context-protocol",
     "leaderboard",
-    "plugin",
-    "runner",
-    "cli"
+    "database",
+    "query",
+    "api"
   ],
   "author": "Open Healthcare Network",
   "license": "MIT",
   "dependencies": {
     "@libsql/client": "^0.14.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "@ohcnetwork/leaderboard-api": "workspace:*",
-    "date-fns": "^4.1.0",
-    "gray-matter": "^4.0.3",
-    "js-yaml": "^4.1.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.19.39",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",

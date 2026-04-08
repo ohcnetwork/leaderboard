@@ -30,6 +30,7 @@ This will install all dependencies for the monorepo, including:
 
 - `@ohcnetwork/leaderboard-api` - Database utilities and plugin type definitions
 - `@leaderboard/plugin-runner` - CLI tool
+- `@leaderboard/mcp-server` - MCP server for AI assistant integration
 - `apps/leaderboard-web` - Next.js application
 
 ### 3. Set Up Data Repository
@@ -172,9 +173,12 @@ leaderboard/
 │       ├── lib/                  # Utilities
 │       └── config.yaml           # Local config (copied from data-repo)
 ├── packages/
-│   ├── plugin-api/               # Plugin type definitions
-│   ├── db/                       # Database utilities
-│   └── plugin-runner/            # CLI tool
+│   ├── api/                      # Database utilities and plugin types
+│   ├── plugin-runner/            # CLI tool
+│   ├── mcp-server/               # MCP server for AI assistants
+│   ├── plugin-dummy/             # Example dummy data plugin
+│   ├── create-plugin/            # Plugin scaffolding CLI
+│   └── create-data-repo/         # Data repository scaffolding CLI
 ├── docs/                         # Documentation (this site)
 └── package.json                  # Root package.json
 
@@ -219,5 +223,6 @@ pnpm create-leaderboard-plugin ../my-plugin
 
 - [Configuration Reference](/docs/getting-started/configuration)
 - [Creating Plugins](/docs/plugins/creating-plugins)
+- [MCP Server for AI Integration](/docs/mcp-server)
 - [Data Management](/docs/data-management)
 - [Deployment](/docs/deployment)

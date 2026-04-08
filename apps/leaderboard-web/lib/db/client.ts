@@ -6,7 +6,7 @@
 import type { Database } from "@ohcnetwork/leaderboard-api";
 import {
   createDatabase,
-  dataDir,
+  getDataDir,
   getDatabaseUrl,
 } from "@ohcnetwork/leaderboard-api";
 
@@ -21,7 +21,7 @@ export function getDatabase(): Database {
     return cachedDb;
   }
 
-  const dbUrl = getDatabaseUrl(dataDir);
+  const dbUrl = getDatabaseUrl(getDataDir());
 
   cachedDb = createDatabase(dbUrl);
   return cachedDb;

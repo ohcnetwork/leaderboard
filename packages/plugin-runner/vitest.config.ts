@@ -5,10 +5,6 @@ export default defineConfig({
     globals: true,
     environment: "node",
     pool: "forks", // Use forks instead of threads to avoid stack overflow
-    poolOptions: {
-      forks: {
-        singleFork: true, // Run tests in a single fork to avoid issues
-      },
-    },
+    singleFork: true, // Run tests in a single fork to avoid issues (moved from poolOptions in Vitest 4)
   },
 });

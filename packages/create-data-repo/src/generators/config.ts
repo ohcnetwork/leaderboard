@@ -106,6 +106,31 @@ export function generateConfigYaml(config: DataRepoConfig): string {
   yamlString += "  #   - pr_merged\n";
   yamlString += "  #   - pr_opened\n";
   yamlString += "  #   - issue_opened\n";
+  yamlString += "  #\n";
+  yamlString += "  # Optional: Define badges and evaluation rules\n";
+  yamlString += "  # badges:\n";
+  yamlString += "  #   definitions:\n";
+  yamlString += "  #     - slug: activity_milestone\n";
+  yamlString += "  #       name: Activity Milestone\n";
+  yamlString +=
+    '  #       description: "Awarded for reaching activity count milestones"\n';
+  yamlString += "  #       variants:\n";
+  yamlString += "  #         bronze:\n";
+  yamlString += '  #           description: "10+ activities"\n';
+  yamlString += '  #           svg_url: "https://example.com/bronze.svg"\n';
+  yamlString += "  #         silver:\n";
+  yamlString += '  #           description: "50+ activities"\n';
+  yamlString += '  #           svg_url: "https://example.com/silver.svg"\n';
+  yamlString += "  #   rules:\n";
+  yamlString += "  #     - type: threshold\n";
+  yamlString += "  #       badge_slug: activity_milestone\n";
+  yamlString += "  #       enabled: true\n";
+  yamlString += "  #       aggregate_slug: activity_count\n";
+  yamlString += "  #       thresholds:\n";
+  yamlString += "  #         - variant: bronze\n";
+  yamlString += "  #           value: 10\n";
+  yamlString += "  #         - variant: silver\n";
+  yamlString += "  #           value: 50\n";
 
   return yamlString;
 }

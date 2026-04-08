@@ -59,7 +59,7 @@ graph TB
 - Fetch and validate plugins from URLs
 - Import existing data from data-repo
 - Execute plugin setup, scrape, and aggregate methods
-- Run standard aggregation and badge evaluation
+- Evaluate config and plugin badge rules
 - Export updated data back to data-repo
 
 **CLI Commands**:
@@ -70,6 +70,7 @@ plugin-runner import                   # Import data only
 plugin-runner setup                    # Plugin setup only
 plugin-runner scrape                   # Plugin scrape only
 plugin-runner aggregate                # Aggregation only
+plugin-runner evaluate                 # Badge evaluation only
 plugin-runner export                   # Export data only
 plugin-runner --data-dir=/path/to/data # Custom data directory
 ```
@@ -112,6 +113,12 @@ import type { Plugin } from "@ohcnetwork/leaderboard-api";
 export default {
   name: "my-plugin",
   version: "1.0.0",
+  badgeDefinitions: [
+    // Optional: Define custom badges
+  ],
+  badgeRules: [
+    // Optional: Define custom badge evaluation rules
+  ],
   async setup(ctx) {
     // Define activity types
   },
@@ -226,14 +233,22 @@ See [MCP Server Documentation](/docs/mcp-server) for detailed usage.
      → Compute plugin-specific aggregates
    ```
 
-6. **Export Phase**
+6. **Badge Evaluation Phase**
+
+   ```
+   Evaluate badge rules from config (threshold, streak, growth, composite)
+   For each plugin (with badgeRules):
+     Evaluate plugin badge rules
+   ```
+
+7. **Export Phase**
 
    ```
    LibSQL → data-repo/contributors/*.md
    LibSQL → data-repo/activities/*.jsonl
    ```
 
-7. **Build Phase**
+8. **Build Phase**
    ```
    Next.js reads LibSQL
    → Generate static pages

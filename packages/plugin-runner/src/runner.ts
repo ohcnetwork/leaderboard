@@ -4,12 +4,16 @@
 
 import type {
   Database,
+  BadgeRuleDefinition as DeclarativeBadgeRuleDefinition,
   Logger,
   Plugin,
   PluginContext,
 } from "@ohcnetwork/leaderboard-api";
+import { badgeDefinitionQueries } from "@ohcnetwork/leaderboard-api";
 import type { Config } from "./config";
 import { loadPlugin } from "./loader";
+import { evaluateBadgeRules } from "./rules/evaluator";
+import type { BadgeRuleDefinition } from "./rules/types";
 
 /**
  * A loaded plugin with its resolved config
@@ -57,7 +61,8 @@ export async function loadAllPlugins(
 }
 
 /**
- * Run setup phase for all plugins
+ * Run setup phase for all plugins.
+ * Also inserts badge definitions from config and plugin manifests.
  */
 export async function setupPlugins(
   loadedPlugins: LoadedPlugin[],
@@ -65,8 +70,29 @@ export async function setupPlugins(
   db: Database,
   logger: Logger,
 ): Promise<void> {
+  // Insert badge definitions from config
+  const configBadgeDefs = config.leaderboard.badges?.definitions ?? [];
+  if (configBadgeDefs.length > 0) {
+    logger.info(
+      `Inserting ${configBadgeDefs.length} badge definitions from config`,
+    );
+    for (const badgeDef of configBadgeDefs) {
+      await badgeDefinitionQueries.upsert(db, badgeDef);
+    }
+  }
+
   logger.info("Running setup phase for all plugins");
   for (const { id, plugin, config: pluginConfig } of loadedPlugins) {
+    // Insert plugin badge definitions
+    if (plugin.badgeDefinitions && plugin.badgeDefinitions.length > 0) {
+      logger.info(
+        `Inserting ${plugin.badgeDefinitions.length} badge definitions from plugin: ${plugin.name}`,
+      );
+      for (const badgeDef of plugin.badgeDefinitions) {
+        await badgeDefinitionQueries.upsert(db, badgeDef);
+      }
+    }
+
     if (plugin.setup) {
       try {
         logger.info(`Running setup for plugin: ${plugin.name}`);
@@ -151,6 +177,46 @@ export async function aggregatePlugins(
 }
 
 /**
+ * Run badge evaluation phase.
+ * First evaluates badge rules from config, then plugin badge rules.
+ */
+export async function evaluateAllBadges(
+  loadedPlugins: LoadedPlugin[],
+  config: Config,
+  db: Database,
+  logger: Logger,
+): Promise<void> {
+  // Evaluate badge rules from config
+  const configRules = transformConfigBadgeRules(
+    config.leaderboard.badges?.rules ?? [],
+  );
+  if (configRules.length > 0) {
+    logger.info(`Evaluating ${configRules.length} badge rules from config`);
+    await evaluateBadgeRules(db, logger, configRules);
+    logger.info("Config badge evaluation complete");
+  }
+
+  // Evaluate plugin badge rules
+  for (const { id, plugin } of loadedPlugins) {
+    if (plugin.badgeRules && plugin.badgeRules.length > 0) {
+      logger.info(
+        `Evaluating ${plugin.badgeRules.length} badge rules from plugin: ${plugin.name}`,
+      );
+      try {
+        await evaluateBadgeRules(db, logger, plugin.badgeRules);
+        logger.info(`Badge evaluation complete for plugin: ${plugin.name}`);
+      } catch (error) {
+        logger.error(
+          `Badge evaluation failed for plugin ${id}`,
+          error as Error,
+        );
+        throw error;
+      }
+    }
+  }
+}
+
+/**
  * Run all plugins (load, setup, scrape)
  * Note: Does not run aggregate phase — use aggregatePlugins() separately
  * after the main leaderboard aggregation has completed.
@@ -171,4 +237,58 @@ export async function runPlugins(
 
   logger.info("All plugins setup and scrape completed successfully");
   return loadedPlugins;
+}
+
+/**
+ * Transform config badge rules (snake_case) to BadgeRuleDefinition (camelCase)
+ */
+function transformConfigBadgeRules(
+  configRules: NonNullable<Config["leaderboard"]["badges"]>["rules"],
+): BadgeRuleDefinition[] {
+  return configRules.map((rule): DeclarativeBadgeRuleDefinition => {
+    switch (rule.type) {
+      case "threshold":
+        return {
+          type: "threshold",
+          badgeSlug: rule.badge_slug,
+          enabled: rule.enabled,
+          aggregateSlug: rule.aggregate_slug,
+          thresholds: rule.thresholds,
+        };
+      case "streak":
+        return {
+          type: "streak",
+          badgeSlug: rule.badge_slug,
+          enabled: rule.enabled,
+          streakType: rule.streak_type,
+          activityDefinitions: rule.activity_definitions,
+          thresholds: rule.thresholds,
+        };
+      case "growth":
+        return {
+          type: "growth",
+          badgeSlug: rule.badge_slug,
+          enabled: rule.enabled,
+          aggregateSlug: rule.aggregate_slug,
+          period: rule.period,
+          thresholds: rule.thresholds.map((t) => ({
+            variant: t.variant,
+            percentageIncrease: t.percentage_increase,
+          })),
+        };
+      case "composite":
+        return {
+          type: "composite",
+          badgeSlug: rule.badge_slug,
+          enabled: rule.enabled,
+          operator: rule.operator,
+          conditions: rule.conditions.map((c) => ({
+            aggregateSlug: c.aggregate_slug,
+            operator: c.operator,
+            value: c.value,
+          })),
+          variant: rule.variant,
+        };
+    }
+  });
 }

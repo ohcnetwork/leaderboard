@@ -704,30 +704,82 @@ Follow semantic versioning:
 
 ## Defining Custom Badge Rules
 
-Plugins can define custom badge rules with activity filtering patterns.
+Plugins can define custom badge rules via the `badgeRules` manifest property or in `config.yaml`. Rules with activity filtering patterns allow flexible badge definitions.
 
 ### Streak Badges with Activity Filtering
 
-You can create streak badges that only count specific activity types:
+You can create streak badges that only count specific activity types. Define them in `config.yaml`:
+
+```yaml
+leaderboard:
+  badges:
+    definitions:
+      - slug: documentation_champion
+        name: "Documentation Champion"
+        description: "Consistent documentation contributor"
+        variants:
+          bronze:
+            description: "4 weeks of docs contributions"
+            svg_url: "https://example.com/docs-bronze.svg"
+          silver:
+            description: "8 weeks of docs contributions"
+            svg_url: "https://example.com/docs-silver.svg"
+          gold:
+            description: "12 weeks of docs contributions"
+            svg_url: "https://example.com/docs-gold.svg"
+    rules:
+      - type: streak
+        badge_slug: documentation_champion
+        enabled: true
+        streak_type: weekly
+        activity_definitions:
+          - "docs_.*" # Regex pattern
+          - readme_update # Exact match
+        thresholds:
+          - variant: bronze
+            days: 4
+          - variant: silver
+            days: 8
+          - variant: gold
+            days: 12
+```
+
+Or define them on the plugin manifest:
 
 ```typescript
-import { STANDARD_BADGE_RULES } from "@leaderboard/plugin-runner";
-
-export const customRules = [
-  ...STANDARD_BADGE_RULES,
-  {
-    type: "streak",
-    badgeSlug: "documentation_champion",
-    enabled: true,
-    streakType: "weekly",
-    activityDefinitions: ["docs_.*", "readme_update"], // Regex patterns
-    thresholds: [
-      { variant: "bronze", days: 4 },
-      { variant: "silver", days: 8 },
-      { variant: "gold", days: 12 },
-    ],
+export default {
+  name: "docs-plugin",
+  version: "1.0.0",
+  badgeDefinitions: [
+    {
+      slug: "documentation_champion",
+      name: "Documentation Champion",
+      description: "Consistent documentation contributor",
+      variants: {
+        bronze: { description: "4 weeks", svg_url: "..." },
+        silver: { description: "8 weeks", svg_url: "..." },
+        gold: { description: "12 weeks", svg_url: "..." },
+      },
+    },
+  ],
+  badgeRules: [
+    {
+      type: "streak",
+      badgeSlug: "documentation_champion",
+      enabled: true,
+      streakType: "weekly",
+      activityDefinitions: ["docs_.*", "readme_update"],
+      thresholds: [
+        { variant: "bronze", days: 4 },
+        { variant: "silver", days: 8 },
+        { variant: "gold", days: 12 },
+      ],
+    },
+  ],
+  async scrape(ctx) {
+    /* ... */
   },
-];
+} satisfies Plugin;
 ```
 
 ### Pattern Matching Examples

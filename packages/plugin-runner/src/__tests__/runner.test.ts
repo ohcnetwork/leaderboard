@@ -3,6 +3,7 @@
  */
 
 import {
+  badgeDefinitionQueries,
   createDatabase,
   initializeSchema,
   type Database,
@@ -12,6 +13,7 @@ import type { Config } from "../config";
 import { createLogger } from "../logger";
 import {
   aggregatePlugins,
+  evaluateAllBadges,
   loadAllPlugins,
   scrapePlugins,
   setupPlugins,
@@ -358,5 +360,231 @@ describe("aggregatePlugins", () => {
     await aggregatePlugins(loaded, config, db, logger);
 
     expect(aggregateFn).toHaveBeenCalledOnce();
+  });
+});
+
+describe("setupPlugins - badge definitions", () => {
+  let db: Database;
+
+  beforeEach(async () => {
+    db = createDatabase(":memory:");
+    await initializeSchema(db);
+  });
+
+  afterEach(async () => {
+    await db.close();
+  });
+
+  it("should insert badge definitions from config", async () => {
+    const loaded: LoadedPlugin[] = [];
+    const config = makeConfig();
+    config.leaderboard.badges = {
+      definitions: [
+        {
+          slug: "config-badge",
+          name: "Config Badge",
+          description: "A badge from config",
+          variants: {
+            bronze: {
+              description: "Bronze",
+              svg_url: "https://example.com/bronze.svg",
+            },
+          },
+        },
+      ],
+      rules: [],
+    };
+
+    await setupPlugins(loaded, config, db, logger);
+
+    const definitions = await badgeDefinitionQueries.getAll(db);
+    const slugs = definitions.map((d) => d.slug);
+    expect(slugs).toContain("config-badge");
+  });
+
+  it("should not insert any badge definitions when config has none", async () => {
+    const loaded: LoadedPlugin[] = [];
+    const config = makeConfig();
+
+    await setupPlugins(loaded, config, db, logger);
+
+    const definitions = await badgeDefinitionQueries.getAll(db);
+    expect(definitions).toHaveLength(0);
+  });
+
+  it("should insert plugin badge definitions", async () => {
+    const loaded: LoadedPlugin[] = [
+      makeLoadedPlugin({
+        plugin: {
+          name: "with-badges",
+          version: "1.0.0",
+          scrape: vi.fn(async () => {}),
+          badgeDefinitions: [
+            {
+              slug: "plugin-badge",
+              name: "Plugin Badge",
+              description: "A badge from a plugin",
+              variants: {
+                bronze: {
+                  description: "Bronze",
+                  svg_url: "https://example.com/bronze.svg",
+                },
+                gold: {
+                  description: "Gold",
+                  svg_url: "https://example.com/gold.svg",
+                },
+              },
+            },
+          ],
+        },
+      }),
+    ];
+    const config = makeConfig();
+
+    await setupPlugins(loaded, config, db, logger);
+
+    const pluginBadge = await badgeDefinitionQueries.getBySlug(
+      db,
+      "plugin-badge",
+    );
+    expect(pluginBadge).not.toBeNull();
+    expect(pluginBadge!.name).toBe("Plugin Badge");
+    expect(pluginBadge!.variants.bronze).toBeDefined();
+    expect(pluginBadge!.variants.gold).toBeDefined();
+  });
+
+  it("should insert both config and plugin badge definitions", async () => {
+    const loaded: LoadedPlugin[] = [
+      makeLoadedPlugin({
+        plugin: {
+          name: "with-badges",
+          version: "1.0.0",
+          scrape: vi.fn(async () => {}),
+          badgeDefinitions: [
+            {
+              slug: "custom-badge",
+              name: "Custom",
+              description: "Custom badge",
+              variants: {
+                default: { description: "Default", svg_url: "" },
+              },
+            },
+          ],
+        },
+      }),
+    ];
+    const config = makeConfig();
+    config.leaderboard.badges = {
+      definitions: [
+        {
+          slug: "config-badge",
+          name: "Config Badge",
+          description: "From config",
+          variants: {
+            gold: { description: "Gold", svg_url: "" },
+          },
+        },
+      ],
+      rules: [],
+    };
+
+    await setupPlugins(loaded, config, db, logger);
+
+    const definitions = await badgeDefinitionQueries.getAll(db);
+    const slugs = definitions.map((d) => d.slug);
+
+    // Config badges
+    expect(slugs).toContain("config-badge");
+    // Plugin badges
+    expect(slugs).toContain("custom-badge");
+  });
+});
+
+describe("evaluateAllBadges", () => {
+  let db: Database;
+
+  beforeEach(async () => {
+    db = createDatabase(":memory:");
+    await initializeSchema(db);
+  });
+
+  afterEach(async () => {
+    await db.close();
+  });
+
+  it("should run without errors when no plugins have badge rules", async () => {
+    const loaded: LoadedPlugin[] = [
+      makeLoadedPlugin({
+        plugin: {
+          name: "no-badges",
+          version: "1.0.0",
+          scrape: vi.fn(async () => {}),
+        },
+      }),
+    ];
+    const config = makeConfig();
+
+    await expect(
+      evaluateAllBadges(loaded, config, db, logger),
+    ).resolves.not.toThrow();
+  });
+
+  it("should evaluate config badge rules", async () => {
+    // Insert badge definition that the rule references
+    await badgeDefinitionQueries.upsert(db, {
+      slug: "test-threshold-badge",
+      name: "Test Badge",
+      description: "A test badge",
+      variants: {
+        bronze: { description: "Bronze", svg_url: "" },
+      },
+    });
+
+    const loaded: LoadedPlugin[] = [];
+    const config = makeConfig();
+    config.leaderboard.badges = {
+      definitions: [],
+      rules: [
+        {
+          type: "threshold" as const,
+          badge_slug: "test-threshold-badge",
+          enabled: true,
+          aggregate_slug: "activity_count",
+          thresholds: [{ variant: "bronze", value: 5 }],
+        },
+      ],
+    };
+
+    // Should not throw (no contributors to evaluate against)
+    await expect(
+      evaluateAllBadges(loaded, config, db, logger),
+    ).resolves.not.toThrow();
+  });
+
+  it("should skip plugins without badge rules", async () => {
+    const loaded: LoadedPlugin[] = [
+      makeLoadedPlugin({
+        id: "no-rules",
+        plugin: {
+          name: "no-rules",
+          version: "1.0.0",
+          scrape: vi.fn(async () => {}),
+        },
+      }),
+      makeLoadedPlugin({
+        id: "with-rules",
+        plugin: {
+          name: "with-rules",
+          version: "1.0.0",
+          scrape: vi.fn(async () => {}),
+          badgeRules: [],
+        },
+      }),
+    ];
+    const config = makeConfig();
+
+    await expect(
+      evaluateAllBadges(loaded, config, db, logger),
+    ).resolves.not.toThrow();
   });
 });

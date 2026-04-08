@@ -519,6 +519,69 @@ export const activityQueries = {
   },
 
   /**
+   * Get the date of the Nth activity for a contributor (sorted by occurred_at ASC).
+   * Used to determine when a contributor crossed an activity count threshold.
+   * @param offset 0-based offset (e.g., offset=9 returns the 10th activity)
+   * @param activityDefinition Optional activity definition slug to filter by
+   */
+  async getDateAtOffset(
+    db: Database,
+    contributor: string,
+    offset: number,
+    activityDefinition?: string,
+  ): Promise<string | null> {
+    const params: unknown[] = [contributor];
+    let whereClause = "WHERE a.contributor = ?";
+    if (activityDefinition) {
+      whereClause += " AND a.activity_definition = ?";
+      params.push(activityDefinition);
+    }
+    params.push(offset);
+
+    const result = await db.execute(
+      `SELECT a.occurred_at
+       FROM activity a
+       ${whereClause}
+       ORDER BY a.occurred_at ASC
+       LIMIT 1 OFFSET ?`,
+      params,
+    );
+
+    if (result.rows.length === 0) return null;
+    const date = result.rows[0].occurred_at as string;
+    return date.split("T")[0];
+  },
+
+  /**
+   * Get the date when a contributor's cumulative points crossed a threshold.
+   * Activities are sorted by occurred_at ASC and points are summed progressively.
+   */
+  async getDateAtPointsThreshold(
+    db: Database,
+    contributor: string,
+    threshold: number,
+  ): Promise<string | null> {
+    const result = await db.execute(
+      `SELECT occurred_at, COALESCE(a.points, ad.points, 0) as points
+       FROM activity a
+       LEFT JOIN activity_definition ad ON a.activity_definition = ad.slug
+       WHERE a.contributor = ?
+       ORDER BY a.occurred_at ASC`,
+      [contributor],
+    );
+
+    let cumulative = 0;
+    for (const row of result.rows) {
+      cumulative += (row.points as number) || 0;
+      if (cumulative >= threshold) {
+        const date = row.occurred_at as string;
+        return date.split("T")[0];
+      }
+    }
+    return null;
+  },
+
+  /**
    * Insert or update activity
    */
   async upsert(db: Database, activity: Activity): Promise<void> {
@@ -1414,6 +1477,7 @@ export const contributorBadgeQueries = {
     slug: string,
     newVariant: string,
     meta?: Record<string, unknown>,
+    achievedOn?: string,
   ): Promise<void> {
     await db.execute(
       `UPDATE contributor_badge 
@@ -1421,7 +1485,7 @@ export const contributorBadgeQueries = {
        WHERE slug = ?`,
       [
         newVariant,
-        new Date().toISOString().split("T")[0],
+        achievedOn ?? new Date().toISOString().split("T")[0],
         meta ? JSON.stringify(meta) : null,
         slug,
       ],

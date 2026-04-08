@@ -133,4 +133,12 @@ function validatePlugin(plugin: unknown): asserts plugin is Plugin {
   if (p.aggregate !== undefined && typeof p.aggregate !== "function") {
     throw new Error("Plugin 'aggregate' must be a function if provided");
   }
+
+  if (p.badgeDefinitions !== undefined && !Array.isArray(p.badgeDefinitions)) {
+    throw new Error("Plugin 'badgeDefinitions' must be an array if provided");
+  }
+
+  if (p.badgeRules !== undefined && !Array.isArray(p.badgeRules)) {
+    throw new Error("Plugin 'badgeRules' must be an array if provided");
+  }
 }

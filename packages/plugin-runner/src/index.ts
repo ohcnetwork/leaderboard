@@ -19,15 +19,22 @@ import { importAggregates } from "./importers/aggregates";
 import { importBadges } from "./importers/badges";
 import { importContributors } from "./importers/contributors";
 import { createLogger } from "./logger";
-import { evaluateBadgeRules } from "./rules/evaluator";
 import {
   aggregatePlugins,
+  evaluateAllBadges,
   loadAllPlugins,
   scrapePlugins,
   setupPlugins,
 } from "./runner";
 
-const PHASES = ["import", "setup", "scrape", "aggregate", "export"] as const;
+const PHASES = [
+  "import",
+  "setup",
+  "scrape",
+  "aggregate",
+  "evaluate",
+  "export",
+] as const;
 type Phase = (typeof PHASES)[number];
 
 async function main() {
@@ -91,7 +98,12 @@ async function main() {
     }
 
     // Load plugins if any plugin phase is needed
-    if (shouldRun("setup") || shouldRun("scrape") || shouldRun("aggregate")) {
+    if (
+      shouldRun("setup") ||
+      shouldRun("scrape") ||
+      shouldRun("aggregate") ||
+      shouldRun("evaluate")
+    ) {
       const loadedPlugins = await loadAllPlugins(config, logger);
 
       // Setup phase
@@ -117,9 +129,12 @@ async function main() {
         logger.info("Running plugin aggregation phase");
         await aggregatePlugins(loadedPlugins, config, db, logger);
         logger.info("Plugin aggregation complete");
+      }
 
-        logger.info("Evaluating badge rules");
-        await evaluateBadgeRules(db, logger);
+      // Evaluate phase
+      if (shouldRun("evaluate")) {
+        logger.info("Running badge evaluation phase");
+        await evaluateAllBadges(loadedPlugins, config, db, logger);
         logger.info("Badge evaluation complete");
       }
     }

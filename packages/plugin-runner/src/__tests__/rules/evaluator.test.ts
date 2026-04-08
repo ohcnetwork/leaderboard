@@ -203,6 +203,262 @@ describe("Badge Rule Evaluator", () => {
       expect(badges).toHaveLength(1);
       expect(badges[0].variant).toBe("gold");
     });
+
+    it("should set achieved_on to the date of the Nth activity for activity_count thresholds", async () => {
+      // Create 15 activities with specific dates
+      for (let i = 0; i < 15; i++) {
+        await activityQueries.upsert(db, {
+          slug: `act_${i}`,
+          contributor: "test_user",
+          activity_definition: "pull_request_opened",
+          title: `Activity ${i}`,
+          occurred_at: `2025-01-${String(i + 1).padStart(2, "0")}`,
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+      }
+
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "activity_count",
+        name: "Activity Count",
+        description: "Total number of activities",
+      });
+
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "activity_count",
+        contributor: "test_user",
+        value: { type: "number", value: 15 },
+        meta: null,
+      });
+
+      await badgeDefinitionQueries.upsert(db, {
+        slug: "activity_milestone",
+        name: "Activity Milestone",
+        description: "milestone",
+        variants: {
+          bronze: { description: "10", svg_url: "/b.svg", order: 1 },
+        },
+      });
+
+      const rules: BadgeRuleDefinition[] = [
+        {
+          type: "threshold",
+          badgeSlug: "activity_milestone",
+          enabled: true,
+          aggregateSlug: "activity_count",
+          thresholds: [{ variant: "bronze", value: 10 }],
+        },
+      ];
+
+      await evaluateBadgeRules(db, mockLogger, rules);
+
+      const badges = await contributorBadgeQueries.getByContributor(
+        db,
+        "test_user",
+      );
+      expect(badges).toHaveLength(1);
+      // The 10th activity (0-indexed: 9) has date 2025-01-10
+      expect(badges[0].achieved_on).toBe("2025-01-10");
+    });
+
+    it("should set achieved_on to the date of the Nth activity for per-definition activity_count thresholds", async () => {
+      // Create mixed activities: PRs on odd days, issues on even days
+      for (let i = 0; i < 10; i++) {
+        await activityQueries.upsert(db, {
+          slug: `pr_${i}`,
+          contributor: "test_user",
+          activity_definition: "pull_request_opened",
+          title: `PR ${i}`,
+          occurred_at: `2025-02-${String(i * 2 + 1).padStart(2, "0")}`,
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+      }
+      for (let i = 0; i < 5; i++) {
+        await activityQueries.upsert(db, {
+          slug: `issue_${i}`,
+          contributor: "test_user",
+          activity_definition: "issue_created",
+          title: `Issue ${i}`,
+          occurred_at: `2025-02-${String(i * 2 + 2).padStart(2, "0")}`,
+          link: null,
+          text: null,
+          points: 5,
+          meta: null,
+        });
+      }
+
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "activity_count:pull_request_opened",
+        name: "PR Count",
+        description: "PR activities",
+      });
+
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "activity_count:pull_request_opened",
+        contributor: "test_user",
+        value: { type: "number", value: 10 },
+        meta: null,
+      });
+
+      await badgeDefinitionQueries.upsert(db, {
+        slug: "pr_milestone",
+        name: "PR Milestone",
+        description: "milestone",
+        variants: {
+          bronze: { description: "5 PRs", svg_url: "/b.svg", order: 1 },
+        },
+      });
+
+      const rules: BadgeRuleDefinition[] = [
+        {
+          type: "threshold",
+          badgeSlug: "pr_milestone",
+          enabled: true,
+          aggregateSlug: "activity_count:pull_request_opened",
+          thresholds: [{ variant: "bronze", value: 5 }],
+        },
+      ];
+
+      await evaluateBadgeRules(db, mockLogger, rules);
+
+      const badges = await contributorBadgeQueries.getByContributor(
+        db,
+        "test_user",
+      );
+      expect(badges).toHaveLength(1);
+      // 5th PR (0-indexed: 4) has date 2025-02-09
+      expect(badges[0].achieved_on).toBe("2025-02-09");
+    });
+
+    it("should set achieved_on based on cumulative points for total_activity_points thresholds", async () => {
+      // Create activities with varying points
+      await activityQueries.upsert(db, {
+        slug: "act_a",
+        contributor: "test_user",
+        activity_definition: "pull_request_opened",
+        title: "A",
+        occurred_at: "2025-03-01",
+        link: null,
+        text: null,
+        points: 30,
+        meta: null,
+      });
+      await activityQueries.upsert(db, {
+        slug: "act_b",
+        contributor: "test_user",
+        activity_definition: "pull_request_merged",
+        title: "B",
+        occurred_at: "2025-03-05",
+        link: null,
+        text: null,
+        points: 40,
+        meta: null,
+      });
+      await activityQueries.upsert(db, {
+        slug: "act_c",
+        contributor: "test_user",
+        activity_definition: "pull_request_opened",
+        title: "C",
+        occurred_at: "2025-03-10",
+        link: null,
+        text: null,
+        points: 50,
+        meta: null,
+      });
+
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "total_activity_points",
+        name: "Total Points",
+        description: "Total activity points",
+      });
+
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "total_activity_points",
+        contributor: "test_user",
+        value: { type: "number", value: 120 },
+        meta: null,
+      });
+
+      await badgeDefinitionQueries.upsert(db, {
+        slug: "points_milestone",
+        name: "Points Milestone",
+        description: "milestone",
+        variants: {
+          bronze: { description: "50 pts", svg_url: "/b.svg", order: 1 },
+        },
+      });
+
+      const rules: BadgeRuleDefinition[] = [
+        {
+          type: "threshold",
+          badgeSlug: "points_milestone",
+          enabled: true,
+          aggregateSlug: "total_activity_points",
+          thresholds: [{ variant: "bronze", value: 50 }],
+        },
+      ];
+
+      await evaluateBadgeRules(db, mockLogger, rules);
+
+      const badges = await contributorBadgeQueries.getByContributor(
+        db,
+        "test_user",
+      );
+      expect(badges).toHaveLength(1);
+      // Cumulative: 30 (act_a), 70 (act_b crosses 50) → achieved_on = 2025-03-05
+      expect(badges[0].achieved_on).toBe("2025-03-05");
+    });
+
+    it("should fall back to current date for unknown aggregate slugs", async () => {
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "custom_metric",
+        name: "Custom Metric",
+        description: "Some custom metric",
+      });
+
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "custom_metric",
+        contributor: "test_user",
+        value: { type: "number", value: 100 },
+        meta: null,
+      });
+
+      await badgeDefinitionQueries.upsert(db, {
+        slug: "custom_badge",
+        name: "Custom Badge",
+        description: "badge",
+        variants: {
+          bronze: { description: "50", svg_url: "/b.svg", order: 1 },
+        },
+      });
+
+      const rules: BadgeRuleDefinition[] = [
+        {
+          type: "threshold",
+          badgeSlug: "custom_badge",
+          enabled: true,
+          aggregateSlug: "custom_metric",
+          thresholds: [{ variant: "bronze", value: 50 }],
+        },
+      ];
+
+      await evaluateBadgeRules(db, mockLogger, rules);
+
+      const badges = await contributorBadgeQueries.getByContributor(
+        db,
+        "test_user",
+      );
+      expect(badges).toHaveLength(1);
+      // Falls back to current date for unknown aggregates
+      expect(badges[0].achieved_on).toBe(
+        new Date().toISOString().split("T")[0],
+      );
+    });
   });
 
   describe("Streak Rules", () => {
@@ -272,6 +528,55 @@ describe("Badge Rule Evaluator", () => {
       expect(badges).toHaveLength(1);
       expect(badges[0].badge).toBe("consistency_champion");
       expect(badges[0].variant).toBe("bronze");
+      // achieved_on should be the end date of the streak, not today
+      expect(badges[0].achieved_on).toBe(today.toISOString().split("T")[0]);
+    });
+
+    it("should set achieved_on to streak end date", async () => {
+      // Add 10 consecutive daily activities starting from a fixed past date
+      for (let i = 0; i < 10; i++) {
+        await activityQueries.upsert(db, {
+          slug: `streak_act_${i}`,
+          contributor: "test_user",
+          activity_definition: "pull_request_opened",
+          title: `Activity ${i}`,
+          occurred_at: `2025-03-${String(i + 1).padStart(2, "0")}`,
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+      }
+
+      await badgeDefinitionQueries.upsert(db, {
+        slug: "streak_badge",
+        name: "Streak Badge",
+        description: "streak",
+        variants: {
+          bronze: { description: "7 days", svg_url: "/b.svg", order: 1 },
+        },
+      });
+
+      const rules: BadgeRuleDefinition[] = [
+        {
+          type: "streak",
+          badgeSlug: "streak_badge",
+          enabled: true,
+          streakType: "daily",
+          thresholds: [{ variant: "bronze", days: 7 }],
+        },
+      ];
+
+      await evaluateBadgeRules(db, mockLogger, rules);
+
+      const badges = await contributorBadgeQueries.getByContributor(
+        db,
+        "test_user",
+      );
+      expect(badges).toHaveLength(1);
+      // Streak of 10 consecutive days: 2025-03-01 to 2025-03-10
+      // End date of the longest streak should be 2025-03-10
+      expect(badges[0].achieved_on).toBe("2025-03-10");
     });
 
     it("should filter activities by regex pattern", async () => {
@@ -505,6 +810,95 @@ describe("Badge Rule Evaluator", () => {
       );
       expect(badges).toHaveLength(1);
       expect(badges[0].badge).toBe("super_contributor");
+      // Composite rules fall back to current date
+      expect(badges[0].achieved_on).toBe(
+        new Date().toISOString().split("T")[0],
+      );
+    });
+  });
+
+  describe("Badge Upgrades", () => {
+    it("should update achieved_on when upgrading a badge variant", async () => {
+      // Create 150 activities with specific dates
+      for (let i = 0; i < 150; i++) {
+        await activityQueries.upsert(db, {
+          slug: `upgrade_act_${i}`,
+          contributor: "test_user",
+          activity_definition: "pull_request_opened",
+          title: `Activity ${i}`,
+          occurred_at: `2025-${String(Math.floor(i / 28) + 1).padStart(2, "0")}-${String((i % 28) + 1).padStart(2, "0")}`,
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+      }
+
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "activity_count",
+        name: "Activity Count",
+        description: "Total activities",
+      });
+
+      await badgeDefinitionQueries.upsert(db, {
+        slug: "activity_milestone",
+        name: "Activity Milestone",
+        description: "milestone",
+        variants: {
+          bronze: { description: "10", svg_url: "/b.svg", order: 1 },
+          silver: { description: "50", svg_url: "/s.svg", order: 2 },
+          gold: { description: "100", svg_url: "/g.svg", order: 3 },
+        },
+      });
+
+      const rules: BadgeRuleDefinition[] = [
+        {
+          type: "threshold",
+          badgeSlug: "activity_milestone",
+          enabled: true,
+          aggregateSlug: "activity_count",
+          thresholds: [
+            { variant: "bronze", value: 10 },
+            { variant: "silver", value: 50 },
+            { variant: "gold", value: 100 },
+          ],
+        },
+      ];
+
+      // First: award bronze with 10 activities
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "activity_count",
+        contributor: "test_user",
+        value: { type: "number", value: 10 },
+        meta: null,
+      });
+
+      await evaluateBadgeRules(db, mockLogger, rules);
+
+      let badges = await contributorBadgeQueries.getByContributor(
+        db,
+        "test_user",
+      );
+      expect(badges).toHaveLength(1);
+      expect(badges[0].variant).toBe("bronze");
+      // 10th activity: index 9 → 2025-01-10
+      expect(badges[0].achieved_on).toBe("2025-01-10");
+
+      // Now upgrade to gold with 150 activities
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "activity_count",
+        contributor: "test_user",
+        value: { type: "number", value: 150 },
+        meta: null,
+      });
+
+      await evaluateBadgeRules(db, mockLogger, rules);
+
+      badges = await contributorBadgeQueries.getByContributor(db, "test_user");
+      expect(badges).toHaveLength(1);
+      expect(badges[0].variant).toBe("gold");
+      // 100th activity: index 99 → month 4 (99/28=3.5→floor=3→+1=4), day (99%28)+1=16
+      expect(badges[0].achieved_on).toBe("2025-04-16");
     });
   });
 });

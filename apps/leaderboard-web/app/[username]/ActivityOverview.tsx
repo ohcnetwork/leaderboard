@@ -66,7 +66,7 @@ export default function ActivityOverview({
     selectedYear === "last-year" ? "in the last year" : `in ${selectedYear}`;
 
   return (
-    <Card className="mb-8">
+    <Card className="mb-8 lg:w-max">
       <CardHeader>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>

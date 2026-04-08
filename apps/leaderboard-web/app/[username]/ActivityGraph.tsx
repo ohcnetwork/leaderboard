@@ -322,7 +322,7 @@ export default function ActivityGraph({
   return (
     <div className="relative">
       <TooltipProvider>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto lg:overflow-visible">
           <div
             className="inline-grid gap-1"
             style={{

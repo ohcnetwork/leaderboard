@@ -28,6 +28,7 @@ export interface ServerContext {
  * Tool execution result wrapper
  */
 export interface ToolResult<T = unknown> {
+  [key: string]: unknown;
   content: Array<{
     type: "text";
     text: string;

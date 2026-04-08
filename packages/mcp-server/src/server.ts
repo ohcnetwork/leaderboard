@@ -3,12 +3,12 @@
  */
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
   CallToolRequestSchema,
-  ListToolsRequestSchema,
   ListResourcesRequestSchema,
+  ListToolsRequestSchema,
   ReadResourceRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import { createDatabase } from "@ohcnetwork/leaderboard-api";
@@ -17,46 +17,46 @@ import { getDatabaseUrl } from "./utils.js";
 
 // Import all tools
 import {
-  queryContributors,
-  QueryContributorsSchema,
+  batchGetContributors,
+  BatchGetContributorsSchema,
+  batchGetContributorStats,
+  BatchGetContributorStatsSchema,
+  getActiveContributors,
+  GetActiveContributorsSchema,
+  getActivity,
+  getActivityDefinitions,
+  GetActivityDefinitionsSchema,
+  GetActivitySchema,
+  getActivityTimeline,
+  GetActivityTimelineSchema,
+  getAggregateDefinitions,
+  GetAggregateDefinitionsSchema,
+  getBadges,
+  GetBadgesSchema,
   getContributor,
+  getContributorAggregates,
+  GetContributorAggregatesSchema,
+  getContributorRanking,
+  GetContributorRankingSchema,
   GetContributorSchema,
   getContributorStats,
   GetContributorStatsSchema,
-  batchGetContributors,
-  BatchGetContributorsSchema,
-  queryActivities,
-  QueryActivitiesSchema,
-  getActivity,
-  GetActivitySchema,
-  getActivityDefinitions,
-  GetActivityDefinitionsSchema,
-  getActivityTimeline,
-  GetActivityTimelineSchema,
-  searchActivities,
-  SearchActivitiesSchema,
+  getGlobalAggregates,
+  GetGlobalAggregatesSchema,
   getLeaderboard,
   GetLeaderboardSchema,
-  getContributorRanking,
-  GetContributorRankingSchema,
-  getTopByActivity,
-  GetTopByActivitySchema,
-  getActiveContributors,
-  GetActiveContributorsSchema,
-  getBadges,
-  GetBadgesSchema,
   getRecentBadges,
   GetRecentBadgesSchema,
   getTopBadgeEarners,
   GetTopBadgeEarnersSchema,
-  getGlobalAggregates,
-  GetGlobalAggregatesSchema,
-  getContributorAggregates,
-  GetContributorAggregatesSchema,
-  getAggregateDefinitions,
-  GetAggregateDefinitionsSchema,
-  batchGetContributorStats,
-  BatchGetContributorStatsSchema,
+  getTopByActivity,
+  GetTopByActivitySchema,
+  queryActivities,
+  QueryActivitiesSchema,
+  queryContributors,
+  QueryContributorsSchema,
+  searchActivities,
+  SearchActivitiesSchema,
 } from "./tools/index.js";
 
 /**
@@ -100,7 +100,10 @@ export function createMCPServer(config: ServerConfig): Server {
               type: "number",
               description: "Maximum number of results (1-1000)",
             },
-            offset: { type: "number", description: "Number of results to skip" },
+            offset: {
+              type: "number",
+              description: "Number of results to skip",
+            },
           },
         },
       },
@@ -169,7 +172,10 @@ export function createMCPServer(config: ServerConfig): Server {
               type: "number",
               description: "Maximum number of results (1-1000)",
             },
-            offset: { type: "number", description: "Number of results to skip" },
+            offset: {
+              type: "number",
+              description: "Number of results to skip",
+            },
           },
         },
       },
@@ -199,7 +205,8 @@ export function createMCPServer(config: ServerConfig): Server {
       },
       {
         name: "get_activity_timeline",
-        description: "Get activity timeline for a contributor grouped by time period",
+        description:
+          "Get activity timeline for a contributor grouped by time period",
         inputSchema: {
           type: "object",
           properties: {
@@ -329,8 +336,7 @@ export function createMCPServer(config: ServerConfig): Server {
       },
       {
         name: "get_badges",
-        description:
-          "Get badge definitions or contributor badges",
+        description: "Get badge definitions or contributor badges",
         inputSchema: {
           type: "object",
           properties: {
@@ -452,7 +458,10 @@ export function createMCPServer(config: ServerConfig): Server {
             context,
           );
         case "get_contributor":
-          return await getContributor(GetContributorSchema.parse(args), context);
+          return await getContributor(
+            GetContributorSchema.parse(args),
+            context,
+          );
         case "get_contributor_stats":
           return await getContributorStats(
             GetContributorStatsSchema.parse(args),
@@ -486,7 +495,10 @@ export function createMCPServer(config: ServerConfig): Server {
             context,
           );
         case "get_leaderboard":
-          return await getLeaderboard(GetLeaderboardSchema.parse(args), context);
+          return await getLeaderboard(
+            GetLeaderboardSchema.parse(args),
+            context,
+          );
         case "get_contributor_ranking":
           return await getContributorRanking(
             GetContributorRankingSchema.parse(args),
@@ -580,12 +592,16 @@ export async function runServer(config: ServerConfig): Promise<void> {
     console.error("Leaderboard MCP Server running on stdio");
   } else if (config.transport === "http") {
     const port = config.httpPort || 3001;
-    const transport = new SSEServerTransport("/message", {
-      endpoint: `/sse`,
+    const http = await import("node:http");
+    const httpServer = http.createServer(async (req, res) => {
+      if (req.method === "GET" && req.url === "/sse") {
+        const transport = new SSEServerTransport("/message", res);
+        await server.connect(transport);
+        await transport.start();
+      }
     });
-
-    // This would require an HTTP server wrapper - simplified version
-    console.error(`Leaderboard MCP Server running on HTTP port ${port}`);
-    await server.connect(transport);
+    httpServer.listen(port, () => {
+      console.error(`Leaderboard MCP Server running on HTTP port ${port}`);
+    });
   }
 }

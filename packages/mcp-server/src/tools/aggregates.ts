@@ -15,7 +15,6 @@ import type { ServerContext, ToolResult } from "../types.js";
 import {
   createSuccessResult,
   createErrorResult,
-  validatePagination,
 } from "../utils.js";
 
 /**

@@ -64,3 +64,19 @@ export function getVisibleRolesOrdered(): Array<{
       description: role.description,
     }));
 }
+
+/**
+ * Get all roles with full metadata, preserving config.yaml insertion order
+ */
+export function getAllRolesOrdered(): Array<{
+  key: string;
+  name: string;
+  description?: string;
+}> {
+  const config = getConfig();
+  return Object.entries(config.leaderboard.roles).map(([key, role]) => ({
+    key,
+    name: role.name,
+    description: role.description,
+  }));
+}

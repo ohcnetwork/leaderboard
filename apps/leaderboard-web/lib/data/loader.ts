@@ -279,20 +279,22 @@ export async function getContributorAggregates(
 }
 
 /**
- * Get all contributors with avatars (excluding hidden roles)
+ * Get all contributors with avatars, optionally excluding specified roles
  */
-export async function getAllContributorsWithAvatars(hiddenRoles: string[]) {
+export async function getAllContributorsWithAvatars(
+  excludeRoles: string[] = [],
+) {
   const db = getDatabase();
 
   // Use optimized query with single JOIN to get points
   const contributorsWithPoints =
-    await contributorQueries.getLeaderboardWithPoints(db, hiddenRoles);
+    await contributorQueries.getLeaderboardWithPoints(db, excludeRoles);
 
   return contributorsWithPoints;
 }
 
 /**
- * Get contributors who were active within a recent period, excluding hidden roles.
+ * Get contributors who were active within a recent period, excluding specified roles.
  * Sorted by points earned in that period.
  */
 export async function getActiveContributors(

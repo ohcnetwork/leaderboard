@@ -1,5 +1,21 @@
 # leaderboard-web
 
+## 0.4.0
+
+### Minor Changes
+
+- 4b560d2: Adds MCP server for querying leaderboard's data
+- 42aff67: Support serving assets from data repository
+
+### Patch Changes
+
+- 6371553: Show all roles (including hidden) in People page
+- cb065da: show more KPI cards in home page
+- e32a214: fix activity overview width in contributor profile page
+- Updated dependencies [4b560d2]
+- Updated dependencies [9b99625]
+  - @ohcnetwork/leaderboard-api@0.3.0
+
 ## 0.3.1
 
 ### Patch Changes

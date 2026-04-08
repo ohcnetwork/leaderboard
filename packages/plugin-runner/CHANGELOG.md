@@ -1,5 +1,17 @@
 # @leaderboard/plugin-runner
 
+## 0.3.0
+
+### Minor Changes
+
+- 9b99625: Improve how badges are evaluated and support configuring badges via config.yaml
+
+### Patch Changes
+
+- Updated dependencies [4b560d2]
+- Updated dependencies [9b99625]
+  - @ohcnetwork/leaderboard-api@0.3.0
+
 ## 0.2.0
 
 ### Minor Changes

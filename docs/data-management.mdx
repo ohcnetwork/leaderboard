@@ -14,6 +14,11 @@ data-repo/
 ├── config.yaml                # Configuration
 ├── theme.css                  # Custom theme (optional)
 ├── .leaderboard.db           # LibSQL database
+├── assets/                    # Custom assets (optional)
+│   ├── logo.png
+│   ├── banner.jpg
+│   └── icons/
+│       └── favicon.ico
 ├── contributors/              # Contributor profiles (Markdown)
 │   ├── alice.md
 │   ├── bob.md
@@ -31,6 +36,76 @@ data-repo/
 | Contributors         | Markdown + YAML | ✅     | ✅     | Human-editable profiles with rich bio content       |
 | Activity Definitions | Database only   | ❌     | ❌     | Managed by plugins, no manual editing needed        |
 | Activities           | Sharded JSONL   | ✅     | ✅     | Efficient for large datasets, easy per-user updates |
+| Assets               | Static files    | ✅     | N/A    | Custom images and files served from data repository |
+
+## Custom Assets
+
+The `assets/` directory in your data repository allows you to serve custom static files (images, icons, etc.) alongside your leaderboard. This is useful for hosting logos, banners, favicons, and other assets without needing external hosting.
+
+### Setup
+
+1. Create an `assets` directory in your data repository:
+
+```bash
+mkdir -p data/assets
+```
+
+2. Add your files to the assets directory:
+
+```bash
+data/assets/
+├── logo.png
+├── banner.jpg
+└── icons/
+    └── favicon.ico
+```
+
+3. The assets are automatically copied to `public/assets/` during the build and dev process.
+
+### Usage
+
+Reference assets in your `config.yaml` using the `/assets/` path:
+
+```yaml
+org:
+  name: My Organization
+  logo_url: /assets/logo.png  # ← Served from data/assets/logo.png
+
+meta:
+  title: My Leaderboard
+  image_url: /assets/banner.jpg  # ← Served from data/assets/banner.jpg
+  favicon_url: /assets/icons/favicon.ico  # ← Served from data/assets/icons/favicon.ico
+```
+
+### How It Works
+
+- During `pnpm dev` and `pnpm build`, the `setup:assets` script automatically copies all files from `data/assets/` to `public/assets/` in the web project
+- Files in `public/assets/` are served as static assets at `/assets/*`
+- The `public/assets/` directory is gitignored, so assets remain in your data repository only
+- You can organize assets in subdirectories (e.g., `assets/icons/`, `assets/images/`)
+
+### Benefits
+
+- **Self-contained**: Keep all configuration and assets in your data repository
+- **Version control**: Track asset changes in your data repository's git history
+- **No external dependencies**: No need for external image hosting or CDN for simple assets
+- **Flexible paths**: Use relative paths (`/assets/*`) in your config instead of absolute URLs
+
+### Example
+
+```yaml
+# config.yaml
+org:
+  name: Acme Corp
+  logo_url: /assets/logo.svg
+  url: https://acme.com
+
+meta:
+  title: Acme Contributors
+  image_url: /assets/og-image.png
+  site_url: https://contributors.acme.com
+  favicon_url: /assets/favicon.ico
+```
 
 ## Contributor Profiles
 

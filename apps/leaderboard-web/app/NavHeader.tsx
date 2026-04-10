@@ -92,7 +92,7 @@ export default function NavHeader({
                 asChild
                 size="icon"
                 variant="outline"
-                className="size-9 rounded-xl dark:text-muted-foreground dark:hover:text-foreground"
+                className="size-9 rounded-xl"
               >
                 <Link
                   href={githubUrl}
@@ -162,7 +162,7 @@ export default function NavHeader({
                   asChild
                   size="icon"
                   variant="outline"
-                  className="size-10 rounded-xl dark:text-muted-foreground dark:hover:text-foreground"
+                  className="size-10 rounded-xl"
                 >
                   <Link
                     href={githubUrl}

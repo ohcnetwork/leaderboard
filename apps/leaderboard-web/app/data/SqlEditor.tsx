@@ -58,8 +58,8 @@ const baseTheme = EditorView.theme({
     fontSize: "13px",
   },
   ".cm-tooltip-autocomplete ul li[aria-selected]": {
-    backgroundColor: "var(--accent)",
-    color: "var(--accent-foreground)",
+    backgroundColor: "var(--muted)",
+    color: "var(--muted-foreground)",
   },
   ".cm-completionIcon": {
     opacity: "0.6",

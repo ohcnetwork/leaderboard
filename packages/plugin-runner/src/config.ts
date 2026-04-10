@@ -123,6 +123,7 @@ export const ConfigSchema = z.object({
   }),
   leaderboard: z.object({
     data_source: z.string().optional(),
+    data_branch: z.string().default("main"),
     plugins: z.record(z.string(), PluginConfigSchema).optional(),
     badges: BadgesConfigSchema.optional(),
     leaderboard: z

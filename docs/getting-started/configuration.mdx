@@ -35,7 +35,7 @@ org:
   name: Open Healthcare Network
   description: Building connected healthcare systems
   url: https://ohc.network
-  logo_url: /assets/logo.svg  # Local asset from data/assets/
+  logo_url: /assets/logo.svg # Local asset from data/assets/
   start_date: 2020-03-08
   socials:
     github: https://github.com/ohcnetwork
@@ -61,9 +61,9 @@ meta:
 meta:
   title: OHC Contributors
   description: Track contributions across OHC projects
-  image_url: /assets/og-image.png  # Local asset from data/assets/
+  image_url: /assets/og-image.png # Local asset from data/assets/
   site_url: https://contributors.ohc.network
-  favicon_url: /assets/favicon.ico  # Local asset from data/assets/
+  favicon_url: /assets/favicon.ico # Local asset from data/assets/
 ```
 
 ### Leaderboard (`leaderboard`)
@@ -72,7 +72,8 @@ Leaderboard-specific configuration.
 
 ```yaml
 leaderboard:
-  data_source: string # optional - Data source URL
+  data_source: string # optional - Data source URL (GitHub repo recommended for “Edit profile” links)
+  data_branch: string # optional - Branch in the data repo (default: main). Used for profile edit links, e.g. production
   theme: string (URL) # optional - Custom theme CSS URL
   roles: # required - Role definitions
     [role_id]:

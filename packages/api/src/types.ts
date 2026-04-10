@@ -131,6 +131,19 @@ export interface Plugin {
    * on the standard aggregates.
    */
   aggregate?: (ctx: PluginContext) => Promise<void>;
+
+  /**
+   * Optional badge definitions that this plugin provides.
+   * These are inserted into the database during the setup phase.
+   */
+  badgeDefinitions?: BadgeDefinition[];
+
+  /**
+   * Optional badge rules that this plugin provides.
+   * These are evaluated during the evaluate phase, after config badge evaluation.
+   * Each rule's badgeSlug must match a badge definition (either from config or from badgeDefinitions).
+   */
+  badgeRules?: BadgeRuleDefinition[];
 }
 
 /**
@@ -329,3 +342,76 @@ export interface ContributorBadge {
   achieved_on: string;
   meta: Record<string, unknown> | null;
 }
+
+// ---- Badge Rule Types ----
+
+/**
+ * Threshold-based badge rule (e.g., total activities > 100)
+ * Awards badges based on contributor aggregate values reaching thresholds.
+ */
+export interface ThresholdBadgeRule {
+  type: "threshold";
+  badgeSlug: string;
+  enabled: boolean;
+  aggregateSlug: string;
+  thresholds: {
+    variant: string;
+    value: number;
+  }[];
+}
+
+/**
+ * Streak-based badge rule (consecutive days with activity)
+ */
+export interface StreakBadgeRule {
+  type: "streak";
+  badgeSlug: string;
+  enabled: boolean;
+  streakType: "daily" | "weekly" | "monthly";
+  activityDefinitions?: string[];
+  thresholds: {
+    variant: string;
+    days: number;
+  }[];
+}
+
+/**
+ * Growth-based badge rule (improvement over time)
+ */
+export interface GrowthBadgeRule {
+  type: "growth";
+  badgeSlug: string;
+  enabled: boolean;
+  aggregateSlug: string;
+  period: "week" | "month" | "year";
+  thresholds: {
+    variant: string;
+    percentageIncrease: number;
+  }[];
+}
+
+/**
+ * Composite badge rule (multiple conditions)
+ */
+export interface CompositeBadgeRule {
+  type: "composite";
+  badgeSlug: string;
+  enabled: boolean;
+  operator: "AND" | "OR";
+  conditions: {
+    aggregateSlug: string;
+    operator: ">" | "<" | ">=" | "<=" | "==" | "!=";
+    value: number;
+  }[];
+  variant: string;
+}
+
+/**
+ * Union of declarative badge rule types.
+ * These can be serialized and used in plugin manifests.
+ */
+export type BadgeRuleDefinition =
+  | ThresholdBadgeRule
+  | StreakBadgeRule
+  | GrowthBadgeRule
+  | CompositeBadgeRule;

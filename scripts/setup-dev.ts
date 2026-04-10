@@ -150,6 +150,98 @@ leaderboard:
   
   # Display configuration
   top_contributors: []
+
+  # Badge definitions and evaluation rules
+  badges:
+    definitions:
+      - slug: activity_milestone
+        name: "Activity Milestone"
+        description: "Awarded for reaching activity count milestones"
+        variants:
+          bronze:
+            description: "10+ activities"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=bronze-activity"
+          silver:
+            description: "50+ activities"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=silver-activity"
+          gold:
+            description: "100+ activities"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=gold-activity"
+          platinum:
+            description: "500+ activities"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=platinum-activity"
+      - slug: points_milestone
+        name: "Points Milestone"
+        description: "Awarded for reaching points milestones"
+        variants:
+          bronze:
+            description: "100+ points"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=bronze-points"
+          silver:
+            description: "500+ points"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=silver-points"
+          gold:
+            description: "1,000+ points"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=gold-points"
+          platinum:
+            description: "5,000+ points"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=platinum-points"
+      - slug: consistency_champion
+        name: "Consistency Champion"
+        description: "Awarded for maintaining activity streaks"
+        variants:
+          bronze:
+            description: "7 day streak"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=bronze-streak"
+          silver:
+            description: "14 day streak"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=silver-streak"
+          gold:
+            description: "30 day streak"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=gold-streak"
+          platinum:
+            description: "90 day streak"
+            svg_url: "https://api.dicebear.com/7.x/shapes/svg?seed=platinum-streak"
+    rules:
+      - type: threshold
+        badge_slug: activity_milestone
+        enabled: true
+        aggregate_slug: activity_count
+        thresholds:
+          - variant: bronze
+            value: 10
+          - variant: silver
+            value: 50
+          - variant: gold
+            value: 100
+          - variant: platinum
+            value: 500
+      - type: threshold
+        badge_slug: points_milestone
+        enabled: true
+        aggregate_slug: total_activity_points
+        thresholds:
+          - variant: bronze
+            value: 100
+          - variant: silver
+            value: 500
+          - variant: gold
+            value: 1000
+          - variant: platinum
+            value: 5000
+      - type: streak
+        badge_slug: consistency_champion
+        enabled: true
+        streak_type: daily
+        thresholds:
+          - variant: bronze
+            days: 7
+          - variant: silver
+            days: 14
+          - variant: gold
+            days: 30
+          - variant: platinum
+            days: 90
   
   roles:
     maintainer:

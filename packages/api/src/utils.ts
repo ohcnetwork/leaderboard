@@ -35,9 +35,3 @@ export const getDataDir = (dataDir?: string) => {
   // Relative path → resolve against workspace root
   return path.resolve(workspaceRoot, p);
 };
-
-/**
- * Absolute path to the data directory based on the environment variable
- * `LEADERBOARD_DATA_DIR` or fallback to `./data` relative to the workspace root
- */
-export const dataDir = getDataDir();

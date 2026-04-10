@@ -31,6 +31,13 @@ Add new data sources by creating simple JavaScript plugins. No need to modify co
 - Custom aggregates and metrics
 - [Data Explorer](/docs/data-explorer) — query the database with SQL directly in the browser
 
+### 🤖 AI Integration
+
+- [MCP Server](/docs/mcp-server) — query leaderboard data with AI assistants via Model Context Protocol
+- 20+ query tools for comprehensive data access
+- Support for Claude Desktop and other MCP clients
+- Read-only, secure API for AI interactions
+
 ### 🎨 Customizable Themes
 
 Override the default theme with your organization's branding using a simple CSS file.
@@ -45,14 +52,17 @@ No server required. Deploy to any static hosting service (Netlify, Vercel, GitHu
 
 ## Architecture
 
-The system consists of three main components:
+The system consists of four main components:
 
 1. **Plugin Runner**: Node.js CLI tool that fetches data from various sources
 2. **Database**: LibSQL database for efficient querying during build
 3. **Next.js App**: Static site generator that creates the frontend
+4. **MCP Server**: Model Context Protocol server for AI assistant integration
 
 ```
 Data Sources → Plugin Runner → LibSQL Database → Next.js Build → Static Site
+                                      ↓
+                                 MCP Server → AI Assistants
 ```
 
 ## Quick Start
@@ -91,5 +101,6 @@ pnpm start
 - [Installation & Setup](/docs/getting-started)
 - [Configuration Guide](/docs/getting-started/configuration)
 - [Creating Plugins](/docs/plugins/creating-plugins)
+- [MCP Server for AI Integration](/docs/mcp-server)
 - [Data Explorer](/docs/data-explorer)
 - [Deployment](/docs/deployment)

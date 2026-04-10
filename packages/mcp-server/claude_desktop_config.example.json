@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "leaderboard": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/leaderboard/packages/mcp-server/dist/index.js",
+        "--data-dir",
+        "/absolute/path/to/leaderboard/data"
+      ],
+      "env": {
+        "LEADERBOARD_DATA_DIR": "/absolute/path/to/leaderboard/data"
+      }
+    }
+  }
+}

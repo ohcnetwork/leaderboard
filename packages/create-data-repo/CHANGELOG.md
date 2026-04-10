@@ -1,5 +1,11 @@
 # create-leaderboard-data-repo
 
+## 0.2.0
+
+### Minor Changes
+
+- 9b99625: Improve how badges are evaluated and support configuring badges via config.yaml
+
 ## 0.1.1
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 import { getConfig } from "@/lib/config/get-config";
-import { getHiddenRoles, getVisibleRolesOrdered } from "@/lib/config/helpers";
+import { getAllRolesOrdered } from "@/lib/config/helpers";
 import { getAllContributorsWithAvatars } from "@/lib/data/loader";
 import type { Metadata } from "next";
 import { Suspense } from "react";
@@ -7,8 +7,7 @@ import PeopleView from "./PeopleView";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
-  const hiddenRoles = getHiddenRoles();
-  const contributors = await getAllContributorsWithAvatars(hiddenRoles);
+  const contributors = await getAllContributorsWithAvatars();
 
   return {
     title: `People - ${config.meta.title}`,
@@ -25,9 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function PeoplePage() {
   const config = getConfig();
-  const hiddenRoles = getHiddenRoles();
-  const contributors = await getAllContributorsWithAvatars(hiddenRoles);
-  const roles = getVisibleRolesOrdered();
+  const contributors = await getAllContributorsWithAvatars();
+  const roles = getAllRolesOrdered();
 
   return (
     <Suspense>

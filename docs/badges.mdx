@@ -66,46 +66,104 @@ A contributor badge represents an awarded achievement.
 }
 ```
 
-## Standard Badges
+## Configuring Badges
 
-The system includes these standard badges that are automatically evaluated:
+Badge definitions and evaluation rules are configured in `config.yaml` under `leaderboard.badges`. This makes badges fully customizable per deployment.
 
-### Activity Milestone
+### Example Configuration
 
-Awarded for reaching activity count milestones.
+```yaml
+leaderboard:
+  badges:
+    definitions:
+      - slug: activity_milestone
+        name: "Activity Milestone"
+        description: "Awarded for reaching activity count milestones"
+        variants:
+          bronze:
+            description: "10+ activities"
+            svg_url: "https://example.com/bronze-activity.svg"
+          silver:
+            description: "50+ activities"
+            svg_url: "https://example.com/silver-activity.svg"
+          gold:
+            description: "100+ activities"
+            svg_url: "https://example.com/gold-activity.svg"
+          platinum:
+            description: "500+ activities"
+            svg_url: "https://example.com/platinum-activity.svg"
 
-| Variant  | Requirement     |
-| -------- | --------------- |
-| Bronze   | 10+ activities  |
-| Silver   | 50+ activities  |
-| Gold     | 100+ activities |
-| Platinum | 500+ activities |
+      - slug: points_milestone
+        name: "Points Milestone"
+        description: "Awarded for reaching points milestones"
+        variants:
+          bronze:
+            description: "100+ points"
+            svg_url: "https://example.com/bronze-points.svg"
+          silver:
+            description: "500+ points"
+            svg_url: "https://example.com/silver-points.svg"
+          gold:
+            description: "1,000+ points"
+            svg_url: "https://example.com/gold-points.svg"
 
-### Points Milestone
+      - slug: consistency_champion
+        name: "Consistency Champion"
+        description: "Awarded for maintaining activity streaks"
+        variants:
+          bronze:
+            description: "7 day streak"
+            svg_url: "https://example.com/bronze-streak.svg"
+          silver:
+            description: "14 day streak"
+            svg_url: "https://example.com/silver-streak.svg"
+          gold:
+            description: "30 day streak"
+            svg_url: "https://example.com/gold-streak.svg"
 
-Awarded for reaching points milestones.
+    rules:
+      - type: threshold
+        badge_slug: activity_milestone
+        enabled: true
+        aggregate_slug: activity_count
+        thresholds:
+          - variant: bronze
+            value: 10
+          - variant: silver
+            value: 50
+          - variant: gold
+            value: 100
+          - variant: platinum
+            value: 500
 
-| Variant  | Requirement   |
-| -------- | ------------- |
-| Bronze   | 100+ points   |
-| Silver   | 500+ points   |
-| Gold     | 1,000+ points |
-| Platinum | 5,000+ points |
+      - type: threshold
+        badge_slug: points_milestone
+        enabled: true
+        aggregate_slug: total_activity_points
+        thresholds:
+          - variant: bronze
+            value: 100
+          - variant: silver
+            value: 500
+          - variant: gold
+            value: 1000
 
-### Consistency Champion
-
-Awarded for maintaining activity streaks.
-
-| Variant  | Requirement   |
-| -------- | ------------- |
-| Bronze   | 7 day streak  |
-| Silver   | 14 day streak |
-| Gold     | 30 day streak |
-| Platinum | 90 day streak |
+      - type: streak
+        badge_slug: consistency_champion
+        enabled: true
+        streak_type: daily
+        thresholds:
+          - variant: bronze
+            days: 7
+          - variant: silver
+            days: 14
+          - variant: gold
+            days: 30
+```
 
 ## Badge Auto-Award System
 
-Badges can be automatically awarded based on rules that evaluate contributor aggregates and activities.
+Badges are automatically awarded based on rules configured in `config.yaml` that evaluate contributor aggregates and activities.
 
 ### Rule Types
 
@@ -113,18 +171,18 @@ Badges can be automatically awarded based on rules that evaluate contributor agg
 
 Award badges when an aggregate value exceeds a threshold.
 
-```typescript
-{
-  type: "threshold",
-  badgeSlug: "activity_milestone",
-  enabled: true,
-  aggregateSlug: "activity_count",
-  thresholds: [
-    { variant: "bronze", value: 10 },
-    { variant: "silver", value: 50 },
-    { variant: "gold", value: 100 }
-  ]
-}
+```yaml
+- type: threshold
+  badge_slug: activity_milestone
+  enabled: true
+  aggregate_slug: activity_count
+  thresholds:
+    - variant: bronze
+      value: 10
+    - variant: silver
+      value: 50
+    - variant: gold
+      value: 100
 ```
 
 **How it works:**
@@ -137,18 +195,18 @@ Award badges when an aggregate value exceeds a threshold.
 
 Award badges for consecutive days of activity.
 
-```typescript
-{
-  type: "streak",
-  badgeSlug: "consistency_champion",
-  enabled: true,
-  streakType: "daily",
-  thresholds: [
-    { variant: "bronze", days: 7 },
-    { variant: "silver", days: 14 },
-    { variant: "gold", days: 30 }
-  ]
-}
+```yaml
+- type: streak
+  badge_slug: consistency_champion
+  enabled: true
+  streak_type: daily
+  thresholds:
+    - variant: bronze
+      days: 7
+    - variant: silver
+      days: 14
+    - variant: gold
+      days: 30
 ```
 
 **Streak types:**
@@ -157,22 +215,42 @@ Award badges for consecutive days of activity.
 - `weekly` - Consecutive weeks with activity
 - `monthly` - Consecutive months with activity
 
-#### 3. Composite Rules
+#### 3. Growth Rules
+
+Award badges for improvement over time.
+
+```yaml
+- type: growth
+  badge_slug: rising_star
+  enabled: true
+  aggregate_slug: activity_count
+  period: month
+  thresholds:
+    - variant: bronze
+      percentage_increase: 25
+    - variant: silver
+      percentage_increase: 50
+    - variant: gold
+      percentage_increase: 100
+```
+
+#### 4. Composite Rules
 
 Award badges when multiple conditions are met.
 
-```typescript
-{
-  type: "composite",
-  badgeSlug: "early_adopter",
-  enabled: true,
-  operator: "AND",
-  conditions: [
-    { aggregateSlug: "contributor_rank_by_join_date", operator: "<=", value: 10 },
-    { aggregateSlug: "activity_count", operator: ">=", value: 5 }
-  ],
-  variant: "gold"
-}
+```yaml
+- type: composite
+  badge_slug: early_adopter
+  enabled: true
+  operator: AND
+  conditions:
+    - aggregate_slug: contributor_rank_by_join_date
+      operator: "<="
+      value: 10
+    - aggregate_slug: activity_count
+      operator: ">="
+      value: 5
+  variant: gold
 ```
 
 **Operators:**
@@ -184,9 +262,9 @@ Award badges when multiple conditions are met.
 
 - `>`, `<`, `>=`, `<=`, `==`, `!=`
 
-#### 4. Custom Rules
+#### 5. Custom Rules (Plugin-only)
 
-Define custom logic for badge awarding.
+Plugins can define custom function-based rules via their `badgeRules` manifest property. These cannot be declared in `config.yaml` since they require code.
 
 ```typescript
 {
@@ -218,7 +296,9 @@ Define custom logic for badge awarding.
 ```mermaid
 graph TD
     Start[Aggregates Calculated] --> LoadRules[Load Badge Rules]
-    LoadRules --> LoadContributors[Load All Contributors]
+    LoadRules --> ConfigRules[Evaluate Config Rules]
+    ConfigRules --> PluginRules[Evaluate Plugin Rules]
+    PluginRules --> LoadContributors[Load All Contributors]
     LoadContributors --> ForEach[For Each Contributor]
     ForEach --> EvalRules[Evaluate All Rules]
     EvalRules --> CheckVariant{Highest Variant?}
@@ -241,11 +321,81 @@ When a contributor qualifies for a higher variant:
 3. Upgrades to the higher variant if qualified
 4. Never downgrades existing badges
 
+### Achievement Dates
+
+The `achieved_on` field reflects when the badge criteria was actually met, not when the evaluation ran:
+
+- **Threshold rules on `activity_count`**: The date of the Nth activity that crossed the threshold (sorted chronologically)
+- **Threshold rules on `activity_count:<definition>`**: Same as above but filtered to the specific activity type
+- **Threshold rules on `total_activity_points`**: The date of the activity whose cumulative points first exceeded the threshold
+- **Streak rules**: The end date of the qualifying streak
+- **Other rules** (composite, growth, custom, or unknown aggregates): Falls back to the current date when evaluation runs
+
+When a badge is upgraded to a higher variant, the `achieved_on` date is updated to reflect when the higher threshold was crossed.
+
 ## Defining Custom Badges
 
-Plugins can define custom badge definitions during the `setup()` phase.
+Plugins can define custom badge definitions and evaluation rules declaratively via the plugin manifest, or imperatively during the `setup()` phase.
 
-### Basic Badge Definition
+### Declarative Badge Definitions (Recommended)
+
+Define badge definitions and rules directly on the plugin object:
+
+```typescript
+import type {
+  Plugin,
+  BadgeDefinition,
+  BadgeRuleDefinition,
+} from "@ohcnetwork/leaderboard-api";
+
+export default {
+  name: "my-plugin",
+  version: "1.0.0",
+  badgeDefinitions: [
+    {
+      slug: "code_reviewer",
+      name: "Code Reviewer",
+      description: "Awarded for thorough code reviews",
+      variants: {
+        bronze: {
+          description: "10+ reviews",
+          svg_url: "https://example.com/reviewer-bronze.svg",
+        },
+        silver: {
+          description: "50+ reviews",
+          svg_url: "https://example.com/reviewer-silver.svg",
+        },
+        gold: {
+          description: "100+ reviews",
+          svg_url: "https://example.com/reviewer-gold.svg",
+        },
+      },
+    },
+  ],
+  badgeRules: [
+    {
+      type: "threshold",
+      badgeSlug: "code_reviewer",
+      enabled: true,
+      aggregateSlug: "code_review_count",
+      thresholds: [
+        { variant: "bronze", value: 10 },
+        { variant: "silver", value: 50 },
+        { variant: "gold", value: 100 },
+      ],
+    },
+  ],
+  async scrape(ctx) {
+    /* ... */
+  },
+} satisfies Plugin;
+```
+
+Badge definitions from the manifest are automatically inserted during the **setup** phase. Badge rules are automatically evaluated during the **evaluate** phase, after config badge rules.
+
+### Imperative Badge Definition
+
+Alternatively, define badges in the `setup()` method:
 
 ```typescript
 import { badgeDefinitionQueries } from "@ohcnetwork/leaderboard-api";
@@ -470,22 +620,21 @@ Before deploying custom badge rules, test them with sample data to ensure they a
 
 ## Advanced Topics
 
-### Custom Badge Rule Configuration
+### Disabling Badge Rules
 
-Badge rules can be configured in `config.yaml`:
+You can disable specific rules by setting `enabled: false`:
 
 ```yaml
 leaderboard:
-  badge_rules:
-    activity_milestone:
-      enabled: true
-      thresholds:
-        bronze: 10
-        silver: 50
-        gold: 100
-
-    custom_badge:
-      enabled: false # Disable specific badges
+  badges:
+    rules:
+      - type: threshold
+        badge_slug: activity_milestone
+        enabled: false # Disable this rule
+        aggregate_slug: activity_count
+        thresholds:
+          - variant: bronze
+            value: 10
 ```
 
 ### Badge Priority

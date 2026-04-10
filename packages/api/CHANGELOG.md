@@ -1,5 +1,12 @@
 # @ohcnetwork/leaderboard-api
 
+## 0.3.0
+
+### Minor Changes
+
+- 4b560d2: Adds MCP server for querying leaderboard's data
+- 9b99625: Improve how badges are evaluated and support configuring badges via config.yaml
+
 ## 0.2.0
 
 ### Minor Changes

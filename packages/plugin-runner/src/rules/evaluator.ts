@@ -16,7 +16,6 @@ import {
   contributorBadgeQueries,
   contributorQueries,
 } from "@ohcnetwork/leaderboard-api";
-import { STANDARD_BADGE_RULES } from "./standard-rules";
 import type {
   BadgeRuleDefinition,
   CompositeBadgeRule,
@@ -54,7 +53,7 @@ function matchActivityDefinitions(
 export async function evaluateBadgeRules(
   db: Database,
   logger: Logger,
-  rules: BadgeRuleDefinition[] = STANDARD_BADGE_RULES,
+  rules: BadgeRuleDefinition[],
 ): Promise<void> {
   logger.info("Evaluating badge rules", { ruleCount: rules.length });
 
@@ -84,9 +83,12 @@ export async function evaluateBadgeRules(
 
       if (!result) continue;
 
-      const { shouldAward, variant, meta } = result;
+      const { shouldAward, variant, achievedOn, meta } = result;
 
       if (!shouldAward) continue;
+
+      const resolvedAchievedOn =
+        achievedOn ?? new Date().toISOString().split("T")[0];
 
       // Check if badge definition exists
       const badgeDef = badgeDefinitions.find((b) => b.slug === rule.badgeSlug);
@@ -116,7 +118,7 @@ export async function evaluateBadgeRules(
           badge: rule.badgeSlug,
           contributor: contributor.username,
           variant,
-          achieved_on: new Date().toISOString().split("T")[0],
+          achieved_on: resolvedAchievedOn,
           meta: { ...meta, rule_type: rule.type, auto_awarded: true },
         });
         awardsGiven++;
@@ -143,6 +145,7 @@ export async function evaluateBadgeRules(
               auto_awarded: true,
               upgraded: true,
             },
+            resolvedAchievedOn,
           );
           upgradesGiven++;
           logger.debug(
@@ -224,9 +227,18 @@ async function evaluateThresholdRule(
 
   for (const threshold of sortedThresholds) {
     if (contributorData.value >= threshold.value) {
+      // Determine achieved_on from the activity that crossed the threshold
+      const achievedOn = await resolveThresholdAchievedOn(
+        db,
+        contributor,
+        rule.aggregateSlug,
+        threshold.value,
+      );
+
       return {
         shouldAward: true,
         variant: threshold.variant,
+        achievedOn,
         meta: {
           threshold: threshold.value,
           actualValue: contributorData.value,
@@ -236,6 +248,57 @@ async function evaluateThresholdRule(
   }
 
   return null;
+}
+
+/**
+ * Resolve the achieved_on date for a threshold rule by finding the activity
+ * that caused the contributor to cross the threshold.
+ *
+ * Supports:
+ * - `activity_count` — date of the Nth activity
+ * - `activity_count:<definition>` — date of the Nth activity of that type
+ * - `total_activity_points` — date when cumulative points crossed the threshold
+ * - Other aggregates — returns undefined (falls back to current date)
+ */
+async function resolveThresholdAchievedOn(
+  db: Database,
+  contributor: string,
+  aggregateSlug: string,
+  thresholdValue: number,
+): Promise<string | undefined> {
+  if (aggregateSlug === "activity_count") {
+    return (
+      (await activityQueries.getDateAtOffset(
+        db,
+        contributor,
+        thresholdValue - 1,
+      )) ?? undefined
+    );
+  }
+
+  if (aggregateSlug.startsWith("activity_count:")) {
+    const activityDefinition = aggregateSlug.slice("activity_count:".length);
+    return (
+      (await activityQueries.getDateAtOffset(
+        db,
+        contributor,
+        thresholdValue - 1,
+        activityDefinition,
+      )) ?? undefined
+    );
+  }
+
+  if (aggregateSlug === "total_activity_points") {
+    return (
+      (await activityQueries.getDateAtPointsThreshold(
+        db,
+        contributor,
+        thresholdValue,
+      )) ?? undefined
+    );
+  }
+
+  return undefined;
 }
 
 /**
@@ -265,7 +328,8 @@ async function evaluateStreakRule(
   if (activities.length === 0) return null;
 
   // Calculate longest streak (union of all matched activities)
-  const longestStreak = calculateLongestStreak(activities, rule.streakType);
+  const { streak: longestStreak, endDate: streakEndDate } =
+    calculateLongestStreak(activities, rule.streakType);
 
   // Sort thresholds by days descending
   const sortedThresholds = [...rule.thresholds].sort((a, b) => b.days - a.days);
@@ -275,6 +339,7 @@ async function evaluateStreakRule(
       return {
         shouldAward: true,
         variant: threshold.variant,
+        achievedOn: streakEndDate,
         meta: {
           streakDays: longestStreak,
           requiredDays: threshold.days,
@@ -288,22 +353,24 @@ async function evaluateStreakRule(
 }
 
 /**
- * Calculate the longest streak of consecutive days with activity
+ * Calculate the longest streak of consecutive days with activity.
+ * Returns both the streak length and the end date of the longest streak.
  */
 function calculateLongestStreak(
   activities: Activity[],
   streakType: "daily" | "weekly" | "monthly",
-): number {
-  if (activities.length === 0) return 0;
+): { streak: number; endDate: string | undefined } {
+  if (activities.length === 0) return { streak: 0, endDate: undefined };
 
   // Get unique dates
   const uniqueDates = Array.from(
     new Set(activities.map((a) => a.occurred_at.split("T")[0])),
   ).sort();
 
-  if (uniqueDates.length === 0) return 0;
+  if (uniqueDates.length === 0) return { streak: 0, endDate: undefined };
 
   let maxStreak = 1;
+  let maxStreakEndIndex = 0;
   let currentStreak = 1;
 
   for (let i = 1; i < uniqueDates.length; i++) {
@@ -317,7 +384,10 @@ function calculateLongestStreak(
     if (streakType === "daily") {
       if (diffDays === 1) {
         currentStreak++;
-        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak > maxStreak) {
+          maxStreak = currentStreak;
+          maxStreakEndIndex = i;
+        }
       } else {
         currentStreak = 1;
       }
@@ -325,7 +395,10 @@ function calculateLongestStreak(
       // For weekly, consider within 7 days as consecutive
       if (diffDays <= 7) {
         currentStreak++;
-        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak > maxStreak) {
+          maxStreak = currentStreak;
+          maxStreakEndIndex = i;
+        }
       } else {
         currentStreak = 1;
       }
@@ -341,14 +414,17 @@ function calculateLongestStreak(
         (currYear === prevYear + 1 && currMonth === 0 && prevMonth === 11)
       ) {
         currentStreak++;
-        maxStreak = Math.max(maxStreak, currentStreak);
+        if (currentStreak > maxStreak) {
+          maxStreak = currentStreak;
+          maxStreakEndIndex = i;
+        }
       } else {
         currentStreak = 1;
       }
     }
   }
 
-  return maxStreak;
+  return { streak: maxStreak, endDate: uniqueDates[maxStreakEndIndex] };
 }
 
 /**

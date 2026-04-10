@@ -1,5 +1,5 @@
 import { Config, ConfigSchema } from "@/lib/config/schema";
-import { dataDir } from "@ohcnetwork/leaderboard-api";
+import { getDataDir } from "@ohcnetwork/leaderboard-api";
 import { readFileSync } from "fs";
 import yaml from "js-yaml";
 import { join } from "path";
@@ -50,7 +50,7 @@ export function getConfig(): Config {
     return cachedConfig;
   }
 
-  const configPath = join(dataDir, "config.yaml");
+  const configPath = join(getDataDir(), "config.yaml");
   const fileContents = readFileSync(configPath, "utf8");
   let rawConfig = yaml.load(fileContents, {
     schema: yaml.JSON_SCHEMA,

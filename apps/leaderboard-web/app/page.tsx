@@ -13,11 +13,17 @@ import {
   getRecentBadgeAchievements,
 } from "@/lib/data/loader";
 import { formatAggregateValue, getDateRange } from "@/lib/utils";
-import { format } from "date-fns";
+import {
+  differenceInDays,
+  differenceInMonths,
+  differenceInYears,
+  format,
+} from "date-fns";
 import {
   Activity,
   ArrowRight,
   Award,
+  Calendar,
   ExternalLink,
   LucideIcon,
   TrendingDown,
@@ -139,6 +145,40 @@ export default async function Home() {
     trend: { percentage: number; direction: "up" | "down" | "flat" } | null;
   }
   const aggregateCards: AggregateCard[] = [];
+
+  // "Since" card — only shown if org has a start_date
+  if (config.org.start_date) {
+    const startDate = new Date(config.org.start_date);
+    const years = differenceInYears(now, startDate);
+    const months = differenceInMonths(now, startDate);
+    const totalDays = differenceInDays(now, startDate);
+
+    let sinceValue: string;
+    if (years >= 1) {
+      sinceValue = `${years} ${years === 1 ? "year" : "years"}`;
+    } else if (months >= 1) {
+      sinceValue = `${months} ${months === 1 ? "month" : "months"}`;
+    } else {
+      sinceValue = `${totalDays} ${totalDays === 1 ? "day" : "days"}`;
+    }
+
+    aggregateCards.push({
+      name: "Since",
+      value: sinceValue,
+      description: `${totalDays.toLocaleString()} days`,
+      icon: Calendar,
+      trend: null,
+    });
+  }
+
+  // Total Contributors card
+  aggregateCards.push({
+    name: "Total Contributors",
+    value: allUsernames.length.toLocaleString(),
+    description: "All time",
+    icon: Users,
+    trend: null,
+  });
 
   for (const slug of builtinSlugs) {
     const def = BUILTIN_GLOBAL_AGGREGATES[slug]!;

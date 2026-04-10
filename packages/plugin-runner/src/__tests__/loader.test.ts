@@ -32,6 +32,14 @@ function validatePlugin(plugin: unknown): asserts plugin is Plugin {
   if (p.aggregate !== undefined && typeof p.aggregate !== "function") {
     throw new Error("Plugin 'aggregate' must be a function if provided");
   }
+
+  if (p.badgeDefinitions !== undefined && !Array.isArray(p.badgeDefinitions)) {
+    throw new Error("Plugin 'badgeDefinitions' must be an array if provided");
+  }
+
+  if (p.badgeRules !== undefined && !Array.isArray(p.badgeRules)) {
+    throw new Error("Plugin 'badgeRules' must be an array if provided");
+  }
 }
 
 describe("Plugin Loader", () => {
@@ -74,6 +82,43 @@ describe("Plugin Loader", () => {
       setup: async () => {},
       scrape: async () => {},
       aggregate: async () => {},
+    };
+
+    expect(() => validatePlugin(plugin)).not.toThrow();
+  });
+
+  it("should validate plugin with badgeDefinitions", () => {
+    const plugin = {
+      name: "test-plugin",
+      version: "1.0.0",
+      scrape: async () => {},
+      badgeDefinitions: [
+        {
+          slug: "test-badge",
+          name: "Test Badge",
+          description: "A test badge",
+          variants: { bronze: { description: "Bronze", svg_url: "" } },
+        },
+      ],
+    };
+
+    expect(() => validatePlugin(plugin)).not.toThrow();
+  });
+
+  it("should validate plugin with badgeRules", () => {
+    const plugin = {
+      name: "test-plugin",
+      version: "1.0.0",
+      scrape: async () => {},
+      badgeRules: [
+        {
+          type: "threshold",
+          badgeSlug: "test-badge",
+          enabled: true,
+          aggregateSlug: "activity_count",
+          thresholds: [{ variant: "bronze", value: 10 }],
+        },
+      ],
     };
 
     expect(() => validatePlugin(plugin)).not.toThrow();
@@ -141,6 +186,32 @@ describe("Plugin Loader", () => {
 
     expect(() => validatePlugin(invalidPlugin)).toThrow(
       "Plugin 'aggregate' must be a function if provided",
+    );
+  });
+
+  it("should reject plugin with non-array badgeDefinitions", () => {
+    const invalidPlugin = {
+      name: "test",
+      version: "1.0.0",
+      scrape: async () => {},
+      badgeDefinitions: "not-an-array",
+    };
+
+    expect(() => validatePlugin(invalidPlugin)).toThrow(
+      "Plugin 'badgeDefinitions' must be an array if provided",
+    );
+  });
+
+  it("should reject plugin with non-array badgeRules", () => {
+    const invalidPlugin = {
+      name: "test",
+      version: "1.0.0",
+      scrape: async () => {},
+      badgeRules: "not-an-array",
+    };
+
+    expect(() => validatePlugin(invalidPlugin)).toThrow(
+      "Plugin 'badgeRules' must be an array if provided",
     );
   });
 });

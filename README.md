@@ -6,8 +6,10 @@ A flexible, plugin-based leaderboard system for tracking and visualizing contrib
 
 - 🔌 **Plugin Architecture**: Extensible system for adding new data sources
 - 📊 **Multiple Views**: Leaderboards, profiles, timelines, and custom metrics
+- 🤖 **MCP Server**: Query leaderboard data with AI assistants via Model Context Protocol
 - 🎨 **Customizable**: Theme overrides and configurable roles
 - 📝 **Human-Editable**: Contributor profiles in Markdown format
+- 🖼️ **Custom Assets**: Serve logos, images, and other assets from your data repository
 - 🚀 **Static Export**: Deploy to any static hosting service
 - 🔒 **Self-Hosted**: Complete control over your data
 
@@ -110,9 +112,12 @@ leaderboard/
 ├── apps/
 │   └── leaderboard-web/          # Next.js application
 ├── packages/
-│   ├── plugin-api/               # Plugin type definitions
-│   ├── db/                       # Database utilities
-│   └── plugin-runner/            # CLI tool for data collection
+│   ├── api/                      # Database utilities and plugin types
+│   ├── plugin-runner/            # CLI tool for data collection
+│   ├── mcp-server/               # MCP server for AI assistant integration
+│   ├── plugin-dummy/             # Example plugin
+│   ├── create-plugin/            # Plugin scaffolding CLI
+│   └── create-data-repo/         # Data repository scaffolding CLI
 ├── docs/                         # Documentation (MDX)
 └── package.json                  # Root package.json
 ```
@@ -241,6 +246,30 @@ export default {
 ```
 
 See the [Plugin Development Guide](./docs/plugins/creating-plugins.mdx) for details.
+
+## Querying Data with AI Assistants
+
+The leaderboard includes an MCP (Model Context Protocol) server that lets you query leaderboard data using AI assistants like Claude:
+
+```bash
+# Build the MCP server
+pnpm --filter @leaderboard/mcp-server build
+
+# Run with stdio transport (for Claude Desktop)
+leaderboard-mcp --data-dir ./data
+
+# Or with HTTP transport
+leaderboard-mcp --transport http --port 3001
+```
+
+Once configured with Claude Desktop, you can ask natural language questions:
+
+- "Show me the top 10 contributors this month"
+- "What activities did alice complete last week?"
+- "Who has earned the most badges?"
+- "Get detailed stats for bob"
+
+See the [MCP Server Documentation](./packages/mcp-server/README.md) for setup and usage details.
 
 ## Deployment
 

@@ -326,7 +326,7 @@ export default function LeaderboardView({
   const hasActivityBreakdown = activityDefinitions.length > 0;
 
   return (
-    <div className="max-w-7xl container mx-auto px-4 py-6">
+    <div className="container mx-auto px-4 py-6">
       {/* Period Tabs */}
       <div className="flex gap-2 mb-6 border-b justify-evenly sm:justify-start">
         {(["week", "month", "year"] as const).map((p) => (
@@ -434,7 +434,7 @@ export default function LeaderboardView({
       </div>
 
       {/* Full Ranked List + Activity Type Sidebar */}
-      <div className="grid grid-cols-1 xl:grid-cols-[1fr_22rem] gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_24rem] gap-6">
         {/* All Contributors */}
         <div>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">
@@ -1219,7 +1219,7 @@ function RankChangeBadge({
           <TooltipTrigger asChild>
             <span
               className={cn(
-                "inline-flex items-center text-xs font-medium text-blue-600 dark:text-blue-400 pl-1.5",
+                "inline-flex items-center text-xs font-medium text-blue-600 dark:text-blue-400 pl-1.5 hover:cursor-default",
                 className,
               )}
             >
@@ -1241,7 +1241,7 @@ function RankChangeBadge({
           <TooltipTrigger asChild>
             <span
               className={cn(
-                "inline-flex items-center text-xs font-medium text-muted-foreground pl-1",
+                "inline-flex items-center text-xs font-medium text-muted-foreground pl-1 hover:cursor-default",
                 className,
               )}
             >
@@ -1263,7 +1263,7 @@ function RankChangeBadge({
           <TooltipTrigger asChild>
             <span
               className={cn(
-                "inline-flex items-center gap-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 pl-3",
+                "inline-flex items-center gap-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 pl-3 hover:cursor-default",
                 className,
               )}
             >
@@ -1285,7 +1285,7 @@ function RankChangeBadge({
         <TooltipTrigger asChild>
           <span
             className={cn(
-              "inline-flex items-center gap-0.5 text-xs font-medium text-red-600 dark:text-red-400 pl-3",
+              "inline-flex items-center gap-0.5 text-xs font-medium text-red-600 dark:text-red-400 pl-3 hover:cursor-default",
               className,
             )}
           >

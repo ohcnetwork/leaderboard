@@ -36,6 +36,8 @@ sequenceDiagram
 
     Runner->>Plugin: Load from URL
     Runner->>Plugin: Validate structure
+    Runner->>DB: Insert badge definitions from config
+    Runner->>DB: Insert plugin badge definitions
     Runner->>Plugin: setup(ctx)
     Plugin->>DB: Define activity types
     Runner->>Plugin: scrape(ctx)
@@ -45,6 +47,9 @@ sequenceDiagram
     Note over Runner,DB: Main leaderboard aggregation runs
     Runner->>Plugin: aggregate(ctx)
     Plugin->>DB: Compute plugin-specific aggregates
+    Note over Runner,DB: Badge evaluation phase
+    Runner->>DB: Evaluate config badge rules
+    Runner->>DB: Evaluate plugin badge rules
 ```
 
 ## Plugin Structure
@@ -55,6 +60,10 @@ Every plugin exports a default object implementing the `Plugin` interface:
 export default {
   name: "my-plugin",
   version: "1.0.0",
+
+  // Optional: Badge definitions and rules
+  badgeDefinitions: [],
+  badgeRules: [],
 
   async setup(ctx) {
     // Optional: Initialize activity definitions
@@ -80,6 +89,8 @@ export default {
 
 - **setup** (`function`): Initialization and activity definition
 - **aggregate** (`function`): Plugin-specific aggregate computation (runs after main aggregation)
+- **badgeDefinitions** (`BadgeDefinition[]`): Badge definitions inserted during setup phase
+- **badgeRules** (`BadgeRuleDefinition[]`): Badge rules evaluated during evaluate phase (after standard rules)
 
 ## Plugin Context
 

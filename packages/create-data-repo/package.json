@@ -1,6 +1,6 @@
 {
   "name": "create-leaderboard-data-repo",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "CLI tool to initialize leaderboard data repositories",
   "type": "module",
   "main": "dist/index.js",
@@ -24,13 +24,13 @@
   "author": "Open Healthcare Network",
   "license": "MIT",
   "dependencies": {
-    "prompts": "^2.4.2",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.1",
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "@types/node": "^20.19.27",
-    "@types/prompts": "^2.4.9",
     "@types/js-yaml": "^4.0.9",
-    "typescript": "^5.7.3"
+    "@types/node": "^20.19.39",
+    "@types/prompts": "^2.4.9",
+    "typescript": "^5.9.3"
   }
 }

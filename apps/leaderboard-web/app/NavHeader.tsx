@@ -112,7 +112,7 @@ export default function NavHeader({
       {/* Desktop Expanded Navbar */}
       <header
         className={cn(
-          "hidden lg:block fixed left-1/2 -translate-x-1/2 z-50 top-4 w-[95%] max-w-7xl transition-all duration-500 ease-in-out",
+          "container hidden lg:block fixed left-1/2 -translate-x-1/2 z-50 top-4 w-[95%] transition-all duration-500 ease-in-out",
           isCollapsed
             ? "opacity-0 pointer-events-none -translate-y-20"
             : "opacity-100 translate-y-0",

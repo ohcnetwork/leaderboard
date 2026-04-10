@@ -1,12 +1,29 @@
 /**
  * Badge rule type definitions
+ *
+ * Declarative rule types (Threshold, Streak, Growth, Composite) are defined in
+ * @ohcnetwork/leaderboard-api so plugins can reference them.
+ * The CustomBadgeRule type is internal to the plugin-runner.
  */
 
 import type {
   Activity,
   AggregateValue,
+  CompositeBadgeRule,
   Contributor,
+  BadgeRuleDefinition as DeclarativeBadgeRuleDefinition,
+  GrowthBadgeRule,
+  StreakBadgeRule,
+  ThresholdBadgeRule,
 } from "@ohcnetwork/leaderboard-api";
+
+// Re-export declarative rule types for internal use
+export type {
+  CompositeBadgeRule,
+  GrowthBadgeRule,
+  StreakBadgeRule,
+  ThresholdBadgeRule,
+};
 
 /**
  * Base rule interface
@@ -18,59 +35,7 @@ export interface BadgeRule {
 }
 
 /**
- * Threshold-based rules (e.g., total activities > 100)
- */
-export interface ThresholdBadgeRule extends BadgeRule {
-  type: "threshold";
-  aggregateSlug: string; // which aggregate to check
-  thresholds: {
-    variant: string; // 'bronze', 'silver', 'gold'
-    value: number; // minimum value required
-  }[];
-}
-
-/**
- * Streak-based rules (consecutive days with activity)
- */
-export interface StreakBadgeRule extends BadgeRule {
-  type: "streak";
-  streakType: "daily" | "weekly" | "monthly";
-  activityDefinitions?: string[]; // Optional regex patterns to filter activity types
-  thresholds: {
-    variant: string;
-    days: number; // consecutive days required
-  }[];
-}
-
-/**
- * Growth-based rules (improvement over time)
- */
-export interface GrowthBadgeRule extends BadgeRule {
-  type: "growth";
-  aggregateSlug: string;
-  period: "week" | "month" | "year";
-  thresholds: {
-    variant: string;
-    percentageIncrease: number; // % growth required
-  }[];
-}
-
-/**
- * Composite rules (multiple conditions)
- */
-export interface CompositeBadgeRule extends BadgeRule {
-  type: "composite";
-  operator: "AND" | "OR";
-  conditions: {
-    aggregateSlug: string;
-    operator: ">" | "<" | ">=" | "<=" | "==" | "!=";
-    value: number;
-  }[];
-  variant: string;
-}
-
-/**
- * Custom function-based rules
+ * Custom function-based rules (internal to plugin-runner, not serializable)
  */
 export interface CustomBadgeRule extends BadgeRule {
   type: "custom";
@@ -86,13 +51,10 @@ export interface CustomBadgeRule extends BadgeRule {
 }
 
 /**
- * Badge rule union type
+ * Full badge rule union type (includes custom rules for internal use)
  */
 export type BadgeRuleDefinition =
-  | ThresholdBadgeRule
-  | StreakBadgeRule
-  | GrowthBadgeRule
-  | CompositeBadgeRule
+  | DeclarativeBadgeRuleDefinition
   | CustomBadgeRule;
 
 /**
@@ -101,5 +63,6 @@ export type BadgeRuleDefinition =
 export interface RuleEvaluationResult {
   shouldAward: boolean;
   variant: string;
+  achievedOn?: string;
   meta?: Record<string, unknown>;
 }

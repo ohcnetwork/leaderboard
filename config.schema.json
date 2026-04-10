@@ -48,6 +48,10 @@
         "data_source": {
           "type": "string"
         },
+        "data_branch": {
+          "default": "main",
+          "type": "string"
+        },
         "plugins": {
           "type": "object",
           "propertyNames": {
@@ -387,6 +391,9 @@
           "additionalProperties": false
         }
       },
+      "required": [
+        "data_branch"
+      ],
       "additionalProperties": false
     }
   },

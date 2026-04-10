@@ -56,6 +56,8 @@ export const LeaderboardDisplayConfigSchema = z.object({
 
 export const LeaderboardConfigSchema = z.object({
   data_source: z.string().optional(),
+  /** Git branch in the data repo where contributor files live (for "Edit on GitHub" links). */
+  data_branch: z.string().default("main"),
   data_update_frequency: z.string().optional(),
   roles: z.record(z.string(), RoleConfigSchema),
   top_contributors: z.array(z.string()).optional(),

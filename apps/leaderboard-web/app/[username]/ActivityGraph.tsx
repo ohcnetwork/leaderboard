@@ -413,7 +413,7 @@ export default function ActivityGraph({
                                   .map(([type, count]) => (
                                     <div
                                       key={type}
-                                      className="flex items-center justify-between gap-3 text-accent-foreground"
+                                      className="flex items-center justify-between gap-3 text-muted-foreground"
                                     >
                                       <span className="truncate max-w-38">
                                         {type}
@@ -425,7 +425,7 @@ export default function ActivityGraph({
                                   ))}
                               </div>
                             ) : (
-                              <div className="text-accent-foreground">
+                              <div className="text-muted-foreground">
                                 No activities
                               </div>
                             )}

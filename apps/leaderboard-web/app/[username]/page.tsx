@@ -3,6 +3,7 @@ import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import Icon from "@/components/Icon";
 import Time from "@/components/Time";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getConfig } from "@/lib/config/get-config";
 import {
@@ -12,11 +13,13 @@ import {
   getContributorProfile,
   listActivityDefinitions,
 } from "@/lib/data/loader";
+import { getContributorProfileEditUrl } from "@/lib/github-edit-url";
 import { formatAggregateValue } from "@/lib/utils";
 import {
   Activity as ActivityIcon,
   Award,
   Calendar,
+  Github,
   Link as LinkIcon,
   LucideIcon,
   TrendingUp,
@@ -184,6 +187,16 @@ export default async function ContributorPage({
     notFound();
   }
 
+  const profileEditUrl =
+    config.leaderboard.data_source != null &&
+    config.leaderboard.data_source.length > 0
+      ? getContributorProfileEditUrl(
+          config.leaderboard.data_source,
+          config.leaderboard.data_branch,
+          contributor.username,
+        )
+      : null;
+
   // Convert bio markdown to HTML
   const bioHtml = contributor.bio ? await marked.parse(contributor.bio) : null;
 
@@ -317,7 +330,19 @@ export default async function ContributorPage({
                 />
               )}
 
-              <div className="flex flex-wrap gap-4 text-sm">
+              <div className="flex flex-wrap items-center gap-3 text-sm">
+                {profileEditUrl && (
+                  <Button variant="outline" size="sm" asChild>
+                    <a
+                      href={profileEditUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="h-4 w-4" />
+                      Edit profile on GitHub
+                    </a>
+                  </Button>
+                )}
                 <div className="flex items-center gap-2">
                   <Award className="h-4 w-4" />
                   <ContributorRoleBadge

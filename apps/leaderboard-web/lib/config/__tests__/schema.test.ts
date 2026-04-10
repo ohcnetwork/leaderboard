@@ -33,6 +33,9 @@ describe("ConfigSchema", () => {
 
     const result = ConfigSchema.safeParse(validConfig);
     expect(result.success).toBe(true);
+    if (result.success) {
+      expect(result.data.leaderboard.data_branch).toBe("main");
+    }
   });
 
   it("should reject invalid URLs", () => {

@@ -38,6 +38,20 @@ data-repo/
 | Activities           | Sharded JSONL   | ✅     | ✅     | Efficient for large datasets, easy per-user updates |
 | Assets               | Static files    | ✅     | N/A    | Custom images and files served from data repository |
 
+## Updating contributor profiles
+
+Profiles live in the data repository as Markdown files with YAML frontmatter: `contributors/{username}.md`.
+
+### From the leaderboard site
+
+If your deployment sets `leaderboard.data_source` to a **github.com** repository URL and `leaderboard.data_branch` to the branch where those files are stored (default: `main`), each contributor profile page shows an **Edit profile on GitHub** button. It opens GitHub’s in-browser editor for that user’s file so they can change frontmatter and bio, then commit (or propose a pull request if they don’t have write access).
+
+Configure the branch explicitly when your data repo’s default branch for flat data is not `main` (for example `production`).
+
+### Directly in the data repository
+
+You can always edit `contributors/{username}.md` locally or on GitHub: update the YAML frontmatter fields (`name`, `role`, `title`, `avatar_url`, `social_profiles`, `joining_date`, `meta`, etc.) and the Markdown body (bio). After merging, run your usual data build/import pipeline so the site picks up the changes.
+
 ## Custom Assets
 
 The `assets/` directory in your data repository allows you to serve custom static files (images, icons, etc.) alongside your leaderboard. This is useful for hosting logos, banners, favicons, and other assets without needing external hosting.
@@ -69,12 +83,12 @@ Reference assets in your `config.yaml` using the `/assets/` path:
 ```yaml
 org:
   name: My Organization
-  logo_url: /assets/logo.png  # ← Served from data/assets/logo.png
+  logo_url: /assets/logo.png # ← Served from data/assets/logo.png
 
 meta:
   title: My Leaderboard
-  image_url: /assets/banner.jpg  # ← Served from data/assets/banner.jpg
-  favicon_url: /assets/icons/favicon.ico  # ← Served from data/assets/icons/favicon.ico
+  image_url: /assets/banner.jpg # ← Served from data/assets/banner.jpg
+  favicon_url: /assets/icons/favicon.ico # ← Served from data/assets/icons/favicon.ico
 ```
 
 ### How It Works

@@ -18,11 +18,12 @@ export function parseGitHubRepoFromUrl(url: string): GitHubRepoRef | null {
       return null;
     }
     const segments = u.pathname.split("/").filter((s) => s.length > 0);
-    if (segments.length < 2) {
+    const owner = segments[0];
+    const repoSegment = segments[1];
+    if (owner === undefined || repoSegment === undefined) {
       return null;
     }
-    let owner = segments[0];
-    let repo = segments[1];
+    let repo = repoSegment;
     if (repo.endsWith(".git")) {
       repo = repo.slice(0, -".git".length);
     }

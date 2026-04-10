@@ -542,3 +542,28 @@ export async function getTopBadgeEarners(
 
   return enrichedTopContributors;
 }
+
+/**
+ * Get badge award counts grouped by badge definition and variant
+ */
+export async function getBadgeAwardCounts(excludeRoles: string[] = []): Promise<
+  Array<{
+    badge: string;
+    variant: string;
+    award_count: number;
+  }>
+> {
+  const db = getDatabase();
+  return await contributorBadgeQueries.getAwardCountsByBadge(db, excludeRoles);
+}
+
+/**
+ * Get overall badge statistics (total awarded, unique earners)
+ */
+export async function getTotalBadgeStats(excludeRoles: string[] = []): Promise<{
+  total_awarded: number;
+  unique_earners: number;
+}> {
+  const db = getDatabase();
+  return await contributorBadgeQueries.getTotalStats(db, excludeRoles);
+}

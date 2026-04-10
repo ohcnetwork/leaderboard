@@ -1620,4 +1620,75 @@ export const contributorBadgeQueries = {
       badge_count: number;
     }>;
   },
+
+  /**
+   * Get award counts grouped by badge definition slug
+   * Returns how many contributors earned each badge (and each variant)
+   */
+  async getAwardCountsByBadge(
+    db: Database,
+    excludeRoles: string[] = [],
+  ): Promise<
+    Array<{
+      badge: string;
+      variant: string;
+      award_count: number;
+    }>
+  > {
+    const roleFilter =
+      excludeRoles.length > 0
+        ? `WHERE c.role NOT IN (${excludeRoles.map(() => "?").join(", ")})`
+        : "";
+
+    const sql = `
+      SELECT 
+        cb.badge,
+        cb.variant,
+        COUNT(*) as award_count
+      FROM contributor_badge cb
+      JOIN contributor c ON cb.contributor = c.username
+      ${roleFilter}
+      GROUP BY cb.badge, cb.variant
+      ORDER BY cb.badge, award_count DESC
+    `;
+
+    const result = await db.execute(sql, [...excludeRoles]);
+    return result.rows as unknown as Array<{
+      badge: string;
+      variant: string;
+      award_count: number;
+    }>;
+  },
+
+  /**
+   * Get overall badge statistics
+   */
+  async getTotalStats(
+    db: Database,
+    excludeRoles: string[] = [],
+  ): Promise<{
+    total_awarded: number;
+    unique_earners: number;
+  }> {
+    const roleFilter =
+      excludeRoles.length > 0
+        ? `WHERE c.role NOT IN (${excludeRoles.map(() => "?").join(", ")})`
+        : "";
+
+    const sql = `
+      SELECT 
+        COUNT(cb.slug) as total_awarded,
+        COUNT(DISTINCT cb.contributor) as unique_earners
+      FROM contributor_badge cb
+      JOIN contributor c ON cb.contributor = c.username
+      ${roleFilter}
+    `;
+
+    const result = await db.execute(sql, [...excludeRoles]);
+    const row = result.rows[0] as any;
+    return {
+      total_awarded: row?.total_awarded ?? 0,
+      unique_earners: row?.unique_earners ?? 0,
+    };
+  },
 };

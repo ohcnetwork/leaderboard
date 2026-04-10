@@ -132,17 +132,17 @@ describe("Badge Rule Evaluator", () => {
 
       await evaluateBadgeRules(db, mockLogger, rules);
 
-      // Check that silver badge was awarded
+      // Check that both bronze and silver badges were awarded
       const badges = await contributorBadgeQueries.getByContributor(
         db,
         "test_user",
       );
-      expect(badges).toHaveLength(1);
-      expect(badges[0].badge).toBe("activity_milestone");
-      expect(badges[0].variant).toBe("silver");
+      expect(badges).toHaveLength(2);
+      const variants = badges.map((b) => b.variant).sort();
+      expect(variants).toEqual(["bronze", "silver"]);
     });
 
-    it("should award highest eligible variant", async () => {
+    it("should award all eligible variants up to the highest", async () => {
       // Set up with high value
       await contributorAggregateDefinitionQueries.upsert(db, {
         slug: "activity_count",
@@ -200,8 +200,9 @@ describe("Badge Rule Evaluator", () => {
         db,
         "test_user",
       );
-      expect(badges).toHaveLength(1);
-      expect(badges[0].variant).toBe("gold");
+      expect(badges).toHaveLength(3);
+      const variants = badges.map((b) => b.variant).sort();
+      expect(variants).toEqual(["bronze", "gold", "silver"]);
     });
 
     it("should set achieved_on to the date of the Nth activity for activity_count thresholds", async () => {
@@ -528,8 +529,6 @@ describe("Badge Rule Evaluator", () => {
       expect(badges).toHaveLength(1);
       expect(badges[0].badge).toBe("consistency_champion");
       expect(badges[0].variant).toBe("bronze");
-      // achieved_on should be the end date of the streak, not today
-      expect(badges[0].achieved_on).toBe(today.toISOString().split("T")[0]);
     });
 
     it("should set achieved_on to streak end date", async () => {
@@ -575,8 +574,8 @@ describe("Badge Rule Evaluator", () => {
       );
       expect(badges).toHaveLength(1);
       // Streak of 10 consecutive days: 2025-03-01 to 2025-03-10
-      // End date of the longest streak should be 2025-03-10
-      expect(badges[0].achieved_on).toBe("2025-03-10");
+      // achieved_on is when the 7-day threshold was first reached: day 7 = 2025-03-07
+      expect(badges[0].achieved_on).toBe("2025-03-07");
     });
 
     it("should filter activities by regex pattern", async () => {
@@ -817,8 +816,8 @@ describe("Badge Rule Evaluator", () => {
     });
   });
 
-  describe("Badge Upgrades", () => {
-    it("should update achieved_on when upgrading a badge variant", async () => {
+  describe("Badge Multi-variant Awards", () => {
+    it("should award all lower variants when upgrading aggregate value", async () => {
       // Create 150 activities with specific dates
       for (let i = 0; i < 150; i++) {
         await activityQueries.upsert(db, {
@@ -865,26 +864,7 @@ describe("Badge Rule Evaluator", () => {
         },
       ];
 
-      // First: award bronze with 10 activities
-      await contributorAggregateQueries.upsert(db, {
-        aggregate: "activity_count",
-        contributor: "test_user",
-        value: { type: "number", value: 10 },
-        meta: null,
-      });
-
-      await evaluateBadgeRules(db, mockLogger, rules);
-
-      let badges = await contributorBadgeQueries.getByContributor(
-        db,
-        "test_user",
-      );
-      expect(badges).toHaveLength(1);
-      expect(badges[0].variant).toBe("bronze");
-      // 10th activity: index 9 → 2025-01-10
-      expect(badges[0].achieved_on).toBe("2025-01-10");
-
-      // Now upgrade to gold with 150 activities
+      // Set aggregate to 150 (qualifies for all three)
       await contributorAggregateQueries.upsert(db, {
         aggregate: "activity_count",
         contributor: "test_user",
@@ -894,11 +874,86 @@ describe("Badge Rule Evaluator", () => {
 
       await evaluateBadgeRules(db, mockLogger, rules);
 
-      badges = await contributorBadgeQueries.getByContributor(db, "test_user");
-      expect(badges).toHaveLength(1);
-      expect(badges[0].variant).toBe("gold");
+      const badges = await contributorBadgeQueries.getByContributor(
+        db,
+        "test_user",
+      );
+      expect(badges).toHaveLength(3);
+
+      const badgeMap = new Map(badges.map((b) => [b.variant, b]));
+
+      // Each variant should have the correct achieved_on date
+      // 10th activity: index 9 → 2025-01-10
+      expect(badgeMap.get("bronze")?.achieved_on).toBe("2025-01-10");
+      // 50th activity: index 49 → month 2 (49/28=1.75→floor=1→+1=2), day (49%28)+1=22
+      expect(badgeMap.get("silver")?.achieved_on).toBe("2025-02-22");
       // 100th activity: index 99 → month 4 (99/28=3.5→floor=3→+1=4), day (99%28)+1=16
-      expect(badges[0].achieved_on).toBe("2025-04-16");
+      expect(badgeMap.get("gold")?.achieved_on).toBe("2025-04-16");
+    });
+
+    it("should not re-award existing variants on re-evaluation", async () => {
+      for (let i = 0; i < 150; i++) {
+        await activityQueries.upsert(db, {
+          slug: `reeval_act_${i}`,
+          contributor: "test_user",
+          activity_definition: "pull_request_opened",
+          title: `Activity ${i}`,
+          occurred_at: `2025-${String(Math.floor(i / 28) + 1).padStart(2, "0")}-${String((i % 28) + 1).padStart(2, "0")}`,
+          link: null,
+          text: null,
+          points: 10,
+          meta: null,
+        });
+      }
+
+      await contributorAggregateDefinitionQueries.upsert(db, {
+        slug: "activity_count",
+        name: "Activity Count",
+        description: "Total activities",
+      });
+
+      await contributorAggregateQueries.upsert(db, {
+        aggregate: "activity_count",
+        contributor: "test_user",
+        value: { type: "number", value: 150 },
+        meta: null,
+      });
+
+      await badgeDefinitionQueries.upsert(db, {
+        slug: "activity_milestone",
+        name: "Activity Milestone",
+        description: "milestone",
+        variants: {
+          bronze: { description: "10", svg_url: "/b.svg", order: 1 },
+          silver: { description: "50", svg_url: "/s.svg", order: 2 },
+          gold: { description: "100", svg_url: "/g.svg", order: 3 },
+        },
+      });
+
+      const rules: BadgeRuleDefinition[] = [
+        {
+          type: "threshold",
+          badgeSlug: "activity_milestone",
+          enabled: true,
+          aggregateSlug: "activity_count",
+          thresholds: [
+            { variant: "bronze", value: 10 },
+            { variant: "silver", value: 50 },
+            { variant: "gold", value: 100 },
+          ],
+        },
+      ];
+
+      // Run twice
+      await evaluateBadgeRules(db, mockLogger, rules);
+      await evaluateBadgeRules(db, mockLogger, rules);
+
+      const badges = await contributorBadgeQueries.getByContributor(
+        db,
+        "test_user",
+      );
+      // Should still be 3, not 6
+      expect(badges).toHaveLength(3);
     });
   });
 });

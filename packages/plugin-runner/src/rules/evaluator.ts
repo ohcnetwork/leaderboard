@@ -67,28 +67,20 @@ export async function evaluateBadgeRules(
   const activityDefinitions = await activityDefinitionQueries.getAll(db);
 
   let awardsGiven = 0;
-  let upgradesGiven = 0;
 
   for (const contributor of contributors) {
     // Evaluate each rule
     for (const rule of rules) {
       if (!rule.enabled) continue;
 
-      const result = await evaluateRule(
+      const results = await evaluateRule(
         db,
         rule,
         contributor.username,
         activityDefinitions,
       );
 
-      if (!result) continue;
-
-      const { shouldAward, variant, achievedOn, meta } = result;
-
-      if (!shouldAward) continue;
-
-      const resolvedAchievedOn =
-        achievedOn ?? new Date().toISOString().split("T")[0];
+      if (!results || results.length === 0) continue;
 
       // Check if badge definition exists
       const badgeDef = badgeDefinitions.find((b) => b.slug === rule.badgeSlug);
@@ -97,59 +89,47 @@ export async function evaluateBadgeRules(
         continue;
       }
 
-      // Check if variant exists in badge definition
-      if (!badgeDef.variants[variant]) {
-        logger.warn(`Variant ${variant} not found for badge ${rule.badgeSlug}`);
-        continue;
-      }
+      // Award each qualifying variant independently
+      for (const result of results) {
+        const { shouldAward, variant, achievedOn, meta } = result;
 
-      // Check existing badges
-      const existingBadge =
-        await contributorBadgeQueries.getByContributorAndBadge(
-          db,
-          contributor.username,
-          rule.badgeSlug,
-        );
+        if (!shouldAward) continue;
 
-      if (!existingBadge) {
-        // Award new badge
-        await contributorBadgeQueries.award(db, {
-          slug: `${rule.badgeSlug}__${contributor.username}__${variant}`,
-          badge: rule.badgeSlug,
-          contributor: contributor.username,
-          variant,
-          achieved_on: resolvedAchievedOn,
-          meta: { ...meta, rule_type: rule.type, auto_awarded: true },
-        });
-        awardsGiven++;
-        logger.debug(
-          `Awarded ${rule.badgeSlug} (${variant}) to ${contributor.username}`,
-        );
-      } else {
-        // Check if we should upgrade
-        const variantOrder = Object.keys(badgeDef.variants);
-        const existingVariantIndex = variantOrder.indexOf(
-          existingBadge.variant,
-        );
-        const newVariantIndex = variantOrder.indexOf(variant);
+        const resolvedAchievedOn =
+          achievedOn ?? new Date().toISOString().split("T")[0];
 
-        if (newVariantIndex > existingVariantIndex) {
-          // Upgrade badge
-          await contributorBadgeQueries.upgrade(
-            db,
-            existingBadge.slug,
-            variant,
-            {
-              ...meta,
-              rule_type: rule.type,
-              auto_awarded: true,
-              upgraded: true,
-            },
-            resolvedAchievedOn,
+        // Check if variant exists in badge definition
+        if (!badgeDef.variants[variant]) {
+          logger.warn(
+            `Variant ${variant} not found for badge ${rule.badgeSlug}`,
           );
-          upgradesGiven++;
+          continue;
+        }
+
+        const badgeSlug = `${rule.badgeSlug}__${contributor.username}__${variant}`;
+
+        // Check if this specific variant already exists
+        const existingBadge =
+          await contributorBadgeQueries.getByContributorAndBadge(
+            db,
+            contributor.username,
+            rule.badgeSlug,
+            variant,
+          );
+
+        if (!existingBadge) {
+          // Award new badge variant
+          await contributorBadgeQueries.award(db, {
+            slug: badgeSlug,
+            badge: rule.badgeSlug,
+            contributor: contributor.username,
+            variant,
+            achieved_on: resolvedAchievedOn,
+            meta: { ...meta, rule_type: rule.type, auto_awarded: true },
+          });
+          awardsGiven++;
           logger.debug(
-            `Upgraded ${rule.badgeSlug} for ${contributor.username}: ${existingBadge.variant} → ${variant}`,
+            `Awarded ${rule.badgeSlug} (${variant}) to ${contributor.username}`,
           );
         }
       }
@@ -158,8 +138,6 @@ export async function evaluateBadgeRules(
 
   logger.info("Badge evaluation complete", {
     awardsGiven,
-    upgradesGiven,
-    totalBadges: awardsGiven + upgradesGiven,
   });
 }
 
@@ -171,7 +149,7 @@ async function evaluateRule(
   rule: BadgeRuleDefinition,
   contributor: string,
   activityDefinitions: ActivityDefinition[],
-): Promise<RuleEvaluationResult | null> {
+): Promise<RuleEvaluationResult[] | null> {
   switch (rule.type) {
     case "threshold":
       return evaluateThresholdRule(db, rule, contributor);
@@ -181,7 +159,7 @@ async function evaluateRule(
       return evaluateCompositeRule(db, rule, contributor);
     case "growth":
       return evaluateGrowthRule(db, rule, contributor);
-    case "custom":
+    case "custom": {
       // For custom rules, load data and call evaluator
       const [aggregates, activities, contributorData] = await Promise.all([
         contributorAggregateQueries.getByContributor(db, contributor),
@@ -192,7 +170,9 @@ async function evaluateRule(
       const aggregateMap = new Map(
         aggregates.map((a) => [a.aggregate, a.value]),
       );
-      return rule.evaluator(contributorData, aggregateMap, activities);
+      const result = rule.evaluator(contributorData, aggregateMap, activities);
+      return result ? [result] : null;
+    }
     default:
       return null;
   }
@@ -205,7 +185,7 @@ async function evaluateThresholdRule(
   db: Database,
   rule: ThresholdBadgeRule,
   contributor: string,
-): Promise<RuleEvaluationResult | null> {
+): Promise<RuleEvaluationResult[] | null> {
   // Get contributor's aggregate value using SQL
   const contributors =
     await contributorAggregateQueries.getContributorsAboveThreshold(
@@ -220,14 +200,16 @@ async function evaluateThresholdRule(
   );
   if (!contributorData) return null;
 
-  // Sort thresholds by value descending to get highest eligible variant
+  // Sort thresholds by value ascending and collect ALL qualifying variants
   const sortedThresholds = [...rule.thresholds].sort(
-    (a, b) => b.value - a.value,
+    (a, b) => a.value - b.value,
   );
+
+  const results: RuleEvaluationResult[] = [];
 
   for (const threshold of sortedThresholds) {
     if (contributorData.value >= threshold.value) {
-      // Determine achieved_on from the activity that crossed the threshold
+      // Determine achieved_on from the activity that crossed this threshold
       const achievedOn = await resolveThresholdAchievedOn(
         db,
         contributor,
@@ -235,7 +217,7 @@ async function evaluateThresholdRule(
         threshold.value,
       );
 
-      return {
+      results.push({
         shouldAward: true,
         variant: threshold.variant,
         achievedOn,
@@ -243,11 +225,11 @@ async function evaluateThresholdRule(
           threshold: threshold.value,
           actualValue: contributorData.value,
         },
-      };
+      });
     }
   }
 
-  return null;
+  return results.length > 0 ? results : null;
 }
 
 /**
@@ -309,7 +291,7 @@ async function evaluateStreakRule(
   rule: StreakBadgeRule,
   contributor: string,
   allActivityDefinitions: ActivityDefinition[],
-): Promise<RuleEvaluationResult | null> {
+): Promise<RuleEvaluationResult[] | null> {
   // Match activity definitions using regex patterns
   const matchedSlugs = matchActivityDefinitions(
     rule.activityDefinitions,
@@ -328,28 +310,37 @@ async function evaluateStreakRule(
   if (activities.length === 0) return null;
 
   // Calculate longest streak (union of all matched activities)
-  const { streak: longestStreak, endDate: streakEndDate } =
-    calculateLongestStreak(activities, rule.streakType);
+  const {
+    streak: longestStreak,
+    startIndex,
+    sortedDates,
+  } = calculateLongestStreak(activities, rule.streakType);
 
-  // Sort thresholds by days descending
-  const sortedThresholds = [...rule.thresholds].sort((a, b) => b.days - a.days);
+  // Sort thresholds by days ascending and collect ALL qualifying variants
+  const sortedThresholds = [...rule.thresholds].sort((a, b) => a.days - b.days);
+
+  const results: RuleEvaluationResult[] = [];
 
   for (const threshold of sortedThresholds) {
     if (longestStreak >= threshold.days) {
-      return {
+      // Compute achieved_on: the date when the streak first reached this threshold
+      const achievedOnIndex = startIndex + threshold.days - 1;
+      const achievedOn = sortedDates[achievedOnIndex];
+
+      results.push({
         shouldAward: true,
         variant: threshold.variant,
-        achievedOn: streakEndDate,
+        achievedOn,
         meta: {
           streakDays: longestStreak,
           requiredDays: threshold.days,
           activityDefinitions: matchedSlugs,
         },
-      };
+      });
     }
   }
 
-  return null;
+  return results.length > 0 ? results : null;
 }
 
 /**
@@ -359,19 +350,27 @@ async function evaluateStreakRule(
 function calculateLongestStreak(
   activities: Activity[],
   streakType: "daily" | "weekly" | "monthly",
-): { streak: number; endDate: string | undefined } {
-  if (activities.length === 0) return { streak: 0, endDate: undefined };
+): {
+  streak: number;
+  startIndex: number;
+  endIndex: number;
+  sortedDates: string[];
+} {
+  const empty = { streak: 0, startIndex: 0, endIndex: 0, sortedDates: [] };
+  if (activities.length === 0) return empty;
 
   // Get unique dates
   const uniqueDates = Array.from(
     new Set(activities.map((a) => a.occurred_at.split("T")[0])),
   ).sort();
 
-  if (uniqueDates.length === 0) return { streak: 0, endDate: undefined };
+  if (uniqueDates.length === 0) return empty;
 
   let maxStreak = 1;
   let maxStreakEndIndex = 0;
+  let maxStreakStartIndex = 0;
   let currentStreak = 1;
+  let currentStreakStartIndex = 0;
 
   for (let i = 1; i < uniqueDates.length; i++) {
     const prevDate = new Date(uniqueDates[i - 1]);
@@ -387,9 +386,11 @@ function calculateLongestStreak(
         if (currentStreak > maxStreak) {
           maxStreak = currentStreak;
           maxStreakEndIndex = i;
+          maxStreakStartIndex = currentStreakStartIndex;
         }
       } else {
         currentStreak = 1;
+        currentStreakStartIndex = i;
       }
     } else if (streakType === "weekly") {
       // For weekly, consider within 7 days as consecutive
@@ -398,9 +399,11 @@ function calculateLongestStreak(
         if (currentStreak > maxStreak) {
           maxStreak = currentStreak;
           maxStreakEndIndex = i;
+          maxStreakStartIndex = currentStreakStartIndex;
         }
       } else {
         currentStreak = 1;
+        currentStreakStartIndex = i;
       }
     } else if (streakType === "monthly") {
       // For monthly, check if in consecutive months
@@ -417,14 +420,21 @@ function calculateLongestStreak(
         if (currentStreak > maxStreak) {
           maxStreak = currentStreak;
           maxStreakEndIndex = i;
+          maxStreakStartIndex = currentStreakStartIndex;
         }
       } else {
         currentStreak = 1;
+        currentStreakStartIndex = i;
       }
     }
   }
 
-  return { streak: maxStreak, endDate: uniqueDates[maxStreakEndIndex] };
+  return {
+    streak: maxStreak,
+    startIndex: maxStreakStartIndex,
+    endIndex: maxStreakEndIndex,
+    sortedDates: uniqueDates,
+  };
 }
 
 /**
@@ -436,7 +446,7 @@ async function evaluateGrowthRule(
   db: Database,
   rule: GrowthBadgeRule,
   contributor: string,
-): Promise<RuleEvaluationResult | null> {
+): Promise<RuleEvaluationResult[] | null> {
   // For now, return null as we don't have historical data
   // This would require storing aggregate values over time
   return null;
@@ -449,7 +459,7 @@ async function evaluateCompositeRule(
   db: Database,
   rule: CompositeBadgeRule,
   contributor: string,
-): Promise<RuleEvaluationResult | null> {
+): Promise<RuleEvaluationResult[] | null> {
   const results: boolean[] = [];
 
   for (const condition of rule.conditions) {
@@ -501,10 +511,12 @@ async function evaluateCompositeRule(
     rule.operator === "AND" ? results.every((r) => r) : results.some((r) => r);
 
   return shouldAward
-    ? {
-        shouldAward: true,
-        variant: rule.variant,
-        meta: { conditions: rule.conditions },
-      }
+    ? [
+        {
+          shouldAward: true,
+          variant: rule.variant,
+          meta: { conditions: rule.conditions },
+        },
+      ]
     : null;
 }

@@ -435,30 +435,35 @@ export default async function ContributorPage({
 
         {/* Badges Section */}
         {badges.length > 0 && (
-          <Card className="mb-8">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Award className="h-5 w-5" />
-                Achievements
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <BadgeShowcase
-                badges={badges}
-                badgeDefinitions={badgeDefinitions}
-              />
-            </CardContent>
-          </Card>
+          <div className="mb-8 md:hidden">
+            <BadgeShowcase
+              badges={badges}
+              badgeDefinitions={badgeDefinitions}
+            />
+          </div>
         )}
 
         {/* Activity Breakdown */}
         <ActivityBreakdown activities={activitiesForBreakdown} />
 
-        {/* Activity Timeline */}
-        <ActivityTimeline
-          activities={activities}
-          activityDefinitions={activityDefinitions}
-        />
+        {/* Activity Timeline + Achievements sidebar */}
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex-1 min-w-0">
+            <ActivityTimeline
+              activities={activities}
+              activityDefinitions={activityDefinitions}
+            />
+          </div>
+
+          {badges.length > 0 && (
+            <aside className="hidden md:block w-100 shrink-0">
+              <BadgeShowcase
+                badges={badges}
+                badgeDefinitions={badgeDefinitions}
+              />
+            </aside>
+          )}
+        </div>
 
         {/* Back to Leaderboard */}
         <div className="mt-8 text-center">

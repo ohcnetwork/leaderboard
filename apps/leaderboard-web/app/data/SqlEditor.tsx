@@ -1,7 +1,9 @@
 "use client";
 
 import { sql, SQLite } from "@codemirror/lang-sql";
-import CodeMirror, { EditorView, keymap } from "@uiw/react-codemirror";
+import { Prec } from "@codemirror/state";
+import { EditorView, keymap } from "@codemirror/view";
+import CodeMirror from "@uiw/react-codemirror";
 import { useTheme } from "next-themes";
 import { useMemo } from "react";
 import type { TableSchema } from "./SqlRepl";
@@ -90,17 +92,30 @@ export default function SqlEditor({
       schemaMap[table.name] = table.columns.map((c) => c.name);
     }
 
+    const runQueryKeymap = keymap.of([
+      {
+        key: "Mod-Enter",
+        preventDefault: true,
+        run: () => {
+          onRun();
+          return true;
+        },
+      },
+      {
+        // macOS: Mod-Enter is Cmd+Enter; Ctrl+Enter is separate
+        key: "Ctrl-Enter",
+        preventDefault: true,
+        run: () => {
+          onRun();
+          return true;
+        },
+      },
+    ]);
+
     return [
       sql({ dialect: SQLite, schema: schemaMap, upperCaseKeywords: true }),
-      keymap.of([
-        {
-          key: "Mod-Enter",
-          run: () => {
-            onRun();
-            return true;
-          },
-        },
-      ]),
+      // Must beat default CodeMirror / basicSetup keymaps so Run actually fires
+      Prec.highest(runQueryKeymap),
       baseTheme,
       EditorView.lineWrapping,
     ];

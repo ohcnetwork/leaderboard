@@ -1515,6 +1515,7 @@ export const contributorBadgeQueries = {
   async getRecentEnriched(
     db: Database,
     limit: number = 20,
+    excludeRoles: string[] = [],
   ): Promise<
     Array<{
       slug: string;
@@ -1530,6 +1531,11 @@ export const contributorBadgeQueries = {
       badge_variants: Record<string, { description: string; svg_url: string }>;
     }>
   > {
+    const roleFilter =
+      excludeRoles.length > 0
+        ? `WHERE c.role NOT IN (${excludeRoles.map(() => "?").join(", ")})`
+        : "";
+
     const sql = `
       SELECT 
         cb.slug,
@@ -1546,11 +1552,12 @@ export const contributorBadgeQueries = {
       FROM contributor_badge cb
       JOIN contributor c ON cb.contributor = c.username
       JOIN badge_definition bd ON cb.badge = bd.slug
+      ${roleFilter}
       ORDER BY cb.achieved_on DESC
       LIMIT ?
     `;
 
-    const result = await db.execute(sql, [limit]);
+    const result = await db.execute(sql, [...excludeRoles, limit]);
     return result.rows.map((row: any) => ({
       slug: row.slug,
       badge: row.badge,
@@ -1573,6 +1580,7 @@ export const contributorBadgeQueries = {
   async getTopEarnersEnriched(
     db: Database,
     limit: number = 10,
+    excludeRoles: string[] = [],
   ): Promise<
     Array<{
       username: string;
@@ -1581,6 +1589,11 @@ export const contributorBadgeQueries = {
       badge_count: number;
     }>
   > {
+    const roleFilter =
+      excludeRoles.length > 0
+        ? `WHERE c.role NOT IN (${excludeRoles.map(() => "?").join(", ")})`
+        : "";
+
     const sql = `
       SELECT 
         c.username,
@@ -1589,12 +1602,13 @@ export const contributorBadgeQueries = {
         COUNT(cb.slug) as badge_count
       FROM contributor c
       JOIN contributor_badge cb ON c.username = cb.contributor
+      ${roleFilter}
       GROUP BY c.username
       ORDER BY badge_count DESC
       LIMIT ?
     `;
 
-    const result = await db.execute(sql, [limit]);
+    const result = await db.execute(sql, [...excludeRoles, limit]);
     return result.rows as unknown as Array<{
       username: string;
       name: string | null;

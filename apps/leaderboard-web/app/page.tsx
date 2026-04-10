@@ -71,7 +71,7 @@ export default async function Home() {
   ] = await Promise.all([
     getRecentActivitiesGroupedByType(90, hiddenRoles),
     getLeaderboard(weekStart, weekEnd),
-    getRecentBadgeAchievements(6),
+    getRecentBadgeAchievements(6, hiddenRoles),
     getActiveContributors(30, hiddenRoles),
     getAllContributorUsernames(),
   ]);

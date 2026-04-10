@@ -490,7 +490,10 @@ export async function getContributorBadges(
  * Get recent badge achievements across all contributors
  * Returns badges with contributor and badge definition details
  */
-export async function getRecentBadgeAchievements(limit: number = 20): Promise<
+export async function getRecentBadgeAchievements(
+  limit: number = 20,
+  excludeRoles: string[] = [],
+): Promise<
   Array<
     ContributorBadge & {
       contributor_name: string | null;
@@ -507,6 +510,7 @@ export async function getRecentBadgeAchievements(limit: number = 20): Promise<
   const enrichedBadges = await contributorBadgeQueries.getRecentEnriched(
     db,
     limit,
+    excludeRoles,
   );
 
   return enrichedBadges;
@@ -515,7 +519,10 @@ export async function getRecentBadgeAchievements(limit: number = 20): Promise<
 /**
  * Get top badge earners (contributors with most badges)
  */
-export async function getTopBadgeEarners(limit: number = 10): Promise<
+export async function getTopBadgeEarners(
+  limit: number = 10,
+  excludeRoles: string[] = [],
+): Promise<
   Array<{
     username: string;
     name: string | null;
@@ -527,7 +534,11 @@ export async function getTopBadgeEarners(limit: number = 10): Promise<
 
   // Use optimized query with GROUP BY and JOIN
   const enrichedTopContributors =
-    await contributorBadgeQueries.getTopEarnersEnriched(db, limit);
+    await contributorBadgeQueries.getTopEarnersEnriched(
+      db,
+      limit,
+      excludeRoles,
+    );
 
   return enrichedTopContributors;
 }

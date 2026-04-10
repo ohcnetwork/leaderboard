@@ -1,12 +1,12 @@
 import { icons } from "@/app/icons.gen";
 import { ContributorRoleBadge } from "@/components/ContributorRoleBadge";
 import Icon from "@/components/Icon";
-import Time from "@/components/Time";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getConfig } from "@/lib/config/get-config";
 import {
+  getAllBadgeDefinitions,
   getAllContributorUsernames,
   getContributorAggregates,
   getContributorBadges,
@@ -31,6 +31,7 @@ import { notFound } from "next/navigation";
 import ActivityBreakdown from "./ActivityBreakdown";
 import ActivityOverview from "./ActivityOverview";
 import ActivityTimeline from "./ActivityTimeline";
+import BadgeShowcase from "./BadgeShowcase";
 
 // Built-in aggregate definitions for profile page
 const BUILTIN_CONTRIBUTOR_AGGREGATES = {
@@ -176,11 +177,13 @@ export default async function ContributorPage({
     activityDefinitions,
     dbAggregates,
     badges,
+    badgeDefinitions,
   ] = await Promise.all([
     getContributorProfile(username),
     listActivityDefinitions(),
     getContributorAggregates(username, dbAggregatesSlugs),
     getContributorBadges(username),
+    getAllBadgeDefinitions(),
   ]);
 
   if (!contributor) {
@@ -440,35 +443,10 @@ export default async function ContributorPage({
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4">
-                {badges.map((badge) => (
-                  <div
-                    key={badge.slug}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    <div
-                      className="w-16 h-16 rounded-full bg-linear-to-br from-badge-accent to-badge-accent/70 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer relative group"
-                      title={`${badge.badge} - ${badge.variant}`}
-                    >
-                      {badge.variant !== "bronze" && (
-                        <span className="absolute -bottom-1 -right-1 bg-card text-badge-accent text-xs font-bold px-1.5 py-0.5 rounded-full border-2 border-badge-accent capitalize">
-                          {badge.variant.charAt(0)}
-                        </span>
-                      )}
-                      <div className="absolute bottom-full mb-2 hidden group-hover:block z-10 w-48 p-2 bg-popover text-popover-foreground text-xs rounded shadow-lg border border-border">
-                        <div className="font-bold">{badge.badge}</div>
-                        <div className="text-muted-foreground mt-1 capitalize">
-                          {badge.variant}
-                        </div>
-                        <div className="text-muted-foreground/70 mt-1 text-xs">
-                          Earned:{" "}
-                          <Time date={badge.achieved_on} variant="date" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <BadgeShowcase
+                badges={badges}
+                badgeDefinitions={badgeDefinitions}
+              />
             </CardContent>
           </Card>
         )}

@@ -30,10 +30,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function BadgesPage() {
   const config = getConfig();
+
+  const hiddenRoles = Object.entries(config.leaderboard.roles)
+    .filter(([, v]) => v.hidden)
+    .map(([k]) => k);
+
   const [badgeDefinitions, recentAchievements, topEarners] = await Promise.all([
     getAllBadgeDefinitions(),
-    getRecentBadgeAchievements(20),
-    getTopBadgeEarners(10),
+    getRecentBadgeAchievements(20, hiddenRoles),
+    getTopBadgeEarners(10, hiddenRoles),
   ]);
 
   return (

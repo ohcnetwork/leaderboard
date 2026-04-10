@@ -1422,11 +1422,15 @@ export const contributorBadgeQueries = {
     db: Database,
     username: string,
     badgeSlug: string,
+    variant?: string,
   ): Promise<ContributorBadge | null> {
-    const result = await db.execute(
-      "SELECT * FROM contributor_badge WHERE contributor = ? AND badge = ?",
-      [username, badgeSlug],
-    );
+    const query = variant
+      ? "SELECT * FROM contributor_badge WHERE contributor = ? AND badge = ? AND variant = ?"
+      : "SELECT * FROM contributor_badge WHERE contributor = ? AND badge = ?";
+    const params = variant
+      ? [username, badgeSlug, variant]
+      : [username, badgeSlug];
+    const result = await db.execute(query, params);
     if (result.rows.length === 0) return null;
     const row: any = result.rows[0];
     return {

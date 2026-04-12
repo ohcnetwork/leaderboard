@@ -7,6 +7,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { getAvatarSrc } from "@/lib/utils";
 import { LayoutGrid, List } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -148,7 +149,7 @@ function NormalView({
                 >
                   <Avatar className="size-16 transition-transform group-hover:scale-105">
                     <AvatarImage
-                      src={contributor.avatar_url || undefined}
+                      src={getAvatarSrc(contributor.username)}
                       alt={contributor.name || contributor.username}
                       className="object-cover"
                     />
@@ -193,7 +194,7 @@ function GalleryView({ contributors }: { contributors: Contributor[] }) {
             >
               <Avatar className="w-full h-full rounded-md transition-all hover:ring-4 hover:ring-foreground/20 hover:scale-105">
                 <AvatarImage
-                  src={contributor.avatar_url || undefined}
+                  src={getAvatarSrc(contributor.username)}
                   alt={contributor.name || contributor.username}
                   className="object-cover"
                 />

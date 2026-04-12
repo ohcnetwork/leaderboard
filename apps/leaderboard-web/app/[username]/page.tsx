@@ -14,7 +14,7 @@ import {
   listActivityDefinitions,
 } from "@/lib/data/loader";
 import { getContributorProfileEditUrl } from "@/lib/github-edit-url";
-import { formatAggregateValue } from "@/lib/utils";
+import { formatAggregateValue, getAvatarSrc } from "@/lib/utils";
 import {
   Activity as ActivityIcon,
   Award,
@@ -276,9 +276,9 @@ export default async function ContributorPage({
       "@type": "Person",
       name: contributor.name || contributor.username,
       alternateName: contributor.username,
-      image: contributor.avatar_url,
+      image: getAvatarSrc(contributor.username),
       description: contributor.bio,
-      url: contributor.avatar_url,
+      url: getAvatarSrc(contributor.username),
       memberOf: {
         "@type": "Organization",
         name: config.org.name,
@@ -308,7 +308,7 @@ export default async function ContributorPage({
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <Avatar className="size-20 sm:size-32 shrink-0">
               <AvatarImage
-                src={contributor.avatar_url || undefined}
+                src={getAvatarSrc(contributor.username)}
                 alt={contributor.name || contributor.username}
               />
               <AvatarFallback className="text-2xl sm:text-4xl">

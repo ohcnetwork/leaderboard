@@ -250,11 +250,21 @@ See [MCP Server Documentation](/docs/mcp-server) for detailed usage.
 
 8. **Build Phase**
    ```
+   Next.js pre-build setup:
+     → Copy theme overrides
+     → Copy database to public/data.db
+     → Copy custom assets from data-repo
+     → Download & optimize contributor avatars (WebP, 256×256)
    Next.js reads LibSQL
    → Generate static pages
-   → Copy .leaderboard.db to public/data.db
    → Output static site
    ```
+
+### Avatar Optimization
+
+Contributor profiles store `avatar_url` pointing to external sources (e.g., GitHub avatars). During the build phase, these are downloaded, converted to WebP, and resized to 256×256 using [sharp](https://sharp.pixelplumbing.com/). The optimized images are saved to `public/avatars/{username}.webp` and served locally, eliminating external dependencies at page load.
+
+Avatars are cached between builds — only new or missing avatars are downloaded, making subsequent builds fast.
 
 ### Client-Side Data Explorer
 

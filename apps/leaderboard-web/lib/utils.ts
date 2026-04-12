@@ -51,6 +51,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export function getAvatarSrc(username: string): string {
+  return `/avatars/${username}.webp`;
+}
+
 /**
  * Get date range for a specific period
  * @param period - The time period (week, month, or year)

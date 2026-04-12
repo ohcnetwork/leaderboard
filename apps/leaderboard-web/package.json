@@ -16,8 +16,9 @@
     "setup:theme": "tsx scripts/setup-theme.ts",
     "setup:db": "tsx scripts/setup-db.ts",
     "setup:assets": "tsx scripts/setup-assets.ts",
-    "predev": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db && pnpm setup:assets",
-    "prebuild": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db && pnpm setup:assets"
+    "setup:avatars": "tsx scripts/setup-avatars.ts",
+    "predev": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db && pnpm setup:assets && pnpm setup:avatars",
+    "prebuild": "pnpm setup:icons && pnpm setup:theme && pnpm setup:db && pnpm setup:assets && pnpm setup:avatars"
   },
   "dependencies": {
     "@codemirror/lang-sql": "^6.10.0",
@@ -85,6 +86,7 @@
   },
   "homepage": "https://github.com/ohcnetwork/leaderboard#readme",
   "devDependencies": {
-    "@types/sql.js": "^1.4.11"
+    "@types/sql.js": "^1.4.11",
+    "sharp": "^0.34.5"
   }
 }

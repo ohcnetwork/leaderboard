@@ -1,6 +1,7 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { getAvatarSrc } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -100,7 +101,7 @@ export default function AvatarMosaic({
           }}
         >
           <AvatarImage
-            src={c.avatar_url || undefined}
+            src={getAvatarSrc(c.username)}
             alt={c.name || c.username}
           />
           <AvatarFallback className="text-[10px]">

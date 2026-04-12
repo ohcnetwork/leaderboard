@@ -9,6 +9,7 @@ import {
   getTopBadgeEarners,
   getTotalBadgeStats,
 } from "@/lib/data/loader";
+import { getAvatarSrc } from "@/lib/utils";
 import { Award, Crown, Medal, Sparkles, Trophy, Users } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -228,7 +229,7 @@ export default async function BadgesPage() {
                         </div>
                         <Avatar className="h-8 w-8 shrink-0">
                           <AvatarImage
-                            src={earner.avatar_url || undefined}
+                            src={getAvatarSrc(earner.username)}
                             alt={earner.name || earner.username}
                           />
                           <AvatarFallback className="text-xs">
@@ -299,7 +300,7 @@ export default async function BadgesPage() {
                       {/* Contributor avatar overlapping */}
                       <Avatar className="h-7 w-7 shrink-0 -ml-5 ring-2 ring-card">
                         <AvatarImage
-                          src={achievement.contributor_avatar_url || undefined}
+                          src={getAvatarSrc(achievement.contributor)}
                           alt={
                             achievement.contributor_name ||
                             achievement.contributor
@@ -523,7 +524,7 @@ function TopEarnerPodium({
     >
       <Avatar className={`${avatarSizes[rank]} ring-2 ring-card shadow-md`}>
         <AvatarImage
-          src={earner.avatar_url || undefined}
+          src={getAvatarSrc(earner.username)}
           alt={earner.name || earner.username}
         />
         <AvatarFallback className="text-sm font-medium">

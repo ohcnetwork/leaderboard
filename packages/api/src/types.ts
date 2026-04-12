@@ -6,6 +6,8 @@
  * Database interface that plugins receive
  * Abstraction over LibSQL client
  */
+import type { ZodTypeAny } from "zod";
+
 export interface Database {
   /**
    * Execute a SQL statement
@@ -112,6 +114,11 @@ export interface Plugin {
    * Semantic version of the plugin
    */
   version: string;
+
+  /**
+   * Optional Zod schema for validating the plugin's configuration
+   */
+  configSchema?: ZodTypeAny;
 
   /**
    * Optional setup method called before scraping

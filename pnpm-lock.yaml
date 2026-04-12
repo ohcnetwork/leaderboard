@@ -218,6 +218,9 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       '@types/node':
         specifier: ^20.19.39
@@ -309,6 +312,9 @@ importers:
       '@ohcnetwork/leaderboard-api':
         specifier: workspace:*
         version: link:../api
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
     devDependencies:
       '@types/node':
         specifier: ^20.19.39

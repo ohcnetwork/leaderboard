@@ -1,15 +1,14 @@
-/**
- * Plugin runner phase function tests
- */
-
 import {
   badgeDefinitionQueries,
   createDatabase,
   initializeSchema,
   type Database,
+  type Plugin,
 } from "@ohcnetwork/leaderboard-api";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { z } from "zod";
 import type { Config } from "../config";
+import * as loader from "../loader";
 import { createLogger } from "../logger";
 import {
   aggregatePlugins,
@@ -59,6 +58,75 @@ describe("loadAllPlugins", () => {
     const config = makeConfig(undefined);
     const result = await loadAllPlugins(config, logger);
     expect(result).toEqual([]);
+  });
+});
+
+describe("loadAllPlugins - configSchema validation", () => {
+  it("should pass valid config when plugin has a configSchema", async () => {
+    const mockPlugin: Plugin = {
+      name: "typed-plugin",
+      version: "1.0.0",
+      configSchema: z.object({ apiToken: z.string().min(1) }),
+      scrape: vi.fn(async () => {}),
+    };
+    vi.spyOn(loader, "loadPlugin").mockResolvedValue(mockPlugin);
+
+    const config = makeConfig({
+      "typed-plugin": {
+        source: "file://fake",
+        config: { apiToken: "secret-token" },
+      },
+    } as any);
+
+    const result = await loadAllPlugins(config, logger);
+    expect(result).toHaveLength(1);
+    expect(result[0].config).toEqual({ apiToken: "secret-token" });
+
+    vi.restoreAllMocks();
+  });
+
+  it("should throw when plugin config fails schema validation", async () => {
+    const mockPlugin: Plugin = {
+      name: "typed-plugin",
+      version: "1.0.0",
+      configSchema: z.object({ apiToken: z.string().min(1) }),
+      scrape: vi.fn(async () => {}),
+    };
+    vi.spyOn(loader, "loadPlugin").mockResolvedValue(mockPlugin);
+
+    const config = makeConfig({
+      "typed-plugin": {
+        source: "file://fake",
+        // apiToken is missing — should fail validation
+        config: {},
+      },
+    } as any);
+
+    await expect(loadAllPlugins(config, logger)).rejects.toThrow();
+
+    vi.restoreAllMocks();
+  });
+
+  it("should skip validation and load successfully when plugin has no configSchema", async () => {
+    const mockPlugin: Plugin = {
+      name: "untyped-plugin",
+      version: "1.0.0",
+      scrape: vi.fn(async () => {}),
+    };
+    vi.spyOn(loader, "loadPlugin").mockResolvedValue(mockPlugin);
+
+    const config = makeConfig({
+      "untyped-plugin": {
+        source: "file://fake",
+        config: { anything: "goes" },
+      },
+    } as any);
+
+    const result = await loadAllPlugins(config, logger);
+    expect(result).toHaveLength(1);
+    expect(result[0].config).toEqual({ anything: "goes" });
+
+    vi.restoreAllMocks();
   });
 });
 

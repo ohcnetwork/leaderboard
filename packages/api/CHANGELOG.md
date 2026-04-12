@@ -1,5 +1,12 @@
 # @ohcnetwork/leaderboard-api
 
+## 0.3.1
+
+### Patch Changes
+
+- e82ff67: Redesign badges page UI
+- 8001421: Fix issues with rendering badges and exclude hidden roles in recent achievements
+
 ## 0.3.0
 
 ### Minor Changes

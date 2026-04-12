@@ -1,5 +1,21 @@
 # leaderboard-web
 
+## 0.5.0
+
+### Minor Changes
+
+- 13b8f0d: Optimize how avatars are loaded
+
+### Patch Changes
+
+- e82ff67: Redesign badges page UI
+- 776d8ec: Fixes SQL query run shortcut key not working
+- 8001421: Fix issues with rendering badges and exclude hidden roles in recent achievements
+- f6bbfde: Adds link to edit profile content
+- Updated dependencies [e82ff67]
+- Updated dependencies [8001421]
+  - @ohcnetwork/leaderboard-api@0.3.1
+
 ## 0.4.0
 
 ### Minor Changes

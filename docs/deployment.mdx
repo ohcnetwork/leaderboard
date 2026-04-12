@@ -93,6 +93,16 @@ This will:
 pnpm build
 ```
 
+The build pipeline automatically runs these pre-build steps:
+
+1. **Icons** — Generate icon set from configuration
+2. **Theme** — Copy custom theme CSS from data repo
+3. **Database** — Copy `.leaderboard.db` to `public/data.db` for the Data Explorer
+4. **Assets** — Copy custom assets (badges, images) from data repo to `public/assets/`
+5. **Avatars** — Download contributor avatars, convert to optimized WebP (256×256), and cache in `public/avatars/`
+
+Avatar images are cached between builds — only new or missing avatars are downloaded, so subsequent builds are fast.
+
 ### Step 6: Deploy Static Files
 
 Deploy the contents of `apps/leaderboard-web/out/` to your hosting provider.

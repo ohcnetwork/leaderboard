@@ -20,7 +20,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { LeaderboardEntry } from "@/lib/data/types";
-import { cn } from "@/lib/utils";
+import { cn, getAvatarSrc } from "@/lib/utils";
 import type { ActivityDefinition } from "@ohcnetwork/leaderboard-api";
 import {
   ChevronDown,
@@ -591,7 +591,7 @@ export default function LeaderboardView({
                         >
                           <Avatar className="size-9 shrink-0">
                             <AvatarImage
-                              src={entry.avatar_url || undefined}
+                              src={getAvatarSrc(entry.username)}
                               alt={entry.name || entry.username}
                             />
                             <AvatarFallback className="text-xs">
@@ -734,7 +734,7 @@ export default function LeaderboardView({
                         </div>
                         <Avatar className="size-8 sm:size-9 shrink-0">
                           <AvatarImage
-                            src={entry.avatar_url || undefined}
+                            src={getAvatarSrc(entry.username)}
                             alt={entry.name || entry.username}
                           />
                           <AvatarFallback className="text-xs">
@@ -863,7 +863,7 @@ export default function LeaderboardView({
                             </span>
                             <Avatar className="size-6 shrink-0">
                               <AvatarImage
-                                src={contributor.avatar_url || undefined}
+                                src={getAvatarSrc(contributor.username)}
                                 alt={contributor.name || contributor.username}
                               />
                               <AvatarFallback className="text-[8px]">
@@ -979,7 +979,7 @@ function PodiumEntry({
             )}
           >
             <AvatarImage
-              src={entry.avatar_url || undefined}
+              src={getAvatarSrc(entry.username)}
               alt={entry.name || entry.username}
             />
             <AvatarFallback className={isFirst ? "text-xl" : "text-sm"}>
@@ -1083,7 +1083,7 @@ function PodiumActivityFeed({
     >
       <Avatar className="size-5 shrink-0 mt-0.5">
         <AvatarImage
-          src={activity.contributor_avatar_url || undefined}
+          src={getAvatarSrc(activity.contributor)}
           alt={activity.contributor_name || activity.contributor}
         />
         <AvatarFallback className="text-[8px]">

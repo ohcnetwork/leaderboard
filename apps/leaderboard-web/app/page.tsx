@@ -12,7 +12,7 @@ import {
   getRecentActivitiesGroupedByType,
   getRecentBadgeAchievements,
 } from "@/lib/data/loader";
-import { formatAggregateValue, getDateRange } from "@/lib/utils";
+import { formatAggregateValue, getAvatarSrc, getDateRange } from "@/lib/utils";
 import {
   differenceInDays,
   differenceInMonths,
@@ -458,7 +458,7 @@ export default async function Home() {
                       </div>
                       <Avatar className="h-8 w-8 shrink-0">
                         <AvatarImage
-                          src={entry.avatar_url || undefined}
+                          src={getAvatarSrc(entry.username)}
                           alt={entry.name || entry.username}
                         />
                         <AvatarFallback className="text-xs">
@@ -541,7 +541,7 @@ export default async function Home() {
                     </div>
                     <Avatar className="h-7 w-7 shrink-0 -ml-5 ring-2 ring-card">
                       <AvatarImage
-                        src={badge.contributor_avatar_url || undefined}
+                        src={getAvatarSrc(badge.contributor)}
                         alt={badge.contributor_name || badge.contributor}
                       />
                       <AvatarFallback className="text-[10px]">
@@ -640,7 +640,7 @@ export default async function Home() {
                     >
                       <Avatar className="h-7 w-7">
                         <AvatarImage
-                          src={a.contributor_avatar_url || undefined}
+                          src={getAvatarSrc(a.contributor)}
                           alt={a.contributor_name || a.contributor}
                         />
                         <AvatarFallback className="text-[10px]">
@@ -795,7 +795,7 @@ function PodiumEntry({ entry, rank, height, avatarSize }: PodiumEntryProps) {
     >
       <Avatar className={`${avatarSize} ring-2 ring-card shadow-md`}>
         <AvatarImage
-          src={entry.avatar_url || undefined}
+          src={getAvatarSrc(entry.username)}
           alt={entry.name || entry.username}
         />
         <AvatarFallback className="text-sm font-medium">

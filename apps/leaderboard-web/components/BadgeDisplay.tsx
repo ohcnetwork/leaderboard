@@ -1,4 +1,5 @@
 import Time from "@/components/Time";
+import { getAvatarSrc } from "@/lib/utils";
 
 type BadgeVariant = {
   description: string;
@@ -301,7 +302,7 @@ export function RecentBadgeAchievement({
     <div className="flex items-center gap-3 p-3 rounded-lg border hover:bg-accent/50 transition-colors">
       {achievement.contributor_avatar_url ? (
         <img
-          src={achievement.contributor_avatar_url}
+          src={getAvatarSrc(achievement.contributor)}
           alt={achievement.contributor_name || achievement.contributor}
           className="w-10 h-10 rounded-full"
         />

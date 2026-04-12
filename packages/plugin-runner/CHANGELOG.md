@@ -1,5 +1,14 @@
 # @leaderboard/plugin-runner
 
+## 0.3.1
+
+### Patch Changes
+
+- f6bbfde: Adds link to edit profile content
+- Updated dependencies [e82ff67]
+- Updated dependencies [8001421]
+  - @ohcnetwork/leaderboard-api@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes

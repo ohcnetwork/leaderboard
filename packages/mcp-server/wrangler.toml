@@ -1,0 +1,12 @@
+# Cloudflare Workers configuration for the Leaderboard MCP Server
+
+name = "ohc-leaderboard-mcp"
+main = "src/worker.ts"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "leaderboard-db"
+database_id = "" # Set via CI: wrangler deploy --d1 DB=<database_id>

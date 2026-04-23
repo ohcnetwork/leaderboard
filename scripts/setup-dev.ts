@@ -119,7 +119,7 @@ meta:
   description: "Development leaderboard with dummy data"
   site_url: "http://localhost:3000"
   image_url: "https://api.dicebear.com/7.x/shapes/svg?seed=leaderboard"
-  favicon_url: "/favicon.ico"
+  favicon_url: "https://api.dicebear.com/7.x/shapes/svg?seed=leaderboard"
 
 leaderboard:
   data_source: "https://github.com/example-org/leaderboard-data"

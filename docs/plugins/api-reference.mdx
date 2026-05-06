@@ -13,6 +13,7 @@ Complete reference for the `@ohcnetwork/leaderboard-api` package.
 interface Plugin {
   name: string;
   version: string;
+  configSchema?: ZodType<Record<string, unknown>>;
   setup?: (ctx: PluginContext) => Promise<void>;
   scrape: (ctx: PluginContext) => Promise<void>;
   aggregate?: (ctx: PluginContext) => Promise<void>;
@@ -34,6 +35,23 @@ interface Plugin {
 - **Type**: `string`
 - **Description**: Semantic version of the plugin
 - **Example**: `'1.0.0'`
+
+#### `configSchema` (optional)
+
+- **Type**: `ZodType<Record<string, unknown>>`
+- **Description**: Zod schema used by the plugin runner to validate and parse `plugins.<id>.config` before calling `setup()`, `scrape()`, or `aggregate()`.
+
+**Example**:
+
+```typescript
+import { z } from "zod";
+
+const configSchema = z.object({
+  apiToken: z.string().min(1),
+  repository: z.string().min(1),
+  limit: z.coerce.number().int().positive().default(100),
+});
+```
 
 #### `badgeDefinitions` (optional)
 
@@ -151,7 +169,7 @@ Database instance for storing data.
 
 ### `ctx.config`
 
-Plugin-specific configuration from `config.yaml`.
+Plugin-specific configuration from `config.yaml`, after parsing through `configSchema` if the plugin defines one.
 
 **Type**: `Record<string, unknown>`
 

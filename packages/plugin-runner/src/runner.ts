@@ -46,10 +46,15 @@ export async function loadAllPlugins(
   for (const [pluginId, pluginConfig] of pluginEntries) {
     try {
       const plugin = await loadPlugin(pluginConfig.source, logger);
+      const resolvedConfig = validatePluginConfig(
+        pluginId,
+        plugin,
+        (pluginConfig.config || {}) as Record<string, unknown>,
+      );
       loadedPlugins.push({
         id: pluginId,
         plugin,
-        config: (pluginConfig.config || {}) as Record<string, unknown>,
+        config: resolvedConfig,
       });
     } catch (error) {
       logger.error(`Failed to load plugin ${pluginId}`, error as Error);
@@ -58,6 +63,33 @@ export async function loadAllPlugins(
   }
 
   return loadedPlugins;
+}
+
+function validatePluginConfig(
+  pluginId: string,
+  plugin: Plugin,
+  config: Record<string, unknown>,
+): Record<string, unknown> {
+  if (!plugin.configSchema) {
+    return config;
+  }
+
+  const result = plugin.configSchema.safeParse(config);
+
+  if (!result.success) {
+    const details = result.error.issues
+      .map((issue) => {
+        const path = issue.path.join(".") || "config";
+        return `  - ${path}: ${issue.message}`;
+      })
+      .join("\n");
+
+    throw new Error(
+      `Configuration validation failed for plugin '${pluginId}':\n${details}`,
+    );
+  }
+
+  return result.data as Record<string, unknown>;
 }
 
 /**

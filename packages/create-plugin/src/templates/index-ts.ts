@@ -20,12 +20,19 @@ import {
   type Plugin,
   type PluginContext,
 } from "@ohcnetwork/leaderboard-api";
+import { z } from "zod";
 
-const plugin: Plugin = {
+const configSchema = z.object({
+  // apiToken: z.string().min(1),
+});
+
+const plugin: Plugin<z.infer<typeof configSchema>> = {
   name: "${options.packageName}",
   version: "0.1.0",
+  // Optional: validate and parse plugin config before setup/scrape runs
+  configSchema,
   
-  async setup(ctx: PluginContext) {
+  async setup(ctx: PluginContext<z.infer<typeof configSchema>>) {
     ctx.logger.info("Setting up ${options.pluginName} plugin...");
     
     // TODO: Define activity types here
@@ -71,7 +78,7 @@ const plugin: Plugin = {
     ctx.logger.info("Setup complete");
   },
   
-  async scrape(ctx: PluginContext) {
+  async scrape(ctx: PluginContext<z.infer<typeof configSchema>>) {
     ctx.logger.info("Starting ${options.pluginName} data scraping...");
     
     // TODO: Implement your scraping logic here

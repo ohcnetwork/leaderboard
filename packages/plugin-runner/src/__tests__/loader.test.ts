@@ -4,6 +4,7 @@
 
 import type { Plugin } from "@ohcnetwork/leaderboard-api";
 import { describe, expect, it } from "vitest";
+import { z } from "zod";
 
 // Re-create validatePlugin logic for testing since it's not exported
 function validatePlugin(plugin: unknown): asserts plugin is Plugin {
@@ -19,6 +20,18 @@ function validatePlugin(plugin: unknown): asserts plugin is Plugin {
 
   if (typeof p.version !== "string" || !p.version) {
     throw new Error("Plugin must have a 'version' string property");
+  }
+
+  if (
+    p.configSchema !== undefined &&
+    (typeof p.configSchema !== "object" ||
+      p.configSchema === null ||
+      typeof (p.configSchema as { safeParse?: unknown }).safeParse !==
+        "function")
+  ) {
+    throw new Error(
+      "Plugin 'configSchema' must be a Zod schema with a 'safeParse' method if provided",
+    );
   }
 
   if (typeof p.scrape !== "function") {
@@ -124,6 +137,19 @@ describe("Plugin Loader", () => {
     expect(() => validatePlugin(plugin)).not.toThrow();
   });
 
+  it("should validate plugin with configSchema", () => {
+    const plugin = {
+      name: "test-plugin",
+      version: "1.0.0",
+      configSchema: z.object({
+        apiToken: z.string().min(1),
+      }),
+      scrape: async () => {},
+    };
+
+    expect(() => validatePlugin(plugin)).not.toThrow();
+  });
+
   it("should reject plugin without name", () => {
     const invalidPlugin = {
       version: "1.0.0",
@@ -212,6 +238,19 @@ describe("Plugin Loader", () => {
 
     expect(() => validatePlugin(invalidPlugin)).toThrow(
       "Plugin 'badgeRules' must be an array if provided",
+    );
+  });
+
+  it("should reject plugin with invalid configSchema", () => {
+    const invalidPlugin = {
+      name: "test",
+      version: "1.0.0",
+      scrape: async () => {},
+      configSchema: { parse: () => ({}) },
+    };
+
+    expect(() => validatePlugin(invalidPlugin)).toThrow(
+      "Plugin 'configSchema' must be a Zod schema with a 'safeParse' method if provided",
     );
   });
 });

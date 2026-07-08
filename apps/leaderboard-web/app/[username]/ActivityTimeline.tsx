@@ -189,7 +189,7 @@ export default function ActivityTimeline({
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <CardTitle>Activity Timeline</CardTitle>
             <p className="text-sm text-muted-foreground mt-1">

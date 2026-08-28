@@ -5,10 +5,7 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
+  "private": true,
   "bin": {
     "leaderboard-mcp": "./dist/index.js"
   },

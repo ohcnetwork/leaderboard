@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "command": "entire hooks cursor before-submit-prompt"
+      }
+    ],
+    "preCompact": [
+      {
+        "command": "entire hooks cursor pre-compact"
+      }
+    ],
+    "sessionEnd": [
+      {
+        "command": "entire hooks cursor session-end"
+      }
+    ],
+    "sessionStart": [
+      {
+        "command": "entire hooks cursor session-start"
+      }
+    ],
+    "stop": [
+      {
+        "command": "entire hooks cursor stop"
+      }
+    ],
+    "subagentStart": [
+      {
+        "command": "entire hooks cursor subagent-start"
+      }
+    ],
+    "subagentStop": [
+      {
+        "command": "entire hooks cursor subagent-stop"
+      }
+    ]
+  },
+  "version": 1
+}

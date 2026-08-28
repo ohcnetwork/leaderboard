@@ -3,6 +3,12 @@
  * Fetches and validates plugin manifests from URLs
  */
 
+import { createHash } from "crypto";
+import { mkdtemp, writeFile } from "fs/promises";
+import { tmpdir } from "os";
+import { join } from "path";
+import { pathToFileURL } from "url";
+
 import type {
   Logger,
   Plugin,
@@ -79,18 +85,24 @@ export async function loadPlugin(
 }
 
 /**
- * Evaluate plugin code safely
+ * Evaluate plugin code by importing it from a real file path.
+ *
+ * A `data:` URL would work too, but every stack frame would then embed the
+ * entire bundle, making traces and error reports unreadable.
  */
 async function evaluatePluginCode(
   code: string,
   sourceUrl: string,
 ): Promise<Plugin> {
-  // Create a dynamic module from the code
-  // Using data URL import is safer than eval
-  const dataUrl = `data:text/javascript,${encodeURIComponent(code)}`;
+  const digest = createHash("sha256").update(code).digest("hex").slice(0, 16);
+  const dir = await mkdtemp(join(tmpdir(), "leaderboard-plugin-"));
+  const filePath = join(dir, `${digest}.mjs`);
 
   try {
-    const module = (await import(dataUrl)) as PluginManifest;
+    await writeFile(filePath, code, "utf8");
+    const module = (await import(
+      pathToFileURL(filePath).href
+    )) as PluginManifest;
 
     if (!module.default) {
       throw new Error("Plugin must export a default object");
@@ -99,7 +111,7 @@ async function evaluatePluginCode(
     return module.default;
   } catch (error) {
     throw new Error(
-      `Failed to evaluate plugin code: ${(error as Error).message}`,
+      `Failed to evaluate plugin code from ${sourceUrl}: ${(error as Error).message}`,
     );
   }
 }

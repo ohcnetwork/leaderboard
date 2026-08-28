@@ -195,6 +195,46 @@ leaderboard:
       hidden: true # Exclude from leaderboard
 ```
 
+## Observability (`observability`)
+
+Error reporting is owned by the leaderboard runner, not by individual plugins.
+Configure it once and every plugin — including third-party ones — reports through it.
+
+```yaml
+observability:
+  # Abort the whole run when a plugin phase throws.
+  # Default (false) reports the failure and continues with the next plugin,
+  # so one failing data source cannot block the export phase.
+  fail_fast: false
+
+  sentry:
+    dsn: ${{ env.SENTRY_DSN }}
+    enabled: true
+    environment: production
+    release: ${{ env.GITHUB_SHA }}
+    traces_sample_rate: 0
+    # Caps events per run so a mass failure cannot exhaust your Sentry quota.
+    max_events_per_run: 100
+```
+
+| Field                       | Default                    | Description                                     |
+| --------------------------- | -------------------------- | ----------------------------------------------- |
+| `fail_fast`                 | `false`                    | Abort the run on the first plugin phase failure |
+| `sentry.dsn`                | —                          | Sentry DSN; reporting stays off when unset      |
+| `sentry.enabled`            | `true`                     | Disable reporting without removing the DSN      |
+| `sentry.environment`        | `NODE_ENV` or `production` | Environment tag on every event                  |
+| `sentry.release`            | —                          | Release tag on every event                      |
+| `sentry.traces_sample_rate` | `0`                        | Performance trace sampling                      |
+| `sentry.max_events_per_run` | `100`                      | Event budget per run                            |
+
+Reporting stays disabled when the DSN is missing, when `enabled` is `false`, or when
+the value still contains an unresolved `${{ env.* }}` placeholder because the variable
+was not set.
+
+Events are grouped by phase, plugin, and source. High-cardinality values such as the
+repository name are attached as tags rather than used for grouping, so a failing
+repository does not create a new issue per repository.
+
 ## Plugin Configuration
 
 Plugins extend the system with new data sources.

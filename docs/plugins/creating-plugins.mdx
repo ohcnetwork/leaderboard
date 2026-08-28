@@ -440,6 +440,42 @@ import {
 3. **Less Boilerplate**: No need to write SQL queries manually
 4. **JSON Handling**: Automatically handles JSON serialization for meta fields
 
+## Error Reporting
+
+Do not bundle a reporting SDK into your plugin. The host process owns error
+reporting and configures it once via the `observability` section of `config.yaml`.
+Report through `ctx.logger` and your errors reach whatever backend the deployment
+has configured:
+
+```javascript
+try {
+  await fetchFromApi();
+} catch (error) {
+  ctx.logger.error("Failed to fetch issues", error, {
+    repo: repository,
+    source: "issues",
+  });
+}
+```
+
+`warn` and `error` calls become reported events; `info` calls become breadcrumbs that
+give those events surrounding context. The `meta` argument is attached to the event,
+so include identifiers such as the repository or source name there.
+
+Where the host supports it, `ctx.logger.child(bindings)` returns a logger that merges
+`bindings` into every subsequent call. It is optional, so guard the call:
+
+```javascript
+const repoLogger = ctx.logger.child?.({ repo }) ?? ctx.logger;
+```
+
+### Failure Isolation
+
+A plugin phase that throws is reported and the run continues with the next plugin,
+unless the deployment sets `observability.fail_fast`. Within your own `scrape`, keep
+error boundaries narrow: recover per page and per data source so one failing endpoint
+does not discard everything else you already fetched.
+
 ## Advanced Patterns
 
 ### Pagination

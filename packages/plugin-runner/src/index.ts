@@ -19,11 +19,13 @@ import { importAggregates } from "./importers/aggregates";
 import { importBadges } from "./importers/badges";
 import { importContributors } from "./importers/contributors";
 import { createLogger } from "./logger";
+import { initObservability } from "./observability";
 import {
   aggregatePlugins,
   evaluateAllBadges,
   loadAllPlugins,
   scrapePlugins,
+  setFailFast,
   setupPlugins,
 } from "./runner";
 
@@ -63,7 +65,6 @@ async function main() {
     );
     process.exit(1);
   }
-
   const runAll = !requestedPhase;
   const shouldRun = (phase: Phase) => runAll || requestedPhase === phase;
 
@@ -75,26 +76,33 @@ async function main() {
     phase: requestedPhase || "all",
   });
 
+  let flush: () => Promise<void> = async () => {};
+
   try {
     // Load configuration
     logger.info("Loading configuration");
     const config = await loadConfig(dataDir);
     logger.info(`Loaded config for: ${config.org.name}`);
 
+    const observability = await initObservability(config.observability, logger);
+    const log = observability.logger;
+    flush = observability.flush;
+    setFailFast(observability.failFast);
+
     // Initialize database
-    logger.info("Initializing database");
+    log.info("Initializing database");
     const db = await initDatabase(dataDir);
-    logger.info("Database initialized");
+    log.info("Database initialized");
 
     // Import phase
     if (shouldRun("import")) {
-      logger.info("Importing existing data");
-      await importContributors(db, dataDir, logger);
-      await importActivityDefinitions(db, dataDir, logger);
-      await importActivities(db, dataDir, logger);
-      await importAggregates(db, dataDir, logger);
-      await importBadges(db, dataDir, logger);
-      logger.info("Import complete");
+      log.info("Importing existing data");
+      await importContributors(db, dataDir, log);
+      await importActivityDefinitions(db, dataDir, log);
+      await importActivities(db, dataDir, log);
+      await importAggregates(db, dataDir, log);
+      await importBadges(db, dataDir, log);
+      log.info("Import complete");
     }
 
     // Load plugins if any plugin phase is needed
@@ -104,59 +112,61 @@ async function main() {
       shouldRun("aggregate") ||
       shouldRun("evaluate")
     ) {
-      const loadedPlugins = await loadAllPlugins(config, logger);
+      const loadedPlugins = await loadAllPlugins(config, log);
 
       // Setup phase
       if (shouldRun("setup")) {
-        logger.info("Running plugin setup");
-        await setupPlugins(loadedPlugins, config, db, logger);
-        logger.info("Setup complete");
+        log.info("Running plugin setup");
+        await setupPlugins(loadedPlugins, config, db, log);
+        log.info("Setup complete");
       }
 
       // Scrape phase
       if (shouldRun("scrape")) {
-        logger.info("Running plugin scrape");
-        await scrapePlugins(loadedPlugins, config, db, logger);
-        logger.info("Scrape complete");
+        log.info("Running plugin scrape");
+        await scrapePlugins(loadedPlugins, config, db, log);
+        log.info("Scrape complete");
       }
 
       // Aggregate phase
       if (shouldRun("aggregate")) {
-        logger.info("Running aggregation phase");
-        await runAggregation(db, logger);
-        logger.info("Aggregation complete");
+        log.info("Running aggregation phase");
+        await runAggregation(db, log);
+        log.info("Aggregation complete");
 
-        logger.info("Running plugin aggregation phase");
-        await aggregatePlugins(loadedPlugins, config, db, logger);
-        logger.info("Plugin aggregation complete");
+        log.info("Running plugin aggregation phase");
+        await aggregatePlugins(loadedPlugins, config, db, log);
+        log.info("Plugin aggregation complete");
       }
 
       // Evaluate phase
       if (shouldRun("evaluate")) {
-        logger.info("Running badge evaluation phase");
-        await evaluateAllBadges(loadedPlugins, config, db, logger);
-        logger.info("Badge evaluation complete");
+        log.info("Running badge evaluation phase");
+        await evaluateAllBadges(loadedPlugins, config, db, log);
+        log.info("Badge evaluation complete");
       }
     }
 
     // Export phase
     if (shouldRun("export")) {
-      logger.info("Exporting data");
-      await exportContributors(db, dataDir, logger);
-      await exportActivityDefinitions(db, dataDir, logger);
-      await exportActivities(db, dataDir, logger);
-      await exportAggregates(db, dataDir, logger);
-      await exportBadges(db, dataDir, logger);
-      logger.info("Export complete");
+      log.info("Exporting data");
+      await exportContributors(db, dataDir, log);
+      await exportActivityDefinitions(db, dataDir, log);
+      await exportActivities(db, dataDir, log);
+      await exportAggregates(db, dataDir, log);
+      await exportBadges(db, dataDir, log);
+      log.info("Export complete");
     }
 
     // Close database
     await db.close();
 
-    logger.info("✅ Plugin runner completed successfully");
+    log.info("✅ Plugin runner completed successfully");
+    await flush();
     process.exit(0);
   } catch (error) {
     logger.error("Fatal error in plugin runner", error as Error);
+    await flush();
     process.exit(1);
   }
 }

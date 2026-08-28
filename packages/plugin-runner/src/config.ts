@@ -110,6 +110,28 @@ const BadgesConfigSchema = z.object({
 });
 
 /**
+ * Observability configuration schema
+ *
+ * Error reporting is owned by the runner, not by individual plugins: plugins
+ * report through `ctx.logger` and stay free of any reporting SDK.
+ */
+const SentryConfigSchema = z.object({
+  dsn: z.string().optional(),
+  enabled: z.boolean().default(true),
+  environment: z.string().optional(),
+  release: z.string().optional(),
+  traces_sample_rate: z.number().min(0).max(1).default(0),
+  /** Caps events per run so a mass failure cannot exhaust the Sentry quota. */
+  max_events_per_run: z.number().int().positive().default(100),
+});
+
+const ObservabilityConfigSchema = z.object({
+  sentry: SentryConfigSchema.optional(),
+  /** Abort the whole run when a plugin phase throws, instead of reporting and continuing. */
+  fail_fast: z.boolean().default(false),
+});
+
+/**
  * Config schema
  */
 export const ConfigSchema = z.object({
@@ -121,6 +143,7 @@ export const ConfigSchema = z.object({
     start_date: z.string().optional(),
     socials: z.record(z.string(), z.string()).optional(),
   }),
+  observability: ObservabilityConfigSchema.optional(),
   leaderboard: z.object({
     data_source: z.string().optional(),
     data_branch: z.string().default("main"),
@@ -140,6 +163,8 @@ export const ConfigSchema = z.object({
 
 export type Config = z.infer<typeof ConfigSchema>;
 export type PluginConfig = z.infer<typeof PluginConfigSchema>;
+export type ObservabilityConfig = z.infer<typeof ObservabilityConfigSchema>;
+export type SentryConfig = z.infer<typeof SentryConfigSchema>;
 
 /**
  * Substitute environment variables in config

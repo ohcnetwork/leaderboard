@@ -42,6 +42,55 @@
       ],
       "additionalProperties": false
     },
+    "observability": {
+      "type": "object",
+      "properties": {
+        "sentry": {
+          "type": "object",
+          "properties": {
+            "dsn": {
+              "type": "string"
+            },
+            "enabled": {
+              "default": true,
+              "type": "boolean"
+            },
+            "environment": {
+              "type": "string"
+            },
+            "release": {
+              "type": "string"
+            },
+            "traces_sample_rate": {
+              "default": 0,
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "max_events_per_run": {
+              "default": 100,
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "enabled",
+            "traces_sample_rate",
+            "max_events_per_run"
+          ],
+          "additionalProperties": false
+        },
+        "fail_fast": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fail_fast"
+      ],
+      "additionalProperties": false
+    },
     "leaderboard": {
       "type": "object",
       "properties": {

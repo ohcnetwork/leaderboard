@@ -16,11 +16,16 @@ import {
   evaluateAllBadges,
   loadAllPlugins,
   scrapePlugins,
+  setFailFast,
   setupPlugins,
   type LoadedPlugin,
 } from "../runner";
 
 const logger = createLogger(false);
+
+afterEach(() => {
+  setFailFast(false);
+});
 
 function makeConfig(plugins: Config["leaderboard"]["plugins"] = {}): Config {
   return {
@@ -91,9 +96,7 @@ describe("setupPlugins", () => {
     await setupPlugins(loaded, config, db, logger);
 
     expect(setupFn).toHaveBeenCalledOnce();
-    expect(setupFn).toHaveBeenCalledWith(
-      expect.objectContaining({ db, logger }),
-    );
+    expect(setupFn).toHaveBeenCalledWith(expect.objectContaining({ db }));
   });
 
   it("should skip plugins without setup method", async () => {
@@ -137,7 +140,41 @@ describe("setupPlugins", () => {
     );
   });
 
-  it("should throw when setup fails", async () => {
+  it("should report and continue when setup fails", async () => {
+    const secondSetup = vi.fn(async () => {});
+    const loaded: LoadedPlugin[] = [
+      makeLoadedPlugin({
+        id: "failing-setup",
+        plugin: {
+          name: "failing-setup",
+          version: "1.0.0",
+          setup: vi.fn(async () => {
+            throw new Error("Setup failed");
+          }),
+          scrape: vi.fn(async () => {}),
+        },
+      }),
+      makeLoadedPlugin({
+        id: "healthy",
+        plugin: {
+          name: "healthy",
+          version: "1.0.0",
+          setup: secondSetup,
+          scrape: vi.fn(async () => {}),
+        },
+      }),
+    ];
+    const config = makeConfig();
+
+    await expect(
+      setupPlugins(loaded, config, db, logger),
+    ).resolves.toBeUndefined();
+    expect(secondSetup).toHaveBeenCalledOnce();
+  });
+
+  it("should throw when setup fails and fail_fast is enabled", async () => {
+    setFailFast(true);
+
     const loaded: LoadedPlugin[] = [
       makeLoadedPlugin({
         plugin: {
@@ -205,11 +242,39 @@ describe("scrapePlugins", () => {
     await scrapePlugins(loaded, config, db, logger);
 
     expect(scrapeFn).toHaveBeenCalledWith(
-      expect.objectContaining({ db, config: pluginConfig, logger }),
+      expect.objectContaining({ db, config: pluginConfig }),
     );
   });
 
-  it("should throw when scrape fails", async () => {
+  it("should report and continue when scrape fails", async () => {
+    const secondScrape = vi.fn(async () => {});
+    const loaded: LoadedPlugin[] = [
+      makeLoadedPlugin({
+        id: "failing",
+        plugin: {
+          name: "failing",
+          version: "1.0.0",
+          scrape: vi.fn(async () => {
+            throw new Error("Scrape failed");
+          }),
+        },
+      }),
+      makeLoadedPlugin({
+        id: "healthy",
+        plugin: { name: "healthy", version: "1.0.0", scrape: secondScrape },
+      }),
+    ];
+    const config = makeConfig();
+
+    await expect(
+      scrapePlugins(loaded, config, db, logger),
+    ).resolves.toBeUndefined();
+    expect(secondScrape).toHaveBeenCalledOnce();
+  });
+
+  it("should throw when scrape fails and fail_fast is enabled", async () => {
+    setFailFast(true);
+
     const loaded: LoadedPlugin[] = [
       makeLoadedPlugin({
         plugin: {
@@ -258,9 +323,7 @@ describe("aggregatePlugins", () => {
     await aggregatePlugins(loaded, config, db, logger);
 
     expect(aggregateFn).toHaveBeenCalledOnce();
-    expect(aggregateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ db, logger }),
-    );
+    expect(aggregateFn).toHaveBeenCalledWith(expect.objectContaining({ db }));
   });
 
   it("should skip plugins without aggregate method", async () => {
@@ -314,7 +377,41 @@ describe("aggregatePlugins", () => {
     expect(callOrder).toEqual(["first", "second"]);
   });
 
-  it("should throw when aggregate fails", async () => {
+  it("should report and continue when aggregate fails", async () => {
+    const secondAggregate = vi.fn(async () => {});
+    const loaded: LoadedPlugin[] = [
+      makeLoadedPlugin({
+        id: "failing",
+        plugin: {
+          name: "failing",
+          version: "1.0.0",
+          scrape: vi.fn(async () => {}),
+          aggregate: vi.fn(async () => {
+            throw new Error("Aggregate failed");
+          }),
+        },
+      }),
+      makeLoadedPlugin({
+        id: "healthy",
+        plugin: {
+          name: "healthy",
+          version: "1.0.0",
+          scrape: vi.fn(async () => {}),
+          aggregate: secondAggregate,
+        },
+      }),
+    ];
+    const config = makeConfig();
+
+    await expect(
+      aggregatePlugins(loaded, config, db, logger),
+    ).resolves.toBeUndefined();
+    expect(secondAggregate).toHaveBeenCalledOnce();
+  });
+
+  it("should throw when aggregate fails and fail_fast is enabled", async () => {
+    setFailFast(true);
+
     const loaded: LoadedPlugin[] = [
       makeLoadedPlugin({
         plugin: {

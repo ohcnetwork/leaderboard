@@ -47,6 +47,12 @@ export interface Logger {
   info(message: string, meta?: Record<string, unknown>): void;
   warn(message: string, meta?: Record<string, unknown>): void;
   error(message: string, error?: Error, meta?: Record<string, unknown>): void;
+
+  /**
+   * Returns a logger that merges `bindings` into every subsequent call.
+   * Optional so plugins built against older host versions keep working.
+   */
+  child?(bindings: Record<string, unknown>): Logger;
 }
 
 /**

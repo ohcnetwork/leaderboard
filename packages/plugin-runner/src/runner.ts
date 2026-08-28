@@ -25,6 +25,44 @@ export interface LoadedPlugin {
 }
 
 /**
+ * When false, a failing plugin phase is reported and the run continues with
+ * the next plugin so one bad data source cannot block the whole build.
+ */
+let failFast = false;
+
+export function setFailFast(value: boolean): void {
+  failFast = value;
+}
+
+function scoped(logger: Logger, bindings: Record<string, unknown>): Logger {
+  return logger.child?.(bindings) ?? logger;
+}
+
+/**
+ * Runs one plugin phase, converting a throw into a reported failure unless
+ * `fail_fast` is configured.
+ *
+ * @returns true when the phase succeeded
+ */
+async function runPhase(
+  phase: string,
+  pluginId: string,
+  logger: Logger,
+  run: (phaseLogger: Logger) => Promise<void>,
+): Promise<boolean> {
+  const phaseLogger = scoped(logger, { phase, plugin: pluginId });
+
+  try {
+    await run(phaseLogger);
+    return true;
+  } catch (error) {
+    phaseLogger.error(`${phase} failed for plugin ${pluginId}`, error as Error);
+    if (failFast) throw error;
+    return false;
+  }
+}
+
+/**
  * Load all plugins from config
  */
 export async function loadAllPlugins(
@@ -94,20 +132,17 @@ export async function setupPlugins(
     }
 
     if (plugin.setup) {
-      try {
-        logger.info(`Running setup for plugin: ${plugin.name}`);
+      await runPhase("setup", id, logger, async (phaseLogger) => {
+        phaseLogger.info(`Running setup for plugin: ${plugin.name}`);
         const ctx: PluginContext = {
           db,
           config: pluginConfig,
           orgConfig: config.org as any,
-          logger,
+          logger: phaseLogger,
         };
-        await plugin.setup(ctx);
-        logger.info(`Setup complete for plugin: ${plugin.name}`);
-      } catch (error) {
-        logger.error(`Setup failed for plugin ${id}`, error as Error);
-        throw error;
-      }
+        await plugin.setup!(ctx);
+        phaseLogger.info(`Setup complete for plugin: ${plugin.name}`);
+      });
     } else {
       logger.debug(`No setup method for plugin: ${plugin.name}`);
     }
@@ -125,20 +160,17 @@ export async function scrapePlugins(
 ): Promise<void> {
   logger.info("Running scrape phase for all plugins");
   for (const { id, plugin, config: pluginConfig } of loadedPlugins) {
-    try {
-      logger.info(`Running scrape for plugin: ${plugin.name}`);
+    await runPhase("scrape", id, logger, async (phaseLogger) => {
+      phaseLogger.info(`Running scrape for plugin: ${plugin.name}`);
       const ctx: PluginContext = {
         db,
         config: pluginConfig,
         orgConfig: config.org as any,
-        logger,
+        logger: phaseLogger,
       };
       await plugin.scrape(ctx);
-      logger.info(`Scrape complete for plugin: ${plugin.name}`);
-    } catch (error) {
-      logger.error(`Scrape failed for plugin ${id}`, error as Error);
-      throw error;
-    }
+      phaseLogger.info(`Scrape complete for plugin: ${plugin.name}`);
+    });
   }
 }
 
@@ -156,20 +188,17 @@ export async function aggregatePlugins(
   logger.info("Running aggregate phase for all plugins");
   for (const { id, plugin, config: pluginConfig } of loadedPlugins) {
     if (plugin.aggregate) {
-      try {
-        logger.info(`Running aggregate for plugin: ${plugin.name}`);
+      await runPhase("aggregate", id, logger, async (phaseLogger) => {
+        phaseLogger.info(`Running aggregate for plugin: ${plugin.name}`);
         const ctx: PluginContext = {
           db,
           config: pluginConfig,
           orgConfig: config.org as any,
-          logger,
+          logger: phaseLogger,
         };
-        await plugin.aggregate(ctx);
-        logger.info(`Aggregate complete for plugin: ${plugin.name}`);
-      } catch (error) {
-        logger.error(`Aggregate failed for plugin ${id}`, error as Error);
-        throw error;
-      }
+        await plugin.aggregate!(ctx);
+        phaseLogger.info(`Aggregate complete for plugin: ${plugin.name}`);
+      });
     } else {
       logger.debug(`No aggregate method for plugin: ${plugin.name}`);
     }
@@ -199,19 +228,15 @@ export async function evaluateAllBadges(
   // Evaluate plugin badge rules
   for (const { id, plugin } of loadedPlugins) {
     if (plugin.badgeRules && plugin.badgeRules.length > 0) {
-      logger.info(
-        `Evaluating ${plugin.badgeRules.length} badge rules from plugin: ${plugin.name}`,
-      );
-      try {
-        await evaluateBadgeRules(db, logger, plugin.badgeRules);
-        logger.info(`Badge evaluation complete for plugin: ${plugin.name}`);
-      } catch (error) {
-        logger.error(
-          `Badge evaluation failed for plugin ${id}`,
-          error as Error,
+      await runPhase("evaluate", id, logger, async (phaseLogger) => {
+        phaseLogger.info(
+          `Evaluating ${plugin.badgeRules!.length} badge rules from plugin: ${plugin.name}`,
         );
-        throw error;
-      }
+        await evaluateBadgeRules(db, phaseLogger, plugin.badgeRules!);
+        phaseLogger.info(
+          `Badge evaluation complete for plugin: ${plugin.name}`,
+        );
+      });
     }
   }
 }

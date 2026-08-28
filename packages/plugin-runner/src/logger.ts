@@ -13,9 +13,14 @@ enum LogLevel {
 
 export class ConsoleLogger implements Logger {
   private minLevel: LogLevel;
+  private bindings: Record<string, unknown>;
 
-  constructor(minLevel: LogLevel = LogLevel.INFO) {
+  constructor(
+    minLevel: LogLevel = LogLevel.INFO,
+    bindings: Record<string, unknown> = {},
+  ) {
     this.minLevel = minLevel;
+    this.bindings = bindings;
   }
 
   private log(
@@ -28,9 +33,15 @@ export class ConsoleLogger implements Logger {
       return;
     }
 
+    const merged = { ...this.bindings, ...meta };
     const timestamp = new Date().toISOString();
-    const metaStr = meta ? ` ${JSON.stringify(meta)}` : "";
+    const metaStr =
+      Object.keys(merged).length > 0 ? ` ${JSON.stringify(merged)}` : "";
     console.log(`[${timestamp}] ${levelName}: ${message}${metaStr}`);
+  }
+
+  child(bindings: Record<string, unknown>): Logger {
+    return new ConsoleLogger(this.minLevel, { ...this.bindings, ...bindings });
   }
 
   debug(message: string, meta?: Record<string, unknown>): void {

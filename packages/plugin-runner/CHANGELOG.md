@@ -1,5 +1,21 @@
 # @leaderboard/plugin-runner
 
+## 0.4.0
+
+### Minor Changes
+
+- bc40c49: Adds support for observability
+
+### Patch Changes
+
+- 61a3ccf: update dependencies
+- f6bbfde: Adds link to edit profile content
+- Updated dependencies [e82ff67]
+- Updated dependencies [bc40c49]
+- Updated dependencies [61a3ccf]
+- Updated dependencies [8001421]
+  - @ohcnetwork/leaderboard-api@0.4.0
+
 ## 0.3.0
 
 ### Minor Changes

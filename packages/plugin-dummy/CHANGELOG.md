@@ -1,5 +1,16 @@
 # @leaderboard/plugin-dummy
 
+## 0.1.4
+
+### Patch Changes
+
+- 61a3ccf: update dependencies
+- Updated dependencies [e82ff67]
+- Updated dependencies [bc40c49]
+- Updated dependencies [61a3ccf]
+- Updated dependencies [8001421]
+  - @ohcnetwork/leaderboard-api@0.4.0
+
 ## 0.1.3
 
 ### Patch Changes

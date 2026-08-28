@@ -1,5 +1,11 @@
 # create-leaderboard-data-repo
 
+## 0.2.1
+
+### Patch Changes
+
+- 61a3ccf: update dependencies
+
 ## 0.2.0
 
 ### Minor Changes

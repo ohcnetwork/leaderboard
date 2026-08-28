@@ -2,6 +2,10 @@
  * Plugin runner phase function tests
  */
 
+import { mkdtemp, rm, writeFile } from "fs/promises";
+import { tmpdir } from "os";
+import { join } from "path";
+import { pathToFileURL } from "url";
 import {
   badgeDefinitionQueries,
   createDatabase,
@@ -64,6 +68,85 @@ describe("loadAllPlugins", () => {
     const config = makeConfig(undefined);
     const result = await loadAllPlugins(config, logger);
     expect(result).toEqual([]);
+  });
+
+  it("should validate plugin config with configSchema and return parsed config", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "leaderboard-plugin-"));
+
+    try {
+      const pluginPath = join(dir, "plugin.mjs");
+      await writeFile(
+        pluginPath,
+        `
+import { z } from "zod";
+
+export default {
+  name: "config-schema-plugin",
+  version: "1.0.0",
+  configSchema: z.object({
+    apiToken: z.string().min(1),
+    limit: z.coerce.number().int().positive().default(10),
+  }),
+  async scrape() {},
+};
+`,
+      );
+
+      const config = makeConfig({
+        test: {
+          source: pathToFileURL(pluginPath).href,
+          config: {
+            apiToken: "secret",
+            limit: "25",
+          },
+        },
+      });
+
+      const [loadedPlugin] = await loadAllPlugins(config, logger);
+
+      expect(loadedPlugin.config).toEqual({
+        apiToken: "secret",
+        limit: 25,
+      });
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+
+  it("should fail fast when plugin config does not match configSchema", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "leaderboard-plugin-"));
+
+    try {
+      const pluginPath = join(dir, "plugin.mjs");
+      await writeFile(
+        pluginPath,
+        `
+import { z } from "zod";
+
+export default {
+  name: "config-schema-plugin",
+  version: "1.0.0",
+  configSchema: z.object({
+    apiToken: z.string().min(1),
+  }),
+  async scrape() {},
+};
+`,
+      );
+
+      const config = makeConfig({
+        test: {
+          source: pathToFileURL(pluginPath).href,
+          config: {},
+        },
+      });
+
+      await expect(loadAllPlugins(config, logger)).rejects.toThrow(
+        "Configuration validation failed for plugin 'test'",
+      );
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
   });
 });
 

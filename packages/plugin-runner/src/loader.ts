@@ -134,6 +134,18 @@ function validatePlugin(plugin: unknown): asserts plugin is Plugin {
     throw new Error("Plugin must have a 'version' string property");
   }
 
+  if (
+    p.configSchema !== undefined &&
+    (typeof p.configSchema !== "object" ||
+      p.configSchema === null ||
+      typeof (p.configSchema as { safeParse?: unknown }).safeParse !==
+        "function")
+  ) {
+    throw new Error(
+      "Plugin 'configSchema' must be a Zod schema with a 'safeParse' method if provided",
+    );
+  }
+
   if (typeof p.scrape !== "function") {
     throw new Error("Plugin must have a 'scrape' function");
   }

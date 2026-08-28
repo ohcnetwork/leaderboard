@@ -2,6 +2,8 @@
  * Core types for the leaderboard plugin system
  */
 
+import type { ZodType } from "zod";
+
 /**
  * Database interface that plugins receive
  * Abstraction over LibSQL client
@@ -83,7 +85,7 @@ export type PluginConfig = Record<string, unknown>;
 /**
  * Context passed to plugin methods
  */
-export interface PluginContext {
+export interface PluginContext<TConfig extends PluginConfig = PluginConfig> {
   /**
    * Database instance for querying and writing data
    */
@@ -92,7 +94,7 @@ export interface PluginContext {
   /**
    * Plugin-specific configuration from config.yaml
    */
-  config: PluginConfig;
+  config: TConfig;
 
   /**
    * Organization configuration
@@ -108,7 +110,7 @@ export interface PluginContext {
 /**
  * Plugin interface that all plugins must implement
  */
-export interface Plugin {
+export interface Plugin<TConfig extends PluginConfig = PluginConfig> {
   /**
    * Unique name for the plugin
    */
@@ -120,15 +122,21 @@ export interface Plugin {
   version: string;
 
   /**
+   * Optional Zod schema used to validate and parse the plugin-specific config
+   * from config.yaml before any lifecycle methods are called.
+   */
+  configSchema?: ZodType<TConfig>;
+
+  /**
    * Optional setup method called before scraping
    * Used to populate activity_definition table and perform initialization
    */
-  setup?: (ctx: PluginContext) => Promise<void>;
+  setup?: (ctx: PluginContext<TConfig>) => Promise<void>;
 
   /**
    * Main scrape method that fetches and stores activity data
    */
-  scrape: (ctx: PluginContext) => Promise<void>;
+  scrape: (ctx: PluginContext<TConfig>) => Promise<void>;
 
   /**
    * Optional aggregate method called after all plugins have scraped
@@ -136,7 +144,7 @@ export interface Plugin {
    * Used for computing plugin-specific aggregates that may depend
    * on the standard aggregates.
    */
-  aggregate?: (ctx: PluginContext) => Promise<void>;
+  aggregate?: (ctx: PluginContext<TConfig>) => Promise<void>;
 
   /**
    * Optional badge definitions that this plugin provides.

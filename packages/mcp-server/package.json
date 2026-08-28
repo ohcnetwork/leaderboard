@@ -6,6 +6,9 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "leaderboard-mcp": "./dist/index.js"
   },

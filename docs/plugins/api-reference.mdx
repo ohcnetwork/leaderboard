@@ -13,6 +13,7 @@ Complete reference for the `@ohcnetwork/leaderboard-api` package.
 interface Plugin {
   name: string;
   version: string;
+  configSchema?: ZodTypeAny;
   setup?: (ctx: PluginContext) => Promise<void>;
   scrape: (ctx: PluginContext) => Promise<void>;
   aggregate?: (ctx: PluginContext) => Promise<void>;
@@ -35,7 +36,35 @@ interface Plugin {
 - **Description**: Semantic version of the plugin
 - **Example**: `'1.0.0'`
 
-#### `badgeDefinitions` (optional)
+#### `configSchema` (optional)
+
+- **Type**: `ZodTypeAny` (from `zod`)
+- **Description**: A Zod schema that validates the plugin's `config` block from `config.yaml`. When present, the plugin runner calls `.parse()` on the raw config before calling `setup()` or `scrape()`, so `ctx.config` is always type-safe. If validation fails, the run aborts with a descriptive error.
+- **Example**:
+
+```typescript
+import { z } from "zod";
+import type { Plugin } from "@ohcnetwork/leaderboard-api";
+
+const configSchema = z.object({
+  apiToken: z.string().min(1),
+  org: z.string().min(1),
+  pageSize: z.number().int().positive().default(100),
+});
+
+type Config = z.infer<typeof configSchema>;
+
+const plugin: Plugin = {
+  name: "my-plugin",
+  version: "1.0.0",
+  configSchema,
+  async scrape(ctx) {
+    const config = ctx.config as Config; // already validated
+    const { apiToken, org, pageSize } = config;
+    // ...
+  },
+};
+```
 
 - **Type**: `BadgeDefinition[]`
 - **Description**: Badge definitions that this plugin provides. Inserted into the database during the setup phase alongside config badge definitions.
@@ -465,7 +494,7 @@ The plugin runner will catch and log the error, then exit with a non-zero code.
 1. **Always use parameterized queries** to prevent SQL injection
 2. **Use `INSERT OR IGNORE`** to prevent duplicate activities
 3. **Log progress** to help with debugging
-4. **Validate configuration** before making API calls
+4. **Declare a `configSchema`** using Zod — the runner validates the config block before your plugin runs, giving users clear error messages instead of cryptic runtime failures
 5. **Handle rate limits** appropriately
 6. **Use batch inserts** for better performance
 7. **Store unique slugs** to identify activities

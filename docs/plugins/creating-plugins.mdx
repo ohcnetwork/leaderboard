@@ -206,11 +206,12 @@ export default {
 };
 ```
 
-## Step 3: Add TypeScript Types (Optional)
+## Step 3: Add TypeScript Types and Config Validation (Recommended)
 
-For better developer experience, create `plugin.ts`:
+For better developer experience and safer config handling, use Zod to validate your plugin's config. Create `plugin.ts`:
 
 ```typescript
+import { z } from "zod";
 import {
   activityDefinitionQueries,
   activityQueries,
@@ -220,14 +221,28 @@ import {
   type PluginContext,
 } from "@ohcnetwork/leaderboard-api";
 
+/**
+ * Define and validate your plugin's config with Zod.
+ * The runner calls .parse() on the config.yaml block before setup() or scrape(),
+ * so ctx.config is always safe to use — no runtime surprises.
+ */
+const configSchema = z.object({
+  apiKey: z.string().min(1, "apiKey is required"),
+  apiUrl: z.string().url().default("https://api.example.com/events"),
+});
+
+type Config = z.infer<typeof configSchema>;
+
 const plugin: Plugin = {
   name: "custom-plugin",
   version: "1.0.0",
 
+  // Attach the schema — the runner validates config before your code runs.
+  configSchema,
+
   async setup(ctx: PluginContext): Promise<void> {
     ctx.logger.info("Setting up custom plugin");
 
-    // Define your activity types using the query helpers
     await activityDefinitionQueries.insertOrIgnore(ctx.db, {
       slug: "custom_event_1",
       name: "Event Type 1",
@@ -240,14 +255,10 @@ const plugin: Plugin = {
   async scrape(ctx: PluginContext): Promise<void> {
     ctx.logger.info("Starting scrape");
 
-    // Get configuration with type safety
-    const { apiKey, apiUrl } = ctx.config as {
-      apiKey: string;
-      apiUrl?: string;
-    };
+    // Config already validated — cast safely and destructure.
+    const { apiKey, apiUrl } = ctx.config as Config;
 
-    // Fetch and process data
-    const response = await fetch(apiUrl || "https://api.example.com/events", {
+    const response = await fetch(apiUrl, {
       headers: { Authorization: `Bearer ${apiKey}` },
     });
 
@@ -263,7 +274,6 @@ const plugin: Plugin = {
     }>;
 
     for (const event of events) {
-      // Ensure contributor exists
       await contributorQueries.upsert(ctx.db, {
         username: event.user.username,
         name: event.user.name,
@@ -276,7 +286,6 @@ const plugin: Plugin = {
         meta: null,
       });
 
-      // Insert activity
       await activityQueries.upsert(ctx.db, {
         slug: `custom-${event.id}`,
         contributor: event.user.username,
@@ -291,7 +300,6 @@ const plugin: Plugin = {
     }
   },
 
-  // Optional: Compute aggregates after main leaderboard aggregation
   async aggregate(ctx: PluginContext): Promise<void> {
     ctx.logger.info("Computing custom aggregates");
 
@@ -329,7 +337,45 @@ Build to JavaScript:
 tsc plugin.ts --module esnext --target es2022
 ```
 
-> **Note:** If you used `pnpm create-leaderboard-plugin`, TypeScript is already configured and you can simply run `pnpm build`.
+> **Note:** If you used `pnpm create-leaderboard-plugin`, TypeScript and Zod are already configured. Run `pnpm build`.
+
+## Validating Plugin Config with Zod
+
+Declaring a `configSchema` on your plugin is the recommended way to handle configuration. The plugin runner calls `schema.parse(rawConfig)` before invoking `setup()` or `scrape()`. If the config block in `config.yaml` is invalid, the run aborts immediately with a clear Zod error — before any API calls or database writes happen.
+
+### Example config.yaml
+
+```yaml
+leaderboard:
+  plugins:
+    custom:
+      source: file:///path/to/plugin.js
+      config:
+        apiKey: ${{ env.MY_API_TOKEN }}
+        # apiUrl is optional — defaults to https://api.example.com/events
+```
+
+### What happens at runtime
+
+1. Runner loads the plugin from `source`
+2. If `plugin.configSchema` exists, runner calls `configSchema.parse(config)`
+3. On failure → run aborts with a detailed Zod validation error (field name + reason)
+4. On success → `ctx.config` holds the parsed, type-safe config object
+5. `setup()` and `scrape()` are called with the validated context
+
+### Minimal schema example
+
+```typescript
+import { z } from "zod";
+
+const configSchema = z.object({
+  apiKey: z.string().min(1), // required
+  org: z.string().min(1), // required
+  pageSize: z.number().int().positive().default(100), // optional with default
+});
+```
+
+Plugins without a `configSchema` work exactly as before — no validation, no breaking change.
 
 ## Step 4: Test Locally
 

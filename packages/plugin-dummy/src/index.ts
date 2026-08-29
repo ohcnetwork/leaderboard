@@ -16,12 +16,17 @@ import {
   contributorQueries,
 } from "@ohcnetwork/leaderboard-api";
 import { ACTIVITY_TYPES, generateActivities } from "./activities";
-import { mergeConfig, type DummyPluginConfig } from "./config";
+import {
+  DummyPluginConfigSchema,
+  mergeConfig,
+  type DummyPluginConfig,
+} from "./config";
 import { generateContributors } from "./contributors";
 
 const plugin: Plugin = {
   name: "@leaderboard/plugin-dummy",
   version: "0.1.0",
+  configSchema: DummyPluginConfigSchema,
 
   async setup(ctx: PluginContext) {
     ctx.logger.info("Setting up dummy plugin...");

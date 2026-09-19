@@ -35,10 +35,14 @@ export default function SearchCommand({ items }: SearchCommandProps) {
       }
     };
 
+    const handleOpenEvent = () => setOpen(true);
+
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("open-search", handleOpenEvent);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("open-search", handleOpenEvent);
     };
   }, []);
 

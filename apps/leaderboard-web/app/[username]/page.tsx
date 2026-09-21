@@ -17,6 +17,7 @@ import { getContributorProfileEditUrl } from "@/lib/github-edit-url";
 import { formatAggregateValue, getAvatarSrc } from "@/lib/utils";
 import {
   Activity as ActivityIcon,
+  ArrowLeft,
   Award,
   Calendar,
   Github,
@@ -466,13 +467,21 @@ export default async function ContributorPage({
         </div>
 
         {/* Back to Leaderboard */}
-        <div className="mt-8 text-center">
-          <Link
-            href="/leaderboard"
-            className="text-sm text-muted-foreground hover:text-foreground"
+        <div className="mt-12 text-center">
+          <Button
+            variant="outline"
+            size="lg"
+            asChild
+            className="group w-fit gap-2 bg-background hover:bg-secondary"
           >
-            ← Back to Leaderboard
-          </Link>
+            <Link
+              href="/leaderboard"
+              className="!no-underline hover:!no-underline focus:!no-underline"
+            >
+              <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" />
+              <span>Back to Leaderboard</span>
+            </Link>
+          </Button>
         </div>
       </div>
     </>

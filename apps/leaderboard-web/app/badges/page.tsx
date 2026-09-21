@@ -1,5 +1,6 @@
 import Time from "@/components/Time";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getConfig } from "@/lib/config/get-config";
 import {
@@ -10,7 +11,15 @@ import {
   getTotalBadgeStats,
 } from "@/lib/data/loader";
 import { getAvatarSrc } from "@/lib/utils";
-import { Award, Crown, Medal, Sparkles, Trophy, Users } from "lucide-react";
+import {
+  ArrowLeft,
+  Award,
+  Crown,
+  Medal,
+  Sparkles,
+  Trophy,
+  Users,
+} from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -475,13 +484,21 @@ export default async function BadgesPage() {
       </section>
 
       {/* ========== Back to Home ========== */}
-      <div className="text-center">
-        <Link
-          href="/"
-          className="text-sm text-muted-foreground hover:text-foreground"
+      <div className="mt-8 text-center">
+        <Button
+          variant="outline"
+          size="lg"
+          asChild
+          className="group w-fit gap-2 bg-background hover:bg-secondary"
         >
-          ← Back to Home
-        </Link>
+          <Link
+            href="/"
+            className="!no-underline hover:!no-underline focus:!no-underline"
+          >
+            <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" />
+            <span>Back to Home</span>
+          </Link>
+        </Button>
       </div>
     </div>
   );

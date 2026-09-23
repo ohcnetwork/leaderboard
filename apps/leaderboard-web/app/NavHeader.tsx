@@ -2,7 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowUp, Award, Github, Home, Trophy, Users } from "lucide-react";
+import {
+  ArrowUp,
+  Award,
+  Github,
+  Home,
+  Search,
+  Trophy,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -87,6 +95,15 @@ export default function NavHeader({
           </Link>
 
           <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("open-search"))}
+              className="flex items-center gap-2 rounded-md border px-2.5 py-1.5 text-sm text-muted-foreground cursor-pointer hover:border-foreground/30 transition-colors"
+              aria-label="Open search"
+            >
+              <Search className="h-4 w-4" />
+              <span className="hidden sm:inline">Search</span>
+            </button>
             {githubUrl && (
               <Button
                 asChild
@@ -157,6 +174,18 @@ export default function NavHeader({
 
             {/* Right: GitHub + Theme Toggle */}
             <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new Event("open-search"))}
+                className="hidden sm:flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm text-muted-foreground cursor-pointer hover:border-foreground/30 transition-colors"
+                aria-label="Open search"
+              >
+                <Search className="h-4 w-4" />
+                <span>Search</span>
+                <kbd className="ml-2 rounded border bg-muted px-1.5 py-0.5 text-xs font-mono">
+                  ⌘K
+                </kbd>
+              </button>
               {githubUrl && (
                 <Button
                   asChild

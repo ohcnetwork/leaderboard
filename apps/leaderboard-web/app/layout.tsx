@@ -7,6 +7,9 @@ import Footer from "./Footer";
 import "./globals.css";
 import NavHeader from "./NavHeader";
 
+import SearchCommand from "@/components/SearchCommand";
+import { getAllContributors } from "@/lib/data/loader";
+
 const fontSans = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -58,11 +61,45 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>): React.ReactElement {
+}>): Promise<React.ReactElement> {
+  const contributors = await getAllContributors();
+  const searchItems = [
+    {
+      title: "Home",
+      href: "/",
+      group: "Pages",
+      keywords: ["home", "dashboard"],
+    },
+    {
+      title: "Leaderboard",
+      href: "/leaderboard",
+      group: "Pages",
+      keywords: ["leaderboard", "ranking", "points", "scores"],
+    },
+    {
+      title: "People",
+      href: "/people",
+      group: "Pages",
+      keywords: ["people", "contributors", "members"],
+    },
+    {
+      title: "Badges",
+      href: "/badges",
+      group: "Pages",
+      keywords: ["badges", "achievements", "awards"],
+    },
+
+    ...contributors.map((contributor) => ({
+      title: contributor.name || contributor.username,
+      href: `/${contributor.username}`,
+      group: "Contributors",
+      keywords: [contributor.username, contributor.name || ""],
+    })),
+  ];
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -81,6 +118,7 @@ export default function RootLayout({
                 logoUrl={config.org.logo_url}
                 githubUrl={config.org.socials?.github}
               />
+              <SearchCommand items={searchItems} />
               <main className="flex-1 pt-16 sm:pt-24">{children}</main>
               <Footer config={config} />
             </div>

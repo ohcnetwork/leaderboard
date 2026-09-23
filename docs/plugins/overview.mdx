@@ -346,6 +346,23 @@ async scrape(ctx) {
 }
 ```
 
+Plugins can also declare a `configSchema` on the manifest and let the plugin runner validate config before any lifecycle methods run:
+
+```typescript
+import { z } from "zod";
+
+export default {
+  name: "example-plugin",
+  version: "1.0.0",
+  configSchema: z.object({
+    apiKey: z.string().min(1),
+  }),
+  async scrape(ctx) {
+    // ctx.config is already validated here
+  },
+};
+```
+
 ## Plugin Security
 
 ### Validation

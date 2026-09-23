@@ -58,7 +58,7 @@ npm init -y
 Install the plugin API types:
 
 ```bash
-npm install --save-dev @ohcnetwork/leaderboard-api
+npm install @ohcnetwork/leaderboard-api zod
 ```
 
 ## Step 2: Create the Plugin File
@@ -77,10 +77,15 @@ import {
   activityQueries,
   contributorQueries,
 } from "@ohcnetwork/leaderboard-api";
+import { z } from "zod";
 
 export default {
   name: "custom-plugin",
   version: "1.0.0",
+  configSchema: z.object({
+    apiKey: z.string().min(1),
+    apiUrl: z.string().url().optional(),
+  }),
 
   /**
    * Setup method: Define activity types

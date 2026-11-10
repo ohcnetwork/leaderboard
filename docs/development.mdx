@@ -24,11 +24,14 @@ The fastest way to get started is using our development setup script:
 git clone https://github.com/ohcnetwork/leaderboard.git
 cd leaderboard
 
+# Set the repository root for data and web commands in this terminal
+export WORKSPACE_ROOT="$PWD"
+
 # Install dependencies
 pnpm install
 
 # Build all packages
-pnpm build
+pnpm build:packages
 
 # Setup development environment
 pnpm setup:dev
@@ -38,6 +41,10 @@ pnpm dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000) to see your leaderboard!
+
+Build the packages before generating sample data. `pnpm build` also runs data
+generation and builds the website, so use it only after setup is complete.
+Set `WORKSPACE_ROOT` again when opening a new terminal, from the repository root.
 
 ## Development Setup Script
 
@@ -309,6 +316,16 @@ export default myPlugin;
 
 ## Environment Variables
 
+Data and web commands require the absolute path to the repository root. Run this
+from the repository root in each terminal where you work on the project:
+
+```bash
+export WORKSPACE_ROOT="$PWD"
+```
+
+The `setup:dev` script supplies this path to its data generation subprocess
+automatically.
+
 Create a `.env` file in the root directory:
 
 ```bash
@@ -326,6 +343,21 @@ LEADERBOARD_DATA_DIR=./data
 See [`.env.example`](/.env.example) for all available options.
 
 ## Troubleshooting
+
+### "'WORKSPACE_ROOT' is not set in the environment"
+
+From the repository root, set `WORKSPACE_ROOT` before running data or web commands:
+
+```bash
+export WORKSPACE_ROOT="$PWD"
+```
+
+If an earlier setup attempt already created `data/config.yaml`, finish generating
+the sample data without deleting the existing files:
+
+```bash
+LEADERBOARD_DATA_DIR="$PWD/data" pnpm build:data
+```
 
 ### "Data directory already exists"
 

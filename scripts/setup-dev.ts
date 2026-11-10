@@ -352,6 +352,7 @@ async function runPluginRunner(): Promise<void> {
       stdio: "inherit",
       env: {
         ...process.env,
+        WORKSPACE_ROOT: process.cwd(),
         LEADERBOARD_DATA_DIR: DATA_DIR,
       },
     });

@@ -22,11 +22,14 @@ Get started with development in under 1 minute:
 git clone https://github.com/ohcnetwork/leaderboard.git
 cd leaderboard
 
+# Set the repository root for data and web commands in this terminal
+export WORKSPACE_ROOT="$PWD"
+
 # Install dependencies
 pnpm install
 
 # Build packages
-pnpm build
+pnpm build:packages
 
 # Setup development environment with dummy data
 pnpm setup:dev

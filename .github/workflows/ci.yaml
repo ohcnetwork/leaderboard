@@ -42,8 +42,8 @@ jobs:
       - name: Run tests
         run: pnpm test
 
-      - name: Setup dev data
-        run: pnpm setup:dev --seed 42
+      - name: Setup dev data without a preconfigured workspace root
+        run: env -u WORKSPACE_ROOT pnpm setup:dev --seed 42
 
       - name: Build web
         run: pnpm build:web
